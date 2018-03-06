@@ -40,3 +40,4 @@ testng/test-output/
 /java8/.gradle
 /java/build
 /java/.gradle
+/core/build
