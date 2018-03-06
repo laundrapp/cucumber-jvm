@@ -1,0 +1,58 @@
+rootProject.name = 'cucumber-jvm'
+include ':cucumber-core'
+include ':cucumber-java'
+include ':cucumber-java8'
+include ':cucumber-kotlin-java8'
+include ':cucumber-testng'
+include ':cucumber-picocontainer'
+include ':cucumber-junit'
+include ':cucumber-spring'
+include ':cucumber-osgi'
+include ':cucumber-guice'
+include ':cucumber-weld'
+include ':cucumber-openejb'
+include ':cucumber-needle'
+include ':cucumber-android'
+include ':cucumber-examples:spring-txn'
+include ':cucumber-examples:java-calculator'
+include ':cucumber-examples:java8-calculator'
+include ':cucumber-examples:java-calculator-testng'
+include ':cucumber-examples:pax-exam:pax-exam-calculator-api'
+include ':cucumber-examples:pax-exam:pax-exam-calculator-service'
+include ':cucumber-examples:pax-exam:pax-exam-calculator-test'
+include ':cucumber-examples:pax-exam'
+include ':cucumber-examples:java-wicket:java-wicket-main'
+include ':cucumber-examples:java-wicket:java-wicket-test'
+include ':cucumber-examples:java-wicket'
+include ':cucumber-examples:java-webbit-websockets-selenium'
+include ':cucumber-examples'
+include ':continuous-deployment'
+
+project(':cucumber-core').projectDir = "$rootDir/core" as File
+project(':cucumber-java').projectDir = "$rootDir/java" as File
+project(':cucumber-java8').projectDir = "$rootDir/java8" as File
+project(':cucumber-kotlin-java8').projectDir = "$rootDir/kotlin-java8" as File
+project(':cucumber-testng').projectDir = "$rootDir/testng" as File
+project(':cucumber-picocontainer').projectDir = "$rootDir/picocontainer" as File
+project(':cucumber-junit').projectDir = "$rootDir/junit" as File
+project(':cucumber-spring').projectDir = "$rootDir/spring" as File
+project(':cucumber-osgi').projectDir = "$rootDir/osgi" as File
+project(':cucumber-guice').projectDir = "$rootDir/guice" as File
+project(':cucumber-weld').projectDir = "$rootDir/weld" as File
+project(':cucumber-openejb').projectDir = "$rootDir/openejb" as File
+project(':cucumber-needle').projectDir = "$rootDir/needle" as File
+project(':cucumber-android').projectDir = "$rootDir/android" as File
+project(':cucumber-examples:spring-txn').projectDir = "$rootDir/examples/spring-txn" as File
+project(':cucumber-examples:java-calculator').projectDir = "$rootDir/examples/java-calculator" as File
+project(':cucumber-examples:java8-calculator').projectDir = "$rootDir/examples/java8-calculator" as File
+project(':cucumber-examples:java-calculator-testng').projectDir = "$rootDir/examples/java-calculator-testng" as File
+project(':cucumber-examples:pax-exam:pax-exam-calculator-api').projectDir = "$rootDir/examples/pax-exam/calculator-api" as File
+project(':cucumber-examples:pax-exam:pax-exam-calculator-service').projectDir = "$rootDir/examples/pax-exam/calculator-service" as File
+project(':cucumber-examples:pax-exam:pax-exam-calculator-test').projectDir = "$rootDir/examples/pax-exam/calculator-test" as File
+project(':cucumber-examples:pax-exam').projectDir = "$rootDir/examples/pax-exam" as File
+project(':cucumber-examples:java-wicket:java-wicket-main').projectDir = "$rootDir/examples/java-wicket/java-wicket-main" as File
+project(':cucumber-examples:java-wicket:java-wicket-test').projectDir = "$rootDir/examples/java-wicket/java-wicket-test" as File
+project(':cucumber-examples:java-wicket').projectDir = "$rootDir/examples/java-wicket" as File
+project(':cucumber-examples:java-webbit-websockets-selenium').projectDir = "$rootDir/examples/java-webbit-websockets-selenium" as File
+project(':cucumber-examples').projectDir = "$rootDir/examples" as File
+project(':continuous-deployment').projectDir = "$rootDir/continuous-deployment" as File

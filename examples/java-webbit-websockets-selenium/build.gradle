@@ -1,0 +1,21 @@
+
+description = 'Examples: Webbit WebSockets tested with Selenium'
+dependencies {
+    compile group: 'org.webbitserver', name: 'webbit', version:'0.4.15'
+  testCompile project(':cucumber-java8')
+  testCompile project(':cucumber-picocontainer')
+  testCompile project(':cucumber-junit')
+    testCompile group: 'org.picocontainer', name: 'picocontainer', version:'2.15'
+    testCompile(group: 'org.seleniumhq.selenium', name: 'selenium-java', version:'3.5.2') {
+exclude(module: 'commons-logging')
+    }
+    testCompile(group: 'org.seleniumhq.selenium', name: 'selenium-remote-driver', version:'3.5.2') {
+exclude(module: 'commons-logging')
+    }
+    testCompile(group: 'org.seleniumhq.selenium', name: 'selenium-server', version:'3.5.2') {
+exclude(module: 'commons-logging')
+    }
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+    testCompile group: 'org.slf4j', name: 'jcl-over-slf4j', version:'1.7.25'
+    testCompile group: 'ch.qos.logback', name: 'logback-classic', version:'1.2.3'
+}

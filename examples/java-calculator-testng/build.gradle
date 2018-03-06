@@ -1,0 +1,7 @@
+
+description = 'Examples: Java Calculator TestNG'
+dependencies {
+  testCompile project(':cucumber-java')
+  testCompile project(':cucumber-testng')
+}
+test.useTestNG()

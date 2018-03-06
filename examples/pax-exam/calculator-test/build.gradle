@@ -1,0 +1,15 @@
+
+description = 'Examples: Pax Exam: Calculator Test'
+dependencies {
+  compile project(':cucumber-examples:pax-exam:pax-exam-calculator-api')
+  compile project(':cucumber-examples:pax-exam:pax-exam-calculator-service')
+  testCompile project(':cucumber-osgi')
+    testCompile group: 'javax.inject', name: 'javax.inject', version:'1'
+    testCompile group: 'org.ops4j.pax.exam', name: 'pax-exam-container-native', version:'4.3.0'
+    testCompile group: 'org.ops4j.pax.exam', name: 'pax-exam-junit4', version:'4.3.0'
+    testCompile group: 'org.ops4j.pax.exam', name: 'pax-exam-link-mvn', version:'4.3.0'
+    testCompile group: 'org.ops4j.pax.url', name: 'pax-url-aether', version:'2.2.0'
+    testCompile group: 'org.apache.felix', name: 'org.apache.felix.framework', version:'5.6.6'
+    testCompile group: 'ch.qos.logback', name: 'logback-core', version:'1.2.3'
+    testCompile group: 'ch.qos.logback', name: 'logback-classic', version:'1.2.3'
+}

@@ -36,3 +36,7 @@ Icon?
 Thumbs.db
 test-json-report.json
 testng/test-output/
+/.gradle
+/java8/.gradle
+/java/build
+/java/.gradle

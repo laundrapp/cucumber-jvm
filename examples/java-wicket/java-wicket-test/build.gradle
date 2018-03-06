@@ -1,0 +1,13 @@
+
+description = 'Examples: Wicket application tested with Selenium'
+dependencies {
+  testCompile project(':cucumber-examples:java-wicket:java-wicket-main')
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+  testCompile project(':cucumber-java')
+  testCompile project(':cucumber-junit')
+    testCompile(group: 'org.seleniumhq.selenium', name: 'selenium-java', version:'3.5.2') {
+exclude(module: 'commons-logging')
+    }
+    testCompile group: 'org.slf4j', name: 'jcl-over-slf4j', version:'1.7.25'
+    testCompile group: 'ch.qos.logback', name: 'logback-classic', version:'1.2.3'
+}

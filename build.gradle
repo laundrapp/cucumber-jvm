@@ -1,0 +1,33 @@
+allprojects  {
+  apply plugin: 'maven'
+
+  group = 'io.cucumber'
+version = '2.3.2-SNAPSHOT'
+}
+
+subprojects {
+  apply plugin: 'java'
+  sourceCompatibility = 1.5
+  targetCompatibility = 1.5
+  tasks.withType(JavaCompile) {
+  	options.encoding = 'UTF-8'
+  }
+
+  
+  repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "http://repo.maven.apache.org/maven2" }
+  }
+
+  configurations.all {
+it.exclude group: 'commons-logging'
+it.exclude group: 'log4j'
+}
+  
+  
+}
+
+task translateAll(dependsOn: [':cucumber-core:translateJava', ':cucumber-java:translateJava', ':cucumber-java8:translateJava', ':cucumber-junit:translateJava']) {
+
+}

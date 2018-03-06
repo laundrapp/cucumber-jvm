@@ -1,0 +1,10 @@
+
+description = 'Cucumber-JVM: OpenEJB'
+dependencies {
+  compile project(':cucumber-java')
+  testCompile project(':cucumber-junit')
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+    compileOnly(group: 'org.apache.openejb', name: 'openejb-core', version:'4.7.4') {
+exclude(module: 'commons-logging')
+    }
+}

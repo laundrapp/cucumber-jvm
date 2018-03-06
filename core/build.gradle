@@ -1,0 +1,54 @@
+apply plugin: "java"
+
+description = 'Cucumber-JVM: Core'
+
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "http://repo.maven.apache.org/maven2" }
+}
+
+dependencies {
+    compile group: 'info.cukes', name: 'cucumber-html', version:'0.2.6'
+    compile(group: 'io.cucumber', name: 'cucumber-jvm-deps', version:'1.0.6') {
+exclude(module: 'xstream')
+exclude(module: 'diffutils')
+    }
+    compile(group: 'io.cucumber', name: 'gherkin', version:'5.0.0') {
+exclude(module: 'gherkin-jvm-deps')
+    }
+    compile group: 'io.cucumber', name: 'tag-expressions', version:'1.1.1'
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+    testCompile group: 'xmlunit', name: 'xmlunit', version:'1.6'
+    testCompile(group: 'org.mockito', name: 'mockito-core', version:'1.10.19') {
+exclude(module: 'hamcrest-core')
+    }
+    testCompile group: 'org.jsoup', name: 'jsoup', version:'1.10.3'
+    testCompile group: 'joda-time', name: 'joda-time', version:'2.9.9'
+    testCompile group: 'org.webbitserver', name: 'webbit', version:'0.4.15'
+    testCompile group: 'org.webbitserver', name: 'webbit-rest', version:'0.3.0'
+}
+
+task translateJava(type:Exec) {
+    inputs.files sourceSets.main.allJava
+    outputs.files files((sourceSets.main.allJava).collect { i ->
+        i.collect { j ->
+            def name = projectDir.path + '../gen/objc/' + i.name
+            //def name = j.path.replace(i.srcDirs.iterator().next().path, 'src/gen/objc')
+            return [name.replace('.java', '.h'), name.replace('.java', '.m')]
+        }
+    }.flatten())
+
+
+    // the classpath is built from the runtime dependencies for the sourcesets ...
+    executable "${J2OBJC_HOME_LATEST}/j2objc"
+    //args '--prefixes', file('main/resources/prefixes.properties').path
+//    args '--mapping', file('mapping.properties').path
+    args '--doc-comments'
+    args '--nullability'
+    args '-d', file('../gen/objc').path
+    args '-sourcepath', (sourceSets.main.allJava.srcDirs).join(':')
+    args '-classpath', sourceSets.main.runtimeClasspath.collect { it.absolutePath }.join(':')
+    args inputs.files
+}

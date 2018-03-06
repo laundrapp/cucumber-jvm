@@ -1,0 +1,11 @@
+rootProject.name = 'cucumber-java8'
+
+include ':cucumber-java', ':cucumber-core', ':cucumber-junit'
+
+project(':cucumber-core').projectDir = "$rootDir/../core" as File
+project(':cucumber-java').projectDir = "$rootDir/../java" as File
+project(':cucumber-junit').projectDir = "$rootDir/junit" as File
+
+
+
+

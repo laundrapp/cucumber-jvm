@@ -1,0 +1,8 @@
+
+description = 'Cucumber-JVM: Kotlin Java8'
+dependencies {
+  compile project(':cucumber-java8')
+  testCompile project(':cucumber-junit')
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+    testCompile group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib', version:'1.2.0'
+}

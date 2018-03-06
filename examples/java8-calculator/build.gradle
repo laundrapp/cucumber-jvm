@@ -1,0 +1,7 @@
+
+description = 'Examples: Java8 Calculator'
+dependencies {
+  testCompile project(':cucumber-java8')
+  testCompile project(':cucumber-junit')
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+}
