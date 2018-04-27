@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiEventTestSourceRead
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiEventTestSourceRead_) && (INCLUDE_ALL_CucumberApiEventTestSourceRead || defined(INCLUDE_CucumberApiEventTestSourceRead))
 #define CucumberApiEventTestSourceRead_
 
@@ -30,13 +35,13 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaLangLong:(JavaLangLong *)timeStamp
-                        withNSString:(NSString *)uri
-                        withNSString:(NSString *)source;
+- (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp
+                                  withNSString:(NSString *)uri
+                                  withNSString:(NSString *)source;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithJavaLangLong:(JavaLangLong *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -55,4 +60,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventTestSourceRead)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiEventTestSourceRead")

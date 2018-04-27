@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeFormatterProgressFormatter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeFormatterProgressFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterProgressFormatter || defined(INCLUDE_CucumberRuntimeFormatterProgressFormatter))
 #define CucumberRuntimeFormatterProgressFormatter_
 
@@ -31,7 +36,7 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaLangAppendable:(id<JavaLangAppendable>)appendable;
+- (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)appendable;
 
 - (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
 
@@ -39,7 +44,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -55,4 +60,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterProgressFormatter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeFormatterProgressFormatter")

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeXstreamConverterWithEnumFormat
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeXstreamConverterWithEnumFormat_) && (INCLUDE_ALL_CucumberRuntimeXstreamConverterWithEnumFormat || defined(INCLUDE_CucumberRuntimeXstreamConverterWithEnumFormat))
 #define CucumberRuntimeXstreamConverterWithEnumFormat_
 
@@ -36,12 +41,12 @@
 
 #pragma mark Package-Private
 
-- (instancetype)initWithJavaUtilLocale:(JavaUtilLocale *)locale
-                          withIOSClass:(IOSClass *)enumClass;
+- (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale
+                                    withIOSClass:(IOSClass *)enumClass;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithIOSClassArray:(IOSObjectArray *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithIOSClassArray:(IOSObjectArray *)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -57,4 +62,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamConverterWithEnumFormat)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeXstreamConverterWithEnumFormat")

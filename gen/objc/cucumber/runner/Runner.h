@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRunnerRunner
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRunnerRunner_) && (INCLUDE_ALL_CucumberRunnerRunner || defined(INCLUDE_CucumberRunnerRunner))
 #define CucumberRunnerRunner_
 
@@ -33,10 +38,10 @@
 
 #pragma mark Public
 
-- (instancetype)initWithCucumberRuntimeGlue:(id<CucumberRuntimeGlue>)glue
-                 withCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus
-                     withJavaUtilCollection:(id<JavaUtilCollection>)backends
-          withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions;
+- (instancetype __nonnull)initWithCucumberRuntimeGlue:(id<CucumberRuntimeGlue>)glue
+                           withCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus
+                               withJavaUtilCollection:(id<JavaUtilCollection>)backends
+                    withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions;
 
 - (id<CucumberRuntimeGlue>)getGlue;
 
@@ -53,7 +58,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -69,4 +74,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRunnerRunner)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRunnerRunner")

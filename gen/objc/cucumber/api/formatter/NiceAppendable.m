@@ -33,7 +33,7 @@ __attribute__((unused)) static void CucumberApiFormatterNiceAppendable_tryFlush(
 
 @implementation CucumberApiFormatterNiceAppendable
 
-- (instancetype)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg {
+- (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg {
   CucumberApiFormatterNiceAppendable_initWithJavaLangAppendable_(self, outArg);
   return self;
 }
@@ -125,6 +125,7 @@ __attribute__((unused)) static void CucumberApiFormatterNiceAppendable_tryFlush(
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangAppendable:);
   methods[1].selector = @selector(appendWithJavaLangCharSequence:);
   methods[2].selector = @selector(appendWithJavaLangCharSequence:withInt:withInt:);

@@ -20,7 +20,7 @@ __attribute__((unused)) static NSString *CucumberRuntimeSnippetsCamelCaseConcate
 @implementation CucumberRuntimeSnippetsCamelCaseConcatenator
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeSnippetsCamelCaseConcatenator_init(self);
   return self;
 }
@@ -59,6 +59,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(concatenateWithNSStringArray:);
   methods[2].selector = @selector(capitalizeWithNSString:);

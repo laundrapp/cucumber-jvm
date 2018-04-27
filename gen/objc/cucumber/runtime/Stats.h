@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeStats
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeStats_) && (INCLUDE_ALL_CucumberRuntimeStats || defined(INCLUDE_CucumberRuntimeStats))
 #define CucumberRuntimeStats_
 
@@ -31,10 +36,10 @@
 
 #pragma mark Public
 
-- (instancetype)initWithBoolean:(jboolean)monochrome;
+- (instancetype __nonnull)initWithBoolean:(jboolean)monochrome;
 
-- (instancetype)initWithBoolean:(jboolean)monochrome
-             withJavaUtilLocale:(JavaUtilLocale *)locale;
+- (instancetype __nonnull)initWithBoolean:(jboolean)monochrome
+                       withJavaUtilLocale:(JavaUtilLocale *)locale;
 
 - (jbyte)exitStatusWithBoolean:(jboolean)isStrict;
 
@@ -58,7 +63,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -107,7 +112,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeStats)
 
 #pragma mark Package-Private
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 @end
 
@@ -123,4 +128,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeStats_SubCounts)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeStats")

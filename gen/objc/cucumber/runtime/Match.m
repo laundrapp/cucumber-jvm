@@ -25,8 +25,8 @@ CucumberRuntimeMatch *CucumberRuntimeMatch_UNDEFINED;
 
 @implementation CucumberRuntimeMatch
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)arguments
-                        withNSString:(NSString *)location {
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)arguments
+                                  withNSString:(NSString *)location {
   CucumberRuntimeMatch_initWithJavaUtilList_withNSString_(self, arguments, location);
   return self;
 }
@@ -53,6 +53,7 @@ CucumberRuntimeMatch *CucumberRuntimeMatch_UNDEFINED;
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilList:withNSString:);
   methods[1].selector = @selector(getArguments);
   methods[2].selector = @selector(getLocation);

@@ -25,6 +25,14 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiPending__Annotations$0
   return @"@cucumber.api.Pending()";
 }
 
+- (jboolean)isEqual:(id)obj {
+  return JreAnnotationEquals(self, obj);
+}
+
+- (NSUInteger)hash {
+  return JreAnnotationHashCode(self);
+}
+
 + (const J2ObjcClassInfo *)__metadata {
   static const void *ptrTable[] = { (void *)&CucumberApiPending__Annotations$0 };
   static const J2ObjcClassInfo _CucumberApiPending = { "Pending", "cucumber.api", ptrTable, NULL, NULL, 7, 0x2609, 0, 0, -1, -1, -1, -1, 0 };

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeFormatterTestSourcesModel
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeFormatterTestSourcesModel_) && (INCLUDE_ALL_CucumberRuntimeFormatterTestSourcesModel || defined(INCLUDE_CucumberRuntimeFormatterTestSourcesModel))
 #define CucumberRuntimeFormatterTestSourcesModel_
 
@@ -26,7 +31,7 @@
 
 #pragma mark Package-Private
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (void)addTestSourceReadEventWithNSString:(NSString *)path
         withCucumberApiEventTestSourceRead:(CucumberApiEventTestSourceRead *)event;
@@ -106,13 +111,13 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterTestSourcesModel)
 
 #pragma mark Package-Private
 
-- (instancetype)initWithCucumberRuntimeFormatterTestSourcesModel:(CucumberRuntimeFormatterTestSourcesModel *)outer$
-                                              withGherkinAstNode:(GherkinAstNode *)examplesRow
-                                                         withInt:(jint)bodyRowIndex;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterTestSourcesModel:(CucumberRuntimeFormatterTestSourcesModel *)outer$
+                                                        withGherkinAstNode:(GherkinAstNode *)examplesRow
+                                                                   withInt:(jint)bodyRowIndex;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithGherkinAstLocation:(GherkinAstLocation *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithGherkinAstLocation:(GherkinAstLocation *)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -142,13 +147,13 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterTestSourcesModel_ExamplesRowW
 
 #pragma mark Package-Private
 
-- (instancetype)initWithCucumberRuntimeFormatterTestSourcesModel:(CucumberRuntimeFormatterTestSourcesModel *)outer$
-                                              withGherkinAstNode:(GherkinAstNode *)node
-            withCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)parent;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterTestSourcesModel:(CucumberRuntimeFormatterTestSourcesModel *)outer$
+                                                        withGherkinAstNode:(GherkinAstNode *)node
+                      withCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)parent;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -167,4 +172,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterTestSourcesModel_AstNode)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeFormatterTestSourcesModel")

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiEventWriteEvent
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiEventWriteEvent_) && (INCLUDE_ALL_CucumberApiEventWriteEvent || defined(INCLUDE_CucumberApiEventWriteEvent))
 #define CucumberApiEventWriteEvent_
 
@@ -29,12 +34,12 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaLangLong:(JavaLangLong *)timeStamp
-                        withNSString:(NSString *)text;
+- (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp
+                                  withNSString:(NSString *)text;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithJavaLangLong:(JavaLangLong *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -52,4 +57,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventWriteEvent)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiEventWriteEvent")

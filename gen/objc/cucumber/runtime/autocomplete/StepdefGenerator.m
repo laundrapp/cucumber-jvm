@@ -33,7 +33,7 @@ J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeAutocompleteStepdefGenerator, STEP_
 
 @interface CucumberRuntimeAutocompleteStepdefGenerator_1 : NSObject < JavaUtilComparator >
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (jint)compareWithId:(id<CucumberRuntimeStepDefinition>)a
                withId:(id<CucumberRuntimeStepDefinition>)b;
@@ -53,7 +53,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeAutocompleteStepdefGenerator)
 @implementation CucumberRuntimeAutocompleteStepdefGenerator
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeAutocompleteStepdefGenerator_init(self);
   return self;
 }
@@ -100,6 +100,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(generateWithJavaUtilCollection:withJavaUtilList:);
   #pragma clang diagnostic pop
@@ -137,7 +138,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeAutocompleteStepdefGenerator)
 @implementation CucumberRuntimeAutocompleteStepdefGenerator_1
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeAutocompleteStepdefGenerator_1_init(self);
   return self;
 }
@@ -184,6 +185,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(compareWithId:withId:);
   #pragma clang diagnostic pop

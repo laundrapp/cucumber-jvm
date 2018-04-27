@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeDefaultSummaryPrinter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeDefaultSummaryPrinter_) && (INCLUDE_ALL_CucumberRuntimeDefaultSummaryPrinter || defined(INCLUDE_CucumberRuntimeDefaultSummaryPrinter))
 #define CucumberRuntimeDefaultSummaryPrinter_
 
@@ -26,7 +31,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (void)printWithCucumberRuntimeRuntime:(CucumberRuntimeRuntime *)runtime;
 
@@ -44,4 +49,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeDefaultSummaryPrinter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeDefaultSummaryPrinter")

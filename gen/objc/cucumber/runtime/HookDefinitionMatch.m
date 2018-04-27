@@ -23,7 +23,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeHookDefinitionMatch, hookDefinition_, id<Cucu
 
 @implementation CucumberRuntimeHookDefinitionMatch
 
-- (instancetype)initWithCucumberRuntimeHookDefinition:(id<CucumberRuntimeHookDefinition>)hookDefinition {
+- (instancetype __nonnull)initWithCucumberRuntimeHookDefinition:(id<CucumberRuntimeHookDefinition>)hookDefinition {
   CucumberRuntimeHookDefinitionMatch_initWithCucumberRuntimeHookDefinition_(self, hookDefinition);
   return self;
 }
@@ -70,6 +70,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeHookDefinitionMatch, hookDefinition_, id<Cucu
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeHookDefinition:);
   methods[1].selector = @selector(runStepWithNSString:withCucumberApiScenario:);
   methods[2].selector = @selector(dryRunStepWithNSString:withCucumberApiScenario:);

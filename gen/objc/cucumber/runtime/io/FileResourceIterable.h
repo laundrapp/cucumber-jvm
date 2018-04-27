@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeIoFileResourceIterable
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeIoFileResourceIterable_) && (INCLUDE_ALL_CucumberRuntimeIoFileResourceIterable || defined(INCLUDE_CucumberRuntimeIoFileResourceIterable))
 #define CucumberRuntimeIoFileResourceIterable_
 
@@ -29,9 +34,9 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)root
-                    withJavaIoFile:(JavaIoFile *)file
-                      withNSString:(NSString *)suffix;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)root
+                              withJavaIoFile:(JavaIoFile *)file
+                                withNSString:(NSString *)suffix;
 
 - (id<JavaUtilIterator>)iterator;
 
@@ -39,7 +44,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -55,4 +60,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoFileResourceIterable)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeIoFileResourceIterable")

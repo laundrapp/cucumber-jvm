@@ -21,8 +21,8 @@ __attribute__((unused)) static NSString *CucumberRuntimeDuplicateStepDefinitionE
 
 @implementation CucumberRuntimeDuplicateStepDefinitionException
 
-- (instancetype)initWithCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)a
-                    withCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)b {
+- (instancetype __nonnull)initWithCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)a
+                              withCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)b {
   CucumberRuntimeDuplicateStepDefinitionException_initWithCucumberRuntimeStepDefinition_withCucumberRuntimeStepDefinition_(self, a, b);
   return self;
 }
@@ -39,6 +39,7 @@ __attribute__((unused)) static NSString *CucumberRuntimeDuplicateStepDefinitionE
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeStepDefinition:withCucumberRuntimeStepDefinition:);
   methods[1].selector = @selector(createMessageWithCucumberRuntimeStepDefinition:withCucumberRuntimeStepDefinition:);
   #pragma clang diagnostic pop

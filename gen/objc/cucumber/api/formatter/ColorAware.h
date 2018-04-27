@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiFormatterColorAware
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiFormatterColorAware_) && (INCLUDE_ALL_CucumberApiFormatterColorAware || defined(INCLUDE_CucumberApiFormatterColorAware))
 #define CucumberApiFormatterColorAware_
 
@@ -41,4 +46,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiFormatterColorAware)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiFormatterColorAware")

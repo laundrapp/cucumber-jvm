@@ -24,8 +24,8 @@ J2OBJC_STATIC_FIELD_CONSTANT(CucumberRuntimeArgument, serialVersionUID, jlong)
 
 @implementation CucumberRuntimeArgument
 
-- (instancetype)initWithJavaLangInteger:(JavaLangInteger *)offset
-                           withNSString:(NSString *)val {
+- (instancetype __nonnull)initWithJavaLangInteger:(JavaLangInteger *)offset
+                                     withNSString:(NSString *)val {
   CucumberRuntimeArgument_initWithJavaLangInteger_withNSString_(self, offset, val);
   return self;
 }
@@ -57,6 +57,7 @@ J2OBJC_STATIC_FIELD_CONSTANT(CucumberRuntimeArgument, serialVersionUID, jlong)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangInteger:withNSString:);
   methods[1].selector = @selector(getVal);
   methods[2].selector = @selector(getOffset);

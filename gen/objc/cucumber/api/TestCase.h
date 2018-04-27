@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiTestCase
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiTestCase_) && (INCLUDE_ALL_CucumberApiTestCase || defined(INCLUDE_CucumberApiTestCase))
 #define CucumberApiTestCase_
 
@@ -29,8 +34,8 @@
  @param testSteps of the test case
  @param pickleEvent the pickle executed by this test case
  */
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)testSteps
-        withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)testSteps
+                  withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent;
 
 /*!
  @brief Creates a new instance of a test case.
@@ -38,9 +43,9 @@
  @param pickleEvent the pickle executed by this test case
  @param dryRun skip execution of the test steps
  */
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)testSteps
-        withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent
-                         withBoolean:(jboolean)dryRun;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)testSteps
+                  withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent
+                                   withBoolean:(jboolean)dryRun;
 
 - (jint)getLine;
 
@@ -62,7 +67,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -84,4 +89,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiTestCase)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiTestCase")

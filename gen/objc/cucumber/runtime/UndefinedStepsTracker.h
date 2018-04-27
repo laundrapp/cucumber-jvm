@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeUndefinedStepsTracker
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeUndefinedStepsTracker_) && (INCLUDE_ALL_CucumberRuntimeUndefinedStepsTracker || defined(INCLUDE_CucumberRuntimeUndefinedStepsTracker))
 #define CucumberRuntimeUndefinedStepsTracker_
 
@@ -27,7 +32,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (id<JavaUtilList>)getSnippets;
 
@@ -55,4 +60,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeUndefinedStepsTracker)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeUndefinedStepsTracker")

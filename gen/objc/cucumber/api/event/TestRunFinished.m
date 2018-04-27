@@ -10,7 +10,7 @@
 
 @implementation CucumberApiEventTestRunFinished
 
-- (instancetype)initWithJavaLangLong:(JavaLangLong *)timeStamp {
+- (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp {
   CucumberApiEventTestRunFinished_initWithJavaLangLong_(self, timeStamp);
   return self;
 }
@@ -21,6 +21,7 @@
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangLong:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LJavaLangLong;" };

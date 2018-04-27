@@ -12,10 +12,10 @@
 
 @implementation CucumberApiEventSnippetsSuggestedEvent
 
-- (instancetype)initWithJavaLangLong:(JavaLangLong *)timeStamp
-                        withNSString:(NSString *)uri
-                    withJavaUtilList:(id<JavaUtilList>)stepLocations
-                    withJavaUtilList:(id<JavaUtilList>)snippets {
+- (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp
+                                  withNSString:(NSString *)uri
+                              withJavaUtilList:(id<JavaUtilList>)stepLocations
+                              withJavaUtilList:(id<JavaUtilList>)snippets {
   CucumberApiEventSnippetsSuggestedEvent_initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_(self, timeStamp, uri, stepLocations, snippets);
   return self;
 }
@@ -33,6 +33,7 @@
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangLong:withNSString:withJavaUtilList:withJavaUtilList:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {

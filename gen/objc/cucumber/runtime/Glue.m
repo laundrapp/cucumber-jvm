@@ -25,6 +25,7 @@
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(addStepDefinitionWithCucumberRuntimeStepDefinition:);
   methods[1].selector = @selector(addBeforeHookWithCucumberRuntimeHookDefinition:);
   methods[2].selector = @selector(addAfterHookWithCucumberRuntimeHookDefinition:);

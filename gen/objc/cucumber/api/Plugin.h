@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiPlugin
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiPlugin_) && (INCLUDE_ALL_CucumberApiPlugin || defined(INCLUDE_CucumberApiPlugin))
 #define CucumberApiPlugin_
 
@@ -52,4 +57,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiPlugin)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiPlugin")

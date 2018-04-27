@@ -35,9 +35,9 @@
  @param duration the duration in nanoseconds
  @param error the error that caused the failure if any
  */
-- (instancetype)initWithCucumberApiResult_Type:(CucumberApiResult_Type *)status
-                              withJavaLangLong:(JavaLangLong *)duration
-                         withJavaLangThrowable:(JavaLangThrowable *)error;
+- (instancetype __nonnull)initWithCucumberApiResult_Type:(CucumberApiResult_Type *)status
+                                        withJavaLangLong:(JavaLangLong *)duration
+                                   withJavaLangThrowable:(JavaLangThrowable *)error;
 
 - (JavaLangLong *)getDuration;
 
@@ -53,7 +53,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 

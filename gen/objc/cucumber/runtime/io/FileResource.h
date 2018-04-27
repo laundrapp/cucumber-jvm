@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeIoFileResource
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeIoFileResource_) && (INCLUDE_ALL_CucumberRuntimeIoFileResource || defined(INCLUDE_CucumberRuntimeIoFileResource))
 #define CucumberRuntimeIoFileResource_
 
@@ -45,7 +50,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -59,4 +64,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoFileResource)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeIoFileResource")

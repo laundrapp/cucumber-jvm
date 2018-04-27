@@ -85,7 +85,7 @@ __attribute__((unused)) static jboolean CucumberRuntimeTableTableConverter_isArr
   id<CucumberRuntimeTableStringConverter> val$mapper_;
 }
 
-- (instancetype)initWithCucumberRuntimeTableStringConverter:(id<CucumberRuntimeTableStringConverter>)capture$0;
+- (instancetype __nonnull)initWithCucumberRuntimeTableStringConverter:(id<CucumberRuntimeTableStringConverter>)capture$0;
 
 - (NSString *)mapWithId:(NSString *)attributeName;
 
@@ -101,8 +101,8 @@ __attribute__((unused)) static CucumberRuntimeTableTableConverter_1 *create_Cucu
 
 @implementation CucumberRuntimeTableTableConverter
 
-- (instancetype)initWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream:(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *)xStream
-                                                withCucumberRuntimeParameterInfo:(CucumberRuntimeParameterInfo *)parameterInfo {
+- (instancetype __nonnull)initWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream:(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *)xStream
+                                                          withCucumberRuntimeParameterInfo:(CucumberRuntimeParameterInfo *)parameterInfo {
   CucumberRuntimeTableTableConverter_initWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_withCucumberRuntimeParameterInfo_(self, xStream, parameterInfo);
   return self;
 }
@@ -340,6 +340,7 @@ withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<Cucumbe
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream:withCucumberRuntimeParameterInfo:);
   methods[1].selector = @selector(convertWithCucumberApiDataTable:withJavaLangReflectType:withBoolean:);
   methods[2].selector = @selector(toListOfComplexTypeWithCucumberApiDataTable:withIOSClass:);
@@ -460,7 +461,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTableTableConverter)
 
 @implementation CucumberRuntimeTableTableConverter_1
 
-- (instancetype)initWithCucumberRuntimeTableStringConverter:(id<CucumberRuntimeTableStringConverter>)capture$0 {
+- (instancetype __nonnull)initWithCucumberRuntimeTableStringConverter:(id<CucumberRuntimeTableStringConverter>)capture$0 {
   CucumberRuntimeTableTableConverter_1_initWithCucumberRuntimeTableStringConverter_(self, capture$0);
   return self;
 }
@@ -481,6 +482,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTableTableConverter)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeTableStringConverter:);
   methods[1].selector = @selector(mapWithId:);
   #pragma clang diagnostic pop

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiDataTable
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiDataTable_) && (INCLUDE_ALL_CucumberApiDataTable || defined(INCLUDE_CucumberApiDataTable))
 #define CucumberApiDataTable_
 
@@ -38,8 +43,8 @@
  @param pickleTable the underlying table.
  @param tableConverter how to convert the rows.
  */
-- (instancetype)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)pickleTable
-                    withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter;
+- (instancetype __nonnull)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)pickleTable
+                              withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter;
 
 /*!
  @brief Converts the table to a List.
@@ -161,7 +166,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -183,4 +188,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiDataTable)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiDataTable")

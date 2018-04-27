@@ -93,10 +93,10 @@ __attribute__((unused)) static void CucumberRunnerRunner_disposeBackendWorlds(Cu
 
 @implementation CucumberRunnerRunner
 
-- (instancetype)initWithCucumberRuntimeGlue:(id<CucumberRuntimeGlue>)glue
-                 withCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus
-                     withJavaUtilCollection:(id<JavaUtilCollection>)backends
-          withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions {
+- (instancetype __nonnull)initWithCucumberRuntimeGlue:(id<CucumberRuntimeGlue>)glue
+                           withCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus
+                               withJavaUtilCollection:(id<JavaUtilCollection>)backends
+                    withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions {
   CucumberRunnerRunner_initWithCucumberRuntimeGlue_withCucumberRunnerEventBus_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_(self, glue, bus, backends, runtimeOptions);
   return self;
 }
@@ -202,6 +202,7 @@ __attribute__((unused)) static void CucumberRunnerRunner_disposeBackendWorlds(Cu
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeGlue:withCucumberRunnerEventBus:withJavaUtilCollection:withCucumberRuntimeRuntimeOptions:);
   methods[1].selector = @selector(runUnreportedStepWithNSString:withNSString:withNSString:withInt:withJavaUtilList:withGherkinPicklesPickleString:);
   methods[2].selector = @selector(runPickleWithGherkinEventsPickleEvent:);

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeReflections
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeReflections_) && (INCLUDE_ALL_CucumberRuntimeReflections || defined(INCLUDE_CucumberRuntimeReflections))
 #define CucumberRuntimeReflections_
 
@@ -25,7 +30,7 @@
 
 #pragma mark Public
 
-- (instancetype)initWithCucumberRuntimeClassFinder:(id<CucumberRuntimeClassFinder>)classFinder;
+- (instancetype __nonnull)initWithCucumberRuntimeClassFinder:(id<CucumberRuntimeClassFinder>)classFinder;
 
 - (id)instantiateExactlyOneSubclassWithIOSClass:(IOSClass *)parentType
                                    withNSString:(NSString *)packageName
@@ -43,7 +48,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -59,4 +64,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeReflections)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeReflections")

@@ -40,9 +40,9 @@
                                     withNSString:(NSString *)format
                                withNSStringArray:(IOSObjectArray *)columnNames;
 
-- (instancetype)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)pickleTable
-                                 withJavaUtilList:(id<JavaUtilList>)raw
-                    withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter;
+- (instancetype __nonnull)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)pickleTable
+                                           withJavaUtilList:(id<JavaUtilList>)raw
+                              withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter;
 
 @end
 
@@ -83,15 +83,15 @@ __attribute__((unused)) static CucumberApiDataTable *create_CucumberApiDataTable
   return CucumberApiDataTable_createWithJavaUtilList_withJavaUtilLocale_withNSString_withNSStringArray_(raw, locale, format, columnNames);
 }
 
-- (instancetype)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)pickleTable
-                    withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter {
+- (instancetype __nonnull)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)pickleTable
+                              withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter {
   CucumberApiDataTable_initWithGherkinPicklesPickleTable_withCucumberApiTableConverter_(self, pickleTable, tableConverter);
   return self;
 }
 
-- (instancetype)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)pickleTable
-                                 withJavaUtilList:(id<JavaUtilList>)raw
-                    withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter {
+- (instancetype __nonnull)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)pickleTable
+                                           withJavaUtilList:(id<JavaUtilList>)raw
+                              withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter {
   CucumberApiDataTable_initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_(self, pickleTable, raw, tableConverter);
   return self;
 }
@@ -247,6 +247,7 @@ __attribute__((unused)) static CucumberApiDataTable *create_CucumberApiDataTable
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(createWithJavaUtilList:);
   methods[1].selector = @selector(createWithJavaUtilList:withNSString:withNSStringArray:);
   methods[2].selector = @selector(createWithJavaUtilList:withJavaUtilLocale:withNSStringArray:);

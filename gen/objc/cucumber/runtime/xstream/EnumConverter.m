@@ -11,8 +11,8 @@
 
 @implementation CucumberRuntimeXstreamEnumConverter
 
-- (instancetype)initWithJavaUtilLocale:(JavaUtilLocale *)locale
-                          withIOSClass:(IOSClass *)enumClass {
+- (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale
+                                    withIOSClass:(IOSClass *)enumClass {
   CucumberRuntimeXstreamEnumConverter_initWithJavaUtilLocale_withIOSClass_(self, locale, enumClass);
   return self;
 }
@@ -23,6 +23,7 @@
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilLocale:withIOSClass:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LJavaUtilLocale;LIOSClass;", "(Ljava/util/Locale;Ljava/lang/Class<+Ljava/lang/Enum;>;)V", "Lcucumber/runtime/xstream/ConverterWithEnumFormat<Ljava/lang/Enum;>;" };

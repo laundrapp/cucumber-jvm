@@ -36,7 +36,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeModelPathWithLines)
   return CucumberRuntimeModelPathWithLines_stripLineFiltersWithNSString_(pathName);
 }
 
-- (instancetype)initWithNSString:(NSString *)pathName {
+- (instancetype __nonnull)initWithNSString:(NSString *)pathName {
   CucumberRuntimeModelPathWithLines_initWithNSString_(self, pathName);
   return self;
 }
@@ -65,6 +65,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeModelPathWithLines)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(hasLineFiltersWithNSString:);
   methods[1].selector = @selector(stripLineFiltersWithNSString:);
   methods[2].selector = @selector(initWithNSString:);

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeTableTableConverter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeTableTableConverter_) && (INCLUDE_ALL_CucumberRuntimeTableTableConverter || defined(INCLUDE_CucumberRuntimeTableTableConverter))
 #define CucumberRuntimeTableTableConverter_
 
@@ -35,8 +40,8 @@
 
 #pragma mark Public
 
-- (instancetype)initWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream:(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *)xStream
-                                                withCucumberRuntimeParameterInfo:(CucumberRuntimeParameterInfo *)parameterInfo;
+- (instancetype __nonnull)initWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream:(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *)xStream
+                                                          withCucumberRuntimeParameterInfo:(CucumberRuntimeParameterInfo *)parameterInfo;
 
 /*!
  @brief This method converts a <code>cucumber.api.DataTable</code> to another type.
@@ -78,7 +83,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -94,4 +99,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTableTableConverter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeTableTableConverter")

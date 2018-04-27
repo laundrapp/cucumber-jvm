@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiFormat
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiFormat_) && (INCLUDE_ALL_CucumberApiFormat || defined(INCLUDE_CucumberApiFormat))
 #define CucumberApiFormat_
 
@@ -64,6 +69,10 @@
 
 @property (readonly) NSString *value;
 
+- (jboolean)isEqual:(id)obj;
+
+- (NSUInteger)hash;
+
 @end
 
 @interface CucumberApiFormat : NSObject < CucumberApiFormat > {
@@ -81,4 +90,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiFormat)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiFormat")

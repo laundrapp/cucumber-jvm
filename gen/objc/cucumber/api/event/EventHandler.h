@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiEventEventHandler
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiEventEventHandler_) && (INCLUDE_ALL_CucumberApiEventEventHandler || defined(INCLUDE_CucumberApiEventEventHandler))
 #define CucumberApiEventEventHandler_
 
@@ -30,4 +35,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventEventHandler)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiEventEventHandler")

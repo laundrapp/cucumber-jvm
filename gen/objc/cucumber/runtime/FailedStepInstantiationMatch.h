@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeFailedStepInstantiationMatch
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeFailedStepInstantiationMatch_) && (INCLUDE_ALL_CucumberRuntimeFailedStepInstantiationMatch || defined(INCLUDE_CucumberRuntimeFailedStepInstantiationMatch))
 #define CucumberRuntimeFailedStepInstantiationMatch_
 
@@ -32,9 +37,9 @@
 
 #pragma mark Public
 
-- (instancetype)initWithNSString:(NSString *)uri
-    withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
-           withJavaLangThrowable:(JavaLangThrowable *)throwable;
+- (instancetype __nonnull)initWithNSString:(NSString *)uri
+              withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
+                     withJavaLangThrowable:(JavaLangThrowable *)throwable;
 
 - (void)dryRunStepWithNSString:(NSString *)language
        withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
@@ -46,11 +51,11 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)arg0
-   withCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)arg1
-                        withNSString:(NSString *)arg2
-        withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)arg3
-withCucumberRuntimeXstreamLocalizedXStreams:(CucumberRuntimeXstreamLocalizedXStreams *)arg4 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)arg0
+             withCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)arg1
+                                  withNSString:(NSString *)arg2
+                  withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)arg3
+   withCucumberRuntimeXstreamLocalizedXStreams:(CucumberRuntimeXstreamLocalizedXStreams *)arg4 NS_UNAVAILABLE;
 
 @end
 
@@ -66,4 +71,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFailedStepInstantiationMatch)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeFailedStepInstantiationMatch")

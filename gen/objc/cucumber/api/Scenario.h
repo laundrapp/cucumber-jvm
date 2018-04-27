@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiScenario
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiScenario_) && (INCLUDE_ALL_CucumberApiScenario || defined(INCLUDE_CucumberApiScenario))
 #define CucumberApiScenario_
 
@@ -93,4 +98,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiScenario)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiScenario")

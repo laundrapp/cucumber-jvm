@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiTransform
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiTransform_) && (INCLUDE_ALL_CucumberApiTransform || defined(INCLUDE_CucumberApiTransform))
 #define CucumberApiTransform_
 
@@ -29,6 +34,10 @@
 @protocol CucumberApiTransform < JavaLangAnnotationAnnotation >
 
 @property (readonly) IOSClass *value;
+
+- (jboolean)isEqual:(id)obj;
+
+- (NSUInteger)hash;
 
 @end
 
@@ -47,4 +56,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiTransform)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiTransform")

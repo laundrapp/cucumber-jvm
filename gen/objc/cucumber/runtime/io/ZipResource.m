@@ -22,8 +22,8 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeIoZipResource, jarEntry_, JavaUtilZipZipEntry
 
 @implementation CucumberRuntimeIoZipResource
 
-- (instancetype)initWithJavaUtilZipZipFile:(JavaUtilZipZipFile *)jarFile
-                   withJavaUtilZipZipEntry:(JavaUtilZipZipEntry *)jarEntry {
+- (instancetype __nonnull)initWithJavaUtilZipZipFile:(JavaUtilZipZipFile *)jarFile
+                             withJavaUtilZipZipEntry:(JavaUtilZipZipEntry *)jarEntry {
   CucumberRuntimeIoZipResource_initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_(self, jarFile, jarEntry);
   return self;
 }
@@ -61,6 +61,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeIoZipResource, jarEntry_, JavaUtilZipZipEntry
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilZipZipFile:withJavaUtilZipZipEntry:);
   methods[1].selector = @selector(getPath);
   methods[2].selector = @selector(getAbsolutePath);

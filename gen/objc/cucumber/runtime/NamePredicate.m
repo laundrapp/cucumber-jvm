@@ -22,7 +22,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeNamePredicate, patterns_, id<JavaUtilList>)
 
 @implementation CucumberRuntimeNamePredicate
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)patterns {
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)patterns {
   CucumberRuntimeNamePredicate_initWithJavaUtilList_(self, patterns);
   return self;
 }
@@ -49,6 +49,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeNamePredicate, patterns_, id<JavaUtilList>)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilList:);
   methods[1].selector = @selector(applyWithGherkinEventsPickleEvent:);
   #pragma clang diagnostic pop

@@ -18,6 +18,7 @@
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(getTimeStamp);
   #pragma clang diagnostic pop
   static const J2ObjcClassInfo _CucumberApiEventEvent = { "Event", "cucumber.api.event", NULL, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };

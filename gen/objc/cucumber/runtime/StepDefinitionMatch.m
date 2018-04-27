@@ -85,7 +85,7 @@ __attribute__((unused)) static JavaUtilLocale *CucumberRuntimeStepDefinitionMatc
 
 @interface CucumberRuntimeStepDefinitionMatch_1 : NSObject < CucumberUtilMapper >
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (id<JavaUtilList>)mapWithId:(GherkinPicklesPickleRow *)row;
 
@@ -101,11 +101,11 @@ __attribute__((unused)) static CucumberRuntimeStepDefinitionMatch_1 *create_Cucu
 
 @implementation CucumberRuntimeStepDefinitionMatch
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)arguments
-   withCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)stepDefinition
-                        withNSString:(NSString *)featurePath
-        withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
-withCucumberRuntimeXstreamLocalizedXStreams:(CucumberRuntimeXstreamLocalizedXStreams *)localizedXStreams {
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)arguments
+             withCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)stepDefinition
+                                  withNSString:(NSString *)featurePath
+                  withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
+   withCucumberRuntimeXstreamLocalizedXStreams:(CucumberRuntimeXstreamLocalizedXStreams *)localizedXStreams {
   CucumberRuntimeStepDefinitionMatch_initWithJavaUtilList_withCucumberRuntimeStepDefinition_withNSString_withGherkinPicklesPickleStep_withCucumberRuntimeXstreamLocalizedXStreams_(self, arguments, stepDefinition, featurePath, step, localizedXStreams);
   return self;
 }
@@ -227,6 +227,7 @@ withCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream:(CucumberRuntimeXst
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilList:withCucumberRuntimeStepDefinition:withNSString:withGherkinPicklesPickleStep:withCucumberRuntimeXstreamLocalizedXStreams:);
   methods[1].selector = @selector(runStepWithNSString:withCucumberApiScenario:);
   methods[2].selector = @selector(dryRunStepWithNSString:withCucumberApiScenario:);
@@ -360,7 +361,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeStepDefinitionMatch)
 @implementation CucumberRuntimeStepDefinitionMatch_1
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeStepDefinitionMatch_1_init(self);
   return self;
 }
@@ -381,6 +382,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(mapWithId:);
   #pragma clang diagnostic pop

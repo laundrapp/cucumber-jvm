@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeXstreamSingleValueConverterWrapperExt
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeXstreamSingleValueConverterWrapperExt_) && (INCLUDE_ALL_CucumberRuntimeXstreamSingleValueConverterWrapperExt || defined(INCLUDE_CucumberRuntimeXstreamSingleValueConverterWrapperExt))
 #define CucumberRuntimeXstreamSingleValueConverterWrapperExt_
 
@@ -29,7 +34,7 @@
 
 #pragma mark Public
 
-- (instancetype)initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>)converter;
+- (instancetype __nonnull)initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>)converter;
 
 - (id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>)getConverter;
 
@@ -47,4 +52,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamSingleValueConverterWrapperExt)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeXstreamSingleValueConverterWrapperExt")

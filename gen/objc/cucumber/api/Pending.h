@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiPending
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiPending_) && (INCLUDE_ALL_CucumberApiPending || defined(INCLUDE_CucumberApiPending))
 #define CucumberApiPending_
 
@@ -30,6 +35,10 @@
  */
 @protocol CucumberApiPending < JavaLangAnnotationAnnotation >
 
+- (jboolean)isEqual:(id)obj;
+
+- (NSUInteger)hash;
+
 @end
 
 @interface CucumberApiPending : NSObject < CucumberApiPending >
@@ -44,4 +53,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiPending)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiPending")

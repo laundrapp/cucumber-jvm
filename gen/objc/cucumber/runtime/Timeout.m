@@ -18,7 +18,7 @@
 
 @interface CucumberRuntimeTimeout ()
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 @end
 
@@ -35,9 +35,9 @@ __attribute__((unused)) static CucumberRuntimeTimeout *create_CucumberRuntimeTim
   JavaLangThread *val$executionThread_;
 }
 
-- (instancetype)initWithId:(id)capture$0
+- (instancetype __nonnull)initWithId:(id)capture$0
 withJavaUtilConcurrentAtomicAtomicBoolean:(JavaUtilConcurrentAtomicAtomicBoolean *)capture$1
-        withJavaLangThread:(JavaLangThread *)capture$2;
+                  withJavaLangThread:(JavaLangThread *)capture$2;
 
 - (void)run;
 
@@ -58,7 +58,7 @@ __attribute__((unused)) static CucumberRuntimeTimeout_1 *create_CucumberRuntimeT
 @implementation CucumberRuntimeTimeout
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeTimeout_init(self);
   return self;
 }
@@ -76,6 +76,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(timeoutWithCucumberRuntimeTimeout_Callback:withLong:);
   #pragma clang diagnostic pop
@@ -132,9 +133,9 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTimeout)
 
 @implementation CucumberRuntimeTimeout_1
 
-- (instancetype)initWithId:(id)capture$0
+- (instancetype __nonnull)initWithId:(id)capture$0
 withJavaUtilConcurrentAtomicAtomicBoolean:(JavaUtilConcurrentAtomicAtomicBoolean *)capture$1
-        withJavaLangThread:(JavaLangThread *)capture$2 {
+                  withJavaLangThread:(JavaLangThread *)capture$2 {
   CucumberRuntimeTimeout_1_initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_(self, capture$0, capture$1, capture$2);
   return self;
 }
@@ -161,6 +162,7 @@ withJavaUtilConcurrentAtomicAtomicBoolean:(JavaUtilConcurrentAtomicAtomicBoolean
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithId:withJavaUtilConcurrentAtomicAtomicBoolean:withJavaLangThread:);
   methods[1].selector = @selector(run);
   #pragma clang diagnostic pop
@@ -199,6 +201,7 @@ CucumberRuntimeTimeout_1 *create_CucumberRuntimeTimeout_1_initWithId_withJavaUti
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(call);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LJavaLangThrowable;", "()TT;", "LCucumberRuntimeTimeout;", "<T:Ljava/lang/Object;>Ljava/lang/Object;" };

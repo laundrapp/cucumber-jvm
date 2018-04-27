@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiPendingException
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiPendingException_) && (INCLUDE_ALL_CucumberApiPendingException || defined(INCLUDE_CucumberApiPendingException))
 #define CucumberApiPendingException_
 
@@ -26,21 +31,21 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
-- (instancetype)initWithNSString:(NSString *)message;
+- (instancetype __nonnull)initWithNSString:(NSString *)message;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
 
-- (instancetype)initWithNSString:(NSString *)arg0
-           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithNSString:(NSString *)arg0
+                     withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
-- (instancetype)initWithNSString:(NSString *)arg0
-           withJavaLangThrowable:(JavaLangThrowable *)arg1
-                     withBoolean:(jboolean)arg2
-                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithNSString:(NSString *)arg0
+                     withJavaLangThrowable:(JavaLangThrowable *)arg1
+                               withBoolean:(jboolean)arg2
+                               withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
@@ -62,4 +67,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiPendingException)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiPendingException")

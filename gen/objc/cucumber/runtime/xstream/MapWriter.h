@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeXstreamMapWriter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeXstreamMapWriter_) && (INCLUDE_ALL_CucumberRuntimeXstreamMapWriter || defined(INCLUDE_CucumberRuntimeXstreamMapWriter))
 #define CucumberRuntimeXstreamMapWriter_
 
@@ -29,7 +34,7 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)columnNames;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)columnNames;
 
 - (void)addAttributeWithNSString:(NSString *)name
                     withNSString:(NSString *)value;
@@ -50,7 +55,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -66,4 +71,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamMapWriter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeXstreamMapWriter")

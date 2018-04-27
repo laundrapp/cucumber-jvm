@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiFormatterNiceAppendable
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiFormatterNiceAppendable_) && (INCLUDE_ALL_CucumberApiFormatterNiceAppendable || defined(INCLUDE_CucumberApiFormatterNiceAppendable))
 #define CucumberApiFormatterNiceAppendable_
 
@@ -26,7 +31,7 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg;
+- (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg;
 
 - (CucumberApiFormatterNiceAppendable *)appendWithChar:(jchar)c;
 
@@ -44,7 +49,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -60,4 +65,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiFormatterNiceAppendable)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiFormatterNiceAppendable")

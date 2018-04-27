@@ -36,9 +36,9 @@ __attribute__((unused)) static void CucumberRuntimeTableDataTableDiff_DiffType_i
   return CucumberRuntimeTableDataTableDiff_createWithJavaUtilList_withCucumberApiTableConverter_(diffTableRows, tableConverter);
 }
 
-- (instancetype)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)pickleTable
-                                 withJavaUtilList:(id<JavaUtilList>)diffTypes
-                    withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter {
+- (instancetype __nonnull)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)pickleTable
+                                           withJavaUtilList:(id<JavaUtilList>)diffTypes
+                              withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter {
   CucumberRuntimeTableDataTableDiff_initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_(self, pickleTable, diffTypes, tableConverter);
   return self;
 }
@@ -60,6 +60,7 @@ __attribute__((unused)) static void CucumberRuntimeTableDataTableDiff_DiffType_i
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(createWithJavaUtilList:withCucumberApiTableConverter:);
   methods[1].selector = @selector(initWithGherkinPicklesPickleTable:withJavaUtilList:withCucumberApiTableConverter:);
   methods[2].selector = @selector(createTablePrinter);
@@ -121,6 +122,7 @@ CucumberRuntimeTableDataTableDiff_DiffType *CucumberRuntimeTableDataTableDiff_Di
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(values);
   methods[1].selector = @selector(valueOfWithNSString:);
   #pragma clang diagnostic pop
@@ -141,7 +143,7 @@ CucumberRuntimeTableDataTableDiff_DiffType *CucumberRuntimeTableDataTableDiff_Di
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
     for (jint i = 0; i < 3; i++) {
-      (CucumberRuntimeTableDataTableDiff_DiffType_values_[i] = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+      ((void)(CucumberRuntimeTableDataTableDiff_DiffType_values_[i] = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
       CucumberRuntimeTableDataTableDiff_DiffType_initWithNSString_withInt_(e, JreEnumConstantName(CucumberRuntimeTableDataTableDiff_DiffType_class_(), i), i);
     }
     J2OBJC_SET_INITIALIZED(CucumberRuntimeTableDataTableDiff_DiffType)

@@ -78,7 +78,7 @@ __attribute__((unused)) static void CucumberRuntimeModelCucumberFeature_loadFrom
 
 @interface CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator : NSObject < JavaUtilComparator >
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (jint)compareWithId:(CucumberRuntimeModelCucumberFeature *)a
                withId:(CucumberRuntimeModelCucumberFeature *)b;
@@ -140,9 +140,9 @@ JavaUtilRegexPattern *CucumberRuntimeModelCucumberFeature_RERUN_PATH_SPECIFICATI
   CucumberRuntimeModelCucumberFeature_loadFromFeaturePathWithCucumberRuntimeFeatureBuilder_withCucumberRuntimeIoResourceLoader_withNSString_withBoolean_(builder, resourceLoader, featurePath, failOnNoResource);
 }
 
-- (instancetype)initWithGherkinAstGherkinDocument:(GherkinAstGherkinDocument *)gherkinDocument
-                                     withNSString:(NSString *)uri
-                                     withNSString:(NSString *)gherkinSource {
+- (instancetype __nonnull)initWithGherkinAstGherkinDocument:(GherkinAstGherkinDocument *)gherkinDocument
+                                               withNSString:(NSString *)uri
+                                               withNSString:(NSString *)gherkinSource {
   CucumberRuntimeModelCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(self, gherkinDocument, uri, gherkinSource);
   return self;
 }
@@ -182,6 +182,7 @@ JavaUtilRegexPattern *CucumberRuntimeModelCucumberFeature_RERUN_PATH_SPECIFICATI
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(load__WithCucumberRuntimeIoResourceLoader:withJavaUtilList:withJavaIoPrintStream:);
   methods[1].selector = @selector(load__WithCucumberRuntimeIoResourceLoader:withJavaUtilList:);
   methods[2].selector = @selector(loadFromRerunFileWithCucumberRuntimeFeatureBuilder:withCucumberRuntimeIoResourceLoader:withNSString:);
@@ -334,7 +335,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeModelCucumberFeature)
 @implementation CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator_init(self);
   return self;
 }
@@ -381,6 +382,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(compareWithId:withId:);
   #pragma clang diagnostic pop

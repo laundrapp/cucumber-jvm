@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiEventSnippetsSuggestedEvent
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiEventSnippetsSuggestedEvent_) && (INCLUDE_ALL_CucumberApiEventSnippetsSuggestedEvent || defined(INCLUDE_CucumberApiEventSnippetsSuggestedEvent))
 #define CucumberApiEventSnippetsSuggestedEvent_
 
@@ -32,14 +37,14 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaLangLong:(JavaLangLong *)timeStamp
-                        withNSString:(NSString *)uri
-                    withJavaUtilList:(id<JavaUtilList>)stepLocations
-                    withJavaUtilList:(id<JavaUtilList>)snippets;
+- (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp
+                                  withNSString:(NSString *)uri
+                              withJavaUtilList:(id<JavaUtilList>)stepLocations
+                              withJavaUtilList:(id<JavaUtilList>)snippets;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithJavaLangLong:(JavaLangLong *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -59,4 +64,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventSnippetsSuggestedEvent)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiEventSnippetsSuggestedEvent")

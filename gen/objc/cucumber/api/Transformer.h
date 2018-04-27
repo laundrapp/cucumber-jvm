@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiTransformer
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiTransformer_) && (INCLUDE_ALL_CucumberApiTransformer || defined(INCLUDE_CucumberApiTransformer))
 #define CucumberApiTransformer_
 
@@ -97,7 +102,7 @@ Given today's date is "10/03/1985"
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (jboolean)canConvertWithIOSClass:(IOSClass *)type;
 
@@ -127,4 +132,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiTransformer)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiTransformer")

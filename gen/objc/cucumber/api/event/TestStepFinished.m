@@ -12,9 +12,9 @@
 
 @implementation CucumberApiEventTestStepFinished
 
-- (instancetype)initWithJavaLangLong:(JavaLangLong *)timeStamp
-             withCucumberApiTestStep:(CucumberApiTestStep *)testStep
-               withCucumberApiResult:(CucumberApiResult *)result {
+- (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp
+                       withCucumberApiTestStep:(CucumberApiTestStep *)testStep
+                         withCucumberApiResult:(CucumberApiResult *)result {
   CucumberApiEventTestStepFinished_initWithJavaLangLong_withCucumberApiTestStep_withCucumberApiResult_(self, timeStamp, testStep, result);
   return self;
 }
@@ -31,6 +31,7 @@
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangLong:withCucumberApiTestStep:withCucumberApiResult:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {

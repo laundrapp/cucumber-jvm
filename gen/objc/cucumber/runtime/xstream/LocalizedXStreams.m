@@ -86,7 +86,7 @@ __attribute__((unused)) static void CucumberRuntimeXstreamLocalizedXStreams_Loca
 
 @interface CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1 : JavaLangThreadLocal
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (id<JavaUtilList>)initialValue OBJC_METHOD_FAMILY_NONE;
 
@@ -106,13 +106,13 @@ __attribute__((unused)) static CucumberRuntimeXstreamLocalizedXStreams_Localized
 
 @implementation CucumberRuntimeXstreamLocalizedXStreams
 
-- (instancetype)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader
-                           withJavaUtilList:(id<JavaUtilList>)extraConverters {
+- (instancetype __nonnull)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader
+                                     withJavaUtilList:(id<JavaUtilList>)extraConverters {
   CucumberRuntimeXstreamLocalizedXStreams_initWithJavaLangClassLoader_withJavaUtilList_(self, classLoader, extraConverters);
   return self;
 }
 
-- (instancetype)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader {
+- (instancetype __nonnull)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader {
   CucumberRuntimeXstreamLocalizedXStreams_initWithJavaLangClassLoader_(self, classLoader);
   return self;
 }
@@ -152,6 +152,7 @@ __attribute__((unused)) static CucumberRuntimeXstreamLocalizedXStreams_Localized
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangClassLoader:withJavaUtilList:);
   methods[1].selector = @selector(initWithJavaLangClassLoader:);
   methods[2].selector = @selector(getWithJavaUtilLocale:);
@@ -223,10 +224,10 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamLocalizedXStreams)
 
 @implementation CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream
 
-- (instancetype)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader
+- (instancetype __nonnull)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader
 withCucumberDepsComThoughtworksXstreamConvertersConverterLookup:(id<CucumberDepsComThoughtworksXstreamConvertersConverterLookup>)converterLookup
 withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry:(id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry>)converterRegistry
-                         withJavaUtilLocale:(JavaUtilLocale *)locale {
+                                   withJavaUtilLocale:(JavaUtilLocale *)locale {
   CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_initWithJavaLangClassLoader_withCucumberDepsComThoughtworksXstreamConvertersConverterLookup_withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withJavaUtilLocale_(self, classLoader, converterLookup, converterRegistry, locale);
   return self;
 }
@@ -300,6 +301,7 @@ withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry:(id<CucumberDe
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangClassLoader:withCucumberDepsComThoughtworksXstreamConvertersConverterLookup:withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry:withJavaUtilLocale:);
   methods[1].selector = @selector(register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry:withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:);
   methods[2].selector = @selector(setParameterInfoWithCucumberRuntimeParameterInfo:);
@@ -355,7 +357,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamLocalizedXStreams_Localiz
 @implementation CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1_init(self);
   return self;
 }
@@ -372,6 +374,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(initialValue);
   #pragma clang diagnostic pop

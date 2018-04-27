@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeRuntimeOptions
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeRuntimeOptions_) && (INCLUDE_ALL_CucumberRuntimeRuntimeOptions || defined(INCLUDE_CucumberRuntimeRuntimeOptions))
 #define CucumberRuntimeRuntimeOptions_
 
@@ -32,12 +37,12 @@
 
 #pragma mark Public
 
-- (instancetype)initWithCucumberRuntimeEnv:(CucumberRuntimeEnv *)env
-                          withJavaUtilList:(id<JavaUtilList>)argv;
+- (instancetype __nonnull)initWithCucumberRuntimeEnv:(CucumberRuntimeEnv *)env
+                                    withJavaUtilList:(id<JavaUtilList>)argv;
 
-- (instancetype)initWithCucumberRuntimeEnv:(CucumberRuntimeEnv *)env
- withCucumberRuntimeFormatterPluginFactory:(CucumberRuntimeFormatterPluginFactory *)pluginFactory
-                          withJavaUtilList:(id<JavaUtilList>)argv;
+- (instancetype __nonnull)initWithCucumberRuntimeEnv:(CucumberRuntimeEnv *)env
+           withCucumberRuntimeFormatterPluginFactory:(CucumberRuntimeFormatterPluginFactory *)pluginFactory
+                                    withJavaUtilList:(id<JavaUtilList>)argv;
 
 /*!
  @brief Create a new instance from a list of options, for example:
@@ -46,10 +51,10 @@
 @endcode
  @param argv the arguments
  */
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)argv;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)argv;
 
-- (instancetype)initWithCucumberRuntimeFormatterPluginFactory:(CucumberRuntimeFormatterPluginFactory *)pluginFactory
-                                             withJavaUtilList:(id<JavaUtilList>)argv;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterPluginFactory:(CucumberRuntimeFormatterPluginFactory *)pluginFactory
+                                                       withJavaUtilList:(id<JavaUtilList>)argv;
 
 /*!
  @brief Create a new instance from a string of options, for example:
@@ -58,7 +63,7 @@
 @endcode
  @param argv the arguments
  */
-- (instancetype)initWithNSString:(NSString *)argv;
+- (instancetype __nonnull)initWithNSString:(NSString *)argv;
 
 - (void)addPluginWithCucumberApiFormatterFormatter:(id<CucumberApiFormatterFormatter>)plugin;
 
@@ -105,7 +110,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -190,11 +195,11 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeRuntimeOptions)
 
 #pragma mark Package-Private
 
-- (instancetype)initWithCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)outer$;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -231,11 +236,11 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeRuntimeOptions_ParsedPluginData)
 
 #pragma mark Package-Private
 
-- (instancetype)initWithCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)outer$;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -251,4 +256,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeRuntimeOptions_ParsedOptionNames)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeRuntimeOptions")

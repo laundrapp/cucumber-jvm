@@ -167,7 +167,7 @@ __attribute__((unused)) static void CucumberRuntimeRuntimeOptions_processRerunFi
 
 @interface CucumberRuntimeRuntimeOptions_1 : NSObject < CucumberUtilMapper >
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (NSString *)mapWithId:(NSString *)o;
 
@@ -183,7 +183,7 @@ __attribute__((unused)) static CucumberRuntimeRuntimeOptions_1 *create_CucumberR
 
 @interface CucumberRuntimeRuntimeOptions_2 : NSObject < CucumberUtilMapper >
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (NSString *)mapWithId:(NSString *)keyword;
 
@@ -203,8 +203,8 @@ __attribute__((unused)) static CucumberRuntimeRuntimeOptions_2 *create_CucumberR
   IOSClass *val$type_;
 }
 
-- (instancetype)initWithCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)outer$
-                                         withIOSClass:(IOSClass *)capture$0;
+- (instancetype __nonnull)initWithCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)outer$
+                                                   withIOSClass:(IOSClass *)capture$0;
 
 - (id)invokeWithId:(id)target
 withJavaLangReflectMethod:(JavaLangReflectMethod *)method
@@ -238,31 +238,31 @@ NSString *CucumberRuntimeRuntimeOptions_usageText;
 
 @implementation CucumberRuntimeRuntimeOptions
 
-- (instancetype)initWithNSString:(NSString *)argv {
+- (instancetype __nonnull)initWithNSString:(NSString *)argv {
   CucumberRuntimeRuntimeOptions_initWithNSString_(self, argv);
   return self;
 }
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)argv {
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)argv {
   CucumberRuntimeRuntimeOptions_initWithJavaUtilList_(self, argv);
   return self;
 }
 
-- (instancetype)initWithCucumberRuntimeEnv:(CucumberRuntimeEnv *)env
-                          withJavaUtilList:(id<JavaUtilList>)argv {
+- (instancetype __nonnull)initWithCucumberRuntimeEnv:(CucumberRuntimeEnv *)env
+                                    withJavaUtilList:(id<JavaUtilList>)argv {
   CucumberRuntimeRuntimeOptions_initWithCucumberRuntimeEnv_withJavaUtilList_(self, env, argv);
   return self;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterPluginFactory:(CucumberRuntimeFormatterPluginFactory *)pluginFactory
-                                             withJavaUtilList:(id<JavaUtilList>)argv {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterPluginFactory:(CucumberRuntimeFormatterPluginFactory *)pluginFactory
+                                                       withJavaUtilList:(id<JavaUtilList>)argv {
   CucumberRuntimeRuntimeOptions_initWithCucumberRuntimeFormatterPluginFactory_withJavaUtilList_(self, pluginFactory, argv);
   return self;
 }
 
-- (instancetype)initWithCucumberRuntimeEnv:(CucumberRuntimeEnv *)env
- withCucumberRuntimeFormatterPluginFactory:(CucumberRuntimeFormatterPluginFactory *)pluginFactory
-                          withJavaUtilList:(id<JavaUtilList>)argv {
+- (instancetype __nonnull)initWithCucumberRuntimeEnv:(CucumberRuntimeEnv *)env
+           withCucumberRuntimeFormatterPluginFactory:(CucumberRuntimeFormatterPluginFactory *)pluginFactory
+                                    withJavaUtilList:(id<JavaUtilList>)argv {
   CucumberRuntimeRuntimeOptions_initWithCucumberRuntimeEnv_withCucumberRuntimeFormatterPluginFactory_withJavaUtilList_(self, env, pluginFactory, argv);
   return self;
 }
@@ -495,6 +495,7 @@ NSString *CucumberRuntimeRuntimeOptions_usageText;
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithNSString:);
   methods[1].selector = @selector(initWithJavaUtilList:);
   methods[2].selector = @selector(initWithCucumberRuntimeEnv:withJavaUtilList:);
@@ -895,7 +896,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeRuntimeOptions)
 @implementation CucumberRuntimeRuntimeOptions_1
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeRuntimeOptions_1_init(self);
   return self;
 }
@@ -912,6 +913,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(mapWithId:);
   #pragma clang diagnostic pop
@@ -937,7 +939,7 @@ CucumberRuntimeRuntimeOptions_1 *create_CucumberRuntimeRuntimeOptions_1_init() {
 @implementation CucumberRuntimeRuntimeOptions_2
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeRuntimeOptions_2_init(self);
   return self;
 }
@@ -954,6 +956,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(mapWithId:);
   #pragma clang diagnostic pop
@@ -978,8 +981,8 @@ CucumberRuntimeRuntimeOptions_2 *create_CucumberRuntimeRuntimeOptions_2_init() {
 
 @implementation CucumberRuntimeRuntimeOptions_3
 
-- (instancetype)initWithCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)outer$
-                                         withIOSClass:(IOSClass *)capture$0 {
+- (instancetype __nonnull)initWithCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)outer$
+                                                   withIOSClass:(IOSClass *)capture$0 {
   CucumberRuntimeRuntimeOptions_3_initWithCucumberRuntimeRuntimeOptions_withIOSClass_(self, outer$, capture$0);
   return self;
 }
@@ -1015,6 +1018,7 @@ withJavaLangReflectMethod:(JavaLangReflectMethod *)method
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeRuntimeOptions:withIOSClass:);
   methods[1].selector = @selector(invokeWithId:withJavaLangReflectMethod:withNSObjectArray:);
   #pragma clang diagnostic pop
@@ -1045,7 +1049,7 @@ CucumberRuntimeRuntimeOptions_3 *create_CucumberRuntimeRuntimeOptions_3_initWith
 
 @implementation CucumberRuntimeRuntimeOptions_ParsedPluginData
 
-- (instancetype)initWithCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)outer$ {
   CucumberRuntimeRuntimeOptions_ParsedPluginData_initWithCucumberRuntimeRuntimeOptions_(self, outer$);
   return self;
 }
@@ -1095,6 +1099,7 @@ CucumberRuntimeRuntimeOptions_3 *create_CucumberRuntimeRuntimeOptions_3_initWith
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeRuntimeOptions:);
   methods[1].selector = @selector(addPluginNameWithNSString:withBoolean:);
   methods[2].selector = @selector(updatePluginFormatterNamesWithJavaUtilList:);
@@ -1132,7 +1137,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeRuntimeOptions_ParsedPluginData)
 
 @implementation CucumberRuntimeRuntimeOptions_ParsedOptionNames
 
-- (instancetype)initWithCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)outer$ {
   CucumberRuntimeRuntimeOptions_ParsedOptionNames_initWithCucumberRuntimeRuntimeOptions_(self, outer$);
   return self;
 }
@@ -1167,6 +1172,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeRuntimeOptions_ParsedPluginData)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeRuntimeOptions:);
   methods[1].selector = @selector(addNameWithNSString:withBoolean:);
   methods[2].selector = @selector(updateNameListWithJavaUtilList:);

@@ -28,7 +28,7 @@
 
 @interface CucumberRuntimeUtils ()
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 + (JavaLangReflectMethod *)targetMethodWithId:(id)target
                     withJavaLangReflectMethod:(JavaLangReflectMethod *)method;
@@ -60,9 +60,9 @@ __attribute__((unused)) static jboolean CucumberRuntimeUtils_includesBlankWithNS
   IOSObjectArray *val$args_;
 }
 
-- (instancetype)initWithJavaLangReflectMethod:(JavaLangReflectMethod *)capture$0
-                                       withId:(id)capture$1
-                            withNSObjectArray:(IOSObjectArray *)capture$2;
+- (instancetype __nonnull)initWithJavaLangReflectMethod:(JavaLangReflectMethod *)capture$0
+                                                 withId:(id)capture$1
+                                      withNSObjectArray:(IOSObjectArray *)capture$2;
 
 - (id)call;
 
@@ -79,7 +79,7 @@ __attribute__((unused)) static CucumberRuntimeUtils_1 *create_CucumberRuntimeUti
 @implementation CucumberRuntimeUtils
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeUtils_init(self);
   return self;
 }
@@ -153,6 +153,7 @@ withJavaLangReflectMethod:(JavaLangReflectMethod *)method
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(isInstantiableWithIOSClass:);
   methods[2].selector = @selector(invokeWithId:withJavaLangReflectMethod:withLong:withNSObjectArray:);
@@ -294,9 +295,9 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeUtils)
 
 @implementation CucumberRuntimeUtils_1
 
-- (instancetype)initWithJavaLangReflectMethod:(JavaLangReflectMethod *)capture$0
-                                       withId:(id)capture$1
-                            withNSObjectArray:(IOSObjectArray *)capture$2 {
+- (instancetype __nonnull)initWithJavaLangReflectMethod:(JavaLangReflectMethod *)capture$0
+                                                 withId:(id)capture$1
+                                      withNSObjectArray:(IOSObjectArray *)capture$2 {
   CucumberRuntimeUtils_1_initWithJavaLangReflectMethod_withId_withNSObjectArray_(self, capture$0, capture$1, capture$2);
   return self;
 }
@@ -335,6 +336,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeUtils)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangReflectMethod:withId:withNSObjectArray:);
   methods[1].selector = @selector(call);
   #pragma clang diagnostic pop

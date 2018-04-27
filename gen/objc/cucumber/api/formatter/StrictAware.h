@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiFormatterStrictAware
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiFormatterStrictAware_) && (INCLUDE_ALL_CucumberApiFormatterStrictAware || defined(INCLUDE_CucumberApiFormatterStrictAware))
 #define CucumberApiFormatterStrictAware_
 
@@ -39,4 +44,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiFormatterStrictAware)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiFormatterStrictAware")

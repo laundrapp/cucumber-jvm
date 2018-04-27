@@ -28,7 +28,7 @@ J2OBJC_FIELD_SETTER(CucumberRunnerEventBus, handlers_, id<JavaUtilMap>)
 
 @implementation CucumberRunnerEventBus
 
-- (instancetype)initWithCucumberRunnerTimeService:(id<CucumberRunnerTimeService>)stopWatch {
+- (instancetype __nonnull)initWithCucumberRunnerTimeService:(id<CucumberRunnerTimeService>)stopWatch {
   CucumberRunnerEventBus_initWithCucumberRunnerTimeService_(self, stopWatch);
   return self;
 }
@@ -72,6 +72,7 @@ J2OBJC_FIELD_SETTER(CucumberRunnerEventBus, handlers_, id<JavaUtilMap>)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRunnerTimeService:);
   methods[1].selector = @selector(getTime);
   methods[2].selector = @selector(sendWithCucumberApiEventEvent:);

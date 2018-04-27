@@ -17,9 +17,9 @@
   jboolean classpathFileResource_;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)root
-                    withJavaIoFile:(JavaIoFile *)file
-                       withBoolean:(jboolean)classpathFileResource;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)root
+                              withJavaIoFile:(JavaIoFile *)file
+                                 withBoolean:(jboolean)classpathFileResource;
 
 @end
 
@@ -44,9 +44,9 @@ __attribute__((unused)) static CucumberRuntimeIoFileResource *create_CucumberRun
   return CucumberRuntimeIoFileResource_createClasspathFileResourceWithJavaIoFile_withJavaIoFile_(root, file);
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)root
-                    withJavaIoFile:(JavaIoFile *)file
-                       withBoolean:(jboolean)classpathFileResource {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)root
+                              withJavaIoFile:(JavaIoFile *)file
+                                 withBoolean:(jboolean)classpathFileResource {
   CucumberRuntimeIoFileResource_initWithJavaIoFile_withJavaIoFile_withBoolean_(self, root, file, classpathFileResource);
   return self;
 }
@@ -96,6 +96,7 @@ __attribute__((unused)) static CucumberRuntimeIoFileResource *create_CucumberRun
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(createFileResourceWithJavaIoFile:withJavaIoFile:);
   methods[1].selector = @selector(createClasspathFileResourceWithJavaIoFile:withJavaIoFile:);
   methods[2].selector = @selector(initWithJavaIoFile:withJavaIoFile:withBoolean:);

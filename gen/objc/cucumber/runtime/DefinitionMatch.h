@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeDefinitionMatch
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeDefinitionMatch_) && (INCLUDE_ALL_CucumberRuntimeDefinitionMatch || defined(INCLUDE_CucumberRuntimeDefinitionMatch))
 #define CucumberRuntimeDefinitionMatch_
 
@@ -44,4 +49,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeDefinitionMatch)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeDefinitionMatch")

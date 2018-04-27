@@ -220,7 +220,7 @@ __attribute__((unused)) static NSString *CucumberRuntimeFormatterPrettyFormatter
 
 @interface CucumberRuntimeFormatterPrettyFormatter_1 : NSObject < CucumberUtilMapper >
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (NSString *)mapWithId:(GherkinAstTag *)tag;
 
@@ -236,7 +236,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_1 *create
 
 @interface CucumberRuntimeFormatterPrettyFormatter_2 : NSObject < CucumberUtilMapper >
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (NSString *)mapWithId:(GherkinPicklesPickleTag *)pickleTag;
 
@@ -255,7 +255,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_2 *create
   CucumberRuntimeFormatterPrettyFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestSourceRead *)event;
 
@@ -274,7 +274,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_3 *create
   CucumberRuntimeFormatterPrettyFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestCaseStarted *)event;
 
@@ -293,7 +293,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_4 *create
   CucumberRuntimeFormatterPrettyFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepStarted *)event;
 
@@ -312,7 +312,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_5 *create
   CucumberRuntimeFormatterPrettyFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepFinished *)event;
 
@@ -331,7 +331,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_6 *create
   CucumberRuntimeFormatterPrettyFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventWriteEvent *)event;
 
@@ -350,7 +350,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_7 *create
   CucumberRuntimeFormatterPrettyFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event;
 
@@ -366,7 +366,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_8 *create
 
 @implementation CucumberRuntimeFormatterPrettyFormatter
 
-- (instancetype)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg {
+- (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg {
   CucumberRuntimeFormatterPrettyFormatter_initWithJavaLangAppendable_(self, outArg);
   return self;
 }
@@ -598,6 +598,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_8 *create
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangAppendable:);
   methods[1].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
   methods[2].selector = @selector(setMonochromeWithBoolean:);
@@ -910,7 +911,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterPrettyFormatter)
 @implementation CucumberRuntimeFormatterPrettyFormatter_1
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeFormatterPrettyFormatter_1_init(self);
   return self;
 }
@@ -927,6 +928,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(mapWithId:);
   #pragma clang diagnostic pop
@@ -952,7 +954,7 @@ CucumberRuntimeFormatterPrettyFormatter_1 *create_CucumberRuntimeFormatterPretty
 @implementation CucumberRuntimeFormatterPrettyFormatter_2
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeFormatterPrettyFormatter_2_init(self);
   return self;
 }
@@ -969,6 +971,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(mapWithId:);
   #pragma clang diagnostic pop
@@ -993,7 +996,7 @@ CucumberRuntimeFormatterPrettyFormatter_2 *create_CucumberRuntimeFormatterPretty
 
 @implementation CucumberRuntimeFormatterPrettyFormatter_3
 
-- (instancetype)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$ {
   CucumberRuntimeFormatterPrettyFormatter_3_initWithCucumberRuntimeFormatterPrettyFormatter_(self, outer$);
   return self;
 }
@@ -1014,6 +1017,7 @@ CucumberRuntimeFormatterPrettyFormatter_2 *create_CucumberRuntimeFormatterPretty
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterPrettyFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -1042,7 +1046,7 @@ CucumberRuntimeFormatterPrettyFormatter_3 *create_CucumberRuntimeFormatterPretty
 
 @implementation CucumberRuntimeFormatterPrettyFormatter_4
 
-- (instancetype)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$ {
   CucumberRuntimeFormatterPrettyFormatter_4_initWithCucumberRuntimeFormatterPrettyFormatter_(self, outer$);
   return self;
 }
@@ -1063,6 +1067,7 @@ CucumberRuntimeFormatterPrettyFormatter_3 *create_CucumberRuntimeFormatterPretty
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterPrettyFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -1091,7 +1096,7 @@ CucumberRuntimeFormatterPrettyFormatter_4 *create_CucumberRuntimeFormatterPretty
 
 @implementation CucumberRuntimeFormatterPrettyFormatter_5
 
-- (instancetype)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$ {
   CucumberRuntimeFormatterPrettyFormatter_5_initWithCucumberRuntimeFormatterPrettyFormatter_(self, outer$);
   return self;
 }
@@ -1112,6 +1117,7 @@ CucumberRuntimeFormatterPrettyFormatter_4 *create_CucumberRuntimeFormatterPretty
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterPrettyFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -1140,7 +1146,7 @@ CucumberRuntimeFormatterPrettyFormatter_5 *create_CucumberRuntimeFormatterPretty
 
 @implementation CucumberRuntimeFormatterPrettyFormatter_6
 
-- (instancetype)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$ {
   CucumberRuntimeFormatterPrettyFormatter_6_initWithCucumberRuntimeFormatterPrettyFormatter_(self, outer$);
   return self;
 }
@@ -1161,6 +1167,7 @@ CucumberRuntimeFormatterPrettyFormatter_5 *create_CucumberRuntimeFormatterPretty
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterPrettyFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -1189,7 +1196,7 @@ CucumberRuntimeFormatterPrettyFormatter_6 *create_CucumberRuntimeFormatterPretty
 
 @implementation CucumberRuntimeFormatterPrettyFormatter_7
 
-- (instancetype)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$ {
   CucumberRuntimeFormatterPrettyFormatter_7_initWithCucumberRuntimeFormatterPrettyFormatter_(self, outer$);
   return self;
 }
@@ -1210,6 +1217,7 @@ CucumberRuntimeFormatterPrettyFormatter_6 *create_CucumberRuntimeFormatterPretty
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterPrettyFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -1238,7 +1246,7 @@ CucumberRuntimeFormatterPrettyFormatter_7 *create_CucumberRuntimeFormatterPretty
 
 @implementation CucumberRuntimeFormatterPrettyFormatter_8
 
-- (instancetype)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$ {
   CucumberRuntimeFormatterPrettyFormatter_8_initWithCucumberRuntimeFormatterPrettyFormatter_(self, outer$);
   return self;
 }
@@ -1259,6 +1267,7 @@ CucumberRuntimeFormatterPrettyFormatter_7 *create_CucumberRuntimeFormatterPretty
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterPrettyFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop

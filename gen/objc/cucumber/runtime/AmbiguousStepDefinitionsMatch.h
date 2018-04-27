@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeAmbiguousStepDefinitionsMatch
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeAmbiguousStepDefinitionsMatch_) && (INCLUDE_ALL_CucumberRuntimeAmbiguousStepDefinitionsMatch || defined(INCLUDE_CucumberRuntimeAmbiguousStepDefinitionsMatch))
 #define CucumberRuntimeAmbiguousStepDefinitionsMatch_
 
@@ -32,8 +37,8 @@
 
 #pragma mark Public
 
-- (instancetype)initWithNSString:(NSString *)uri
-    withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
+- (instancetype __nonnull)initWithNSString:(NSString *)uri
+              withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
 withCucumberRuntimeAmbiguousStepDefinitionsException:(CucumberRuntimeAmbiguousStepDefinitionsException *)e;
 
 - (void)dryRunStepWithNSString:(NSString *)language
@@ -46,11 +51,11 @@ withCucumberRuntimeAmbiguousStepDefinitionsException:(CucumberRuntimeAmbiguousSt
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)arg0
-   withCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)arg1
-                        withNSString:(NSString *)arg2
-        withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)arg3
-withCucumberRuntimeXstreamLocalizedXStreams:(CucumberRuntimeXstreamLocalizedXStreams *)arg4 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)arg0
+             withCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)arg1
+                                  withNSString:(NSString *)arg2
+                  withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)arg3
+   withCucumberRuntimeXstreamLocalizedXStreams:(CucumberRuntimeXstreamLocalizedXStreams *)arg4 NS_UNAVAILABLE;
 
 @end
 
@@ -66,4 +71,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeAmbiguousStepDefinitionsMatch)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeAmbiguousStepDefinitionsMatch")

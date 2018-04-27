@@ -11,7 +11,7 @@
 
 @implementation CucumberRuntimeIoUTF8OutputStreamWriter
 
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg {
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg {
   CucumberRuntimeIoUTF8OutputStreamWriter_initWithJavaIoOutputStream_(self, outArg);
   return self;
 }
@@ -22,6 +22,7 @@
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaIoOutputStream:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LJavaIoOutputStream;", "LJavaIoIOException;" };

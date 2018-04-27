@@ -31,8 +31,8 @@ __attribute__((unused)) static NSString *CucumberRuntimeAmbiguousStepDefinitions
 
 @implementation CucumberRuntimeAmbiguousStepDefinitionsException
 
-- (instancetype)initWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
-                                withJavaUtilList:(id<JavaUtilList>)matches {
+- (instancetype __nonnull)initWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
+                                          withJavaUtilList:(id<JavaUtilList>)matches {
   CucumberRuntimeAmbiguousStepDefinitionsException_initWithGherkinPicklesPickleStep_withJavaUtilList_(self, step, matches);
   return self;
 }
@@ -64,6 +64,7 @@ __attribute__((unused)) static NSString *CucumberRuntimeAmbiguousStepDefinitions
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithGherkinPicklesPickleStep:withJavaUtilList:);
   methods[1].selector = @selector(createMessageWithGherkinPicklesPickleStep:withJavaUtilList:);
   methods[2].selector = @selector(quoteTextWithNSString:);

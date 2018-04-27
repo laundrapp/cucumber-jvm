@@ -20,7 +20,7 @@ __attribute__((unused)) static NSString *CucumberRuntimeTooManyInstancesExceptio
 
 @implementation CucumberRuntimeTooManyInstancesException
 
-- (instancetype)initWithJavaUtilCollection:(id<JavaUtilCollection>)instances {
+- (instancetype __nonnull)initWithJavaUtilCollection:(id<JavaUtilCollection>)instances {
   CucumberRuntimeTooManyInstancesException_initWithJavaUtilCollection_(self, instances);
   return self;
 }
@@ -36,6 +36,7 @@ __attribute__((unused)) static NSString *CucumberRuntimeTooManyInstancesExceptio
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilCollection:);
   methods[1].selector = @selector(createMessageWithJavaUtilCollection:);
   #pragma clang diagnostic pop

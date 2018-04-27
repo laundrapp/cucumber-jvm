@@ -25,7 +25,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamClassWithStringAssignableConstructorCo
 
 @implementation CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter
 
-- (instancetype)initWithJavaLangReflectConstructor:(JavaLangReflectConstructor *)constructor {
+- (instancetype __nonnull)initWithJavaLangReflectConstructor:(JavaLangReflectConstructor *)constructor {
   CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter_initWithJavaLangReflectConstructor_(self, constructor);
   return self;
 }
@@ -67,6 +67,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamClassWithStringAssignableConstructorCo
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangReflectConstructor:);
   methods[1].selector = @selector(toStringWithId:);
   methods[2].selector = @selector(fromStringWithNSString:);

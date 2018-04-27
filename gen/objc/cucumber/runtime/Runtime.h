@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeRuntime
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeRuntime_) && (INCLUDE_ALL_CucumberRuntimeRuntime || defined(INCLUDE_CucumberRuntimeRuntime))
 #define CucumberRuntimeRuntime_
 
@@ -42,28 +47,28 @@
 
 #pragma mark Public
 
-- (instancetype)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                         withCucumberRuntimeClassFinder:(id<CucumberRuntimeClassFinder>)classFinder
-                                withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
-                      withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions;
+- (instancetype __nonnull)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
+                                   withCucumberRuntimeClassFinder:(id<CucumberRuntimeClassFinder>)classFinder
+                                          withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
+                                withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions;
 
-- (instancetype)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
-                                 withJavaUtilCollection:(id<JavaUtilCollection>)backends
-                      withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions;
+- (instancetype __nonnull)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
+                                          withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
+                                           withJavaUtilCollection:(id<JavaUtilCollection>)backends
+                                withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions;
 
-- (instancetype)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
-                                 withJavaUtilCollection:(id<JavaUtilCollection>)backends
-                      withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions
-                                withCucumberRuntimeGlue:(id<CucumberRuntimeGlue>)optionalGlue;
+- (instancetype __nonnull)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
+                                          withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
+                                           withJavaUtilCollection:(id<JavaUtilCollection>)backends
+                                withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions
+                                          withCucumberRuntimeGlue:(id<CucumberRuntimeGlue>)optionalGlue;
 
-- (instancetype)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
-                                 withJavaUtilCollection:(id<JavaUtilCollection>)backends
-                      withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions
-                          withCucumberRunnerTimeService:(id<CucumberRunnerTimeService>)stopWatch
-                                withCucumberRuntimeGlue:(id<CucumberRuntimeGlue>)optionalGlue;
+- (instancetype __nonnull)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
+                                          withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
+                                           withJavaUtilCollection:(id<JavaUtilCollection>)backends
+                                withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions
+                                    withCucumberRunnerTimeService:(id<CucumberRunnerTimeService>)stopWatch
+                                          withCucumberRuntimeGlue:(id<CucumberRuntimeGlue>)optionalGlue;
 
 - (id<JavaUtilList>)compileFeatureWithCucumberRuntimeModelCucumberFeature:(CucumberRuntimeModelCucumberFeature *)feature;
 
@@ -98,7 +103,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -134,4 +139,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeRuntime)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeRuntime")

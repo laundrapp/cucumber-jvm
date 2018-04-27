@@ -18,7 +18,7 @@ J2OBJC_FIELD_SETTER(CucumberApiEventTimeStampedEvent, timeStamp_, JavaLangLong *
 
 @implementation CucumberApiEventTimeStampedEvent
 
-- (instancetype)initWithJavaLangLong:(JavaLangLong *)timeStamp {
+- (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp {
   CucumberApiEventTimeStampedEvent_initWithJavaLangLong_(self, timeStamp);
   return self;
 }
@@ -39,6 +39,7 @@ J2OBJC_FIELD_SETTER(CucumberApiEventTimeStampedEvent, timeStamp_, JavaLangLong *
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangLong:);
   methods[1].selector = @selector(getTimeStamp);
   #pragma clang diagnostic pop

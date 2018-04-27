@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeFormatterFormat
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeFormatterFormat_) && (INCLUDE_ALL_CucumberRuntimeFormatterFormat || defined(INCLUDE_CucumberRuntimeFormatterFormat))
 #define CucumberRuntimeFormatterFormat_
 
@@ -28,4 +33,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterFormat)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeFormatterFormat")

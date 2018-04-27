@@ -23,7 +23,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeLinePredicate, lineFilters_, id<JavaUtilMap>)
 
 @implementation CucumberRuntimeLinePredicate
 
-- (instancetype)initWithJavaUtilMap:(id<JavaUtilMap>)lineFilters {
+- (instancetype __nonnull)initWithJavaUtilMap:(id<JavaUtilMap>)lineFilters {
   CucumberRuntimeLinePredicate_initWithJavaUtilMap_(self, lineFilters);
   return self;
 }
@@ -55,6 +55,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeLinePredicate, lineFilters_, id<JavaUtilMap>)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilMap:);
   methods[1].selector = @selector(applyWithGherkinEventsPickleEvent:);
   #pragma clang diagnostic pop

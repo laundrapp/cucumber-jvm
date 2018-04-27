@@ -27,9 +27,9 @@ J2OBJC_FIELD_SETTER(CucumberRunnerPickleTestStep, step_, GherkinPicklesPickleSte
 
 @implementation CucumberRunnerPickleTestStep
 
-- (instancetype)initWithNSString:(NSString *)uri
-    withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
-withCucumberRuntimeDefinitionMatch:(id<CucumberRuntimeDefinitionMatch>)definitionMatch {
+- (instancetype __nonnull)initWithNSString:(NSString *)uri
+              withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
+        withCucumberRuntimeDefinitionMatch:(id<CucumberRuntimeDefinitionMatch>)definitionMatch {
   CucumberRunnerPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCucumberRuntimeDefinitionMatch_(self, uri, step, definitionMatch);
   return self;
 }
@@ -81,6 +81,7 @@ withCucumberRuntimeDefinitionMatch:(id<CucumberRuntimeDefinitionMatch>)definitio
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithNSString:withGherkinPicklesPickleStep:withCucumberRuntimeDefinitionMatch:);
   methods[1].selector = @selector(isHook);
   methods[2].selector = @selector(getPickleStep);

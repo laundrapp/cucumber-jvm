@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeStepDefinitionMatch
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeStepDefinitionMatch_) && (INCLUDE_ALL_CucumberRuntimeStepDefinitionMatch || defined(INCLUDE_CucumberRuntimeStepDefinitionMatch))
 #define CucumberRuntimeStepDefinitionMatch_
 
@@ -36,11 +41,11 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)arguments
-   withCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)stepDefinition
-                        withNSString:(NSString *)featurePath
-        withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
-withCucumberRuntimeXstreamLocalizedXStreams:(CucumberRuntimeXstreamLocalizedXStreams *)localizedXStreams;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)arguments
+             withCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)stepDefinition
+                                  withNSString:(NSString *)featurePath
+                  withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
+   withCucumberRuntimeXstreamLocalizedXStreams:(CucumberRuntimeXstreamLocalizedXStreams *)localizedXStreams;
 
 - (void)dryRunStepWithNSString:(NSString *)language
        withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
@@ -69,8 +74,8 @@ withCucumberRuntimeXstreamLocalizedXStreams:(CucumberRuntimeXstreamLocalizedXStr
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)arg0
-                        withNSString:(NSString *)arg1 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)arg0
+                                  withNSString:(NSString *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -88,4 +93,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeStepDefinitionMatch)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeStepDefinitionMatch")

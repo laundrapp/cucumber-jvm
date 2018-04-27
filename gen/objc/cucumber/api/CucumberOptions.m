@@ -82,6 +82,14 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiCucumberOptions__Annot
   return [NSString stringWithFormat:@"@cucumber.api.CucumberOptions(dryRun=%d, strict=%d, features=%@, glue=%@, tags=%@, format=%@, plugin=%@, monochrome=%d, name=%@, snippets=%@, junit=%@)", dryRun_, strict_, features_, glue_, tags_, format_, plugin_, monochrome_, name_, snippets_, junit_];
 }
 
+- (jboolean)isEqual:(id)obj {
+  return JreAnnotationEquals(self, obj);
+}
+
+- (NSUInteger)hash {
+  return JreAnnotationHashCode(self);
+}
+
 - (void)dealloc {
   RELEASE_(features_);
   RELEASE_(glue_);
@@ -110,6 +118,7 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiCucumberOptions__Annot
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(dryRun);
   methods[1].selector = @selector(strict);
   methods[2].selector = @selector(features);

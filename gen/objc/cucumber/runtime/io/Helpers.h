@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeIoHelpers
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeIoHelpers_) && (INCLUDE_ALL_CucumberRuntimeIoHelpers || defined(INCLUDE_CucumberRuntimeIoHelpers))
 #define CucumberRuntimeIoHelpers_
 
@@ -43,4 +48,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoHelpers)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeIoHelpers")

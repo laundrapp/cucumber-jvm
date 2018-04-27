@@ -18,6 +18,7 @@
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(resourcesWithNSString:withNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "resources", "LNSString;LNSString;", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Iterable<Lcucumber/runtime/io/Resource;>;" };

@@ -25,8 +25,8 @@ J2OBJC_FIELD_SETTER(CucumberRunnerUnskipableStep, hookType_, CucumberApiHookType
 
 @implementation CucumberRunnerUnskipableStep
 
-- (instancetype)initWithCucumberApiHookType:(CucumberApiHookType *)hookType
-         withCucumberRuntimeDefinitionMatch:(id<CucumberRuntimeDefinitionMatch>)definitionMatch {
+- (instancetype __nonnull)initWithCucumberApiHookType:(CucumberApiHookType *)hookType
+                   withCucumberRuntimeDefinitionMatch:(id<CucumberRuntimeDefinitionMatch>)definitionMatch {
   CucumberRunnerUnskipableStep_initWithCucumberApiHookType_withCucumberRuntimeDefinitionMatch_(self, hookType, definitionMatch);
   return self;
 }
@@ -85,6 +85,7 @@ J2OBJC_FIELD_SETTER(CucumberRunnerUnskipableStep, hookType_, CucumberApiHookType
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberApiHookType:withCucumberRuntimeDefinitionMatch:);
   methods[1].selector = @selector(executeStepWithNSString:withCucumberApiScenario:withBoolean:);
   methods[2].selector = @selector(isHook);

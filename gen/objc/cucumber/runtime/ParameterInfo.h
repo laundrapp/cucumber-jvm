@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeParameterInfo
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeParameterInfo_) && (INCLUDE_ALL_CucumberRuntimeParameterInfo || defined(INCLUDE_CucumberRuntimeParameterInfo))
 #define CucumberRuntimeParameterInfo_
 
@@ -31,16 +36,16 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaLangReflectType:(id<JavaLangReflectType>)type
-                               withNSString:(NSString *)format
-                               withNSString:(NSString *)delimiter
-                                withBoolean:(jboolean)transposed
-                 withCucumberApiTransformer:(CucumberApiTransformer *)transformer;
+- (instancetype __nonnull)initWithJavaLangReflectType:(id<JavaLangReflectType>)type
+                                         withNSString:(NSString *)format
+                                         withNSString:(NSString *)delimiter
+                                          withBoolean:(jboolean)transposed
+                           withCucumberApiTransformer:(CucumberApiTransformer *)transformer;
 
-- (instancetype)initWithJavaLangReflectType:(id<JavaLangReflectType>)type
-                               withNSString:(NSString *)format
-                               withNSString:(NSString *)delimiter
-                 withCucumberApiTransformer:(CucumberApiTransformer *)transformer;
+- (instancetype __nonnull)initWithJavaLangReflectType:(id<JavaLangReflectType>)type
+                                         withNSString:(NSString *)format
+                                         withNSString:(NSString *)delimiter
+                           withCucumberApiTransformer:(CucumberApiTransformer *)transformer;
 
 - (id)convertWithNSString:(NSString *)value
 withCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream:(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *)xStream;
@@ -61,7 +66,7 @@ withCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream:(CucumberRuntimeXst
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -92,4 +97,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeParameterInfo)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeParameterInfo")

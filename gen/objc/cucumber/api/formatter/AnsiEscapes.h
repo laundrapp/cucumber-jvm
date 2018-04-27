@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiFormatterAnsiEscapes
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiFormatterAnsiEscapes_) && (INCLUDE_ALL_CucumberApiFormatterAnsiEscapes || defined(INCLUDE_CucumberApiFormatterAnsiEscapes))
 #define CucumberApiFormatterAnsiEscapes_
 
@@ -33,7 +38,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -117,4 +122,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiFormatterAnsiEscapes)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiFormatterAnsiEscapes")

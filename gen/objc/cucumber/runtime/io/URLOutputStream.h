@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeIoURLOutputStream
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeIoURLOutputStream_) && (INCLUDE_ALL_CucumberRuntimeIoURLOutputStream || defined(INCLUDE_CucumberRuntimeIoURLOutputStream))
 #define CucumberRuntimeIoURLOutputStream_
 
@@ -32,12 +37,12 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaNetURL:(JavaNetURL *)url;
+- (instancetype __nonnull)initWithJavaNetURL:(JavaNetURL *)url;
 
-- (instancetype)initWithJavaNetURL:(JavaNetURL *)url
-                      withNSString:(NSString *)method
-                   withJavaUtilMap:(id<JavaUtilMap>)headers
-                           withInt:(jint)expectedResponseCode;
+- (instancetype __nonnull)initWithJavaNetURL:(JavaNetURL *)url
+                                withNSString:(NSString *)method
+                             withJavaUtilMap:(id<JavaUtilMap>)headers
+                                     withInt:(jint)expectedResponseCode;
 
 - (void)close;
 
@@ -53,7 +58,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -89,24 +94,24 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoURLOutputStream)
 
 #pragma mark Public
 
-- (instancetype)initWithCucumberRuntimeIoURLOutputStream:(CucumberRuntimeIoURLOutputStream *)outer$
-                                            withNSString:(NSString *)responseBody
-                                   withJavaIoIOException:(JavaIoIOException *)cause
-                                                 withInt:(jint)responseCode
-                                            withNSString:(NSString *)contentType;
+- (instancetype __nonnull)initWithCucumberRuntimeIoURLOutputStream:(CucumberRuntimeIoURLOutputStream *)outer$
+                                                      withNSString:(NSString *)responseBody
+                                             withJavaIoIOException:(JavaIoIOException *)cause
+                                                           withInt:(jint)responseCode
+                                                      withNSString:(NSString *)contentType;
 
 - (NSString *)getMessage;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
-- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
 
-- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
 
-- (instancetype)initWithNSString:(NSString *)arg0
-           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithNSString:(NSString *)arg0
+                     withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -122,4 +127,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoURLOutputStream_ResponseException)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeIoURLOutputStream")

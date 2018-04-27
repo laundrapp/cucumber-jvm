@@ -23,7 +23,7 @@
 
 @implementation CucumberRuntimeHookComparator
 
-- (instancetype)initWithBoolean:(jboolean)ascending {
+- (instancetype __nonnull)initWithBoolean:(jboolean)ascending {
   CucumberRuntimeHookComparator_initWithBoolean_(self, ascending);
   return self;
 }
@@ -72,6 +72,7 @@
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithBoolean:);
   methods[1].selector = @selector(compareWithId:withId:);
   #pragma clang diagnostic pop

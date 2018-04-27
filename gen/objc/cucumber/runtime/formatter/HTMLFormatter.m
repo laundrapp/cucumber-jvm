@@ -270,7 +270,7 @@ __attribute__((unused)) static void CucumberRuntimeFormatterHTMLFormatter_closeQ
 
 @interface CucumberRuntimeFormatterHTMLFormatter_1 : JavaUtilHashMap
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (NSString *)computeIfAbsentWithId:(NSString *)arg0
        withJavaUtilFunctionFunction:(id<JavaUtilFunctionFunction>)arg1;
@@ -316,7 +316,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterHTMLFormatter_1 *create_C
   CucumberRuntimeFormatterHTMLFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestSourceRead *)event;
 
@@ -335,7 +335,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterHTMLFormatter_2 *create_C
   CucumberRuntimeFormatterHTMLFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestCaseStarted *)event;
 
@@ -354,7 +354,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterHTMLFormatter_3 *create_C
   CucumberRuntimeFormatterHTMLFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepStarted *)event;
 
@@ -373,7 +373,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterHTMLFormatter_4 *create_C
   CucumberRuntimeFormatterHTMLFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepFinished *)event;
 
@@ -392,7 +392,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterHTMLFormatter_5 *create_C
   CucumberRuntimeFormatterHTMLFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventEmbedEvent *)event;
 
@@ -411,7 +411,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterHTMLFormatter_6 *create_C
   CucumberRuntimeFormatterHTMLFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventWriteEvent *)event;
 
@@ -430,7 +430,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterHTMLFormatter_7 *create_C
   CucumberRuntimeFormatterHTMLFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event;
 
@@ -448,13 +448,13 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFormatterHTMLFormatter)
 
 @implementation CucumberRuntimeFormatterHTMLFormatter
 
-- (instancetype)initWithJavaNetURL:(JavaNetURL *)htmlReportDir {
+- (instancetype __nonnull)initWithJavaNetURL:(JavaNetURL *)htmlReportDir {
   CucumberRuntimeFormatterHTMLFormatter_initWithJavaNetURL_(self, htmlReportDir);
   return self;
 }
 
-- (instancetype)initWithJavaNetURL:(JavaNetURL *)htmlReportDir
-withCucumberApiFormatterNiceAppendable:(CucumberApiFormatterNiceAppendable *)jsOut {
+- (instancetype __nonnull)initWithJavaNetURL:(JavaNetURL *)htmlReportDir
+      withCucumberApiFormatterNiceAppendable:(CucumberApiFormatterNiceAppendable *)jsOut {
   CucumberRuntimeFormatterHTMLFormatter_initWithJavaNetURL_withCucumberApiFormatterNiceAppendable_(self, htmlReportDir, jsOut);
   return self;
 }
@@ -679,6 +679,7 @@ withCucumberApiFormatterNiceAppendable:(CucumberApiFormatterNiceAppendable *)jsO
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaNetURL:);
   methods[1].selector = @selector(initWithJavaNetURL:withCucumberApiFormatterNiceAppendable:);
   methods[2].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
@@ -1213,7 +1214,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterHTMLFormatter)
 @implementation CucumberRuntimeFormatterHTMLFormatter_1
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeFormatterHTMLFormatter_1_init(self);
   return self;
 }
@@ -1225,6 +1226,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LCucumberRuntimeFormatterHTMLFormatter;", "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;" };
@@ -1256,7 +1258,7 @@ CucumberRuntimeFormatterHTMLFormatter_1 *create_CucumberRuntimeFormatterHTMLForm
 
 @implementation CucumberRuntimeFormatterHTMLFormatter_2
 
-- (instancetype)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$ {
   CucumberRuntimeFormatterHTMLFormatter_2_initWithCucumberRuntimeFormatterHTMLFormatter_(self, outer$);
   return self;
 }
@@ -1277,6 +1279,7 @@ CucumberRuntimeFormatterHTMLFormatter_1 *create_CucumberRuntimeFormatterHTMLForm
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterHTMLFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -1305,7 +1308,7 @@ CucumberRuntimeFormatterHTMLFormatter_2 *create_CucumberRuntimeFormatterHTMLForm
 
 @implementation CucumberRuntimeFormatterHTMLFormatter_3
 
-- (instancetype)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$ {
   CucumberRuntimeFormatterHTMLFormatter_3_initWithCucumberRuntimeFormatterHTMLFormatter_(self, outer$);
   return self;
 }
@@ -1326,6 +1329,7 @@ CucumberRuntimeFormatterHTMLFormatter_2 *create_CucumberRuntimeFormatterHTMLForm
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterHTMLFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -1354,7 +1358,7 @@ CucumberRuntimeFormatterHTMLFormatter_3 *create_CucumberRuntimeFormatterHTMLForm
 
 @implementation CucumberRuntimeFormatterHTMLFormatter_4
 
-- (instancetype)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$ {
   CucumberRuntimeFormatterHTMLFormatter_4_initWithCucumberRuntimeFormatterHTMLFormatter_(self, outer$);
   return self;
 }
@@ -1375,6 +1379,7 @@ CucumberRuntimeFormatterHTMLFormatter_3 *create_CucumberRuntimeFormatterHTMLForm
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterHTMLFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -1403,7 +1408,7 @@ CucumberRuntimeFormatterHTMLFormatter_4 *create_CucumberRuntimeFormatterHTMLForm
 
 @implementation CucumberRuntimeFormatterHTMLFormatter_5
 
-- (instancetype)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$ {
   CucumberRuntimeFormatterHTMLFormatter_5_initWithCucumberRuntimeFormatterHTMLFormatter_(self, outer$);
   return self;
 }
@@ -1424,6 +1429,7 @@ CucumberRuntimeFormatterHTMLFormatter_4 *create_CucumberRuntimeFormatterHTMLForm
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterHTMLFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -1452,7 +1458,7 @@ CucumberRuntimeFormatterHTMLFormatter_5 *create_CucumberRuntimeFormatterHTMLForm
 
 @implementation CucumberRuntimeFormatterHTMLFormatter_6
 
-- (instancetype)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$ {
   CucumberRuntimeFormatterHTMLFormatter_6_initWithCucumberRuntimeFormatterHTMLFormatter_(self, outer$);
   return self;
 }
@@ -1473,6 +1479,7 @@ CucumberRuntimeFormatterHTMLFormatter_5 *create_CucumberRuntimeFormatterHTMLForm
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterHTMLFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -1501,7 +1508,7 @@ CucumberRuntimeFormatterHTMLFormatter_6 *create_CucumberRuntimeFormatterHTMLForm
 
 @implementation CucumberRuntimeFormatterHTMLFormatter_7
 
-- (instancetype)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$ {
   CucumberRuntimeFormatterHTMLFormatter_7_initWithCucumberRuntimeFormatterHTMLFormatter_(self, outer$);
   return self;
 }
@@ -1522,6 +1529,7 @@ CucumberRuntimeFormatterHTMLFormatter_6 *create_CucumberRuntimeFormatterHTMLForm
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterHTMLFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -1550,7 +1558,7 @@ CucumberRuntimeFormatterHTMLFormatter_7 *create_CucumberRuntimeFormatterHTMLForm
 
 @implementation CucumberRuntimeFormatterHTMLFormatter_8
 
-- (instancetype)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterHTMLFormatter:(CucumberRuntimeFormatterHTMLFormatter *)outer$ {
   CucumberRuntimeFormatterHTMLFormatter_8_initWithCucumberRuntimeFormatterHTMLFormatter_(self, outer$);
   return self;
 }
@@ -1571,6 +1579,7 @@ CucumberRuntimeFormatterHTMLFormatter_7 *create_CucumberRuntimeFormatterHTMLForm
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterHTMLFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop

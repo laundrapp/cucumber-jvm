@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRunnerUnskipableStep
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRunnerUnskipableStep_) && (INCLUDE_ALL_CucumberRunnerUnskipableStep || defined(INCLUDE_CucumberRunnerUnskipableStep))
 #define CucumberRunnerUnskipableStep_
 
@@ -31,8 +36,8 @@
 
 #pragma mark Public
 
-- (instancetype)initWithCucumberApiHookType:(CucumberApiHookType *)hookType
-         withCucumberRuntimeDefinitionMatch:(id<CucumberRuntimeDefinitionMatch>)definitionMatch;
+- (instancetype __nonnull)initWithCucumberApiHookType:(CucumberApiHookType *)hookType
+                   withCucumberRuntimeDefinitionMatch:(id<CucumberRuntimeDefinitionMatch>)definitionMatch;
 
 - (CucumberApiHookType *)getHookType;
 
@@ -56,7 +61,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithCucumberRuntimeDefinitionMatch:(id<CucumberRuntimeDefinitionMatch>)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithCucumberRuntimeDefinitionMatch:(id<CucumberRuntimeDefinitionMatch>)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -72,4 +77,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRunnerUnskipableStep)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRunnerUnskipableStep")

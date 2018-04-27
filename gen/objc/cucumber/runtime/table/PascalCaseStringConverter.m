@@ -40,7 +40,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeTablePascalCaseStringConverter)
 @implementation CucumberRuntimeTablePascalCaseStringConverter
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeTablePascalCaseStringConverter_init(self);
   return self;
 }
@@ -76,6 +76,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(mapWithNSString:);
   methods[2].selector = @selector(joinWithNSStringArray:);

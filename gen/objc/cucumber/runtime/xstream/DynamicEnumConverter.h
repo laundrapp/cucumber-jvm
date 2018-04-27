@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeXstreamDynamicEnumConverter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeXstreamDynamicEnumConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamDynamicEnumConverter || defined(INCLUDE_CucumberRuntimeXstreamDynamicEnumConverter))
 #define CucumberRuntimeXstreamDynamicEnumConverter_
 
@@ -37,11 +42,11 @@
 
 #pragma mark Package-Private
 
-- (instancetype)initWithJavaUtilLocale:(JavaUtilLocale *)locale;
+- (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -57,4 +62,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamDynamicEnumConverter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeXstreamDynamicEnumConverter")

@@ -37,7 +37,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeAutocompleteMetaStepdef)
 @implementation CucumberRuntimeAutocompleteMetaStepdef
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeAutocompleteMetaStepdef_init(self);
   return self;
 }
@@ -93,6 +93,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(matchesWithNSString:);
   methods[2].selector = @selector(pattern);
@@ -146,7 +147,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeAutocompleteMetaStepdef)
 @implementation CucumberRuntimeAutocompleteMetaStepdef_MetaStep
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeAutocompleteMetaStepdef_MetaStep_init(self);
   return self;
 }
@@ -187,6 +188,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(compareToWithId:);
   methods[2].selector = @selector(isEqual:);
@@ -221,7 +223,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeAutocompleteMetaStepdef_MetaStep
 @implementation CucumberRuntimeAutocompleteMetaStepdef_MetaArgument
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeAutocompleteMetaStepdef_MetaArgument_init(self);
   return self;
 }
@@ -238,6 +240,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {

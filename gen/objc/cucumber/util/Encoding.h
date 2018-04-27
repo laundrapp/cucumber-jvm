@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberUtilEncoding
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberUtilEncoding_) && (INCLUDE_ALL_CucumberUtilEncoding || defined(INCLUDE_CucumberUtilEncoding))
 #define CucumberUtilEncoding_
 
@@ -25,7 +30,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 + (NSString *)readFileWithCucumberRuntimeIoResource:(id<CucumberRuntimeIoResource>)resource;
 
@@ -50,4 +55,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberUtilEncoding)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberUtilEncoding")

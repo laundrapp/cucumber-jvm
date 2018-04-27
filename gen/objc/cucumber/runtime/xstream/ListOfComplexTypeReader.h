@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeXstreamListOfComplexTypeReader
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeXstreamListOfComplexTypeReader_) && (INCLUDE_ALL_CucumberRuntimeXstreamListOfComplexTypeReader || defined(INCLUDE_CucumberRuntimeXstreamListOfComplexTypeReader))
 #define CucumberRuntimeXstreamListOfComplexTypeReader_
 
@@ -49,9 +54,9 @@
 
 #pragma mark Public
 
-- (instancetype)initWithIOSClass:(IOSClass *)itemType
-                withJavaUtilList:(id<JavaUtilList>)attributeNames
-                withJavaUtilList:(id<JavaUtilList>)items;
+- (instancetype __nonnull)initWithIOSClass:(IOSClass *)itemType
+                          withJavaUtilList:(id<JavaUtilList>)attributeNames
+                          withJavaUtilList:(id<JavaUtilList>)items;
 
 - (void)appendErrorsWithCucumberDepsComThoughtworksXstreamConvertersErrorWriter:(id<CucumberDepsComThoughtworksXstreamConvertersErrorWriter>)errorWriter;
 
@@ -79,9 +84,9 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
-- (instancetype)initWithCucumberDepsComThoughtworksXstreamIoNamingNameCoder:(id<CucumberDepsComThoughtworksXstreamIoNamingNameCoder>)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithCucumberDepsComThoughtworksXstreamIoNamingNameCoder:(id<CucumberDepsComThoughtworksXstreamIoNamingNameCoder>)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -97,4 +102,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamListOfComplexTypeReader)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeXstreamListOfComplexTypeReader")

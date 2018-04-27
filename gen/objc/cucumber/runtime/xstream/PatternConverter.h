@@ -46,7 +46,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (jboolean)canConvertWithIOSClass:(IOSClass *)type;
 

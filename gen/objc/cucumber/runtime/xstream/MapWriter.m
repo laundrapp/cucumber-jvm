@@ -28,7 +28,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamMapWriter, key_, NSString *)
 
 @implementation CucumberRuntimeXstreamMapWriter
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)columnNames {
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)columnNames {
   CucumberRuntimeXstreamMapWriter_initWithJavaUtilList_(self, columnNames);
   return self;
 }
@@ -95,6 +95,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamMapWriter, key_, NSString *)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilList:);
   methods[1].selector = @selector(getHeader);
   methods[2].selector = @selector(getValues);

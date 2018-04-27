@@ -63,7 +63,7 @@ __attribute__((unused)) static void CucumberRuntimeFormatterProgressFormatter_ha
 
 @interface CucumberRuntimeFormatterProgressFormatter_1 : JavaUtilHashMap
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (JavaLangCharacter *)computeIfAbsentWithId:(CucumberApiResult_Type *)arg0
                 withJavaUtilFunctionFunction:(id<JavaUtilFunctionFunction>)arg1;
@@ -106,7 +106,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterProgressFormatter_1 *crea
 
 @interface CucumberRuntimeFormatterProgressFormatter_2 : JavaUtilHashMap
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (CucumberApiFormatterAnsiEscapes *)computeIfAbsentWithId:(CucumberApiResult_Type *)arg0
                               withJavaUtilFunctionFunction:(id<JavaUtilFunctionFunction>)arg1;
@@ -152,7 +152,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterProgressFormatter_2 *crea
   CucumberRuntimeFormatterProgressFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterProgressFormatter:(CucumberRuntimeFormatterProgressFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterProgressFormatter:(CucumberRuntimeFormatterProgressFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepFinished *)event;
 
@@ -171,7 +171,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterProgressFormatter_3 *crea
   CucumberRuntimeFormatterProgressFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterProgressFormatter:(CucumberRuntimeFormatterProgressFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterProgressFormatter:(CucumberRuntimeFormatterProgressFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventWriteEvent *)event;
 
@@ -190,7 +190,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterProgressFormatter_4 *crea
   CucumberRuntimeFormatterProgressFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterProgressFormatter:(CucumberRuntimeFormatterProgressFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterProgressFormatter:(CucumberRuntimeFormatterProgressFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event;
 
@@ -208,7 +208,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFormatterProgressFormatter)
 
 @implementation CucumberRuntimeFormatterProgressFormatter
 
-- (instancetype)initWithJavaLangAppendable:(id<JavaLangAppendable>)appendable {
+- (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)appendable {
   CucumberRuntimeFormatterProgressFormatter_initWithJavaLangAppendable_(self, appendable);
   return self;
 }
@@ -254,6 +254,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFormatterProgressFormatter)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangAppendable:);
   methods[1].selector = @selector(setMonochromeWithBoolean:);
   methods[2].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
@@ -328,7 +329,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterProgressFormatter)
 @implementation CucumberRuntimeFormatterProgressFormatter_1
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeFormatterProgressFormatter_1_init(self);
   return self;
 }
@@ -340,6 +341,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LCucumberRuntimeFormatterProgressFormatter;", "Ljava/util/HashMap<Lcucumber/api/Result$Type;Ljava/lang/Character;>;" };
@@ -372,7 +374,7 @@ CucumberRuntimeFormatterProgressFormatter_1 *create_CucumberRuntimeFormatterProg
 @implementation CucumberRuntimeFormatterProgressFormatter_2
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeFormatterProgressFormatter_2_init(self);
   return self;
 }
@@ -384,6 +386,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LCucumberRuntimeFormatterProgressFormatter;", "Ljava/util/HashMap<Lcucumber/api/Result$Type;Lcucumber/api/formatter/AnsiEscapes;>;" };
@@ -415,7 +418,7 @@ CucumberRuntimeFormatterProgressFormatter_2 *create_CucumberRuntimeFormatterProg
 
 @implementation CucumberRuntimeFormatterProgressFormatter_3
 
-- (instancetype)initWithCucumberRuntimeFormatterProgressFormatter:(CucumberRuntimeFormatterProgressFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterProgressFormatter:(CucumberRuntimeFormatterProgressFormatter *)outer$ {
   CucumberRuntimeFormatterProgressFormatter_3_initWithCucumberRuntimeFormatterProgressFormatter_(self, outer$);
   return self;
 }
@@ -436,6 +439,7 @@ CucumberRuntimeFormatterProgressFormatter_2 *create_CucumberRuntimeFormatterProg
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterProgressFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -464,7 +468,7 @@ CucumberRuntimeFormatterProgressFormatter_3 *create_CucumberRuntimeFormatterProg
 
 @implementation CucumberRuntimeFormatterProgressFormatter_4
 
-- (instancetype)initWithCucumberRuntimeFormatterProgressFormatter:(CucumberRuntimeFormatterProgressFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterProgressFormatter:(CucumberRuntimeFormatterProgressFormatter *)outer$ {
   CucumberRuntimeFormatterProgressFormatter_4_initWithCucumberRuntimeFormatterProgressFormatter_(self, outer$);
   return self;
 }
@@ -485,6 +489,7 @@ CucumberRuntimeFormatterProgressFormatter_3 *create_CucumberRuntimeFormatterProg
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterProgressFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -513,7 +518,7 @@ CucumberRuntimeFormatterProgressFormatter_4 *create_CucumberRuntimeFormatterProg
 
 @implementation CucumberRuntimeFormatterProgressFormatter_5
 
-- (instancetype)initWithCucumberRuntimeFormatterProgressFormatter:(CucumberRuntimeFormatterProgressFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterProgressFormatter:(CucumberRuntimeFormatterProgressFormatter *)outer$ {
   CucumberRuntimeFormatterProgressFormatter_5_initWithCucumberRuntimeFormatterProgressFormatter_(self, outer$);
   return self;
 }
@@ -534,6 +539,7 @@ CucumberRuntimeFormatterProgressFormatter_4 *create_CucumberRuntimeFormatterProg
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterProgressFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop

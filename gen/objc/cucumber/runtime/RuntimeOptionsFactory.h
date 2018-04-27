@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeRuntimeOptionsFactory
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeRuntimeOptionsFactory_) && (INCLUDE_ALL_CucumberRuntimeRuntimeOptionsFactory || defined(INCLUDE_CucumberRuntimeRuntimeOptionsFactory))
 #define CucumberRuntimeRuntimeOptionsFactory_
 
@@ -23,7 +28,7 @@
 
 #pragma mark Public
 
-- (instancetype)initWithIOSClass:(IOSClass *)clazz;
+- (instancetype __nonnull)initWithIOSClass:(IOSClass *)clazz;
 
 - (CucumberRuntimeRuntimeOptions *)create;
 
@@ -37,7 +42,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -59,4 +64,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeRuntimeOptionsFactory)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeRuntimeOptionsFactory")

@@ -39,9 +39,9 @@ __attribute__((unused)) static void CucumberRuntimeIoZipResourceIterator_moveToN
 
 @implementation CucumberRuntimeIoZipResourceIterator
 
-- (instancetype)initWithNSString:(NSString *)zipPath
-                    withNSString:(NSString *)path
-                    withNSString:(NSString *)suffix {
+- (instancetype __nonnull)initWithNSString:(NSString *)zipPath
+                              withNSString:(NSString *)path
+                              withNSString:(NSString *)suffix {
   CucumberRuntimeIoZipResourceIterator_initWithNSString_withNSString_withNSString_(self, zipPath, path, suffix);
   return self;
 }
@@ -93,6 +93,7 @@ __attribute__((unused)) static void CucumberRuntimeIoZipResourceIterator_moveToN
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithNSString:withNSString:withNSString:);
   methods[1].selector = @selector(hasNext);
   methods[2].selector = @selector(next);

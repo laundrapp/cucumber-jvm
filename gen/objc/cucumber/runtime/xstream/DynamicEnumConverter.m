@@ -23,7 +23,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamDynamicEnumConverter, locale_, JavaUti
 
 @implementation CucumberRuntimeXstreamDynamicEnumConverter
 
-- (instancetype)initWithJavaUtilLocale:(JavaUtilLocale *)locale {
+- (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale {
   CucumberRuntimeXstreamDynamicEnumConverter_initWithJavaUtilLocale_(self, locale);
   return self;
 }
@@ -49,6 +49,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamDynamicEnumConverter, locale_, JavaUti
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilLocale:);
   methods[1].selector = @selector(converterForClassWithIOSClass:);
   methods[2].selector = @selector(canConvertWithIOSClass:);

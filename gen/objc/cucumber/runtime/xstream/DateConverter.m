@@ -15,7 +15,7 @@
 
 @implementation CucumberRuntimeXstreamDateConverter
 
-- (instancetype)initWithJavaUtilLocale:(JavaUtilLocale *)locale {
+- (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale {
   CucumberRuntimeXstreamDateConverter_initWithJavaUtilLocale_(self, locale);
   return self;
 }
@@ -26,6 +26,7 @@
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilLocale:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LJavaUtilLocale;", "Lcucumber/runtime/xstream/TimeConverter<Ljava/util/Date;>;" };

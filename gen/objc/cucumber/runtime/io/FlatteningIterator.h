@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeIoFlatteningIterator
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeIoFlatteningIterator_) && (INCLUDE_ALL_CucumberRuntimeIoFlatteningIterator || defined(INCLUDE_CucumberRuntimeIoFlatteningIterator))
 #define CucumberRuntimeIoFlatteningIterator_
 
@@ -26,7 +31,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (jboolean)hasNext;
 
@@ -50,4 +55,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoFlatteningIterator)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeIoFlatteningIterator")

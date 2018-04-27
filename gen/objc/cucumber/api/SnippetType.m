@@ -59,6 +59,7 @@ CucumberApiSnippetType *CucumberApiSnippetType_values_[2];
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(fromStringWithNSString:);
   methods[1].selector = @selector(getFunctionNameGenerator);
   methods[2].selector = @selector(values);
@@ -81,9 +82,9 @@ CucumberApiSnippetType *CucumberApiSnippetType_values_[2];
     size_t allocSize = 2 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
-    (JreEnum(CucumberApiSnippetType, UNDERSCORE) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(CucumberApiSnippetType, UNDERSCORE) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     CucumberApiSnippetType_initWithNSString_withCucumberRuntimeSnippetsConcatenator_withNSString_withInt_(e, @"underscore", create_CucumberRuntimeSnippetsUnderscoreConcatenator_init(), @"UNDERSCORE", 0);
-    (JreEnum(CucumberApiSnippetType, CAMELCASE) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(CucumberApiSnippetType, CAMELCASE) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     CucumberApiSnippetType_initWithNSString_withCucumberRuntimeSnippetsConcatenator_withNSString_withInt_(e, @"camelcase", create_CucumberRuntimeSnippetsCamelCaseConcatenator_init(), @"CAMELCASE", 1);
     J2OBJC_SET_INITIALIZED(CucumberApiSnippetType)
   }

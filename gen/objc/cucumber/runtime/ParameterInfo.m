@@ -91,19 +91,19 @@ NSString *CucumberRuntimeParameterInfo_DEFAULT_DELIMITER = @",\\s?";
   return CucumberRuntimeParameterInfo_getTransformerWithJavaLangAnnotationAnnotation_(annotation);
 }
 
-- (instancetype)initWithJavaLangReflectType:(id<JavaLangReflectType>)type
-                               withNSString:(NSString *)format
-                               withNSString:(NSString *)delimiter
-                 withCucumberApiTransformer:(CucumberApiTransformer *)transformer {
+- (instancetype __nonnull)initWithJavaLangReflectType:(id<JavaLangReflectType>)type
+                                         withNSString:(NSString *)format
+                                         withNSString:(NSString *)delimiter
+                           withCucumberApiTransformer:(CucumberApiTransformer *)transformer {
   CucumberRuntimeParameterInfo_initWithJavaLangReflectType_withNSString_withNSString_withCucumberApiTransformer_(self, type, format, delimiter, transformer);
   return self;
 }
 
-- (instancetype)initWithJavaLangReflectType:(id<JavaLangReflectType>)type
-                               withNSString:(NSString *)format
-                               withNSString:(NSString *)delimiter
-                                withBoolean:(jboolean)transposed
-                 withCucumberApiTransformer:(CucumberApiTransformer *)transformer {
+- (instancetype __nonnull)initWithJavaLangReflectType:(id<JavaLangReflectType>)type
+                                         withNSString:(NSString *)format
+                                         withNSString:(NSString *)delimiter
+                                          withBoolean:(jboolean)transposed
+                           withCucumberApiTransformer:(CucumberApiTransformer *)transformer {
   CucumberRuntimeParameterInfo_initWithJavaLangReflectType_withNSString_withNSString_withBoolean_withCucumberApiTransformer_(self, type, format, delimiter, transposed, transformer);
   return self;
 }
@@ -194,6 +194,7 @@ withCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream:(CucumberRuntimeXst
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(fromMethodWithJavaLangReflectMethod:);
   methods[1].selector = @selector(fromTypesWithJavaLangReflectTypeArray:);
   methods[2].selector = @selector(isAnnotatedWithWithJavaLangAnnotationAnnotation:withIOSClass:);

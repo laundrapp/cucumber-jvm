@@ -96,7 +96,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeXstreamPatternConverter)
 @implementation CucumberRuntimeXstreamPatternConverter
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeXstreamPatternConverter_init(self);
   return self;
 }
@@ -139,6 +139,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(toStringWithId:);
   methods[2].selector = @selector(fromStringWithNSString:);
@@ -216,6 +217,7 @@ CucumberRuntimeXstreamPatternConverter_FLAG *CucumberRuntimeXstreamPatternConver
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(values);
   methods[1].selector = @selector(valueOfWithNSString:);
   #pragma clang diagnostic pop
@@ -241,21 +243,21 @@ CucumberRuntimeXstreamPatternConverter_FLAG *CucumberRuntimeXstreamPatternConver
     size_t allocSize = 8 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
-    (JreEnum(CucumberRuntimeXstreamPatternConverter_FLAG, d) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(CucumberRuntimeXstreamPatternConverter_FLAG, d) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     CucumberRuntimeXstreamPatternConverter_FLAG_initWithInt_withNSString_withInt_(e, JavaUtilRegexPattern_UNIX_LINES, @"d", 0);
-    (JreEnum(CucumberRuntimeXstreamPatternConverter_FLAG, i) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(CucumberRuntimeXstreamPatternConverter_FLAG, i) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     CucumberRuntimeXstreamPatternConverter_FLAG_initWithInt_withNSString_withInt_(e, JavaUtilRegexPattern_CASE_INSENSITIVE, @"i", 1);
-    (JreEnum(CucumberRuntimeXstreamPatternConverter_FLAG, x) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(CucumberRuntimeXstreamPatternConverter_FLAG, x) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     CucumberRuntimeXstreamPatternConverter_FLAG_initWithInt_withNSString_withInt_(e, JavaUtilRegexPattern_COMMENTS, @"x", 2);
-    (JreEnum(CucumberRuntimeXstreamPatternConverter_FLAG, m) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(CucumberRuntimeXstreamPatternConverter_FLAG, m) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     CucumberRuntimeXstreamPatternConverter_FLAG_initWithInt_withNSString_withInt_(e, JavaUtilRegexPattern_MULTILINE, @"m", 3);
-    (JreEnum(CucumberRuntimeXstreamPatternConverter_FLAG, l) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(CucumberRuntimeXstreamPatternConverter_FLAG, l) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     CucumberRuntimeXstreamPatternConverter_FLAG_initWithInt_withNSString_withInt_(e, JavaUtilRegexPattern_LITERAL, @"l", 4);
-    (JreEnum(CucumberRuntimeXstreamPatternConverter_FLAG, s) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(CucumberRuntimeXstreamPatternConverter_FLAG, s) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     CucumberRuntimeXstreamPatternConverter_FLAG_initWithInt_withNSString_withInt_(e, JavaUtilRegexPattern_DOTALL, @"s", 5);
-    (JreEnum(CucumberRuntimeXstreamPatternConverter_FLAG, u) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(CucumberRuntimeXstreamPatternConverter_FLAG, u) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     CucumberRuntimeXstreamPatternConverter_FLAG_initWithInt_withNSString_withInt_(e, JavaUtilRegexPattern_UNICODE_CASE, @"u", 6);
-    (JreEnum(CucumberRuntimeXstreamPatternConverter_FLAG, c) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(CucumberRuntimeXstreamPatternConverter_FLAG, c) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     CucumberRuntimeXstreamPatternConverter_FLAG_initWithInt_withNSString_withInt_(e, JavaUtilRegexPattern_CANON_EQ, @"c", 7);
     J2OBJC_SET_INITIALIZED(CucumberRuntimeXstreamPatternConverter_FLAG)
   }

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeIoResourceLoader
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeIoResourceLoader_) && (INCLUDE_ALL_CucumberRuntimeIoResourceLoader || defined(INCLUDE_CucumberRuntimeIoResourceLoader))
 #define CucumberRuntimeIoResourceLoader_
 
@@ -31,4 +36,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoResourceLoader)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeIoResourceLoader")

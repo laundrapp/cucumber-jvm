@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeArgument
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeArgument_) && (INCLUDE_ALL_CucumberRuntimeArgument || defined(INCLUDE_CucumberRuntimeArgument))
 #define CucumberRuntimeArgument_
 
@@ -22,8 +27,8 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaLangInteger:(JavaLangInteger *)offset
-                           withNSString:(NSString *)val;
+- (instancetype __nonnull)initWithJavaLangInteger:(JavaLangInteger *)offset
+                                     withNSString:(NSString *)val;
 
 - (JavaLangInteger *)getOffset;
 
@@ -33,7 +38,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -49,4 +54,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeArgument)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeArgument")

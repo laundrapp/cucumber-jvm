@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberUtilMapper
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberUtilMapper_) && (INCLUDE_ALL_CucumberUtilMapper || defined(INCLUDE_CucumberUtilMapper))
 #define CucumberUtilMapper_
 
@@ -28,4 +33,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberUtilMapper)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberUtilMapper")

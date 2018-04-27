@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeSnippetsFunctionNameGenerator
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeSnippetsFunctionNameGenerator_) && (INCLUDE_ALL_CucumberRuntimeSnippetsFunctionNameGenerator || defined(INCLUDE_CucumberRuntimeSnippetsFunctionNameGenerator))
 #define CucumberRuntimeSnippetsFunctionNameGenerator_
 
@@ -22,13 +27,13 @@
 
 #pragma mark Public
 
-- (instancetype)initWithCucumberRuntimeSnippetsConcatenator:(id<CucumberRuntimeSnippetsConcatenator>)concatenator;
+- (instancetype __nonnull)initWithCucumberRuntimeSnippetsConcatenator:(id<CucumberRuntimeSnippetsConcatenator>)concatenator;
 
 - (NSString *)generateFunctionNameWithNSString:(NSString *)sentence;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -44,4 +49,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeSnippetsFunctionNameGenerator)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeSnippetsFunctionNameGenerator")

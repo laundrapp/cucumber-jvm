@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRunnerPickleTestStep
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRunnerPickleTestStep_) && (INCLUDE_ALL_CucumberRunnerPickleTestStep || defined(INCLUDE_CucumberRunnerPickleTestStep))
 #define CucumberRunnerPickleTestStep_
 
@@ -29,9 +34,9 @@
 
 #pragma mark Public
 
-- (instancetype)initWithNSString:(NSString *)uri
-    withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
-withCucumberRuntimeDefinitionMatch:(id<CucumberRuntimeDefinitionMatch>)definitionMatch;
+- (instancetype __nonnull)initWithNSString:(NSString *)uri
+              withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
+        withCucumberRuntimeDefinitionMatch:(id<CucumberRuntimeDefinitionMatch>)definitionMatch;
 
 - (CucumberApiHookType *)getHookType;
 
@@ -49,7 +54,7 @@ withCucumberRuntimeDefinitionMatch:(id<CucumberRuntimeDefinitionMatch>)definitio
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithCucumberRuntimeDefinitionMatch:(id<CucumberRuntimeDefinitionMatch>)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithCucumberRuntimeDefinitionMatch:(id<CucumberRuntimeDefinitionMatch>)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -65,4 +70,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRunnerPickleTestStep)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRunnerPickleTestStep")

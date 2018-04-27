@@ -64,15 +64,15 @@ __attribute__((unused)) static NSString *CucumberRuntimeIoURLOutputStream_Respon
 
 @implementation CucumberRuntimeIoURLOutputStream
 
-- (instancetype)initWithJavaNetURL:(JavaNetURL *)url {
+- (instancetype __nonnull)initWithJavaNetURL:(JavaNetURL *)url {
   CucumberRuntimeIoURLOutputStream_initWithJavaNetURL_(self, url);
   return self;
 }
 
-- (instancetype)initWithJavaNetURL:(JavaNetURL *)url
-                      withNSString:(NSString *)method
-                   withJavaUtilMap:(id<JavaUtilMap>)headers
-                           withInt:(jint)expectedResponseCode {
+- (instancetype __nonnull)initWithJavaNetURL:(JavaNetURL *)url
+                                withNSString:(NSString *)method
+                             withJavaUtilMap:(id<JavaUtilMap>)headers
+                                     withInt:(jint)expectedResponseCode {
   CucumberRuntimeIoURLOutputStream_initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_(self, url, method, headers, expectedResponseCode);
   return self;
 }
@@ -151,6 +151,7 @@ __attribute__((unused)) static NSString *CucumberRuntimeIoURLOutputStream_Respon
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaNetURL:);
   methods[1].selector = @selector(initWithJavaNetURL:withNSString:withJavaUtilMap:withInt:);
   methods[2].selector = @selector(ensureParentDirExistsWithJavaIoFile:);
@@ -232,11 +233,11 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoURLOutputStream)
 
 @implementation CucumberRuntimeIoURLOutputStream_ResponseException
 
-- (instancetype)initWithCucumberRuntimeIoURLOutputStream:(CucumberRuntimeIoURLOutputStream *)outer$
-                                            withNSString:(NSString *)responseBody
-                                   withJavaIoIOException:(JavaIoIOException *)cause
-                                                 withInt:(jint)responseCode
-                                            withNSString:(NSString *)contentType {
+- (instancetype __nonnull)initWithCucumberRuntimeIoURLOutputStream:(CucumberRuntimeIoURLOutputStream *)outer$
+                                                      withNSString:(NSString *)responseBody
+                                             withJavaIoIOException:(JavaIoIOException *)cause
+                                                           withInt:(jint)responseCode
+                                                      withNSString:(NSString *)contentType {
   CucumberRuntimeIoURLOutputStream_ResponseException_initWithCucumberRuntimeIoURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_(self, outer$, responseBody, cause, responseCode, contentType);
   return self;
 }
@@ -275,6 +276,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoURLOutputStream)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeIoURLOutputStream:withNSString:withJavaIoIOException:withInt:withNSString:);
   methods[1].selector = @selector(getMessage);
   methods[2].selector = @selector(getMessage0WithNSString:);

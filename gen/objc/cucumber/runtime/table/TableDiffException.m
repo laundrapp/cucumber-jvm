@@ -23,9 +23,9 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeTableTableDiffException, diff_, CucumberApiDa
 
 @implementation CucumberRuntimeTableTableDiffException
 
-- (instancetype)initWithCucumberApiDataTable:(CucumberApiDataTable *)from
-                    withCucumberApiDataTable:(CucumberApiDataTable *)to
-                    withCucumberApiDataTable:(CucumberApiDataTable *)diff {
+- (instancetype __nonnull)initWithCucumberApiDataTable:(CucumberApiDataTable *)from
+                              withCucumberApiDataTable:(CucumberApiDataTable *)to
+                              withCucumberApiDataTable:(CucumberApiDataTable *)diff {
   CucumberRuntimeTableTableDiffException_initWithCucumberApiDataTable_withCucumberApiDataTable_withCucumberApiDataTable_(self, from, to, diff);
   return self;
 }
@@ -58,6 +58,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeTableTableDiffException, diff_, CucumberApiDa
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberApiDataTable:withCucumberApiDataTable:withCucumberApiDataTable:);
   methods[1].selector = @selector(getFrom);
   methods[2].selector = @selector(getTo);

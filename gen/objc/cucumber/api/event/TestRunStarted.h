@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiEventTestRunStarted
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiEventTestRunStarted_) && (INCLUDE_ALL_CucumberApiEventTestRunStarted || defined(INCLUDE_CucumberApiEventTestRunStarted))
 #define CucumberApiEventTestRunStarted_
 
@@ -26,7 +31,7 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaLangLong:(JavaLangLong *)timeStamp;
+- (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp;
 
 @end
 
@@ -42,4 +47,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventTestRunStarted)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiEventTestRunStarted")

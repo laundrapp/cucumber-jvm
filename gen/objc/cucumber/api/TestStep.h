@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiTestStep
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiTestStep_) && (INCLUDE_ALL_CucumberApiTestStep || defined(INCLUDE_CucumberApiTestStep))
 #define CucumberApiTestStep_
 
@@ -38,7 +43,7 @@
  @brief Creates a new test step from the matching step definition
  @param definitionMatch the matching step definition
  */
-- (instancetype)initWithCucumberRuntimeDefinitionMatch:(id<CucumberRuntimeDefinitionMatch>)definitionMatch;
+- (instancetype __nonnull)initWithCucumberRuntimeDefinitionMatch:(id<CucumberRuntimeDefinitionMatch>)definitionMatch;
 
 - (NSString *)getCodeLocation;
 
@@ -92,4 +97,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiTestStep)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiTestStep")

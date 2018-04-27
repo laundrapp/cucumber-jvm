@@ -18,6 +18,7 @@
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(registerHandlerForWithIOSClass:withCucumberApiEventEventHandler:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "registerHandlerFor", "LIOSClass;LCucumberApiEventEventHandler;", "<T::Lcucumber/api/event/Event;>(Ljava/lang/Class<TT;>;Lcucumber/api/event/EventHandler<TT;>;)V" };

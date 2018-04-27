@@ -117,7 +117,7 @@ __attribute__((unused)) static void CucumberRuntimeStats_addResultToSubCountWith
   CucumberRuntimeStats *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeStats:(CucumberRuntimeStats *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeStats:(CucumberRuntimeStats *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunStarted *)event;
 
@@ -136,7 +136,7 @@ __attribute__((unused)) static CucumberRuntimeStats_1 *create_CucumberRuntimeSta
   CucumberRuntimeStats *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeStats:(CucumberRuntimeStats *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeStats:(CucumberRuntimeStats *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepFinished *)event;
 
@@ -155,7 +155,7 @@ __attribute__((unused)) static CucumberRuntimeStats_2 *create_CucumberRuntimeSta
   CucumberRuntimeStats *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeStats:(CucumberRuntimeStats *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeStats:(CucumberRuntimeStats *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestCaseFinished *)event;
 
@@ -174,7 +174,7 @@ __attribute__((unused)) static CucumberRuntimeStats_3 *create_CucumberRuntimeSta
   CucumberRuntimeStats *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeStats:(CucumberRuntimeStats *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeStats:(CucumberRuntimeStats *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event;
 
@@ -190,13 +190,13 @@ __attribute__((unused)) static CucumberRuntimeStats_4 *create_CucumberRuntimeSta
 
 @implementation CucumberRuntimeStats
 
-- (instancetype)initWithBoolean:(jboolean)monochrome {
+- (instancetype __nonnull)initWithBoolean:(jboolean)monochrome {
   CucumberRuntimeStats_initWithBoolean_(self, monochrome);
   return self;
 }
 
-- (instancetype)initWithBoolean:(jboolean)monochrome
-             withJavaUtilLocale:(JavaUtilLocale *)locale {
+- (instancetype __nonnull)initWithBoolean:(jboolean)monochrome
+                       withJavaUtilLocale:(JavaUtilLocale *)locale {
   CucumberRuntimeStats_initWithBoolean_withJavaUtilLocale_(self, monochrome, locale);
   return self;
 }
@@ -352,6 +352,7 @@ __attribute__((unused)) static CucumberRuntimeStats_4 *create_CucumberRuntimeSta
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithBoolean:);
   methods[1].selector = @selector(initWithBoolean:withJavaUtilLocale:);
   methods[2].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
@@ -541,7 +542,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeStats)
 
 @implementation CucumberRuntimeStats_1
 
-- (instancetype)initWithCucumberRuntimeStats:(CucumberRuntimeStats *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeStats:(CucumberRuntimeStats *)outer$ {
   CucumberRuntimeStats_1_initWithCucumberRuntimeStats_(self, outer$);
   return self;
 }
@@ -562,6 +563,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeStats)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeStats:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -590,7 +592,7 @@ CucumberRuntimeStats_1 *create_CucumberRuntimeStats_1_initWithCucumberRuntimeSta
 
 @implementation CucumberRuntimeStats_2
 
-- (instancetype)initWithCucumberRuntimeStats:(CucumberRuntimeStats *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeStats:(CucumberRuntimeStats *)outer$ {
   CucumberRuntimeStats_2_initWithCucumberRuntimeStats_(self, outer$);
   return self;
 }
@@ -617,6 +619,7 @@ CucumberRuntimeStats_1 *create_CucumberRuntimeStats_1_initWithCucumberRuntimeSta
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeStats:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -645,7 +648,7 @@ CucumberRuntimeStats_2 *create_CucumberRuntimeStats_2_initWithCucumberRuntimeSta
 
 @implementation CucumberRuntimeStats_3
 
-- (instancetype)initWithCucumberRuntimeStats:(CucumberRuntimeStats *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeStats:(CucumberRuntimeStats *)outer$ {
   CucumberRuntimeStats_3_initWithCucumberRuntimeStats_(self, outer$);
   return self;
 }
@@ -666,6 +669,7 @@ CucumberRuntimeStats_2 *create_CucumberRuntimeStats_2_initWithCucumberRuntimeSta
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeStats:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -694,7 +698,7 @@ CucumberRuntimeStats_3 *create_CucumberRuntimeStats_3_initWithCucumberRuntimeSta
 
 @implementation CucumberRuntimeStats_4
 
-- (instancetype)initWithCucumberRuntimeStats:(CucumberRuntimeStats *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeStats:(CucumberRuntimeStats *)outer$ {
   CucumberRuntimeStats_4_initWithCucumberRuntimeStats_(self, outer$);
   return self;
 }
@@ -715,6 +719,7 @@ CucumberRuntimeStats_3 *create_CucumberRuntimeStats_3_initWithCucumberRuntimeSta
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeStats:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -744,7 +749,7 @@ CucumberRuntimeStats_4 *create_CucumberRuntimeStats_4_initWithCucumberRuntimeSta
 @implementation CucumberRuntimeStats_SubCounts
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeStats_SubCounts_init(self);
   return self;
 }
@@ -761,6 +766,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(getTotal);
   #pragma clang diagnostic pop

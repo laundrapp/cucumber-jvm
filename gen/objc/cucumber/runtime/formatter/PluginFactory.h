@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeFormatterPluginFactory
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeFormatterPluginFactory_) && (INCLUDE_ALL_CucumberRuntimeFormatterPluginFactory || defined(INCLUDE_CucumberRuntimeFormatterPluginFactory))
 #define CucumberRuntimeFormatterPluginFactory_
 
@@ -30,7 +35,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (id<CucumberApiPlugin>)createWithNSString:(NSString *)pluginString;
 
@@ -60,4 +65,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterPluginFactory)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeFormatterPluginFactory")

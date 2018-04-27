@@ -25,7 +25,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamListConverter, delegate_, id<CucumberD
 
 @implementation CucumberRuntimeXstreamListConverter
 
-- (instancetype)initWithNSString:(NSString *)delimiter
+- (instancetype __nonnull)initWithNSString:(NSString *)delimiter
 withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>)delegate {
   CucumberRuntimeXstreamListConverter_initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, delimiter, delegate);
   return self;
@@ -86,6 +86,7 @@ withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<Cucumbe
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithNSString:withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:);
   methods[1].selector = @selector(toStringWithId:);
   methods[2].selector = @selector(fromStringWithNSString:);

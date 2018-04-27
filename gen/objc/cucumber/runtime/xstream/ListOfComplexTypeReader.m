@@ -38,9 +38,9 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamListOfComplexTypeReader, attributeValu
 
 @implementation CucumberRuntimeXstreamListOfComplexTypeReader
 
-- (instancetype)initWithIOSClass:(IOSClass *)itemType
-                withJavaUtilList:(id<JavaUtilList>)attributeNames
-                withJavaUtilList:(id<JavaUtilList>)items {
+- (instancetype __nonnull)initWithIOSClass:(IOSClass *)itemType
+                          withJavaUtilList:(id<JavaUtilList>)attributeNames
+                          withJavaUtilList:(id<JavaUtilList>)items {
   CucumberRuntimeXstreamListOfComplexTypeReader_initWithIOSClass_withJavaUtilList_withJavaUtilList_(self, itemType, attributeNames, items);
   return self;
 }
@@ -151,6 +151,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamListOfComplexTypeReader, attributeValu
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithIOSClass:withJavaUtilList:withJavaUtilList:);
   methods[1].selector = @selector(hasMoreChildren);
   methods[2].selector = @selector(moveDown);

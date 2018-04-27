@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeIoUTF8OutputStreamWriter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeIoUTF8OutputStreamWriter_) && (INCLUDE_ALL_CucumberRuntimeIoUTF8OutputStreamWriter || defined(INCLUDE_CucumberRuntimeIoUTF8OutputStreamWriter))
 #define CucumberRuntimeIoUTF8OutputStreamWriter_
 
@@ -28,18 +33,18 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg;
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)arg0
-                 withJavaNioCharsetCharset:(JavaNioCharsetCharset *)arg1 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)arg0
+                           withJavaNioCharsetCharset:(JavaNioCharsetCharset *)arg1 NS_UNAVAILABLE;
 
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)arg0
-          withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)arg1 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)arg0
+                    withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)arg1 NS_UNAVAILABLE;
 
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)arg0
-                              withNSString:(NSString *)arg1 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)arg0
+                                        withNSString:(NSString *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -55,4 +60,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoUTF8OutputStreamWriter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeIoUTF8OutputStreamWriter")

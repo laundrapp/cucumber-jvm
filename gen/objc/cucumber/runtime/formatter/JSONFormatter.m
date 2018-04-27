@@ -187,7 +187,7 @@ __attribute__((unused)) static id<JavaUtilMap> CucumberRuntimeFormatterJSONForma
   CucumberRuntimeFormatterJSONFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestSourceRead *)event;
 
@@ -206,7 +206,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_1 *create_C
   CucumberRuntimeFormatterJSONFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestCaseStarted *)event;
 
@@ -225,7 +225,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_2 *create_C
   CucumberRuntimeFormatterJSONFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepStarted *)event;
 
@@ -244,7 +244,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_3 *create_C
   CucumberRuntimeFormatterJSONFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepFinished *)event;
 
@@ -263,7 +263,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_4 *create_C
   CucumberRuntimeFormatterJSONFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event;
 
@@ -282,7 +282,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_5 *create_C
   CucumberRuntimeFormatterJSONFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventWriteEvent *)event;
 
@@ -301,7 +301,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_6 *create_C
   CucumberRuntimeFormatterJSONFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventEmbedEvent *)event;
 
@@ -317,7 +317,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_7 *create_C
 
 @implementation CucumberRuntimeFormatterJSONFormatter
 
-- (instancetype)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg {
+- (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg {
   CucumberRuntimeFormatterJSONFormatter_initWithJavaLangAppendable_(self, outArg);
   return self;
 }
@@ -475,6 +475,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_7 *create_C
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangAppendable:);
   methods[1].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
   methods[2].selector = @selector(handleTestSourceReadWithCucumberApiEventTestSourceRead:);
@@ -789,7 +790,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterJSONFormatter)
 
 @implementation CucumberRuntimeFormatterJSONFormatter_1
 
-- (instancetype)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
   CucumberRuntimeFormatterJSONFormatter_1_initWithCucumberRuntimeFormatterJSONFormatter_(self, outer$);
   return self;
 }
@@ -810,6 +811,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterJSONFormatter)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterJSONFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -838,7 +840,7 @@ CucumberRuntimeFormatterJSONFormatter_1 *create_CucumberRuntimeFormatterJSONForm
 
 @implementation CucumberRuntimeFormatterJSONFormatter_2
 
-- (instancetype)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
   CucumberRuntimeFormatterJSONFormatter_2_initWithCucumberRuntimeFormatterJSONFormatter_(self, outer$);
   return self;
 }
@@ -859,6 +861,7 @@ CucumberRuntimeFormatterJSONFormatter_1 *create_CucumberRuntimeFormatterJSONForm
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterJSONFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -887,7 +890,7 @@ CucumberRuntimeFormatterJSONFormatter_2 *create_CucumberRuntimeFormatterJSONForm
 
 @implementation CucumberRuntimeFormatterJSONFormatter_3
 
-- (instancetype)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
   CucumberRuntimeFormatterJSONFormatter_3_initWithCucumberRuntimeFormatterJSONFormatter_(self, outer$);
   return self;
 }
@@ -908,6 +911,7 @@ CucumberRuntimeFormatterJSONFormatter_2 *create_CucumberRuntimeFormatterJSONForm
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterJSONFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -936,7 +940,7 @@ CucumberRuntimeFormatterJSONFormatter_3 *create_CucumberRuntimeFormatterJSONForm
 
 @implementation CucumberRuntimeFormatterJSONFormatter_4
 
-- (instancetype)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
   CucumberRuntimeFormatterJSONFormatter_4_initWithCucumberRuntimeFormatterJSONFormatter_(self, outer$);
   return self;
 }
@@ -957,6 +961,7 @@ CucumberRuntimeFormatterJSONFormatter_3 *create_CucumberRuntimeFormatterJSONForm
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterJSONFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -985,7 +990,7 @@ CucumberRuntimeFormatterJSONFormatter_4 *create_CucumberRuntimeFormatterJSONForm
 
 @implementation CucumberRuntimeFormatterJSONFormatter_5
 
-- (instancetype)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
   CucumberRuntimeFormatterJSONFormatter_5_initWithCucumberRuntimeFormatterJSONFormatter_(self, outer$);
   return self;
 }
@@ -1006,6 +1011,7 @@ CucumberRuntimeFormatterJSONFormatter_4 *create_CucumberRuntimeFormatterJSONForm
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterJSONFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -1034,7 +1040,7 @@ CucumberRuntimeFormatterJSONFormatter_5 *create_CucumberRuntimeFormatterJSONForm
 
 @implementation CucumberRuntimeFormatterJSONFormatter_6
 
-- (instancetype)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
   CucumberRuntimeFormatterJSONFormatter_6_initWithCucumberRuntimeFormatterJSONFormatter_(self, outer$);
   return self;
 }
@@ -1055,6 +1061,7 @@ CucumberRuntimeFormatterJSONFormatter_5 *create_CucumberRuntimeFormatterJSONForm
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterJSONFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -1083,7 +1090,7 @@ CucumberRuntimeFormatterJSONFormatter_6 *create_CucumberRuntimeFormatterJSONForm
 
 @implementation CucumberRuntimeFormatterJSONFormatter_7
 
-- (instancetype)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
   CucumberRuntimeFormatterJSONFormatter_7_initWithCucumberRuntimeFormatterJSONFormatter_(self, outer$);
   return self;
 }
@@ -1104,6 +1111,7 @@ CucumberRuntimeFormatterJSONFormatter_6 *create_CucumberRuntimeFormatterJSONForm
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterJSONFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop

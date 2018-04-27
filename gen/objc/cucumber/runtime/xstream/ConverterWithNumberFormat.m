@@ -23,8 +23,8 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamConverterWithNumberFormat, formats_, i
 
 @implementation CucumberRuntimeXstreamConverterWithNumberFormat
 
-- (instancetype)initWithJavaUtilLocale:(JavaUtilLocale *)locale
-                     withIOSClassArray:(IOSObjectArray *)convertibleTypes {
+- (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale
+                               withIOSClassArray:(IOSObjectArray *)convertibleTypes {
   CucumberRuntimeXstreamConverterWithNumberFormat_initWithJavaUtilLocale_withIOSClassArray_(self, locale, convertibleTypes);
   return self;
 }
@@ -58,6 +58,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamConverterWithNumberFormat, formats_, i
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilLocale:withIOSClassArray:);
   methods[1].selector = @selector(transformWithNSString:);
   methods[2].selector = @selector(getFormats);

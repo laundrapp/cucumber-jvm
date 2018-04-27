@@ -29,8 +29,8 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeIoResourceLoaderClassFinder, classLoader_, Ja
 
 @implementation CucumberRuntimeIoResourceLoaderClassFinder
 
-- (instancetype)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                withJavaLangClassLoader:(JavaLangClassLoader *)classLoader {
+- (instancetype __nonnull)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
+                                          withJavaLangClassLoader:(JavaLangClassLoader *)classLoader {
   CucumberRuntimeIoResourceLoaderClassFinder_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_(self, resourceLoader, classLoader);
   return self;
 }
@@ -73,6 +73,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeIoResourceLoaderClassFinder, classLoader_, Ja
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeIoResourceLoader:withJavaLangClassLoader:);
   methods[1].selector = @selector(getDescendantsWithIOSClass:withNSString:);
   methods[2].selector = @selector(loadClassWithNSString:);

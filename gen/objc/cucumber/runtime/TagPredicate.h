@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeTagPredicate
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeTagPredicate_) && (INCLUDE_ALL_CucumberRuntimeTagPredicate || defined(INCLUDE_CucumberRuntimeTagPredicate))
 #define CucumberRuntimeTagPredicate_
 
@@ -28,7 +33,7 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)tagExpressions;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)tagExpressions;
 
 - (jboolean)applyWithJavaUtilCollection:(id<JavaUtilCollection>)pickleTags;
 
@@ -36,7 +41,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -52,4 +57,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTagPredicate)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeTagPredicate")

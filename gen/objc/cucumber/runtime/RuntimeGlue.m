@@ -55,8 +55,8 @@ __attribute__((unused)) static IOSObjectArray *CucumberRuntimeRuntimeGlue__Annot
 
 @interface CucumberRuntimeRuntimeGlue_CacheEntry ()
 
-- (instancetype)initWithCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)stepDefinition
-                                     withJavaUtilList:(id<JavaUtilList>)arguments;
+- (instancetype __nonnull)initWithCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)stepDefinition
+                                               withJavaUtilList:(id<JavaUtilList>)arguments;
 
 @end
 
@@ -68,13 +68,13 @@ __attribute__((unused)) static CucumberRuntimeRuntimeGlue_CacheEntry *create_Cuc
 
 @implementation CucumberRuntimeRuntimeGlue
 
-- (instancetype)initWithCucumberRuntimeXstreamLocalizedXStreams:(CucumberRuntimeXstreamLocalizedXStreams *)localizedXStreams {
+- (instancetype __nonnull)initWithCucumberRuntimeXstreamLocalizedXStreams:(CucumberRuntimeXstreamLocalizedXStreams *)localizedXStreams {
   CucumberRuntimeRuntimeGlue_initWithCucumberRuntimeXstreamLocalizedXStreams_(self, localizedXStreams);
   return self;
 }
 
-- (instancetype)initWithCucumberRuntimeUndefinedStepsTracker:(CucumberRuntimeUndefinedStepsTracker *)tracker
-                 withCucumberRuntimeXstreamLocalizedXStreams:(CucumberRuntimeXstreamLocalizedXStreams *)localizedXStreams {
+- (instancetype __nonnull)initWithCucumberRuntimeUndefinedStepsTracker:(CucumberRuntimeUndefinedStepsTracker *)tracker
+                           withCucumberRuntimeXstreamLocalizedXStreams:(CucumberRuntimeXstreamLocalizedXStreams *)localizedXStreams {
   CucumberRuntimeRuntimeGlue_initWithCucumberRuntimeUndefinedStepsTracker_withCucumberRuntimeXstreamLocalizedXStreams_(self, tracker, localizedXStreams);
   return self;
 }
@@ -176,6 +176,7 @@ __attribute__((unused)) static CucumberRuntimeRuntimeGlue_CacheEntry *create_Cuc
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeXstreamLocalizedXStreams:);
   methods[1].selector = @selector(initWithCucumberRuntimeUndefinedStepsTracker:withCucumberRuntimeXstreamLocalizedXStreams:);
   methods[2].selector = @selector(addStepDefinitionWithCucumberRuntimeStepDefinition:);
@@ -279,8 +280,8 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeRuntimeGlue)
 
 @implementation CucumberRuntimeRuntimeGlue_CacheEntry
 
-- (instancetype)initWithCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)stepDefinition
-                                     withJavaUtilList:(id<JavaUtilList>)arguments {
+- (instancetype __nonnull)initWithCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)stepDefinition
+                                               withJavaUtilList:(id<JavaUtilList>)arguments {
   CucumberRuntimeRuntimeGlue_CacheEntry_initWithCucumberRuntimeStepDefinition_withJavaUtilList_(self, stepDefinition, arguments);
   return self;
 }
@@ -297,6 +298,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeRuntimeGlue)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeStepDefinition:withJavaUtilList:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {

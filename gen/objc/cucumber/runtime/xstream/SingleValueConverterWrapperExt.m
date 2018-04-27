@@ -19,7 +19,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamSingleValueConverterWrapperExt, conver
 
 @implementation CucumberRuntimeXstreamSingleValueConverterWrapperExt
 
-- (instancetype)initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>)converter {
+- (instancetype __nonnull)initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>)converter {
   CucumberRuntimeXstreamSingleValueConverterWrapperExt_initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converter);
   return self;
 }
@@ -40,6 +40,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamSingleValueConverterWrapperExt, conver
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:);
   methods[1].selector = @selector(getConverter);
   #pragma clang diagnostic pop

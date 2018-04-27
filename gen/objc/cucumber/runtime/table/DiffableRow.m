@@ -11,8 +11,8 @@
 
 @implementation CucumberRuntimeTableDiffableRow
 
-- (instancetype)initWithGherkinPicklesPickleRow:(GherkinPicklesPickleRow *)row
-                               withJavaUtilList:(id<JavaUtilList>)convertedRow {
+- (instancetype __nonnull)initWithGherkinPicklesPickleRow:(GherkinPicklesPickleRow *)row
+                                         withJavaUtilList:(id<JavaUtilList>)convertedRow {
   CucumberRuntimeTableDiffableRow_initWithGherkinPicklesPickleRow_withJavaUtilList_(self, row, convertedRow);
   return self;
 }
@@ -42,6 +42,7 @@
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithGherkinPicklesPickleRow:withJavaUtilList:);
   methods[1].selector = @selector(isEqual:);
   methods[2].selector = @selector(hash);

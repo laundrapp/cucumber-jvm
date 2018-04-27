@@ -34,9 +34,9 @@
 
 #pragma mark Public
 
-- (instancetype)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)pickleTable
-                                 withJavaUtilList:(id<JavaUtilList>)diffTypes
-                    withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter;
+- (instancetype __nonnull)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)pickleTable
+                                           withJavaUtilList:(id<JavaUtilList>)diffTypes
+                              withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter;
 
 + (CucumberRuntimeTableDataTableDiff *)createWithJavaUtilList:(id<JavaUtilList>)diffTableRows
                                 withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter;
@@ -47,8 +47,8 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)arg0
-                    withCucumberApiTableConverter:(id<CucumberApiTableConverter>)arg1 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)arg0
+                              withCucumberApiTableConverter:(id<CucumberApiTableConverter>)arg1 NS_UNAVAILABLE;
 
 @end
 

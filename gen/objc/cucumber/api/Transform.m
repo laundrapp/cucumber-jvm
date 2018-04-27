@@ -28,6 +28,14 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiTransform__Annotations
   return [NSString stringWithFormat:@"@cucumber.api.Transform(value=%@)", value_];
 }
 
+- (jboolean)isEqual:(id)obj {
+  return JreAnnotationEquals(self, obj);
+}
+
+- (NSUInteger)hash {
+  return JreAnnotationHashCode(self);
+}
+
 - (void)dealloc {
   RELEASE_(value_);
   [super dealloc];
@@ -39,6 +47,7 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiTransform__Annotations
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(value);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {

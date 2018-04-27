@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeGlue
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeGlue_) && (INCLUDE_ALL_CucumberRuntimeGlue || defined(INCLUDE_CucumberRuntimeGlue))
 #define CucumberRuntimeGlue_
 
@@ -50,4 +55,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeGlue)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeGlue")

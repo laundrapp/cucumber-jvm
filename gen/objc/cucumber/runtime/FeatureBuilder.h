@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeFeatureBuilder
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeFeatureBuilder_) && (INCLUDE_ALL_CucumberRuntimeFeatureBuilder || defined(INCLUDE_CucumberRuntimeFeatureBuilder))
 #define CucumberRuntimeFeatureBuilder_
 
@@ -23,7 +28,7 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)cucumberFeatures;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)cucumberFeatures;
 
 - (void)parseWithCucumberRuntimeIoResource:(id<CucumberRuntimeIoResource>)resource;
 
@@ -31,12 +36,12 @@
 
 #pragma mark Package-Private
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)cucumberFeatures
-                            withChar:(jchar)fileSeparatorChar;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)cucumberFeatures
+                                      withChar:(jchar)fileSeparatorChar;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -58,4 +63,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFeatureBuilder)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeFeatureBuilder")

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeXstreamListConverter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeXstreamListConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamListConverter || defined(INCLUDE_CucumberRuntimeXstreamListConverter))
 #define CucumberRuntimeXstreamListConverter_
 
@@ -26,7 +31,7 @@
 
 #pragma mark Public
 
-- (instancetype)initWithNSString:(NSString *)delimiter
+- (instancetype __nonnull)initWithNSString:(NSString *)delimiter
 withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>)delegate;
 
 - (jboolean)canConvertWithIOSClass:(IOSClass *)type;
@@ -37,7 +42,7 @@ withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<Cucumbe
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -53,4 +58,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamListConverter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeXstreamListConverter")

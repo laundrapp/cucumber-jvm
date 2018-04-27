@@ -57,7 +57,7 @@ __attribute__((unused)) static void CucumberRuntimeFormatterRerunFormatter_repor
   CucumberRuntimeFormatterRerunFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterRerunFormatter:(CucumberRuntimeFormatterRerunFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterRerunFormatter:(CucumberRuntimeFormatterRerunFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestCaseFinished *)event;
 
@@ -76,7 +76,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterRerunFormatter_1 *create_
   CucumberRuntimeFormatterRerunFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterRerunFormatter:(CucumberRuntimeFormatterRerunFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterRerunFormatter:(CucumberRuntimeFormatterRerunFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event;
 
@@ -92,7 +92,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterRerunFormatter_2 *create_
 
 @implementation CucumberRuntimeFormatterRerunFormatter
 
-- (instancetype)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg {
+- (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg {
   CucumberRuntimeFormatterRerunFormatter_initWithJavaLangAppendable_(self, outArg);
   return self;
 }
@@ -142,6 +142,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterRerunFormatter_2 *create_
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangAppendable:);
   methods[1].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
   methods[2].selector = @selector(setStrictWithBoolean:);
@@ -219,7 +220,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterRerunFormatter)
 
 @implementation CucumberRuntimeFormatterRerunFormatter_1
 
-- (instancetype)initWithCucumberRuntimeFormatterRerunFormatter:(CucumberRuntimeFormatterRerunFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterRerunFormatter:(CucumberRuntimeFormatterRerunFormatter *)outer$ {
   CucumberRuntimeFormatterRerunFormatter_1_initWithCucumberRuntimeFormatterRerunFormatter_(self, outer$);
   return self;
 }
@@ -240,6 +241,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterRerunFormatter)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterRerunFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -268,7 +270,7 @@ CucumberRuntimeFormatterRerunFormatter_1 *create_CucumberRuntimeFormatterRerunFo
 
 @implementation CucumberRuntimeFormatterRerunFormatter_2
 
-- (instancetype)initWithCucumberRuntimeFormatterRerunFormatter:(CucumberRuntimeFormatterRerunFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterRerunFormatter:(CucumberRuntimeFormatterRerunFormatter *)outer$ {
   CucumberRuntimeFormatterRerunFormatter_2_initWithCucumberRuntimeFormatterRerunFormatter_(self, outer$);
   return self;
 }
@@ -289,6 +291,7 @@ CucumberRuntimeFormatterRerunFormatter_1 *create_CucumberRuntimeFormatterRerunFo
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterRerunFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop

@@ -33,7 +33,7 @@ NSString *CucumberRuntimeIoMultiLoader_CLASSPATH_SCHEME = @"classpath:";
 
 @implementation CucumberRuntimeIoMultiLoader
 
-- (instancetype)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader {
+- (instancetype __nonnull)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader {
   CucumberRuntimeIoMultiLoader_initWithJavaLangClassLoader_(self, classLoader);
   return self;
 }
@@ -76,6 +76,7 @@ NSString *CucumberRuntimeIoMultiLoader_CLASSPATH_SCHEME = @"classpath:";
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangClassLoader:);
   methods[1].selector = @selector(resourcesWithNSString:withNSString:);
   methods[2].selector = @selector(packageNameWithNSString:);

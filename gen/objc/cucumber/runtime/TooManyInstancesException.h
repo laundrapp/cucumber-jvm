@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeTooManyInstancesException
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeTooManyInstancesException_) && (INCLUDE_ALL_CucumberRuntimeTooManyInstancesException || defined(INCLUDE_CucumberRuntimeTooManyInstancesException))
 #define CucumberRuntimeTooManyInstancesException_
 
@@ -27,16 +32,16 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaUtilCollection:(id<JavaUtilCollection>)instances;
+- (instancetype __nonnull)initWithJavaUtilCollection:(id<JavaUtilCollection>)instances;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
 
-- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
 
-- (instancetype)initWithNSString:(NSString *)arg0
-           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithNSString:(NSString *)arg0
+                     withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -52,4 +57,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTooManyInstancesException)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeTooManyInstancesException")

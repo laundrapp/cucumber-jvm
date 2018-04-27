@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiEventTimeStampedEvent
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiEventTimeStampedEvent_) && (INCLUDE_ALL_CucumberApiEventTimeStampedEvent || defined(INCLUDE_CucumberApiEventTimeStampedEvent))
 #define CucumberApiEventTimeStampedEvent_
 
@@ -30,7 +35,7 @@
 
 #pragma mark Package-Private
 
-- (instancetype)initWithJavaLangLong:(JavaLangLong *)timeStamp;
+- (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp;
 
 @end
 
@@ -42,4 +47,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventTimeStampedEvent)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiEventTimeStampedEvent")

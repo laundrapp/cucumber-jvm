@@ -38,7 +38,7 @@
   <li> <strong> %s </strong> : Code source </li>                
   </ul>
  */
-- (instancetype)initWithNSString:(NSString *)format;
+- (instancetype __nonnull)initWithNSString:(NSString *)format;
 
 - (NSString *)getCodeSourceWithJavaLangReflectMethod:(JavaLangReflectMethod *)method;
 
@@ -69,7 +69,7 @@ CucumberRuntimeMethodFormat *CucumberRuntimeMethodFormat_FULL;
 
 @implementation CucumberRuntimeMethodFormat
 
-- (instancetype)initWithNSString:(NSString *)format {
+- (instancetype __nonnull)initWithNSString:(NSString *)format {
   CucumberRuntimeMethodFormat_initWithNSString_(self, format);
   return self;
 }
@@ -112,6 +112,7 @@ CucumberRuntimeMethodFormat *CucumberRuntimeMethodFormat_FULL;
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithNSString:);
   methods[1].selector = @selector(formatWithJavaLangReflectMethod:);
   methods[2].selector = @selector(getCodeSourceWithJavaLangReflectMethod:);

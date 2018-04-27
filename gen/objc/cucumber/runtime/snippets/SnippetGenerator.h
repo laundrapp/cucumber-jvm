@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeSnippetsSnippetGenerator
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeSnippetsSnippetGenerator_) && (INCLUDE_ALL_CucumberRuntimeSnippetsSnippetGenerator || defined(INCLUDE_CucumberRuntimeSnippetsSnippetGenerator))
 #define CucumberRuntimeSnippetsSnippetGenerator_
 
@@ -26,7 +31,7 @@
 
 #pragma mark Public
 
-- (instancetype)initWithCucumberRuntimeSnippetsSnippet:(id<CucumberRuntimeSnippetsSnippet>)snippet;
+- (instancetype __nonnull)initWithCucumberRuntimeSnippetsSnippet:(id<CucumberRuntimeSnippetsSnippet>)snippet;
 
 - (NSString *)getSnippetWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
                                         withNSString:(NSString *)keyword
@@ -42,7 +47,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -60,4 +65,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeSnippetsSnippetGenerator)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeSnippetsSnippetGenerator")

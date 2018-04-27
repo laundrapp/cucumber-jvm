@@ -11,9 +11,9 @@
 
 @implementation CucumberApiEventEmbedEvent
 
-- (instancetype)initWithJavaLangLong:(JavaLangLong *)timeStamp
-                       withByteArray:(IOSByteArray *)data
-                        withNSString:(NSString *)mimeType {
+- (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp
+                                 withByteArray:(IOSByteArray *)data
+                                  withNSString:(NSString *)mimeType {
   CucumberApiEventEmbedEvent_initWithJavaLangLong_withByteArray_withNSString_(self, timeStamp, data, mimeType);
   return self;
 }
@@ -30,6 +30,7 @@
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangLong:withByteArray:withNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {

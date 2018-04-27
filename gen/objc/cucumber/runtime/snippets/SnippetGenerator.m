@@ -66,7 +66,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeSnippetsSnippetGenerator)
 
 @implementation CucumberRuntimeSnippetsSnippetGenerator
 
-- (instancetype)initWithCucumberRuntimeSnippetsSnippet:(id<CucumberRuntimeSnippetsSnippet>)snippet {
+- (instancetype __nonnull)initWithCucumberRuntimeSnippetsSnippet:(id<CucumberRuntimeSnippetsSnippet>)snippet {
   CucumberRuntimeSnippetsSnippetGenerator_initWithCucumberRuntimeSnippetsSnippet_(self, snippet);
   return self;
 }
@@ -144,6 +144,7 @@ withCucumberRuntimeSnippetsFunctionNameGenerator:(CucumberRuntimeSnippetsFunctio
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeSnippetsSnippet:);
   methods[1].selector = @selector(getSnippetWithGherkinPicklesPickleStep:withNSString:withCucumberRuntimeSnippetsFunctionNameGenerator:);
   methods[2].selector = @selector(patternForWithNSString:);

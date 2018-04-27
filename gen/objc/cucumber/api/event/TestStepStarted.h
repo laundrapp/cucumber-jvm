@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiEventTestStepStarted
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiEventTestStepStarted_) && (INCLUDE_ALL_CucumberApiEventTestStepStarted || defined(INCLUDE_CucumberApiEventTestStepStarted))
 #define CucumberApiEventTestStepStarted_
 
@@ -30,12 +35,12 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaLangLong:(JavaLangLong *)timeStamp
-             withCucumberApiTestStep:(CucumberApiTestStep *)testStep;
+- (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp
+                       withCucumberApiTestStep:(CucumberApiTestStep *)testStep;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)initWithJavaLangLong:(JavaLangLong *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -53,4 +58,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventTestStepStarted)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiEventTestStepStarted")

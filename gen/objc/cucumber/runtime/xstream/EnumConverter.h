@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeXstreamEnumConverter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeXstreamEnumConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamEnumConverter || defined(INCLUDE_CucumberRuntimeXstreamEnumConverter))
 #define CucumberRuntimeXstreamEnumConverter_
 
@@ -27,8 +32,8 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaUtilLocale:(JavaUtilLocale *)locale
-                          withIOSClass:(IOSClass *)enumClass;
+- (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale
+                                    withIOSClass:(IOSClass *)enumClass;
 
 @end
 
@@ -44,4 +49,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamEnumConverter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeXstreamEnumConverter")

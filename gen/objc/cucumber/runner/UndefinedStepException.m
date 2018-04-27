@@ -12,7 +12,7 @@
 
 @implementation CucumberRunnerUndefinedStepException
 
-- (instancetype)initWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step {
+- (instancetype __nonnull)initWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step {
   CucumberRunnerUndefinedStepException_initWithGherkinPicklesPickleStep_(self, step);
   return self;
 }
@@ -23,6 +23,7 @@
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithGherkinPicklesPickleStep:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LGherkinPicklesPickleStep;" };

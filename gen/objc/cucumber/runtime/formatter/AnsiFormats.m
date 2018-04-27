@@ -25,7 +25,7 @@ J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeFormatterAnsiFormats, formats, id<J
 
 @interface CucumberRuntimeFormatterAnsiFormats_1 : JavaUtilHashMap
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (id<CucumberRuntimeFormatterFormat>)computeIfAbsentWithId:(NSString *)arg0
                                withJavaUtilFunctionFunction:(id<JavaUtilFunctionFunction>)arg1;
@@ -71,7 +71,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterAnsiFormats_1 *create_Cuc
   IOSObjectArray *escapes_;
 }
 
-- (instancetype)initWithCucumberApiFormatterAnsiEscapesArray:(IOSObjectArray *)escapes;
+- (instancetype __nonnull)initWithCucumberApiFormatterAnsiEscapesArray:(IOSObjectArray *)escapes;
 
 - (NSString *)textWithNSString:(NSString *)text;
 
@@ -94,7 +94,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFormatterAnsiFormats)
 @implementation CucumberRuntimeFormatterAnsiFormats
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeFormatterAnsiFormats_init(self);
   return self;
 }
@@ -118,6 +118,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(getWithNSString:);
   methods[2].selector = @selector(upWithInt:);
@@ -156,7 +157,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterAnsiFormats)
 @implementation CucumberRuntimeFormatterAnsiFormats_1
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeFormatterAnsiFormats_1_init(self);
   return self;
 }
@@ -168,6 +169,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LCucumberRuntimeFormatterAnsiFormats;", "Ljava/util/HashMap<Ljava/lang/String;Lcucumber/runtime/formatter/Format;>;" };
@@ -212,7 +214,7 @@ CucumberRuntimeFormatterAnsiFormats_1 *create_CucumberRuntimeFormatterAnsiFormat
 
 @implementation CucumberRuntimeFormatterAnsiFormats_ColorFormat
 
-- (instancetype)initWithCucumberApiFormatterAnsiEscapesArray:(IOSObjectArray *)escapes {
+- (instancetype __nonnull)initWithCucumberApiFormatterAnsiEscapesArray:(IOSObjectArray *)escapes {
   CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_(self, escapes);
   return self;
 }
@@ -245,6 +247,7 @@ CucumberRuntimeFormatterAnsiFormats_1 *create_CucumberRuntimeFormatterAnsiFormat
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberApiFormatterAnsiEscapesArray:);
   methods[1].selector = @selector(textWithNSString:);
   #pragma clang diagnostic pop

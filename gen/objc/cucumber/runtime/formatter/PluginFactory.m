@@ -119,7 +119,7 @@ __attribute__((unused)) static IOSClass *CucumberRuntimeFormatterPluginFactory_g
 
 @interface CucumberRuntimeFormatterPluginFactory_1 : JavaUtilHashMap
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (IOSClass *)computeIfAbsentWithId:(NSString *)arg0
        withJavaUtilFunctionFunction:(id<JavaUtilFunctionFunction>)arg1;
@@ -162,7 +162,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterPluginFactory_1 *create_C
 
 @interface CucumberRuntimeFormatterPluginFactory_2 : JavaIoPrintStream
 
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)x0;
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)x0;
 
 - (void)close;
 
@@ -181,7 +181,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFormatterPluginFactory)
 @implementation CucumberRuntimeFormatterPluginFactory
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeFormatterPluginFactory_init(self);
   return self;
 }
@@ -290,6 +290,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(createWithNSString:);
   methods[2].selector = @selector(instantiateWithNSString:withIOSClass:withNSString:);
@@ -503,7 +504,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterPluginFactory)
 @implementation CucumberRuntimeFormatterPluginFactory_1
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeFormatterPluginFactory_1_init(self);
   return self;
 }
@@ -515,6 +516,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LCucumberRuntimeFormatterPluginFactory;", "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Class<+Lcucumber/api/Plugin;>;>;" };
@@ -551,7 +553,7 @@ CucumberRuntimeFormatterPluginFactory_1 *create_CucumberRuntimeFormatterPluginFa
 
 @implementation CucumberRuntimeFormatterPluginFactory_2
 
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)x0 {
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)x0 {
   CucumberRuntimeFormatterPluginFactory_2_initWithJavaIoOutputStream_(self, x0);
   return self;
 }
@@ -566,6 +568,7 @@ CucumberRuntimeFormatterPluginFactory_1 *create_CucumberRuntimeFormatterPluginFa
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaIoOutputStream:);
   methods[1].selector = @selector(close);
   #pragma clang diagnostic pop

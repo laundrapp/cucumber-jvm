@@ -52,9 +52,9 @@ CucumberApiResult *CucumberApiResult_UNDEFINED;
 
 @implementation CucumberApiResult
 
-- (instancetype)initWithCucumberApiResult_Type:(CucumberApiResult_Type *)status
-                              withJavaLangLong:(JavaLangLong *)duration
-                         withJavaLangThrowable:(JavaLangThrowable *)error {
+- (instancetype __nonnull)initWithCucumberApiResult_Type:(CucumberApiResult_Type *)status
+                                        withJavaLangLong:(JavaLangLong *)duration
+                                   withJavaLangThrowable:(JavaLangThrowable *)error {
   CucumberApiResult_initWithCucumberApiResult_Type_withJavaLangLong_withJavaLangThrowable_(self, status, duration, error);
   return self;
 }
@@ -117,6 +117,7 @@ CucumberApiResult *CucumberApiResult_UNDEFINED;
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberApiResult_Type:withJavaLangLong:withJavaLangThrowable:);
   methods[1].selector = @selector(getStatus);
   methods[2].selector = @selector(getDuration);
@@ -219,6 +220,7 @@ CucumberApiResult_Type *CucumberApiResult_Type_values_[6];
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(fromLowerCaseNameWithNSString:);
   methods[1].selector = @selector(lowerCaseName);
   methods[2].selector = @selector(firstLetterCapitalizedName);
@@ -245,7 +247,7 @@ CucumberApiResult_Type *CucumberApiResult_Type_values_[6];
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
     for (jint i = 0; i < 6; i++) {
-      (CucumberApiResult_Type_values_[i] = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+      ((void)(CucumberApiResult_Type_values_[i] = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
       CucumberApiResult_Type_initWithNSString_withInt_(e, JreEnumConstantName(CucumberApiResult_Type_class_(), i), i);
     }
     J2OBJC_SET_INITIALIZED(CucumberApiResult_Type)

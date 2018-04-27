@@ -36,9 +36,9 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeIoClasspathResourceIterable, suffix_, NSStrin
 
 @implementation CucumberRuntimeIoClasspathResourceIterable
 
-- (instancetype)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader
-                               withNSString:(NSString *)path
-                               withNSString:(NSString *)suffix {
+- (instancetype __nonnull)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader
+                                         withNSString:(NSString *)path
+                                         withNSString:(NSString *)suffix {
   CucumberRuntimeIoClasspathResourceIterable_initWithJavaLangClassLoader_withNSString_withNSString_(self, classLoader, path, suffix);
   return self;
 }
@@ -68,7 +68,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeIoClasspathResourceIterable, suffix_, NSStrin
 }
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id *)stackbuf count:(NSUInteger)len {
-  return JreDefaultFastEnumeration(self, state, stackbuf, len);
+  return JreDefaultFastEnumeration(self, state, stackbuf);
 }
 
 - (void)dealloc {
@@ -86,6 +86,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeIoClasspathResourceIterable, suffix_, NSStrin
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangClassLoader:withNSString:withNSString:);
   methods[1].selector = @selector(iterator);
   #pragma clang diagnostic pop

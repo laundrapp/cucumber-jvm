@@ -71,37 +71,37 @@ __attribute__((unused)) static id<JavaUtilCollection> CucumberRuntimeRuntime_loa
 
 @implementation CucumberRuntimeRuntime
 
-- (instancetype)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                         withCucumberRuntimeClassFinder:(id<CucumberRuntimeClassFinder>)classFinder
-                                withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
-                      withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions {
+- (instancetype __nonnull)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
+                                   withCucumberRuntimeClassFinder:(id<CucumberRuntimeClassFinder>)classFinder
+                                          withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
+                                withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions {
   CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withCucumberRuntimeClassFinder_withJavaLangClassLoader_withCucumberRuntimeRuntimeOptions_(self, resourceLoader, classFinder, classLoader, runtimeOptions);
   return self;
 }
 
-- (instancetype)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
-                                 withJavaUtilCollection:(id<JavaUtilCollection>)backends
-                      withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions {
+- (instancetype __nonnull)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
+                                          withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
+                                           withJavaUtilCollection:(id<JavaUtilCollection>)backends
+                                withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions {
   CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_(self, resourceLoader, classLoader, backends, runtimeOptions);
   return self;
 }
 
-- (instancetype)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
-                                 withJavaUtilCollection:(id<JavaUtilCollection>)backends
-                      withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions
-                                withCucumberRuntimeGlue:(id<CucumberRuntimeGlue>)optionalGlue {
+- (instancetype __nonnull)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
+                                          withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
+                                           withJavaUtilCollection:(id<JavaUtilCollection>)backends
+                                withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions
+                                          withCucumberRuntimeGlue:(id<CucumberRuntimeGlue>)optionalGlue {
   CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_withCucumberRuntimeGlue_(self, resourceLoader, classLoader, backends, runtimeOptions, optionalGlue);
   return self;
 }
 
-- (instancetype)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
-                                 withJavaUtilCollection:(id<JavaUtilCollection>)backends
-                      withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions
-                          withCucumberRunnerTimeService:(id<CucumberRunnerTimeService>)stopWatch
-                                withCucumberRuntimeGlue:(id<CucumberRuntimeGlue>)optionalGlue {
+- (instancetype __nonnull)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
+                                          withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
+                                           withJavaUtilCollection:(id<JavaUtilCollection>)backends
+                                withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions
+                                    withCucumberRunnerTimeService:(id<CucumberRunnerTimeService>)stopWatch
+                                          withCucumberRuntimeGlue:(id<CucumberRuntimeGlue>)optionalGlue {
   CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_withCucumberRunnerTimeService_withCucumberRuntimeGlue_(self, resourceLoader, classLoader, backends, runtimeOptions, stopWatch, optionalGlue);
   return self;
 }
@@ -221,6 +221,7 @@ __attribute__((unused)) static id<JavaUtilCollection> CucumberRuntimeRuntime_loa
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeIoResourceLoader:withCucumberRuntimeClassFinder:withJavaLangClassLoader:withCucumberRuntimeRuntimeOptions:);
   methods[1].selector = @selector(initWithCucumberRuntimeIoResourceLoader:withJavaLangClassLoader:withJavaUtilCollection:withCucumberRuntimeRuntimeOptions:);
   methods[2].selector = @selector(initWithCucumberRuntimeIoResourceLoader:withJavaLangClassLoader:withJavaUtilCollection:withCucumberRuntimeRuntimeOptions:withCucumberRuntimeGlue:);

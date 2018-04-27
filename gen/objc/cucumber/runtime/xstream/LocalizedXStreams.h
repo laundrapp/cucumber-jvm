@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeXstreamLocalizedXStreams
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeXstreamLocalizedXStreams_) && (INCLUDE_ALL_CucumberRuntimeXstreamLocalizedXStreams || defined(INCLUDE_CucumberRuntimeXstreamLocalizedXStreams))
 #define CucumberRuntimeXstreamLocalizedXStreams_
 
@@ -25,16 +30,16 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
+- (instancetype __nonnull)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
 
-- (instancetype)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader
-                           withJavaUtilList:(id<JavaUtilList>)extraConverters;
+- (instancetype __nonnull)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader
+                                     withJavaUtilList:(id<JavaUtilList>)extraConverters;
 
 - (CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *)getWithJavaUtilLocale:(JavaUtilLocale *)locale;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -79,10 +84,10 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamLocalizedXStreams)
 
 #pragma mark Public
 
-- (instancetype)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader
+- (instancetype __nonnull)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader
 withCucumberDepsComThoughtworksXstreamConvertersConverterLookup:(id<CucumberDepsComThoughtworksXstreamConvertersConverterLookup>)converterLookup
 withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry:(id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry>)converterRegistry
-                         withJavaUtilLocale:(JavaUtilLocale *)locale;
+                                   withJavaUtilLocale:(JavaUtilLocale *)locale;
 
 - (id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>)createListConverterWithNSString:(NSString *)delimiter
                                    withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>)elementConverter;
@@ -97,50 +102,50 @@ withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry:(id<CucumberDe
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
-- (instancetype)initWithCucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider:(id<CucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider>)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithCucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider:(id<CucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider>)arg0 NS_UNAVAILABLE;
 
-- (instancetype)initWithCucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider:(id<CucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider>)arg0
-                                withCucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver:(id<CucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver>)arg1 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithCucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider:(id<CucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider>)arg0
+                                          withCucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver:(id<CucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver>)arg1 NS_UNAVAILABLE;
 
-- (instancetype)initWithCucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider:(id<CucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider>)arg0
-                                withCucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver:(id<CucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver>)arg1
-                                  withCucumberDepsComThoughtworksXstreamCoreClassLoaderReference:(CucumberDepsComThoughtworksXstreamCoreClassLoaderReference *)arg2 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithCucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider:(id<CucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider>)arg0
+                                          withCucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver:(id<CucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver>)arg1
+                                            withCucumberDepsComThoughtworksXstreamCoreClassLoaderReference:(CucumberDepsComThoughtworksXstreamCoreClassLoaderReference *)arg2 NS_UNAVAILABLE;
 
-- (instancetype)initWithCucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider:(id<CucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider>)arg0
-                                withCucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver:(id<CucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver>)arg1
-                                  withCucumberDepsComThoughtworksXstreamCoreClassLoaderReference:(CucumberDepsComThoughtworksXstreamCoreClassLoaderReference *)arg2
-                                              withCucumberDepsComThoughtworksXstreamMapperMapper:(id<CucumberDepsComThoughtworksXstreamMapperMapper>)arg3 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithCucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider:(id<CucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider>)arg0
+                                          withCucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver:(id<CucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver>)arg1
+                                            withCucumberDepsComThoughtworksXstreamCoreClassLoaderReference:(CucumberDepsComThoughtworksXstreamCoreClassLoaderReference *)arg2
+                                                        withCucumberDepsComThoughtworksXstreamMapperMapper:(id<CucumberDepsComThoughtworksXstreamMapperMapper>)arg3 NS_UNAVAILABLE;
 
-- (instancetype)initWithCucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider:(id<CucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider>)arg0
-                                withCucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver:(id<CucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver>)arg1
-                                  withCucumberDepsComThoughtworksXstreamCoreClassLoaderReference:(CucumberDepsComThoughtworksXstreamCoreClassLoaderReference *)arg2
-                                              withCucumberDepsComThoughtworksXstreamMapperMapper:(id<CucumberDepsComThoughtworksXstreamMapperMapper>)arg3
-                                 withCucumberDepsComThoughtworksXstreamConvertersConverterLookup:(id<CucumberDepsComThoughtworksXstreamConvertersConverterLookup>)arg4
-                               withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry:(id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry>)arg5 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithCucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider:(id<CucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider>)arg0
+                                          withCucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver:(id<CucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver>)arg1
+                                            withCucumberDepsComThoughtworksXstreamCoreClassLoaderReference:(CucumberDepsComThoughtworksXstreamCoreClassLoaderReference *)arg2
+                                                        withCucumberDepsComThoughtworksXstreamMapperMapper:(id<CucumberDepsComThoughtworksXstreamMapperMapper>)arg3
+                                           withCucumberDepsComThoughtworksXstreamConvertersConverterLookup:(id<CucumberDepsComThoughtworksXstreamConvertersConverterLookup>)arg4
+                                         withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry:(id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry>)arg5 NS_UNAVAILABLE;
 
-- (instancetype)initWithCucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider:(id<CucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider>)arg0
-                                withCucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver:(id<CucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver>)arg1
-                                                                         withJavaLangClassLoader:(JavaLangClassLoader *)arg2 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithCucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider:(id<CucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider>)arg0
+                                          withCucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver:(id<CucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver>)arg1
+                                                                                   withJavaLangClassLoader:(JavaLangClassLoader *)arg2 NS_UNAVAILABLE;
 
-- (instancetype)initWithCucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider:(id<CucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider>)arg0
-                                withCucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver:(id<CucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver>)arg1
-                                                                         withJavaLangClassLoader:(JavaLangClassLoader *)arg2
-                                              withCucumberDepsComThoughtworksXstreamMapperMapper:(id<CucumberDepsComThoughtworksXstreamMapperMapper>)arg3 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithCucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider:(id<CucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider>)arg0
+                                          withCucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver:(id<CucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver>)arg1
+                                                                                   withJavaLangClassLoader:(JavaLangClassLoader *)arg2
+                                                        withCucumberDepsComThoughtworksXstreamMapperMapper:(id<CucumberDepsComThoughtworksXstreamMapperMapper>)arg3 NS_UNAVAILABLE;
 
-- (instancetype)initWithCucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider:(id<CucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider>)arg0
-                                withCucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver:(id<CucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver>)arg1
-                                                                         withJavaLangClassLoader:(JavaLangClassLoader *)arg2
-                                              withCucumberDepsComThoughtworksXstreamMapperMapper:(id<CucumberDepsComThoughtworksXstreamMapperMapper>)arg3
-                                 withCucumberDepsComThoughtworksXstreamConvertersConverterLookup:(id<CucumberDepsComThoughtworksXstreamConvertersConverterLookup>)arg4
-                               withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry:(id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry>)arg5 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithCucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider:(id<CucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider>)arg0
+                                          withCucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver:(id<CucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver>)arg1
+                                                                                   withJavaLangClassLoader:(JavaLangClassLoader *)arg2
+                                                        withCucumberDepsComThoughtworksXstreamMapperMapper:(id<CucumberDepsComThoughtworksXstreamMapperMapper>)arg3
+                                           withCucumberDepsComThoughtworksXstreamConvertersConverterLookup:(id<CucumberDepsComThoughtworksXstreamConvertersConverterLookup>)arg4
+                                         withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry:(id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry>)arg5 NS_UNAVAILABLE;
 
-- (instancetype)initWithCucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider:(id<CucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider>)arg0
-                                              withCucumberDepsComThoughtworksXstreamMapperMapper:(id<CucumberDepsComThoughtworksXstreamMapperMapper>)arg1
-                                withCucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver:(id<CucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver>)arg2 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithCucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider:(id<CucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider>)arg0
+                                                        withCucumberDepsComThoughtworksXstreamMapperMapper:(id<CucumberDepsComThoughtworksXstreamMapperMapper>)arg1
+                                          withCucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver:(id<CucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver>)arg2 NS_UNAVAILABLE;
 
-- (instancetype)initWithCucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver:(id<CucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver>)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithCucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver:(id<CucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver>)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -156,4 +161,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStr
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeXstreamLocalizedXStreams")

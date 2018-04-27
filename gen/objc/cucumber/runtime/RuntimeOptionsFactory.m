@@ -119,7 +119,7 @@ __attribute__((unused)) static id<CucumberApiCucumberOptions> CucumberRuntimeRun
 
 @implementation CucumberRuntimeRuntimeOptionsFactory
 
-- (instancetype)initWithIOSClass:(IOSClass *)clazz {
+- (instancetype __nonnull)initWithIOSClass:(IOSClass *)clazz {
   CucumberRuntimeRuntimeOptionsFactory_initWithIOSClass_(self, clazz);
   return self;
 }
@@ -259,6 +259,7 @@ __attribute__((unused)) static id<CucumberApiCucumberOptions> CucumberRuntimeRun
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithIOSClass:);
   methods[1].selector = @selector(create);
   methods[2].selector = @selector(buildArgsFromOptions);

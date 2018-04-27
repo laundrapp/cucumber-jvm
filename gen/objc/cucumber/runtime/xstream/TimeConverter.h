@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeXstreamTimeConverter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeXstreamTimeConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamTimeConverter || defined(INCLUDE_CucumberRuntimeXstreamTimeConverter))
 #define CucumberRuntimeXstreamTimeConverter_
 
@@ -43,8 +48,8 @@
 
 #pragma mark Package-Private
 
-- (instancetype)initWithJavaUtilLocale:(JavaUtilLocale *)locale
-                     withIOSClassArray:(IOSObjectArray *)convertibleTypes;
+- (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale
+                               withIOSClassArray:(IOSObjectArray *)convertibleTypes;
 
 - (void)addWithJavaTextDateFormat:(JavaTextDateFormat *)dateFormat;
 
@@ -63,4 +68,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamTimeConverter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeXstreamTimeConverter")

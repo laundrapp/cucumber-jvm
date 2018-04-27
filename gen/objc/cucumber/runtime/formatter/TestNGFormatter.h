@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeFormatterTestNGFormatter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeFormatterTestNGFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterTestNGFormatter || defined(INCLUDE_CucumberRuntimeFormatterTestNGFormatter))
 #define CucumberRuntimeFormatterTestNGFormatter_
 
@@ -31,7 +36,7 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaNetURL:(JavaNetURL *)url;
+- (instancetype __nonnull)initWithJavaNetURL:(JavaNetURL *)url;
 
 - (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
 
@@ -39,7 +44,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -55,4 +60,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterTestNGFormatter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeFormatterTestNGFormatter")

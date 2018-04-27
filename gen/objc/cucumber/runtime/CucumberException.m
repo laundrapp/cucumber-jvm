@@ -10,18 +10,18 @@
 
 @implementation CucumberRuntimeCucumberException
 
-- (instancetype)initWithNSString:(NSString *)message {
+- (instancetype __nonnull)initWithNSString:(NSString *)message {
   CucumberRuntimeCucumberException_initWithNSString_(self, message);
   return self;
 }
 
-- (instancetype)initWithNSString:(NSString *)message
-           withJavaLangThrowable:(JavaLangThrowable *)e {
+- (instancetype __nonnull)initWithNSString:(NSString *)message
+                     withJavaLangThrowable:(JavaLangThrowable *)e {
   CucumberRuntimeCucumberException_initWithNSString_withJavaLangThrowable_(self, message, e);
   return self;
 }
 
-- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)e {
+- (instancetype __nonnull)initWithJavaLangThrowable:(JavaLangThrowable *)e {
   CucumberRuntimeCucumberException_initWithJavaLangThrowable_(self, e);
   return self;
 }
@@ -34,6 +34,7 @@
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithNSString:);
   methods[1].selector = @selector(initWithNSString:withJavaLangThrowable:);
   methods[2].selector = @selector(initWithJavaLangThrowable:);

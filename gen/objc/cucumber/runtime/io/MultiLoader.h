@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeIoMultiLoader
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeIoMultiLoader_) && (INCLUDE_ALL_CucumberRuntimeIoMultiLoader || defined(INCLUDE_CucumberRuntimeIoMultiLoader))
 #define CucumberRuntimeIoMultiLoader_
 
@@ -27,7 +32,7 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
+- (instancetype __nonnull)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
 
 + (NSString *)packageNameWithNSString:(NSString *)gluePath;
 
@@ -36,7 +41,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -59,4 +64,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoMultiLoader)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeIoMultiLoader")

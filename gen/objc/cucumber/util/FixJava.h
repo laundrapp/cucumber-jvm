@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberUtilFixJava
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberUtilFixJava_) && (INCLUDE_ALL_CucumberUtilFixJava || defined(INCLUDE_CucumberUtilFixJava))
 #define CucumberUtilFixJava_
 
@@ -26,7 +31,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 + (NSString *)joinWithJavaUtilList:(id<JavaUtilList>)strings
                       withNSString:(NSString *)separator;
@@ -64,4 +69,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberUtilFixJava)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberUtilFixJava")

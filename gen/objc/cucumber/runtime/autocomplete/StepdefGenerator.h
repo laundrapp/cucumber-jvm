@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeAutocompleteStepdefGenerator
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeAutocompleteStepdefGenerator_) && (INCLUDE_ALL_CucumberRuntimeAutocompleteStepdefGenerator || defined(INCLUDE_CucumberRuntimeAutocompleteStepdefGenerator))
 #define CucumberRuntimeAutocompleteStepdefGenerator_
 
@@ -26,7 +31,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (id<JavaUtilList>)generateWithJavaUtilCollection:(id<JavaUtilCollection>)stepDefinitions
                                   withJavaUtilList:(id<JavaUtilList>)features;
@@ -45,4 +50,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeAutocompleteStepdefGenerator)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeAutocompleteStepdefGenerator")

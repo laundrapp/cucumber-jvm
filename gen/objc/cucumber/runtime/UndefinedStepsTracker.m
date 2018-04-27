@@ -89,7 +89,7 @@ __attribute__((unused)) static NSString *CucumberRuntimeUndefinedStepsTracker_co
   CucumberRuntimeUndefinedStepsTracker *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeUndefinedStepsTracker:(CucumberRuntimeUndefinedStepsTracker *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeUndefinedStepsTracker:(CucumberRuntimeUndefinedStepsTracker *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestSourceRead *)event;
 
@@ -108,7 +108,7 @@ __attribute__((unused)) static CucumberRuntimeUndefinedStepsTracker_1 *create_Cu
   CucumberRuntimeUndefinedStepsTracker *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeUndefinedStepsTracker:(CucumberRuntimeUndefinedStepsTracker *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeUndefinedStepsTracker:(CucumberRuntimeUndefinedStepsTracker *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventSnippetsSuggestedEvent *)event;
 
@@ -128,8 +128,8 @@ __attribute__((unused)) static CucumberRuntimeUndefinedStepsTracker_2 *create_Cu
   id<JavaUtilMap> stepMap_;
 }
 
-- (instancetype)initWithGherkinGherkinDialect:(GherkinGherkinDialect *)dialect
-                              withJavaUtilMap:(id<JavaUtilMap>)stepMap;
+- (instancetype __nonnull)initWithGherkinGherkinDialect:(GherkinGherkinDialect *)dialect
+                                        withJavaUtilMap:(id<JavaUtilMap>)stepMap;
 
 @end
 
@@ -152,7 +152,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeUndefinedStepsTracker_FeatureStepMap)
   CucumberRuntimeUndefinedStepsTracker_StepNode *previous_;
 }
 
-- (instancetype)initWithGherkinAstStep:(GherkinAstStep *)step
+- (instancetype __nonnull)initWithGherkinAstStep:(GherkinAstStep *)step
 withCucumberRuntimeUndefinedStepsTracker_StepNode:(CucumberRuntimeUndefinedStepsTracker_StepNode *)previous;
 
 @end
@@ -173,7 +173,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeUndefinedStepsTracker_StepNode)
 @implementation CucumberRuntimeUndefinedStepsTracker
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeUndefinedStepsTracker_init(self);
   return self;
 }
@@ -264,6 +264,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
   methods[2].selector = @selector(hasUndefinedSteps);
@@ -404,7 +405,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeUndefinedStepsTracker)
 
 @implementation CucumberRuntimeUndefinedStepsTracker_1
 
-- (instancetype)initWithCucumberRuntimeUndefinedStepsTracker:(CucumberRuntimeUndefinedStepsTracker *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeUndefinedStepsTracker:(CucumberRuntimeUndefinedStepsTracker *)outer$ {
   CucumberRuntimeUndefinedStepsTracker_1_initWithCucumberRuntimeUndefinedStepsTracker_(self, outer$);
   return self;
 }
@@ -425,6 +426,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeUndefinedStepsTracker)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeUndefinedStepsTracker:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -453,7 +455,7 @@ CucumberRuntimeUndefinedStepsTracker_1 *create_CucumberRuntimeUndefinedStepsTrac
 
 @implementation CucumberRuntimeUndefinedStepsTracker_2
 
-- (instancetype)initWithCucumberRuntimeUndefinedStepsTracker:(CucumberRuntimeUndefinedStepsTracker *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeUndefinedStepsTracker:(CucumberRuntimeUndefinedStepsTracker *)outer$ {
   CucumberRuntimeUndefinedStepsTracker_2_initWithCucumberRuntimeUndefinedStepsTracker_(self, outer$);
   return self;
 }
@@ -474,6 +476,7 @@ CucumberRuntimeUndefinedStepsTracker_1 *create_CucumberRuntimeUndefinedStepsTrac
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeUndefinedStepsTracker:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -502,8 +505,8 @@ CucumberRuntimeUndefinedStepsTracker_2 *create_CucumberRuntimeUndefinedStepsTrac
 
 @implementation CucumberRuntimeUndefinedStepsTracker_FeatureStepMap
 
-- (instancetype)initWithGherkinGherkinDialect:(GherkinGherkinDialect *)dialect
-                              withJavaUtilMap:(id<JavaUtilMap>)stepMap {
+- (instancetype __nonnull)initWithGherkinGherkinDialect:(GherkinGherkinDialect *)dialect
+                                        withJavaUtilMap:(id<JavaUtilMap>)stepMap {
   CucumberRuntimeUndefinedStepsTracker_FeatureStepMap_initWithGherkinGherkinDialect_withJavaUtilMap_(self, dialect, stepMap);
   return self;
 }
@@ -520,6 +523,7 @@ CucumberRuntimeUndefinedStepsTracker_2 *create_CucumberRuntimeUndefinedStepsTrac
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithGherkinGherkinDialect:withJavaUtilMap:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
@@ -551,7 +555,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeUndefinedStepsTracker_FeatureSte
 
 @implementation CucumberRuntimeUndefinedStepsTracker_StepNode
 
-- (instancetype)initWithGherkinAstStep:(GherkinAstStep *)step
+- (instancetype __nonnull)initWithGherkinAstStep:(GherkinAstStep *)step
 withCucumberRuntimeUndefinedStepsTracker_StepNode:(CucumberRuntimeUndefinedStepsTracker_StepNode *)previous {
   CucumberRuntimeUndefinedStepsTracker_StepNode_initWithGherkinAstStep_withCucumberRuntimeUndefinedStepsTracker_StepNode_(self, step, previous);
   return self;
@@ -569,6 +573,7 @@ withCucumberRuntimeUndefinedStepsTracker_StepNode:(CucumberRuntimeUndefinedSteps
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithGherkinAstStep:withCucumberRuntimeUndefinedStepsTracker_StepNode:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {

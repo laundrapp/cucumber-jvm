@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiSummaryPrinter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiSummaryPrinter_) && (INCLUDE_ALL_CucumberApiSummaryPrinter || defined(INCLUDE_CucumberApiSummaryPrinter))
 #define CucumberApiSummaryPrinter_
 
@@ -38,4 +43,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiSummaryPrinter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiSummaryPrinter")

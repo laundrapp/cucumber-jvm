@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeTableTablePrinter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeTableTablePrinter_) && (INCLUDE_ALL_CucumberRuntimeTableTablePrinter || defined(INCLUDE_CucumberRuntimeTableTablePrinter))
 #define CucumberRuntimeTableTablePrinter_
 
@@ -23,7 +28,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (void)printTableWithJavaUtilList:(id<JavaUtilList>)table
          withJavaLangStringBuilder:(JavaLangStringBuilder *)result;
@@ -47,4 +52,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTableTablePrinter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeTableTablePrinter")

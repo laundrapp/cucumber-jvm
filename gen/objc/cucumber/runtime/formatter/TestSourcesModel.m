@@ -64,7 +64,7 @@ __attribute__((unused)) static void CucumberRuntimeFormatterTestSourcesModel_pro
 @implementation CucumberRuntimeFormatterTestSourcesModel
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeFormatterTestSourcesModel_init(self);
   return self;
 }
@@ -216,6 +216,7 @@ withCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTe
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(getFeatureForTestCaseWithCucumberRuntimeFormatterTestSourcesModel_AstNode:);
   methods[2].selector = @selector(getBackgroundForTestCaseWithCucumberRuntimeFormatterTestSourcesModel_AstNode:);
@@ -381,9 +382,9 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterTestSourcesModel)
 
 @implementation CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode
 
-- (instancetype)initWithCucumberRuntimeFormatterTestSourcesModel:(CucumberRuntimeFormatterTestSourcesModel *)outer$
-                                              withGherkinAstNode:(GherkinAstNode *)examplesRow
-                                                         withInt:(jint)bodyRowIndex {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterTestSourcesModel:(CucumberRuntimeFormatterTestSourcesModel *)outer$
+                                                        withGherkinAstNode:(GherkinAstNode *)examplesRow
+                                                                   withInt:(jint)bodyRowIndex {
   CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withInt_(self, outer$, examplesRow, bodyRowIndex);
   return self;
 }
@@ -394,6 +395,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterTestSourcesModel)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterTestSourcesModel:withGherkinAstNode:withInt:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
@@ -423,9 +425,9 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterTestSourcesModel_Exampl
 
 @implementation CucumberRuntimeFormatterTestSourcesModel_AstNode
 
-- (instancetype)initWithCucumberRuntimeFormatterTestSourcesModel:(CucumberRuntimeFormatterTestSourcesModel *)outer$
-                                              withGherkinAstNode:(GherkinAstNode *)node
-            withCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)parent {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterTestSourcesModel:(CucumberRuntimeFormatterTestSourcesModel *)outer$
+                                                        withGherkinAstNode:(GherkinAstNode *)node
+                      withCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)parent {
   CucumberRuntimeFormatterTestSourcesModel_AstNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(self, outer$, node, parent);
   return self;
 }
@@ -442,6 +444,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterTestSourcesModel_Exampl
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterTestSourcesModel:withGherkinAstNode:withCucumberRuntimeFormatterTestSourcesModel_AstNode:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeIoFileResourceLoader
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeIoFileResourceLoader_) && (INCLUDE_ALL_CucumberRuntimeIoFileResourceLoader || defined(INCLUDE_CucumberRuntimeIoFileResourceLoader))
 #define CucumberRuntimeIoFileResourceLoader_
 
@@ -26,7 +31,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (id<JavaLangIterable>)resourcesWithNSString:(NSString *)path
                                  withNSString:(NSString *)suffix;
@@ -45,4 +50,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoFileResourceLoader)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeIoFileResourceLoader")

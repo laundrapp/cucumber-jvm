@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeXstreamCellWriter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeXstreamCellWriter_) && (INCLUDE_ALL_CucumberRuntimeXstreamCellWriter || defined(INCLUDE_CucumberRuntimeXstreamCellWriter))
 #define CucumberRuntimeXstreamCellWriter_
 
@@ -26,7 +31,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (id<JavaUtilList>)getHeader;
 
@@ -42,4 +47,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamCellWriter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeXstreamCellWriter")

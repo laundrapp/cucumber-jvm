@@ -19,6 +19,11 @@
 #define INCLUDE_CucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy 1
 #endif
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeFormatterUsageFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterUsageFormatter || defined(INCLUDE_CucumberRuntimeFormatterUsageFormatter))
 #define CucumberRuntimeFormatterUsageFormatter_
 
@@ -47,7 +52,7 @@
  @brief Constructor
  @param outArg<code>Appendable</code>  to print the result
  */
-- (instancetype)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg;
+- (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg;
 
 /*!
  @brief Add a <code>UsageStatisticStrategy</code> to the formatter
@@ -67,7 +72,7 @@ withCucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy:(id<CucumberRu
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -107,7 +112,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter)
 
 #pragma mark Package-Private
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 @end
 
@@ -144,7 +149,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter_StepDefContain
 
 #pragma mark Package-Private
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 @end
 
@@ -177,7 +182,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter_StepContainer)
 
 #pragma mark Package-Private
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 @end
 
@@ -238,7 +243,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter_UsageStatistic
 
 #pragma mark Package-Private
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 @end
 
@@ -271,7 +276,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter_AverageUsageSt
 
 #pragma mark Package-Private
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 @end
 
@@ -287,4 +292,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter_MedianUsageSta
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeFormatterUsageFormatter")

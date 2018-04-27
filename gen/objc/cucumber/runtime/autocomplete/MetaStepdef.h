@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeAutocompleteMetaStepdef
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeAutocompleteMetaStepdef_) && (INCLUDE_ALL_CucumberRuntimeAutocompleteMetaStepdef || defined(INCLUDE_CucumberRuntimeAutocompleteMetaStepdef))
 #define CucumberRuntimeAutocompleteMetaStepdef_
 
@@ -27,7 +32,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (jboolean)isEqual:(id)o;
 
@@ -72,7 +77,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeAutocompleteMetaStepdef)
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (jint)compareToWithId:(CucumberRuntimeAutocompleteMetaStepdef_MetaStep *)other;
 
@@ -108,7 +113,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeAutocompleteMetaStepdef_MetaStep)
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 @end
 
@@ -126,4 +131,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeAutocompleteMetaStepdef_MetaArgument)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeAutocompleteMetaStepdef")

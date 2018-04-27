@@ -18,6 +18,7 @@
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(mapWithId:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "map", "LNSObject;", "(TT;)TR;", "<T:Ljava/lang/Object;R:Ljava/lang/Object;>Ljava/lang/Object;" };

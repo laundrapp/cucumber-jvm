@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeNamePredicate
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeNamePredicate_) && (INCLUDE_ALL_CucumberRuntimeNamePredicate || defined(INCLUDE_CucumberRuntimeNamePredicate))
 #define CucumberRuntimeNamePredicate_
 
@@ -27,13 +32,13 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)patterns;
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)patterns;
 
 - (jboolean)applyWithGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -49,4 +54,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeNamePredicate)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeNamePredicate")

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeFormatterNullFormatter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeFormatterNullFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterNullFormatter || defined(INCLUDE_CucumberRuntimeFormatterNullFormatter))
 #define CucumberRuntimeFormatterNullFormatter_
 
@@ -26,7 +31,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
 
@@ -44,4 +49,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterNullFormatter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeFormatterNullFormatter")

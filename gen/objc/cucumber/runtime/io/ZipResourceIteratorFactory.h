@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeIoZipResourceIteratorFactory
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeIoZipResourceIteratorFactory_) && (INCLUDE_ALL_CucumberRuntimeIoZipResourceIteratorFactory || defined(INCLUDE_CucumberRuntimeIoZipResourceIteratorFactory))
 #define CucumberRuntimeIoZipResourceIteratorFactory_
 
@@ -31,7 +36,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (id<JavaUtilIterator>)createIteratorWithJavaNetURL:(JavaNetURL *)url
                                         withNSString:(NSString *)path
@@ -53,4 +58,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoZipResourceIteratorFactory)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeIoZipResourceIteratorFactory")

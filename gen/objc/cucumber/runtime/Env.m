@@ -34,24 +34,24 @@ CucumberRuntimeEnv *CucumberRuntimeEnv_INSTANCE;
 @implementation CucumberRuntimeEnv
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeEnv_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (instancetype)initWithNSString:(NSString *)bundleName {
+- (instancetype __nonnull)initWithNSString:(NSString *)bundleName {
   CucumberRuntimeEnv_initWithNSString_(self, bundleName);
   return self;
 }
 
-- (instancetype)initWithJavaUtilProperties:(JavaUtilProperties *)properties {
+- (instancetype __nonnull)initWithJavaUtilProperties:(JavaUtilProperties *)properties {
   CucumberRuntimeEnv_initWithJavaUtilProperties_(self, properties);
   return self;
 }
 
-- (instancetype)initWithNSString:(NSString *)bundleName
-          withJavaUtilProperties:(JavaUtilProperties *)properties {
+- (instancetype __nonnull)initWithNSString:(NSString *)bundleName
+                    withJavaUtilProperties:(JavaUtilProperties *)properties {
   CucumberRuntimeEnv_initWithNSString_withJavaUtilProperties_(self, bundleName, properties);
   return self;
 }
@@ -88,6 +88,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(initWithNSString:);
   methods[2].selector = @selector(initWithJavaUtilProperties:);

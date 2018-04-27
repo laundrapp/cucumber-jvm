@@ -37,7 +37,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamConverterWithEnumFormat, typeClass_, I
   CucumberRuntimeXstreamConverterWithEnumFormat *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$;
 
 - (JavaLangStringBuffer *)formatWithId:(id)obj
               withJavaLangStringBuffer:(JavaLangStringBuffer *)toAppendTo
@@ -58,7 +58,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamConverterWithEnumFormat_Abstrac
 
 @interface CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat : CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat
 
-- (instancetype)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$;
 
 - (NSString *)transformSourceWithNSString:(NSString *)source;
 
@@ -79,7 +79,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamConverterWithEnumFormat_Origina
   CucumberRuntimeXstreamConverterWithEnumFormat *this$1_;
 }
 
-- (instancetype)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$;
 
 - (NSString *)transformSourceWithNSString:(NSString *)source;
 
@@ -100,7 +100,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamConverterWithEnumFormat_Lowerca
   CucumberRuntimeXstreamConverterWithEnumFormat *this$1_;
 }
 
-- (instancetype)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$;
 
 - (NSString *)transformSourceWithNSString:(NSString *)source;
 
@@ -121,7 +121,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamConverterWithEnumFormat_Upperca
   CucumberRuntimeXstreamConverterWithEnumFormat *this$1_;
 }
 
-- (instancetype)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$;
 
 - (NSString *)transformSourceWithNSString:(NSString *)source;
 
@@ -139,8 +139,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamConverterWithEnumFormat_Capital
 
 @implementation CucumberRuntimeXstreamConverterWithEnumFormat
 
-- (instancetype)initWithJavaUtilLocale:(JavaUtilLocale *)locale
-                          withIOSClass:(IOSClass *)enumClass {
+- (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale
+                                    withIOSClass:(IOSClass *)enumClass {
   CucumberRuntimeXstreamConverterWithEnumFormat_initWithJavaUtilLocale_withIOSClass_(self, locale, enumClass);
   return self;
 }
@@ -174,6 +174,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamConverterWithEnumFormat_Capital
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilLocale:withIOSClass:);
   methods[1].selector = @selector(transformWithNSString:);
   methods[2].selector = @selector(getFormats);
@@ -213,7 +214,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat)
 
 @implementation CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat
 
-- (instancetype)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$ {
   CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(self, outer$);
   return self;
 }
@@ -249,6 +250,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeXstreamConverterWithEnumFormat:);
   methods[1].selector = @selector(formatWithId:withJavaLangStringBuffer:withJavaTextFieldPosition:);
   methods[2].selector = @selector(parseObjectWithNSString:withJavaTextParsePosition:);
@@ -273,7 +275,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat_A
 
 @implementation CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat
 
-- (instancetype)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$ {
   CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(self, outer$);
   return self;
 }
@@ -289,6 +291,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat_A
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeXstreamConverterWithEnumFormat:);
   methods[1].selector = @selector(transformSourceWithNSString:);
   #pragma clang diagnostic pop
@@ -315,7 +318,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat_O
 
 @implementation CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat
 
-- (instancetype)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$ {
   CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(self, outer$);
   return self;
 }
@@ -336,6 +339,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat_O
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeXstreamConverterWithEnumFormat:);
   methods[1].selector = @selector(transformSourceWithNSString:);
   #pragma clang diagnostic pop
@@ -366,7 +370,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat_L
 
 @implementation CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat
 
-- (instancetype)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$ {
   CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(self, outer$);
   return self;
 }
@@ -387,6 +391,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat_L
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeXstreamConverterWithEnumFormat:);
   methods[1].selector = @selector(transformSourceWithNSString:);
   #pragma clang diagnostic pop
@@ -417,7 +422,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat_U
 
 @implementation CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat
 
-- (instancetype)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$ {
   CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(self, outer$);
   return self;
 }
@@ -440,6 +445,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat_U
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeXstreamConverterWithEnumFormat:);
   methods[1].selector = @selector(transformSourceWithNSString:);
   #pragma clang diagnostic pop

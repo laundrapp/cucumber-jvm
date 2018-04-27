@@ -57,8 +57,8 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeScenarioImpl)
 
 @implementation CucumberRuntimeScenarioImpl
 
-- (instancetype)initWithCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus
-                  withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent {
+- (instancetype __nonnull)initWithCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus
+                            withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent {
   CucumberRuntimeScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(self, bus, pickleEvent);
   return self;
 }
@@ -160,6 +160,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeScenarioImpl)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRunnerEventBus:withGherkinEventsPickleEvent:);
   methods[1].selector = @selector(addWithCucumberApiResult:);
   methods[2].selector = @selector(getSourceTagNames);

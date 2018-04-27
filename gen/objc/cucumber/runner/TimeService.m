@@ -9,7 +9,7 @@
 
 @interface CucumberRunnerTimeService_1 : NSObject < CucumberRunnerTimeService >
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (jlong)time;
 
@@ -35,6 +35,7 @@ id<CucumberRunnerTimeService> CucumberRunnerTimeService_SYSTEM;
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(time);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
@@ -59,7 +60,7 @@ J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRunnerTimeService)
 @implementation CucumberRunnerTimeService_1
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRunnerTimeService_1_init(self);
   return self;
 }
@@ -76,6 +77,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(time);
   #pragma clang diagnostic pop

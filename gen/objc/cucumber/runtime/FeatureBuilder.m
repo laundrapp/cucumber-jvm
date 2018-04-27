@@ -55,13 +55,13 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFeatureBuilder)
 
 @implementation CucumberRuntimeFeatureBuilder
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)cucumberFeatures {
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)cucumberFeatures {
   CucumberRuntimeFeatureBuilder_initWithJavaUtilList_(self, cucumberFeatures);
   return self;
 }
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)cucumberFeatures
-                            withChar:(jchar)fileSeparatorChar {
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)cucumberFeatures
+                                      withChar:(jchar)fileSeparatorChar {
   CucumberRuntimeFeatureBuilder_initWithJavaUtilList_withChar_(self, cucumberFeatures, fileSeparatorChar);
   return self;
 }
@@ -122,6 +122,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFeatureBuilder)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilList:);
   methods[1].selector = @selector(initWithJavaUtilList:withChar:);
   methods[2].selector = @selector(parseWithCucumberRuntimeIoResource:);

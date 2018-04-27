@@ -18,6 +18,7 @@
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(runUnreportedStepWithNSString:withNSString:withNSString:withInt:withJavaUtilList:withGherkinPicklesPickleString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "runUnreportedStep", "LNSString;LNSString;LNSString;ILJavaUtilList;LGherkinPicklesPickleString;", "LJavaLangThrowable;", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/util/List<Lgherkin/pickles/PickleRow;>;Lgherkin/pickles/PickleString;)V" };

@@ -25,10 +25,10 @@
   CucumberRuntimeIoFlatteningIterator *flatteningIterator_;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)root
-                    withJavaIoFile:(JavaIoFile *)file
-                      withNSString:(NSString *)suffix
-                       withBoolean:(jboolean)classpathFileResourceIterator;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)root
+                              withJavaIoFile:(JavaIoFile *)file
+                                withNSString:(NSString *)suffix
+                                 withBoolean:(jboolean)classpathFileResourceIterator;
 
 @end
 
@@ -45,7 +45,7 @@ __attribute__((unused)) static CucumberRuntimeIoFileResourceIterator *create_Cuc
   NSString *val$suffix_;
 }
 
-- (instancetype)initWithNSString:(NSString *)capture$0;
+- (instancetype __nonnull)initWithNSString:(NSString *)capture$0;
 
 - (jboolean)acceptWithJavaIoFile:(JavaIoFile *)file;
 
@@ -71,10 +71,10 @@ __attribute__((unused)) static CucumberRuntimeIoFileResourceIterator_1 *create_C
   jboolean classpathFileIterator_;
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)root
-                    withJavaIoFile:(JavaIoFile *)file
-              withJavaIoFileFilter:(id<JavaIoFileFilter>)filter
-                       withBoolean:(jboolean)classpathFileIterator;
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)root
+                              withJavaIoFile:(JavaIoFile *)file
+                        withJavaIoFileFilter:(id<JavaIoFileFilter>)filter
+                                 withBoolean:(jboolean)classpathFileIterator;
 
 - (id)next;
 
@@ -116,10 +116,10 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoFileResourceIterator_FileIterator)
   return CucumberRuntimeIoFileResourceIterator_createClasspathFileResourceIteratorWithJavaIoFile_withJavaIoFile_withNSString_(root, file, suffix);
 }
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)root
-                    withJavaIoFile:(JavaIoFile *)file
-                      withNSString:(NSString *)suffix
-                       withBoolean:(jboolean)classpathFileResourceIterator {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)root
+                              withJavaIoFile:(JavaIoFile *)file
+                                withNSString:(NSString *)suffix
+                                 withBoolean:(jboolean)classpathFileResourceIterator {
   CucumberRuntimeIoFileResourceIterator_initWithJavaIoFile_withJavaIoFile_withNSString_withBoolean_(self, root, file, suffix, classpathFileResourceIterator);
   return self;
 }
@@ -156,6 +156,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoFileResourceIterator_FileIterator)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(createFileResourceIteratorWithJavaIoFile:withJavaIoFile:withNSString:);
   methods[1].selector = @selector(createClasspathFileResourceIteratorWithJavaIoFile:withJavaIoFile:withNSString:);
   methods[2].selector = @selector(initWithJavaIoFile:withJavaIoFile:withNSString:withBoolean:);
@@ -202,7 +203,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoFileResourceIterator)
 
 @implementation CucumberRuntimeIoFileResourceIterator_1
 
-- (instancetype)initWithNSString:(NSString *)capture$0 {
+- (instancetype __nonnull)initWithNSString:(NSString *)capture$0 {
   CucumberRuntimeIoFileResourceIterator_1_initWithNSString_(self, capture$0);
   return self;
 }
@@ -223,6 +224,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoFileResourceIterator)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithNSString:);
   methods[1].selector = @selector(acceptWithJavaIoFile:);
   #pragma clang diagnostic pop
@@ -251,10 +253,10 @@ CucumberRuntimeIoFileResourceIterator_1 *create_CucumberRuntimeIoFileResourceIte
 
 @implementation CucumberRuntimeIoFileResourceIterator_FileIterator
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)root
-                    withJavaIoFile:(JavaIoFile *)file
-              withJavaIoFileFilter:(id<JavaIoFileFilter>)filter
-                       withBoolean:(jboolean)classpathFileIterator {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)root
+                              withJavaIoFile:(JavaIoFile *)file
+                        withJavaIoFileFilter:(id<JavaIoFileFilter>)filter
+                                 withBoolean:(jboolean)classpathFileIterator {
   CucumberRuntimeIoFileResourceIterator_FileIterator_initWithJavaIoFile_withJavaIoFile_withJavaIoFileFilter_withBoolean_(self, root, file, filter, classpathFileIterator);
   return self;
 }
@@ -302,6 +304,7 @@ CucumberRuntimeIoFileResourceIterator_1 *create_CucumberRuntimeIoFileResourceIte
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaIoFile:withJavaIoFile:withJavaIoFileFilter:withBoolean:);
   methods[1].selector = @selector(next);
   methods[2].selector = @selector(hasNext);

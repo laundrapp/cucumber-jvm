@@ -27,7 +27,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamConverterWithFormat, convertibleTypes_
 
 @implementation CucumberRuntimeXstreamConverterWithFormat
 
-- (instancetype)initWithIOSClassArray:(IOSObjectArray *)convertibleTypes {
+- (instancetype __nonnull)initWithIOSClassArray:(IOSObjectArray *)convertibleTypes {
   CucumberRuntimeXstreamConverterWithFormat_initWithIOSClassArray_(self, convertibleTypes);
   return self;
 }
@@ -97,6 +97,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamConverterWithFormat, convertibleTypes_
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithIOSClassArray:);
   methods[1].selector = @selector(transformWithNSString:);
   methods[2].selector = @selector(getFormats);

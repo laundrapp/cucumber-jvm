@@ -32,7 +32,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeSnippetsFunctionNameGenerator)
 
 @implementation CucumberRuntimeSnippetsFunctionNameGenerator
 
-- (instancetype)initWithCucumberRuntimeSnippetsConcatenator:(id<CucumberRuntimeSnippetsConcatenator>)concatenator {
+- (instancetype __nonnull)initWithCucumberRuntimeSnippetsConcatenator:(id<CucumberRuntimeSnippetsConcatenator>)concatenator {
   CucumberRuntimeSnippetsFunctionNameGenerator_initWithCucumberRuntimeSnippetsConcatenator_(self, concatenator);
   return self;
 }
@@ -61,6 +61,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeSnippetsFunctionNameGenerator)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeSnippetsConcatenator:);
   methods[1].selector = @selector(generateFunctionNameWithNSString:);
   methods[2].selector = @selector(removeIllegalCharactersWithNSString:);

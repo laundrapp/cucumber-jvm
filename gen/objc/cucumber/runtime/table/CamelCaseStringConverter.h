@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeTableCamelCaseStringConverter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeTableCamelCaseStringConverter_) && (INCLUDE_ALL_CucumberRuntimeTableCamelCaseStringConverter || defined(INCLUDE_CucumberRuntimeTableCamelCaseStringConverter))
 #define CucumberRuntimeTableCamelCaseStringConverter_
 
@@ -24,7 +29,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (NSString *)mapWithNSString:(NSString *)string;
 
@@ -42,4 +47,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTableCamelCaseStringConverter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeTableCamelCaseStringConverter")

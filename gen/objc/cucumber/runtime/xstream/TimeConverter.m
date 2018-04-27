@@ -36,8 +36,8 @@ __attribute__((unused)) static JavaTextFormat *CucumberRuntimeXstreamTimeConvert
 
 @implementation CucumberRuntimeXstreamTimeConverter
 
-- (instancetype)initWithJavaUtilLocale:(JavaUtilLocale *)locale
-                     withIOSClassArray:(IOSObjectArray *)convertibleTypes {
+- (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale
+                               withIOSClassArray:(IOSObjectArray *)convertibleTypes {
   CucumberRuntimeXstreamTimeConverter_initWithJavaUtilLocale_withIOSClassArray_(self, locale, convertibleTypes);
   return self;
 }
@@ -103,6 +103,7 @@ __attribute__((unused)) static JavaTextFormat *CucumberRuntimeXstreamTimeConvert
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilLocale:withIOSClassArray:);
   methods[1].selector = @selector(addFormatWithInt:withJavaUtilLocale:);
   methods[2].selector = @selector(addWithJavaTextDateFormat:);

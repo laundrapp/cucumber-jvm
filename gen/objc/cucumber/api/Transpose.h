@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiTranspose
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiTranspose_) && (INCLUDE_ALL_CucumberApiTranspose || defined(INCLUDE_CucumberApiTranspose))
 #define CucumberApiTranspose_
 
@@ -56,6 +61,10 @@
 
 @property (readonly) jboolean value;
 
+- (jboolean)isEqual:(id)obj;
+
+- (NSUInteger)hash;
+
 @end
 
 @interface CucumberApiTranspose : NSObject < CucumberApiTranspose > {
@@ -73,4 +82,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiTranspose)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiTranspose")

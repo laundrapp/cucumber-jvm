@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeIoDelegatingResourceIteratorFactory
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeIoDelegatingResourceIteratorFactory_) && (INCLUDE_ALL_CucumberRuntimeIoDelegatingResourceIteratorFactory || defined(INCLUDE_CucumberRuntimeIoDelegatingResourceIteratorFactory))
 #define CucumberRuntimeIoDelegatingResourceIteratorFactory_
 
@@ -36,7 +41,7 @@
   class with a fallback factory.
  @param fallbackResourceIteratorFactory The factory to use when an                                         appropriate one couldn't be found otherwise.
  */
-- (instancetype)initWithCucumberRuntimeIoResourceIteratorFactory:(id<CucumberRuntimeIoResourceIteratorFactory>)fallbackResourceIteratorFactory;
+- (instancetype __nonnull)initWithCucumberRuntimeIoResourceIteratorFactory:(id<CucumberRuntimeIoResourceIteratorFactory>)fallbackResourceIteratorFactory;
 
 - (id<JavaUtilIterator>)createIteratorWithJavaNetURL:(JavaNetURL *)url
                                         withNSString:(NSString *)path
@@ -46,7 +51,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -62,4 +67,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoDelegatingResourceIteratorFactory)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeIoDelegatingResourceIteratorFactory")

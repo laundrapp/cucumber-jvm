@@ -26,7 +26,7 @@ J2OBJC_FIELD_SETTER(CucumberApiTransformer, locale_, JavaUtilLocale *)
 @implementation CucumberApiTransformer
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberApiTransformer_init(self);
   return self;
 }
@@ -77,6 +77,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(toStringWithId:);
   methods[2].selector = @selector(fromStringWithNSString:);

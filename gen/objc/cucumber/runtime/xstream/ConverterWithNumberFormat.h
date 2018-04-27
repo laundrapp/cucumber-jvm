@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeXstreamConverterWithNumberFormat
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeXstreamConverterWithNumberFormat_) && (INCLUDE_ALL_CucumberRuntimeXstreamConverterWithNumberFormat || defined(INCLUDE_CucumberRuntimeXstreamConverterWithNumberFormat))
 #define CucumberRuntimeXstreamConverterWithNumberFormat_
 
@@ -38,8 +43,8 @@
 
 #pragma mark Package-Private
 
-- (instancetype)initWithJavaUtilLocale:(JavaUtilLocale *)locale
-                     withIOSClassArray:(IOSObjectArray *)convertibleTypes;
+- (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale
+                               withIOSClassArray:(IOSObjectArray *)convertibleTypes;
 
 @end
 
@@ -51,4 +56,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamConverterWithNumberFormat)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeXstreamConverterWithNumberFormat")

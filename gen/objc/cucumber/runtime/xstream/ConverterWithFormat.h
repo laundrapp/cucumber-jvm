@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeXstreamConverterWithFormat
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeXstreamConverterWithFormat_) && (INCLUDE_ALL_CucumberRuntimeXstreamConverterWithFormat || defined(INCLUDE_CucumberRuntimeXstreamConverterWithFormat))
 #define CucumberRuntimeXstreamConverterWithFormat_
 
@@ -44,7 +49,7 @@
 
 #pragma mark Package-Private
 
-- (instancetype)initWithIOSClassArray:(IOSObjectArray *)convertibleTypes;
+- (instancetype __nonnull)initWithIOSClassArray:(IOSObjectArray *)convertibleTypes;
 
 /*!
  @brief Parses a value using one of the java.util.text format classes.
@@ -65,4 +70,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamConverterWithFormat)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeXstreamConverterWithFormat")

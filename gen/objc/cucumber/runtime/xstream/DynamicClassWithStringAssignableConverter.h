@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter || defined(INCLUDE_CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter))
 #define CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter_
 
@@ -33,7 +38,7 @@
 
 #pragma mark Package-Private
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 @end
 
@@ -49,4 +54,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamDynamicClassWithStringAssignabl
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter")

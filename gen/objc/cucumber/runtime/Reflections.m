@@ -37,7 +37,7 @@ __attribute__((unused)) static jboolean CucumberRuntimeReflections_hasConstructo
 
 @implementation CucumberRuntimeReflections
 
-- (instancetype)initWithCucumberRuntimeClassFinder:(id<CucumberRuntimeClassFinder>)classFinder {
+- (instancetype __nonnull)initWithCucumberRuntimeClassFinder:(id<CucumberRuntimeClassFinder>)classFinder {
   CucumberRuntimeReflections_initWithCucumberRuntimeClassFinder_(self, classFinder);
   return self;
 }
@@ -110,6 +110,7 @@ __attribute__((unused)) static jboolean CucumberRuntimeReflections_hasConstructo
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeClassFinder:);
   methods[1].selector = @selector(instantiateExactlyOneSubclassWithIOSClass:withNSString:withIOSClassArray:withNSObjectArray:);
   methods[2].selector = @selector(instantiateSubclassesWithIOSClass:withNSString:withIOSClassArray:withNSObjectArray:);

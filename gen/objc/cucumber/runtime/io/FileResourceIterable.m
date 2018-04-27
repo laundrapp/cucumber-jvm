@@ -27,9 +27,9 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeIoFileResourceIterable, suffix_, NSString *)
 
 @implementation CucumberRuntimeIoFileResourceIterable
 
-- (instancetype)initWithJavaIoFile:(JavaIoFile *)root
-                    withJavaIoFile:(JavaIoFile *)file
-                      withNSString:(NSString *)suffix {
+- (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)root
+                              withJavaIoFile:(JavaIoFile *)file
+                                withNSString:(NSString *)suffix {
   CucumberRuntimeIoFileResourceIterable_initWithJavaIoFile_withJavaIoFile_withNSString_(self, root, file, suffix);
   return self;
 }
@@ -47,7 +47,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeIoFileResourceIterable, suffix_, NSString *)
 }
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id *)stackbuf count:(NSUInteger)len {
-  return JreDefaultFastEnumeration(self, state, stackbuf, len);
+  return JreDefaultFastEnumeration(self, state, stackbuf);
 }
 
 - (void)dealloc {
@@ -64,6 +64,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeIoFileResourceIterable, suffix_, NSString *)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaIoFile:withJavaIoFile:withNSString:);
   methods[1].selector = @selector(iterator);
   #pragma clang diagnostic pop

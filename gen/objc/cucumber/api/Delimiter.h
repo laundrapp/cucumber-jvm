@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiDelimiter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiDelimiter_) && (INCLUDE_ALL_CucumberApiDelimiter || defined(INCLUDE_CucumberApiDelimiter))
 #define CucumberApiDelimiter_
 
@@ -53,6 +58,10 @@
 
 @property (readonly) NSString *value;
 
+- (jboolean)isEqual:(id)obj;
+
+- (NSUInteger)hash;
+
 @end
 
 @interface CucumberApiDelimiter : NSObject < CucumberApiDelimiter > {
@@ -70,4 +79,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiDelimiter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiDelimiter")

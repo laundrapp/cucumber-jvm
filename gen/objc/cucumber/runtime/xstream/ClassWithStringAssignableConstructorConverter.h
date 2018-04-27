@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter || defined(INCLUDE_CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter))
 #define CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter_
 
@@ -35,11 +40,11 @@
 
 #pragma mark Package-Private
 
-- (instancetype)initWithJavaLangReflectConstructor:(JavaLangReflectConstructor *)constructor;
+- (instancetype __nonnull)initWithJavaLangReflectConstructor:(JavaLangReflectConstructor *)constructor;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -55,4 +60,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamClassWithStringAssignableConstr
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter")

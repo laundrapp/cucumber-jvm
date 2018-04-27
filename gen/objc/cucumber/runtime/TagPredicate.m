@@ -31,7 +31,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeTagPredicate, oldStyleExpressions_, id<JavaUt
 
 @implementation CucumberRuntimeTagPredicate
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)tagExpressions {
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)tagExpressions {
   CucumberRuntimeTagPredicate_initWithJavaUtilList_(self, tagExpressions);
   return self;
 }
@@ -72,6 +72,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeTagPredicate, oldStyleExpressions_, id<JavaUt
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilList:);
   methods[1].selector = @selector(applyWithGherkinEventsPickleEvent:);
   methods[2].selector = @selector(applyWithJavaUtilCollection:);

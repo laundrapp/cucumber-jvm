@@ -13,7 +13,7 @@ J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeFormatterMonochromeFormats, FORMAT,
 
 @interface CucumberRuntimeFormatterMonochromeFormats_1 : NSObject < CucumberRuntimeFormatterFormat >
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (NSString *)textWithNSString:(NSString *)text;
 
@@ -32,7 +32,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFormatterMonochromeFormats)
 @implementation CucumberRuntimeFormatterMonochromeFormats
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeFormatterMonochromeFormats_init(self);
   return self;
 }
@@ -54,6 +54,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(getWithNSString:);
   methods[2].selector = @selector(upWithInt:);
@@ -92,7 +93,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterMonochromeFormats)
 @implementation CucumberRuntimeFormatterMonochromeFormats_1
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeFormatterMonochromeFormats_1_init(self);
   return self;
 }
@@ -109,6 +110,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(textWithNSString:);
   #pragma clang diagnostic pop

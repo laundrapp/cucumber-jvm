@@ -37,6 +37,7 @@ CucumberApiHookType *CucumberApiHookType_values_[2];
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(description);
   methods[1].selector = @selector(values);
   methods[2].selector = @selector(valueOfWithNSString:);
@@ -57,7 +58,7 @@ CucumberApiHookType *CucumberApiHookType_values_[2];
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
     for (jint i = 0; i < 2; i++) {
-      (CucumberApiHookType_values_[i] = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+      ((void)(CucumberApiHookType_values_[i] = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
       CucumberApiHookType_initWithNSString_withInt_(e, JreEnumConstantName(CucumberApiHookType_class_(), i), i);
     }
     J2OBJC_SET_INITIALIZED(CucumberApiHookType)

@@ -19,7 +19,7 @@ __attribute__((unused)) static NSString *CucumberRuntimeNoInstancesException_cre
 
 @implementation CucumberRuntimeNoInstancesException
 
-- (instancetype)initWithIOSClass:(IOSClass *)parentType {
+- (instancetype __nonnull)initWithIOSClass:(IOSClass *)parentType {
   CucumberRuntimeNoInstancesException_initWithIOSClass_(self, parentType);
   return self;
 }
@@ -35,6 +35,7 @@ __attribute__((unused)) static NSString *CucumberRuntimeNoInstancesException_cre
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithIOSClass:);
   methods[1].selector = @selector(createMessageWithIOSClass:);
   #pragma clang diagnostic pop

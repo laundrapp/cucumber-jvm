@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeStepDefinition
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeStepDefinition_) && (INCLUDE_ALL_CucumberRuntimeStepDefinition || defined(INCLUDE_CucumberRuntimeStepDefinition))
 #define CucumberRuntimeStepDefinition_
 
@@ -87,4 +92,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeStepDefinition)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeStepDefinition")

@@ -29,15 +29,15 @@ __attribute__((unused)) static NSString *CucumberRuntimeSnippetsArgumentPattern_
 
 @implementation CucumberRuntimeSnippetsArgumentPattern
 
-- (instancetype)initWithJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern
-                                withIOSClass:(IOSClass *)type {
+- (instancetype __nonnull)initWithJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern
+                                          withIOSClass:(IOSClass *)type {
   CucumberRuntimeSnippetsArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(self, pattern, type);
   return self;
 }
 
-- (instancetype)initWithJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern
-                                withNSString:(NSString *)replacement
-                                withIOSClass:(IOSClass *)type {
+- (instancetype __nonnull)initWithJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern
+                                          withNSString:(NSString *)replacement
+                                          withIOSClass:(IOSClass *)type {
   CucumberRuntimeSnippetsArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(self, pattern, replacement, type);
   return self;
 }
@@ -82,6 +82,7 @@ __attribute__((unused)) static NSString *CucumberRuntimeSnippetsArgumentPattern_
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilRegexPattern:withIOSClass:);
   methods[1].selector = @selector(initWithJavaUtilRegexPattern:withNSString:withIOSClass:);
   methods[2].selector = @selector(pattern);

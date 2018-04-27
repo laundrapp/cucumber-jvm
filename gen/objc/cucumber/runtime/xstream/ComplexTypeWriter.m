@@ -51,7 +51,7 @@ __attribute__((unused)) static NSString *CucumberRuntimeXstreamComplexTypeWriter
 
 @implementation CucumberRuntimeXstreamComplexTypeWriter
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)columnNames {
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)columnNames {
   CucumberRuntimeXstreamComplexTypeWriter_initWithJavaUtilList_(self, columnNames);
   return self;
 }
@@ -153,6 +153,7 @@ __attribute__((unused)) static NSString *CucumberRuntimeXstreamComplexTypeWriter
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilList:);
   methods[1].selector = @selector(getHeader);
   methods[2].selector = @selector(getValues);

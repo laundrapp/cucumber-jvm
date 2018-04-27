@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeEnv
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeEnv_) && (INCLUDE_ALL_CucumberRuntimeEnv || defined(INCLUDE_CucumberRuntimeEnv))
 #define CucumberRuntimeEnv_
 
@@ -30,14 +35,14 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
-- (instancetype)initWithJavaUtilProperties:(JavaUtilProperties *)properties;
+- (instancetype __nonnull)initWithJavaUtilProperties:(JavaUtilProperties *)properties;
 
-- (instancetype)initWithNSString:(NSString *)bundleName;
+- (instancetype __nonnull)initWithNSString:(NSString *)bundleName;
 
-- (instancetype)initWithNSString:(NSString *)bundleName
-          withJavaUtilProperties:(JavaUtilProperties *)properties;
+- (instancetype __nonnull)initWithNSString:(NSString *)bundleName
+                    withJavaUtilProperties:(JavaUtilProperties *)properties;
 
 - (NSString *)getWithNSString:(NSString *)key;
 
@@ -81,4 +86,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeEnv)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeEnv")

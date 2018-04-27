@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberApiTableConverter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberApiTableConverter_) && (INCLUDE_ALL_CucumberApiTableConverter || defined(INCLUDE_CucumberApiTableConverter))
 #define CucumberApiTableConverter_
 
@@ -53,4 +58,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberApiTableConverter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberApiTableConverter")

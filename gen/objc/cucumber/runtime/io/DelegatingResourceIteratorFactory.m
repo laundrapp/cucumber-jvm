@@ -26,7 +26,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeIoDelegatingResourceIteratorFactory, fallback
 
 @implementation CucumberRuntimeIoDelegatingResourceIteratorFactory
 
-- (instancetype)initWithCucumberRuntimeIoResourceIteratorFactory:(id<CucumberRuntimeIoResourceIteratorFactory>)fallbackResourceIteratorFactory {
+- (instancetype __nonnull)initWithCucumberRuntimeIoResourceIteratorFactory:(id<CucumberRuntimeIoResourceIteratorFactory>)fallbackResourceIteratorFactory {
   CucumberRuntimeIoDelegatingResourceIteratorFactory_initWithCucumberRuntimeIoResourceIteratorFactory_(self, fallbackResourceIteratorFactory);
   return self;
 }
@@ -70,6 +70,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeIoDelegatingResourceIteratorFactory, fallback
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeIoResourceIteratorFactory:);
   methods[1].selector = @selector(isFactoryForWithJavaNetURL:);
   methods[2].selector = @selector(createIteratorWithJavaNetURL:withNSString:withNSString:);

@@ -46,15 +46,15 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiTestCase__Annotations$
 
 @implementation CucumberApiTestCase
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)testSteps
-        withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent {
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)testSteps
+                  withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent {
   CucumberApiTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_(self, testSteps, pickleEvent);
   return self;
 }
 
-- (instancetype)initWithJavaUtilList:(id<JavaUtilList>)testSteps
-        withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent
-                         withBoolean:(jboolean)dryRun {
+- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)testSteps
+                  withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent
+                                   withBoolean:(jboolean)dryRun {
   CucumberApiTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_(self, testSteps, pickleEvent, dryRun);
   return self;
 }
@@ -124,6 +124,7 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiTestCase__Annotations$
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilList:withGherkinEventsPickleEvent:);
   methods[1].selector = @selector(initWithJavaUtilList:withGherkinEventsPickleEvent:withBoolean:);
   methods[2].selector = @selector(runWithCucumberRunnerEventBus:);

@@ -15,7 +15,7 @@
 
 + (CucumberApiFormatterAnsiEscapes *)colorWithInt:(jint)code;
 
-- (instancetype)initWithNSString:(NSString *)value;
+- (instancetype __nonnull)initWithNSString:(NSString *)value;
 
 @end
 
@@ -62,7 +62,7 @@ CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_INTENSITY_BOLD;
   return CucumberApiFormatterAnsiEscapes_upWithInt_(count);
 }
 
-- (instancetype)initWithNSString:(NSString *)value {
+- (instancetype __nonnull)initWithNSString:(NSString *)value {
   CucumberApiFormatterAnsiEscapes_initWithNSString_(self, value);
   return self;
 }
@@ -97,6 +97,7 @@ CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_INTENSITY_BOLD;
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(colorWithInt:);
   methods[1].selector = @selector(upWithInt:);
   methods[2].selector = @selector(initWithNSString:);

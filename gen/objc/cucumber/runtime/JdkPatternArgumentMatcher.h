@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeJdkPatternArgumentMatcher
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeJdkPatternArgumentMatcher_) && (INCLUDE_ALL_CucumberRuntimeJdkPatternArgumentMatcher || defined(INCLUDE_CucumberRuntimeJdkPatternArgumentMatcher))
 #define CucumberRuntimeJdkPatternArgumentMatcher_
 
@@ -23,13 +28,13 @@
 
 #pragma mark Public
 
-- (instancetype)initWithJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern;
+- (instancetype __nonnull)initWithJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern;
 
 - (id<JavaUtilList>)argumentsFromWithNSString:(NSString *)stepName;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -45,4 +50,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeJdkPatternArgumentMatcher)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeJdkPatternArgumentMatcher")

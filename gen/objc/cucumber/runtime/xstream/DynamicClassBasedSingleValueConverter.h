@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter || defined(INCLUDE_CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter))
 #define CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter_
 
@@ -42,7 +47,7 @@ withCucumberDepsComThoughtworksXstreamConvertersMarshallingContext:(id<CucumberD
 
 #pragma mark Package-Private
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 @end
 
@@ -54,4 +59,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamDynamicClassBasedSingleValueCon
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter")

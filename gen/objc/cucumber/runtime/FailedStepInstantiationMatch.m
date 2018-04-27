@@ -26,9 +26,9 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeFailedStepInstantiationMatch, throwable_, Jav
 
 @implementation CucumberRuntimeFailedStepInstantiationMatch
 
-- (instancetype)initWithNSString:(NSString *)uri
-    withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
-           withJavaLangThrowable:(JavaLangThrowable *)throwable {
+- (instancetype __nonnull)initWithNSString:(NSString *)uri
+              withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
+                     withJavaLangThrowable:(JavaLangThrowable *)throwable {
   CucumberRuntimeFailedStepInstantiationMatch_initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_(self, uri, step, throwable);
   return self;
 }
@@ -61,6 +61,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeFailedStepInstantiationMatch, throwable_, Jav
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithNSString:withGherkinPicklesPickleStep:withJavaLangThrowable:);
   methods[1].selector = @selector(runStepWithNSString:withCucumberApiScenario:);
   methods[2].selector = @selector(dryRunStepWithNSString:withCucumberApiScenario:);

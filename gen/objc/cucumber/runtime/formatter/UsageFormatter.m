@@ -90,7 +90,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterUsageFormatter_StepContai
   CucumberRuntimeFormatterUsageFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterUsageFormatter:(CucumberRuntimeFormatterUsageFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterUsageFormatter:(CucumberRuntimeFormatterUsageFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepFinished *)event;
 
@@ -109,7 +109,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterUsageFormatter_1 *create_
   CucumberRuntimeFormatterUsageFormatter *this$0_;
 }
 
-- (instancetype)initWithCucumberRuntimeFormatterUsageFormatter:(CucumberRuntimeFormatterUsageFormatter *)outer$;
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterUsageFormatter:(CucumberRuntimeFormatterUsageFormatter *)outer$;
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event;
 
@@ -147,7 +147,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFormatterUsageFormatter)
 
 @implementation CucumberRuntimeFormatterUsageFormatter
 
-- (instancetype)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg {
+- (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg {
   CucumberRuntimeFormatterUsageFormatter_initWithJavaLangAppendable_(self, outArg);
   return self;
 }
@@ -249,6 +249,7 @@ withCucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy:(id<CucumberRu
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangAppendable:);
   methods[1].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
   methods[2].selector = @selector(handleTestStepFinishedWithCucumberApiEventTestStepFinished:);
@@ -387,7 +388,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterUsageFormatter)
 
 @implementation CucumberRuntimeFormatterUsageFormatter_1
 
-- (instancetype)initWithCucumberRuntimeFormatterUsageFormatter:(CucumberRuntimeFormatterUsageFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterUsageFormatter:(CucumberRuntimeFormatterUsageFormatter *)outer$ {
   CucumberRuntimeFormatterUsageFormatter_1_initWithCucumberRuntimeFormatterUsageFormatter_(self, outer$);
   return self;
 }
@@ -408,6 +409,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterUsageFormatter)
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterUsageFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -436,7 +438,7 @@ CucumberRuntimeFormatterUsageFormatter_1 *create_CucumberRuntimeFormatterUsageFo
 
 @implementation CucumberRuntimeFormatterUsageFormatter_2
 
-- (instancetype)initWithCucumberRuntimeFormatterUsageFormatter:(CucumberRuntimeFormatterUsageFormatter *)outer$ {
+- (instancetype __nonnull)initWithCucumberRuntimeFormatterUsageFormatter:(CucumberRuntimeFormatterUsageFormatter *)outer$ {
   CucumberRuntimeFormatterUsageFormatter_2_initWithCucumberRuntimeFormatterUsageFormatter_(self, outer$);
   return self;
 }
@@ -457,6 +459,7 @@ CucumberRuntimeFormatterUsageFormatter_1 *create_CucumberRuntimeFormatterUsageFo
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRuntimeFormatterUsageFormatter:);
   methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
@@ -486,7 +489,7 @@ CucumberRuntimeFormatterUsageFormatter_2 *create_CucumberRuntimeFormatterUsageFo
 @implementation CucumberRuntimeFormatterUsageFormatter_StepDefContainer
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeFormatterUsageFormatter_StepDefContainer_init(self);
   return self;
 }
@@ -504,6 +507,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
@@ -534,7 +538,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterUsageFormatter_StepDefC
 @implementation CucumberRuntimeFormatterUsageFormatter_StepContainer
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeFormatterUsageFormatter_StepContainer_init(self);
   return self;
 }
@@ -553,6 +557,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
@@ -586,7 +591,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterUsageFormatter_StepCont
 @implementation CucumberRuntimeFormatterUsageFormatter_StepDuration
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeFormatterUsageFormatter_StepDuration_init(self);
   return self;
 }
@@ -604,6 +609,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
@@ -639,6 +645,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterUsageFormatter_StepDura
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(calculateWithJavaUtilList:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "calculate", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/Long;>;)Ljava/lang/Long;", "LCucumberRuntimeFormatterUsageFormatter;" };
@@ -653,7 +660,7 @@ J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterUsageFormatter_Usag
 @implementation CucumberRuntimeFormatterUsageFormatter_AverageUsageStatisticStrategy
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeFormatterUsageFormatter_AverageUsageStatisticStrategy_init(self);
   return self;
 }
@@ -682,6 +689,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(calculateWithJavaUtilList:);
   methods[2].selector = @selector(verifyNoNullsWithJavaUtilList:);
@@ -714,7 +722,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterUsageFormatter_AverageU
 @implementation CucumberRuntimeFormatterUsageFormatter_MedianUsageStatisticStrategy
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype)init {
+- (instancetype __nonnull)init {
   CucumberRuntimeFormatterUsageFormatter_MedianUsageStatisticStrategy_init(self);
   return self;
 }
@@ -746,6 +754,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(calculateWithJavaUtilList:);
   methods[2].selector = @selector(verifyNoNullsWithJavaUtilList:);

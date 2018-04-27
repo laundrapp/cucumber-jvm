@@ -22,6 +22,7 @@
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(getLocationWithBoolean:);
   methods[1].selector = @selector(executeWithCucumberApiScenario:);
   methods[2].selector = @selector(matchesWithJavaUtilCollection:);

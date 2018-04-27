@@ -15,7 +15,7 @@
 
 @implementation CucumberRuntimeXstreamDoubleConverter
 
-- (instancetype)initWithJavaUtilLocale:(JavaUtilLocale *)locale {
+- (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale {
   CucumberRuntimeXstreamDoubleConverter_initWithJavaUtilLocale_(self, locale);
   return self;
 }
@@ -31,6 +31,7 @@
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilLocale:);
   methods[1].selector = @selector(downcastWithNSNumber:);
   #pragma clang diagnostic pop

@@ -73,8 +73,8 @@ __attribute__((unused)) static void CucumberRuntimeTableTableDiffer_markChangedA
 
 @implementation CucumberRuntimeTableTableDiffer
 
-- (instancetype)initWithCucumberApiDataTable:(CucumberApiDataTable *)fromTable
-                    withCucumberApiDataTable:(CucumberApiDataTable *)toTable {
+- (instancetype __nonnull)initWithCucumberApiDataTable:(CucumberApiDataTable *)fromTable
+                              withCucumberApiDataTable:(CucumberApiDataTable *)toTable {
   CucumberRuntimeTableTableDiffer_initWithCucumberApiDataTable_withCucumberApiDataTable_(self, fromTable, toTable);
   return self;
 }
@@ -172,6 +172,7 @@ __attribute__((unused)) static void CucumberRuntimeTableTableDiffer_markChangedA
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberApiDataTable:withCucumberApiDataTable:);
   methods[1].selector = @selector(checkColumnsWithCucumberApiDataTable:withCucumberApiDataTable:);
   methods[2].selector = @selector(calculateDiffs);

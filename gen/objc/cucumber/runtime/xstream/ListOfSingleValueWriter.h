@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimeXstreamListOfSingleValueWriter
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimeXstreamListOfSingleValueWriter_) && (INCLUDE_ALL_CucumberRuntimeXstreamListOfSingleValueWriter || defined(INCLUDE_CucumberRuntimeXstreamListOfSingleValueWriter))
 #define CucumberRuntimeXstreamListOfSingleValueWriter_
 
@@ -26,7 +31,7 @@
 
 #pragma mark Public
 
-- (instancetype)init;
+- (instancetype __nonnull)init;
 
 - (void)addAttributeWithNSString:(NSString *)name
                     withNSString:(NSString *)value;
@@ -59,4 +64,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamListOfSingleValueWriter)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimeXstreamListOfSingleValueWriter")

@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRuntimePicklePredicate
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRuntimePicklePredicate_) && (INCLUDE_ALL_CucumberRuntimePicklePredicate || defined(INCLUDE_CucumberRuntimePicklePredicate))
 #define CucumberRuntimePicklePredicate_
 
@@ -30,4 +35,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimePicklePredicate)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRuntimePicklePredicate")

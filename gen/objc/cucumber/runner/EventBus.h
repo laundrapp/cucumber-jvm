@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_CucumberRunnerEventBus
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (CucumberRunnerEventBus_) && (INCLUDE_ALL_CucumberRunnerEventBus || defined(INCLUDE_CucumberRunnerEventBus))
 #define CucumberRunnerEventBus_
 
@@ -30,7 +35,7 @@
 
 #pragma mark Public
 
-- (instancetype)initWithCucumberRunnerTimeService:(id<CucumberRunnerTimeService>)stopWatch;
+- (instancetype __nonnull)initWithCucumberRunnerTimeService:(id<CucumberRunnerTimeService>)stopWatch;
 
 - (JavaLangLong *)getTime;
 
@@ -41,7 +46,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -57,4 +62,8 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRunnerEventBus)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_CucumberRunnerEventBus")
