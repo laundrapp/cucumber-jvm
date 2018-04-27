@@ -11,11 +11,11 @@ exclude(module: 'hamcrest-core')
 }
 
 
-task translateJava(type:Exec, dependsOn:[':cucumber-core:translateJava']) {
+task translateJava(type:Exec) {
     inputs.files sourceSets.main.allJava
     outputs.files files((sourceSets.main.allJava).collect { i ->
         i.collect { j ->
-            def name = projectDir.path + '../gen/objc/' + i.name
+            def name = projectDir.path + '/../gen/objc/' + i.name
             //def name = j.path.replace(i.srcDirs.iterator().next().path, 'src/gen/objc')
             return [name.replace('.java', '.h'), name.replace('.java', '.m')]
         }
@@ -28,8 +28,9 @@ task translateJava(type:Exec, dependsOn:[':cucumber-core:translateJava']) {
 //    args '--mapping', file('mapping.properties').path
     args '--doc-comments'
     args '--nullability'
-    args '-d', file('../../gen/objc').path
+    args '-d', file('../gen/objc').path
     args '-sourcepath', (sourceSets.main.allJava.srcDirs).join(':')
     args '-classpath', sourceSets.main.runtimeClasspath.collect { it.absolutePath }.join(':')
     args inputs.files
 }
+

@@ -28,6 +28,6 @@ it.exclude group: 'log4j'
   
 }
 
-task translateAll(dependsOn: [':cucumber-core:translateJava', ':cucumber-java:translateJava', ':cucumber-java8:translateJava', ':cucumber-junit:translateJava']) {
+task translateAll(dependsOn: [':cucumber-core:translateJava', ':cucumber-java:translateJava', ':cucumber-junit:translateJava']) {
 
 }
