@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   s.exclude_files = 'gen/objc/*Test.{h,m}'
   s.resources = 'src/main/resources/*'
 
-  s.dependency 'gherkin'
-  s.dependency 'tag-expressions'
+  s.dependency 'gherkin', '5.0.0.J2ObjC2.1.1'
+  s.dependency 'tag-expressions', '1.1.1-j2obj2.1.1'
 
   s.public_header_files = 'gen/objc/**/*.h'
   s.header_mappings_dir = 'gen/objc/**'
