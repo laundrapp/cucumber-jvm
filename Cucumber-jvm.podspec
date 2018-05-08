@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name             = "CucumberJvm"
+  s.name             = "Cucumber-jvm"
   s.version          = '2.3.2.J2ObjC2.1.1'
   s.author           = { "Marcus Smith" => "m_badenochsmith@yahoo.co.uk" }
   s.source           = { :git => "https://github.com/laundrapp/cucumber-vm.git" }
