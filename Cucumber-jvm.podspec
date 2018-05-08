@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   s.exclude_files = 'gen/objc/*Test.{h,m}'
   s.resources = 'src/main/resources/*'
 
-  s.dependency 'gherkin-java', :git => "https://github.com/laundrapp/gherkin-java.git", :tag => "5.0.0-SNAPSHOT-J2ObjC2.0.5"
-  s.dependency 'tag-expressions', :git=>'https://github.com/laundrapp/tag-expressions-java.git', :tag=>'1.1.1.J2ObjC2.0.5'
+  s.dependency 'gherkin'
+  s.dependency 'tag-expressions'
 
   s.public_header_files = 'gen/objc/**/*.h'
   s.header_mappings_dir = 'gen/objc/**'
@@ -25,4 +25,3 @@ Pod::Spec.new do |s|
 #  s.xcconfig = { 'HEADER_SEARCH_PATHS' => "\"${PODS_ROOT}/J2ObjC/dist/include\"" }
 
 end
-~
