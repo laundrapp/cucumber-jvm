@@ -7,17 +7,40 @@ repositories {
     mavenLocal()
     mavenCentral()
     maven { url "http://repo.maven.apache.org/maven2" }
+    maven {
+        credentials {
+            username "marcus@laundrapp.com"
+            password "buck1ngh4m"
+        }
+        authentication {
+            basic(BasicAuthentication)
+        }
+        url "https://bitbucket.org/laundrapp/maven/raw/releases"
+    }
+    maven {
+        credentials {
+            username "marcus@laundrapp.com"
+            password "buck1ngh4m"
+        }
+        authentication {
+            basic(BasicAuthentication)
+        }
+        url "https://bitbucket.org/laundrapp/maven/raw/snapshots"
+    }
 }
 
 dependencies {
     compile group: 'info.cukes', name: 'cucumber-html', version:'0.2.6'
-    compile(group: 'io.cucumber', name: 'cucumber-jvm-deps', version:'1.0.6') {
+    compile group:'com.laundrapp', name:'gherkin', version:'5.0.1'
+    compile group:'com.laundrapp', name:'xstream', version:'1.4.7'
+    compile group:'com.laundrapp', name:'diffutils', version: '1.3.0'
+   /* compile(group: 'io.cucumber', name: 'cucumber-jvm-deps', version:'1.0.6') {
 exclude(module: 'xstream')
 exclude(module: 'diffutils')
     }
     compile(group: 'io.cucumber', name: 'gherkin', version:'5.0.0') {
 exclude(module: 'gherkin-jvm-deps')
-    }
+    }*/
     compile group: 'io.cucumber', name: 'tag-expressions', version:'1.1.1'
     testCompile group: 'junit', name: 'junit', version:'4.12'
     testCompile group: 'xmlunit', name: 'xmlunit', version:'1.6'

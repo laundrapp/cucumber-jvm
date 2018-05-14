@@ -18,6 +18,26 @@ subprojects {
     mavenLocal()
     mavenCentral()
     maven { url "http://repo.maven.apache.org/maven2" }
+      maven {
+          credentials {
+              username "marcus@laundrapp.com"
+              password "buck1ngh4m"
+          }
+          authentication {
+              basic(BasicAuthentication)
+          }
+          url "https://bitbucket.org/laundrapp/maven/raw/releases"
+      }
+      maven {
+          credentials {
+              username "marcus@laundrapp.com"
+              password "buck1ngh4m"
+          }
+          authentication {
+              basic(BasicAuthentication)
+          }
+          url "https://bitbucket.org/laundrapp/maven/raw/snapshots"
+      }
   }
 
   configurations.all {
