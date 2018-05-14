@@ -1,7 +1,7 @@
 package cucumber.runtime.autocomplete;
 
-import gherkin.deps.com.google.gson.Gson;
-import gherkin.deps.com.google.gson.GsonBuilder;
+//import gherkin.deps.com.google.gson.Gson;
+//import gherkin.deps.com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MetaStepdef {
-    private static final Gson GSON = new GsonBuilder().create();
+//    private static final Gson GSON = new GsonBuilder().create();
 
     public final SortedSet<MetaStep> steps = new TreeSet<MetaStep>();
     public String source;
@@ -55,7 +55,8 @@ public class MetaStepdef {
 
     @Override
     public String toString() {
-        return GSON.toJson(this);
+//        return GSON.toJson(this);
+        throw new UnsupportedOperationException("Needs gson");
     }
 
     public static class MetaStep implements Comparable<MetaStep> {

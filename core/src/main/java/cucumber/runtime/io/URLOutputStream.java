@@ -1,6 +1,6 @@
 package cucumber.runtime.io;
 
-import gherkin.deps.com.google.gson.Gson;
+//import gherkin.deps.com.google.gson.Gson;
 import cucumber.util.FixJava;
 
 import java.io.*;
@@ -105,7 +105,7 @@ public class URLOutputStream extends OutputStream {
     }
 
     public class ResponseException extends IOException {
-        private final Gson gson = new Gson();
+//        private final Gson gson = new Gson();
         private final int responseCode;
         private final String contentType;
 
@@ -118,12 +118,13 @@ public class URLOutputStream extends OutputStream {
         @Override
         public String getMessage() {
             if (contentType.equals("application/json")) {
-                Map map = gson.fromJson(super.getMessage(), Map.class);
-                if (map.containsKey("error")) {
-                    return getMessage0(map.get("error").toString());
-                } else {
-                    return getMessage0(super.getMessage());
-                }
+                throw new UnsupportedOperationException("Needs gson");
+//                Map map = gson.fromJson(super.getMessage(), Map.class);
+//                if (map.containsKey("error")) {
+//                    return getMessage0(map.get("error").toString());
+//                } else {
+//                    return getMessage0(super.getMessage());
+//                }
             } else {
                 return getMessage0(super.getMessage());
             }
