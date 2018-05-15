@@ -22,7 +22,6 @@ import gherkin.ast.ScenarioDefinition;
 import gherkin.ast.Step;
 //import gherkin.deps.com.google.gson.Gson;
 //import gherkin.deps.com.google.gson.GsonBuilder;
-import gherkin.deps.net.iharder.Base64;
 import gherkin.pickles.Argument;
 import gherkin.pickles.PickleCell;
 import gherkin.pickles.PickleRow;
@@ -30,10 +29,7 @@ import gherkin.pickles.PickleString;
 import gherkin.pickles.PickleTable;
 import gherkin.pickles.PickleTag;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 final class JSONFormatter implements Formatter {
     private String currentFeatureFile;
@@ -308,7 +304,7 @@ final class JSONFormatter implements Formatter {
     private Map<String, Object> createEmbeddingMap(byte[] data, String mimeType) {
         Map<String, Object> embedMap = new HashMap<String, Object>();
         embedMap.put("mime_type", mimeType);
-        embedMap.put("data", Base64.encodeBytes(data));
+        embedMap.put("data", Base64.getEncoder().encode(data));
         return embedMap;
     }
 
