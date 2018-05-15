@@ -1,14 +1,13 @@
 package cucumber.runtime.table;
 
 import cucumber.api.DataTable;
-import cucumber.deps.difflib.Delta;
-import cucumber.deps.difflib.DiffUtils;
-import cucumber.deps.difflib.Patch;
+import difflib.Delta;
+import difflib.DiffUtils;
+import difflib.Patch;
 import gherkin.pickles.PickleCell;
 import gherkin.pickles.PickleRow;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
