@@ -1,5 +1,12 @@
 apply plugin: "java"
 
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java', 'target/generated-sources/i18n/java']
+        }
+    }
+}
 description = 'Cucumber-JVM: Java'
 dependencies {
   compile project(':cucumber-core')
