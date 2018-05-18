@@ -59,7 +59,7 @@ dependencies {
     //
     // The following dependency works, if you build Cucumber-JVM on your local machine:
     //
-    // androidTestCompile 'io.cucumber:cucumber-android:2.3.2-SNAPSHOT'
+    // androidTestCompile 'io.cucumber:cucumber-android:2.3.1'
     //
     // (If you enable it, you must disable the dependency to the stable Cucumber version above.)
     //

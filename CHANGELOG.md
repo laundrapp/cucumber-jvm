@@ -1,6 +1,6 @@
 Please see [CONTRIBUTING.md](https://github.com/cucumber/cucumber/blob/master/CONTRIBUTING.md) on how to contribute to Cucumber.
 
-## [2.3.2-SNAPSHOT](https://github.com/cucumber/cucumber-jvm/compare/v2.3.1...master) (In Git)
+## [2.3.1](https://github.com/cucumber/cucumber-jvm/compare/v2.3.1...master) (In Git)
 
 ### Added
  * [JUnit] Add readme to cucumber-junit ([#1306](https://github.com/cucumber/cucumber-jvm/pull/1306) M.P. Korstanje)
