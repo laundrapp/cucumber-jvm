@@ -1,3 +1,7 @@
+plugins {
+    id "com.github.dkorotych.gradle-maven-exec" version "1.2.2.1"
+}
+
 allprojects  {
   apply plugin: 'maven'
 
@@ -48,6 +52,6 @@ it.exclude group: 'log4j'
   
 }
 
-task translateAll(dependsOn: [':cucumber-core:translateJava', ':cucumber-java:translateJava', ':cucumber-junit:translateJava']) {
+    task translateAll(dependsOn: [':cucumber-core:translateJava', ':cucumber-java:translateJava', ':cucumber-junit:translateJava']) {
 
 }

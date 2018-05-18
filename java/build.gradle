@@ -9,16 +9,19 @@ sourceSets {
 }
 description = 'Cucumber-JVM: Java'
 dependencies {
-  compile project(':cucumber-core')
-  testCompile project(':cucumber-junit')
+    compile project(':cucumber-core')
+    testCompile project(':cucumber-junit')
     testCompile group: 'junit', name: 'junit', version:'4.12'
     testCompile(group: 'org.mockito', name: 'mockito-core', version:'1.10.19') {
-exclude(module: 'hamcrest-core')
+        exclude(module: 'hamcrest-core')
     }
 }
 
+task generateSources(type: MavenExec) {
+    goals 'compile'
+}
 
-task translateJava(type:Exec) {
+task translateJava(type:Exec, dependsOn: ['generateSources']) {
     inputs.files sourceSets.main.allJava
     outputs.files files((sourceSets.main.allJava).collect { i ->
         i.collect { j ->
