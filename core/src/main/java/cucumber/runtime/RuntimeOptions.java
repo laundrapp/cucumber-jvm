@@ -41,7 +41,7 @@ import static java.util.Collections.unmodifiableList;
 
 // IMPORTANT! Make sure USAGE.txt is always uptodate if this class changes.
 public class RuntimeOptions {
-    public static final String VERSION = ResourceBundle.getBundle("cucumber.version").getString("cucumber-jvm.version");
+    public static final String VERSION = "2.3.1";
     public static final String USAGE_RESOURCE = "/cucumber/api/cli/USAGE.txt";
 
     static String usageText;
