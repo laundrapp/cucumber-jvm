@@ -49,7 +49,6 @@
 #include "java/util/HashMap.h"
 #include "java/util/List.h"
 #include "java/util/Map.h"
-#include "java/util/ResourceBundle.h"
 #include "java/util/Set.h"
 #include "java/util/regex/Pattern.h"
 
@@ -232,7 +231,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeRuntimeOptions_ParsedOptionNames, names_, id<
 
 J2OBJC_INITIALIZED_DEFN(CucumberRuntimeRuntimeOptions)
 
-NSString *CucumberRuntimeRuntimeOptions_VERSION;
+NSString *CucumberRuntimeRuntimeOptions_VERSION = @"2.3.1";
 NSString *CucumberRuntimeRuntimeOptions_USAGE_RESOURCE = @"/cucumber/api/cli/USAGE.txt";
 NSString *CucumberRuntimeRuntimeOptions_usageText;
 
@@ -567,7 +566,6 @@ NSString *CucumberRuntimeRuntimeOptions_usageText;
 
 + (void)initialize {
   if (self == [CucumberRuntimeRuntimeOptions class]) {
-    JreStrongAssign(&CucumberRuntimeRuntimeOptions_VERSION, [((JavaUtilResourceBundle *) nil_chk(JavaUtilResourceBundle_getBundleWithNSString_(@"cucumber.version"))) getStringWithNSString:@"cucumber-jvm.version"]);
     JreStrongAssignAndConsume(&CucumberRuntimeRuntimeOptions_QUOTE_MAPPER, new_CucumberRuntimeRuntimeOptions_1_init());
     JreStrongAssignAndConsume(&CucumberRuntimeRuntimeOptions_CODE_KEYWORD_MAPPER, new_CucumberRuntimeRuntimeOptions_2_init());
     J2OBJC_SET_INITIALIZED(CucumberRuntimeRuntimeOptions)
