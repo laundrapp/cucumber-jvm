@@ -17,6 +17,8 @@ Pod::Spec.new do |s|
 
   s.dependency 'gherkin', '5.0.1.J2ObjC2.1.1'
   s.dependency 'tag-expressions', '1.1.1-j2obj2.1.1'
+  s.dependency 'xstream', '1.4.7.J2ObjC2.1.1'
+  s.dependency 'diffutils', '1.3.0.J2ObjC2.1.1'
 
   s.public_header_files = 'gen/objc/**/*.h'
   s.header_mappings_dir = 'gen/objc/**'
