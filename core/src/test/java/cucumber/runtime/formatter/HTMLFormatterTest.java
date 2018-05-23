@@ -6,7 +6,7 @@ import cucumber.runtime.TestHelper;
 import cucumber.runtime.Utils;
 import cucumber.runtime.model.CucumberFeature;
 import cucumber.util.FixJava;
-import gherkin.deps.com.google.gson.JsonParser;
+import com.google.gson.JsonParser;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

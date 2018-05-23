@@ -7,8 +7,8 @@ import cucumber.runtime.ParameterInfo;
 import cucumber.runtime.StepDefinition;
 import cucumber.runtime.io.Resource;
 import cucumber.runtime.model.CucumberFeature;
-import gherkin.deps.com.google.gson.Gson;
-import gherkin.deps.com.google.gson.GsonBuilder;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import gherkin.pickles.PickleStep;
 import org.junit.Test;
 

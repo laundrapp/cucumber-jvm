@@ -44,7 +44,7 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeAutocompleteMetaStepdef)
+J2OBJC_STATIC_INIT(CucumberRuntimeAutocompleteMetaStepdef)
 
 J2OBJC_FIELD_SETTER(CucumberRuntimeAutocompleteMetaStepdef, steps_, id<JavaUtilSortedSet>)
 J2OBJC_FIELD_SETTER(CucumberRuntimeAutocompleteMetaStepdef, source_, NSString *)

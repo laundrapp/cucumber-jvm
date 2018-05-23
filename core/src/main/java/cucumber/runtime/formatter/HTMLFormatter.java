@@ -28,8 +28,8 @@ import gherkin.ast.Step;
 import gherkin.ast.TableCell;
 import gherkin.ast.TableRow;
 import gherkin.ast.Tag;
-//import gherkin.deps.com.google.gson.Gson;
-//import gherkin.deps.com.google.gson.GsonBuilder;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import gherkin.pickles.Argument;
 import gherkin.pickles.PickleCell;
 import gherkin.pickles.PickleRow;
@@ -50,7 +50,7 @@ import java.util.List;
 import java.util.Map;
 
 final class HTMLFormatter implements Formatter {
-//    private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
     private static final String JS_FORMATTER_VAR = "formatter";
     private static final String JS_REPORT_FILENAME = "report.js";
     private static final String[] TEXT_ASSETS = new String[]{"/cucumber/formatter/formatter.js", "/cucumber/formatter/index.html", "/cucumber/formatter/jquery-1.8.2.min.js", "/cucumber/formatter/style.css"};
@@ -448,10 +448,9 @@ final class HTMLFormatter implements Formatter {
             if (comma) {
                 out.append(", ");
             }
-            throw new UnsupportedOperationException("Needs gson");
-//            String stringArg = gson.toJson(arg);
-//            out.append(stringArg);
-//            comma = true;
+            String stringArg = gson.toJson(arg);
+            out.append(stringArg);
+            comma = true;
         }
         out.append(");").println();
     }

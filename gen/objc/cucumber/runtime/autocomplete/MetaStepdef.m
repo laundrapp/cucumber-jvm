@@ -5,8 +5,9 @@
 
 #include "IOSClass.h"
 #include "J2ObjC_source.h"
+#include "com/google/gson/Gson.h"
+#include "com/google/gson/GsonBuilder.h"
 #include "cucumber/runtime/autocomplete/MetaStepdef.h"
-#include "java/lang/UnsupportedOperationException.h"
 #include "java/util/ArrayList.h"
 #include "java/util/List.h"
 #include "java/util/SortedSet.h"
@@ -25,7 +26,13 @@
 
 J2OBJC_FIELD_SETTER(CucumberRuntimeAutocompleteMetaStepdef, pattern_, JavaUtilRegexPattern *)
 
+inline ComGoogleGsonGson *CucumberRuntimeAutocompleteMetaStepdef_get_GSON(void);
+static ComGoogleGsonGson *CucumberRuntimeAutocompleteMetaStepdef_GSON;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeAutocompleteMetaStepdef, GSON, ComGoogleGsonGson *)
+
 __attribute__((unused)) static JavaUtilRegexPattern *CucumberRuntimeAutocompleteMetaStepdef_pattern(CucumberRuntimeAutocompleteMetaStepdef *self);
+
+J2OBJC_INITIALIZED_DEFN(CucumberRuntimeAutocompleteMetaStepdef)
 
 @implementation CucumberRuntimeAutocompleteMetaStepdef
 
@@ -64,7 +71,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (NSString *)description {
-  @throw create_JavaLangUnsupportedOperationException_initWithNSString_(@"Needs gson");
+  return [((ComGoogleGsonGson *) nil_chk(CucumberRuntimeAutocompleteMetaStepdef_GSON)) toJsonWithId:self];
 }
 
 - (void)dealloc {
@@ -95,14 +102,22 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[5].selector = @selector(description);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "steps_", "LJavaUtilSortedSet;", .constantValue.asLong = 0, 0x11, -1, -1, 6, -1 },
+    { "GSON", "LComGoogleGsonGson;", .constantValue.asLong = 0, 0x1a, -1, 6, -1, -1 },
+    { "steps_", "LJavaUtilSortedSet;", .constantValue.asLong = 0, 0x11, -1, -1, 7, -1 },
     { "source_", "LNSString;", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
     { "flags_", "LNSString;", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
     { "pattern_", "LJavaUtilRegexPattern;", .constantValue.asLong = 0, 0x82, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "matches", "LNSString;", "equals", "LNSObject;", "hashCode", "toString", "Ljava/util/SortedSet<Lcucumber/runtime/autocomplete/MetaStepdef$MetaStep;>;", "LCucumberRuntimeAutocompleteMetaStepdef_MetaStep;LCucumberRuntimeAutocompleteMetaStepdef_MetaArgument;" };
-  static const J2ObjcClassInfo _CucumberRuntimeAutocompleteMetaStepdef = { "MetaStepdef", "cucumber.runtime.autocomplete", ptrTable, methods, fields, 7, 0x1, 6, 4, -1, 7, -1, -1, -1 };
+  static const void *ptrTable[] = { "matches", "LNSString;", "equals", "LNSObject;", "hashCode", "toString", &CucumberRuntimeAutocompleteMetaStepdef_GSON, "Ljava/util/SortedSet<Lcucumber/runtime/autocomplete/MetaStepdef$MetaStep;>;", "LCucumberRuntimeAutocompleteMetaStepdef_MetaStep;LCucumberRuntimeAutocompleteMetaStepdef_MetaArgument;" };
+  static const J2ObjcClassInfo _CucumberRuntimeAutocompleteMetaStepdef = { "MetaStepdef", "cucumber.runtime.autocomplete", ptrTable, methods, fields, 7, 0x1, 6, 5, -1, 8, -1, -1, -1 };
   return &_CucumberRuntimeAutocompleteMetaStepdef;
+}
+
++ (void)initialize {
+  if (self == [CucumberRuntimeAutocompleteMetaStepdef class]) {
+    JreStrongAssign(&CucumberRuntimeAutocompleteMetaStepdef_GSON, [create_ComGoogleGsonGsonBuilder_init() create]);
+    J2OBJC_SET_INITIALIZED(CucumberRuntimeAutocompleteMetaStepdef)
+  }
 }
 
 @end

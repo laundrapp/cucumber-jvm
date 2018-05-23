@@ -6,6 +6,8 @@
 #include "IOSClass.h"
 #include "IOSPrimitiveArray.h"
 #include "J2ObjC_source.h"
+#include "com/google/gson/Gson.h"
+#include "com/google/gson/GsonBuilder.h"
 #include "cucumber/api/HookType.h"
 #include "cucumber/api/Result.h"
 #include "cucumber/api/TestCase.h"
@@ -40,7 +42,6 @@
 #include "java/lang/Appendable.h"
 #include "java/lang/Integer.h"
 #include "java/lang/Long.h"
-#include "java/lang/UnsupportedOperationException.h"
 #include "java/util/ArrayList.h"
 #include "java/util/Base64.h"
 #include "java/util/HashMap.h"
@@ -56,6 +57,7 @@
   id<JavaUtilMap> currentTestCaseMap_;
   id<JavaUtilList> currentStepsList_;
   id<JavaUtilMap> currentStepOrHookMap_;
+  ComGoogleGsonGson *gson_;
   CucumberApiFormatterNiceAppendable *out_;
   CucumberRuntimeFormatterTestSourcesModel *testSources_;
   id<CucumberApiEventEventHandler> testSourceReadHandler_;
@@ -125,6 +127,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, currentElementMap_, i
 J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, currentTestCaseMap_, id<JavaUtilMap>)
 J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, currentStepsList_, id<JavaUtilList>)
 J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, currentStepOrHookMap_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, gson_, ComGoogleGsonGson *)
 J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, out_, CucumberApiFormatterNiceAppendable *)
 J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, testSources_, CucumberRuntimeFormatterTestSourcesModel *)
 J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, testSourceReadHandler_, id<CucumberApiEventEventHandler>)
@@ -430,6 +433,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_7 *create_C
   RELEASE_(currentTestCaseMap_);
   RELEASE_(currentStepsList_);
   RELEASE_(currentStepOrHookMap_);
+  RELEASE_(gson_);
   RELEASE_(out_);
   RELEASE_(testSources_);
   RELEASE_(testSourceReadHandler_);
@@ -505,6 +509,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_7 *create_C
     { "currentTestCaseMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 50, -1 },
     { "currentStepsList_", "LJavaUtilList;", .constantValue.asLong = 0, 0x2, -1, -1, 49, -1 },
     { "currentStepOrHookMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 50, -1 },
+    { "gson_", "LComGoogleGsonGson;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "out_", "LCucumberApiFormatterNiceAppendable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "testSources_", "LCucumberRuntimeFormatterTestSourcesModel;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "testSourceReadHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 51, -1 },
@@ -516,7 +521,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_7 *create_C
     { "embedEventhandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 57, -1 },
   };
   static const void *ptrTable[] = { "LJavaLangAppendable;", "setEventPublisher", "LCucumberApiEventEventPublisher;", "handleTestSourceRead", "LCucumberApiEventTestSourceRead;", "handleTestCaseStarted", "LCucumberApiEventTestCaseStarted;", "handleTestStepStarted", "LCucumberApiEventTestStepStarted;", "handleWrite", "LCucumberApiEventWriteEvent;", "handleEmbed", "LCucumberApiEventEmbedEvent;", "handleTestStepFinished", "LCucumberApiEventTestStepFinished;", "createFeatureMap", "LCucumberApiTestCase;", "(Lcucumber/api/TestCase;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createTestCase", "createBackground", "isFirstStepAfterBackground", "LCucumberApiTestStep;", "createTestStep", "(Lcucumber/api/TestStep;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createDocStringMap", "LGherkinPicklesArgument;LCucumberRuntimeFormatterTestSourcesModel_AstNode;", "(Lgherkin/pickles/Argument;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createDataTableList", "LGherkinPicklesArgument;", "(Lgherkin/pickles/Argument;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "createCellList", "LGherkinPicklesPickleRow;", "(Lgherkin/pickles/PickleRow;)Ljava/util/List<Ljava/lang/String;>;", "createHookStep", "addHookStepToTestCaseMap", "LJavaUtilMap;LCucumberApiHookType;", "(Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;Lcucumber/api/HookType;)V", "addOutputToHookMap", "LNSString;", "addEmbeddingToHookMap", "[BLNSString;", "createEmbeddingMap", "([BLjava/lang/String;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createMatchMap", "LCucumberApiTestStep;LCucumberApiResult;", "(Lcucumber/api/TestStep;Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createResultMap", "LCucumberApiResult;", "(Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/EmbedEvent;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterJSONFormatter = { "JSONFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 24, 16, -1, -1, -1, -1, -1 };
+  static const J2ObjcClassInfo _CucumberRuntimeFormatterJSONFormatter = { "JSONFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 24, 17, -1, -1, -1, -1, -1 };
   return &_CucumberRuntimeFormatterJSONFormatter;
 }
 
@@ -525,6 +530,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_7 *create_C
 void CucumberRuntimeFormatterJSONFormatter_initWithJavaLangAppendable_(CucumberRuntimeFormatterJSONFormatter *self, id<JavaLangAppendable> outArg) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->featureMaps_, new_JavaUtilArrayList_init());
+  JreStrongAssign(&self->gson_, [((ComGoogleGsonGsonBuilder *) nil_chk([create_ComGoogleGsonGsonBuilder_init() setPrettyPrinting])) create]);
   JreStrongAssignAndConsume(&self->testSources_, new_CucumberRuntimeFormatterTestSourcesModel_init());
   JreStrongAssignAndConsume(&self->testSourceReadHandler_, new_CucumberRuntimeFormatterJSONFormatter_1_initWithCucumberRuntimeFormatterJSONFormatter_(self));
   JreStrongAssignAndConsume(&self->caseStartedHandler_, new_CucumberRuntimeFormatterJSONFormatter_2_initWithCucumberRuntimeFormatterJSONFormatter_(self));
@@ -596,7 +602,8 @@ void CucumberRuntimeFormatterJSONFormatter_handleTestStepFinishedWithCucumberApi
 }
 
 void CucumberRuntimeFormatterJSONFormatter_finishReport(CucumberRuntimeFormatterJSONFormatter *self) {
-  @throw create_JavaLangUnsupportedOperationException_initWithNSString_(@"Needs gson");
+  [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) appendWithJavaLangCharSequence:[((ComGoogleGsonGson *) nil_chk(self->gson_)) toJsonWithId:self->featureMaps_]];
+  [self->out_ close];
 }
 
 id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createFeatureMapWithCucumberApiTestCase_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiTestCase *testCase) {

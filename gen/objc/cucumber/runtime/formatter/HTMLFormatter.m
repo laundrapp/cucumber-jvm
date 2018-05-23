@@ -7,6 +7,8 @@
 #include "IOSObjectArray.h"
 #include "IOSPrimitiveArray.h"
 #include "J2ObjC_source.h"
+#include "com/google/gson/Gson.h"
+#include "com/google/gson/GsonBuilder.h"
 #include "cucumber/api/HookType.h"
 #include "cucumber/api/Result.h"
 #include "cucumber/api/TestCase.h"
@@ -50,7 +52,6 @@
 #include "java/io/OutputStream.h"
 #include "java/io/OutputStreamWriter.h"
 #include "java/lang/StringBuilder.h"
-#include "java/lang/UnsupportedOperationException.h"
 #include "java/net/URL.h"
 #include "java/util/ArrayList.h"
 #include "java/util/HashMap.h"
@@ -174,6 +175,10 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterHTMLFormatter, stepFinishedHandler_,
 J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterHTMLFormatter, embedEventhandler_, id<CucumberApiEventEventHandler>)
 J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterHTMLFormatter, writeEventhandler_, id<CucumberApiEventEventHandler>)
 J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterHTMLFormatter, runFinishedHandler_, id<CucumberApiEventEventHandler>)
+
+inline ComGoogleGsonGson *CucumberRuntimeFormatterHTMLFormatter_get_gson(void);
+static ComGoogleGsonGson *CucumberRuntimeFormatterHTMLFormatter_gson;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeFormatterHTMLFormatter, gson, ComGoogleGsonGson *)
 
 inline NSString *CucumberRuntimeFormatterHTMLFormatter_get_JS_FORMATTER_VAR(void);
 static NSString *CucumberRuntimeFormatterHTMLFormatter_JS_FORMATTER_VAR = @"formatter";
@@ -716,34 +721,36 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFormatterHTMLFormatter)
   methods[38].selector = @selector(closeQuietlyWithJavaIoCloseable:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "JS_FORMATTER_VAR", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 74, -1, -1 },
-    { "JS_REPORT_FILENAME", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 75, -1, -1 },
-    { "TEXT_ASSETS", "[LNSString;", .constantValue.asLong = 0, 0x1a, -1, 76, -1, -1 },
-    { "MIME_TYPES_EXTENSIONS", "LJavaUtilMap;", .constantValue.asLong = 0, 0x1a, -1, 77, 78, -1 },
+    { "gson", "LComGoogleGsonGson;", .constantValue.asLong = 0, 0x1a, -1, 74, -1, -1 },
+    { "JS_FORMATTER_VAR", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 75, -1, -1 },
+    { "JS_REPORT_FILENAME", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 76, -1, -1 },
+    { "TEXT_ASSETS", "[LNSString;", .constantValue.asLong = 0, 0x1a, -1, 77, -1, -1 },
+    { "MIME_TYPES_EXTENSIONS", "LJavaUtilMap;", .constantValue.asLong = 0, 0x1a, -1, 78, 79, -1 },
     { "testSources_", "LCucumberRuntimeFormatterTestSourcesModel;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "htmlReportDir_", "LJavaNetURL;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "jsOut_", "LCucumberApiFormatterNiceAppendable;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "firstFeature_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "currentFeatureFile_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "currentTestCaseMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 79, -1 },
+    { "currentTestCaseMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 80, -1 },
     { "currentScenarioOutline_", "LGherkinAstScenarioOutline;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "currentExamples_", "LGherkinAstExamples;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "embeddedIndex_", "I", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "testSourceReadHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 80, -1 },
-    { "caseStartedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 81, -1 },
-    { "stepStartedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 82, -1 },
-    { "stepFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 83, -1 },
-    { "embedEventhandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 84, -1 },
-    { "writeEventhandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 85, -1 },
-    { "runFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 86, -1 },
+    { "testSourceReadHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 81, -1 },
+    { "caseStartedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 82, -1 },
+    { "stepStartedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 83, -1 },
+    { "stepFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 84, -1 },
+    { "embedEventhandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 85, -1 },
+    { "writeEventhandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 86, -1 },
+    { "runFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 87, -1 },
   };
-  static const void *ptrTable[] = { "LJavaNetURL;", "LJavaNetURL;LCucumberApiFormatterNiceAppendable;", "setEventPublisher", "LCucumberApiEventEventPublisher;", "handleTestSourceRead", "LCucumberApiEventTestSourceRead;", "handleTestCaseStarted", "LCucumberApiEventTestCaseStarted;", "handleTestStepStarted", "LCucumberApiEventTestStepStarted;", "handleTestStepFinished", "LCucumberApiEventTestStepFinished;", "handleEmbed", "LCucumberApiEventEmbedEvent;", "handleWrite", "LCucumberApiEventWriteEvent;", "handleStartOfFeature", "LCucumberApiTestCase;", "createFeature", "(Lcucumber/api/TestCase;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createTagList", "LJavaUtilList;", "(Ljava/util/List<Lgherkin/ast/Tag;>;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "handleScenarioOutline", "createScenarioOutline", "LGherkinAstScenarioOutline;", "(Lgherkin/ast/ScenarioOutline;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "addOutlineStepsToReport", "createDocStringMap", "LGherkinAstDocString;", "(Lgherkin/ast/DocString;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createDataTableList", "LGherkinAstDataTable;", "(Lgherkin/ast/DataTable;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "createRowMap", "LGherkinAstTableRow;", "(Lgherkin/ast/TableRow;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createCellList", "(Lgherkin/ast/TableRow;)Ljava/util/List<Ljava/lang/String;>;", "createExamples", "LGherkinAstExamples;", "(Lgherkin/ast/Examples;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createTestCase", "createBackground", "isFirstStepAfterBackground", "LCucumberApiTestStep;", "createTestStep", "(Lcucumber/api/TestStep;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "LGherkinPicklesPickleString;", "(Lgherkin/pickles/PickleString;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "LGherkinPicklesPickleTable;", "(Lgherkin/pickles/PickleTable;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "LGherkinPicklesPickleRow;", "(Lgherkin/pickles/PickleRow;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "(Lgherkin/pickles/PickleRow;)Ljava/util/List<Ljava/lang/String;>;", "createMatchMap", "LCucumberApiTestStep;LCucumberApiResult;", "(Lcucumber/api/TestStep;Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createResultMap", "LCucumberApiResult;", "(Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "jsFunctionCall", "LNSString;[LNSObject;", "toUrl", "LNSString;", "writeStreamToURL", "LJavaIoInputStream;LJavaNetURL;", "writeBytesToURL", "[BLJavaNetURL;", "LCucumberRuntimeCucumberException;", "createJsOut", "createReportFileOutputStream", "closeQuietly", "LJavaIoCloseable;", &CucumberRuntimeFormatterHTMLFormatter_JS_FORMATTER_VAR, &CucumberRuntimeFormatterHTMLFormatter_JS_REPORT_FILENAME, &CucumberRuntimeFormatterHTMLFormatter_TEXT_ASSETS, &CucumberRuntimeFormatterHTMLFormatter_MIME_TYPES_EXTENSIONS, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/EmbedEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterHTMLFormatter = { "HTMLFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 39, 20, -1, -1, -1, -1, -1 };
+  static const void *ptrTable[] = { "LJavaNetURL;", "LJavaNetURL;LCucumberApiFormatterNiceAppendable;", "setEventPublisher", "LCucumberApiEventEventPublisher;", "handleTestSourceRead", "LCucumberApiEventTestSourceRead;", "handleTestCaseStarted", "LCucumberApiEventTestCaseStarted;", "handleTestStepStarted", "LCucumberApiEventTestStepStarted;", "handleTestStepFinished", "LCucumberApiEventTestStepFinished;", "handleEmbed", "LCucumberApiEventEmbedEvent;", "handleWrite", "LCucumberApiEventWriteEvent;", "handleStartOfFeature", "LCucumberApiTestCase;", "createFeature", "(Lcucumber/api/TestCase;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createTagList", "LJavaUtilList;", "(Ljava/util/List<Lgherkin/ast/Tag;>;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "handleScenarioOutline", "createScenarioOutline", "LGherkinAstScenarioOutline;", "(Lgherkin/ast/ScenarioOutline;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "addOutlineStepsToReport", "createDocStringMap", "LGherkinAstDocString;", "(Lgherkin/ast/DocString;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createDataTableList", "LGherkinAstDataTable;", "(Lgherkin/ast/DataTable;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "createRowMap", "LGherkinAstTableRow;", "(Lgherkin/ast/TableRow;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createCellList", "(Lgherkin/ast/TableRow;)Ljava/util/List<Ljava/lang/String;>;", "createExamples", "LGherkinAstExamples;", "(Lgherkin/ast/Examples;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createTestCase", "createBackground", "isFirstStepAfterBackground", "LCucumberApiTestStep;", "createTestStep", "(Lcucumber/api/TestStep;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "LGherkinPicklesPickleString;", "(Lgherkin/pickles/PickleString;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "LGherkinPicklesPickleTable;", "(Lgherkin/pickles/PickleTable;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "LGherkinPicklesPickleRow;", "(Lgherkin/pickles/PickleRow;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "(Lgherkin/pickles/PickleRow;)Ljava/util/List<Ljava/lang/String;>;", "createMatchMap", "LCucumberApiTestStep;LCucumberApiResult;", "(Lcucumber/api/TestStep;Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createResultMap", "LCucumberApiResult;", "(Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "jsFunctionCall", "LNSString;[LNSObject;", "toUrl", "LNSString;", "writeStreamToURL", "LJavaIoInputStream;LJavaNetURL;", "writeBytesToURL", "[BLJavaNetURL;", "LCucumberRuntimeCucumberException;", "createJsOut", "createReportFileOutputStream", "closeQuietly", "LJavaIoCloseable;", &CucumberRuntimeFormatterHTMLFormatter_gson, &CucumberRuntimeFormatterHTMLFormatter_JS_FORMATTER_VAR, &CucumberRuntimeFormatterHTMLFormatter_JS_REPORT_FILENAME, &CucumberRuntimeFormatterHTMLFormatter_TEXT_ASSETS, &CucumberRuntimeFormatterHTMLFormatter_MIME_TYPES_EXTENSIONS, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/EmbedEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
+  static const J2ObjcClassInfo _CucumberRuntimeFormatterHTMLFormatter = { "HTMLFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 39, 21, -1, -1, -1, -1, -1 };
   return &_CucumberRuntimeFormatterHTMLFormatter;
 }
 
 + (void)initialize {
   if (self == [CucumberRuntimeFormatterHTMLFormatter class]) {
+    JreStrongAssign(&CucumberRuntimeFormatterHTMLFormatter_gson, [((ComGoogleGsonGsonBuilder *) nil_chk([create_ComGoogleGsonGsonBuilder_init() setPrettyPrinting])) create]);
     JreStrongAssignAndConsume(&CucumberRuntimeFormatterHTMLFormatter_TEXT_ASSETS, [IOSObjectArray newArrayWithObjects:(id[]){ @"/cucumber/formatter/formatter.js", @"/cucumber/formatter/index.html", @"/cucumber/formatter/jquery-1.8.2.min.js", @"/cucumber/formatter/style.css" } count:4 type:NSString_class_()]);
     JreStrongAssignAndConsume(&CucumberRuntimeFormatterHTMLFormatter_MIME_TYPES_EXTENSIONS, new_CucumberRuntimeFormatterHTMLFormatter_1_init());
     J2OBJC_SET_INITIALIZED(CucumberRuntimeFormatterHTMLFormatter)
@@ -1103,7 +1110,9 @@ void CucumberRuntimeFormatterHTMLFormatter_jsFunctionCallWithNSString_withNSObje
       if (comma) {
         [((CucumberApiFormatterNiceAppendable *) nil_chk(out)) appendWithJavaLangCharSequence:@", "];
       }
-      @throw create_JavaLangUnsupportedOperationException_initWithNSString_(@"Needs gson");
+      NSString *stringArg = [((ComGoogleGsonGson *) nil_chk(CucumberRuntimeFormatterHTMLFormatter_gson)) toJsonWithId:arg];
+      [((CucumberApiFormatterNiceAppendable *) nil_chk(out)) appendWithJavaLangCharSequence:stringArg];
+      comma = true;
     }
   }
   [((CucumberApiFormatterNiceAppendable *) nil_chk([((CucumberApiFormatterNiceAppendable *) nil_chk(out)) appendWithJavaLangCharSequence:@");"])) println];

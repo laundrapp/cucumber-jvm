@@ -7,6 +7,7 @@
 #include "IOSObjectArray.h"
 #include "IOSPrimitiveArray.h"
 #include "J2ObjC_source.h"
+#include "com/google/gson/Gson.h"
 #include "cucumber/runtime/io/URLOutputStream.h"
 #include "cucumber/util/FixJava.h"
 #include "java/io/File.h"
@@ -17,7 +18,6 @@
 #include "java/io/OutputStream.h"
 #include "java/lang/IllegalArgumentException.h"
 #include "java/lang/Integer.h"
-#include "java/lang/UnsupportedOperationException.h"
 #include "java/net/HttpURLConnection.h"
 #include "java/net/URL.h"
 #include "java/net/URLConnection.h"
@@ -48,6 +48,7 @@ __attribute__((unused)) static void CucumberRuntimeIoURLOutputStream_ensureParen
 @interface CucumberRuntimeIoURLOutputStream_ResponseException () {
  @public
   CucumberRuntimeIoURLOutputStream *this$0_;
+  ComGoogleGsonGson *gson_;
   jint responseCode_;
   NSString *contentType_;
 }
@@ -56,6 +57,7 @@ __attribute__((unused)) static void CucumberRuntimeIoURLOutputStream_ensureParen
 
 @end
 
+J2OBJC_FIELD_SETTER(CucumberRuntimeIoURLOutputStream_ResponseException, gson_, ComGoogleGsonGson *)
 J2OBJC_FIELD_SETTER(CucumberRuntimeIoURLOutputStream_ResponseException, contentType_, NSString *)
 
 __attribute__((unused)) static NSString *CucumberRuntimeIoURLOutputStream_ResponseException_getMessage0WithNSString_(CucumberRuntimeIoURLOutputStream_ResponseException *self, NSString *message);
@@ -242,7 +244,13 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoURLOutputStream)
 
 - (NSString *)getMessage {
   if ([((NSString *) nil_chk(contentType_)) isEqual:@"application/json"]) {
-    @throw create_JavaLangUnsupportedOperationException_initWithNSString_(@"Needs gson");
+    id<JavaUtilMap> map = [((ComGoogleGsonGson *) nil_chk(gson_)) fromJsonWithNSString:[super getMessage] withIOSClass:JavaUtilMap_class_()];
+    if ([((id<JavaUtilMap>) nil_chk(map)) containsKeyWithId:@"error"]) {
+      return CucumberRuntimeIoURLOutputStream_ResponseException_getMessage0WithNSString_(self, [nil_chk([map getWithId:@"error"]) description]);
+    }
+    else {
+      return CucumberRuntimeIoURLOutputStream_ResponseException_getMessage0WithNSString_(self, [super getMessage]);
+    }
   }
   else {
     return CucumberRuntimeIoURLOutputStream_ResponseException_getMessage0WithNSString_(self, [super getMessage]);
@@ -255,6 +263,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoURLOutputStream)
 
 - (void)dealloc {
   RELEASE_(this$0_);
+  RELEASE_(gson_);
   RELEASE_(contentType_);
   [super dealloc];
 }
@@ -274,11 +283,12 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoURLOutputStream)
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCucumberRuntimeIoURLOutputStream;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "gson_", "LComGoogleGsonGson;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "responseCode_", "I", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "contentType_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LNSString;LJavaIoIOException;ILNSString;", "getMessage0", "LNSString;", "LCucumberRuntimeIoURLOutputStream;" };
-  static const J2ObjcClassInfo _CucumberRuntimeIoURLOutputStream_ResponseException = { "ResponseException", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 3, 3, 3, -1, -1, -1, -1 };
+  static const J2ObjcClassInfo _CucumberRuntimeIoURLOutputStream_ResponseException = { "ResponseException", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 3, 4, 3, -1, -1, -1, -1 };
   return &_CucumberRuntimeIoURLOutputStream_ResponseException;
 }
 
@@ -287,6 +297,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoURLOutputStream)
 void CucumberRuntimeIoURLOutputStream_ResponseException_initWithCucumberRuntimeIoURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_(CucumberRuntimeIoURLOutputStream_ResponseException *self, CucumberRuntimeIoURLOutputStream *outer$, NSString *responseBody, JavaIoIOException *cause, jint responseCode, NSString *contentType) {
   JreStrongAssign(&self->this$0_, outer$);
   JavaIoIOException_initWithNSString_withJavaLangThrowable_(self, responseBody, cause);
+  JreStrongAssignAndConsume(&self->gson_, new_ComGoogleGsonGson_init());
   self->responseCode_ = responseCode;
   JreStrongAssign(&self->contentType_, contentType);
 }

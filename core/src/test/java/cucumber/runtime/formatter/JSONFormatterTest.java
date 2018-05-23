@@ -10,10 +10,10 @@ import cucumber.runtime.TestHelper;
 import cucumber.runtime.io.ClasspathResourceLoader;
 import cucumber.runtime.model.CucumberFeature;
 import cucumber.runtime.snippets.FunctionNameGenerator;
-import gherkin.deps.com.google.gson.JsonParser;
+import com.google.gson.JsonParser;
 import gherkin.pickles.PickleStep;
 import gherkin.pickles.PickleTag;
-import gherkin.deps.com.google.gson.JsonElement;
+import com.google.gson.JsonElement;
 import org.junit.Test;
 import org.mockito.stubbing.Answer;
 

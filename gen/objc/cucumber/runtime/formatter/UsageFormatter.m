@@ -5,6 +5,8 @@
 
 #include "IOSClass.h"
 #include "J2ObjC_source.h"
+#include "com/google/gson/Gson.h"
+#include "com/google/gson/GsonBuilder.h"
 #include "cucumber/api/Result.h"
 #include "cucumber/api/TestStep.h"
 #include "cucumber/api/event/EventHandler.h"
@@ -15,7 +17,6 @@
 #include "cucumber/runtime/formatter/UsageFormatter.h"
 #include "java/lang/Appendable.h"
 #include "java/lang/Long.h"
-#include "java/lang/UnsupportedOperationException.h"
 #include "java/math/BigDecimal.h"
 #include "java/util/ArrayList.h"
 #include "java/util/Collections.h"
@@ -41,6 +42,8 @@
 - (JavaMathBigDecimal *)toSecondsWithJavaLangLong:(JavaLangLong *)nanoSeconds;
 
 - (id<JavaUtilList>)getRawDurationsWithJavaUtilList:(id<JavaUtilList>)stepDurations;
+
+- (ComGoogleGsonGson *)gson;
 
 - (void)addUsageEntryWithCucumberApiResult:(CucumberApiResult *)result
                               withNSString:(NSString *)stepDefinition
@@ -73,6 +76,8 @@ __attribute__((unused)) static id<JavaUtilMap> CucumberRuntimeFormatterUsageForm
 __attribute__((unused)) static JavaMathBigDecimal *CucumberRuntimeFormatterUsageFormatter_toSecondsWithJavaLangLong_(CucumberRuntimeFormatterUsageFormatter *self, JavaLangLong *nanoSeconds);
 
 __attribute__((unused)) static id<JavaUtilList> CucumberRuntimeFormatterUsageFormatter_getRawDurationsWithJavaUtilList_(CucumberRuntimeFormatterUsageFormatter *self, id<JavaUtilList> stepDurations);
+
+__attribute__((unused)) static ComGoogleGsonGson *CucumberRuntimeFormatterUsageFormatter_gson(CucumberRuntimeFormatterUsageFormatter *self);
 
 __attribute__((unused)) static void CucumberRuntimeFormatterUsageFormatter_addUsageEntryWithCucumberApiResult_withNSString_withNSString_withNSString_(CucumberRuntimeFormatterUsageFormatter *self, CucumberApiResult *result, NSString *stepDefinition, NSString *stepNameWithArgs, NSString *stepLocation);
 
@@ -166,7 +171,8 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFormatterUsageFormatter)
     JreStrongAssign(&stepDefContainer->source_, [((id<JavaUtilMap_Entry>) nil_chk(usageEntry)) getKey]);
     JreStrongAssign(&stepDefContainer->steps_, CucumberRuntimeFormatterUsageFormatter_createStepContainerWithJavaUtilList_(self, [usageEntry getValue]));
   }
-  @throw create_JavaLangUnsupportedOperationException_initWithNSString_(@"Needs gson");
+  [((CucumberApiFormatterNiceAppendable *) nil_chk(out_)) appendWithJavaLangCharSequence:[((ComGoogleGsonGson *) nil_chk(CucumberRuntimeFormatterUsageFormatter_gson(self))) toJsonWithId:stepDefContainers]];
+  [out_ close];
 }
 
 - (id<JavaUtilList>)createStepContainerWithJavaUtilList:(id<JavaUtilList>)stepContainers {
@@ -187,6 +193,10 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFormatterUsageFormatter)
 
 - (id<JavaUtilList>)getRawDurationsWithJavaUtilList:(id<JavaUtilList>)stepDurations {
   return CucumberRuntimeFormatterUsageFormatter_getRawDurationsWithJavaUtilList_(self, stepDurations);
+}
+
+- (ComGoogleGsonGson *)gson {
+  return CucumberRuntimeFormatterUsageFormatter_gson(self);
 }
 
 - (void)addUsageEntryWithCucumberApiResult:(CucumberApiResult *)result
@@ -231,6 +241,7 @@ withCucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy:(id<CucumberRu
     { NULL, "LJavaUtilMap;", 0x2, 10, 11, -1, 12, -1, -1 },
     { NULL, "LJavaMathBigDecimal;", 0x2, 13, 14, -1, -1, -1, -1 },
     { NULL, "LJavaUtilList;", 0x2, 15, 6, -1, 16, -1, -1 },
+    { NULL, "LComGoogleGsonGson;", 0x2, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 17, 18, -1, -1, -1, -1 },
     { NULL, "LCucumberRuntimeFormatterUsageFormatter_StepDuration;", 0x2, 19, 20, -1, -1, -1, -1 },
     { NULL, "LCucumberRuntimeFormatterUsageFormatter_StepContainer;", 0x2, 21, 22, -1, 23, -1, -1 },
@@ -248,10 +259,11 @@ withCucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy:(id<CucumberRu
   methods[6].selector = @selector(createAggregatedDurationsWithCucumberRuntimeFormatterUsageFormatter_StepContainer:);
   methods[7].selector = @selector(toSecondsWithJavaLangLong:);
   methods[8].selector = @selector(getRawDurationsWithJavaUtilList:);
-  methods[9].selector = @selector(addUsageEntryWithCucumberApiResult:withNSString:withNSString:withNSString:);
-  methods[10].selector = @selector(createStepDurationWithJavaLangLong:withNSString:);
-  methods[11].selector = @selector(findOrCreateStepContainerWithNSString:withJavaUtilList:);
-  methods[12].selector = @selector(addUsageStatisticStrategyWithNSString:withCucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy:);
+  methods[9].selector = @selector(gson);
+  methods[10].selector = @selector(addUsageEntryWithCucumberApiResult:withNSString:withNSString:withNSString:);
+  methods[11].selector = @selector(createStepDurationWithJavaLangLong:withNSString:);
+  methods[12].selector = @selector(findOrCreateStepContainerWithNSString:withJavaUtilList:);
+  methods[13].selector = @selector(addUsageStatisticStrategyWithNSString:withCucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "NANOS_PER_SECOND", "LJavaMathBigDecimal;", .constantValue.asLong = 0, 0x1a, -1, 26, -1, -1 },
@@ -262,7 +274,7 @@ withCucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy:(id<CucumberRu
     { "runFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 30, -1 },
   };
   static const void *ptrTable[] = { "LJavaLangAppendable;", "setEventPublisher", "LCucumberApiEventEventPublisher;", "handleTestStepFinished", "LCucumberApiEventTestStepFinished;", "createStepContainer", "LJavaUtilList;", "(Ljava/util/List<Lcucumber/runtime/formatter/UsageFormatter$StepContainer;>;)Ljava/util/List<Lcucumber/runtime/formatter/UsageFormatter$StepContainer;>;", "formatDurationAsSeconds", "(Ljava/util/List<Lcucumber/runtime/formatter/UsageFormatter$StepDuration;>;)V", "createAggregatedDurations", "LCucumberRuntimeFormatterUsageFormatter_StepContainer;", "(Lcucumber/runtime/formatter/UsageFormatter$StepContainer;)Ljava/util/Map<Ljava/lang/String;Ljava/math/BigDecimal;>;", "toSeconds", "LJavaLangLong;", "getRawDurations", "(Ljava/util/List<Lcucumber/runtime/formatter/UsageFormatter$StepDuration;>;)Ljava/util/List<Ljava/lang/Long;>;", "addUsageEntry", "LCucumberApiResult;LNSString;LNSString;LNSString;", "createStepDuration", "LJavaLangLong;LNSString;", "findOrCreateStepContainer", "LNSString;LJavaUtilList;", "(Ljava/lang/String;Ljava/util/List<Lcucumber/runtime/formatter/UsageFormatter$StepContainer;>;)Lcucumber/runtime/formatter/UsageFormatter$StepContainer;", "addUsageStatisticStrategy", "LNSString;LCucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy;", &CucumberRuntimeFormatterUsageFormatter_NANOS_PER_SECOND, "Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Lcucumber/runtime/formatter/UsageFormatter$StepContainer;>;>;", "Ljava/util/Map<Ljava/lang/String;Lcucumber/runtime/formatter/UsageFormatter$UsageStatisticStrategy;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;", "LCucumberRuntimeFormatterUsageFormatter_StepDefContainer;LCucumberRuntimeFormatterUsageFormatter_StepContainer;LCucumberRuntimeFormatterUsageFormatter_StepDuration;LCucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy;LCucumberRuntimeFormatterUsageFormatter_AverageUsageStatisticStrategy;LCucumberRuntimeFormatterUsageFormatter_MedianUsageStatisticStrategy;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterUsageFormatter = { "UsageFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 13, 6, -1, 31, -1, -1, -1 };
+  static const J2ObjcClassInfo _CucumberRuntimeFormatterUsageFormatter = { "UsageFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 14, 6, -1, 31, -1, -1, -1 };
   return &_CucumberRuntimeFormatterUsageFormatter;
 }
 
@@ -330,6 +342,10 @@ id<JavaUtilList> CucumberRuntimeFormatterUsageFormatter_getRawDurationsWithJavaU
     [rawDurations addWithId:JavaLangLong_valueOfWithLong_([((JavaMathBigDecimal *) nil_chk(((CucumberRuntimeFormatterUsageFormatter_StepDuration *) nil_chk(stepDuration))->duration_)) longLongValue])];
   }
   return rawDurations;
+}
+
+ComGoogleGsonGson *CucumberRuntimeFormatterUsageFormatter_gson(CucumberRuntimeFormatterUsageFormatter *self) {
+  return [((ComGoogleGsonGsonBuilder *) nil_chk([create_ComGoogleGsonGsonBuilder_init() setPrettyPrinting])) create];
 }
 
 void CucumberRuntimeFormatterUsageFormatter_addUsageEntryWithCucumberApiResult_withNSString_withNSString_withNSString_(CucumberRuntimeFormatterUsageFormatter *self, CucumberApiResult *result, NSString *stepDefinition, NSString *stepNameWithArgs, NSString *stepLocation) {

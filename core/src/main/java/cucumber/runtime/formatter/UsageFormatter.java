@@ -7,8 +7,8 @@ import cucumber.api.event.TestRunFinished;
 import cucumber.api.event.TestStepFinished;
 import cucumber.api.formatter.Formatter;
 import cucumber.api.formatter.NiceAppendable;
-//import gherkin.deps.com.google.gson.Gson;
-//import gherkin.deps.com.google.gson.GsonBuilder;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -76,9 +76,8 @@ final class UsageFormatter implements Formatter {
             stepDefContainer.steps = createStepContainer(usageEntry.getValue());
         }
 
-        throw new UnsupportedOperationException("Needs gson");
-//        out.append(gson().toJson(stepDefContainers));
-//        out.close();
+        out.append(gson().toJson(stepDefContainers));
+        out.close();
     }
 
     private List<StepContainer> createStepContainer(List<StepContainer> stepContainers) {
@@ -121,9 +120,9 @@ final class UsageFormatter implements Formatter {
         return rawDurations;
     }
 
-//    private Gson gson() {
-//        return new GsonBuilder().setPrettyPrinting().create();
-//    }
+    private Gson gson() {
+        return new GsonBuilder().setPrettyPrinting().create();
+    }
 
     private void addUsageEntry(Result result, String stepDefinition, String stepNameWithArgs, String stepLocation) {
         List<StepContainer> stepContainers = usageMap.get(stepDefinition);

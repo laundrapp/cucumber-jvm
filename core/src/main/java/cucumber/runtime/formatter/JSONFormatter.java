@@ -20,8 +20,8 @@ import gherkin.ast.DocString;
 import gherkin.ast.Feature;
 import gherkin.ast.ScenarioDefinition;
 import gherkin.ast.Step;
-//import gherkin.deps.com.google.gson.Gson;
-//import gherkin.deps.com.google.gson.GsonBuilder;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import gherkin.pickles.Argument;
 import gherkin.pickles.PickleCell;
 import gherkin.pickles.PickleRow;
@@ -39,7 +39,7 @@ final class JSONFormatter implements Formatter {
     private Map<String, Object> currentTestCaseMap;
     private List<Map<String, Object>> currentStepsList;
     private Map<String, Object> currentStepOrHookMap;
-//    private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
     private final NiceAppendable out;
     private final TestSourcesModel testSources = new TestSourcesModel();
 
@@ -152,9 +152,8 @@ final class JSONFormatter implements Formatter {
     }
 
     private void finishReport() {
-//        out.append(gson.toJson(featureMaps));
-//        out.close();
-        throw new UnsupportedOperationException("Needs gson");
+        out.append(gson.toJson(featureMaps));
+        out.close();
     }
 
     private Map<String, Object> createFeatureMap(TestCase testCase) {
