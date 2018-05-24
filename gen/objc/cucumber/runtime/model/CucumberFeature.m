@@ -156,7 +156,7 @@ JavaUtilRegexPattern *CCBRCucumberFeature_RERUN_PATH_SPECIFICATION;
 }
 
 - (void)sendTestSourceReadWithCCBEventBus:(CCBEventBus *)bus {
-  [((CCBEventBus *) nil_chk(bus)) sendWithCCBEvent:create_CCBTestSourceRead_initWithJavaLangLong_withNSString_withNSString_([bus getTime], uri_, gherkinSource_)];
+  [((CCBEventBus *) nil_chk(bus)) sendWithCucumberApiEventEvent:create_CucumberApiEventTestSourceRead_initWithJavaLangLong_withNSString_withNSString_([bus getTime], uri_, gherkinSource_)];
 }
 
 - (void)dealloc {

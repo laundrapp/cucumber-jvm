@@ -21,7 +21,7 @@
 #if !defined (CCBRPluginFactory_) && (INCLUDE_ALL_CucumberRuntimeFormatterPluginFactory || defined(INCLUDE_CCBRPluginFactory))
 #define CCBRPluginFactory_
 
-@protocol CCBPlugin;
+@protocol CucumberApiPlugin;
 
 /*!
  @brief This class creates plugin instances from a String.
@@ -37,7 +37,7 @@
 
 - (instancetype __nonnull)init;
 
-- (id<CCBPlugin>)createWithNSString:(NSString *)pluginString;
+- (id<CucumberApiPlugin>)createWithNSString:(NSString *)pluginString;
 
 + (jboolean)isFormatterNameWithNSString:(NSString *)name;
 

@@ -18,16 +18,16 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBStepDefinitionReporter_) && (INCLUDE_ALL_CucumberApiStepDefinitionReporter || defined(INCLUDE_CCBStepDefinitionReporter))
-#define CCBStepDefinitionReporter_
+#if !defined (CucumberApiStepDefinitionReporter_) && (INCLUDE_ALL_CucumberApiStepDefinitionReporter || defined(INCLUDE_CucumberApiStepDefinitionReporter))
+#define CucumberApiStepDefinitionReporter_
 
 #define RESTRICT_CucumberApiPlugin 1
-#define INCLUDE_CCBPlugin 1
+#define INCLUDE_CucumberApiPlugin 1
 #include "cucumber/api/Plugin.h"
 
 @protocol CCBRStepDefinition;
 
-@protocol CCBStepDefinitionReporter < CCBPlugin, JavaObject >
+@protocol CucumberApiStepDefinitionReporter < CucumberApiPlugin, JavaObject >
 
 /*!
  @brief Called when a step definition is defined
@@ -37,11 +37,9 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBStepDefinitionReporter)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiStepDefinitionReporter)
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBStepDefinitionReporter)
-
-#define CucumberApiStepDefinitionReporter CCBStepDefinitionReporter
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiStepDefinitionReporter)
 
 #endif
 

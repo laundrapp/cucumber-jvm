@@ -18,16 +18,16 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBTimeStampedEvent_) && (INCLUDE_ALL_CucumberApiEventTimeStampedEvent || defined(INCLUDE_CCBTimeStampedEvent))
-#define CCBTimeStampedEvent_
+#if !defined (CucumberApiEventTimeStampedEvent_) && (INCLUDE_ALL_CucumberApiEventTimeStampedEvent || defined(INCLUDE_CucumberApiEventTimeStampedEvent))
+#define CucumberApiEventTimeStampedEvent_
 
 #define RESTRICT_CucumberApiEventEvent 1
-#define INCLUDE_CCBEvent 1
+#define INCLUDE_CucumberApiEventEvent 1
 #include "cucumber/api/event/Event.h"
 
 @class JavaLangLong;
 
-@interface CCBTimeStampedEvent : NSObject < CCBEvent >
+@interface CucumberApiEventTimeStampedEvent : NSObject < CucumberApiEventEvent >
 
 #pragma mark Public
 
@@ -39,13 +39,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBTimeStampedEvent)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiEventTimeStampedEvent)
 
-FOUNDATION_EXPORT void CCBTimeStampedEvent_initWithJavaLangLong_(CCBTimeStampedEvent *self, JavaLangLong *timeStamp);
+FOUNDATION_EXPORT void CucumberApiEventTimeStampedEvent_initWithJavaLangLong_(CucumberApiEventTimeStampedEvent *self, JavaLangLong *timeStamp);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBTimeStampedEvent)
-
-@compatibility_alias CucumberApiEventTimeStampedEvent CCBTimeStampedEvent;
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventTimeStampedEvent)
 
 #endif
 

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBFormat_) && (INCLUDE_ALL_CucumberApiFormat || defined(INCLUDE_CCBFormat))
-#define CCBFormat_
+#if !defined (CucumberApiFormat_) && (INCLUDE_ALL_CucumberApiFormat || defined(INCLUDE_CucumberApiFormat))
+#define CucumberApiFormat_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -65,7 +65,7 @@
   This annotation also works for data tables that are transformed to a list of beans with Date or Calendar fields. 
  </p>
  */
-@protocol CCBFormat < JavaLangAnnotationAnnotation >
+@protocol CucumberApiFormat < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 
@@ -75,20 +75,18 @@
 
 @end
 
-@interface CCBFormat : NSObject < CCBFormat > {
+@interface CucumberApiFormat : NSObject < CucumberApiFormat > {
  @public
   NSString *value_;
 }
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBFormat)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiFormat)
 
-FOUNDATION_EXPORT id<CCBFormat> create_CCBFormat(NSString *value);
+FOUNDATION_EXPORT id<CucumberApiFormat> create_CucumberApiFormat(NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBFormat)
-
-#define CucumberApiFormat CCBFormat
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiFormat)
 
 #endif
 

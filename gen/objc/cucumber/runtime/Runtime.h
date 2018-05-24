@@ -32,8 +32,8 @@
 @protocol CCBRClassFinder;
 @protocol CCBRGlue;
 @protocol CCBRResourceLoader;
-@protocol CCBStepDefinitionReporter;
 @protocol CCBTimeService;
+@protocol CucumberApiStepDefinitionReporter;
 @protocol JavaUtilCollection;
 @protocol JavaUtilList;
 
@@ -88,7 +88,7 @@
 
 - (void)printSummary;
 
-- (void)reportStepDefinitionsWithCCBStepDefinitionReporter:(id<CCBStepDefinitionReporter>)stepDefinitionReporter;
+- (void)reportStepDefinitionsWithCucumberApiStepDefinitionReporter:(id<CucumberApiStepDefinitionReporter>)stepDefinitionReporter;
 
 /*!
  @brief This is the main entry point.Used from CLI, but not from JUnit.

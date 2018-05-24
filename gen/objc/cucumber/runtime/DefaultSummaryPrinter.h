@@ -22,12 +22,12 @@
 #define CCBRDefaultSummaryPrinter_
 
 #define RESTRICT_CucumberApiSummaryPrinter 1
-#define INCLUDE_CCBSummaryPrinter 1
+#define INCLUDE_CucumberApiSummaryPrinter 1
 #include "cucumber/api/SummaryPrinter.h"
 
 @class CCBRRuntime;
 
-@interface CCBRDefaultSummaryPrinter : NSObject < CCBSummaryPrinter >
+@interface CCBRDefaultSummaryPrinter : NSObject < CucumberApiSummaryPrinter >
 
 #pragma mark Public
 

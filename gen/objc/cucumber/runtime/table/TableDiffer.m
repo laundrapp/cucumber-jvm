@@ -26,12 +26,12 @@
 
 @interface CCBRTableDiffer () {
  @public
-  CCBDataTable *from_;
-  CCBDataTable *to_;
+  CucumberApiDataTable *from_;
+  CucumberApiDataTable *to_;
 }
 
-- (void)checkColumnsWithCCBDataTable:(CCBDataTable *)a
-                    withCCBDataTable:(CCBDataTable *)b;
+- (void)checkColumnsWithCucumberApiDataTable:(CucumberApiDataTable *)a
+                    withCucumberApiDataTable:(CucumberApiDataTable *)b;
 
 - (id<JavaUtilList>)convertToPickleCellsWithJavaUtilList:(id<JavaUtilList>)e;
 
@@ -39,7 +39,7 @@
 
 - (id<JavaUtilMap>)createDeltasByLineWithJavaUtilList:(id<JavaUtilList>)deltas;
 
-- (CCBDataTable *)createTableDiffWithJavaUtilMap:(id<JavaUtilMap>)deltasByLine;
+- (CucumberApiDataTable *)createTableDiffWithJavaUtilMap:(id<JavaUtilMap>)deltasByLine;
 
 - (void)addRowsToTableDiffWithJavaUtilList:(id<JavaUtilList>)diffTableRows
                           withDifflibDelta:(DifflibDelta *)delta;
@@ -52,10 +52,10 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CCBRTableDiffer, from_, CCBDataTable *)
-J2OBJC_FIELD_SETTER(CCBRTableDiffer, to_, CCBDataTable *)
+J2OBJC_FIELD_SETTER(CCBRTableDiffer, from_, CucumberApiDataTable *)
+J2OBJC_FIELD_SETTER(CCBRTableDiffer, to_, CucumberApiDataTable *)
 
-__attribute__((unused)) static void CCBRTableDiffer_checkColumnsWithCCBDataTable_withCCBDataTable_(CCBRTableDiffer *self, CCBDataTable *a, CCBDataTable *b);
+__attribute__((unused)) static void CCBRTableDiffer_checkColumnsWithCucumberApiDataTable_withCucumberApiDataTable_(CCBRTableDiffer *self, CucumberApiDataTable *a, CucumberApiDataTable *b);
 
 __attribute__((unused)) static id<JavaUtilList> CCBRTableDiffer_convertToPickleCellsWithJavaUtilList_(CCBRTableDiffer *self, id<JavaUtilList> e);
 
@@ -63,7 +63,7 @@ __attribute__((unused)) static id<JavaUtilList> CCBRTableDiffer_getCellValuesWit
 
 __attribute__((unused)) static id<JavaUtilMap> CCBRTableDiffer_createDeltasByLineWithJavaUtilList_(CCBRTableDiffer *self, id<JavaUtilList> deltas);
 
-__attribute__((unused)) static CCBDataTable *CCBRTableDiffer_createTableDiffWithJavaUtilMap_(CCBRTableDiffer *self, id<JavaUtilMap> deltasByLine);
+__attribute__((unused)) static CucumberApiDataTable *CCBRTableDiffer_createTableDiffWithJavaUtilMap_(CCBRTableDiffer *self, id<JavaUtilMap> deltasByLine);
 
 __attribute__((unused)) static void CCBRTableDiffer_addRowsToTableDiffWithJavaUtilList_withDifflibDelta_(CCBRTableDiffer *self, id<JavaUtilList> diffTableRows, DifflibDelta *delta);
 
@@ -73,23 +73,23 @@ __attribute__((unused)) static void CCBRTableDiffer_markChangedAndInsertedRowsIn
 
 @implementation CCBRTableDiffer
 
-- (instancetype __nonnull)initWithCCBDataTable:(CCBDataTable *)fromTable
-                              withCCBDataTable:(CCBDataTable *)toTable {
-  CCBRTableDiffer_initWithCCBDataTable_withCCBDataTable_(self, fromTable, toTable);
+- (instancetype __nonnull)initWithCucumberApiDataTable:(CucumberApiDataTable *)fromTable
+                              withCucumberApiDataTable:(CucumberApiDataTable *)toTable {
+  CCBRTableDiffer_initWithCucumberApiDataTable_withCucumberApiDataTable_(self, fromTable, toTable);
   return self;
 }
 
-- (void)checkColumnsWithCCBDataTable:(CCBDataTable *)a
-                    withCCBDataTable:(CCBDataTable *)b {
-  CCBRTableDiffer_checkColumnsWithCCBDataTable_withCCBDataTable_(self, a, b);
+- (void)checkColumnsWithCucumberApiDataTable:(CucumberApiDataTable *)a
+                    withCucumberApiDataTable:(CucumberApiDataTable *)b {
+  CCBRTableDiffer_checkColumnsWithCucumberApiDataTable_withCucumberApiDataTable_(self, a, b);
 }
 
 - (void)calculateDiffs {
-  DifflibPatch *patch = DifflibDiffUtils_diffWithJavaUtilList_withJavaUtilList_([((CCBDataTable *) nil_chk(from_)) diffableRows], [((CCBDataTable *) nil_chk(to_)) diffableRows]);
+  DifflibPatch *patch = DifflibDiffUtils_diffWithJavaUtilList_withJavaUtilList_([((CucumberApiDataTable *) nil_chk(from_)) diffableRows], [((CucumberApiDataTable *) nil_chk(to_)) diffableRows]);
   id<JavaUtilList> deltas = [((DifflibPatch *) nil_chk(patch)) getDeltas];
   if (![((id<JavaUtilList>) nil_chk(deltas)) isEmpty]) {
     id<JavaUtilMap> deltasByLine = CCBRTableDiffer_createDeltasByLineWithJavaUtilList_(self, deltas);
-    @throw create_CCBRTableDiffException_initWithCCBDataTable_withCCBDataTable_withCCBDataTable_(from_, to_, CCBRTableDiffer_createTableDiffWithJavaUtilMap_(self, deltasByLine));
+    @throw create_CCBRTableDiffException_initWithCucumberApiDataTable_withCucumberApiDataTable_withCucumberApiDataTable_(from_, to_, CCBRTableDiffer_createTableDiffWithJavaUtilMap_(self, deltasByLine));
   }
 }
 
@@ -98,8 +98,8 @@ __attribute__((unused)) static void CCBRTableDiffer_markChangedAndInsertedRowsIn
   id<JavaUtilList> diffTableRows = create_JavaUtilArrayList_init();
   id<JavaUtilList> missingRow = create_JavaUtilArrayList_init();
   JavaUtilArrayList *extraRows = create_JavaUtilArrayList_init();
-  [extraRows addAllWithJavaUtilCollection:[((CCBDataTable *) nil_chk(to_)) raw]];
-  for (GherkinPicklesPickleRow * __strong r in nil_chk([((CCBDataTable *) nil_chk(from_)) getPickleRows])) {
+  [extraRows addAllWithJavaUtilCollection:[((CucumberApiDataTable *) nil_chk(to_)) raw]];
+  for (GherkinPicklesPickleRow * __strong r in nil_chk([((CucumberApiDataTable *) nil_chk(from_)) getPickleRows])) {
     if (![((id<JavaUtilList>) nil_chk([to_ raw])) containsWithId:CCBRTableDiffer_getCellValuesWithGherkinPicklesPickleRow_(self, r)]) {
       [missingRow addWithId:CCBRTableDiffer_getCellValuesWithGherkinPicklesPickleRow_(self, r)];
       [diffTableRows addWithId:create_JavaUtilAbstractMap_SimpleEntry_initWithId_withId_(create_GherkinPicklesPickleRow_initWithJavaUtilList_([((GherkinPicklesPickleRow *) nil_chk(r)) getCells]), JreLoadEnum(CCBRDataTableDiff_DiffType, DELETE))];
@@ -115,7 +115,7 @@ __attribute__((unused)) static void CCBRTableDiffer_markChangedAndInsertedRowsIn
     isDifferent = true;
   }
   if (isDifferent) {
-    @throw create_CCBRTableDiffException_initWithCCBDataTable_withCCBDataTable_withCCBDataTable_(from_, to_, CCBRDataTableDiff_createWithJavaUtilList_withCCBTableConverter_(diffTableRows, [from_ getTableConverter]));
+    @throw create_CCBRTableDiffException_initWithCucumberApiDataTable_withCucumberApiDataTable_withCucumberApiDataTable_(from_, to_, CCBRDataTableDiff_createWithJavaUtilList_withCucumberApiTableConverter_(diffTableRows, [from_ getTableConverter]));
   }
 }
 
@@ -131,7 +131,7 @@ __attribute__((unused)) static void CCBRTableDiffer_markChangedAndInsertedRowsIn
   return CCBRTableDiffer_createDeltasByLineWithJavaUtilList_(self, deltas);
 }
 
-- (CCBDataTable *)createTableDiffWithJavaUtilMap:(id<JavaUtilMap>)deltasByLine {
+- (CucumberApiDataTable *)createTableDiffWithJavaUtilMap:(id<JavaUtilMap>)deltasByLine {
   return CCBRTableDiffer_createTableDiffWithJavaUtilMap_(self, deltasByLine);
 }
 
@@ -165,7 +165,7 @@ __attribute__((unused)) static void CCBRTableDiffer_markChangedAndInsertedRowsIn
     { NULL, "LJavaUtilList;", 0x2, 3, 4, -1, 5, -1, -1 },
     { NULL, "LJavaUtilList;", 0x2, 6, 7, -1, 8, -1, -1 },
     { NULL, "LJavaUtilMap;", 0x2, 9, 4, -1, 10, -1, -1 },
-    { NULL, "LCCBDataTable;", 0x2, 11, 12, -1, 13, -1, -1 },
+    { NULL, "LCucumberApiDataTable;", 0x2, 11, 12, -1, 13, -1, -1 },
     { NULL, "V", 0x2, 14, 15, -1, 16, -1, -1 },
     { NULL, "V", 0x2, 17, 15, -1, 16, -1, -1 },
     { NULL, "V", 0x2, 18, 15, -1, 16, -1, -1 },
@@ -173,8 +173,8 @@ __attribute__((unused)) static void CCBRTableDiffer_markChangedAndInsertedRowsIn
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCCBDataTable:withCCBDataTable:);
-  methods[1].selector = @selector(checkColumnsWithCCBDataTable:withCCBDataTable:);
+  methods[0].selector = @selector(initWithCucumberApiDataTable:withCucumberApiDataTable:);
+  methods[1].selector = @selector(checkColumnsWithCucumberApiDataTable:withCucumberApiDataTable:);
   methods[2].selector = @selector(calculateDiffs);
   methods[3].selector = @selector(calculateUnorderedDiffs);
   methods[4].selector = @selector(convertToPickleCellsWithJavaUtilList:);
@@ -186,33 +186,33 @@ __attribute__((unused)) static void CCBRTableDiffer_markChangedAndInsertedRowsIn
   methods[10].selector = @selector(markChangedAndInsertedRowsInRevisedAsNewWithJavaUtilList:withDifflibDelta:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "from_", "LCCBDataTable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "to_", "LCCBDataTable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "from_", "LCucumberApiDataTable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "to_", "LCucumberApiDataTable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCCBDataTable;LCCBDataTable;", "checkColumns", "LCCBRTableDiffException;", "convertToPickleCells", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)Ljava/util/List<Lgherkin/pickles/PickleCell;>;", "getCellValues", "LGherkinPicklesPickleRow;", "(Lgherkin/pickles/PickleRow;)Ljava/util/List<Ljava/lang/String;>;", "createDeltasByLine", "(Ljava/util/List<Ldifflib/Delta;>;)Ljava/util/Map<Ljava/lang/Integer;Ldifflib/Delta;>;", "createTableDiff", "LJavaUtilMap;", "(Ljava/util/Map<Ljava/lang/Integer;Ldifflib/Delta;>;)Lcucumber/api/DataTable;", "addRowsToTableDiff", "LJavaUtilList;LDifflibDelta;", "(Ljava/util/List<Ljava/util/AbstractMap$SimpleEntry<Lgherkin/pickles/PickleRow;Lcucumber/runtime/table/DataTableDiff$DiffType;>;>;Ldifflib/Delta;)V", "markChangedAndDeletedRowsInOriginalAsMissing", "markChangedAndInsertedRowsInRevisedAsNew" };
+  static const void *ptrTable[] = { "LCucumberApiDataTable;LCucumberApiDataTable;", "checkColumns", "LCCBRTableDiffException;", "convertToPickleCells", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)Ljava/util/List<Lgherkin/pickles/PickleCell;>;", "getCellValues", "LGherkinPicklesPickleRow;", "(Lgherkin/pickles/PickleRow;)Ljava/util/List<Ljava/lang/String;>;", "createDeltasByLine", "(Ljava/util/List<Ldifflib/Delta;>;)Ljava/util/Map<Ljava/lang/Integer;Ldifflib/Delta;>;", "createTableDiff", "LJavaUtilMap;", "(Ljava/util/Map<Ljava/lang/Integer;Ldifflib/Delta;>;)Lcucumber/api/DataTable;", "addRowsToTableDiff", "LJavaUtilList;LDifflibDelta;", "(Ljava/util/List<Ljava/util/AbstractMap$SimpleEntry<Lgherkin/pickles/PickleRow;Lcucumber/runtime/table/DataTableDiff$DiffType;>;>;Ldifflib/Delta;)V", "markChangedAndDeletedRowsInOriginalAsMissing", "markChangedAndInsertedRowsInRevisedAsNew" };
   static const J2ObjcClassInfo _CCBRTableDiffer = { "TableDiffer", "cucumber.runtime.table", ptrTable, methods, fields, 7, 0x1, 11, 2, -1, -1, -1, -1, -1 };
   return &_CCBRTableDiffer;
 }
 
 @end
 
-void CCBRTableDiffer_initWithCCBDataTable_withCCBDataTable_(CCBRTableDiffer *self, CCBDataTable *fromTable, CCBDataTable *toTable) {
+void CCBRTableDiffer_initWithCucumberApiDataTable_withCucumberApiDataTable_(CCBRTableDiffer *self, CucumberApiDataTable *fromTable, CucumberApiDataTable *toTable) {
   NSObject_init(self);
-  CCBRTableDiffer_checkColumnsWithCCBDataTable_withCCBDataTable_(self, fromTable, toTable);
+  CCBRTableDiffer_checkColumnsWithCucumberApiDataTable_withCucumberApiDataTable_(self, fromTable, toTable);
   JreStrongAssign(&self->from_, fromTable);
   JreStrongAssign(&self->to_, toTable);
 }
 
-CCBRTableDiffer *new_CCBRTableDiffer_initWithCCBDataTable_withCCBDataTable_(CCBDataTable *fromTable, CCBDataTable *toTable) {
-  J2OBJC_NEW_IMPL(CCBRTableDiffer, initWithCCBDataTable_withCCBDataTable_, fromTable, toTable)
+CCBRTableDiffer *new_CCBRTableDiffer_initWithCucumberApiDataTable_withCucumberApiDataTable_(CucumberApiDataTable *fromTable, CucumberApiDataTable *toTable) {
+  J2OBJC_NEW_IMPL(CCBRTableDiffer, initWithCucumberApiDataTable_withCucumberApiDataTable_, fromTable, toTable)
 }
 
-CCBRTableDiffer *create_CCBRTableDiffer_initWithCCBDataTable_withCCBDataTable_(CCBDataTable *fromTable, CCBDataTable *toTable) {
-  J2OBJC_CREATE_IMPL(CCBRTableDiffer, initWithCCBDataTable_withCCBDataTable_, fromTable, toTable)
+CCBRTableDiffer *create_CCBRTableDiffer_initWithCucumberApiDataTable_withCucumberApiDataTable_(CucumberApiDataTable *fromTable, CucumberApiDataTable *toTable) {
+  J2OBJC_CREATE_IMPL(CCBRTableDiffer, initWithCucumberApiDataTable_withCucumberApiDataTable_, fromTable, toTable)
 }
 
-void CCBRTableDiffer_checkColumnsWithCCBDataTable_withCCBDataTable_(CCBRTableDiffer *self, CCBDataTable *a, CCBDataTable *b) {
-  if ([((id<JavaUtilList>) nil_chk([((CCBDataTable *) nil_chk(a)) topCells])) size] != [((id<JavaUtilList>) nil_chk([((CCBDataTable *) nil_chk(b)) topCells])) size] && ![((id<JavaUtilList>) nil_chk([b topCells])) isEmpty]) {
+void CCBRTableDiffer_checkColumnsWithCucumberApiDataTable_withCucumberApiDataTable_(CCBRTableDiffer *self, CucumberApiDataTable *a, CucumberApiDataTable *b) {
+  if ([((id<JavaUtilList>) nil_chk([((CucumberApiDataTable *) nil_chk(a)) topCells])) size] != [((id<JavaUtilList>) nil_chk([((CucumberApiDataTable *) nil_chk(b)) topCells])) size] && ![((id<JavaUtilList>) nil_chk([b topCells])) isEmpty]) {
     @throw create_JavaLangIllegalArgumentException_initWithNSString_(JreStrcat("$@C@", @"Tables must have equal number of columns:\n", a, 0x000a, b));
   }
 }
@@ -241,9 +241,9 @@ id<JavaUtilMap> CCBRTableDiffer_createDeltasByLineWithJavaUtilList_(CCBRTableDif
   return deltasByLine;
 }
 
-CCBDataTable *CCBRTableDiffer_createTableDiffWithJavaUtilMap_(CCBRTableDiffer *self, id<JavaUtilMap> deltasByLine) {
+CucumberApiDataTable *CCBRTableDiffer_createTableDiffWithJavaUtilMap_(CCBRTableDiffer *self, id<JavaUtilMap> deltasByLine) {
   id<JavaUtilList> diffTableRows = create_JavaUtilArrayList_init();
-  id<JavaUtilList> rows = [((CCBDataTable *) nil_chk(self->from_)) raw];
+  id<JavaUtilList> rows = [((CucumberApiDataTable *) nil_chk(self->from_)) raw];
   for (jint i = 0; i < [((id<JavaUtilList>) nil_chk(rows)) size]; i++) {
     DifflibDelta *delta = [((id<JavaUtilMap>) nil_chk(deltasByLine)) getWithId:JavaLangInteger_valueOfWithInt_(i)];
     if (delta == nil) {
@@ -263,7 +263,7 @@ CCBDataTable *CCBRTableDiffer_createTableDiffWithJavaUtilMap_(CCBRTableDiffer *s
   if (remainingDelta != nil) {
     CCBRTableDiffer_addRowsToTableDiffWithJavaUtilList_withDifflibDelta_(self, diffTableRows, remainingDelta);
   }
-  return CCBRDataTableDiff_createWithJavaUtilList_withCCBTableConverter_(diffTableRows, [self->from_ getTableConverter]);
+  return CCBRDataTableDiff_createWithJavaUtilList_withCucumberApiTableConverter_(diffTableRows, [self->from_ getTableConverter]);
 }
 
 void CCBRTableDiffer_addRowsToTableDiffWithJavaUtilList_withDifflibDelta_(CCBRTableDiffer *self, id<JavaUtilList> diffTableRows, DifflibDelta *delta) {

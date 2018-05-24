@@ -18,14 +18,14 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBResult_) && (INCLUDE_ALL_CucumberApiResult || defined(INCLUDE_CCBResult))
-#define CCBResult_
+#if !defined (CucumberApiResult_) && (INCLUDE_ALL_CucumberApiResult || defined(INCLUDE_CucumberApiResult))
+#define CucumberApiResult_
 
-@class CCBResult_Type;
+@class CucumberApiResult_Type;
 @class JavaLangLong;
 @class JavaLangThrowable;
 
-@interface CCBResult : NSObject
+@interface CucumberApiResult : NSObject
 
 #pragma mark Public
 
@@ -35,9 +35,9 @@
  @param duration the duration in nanoseconds
  @param error the error that caused the failure if any
  */
-- (instancetype __nonnull)initWithCCBResult_Type:(CCBResult_Type *)status
-                                withJavaLangLong:(JavaLangLong *)duration
-                           withJavaLangThrowable:(JavaLangThrowable *)error;
+- (instancetype __nonnull)initWithCucumberApiResult_Type:(CucumberApiResult_Type *)status
+                                        withJavaLangLong:(JavaLangLong *)duration
+                                   withJavaLangThrowable:(JavaLangThrowable *)error;
 
 - (JavaLangLong *)getDuration;
 
@@ -45,9 +45,9 @@
 
 - (NSString *)getErrorMessage;
 
-- (CCBResult_Type *)getStatus;
+- (CucumberApiResult_Type *)getStatus;
 
-- (jboolean)isWithCCBResult_Type:(CCBResult_Type *)status;
+- (jboolean)isWithCucumberApiResult_Type:(CucumberApiResult_Type *)status;
 
 - (jboolean)isOkWithBoolean:(jboolean)isStrict;
 
@@ -57,32 +57,30 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CCBResult)
+J2OBJC_STATIC_INIT(CucumberApiResult)
 
-inline CCBResult *CCBResult_get_SKIPPED(void);
+inline CucumberApiResult *CucumberApiResult_get_SKIPPED(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT CCBResult *CCBResult_SKIPPED;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBResult, SKIPPED, CCBResult *)
+FOUNDATION_EXPORT CucumberApiResult *CucumberApiResult_SKIPPED;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberApiResult, SKIPPED, CucumberApiResult *)
 
-inline CCBResult *CCBResult_get_UNDEFINED(void);
+inline CucumberApiResult *CucumberApiResult_get_UNDEFINED(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT CCBResult *CCBResult_UNDEFINED;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBResult, UNDEFINED, CCBResult *)
+FOUNDATION_EXPORT CucumberApiResult *CucumberApiResult_UNDEFINED;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberApiResult, UNDEFINED, CucumberApiResult *)
 
-FOUNDATION_EXPORT void CCBResult_initWithCCBResult_Type_withJavaLangLong_withJavaLangThrowable_(CCBResult *self, CCBResult_Type *status, JavaLangLong *duration, JavaLangThrowable *error);
+FOUNDATION_EXPORT void CucumberApiResult_initWithCucumberApiResult_Type_withJavaLangLong_withJavaLangThrowable_(CucumberApiResult *self, CucumberApiResult_Type *status, JavaLangLong *duration, JavaLangThrowable *error);
 
-FOUNDATION_EXPORT CCBResult *new_CCBResult_initWithCCBResult_Type_withJavaLangLong_withJavaLangThrowable_(CCBResult_Type *status, JavaLangLong *duration, JavaLangThrowable *error) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CucumberApiResult *new_CucumberApiResult_initWithCucumberApiResult_Type_withJavaLangLong_withJavaLangThrowable_(CucumberApiResult_Type *status, JavaLangLong *duration, JavaLangThrowable *error) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBResult *create_CCBResult_initWithCCBResult_Type_withJavaLangLong_withJavaLangThrowable_(CCBResult_Type *status, JavaLangLong *duration, JavaLangThrowable *error);
+FOUNDATION_EXPORT CucumberApiResult *create_CucumberApiResult_initWithCucumberApiResult_Type_withJavaLangLong_withJavaLangThrowable_(CucumberApiResult_Type *status, JavaLangLong *duration, JavaLangThrowable *error);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBResult)
-
-@compatibility_alias CucumberApiResult CCBResult;
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiResult)
 
 #endif
 
-#if !defined (CCBResult_Type_) && (INCLUDE_ALL_CucumberApiResult || defined(INCLUDE_CCBResult_Type))
-#define CCBResult_Type_
+#if !defined (CucumberApiResult_Type_) && (INCLUDE_ALL_CucumberApiResult || defined(INCLUDE_CucumberApiResult_Type))
+#define CucumberApiResult_Type_
 
 #define RESTRICT_JavaLangEnum 1
 #define INCLUDE_JavaLangEnum 1
@@ -90,63 +88,63 @@ J2OBJC_TYPE_LITERAL_HEADER(CCBResult)
 
 @class IOSObjectArray;
 
-typedef NS_ENUM(NSUInteger, CCBResult_Type_Enum) {
-  CCBResult_Type_Enum_PASSED = 0,
-  CCBResult_Type_Enum_SKIPPED = 1,
-  CCBResult_Type_Enum_PENDING = 2,
-  CCBResult_Type_Enum_UNDEFINED = 3,
-  CCBResult_Type_Enum_AMBIGUOUS = 4,
-  CCBResult_Type_Enum_FAILED = 5,
+typedef NS_ENUM(NSUInteger, CucumberApiResult_Type_Enum) {
+  CucumberApiResult_Type_Enum_PASSED = 0,
+  CucumberApiResult_Type_Enum_SKIPPED = 1,
+  CucumberApiResult_Type_Enum_PENDING = 2,
+  CucumberApiResult_Type_Enum_UNDEFINED = 3,
+  CucumberApiResult_Type_Enum_AMBIGUOUS = 4,
+  CucumberApiResult_Type_Enum_FAILED = 5,
 };
 
-@interface CCBResult_Type : JavaLangEnum
+@interface CucumberApiResult_Type : JavaLangEnum
 
 #pragma mark Public
 
 - (NSString *)firstLetterCapitalizedName;
 
-+ (CCBResult_Type *)fromLowerCaseNameWithNSString:(NSString *)lowerCaseName;
++ (CucumberApiResult_Type *)fromLowerCaseNameWithNSString:(NSString *)lowerCaseName;
 
 - (NSString *)lowerCaseName;
 
-+ (CCBResult_Type *)valueOfWithNSString:(NSString *)name;
++ (CucumberApiResult_Type *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
 
 @end
 
-J2OBJC_STATIC_INIT(CCBResult_Type)
+J2OBJC_STATIC_INIT(CucumberApiResult_Type)
 
 /*! INTERNAL ONLY - Use enum accessors declared below. */
-FOUNDATION_EXPORT CCBResult_Type *CCBResult_Type_values_[];
+FOUNDATION_EXPORT CucumberApiResult_Type *CucumberApiResult_Type_values_[];
 
-inline CCBResult_Type *CCBResult_Type_get_PASSED(void);
-J2OBJC_ENUM_CONSTANT(CCBResult_Type, PASSED)
+inline CucumberApiResult_Type *CucumberApiResult_Type_get_PASSED(void);
+J2OBJC_ENUM_CONSTANT(CucumberApiResult_Type, PASSED)
 
-inline CCBResult_Type *CCBResult_Type_get_SKIPPED(void);
-J2OBJC_ENUM_CONSTANT(CCBResult_Type, SKIPPED)
+inline CucumberApiResult_Type *CucumberApiResult_Type_get_SKIPPED(void);
+J2OBJC_ENUM_CONSTANT(CucumberApiResult_Type, SKIPPED)
 
-inline CCBResult_Type *CCBResult_Type_get_PENDING(void);
-J2OBJC_ENUM_CONSTANT(CCBResult_Type, PENDING)
+inline CucumberApiResult_Type *CucumberApiResult_Type_get_PENDING(void);
+J2OBJC_ENUM_CONSTANT(CucumberApiResult_Type, PENDING)
 
-inline CCBResult_Type *CCBResult_Type_get_UNDEFINED(void);
-J2OBJC_ENUM_CONSTANT(CCBResult_Type, UNDEFINED)
+inline CucumberApiResult_Type *CucumberApiResult_Type_get_UNDEFINED(void);
+J2OBJC_ENUM_CONSTANT(CucumberApiResult_Type, UNDEFINED)
 
-inline CCBResult_Type *CCBResult_Type_get_AMBIGUOUS(void);
-J2OBJC_ENUM_CONSTANT(CCBResult_Type, AMBIGUOUS)
+inline CucumberApiResult_Type *CucumberApiResult_Type_get_AMBIGUOUS(void);
+J2OBJC_ENUM_CONSTANT(CucumberApiResult_Type, AMBIGUOUS)
 
-inline CCBResult_Type *CCBResult_Type_get_FAILED(void);
-J2OBJC_ENUM_CONSTANT(CCBResult_Type, FAILED)
+inline CucumberApiResult_Type *CucumberApiResult_Type_get_FAILED(void);
+J2OBJC_ENUM_CONSTANT(CucumberApiResult_Type, FAILED)
 
-FOUNDATION_EXPORT CCBResult_Type *CCBResult_Type_fromLowerCaseNameWithNSString_(NSString *lowerCaseName);
+FOUNDATION_EXPORT CucumberApiResult_Type *CucumberApiResult_Type_fromLowerCaseNameWithNSString_(NSString *lowerCaseName);
 
-FOUNDATION_EXPORT IOSObjectArray *CCBResult_Type_values(void);
+FOUNDATION_EXPORT IOSObjectArray *CucumberApiResult_Type_values(void);
 
-FOUNDATION_EXPORT CCBResult_Type *CCBResult_Type_valueOfWithNSString_(NSString *name);
+FOUNDATION_EXPORT CucumberApiResult_Type *CucumberApiResult_Type_valueOfWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT CCBResult_Type *CCBResult_Type_fromOrdinal(NSUInteger ordinal);
+FOUNDATION_EXPORT CucumberApiResult_Type *CucumberApiResult_Type_fromOrdinal(NSUInteger ordinal);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBResult_Type)
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiResult_Type)
 
 #endif
 

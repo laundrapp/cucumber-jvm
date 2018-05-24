@@ -7,19 +7,19 @@
 #include "cucumber/api/event/TimeStampedEvent.h"
 #include "java/lang/Long.h"
 
-@interface CCBTimeStampedEvent () {
+@interface CucumberApiEventTimeStampedEvent () {
  @public
   JavaLangLong *timeStamp_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(CCBTimeStampedEvent, timeStamp_, JavaLangLong *)
+J2OBJC_FIELD_SETTER(CucumberApiEventTimeStampedEvent, timeStamp_, JavaLangLong *)
 
-@implementation CCBTimeStampedEvent
+@implementation CucumberApiEventTimeStampedEvent
 
 - (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp {
-  CCBTimeStampedEvent_initWithJavaLangLong_(self, timeStamp);
+  CucumberApiEventTimeStampedEvent_initWithJavaLangLong_(self, timeStamp);
   return self;
 }
 
@@ -47,15 +47,15 @@ J2OBJC_FIELD_SETTER(CCBTimeStampedEvent, timeStamp_, JavaLangLong *)
     { "timeStamp_", "LJavaLangLong;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LJavaLangLong;" };
-  static const J2ObjcClassInfo _CCBTimeStampedEvent = { "TimeStampedEvent", "cucumber.api.event", ptrTable, methods, fields, 7, 0x400, 2, 1, -1, -1, -1, -1, -1 };
-  return &_CCBTimeStampedEvent;
+  static const J2ObjcClassInfo _CucumberApiEventTimeStampedEvent = { "TimeStampedEvent", "cucumber.api.event", ptrTable, methods, fields, 7, 0x400, 2, 1, -1, -1, -1, -1, -1 };
+  return &_CucumberApiEventTimeStampedEvent;
 }
 
 @end
 
-void CCBTimeStampedEvent_initWithJavaLangLong_(CCBTimeStampedEvent *self, JavaLangLong *timeStamp) {
+void CucumberApiEventTimeStampedEvent_initWithJavaLangLong_(CucumberApiEventTimeStampedEvent *self, JavaLangLong *timeStamp) {
   NSObject_init(self);
   JreStrongAssign(&self->timeStamp_, timeStamp);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBTimeStampedEvent)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiEventTimeStampedEvent)

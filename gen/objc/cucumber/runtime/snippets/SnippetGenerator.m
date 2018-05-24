@@ -247,7 +247,7 @@ id<JavaUtilList> CCBRSnippetGenerator_argumentTypesWithGherkinPicklesPickleStep_
       [argTypes addWithId:NSString_class_()];
     }
     if ([arg isKindOfClass:[GherkinPicklesPickleTable class]]) {
-      [argTypes addWithId:CCBDataTable_class_()];
+      [argTypes addWithId:CucumberApiDataTable_class_()];
     }
   }
   return argTypes;

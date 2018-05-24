@@ -14,14 +14,14 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *CCBTransform__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CucumberApiTransform__Annotations$0(void);
 
-@implementation CCBTransform
+@implementation CucumberApiTransform
 
 @synthesize value = value_;
 
 - (IOSClass *)annotationType {
-  return CCBTransform_class_();
+  return CucumberApiTransform_class_();
 }
 
 - (NSString *)description {
@@ -53,21 +53,21 @@ __attribute__((unused)) static IOSObjectArray *CCBTransform__Annotations$0(void)
   static const J2ObjcFieldInfo fields[] = {
     { "value_", "LIOSClass;", .constantValue.asLong = 0, 0x1000, -1, -1, 0, -1 },
   };
-  static const void *ptrTable[] = { "Ljava/lang/Class<+Lcucumber/api/Transformer<*>;>;", (void *)&CCBTransform__Annotations$0 };
-  static const J2ObjcClassInfo _CCBTransform = { "Transform", "cucumber.api", ptrTable, methods, fields, 7, 0x2609, 1, 1, -1, -1, -1, -1, 1 };
-  return &_CCBTransform;
+  static const void *ptrTable[] = { "Ljava/lang/Class<+Lcucumber/api/Transformer<*>;>;", (void *)&CucumberApiTransform__Annotations$0 };
+  static const J2ObjcClassInfo _CucumberApiTransform = { "Transform", "cucumber.api", ptrTable, methods, fields, 7, 0x2609, 1, 1, -1, -1, -1, -1, 1 };
+  return &_CucumberApiTransform;
 }
 
 @end
 
-id<CCBTransform> create_CCBTransform(IOSClass *value) {
-  CCBTransform *self = AUTORELEASE([[CCBTransform alloc] init]);
+id<CucumberApiTransform> create_CucumberApiTransform(IOSClass *value) {
+  CucumberApiTransform *self = AUTORELEASE([[CucumberApiTransform alloc] init]);
   self->value_ = RETAIN_(value);
   return self;
 }
 
-IOSObjectArray *CCBTransform__Annotations$0() {
+IOSObjectArray *CucumberApiTransform__Annotations$0() {
   return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, PARAMETER), JreLoadEnum(JavaLangAnnotationElementType, ANNOTATION_TYPE) } count:2 type:JavaLangAnnotationElementType_class_()]), create_JavaLangAnnotationDocumented() } count:3 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBTransform)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiTransform)

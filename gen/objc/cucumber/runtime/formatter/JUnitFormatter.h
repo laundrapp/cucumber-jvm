@@ -22,23 +22,23 @@
 #define CCBRJUnitFormatter_
 
 #define RESTRICT_CucumberApiFormatterFormatter 1
-#define INCLUDE_CCBFormatter 1
+#define INCLUDE_CucumberApiFormatterFormatter 1
 #include "cucumber/api/formatter/Formatter.h"
 
 #define RESTRICT_CucumberApiFormatterStrictAware 1
-#define INCLUDE_CCBStrictAware 1
+#define INCLUDE_CucumberApiFormatterStrictAware 1
 #include "cucumber/api/formatter/StrictAware.h"
 
 @class JavaNetURL;
-@protocol CCBEventPublisher;
+@protocol CucumberApiEventEventPublisher;
 
-@interface CCBRJUnitFormatter : NSObject < CCBFormatter, CCBStrictAware >
+@interface CCBRJUnitFormatter : NSObject < CucumberApiFormatterFormatter, CucumberApiFormatterStrictAware >
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithJavaNetURL:(JavaNetURL *)outArg;
 
-- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher;
+- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
 
 - (void)setStrictWithBoolean:(jboolean)strict;
 

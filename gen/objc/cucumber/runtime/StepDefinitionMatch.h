@@ -34,7 +34,7 @@
 @class JavaLangStackTraceElement;
 @class JavaLangThrowable;
 @protocol CCBRStepDefinition;
-@protocol CCBScenario;
+@protocol CucumberApiScenario;
 @protocol JavaUtilList;
 
 @interface CCBRStepDefinitionMatch : CCBRMatch < CCBRDefinitionMatch >
@@ -48,7 +48,7 @@
                      withCCBRLocalizedXStreams:(CCBRLocalizedXStreams *)localizedXStreams;
 
 - (void)dryRunStepWithNSString:(NSString *)language
-               withCCBScenario:(id<CCBScenario>)scenario;
+       withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
 
 - (NSString *)getCodeLocation;
 
@@ -61,7 +61,7 @@
 - (JavaLangStackTraceElement *)getStepLocation;
 
 - (void)runStepWithNSString:(NSString *)language
-            withCCBScenario:(id<CCBScenario>)scenario;
+    withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
 
 #pragma mark Protected
 

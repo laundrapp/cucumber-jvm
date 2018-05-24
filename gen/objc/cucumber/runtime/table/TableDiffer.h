@@ -21,14 +21,14 @@
 #if !defined (CCBRTableDiffer_) && (INCLUDE_ALL_CucumberRuntimeTableTableDiffer || defined(INCLUDE_CCBRTableDiffer))
 #define CCBRTableDiffer_
 
-@class CCBDataTable;
+@class CucumberApiDataTable;
 
 @interface CCBRTableDiffer : NSObject
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCCBDataTable:(CCBDataTable *)fromTable
-                              withCCBDataTable:(CCBDataTable *)toTable;
+- (instancetype __nonnull)initWithCucumberApiDataTable:(CucumberApiDataTable *)fromTable
+                              withCucumberApiDataTable:(CucumberApiDataTable *)toTable;
 
 - (void)calculateDiffs;
 
@@ -42,11 +42,11 @@
 
 J2OBJC_EMPTY_STATIC_INIT(CCBRTableDiffer)
 
-FOUNDATION_EXPORT void CCBRTableDiffer_initWithCCBDataTable_withCCBDataTable_(CCBRTableDiffer *self, CCBDataTable *fromTable, CCBDataTable *toTable);
+FOUNDATION_EXPORT void CCBRTableDiffer_initWithCucumberApiDataTable_withCucumberApiDataTable_(CCBRTableDiffer *self, CucumberApiDataTable *fromTable, CucumberApiDataTable *toTable);
 
-FOUNDATION_EXPORT CCBRTableDiffer *new_CCBRTableDiffer_initWithCCBDataTable_withCCBDataTable_(CCBDataTable *fromTable, CCBDataTable *toTable) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRTableDiffer *new_CCBRTableDiffer_initWithCucumberApiDataTable_withCucumberApiDataTable_(CucumberApiDataTable *fromTable, CucumberApiDataTable *toTable) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRTableDiffer *create_CCBRTableDiffer_initWithCCBDataTable_withCCBDataTable_(CCBDataTable *fromTable, CCBDataTable *toTable);
+FOUNDATION_EXPORT CCBRTableDiffer *create_CCBRTableDiffer_initWithCucumberApiDataTable_withCucumberApiDataTable_(CucumberApiDataTable *fromTable, CucumberApiDataTable *toTable);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRTableDiffer)
 

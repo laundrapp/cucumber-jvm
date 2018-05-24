@@ -18,15 +18,15 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBFormatter_) && (INCLUDE_ALL_CucumberApiFormatterFormatter || defined(INCLUDE_CCBFormatter))
-#define CCBFormatter_
+#if !defined (CucumberApiFormatterFormatter_) && (INCLUDE_ALL_CucumberApiFormatterFormatter || defined(INCLUDE_CucumberApiFormatterFormatter))
+#define CucumberApiFormatterFormatter_
 
 #define RESTRICT_CucumberApiEventEventListener 1
-#define INCLUDE_CCBEventListener 1
+#define INCLUDE_CucumberApiEventEventListener 1
 #include "cucumber/api/event/EventListener.h"
 
 #define RESTRICT_CucumberApiPlugin 1
-#define INCLUDE_CCBPlugin 1
+#define INCLUDE_CucumberApiPlugin 1
 #include "cucumber/api/Plugin.h"
 
 /*!
@@ -35,15 +35,13 @@
  - seealso: EventListener
  - seealso: Plugin
  */
-@protocol CCBFormatter < CCBEventListener, CCBPlugin, JavaObject >
+@protocol CucumberApiFormatterFormatter < CucumberApiEventEventListener, CucumberApiPlugin, JavaObject >
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBFormatter)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiFormatterFormatter)
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBFormatter)
-
-#define CucumberApiFormatterFormatter CCBFormatter
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiFormatterFormatter)
 
 #endif
 

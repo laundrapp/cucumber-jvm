@@ -19,22 +19,22 @@
 #include "java/util/Arrays.h"
 #include "java/util/List.h"
 
-@implementation CCBMain
+@implementation CucumberApiCliMain
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CCBMain_init(self);
+  CucumberApiCliMain_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 + (void)mainWithNSStringArray:(IOSObjectArray *)argv {
-  CCBMain_mainWithNSStringArray_(argv);
+  CucumberApiCliMain_mainWithNSStringArray_(argv);
 }
 
 + (jbyte)runWithNSStringArray:(IOSObjectArray *)argv
       withJavaLangClassLoader:(JavaLangClassLoader *)classLoader {
-  return CCBMain_runWithNSStringArray_withJavaLangClassLoader_(argv, classLoader);
+  return CucumberApiCliMain_runWithNSStringArray_withJavaLangClassLoader_(argv, classLoader);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -51,32 +51,32 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[2].selector = @selector(runWithNSStringArray:withJavaLangClassLoader:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "main", "[LNSString;", "LJavaLangThrowable;", "run", "[LNSString;LJavaLangClassLoader;", "LJavaIoIOException;" };
-  static const J2ObjcClassInfo _CCBMain = { "Main", "cucumber.api.cli", ptrTable, methods, NULL, 7, 0x1, 3, 0, -1, -1, -1, -1, -1 };
-  return &_CCBMain;
+  static const J2ObjcClassInfo _CucumberApiCliMain = { "Main", "cucumber.api.cli", ptrTable, methods, NULL, 7, 0x1, 3, 0, -1, -1, -1, -1, -1 };
+  return &_CucumberApiCliMain;
 }
 
 @end
 
-void CCBMain_init(CCBMain *self) {
+void CucumberApiCliMain_init(CucumberApiCliMain *self) {
   NSObject_init(self);
 }
 
-CCBMain *new_CCBMain_init() {
-  J2OBJC_NEW_IMPL(CCBMain, init)
+CucumberApiCliMain *new_CucumberApiCliMain_init() {
+  J2OBJC_NEW_IMPL(CucumberApiCliMain, init)
 }
 
-CCBMain *create_CCBMain_init() {
-  J2OBJC_CREATE_IMPL(CCBMain, init)
+CucumberApiCliMain *create_CucumberApiCliMain_init() {
+  J2OBJC_CREATE_IMPL(CucumberApiCliMain, init)
 }
 
-void CCBMain_mainWithNSStringArray_(IOSObjectArray *argv) {
-  CCBMain_initialize();
-  jbyte exitstatus = CCBMain_runWithNSStringArray_withJavaLangClassLoader_(argv, [((JavaLangThread *) nil_chk(JavaLangThread_currentThread())) getContextClassLoader]);
+void CucumberApiCliMain_mainWithNSStringArray_(IOSObjectArray *argv) {
+  CucumberApiCliMain_initialize();
+  jbyte exitstatus = CucumberApiCliMain_runWithNSStringArray_withJavaLangClassLoader_(argv, [((JavaLangThread *) nil_chk(JavaLangThread_currentThread())) getContextClassLoader]);
   JavaLangSystem_exitWithInt_(exitstatus);
 }
 
-jbyte CCBMain_runWithNSStringArray_withJavaLangClassLoader_(IOSObjectArray *argv, JavaLangClassLoader *classLoader) {
-  CCBMain_initialize();
+jbyte CucumberApiCliMain_runWithNSStringArray_withJavaLangClassLoader_(IOSObjectArray *argv, JavaLangClassLoader *classLoader) {
+  CucumberApiCliMain_initialize();
   CCBRRuntimeOptions *runtimeOptions = create_CCBRRuntimeOptions_initWithJavaUtilList_(create_JavaUtilArrayList_initWithJavaUtilCollection_(JavaUtilArrays_asListWithNSObjectArray_(argv)));
   id<CCBRResourceLoader> resourceLoader = create_CCBRMultiLoader_initWithJavaLangClassLoader_(classLoader);
   id<CCBRClassFinder> classFinder = create_CCBRResourceLoaderClassFinder_initWithCCBRResourceLoader_withJavaLangClassLoader_(resourceLoader, classLoader);
@@ -85,4 +85,4 @@ jbyte CCBMain_runWithNSStringArray_withJavaLangClassLoader_(IOSObjectArray *argv
   return [runtime exitStatus];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBMain)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiCliMain)

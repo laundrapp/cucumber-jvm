@@ -8,12 +8,12 @@
 #include "cucumber/api/event/TimeStampedEvent.h"
 #include "java/lang/Long.h"
 
-@implementation CCBTestSourceRead
+@implementation CucumberApiEventTestSourceRead
 
 - (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp
                                   withNSString:(NSString *)uri
                                   withNSString:(NSString *)source {
-  CCBTestSourceRead_initWithJavaLangLong_withNSString_withNSString_(self, timeStamp, uri, source);
+  CucumberApiEventTestSourceRead_initWithJavaLangLong_withNSString_withNSString_(self, timeStamp, uri, source);
   return self;
 }
 
@@ -37,24 +37,24 @@
     { "source_", "LNSString;", .constantValue.asLong = 0, 0x11, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LJavaLangLong;LNSString;LNSString;" };
-  static const J2ObjcClassInfo _CCBTestSourceRead = { "TestSourceRead", "cucumber.api.event", ptrTable, methods, fields, 7, 0x11, 1, 2, -1, -1, -1, -1, -1 };
-  return &_CCBTestSourceRead;
+  static const J2ObjcClassInfo _CucumberApiEventTestSourceRead = { "TestSourceRead", "cucumber.api.event", ptrTable, methods, fields, 7, 0x11, 1, 2, -1, -1, -1, -1, -1 };
+  return &_CucumberApiEventTestSourceRead;
 }
 
 @end
 
-void CCBTestSourceRead_initWithJavaLangLong_withNSString_withNSString_(CCBTestSourceRead *self, JavaLangLong *timeStamp, NSString *uri, NSString *source) {
-  CCBTimeStampedEvent_initWithJavaLangLong_(self, timeStamp);
+void CucumberApiEventTestSourceRead_initWithJavaLangLong_withNSString_withNSString_(CucumberApiEventTestSourceRead *self, JavaLangLong *timeStamp, NSString *uri, NSString *source) {
+  CucumberApiEventTimeStampedEvent_initWithJavaLangLong_(self, timeStamp);
   JreStrongAssign(&self->uri_, uri);
   JreStrongAssign(&self->source_, source);
 }
 
-CCBTestSourceRead *new_CCBTestSourceRead_initWithJavaLangLong_withNSString_withNSString_(JavaLangLong *timeStamp, NSString *uri, NSString *source) {
-  J2OBJC_NEW_IMPL(CCBTestSourceRead, initWithJavaLangLong_withNSString_withNSString_, timeStamp, uri, source)
+CucumberApiEventTestSourceRead *new_CucumberApiEventTestSourceRead_initWithJavaLangLong_withNSString_withNSString_(JavaLangLong *timeStamp, NSString *uri, NSString *source) {
+  J2OBJC_NEW_IMPL(CucumberApiEventTestSourceRead, initWithJavaLangLong_withNSString_withNSString_, timeStamp, uri, source)
 }
 
-CCBTestSourceRead *create_CCBTestSourceRead_initWithJavaLangLong_withNSString_withNSString_(JavaLangLong *timeStamp, NSString *uri, NSString *source) {
-  J2OBJC_CREATE_IMPL(CCBTestSourceRead, initWithJavaLangLong_withNSString_withNSString_, timeStamp, uri, source)
+CucumberApiEventTestSourceRead *create_CucumberApiEventTestSourceRead_initWithJavaLangLong_withNSString_withNSString_(JavaLangLong *timeStamp, NSString *uri, NSString *source) {
+  J2OBJC_CREATE_IMPL(CucumberApiEventTestSourceRead, initWithJavaLangLong_withNSString_withNSString_, timeStamp, uri, source)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBTestSourceRead)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiEventTestSourceRead)

@@ -27,7 +27,7 @@
 
 @class CCBRMatch;
 @protocol CCBRHookDefinition;
-@protocol CCBScenario;
+@protocol CucumberApiScenario;
 @protocol JavaUtilList;
 
 @interface CCBRHookDefinitionMatch : NSObject < CCBRDefinitionMatch >
@@ -37,7 +37,7 @@
 - (instancetype __nonnull)initWithCCBRHookDefinition:(id<CCBRHookDefinition>)hookDefinition;
 
 - (void)dryRunStepWithNSString:(NSString *)language
-               withCCBScenario:(id<CCBScenario>)scenario;
+       withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
 
 - (id<JavaUtilList>)getArguments;
 
@@ -48,7 +48,7 @@
 - (NSString *)getPattern;
 
 - (void)runStepWithNSString:(NSString *)language
-            withCCBScenario:(id<CCBScenario>)scenario;
+    withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
 
 // Disallowed inherited constructors, do not use.
 

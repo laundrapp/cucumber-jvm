@@ -13,9 +13,9 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *CCBTranspose__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CucumberApiTranspose__Annotations$0(void);
 
-@implementation CCBTranspose
+@implementation CucumberApiTranspose
 
 @synthesize value = value_;
 
@@ -24,7 +24,7 @@ __attribute__((unused)) static IOSObjectArray *CCBTranspose__Annotations$0(void)
 }
 
 - (IOSClass *)annotationType {
-  return CCBTranspose_class_();
+  return CucumberApiTranspose_class_();
 }
 
 - (NSString *)description {
@@ -51,21 +51,21 @@ __attribute__((unused)) static IOSObjectArray *CCBTranspose__Annotations$0(void)
   static const J2ObjcFieldInfo fields[] = {
     { "value_", "Z", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&CCBTranspose__Annotations$0 };
-  static const J2ObjcClassInfo _CCBTranspose = { "Transpose", "cucumber.api", ptrTable, methods, fields, 7, 0x2609, 1, 1, -1, -1, -1, -1, 0 };
-  return &_CCBTranspose;
+  static const void *ptrTable[] = { (void *)&CucumberApiTranspose__Annotations$0 };
+  static const J2ObjcClassInfo _CucumberApiTranspose = { "Transpose", "cucumber.api", ptrTable, methods, fields, 7, 0x2609, 1, 1, -1, -1, -1, -1, 0 };
+  return &_CucumberApiTranspose;
 }
 
 @end
 
-id<CCBTranspose> create_CCBTranspose(jboolean value) {
-  CCBTranspose *self = AUTORELEASE([[CCBTranspose alloc] init]);
+id<CucumberApiTranspose> create_CucumberApiTranspose(jboolean value) {
+  CucumberApiTranspose *self = AUTORELEASE([[CucumberApiTranspose alloc] init]);
   self->value_ = value;
   return self;
 }
 
-IOSObjectArray *CCBTranspose__Annotations$0() {
+IOSObjectArray *CucumberApiTranspose__Annotations$0() {
   return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, PARAMETER) } count:1 type:JavaLangAnnotationElementType_class_()]) } count:2 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBTranspose)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiTranspose)

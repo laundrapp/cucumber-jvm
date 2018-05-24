@@ -42,10 +42,10 @@
   id<JavaUtilList> pendingScenarios_;
   id<JavaUtilList> undefinedScenarios_;
   id<JavaUtilList> errors_;
-  id<CCBEventHandler> testRunStartedHandler_;
-  id<CCBEventHandler> stepFinishedHandler_;
-  id<CCBEventHandler> testCaseFinishedHandler_;
-  id<CCBEventHandler> testRunFinishedHandler_;
+  id<CucumberApiEventEventHandler> testRunStartedHandler_;
+  id<CucumberApiEventEventHandler> stepFinishedHandler_;
+  id<CucumberApiEventEventHandler> testCaseFinishedHandler_;
+  id<CucumberApiEventEventHandler> testRunFinishedHandler_;
 }
 
 - (void)printStepCountsWithJavaIoPrintStream:(JavaIoPrintStream *)outArg;
@@ -57,7 +57,7 @@
 
 - (jboolean)printSubCountWithJavaIoPrintStream:(JavaIoPrintStream *)outArg
                                        withInt:(jint)count
-                            withCCBResult_Type:(CCBResult_Type *)type
+                    withCucumberApiResult_Type:(CucumberApiResult_Type *)type
                                    withBoolean:(jboolean)addComma;
 
 - (void)printDurationWithJavaIoPrintStream:(JavaIoPrintStream *)outArg;
@@ -67,12 +67,12 @@
 
 - (void)printScenariosWithJavaIoPrintStream:(JavaIoPrintStream *)outArg
                            withJavaUtilList:(id<JavaUtilList>)scenarios
-                         withCCBResult_Type:(CCBResult_Type *)type;
+                 withCucumberApiResult_Type:(CucumberApiResult_Type *)type;
 
 - (void)addErrorWithJavaLangThrowable:(JavaLangThrowable *)error;
 
 - (void)addResultToSubCountWithCCBRStats_SubCounts:(CCBRStats_SubCounts *)subCounts
-                                withCCBResult_Type:(CCBResult_Type *)resultStatus;
+                        withCucumberApiResult_Type:(CucumberApiResult_Type *)resultStatus;
 
 @end
 
@@ -85,10 +85,10 @@ J2OBJC_FIELD_SETTER(CCBRStats, ambiguousScenarios_, id<JavaUtilList>)
 J2OBJC_FIELD_SETTER(CCBRStats, pendingScenarios_, id<JavaUtilList>)
 J2OBJC_FIELD_SETTER(CCBRStats, undefinedScenarios_, id<JavaUtilList>)
 J2OBJC_FIELD_SETTER(CCBRStats, errors_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CCBRStats, testRunStartedHandler_, id<CCBEventHandler>)
-J2OBJC_FIELD_SETTER(CCBRStats, stepFinishedHandler_, id<CCBEventHandler>)
-J2OBJC_FIELD_SETTER(CCBRStats, testCaseFinishedHandler_, id<CCBEventHandler>)
-J2OBJC_FIELD_SETTER(CCBRStats, testRunFinishedHandler_, id<CCBEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRStats, testRunStartedHandler_, id<CucumberApiEventEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRStats, stepFinishedHandler_, id<CucumberApiEventEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRStats, testCaseFinishedHandler_, id<CucumberApiEventEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRStats, testRunFinishedHandler_, id<CucumberApiEventEventHandler>)
 
 inline jbyte CCBRStats_get_ERRORS(void);
 #define CCBRStats_ERRORS 1
@@ -100,26 +100,26 @@ __attribute__((unused)) static void CCBRStats_printScenarioCountsWithJavaIoPrint
 
 __attribute__((unused)) static void CCBRStats_printSubCountsWithJavaIoPrintStream_withCCBRStats_SubCounts_(CCBRStats *self, JavaIoPrintStream *outArg, CCBRStats_SubCounts *subCounts);
 
-__attribute__((unused)) static jboolean CCBRStats_printSubCountWithJavaIoPrintStream_withInt_withCCBResult_Type_withBoolean_(CCBRStats *self, JavaIoPrintStream *outArg, jint count, CCBResult_Type *type, jboolean addComma);
+__attribute__((unused)) static jboolean CCBRStats_printSubCountWithJavaIoPrintStream_withInt_withCucumberApiResult_Type_withBoolean_(CCBRStats *self, JavaIoPrintStream *outArg, jint count, CucumberApiResult_Type *type, jboolean addComma);
 
 __attribute__((unused)) static void CCBRStats_printDurationWithJavaIoPrintStream_(CCBRStats *self, JavaIoPrintStream *outArg);
 
 __attribute__((unused)) static void CCBRStats_printNonZeroResultScenariosWithJavaIoPrintStream_withBoolean_(CCBRStats *self, JavaIoPrintStream *outArg, jboolean isStrict);
 
-__attribute__((unused)) static void CCBRStats_printScenariosWithJavaIoPrintStream_withJavaUtilList_withCCBResult_Type_(CCBRStats *self, JavaIoPrintStream *outArg, id<JavaUtilList> scenarios, CCBResult_Type *type);
+__attribute__((unused)) static void CCBRStats_printScenariosWithJavaIoPrintStream_withJavaUtilList_withCucumberApiResult_Type_(CCBRStats *self, JavaIoPrintStream *outArg, id<JavaUtilList> scenarios, CucumberApiResult_Type *type);
 
 __attribute__((unused)) static void CCBRStats_addErrorWithJavaLangThrowable_(CCBRStats *self, JavaLangThrowable *error);
 
-__attribute__((unused)) static void CCBRStats_addResultToSubCountWithCCBRStats_SubCounts_withCCBResult_Type_(CCBRStats *self, CCBRStats_SubCounts *subCounts, CCBResult_Type *resultStatus);
+__attribute__((unused)) static void CCBRStats_addResultToSubCountWithCCBRStats_SubCounts_withCucumberApiResult_Type_(CCBRStats *self, CCBRStats_SubCounts *subCounts, CucumberApiResult_Type *resultStatus);
 
-@interface CCBRStats_1 : NSObject < CCBEventHandler > {
+@interface CCBRStats_1 : NSObject < CucumberApiEventEventHandler > {
  @public
   CCBRStats *this$0_;
 }
 
 - (instancetype __nonnull)initWithCCBRStats:(CCBRStats *)outer$;
 
-- (void)receiveWithCCBEvent:(CCBTestRunStarted *)event;
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunStarted *)event;
 
 @end
 
@@ -131,14 +131,14 @@ __attribute__((unused)) static CCBRStats_1 *new_CCBRStats_1_initWithCCBRStats_(C
 
 __attribute__((unused)) static CCBRStats_1 *create_CCBRStats_1_initWithCCBRStats_(CCBRStats *outer$);
 
-@interface CCBRStats_2 : NSObject < CCBEventHandler > {
+@interface CCBRStats_2 : NSObject < CucumberApiEventEventHandler > {
  @public
   CCBRStats *this$0_;
 }
 
 - (instancetype __nonnull)initWithCCBRStats:(CCBRStats *)outer$;
 
-- (void)receiveWithCCBEvent:(CCBTestStepFinished *)event;
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepFinished *)event;
 
 @end
 
@@ -150,14 +150,14 @@ __attribute__((unused)) static CCBRStats_2 *new_CCBRStats_2_initWithCCBRStats_(C
 
 __attribute__((unused)) static CCBRStats_2 *create_CCBRStats_2_initWithCCBRStats_(CCBRStats *outer$);
 
-@interface CCBRStats_3 : NSObject < CCBEventHandler > {
+@interface CCBRStats_3 : NSObject < CucumberApiEventEventHandler > {
  @public
   CCBRStats *this$0_;
 }
 
 - (instancetype __nonnull)initWithCCBRStats:(CCBRStats *)outer$;
 
-- (void)receiveWithCCBEvent:(CCBTestCaseFinished *)event;
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestCaseFinished *)event;
 
 @end
 
@@ -169,14 +169,14 @@ __attribute__((unused)) static CCBRStats_3 *new_CCBRStats_3_initWithCCBRStats_(C
 
 __attribute__((unused)) static CCBRStats_3 *create_CCBRStats_3_initWithCCBRStats_(CCBRStats *outer$);
 
-@interface CCBRStats_4 : NSObject < CCBEventHandler > {
+@interface CCBRStats_4 : NSObject < CucumberApiEventEventHandler > {
  @public
   CCBRStats *this$0_;
 }
 
 - (instancetype __nonnull)initWithCCBRStats:(CCBRStats *)outer$;
 
-- (void)receiveWithCCBEvent:(CCBTestRunFinished *)event;
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event;
 
 @end
 
@@ -201,11 +201,11 @@ __attribute__((unused)) static CCBRStats_4 *create_CCBRStats_4_initWithCCBRStats
   return self;
 }
 
-- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher {
-  [((id<CCBEventPublisher>) nil_chk(publisher)) registerHandlerForWithIOSClass:CCBTestRunStarted_class_() withCCBEventHandler:testRunStartedHandler_];
-  [publisher registerHandlerForWithIOSClass:CCBTestStepFinished_class_() withCCBEventHandler:stepFinishedHandler_];
-  [publisher registerHandlerForWithIOSClass:CCBTestCaseFinished_class_() withCCBEventHandler:testCaseFinishedHandler_];
-  [publisher registerHandlerForWithIOSClass:CCBTestRunFinished_class_() withCCBEventHandler:testRunFinishedHandler_];
+- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher {
+  [((id<CucumberApiEventEventPublisher>) nil_chk(publisher)) registerHandlerForWithIOSClass:CucumberApiEventTestRunStarted_class_() withCucumberApiEventEventHandler:testRunStartedHandler_];
+  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestStepFinished_class_() withCucumberApiEventEventHandler:stepFinishedHandler_];
+  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestCaseFinished_class_() withCucumberApiEventEventHandler:testCaseFinishedHandler_];
+  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestRunFinished_class_() withCucumberApiEventEventHandler:testRunFinishedHandler_];
 }
 
 - (id<JavaUtilList>)getErrors {
@@ -249,9 +249,9 @@ __attribute__((unused)) static CCBRStats_4 *create_CCBRStats_4_initWithCCBRStats
 
 - (jboolean)printSubCountWithJavaIoPrintStream:(JavaIoPrintStream *)outArg
                                        withInt:(jint)count
-                            withCCBResult_Type:(CCBResult_Type *)type
+                    withCucumberApiResult_Type:(CucumberApiResult_Type *)type
                                    withBoolean:(jboolean)addComma {
-  return CCBRStats_printSubCountWithJavaIoPrintStream_withInt_withCCBResult_Type_withBoolean_(self, outArg, count, type, addComma);
+  return CCBRStats_printSubCountWithJavaIoPrintStream_withInt_withCucumberApiResult_Type_withBoolean_(self, outArg, count, type, addComma);
 }
 
 - (void)printDurationWithJavaIoPrintStream:(JavaIoPrintStream *)outArg {
@@ -265,12 +265,12 @@ __attribute__((unused)) static CCBRStats_4 *create_CCBRStats_4_initWithCCBRStats
 
 - (void)printScenariosWithJavaIoPrintStream:(JavaIoPrintStream *)outArg
                            withJavaUtilList:(id<JavaUtilList>)scenarios
-                         withCCBResult_Type:(CCBResult_Type *)type {
-  CCBRStats_printScenariosWithJavaIoPrintStream_withJavaUtilList_withCCBResult_Type_(self, outArg, scenarios, type);
+                 withCucumberApiResult_Type:(CucumberApiResult_Type *)type {
+  CCBRStats_printScenariosWithJavaIoPrintStream_withJavaUtilList_withCucumberApiResult_Type_(self, outArg, scenarios, type);
 }
 
-- (void)addStepWithCCBResult_Type:(CCBResult_Type *)resultStatus {
-  CCBRStats_addResultToSubCountWithCCBRStats_SubCounts_withCCBResult_Type_(self, stepSubCounts_, resultStatus);
+- (void)addStepWithCucumberApiResult_Type:(CucumberApiResult_Type *)resultStatus {
+  CCBRStats_addResultToSubCountWithCCBRStats_SubCounts_withCucumberApiResult_Type_(self, stepSubCounts_, resultStatus);
 }
 
 - (void)addErrorWithJavaLangThrowable:(JavaLangThrowable *)error {
@@ -286,24 +286,24 @@ __attribute__((unused)) static CCBRStats_4 *create_CCBRStats_4_initWithCCBRStats
 }
 
 - (void)addResultToSubCountWithCCBRStats_SubCounts:(CCBRStats_SubCounts *)subCounts
-                                withCCBResult_Type:(CCBResult_Type *)resultStatus {
-  CCBRStats_addResultToSubCountWithCCBRStats_SubCounts_withCCBResult_Type_(self, subCounts, resultStatus);
+                        withCucumberApiResult_Type:(CucumberApiResult_Type *)resultStatus {
+  CCBRStats_addResultToSubCountWithCCBRStats_SubCounts_withCucumberApiResult_Type_(self, subCounts, resultStatus);
 }
 
-- (void)addScenarioWithCCBResult_Type:(CCBResult_Type *)resultStatus
-                         withNSString:(NSString *)scenarioDesignation {
-  CCBRStats_addResultToSubCountWithCCBRStats_SubCounts_withCCBResult_Type_(self, scenarioSubCounts_, resultStatus);
+- (void)addScenarioWithCucumberApiResult_Type:(CucumberApiResult_Type *)resultStatus
+                                 withNSString:(NSString *)scenarioDesignation {
+  CCBRStats_addResultToSubCountWithCCBRStats_SubCounts_withCucumberApiResult_Type_(self, scenarioSubCounts_, resultStatus);
   switch ([resultStatus ordinal]) {
-    case CCBResult_Type_Enum_FAILED:
+    case CucumberApiResult_Type_Enum_FAILED:
     [((id<JavaUtilList>) nil_chk(failedScenarios_)) addWithId:scenarioDesignation];
     break;
-    case CCBResult_Type_Enum_AMBIGUOUS:
+    case CucumberApiResult_Type_Enum_AMBIGUOUS:
     [((id<JavaUtilList>) nil_chk(ambiguousScenarios_)) addWithId:scenarioDesignation];
     break;
-    case CCBResult_Type_Enum_PENDING:
+    case CucumberApiResult_Type_Enum_PENDING:
     [((id<JavaUtilList>) nil_chk(pendingScenarios_)) addWithId:scenarioDesignation];
     break;
-    case CCBResult_Type_Enum_UNDEFINED:
+    case CucumberApiResult_Type_Enum_UNDEFINED:
     [((id<JavaUtilList>) nil_chk(undefinedScenarios_)) addWithId:scenarioDesignation];
     break;
     default:
@@ -355,23 +355,23 @@ __attribute__((unused)) static CCBRStats_4 *create_CCBRStats_4_initWithCCBRStats
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithBoolean:);
   methods[1].selector = @selector(initWithBoolean:withJavaUtilLocale:);
-  methods[2].selector = @selector(setEventPublisherWithCCBEventPublisher:);
+  methods[2].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
   methods[3].selector = @selector(getErrors);
   methods[4].selector = @selector(exitStatusWithBoolean:);
   methods[5].selector = @selector(printStatsWithJavaIoPrintStream:withBoolean:);
   methods[6].selector = @selector(printStepCountsWithJavaIoPrintStream:);
   methods[7].selector = @selector(printScenarioCountsWithJavaIoPrintStream:);
   methods[8].selector = @selector(printSubCountsWithJavaIoPrintStream:withCCBRStats_SubCounts:);
-  methods[9].selector = @selector(printSubCountWithJavaIoPrintStream:withInt:withCCBResult_Type:withBoolean:);
+  methods[9].selector = @selector(printSubCountWithJavaIoPrintStream:withInt:withCucumberApiResult_Type:withBoolean:);
   methods[10].selector = @selector(printDurationWithJavaIoPrintStream:);
   methods[11].selector = @selector(printNonZeroResultScenariosWithJavaIoPrintStream:withBoolean:);
-  methods[12].selector = @selector(printScenariosWithJavaIoPrintStream:withJavaUtilList:withCCBResult_Type:);
-  methods[13].selector = @selector(addStepWithCCBResult_Type:);
+  methods[12].selector = @selector(printScenariosWithJavaIoPrintStream:withJavaUtilList:withCucumberApiResult_Type:);
+  methods[13].selector = @selector(addStepWithCucumberApiResult_Type:);
   methods[14].selector = @selector(addErrorWithJavaLangThrowable:);
   methods[15].selector = @selector(setStartTimeWithJavaLangLong:);
   methods[16].selector = @selector(setFinishTimeWithJavaLangLong:);
-  methods[17].selector = @selector(addResultToSubCountWithCCBRStats_SubCounts:withCCBResult_Type:);
-  methods[18].selector = @selector(addScenarioWithCCBResult_Type:withNSString:);
+  methods[17].selector = @selector(addResultToSubCountWithCCBRStats_SubCounts:withCucumberApiResult_Type:);
+  methods[18].selector = @selector(addScenarioWithCucumberApiResult_Type:withNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "ONE_SECOND", "J", .constantValue.asLong = CCBRStats_ONE_SECOND, 0x19, -1, -1, -1, -1 },
@@ -388,12 +388,12 @@ __attribute__((unused)) static CCBRStats_4 *create_CCBRStats_4_initWithCCBRStats
     { "pendingScenarios_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 31, -1 },
     { "undefinedScenarios_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 31, -1 },
     { "errors_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 32, -1 },
-    { "testRunStartedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x12, -1, -1, 33, -1 },
-    { "stepFinishedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x12, -1, -1, 34, -1 },
-    { "testCaseFinishedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x12, -1, -1, 35, -1 },
-    { "testRunFinishedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x12, -1, -1, 36, -1 },
+    { "testRunStartedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x12, -1, -1, 33, -1 },
+    { "stepFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x12, -1, -1, 34, -1 },
+    { "testCaseFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x12, -1, -1, 35, -1 },
+    { "testRunFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x12, -1, -1, 36, -1 },
   };
-  static const void *ptrTable[] = { "Z", "ZLJavaUtilLocale;", "setEventPublisher", "LCCBEventPublisher;", "()Ljava/util/List<Ljava/lang/Throwable;>;", "exitStatus", "printStats", "LJavaIoPrintStream;Z", "printStepCounts", "LJavaIoPrintStream;", "printScenarioCounts", "printSubCounts", "LJavaIoPrintStream;LCCBRStats_SubCounts;", "printSubCount", "LJavaIoPrintStream;ILCCBResult_Type;Z", "printDuration", "printNonZeroResultScenarios", "printScenarios", "LJavaIoPrintStream;LJavaUtilList;LCCBResult_Type;", "(Ljava/io/PrintStream;Ljava/util/List<Ljava/lang/String;>;Lcucumber/api/Result$Type;)V", "addStep", "LCCBResult_Type;", "addError", "LJavaLangThrowable;", "setStartTime", "LJavaLangLong;", "setFinishTime", "addResultToSubCount", "LCCBRStats_SubCounts;LCCBResult_Type;", "addScenario", "LCCBResult_Type;LNSString;", "Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/List<Ljava/lang/Throwable;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;", "LCCBRStats_SubCounts;" };
+  static const void *ptrTable[] = { "Z", "ZLJavaUtilLocale;", "setEventPublisher", "LCucumberApiEventEventPublisher;", "()Ljava/util/List<Ljava/lang/Throwable;>;", "exitStatus", "printStats", "LJavaIoPrintStream;Z", "printStepCounts", "LJavaIoPrintStream;", "printScenarioCounts", "printSubCounts", "LJavaIoPrintStream;LCCBRStats_SubCounts;", "printSubCount", "LJavaIoPrintStream;ILCucumberApiResult_Type;Z", "printDuration", "printNonZeroResultScenarios", "printScenarios", "LJavaIoPrintStream;LJavaUtilList;LCucumberApiResult_Type;", "(Ljava/io/PrintStream;Ljava/util/List<Ljava/lang/String;>;Lcucumber/api/Result$Type;)V", "addStep", "LCucumberApiResult_Type;", "addError", "LJavaLangThrowable;", "setStartTime", "LJavaLangLong;", "setFinishTime", "addResultToSubCount", "LCCBRStats_SubCounts;LCucumberApiResult_Type;", "addScenario", "LCucumberApiResult_Type;LNSString;", "Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/List<Ljava/lang/Throwable;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;", "LCCBRStats_SubCounts;" };
   static const J2ObjcClassInfo _CCBRStats = { "Stats", "cucumber.runtime", ptrTable, methods, fields, 7, 0x0, 19, 18, -1, 37, -1, -1, -1 };
   return &_CCBRStats;
 }
@@ -460,20 +460,20 @@ void CCBRStats_printScenarioCountsWithJavaIoPrintStream_(CCBRStats *self, JavaIo
 
 void CCBRStats_printSubCountsWithJavaIoPrintStream_withCCBRStats_SubCounts_(CCBRStats *self, JavaIoPrintStream *outArg, CCBRStats_SubCounts *subCounts) {
   jboolean addComma = false;
-  addComma = CCBRStats_printSubCountWithJavaIoPrintStream_withInt_withCCBResult_Type_withBoolean_(self, outArg, ((CCBRStats_SubCounts *) nil_chk(subCounts))->failed_, JreLoadEnum(CCBResult_Type, FAILED), addComma);
-  addComma = CCBRStats_printSubCountWithJavaIoPrintStream_withInt_withCCBResult_Type_withBoolean_(self, outArg, subCounts->ambiguous_, JreLoadEnum(CCBResult_Type, AMBIGUOUS), addComma);
-  addComma = CCBRStats_printSubCountWithJavaIoPrintStream_withInt_withCCBResult_Type_withBoolean_(self, outArg, subCounts->skipped_, JreLoadEnum(CCBResult_Type, SKIPPED), addComma);
-  addComma = CCBRStats_printSubCountWithJavaIoPrintStream_withInt_withCCBResult_Type_withBoolean_(self, outArg, subCounts->pending_, JreLoadEnum(CCBResult_Type, PENDING), addComma);
-  addComma = CCBRStats_printSubCountWithJavaIoPrintStream_withInt_withCCBResult_Type_withBoolean_(self, outArg, subCounts->undefined_, JreLoadEnum(CCBResult_Type, UNDEFINED), addComma);
-  addComma = CCBRStats_printSubCountWithJavaIoPrintStream_withInt_withCCBResult_Type_withBoolean_(self, outArg, subCounts->passed_, JreLoadEnum(CCBResult_Type, PASSED), addComma);
+  addComma = CCBRStats_printSubCountWithJavaIoPrintStream_withInt_withCucumberApiResult_Type_withBoolean_(self, outArg, ((CCBRStats_SubCounts *) nil_chk(subCounts))->failed_, JreLoadEnum(CucumberApiResult_Type, FAILED), addComma);
+  addComma = CCBRStats_printSubCountWithJavaIoPrintStream_withInt_withCucumberApiResult_Type_withBoolean_(self, outArg, subCounts->ambiguous_, JreLoadEnum(CucumberApiResult_Type, AMBIGUOUS), addComma);
+  addComma = CCBRStats_printSubCountWithJavaIoPrintStream_withInt_withCucumberApiResult_Type_withBoolean_(self, outArg, subCounts->skipped_, JreLoadEnum(CucumberApiResult_Type, SKIPPED), addComma);
+  addComma = CCBRStats_printSubCountWithJavaIoPrintStream_withInt_withCucumberApiResult_Type_withBoolean_(self, outArg, subCounts->pending_, JreLoadEnum(CucumberApiResult_Type, PENDING), addComma);
+  addComma = CCBRStats_printSubCountWithJavaIoPrintStream_withInt_withCucumberApiResult_Type_withBoolean_(self, outArg, subCounts->undefined_, JreLoadEnum(CucumberApiResult_Type, UNDEFINED), addComma);
+  addComma = CCBRStats_printSubCountWithJavaIoPrintStream_withInt_withCucumberApiResult_Type_withBoolean_(self, outArg, subCounts->passed_, JreLoadEnum(CucumberApiResult_Type, PASSED), addComma);
 }
 
-jboolean CCBRStats_printSubCountWithJavaIoPrintStream_withInt_withCCBResult_Type_withBoolean_(CCBRStats *self, JavaIoPrintStream *outArg, jint count, CCBResult_Type *type, jboolean addComma) {
+jboolean CCBRStats_printSubCountWithJavaIoPrintStream_withInt_withCucumberApiResult_Type_withBoolean_(CCBRStats *self, JavaIoPrintStream *outArg, jint count, CucumberApiResult_Type *type, jboolean addComma) {
   if (count != 0) {
     if (addComma) {
       [((JavaIoPrintStream *) nil_chk(outArg)) printWithNSString:@", "];
     }
-    id<CCBRFormat> format = [((id<CCBRFormats>) nil_chk(self->formats_)) getWithNSString:[((CCBResult_Type *) nil_chk(type)) lowerCaseName]];
+    id<CCBRFormat> format = [((id<CCBRFormats>) nil_chk(self->formats_)) getWithNSString:[((CucumberApiResult_Type *) nil_chk(type)) lowerCaseName]];
     [((JavaIoPrintStream *) nil_chk(outArg)) printWithNSString:[((id<CCBRFormat>) nil_chk(format)) textWithNSString:JreStrcat("IC$", count, ' ', [type lowerCaseName])]];
     addComma = true;
   }
@@ -487,16 +487,16 @@ void CCBRStats_printDurationWithJavaIoPrintStream_(CCBRStats *self, JavaIoPrintS
 }
 
 void CCBRStats_printNonZeroResultScenariosWithJavaIoPrintStream_withBoolean_(CCBRStats *self, JavaIoPrintStream *outArg, jboolean isStrict) {
-  CCBRStats_printScenariosWithJavaIoPrintStream_withJavaUtilList_withCCBResult_Type_(self, outArg, self->failedScenarios_, JreLoadEnum(CCBResult_Type, FAILED));
-  CCBRStats_printScenariosWithJavaIoPrintStream_withJavaUtilList_withCCBResult_Type_(self, outArg, self->ambiguousScenarios_, JreLoadEnum(CCBResult_Type, AMBIGUOUS));
+  CCBRStats_printScenariosWithJavaIoPrintStream_withJavaUtilList_withCucumberApiResult_Type_(self, outArg, self->failedScenarios_, JreLoadEnum(CucumberApiResult_Type, FAILED));
+  CCBRStats_printScenariosWithJavaIoPrintStream_withJavaUtilList_withCucumberApiResult_Type_(self, outArg, self->ambiguousScenarios_, JreLoadEnum(CucumberApiResult_Type, AMBIGUOUS));
   if (isStrict) {
-    CCBRStats_printScenariosWithJavaIoPrintStream_withJavaUtilList_withCCBResult_Type_(self, outArg, self->pendingScenarios_, JreLoadEnum(CCBResult_Type, PENDING));
-    CCBRStats_printScenariosWithJavaIoPrintStream_withJavaUtilList_withCCBResult_Type_(self, outArg, self->undefinedScenarios_, JreLoadEnum(CCBResult_Type, UNDEFINED));
+    CCBRStats_printScenariosWithJavaIoPrintStream_withJavaUtilList_withCucumberApiResult_Type_(self, outArg, self->pendingScenarios_, JreLoadEnum(CucumberApiResult_Type, PENDING));
+    CCBRStats_printScenariosWithJavaIoPrintStream_withJavaUtilList_withCucumberApiResult_Type_(self, outArg, self->undefinedScenarios_, JreLoadEnum(CucumberApiResult_Type, UNDEFINED));
   }
 }
 
-void CCBRStats_printScenariosWithJavaIoPrintStream_withJavaUtilList_withCCBResult_Type_(CCBRStats *self, JavaIoPrintStream *outArg, id<JavaUtilList> scenarios, CCBResult_Type *type) {
-  id<CCBRFormat> format = [((id<CCBRFormats>) nil_chk(self->formats_)) getWithNSString:[((CCBResult_Type *) nil_chk(type)) lowerCaseName]];
+void CCBRStats_printScenariosWithJavaIoPrintStream_withJavaUtilList_withCucumberApiResult_Type_(CCBRStats *self, JavaIoPrintStream *outArg, id<JavaUtilList> scenarios, CucumberApiResult_Type *type) {
+  id<CCBRFormat> format = [((id<CCBRFormats>) nil_chk(self->formats_)) getWithNSString:[((CucumberApiResult_Type *) nil_chk(type)) lowerCaseName]];
   if (![((id<JavaUtilList>) nil_chk(scenarios)) isEmpty]) {
     [((JavaIoPrintStream *) nil_chk(outArg)) printlnWithNSString:[((id<CCBRFormat>) nil_chk(format)) textWithNSString:JreStrcat("$$", [type firstLetterCapitalizedName], @" scenarios:")]];
   }
@@ -516,21 +516,21 @@ void CCBRStats_addErrorWithJavaLangThrowable_(CCBRStats *self, JavaLangThrowable
   [((id<JavaUtilList>) nil_chk(self->errors_)) addWithId:error];
 }
 
-void CCBRStats_addResultToSubCountWithCCBRStats_SubCounts_withCCBResult_Type_(CCBRStats *self, CCBRStats_SubCounts *subCounts, CCBResult_Type *resultStatus) {
+void CCBRStats_addResultToSubCountWithCCBRStats_SubCounts_withCucumberApiResult_Type_(CCBRStats *self, CCBRStats_SubCounts *subCounts, CucumberApiResult_Type *resultStatus) {
   switch ([resultStatus ordinal]) {
-    case CCBResult_Type_Enum_FAILED:
+    case CucumberApiResult_Type_Enum_FAILED:
     ((CCBRStats_SubCounts *) nil_chk(subCounts))->failed_++;
     break;
-    case CCBResult_Type_Enum_AMBIGUOUS:
+    case CucumberApiResult_Type_Enum_AMBIGUOUS:
     ((CCBRStats_SubCounts *) nil_chk(subCounts))->ambiguous_++;
     break;
-    case CCBResult_Type_Enum_PENDING:
+    case CucumberApiResult_Type_Enum_PENDING:
     ((CCBRStats_SubCounts *) nil_chk(subCounts))->pending_++;
     break;
-    case CCBResult_Type_Enum_UNDEFINED:
+    case CucumberApiResult_Type_Enum_UNDEFINED:
     ((CCBRStats_SubCounts *) nil_chk(subCounts))->undefined_++;
     break;
-    case CCBResult_Type_Enum_SKIPPED:
+    case CucumberApiResult_Type_Enum_SKIPPED:
     ((CCBRStats_SubCounts *) nil_chk(subCounts))->skipped_++;
     break;
     default:
@@ -547,8 +547,8 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRStats)
   return self;
 }
 
-- (void)receiveWithCCBEvent:(CCBTestRunStarted *)event {
-  [this$0_ setStartTimeWithJavaLangLong:[((CCBTestRunStarted *) nil_chk(event)) getTimeStamp]];
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunStarted *)event {
+  [this$0_ setStartTimeWithJavaLangLong:[((CucumberApiEventTestRunStarted *) nil_chk(event)) getTimeStamp]];
 }
 
 - (void)dealloc {
@@ -565,12 +565,12 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRStats)
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRStats:);
-  methods[1].selector = @selector(receiveWithCCBEvent:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCCBRStats;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCCBTestRunStarted;", "LCCBRStats;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunStarted;>;" };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestRunStarted;", "LCCBRStats;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunStarted;>;" };
   static const J2ObjcClassInfo _CCBRStats_1 = { "", "cucumber.runtime", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
   return &_CCBRStats_1;
 }
@@ -597,13 +597,13 @@ CCBRStats_1 *create_CCBRStats_1_initWithCCBRStats_(CCBRStats *outer$) {
   return self;
 }
 
-- (void)receiveWithCCBEvent:(CCBTestStepFinished *)event {
-  CCBResult *result = ((CCBTestStepFinished *) nil_chk(event))->result_;
-  if ([((CCBResult *) nil_chk(result)) getError] != nil) {
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepFinished *)event {
+  CucumberApiResult *result = ((CucumberApiEventTestStepFinished *) nil_chk(event))->result_;
+  if ([((CucumberApiResult *) nil_chk(result)) getError] != nil) {
     CCBRStats_addErrorWithJavaLangThrowable_(this$0_, [result getError]);
   }
-  if (![((CCBTestStep *) nil_chk(event->testStep_)) isHook]) {
-    [this$0_ addStepWithCCBResult_Type:[result getStatus]];
+  if (![((CucumberApiTestStep *) nil_chk(event->testStep_)) isHook]) {
+    [this$0_ addStepWithCucumberApiResult_Type:[result getStatus]];
   }
 }
 
@@ -621,12 +621,12 @@ CCBRStats_1 *create_CCBRStats_1_initWithCCBRStats_(CCBRStats *outer$) {
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRStats:);
-  methods[1].selector = @selector(receiveWithCCBEvent:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCCBRStats;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCCBTestStepFinished;", "LCCBRStats;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;" };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestStepFinished;", "LCCBRStats;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;" };
   static const J2ObjcClassInfo _CCBRStats_2 = { "", "cucumber.runtime", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
   return &_CCBRStats_2;
 }
@@ -653,8 +653,8 @@ CCBRStats_2 *create_CCBRStats_2_initWithCCBRStats_(CCBRStats *outer$) {
   return self;
 }
 
-- (void)receiveWithCCBEvent:(CCBTestCaseFinished *)event {
-  [this$0_ addScenarioWithCCBResult_Type:[((CCBResult *) nil_chk(((CCBTestCaseFinished *) nil_chk(event))->result_)) getStatus] withNSString:[((CCBTestCase *) nil_chk(event->testCase_)) getScenarioDesignation]];
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestCaseFinished *)event {
+  [this$0_ addScenarioWithCucumberApiResult_Type:[((CucumberApiResult *) nil_chk(((CucumberApiEventTestCaseFinished *) nil_chk(event))->result_)) getStatus] withNSString:[((CucumberApiTestCase *) nil_chk(event->testCase_)) getScenarioDesignation]];
 }
 
 - (void)dealloc {
@@ -671,12 +671,12 @@ CCBRStats_2 *create_CCBRStats_2_initWithCCBRStats_(CCBRStats *outer$) {
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRStats:);
-  methods[1].selector = @selector(receiveWithCCBEvent:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCCBRStats;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCCBTestCaseFinished;", "LCCBRStats;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseFinished;>;" };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestCaseFinished;", "LCCBRStats;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseFinished;>;" };
   static const J2ObjcClassInfo _CCBRStats_3 = { "", "cucumber.runtime", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
   return &_CCBRStats_3;
 }
@@ -703,8 +703,8 @@ CCBRStats_3 *create_CCBRStats_3_initWithCCBRStats_(CCBRStats *outer$) {
   return self;
 }
 
-- (void)receiveWithCCBEvent:(CCBTestRunFinished *)event {
-  [this$0_ setFinishTimeWithJavaLangLong:[((CCBTestRunFinished *) nil_chk(event)) getTimeStamp]];
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event {
+  [this$0_ setFinishTimeWithJavaLangLong:[((CucumberApiEventTestRunFinished *) nil_chk(event)) getTimeStamp]];
 }
 
 - (void)dealloc {
@@ -721,12 +721,12 @@ CCBRStats_3 *create_CCBRStats_3_initWithCCBRStats_(CCBRStats *outer$) {
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRStats:);
-  methods[1].selector = @selector(receiveWithCCBEvent:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCCBRStats;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCCBTestRunFinished;", "LCCBRStats;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestRunFinished;", "LCCBRStats;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
   static const J2ObjcClassInfo _CCBRStats_4 = { "", "cucumber.runtime", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
   return &_CCBRStats_4;
 }

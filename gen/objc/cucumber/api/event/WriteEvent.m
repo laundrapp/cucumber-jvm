@@ -8,11 +8,11 @@
 #include "cucumber/api/event/WriteEvent.h"
 #include "java/lang/Long.h"
 
-@implementation CCBWriteEvent
+@implementation CucumberApiEventWriteEvent
 
 - (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp
                                   withNSString:(NSString *)text {
-  CCBWriteEvent_initWithJavaLangLong_withNSString_(self, timeStamp, text);
+  CucumberApiEventWriteEvent_initWithJavaLangLong_withNSString_(self, timeStamp, text);
   return self;
 }
 
@@ -34,23 +34,23 @@
     { "text_", "LNSString;", .constantValue.asLong = 0, 0x11, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LJavaLangLong;LNSString;" };
-  static const J2ObjcClassInfo _CCBWriteEvent = { "WriteEvent", "cucumber.api.event", ptrTable, methods, fields, 7, 0x11, 1, 1, -1, -1, -1, -1, -1 };
-  return &_CCBWriteEvent;
+  static const J2ObjcClassInfo _CucumberApiEventWriteEvent = { "WriteEvent", "cucumber.api.event", ptrTable, methods, fields, 7, 0x11, 1, 1, -1, -1, -1, -1, -1 };
+  return &_CucumberApiEventWriteEvent;
 }
 
 @end
 
-void CCBWriteEvent_initWithJavaLangLong_withNSString_(CCBWriteEvent *self, JavaLangLong *timeStamp, NSString *text) {
-  CCBTimeStampedEvent_initWithJavaLangLong_(self, timeStamp);
+void CucumberApiEventWriteEvent_initWithJavaLangLong_withNSString_(CucumberApiEventWriteEvent *self, JavaLangLong *timeStamp, NSString *text) {
+  CucumberApiEventTimeStampedEvent_initWithJavaLangLong_(self, timeStamp);
   JreStrongAssign(&self->text_, text);
 }
 
-CCBWriteEvent *new_CCBWriteEvent_initWithJavaLangLong_withNSString_(JavaLangLong *timeStamp, NSString *text) {
-  J2OBJC_NEW_IMPL(CCBWriteEvent, initWithJavaLangLong_withNSString_, timeStamp, text)
+CucumberApiEventWriteEvent *new_CucumberApiEventWriteEvent_initWithJavaLangLong_withNSString_(JavaLangLong *timeStamp, NSString *text) {
+  J2OBJC_NEW_IMPL(CucumberApiEventWriteEvent, initWithJavaLangLong_withNSString_, timeStamp, text)
 }
 
-CCBWriteEvent *create_CCBWriteEvent_initWithJavaLangLong_withNSString_(JavaLangLong *timeStamp, NSString *text) {
-  J2OBJC_CREATE_IMPL(CCBWriteEvent, initWithJavaLangLong_withNSString_, timeStamp, text)
+CucumberApiEventWriteEvent *create_CucumberApiEventWriteEvent_initWithJavaLangLong_withNSString_(JavaLangLong *timeStamp, NSString *text) {
+  J2OBJC_CREATE_IMPL(CucumberApiEventWriteEvent, initWithJavaLangLong_withNSString_, timeStamp, text)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBWriteEvent)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiEventWriteEvent)

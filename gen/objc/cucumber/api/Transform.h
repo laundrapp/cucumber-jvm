@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBTransform_) && (INCLUDE_ALL_CucumberApiTransform || defined(INCLUDE_CCBTransform))
-#define CCBTransform_
+#if !defined (CucumberApiTransform_) && (INCLUDE_ALL_CucumberApiTransform || defined(INCLUDE_CucumberApiTransform))
+#define CucumberApiTransform_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -31,7 +31,7 @@
  @brief An annotation to specify how a Step Definition argument is transformed.
  - seealso: Transformer
  */
-@protocol CCBTransform < JavaLangAnnotationAnnotation >
+@protocol CucumberApiTransform < JavaLangAnnotationAnnotation >
 
 @property (readonly) IOSClass *value;
 
@@ -41,20 +41,18 @@
 
 @end
 
-@interface CCBTransform : NSObject < CCBTransform > {
+@interface CucumberApiTransform : NSObject < CucumberApiTransform > {
  @public
   IOSClass *value_;
 }
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBTransform)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiTransform)
 
-FOUNDATION_EXPORT id<CCBTransform> create_CCBTransform(IOSClass *value);
+FOUNDATION_EXPORT id<CucumberApiTransform> create_CucumberApiTransform(IOSClass *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBTransform)
-
-#define CucumberApiTransform CCBTransform
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiTransform)
 
 #endif
 

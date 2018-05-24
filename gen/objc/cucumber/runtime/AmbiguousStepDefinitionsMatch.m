@@ -33,13 +33,13 @@ J2OBJC_FIELD_SETTER(CCBRAmbiguousStepDefinitionsMatch, exception_, CCBRAmbiguous
 }
 
 - (void)runStepWithNSString:(NSString *)language
-            withCCBScenario:(id<CCBScenario>)scenario {
+    withCucumberApiScenario:(id<CucumberApiScenario>)scenario {
   @throw nil_chk(exception_);
 }
 
 - (void)dryRunStepWithNSString:(NSString *)language
-               withCCBScenario:(id<CCBScenario>)scenario {
-  [self runStepWithNSString:language withCCBScenario:scenario];
+       withCucumberApiScenario:(id<CucumberApiScenario>)scenario {
+  [self runStepWithNSString:language withCucumberApiScenario:scenario];
 }
 
 - (CCBRMatch *)getMatch {
@@ -62,14 +62,14 @@ J2OBJC_FIELD_SETTER(CCBRAmbiguousStepDefinitionsMatch, exception_, CCBRAmbiguous
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithNSString:withGherkinPicklesPickleStep:withCCBRAmbiguousStepDefinitionsException:);
-  methods[1].selector = @selector(runStepWithNSString:withCCBScenario:);
-  methods[2].selector = @selector(dryRunStepWithNSString:withCCBScenario:);
+  methods[1].selector = @selector(runStepWithNSString:withCucumberApiScenario:);
+  methods[2].selector = @selector(dryRunStepWithNSString:withCucumberApiScenario:);
   methods[3].selector = @selector(getMatch);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "exception_", "LCCBRAmbiguousStepDefinitionsException;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LNSString;LGherkinPicklesPickleStep;LCCBRAmbiguousStepDefinitionsException;", "runStep", "LNSString;LCCBScenario;", "LJavaLangThrowable;", "dryRunStep" };
+  static const void *ptrTable[] = { "LNSString;LGherkinPicklesPickleStep;LCCBRAmbiguousStepDefinitionsException;", "runStep", "LNSString;LCucumberApiScenario;", "LJavaLangThrowable;", "dryRunStep" };
   static const J2ObjcClassInfo _CCBRAmbiguousStepDefinitionsMatch = { "AmbiguousStepDefinitionsMatch", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 4, 1, -1, -1, -1, -1, -1 };
   return &_CCBRAmbiguousStepDefinitionsMatch;
 }

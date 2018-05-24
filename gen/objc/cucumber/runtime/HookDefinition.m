@@ -24,12 +24,12 @@
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(getLocationWithBoolean:);
-  methods[1].selector = @selector(executeWithCCBScenario:);
+  methods[1].selector = @selector(executeWithCucumberApiScenario:);
   methods[2].selector = @selector(matchesWithJavaUtilCollection:);
   methods[3].selector = @selector(getOrder);
   methods[4].selector = @selector(isScenarioScoped);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "getLocation", "Z", "execute", "LCCBScenario;", "LJavaLangThrowable;", "matches", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z" };
+  static const void *ptrTable[] = { "getLocation", "Z", "execute", "LCucumberApiScenario;", "LJavaLangThrowable;", "matches", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z" };
   static const J2ObjcClassInfo _CCBRHookDefinition = { "HookDefinition", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 5, 0, -1, -1, -1, -1, -1 };
   return &_CCBRHookDefinition;
 }

@@ -11,19 +11,19 @@
 #include "java/lang/RuntimeException.h"
 #include "java/lang/annotation/Annotation.h"
 
-__attribute__((unused)) static IOSObjectArray *CCBPendingException__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CucumberApiPendingException__Annotations$0(void);
 
-@implementation CCBPendingException
+@implementation CucumberApiPendingException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CCBPendingException_init(self);
+  CucumberApiPendingException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (instancetype __nonnull)initWithNSString:(NSString *)message {
-  CCBPendingException_initWithNSString_(self, message);
+  CucumberApiPendingException_initWithNSString_(self, message);
   return self;
 }
 
@@ -38,39 +38,39 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(initWithNSString:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LNSString;", (void *)&CCBPendingException__Annotations$0 };
-  static const J2ObjcClassInfo _CCBPendingException = { "PendingException", "cucumber.api", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, 1 };
-  return &_CCBPendingException;
+  static const void *ptrTable[] = { "LNSString;", (void *)&CucumberApiPendingException__Annotations$0 };
+  static const J2ObjcClassInfo _CucumberApiPendingException = { "PendingException", "cucumber.api", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, 1 };
+  return &_CucumberApiPendingException;
 }
 
 @end
 
-void CCBPendingException_init(CCBPendingException *self) {
-  CCBPendingException_initWithNSString_(self, @"TODO: implement me");
+void CucumberApiPendingException_init(CucumberApiPendingException *self) {
+  CucumberApiPendingException_initWithNSString_(self, @"TODO: implement me");
 }
 
-CCBPendingException *new_CCBPendingException_init() {
-  J2OBJC_NEW_IMPL(CCBPendingException, init)
+CucumberApiPendingException *new_CucumberApiPendingException_init() {
+  J2OBJC_NEW_IMPL(CucumberApiPendingException, init)
 }
 
-CCBPendingException *create_CCBPendingException_init() {
-  J2OBJC_CREATE_IMPL(CCBPendingException, init)
+CucumberApiPendingException *create_CucumberApiPendingException_init() {
+  J2OBJC_CREATE_IMPL(CucumberApiPendingException, init)
 }
 
-void CCBPendingException_initWithNSString_(CCBPendingException *self, NSString *message) {
+void CucumberApiPendingException_initWithNSString_(CucumberApiPendingException *self, NSString *message) {
   JavaLangRuntimeException_initWithNSString_(self, message);
 }
 
-CCBPendingException *new_CCBPendingException_initWithNSString_(NSString *message) {
-  J2OBJC_NEW_IMPL(CCBPendingException, initWithNSString_, message)
+CucumberApiPendingException *new_CucumberApiPendingException_initWithNSString_(NSString *message) {
+  J2OBJC_NEW_IMPL(CucumberApiPendingException, initWithNSString_, message)
 }
 
-CCBPendingException *create_CCBPendingException_initWithNSString_(NSString *message) {
-  J2OBJC_CREATE_IMPL(CCBPendingException, initWithNSString_, message)
+CucumberApiPendingException *create_CucumberApiPendingException_initWithNSString_(NSString *message) {
+  J2OBJC_CREATE_IMPL(CucumberApiPendingException, initWithNSString_, message)
 }
 
-IOSObjectArray *CCBPendingException__Annotations$0() {
-  return [IOSObjectArray arrayWithObjects:(id[]){ create_CCBPending() } count:1 type:JavaLangAnnotationAnnotation_class_()];
+IOSObjectArray *CucumberApiPendingException__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_CucumberApiPending() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBPendingException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiPendingException)

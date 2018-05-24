@@ -53,15 +53,15 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeJavaJavaHookDefinition, objectFactory_, id<Cu
   return [format formatWithJavaLangReflectMethod:method_];
 }
 
-- (void)executeWithCCBScenario:(id<CCBScenario>)scenario {
+- (void)executeWithCucumberApiScenario:(id<CucumberApiScenario>)scenario {
   IOSObjectArray *args;
   switch (((IOSObjectArray *) nil_chk([((JavaLangReflectMethod *) nil_chk(method_)) getParameterTypes]))->size_) {
     case 0:
     args = [IOSObjectArray arrayWithLength:0 type:NSObject_class_()];
     break;
     case 1:
-    if (![CCBScenario_class_() isEqual:IOSObjectArray_Get(nil_chk([method_ getParameterTypes]), 0)]) {
-      @throw create_CCBRCucumberException_initWithNSString_(JreStrcat("$$$$", @"When a hook declares an argument it must be of type ", [CCBScenario_class_() getName], @". ", [method_ description]));
+    if (![CucumberApiScenario_class_() isEqual:IOSObjectArray_Get(nil_chk([method_ getParameterTypes]), 0)]) {
+      @throw create_CCBRCucumberException_initWithNSString_(JreStrcat("$$$$", @"When a hook declares an argument it must be of type ", [CucumberApiScenario_class_() getName], @". ", [method_ description]));
     }
     args = [IOSObjectArray arrayWithObjects:(id[]){ scenario } count:1 type:NSObject_class_()];
     break;
@@ -106,7 +106,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeJavaJavaHookDefinition, objectFactory_, id<Cu
   methods[0].selector = @selector(initWithJavaLangReflectMethod:withNSStringArray:withInt:withLong:withCucumberApiJavaObjectFactory:);
   methods[1].selector = @selector(getMethod);
   methods[2].selector = @selector(getLocationWithBoolean:);
-  methods[3].selector = @selector(executeWithCCBScenario:);
+  methods[3].selector = @selector(executeWithCucumberApiScenario:);
   methods[4].selector = @selector(matchesWithJavaUtilCollection:);
   methods[5].selector = @selector(getOrder);
   methods[6].selector = @selector(isScenarioScoped);
@@ -118,7 +118,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeJavaJavaHookDefinition, objectFactory_, id<Cu
     { "order_", "I", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "objectFactory_", "LCucumberApiJavaObjectFactory;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LJavaLangReflectMethod;[LNSString;IJLCucumberApiJavaObjectFactory;", "getLocation", "Z", "execute", "LCCBScenario;", "LJavaLangThrowable;", "matches", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z" };
+  static const void *ptrTable[] = { "LJavaLangReflectMethod;[LNSString;IJLCucumberApiJavaObjectFactory;", "getLocation", "Z", "execute", "LCucumberApiScenario;", "LJavaLangThrowable;", "matches", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z" };
   static const J2ObjcClassInfo _CucumberRuntimeJavaJavaHookDefinition = { "JavaHookDefinition", "cucumber.runtime.java", ptrTable, methods, fields, 7, 0x0, 7, 5, -1, -1, -1, -1, -1 };
   return &_CucumberRuntimeJavaJavaHookDefinition;
 }

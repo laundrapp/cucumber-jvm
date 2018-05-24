@@ -18,21 +18,21 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBCucumberOptions_) && (INCLUDE_ALL_CucumberApiCucumberOptions || defined(INCLUDE_CCBCucumberOptions))
-#define CCBCucumberOptions_
+#if !defined (CucumberApiCucumberOptions_) && (INCLUDE_ALL_CucumberApiCucumberOptions || defined(INCLUDE_CucumberApiCucumberOptions))
+#define CucumberApiCucumberOptions_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
 #include "java/lang/annotation/Annotation.h"
 
-@class CCBSnippetType;
+@class CucumberApiSnippetType;
 @class IOSClass;
 @class IOSObjectArray;
 
 /*!
  @brief This annotation provides the same options as the cucumber command line, <code>cucumber.api.cli.Main</code>.
  */
-@protocol CCBCucumberOptions < JavaLangAnnotationAnnotation >
+@protocol CucumberApiCucumberOptions < JavaLangAnnotationAnnotation >
 
 @property (readonly) jboolean dryRun;
 @property (readonly) jboolean strict;
@@ -43,7 +43,7 @@
 @property (readonly) IOSObjectArray *plugin;
 @property (readonly) jboolean monochrome;
 @property (readonly) IOSObjectArray *name;
-@property (readonly) CCBSnippetType *snippets;
+@property (readonly) CucumberApiSnippetType *snippets;
 @property (readonly) IOSObjectArray *junit;
 
 - (jboolean)isEqual:(id)obj;
@@ -52,7 +52,7 @@
 
 @end
 
-@interface CCBCucumberOptions : NSObject < CCBCucumberOptions > {
+@interface CucumberApiCucumberOptions : NSObject < CucumberApiCucumberOptions > {
  @public
   jboolean dryRun_;
   jboolean strict_;
@@ -63,19 +63,17 @@
   IOSObjectArray *plugin_;
   jboolean monochrome_;
   IOSObjectArray *name_;
-  CCBSnippetType *snippets_;
+  CucumberApiSnippetType *snippets_;
   IOSObjectArray *junit_;
 }
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBCucumberOptions)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiCucumberOptions)
 
-FOUNDATION_EXPORT id<CCBCucumberOptions> create_CCBCucumberOptions(jboolean dryRun, IOSObjectArray *features, IOSObjectArray *format, IOSObjectArray *glue, IOSObjectArray *junit, jboolean monochrome, IOSObjectArray *name, IOSObjectArray *plugin, CCBSnippetType *snippets, jboolean strict, IOSObjectArray *tags);
+FOUNDATION_EXPORT id<CucumberApiCucumberOptions> create_CucumberApiCucumberOptions(jboolean dryRun, IOSObjectArray *features, IOSObjectArray *format, IOSObjectArray *glue, IOSObjectArray *junit, jboolean monochrome, IOSObjectArray *name, IOSObjectArray *plugin, CucumberApiSnippetType *snippets, jboolean strict, IOSObjectArray *tags);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBCucumberOptions)
-
-#define CucumberApiCucumberOptions CCBCucumberOptions
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiCucumberOptions)
 
 #endif
 

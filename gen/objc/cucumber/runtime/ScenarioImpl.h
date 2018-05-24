@@ -22,26 +22,26 @@
 #define CCBRScenarioImpl_
 
 #define RESTRICT_CucumberApiScenario 1
-#define INCLUDE_CCBScenario 1
+#define INCLUDE_CucumberApiScenario 1
 #include "cucumber/api/Scenario.h"
 
 @class CCBEventBus;
-@class CCBResult;
-@class CCBResult_Type;
+@class CucumberApiResult;
+@class CucumberApiResult_Type;
 @class GherkinEventsPickleEvent;
 @class IOSByteArray;
 @class JavaLangThrowable;
 @protocol JavaUtilCollection;
 @protocol JavaUtilList;
 
-@interface CCBRScenarioImpl : NSObject < CCBScenario >
+@interface CCBRScenarioImpl : NSObject < CucumberApiScenario >
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithCCBEventBus:(CCBEventBus *)bus
                  withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent;
 
-- (void)addWithCCBResult:(CCBResult *)result;
+- (void)addWithCucumberApiResult:(CucumberApiResult *)result;
 
 - (void)embedWithByteArray:(IOSByteArray *)data
               withNSString:(NSString *)mimeType;
@@ -56,7 +56,7 @@
 
 - (id<JavaUtilCollection>)getSourceTagNames;
 
-- (CCBResult_Type *)getStatus;
+- (CucumberApiResult_Type *)getStatus;
 
 - (NSString *)getUri;
 

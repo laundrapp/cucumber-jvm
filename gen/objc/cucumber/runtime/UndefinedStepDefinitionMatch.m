@@ -22,13 +22,13 @@
 }
 
 - (void)runStepWithNSString:(NSString *)language
-            withCCBScenario:(id<CCBScenario>)scenario {
+    withCucumberApiScenario:(id<CucumberApiScenario>)scenario {
   @throw create_CCBRUndefinedStepDefinitionException_init();
 }
 
 - (void)dryRunStepWithNSString:(NSString *)language
-               withCCBScenario:(id<CCBScenario>)scenario {
-  [self runStepWithNSString:language withCCBScenario:scenario];
+       withCucumberApiScenario:(id<CucumberApiScenario>)scenario {
+  [self runStepWithNSString:language withCucumberApiScenario:scenario];
 }
 
 - (CCBRMatch *)getMatch {
@@ -46,11 +46,11 @@
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithGherkinPicklesPickleStep:);
-  methods[1].selector = @selector(runStepWithNSString:withCCBScenario:);
-  methods[2].selector = @selector(dryRunStepWithNSString:withCCBScenario:);
+  methods[1].selector = @selector(runStepWithNSString:withCucumberApiScenario:);
+  methods[2].selector = @selector(dryRunStepWithNSString:withCucumberApiScenario:);
   methods[3].selector = @selector(getMatch);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LGherkinPicklesPickleStep;", "runStep", "LNSString;LCCBScenario;", "LJavaLangThrowable;", "dryRunStep" };
+  static const void *ptrTable[] = { "LGherkinPicklesPickleStep;", "runStep", "LNSString;LCucumberApiScenario;", "LJavaLangThrowable;", "dryRunStep" };
   static const J2ObjcClassInfo _CCBRUndefinedStepDefinitionMatch = { "UndefinedStepDefinitionMatch", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x1, 4, 0, -1, -1, -1, -1, -1 };
   return &_CCBRUndefinedStepDefinitionMatch;
 }

@@ -71,7 +71,7 @@ __attribute__((unused)) static CCBRAnsiFormats_1 *create_CCBRAnsiFormats_1_init(
   IOSObjectArray *escapes_;
 }
 
-- (instancetype __nonnull)initWithCCBAnsiEscapesArray:(IOSObjectArray *)escapes;
+- (instancetype __nonnull)initWithCucumberApiFormatterAnsiEscapesArray:(IOSObjectArray *)escapes;
 
 - (NSString *)textWithNSString:(NSString *)text;
 
@@ -81,11 +81,11 @@ J2OBJC_EMPTY_STATIC_INIT(CCBRAnsiFormats_ColorFormat)
 
 J2OBJC_FIELD_SETTER(CCBRAnsiFormats_ColorFormat, escapes_, IOSObjectArray *)
 
-__attribute__((unused)) static void CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_(CCBRAnsiFormats_ColorFormat *self, IOSObjectArray *escapes);
+__attribute__((unused)) static void CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_(CCBRAnsiFormats_ColorFormat *self, IOSObjectArray *escapes);
 
-__attribute__((unused)) static CCBRAnsiFormats_ColorFormat *new_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_(IOSObjectArray *escapes) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRAnsiFormats_ColorFormat *new_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_(IOSObjectArray *escapes) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CCBRAnsiFormats_ColorFormat *create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_(IOSObjectArray *escapes);
+__attribute__((unused)) static CCBRAnsiFormats_ColorFormat *create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_(IOSObjectArray *escapes);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRAnsiFormats_ColorFormat)
 
@@ -107,7 +107,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (NSString *)upWithInt:(jint)n {
-  return [((CCBAnsiEscapes *) nil_chk(CCBAnsiEscapes_upWithInt_(n))) description];
+  return [((CucumberApiFormatterAnsiEscapes *) nil_chk(CucumberApiFormatterAnsiEscapes_upWithInt_(n))) description];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -182,25 +182,25 @@ J2OBJC_IGNORE_DESIGNATED_END
 void CCBRAnsiFormats_1_init(CCBRAnsiFormats_1 *self) {
   JavaUtilHashMap_init(self);
   {
-    [self putWithId:@"undefined" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, YELLOW) } count:1 type:CCBAnsiEscapes_class_()])];
-    [self putWithId:@"undefined_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, YELLOW), JreLoadStatic(CCBAnsiEscapes, INTENSITY_BOLD) } count:2 type:CCBAnsiEscapes_class_()])];
-    [self putWithId:@"pending" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, YELLOW) } count:1 type:CCBAnsiEscapes_class_()])];
-    [self putWithId:@"pending_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, YELLOW), JreLoadStatic(CCBAnsiEscapes, INTENSITY_BOLD) } count:2 type:CCBAnsiEscapes_class_()])];
-    [self putWithId:@"executing" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, GREY) } count:1 type:CCBAnsiEscapes_class_()])];
-    [self putWithId:@"executing_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, GREY), JreLoadStatic(CCBAnsiEscapes, INTENSITY_BOLD) } count:2 type:CCBAnsiEscapes_class_()])];
-    [self putWithId:@"failed" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, RED) } count:1 type:CCBAnsiEscapes_class_()])];
-    [self putWithId:@"failed_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, RED), JreLoadStatic(CCBAnsiEscapes, INTENSITY_BOLD) } count:2 type:CCBAnsiEscapes_class_()])];
-    [self putWithId:@"ambiguous" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, RED) } count:1 type:CCBAnsiEscapes_class_()])];
-    [self putWithId:@"ambiguous_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, RED), JreLoadStatic(CCBAnsiEscapes, INTENSITY_BOLD) } count:2 type:CCBAnsiEscapes_class_()])];
-    [self putWithId:@"passed" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, GREEN) } count:1 type:CCBAnsiEscapes_class_()])];
-    [self putWithId:@"passed_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, GREEN), JreLoadStatic(CCBAnsiEscapes, INTENSITY_BOLD) } count:2 type:CCBAnsiEscapes_class_()])];
-    [self putWithId:@"outline" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, CYAN) } count:1 type:CCBAnsiEscapes_class_()])];
-    [self putWithId:@"outline_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, CYAN), JreLoadStatic(CCBAnsiEscapes, INTENSITY_BOLD) } count:2 type:CCBAnsiEscapes_class_()])];
-    [self putWithId:@"skipped" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, CYAN) } count:1 type:CCBAnsiEscapes_class_()])];
-    [self putWithId:@"skipped_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, CYAN), JreLoadStatic(CCBAnsiEscapes, INTENSITY_BOLD) } count:2 type:CCBAnsiEscapes_class_()])];
-    [self putWithId:@"comment" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, GREY) } count:1 type:CCBAnsiEscapes_class_()])];
-    [self putWithId:@"tag" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, CYAN) } count:1 type:CCBAnsiEscapes_class_()])];
-    [self putWithId:@"output" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, BLUE) } count:1 type:CCBAnsiEscapes_class_()])];
+    [self putWithId:@"undefined" withId:create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, YELLOW) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
+    [self putWithId:@"undefined_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, YELLOW), JreLoadStatic(CucumberApiFormatterAnsiEscapes, INTENSITY_BOLD) } count:2 type:CucumberApiFormatterAnsiEscapes_class_()])];
+    [self putWithId:@"pending" withId:create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, YELLOW) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
+    [self putWithId:@"pending_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, YELLOW), JreLoadStatic(CucumberApiFormatterAnsiEscapes, INTENSITY_BOLD) } count:2 type:CucumberApiFormatterAnsiEscapes_class_()])];
+    [self putWithId:@"executing" withId:create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, GREY) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
+    [self putWithId:@"executing_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, GREY), JreLoadStatic(CucumberApiFormatterAnsiEscapes, INTENSITY_BOLD) } count:2 type:CucumberApiFormatterAnsiEscapes_class_()])];
+    [self putWithId:@"failed" withId:create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, RED) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
+    [self putWithId:@"failed_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, RED), JreLoadStatic(CucumberApiFormatterAnsiEscapes, INTENSITY_BOLD) } count:2 type:CucumberApiFormatterAnsiEscapes_class_()])];
+    [self putWithId:@"ambiguous" withId:create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, RED) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
+    [self putWithId:@"ambiguous_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, RED), JreLoadStatic(CucumberApiFormatterAnsiEscapes, INTENSITY_BOLD) } count:2 type:CucumberApiFormatterAnsiEscapes_class_()])];
+    [self putWithId:@"passed" withId:create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, GREEN) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
+    [self putWithId:@"passed_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, GREEN), JreLoadStatic(CucumberApiFormatterAnsiEscapes, INTENSITY_BOLD) } count:2 type:CucumberApiFormatterAnsiEscapes_class_()])];
+    [self putWithId:@"outline" withId:create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, CYAN) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
+    [self putWithId:@"outline_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, CYAN), JreLoadStatic(CucumberApiFormatterAnsiEscapes, INTENSITY_BOLD) } count:2 type:CucumberApiFormatterAnsiEscapes_class_()])];
+    [self putWithId:@"skipped" withId:create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, CYAN) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
+    [self putWithId:@"skipped_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, CYAN), JreLoadStatic(CucumberApiFormatterAnsiEscapes, INTENSITY_BOLD) } count:2 type:CucumberApiFormatterAnsiEscapes_class_()])];
+    [self putWithId:@"comment" withId:create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, GREY) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
+    [self putWithId:@"tag" withId:create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, CYAN) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
+    [self putWithId:@"output" withId:create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, BLUE) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
   }
 }
 
@@ -214,8 +214,8 @@ CCBRAnsiFormats_1 *create_CCBRAnsiFormats_1_init() {
 
 @implementation CCBRAnsiFormats_ColorFormat
 
-- (instancetype __nonnull)initWithCCBAnsiEscapesArray:(IOSObjectArray *)escapes {
-  CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_(self, escapes);
+- (instancetype __nonnull)initWithCucumberApiFormatterAnsiEscapesArray:(IOSObjectArray *)escapes {
+  CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_(self, escapes);
   return self;
 }
 
@@ -223,15 +223,15 @@ CCBRAnsiFormats_1 *create_CCBRAnsiFormats_1_init() {
   JavaLangStringBuilder *sb = create_JavaLangStringBuilder_init();
   {
     IOSObjectArray *a__ = escapes_;
-    CCBAnsiEscapes * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
-    CCBAnsiEscapes * const *e__ = b__ + a__->size_;
+    CucumberApiFormatterAnsiEscapes * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
+    CucumberApiFormatterAnsiEscapes * const *e__ = b__ + a__->size_;
     while (b__ < e__) {
-      CCBAnsiEscapes *escape = *b__++;
-      [((CCBAnsiEscapes *) nil_chk(escape)) appendToWithJavaLangStringBuilder:sb];
+      CucumberApiFormatterAnsiEscapes *escape = *b__++;
+      [((CucumberApiFormatterAnsiEscapes *) nil_chk(escape)) appendToWithJavaLangStringBuilder:sb];
     }
   }
   [sb appendWithNSString:text];
-  [((CCBAnsiEscapes *) nil_chk(JreLoadStatic(CCBAnsiEscapes, RESET))) appendToWithJavaLangStringBuilder:sb];
+  [((CucumberApiFormatterAnsiEscapes *) nil_chk(JreLoadStatic(CucumberApiFormatterAnsiEscapes, RESET))) appendToWithJavaLangStringBuilder:sb];
   return [sb description];
 }
 
@@ -248,30 +248,30 @@ CCBRAnsiFormats_1 *create_CCBRAnsiFormats_1_init() {
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCCBAnsiEscapesArray:);
+  methods[0].selector = @selector(initWithCucumberApiFormatterAnsiEscapesArray:);
   methods[1].selector = @selector(textWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "escapes_", "[LCCBAnsiEscapes;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "escapes_", "[LCucumberApiFormatterAnsiEscapes;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "[LCCBAnsiEscapes;", "text", "LNSString;", "LCCBRAnsiFormats;" };
+  static const void *ptrTable[] = { "[LCucumberApiFormatterAnsiEscapes;", "text", "LNSString;", "LCCBRAnsiFormats;" };
   static const J2ObjcClassInfo _CCBRAnsiFormats_ColorFormat = { "ColorFormat", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x1a, 2, 1, 3, -1, -1, -1, -1 };
   return &_CCBRAnsiFormats_ColorFormat;
 }
 
 @end
 
-void CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_(CCBRAnsiFormats_ColorFormat *self, IOSObjectArray *escapes) {
+void CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_(CCBRAnsiFormats_ColorFormat *self, IOSObjectArray *escapes) {
   NSObject_init(self);
   JreStrongAssign(&self->escapes_, escapes);
 }
 
-CCBRAnsiFormats_ColorFormat *new_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_(IOSObjectArray *escapes) {
-  J2OBJC_NEW_IMPL(CCBRAnsiFormats_ColorFormat, initWithCCBAnsiEscapesArray_, escapes)
+CCBRAnsiFormats_ColorFormat *new_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_(IOSObjectArray *escapes) {
+  J2OBJC_NEW_IMPL(CCBRAnsiFormats_ColorFormat, initWithCucumberApiFormatterAnsiEscapesArray_, escapes)
 }
 
-CCBRAnsiFormats_ColorFormat *create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_(IOSObjectArray *escapes) {
-  J2OBJC_CREATE_IMPL(CCBRAnsiFormats_ColorFormat, initWithCCBAnsiEscapesArray_, escapes)
+CCBRAnsiFormats_ColorFormat *create_CCBRAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_(IOSObjectArray *escapes) {
+  J2OBJC_CREATE_IMPL(CCBRAnsiFormats_ColorFormat, initWithCucumberApiFormatterAnsiEscapesArray_, escapes)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRAnsiFormats_ColorFormat)

@@ -15,7 +15,7 @@
 #include "java/lang/Enum.h"
 #include "java/lang/IllegalArgumentException.h"
 
-@interface CCBSnippetType () {
+@interface CucumberApiSnippetType () {
  @public
   NSString *name_SnippetType_;
   id<CCBRConcatenator> concatenator_;
@@ -23,19 +23,19 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CCBSnippetType, name_SnippetType_, NSString *)
-J2OBJC_FIELD_SETTER(CCBSnippetType, concatenator_, id<CCBRConcatenator>)
+J2OBJC_FIELD_SETTER(CucumberApiSnippetType, name_SnippetType_, NSString *)
+J2OBJC_FIELD_SETTER(CucumberApiSnippetType, concatenator_, id<CCBRConcatenator>)
 
-__attribute__((unused)) static void CCBSnippetType_initWithNSString_withCCBRConcatenator_withNSString_withInt_(CCBSnippetType *self, NSString *name, id<CCBRConcatenator> concatenator, NSString *__name, jint __ordinal);
+__attribute__((unused)) static void CucumberApiSnippetType_initWithNSString_withCCBRConcatenator_withNSString_withInt_(CucumberApiSnippetType *self, NSString *name, id<CCBRConcatenator> concatenator, NSString *__name, jint __ordinal);
 
-J2OBJC_INITIALIZED_DEFN(CCBSnippetType)
+J2OBJC_INITIALIZED_DEFN(CucumberApiSnippetType)
 
-CCBSnippetType *CCBSnippetType_values_[2];
+CucumberApiSnippetType *CucumberApiSnippetType_values_[2];
 
-@implementation CCBSnippetType
+@implementation CucumberApiSnippetType
 
-+ (CCBSnippetType *)fromStringWithNSString:(NSString *)name {
-  return CCBSnippetType_fromStringWithNSString_(name);
++ (CucumberApiSnippetType *)fromStringWithNSString:(NSString *)name {
+  return CucumberApiSnippetType_fromStringWithNSString_(name);
 }
 
 - (CCBRFunctionNameGenerator *)getFunctionNameGenerator {
@@ -43,19 +43,19 @@ CCBSnippetType *CCBSnippetType_values_[2];
 }
 
 + (IOSObjectArray *)values {
-  return CCBSnippetType_values();
+  return CucumberApiSnippetType_values();
 }
 
-+ (CCBSnippetType *)valueOfWithNSString:(NSString *)name {
-  return CCBSnippetType_valueOfWithNSString_(name);
++ (CucumberApiSnippetType *)valueOfWithNSString:(NSString *)name {
+  return CucumberApiSnippetType_valueOfWithNSString_(name);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, "LCCBSnippetType;", 0x9, 0, 1, -1, -1, -1, -1 },
+    { NULL, "LCucumberApiSnippetType;", 0x9, 0, 1, -1, -1, -1, -1 },
     { NULL, "LCCBRFunctionNameGenerator;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "[LCCBSnippetType;", 0x9, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LCCBSnippetType;", 0x9, 2, 1, -1, -1, -1, -1 },
+    { NULL, "[LCucumberApiSnippetType;", 0x9, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCucumberApiSnippetType;", 0x9, 2, 1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -66,47 +66,47 @@ CCBSnippetType *CCBSnippetType_values_[2];
   methods[3].selector = @selector(valueOfWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "UNDERSCORE", "LCCBSnippetType;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
-    { "CAMELCASE", "LCCBSnippetType;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
+    { "UNDERSCORE", "LCucumberApiSnippetType;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
+    { "CAMELCASE", "LCucumberApiSnippetType;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
     { "name_SnippetType_", "LNSString;", .constantValue.asLong = 0, 0x12, 5, -1, -1, -1 },
     { "concatenator_", "LCCBRConcatenator;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "fromString", "LNSString;", "valueOf", &JreEnum(CCBSnippetType, UNDERSCORE), &JreEnum(CCBSnippetType, CAMELCASE), "name", "Ljava/lang/Enum<Lcucumber/api/SnippetType;>;" };
-  static const J2ObjcClassInfo _CCBSnippetType = { "SnippetType", "cucumber.api", ptrTable, methods, fields, 7, 0x4011, 4, 4, -1, -1, -1, 6, -1 };
-  return &_CCBSnippetType;
+  static const void *ptrTable[] = { "fromString", "LNSString;", "valueOf", &JreEnum(CucumberApiSnippetType, UNDERSCORE), &JreEnum(CucumberApiSnippetType, CAMELCASE), "name", "Ljava/lang/Enum<Lcucumber/api/SnippetType;>;" };
+  static const J2ObjcClassInfo _CucumberApiSnippetType = { "SnippetType", "cucumber.api", ptrTable, methods, fields, 7, 0x4011, 4, 4, -1, -1, -1, 6, -1 };
+  return &_CucumberApiSnippetType;
 }
 
 + (void)initialize {
-  if (self == [CCBSnippetType class]) {
+  if (self == [CucumberApiSnippetType class]) {
     size_t objSize = class_getInstanceSize(self);
     size_t allocSize = 2 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
-    ((void) (JreEnum(CCBSnippetType, UNDERSCORE) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
-    CCBSnippetType_initWithNSString_withCCBRConcatenator_withNSString_withInt_(e, @"underscore", create_CCBRUnderscoreConcatenator_init(), @"UNDERSCORE", 0);
-    ((void) (JreEnum(CCBSnippetType, CAMELCASE) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
-    CCBSnippetType_initWithNSString_withCCBRConcatenator_withNSString_withInt_(e, @"camelcase", create_CCBRCamelCaseConcatenator_init(), @"CAMELCASE", 1);
-    J2OBJC_SET_INITIALIZED(CCBSnippetType)
+    ((void) (JreEnum(CucumberApiSnippetType, UNDERSCORE) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
+    CucumberApiSnippetType_initWithNSString_withCCBRConcatenator_withNSString_withInt_(e, @"underscore", create_CCBRUnderscoreConcatenator_init(), @"UNDERSCORE", 0);
+    ((void) (JreEnum(CucumberApiSnippetType, CAMELCASE) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
+    CucumberApiSnippetType_initWithNSString_withCCBRConcatenator_withNSString_withInt_(e, @"camelcase", create_CCBRCamelCaseConcatenator_init(), @"CAMELCASE", 1);
+    J2OBJC_SET_INITIALIZED(CucumberApiSnippetType)
   }
 }
 
 @end
 
-void CCBSnippetType_initWithNSString_withCCBRConcatenator_withNSString_withInt_(CCBSnippetType *self, NSString *name, id<CCBRConcatenator> concatenator, NSString *__name, jint __ordinal) {
+void CucumberApiSnippetType_initWithNSString_withCCBRConcatenator_withNSString_withInt_(CucumberApiSnippetType *self, NSString *name, id<CCBRConcatenator> concatenator, NSString *__name, jint __ordinal) {
   JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
   JreStrongAssign(&self->name_SnippetType_, name);
   JreStrongAssign(&self->concatenator_, concatenator);
 }
 
-CCBSnippetType *CCBSnippetType_fromStringWithNSString_(NSString *name) {
-  CCBSnippetType_initialize();
+CucumberApiSnippetType *CucumberApiSnippetType_fromStringWithNSString_(NSString *name) {
+  CucumberApiSnippetType_initialize();
   {
-    IOSObjectArray *a__ = CCBSnippetType_values();
-    CCBSnippetType * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
-    CCBSnippetType * const *e__ = b__ + a__->size_;
+    IOSObjectArray *a__ = CucumberApiSnippetType_values();
+    CucumberApiSnippetType * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
+    CucumberApiSnippetType * const *e__ = b__ + a__->size_;
     while (b__ < e__) {
-      CCBSnippetType *snippetType = *b__++;
-      if ([((NSString *) nil_chk(name)) java_equalsIgnoreCase:((CCBSnippetType *) nil_chk(snippetType))->name_SnippetType_]) {
+      CucumberApiSnippetType *snippetType = *b__++;
+      if ([((NSString *) nil_chk(name)) java_equalsIgnoreCase:((CucumberApiSnippetType *) nil_chk(snippetType))->name_SnippetType_]) {
         return snippetType;
       }
     }
@@ -114,15 +114,15 @@ CCBSnippetType *CCBSnippetType_fromStringWithNSString_(NSString *name) {
   @throw create_CCBRCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"Unrecognized SnippetType %s", [IOSObjectArray arrayWithObjects:(id[]){ name } count:1 type:NSObject_class_()]));
 }
 
-IOSObjectArray *CCBSnippetType_values() {
-  CCBSnippetType_initialize();
-  return [IOSObjectArray arrayWithObjects:CCBSnippetType_values_ count:2 type:CCBSnippetType_class_()];
+IOSObjectArray *CucumberApiSnippetType_values() {
+  CucumberApiSnippetType_initialize();
+  return [IOSObjectArray arrayWithObjects:CucumberApiSnippetType_values_ count:2 type:CucumberApiSnippetType_class_()];
 }
 
-CCBSnippetType *CCBSnippetType_valueOfWithNSString_(NSString *name) {
-  CCBSnippetType_initialize();
+CucumberApiSnippetType *CucumberApiSnippetType_valueOfWithNSString_(NSString *name) {
+  CucumberApiSnippetType_initialize();
   for (int i = 0; i < 2; i++) {
-    CCBSnippetType *e = CCBSnippetType_values_[i];
+    CucumberApiSnippetType *e = CucumberApiSnippetType_values_[i];
     if ([name isEqual:[e name]]) {
       return e;
     }
@@ -131,12 +131,12 @@ CCBSnippetType *CCBSnippetType_valueOfWithNSString_(NSString *name) {
   return nil;
 }
 
-CCBSnippetType *CCBSnippetType_fromOrdinal(NSUInteger ordinal) {
-  CCBSnippetType_initialize();
+CucumberApiSnippetType *CucumberApiSnippetType_fromOrdinal(NSUInteger ordinal) {
+  CucumberApiSnippetType_initialize();
   if (ordinal >= 2) {
     return nil;
   }
-  return CCBSnippetType_values_[ordinal];
+  return CucumberApiSnippetType_values_[ordinal];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBSnippetType)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiSnippetType)

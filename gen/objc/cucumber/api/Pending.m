@@ -13,12 +13,12 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *CCBPending__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CucumberApiPending__Annotations$0(void);
 
-@implementation CCBPending
+@implementation CucumberApiPending
 
 - (IOSClass *)annotationType {
-  return CCBPending_class_();
+  return CucumberApiPending_class_();
 }
 
 - (NSString *)description {
@@ -34,20 +34,20 @@ __attribute__((unused)) static IOSObjectArray *CCBPending__Annotations$0(void);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const void *ptrTable[] = { (void *)&CCBPending__Annotations$0 };
-  static const J2ObjcClassInfo _CCBPending = { "Pending", "cucumber.api", ptrTable, NULL, NULL, 7, 0x2609, 0, 0, -1, -1, -1, -1, 0 };
-  return &_CCBPending;
+  static const void *ptrTable[] = { (void *)&CucumberApiPending__Annotations$0 };
+  static const J2ObjcClassInfo _CucumberApiPending = { "Pending", "cucumber.api", ptrTable, NULL, NULL, 7, 0x2609, 0, 0, -1, -1, -1, -1, 0 };
+  return &_CucumberApiPending;
 }
 
 @end
 
-id<CCBPending> create_CCBPending() {
-  CCBPending *self = AUTORELEASE([[CCBPending alloc] init]);
+id<CucumberApiPending> create_CucumberApiPending() {
+  CucumberApiPending *self = AUTORELEASE([[CucumberApiPending alloc] init]);
   return self;
 }
 
-IOSObjectArray *CCBPending__Annotations$0() {
+IOSObjectArray *CucumberApiPending__Annotations$0() {
   return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, TYPE) } count:1 type:JavaLangAnnotationElementType_class_()]) } count:2 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBPending)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiPending)

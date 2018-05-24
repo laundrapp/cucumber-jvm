@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBPendingException_) && (INCLUDE_ALL_CucumberApiPendingException || defined(INCLUDE_CCBPendingException))
-#define CCBPendingException_
+#if !defined (CucumberApiPendingException_) && (INCLUDE_ALL_CucumberApiPendingException || defined(INCLUDE_CucumberApiPendingException))
+#define CucumberApiPendingException_
 
 #define RESTRICT_JavaLangRuntimeException 1
 #define INCLUDE_JavaLangRuntimeException 1
@@ -27,7 +27,7 @@
 
 @class JavaLangThrowable;
 
-@interface CCBPendingException : JavaLangRuntimeException
+@interface CucumberApiPendingException : JavaLangRuntimeException
 
 #pragma mark Public
 
@@ -49,23 +49,21 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBPendingException)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiPendingException)
 
-FOUNDATION_EXPORT void CCBPendingException_init(CCBPendingException *self);
+FOUNDATION_EXPORT void CucumberApiPendingException_init(CucumberApiPendingException *self);
 
-FOUNDATION_EXPORT CCBPendingException *new_CCBPendingException_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CucumberApiPendingException *new_CucumberApiPendingException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBPendingException *create_CCBPendingException_init(void);
+FOUNDATION_EXPORT CucumberApiPendingException *create_CucumberApiPendingException_init(void);
 
-FOUNDATION_EXPORT void CCBPendingException_initWithNSString_(CCBPendingException *self, NSString *message);
+FOUNDATION_EXPORT void CucumberApiPendingException_initWithNSString_(CucumberApiPendingException *self, NSString *message);
 
-FOUNDATION_EXPORT CCBPendingException *new_CCBPendingException_initWithNSString_(NSString *message) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CucumberApiPendingException *new_CucumberApiPendingException_initWithNSString_(NSString *message) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBPendingException *create_CCBPendingException_initWithNSString_(NSString *message);
+FOUNDATION_EXPORT CucumberApiPendingException *create_CucumberApiPendingException_initWithNSString_(NSString *message);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBPendingException)
-
-@compatibility_alias CucumberApiPendingException CCBPendingException;
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiPendingException)
 
 #endif
 

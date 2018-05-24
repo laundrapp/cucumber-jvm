@@ -6,16 +6,16 @@
 #include "J2ObjC_source.h"
 #include "cucumber/api/Scenario.h"
 
-@interface CCBScenario : NSObject
+@interface CucumberApiScenario : NSObject
 
 @end
 
-@implementation CCBScenario
+@implementation CucumberApiScenario
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, "LJavaUtilCollection;", 0x401, -1, -1, -1, 0, -1, -1 },
-    { NULL, "LCCBResult_Type;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCucumberApiResult_Type;", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x401, 1, 2, -1, -1, -1, -1 },
     { NULL, "V", 0x401, 3, 4, -1, -1, -1, -1 },
@@ -38,10 +38,10 @@
   methods[8].selector = @selector(getLines);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "()Ljava/util/Collection<Ljava/lang/String;>;", "embed", "[BLNSString;", "write", "LNSString;", "()Ljava/util/List<Ljava/lang/Integer;>;" };
-  static const J2ObjcClassInfo _CCBScenario = { "Scenario", "cucumber.api", ptrTable, methods, NULL, 7, 0x609, 9, 0, -1, -1, -1, -1, -1 };
-  return &_CCBScenario;
+  static const J2ObjcClassInfo _CucumberApiScenario = { "Scenario", "cucumber.api", ptrTable, methods, NULL, 7, 0x609, 9, 0, -1, -1, -1, -1, -1 };
+  return &_CucumberApiScenario;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBScenario)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiScenario)

@@ -111,7 +111,7 @@ __attribute__((unused)) static CCBRStepDefinitionMatch_1 *create_CCBRStepDefinit
 }
 
 - (void)runStepWithNSString:(NSString *)language
-            withCCBScenario:(id<CCBScenario>)scenario {
+    withCucumberApiScenario:(id<CucumberApiScenario>)scenario {
   @try {
     [((id<CCBRStepDefinition>) nil_chk(stepDefinition_)) executeWithNSString:language withNSObjectArray:CCBRStepDefinitionMatch_transformedArgsWithGherkinPicklesPickleStep_withCCBRLocalizedXStreams_LocalizedXStream_(self, step_, [((CCBRLocalizedXStreams *) nil_chk(localizedXStreams_)) getWithJavaUtilLocale:CCBRStepDefinitionMatch_localeForWithNSString_(self, language)])];
   }
@@ -124,7 +124,7 @@ __attribute__((unused)) static CCBRStepDefinitionMatch_1 *create_CCBRStepDefinit
 }
 
 - (void)dryRunStepWithNSString:(NSString *)language
-               withCCBScenario:(id<CCBScenario>)scenario {
+       withCucumberApiScenario:(id<CucumberApiScenario>)scenario {
 }
 
 - (IOSObjectArray *)transformedArgsWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
@@ -229,8 +229,8 @@ __attribute__((unused)) static CCBRStepDefinitionMatch_1 *create_CCBRStepDefinit
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilList:withCCBRStepDefinition:withNSString:withGherkinPicklesPickleStep:withCCBRLocalizedXStreams:);
-  methods[1].selector = @selector(runStepWithNSString:withCCBScenario:);
-  methods[2].selector = @selector(dryRunStepWithNSString:withCCBScenario:);
+  methods[1].selector = @selector(runStepWithNSString:withCucumberApiScenario:);
+  methods[2].selector = @selector(dryRunStepWithNSString:withCucumberApiScenario:);
   methods[3].selector = @selector(transformedArgsWithGherkinPicklesPickleStep:withCCBRLocalizedXStreams_LocalizedXStream:);
   methods[4].selector = @selector(getParameterTypeWithInt:withJavaLangReflectType:);
   methods[5].selector = @selector(tableArgumentWithGherkinPicklesPickleTable:withInt:withCCBRLocalizedXStreams_LocalizedXStream:);
@@ -251,7 +251,7 @@ __attribute__((unused)) static CCBRStepDefinitionMatch_1 *create_CCBRStepDefinit
     { "step_", "LGherkinPicklesPickleStep;", .constantValue.asLong = 0, 0x92, -1, -1, -1, -1 },
     { "localizedXStreams_", "LCCBRLocalizedXStreams;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LJavaUtilList;LCCBRStepDefinition;LNSString;LGherkinPicklesPickleStep;LCCBRLocalizedXStreams;", "(Ljava/util/List<Lcucumber/runtime/Argument;>;Lcucumber/runtime/StepDefinition;Ljava/lang/String;Lgherkin/pickles/PickleStep;Lcucumber/runtime/xstream/LocalizedXStreams;)V", "runStep", "LNSString;LCCBScenario;", "LJavaLangThrowable;", "dryRunStep", "transformedArgs", "LGherkinPicklesPickleStep;LCCBRLocalizedXStreams_LocalizedXStream;", "getParameterType", "ILJavaLangReflectType;", "tableArgument", "LGherkinPicklesPickleTable;ILCCBRLocalizedXStreams_LocalizedXStream;", "arityMismatch", "I", "createArgumentsForErrorMessage", "LGherkinPicklesPickleStep;", "(Lgherkin/pickles/PickleStep;)Ljava/util/List<Lcucumber/runtime/Argument;>;", "removeFrameworkFramesAndAppendStepLocation", "LJavaLangThrowable;LJavaLangStackTraceElement;", "localeFor", "LNSString;", "getStepLine" };
+  static const void *ptrTable[] = { "LJavaUtilList;LCCBRStepDefinition;LNSString;LGherkinPicklesPickleStep;LCCBRLocalizedXStreams;", "(Ljava/util/List<Lcucumber/runtime/Argument;>;Lcucumber/runtime/StepDefinition;Ljava/lang/String;Lgherkin/pickles/PickleStep;Lcucumber/runtime/xstream/LocalizedXStreams;)V", "runStep", "LNSString;LCucumberApiScenario;", "LJavaLangThrowable;", "dryRunStep", "transformedArgs", "LGherkinPicklesPickleStep;LCCBRLocalizedXStreams_LocalizedXStream;", "getParameterType", "ILJavaLangReflectType;", "tableArgument", "LGherkinPicklesPickleTable;ILCCBRLocalizedXStreams_LocalizedXStream;", "arityMismatch", "I", "createArgumentsForErrorMessage", "LGherkinPicklesPickleStep;", "(Lgherkin/pickles/PickleStep;)Ljava/util/List<Lcucumber/runtime/Argument;>;", "removeFrameworkFramesAndAppendStepLocation", "LJavaLangThrowable;LJavaLangStackTraceElement;", "localeFor", "LNSString;", "getStepLine" };
   static const J2ObjcClassInfo _CCBRStepDefinitionMatch = { "StepDefinitionMatch", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 16, 4, -1, -1, -1, -1, -1 };
   return &_CCBRStepDefinitionMatch;
 }
@@ -308,17 +308,17 @@ IOSObjectArray *CCBRStepDefinitionMatch_transformedArgsWithGherkinPicklesPickleS
 CCBRParameterInfo *CCBRStepDefinitionMatch_getParameterTypeWithInt_withJavaLangReflectType_(CCBRStepDefinitionMatch *self, jint n, id<JavaLangReflectType> argumentType) {
   CCBRParameterInfo *parameterInfo = [((id<CCBRStepDefinition>) nil_chk(self->stepDefinition_)) getParameterTypeWithInt:n withJavaLangReflectType:argumentType];
   if (parameterInfo == nil) {
-    parameterInfo = create_CCBRParameterInfo_initWithJavaLangReflectType_withNSString_withNSString_withBoolean_withCCBTransformer_(argumentType, nil, nil, false, nil);
+    parameterInfo = create_CCBRParameterInfo_initWithJavaLangReflectType_withNSString_withNSString_withBoolean_withCucumberApiTransformer_(argumentType, nil, nil, false, nil);
   }
   return parameterInfo;
 }
 
 id CCBRStepDefinitionMatch_tableArgumentWithGherkinPicklesPickleTable_withInt_withCCBRLocalizedXStreams_LocalizedXStream_(CCBRStepDefinitionMatch *self, GherkinPicklesPickleTable *stepArgument, jint argIndex, CCBRLocalizedXStreams_LocalizedXStream *xStream) {
-  CCBRParameterInfo *parameterInfo = CCBRStepDefinitionMatch_getParameterTypeWithInt_withJavaLangReflectType_(self, argIndex, CCBDataTable_class_());
-  id<CCBTableConverter> tableConverter = create_CCBRTableConverter_initWithCCBRLocalizedXStreams_LocalizedXStream_withCCBRParameterInfo_(xStream, parameterInfo);
-  CCBDataTable *table = create_CCBDataTable_initWithGherkinPicklesPickleTable_withCCBTableConverter_(stepArgument, tableConverter);
+  CCBRParameterInfo *parameterInfo = CCBRStepDefinitionMatch_getParameterTypeWithInt_withJavaLangReflectType_(self, argIndex, CucumberApiDataTable_class_());
+  id<CucumberApiTableConverter> tableConverter = create_CCBRTableConverter_initWithCCBRLocalizedXStreams_LocalizedXStream_withCCBRParameterInfo_(xStream, parameterInfo);
+  CucumberApiDataTable *table = create_CucumberApiDataTable_initWithGherkinPicklesPickleTable_withCucumberApiTableConverter_(stepArgument, tableConverter);
   id<JavaLangReflectType> type = [((CCBRParameterInfo *) nil_chk(parameterInfo)) getType];
-  return [tableConverter convertWithCCBDataTable:table withJavaLangReflectType:type withBoolean:[parameterInfo isTransposed]];
+  return [tableConverter convertWithCucumberApiDataTable:table withJavaLangReflectType:type withBoolean:[parameterInfo isTransposed]];
 }
 
 CCBRCucumberException *CCBRStepDefinitionMatch_arityMismatchWithInt_(CCBRStepDefinitionMatch *self, jint parameterCount) {

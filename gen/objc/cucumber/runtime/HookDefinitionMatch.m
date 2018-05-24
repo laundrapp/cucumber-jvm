@@ -29,12 +29,12 @@ J2OBJC_FIELD_SETTER(CCBRHookDefinitionMatch, hookDefinition_, id<CCBRHookDefinit
 }
 
 - (void)runStepWithNSString:(NSString *)language
-            withCCBScenario:(id<CCBScenario>)scenario {
-  [((id<CCBRHookDefinition>) nil_chk(hookDefinition_)) executeWithCCBScenario:scenario];
+    withCucumberApiScenario:(id<CucumberApiScenario>)scenario {
+  [((id<CCBRHookDefinition>) nil_chk(hookDefinition_)) executeWithCucumberApiScenario:scenario];
 }
 
 - (void)dryRunStepWithNSString:(NSString *)language
-               withCCBScenario:(id<CCBScenario>)scenario {
+       withCucumberApiScenario:(id<CucumberApiScenario>)scenario {
 }
 
 - (CCBRMatch *)getMatch {
@@ -72,8 +72,8 @@ J2OBJC_FIELD_SETTER(CCBRHookDefinitionMatch, hookDefinition_, id<CCBRHookDefinit
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRHookDefinition:);
-  methods[1].selector = @selector(runStepWithNSString:withCCBScenario:);
-  methods[2].selector = @selector(dryRunStepWithNSString:withCCBScenario:);
+  methods[1].selector = @selector(runStepWithNSString:withCucumberApiScenario:);
+  methods[2].selector = @selector(dryRunStepWithNSString:withCucumberApiScenario:);
   methods[3].selector = @selector(getMatch);
   methods[4].selector = @selector(getPattern);
   methods[5].selector = @selector(getCodeLocation);
@@ -82,7 +82,7 @@ J2OBJC_FIELD_SETTER(CCBRHookDefinitionMatch, hookDefinition_, id<CCBRHookDefinit
   static const J2ObjcFieldInfo fields[] = {
     { "hookDefinition_", "LCCBRHookDefinition;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCCBRHookDefinition;", "runStep", "LNSString;LCCBScenario;", "LJavaLangThrowable;", "dryRunStep", "()Ljava/util/List<Lcucumber/runtime/Argument;>;" };
+  static const void *ptrTable[] = { "LCCBRHookDefinition;", "runStep", "LNSString;LCucumberApiScenario;", "LJavaLangThrowable;", "dryRunStep", "()Ljava/util/List<Lcucumber/runtime/Argument;>;" };
   static const J2ObjcClassInfo _CCBRHookDefinitionMatch = { "HookDefinitionMatch", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 7, 1, -1, -1, -1, -1, -1 };
   return &_CCBRHookDefinitionMatch;
 }

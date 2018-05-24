@@ -28,9 +28,9 @@
 @interface CCBRUsageFormatter () {
  @public
   id<JavaUtilMap> statisticStrategies_;
-  CCBNiceAppendable *out_;
-  id<CCBEventHandler> stepFinishedHandler_;
-  id<CCBEventHandler> runFinishedHandler_;
+  CucumberApiFormatterNiceAppendable *out_;
+  id<CucumberApiEventEventHandler> stepFinishedHandler_;
+  id<CucumberApiEventEventHandler> runFinishedHandler_;
 }
 
 - (id<JavaUtilList>)createStepContainerWithJavaUtilList:(id<JavaUtilList>)stepContainers;
@@ -45,10 +45,10 @@
 
 - (ComGoogleGsonGson *)gson;
 
-- (void)addUsageEntryWithCCBResult:(CCBResult *)result
-                      withNSString:(NSString *)stepDefinition
-                      withNSString:(NSString *)stepNameWithArgs
-                      withNSString:(NSString *)stepLocation;
+- (void)addUsageEntryWithCucumberApiResult:(CucumberApiResult *)result
+                              withNSString:(NSString *)stepDefinition
+                              withNSString:(NSString *)stepNameWithArgs
+                              withNSString:(NSString *)stepLocation;
 
 - (CCBRUsageFormatter_StepDuration *)createStepDurationWithJavaLangLong:(JavaLangLong *)duration
                                                            withNSString:(NSString *)location;
@@ -59,9 +59,9 @@
 @end
 
 J2OBJC_FIELD_SETTER(CCBRUsageFormatter, statisticStrategies_, id<JavaUtilMap>)
-J2OBJC_FIELD_SETTER(CCBRUsageFormatter, out_, CCBNiceAppendable *)
-J2OBJC_FIELD_SETTER(CCBRUsageFormatter, stepFinishedHandler_, id<CCBEventHandler>)
-J2OBJC_FIELD_SETTER(CCBRUsageFormatter, runFinishedHandler_, id<CCBEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRUsageFormatter, out_, CucumberApiFormatterNiceAppendable *)
+J2OBJC_FIELD_SETTER(CCBRUsageFormatter, stepFinishedHandler_, id<CucumberApiEventEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRUsageFormatter, runFinishedHandler_, id<CucumberApiEventEventHandler>)
 
 inline JavaMathBigDecimal *CCBRUsageFormatter_get_NANOS_PER_SECOND(void);
 static JavaMathBigDecimal *CCBRUsageFormatter_NANOS_PER_SECOND;
@@ -79,20 +79,20 @@ __attribute__((unused)) static id<JavaUtilList> CCBRUsageFormatter_getRawDuratio
 
 __attribute__((unused)) static ComGoogleGsonGson *CCBRUsageFormatter_gson(CCBRUsageFormatter *self);
 
-__attribute__((unused)) static void CCBRUsageFormatter_addUsageEntryWithCCBResult_withNSString_withNSString_withNSString_(CCBRUsageFormatter *self, CCBResult *result, NSString *stepDefinition, NSString *stepNameWithArgs, NSString *stepLocation);
+__attribute__((unused)) static void CCBRUsageFormatter_addUsageEntryWithCucumberApiResult_withNSString_withNSString_withNSString_(CCBRUsageFormatter *self, CucumberApiResult *result, NSString *stepDefinition, NSString *stepNameWithArgs, NSString *stepLocation);
 
 __attribute__((unused)) static CCBRUsageFormatter_StepDuration *CCBRUsageFormatter_createStepDurationWithJavaLangLong_withNSString_(CCBRUsageFormatter *self, JavaLangLong *duration, NSString *location);
 
 __attribute__((unused)) static CCBRUsageFormatter_StepContainer *CCBRUsageFormatter_findOrCreateStepContainerWithNSString_withJavaUtilList_(CCBRUsageFormatter *self, NSString *stepNameWithArgs, id<JavaUtilList> stepContainers);
 
-@interface CCBRUsageFormatter_1 : NSObject < CCBEventHandler > {
+@interface CCBRUsageFormatter_1 : NSObject < CucumberApiEventEventHandler > {
  @public
   CCBRUsageFormatter *this$0_;
 }
 
 - (instancetype __nonnull)initWithCCBRUsageFormatter:(CCBRUsageFormatter *)outer$;
 
-- (void)receiveWithCCBEvent:(CCBTestStepFinished *)event;
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepFinished *)event;
 
 @end
 
@@ -104,14 +104,14 @@ __attribute__((unused)) static CCBRUsageFormatter_1 *new_CCBRUsageFormatter_1_in
 
 __attribute__((unused)) static CCBRUsageFormatter_1 *create_CCBRUsageFormatter_1_initWithCCBRUsageFormatter_(CCBRUsageFormatter *outer$);
 
-@interface CCBRUsageFormatter_2 : NSObject < CCBEventHandler > {
+@interface CCBRUsageFormatter_2 : NSObject < CucumberApiEventEventHandler > {
  @public
   CCBRUsageFormatter *this$0_;
 }
 
 - (instancetype __nonnull)initWithCCBRUsageFormatter:(CCBRUsageFormatter *)outer$;
 
-- (void)receiveWithCCBEvent:(CCBTestRunFinished *)event;
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event;
 
 @end
 
@@ -152,14 +152,14 @@ J2OBJC_INITIALIZED_DEFN(CCBRUsageFormatter)
   return self;
 }
 
-- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher {
-  [((id<CCBEventPublisher>) nil_chk(publisher)) registerHandlerForWithIOSClass:CCBTestStepFinished_class_() withCCBEventHandler:stepFinishedHandler_];
-  [publisher registerHandlerForWithIOSClass:CCBTestRunFinished_class_() withCCBEventHandler:runFinishedHandler_];
+- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher {
+  [((id<CucumberApiEventEventPublisher>) nil_chk(publisher)) registerHandlerForWithIOSClass:CucumberApiEventTestStepFinished_class_() withCucumberApiEventEventHandler:stepFinishedHandler_];
+  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestRunFinished_class_() withCucumberApiEventEventHandler:runFinishedHandler_];
 }
 
-- (void)handleTestStepFinishedWithCCBTestStepFinished:(CCBTestStepFinished *)event {
-  if (![((CCBTestStep *) nil_chk(((CCBTestStepFinished *) nil_chk(event))->testStep_)) isHook] && [((CCBResult *) nil_chk(event->result_)) isWithCCBResult_Type:JreLoadEnum(CCBResult_Type, PASSED)]) {
-    CCBRUsageFormatter_addUsageEntryWithCCBResult_withNSString_withNSString_withNSString_(self, event->result_, [event->testStep_ getPattern], [event->testStep_ getStepText], [event->testStep_ getStepLocation]);
+- (void)handleTestStepFinishedWithCucumberApiEventTestStepFinished:(CucumberApiEventTestStepFinished *)event {
+  if (![((CucumberApiTestStep *) nil_chk(((CucumberApiEventTestStepFinished *) nil_chk(event))->testStep_)) isHook] && [((CucumberApiResult *) nil_chk(event->result_)) isWithCucumberApiResult_Type:JreLoadEnum(CucumberApiResult_Type, PASSED)]) {
+    CCBRUsageFormatter_addUsageEntryWithCucumberApiResult_withNSString_withNSString_withNSString_(self, event->result_, [event->testStep_ getPattern], [event->testStep_ getStepText], [event->testStep_ getStepLocation]);
   }
 }
 
@@ -171,7 +171,7 @@ J2OBJC_INITIALIZED_DEFN(CCBRUsageFormatter)
     JreStrongAssign(&stepDefContainer->source_, [((id<JavaUtilMap_Entry>) nil_chk(usageEntry)) getKey]);
     JreStrongAssign(&stepDefContainer->steps_, CCBRUsageFormatter_createStepContainerWithJavaUtilList_(self, [usageEntry getValue]));
   }
-  [((CCBNiceAppendable *) nil_chk(out_)) appendWithJavaLangCharSequence:[((ComGoogleGsonGson *) nil_chk(CCBRUsageFormatter_gson(self))) toJsonWithId:stepDefContainers]];
+  [((CucumberApiFormatterNiceAppendable *) nil_chk(out_)) appendWithJavaLangCharSequence:[((ComGoogleGsonGson *) nil_chk(CCBRUsageFormatter_gson(self))) toJsonWithId:stepDefContainers]];
   [out_ close];
 }
 
@@ -199,11 +199,11 @@ J2OBJC_INITIALIZED_DEFN(CCBRUsageFormatter)
   return CCBRUsageFormatter_gson(self);
 }
 
-- (void)addUsageEntryWithCCBResult:(CCBResult *)result
-                      withNSString:(NSString *)stepDefinition
-                      withNSString:(NSString *)stepNameWithArgs
-                      withNSString:(NSString *)stepLocation {
-  CCBRUsageFormatter_addUsageEntryWithCCBResult_withNSString_withNSString_withNSString_(self, result, stepDefinition, stepNameWithArgs, stepLocation);
+- (void)addUsageEntryWithCucumberApiResult:(CucumberApiResult *)result
+                              withNSString:(NSString *)stepDefinition
+                              withNSString:(NSString *)stepNameWithArgs
+                              withNSString:(NSString *)stepLocation {
+  CCBRUsageFormatter_addUsageEntryWithCucumberApiResult_withNSString_withNSString_withNSString_(self, result, stepDefinition, stepNameWithArgs, stepLocation);
 }
 
 - (CCBRUsageFormatter_StepDuration *)createStepDurationWithJavaLangLong:(JavaLangLong *)duration
@@ -251,8 +251,8 @@ withCCBRUsageFormatter_UsageStatisticStrategy:(id<CCBRUsageFormatter_UsageStatis
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangAppendable:);
-  methods[1].selector = @selector(setEventPublisherWithCCBEventPublisher:);
-  methods[2].selector = @selector(handleTestStepFinishedWithCCBTestStepFinished:);
+  methods[1].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
+  methods[2].selector = @selector(handleTestStepFinishedWithCucumberApiEventTestStepFinished:);
   methods[3].selector = @selector(finishReport);
   methods[4].selector = @selector(createStepContainerWithJavaUtilList:);
   methods[5].selector = @selector(formatDurationAsSecondsWithJavaUtilList:);
@@ -260,7 +260,7 @@ withCCBRUsageFormatter_UsageStatisticStrategy:(id<CCBRUsageFormatter_UsageStatis
   methods[7].selector = @selector(toSecondsWithJavaLangLong:);
   methods[8].selector = @selector(getRawDurationsWithJavaUtilList:);
   methods[9].selector = @selector(gson);
-  methods[10].selector = @selector(addUsageEntryWithCCBResult:withNSString:withNSString:withNSString:);
+  methods[10].selector = @selector(addUsageEntryWithCucumberApiResult:withNSString:withNSString:withNSString:);
   methods[11].selector = @selector(createStepDurationWithJavaLangLong:withNSString:);
   methods[12].selector = @selector(findOrCreateStepContainerWithNSString:withJavaUtilList:);
   methods[13].selector = @selector(addUsageStatisticStrategyWithNSString:withCCBRUsageFormatter_UsageStatisticStrategy:);
@@ -269,11 +269,11 @@ withCCBRUsageFormatter_UsageStatisticStrategy:(id<CCBRUsageFormatter_UsageStatis
     { "NANOS_PER_SECOND", "LJavaMathBigDecimal;", .constantValue.asLong = 0, 0x1a, -1, 26, -1, -1 },
     { "usageMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x10, -1, -1, 27, -1 },
     { "statisticStrategies_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 28, -1 },
-    { "out_", "LCCBNiceAppendable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "stepFinishedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 29, -1 },
-    { "runFinishedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 30, -1 },
+    { "out_", "LCucumberApiFormatterNiceAppendable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "stepFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 29, -1 },
+    { "runFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 30, -1 },
   };
-  static const void *ptrTable[] = { "LJavaLangAppendable;", "setEventPublisher", "LCCBEventPublisher;", "handleTestStepFinished", "LCCBTestStepFinished;", "createStepContainer", "LJavaUtilList;", "(Ljava/util/List<Lcucumber/runtime/formatter/UsageFormatter$StepContainer;>;)Ljava/util/List<Lcucumber/runtime/formatter/UsageFormatter$StepContainer;>;", "formatDurationAsSeconds", "(Ljava/util/List<Lcucumber/runtime/formatter/UsageFormatter$StepDuration;>;)V", "createAggregatedDurations", "LCCBRUsageFormatter_StepContainer;", "(Lcucumber/runtime/formatter/UsageFormatter$StepContainer;)Ljava/util/Map<Ljava/lang/String;Ljava/math/BigDecimal;>;", "toSeconds", "LJavaLangLong;", "getRawDurations", "(Ljava/util/List<Lcucumber/runtime/formatter/UsageFormatter$StepDuration;>;)Ljava/util/List<Ljava/lang/Long;>;", "addUsageEntry", "LCCBResult;LNSString;LNSString;LNSString;", "createStepDuration", "LJavaLangLong;LNSString;", "findOrCreateStepContainer", "LNSString;LJavaUtilList;", "(Ljava/lang/String;Ljava/util/List<Lcucumber/runtime/formatter/UsageFormatter$StepContainer;>;)Lcucumber/runtime/formatter/UsageFormatter$StepContainer;", "addUsageStatisticStrategy", "LNSString;LCCBRUsageFormatter_UsageStatisticStrategy;", &CCBRUsageFormatter_NANOS_PER_SECOND, "Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Lcucumber/runtime/formatter/UsageFormatter$StepContainer;>;>;", "Ljava/util/Map<Ljava/lang/String;Lcucumber/runtime/formatter/UsageFormatter$UsageStatisticStrategy;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;", "LCCBRUsageFormatter_StepDefContainer;LCCBRUsageFormatter_StepContainer;LCCBRUsageFormatter_StepDuration;LCCBRUsageFormatter_UsageStatisticStrategy;LCCBRUsageFormatter_AverageUsageStatisticStrategy;LCCBRUsageFormatter_MedianUsageStatisticStrategy;" };
+  static const void *ptrTable[] = { "LJavaLangAppendable;", "setEventPublisher", "LCucumberApiEventEventPublisher;", "handleTestStepFinished", "LCucumberApiEventTestStepFinished;", "createStepContainer", "LJavaUtilList;", "(Ljava/util/List<Lcucumber/runtime/formatter/UsageFormatter$StepContainer;>;)Ljava/util/List<Lcucumber/runtime/formatter/UsageFormatter$StepContainer;>;", "formatDurationAsSeconds", "(Ljava/util/List<Lcucumber/runtime/formatter/UsageFormatter$StepDuration;>;)V", "createAggregatedDurations", "LCCBRUsageFormatter_StepContainer;", "(Lcucumber/runtime/formatter/UsageFormatter$StepContainer;)Ljava/util/Map<Ljava/lang/String;Ljava/math/BigDecimal;>;", "toSeconds", "LJavaLangLong;", "getRawDurations", "(Ljava/util/List<Lcucumber/runtime/formatter/UsageFormatter$StepDuration;>;)Ljava/util/List<Ljava/lang/Long;>;", "addUsageEntry", "LCucumberApiResult;LNSString;LNSString;LNSString;", "createStepDuration", "LJavaLangLong;LNSString;", "findOrCreateStepContainer", "LNSString;LJavaUtilList;", "(Ljava/lang/String;Ljava/util/List<Lcucumber/runtime/formatter/UsageFormatter$StepContainer;>;)Lcucumber/runtime/formatter/UsageFormatter$StepContainer;", "addUsageStatisticStrategy", "LNSString;LCCBRUsageFormatter_UsageStatisticStrategy;", &CCBRUsageFormatter_NANOS_PER_SECOND, "Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Lcucumber/runtime/formatter/UsageFormatter$StepContainer;>;>;", "Ljava/util/Map<Ljava/lang/String;Lcucumber/runtime/formatter/UsageFormatter$UsageStatisticStrategy;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;", "LCCBRUsageFormatter_StepDefContainer;LCCBRUsageFormatter_StepContainer;LCCBRUsageFormatter_StepDuration;LCCBRUsageFormatter_UsageStatisticStrategy;LCCBRUsageFormatter_AverageUsageStatisticStrategy;LCCBRUsageFormatter_MedianUsageStatisticStrategy;" };
   static const J2ObjcClassInfo _CCBRUsageFormatter = { "UsageFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 14, 6, -1, 31, -1, -1, -1 };
   return &_CCBRUsageFormatter;
 }
@@ -293,7 +293,7 @@ void CCBRUsageFormatter_initWithJavaLangAppendable_(CCBRUsageFormatter *self, id
   JreStrongAssignAndConsume(&self->statisticStrategies_, new_JavaUtilHashMap_init());
   JreStrongAssignAndConsume(&self->stepFinishedHandler_, new_CCBRUsageFormatter_1_initWithCCBRUsageFormatter_(self));
   JreStrongAssignAndConsume(&self->runFinishedHandler_, new_CCBRUsageFormatter_2_initWithCCBRUsageFormatter_(self));
-  JreStrongAssignAndConsume(&self->out_, new_CCBNiceAppendable_initWithJavaLangAppendable_(outArg));
+  JreStrongAssignAndConsume(&self->out_, new_CucumberApiFormatterNiceAppendable_initWithJavaLangAppendable_(outArg));
   [self addUsageStatisticStrategyWithNSString:@"median" withCCBRUsageFormatter_UsageStatisticStrategy:create_CCBRUsageFormatter_MedianUsageStatisticStrategy_init()];
   [self addUsageStatisticStrategyWithNSString:@"average" withCCBRUsageFormatter_UsageStatisticStrategy:create_CCBRUsageFormatter_AverageUsageStatisticStrategy_init()];
 }
@@ -348,14 +348,14 @@ ComGoogleGsonGson *CCBRUsageFormatter_gson(CCBRUsageFormatter *self) {
   return [((ComGoogleGsonGsonBuilder *) nil_chk([create_ComGoogleGsonGsonBuilder_init() setPrettyPrinting])) create];
 }
 
-void CCBRUsageFormatter_addUsageEntryWithCCBResult_withNSString_withNSString_withNSString_(CCBRUsageFormatter *self, CCBResult *result, NSString *stepDefinition, NSString *stepNameWithArgs, NSString *stepLocation) {
+void CCBRUsageFormatter_addUsageEntryWithCucumberApiResult_withNSString_withNSString_withNSString_(CCBRUsageFormatter *self, CucumberApiResult *result, NSString *stepDefinition, NSString *stepNameWithArgs, NSString *stepLocation) {
   id<JavaUtilList> stepContainers = [((id<JavaUtilMap>) nil_chk(self->usageMap_)) getWithId:stepDefinition];
   if (stepContainers == nil) {
     stepContainers = create_JavaUtilArrayList_init();
     [self->usageMap_ putWithId:stepDefinition withId:stepContainers];
   }
   CCBRUsageFormatter_StepContainer *stepContainer = CCBRUsageFormatter_findOrCreateStepContainerWithNSString_withJavaUtilList_(self, stepNameWithArgs, stepContainers);
-  JavaLangLong *duration = [((CCBResult *) nil_chk(result)) getDuration];
+  JavaLangLong *duration = [((CucumberApiResult *) nil_chk(result)) getDuration];
   CCBRUsageFormatter_StepDuration *stepDuration = CCBRUsageFormatter_createStepDurationWithJavaLangLong_withNSString_(self, duration, stepLocation);
   [((id<JavaUtilList>) nil_chk(((CCBRUsageFormatter_StepContainer *) nil_chk(stepContainer))->durations_)) addWithId:stepDuration];
 }
@@ -393,8 +393,8 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRUsageFormatter)
   return self;
 }
 
-- (void)receiveWithCCBEvent:(CCBTestStepFinished *)event {
-  [this$0_ handleTestStepFinishedWithCCBTestStepFinished:event];
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepFinished *)event {
+  [this$0_ handleTestStepFinishedWithCucumberApiEventTestStepFinished:event];
 }
 
 - (void)dealloc {
@@ -411,12 +411,12 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRUsageFormatter)
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRUsageFormatter:);
-  methods[1].selector = @selector(receiveWithCCBEvent:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCCBRUsageFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCCBTestStepFinished;", "LCCBRUsageFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;" };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestStepFinished;", "LCCBRUsageFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;" };
   static const J2ObjcClassInfo _CCBRUsageFormatter_1 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
   return &_CCBRUsageFormatter_1;
 }
@@ -443,7 +443,7 @@ CCBRUsageFormatter_1 *create_CCBRUsageFormatter_1_initWithCCBRUsageFormatter_(CC
   return self;
 }
 
-- (void)receiveWithCCBEvent:(CCBTestRunFinished *)event {
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event {
   [this$0_ finishReport];
 }
 
@@ -461,12 +461,12 @@ CCBRUsageFormatter_1 *create_CCBRUsageFormatter_1_initWithCCBRUsageFormatter_(CC
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRUsageFormatter:);
-  methods[1].selector = @selector(receiveWithCCBEvent:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCCBRUsageFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCCBTestRunFinished;", "LCCBRUsageFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestRunFinished;", "LCCBRUsageFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
   static const J2ObjcClassInfo _CCBRUsageFormatter_2 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
   return &_CCBRUsageFormatter_2;
 }

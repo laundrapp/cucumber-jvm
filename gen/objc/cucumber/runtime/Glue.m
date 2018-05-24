@@ -32,10 +32,10 @@
   methods[3].selector = @selector(getBeforeHooks);
   methods[4].selector = @selector(getAfterHooks);
   methods[5].selector = @selector(stepDefinitionMatchWithNSString:withGherkinPicklesPickleStep:);
-  methods[6].selector = @selector(reportStepDefinitionsWithCCBStepDefinitionReporter:);
+  methods[6].selector = @selector(reportStepDefinitionsWithCucumberApiStepDefinitionReporter:);
   methods[7].selector = @selector(removeScenarioScopedGlue);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "addStepDefinition", "LCCBRStepDefinition;", "LCCBRDuplicateStepDefinitionException;", "addBeforeHook", "LCCBRHookDefinition;", "addAfterHook", "()Ljava/util/List<Lcucumber/runtime/HookDefinition;>;", "stepDefinitionMatch", "LNSString;LGherkinPicklesPickleStep;", "reportStepDefinitions", "LCCBStepDefinitionReporter;" };
+  static const void *ptrTable[] = { "addStepDefinition", "LCCBRStepDefinition;", "LCCBRDuplicateStepDefinitionException;", "addBeforeHook", "LCCBRHookDefinition;", "addAfterHook", "()Ljava/util/List<Lcucumber/runtime/HookDefinition;>;", "stepDefinitionMatch", "LNSString;LGherkinPicklesPickleStep;", "reportStepDefinitions", "LCucumberApiStepDefinitionReporter;" };
   static const J2ObjcClassInfo _CCBRGlue = { "Glue", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 8, 0, -1, -1, -1, -1, -1 };
   return &_CCBRGlue;
 }

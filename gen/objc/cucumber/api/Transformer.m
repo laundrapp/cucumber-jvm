@@ -12,7 +12,7 @@
 #include "java/lang/reflect/Type.h"
 #include "java/util/Locale.h"
 
-@interface CCBTransformer () {
+@interface CucumberApiTransformer () {
  @public
   id<JavaLangReflectType> type_;
   JavaUtilLocale *locale_;
@@ -20,14 +20,14 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CCBTransformer, type_, id<JavaLangReflectType>)
-J2OBJC_FIELD_SETTER(CCBTransformer, locale_, JavaUtilLocale *)
+J2OBJC_FIELD_SETTER(CucumberApiTransformer, type_, id<JavaLangReflectType>)
+J2OBJC_FIELD_SETTER(CucumberApiTransformer, locale_, JavaUtilLocale *)
 
-@implementation CCBTransformer
+@implementation CucumberApiTransformer
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CCBTransformer_init(self);
+  CucumberApiTransformer_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -91,16 +91,16 @@ J2OBJC_IGNORE_DESIGNATED_END
     { "locale_", "LJavaUtilLocale;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "toString", "LNSObject;", "fromString", "LNSString;", "canConvert", "LIOSClass;", "transform", "(Ljava/lang/String;)TT;", "setParameterInfoAndLocale", "LCCBRParameterInfo;LJavaUtilLocale;", "<T:Ljava/lang/Object;>Ljava/lang/Object;Lcucumber/deps/com/thoughtworks/xstream/converters/SingleValueConverter;" };
-  static const J2ObjcClassInfo _CCBTransformer = { "Transformer", "cucumber.api", ptrTable, methods, fields, 7, 0x401, 7, 2, -1, -1, -1, 10, -1 };
-  return &_CCBTransformer;
+  static const J2ObjcClassInfo _CucumberApiTransformer = { "Transformer", "cucumber.api", ptrTable, methods, fields, 7, 0x401, 7, 2, -1, -1, -1, 10, -1 };
+  return &_CucumberApiTransformer;
 }
 
 @end
 
-void CCBTransformer_init(CCBTransformer *self) {
+void CucumberApiTransformer_init(CucumberApiTransformer *self) {
   NSObject_init(self);
   id<JavaLangReflectParameterizedType> ptype = (id<JavaLangReflectParameterizedType>) cast_check([[self java_getClass] getGenericSuperclass], JavaLangReflectParameterizedType_class_());
   JreStrongAssign(&self->type_, IOSObjectArray_Get(nil_chk([((id<JavaLangReflectParameterizedType>) nil_chk(ptype)) getActualTypeArguments]), 0));
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBTransformer)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiTransformer)

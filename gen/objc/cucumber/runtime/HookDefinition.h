@@ -21,7 +21,7 @@
 #if !defined (CCBRHookDefinition_) && (INCLUDE_ALL_CucumberRuntimeHookDefinition || defined(INCLUDE_CCBRHookDefinition))
 #define CCBRHookDefinition_
 
-@protocol CCBScenario;
+@protocol CucumberApiScenario;
 @protocol JavaUtilCollection;
 
 @protocol CCBRHookDefinition < JavaObject >
@@ -33,7 +33,7 @@
  */
 - (NSString *)getLocationWithBoolean:(jboolean)detail;
 
-- (void)executeWithCCBScenario:(id<CCBScenario>)scenario;
+- (void)executeWithCucumberApiScenario:(id<CucumberApiScenario>)scenario;
 
 - (jboolean)matchesWithJavaUtilCollection:(id<JavaUtilCollection>)tags;
 

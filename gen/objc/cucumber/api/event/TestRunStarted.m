@@ -8,10 +8,10 @@
 #include "cucumber/api/event/TimeStampedEvent.h"
 #include "java/lang/Long.h"
 
-@implementation CCBTestRunStarted
+@implementation CucumberApiEventTestRunStarted
 
 - (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp {
-  CCBTestRunStarted_initWithJavaLangLong_(self, timeStamp);
+  CucumberApiEventTestRunStarted_initWithJavaLangLong_(self, timeStamp);
   return self;
 }
 
@@ -25,22 +25,22 @@
   methods[0].selector = @selector(initWithJavaLangLong:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LJavaLangLong;" };
-  static const J2ObjcClassInfo _CCBTestRunStarted = { "TestRunStarted", "cucumber.api.event", ptrTable, methods, NULL, 7, 0x11, 1, 0, -1, -1, -1, -1, -1 };
-  return &_CCBTestRunStarted;
+  static const J2ObjcClassInfo _CucumberApiEventTestRunStarted = { "TestRunStarted", "cucumber.api.event", ptrTable, methods, NULL, 7, 0x11, 1, 0, -1, -1, -1, -1, -1 };
+  return &_CucumberApiEventTestRunStarted;
 }
 
 @end
 
-void CCBTestRunStarted_initWithJavaLangLong_(CCBTestRunStarted *self, JavaLangLong *timeStamp) {
-  CCBTimeStampedEvent_initWithJavaLangLong_(self, timeStamp);
+void CucumberApiEventTestRunStarted_initWithJavaLangLong_(CucumberApiEventTestRunStarted *self, JavaLangLong *timeStamp) {
+  CucumberApiEventTimeStampedEvent_initWithJavaLangLong_(self, timeStamp);
 }
 
-CCBTestRunStarted *new_CCBTestRunStarted_initWithJavaLangLong_(JavaLangLong *timeStamp) {
-  J2OBJC_NEW_IMPL(CCBTestRunStarted, initWithJavaLangLong_, timeStamp)
+CucumberApiEventTestRunStarted *new_CucumberApiEventTestRunStarted_initWithJavaLangLong_(JavaLangLong *timeStamp) {
+  J2OBJC_NEW_IMPL(CucumberApiEventTestRunStarted, initWithJavaLangLong_, timeStamp)
 }
 
-CCBTestRunStarted *create_CCBTestRunStarted_initWithJavaLangLong_(JavaLangLong *timeStamp) {
-  J2OBJC_CREATE_IMPL(CCBTestRunStarted, initWithJavaLangLong_, timeStamp)
+CucumberApiEventTestRunStarted *create_CucumberApiEventTestRunStarted_initWithJavaLangLong_(JavaLangLong *timeStamp) {
+  J2OBJC_CREATE_IMPL(CucumberApiEventTestRunStarted, initWithJavaLangLong_, timeStamp)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBTestRunStarted)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiEventTestRunStarted)

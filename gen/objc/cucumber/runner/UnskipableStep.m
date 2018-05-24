@@ -16,26 +16,26 @@
 
 @interface CCBUnskipableStep () {
  @public
-  CCBHookType *hookType_;
+  CucumberApiHookType *hookType_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(CCBUnskipableStep, hookType_, CCBHookType *)
+J2OBJC_FIELD_SETTER(CCBUnskipableStep, hookType_, CucumberApiHookType *)
 
 @implementation CCBUnskipableStep
 
-- (instancetype __nonnull)initWithCCBHookType:(CCBHookType *)hookType
-                      withCCBRDefinitionMatch:(id<CCBRDefinitionMatch>)definitionMatch {
-  CCBUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(self, hookType, definitionMatch);
+- (instancetype __nonnull)initWithCucumberApiHookType:(CucumberApiHookType *)hookType
+                              withCCBRDefinitionMatch:(id<CCBRDefinitionMatch>)definitionMatch {
+  CCBUnskipableStep_initWithCucumberApiHookType_withCCBRDefinitionMatch_(self, hookType, definitionMatch);
   return self;
 }
 
-- (CCBResult_Type *)executeStepWithNSString:(NSString *)language
-                            withCCBScenario:(id<CCBScenario>)scenario
-                                withBoolean:(jboolean)skipSteps {
-  [((id<CCBRDefinitionMatch>) nil_chk(definitionMatch_)) runStepWithNSString:language withCCBScenario:scenario];
-  return JreLoadEnum(CCBResult_Type, PASSED);
+- (CucumberApiResult_Type *)executeStepWithNSString:(NSString *)language
+                            withCucumberApiScenario:(id<CucumberApiScenario>)scenario
+                                        withBoolean:(jboolean)skipSteps {
+  [((id<CCBRDefinitionMatch>) nil_chk(definitionMatch_)) runStepWithNSString:language withCucumberApiScenario:scenario];
+  return JreLoadEnum(CucumberApiResult_Type, PASSED);
 }
 
 - (jboolean)isHook {
@@ -62,7 +62,7 @@ J2OBJC_FIELD_SETTER(CCBUnskipableStep, hookType_, CCBHookType *)
   @throw create_JavaLangUnsupportedOperationException_init();
 }
 
-- (CCBHookType *)getHookType {
+- (CucumberApiHookType *)getHookType {
   return hookType_;
 }
 
@@ -74,20 +74,20 @@ J2OBJC_FIELD_SETTER(CCBUnskipableStep, hookType_, CCBHookType *)
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
-    { NULL, "LCCBResult_Type;", 0x4, 1, 2, 3, -1, -1, -1 },
+    { NULL, "LCucumberApiResult_Type;", 0x4, 1, 2, 3, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LGherkinPicklesPickleStep;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "I", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 4, -1, -1 },
-    { NULL, "LCCBHookType;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCucumberApiHookType;", 0x1, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCCBHookType:withCCBRDefinitionMatch:);
-  methods[1].selector = @selector(executeStepWithNSString:withCCBScenario:withBoolean:);
+  methods[0].selector = @selector(initWithCucumberApiHookType:withCCBRDefinitionMatch:);
+  methods[1].selector = @selector(executeStepWithNSString:withCucumberApiScenario:withBoolean:);
   methods[2].selector = @selector(isHook);
   methods[3].selector = @selector(getPickleStep);
   methods[4].selector = @selector(getStepLocation);
@@ -97,26 +97,26 @@ J2OBJC_FIELD_SETTER(CCBUnskipableStep, hookType_, CCBHookType *)
   methods[8].selector = @selector(getHookType);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "hookType_", "LCCBHookType;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "hookType_", "LCucumberApiHookType;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCCBHookType;LCCBRDefinitionMatch;", "executeStep", "LNSString;LCCBScenario;Z", "LJavaLangThrowable;", "()Ljava/util/List<Lgherkin/pickles/Argument;>;" };
+  static const void *ptrTable[] = { "LCucumberApiHookType;LCCBRDefinitionMatch;", "executeStep", "LNSString;LCucumberApiScenario;Z", "LJavaLangThrowable;", "()Ljava/util/List<Lgherkin/pickles/Argument;>;" };
   static const J2ObjcClassInfo _CCBUnskipableStep = { "UnskipableStep", "cucumber.runner", ptrTable, methods, fields, 7, 0x1, 9, 1, -1, -1, -1, -1, -1 };
   return &_CCBUnskipableStep;
 }
 
 @end
 
-void CCBUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CCBUnskipableStep *self, CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch) {
-  CCBTestStep_initWithCCBRDefinitionMatch_(self, definitionMatch);
+void CCBUnskipableStep_initWithCucumberApiHookType_withCCBRDefinitionMatch_(CCBUnskipableStep *self, CucumberApiHookType *hookType, id<CCBRDefinitionMatch> definitionMatch) {
+  CucumberApiTestStep_initWithCCBRDefinitionMatch_(self, definitionMatch);
   JreStrongAssign(&self->hookType_, hookType);
 }
 
-CCBUnskipableStep *new_CCBUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch) {
-  J2OBJC_NEW_IMPL(CCBUnskipableStep, initWithCCBHookType_withCCBRDefinitionMatch_, hookType, definitionMatch)
+CCBUnskipableStep *new_CCBUnskipableStep_initWithCucumberApiHookType_withCCBRDefinitionMatch_(CucumberApiHookType *hookType, id<CCBRDefinitionMatch> definitionMatch) {
+  J2OBJC_NEW_IMPL(CCBUnskipableStep, initWithCucumberApiHookType_withCCBRDefinitionMatch_, hookType, definitionMatch)
 }
 
-CCBUnskipableStep *create_CCBUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch) {
-  J2OBJC_CREATE_IMPL(CCBUnskipableStep, initWithCCBHookType_withCCBRDefinitionMatch_, hookType, definitionMatch)
+CCBUnskipableStep *create_CCBUnskipableStep_initWithCucumberApiHookType_withCCBRDefinitionMatch_(CucumberApiHookType *hookType, id<CCBRDefinitionMatch> definitionMatch) {
+  J2OBJC_CREATE_IMPL(CCBUnskipableStep, initWithCucumberApiHookType_withCCBRDefinitionMatch_, hookType, definitionMatch)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBUnskipableStep)

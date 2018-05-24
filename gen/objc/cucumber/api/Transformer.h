@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBTransformer_) && (INCLUDE_ALL_CucumberApiTransformer || defined(INCLUDE_CCBTransformer))
-#define CCBTransformer_
+#if !defined (CucumberApiTransformer_) && (INCLUDE_ALL_CucumberApiTransformer || defined(INCLUDE_CucumberApiTransformer))
+#define CucumberApiTransformer_
 
 #define RESTRICT_CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter 1
 #define INCLUDE_CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter 1
@@ -98,7 +98,7 @@ Given today's date is "10/03/1985"
   </p>
  - seealso: Transform
  */
-@interface CCBTransformer : NSObject < CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter >
+@interface CucumberApiTransformer : NSObject < CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter >
 
 #pragma mark Public
 
@@ -124,13 +124,11 @@ Given today's date is "10/03/1985"
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBTransformer)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiTransformer)
 
-FOUNDATION_EXPORT void CCBTransformer_init(CCBTransformer *self);
+FOUNDATION_EXPORT void CucumberApiTransformer_init(CucumberApiTransformer *self);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBTransformer)
-
-@compatibility_alias CucumberApiTransformer CCBTransformer;
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiTransformer)
 
 #endif
 

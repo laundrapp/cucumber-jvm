@@ -24,12 +24,12 @@
 @class CCBEventBus;
 @class CCBREnv;
 @class CCBRPluginFactory;
-@class CCBSnippetType;
+@class CucumberApiSnippetType;
 @class JavaLangClassLoader;
-@protocol CCBFormatter;
 @protocol CCBRResourceLoader;
-@protocol CCBStepDefinitionReporter;
-@protocol CCBSummaryPrinter;
+@protocol CucumberApiFormatterFormatter;
+@protocol CucumberApiStepDefinitionReporter;
+@protocol CucumberApiSummaryPrinter;
 @protocol JavaUtilList;
 @protocol JavaUtilMap;
 
@@ -65,12 +65,12 @@
  */
 - (instancetype __nonnull)initWithNSString:(NSString *)argv;
 
-- (void)addPluginWithCCBFormatter:(id<CCBFormatter>)plugin;
+- (void)addPluginWithCucumberApiFormatterFormatter:(id<CucumberApiFormatterFormatter>)plugin;
 
 - (id<JavaUtilList>)cucumberFeaturesWithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
                                            withCCBEventBus:(CCBEventBus *)bus;
 
-- (id<CCBFormatter>)formatterWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
+- (id<CucumberApiFormatterFormatter>)formatterWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
 
 - (id<JavaUtilList>)getFeaturePaths;
 
@@ -84,7 +84,7 @@
 
 - (id<JavaUtilList>)getPlugins;
 
-- (CCBSnippetType *)getSnippetType;
+- (CucumberApiSnippetType *)getSnippetType;
 
 - (id<JavaUtilList>)getTagFilters;
 
@@ -94,9 +94,9 @@
 
 - (jboolean)isStrict;
 
-- (id<CCBStepDefinitionReporter>)stepDefinitionReporterWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
+- (id<CucumberApiStepDefinitionReporter>)stepDefinitionReporterWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
 
-- (id<CCBSummaryPrinter>)summaryPrinterWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
+- (id<CucumberApiSummaryPrinter>)summaryPrinterWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
 
 #pragma mark Package-Private
 

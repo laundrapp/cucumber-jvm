@@ -18,19 +18,19 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBTestStep_) && (INCLUDE_ALL_CucumberApiTestStep || defined(INCLUDE_CCBTestStep))
-#define CCBTestStep_
+#if !defined (CucumberApiTestStep_) && (INCLUDE_ALL_CucumberApiTestStep || defined(INCLUDE_CucumberApiTestStep))
+#define CucumberApiTestStep_
 
 @class CCBEventBus;
-@class CCBHookType;
-@class CCBResult;
-@class CCBResult_Type;
+@class CucumberApiHookType;
+@class CucumberApiResult;
+@class CucumberApiResult_Type;
 @class GherkinPicklesPickleStep;
 @protocol CCBRDefinitionMatch;
-@protocol CCBScenario;
+@protocol CucumberApiScenario;
 @protocol JavaUtilList;
 
-@interface CCBTestStep : NSObject {
+@interface CucumberApiTestStep : NSObject {
  @public
   /*!
    */
@@ -49,7 +49,7 @@
 
 - (id<JavaUtilList>)getDefinitionArgument;
 
-- (CCBHookType *)getHookType;
+- (CucumberApiHookType *)getHookType;
 
 - (NSString *)getPattern;
 
@@ -72,30 +72,28 @@
  @param skipSteps if this step should be skipped
  @return result of running this step
  */
-- (CCBResult *)runWithCCBEventBus:(CCBEventBus *)bus
-                     withNSString:(NSString *)language
-                  withCCBScenario:(id<CCBScenario>)scenario
-                      withBoolean:(jboolean)skipSteps;
+- (CucumberApiResult *)runWithCCBEventBus:(CCBEventBus *)bus
+                             withNSString:(NSString *)language
+                  withCucumberApiScenario:(id<CucumberApiScenario>)scenario
+                              withBoolean:(jboolean)skipSteps;
 
 #pragma mark Protected
 
-- (CCBResult_Type *)executeStepWithNSString:(NSString *)language
-                            withCCBScenario:(id<CCBScenario>)scenario
-                                withBoolean:(jboolean)skipSteps;
+- (CucumberApiResult_Type *)executeStepWithNSString:(NSString *)language
+                            withCucumberApiScenario:(id<CucumberApiScenario>)scenario
+                                        withBoolean:(jboolean)skipSteps;
 
-- (CCBResult_Type *)nonExceptionStatusWithBoolean:(jboolean)skipSteps;
+- (CucumberApiResult_Type *)nonExceptionStatusWithBoolean:(jboolean)skipSteps;
 
 @end
 
-J2OBJC_STATIC_INIT(CCBTestStep)
+J2OBJC_STATIC_INIT(CucumberApiTestStep)
 
-J2OBJC_FIELD_SETTER(CCBTestStep, definitionMatch_, id<CCBRDefinitionMatch>)
+J2OBJC_FIELD_SETTER(CucumberApiTestStep, definitionMatch_, id<CCBRDefinitionMatch>)
 
-FOUNDATION_EXPORT void CCBTestStep_initWithCCBRDefinitionMatch_(CCBTestStep *self, id<CCBRDefinitionMatch> definitionMatch);
+FOUNDATION_EXPORT void CucumberApiTestStep_initWithCCBRDefinitionMatch_(CucumberApiTestStep *self, id<CCBRDefinitionMatch> definitionMatch);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBTestStep)
-
-@compatibility_alias CucumberApiTestStep CCBTestStep;
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiTestStep)
 
 #endif
 

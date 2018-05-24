@@ -9,31 +9,31 @@
 #include "java/lang/Enum.h"
 #include "java/lang/IllegalArgumentException.h"
 
-__attribute__((unused)) static void CCBHookType_initWithNSString_withInt_(CCBHookType *self, NSString *__name, jint __ordinal);
+__attribute__((unused)) static void CucumberApiHookType_initWithNSString_withInt_(CucumberApiHookType *self, NSString *__name, jint __ordinal);
 
-J2OBJC_INITIALIZED_DEFN(CCBHookType)
+J2OBJC_INITIALIZED_DEFN(CucumberApiHookType)
 
-CCBHookType *CCBHookType_values_[2];
+CucumberApiHookType *CucumberApiHookType_values_[2];
 
-@implementation CCBHookType
+@implementation CucumberApiHookType
 
 - (NSString *)description {
   return [((NSString *) nil_chk([super description])) lowercaseString];
 }
 
 + (IOSObjectArray *)values {
-  return CCBHookType_values();
+  return CucumberApiHookType_values();
 }
 
-+ (CCBHookType *)valueOfWithNSString:(NSString *)name {
-  return CCBHookType_valueOfWithNSString_(name);
++ (CucumberApiHookType *)valueOfWithNSString:(NSString *)name {
+  return CucumberApiHookType_valueOfWithNSString_(name);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, "LNSString;", 0x1, 0, -1, -1, -1, -1, -1 },
-    { NULL, "[LCCBHookType;", 0x9, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LCCBHookType;", 0x9, 1, 2, -1, -1, -1, -1 },
+    { NULL, "[LCucumberApiHookType;", 0x9, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCucumberApiHookType;", 0x9, 1, 2, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -43,43 +43,43 @@ CCBHookType *CCBHookType_values_[2];
   methods[2].selector = @selector(valueOfWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "Before", "LCCBHookType;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
-    { "After", "LCCBHookType;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
+    { "Before", "LCucumberApiHookType;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
+    { "After", "LCucumberApiHookType;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
   };
-  static const void *ptrTable[] = { "toString", "valueOf", "LNSString;", &JreEnum(CCBHookType, Before), &JreEnum(CCBHookType, After), "Ljava/lang/Enum<Lcucumber/api/HookType;>;" };
-  static const J2ObjcClassInfo _CCBHookType = { "HookType", "cucumber.api", ptrTable, methods, fields, 7, 0x4011, 3, 2, -1, -1, -1, 5, -1 };
-  return &_CCBHookType;
+  static const void *ptrTable[] = { "toString", "valueOf", "LNSString;", &JreEnum(CucumberApiHookType, Before), &JreEnum(CucumberApiHookType, After), "Ljava/lang/Enum<Lcucumber/api/HookType;>;" };
+  static const J2ObjcClassInfo _CucumberApiHookType = { "HookType", "cucumber.api", ptrTable, methods, fields, 7, 0x4011, 3, 2, -1, -1, -1, 5, -1 };
+  return &_CucumberApiHookType;
 }
 
 + (void)initialize {
-  if (self == [CCBHookType class]) {
+  if (self == [CucumberApiHookType class]) {
     size_t objSize = class_getInstanceSize(self);
     size_t allocSize = 2 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
     for (jint i = 0; i < 2; i++) {
-      ((void)(CCBHookType_values_[i] = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
-      CCBHookType_initWithNSString_withInt_(e, JreEnumConstantName(CCBHookType_class_(), i), i);
+      ((void)(CucumberApiHookType_values_[i] = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
+      CucumberApiHookType_initWithNSString_withInt_(e, JreEnumConstantName(CucumberApiHookType_class_(), i), i);
     }
-    J2OBJC_SET_INITIALIZED(CCBHookType)
+    J2OBJC_SET_INITIALIZED(CucumberApiHookType)
   }
 }
 
 @end
 
-void CCBHookType_initWithNSString_withInt_(CCBHookType *self, NSString *__name, jint __ordinal) {
+void CucumberApiHookType_initWithNSString_withInt_(CucumberApiHookType *self, NSString *__name, jint __ordinal) {
   JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
 }
 
-IOSObjectArray *CCBHookType_values() {
-  CCBHookType_initialize();
-  return [IOSObjectArray arrayWithObjects:CCBHookType_values_ count:2 type:CCBHookType_class_()];
+IOSObjectArray *CucumberApiHookType_values() {
+  CucumberApiHookType_initialize();
+  return [IOSObjectArray arrayWithObjects:CucumberApiHookType_values_ count:2 type:CucumberApiHookType_class_()];
 }
 
-CCBHookType *CCBHookType_valueOfWithNSString_(NSString *name) {
-  CCBHookType_initialize();
+CucumberApiHookType *CucumberApiHookType_valueOfWithNSString_(NSString *name) {
+  CucumberApiHookType_initialize();
   for (int i = 0; i < 2; i++) {
-    CCBHookType *e = CCBHookType_values_[i];
+    CucumberApiHookType *e = CucumberApiHookType_values_[i];
     if ([name isEqual:[e name]]) {
       return e;
     }
@@ -88,12 +88,12 @@ CCBHookType *CCBHookType_valueOfWithNSString_(NSString *name) {
   return nil;
 }
 
-CCBHookType *CCBHookType_fromOrdinal(NSUInteger ordinal) {
-  CCBHookType_initialize();
+CucumberApiHookType *CucumberApiHookType_fromOrdinal(NSUInteger ordinal) {
+  CucumberApiHookType_initialize();
   if (ordinal >= 2) {
     return nil;
   }
-  return CCBHookType_values_[ordinal];
+  return CucumberApiHookType_values_[ordinal];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBHookType)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiHookType)

@@ -18,30 +18,28 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBEventListener_) && (INCLUDE_ALL_CucumberApiEventEventListener || defined(INCLUDE_CCBEventListener))
-#define CCBEventListener_
+#if !defined (CucumberApiEventEventListener_) && (INCLUDE_ALL_CucumberApiEventEventListener || defined(INCLUDE_CucumberApiEventEventListener))
+#define CucumberApiEventEventListener_
 
-@protocol CCBEventPublisher;
+@protocol CucumberApiEventEventPublisher;
 
 /*!
  @brief This is the interface you should implement if you want your own custom
   formatter.
  */
-@protocol CCBEventListener < JavaObject >
+@protocol CucumberApiEventEventListener < JavaObject >
 
 /*!
  @brief Set the event publisher.The formatter can register event listeners with the publisher.
  @param publisher the event publisher
  */
-- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher;
+- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBEventListener)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiEventEventListener)
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBEventListener)
-
-#define CucumberApiEventEventListener CCBEventListener
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventEventListener)
 
 #endif
 

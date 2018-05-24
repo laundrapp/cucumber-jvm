@@ -16,7 +16,7 @@ J2OBJC_IGNORE_DESIGNATED_BEGIN
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher {
+- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher {
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -28,9 +28,9 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(setEventPublisherWithCCBEventPublisher:);
+  methods[1].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "setEventPublisher", "LCCBEventPublisher;" };
+  static const void *ptrTable[] = { "setEventPublisher", "LCucumberApiEventEventPublisher;" };
   static const J2ObjcClassInfo _CCBRNullFormatter = { "NullFormatter", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x10, 2, 0, -1, -1, -1, -1, -1 };
   return &_CCBRNullFormatter;
 }

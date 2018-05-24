@@ -30,7 +30,7 @@
 @class GherkinEventsPickleEvent;
 @class GherkinPicklesPickleString;
 @protocol CCBRGlue;
-@protocol CCBStepDefinitionReporter;
+@protocol CucumberApiStepDefinitionReporter;
 @protocol JavaUtilCollection;
 @protocol JavaUtilList;
 
@@ -45,7 +45,7 @@
 
 - (id<CCBRGlue>)getGlue;
 
-- (void)reportStepDefinitionsWithCCBStepDefinitionReporter:(id<CCBStepDefinitionReporter>)stepDefinitionReporter;
+- (void)reportStepDefinitionsWithCucumberApiStepDefinitionReporter:(id<CucumberApiStepDefinitionReporter>)stepDefinitionReporter;
 
 - (void)runPickleWithGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickle;
 

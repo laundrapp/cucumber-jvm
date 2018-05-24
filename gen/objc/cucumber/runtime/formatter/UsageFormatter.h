@@ -28,12 +28,12 @@
 #define CCBRUsageFormatter_
 
 #define RESTRICT_CucumberApiFormatterFormatter 1
-#define INCLUDE_CCBFormatter 1
+#define INCLUDE_CucumberApiFormatterFormatter 1
 #include "cucumber/api/formatter/Formatter.h"
 
-@class CCBTestStepFinished;
-@protocol CCBEventPublisher;
+@class CucumberApiEventTestStepFinished;
 @protocol CCBRUsageFormatter_UsageStatisticStrategy;
+@protocol CucumberApiEventEventPublisher;
 @protocol JavaLangAppendable;
 @protocol JavaUtilMap;
 
@@ -41,7 +41,7 @@
  @brief Formatter to measure performance of steps.Aggregated results for all steps can be computed
   by adding <code>UsageStatisticStrategy</code> to the usageFormatter
  */
-@interface CCBRUsageFormatter : NSObject < CCBFormatter > {
+@interface CCBRUsageFormatter : NSObject < CucumberApiFormatterFormatter > {
  @public
   id<JavaUtilMap> usageMap_;
 }
@@ -62,13 +62,13 @@
 - (void)addUsageStatisticStrategyWithNSString:(NSString *)key
 withCCBRUsageFormatter_UsageStatisticStrategy:(id<CCBRUsageFormatter_UsageStatisticStrategy>)strategy;
 
-- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher;
+- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
 
 #pragma mark Package-Private
 
 - (void)finishReport;
 
-- (void)handleTestStepFinishedWithCCBTestStepFinished:(CCBTestStepFinished *)event;
+- (void)handleTestStepFinishedWithCucumberApiEventTestStepFinished:(CucumberApiEventTestStepFinished *)event;
 
 // Disallowed inherited constructors, do not use.
 

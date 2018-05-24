@@ -22,19 +22,19 @@
 #define CCBRJSONFormatter_
 
 #define RESTRICT_CucumberApiFormatterFormatter 1
-#define INCLUDE_CCBFormatter 1
+#define INCLUDE_CucumberApiFormatterFormatter 1
 #include "cucumber/api/formatter/Formatter.h"
 
-@protocol CCBEventPublisher;
+@protocol CucumberApiEventEventPublisher;
 @protocol JavaLangAppendable;
 
-@interface CCBRJSONFormatter : NSObject < CCBFormatter >
+@interface CCBRJSONFormatter : NSObject < CucumberApiFormatterFormatter >
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg;
 
-- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher;
+- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
 
 // Disallowed inherited constructors, do not use.
 

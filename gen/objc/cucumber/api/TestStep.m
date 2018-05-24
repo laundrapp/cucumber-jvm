@@ -25,40 +25,40 @@
 #include "java/util/Arrays.h"
 #include "java/util/List.h"
 
-@interface CCBTestStep ()
+@interface CucumberApiTestStep ()
 
-- (CCBResult_Type *)mapThrowableToStatusWithJavaLangThrowable:(JavaLangThrowable *)t;
+- (CucumberApiResult_Type *)mapThrowableToStatusWithJavaLangThrowable:(JavaLangThrowable *)t;
 
-- (CCBResult *)mapStatusToResultWithCCBResult_Type:(CCBResult_Type *)status
-                             withJavaLangThrowable:(JavaLangThrowable *)error
-                                          withLong:(jlong)duration;
+- (CucumberApiResult *)mapStatusToResultWithCucumberApiResult_Type:(CucumberApiResult_Type *)status
+                                             withJavaLangThrowable:(JavaLangThrowable *)error
+                                                          withLong:(jlong)duration;
 
 @end
 
-inline IOSObjectArray *CCBTestStep_get_ASSUMPTION_VIOLATED_EXCEPTIONS(void);
-static IOSObjectArray *CCBTestStep_ASSUMPTION_VIOLATED_EXCEPTIONS;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBTestStep, ASSUMPTION_VIOLATED_EXCEPTIONS, IOSObjectArray *)
+inline IOSObjectArray *CucumberApiTestStep_get_ASSUMPTION_VIOLATED_EXCEPTIONS(void);
+static IOSObjectArray *CucumberApiTestStep_ASSUMPTION_VIOLATED_EXCEPTIONS;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberApiTestStep, ASSUMPTION_VIOLATED_EXCEPTIONS, IOSObjectArray *)
 
-__attribute__((unused)) static CCBResult_Type *CCBTestStep_mapThrowableToStatusWithJavaLangThrowable_(CCBTestStep *self, JavaLangThrowable *t);
+__attribute__((unused)) static CucumberApiResult_Type *CucumberApiTestStep_mapThrowableToStatusWithJavaLangThrowable_(CucumberApiTestStep *self, JavaLangThrowable *t);
 
-__attribute__((unused)) static CCBResult *CCBTestStep_mapStatusToResultWithCCBResult_Type_withJavaLangThrowable_withLong_(CCBTestStep *self, CCBResult_Type *status, JavaLangThrowable *error, jlong duration);
+__attribute__((unused)) static CucumberApiResult *CucumberApiTestStep_mapStatusToResultWithCucumberApiResult_Type_withJavaLangThrowable_withLong_(CucumberApiTestStep *self, CucumberApiResult_Type *status, JavaLangThrowable *error, jlong duration);
 
-__attribute__((unused)) static IOSObjectArray *CCBTestStep__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CucumberApiTestStep__Annotations$0(void);
 
-__attribute__((unused)) static IOSObjectArray *CCBTestStep__Annotations$1(void);
+__attribute__((unused)) static IOSObjectArray *CucumberApiTestStep__Annotations$1(void);
 
-__attribute__((unused)) static IOSObjectArray *CCBTestStep__Annotations$2(void);
+__attribute__((unused)) static IOSObjectArray *CucumberApiTestStep__Annotations$2(void);
 
-__attribute__((unused)) static IOSObjectArray *CCBTestStep__Annotations$3(void);
+__attribute__((unused)) static IOSObjectArray *CucumberApiTestStep__Annotations$3(void);
 
-__attribute__((unused)) static IOSObjectArray *CCBTestStep__Annotations$4(void);
+__attribute__((unused)) static IOSObjectArray *CucumberApiTestStep__Annotations$4(void);
 
-J2OBJC_INITIALIZED_DEFN(CCBTestStep)
+J2OBJC_INITIALIZED_DEFN(CucumberApiTestStep)
 
-@implementation CCBTestStep
+@implementation CucumberApiTestStep
 
 - (instancetype __nonnull)initWithCCBRDefinitionMatch:(id<CCBRDefinitionMatch>)definitionMatch {
-  CCBTestStep_initWithCCBRDefinitionMatch_(self, definitionMatch);
+  CucumberApiTestStep_initWithCCBRDefinitionMatch_(self, definitionMatch);
   return self;
 }
 
@@ -110,58 +110,58 @@ J2OBJC_INITIALIZED_DEFN(CCBTestStep)
   return 0;
 }
 
-- (CCBHookType *)getHookType {
+- (CucumberApiHookType *)getHookType {
   // can't call an abstract method
   [self doesNotRecognizeSelector:_cmd];
   return 0;
 }
 
-- (CCBResult *)runWithCCBEventBus:(CCBEventBus *)bus
-                     withNSString:(NSString *)language
-                  withCCBScenario:(id<CCBScenario>)scenario
-                      withBoolean:(jboolean)skipSteps {
+- (CucumberApiResult *)runWithCCBEventBus:(CCBEventBus *)bus
+                             withNSString:(NSString *)language
+                  withCucumberApiScenario:(id<CucumberApiScenario>)scenario
+                              withBoolean:(jboolean)skipSteps {
   JavaLangLong *startTime = [((CCBEventBus *) nil_chk(bus)) getTime];
-  [bus sendWithCCBEvent:create_CCBTestStepStarted_initWithJavaLangLong_withCCBTestStep_(startTime, self)];
-  CCBResult_Type *status;
+  [bus sendWithCucumberApiEventEvent:create_CucumberApiEventTestStepStarted_initWithJavaLangLong_withCucumberApiTestStep_(startTime, self)];
+  CucumberApiResult_Type *status;
   JavaLangThrowable *error = nil;
   @try {
-    status = [self executeStepWithNSString:language withCCBScenario:scenario withBoolean:skipSteps];
+    status = [self executeStepWithNSString:language withCucumberApiScenario:scenario withBoolean:skipSteps];
   }
   @catch (JavaLangThrowable *t) {
     error = t;
-    status = CCBTestStep_mapThrowableToStatusWithJavaLangThrowable_(self, t);
+    status = CucumberApiTestStep_mapThrowableToStatusWithJavaLangThrowable_(self, t);
   }
   JavaLangLong *stopTime = [bus getTime];
-  CCBResult *result = CCBTestStep_mapStatusToResultWithCCBResult_Type_withJavaLangThrowable_withLong_(self, status, error, [((JavaLangLong *) nil_chk(stopTime)) longLongValue] - [((JavaLangLong *) nil_chk(startTime)) longLongValue]);
-  [bus sendWithCCBEvent:create_CCBTestStepFinished_initWithJavaLangLong_withCCBTestStep_withCCBResult_(stopTime, self, result)];
+  CucumberApiResult *result = CucumberApiTestStep_mapStatusToResultWithCucumberApiResult_Type_withJavaLangThrowable_withLong_(self, status, error, [((JavaLangLong *) nil_chk(stopTime)) longLongValue] - [((JavaLangLong *) nil_chk(startTime)) longLongValue]);
+  [bus sendWithCucumberApiEventEvent:create_CucumberApiEventTestStepFinished_initWithJavaLangLong_withCucumberApiTestStep_withCucumberApiResult_(stopTime, self, result)];
   return result;
 }
 
-- (CCBResult_Type *)nonExceptionStatusWithBoolean:(jboolean)skipSteps {
-  return skipSteps ? JreLoadEnum(CCBResult_Type, SKIPPED) : JreLoadEnum(CCBResult_Type, PASSED);
+- (CucumberApiResult_Type *)nonExceptionStatusWithBoolean:(jboolean)skipSteps {
+  return skipSteps ? JreLoadEnum(CucumberApiResult_Type, SKIPPED) : JreLoadEnum(CucumberApiResult_Type, PASSED);
 }
 
-- (CCBResult_Type *)executeStepWithNSString:(NSString *)language
-                            withCCBScenario:(id<CCBScenario>)scenario
-                                withBoolean:(jboolean)skipSteps {
+- (CucumberApiResult_Type *)executeStepWithNSString:(NSString *)language
+                            withCucumberApiScenario:(id<CucumberApiScenario>)scenario
+                                        withBoolean:(jboolean)skipSteps {
   if (!skipSteps) {
-    [((id<CCBRDefinitionMatch>) nil_chk(definitionMatch_)) runStepWithNSString:language withCCBScenario:scenario];
-    return JreLoadEnum(CCBResult_Type, PASSED);
+    [((id<CCBRDefinitionMatch>) nil_chk(definitionMatch_)) runStepWithNSString:language withCucumberApiScenario:scenario];
+    return JreLoadEnum(CucumberApiResult_Type, PASSED);
   }
   else {
-    [((id<CCBRDefinitionMatch>) nil_chk(definitionMatch_)) dryRunStepWithNSString:language withCCBScenario:scenario];
-    return JreLoadEnum(CCBResult_Type, SKIPPED);
+    [((id<CCBRDefinitionMatch>) nil_chk(definitionMatch_)) dryRunStepWithNSString:language withCucumberApiScenario:scenario];
+    return JreLoadEnum(CucumberApiResult_Type, SKIPPED);
   }
 }
 
-- (CCBResult_Type *)mapThrowableToStatusWithJavaLangThrowable:(JavaLangThrowable *)t {
-  return CCBTestStep_mapThrowableToStatusWithJavaLangThrowable_(self, t);
+- (CucumberApiResult_Type *)mapThrowableToStatusWithJavaLangThrowable:(JavaLangThrowable *)t {
+  return CucumberApiTestStep_mapThrowableToStatusWithJavaLangThrowable_(self, t);
 }
 
-- (CCBResult *)mapStatusToResultWithCCBResult_Type:(CCBResult_Type *)status
-                             withJavaLangThrowable:(JavaLangThrowable *)error
-                                          withLong:(jlong)duration {
-  return CCBTestStep_mapStatusToResultWithCCBResult_Type_withJavaLangThrowable_withLong_(self, status, error, duration);
+- (CucumberApiResult *)mapStatusToResultWithCucumberApiResult_Type:(CucumberApiResult_Type *)status
+                                             withJavaLangThrowable:(JavaLangThrowable *)error
+                                                          withLong:(jlong)duration {
+  return CucumberApiTestStep_mapStatusToResultWithCucumberApiResult_Type_withJavaLangThrowable_withLong_(self, status, error, duration);
 }
 
 - (void)dealloc {
@@ -181,12 +181,12 @@ J2OBJC_INITIALIZED_DEFN(CCBTestStep)
     { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "I", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "LJavaUtilList;", 0x401, -1, -1, -1, 3, -1, -1 },
-    { NULL, "LCCBHookType;", 0x401, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LCCBResult;", 0x1, 4, 5, -1, -1, 6, -1 },
-    { NULL, "LCCBResult_Type;", 0x4, 7, 8, -1, -1, 9, -1 },
-    { NULL, "LCCBResult_Type;", 0x4, 10, 11, 12, -1, 13, -1 },
-    { NULL, "LCCBResult_Type;", 0x2, 14, 12, -1, -1, -1, -1 },
-    { NULL, "LCCBResult;", 0x2, 15, 16, -1, -1, -1, -1 },
+    { NULL, "LCucumberApiHookType;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCucumberApiResult;", 0x1, 4, 5, -1, -1, 6, -1 },
+    { NULL, "LCucumberApiResult_Type;", 0x4, 7, 8, -1, -1, 9, -1 },
+    { NULL, "LCucumberApiResult_Type;", 0x4, 10, 11, 12, -1, 13, -1 },
+    { NULL, "LCucumberApiResult_Type;", 0x2, 14, 12, -1, -1, -1, -1 },
+    { NULL, "LCucumberApiResult;", 0x2, 15, 16, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -202,83 +202,83 @@ J2OBJC_INITIALIZED_DEFN(CCBTestStep)
   methods[8].selector = @selector(getStepLine);
   methods[9].selector = @selector(getStepArgument);
   methods[10].selector = @selector(getHookType);
-  methods[11].selector = @selector(runWithCCBEventBus:withNSString:withCCBScenario:withBoolean:);
+  methods[11].selector = @selector(runWithCCBEventBus:withNSString:withCucumberApiScenario:withBoolean:);
   methods[12].selector = @selector(nonExceptionStatusWithBoolean:);
-  methods[13].selector = @selector(executeStepWithNSString:withCCBScenario:withBoolean:);
+  methods[13].selector = @selector(executeStepWithNSString:withCucumberApiScenario:withBoolean:);
   methods[14].selector = @selector(mapThrowableToStatusWithJavaLangThrowable:);
-  methods[15].selector = @selector(mapStatusToResultWithCCBResult_Type:withJavaLangThrowable:withLong:);
+  methods[15].selector = @selector(mapStatusToResultWithCucumberApiResult_Type:withJavaLangThrowable:withLong:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "ASSUMPTION_VIOLATED_EXCEPTIONS", "[LNSString;", .constantValue.asLong = 0, 0x1a, -1, 17, -1, -1 },
     { "definitionMatch_", "LCCBRDefinitionMatch;", .constantValue.asLong = 0, 0x14, -1, -1, -1, 18 },
   };
-  static const void *ptrTable[] = { "LCCBRDefinitionMatch;", (void *)&CCBTestStep__Annotations$0, "()Ljava/util/List<Lcucumber/runtime/Argument;>;", "()Ljava/util/List<Lgherkin/pickles/Argument;>;", "run", "LCCBEventBus;LNSString;LCCBScenario;Z", (void *)&CCBTestStep__Annotations$1, "nonExceptionStatus", "Z", (void *)&CCBTestStep__Annotations$2, "executeStep", "LNSString;LCCBScenario;Z", "LJavaLangThrowable;", (void *)&CCBTestStep__Annotations$3, "mapThrowableToStatus", "mapStatusToResult", "LCCBResult_Type;LJavaLangThrowable;J", &CCBTestStep_ASSUMPTION_VIOLATED_EXCEPTIONS, (void *)&CCBTestStep__Annotations$4 };
-  static const J2ObjcClassInfo _CCBTestStep = { "TestStep", "cucumber.api", ptrTable, methods, fields, 7, 0x401, 16, 2, -1, -1, -1, -1, -1 };
-  return &_CCBTestStep;
+  static const void *ptrTable[] = { "LCCBRDefinitionMatch;", (void *)&CucumberApiTestStep__Annotations$0, "()Ljava/util/List<Lcucumber/runtime/Argument;>;", "()Ljava/util/List<Lgherkin/pickles/Argument;>;", "run", "LCCBEventBus;LNSString;LCucumberApiScenario;Z", (void *)&CucumberApiTestStep__Annotations$1, "nonExceptionStatus", "Z", (void *)&CucumberApiTestStep__Annotations$2, "executeStep", "LNSString;LCucumberApiScenario;Z", "LJavaLangThrowable;", (void *)&CucumberApiTestStep__Annotations$3, "mapThrowableToStatus", "mapStatusToResult", "LCucumberApiResult_Type;LJavaLangThrowable;J", &CucumberApiTestStep_ASSUMPTION_VIOLATED_EXCEPTIONS, (void *)&CucumberApiTestStep__Annotations$4 };
+  static const J2ObjcClassInfo _CucumberApiTestStep = { "TestStep", "cucumber.api", ptrTable, methods, fields, 7, 0x401, 16, 2, -1, -1, -1, -1, -1 };
+  return &_CucumberApiTestStep;
 }
 
 + (void)initialize {
-  if (self == [CCBTestStep class]) {
-    JreStrongAssignAndConsume(&CCBTestStep_ASSUMPTION_VIOLATED_EXCEPTIONS, [IOSObjectArray newArrayWithObjects:(id[]){ @"org.junit.AssumptionViolatedException", @"org.junit.internal.AssumptionViolatedException" } count:2 type:NSString_class_()]);
+  if (self == [CucumberApiTestStep class]) {
+    JreStrongAssignAndConsume(&CucumberApiTestStep_ASSUMPTION_VIOLATED_EXCEPTIONS, [IOSObjectArray newArrayWithObjects:(id[]){ @"org.junit.AssumptionViolatedException", @"org.junit.internal.AssumptionViolatedException" } count:2 type:NSString_class_()]);
     {
-      JavaUtilArrays_sortWithNSObjectArray_(CCBTestStep_ASSUMPTION_VIOLATED_EXCEPTIONS);
+      JavaUtilArrays_sortWithNSObjectArray_(CucumberApiTestStep_ASSUMPTION_VIOLATED_EXCEPTIONS);
     }
-    J2OBJC_SET_INITIALIZED(CCBTestStep)
+    J2OBJC_SET_INITIALIZED(CucumberApiTestStep)
   }
 }
 
 @end
 
-void CCBTestStep_initWithCCBRDefinitionMatch_(CCBTestStep *self, id<CCBRDefinitionMatch> definitionMatch) {
+void CucumberApiTestStep_initWithCCBRDefinitionMatch_(CucumberApiTestStep *self, id<CCBRDefinitionMatch> definitionMatch) {
   NSObject_init(self);
   JreStrongAssign(&self->definitionMatch_, definitionMatch);
 }
 
-CCBResult_Type *CCBTestStep_mapThrowableToStatusWithJavaLangThrowable_(CCBTestStep *self, JavaLangThrowable *t) {
-  if ([[((JavaLangThrowable *) nil_chk(t)) java_getClass] isAnnotationPresentWithIOSClass:CCBPending_class_()]) {
-    return JreLoadEnum(CCBResult_Type, PENDING);
+CucumberApiResult_Type *CucumberApiTestStep_mapThrowableToStatusWithJavaLangThrowable_(CucumberApiTestStep *self, JavaLangThrowable *t) {
+  if ([[((JavaLangThrowable *) nil_chk(t)) java_getClass] isAnnotationPresentWithIOSClass:CucumberApiPending_class_()]) {
+    return JreLoadEnum(CucumberApiResult_Type, PENDING);
   }
-  if (JavaUtilArrays_binarySearchWithNSObjectArray_withId_(CCBTestStep_ASSUMPTION_VIOLATED_EXCEPTIONS, [[t java_getClass] getName]) >= 0) {
-    return JreLoadEnum(CCBResult_Type, SKIPPED);
+  if (JavaUtilArrays_binarySearchWithNSObjectArray_withId_(CucumberApiTestStep_ASSUMPTION_VIOLATED_EXCEPTIONS, [[t java_getClass] getName]) >= 0) {
+    return JreLoadEnum(CucumberApiResult_Type, SKIPPED);
   }
   if ([t java_getClass] == CCBRUndefinedStepDefinitionException_class_()) {
-    return JreLoadEnum(CCBResult_Type, UNDEFINED);
+    return JreLoadEnum(CucumberApiResult_Type, UNDEFINED);
   }
   if ([t java_getClass] == CCBRAmbiguousStepDefinitionsException_class_()) {
-    return JreLoadEnum(CCBResult_Type, AMBIGUOUS);
+    return JreLoadEnum(CucumberApiResult_Type, AMBIGUOUS);
   }
-  return JreLoadEnum(CCBResult_Type, FAILED);
+  return JreLoadEnum(CucumberApiResult_Type, FAILED);
 }
 
-CCBResult *CCBTestStep_mapStatusToResultWithCCBResult_Type_withJavaLangThrowable_withLong_(CCBTestStep *self, CCBResult_Type *status, JavaLangThrowable *error, jlong duration) {
+CucumberApiResult *CucumberApiTestStep_mapStatusToResultWithCucumberApiResult_Type_withJavaLangThrowable_withLong_(CucumberApiTestStep *self, CucumberApiResult_Type *status, JavaLangThrowable *error, jlong duration) {
   JavaLangLong *resultDuration = JavaLangLong_valueOfWithLong_(duration);
-  if (status == JreLoadEnum(CCBResult_Type, SKIPPED) && error == nil) {
-    return JreLoadStatic(CCBResult, SKIPPED);
+  if (status == JreLoadEnum(CucumberApiResult_Type, SKIPPED) && error == nil) {
+    return JreLoadStatic(CucumberApiResult, SKIPPED);
   }
-  if (status == JreLoadEnum(CCBResult_Type, UNDEFINED)) {
-    return JreLoadStatic(CCBResult, UNDEFINED);
+  if (status == JreLoadEnum(CucumberApiResult_Type, UNDEFINED)) {
+    return JreLoadStatic(CucumberApiResult, UNDEFINED);
   }
-  return create_CCBResult_initWithCCBResult_Type_withJavaLangLong_withJavaLangThrowable_(status, resultDuration, error);
+  return create_CucumberApiResult_initWithCucumberApiResult_Type_withJavaLangLong_withJavaLangThrowable_(status, resultDuration, error);
 }
 
-IOSObjectArray *CCBTestStep__Annotations$0() {
+IOSObjectArray *CucumberApiTestStep__Annotations$0() {
   return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *CCBTestStep__Annotations$1() {
+IOSObjectArray *CucumberApiTestStep__Annotations$1() {
   return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *CCBTestStep__Annotations$2() {
+IOSObjectArray *CucumberApiTestStep__Annotations$2() {
   return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *CCBTestStep__Annotations$3() {
+IOSObjectArray *CucumberApiTestStep__Annotations$3() {
   return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *CCBTestStep__Annotations$4() {
+IOSObjectArray *CucumberApiTestStep__Annotations$4() {
   return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBTestStep)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiTestStep)

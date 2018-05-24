@@ -22,18 +22,18 @@
 #define CCBRNullFormatter_
 
 #define RESTRICT_CucumberApiFormatterFormatter 1
-#define INCLUDE_CCBFormatter 1
+#define INCLUDE_CucumberApiFormatterFormatter 1
 #include "cucumber/api/formatter/Formatter.h"
 
-@protocol CCBEventPublisher;
+@protocol CucumberApiEventEventPublisher;
 
-@interface CCBRNullFormatter : NSObject < CCBFormatter >
+@interface CCBRNullFormatter : NSObject < CucumberApiFormatterFormatter >
 
 #pragma mark Public
 
 - (instancetype __nonnull)init;
 
-- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher;
+- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
 
 @end
 

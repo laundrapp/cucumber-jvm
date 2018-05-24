@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBNiceAppendable_) && (INCLUDE_ALL_CucumberApiFormatterNiceAppendable || defined(INCLUDE_CCBNiceAppendable))
-#define CCBNiceAppendable_
+#if !defined (CucumberApiFormatterNiceAppendable_) && (INCLUDE_ALL_CucumberApiFormatterNiceAppendable || defined(INCLUDE_CucumberApiFormatterNiceAppendable))
+#define CucumberApiFormatterNiceAppendable_
 
 @protocol JavaLangAppendable;
 @protocol JavaLangCharSequence;
@@ -27,25 +27,25 @@
 /*!
  @brief A nice appendable that doesn't throw checked exceptions
  */
-@interface CCBNiceAppendable : NSObject
+@interface CucumberApiFormatterNiceAppendable : NSObject
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg;
 
-- (CCBNiceAppendable *)appendWithChar:(jchar)c;
+- (CucumberApiFormatterNiceAppendable *)appendWithChar:(jchar)c;
 
-- (CCBNiceAppendable *)appendWithJavaLangCharSequence:(id<JavaLangCharSequence>)csq;
+- (CucumberApiFormatterNiceAppendable *)appendWithJavaLangCharSequence:(id<JavaLangCharSequence>)csq;
 
-- (CCBNiceAppendable *)appendWithJavaLangCharSequence:(id<JavaLangCharSequence>)csq
-                                              withInt:(jint)start
-                                              withInt:(jint)end;
+- (CucumberApiFormatterNiceAppendable *)appendWithJavaLangCharSequence:(id<JavaLangCharSequence>)csq
+                                                               withInt:(jint)start
+                                                               withInt:(jint)end;
 
 - (void)close;
 
-- (CCBNiceAppendable *)println;
+- (CucumberApiFormatterNiceAppendable *)println;
 
-- (CCBNiceAppendable *)printlnWithJavaLangCharSequence:(id<JavaLangCharSequence>)csq;
+- (CucumberApiFormatterNiceAppendable *)printlnWithJavaLangCharSequence:(id<JavaLangCharSequence>)csq;
 
 // Disallowed inherited constructors, do not use.
 
@@ -53,17 +53,15 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBNiceAppendable)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiFormatterNiceAppendable)
 
-FOUNDATION_EXPORT void CCBNiceAppendable_initWithJavaLangAppendable_(CCBNiceAppendable *self, id<JavaLangAppendable> outArg);
+FOUNDATION_EXPORT void CucumberApiFormatterNiceAppendable_initWithJavaLangAppendable_(CucumberApiFormatterNiceAppendable *self, id<JavaLangAppendable> outArg);
 
-FOUNDATION_EXPORT CCBNiceAppendable *new_CCBNiceAppendable_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CucumberApiFormatterNiceAppendable *new_CucumberApiFormatterNiceAppendable_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBNiceAppendable *create_CCBNiceAppendable_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg);
+FOUNDATION_EXPORT CucumberApiFormatterNiceAppendable *create_CucumberApiFormatterNiceAppendable_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBNiceAppendable)
-
-@compatibility_alias CucumberApiFormatterNiceAppendable CCBNiceAppendable;
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiFormatterNiceAppendable)
 
 #endif
 

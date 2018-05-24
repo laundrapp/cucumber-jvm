@@ -22,23 +22,23 @@
 #define CCBRProgressFormatter_
 
 #define RESTRICT_CucumberApiFormatterFormatter 1
-#define INCLUDE_CCBFormatter 1
+#define INCLUDE_CucumberApiFormatterFormatter 1
 #include "cucumber/api/formatter/Formatter.h"
 
 #define RESTRICT_CucumberApiFormatterColorAware 1
-#define INCLUDE_CCBColorAware 1
+#define INCLUDE_CucumberApiFormatterColorAware 1
 #include "cucumber/api/formatter/ColorAware.h"
 
-@protocol CCBEventPublisher;
+@protocol CucumberApiEventEventPublisher;
 @protocol JavaLangAppendable;
 
-@interface CCBRProgressFormatter : NSObject < CCBFormatter, CCBColorAware >
+@interface CCBRProgressFormatter : NSObject < CucumberApiFormatterFormatter, CucumberApiFormatterColorAware >
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)appendable;
 
-- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher;
+- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
 
 - (void)setMonochromeWithBoolean:(jboolean)monochrome;
 

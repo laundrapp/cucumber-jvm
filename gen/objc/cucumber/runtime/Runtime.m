@@ -113,17 +113,17 @@ __attribute__((unused)) static id<JavaUtilCollection> CCBRRuntime_loadBackendsWi
 
 - (void)run {
   id<JavaUtilList> features = [((CCBRRuntimeOptions *) nil_chk(runtimeOptions_)) cucumberFeaturesWithCCBRResourceLoader:resourceLoader_ withCCBEventBus:bus_];
-  id<CCBStepDefinitionReporter> stepDefinitionReporter = [runtimeOptions_ stepDefinitionReporterWithJavaLangClassLoader:classLoader_];
-  [self reportStepDefinitionsWithCCBStepDefinitionReporter:stepDefinitionReporter];
+  id<CucumberApiStepDefinitionReporter> stepDefinitionReporter = [runtimeOptions_ stepDefinitionReporterWithJavaLangClassLoader:classLoader_];
+  [self reportStepDefinitionsWithCucumberApiStepDefinitionReporter:stepDefinitionReporter];
   for (CCBRCucumberFeature * __strong cucumberFeature in nil_chk(features)) {
     [self runFeatureWithCCBRCucumberFeature:cucumberFeature];
   }
-  [((CCBEventBus *) nil_chk(bus_)) sendWithCCBEvent:create_CCBTestRunFinished_initWithJavaLangLong_([bus_ getTime])];
+  [((CCBEventBus *) nil_chk(bus_)) sendWithCucumberApiEventEvent:create_CucumberApiEventTestRunFinished_initWithJavaLangLong_([bus_ getTime])];
   [self printSummary];
 }
 
-- (void)reportStepDefinitionsWithCCBStepDefinitionReporter:(id<CCBStepDefinitionReporter>)stepDefinitionReporter {
-  [((CCBRunner *) nil_chk(runner_)) reportStepDefinitionsWithCCBStepDefinitionReporter:stepDefinitionReporter];
+- (void)reportStepDefinitionsWithCucumberApiStepDefinitionReporter:(id<CucumberApiStepDefinitionReporter>)stepDefinitionReporter {
+  [((CCBRunner *) nil_chk(runner_)) reportStepDefinitionsWithCucumberApiStepDefinitionReporter:stepDefinitionReporter];
 }
 
 - (void)runFeatureWithCCBRCucumberFeature:(CCBRCucumberFeature *)feature {
@@ -153,8 +153,8 @@ __attribute__((unused)) static id<JavaUtilCollection> CCBRRuntime_loadBackendsWi
 }
 
 - (void)printSummary {
-  id<CCBSummaryPrinter> summaryPrinter = [((CCBRRuntimeOptions *) nil_chk(runtimeOptions_)) summaryPrinterWithJavaLangClassLoader:classLoader_];
-  [((id<CCBSummaryPrinter>) nil_chk(summaryPrinter)) printWithCCBRRuntime:self];
+  id<CucumberApiSummaryPrinter> summaryPrinter = [((CCBRRuntimeOptions *) nil_chk(runtimeOptions_)) summaryPrinterWithJavaLangClassLoader:classLoader_];
+  [((id<CucumberApiSummaryPrinter>) nil_chk(summaryPrinter)) printWithCCBRRuntime:self];
 }
 
 - (void)printStatsWithJavaIoPrintStream:(JavaIoPrintStream *)outArg {
@@ -228,7 +228,7 @@ __attribute__((unused)) static id<JavaUtilCollection> CCBRRuntime_loadBackendsWi
   methods[3].selector = @selector(initWithCCBRResourceLoader:withJavaLangClassLoader:withJavaUtilCollection:withCCBRRuntimeOptions:withCCBTimeService:withCCBRGlue:);
   methods[4].selector = @selector(loadBackendsWithCCBRResourceLoader:withCCBRClassFinder:);
   methods[5].selector = @selector(run);
-  methods[6].selector = @selector(reportStepDefinitionsWithCCBStepDefinitionReporter:);
+  methods[6].selector = @selector(reportStepDefinitionsWithCucumberApiStepDefinitionReporter:);
   methods[7].selector = @selector(runFeatureWithCCBRCucumberFeature:);
   methods[8].selector = @selector(compileFeatureWithCCBRCucumberFeature:);
   methods[9].selector = @selector(matchesFiltersWithGherkinEventsPickleEvent:);
@@ -252,7 +252,7 @@ __attribute__((unused)) static id<JavaUtilCollection> CCBRRuntime_loadBackendsWi
     { "bus_", "LCCBEventBus;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "compiler_", "LGherkinPicklesCompiler;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCCBRResourceLoader;LCCBRClassFinder;LJavaLangClassLoader;LCCBRRuntimeOptions;", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;)V", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;LCCBRGlue;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;Lcucumber/runtime/Glue;)V", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;LCCBTimeService;LCCBRGlue;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;Lcucumber/runner/TimeService;Lcucumber/runtime/Glue;)V", "loadBackends", "LCCBRResourceLoader;LCCBRClassFinder;", "(Lcucumber/runtime/io/ResourceLoader;Lcucumber/runtime/ClassFinder;)Ljava/util/Collection<+Lcucumber/runtime/Backend;>;", "LJavaIoIOException;", "reportStepDefinitions", "LCCBStepDefinitionReporter;", "runFeature", "LCCBRCucumberFeature;", "compileFeature", "(Lcucumber/runtime/model/CucumberFeature;)Ljava/util/List<Lgherkin/events/PickleEvent;>;", "matchesFilters", "LGherkinEventsPickleEvent;", "printStats", "LJavaIoPrintStream;", "()Ljava/util/List<Ljava/lang/Throwable;>;", "()Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/List<Lcucumber/runtime/PicklePredicate;>;" };
+  static const void *ptrTable[] = { "LCCBRResourceLoader;LCCBRClassFinder;LJavaLangClassLoader;LCCBRRuntimeOptions;", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;)V", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;LCCBRGlue;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;Lcucumber/runtime/Glue;)V", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;LCCBTimeService;LCCBRGlue;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;Lcucumber/runner/TimeService;Lcucumber/runtime/Glue;)V", "loadBackends", "LCCBRResourceLoader;LCCBRClassFinder;", "(Lcucumber/runtime/io/ResourceLoader;Lcucumber/runtime/ClassFinder;)Ljava/util/Collection<+Lcucumber/runtime/Backend;>;", "LJavaIoIOException;", "reportStepDefinitions", "LCucumberApiStepDefinitionReporter;", "runFeature", "LCCBRCucumberFeature;", "compileFeature", "(Lcucumber/runtime/model/CucumberFeature;)Ljava/util/List<Lgherkin/events/PickleEvent;>;", "matchesFilters", "LGherkinEventsPickleEvent;", "printStats", "LJavaIoPrintStream;", "()Ljava/util/List<Ljava/lang/Throwable;>;", "()Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/List<Lcucumber/runtime/PicklePredicate;>;" };
   static const J2ObjcClassInfo _CCBRRuntime = { "Runtime", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 18, 9, -1, -1, -1, -1, -1 };
   return &_CCBRRuntime;
 }
@@ -323,8 +323,8 @@ void CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtil
   if (![((id<JavaUtilMap>) nil_chk(lineFilters)) isEmpty]) {
     [self->filters_ addWithId:create_CCBRLinePredicate_initWithJavaUtilMap_(lineFilters)];
   }
-  [self->stats_ setEventPublisherWithCCBEventPublisher:self->bus_];
-  [self->undefinedStepsTracker_ setEventPublisherWithCCBEventPublisher:self->bus_];
+  [self->stats_ setEventPublisherWithCucumberApiEventEventPublisher:self->bus_];
+  [self->undefinedStepsTracker_ setEventPublisherWithCucumberApiEventEventPublisher:self->bus_];
   [runtimeOptions setEventBusWithCCBEventBus:self->bus_];
 }
 

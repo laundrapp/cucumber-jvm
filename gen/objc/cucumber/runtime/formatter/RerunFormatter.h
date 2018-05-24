@@ -22,27 +22,27 @@
 #define CCBRRerunFormatter_
 
 #define RESTRICT_CucumberApiFormatterFormatter 1
-#define INCLUDE_CCBFormatter 1
+#define INCLUDE_CucumberApiFormatterFormatter 1
 #include "cucumber/api/formatter/Formatter.h"
 
 #define RESTRICT_CucumberApiFormatterStrictAware 1
-#define INCLUDE_CCBStrictAware 1
+#define INCLUDE_CucumberApiFormatterStrictAware 1
 #include "cucumber/api/formatter/StrictAware.h"
 
-@protocol CCBEventPublisher;
+@protocol CucumberApiEventEventPublisher;
 @protocol JavaLangAppendable;
 
 /*!
  @brief Formatter for reporting all failed test cases and print their locations
   Failed means: results that make the exit code non-zero.
  */
-@interface CCBRRerunFormatter : NSObject < CCBFormatter, CCBStrictAware >
+@interface CCBRRerunFormatter : NSObject < CucumberApiFormatterFormatter, CucumberApiFormatterStrictAware >
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg;
 
-- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher;
+- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
 
 - (void)setStrictWithBoolean:(jboolean)strict;
 

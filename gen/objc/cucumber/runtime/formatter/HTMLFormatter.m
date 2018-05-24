@@ -67,43 +67,43 @@
  @public
   CCBRTestSourcesModel *testSources_;
   JavaNetURL *htmlReportDir_;
-  CCBNiceAppendable *jsOut_;
+  CucumberApiFormatterNiceAppendable *jsOut_;
   jboolean firstFeature_;
   NSString *currentFeatureFile_;
   id<JavaUtilMap> currentTestCaseMap_;
   GherkinAstScenarioOutline *currentScenarioOutline_;
   GherkinAstExamples *currentExamples_;
   jint embeddedIndex_;
-  id<CCBEventHandler> testSourceReadHandler_;
-  id<CCBEventHandler> caseStartedHandler_;
-  id<CCBEventHandler> stepStartedHandler_;
-  id<CCBEventHandler> stepFinishedHandler_;
-  id<CCBEventHandler> embedEventhandler_;
-  id<CCBEventHandler> writeEventhandler_;
-  id<CCBEventHandler> runFinishedHandler_;
+  id<CucumberApiEventEventHandler> testSourceReadHandler_;
+  id<CucumberApiEventEventHandler> caseStartedHandler_;
+  id<CucumberApiEventEventHandler> stepStartedHandler_;
+  id<CucumberApiEventEventHandler> stepFinishedHandler_;
+  id<CucumberApiEventEventHandler> embedEventhandler_;
+  id<CucumberApiEventEventHandler> writeEventhandler_;
+  id<CucumberApiEventEventHandler> runFinishedHandler_;
 }
 
-- (void)handleTestSourceReadWithCCBTestSourceRead:(CCBTestSourceRead *)event;
+- (void)handleTestSourceReadWithCucumberApiEventTestSourceRead:(CucumberApiEventTestSourceRead *)event;
 
-- (void)handleTestCaseStartedWithCCBTestCaseStarted:(CCBTestCaseStarted *)event;
+- (void)handleTestCaseStartedWithCucumberApiEventTestCaseStarted:(CucumberApiEventTestCaseStarted *)event;
 
-- (void)handleTestStepStartedWithCCBTestStepStarted:(CCBTestStepStarted *)event;
+- (void)handleTestStepStartedWithCucumberApiEventTestStepStarted:(CucumberApiEventTestStepStarted *)event;
 
-- (void)handleTestStepFinishedWithCCBTestStepFinished:(CCBTestStepFinished *)event;
+- (void)handleTestStepFinishedWithCucumberApiEventTestStepFinished:(CucumberApiEventTestStepFinished *)event;
 
-- (void)handleEmbedWithCCBEmbedEvent:(CCBEmbedEvent *)event;
+- (void)handleEmbedWithCucumberApiEventEmbedEvent:(CucumberApiEventEmbedEvent *)event;
 
-- (void)handleWriteWithCCBWriteEvent:(CCBWriteEvent *)event;
+- (void)handleWriteWithCucumberApiEventWriteEvent:(CucumberApiEventWriteEvent *)event;
 
 - (void)finishReport;
 
-- (void)handleStartOfFeatureWithCCBTestCase:(CCBTestCase *)testCase;
+- (void)handleStartOfFeatureWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
 
-- (id<JavaUtilMap>)createFeatureWithCCBTestCase:(CCBTestCase *)testCase;
+- (id<JavaUtilMap>)createFeatureWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
 
 - (id<JavaUtilList>)createTagListWithJavaUtilList:(id<JavaUtilList>)tags;
 
-- (void)handleScenarioOutlineWithCCBTestCase:(CCBTestCase *)testCase;
+- (void)handleScenarioOutlineWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
 
 - (id<JavaUtilMap>)createScenarioOutlineWithGherkinAstScenarioOutline:(GherkinAstScenarioOutline *)scenarioOutline;
 
@@ -119,13 +119,13 @@
 
 - (id<JavaUtilMap>)createExamplesWithGherkinAstExamples:(GherkinAstExamples *)examples;
 
-- (id<JavaUtilMap>)createTestCaseWithCCBTestCase:(CCBTestCase *)testCase;
+- (id<JavaUtilMap>)createTestCaseWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
 
-- (id<JavaUtilMap>)createBackgroundWithCCBTestCase:(CCBTestCase *)testCase;
+- (id<JavaUtilMap>)createBackgroundWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
 
-- (jboolean)isFirstStepAfterBackgroundWithCCBTestStep:(CCBTestStep *)testStep;
+- (jboolean)isFirstStepAfterBackgroundWithCucumberApiTestStep:(CucumberApiTestStep *)testStep;
 
-- (id<JavaUtilMap>)createTestStepWithCCBTestStep:(CCBTestStep *)testStep;
+- (id<JavaUtilMap>)createTestStepWithCucumberApiTestStep:(CucumberApiTestStep *)testStep;
 
 - (id<JavaUtilMap>)createDocStringMapWithGherkinPicklesPickleString:(GherkinPicklesPickleString *)docString;
 
@@ -135,10 +135,10 @@
 
 - (id<JavaUtilList>)createCellListWithGherkinPicklesPickleRow:(GherkinPicklesPickleRow *)row;
 
-- (id<JavaUtilMap>)createMatchMapWithCCBTestStep:(CCBTestStep *)testStep
-                                   withCCBResult:(CCBResult *)result;
+- (id<JavaUtilMap>)createMatchMapWithCucumberApiTestStep:(CucumberApiTestStep *)testStep
+                                   withCucumberApiResult:(CucumberApiResult *)result;
 
-- (id<JavaUtilMap>)createResultMapWithCCBResult:(CCBResult *)result;
+- (id<JavaUtilMap>)createResultMapWithCucumberApiResult:(CucumberApiResult *)result;
 
 - (void)jsFunctionCallWithNSString:(NSString *)functionName
                  withNSObjectArray:(IOSObjectArray *)args;
@@ -153,7 +153,7 @@
 + (void)writeBytesToURLWithByteArray:(IOSByteArray *)buf
                       withJavaNetURL:(JavaNetURL *)url;
 
-+ (CCBNiceAppendable *)createJsOutWithJavaNetURL:(JavaNetURL *)htmlReportDir;
++ (CucumberApiFormatterNiceAppendable *)createJsOutWithJavaNetURL:(JavaNetURL *)htmlReportDir;
 
 + (JavaIoOutputStream *)createReportFileOutputStreamWithJavaNetURL:(JavaNetURL *)url;
 
@@ -163,18 +163,18 @@
 
 J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, testSources_, CCBRTestSourcesModel *)
 J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, htmlReportDir_, JavaNetURL *)
-J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, jsOut_, CCBNiceAppendable *)
+J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, jsOut_, CucumberApiFormatterNiceAppendable *)
 J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, currentFeatureFile_, NSString *)
 J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, currentTestCaseMap_, id<JavaUtilMap>)
 J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, currentScenarioOutline_, GherkinAstScenarioOutline *)
 J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, currentExamples_, GherkinAstExamples *)
-J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, testSourceReadHandler_, id<CCBEventHandler>)
-J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, caseStartedHandler_, id<CCBEventHandler>)
-J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, stepStartedHandler_, id<CCBEventHandler>)
-J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, stepFinishedHandler_, id<CCBEventHandler>)
-J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, embedEventhandler_, id<CCBEventHandler>)
-J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, writeEventhandler_, id<CCBEventHandler>)
-J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, runFinishedHandler_, id<CCBEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, testSourceReadHandler_, id<CucumberApiEventEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, caseStartedHandler_, id<CucumberApiEventEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, stepStartedHandler_, id<CucumberApiEventEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, stepFinishedHandler_, id<CucumberApiEventEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, embedEventhandler_, id<CucumberApiEventEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, writeEventhandler_, id<CucumberApiEventEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, runFinishedHandler_, id<CucumberApiEventEventHandler>)
 
 inline ComGoogleGsonGson *CCBRHTMLFormatter_get_gson(void);
 static ComGoogleGsonGson *CCBRHTMLFormatter_gson;
@@ -196,27 +196,27 @@ inline id<JavaUtilMap> CCBRHTMLFormatter_get_MIME_TYPES_EXTENSIONS(void);
 static id<JavaUtilMap> CCBRHTMLFormatter_MIME_TYPES_EXTENSIONS;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRHTMLFormatter, MIME_TYPES_EXTENSIONS, id<JavaUtilMap>)
 
-__attribute__((unused)) static void CCBRHTMLFormatter_handleTestSourceReadWithCCBTestSourceRead_(CCBRHTMLFormatter *self, CCBTestSourceRead *event);
+__attribute__((unused)) static void CCBRHTMLFormatter_handleTestSourceReadWithCucumberApiEventTestSourceRead_(CCBRHTMLFormatter *self, CucumberApiEventTestSourceRead *event);
 
-__attribute__((unused)) static void CCBRHTMLFormatter_handleTestCaseStartedWithCCBTestCaseStarted_(CCBRHTMLFormatter *self, CCBTestCaseStarted *event);
+__attribute__((unused)) static void CCBRHTMLFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarted_(CCBRHTMLFormatter *self, CucumberApiEventTestCaseStarted *event);
 
-__attribute__((unused)) static void CCBRHTMLFormatter_handleTestStepStartedWithCCBTestStepStarted_(CCBRHTMLFormatter *self, CCBTestStepStarted *event);
+__attribute__((unused)) static void CCBRHTMLFormatter_handleTestStepStartedWithCucumberApiEventTestStepStarted_(CCBRHTMLFormatter *self, CucumberApiEventTestStepStarted *event);
 
-__attribute__((unused)) static void CCBRHTMLFormatter_handleTestStepFinishedWithCCBTestStepFinished_(CCBRHTMLFormatter *self, CCBTestStepFinished *event);
+__attribute__((unused)) static void CCBRHTMLFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(CCBRHTMLFormatter *self, CucumberApiEventTestStepFinished *event);
 
-__attribute__((unused)) static void CCBRHTMLFormatter_handleEmbedWithCCBEmbedEvent_(CCBRHTMLFormatter *self, CCBEmbedEvent *event);
+__attribute__((unused)) static void CCBRHTMLFormatter_handleEmbedWithCucumberApiEventEmbedEvent_(CCBRHTMLFormatter *self, CucumberApiEventEmbedEvent *event);
 
-__attribute__((unused)) static void CCBRHTMLFormatter_handleWriteWithCCBWriteEvent_(CCBRHTMLFormatter *self, CCBWriteEvent *event);
+__attribute__((unused)) static void CCBRHTMLFormatter_handleWriteWithCucumberApiEventWriteEvent_(CCBRHTMLFormatter *self, CucumberApiEventWriteEvent *event);
 
 __attribute__((unused)) static void CCBRHTMLFormatter_finishReport(CCBRHTMLFormatter *self);
 
-__attribute__((unused)) static void CCBRHTMLFormatter_handleStartOfFeatureWithCCBTestCase_(CCBRHTMLFormatter *self, CCBTestCase *testCase);
+__attribute__((unused)) static void CCBRHTMLFormatter_handleStartOfFeatureWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase);
 
-__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createFeatureWithCCBTestCase_(CCBRHTMLFormatter *self, CCBTestCase *testCase);
+__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createFeatureWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase);
 
 __attribute__((unused)) static id<JavaUtilList> CCBRHTMLFormatter_createTagListWithJavaUtilList_(CCBRHTMLFormatter *self, id<JavaUtilList> tags);
 
-__attribute__((unused)) static void CCBRHTMLFormatter_handleScenarioOutlineWithCCBTestCase_(CCBRHTMLFormatter *self, CCBTestCase *testCase);
+__attribute__((unused)) static void CCBRHTMLFormatter_handleScenarioOutlineWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase);
 
 __attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createScenarioOutlineWithGherkinAstScenarioOutline_(CCBRHTMLFormatter *self, GherkinAstScenarioOutline *scenarioOutline);
 
@@ -232,13 +232,13 @@ __attribute__((unused)) static id<JavaUtilList> CCBRHTMLFormatter_createCellList
 
 __attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createExamplesWithGherkinAstExamples_(CCBRHTMLFormatter *self, GherkinAstExamples *examples);
 
-__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createTestCaseWithCCBTestCase_(CCBRHTMLFormatter *self, CCBTestCase *testCase);
+__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createTestCaseWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase);
 
-__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createBackgroundWithCCBTestCase_(CCBRHTMLFormatter *self, CCBTestCase *testCase);
+__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createBackgroundWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase);
 
-__attribute__((unused)) static jboolean CCBRHTMLFormatter_isFirstStepAfterBackgroundWithCCBTestStep_(CCBRHTMLFormatter *self, CCBTestStep *testStep);
+__attribute__((unused)) static jboolean CCBRHTMLFormatter_isFirstStepAfterBackgroundWithCucumberApiTestStep_(CCBRHTMLFormatter *self, CucumberApiTestStep *testStep);
 
-__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createTestStepWithCCBTestStep_(CCBRHTMLFormatter *self, CCBTestStep *testStep);
+__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createTestStepWithCucumberApiTestStep_(CCBRHTMLFormatter *self, CucumberApiTestStep *testStep);
 
 __attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createDocStringMapWithGherkinPicklesPickleString_(CCBRHTMLFormatter *self, GherkinPicklesPickleString *docString);
 
@@ -248,9 +248,9 @@ __attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createRowMapWit
 
 __attribute__((unused)) static id<JavaUtilList> CCBRHTMLFormatter_createCellListWithGherkinPicklesPickleRow_(CCBRHTMLFormatter *self, GherkinPicklesPickleRow *row);
 
-__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createMatchMapWithCCBTestStep_withCCBResult_(CCBRHTMLFormatter *self, CCBTestStep *testStep, CCBResult *result);
+__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createMatchMapWithCucumberApiTestStep_withCucumberApiResult_(CCBRHTMLFormatter *self, CucumberApiTestStep *testStep, CucumberApiResult *result);
 
-__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createResultMapWithCCBResult_(CCBRHTMLFormatter *self, CCBResult *result);
+__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createResultMapWithCucumberApiResult_(CCBRHTMLFormatter *self, CucumberApiResult *result);
 
 __attribute__((unused)) static void CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(CCBRHTMLFormatter *self, NSString *functionName, IOSObjectArray *args);
 
@@ -262,7 +262,7 @@ __attribute__((unused)) static void CCBRHTMLFormatter_writeStreamToURLWithJavaIo
 
 __attribute__((unused)) static void CCBRHTMLFormatter_writeBytesToURLWithByteArray_withJavaNetURL_(IOSByteArray *buf, JavaNetURL *url);
 
-__attribute__((unused)) static CCBNiceAppendable *CCBRHTMLFormatter_createJsOutWithJavaNetURL_(JavaNetURL *htmlReportDir);
+__attribute__((unused)) static CucumberApiFormatterNiceAppendable *CCBRHTMLFormatter_createJsOutWithJavaNetURL_(JavaNetURL *htmlReportDir);
 
 __attribute__((unused)) static JavaIoOutputStream *CCBRHTMLFormatter_createReportFileOutputStreamWithJavaNetURL_(JavaNetURL *url);
 
@@ -311,14 +311,14 @@ __attribute__((unused)) static CCBRHTMLFormatter_1 *new_CCBRHTMLFormatter_1_init
 
 __attribute__((unused)) static CCBRHTMLFormatter_1 *create_CCBRHTMLFormatter_1_init(void);
 
-@interface CCBRHTMLFormatter_2 : NSObject < CCBEventHandler > {
+@interface CCBRHTMLFormatter_2 : NSObject < CucumberApiEventEventHandler > {
  @public
   CCBRHTMLFormatter *this$0_;
 }
 
 - (instancetype __nonnull)initWithCCBRHTMLFormatter:(CCBRHTMLFormatter *)outer$;
 
-- (void)receiveWithCCBEvent:(CCBTestSourceRead *)event;
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestSourceRead *)event;
 
 @end
 
@@ -330,14 +330,14 @@ __attribute__((unused)) static CCBRHTMLFormatter_2 *new_CCBRHTMLFormatter_2_init
 
 __attribute__((unused)) static CCBRHTMLFormatter_2 *create_CCBRHTMLFormatter_2_initWithCCBRHTMLFormatter_(CCBRHTMLFormatter *outer$);
 
-@interface CCBRHTMLFormatter_3 : NSObject < CCBEventHandler > {
+@interface CCBRHTMLFormatter_3 : NSObject < CucumberApiEventEventHandler > {
  @public
   CCBRHTMLFormatter *this$0_;
 }
 
 - (instancetype __nonnull)initWithCCBRHTMLFormatter:(CCBRHTMLFormatter *)outer$;
 
-- (void)receiveWithCCBEvent:(CCBTestCaseStarted *)event;
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestCaseStarted *)event;
 
 @end
 
@@ -349,14 +349,14 @@ __attribute__((unused)) static CCBRHTMLFormatter_3 *new_CCBRHTMLFormatter_3_init
 
 __attribute__((unused)) static CCBRHTMLFormatter_3 *create_CCBRHTMLFormatter_3_initWithCCBRHTMLFormatter_(CCBRHTMLFormatter *outer$);
 
-@interface CCBRHTMLFormatter_4 : NSObject < CCBEventHandler > {
+@interface CCBRHTMLFormatter_4 : NSObject < CucumberApiEventEventHandler > {
  @public
   CCBRHTMLFormatter *this$0_;
 }
 
 - (instancetype __nonnull)initWithCCBRHTMLFormatter:(CCBRHTMLFormatter *)outer$;
 
-- (void)receiveWithCCBEvent:(CCBTestStepStarted *)event;
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepStarted *)event;
 
 @end
 
@@ -368,14 +368,14 @@ __attribute__((unused)) static CCBRHTMLFormatter_4 *new_CCBRHTMLFormatter_4_init
 
 __attribute__((unused)) static CCBRHTMLFormatter_4 *create_CCBRHTMLFormatter_4_initWithCCBRHTMLFormatter_(CCBRHTMLFormatter *outer$);
 
-@interface CCBRHTMLFormatter_5 : NSObject < CCBEventHandler > {
+@interface CCBRHTMLFormatter_5 : NSObject < CucumberApiEventEventHandler > {
  @public
   CCBRHTMLFormatter *this$0_;
 }
 
 - (instancetype __nonnull)initWithCCBRHTMLFormatter:(CCBRHTMLFormatter *)outer$;
 
-- (void)receiveWithCCBEvent:(CCBTestStepFinished *)event;
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepFinished *)event;
 
 @end
 
@@ -387,14 +387,14 @@ __attribute__((unused)) static CCBRHTMLFormatter_5 *new_CCBRHTMLFormatter_5_init
 
 __attribute__((unused)) static CCBRHTMLFormatter_5 *create_CCBRHTMLFormatter_5_initWithCCBRHTMLFormatter_(CCBRHTMLFormatter *outer$);
 
-@interface CCBRHTMLFormatter_6 : NSObject < CCBEventHandler > {
+@interface CCBRHTMLFormatter_6 : NSObject < CucumberApiEventEventHandler > {
  @public
   CCBRHTMLFormatter *this$0_;
 }
 
 - (instancetype __nonnull)initWithCCBRHTMLFormatter:(CCBRHTMLFormatter *)outer$;
 
-- (void)receiveWithCCBEvent:(CCBEmbedEvent *)event;
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventEmbedEvent *)event;
 
 @end
 
@@ -406,14 +406,14 @@ __attribute__((unused)) static CCBRHTMLFormatter_6 *new_CCBRHTMLFormatter_6_init
 
 __attribute__((unused)) static CCBRHTMLFormatter_6 *create_CCBRHTMLFormatter_6_initWithCCBRHTMLFormatter_(CCBRHTMLFormatter *outer$);
 
-@interface CCBRHTMLFormatter_7 : NSObject < CCBEventHandler > {
+@interface CCBRHTMLFormatter_7 : NSObject < CucumberApiEventEventHandler > {
  @public
   CCBRHTMLFormatter *this$0_;
 }
 
 - (instancetype __nonnull)initWithCCBRHTMLFormatter:(CCBRHTMLFormatter *)outer$;
 
-- (void)receiveWithCCBEvent:(CCBWriteEvent *)event;
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventWriteEvent *)event;
 
 @end
 
@@ -425,14 +425,14 @@ __attribute__((unused)) static CCBRHTMLFormatter_7 *new_CCBRHTMLFormatter_7_init
 
 __attribute__((unused)) static CCBRHTMLFormatter_7 *create_CCBRHTMLFormatter_7_initWithCCBRHTMLFormatter_(CCBRHTMLFormatter *outer$);
 
-@interface CCBRHTMLFormatter_8 : NSObject < CCBEventHandler > {
+@interface CCBRHTMLFormatter_8 : NSObject < CucumberApiEventEventHandler > {
  @public
   CCBRHTMLFormatter *this$0_;
 }
 
 - (instancetype __nonnull)initWithCCBRHTMLFormatter:(CCBRHTMLFormatter *)outer$;
 
-- (void)receiveWithCCBEvent:(CCBTestRunFinished *)event;
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event;
 
 @end
 
@@ -454,63 +454,63 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
 }
 
 - (instancetype __nonnull)initWithJavaNetURL:(JavaNetURL *)htmlReportDir
-                       withCCBNiceAppendable:(CCBNiceAppendable *)jsOut {
-  CCBRHTMLFormatter_initWithJavaNetURL_withCCBNiceAppendable_(self, htmlReportDir, jsOut);
+      withCucumberApiFormatterNiceAppendable:(CucumberApiFormatterNiceAppendable *)jsOut {
+  CCBRHTMLFormatter_initWithJavaNetURL_withCucumberApiFormatterNiceAppendable_(self, htmlReportDir, jsOut);
   return self;
 }
 
-- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher {
-  [((id<CCBEventPublisher>) nil_chk(publisher)) registerHandlerForWithIOSClass:CCBTestSourceRead_class_() withCCBEventHandler:testSourceReadHandler_];
-  [publisher registerHandlerForWithIOSClass:CCBTestCaseStarted_class_() withCCBEventHandler:caseStartedHandler_];
-  [publisher registerHandlerForWithIOSClass:CCBTestStepStarted_class_() withCCBEventHandler:stepStartedHandler_];
-  [publisher registerHandlerForWithIOSClass:CCBTestStepFinished_class_() withCCBEventHandler:stepFinishedHandler_];
-  [publisher registerHandlerForWithIOSClass:CCBEmbedEvent_class_() withCCBEventHandler:embedEventhandler_];
-  [publisher registerHandlerForWithIOSClass:CCBWriteEvent_class_() withCCBEventHandler:writeEventhandler_];
-  [publisher registerHandlerForWithIOSClass:CCBTestRunFinished_class_() withCCBEventHandler:runFinishedHandler_];
+- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher {
+  [((id<CucumberApiEventEventPublisher>) nil_chk(publisher)) registerHandlerForWithIOSClass:CucumberApiEventTestSourceRead_class_() withCucumberApiEventEventHandler:testSourceReadHandler_];
+  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestCaseStarted_class_() withCucumberApiEventEventHandler:caseStartedHandler_];
+  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestStepStarted_class_() withCucumberApiEventEventHandler:stepStartedHandler_];
+  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestStepFinished_class_() withCucumberApiEventEventHandler:stepFinishedHandler_];
+  [publisher registerHandlerForWithIOSClass:CucumberApiEventEmbedEvent_class_() withCucumberApiEventEventHandler:embedEventhandler_];
+  [publisher registerHandlerForWithIOSClass:CucumberApiEventWriteEvent_class_() withCucumberApiEventEventHandler:writeEventhandler_];
+  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestRunFinished_class_() withCucumberApiEventEventHandler:runFinishedHandler_];
 }
 
-- (void)handleTestSourceReadWithCCBTestSourceRead:(CCBTestSourceRead *)event {
-  CCBRHTMLFormatter_handleTestSourceReadWithCCBTestSourceRead_(self, event);
+- (void)handleTestSourceReadWithCucumberApiEventTestSourceRead:(CucumberApiEventTestSourceRead *)event {
+  CCBRHTMLFormatter_handleTestSourceReadWithCucumberApiEventTestSourceRead_(self, event);
 }
 
-- (void)handleTestCaseStartedWithCCBTestCaseStarted:(CCBTestCaseStarted *)event {
-  CCBRHTMLFormatter_handleTestCaseStartedWithCCBTestCaseStarted_(self, event);
+- (void)handleTestCaseStartedWithCucumberApiEventTestCaseStarted:(CucumberApiEventTestCaseStarted *)event {
+  CCBRHTMLFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarted_(self, event);
 }
 
-- (void)handleTestStepStartedWithCCBTestStepStarted:(CCBTestStepStarted *)event {
-  CCBRHTMLFormatter_handleTestStepStartedWithCCBTestStepStarted_(self, event);
+- (void)handleTestStepStartedWithCucumberApiEventTestStepStarted:(CucumberApiEventTestStepStarted *)event {
+  CCBRHTMLFormatter_handleTestStepStartedWithCucumberApiEventTestStepStarted_(self, event);
 }
 
-- (void)handleTestStepFinishedWithCCBTestStepFinished:(CCBTestStepFinished *)event {
-  CCBRHTMLFormatter_handleTestStepFinishedWithCCBTestStepFinished_(self, event);
+- (void)handleTestStepFinishedWithCucumberApiEventTestStepFinished:(CucumberApiEventTestStepFinished *)event {
+  CCBRHTMLFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(self, event);
 }
 
-- (void)handleEmbedWithCCBEmbedEvent:(CCBEmbedEvent *)event {
-  CCBRHTMLFormatter_handleEmbedWithCCBEmbedEvent_(self, event);
+- (void)handleEmbedWithCucumberApiEventEmbedEvent:(CucumberApiEventEmbedEvent *)event {
+  CCBRHTMLFormatter_handleEmbedWithCucumberApiEventEmbedEvent_(self, event);
 }
 
-- (void)handleWriteWithCCBWriteEvent:(CCBWriteEvent *)event {
-  CCBRHTMLFormatter_handleWriteWithCCBWriteEvent_(self, event);
+- (void)handleWriteWithCucumberApiEventWriteEvent:(CucumberApiEventWriteEvent *)event {
+  CCBRHTMLFormatter_handleWriteWithCucumberApiEventWriteEvent_(self, event);
 }
 
 - (void)finishReport {
   CCBRHTMLFormatter_finishReport(self);
 }
 
-- (void)handleStartOfFeatureWithCCBTestCase:(CCBTestCase *)testCase {
-  CCBRHTMLFormatter_handleStartOfFeatureWithCCBTestCase_(self, testCase);
+- (void)handleStartOfFeatureWithCucumberApiTestCase:(CucumberApiTestCase *)testCase {
+  CCBRHTMLFormatter_handleStartOfFeatureWithCucumberApiTestCase_(self, testCase);
 }
 
-- (id<JavaUtilMap>)createFeatureWithCCBTestCase:(CCBTestCase *)testCase {
-  return CCBRHTMLFormatter_createFeatureWithCCBTestCase_(self, testCase);
+- (id<JavaUtilMap>)createFeatureWithCucumberApiTestCase:(CucumberApiTestCase *)testCase {
+  return CCBRHTMLFormatter_createFeatureWithCucumberApiTestCase_(self, testCase);
 }
 
 - (id<JavaUtilList>)createTagListWithJavaUtilList:(id<JavaUtilList>)tags {
   return CCBRHTMLFormatter_createTagListWithJavaUtilList_(self, tags);
 }
 
-- (void)handleScenarioOutlineWithCCBTestCase:(CCBTestCase *)testCase {
-  CCBRHTMLFormatter_handleScenarioOutlineWithCCBTestCase_(self, testCase);
+- (void)handleScenarioOutlineWithCucumberApiTestCase:(CucumberApiTestCase *)testCase {
+  CCBRHTMLFormatter_handleScenarioOutlineWithCucumberApiTestCase_(self, testCase);
 }
 
 - (id<JavaUtilMap>)createScenarioOutlineWithGherkinAstScenarioOutline:(GherkinAstScenarioOutline *)scenarioOutline {
@@ -541,20 +541,20 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
   return CCBRHTMLFormatter_createExamplesWithGherkinAstExamples_(self, examples);
 }
 
-- (id<JavaUtilMap>)createTestCaseWithCCBTestCase:(CCBTestCase *)testCase {
-  return CCBRHTMLFormatter_createTestCaseWithCCBTestCase_(self, testCase);
+- (id<JavaUtilMap>)createTestCaseWithCucumberApiTestCase:(CucumberApiTestCase *)testCase {
+  return CCBRHTMLFormatter_createTestCaseWithCucumberApiTestCase_(self, testCase);
 }
 
-- (id<JavaUtilMap>)createBackgroundWithCCBTestCase:(CCBTestCase *)testCase {
-  return CCBRHTMLFormatter_createBackgroundWithCCBTestCase_(self, testCase);
+- (id<JavaUtilMap>)createBackgroundWithCucumberApiTestCase:(CucumberApiTestCase *)testCase {
+  return CCBRHTMLFormatter_createBackgroundWithCucumberApiTestCase_(self, testCase);
 }
 
-- (jboolean)isFirstStepAfterBackgroundWithCCBTestStep:(CCBTestStep *)testStep {
-  return CCBRHTMLFormatter_isFirstStepAfterBackgroundWithCCBTestStep_(self, testStep);
+- (jboolean)isFirstStepAfterBackgroundWithCucumberApiTestStep:(CucumberApiTestStep *)testStep {
+  return CCBRHTMLFormatter_isFirstStepAfterBackgroundWithCucumberApiTestStep_(self, testStep);
 }
 
-- (id<JavaUtilMap>)createTestStepWithCCBTestStep:(CCBTestStep *)testStep {
-  return CCBRHTMLFormatter_createTestStepWithCCBTestStep_(self, testStep);
+- (id<JavaUtilMap>)createTestStepWithCucumberApiTestStep:(CucumberApiTestStep *)testStep {
+  return CCBRHTMLFormatter_createTestStepWithCucumberApiTestStep_(self, testStep);
 }
 
 - (id<JavaUtilMap>)createDocStringMapWithGherkinPicklesPickleString:(GherkinPicklesPickleString *)docString {
@@ -573,13 +573,13 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
   return CCBRHTMLFormatter_createCellListWithGherkinPicklesPickleRow_(self, row);
 }
 
-- (id<JavaUtilMap>)createMatchMapWithCCBTestStep:(CCBTestStep *)testStep
-                                   withCCBResult:(CCBResult *)result {
-  return CCBRHTMLFormatter_createMatchMapWithCCBTestStep_withCCBResult_(self, testStep, result);
+- (id<JavaUtilMap>)createMatchMapWithCucumberApiTestStep:(CucumberApiTestStep *)testStep
+                                   withCucumberApiResult:(CucumberApiResult *)result {
+  return CCBRHTMLFormatter_createMatchMapWithCucumberApiTestStep_withCucumberApiResult_(self, testStep, result);
 }
 
-- (id<JavaUtilMap>)createResultMapWithCCBResult:(CCBResult *)result {
-  return CCBRHTMLFormatter_createResultMapWithCCBResult_(self, result);
+- (id<JavaUtilMap>)createResultMapWithCucumberApiResult:(CucumberApiResult *)result {
+  return CCBRHTMLFormatter_createResultMapWithCucumberApiResult_(self, result);
 }
 
 - (void)jsFunctionCallWithNSString:(NSString *)functionName
@@ -605,7 +605,7 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
   CCBRHTMLFormatter_writeBytesToURLWithByteArray_withJavaNetURL_(buf, url);
 }
 
-+ (CCBNiceAppendable *)createJsOutWithJavaNetURL:(JavaNetURL *)htmlReportDir {
++ (CucumberApiFormatterNiceAppendable *)createJsOutWithJavaNetURL:(JavaNetURL *)htmlReportDir {
   return CCBRHTMLFormatter_createJsOutWithJavaNetURL_(htmlReportDir);
 }
 
@@ -673,7 +673,7 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
     { NULL, "LJavaNetURL;", 0x2, 63, 64, -1, -1, -1, -1 },
     { NULL, "V", 0xa, 65, 66, -1, -1, -1, -1 },
     { NULL, "V", 0xa, 67, 68, 69, -1, -1, -1 },
-    { NULL, "LCCBNiceAppendable;", 0xa, 70, 0, -1, -1, -1, -1 },
+    { NULL, "LCucumberApiFormatterNiceAppendable;", 0xa, 70, 0, -1, -1, -1, -1 },
     { NULL, "LJavaIoOutputStream;", 0xa, 71, 0, -1, -1, -1, -1 },
     { NULL, "V", 0xa, 72, 73, -1, -1, -1, -1 },
   };
@@ -681,19 +681,19 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaNetURL:);
-  methods[1].selector = @selector(initWithJavaNetURL:withCCBNiceAppendable:);
-  methods[2].selector = @selector(setEventPublisherWithCCBEventPublisher:);
-  methods[3].selector = @selector(handleTestSourceReadWithCCBTestSourceRead:);
-  methods[4].selector = @selector(handleTestCaseStartedWithCCBTestCaseStarted:);
-  methods[5].selector = @selector(handleTestStepStartedWithCCBTestStepStarted:);
-  methods[6].selector = @selector(handleTestStepFinishedWithCCBTestStepFinished:);
-  methods[7].selector = @selector(handleEmbedWithCCBEmbedEvent:);
-  methods[8].selector = @selector(handleWriteWithCCBWriteEvent:);
+  methods[1].selector = @selector(initWithJavaNetURL:withCucumberApiFormatterNiceAppendable:);
+  methods[2].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
+  methods[3].selector = @selector(handleTestSourceReadWithCucumberApiEventTestSourceRead:);
+  methods[4].selector = @selector(handleTestCaseStartedWithCucumberApiEventTestCaseStarted:);
+  methods[5].selector = @selector(handleTestStepStartedWithCucumberApiEventTestStepStarted:);
+  methods[6].selector = @selector(handleTestStepFinishedWithCucumberApiEventTestStepFinished:);
+  methods[7].selector = @selector(handleEmbedWithCucumberApiEventEmbedEvent:);
+  methods[8].selector = @selector(handleWriteWithCucumberApiEventWriteEvent:);
   methods[9].selector = @selector(finishReport);
-  methods[10].selector = @selector(handleStartOfFeatureWithCCBTestCase:);
-  methods[11].selector = @selector(createFeatureWithCCBTestCase:);
+  methods[10].selector = @selector(handleStartOfFeatureWithCucumberApiTestCase:);
+  methods[11].selector = @selector(createFeatureWithCucumberApiTestCase:);
   methods[12].selector = @selector(createTagListWithJavaUtilList:);
-  methods[13].selector = @selector(handleScenarioOutlineWithCCBTestCase:);
+  methods[13].selector = @selector(handleScenarioOutlineWithCucumberApiTestCase:);
   methods[14].selector = @selector(createScenarioOutlineWithGherkinAstScenarioOutline:);
   methods[15].selector = @selector(addOutlineStepsToReportWithGherkinAstScenarioOutline:);
   methods[16].selector = @selector(createDocStringMapWithGherkinAstDocString:);
@@ -701,16 +701,16 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
   methods[18].selector = @selector(createRowMapWithGherkinAstTableRow:);
   methods[19].selector = @selector(createCellListWithGherkinAstTableRow:);
   methods[20].selector = @selector(createExamplesWithGherkinAstExamples:);
-  methods[21].selector = @selector(createTestCaseWithCCBTestCase:);
-  methods[22].selector = @selector(createBackgroundWithCCBTestCase:);
-  methods[23].selector = @selector(isFirstStepAfterBackgroundWithCCBTestStep:);
-  methods[24].selector = @selector(createTestStepWithCCBTestStep:);
+  methods[21].selector = @selector(createTestCaseWithCucumberApiTestCase:);
+  methods[22].selector = @selector(createBackgroundWithCucumberApiTestCase:);
+  methods[23].selector = @selector(isFirstStepAfterBackgroundWithCucumberApiTestStep:);
+  methods[24].selector = @selector(createTestStepWithCucumberApiTestStep:);
   methods[25].selector = @selector(createDocStringMapWithGherkinPicklesPickleString:);
   methods[26].selector = @selector(createDataTableListWithGherkinPicklesPickleTable:);
   methods[27].selector = @selector(createRowMapWithGherkinPicklesPickleRow:);
   methods[28].selector = @selector(createCellListWithGherkinPicklesPickleRow:);
-  methods[29].selector = @selector(createMatchMapWithCCBTestStep:withCCBResult:);
-  methods[30].selector = @selector(createResultMapWithCCBResult:);
+  methods[29].selector = @selector(createMatchMapWithCucumberApiTestStep:withCucumberApiResult:);
+  methods[30].selector = @selector(createResultMapWithCucumberApiResult:);
   methods[31].selector = @selector(jsFunctionCallWithNSString:withNSObjectArray:);
   methods[32].selector = @selector(copyReportFiles);
   methods[33].selector = @selector(toUrlWithNSString:);
@@ -728,22 +728,22 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
     { "MIME_TYPES_EXTENSIONS", "LJavaUtilMap;", .constantValue.asLong = 0, 0x1a, -1, 78, 79, -1 },
     { "testSources_", "LCCBRTestSourcesModel;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "htmlReportDir_", "LJavaNetURL;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "jsOut_", "LCCBNiceAppendable;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "jsOut_", "LCucumberApiFormatterNiceAppendable;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "firstFeature_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "currentFeatureFile_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "currentTestCaseMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 80, -1 },
     { "currentScenarioOutline_", "LGherkinAstScenarioOutline;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "currentExamples_", "LGherkinAstExamples;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "embeddedIndex_", "I", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "testSourceReadHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 81, -1 },
-    { "caseStartedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 82, -1 },
-    { "stepStartedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 83, -1 },
-    { "stepFinishedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 84, -1 },
-    { "embedEventhandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 85, -1 },
-    { "writeEventhandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 86, -1 },
-    { "runFinishedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 87, -1 },
+    { "testSourceReadHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 81, -1 },
+    { "caseStartedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 82, -1 },
+    { "stepStartedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 83, -1 },
+    { "stepFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 84, -1 },
+    { "embedEventhandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 85, -1 },
+    { "writeEventhandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 86, -1 },
+    { "runFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 87, -1 },
   };
-  static const void *ptrTable[] = { "LJavaNetURL;", "LJavaNetURL;LCCBNiceAppendable;", "setEventPublisher", "LCCBEventPublisher;", "handleTestSourceRead", "LCCBTestSourceRead;", "handleTestCaseStarted", "LCCBTestCaseStarted;", "handleTestStepStarted", "LCCBTestStepStarted;", "handleTestStepFinished", "LCCBTestStepFinished;", "handleEmbed", "LCCBEmbedEvent;", "handleWrite", "LCCBWriteEvent;", "handleStartOfFeature", "LCCBTestCase;", "createFeature", "(Lcucumber/api/TestCase;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createTagList", "LJavaUtilList;", "(Ljava/util/List<Lgherkin/ast/Tag;>;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "handleScenarioOutline", "createScenarioOutline", "LGherkinAstScenarioOutline;", "(Lgherkin/ast/ScenarioOutline;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "addOutlineStepsToReport", "createDocStringMap", "LGherkinAstDocString;", "(Lgherkin/ast/DocString;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createDataTableList", "LGherkinAstDataTable;", "(Lgherkin/ast/DataTable;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "createRowMap", "LGherkinAstTableRow;", "(Lgherkin/ast/TableRow;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createCellList", "(Lgherkin/ast/TableRow;)Ljava/util/List<Ljava/lang/String;>;", "createExamples", "LGherkinAstExamples;", "(Lgherkin/ast/Examples;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createTestCase", "createBackground", "isFirstStepAfterBackground", "LCCBTestStep;", "createTestStep", "(Lcucumber/api/TestStep;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "LGherkinPicklesPickleString;", "(Lgherkin/pickles/PickleString;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "LGherkinPicklesPickleTable;", "(Lgherkin/pickles/PickleTable;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "LGherkinPicklesPickleRow;", "(Lgherkin/pickles/PickleRow;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "(Lgherkin/pickles/PickleRow;)Ljava/util/List<Ljava/lang/String;>;", "createMatchMap", "LCCBTestStep;LCCBResult;", "(Lcucumber/api/TestStep;Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createResultMap", "LCCBResult;", "(Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "jsFunctionCall", "LNSString;[LNSObject;", "toUrl", "LNSString;", "writeStreamToURL", "LJavaIoInputStream;LJavaNetURL;", "writeBytesToURL", "[BLJavaNetURL;", "LCCBRCucumberException;", "createJsOut", "createReportFileOutputStream", "closeQuietly", "LJavaIoCloseable;", &CCBRHTMLFormatter_gson, &CCBRHTMLFormatter_JS_FORMATTER_VAR, &CCBRHTMLFormatter_JS_REPORT_FILENAME, &CCBRHTMLFormatter_TEXT_ASSETS, &CCBRHTMLFormatter_MIME_TYPES_EXTENSIONS, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/EmbedEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
+  static const void *ptrTable[] = { "LJavaNetURL;", "LJavaNetURL;LCucumberApiFormatterNiceAppendable;", "setEventPublisher", "LCucumberApiEventEventPublisher;", "handleTestSourceRead", "LCucumberApiEventTestSourceRead;", "handleTestCaseStarted", "LCucumberApiEventTestCaseStarted;", "handleTestStepStarted", "LCucumberApiEventTestStepStarted;", "handleTestStepFinished", "LCucumberApiEventTestStepFinished;", "handleEmbed", "LCucumberApiEventEmbedEvent;", "handleWrite", "LCucumberApiEventWriteEvent;", "handleStartOfFeature", "LCucumberApiTestCase;", "createFeature", "(Lcucumber/api/TestCase;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createTagList", "LJavaUtilList;", "(Ljava/util/List<Lgherkin/ast/Tag;>;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "handleScenarioOutline", "createScenarioOutline", "LGherkinAstScenarioOutline;", "(Lgherkin/ast/ScenarioOutline;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "addOutlineStepsToReport", "createDocStringMap", "LGherkinAstDocString;", "(Lgherkin/ast/DocString;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createDataTableList", "LGherkinAstDataTable;", "(Lgherkin/ast/DataTable;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "createRowMap", "LGherkinAstTableRow;", "(Lgherkin/ast/TableRow;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createCellList", "(Lgherkin/ast/TableRow;)Ljava/util/List<Ljava/lang/String;>;", "createExamples", "LGherkinAstExamples;", "(Lgherkin/ast/Examples;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createTestCase", "createBackground", "isFirstStepAfterBackground", "LCucumberApiTestStep;", "createTestStep", "(Lcucumber/api/TestStep;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "LGherkinPicklesPickleString;", "(Lgherkin/pickles/PickleString;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "LGherkinPicklesPickleTable;", "(Lgherkin/pickles/PickleTable;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "LGherkinPicklesPickleRow;", "(Lgherkin/pickles/PickleRow;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "(Lgherkin/pickles/PickleRow;)Ljava/util/List<Ljava/lang/String;>;", "createMatchMap", "LCucumberApiTestStep;LCucumberApiResult;", "(Lcucumber/api/TestStep;Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createResultMap", "LCucumberApiResult;", "(Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "jsFunctionCall", "LNSString;[LNSObject;", "toUrl", "LNSString;", "writeStreamToURL", "LJavaIoInputStream;LJavaNetURL;", "writeBytesToURL", "[BLJavaNetURL;", "LCCBRCucumberException;", "createJsOut", "createReportFileOutputStream", "closeQuietly", "LJavaIoCloseable;", &CCBRHTMLFormatter_gson, &CCBRHTMLFormatter_JS_FORMATTER_VAR, &CCBRHTMLFormatter_JS_REPORT_FILENAME, &CCBRHTMLFormatter_TEXT_ASSETS, &CCBRHTMLFormatter_MIME_TYPES_EXTENSIONS, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/EmbedEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
   static const J2ObjcClassInfo _CCBRHTMLFormatter = { "HTMLFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 39, 21, -1, -1, -1, -1, -1 };
   return &_CCBRHTMLFormatter;
 }
@@ -760,7 +760,7 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
 @end
 
 void CCBRHTMLFormatter_initWithJavaNetURL_(CCBRHTMLFormatter *self, JavaNetURL *htmlReportDir) {
-  CCBRHTMLFormatter_initWithJavaNetURL_withCCBNiceAppendable_(self, htmlReportDir, CCBRHTMLFormatter_createJsOutWithJavaNetURL_(htmlReportDir));
+  CCBRHTMLFormatter_initWithJavaNetURL_withCucumberApiFormatterNiceAppendable_(self, htmlReportDir, CCBRHTMLFormatter_createJsOutWithJavaNetURL_(htmlReportDir));
 }
 
 CCBRHTMLFormatter *new_CCBRHTMLFormatter_initWithJavaNetURL_(JavaNetURL *htmlReportDir) {
@@ -771,7 +771,7 @@ CCBRHTMLFormatter *create_CCBRHTMLFormatter_initWithJavaNetURL_(JavaNetURL *html
   J2OBJC_CREATE_IMPL(CCBRHTMLFormatter, initWithJavaNetURL_, htmlReportDir)
 }
 
-void CCBRHTMLFormatter_initWithJavaNetURL_withCCBNiceAppendable_(CCBRHTMLFormatter *self, JavaNetURL *htmlReportDir, CCBNiceAppendable *jsOut) {
+void CCBRHTMLFormatter_initWithJavaNetURL_withCucumberApiFormatterNiceAppendable_(CCBRHTMLFormatter *self, JavaNetURL *htmlReportDir, CucumberApiFormatterNiceAppendable *jsOut) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->testSources_, new_CCBRTestSourcesModel_init());
   self->firstFeature_ = true;
@@ -786,28 +786,28 @@ void CCBRHTMLFormatter_initWithJavaNetURL_withCCBNiceAppendable_(CCBRHTMLFormatt
   JreStrongAssign(&self->jsOut_, jsOut);
 }
 
-CCBRHTMLFormatter *new_CCBRHTMLFormatter_initWithJavaNetURL_withCCBNiceAppendable_(JavaNetURL *htmlReportDir, CCBNiceAppendable *jsOut) {
-  J2OBJC_NEW_IMPL(CCBRHTMLFormatter, initWithJavaNetURL_withCCBNiceAppendable_, htmlReportDir, jsOut)
+CCBRHTMLFormatter *new_CCBRHTMLFormatter_initWithJavaNetURL_withCucumberApiFormatterNiceAppendable_(JavaNetURL *htmlReportDir, CucumberApiFormatterNiceAppendable *jsOut) {
+  J2OBJC_NEW_IMPL(CCBRHTMLFormatter, initWithJavaNetURL_withCucumberApiFormatterNiceAppendable_, htmlReportDir, jsOut)
 }
 
-CCBRHTMLFormatter *create_CCBRHTMLFormatter_initWithJavaNetURL_withCCBNiceAppendable_(JavaNetURL *htmlReportDir, CCBNiceAppendable *jsOut) {
-  J2OBJC_CREATE_IMPL(CCBRHTMLFormatter, initWithJavaNetURL_withCCBNiceAppendable_, htmlReportDir, jsOut)
+CCBRHTMLFormatter *create_CCBRHTMLFormatter_initWithJavaNetURL_withCucumberApiFormatterNiceAppendable_(JavaNetURL *htmlReportDir, CucumberApiFormatterNiceAppendable *jsOut) {
+  J2OBJC_CREATE_IMPL(CCBRHTMLFormatter, initWithJavaNetURL_withCucumberApiFormatterNiceAppendable_, htmlReportDir, jsOut)
 }
 
-void CCBRHTMLFormatter_handleTestSourceReadWithCCBTestSourceRead_(CCBRHTMLFormatter *self, CCBTestSourceRead *event) {
-  [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) addTestSourceReadEventWithNSString:((CCBTestSourceRead *) nil_chk(event))->uri_ withCCBTestSourceRead:event];
+void CCBRHTMLFormatter_handleTestSourceReadWithCucumberApiEventTestSourceRead_(CCBRHTMLFormatter *self, CucumberApiEventTestSourceRead *event) {
+  [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) addTestSourceReadEventWithNSString:((CucumberApiEventTestSourceRead *) nil_chk(event))->uri_ withCucumberApiEventTestSourceRead:event];
 }
 
-void CCBRHTMLFormatter_handleTestCaseStartedWithCCBTestCaseStarted_(CCBRHTMLFormatter *self, CCBTestCaseStarted *event) {
+void CCBRHTMLFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarted_(CCBRHTMLFormatter *self, CucumberApiEventTestCaseStarted *event) {
   if (self->firstFeature_) {
-    [((CCBNiceAppendable *) nil_chk([((CCBNiceAppendable *) nil_chk([((CCBNiceAppendable *) nil_chk([((CCBNiceAppendable *) nil_chk(self->jsOut_)) appendWithJavaLangCharSequence:@"$(document).ready(function() {"])) appendWithJavaLangCharSequence:@"var "])) appendWithJavaLangCharSequence:CCBRHTMLFormatter_JS_FORMATTER_VAR])) appendWithJavaLangCharSequence:@" = new CucumberHTML.DOMFormatter($('.cucumber-report'));"];
+    [((CucumberApiFormatterNiceAppendable *) nil_chk([((CucumberApiFormatterNiceAppendable *) nil_chk([((CucumberApiFormatterNiceAppendable *) nil_chk([((CucumberApiFormatterNiceAppendable *) nil_chk(self->jsOut_)) appendWithJavaLangCharSequence:@"$(document).ready(function() {"])) appendWithJavaLangCharSequence:@"var "])) appendWithJavaLangCharSequence:CCBRHTMLFormatter_JS_FORMATTER_VAR])) appendWithJavaLangCharSequence:@" = new CucumberHTML.DOMFormatter($('.cucumber-report'));"];
     self->firstFeature_ = false;
   }
-  CCBRHTMLFormatter_handleStartOfFeatureWithCCBTestCase_(self, ((CCBTestCaseStarted *) nil_chk(event))->testCase_);
-  CCBRHTMLFormatter_handleScenarioOutlineWithCCBTestCase_(self, event->testCase_);
-  JreStrongAssign(&self->currentTestCaseMap_, CCBRHTMLFormatter_createTestCaseWithCCBTestCase_(self, event->testCase_));
-  if ([((CCBRTestSourcesModel *) nil_chk(self->testSources_)) hasBackgroundWithNSString:self->currentFeatureFile_ withInt:[((CCBTestCase *) nil_chk(event->testCase_)) getLine]]) {
-    CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"background", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createBackgroundWithCCBTestCase_(self, event->testCase_) } count:1 type:NSObject_class_()]);
+  CCBRHTMLFormatter_handleStartOfFeatureWithCucumberApiTestCase_(self, ((CucumberApiEventTestCaseStarted *) nil_chk(event))->testCase_);
+  CCBRHTMLFormatter_handleScenarioOutlineWithCucumberApiTestCase_(self, event->testCase_);
+  JreStrongAssign(&self->currentTestCaseMap_, CCBRHTMLFormatter_createTestCaseWithCucumberApiTestCase_(self, event->testCase_));
+  if ([((CCBRTestSourcesModel *) nil_chk(self->testSources_)) hasBackgroundWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestCase *) nil_chk(event->testCase_)) getLine]]) {
+    CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"background", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createBackgroundWithCucumberApiTestCase_(self, event->testCase_) } count:1 type:NSObject_class_()]);
   }
   else {
     CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"scenario", [IOSObjectArray arrayWithObjects:(id[]){ self->currentTestCaseMap_ } count:1 type:NSObject_class_()]);
@@ -815,28 +815,28 @@ void CCBRHTMLFormatter_handleTestCaseStartedWithCCBTestCaseStarted_(CCBRHTMLForm
   }
 }
 
-void CCBRHTMLFormatter_handleTestStepStartedWithCCBTestStepStarted_(CCBRHTMLFormatter *self, CCBTestStepStarted *event) {
-  if (![((CCBTestStep *) nil_chk(((CCBTestStepStarted *) nil_chk(event))->testStep_)) isHook]) {
-    if (CCBRHTMLFormatter_isFirstStepAfterBackgroundWithCCBTestStep_(self, event->testStep_)) {
+void CCBRHTMLFormatter_handleTestStepStartedWithCucumberApiEventTestStepStarted_(CCBRHTMLFormatter *self, CucumberApiEventTestStepStarted *event) {
+  if (![((CucumberApiTestStep *) nil_chk(((CucumberApiEventTestStepStarted *) nil_chk(event))->testStep_)) isHook]) {
+    if (CCBRHTMLFormatter_isFirstStepAfterBackgroundWithCucumberApiTestStep_(self, event->testStep_)) {
       CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"scenario", [IOSObjectArray arrayWithObjects:(id[]){ self->currentTestCaseMap_ } count:1 type:NSObject_class_()]);
       JreStrongAssign(&self->currentTestCaseMap_, nil);
     }
-    CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"step", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createTestStepWithCCBTestStep_(self, event->testStep_) } count:1 type:NSObject_class_()]);
+    CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"step", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createTestStepWithCucumberApiTestStep_(self, event->testStep_) } count:1 type:NSObject_class_()]);
   }
 }
 
-void CCBRHTMLFormatter_handleTestStepFinishedWithCCBTestStepFinished_(CCBRHTMLFormatter *self, CCBTestStepFinished *event) {
-  if (![((CCBTestStep *) nil_chk(((CCBTestStepFinished *) nil_chk(event))->testStep_)) isHook]) {
-    CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"match", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createMatchMapWithCCBTestStep_withCCBResult_(self, event->testStep_, event->result_) } count:1 type:NSObject_class_()]);
-    CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"result", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createResultMapWithCCBResult_(self, event->result_) } count:1 type:NSObject_class_()]);
+void CCBRHTMLFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(CCBRHTMLFormatter *self, CucumberApiEventTestStepFinished *event) {
+  if (![((CucumberApiTestStep *) nil_chk(((CucumberApiEventTestStepFinished *) nil_chk(event))->testStep_)) isHook]) {
+    CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"match", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createMatchMapWithCucumberApiTestStep_withCucumberApiResult_(self, event->testStep_, event->result_) } count:1 type:NSObject_class_()]);
+    CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"result", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createResultMapWithCucumberApiResult_(self, event->result_) } count:1 type:NSObject_class_()]);
   }
   else {
-    CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, [((CCBHookType *) nil_chk([event->testStep_ getHookType])) description], [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createResultMapWithCCBResult_(self, event->result_) } count:1 type:NSObject_class_()]);
+    CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, [((CucumberApiHookType *) nil_chk([event->testStep_ getHookType])) description], [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createResultMapWithCucumberApiResult_(self, event->result_) } count:1 type:NSObject_class_()]);
   }
 }
 
-void CCBRHTMLFormatter_handleEmbedWithCCBEmbedEvent_(CCBRHTMLFormatter *self, CCBEmbedEvent *event) {
-  NSString *mimeType = ((CCBEmbedEvent *) nil_chk(event))->mimeType_;
+void CCBRHTMLFormatter_handleEmbedWithCucumberApiEventEmbedEvent_(CCBRHTMLFormatter *self, CucumberApiEventEmbedEvent *event) {
+  NSString *mimeType = ((CucumberApiEventEmbedEvent *) nil_chk(event))->mimeType_;
   if ([((NSString *) nil_chk(mimeType)) java_hasPrefix:@"text/"]) {
     CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"embedding", [IOSObjectArray arrayWithObjects:(id[]){ mimeType, [NSString java_stringWithBytes:event->data_] } count:2 type:NSObject_class_()]);
   }
@@ -850,29 +850,29 @@ void CCBRHTMLFormatter_handleEmbedWithCCBEmbedEvent_(CCBRHTMLFormatter *self, CC
   }
 }
 
-void CCBRHTMLFormatter_handleWriteWithCCBWriteEvent_(CCBRHTMLFormatter *self, CCBWriteEvent *event) {
-  CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"write", [IOSObjectArray arrayWithObjects:(id[]){ ((CCBWriteEvent *) nil_chk(event))->text_ } count:1 type:NSObject_class_()]);
+void CCBRHTMLFormatter_handleWriteWithCucumberApiEventWriteEvent_(CCBRHTMLFormatter *self, CucumberApiEventWriteEvent *event) {
+  CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"write", [IOSObjectArray arrayWithObjects:(id[]){ ((CucumberApiEventWriteEvent *) nil_chk(event))->text_ } count:1 type:NSObject_class_()]);
 }
 
 void CCBRHTMLFormatter_finishReport(CCBRHTMLFormatter *self) {
   if (!self->firstFeature_) {
-    [((CCBNiceAppendable *) nil_chk(self->jsOut_)) appendWithJavaLangCharSequence:@"});"];
+    [((CucumberApiFormatterNiceAppendable *) nil_chk(self->jsOut_)) appendWithJavaLangCharSequence:@"});"];
     CCBRHTMLFormatter_copyReportFiles(self);
   }
-  [((CCBNiceAppendable *) nil_chk(self->jsOut_)) close];
+  [((CucumberApiFormatterNiceAppendable *) nil_chk(self->jsOut_)) close];
 }
 
-void CCBRHTMLFormatter_handleStartOfFeatureWithCCBTestCase_(CCBRHTMLFormatter *self, CCBTestCase *testCase) {
-  if (self->currentFeatureFile_ == nil || ![self->currentFeatureFile_ isEqual:[((CCBTestCase *) nil_chk(testCase)) getUri]]) {
-    JreStrongAssign(&self->currentFeatureFile_, [((CCBTestCase *) nil_chk(testCase)) getUri]);
+void CCBRHTMLFormatter_handleStartOfFeatureWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase) {
+  if (self->currentFeatureFile_ == nil || ![self->currentFeatureFile_ isEqual:[((CucumberApiTestCase *) nil_chk(testCase)) getUri]]) {
+    JreStrongAssign(&self->currentFeatureFile_, [((CucumberApiTestCase *) nil_chk(testCase)) getUri]);
     CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"uri", [IOSObjectArray arrayWithObjects:(id[]){ self->currentFeatureFile_ } count:1 type:NSObject_class_()]);
-    CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"feature", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createFeatureWithCCBTestCase_(self, testCase) } count:1 type:NSObject_class_()]);
+    CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"feature", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createFeatureWithCucumberApiTestCase_(self, testCase) } count:1 type:NSObject_class_()]);
   }
 }
 
-id<JavaUtilMap> CCBRHTMLFormatter_createFeatureWithCCBTestCase_(CCBRHTMLFormatter *self, CCBTestCase *testCase) {
+id<JavaUtilMap> CCBRHTMLFormatter_createFeatureWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase) {
   id<JavaUtilMap> featureMap = create_JavaUtilHashMap_init();
-  GherkinAstFeature *feature = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getFeatureWithNSString:[((CCBTestCase *) nil_chk(testCase)) getUri]];
+  GherkinAstFeature *feature = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getFeatureWithNSString:[((CucumberApiTestCase *) nil_chk(testCase)) getUri]];
   if (feature != nil) {
     [featureMap putWithId:@"keyword" withId:[feature getKeyword]];
     [featureMap putWithId:@"name" withId:[feature getName]];
@@ -894,8 +894,8 @@ id<JavaUtilList> CCBRHTMLFormatter_createTagListWithJavaUtilList_(CCBRHTMLFormat
   return tagList;
 }
 
-void CCBRHTMLFormatter_handleScenarioOutlineWithCCBTestCase_(CCBRHTMLFormatter *self, CCBTestCase *testCase) {
-  CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CCBTestCase *) nil_chk(testCase)) getLine]];
+void CCBRHTMLFormatter_handleScenarioOutlineWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase) {
+  CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestCase *) nil_chk(testCase)) getLine]];
   if (CCBRTestSourcesModel_isScenarioOutlineScenarioWithCCBRTestSourcesModel_AstNode_(astNode)) {
     GherkinAstScenarioOutline *scenarioOutline = (GherkinAstScenarioOutline *) cast_chk(CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_(astNode), [GherkinAstScenarioOutline class]);
     if (self->currentScenarioOutline_ == nil || ![self->currentScenarioOutline_ isEqual:scenarioOutline]) {
@@ -989,9 +989,9 @@ id<JavaUtilMap> CCBRHTMLFormatter_createExamplesWithGherkinAstExamples_(CCBRHTML
   return examplesMap;
 }
 
-id<JavaUtilMap> CCBRHTMLFormatter_createTestCaseWithCCBTestCase_(CCBRHTMLFormatter *self, CCBTestCase *testCase) {
+id<JavaUtilMap> CCBRHTMLFormatter_createTestCaseWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase) {
   id<JavaUtilMap> testCaseMap = create_JavaUtilHashMap_init();
-  [testCaseMap putWithId:@"name" withId:[((CCBTestCase *) nil_chk(testCase)) getName]];
+  [testCaseMap putWithId:@"name" withId:[((CucumberApiTestCase *) nil_chk(testCase)) getName]];
   CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[testCase getLine]];
   if (astNode != nil) {
     GherkinAstScenarioDefinition *scenarioDefinition = CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_(astNode);
@@ -1010,8 +1010,8 @@ id<JavaUtilMap> CCBRHTMLFormatter_createTestCaseWithCCBTestCase_(CCBRHTMLFormatt
   return testCaseMap;
 }
 
-id<JavaUtilMap> CCBRHTMLFormatter_createBackgroundWithCCBTestCase_(CCBRHTMLFormatter *self, CCBTestCase *testCase) {
-  CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CCBTestCase *) nil_chk(testCase)) getLine]];
+id<JavaUtilMap> CCBRHTMLFormatter_createBackgroundWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase) {
+  CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestCase *) nil_chk(testCase)) getLine]];
   if (astNode != nil) {
     GherkinAstBackground *background = CCBRTestSourcesModel_getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode_(astNode);
     id<JavaUtilMap> testCaseMap = create_JavaUtilHashMap_init();
@@ -1023,8 +1023,8 @@ id<JavaUtilMap> CCBRHTMLFormatter_createBackgroundWithCCBTestCase_(CCBRHTMLForma
   return nil;
 }
 
-jboolean CCBRHTMLFormatter_isFirstStepAfterBackgroundWithCCBTestStep_(CCBRHTMLFormatter *self, CCBTestStep *testStep) {
-  CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CCBTestStep *) nil_chk(testStep)) getStepLine]];
+jboolean CCBRHTMLFormatter_isFirstStepAfterBackgroundWithCucumberApiTestStep_(CCBRHTMLFormatter *self, CucumberApiTestStep *testStep) {
+  CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestStep *) nil_chk(testStep)) getStepLine]];
   if (astNode != nil) {
     if (self->currentTestCaseMap_ != nil && !CCBRTestSourcesModel_isBackgroundStepWithCCBRTestSourcesModel_AstNode_(astNode)) {
       return true;
@@ -1033,9 +1033,9 @@ jboolean CCBRHTMLFormatter_isFirstStepAfterBackgroundWithCCBTestStep_(CCBRHTMLFo
   return false;
 }
 
-id<JavaUtilMap> CCBRHTMLFormatter_createTestStepWithCCBTestStep_(CCBRHTMLFormatter *self, CCBTestStep *testStep) {
+id<JavaUtilMap> CCBRHTMLFormatter_createTestStepWithCucumberApiTestStep_(CCBRHTMLFormatter *self, CucumberApiTestStep *testStep) {
   id<JavaUtilMap> stepMap = create_JavaUtilHashMap_init();
-  [stepMap putWithId:@"name" withId:[((CCBTestStep *) nil_chk(testStep)) getStepText]];
+  [stepMap putWithId:@"name" withId:[((CucumberApiTestStep *) nil_chk(testStep)) getStepText]];
   if (![((id<JavaUtilList>) nil_chk([testStep getStepArgument])) isEmpty]) {
     id<GherkinPicklesArgument> argument = [((id<JavaUtilList>) nil_chk([testStep getStepArgument])) getWithInt:0];
     if ([argument isKindOfClass:[GherkinPicklesPickleString class]]) {
@@ -1081,17 +1081,17 @@ id<JavaUtilList> CCBRHTMLFormatter_createCellListWithGherkinPicklesPickleRow_(CC
   return cells;
 }
 
-id<JavaUtilMap> CCBRHTMLFormatter_createMatchMapWithCCBTestStep_withCCBResult_(CCBRHTMLFormatter *self, CCBTestStep *testStep, CCBResult *result) {
+id<JavaUtilMap> CCBRHTMLFormatter_createMatchMapWithCucumberApiTestStep_withCucumberApiResult_(CCBRHTMLFormatter *self, CucumberApiTestStep *testStep, CucumberApiResult *result) {
   id<JavaUtilMap> matchMap = create_JavaUtilHashMap_init();
-  if (![((CCBResult *) nil_chk(result)) isWithCCBResult_Type:JreLoadEnum(CCBResult_Type, UNDEFINED)]) {
-    [matchMap putWithId:@"location" withId:[((CCBTestStep *) nil_chk(testStep)) getCodeLocation]];
+  if (![((CucumberApiResult *) nil_chk(result)) isWithCucumberApiResult_Type:JreLoadEnum(CucumberApiResult_Type, UNDEFINED)]) {
+    [matchMap putWithId:@"location" withId:[((CucumberApiTestStep *) nil_chk(testStep)) getCodeLocation]];
   }
   return matchMap;
 }
 
-id<JavaUtilMap> CCBRHTMLFormatter_createResultMapWithCCBResult_(CCBRHTMLFormatter *self, CCBResult *result) {
+id<JavaUtilMap> CCBRHTMLFormatter_createResultMapWithCucumberApiResult_(CCBRHTMLFormatter *self, CucumberApiResult *result) {
   id<JavaUtilMap> resultMap = create_JavaUtilHashMap_init();
-  [resultMap putWithId:@"status" withId:[((CCBResult_Type *) nil_chk([((CCBResult *) nil_chk(result)) getStatus])) lowerCaseName]];
+  [resultMap putWithId:@"status" withId:[((CucumberApiResult_Type *) nil_chk([((CucumberApiResult *) nil_chk(result)) getStatus])) lowerCaseName]];
   if ([result getErrorMessage] != nil) {
     [resultMap putWithId:@"error_message" withId:[result getErrorMessage]];
   }
@@ -1099,7 +1099,7 @@ id<JavaUtilMap> CCBRHTMLFormatter_createResultMapWithCCBResult_(CCBRHTMLFormatte
 }
 
 void CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(CCBRHTMLFormatter *self, NSString *functionName, IOSObjectArray *args) {
-  CCBNiceAppendable *out = [((CCBNiceAppendable *) nil_chk([((CCBNiceAppendable *) nil_chk([((CCBNiceAppendable *) nil_chk(self->jsOut_)) appendWithJavaLangCharSequence:JreStrcat("$C", CCBRHTMLFormatter_JS_FORMATTER_VAR, '.')])) appendWithJavaLangCharSequence:functionName])) appendWithJavaLangCharSequence:@"("];
+  CucumberApiFormatterNiceAppendable *out = [((CucumberApiFormatterNiceAppendable *) nil_chk([((CucumberApiFormatterNiceAppendable *) nil_chk([((CucumberApiFormatterNiceAppendable *) nil_chk(self->jsOut_)) appendWithJavaLangCharSequence:JreStrcat("$C", CCBRHTMLFormatter_JS_FORMATTER_VAR, '.')])) appendWithJavaLangCharSequence:functionName])) appendWithJavaLangCharSequence:@"("];
   jboolean comma = false;
   {
     IOSObjectArray *a__ = args;
@@ -1108,14 +1108,14 @@ void CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(CCBRHTMLFor
     while (b__ < e__) {
       id arg = *b__++;
       if (comma) {
-        [((CCBNiceAppendable *) nil_chk(out)) appendWithJavaLangCharSequence:@", "];
+        [((CucumberApiFormatterNiceAppendable *) nil_chk(out)) appendWithJavaLangCharSequence:@", "];
       }
       NSString *stringArg = [((ComGoogleGsonGson *) nil_chk(CCBRHTMLFormatter_gson)) toJsonWithId:arg];
-      [((CCBNiceAppendable *) nil_chk(out)) appendWithJavaLangCharSequence:stringArg];
+      [((CucumberApiFormatterNiceAppendable *) nil_chk(out)) appendWithJavaLangCharSequence:stringArg];
       comma = true;
     }
   }
-  [((CCBNiceAppendable *) nil_chk([((CCBNiceAppendable *) nil_chk(out)) appendWithJavaLangCharSequence:@");"])) println];
+  [((CucumberApiFormatterNiceAppendable *) nil_chk([((CucumberApiFormatterNiceAppendable *) nil_chk(out)) appendWithJavaLangCharSequence:@");"])) println];
 }
 
 void CCBRHTMLFormatter_copyReportFiles(CCBRHTMLFormatter *self) {
@@ -1180,10 +1180,10 @@ void CCBRHTMLFormatter_writeBytesToURLWithByteArray_withJavaNetURL_(IOSByteArray
   }
 }
 
-CCBNiceAppendable *CCBRHTMLFormatter_createJsOutWithJavaNetURL_(JavaNetURL *htmlReportDir) {
+CucumberApiFormatterNiceAppendable *CCBRHTMLFormatter_createJsOutWithJavaNetURL_(JavaNetURL *htmlReportDir) {
   CCBRHTMLFormatter_initialize();
   @try {
-    return create_CCBNiceAppendable_initWithJavaLangAppendable_(create_JavaIoOutputStreamWriter_initWithJavaIoOutputStream_withNSString_(CCBRHTMLFormatter_createReportFileOutputStreamWithJavaNetURL_(create_JavaNetURL_initWithJavaNetURL_withNSString_(htmlReportDir, CCBRHTMLFormatter_JS_REPORT_FILENAME)), @"UTF-8"));
+    return create_CucumberApiFormatterNiceAppendable_initWithJavaLangAppendable_(create_JavaIoOutputStreamWriter_initWithJavaIoOutputStream_withNSString_(CCBRHTMLFormatter_createReportFileOutputStreamWithJavaNetURL_(create_JavaNetURL_initWithJavaNetURL_withNSString_(htmlReportDir, CCBRHTMLFormatter_JS_REPORT_FILENAME)), @"UTF-8"));
   }
   @catch (JavaIoIOException *e) {
     @throw create_CCBRCucumberException_initWithJavaLangThrowable_(e);
@@ -1263,8 +1263,8 @@ CCBRHTMLFormatter_1 *create_CCBRHTMLFormatter_1_init() {
   return self;
 }
 
-- (void)receiveWithCCBEvent:(CCBTestSourceRead *)event {
-  CCBRHTMLFormatter_handleTestSourceReadWithCCBTestSourceRead_(this$0_, event);
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestSourceRead *)event {
+  CCBRHTMLFormatter_handleTestSourceReadWithCucumberApiEventTestSourceRead_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -1281,12 +1281,12 @@ CCBRHTMLFormatter_1 *create_CCBRHTMLFormatter_1_init() {
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRHTMLFormatter:);
-  methods[1].selector = @selector(receiveWithCCBEvent:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCCBRHTMLFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCCBTestSourceRead;", "LCCBRHTMLFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;" };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestSourceRead;", "LCCBRHTMLFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;" };
   static const J2ObjcClassInfo _CCBRHTMLFormatter_2 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
   return &_CCBRHTMLFormatter_2;
 }
@@ -1313,8 +1313,8 @@ CCBRHTMLFormatter_2 *create_CCBRHTMLFormatter_2_initWithCCBRHTMLFormatter_(CCBRH
   return self;
 }
 
-- (void)receiveWithCCBEvent:(CCBTestCaseStarted *)event {
-  CCBRHTMLFormatter_handleTestCaseStartedWithCCBTestCaseStarted_(this$0_, event);
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestCaseStarted *)event {
+  CCBRHTMLFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarted_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -1331,12 +1331,12 @@ CCBRHTMLFormatter_2 *create_CCBRHTMLFormatter_2_initWithCCBRHTMLFormatter_(CCBRH
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRHTMLFormatter:);
-  methods[1].selector = @selector(receiveWithCCBEvent:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCCBRHTMLFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCCBTestCaseStarted;", "LCCBRHTMLFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;" };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestCaseStarted;", "LCCBRHTMLFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;" };
   static const J2ObjcClassInfo _CCBRHTMLFormatter_3 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
   return &_CCBRHTMLFormatter_3;
 }
@@ -1363,8 +1363,8 @@ CCBRHTMLFormatter_3 *create_CCBRHTMLFormatter_3_initWithCCBRHTMLFormatter_(CCBRH
   return self;
 }
 
-- (void)receiveWithCCBEvent:(CCBTestStepStarted *)event {
-  CCBRHTMLFormatter_handleTestStepStartedWithCCBTestStepStarted_(this$0_, event);
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepStarted *)event {
+  CCBRHTMLFormatter_handleTestStepStartedWithCucumberApiEventTestStepStarted_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -1381,12 +1381,12 @@ CCBRHTMLFormatter_3 *create_CCBRHTMLFormatter_3_initWithCCBRHTMLFormatter_(CCBRH
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRHTMLFormatter:);
-  methods[1].selector = @selector(receiveWithCCBEvent:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCCBRHTMLFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCCBTestStepStarted;", "LCCBRHTMLFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;" };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestStepStarted;", "LCCBRHTMLFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;" };
   static const J2ObjcClassInfo _CCBRHTMLFormatter_4 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
   return &_CCBRHTMLFormatter_4;
 }
@@ -1413,8 +1413,8 @@ CCBRHTMLFormatter_4 *create_CCBRHTMLFormatter_4_initWithCCBRHTMLFormatter_(CCBRH
   return self;
 }
 
-- (void)receiveWithCCBEvent:(CCBTestStepFinished *)event {
-  CCBRHTMLFormatter_handleTestStepFinishedWithCCBTestStepFinished_(this$0_, event);
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepFinished *)event {
+  CCBRHTMLFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -1431,12 +1431,12 @@ CCBRHTMLFormatter_4 *create_CCBRHTMLFormatter_4_initWithCCBRHTMLFormatter_(CCBRH
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRHTMLFormatter:);
-  methods[1].selector = @selector(receiveWithCCBEvent:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCCBRHTMLFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCCBTestStepFinished;", "LCCBRHTMLFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;" };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestStepFinished;", "LCCBRHTMLFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;" };
   static const J2ObjcClassInfo _CCBRHTMLFormatter_5 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
   return &_CCBRHTMLFormatter_5;
 }
@@ -1463,8 +1463,8 @@ CCBRHTMLFormatter_5 *create_CCBRHTMLFormatter_5_initWithCCBRHTMLFormatter_(CCBRH
   return self;
 }
 
-- (void)receiveWithCCBEvent:(CCBEmbedEvent *)event {
-  CCBRHTMLFormatter_handleEmbedWithCCBEmbedEvent_(this$0_, event);
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventEmbedEvent *)event {
+  CCBRHTMLFormatter_handleEmbedWithCucumberApiEventEmbedEvent_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -1481,12 +1481,12 @@ CCBRHTMLFormatter_5 *create_CCBRHTMLFormatter_5_initWithCCBRHTMLFormatter_(CCBRH
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRHTMLFormatter:);
-  methods[1].selector = @selector(receiveWithCCBEvent:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCCBRHTMLFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCCBEmbedEvent;", "LCCBRHTMLFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/EmbedEvent;>;" };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventEmbedEvent;", "LCCBRHTMLFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/EmbedEvent;>;" };
   static const J2ObjcClassInfo _CCBRHTMLFormatter_6 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
   return &_CCBRHTMLFormatter_6;
 }
@@ -1513,8 +1513,8 @@ CCBRHTMLFormatter_6 *create_CCBRHTMLFormatter_6_initWithCCBRHTMLFormatter_(CCBRH
   return self;
 }
 
-- (void)receiveWithCCBEvent:(CCBWriteEvent *)event {
-  CCBRHTMLFormatter_handleWriteWithCCBWriteEvent_(this$0_, event);
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventWriteEvent *)event {
+  CCBRHTMLFormatter_handleWriteWithCucumberApiEventWriteEvent_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -1531,12 +1531,12 @@ CCBRHTMLFormatter_6 *create_CCBRHTMLFormatter_6_initWithCCBRHTMLFormatter_(CCBRH
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRHTMLFormatter:);
-  methods[1].selector = @selector(receiveWithCCBEvent:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCCBRHTMLFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCCBWriteEvent;", "LCCBRHTMLFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;" };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventWriteEvent;", "LCCBRHTMLFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;" };
   static const J2ObjcClassInfo _CCBRHTMLFormatter_7 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
   return &_CCBRHTMLFormatter_7;
 }
@@ -1563,7 +1563,7 @@ CCBRHTMLFormatter_7 *create_CCBRHTMLFormatter_7_initWithCCBRHTMLFormatter_(CCBRH
   return self;
 }
 
-- (void)receiveWithCCBEvent:(CCBTestRunFinished *)event {
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event {
   CCBRHTMLFormatter_finishReport(this$0_);
 }
 
@@ -1581,12 +1581,12 @@ CCBRHTMLFormatter_7 *create_CCBRHTMLFormatter_7_initWithCCBRHTMLFormatter_(CCBRH
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRHTMLFormatter:);
-  methods[1].selector = @selector(receiveWithCCBEvent:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCCBRHTMLFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCCBTestRunFinished;", "LCCBRHTMLFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestRunFinished;", "LCCBRHTMLFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
   static const J2ObjcClassInfo _CCBRHTMLFormatter_8 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
   return &_CCBRHTMLFormatter_8;
 }

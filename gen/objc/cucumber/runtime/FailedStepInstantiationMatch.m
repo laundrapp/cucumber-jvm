@@ -34,13 +34,13 @@ J2OBJC_FIELD_SETTER(CCBRFailedStepInstantiationMatch, throwable_, JavaLangThrowa
 }
 
 - (void)runStepWithNSString:(NSString *)language
-            withCCBScenario:(id<CCBScenario>)scenario {
+    withCucumberApiScenario:(id<CucumberApiScenario>)scenario {
   @throw nil_chk(throwable_);
 }
 
 - (void)dryRunStepWithNSString:(NSString *)language
-               withCCBScenario:(id<CCBScenario>)scenario {
-  [self runStepWithNSString:language withCCBScenario:scenario];
+       withCucumberApiScenario:(id<CucumberApiScenario>)scenario {
+  [self runStepWithNSString:language withCucumberApiScenario:scenario];
 }
 
 - (CCBRMatch *)getMatch {
@@ -63,14 +63,14 @@ J2OBJC_FIELD_SETTER(CCBRFailedStepInstantiationMatch, throwable_, JavaLangThrowa
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithNSString:withGherkinPicklesPickleStep:withJavaLangThrowable:);
-  methods[1].selector = @selector(runStepWithNSString:withCCBScenario:);
-  methods[2].selector = @selector(dryRunStepWithNSString:withCCBScenario:);
+  methods[1].selector = @selector(runStepWithNSString:withCucumberApiScenario:);
+  methods[2].selector = @selector(dryRunStepWithNSString:withCucumberApiScenario:);
   methods[3].selector = @selector(getMatch);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "throwable_", "LJavaLangThrowable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LNSString;LGherkinPicklesPickleStep;LJavaLangThrowable;", "runStep", "LNSString;LCCBScenario;", "LJavaLangThrowable;", "dryRunStep" };
+  static const void *ptrTable[] = { "LNSString;LGherkinPicklesPickleStep;LJavaLangThrowable;", "runStep", "LNSString;LCucumberApiScenario;", "LJavaLangThrowable;", "dryRunStep" };
   static const J2ObjcClassInfo _CCBRFailedStepInstantiationMatch = { "FailedStepInstantiationMatch", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 4, 1, -1, -1, -1, -1, -1 };
   return &_CCBRFailedStepInstantiationMatch;
 }

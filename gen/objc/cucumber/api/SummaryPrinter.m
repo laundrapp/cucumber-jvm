@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/api/SummaryPrinter.h"
 
-@interface CCBSummaryPrinter : NSObject
+@interface CucumberApiSummaryPrinter : NSObject
 
 @end
 
-@implementation CCBSummaryPrinter
+@implementation CucumberApiSummaryPrinter
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -22,10 +22,10 @@
   methods[0].selector = @selector(printWithCCBRRuntime:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "print", "LCCBRRuntime;" };
-  static const J2ObjcClassInfo _CCBSummaryPrinter = { "SummaryPrinter", "cucumber.api", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
-  return &_CCBSummaryPrinter;
+  static const J2ObjcClassInfo _CucumberApiSummaryPrinter = { "SummaryPrinter", "cucumber.api", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
+  return &_CucumberApiSummaryPrinter;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBSummaryPrinter)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiSummaryPrinter)

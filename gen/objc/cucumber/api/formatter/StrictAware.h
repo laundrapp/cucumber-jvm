@@ -18,17 +18,17 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBStrictAware_) && (INCLUDE_ALL_CucumberApiFormatterStrictAware || defined(INCLUDE_CCBStrictAware))
-#define CCBStrictAware_
+#if !defined (CucumberApiFormatterStrictAware_) && (INCLUDE_ALL_CucumberApiFormatterStrictAware || defined(INCLUDE_CucumberApiFormatterStrictAware))
+#define CucumberApiFormatterStrictAware_
 
 #define RESTRICT_CucumberApiFormatterFormatter 1
-#define INCLUDE_CCBFormatter 1
+#define INCLUDE_CucumberApiFormatterFormatter 1
 #include "cucumber/api/formatter/Formatter.h"
 
 /*!
  @brief Interface for Formatters that need to know if the Runtime is strict.
  */
-@protocol CCBStrictAware < CCBFormatter, JavaObject >
+@protocol CucumberApiFormatterStrictAware < CucumberApiFormatterFormatter, JavaObject >
 
 /*!
  @brief When set to strict the formatter should indicate failure for undefined and pending steps
@@ -38,11 +38,9 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBStrictAware)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiFormatterStrictAware)
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBStrictAware)
-
-#define CucumberApiFormatterStrictAware CCBStrictAware
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiFormatterStrictAware)
 
 #endif
 

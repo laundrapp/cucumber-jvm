@@ -22,7 +22,7 @@
 #define CCBRTestSourcesModel_
 
 @class CCBRTestSourcesModel_AstNode;
-@class CCBTestSourceRead;
+@class CucumberApiEventTestSourceRead;
 @class GherkinAstBackground;
 @class GherkinAstFeature;
 @class GherkinAstScenarioDefinition;
@@ -34,7 +34,7 @@
 - (instancetype __nonnull)init;
 
 - (void)addTestSourceReadEventWithNSString:(NSString *)path
-                     withCCBTestSourceRead:(CCBTestSourceRead *)event;
+        withCucumberApiEventTestSourceRead:(CucumberApiEventTestSourceRead *)event;
 
 + (NSString *)calculateIdWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode;
 

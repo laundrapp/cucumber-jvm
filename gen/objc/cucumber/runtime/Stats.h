@@ -22,17 +22,17 @@
 #define CCBRStats_
 
 #define RESTRICT_CucumberApiEventEventListener 1
-#define INCLUDE_CCBEventListener 1
+#define INCLUDE_CucumberApiEventEventListener 1
 #include "cucumber/api/event/EventListener.h"
 
-@class CCBResult_Type;
+@class CucumberApiResult_Type;
 @class JavaIoPrintStream;
 @class JavaLangLong;
 @class JavaUtilLocale;
-@protocol CCBEventPublisher;
+@protocol CucumberApiEventEventPublisher;
 @protocol JavaUtilList;
 
-@interface CCBRStats : NSObject < CCBEventListener >
+@interface CCBRStats : NSObject < CucumberApiEventEventListener >
 
 #pragma mark Public
 
@@ -48,14 +48,14 @@
 - (void)printStatsWithJavaIoPrintStream:(JavaIoPrintStream *)outArg
                             withBoolean:(jboolean)isStrict;
 
-- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher;
+- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
 
 #pragma mark Package-Private
 
-- (void)addScenarioWithCCBResult_Type:(CCBResult_Type *)resultStatus
-                         withNSString:(NSString *)scenarioDesignation;
+- (void)addScenarioWithCucumberApiResult_Type:(CucumberApiResult_Type *)resultStatus
+                                 withNSString:(NSString *)scenarioDesignation;
 
-- (void)addStepWithCCBResult_Type:(CCBResult_Type *)resultStatus;
+- (void)addStepWithCucumberApiResult_Type:(CucumberApiResult_Type *)resultStatus;
 
 - (void)setFinishTimeWithJavaLangLong:(JavaLangLong *)finishTime;
 

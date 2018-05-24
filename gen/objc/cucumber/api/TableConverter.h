@@ -18,45 +18,43 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBTableConverter_) && (INCLUDE_ALL_CucumberApiTableConverter || defined(INCLUDE_CCBTableConverter))
-#define CCBTableConverter_
+#if !defined (CucumberApiTableConverter_) && (INCLUDE_ALL_CucumberApiTableConverter || defined(INCLUDE_CucumberApiTableConverter))
+#define CucumberApiTableConverter_
 
-@class CCBDataTable;
+@class CucumberApiDataTable;
 @class IOSObjectArray;
 @protocol JavaLangReflectType;
 @protocol JavaUtilList;
 @protocol JavaUtilMap;
 
-@protocol CCBTableConverter < JavaObject >
+@protocol CucumberApiTableConverter < JavaObject >
 
-- (id)convertWithCCBDataTable:(CCBDataTable *)dataTable
-      withJavaLangReflectType:(id<JavaLangReflectType>)type
-                  withBoolean:(jboolean)transposed;
+- (id)convertWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
+              withJavaLangReflectType:(id<JavaLangReflectType>)type
+                          withBoolean:(jboolean)transposed;
 
-- (id<JavaUtilList>)toListWithCCBDataTable:(CCBDataTable *)dataTable
-                   withJavaLangReflectType:(id<JavaLangReflectType>)itemType;
+- (id<JavaUtilList>)toListWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
+                           withJavaLangReflectType:(id<JavaLangReflectType>)itemType;
 
-- (id<JavaUtilList>)toListsWithCCBDataTable:(CCBDataTable *)dataTable
-                    withJavaLangReflectType:(id<JavaLangReflectType>)itemType;
+- (id<JavaUtilList>)toListsWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
+                            withJavaLangReflectType:(id<JavaLangReflectType>)itemType;
 
-- (id<JavaUtilMap>)toMapWithCCBDataTable:(CCBDataTable *)dataTable
-                 withJavaLangReflectType:(id<JavaLangReflectType>)keyType
-                 withJavaLangReflectType:(id<JavaLangReflectType>)valueType;
+- (id<JavaUtilMap>)toMapWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
+                         withJavaLangReflectType:(id<JavaLangReflectType>)keyType
+                         withJavaLangReflectType:(id<JavaLangReflectType>)valueType;
 
-- (id<JavaUtilList>)toMapsWithCCBDataTable:(CCBDataTable *)dataTable
-                   withJavaLangReflectType:(id<JavaLangReflectType>)keyType
-                   withJavaLangReflectType:(id<JavaLangReflectType>)valueType;
+- (id<JavaUtilList>)toMapsWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
+                           withJavaLangReflectType:(id<JavaLangReflectType>)keyType
+                           withJavaLangReflectType:(id<JavaLangReflectType>)valueType;
 
-- (CCBDataTable *)toTableWithJavaUtilList:(id<JavaUtilList>)objects
-                        withNSStringArray:(IOSObjectArray *)columnNames;
+- (CucumberApiDataTable *)toTableWithJavaUtilList:(id<JavaUtilList>)objects
+                                withNSStringArray:(IOSObjectArray *)columnNames;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBTableConverter)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiTableConverter)
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBTableConverter)
-
-#define CucumberApiTableConverter CCBTableConverter
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiTableConverter)
 
 #endif
 

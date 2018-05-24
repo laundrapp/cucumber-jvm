@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/api/event/EventPublisher.h"
 
-@interface CCBEventPublisher : NSObject
+@interface CucumberApiEventEventPublisher : NSObject
 
 @end
 
-@implementation CCBEventPublisher
+@implementation CucumberApiEventEventPublisher
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -19,13 +19,13 @@
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(registerHandlerForWithIOSClass:withCCBEventHandler:);
+  methods[0].selector = @selector(registerHandlerForWithIOSClass:withCucumberApiEventEventHandler:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "registerHandlerFor", "LIOSClass;LCCBEventHandler;", "<T::Lcucumber/api/event/Event;>(Ljava/lang/Class<TT;>;Lcucumber/api/event/EventHandler<TT;>;)V" };
-  static const J2ObjcClassInfo _CCBEventPublisher = { "EventPublisher", "cucumber.api.event", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
-  return &_CCBEventPublisher;
+  static const void *ptrTable[] = { "registerHandlerFor", "LIOSClass;LCucumberApiEventEventHandler;", "<T::Lcucumber/api/event/Event;>(Ljava/lang/Class<TT;>;Lcucumber/api/event/EventHandler<TT;>;)V" };
+  static const J2ObjcClassInfo _CucumberApiEventEventPublisher = { "EventPublisher", "cucumber.api.event", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
+  return &_CucumberApiEventEventPublisher;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBEventPublisher)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiEventEventPublisher)

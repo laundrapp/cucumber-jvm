@@ -22,15 +22,15 @@
 #define CCBPickleTestStep_
 
 #define RESTRICT_CucumberApiTestStep 1
-#define INCLUDE_CCBTestStep 1
+#define INCLUDE_CucumberApiTestStep 1
 #include "cucumber/api/TestStep.h"
 
-@class CCBHookType;
+@class CucumberApiHookType;
 @class GherkinPicklesPickleStep;
 @protocol CCBRDefinitionMatch;
 @protocol JavaUtilList;
 
-@interface CCBPickleTestStep : CCBTestStep
+@interface CCBPickleTestStep : CucumberApiTestStep
 
 #pragma mark Public
 
@@ -38,7 +38,7 @@
               withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
                    withCCBRDefinitionMatch:(id<CCBRDefinitionMatch>)definitionMatch;
 
-- (CCBHookType *)getHookType;
+- (CucumberApiHookType *)getHookType;
 
 - (GherkinPicklesPickleStep *)getPickleStep;
 

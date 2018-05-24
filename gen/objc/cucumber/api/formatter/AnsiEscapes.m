@@ -8,71 +8,71 @@
 #include "cucumber/api/formatter/NiceAppendable.h"
 #include "java/lang/StringBuilder.h"
 
-@interface CCBAnsiEscapes () {
+@interface CucumberApiFormatterAnsiEscapes () {
  @public
   NSString *value_;
 }
 
-+ (CCBAnsiEscapes *)colorWithInt:(jint)code;
++ (CucumberApiFormatterAnsiEscapes *)colorWithInt:(jint)code;
 
 - (instancetype __nonnull)initWithNSString:(NSString *)value;
 
 @end
 
-J2OBJC_FIELD_SETTER(CCBAnsiEscapes, value_, NSString *)
+J2OBJC_FIELD_SETTER(CucumberApiFormatterAnsiEscapes, value_, NSString *)
 
-inline jchar CCBAnsiEscapes_get_ESC(void);
-#define CCBAnsiEscapes_ESC 0x001b
-J2OBJC_STATIC_FIELD_CONSTANT(CCBAnsiEscapes, ESC, jchar)
+inline jchar CucumberApiFormatterAnsiEscapes_get_ESC(void);
+#define CucumberApiFormatterAnsiEscapes_ESC 0x001b
+J2OBJC_STATIC_FIELD_CONSTANT(CucumberApiFormatterAnsiEscapes, ESC, jchar)
 
-inline jchar CCBAnsiEscapes_get_BRACKET(void);
-#define CCBAnsiEscapes_BRACKET '['
-J2OBJC_STATIC_FIELD_CONSTANT(CCBAnsiEscapes, BRACKET, jchar)
+inline jchar CucumberApiFormatterAnsiEscapes_get_BRACKET(void);
+#define CucumberApiFormatterAnsiEscapes_BRACKET '['
+J2OBJC_STATIC_FIELD_CONSTANT(CucumberApiFormatterAnsiEscapes, BRACKET, jchar)
 
-__attribute__((unused)) static CCBAnsiEscapes *CCBAnsiEscapes_colorWithInt_(jint code);
+__attribute__((unused)) static CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_colorWithInt_(jint code);
 
-__attribute__((unused)) static void CCBAnsiEscapes_initWithNSString_(CCBAnsiEscapes *self, NSString *value);
+__attribute__((unused)) static void CucumberApiFormatterAnsiEscapes_initWithNSString_(CucumberApiFormatterAnsiEscapes *self, NSString *value);
 
-__attribute__((unused)) static CCBAnsiEscapes *new_CCBAnsiEscapes_initWithNSString_(NSString *value) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CucumberApiFormatterAnsiEscapes *new_CucumberApiFormatterAnsiEscapes_initWithNSString_(NSString *value) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CCBAnsiEscapes *create_CCBAnsiEscapes_initWithNSString_(NSString *value);
+__attribute__((unused)) static CucumberApiFormatterAnsiEscapes *create_CucumberApiFormatterAnsiEscapes_initWithNSString_(NSString *value);
 
-J2OBJC_INITIALIZED_DEFN(CCBAnsiEscapes)
+J2OBJC_INITIALIZED_DEFN(CucumberApiFormatterAnsiEscapes)
 
-CCBAnsiEscapes *CCBAnsiEscapes_RESET;
-CCBAnsiEscapes *CCBAnsiEscapes_BLACK;
-CCBAnsiEscapes *CCBAnsiEscapes_RED;
-CCBAnsiEscapes *CCBAnsiEscapes_GREEN;
-CCBAnsiEscapes *CCBAnsiEscapes_YELLOW;
-CCBAnsiEscapes *CCBAnsiEscapes_BLUE;
-CCBAnsiEscapes *CCBAnsiEscapes_MAGENTA;
-CCBAnsiEscapes *CCBAnsiEscapes_CYAN;
-CCBAnsiEscapes *CCBAnsiEscapes_WHITE;
-CCBAnsiEscapes *CCBAnsiEscapes_DEFAULT;
-CCBAnsiEscapes *CCBAnsiEscapes_GREY;
-CCBAnsiEscapes *CCBAnsiEscapes_INTENSITY_BOLD;
+CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_RESET;
+CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_BLACK;
+CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_RED;
+CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_GREEN;
+CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_YELLOW;
+CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_BLUE;
+CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_MAGENTA;
+CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_CYAN;
+CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_WHITE;
+CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_DEFAULT;
+CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_GREY;
+CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_INTENSITY_BOLD;
 
-@implementation CCBAnsiEscapes
+@implementation CucumberApiFormatterAnsiEscapes
 
-+ (CCBAnsiEscapes *)colorWithInt:(jint)code {
-  return CCBAnsiEscapes_colorWithInt_(code);
++ (CucumberApiFormatterAnsiEscapes *)colorWithInt:(jint)code {
+  return CucumberApiFormatterAnsiEscapes_colorWithInt_(code);
 }
 
-+ (CCBAnsiEscapes *)upWithInt:(jint)count {
-  return CCBAnsiEscapes_upWithInt_(count);
++ (CucumberApiFormatterAnsiEscapes *)upWithInt:(jint)count {
+  return CucumberApiFormatterAnsiEscapes_upWithInt_(count);
 }
 
 - (instancetype __nonnull)initWithNSString:(NSString *)value {
-  CCBAnsiEscapes_initWithNSString_(self, value);
+  CucumberApiFormatterAnsiEscapes_initWithNSString_(self, value);
   return self;
 }
 
-- (void)appendToWithCCBNiceAppendable:(CCBNiceAppendable *)a {
-  [((CCBNiceAppendable *) nil_chk([((CCBNiceAppendable *) nil_chk([((CCBNiceAppendable *) nil_chk(a)) appendWithChar:CCBAnsiEscapes_ESC])) appendWithChar:CCBAnsiEscapes_BRACKET])) appendWithJavaLangCharSequence:value_];
+- (void)appendToWithCucumberApiFormatterNiceAppendable:(CucumberApiFormatterNiceAppendable *)a {
+  [((CucumberApiFormatterNiceAppendable *) nil_chk([((CucumberApiFormatterNiceAppendable *) nil_chk([((CucumberApiFormatterNiceAppendable *) nil_chk(a)) appendWithChar:CucumberApiFormatterAnsiEscapes_ESC])) appendWithChar:CucumberApiFormatterAnsiEscapes_BRACKET])) appendWithJavaLangCharSequence:value_];
 }
 
 - (void)appendToWithJavaLangStringBuilder:(JavaLangStringBuilder *)a {
-  [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk(a)) appendWithChar:CCBAnsiEscapes_ESC])) appendWithChar:CCBAnsiEscapes_BRACKET])) appendWithNSString:value_];
+  [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk(a)) appendWithChar:CucumberApiFormatterAnsiEscapes_ESC])) appendWithChar:CucumberApiFormatterAnsiEscapes_BRACKET])) appendWithNSString:value_];
 }
 
 - (NSString *)description {
@@ -88,8 +88,8 @@ CCBAnsiEscapes *CCBAnsiEscapes_INTENSITY_BOLD;
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, "LCCBAnsiEscapes;", 0xa, 0, 1, -1, -1, -1, -1 },
-    { NULL, "LCCBAnsiEscapes;", 0x9, 2, 1, -1, -1, -1, -1 },
+    { NULL, "LCucumberApiFormatterAnsiEscapes;", 0xa, 0, 1, -1, -1, -1, -1 },
+    { NULL, "LCucumberApiFormatterAnsiEscapes;", 0x9, 2, 1, -1, -1, -1, -1 },
     { NULL, NULL, 0x2, -1, 3, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 4, 5, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 4, 6, -1, -1, -1, -1 },
@@ -101,73 +101,73 @@ CCBAnsiEscapes *CCBAnsiEscapes_INTENSITY_BOLD;
   methods[0].selector = @selector(colorWithInt:);
   methods[1].selector = @selector(upWithInt:);
   methods[2].selector = @selector(initWithNSString:);
-  methods[3].selector = @selector(appendToWithCCBNiceAppendable:);
+  methods[3].selector = @selector(appendToWithCucumberApiFormatterNiceAppendable:);
   methods[4].selector = @selector(appendToWithJavaLangStringBuilder:);
   methods[5].selector = @selector(description);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "ESC", "C", .constantValue.asUnichar = CCBAnsiEscapes_ESC, 0x1a, -1, -1, -1, -1 },
-    { "BRACKET", "C", .constantValue.asUnichar = CCBAnsiEscapes_BRACKET, 0x1a, -1, -1, -1, -1 },
-    { "RESET", "LCCBAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 8, -1, -1 },
-    { "BLACK", "LCCBAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 9, -1, -1 },
-    { "RED", "LCCBAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 10, -1, -1 },
-    { "GREEN", "LCCBAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 11, -1, -1 },
-    { "YELLOW", "LCCBAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 12, -1, -1 },
-    { "BLUE", "LCCBAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 13, -1, -1 },
-    { "MAGENTA", "LCCBAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 14, -1, -1 },
-    { "CYAN", "LCCBAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 15, -1, -1 },
-    { "WHITE", "LCCBAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 16, -1, -1 },
-    { "DEFAULT", "LCCBAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 17, -1, -1 },
-    { "GREY", "LCCBAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 18, -1, -1 },
-    { "INTENSITY_BOLD", "LCCBAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 19, -1, -1 },
+    { "ESC", "C", .constantValue.asUnichar = CucumberApiFormatterAnsiEscapes_ESC, 0x1a, -1, -1, -1, -1 },
+    { "BRACKET", "C", .constantValue.asUnichar = CucumberApiFormatterAnsiEscapes_BRACKET, 0x1a, -1, -1, -1, -1 },
+    { "RESET", "LCucumberApiFormatterAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 8, -1, -1 },
+    { "BLACK", "LCucumberApiFormatterAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 9, -1, -1 },
+    { "RED", "LCucumberApiFormatterAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 10, -1, -1 },
+    { "GREEN", "LCucumberApiFormatterAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 11, -1, -1 },
+    { "YELLOW", "LCucumberApiFormatterAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 12, -1, -1 },
+    { "BLUE", "LCucumberApiFormatterAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 13, -1, -1 },
+    { "MAGENTA", "LCucumberApiFormatterAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 14, -1, -1 },
+    { "CYAN", "LCucumberApiFormatterAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 15, -1, -1 },
+    { "WHITE", "LCucumberApiFormatterAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 16, -1, -1 },
+    { "DEFAULT", "LCucumberApiFormatterAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 17, -1, -1 },
+    { "GREY", "LCucumberApiFormatterAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 18, -1, -1 },
+    { "INTENSITY_BOLD", "LCucumberApiFormatterAnsiEscapes;", .constantValue.asLong = 0, 0x9, -1, 19, -1, -1 },
     { "value_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "color", "I", "up", "LNSString;", "appendTo", "LCCBNiceAppendable;", "LJavaLangStringBuilder;", "toString", &CCBAnsiEscapes_RESET, &CCBAnsiEscapes_BLACK, &CCBAnsiEscapes_RED, &CCBAnsiEscapes_GREEN, &CCBAnsiEscapes_YELLOW, &CCBAnsiEscapes_BLUE, &CCBAnsiEscapes_MAGENTA, &CCBAnsiEscapes_CYAN, &CCBAnsiEscapes_WHITE, &CCBAnsiEscapes_DEFAULT, &CCBAnsiEscapes_GREY, &CCBAnsiEscapes_INTENSITY_BOLD };
-  static const J2ObjcClassInfo _CCBAnsiEscapes = { "AnsiEscapes", "cucumber.api.formatter", ptrTable, methods, fields, 7, 0x1, 6, 15, -1, -1, -1, -1, -1 };
-  return &_CCBAnsiEscapes;
+  static const void *ptrTable[] = { "color", "I", "up", "LNSString;", "appendTo", "LCucumberApiFormatterNiceAppendable;", "LJavaLangStringBuilder;", "toString", &CucumberApiFormatterAnsiEscapes_RESET, &CucumberApiFormatterAnsiEscapes_BLACK, &CucumberApiFormatterAnsiEscapes_RED, &CucumberApiFormatterAnsiEscapes_GREEN, &CucumberApiFormatterAnsiEscapes_YELLOW, &CucumberApiFormatterAnsiEscapes_BLUE, &CucumberApiFormatterAnsiEscapes_MAGENTA, &CucumberApiFormatterAnsiEscapes_CYAN, &CucumberApiFormatterAnsiEscapes_WHITE, &CucumberApiFormatterAnsiEscapes_DEFAULT, &CucumberApiFormatterAnsiEscapes_GREY, &CucumberApiFormatterAnsiEscapes_INTENSITY_BOLD };
+  static const J2ObjcClassInfo _CucumberApiFormatterAnsiEscapes = { "AnsiEscapes", "cucumber.api.formatter", ptrTable, methods, fields, 7, 0x1, 6, 15, -1, -1, -1, -1, -1 };
+  return &_CucumberApiFormatterAnsiEscapes;
 }
 
 + (void)initialize {
-  if (self == [CCBAnsiEscapes class]) {
-    JreStrongAssign(&CCBAnsiEscapes_RESET, CCBAnsiEscapes_colorWithInt_(0));
-    JreStrongAssign(&CCBAnsiEscapes_BLACK, CCBAnsiEscapes_colorWithInt_(30));
-    JreStrongAssign(&CCBAnsiEscapes_RED, CCBAnsiEscapes_colorWithInt_(31));
-    JreStrongAssign(&CCBAnsiEscapes_GREEN, CCBAnsiEscapes_colorWithInt_(32));
-    JreStrongAssign(&CCBAnsiEscapes_YELLOW, CCBAnsiEscapes_colorWithInt_(33));
-    JreStrongAssign(&CCBAnsiEscapes_BLUE, CCBAnsiEscapes_colorWithInt_(34));
-    JreStrongAssign(&CCBAnsiEscapes_MAGENTA, CCBAnsiEscapes_colorWithInt_(35));
-    JreStrongAssign(&CCBAnsiEscapes_CYAN, CCBAnsiEscapes_colorWithInt_(36));
-    JreStrongAssign(&CCBAnsiEscapes_WHITE, CCBAnsiEscapes_colorWithInt_(37));
-    JreStrongAssign(&CCBAnsiEscapes_DEFAULT, CCBAnsiEscapes_colorWithInt_(9));
-    JreStrongAssign(&CCBAnsiEscapes_GREY, CCBAnsiEscapes_colorWithInt_(90));
-    JreStrongAssign(&CCBAnsiEscapes_INTENSITY_BOLD, CCBAnsiEscapes_colorWithInt_(1));
-    J2OBJC_SET_INITIALIZED(CCBAnsiEscapes)
+  if (self == [CucumberApiFormatterAnsiEscapes class]) {
+    JreStrongAssign(&CucumberApiFormatterAnsiEscapes_RESET, CucumberApiFormatterAnsiEscapes_colorWithInt_(0));
+    JreStrongAssign(&CucumberApiFormatterAnsiEscapes_BLACK, CucumberApiFormatterAnsiEscapes_colorWithInt_(30));
+    JreStrongAssign(&CucumberApiFormatterAnsiEscapes_RED, CucumberApiFormatterAnsiEscapes_colorWithInt_(31));
+    JreStrongAssign(&CucumberApiFormatterAnsiEscapes_GREEN, CucumberApiFormatterAnsiEscapes_colorWithInt_(32));
+    JreStrongAssign(&CucumberApiFormatterAnsiEscapes_YELLOW, CucumberApiFormatterAnsiEscapes_colorWithInt_(33));
+    JreStrongAssign(&CucumberApiFormatterAnsiEscapes_BLUE, CucumberApiFormatterAnsiEscapes_colorWithInt_(34));
+    JreStrongAssign(&CucumberApiFormatterAnsiEscapes_MAGENTA, CucumberApiFormatterAnsiEscapes_colorWithInt_(35));
+    JreStrongAssign(&CucumberApiFormatterAnsiEscapes_CYAN, CucumberApiFormatterAnsiEscapes_colorWithInt_(36));
+    JreStrongAssign(&CucumberApiFormatterAnsiEscapes_WHITE, CucumberApiFormatterAnsiEscapes_colorWithInt_(37));
+    JreStrongAssign(&CucumberApiFormatterAnsiEscapes_DEFAULT, CucumberApiFormatterAnsiEscapes_colorWithInt_(9));
+    JreStrongAssign(&CucumberApiFormatterAnsiEscapes_GREY, CucumberApiFormatterAnsiEscapes_colorWithInt_(90));
+    JreStrongAssign(&CucumberApiFormatterAnsiEscapes_INTENSITY_BOLD, CucumberApiFormatterAnsiEscapes_colorWithInt_(1));
+    J2OBJC_SET_INITIALIZED(CucumberApiFormatterAnsiEscapes)
   }
 }
 
 @end
 
-CCBAnsiEscapes *CCBAnsiEscapes_colorWithInt_(jint code) {
-  CCBAnsiEscapes_initialize();
-  return create_CCBAnsiEscapes_initWithNSString_(JreStrcat("$C", NSString_java_valueOfInt_(code), 'm'));
+CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_colorWithInt_(jint code) {
+  CucumberApiFormatterAnsiEscapes_initialize();
+  return create_CucumberApiFormatterAnsiEscapes_initWithNSString_(JreStrcat("$C", NSString_java_valueOfInt_(code), 'm'));
 }
 
-CCBAnsiEscapes *CCBAnsiEscapes_upWithInt_(jint count) {
-  CCBAnsiEscapes_initialize();
-  return create_CCBAnsiEscapes_initWithNSString_(JreStrcat("$C", NSString_java_valueOfInt_(count), 'A'));
+CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_upWithInt_(jint count) {
+  CucumberApiFormatterAnsiEscapes_initialize();
+  return create_CucumberApiFormatterAnsiEscapes_initWithNSString_(JreStrcat("$C", NSString_java_valueOfInt_(count), 'A'));
 }
 
-void CCBAnsiEscapes_initWithNSString_(CCBAnsiEscapes *self, NSString *value) {
+void CucumberApiFormatterAnsiEscapes_initWithNSString_(CucumberApiFormatterAnsiEscapes *self, NSString *value) {
   NSObject_init(self);
   JreStrongAssign(&self->value_, value);
 }
 
-CCBAnsiEscapes *new_CCBAnsiEscapes_initWithNSString_(NSString *value) {
-  J2OBJC_NEW_IMPL(CCBAnsiEscapes, initWithNSString_, value)
+CucumberApiFormatterAnsiEscapes *new_CucumberApiFormatterAnsiEscapes_initWithNSString_(NSString *value) {
+  J2OBJC_NEW_IMPL(CucumberApiFormatterAnsiEscapes, initWithNSString_, value)
 }
 
-CCBAnsiEscapes *create_CCBAnsiEscapes_initWithNSString_(NSString *value) {
-  J2OBJC_CREATE_IMPL(CCBAnsiEscapes, initWithNSString_, value)
+CucumberApiFormatterAnsiEscapes *create_CucumberApiFormatterAnsiEscapes_initWithNSString_(NSString *value) {
+  J2OBJC_CREATE_IMPL(CucumberApiFormatterAnsiEscapes, initWithNSString_, value)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBAnsiEscapes)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiFormatterAnsiEscapes)

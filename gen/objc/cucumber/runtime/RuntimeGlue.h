@@ -31,7 +31,7 @@
 @class GherkinPicklesPickleStep;
 @protocol CCBRHookDefinition;
 @protocol CCBRStepDefinition;
-@protocol CCBStepDefinitionReporter;
+@protocol CucumberApiStepDefinitionReporter;
 @protocol JavaUtilList;
 @protocol JavaUtilMap;
 
@@ -62,7 +62,7 @@
 
 - (void)removeScenarioScopedGlue;
 
-- (void)reportStepDefinitionsWithCCBStepDefinitionReporter:(id<CCBStepDefinitionReporter>)stepDefinitionReporter;
+- (void)reportStepDefinitionsWithCucumberApiStepDefinitionReporter:(id<CucumberApiStepDefinitionReporter>)stepDefinitionReporter;
 
 - (CCBRStepDefinitionMatch *)stepDefinitionMatchWithNSString:(NSString *)featurePath
                                 withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step;

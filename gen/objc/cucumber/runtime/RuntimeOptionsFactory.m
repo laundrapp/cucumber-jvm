@@ -31,43 +31,43 @@
 
 - (id<JavaUtilList>)buildArgsFromOptions;
 
-- (void)addNameWithCCBCucumberOptions:(id<CCBCucumberOptions>)options
-                     withJavaUtilList:(id<JavaUtilList>)args;
+- (void)addNameWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
+                             withJavaUtilList:(id<JavaUtilList>)args;
 
-- (void)addSnippetsWithCCBCucumberOptions:(id<CCBCucumberOptions>)options
-                         withJavaUtilList:(id<JavaUtilList>)args;
+- (void)addSnippetsWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
+                                 withJavaUtilList:(id<JavaUtilList>)args;
 
-- (void)addDryRunWithCCBCucumberOptions:(id<CCBCucumberOptions>)options
-                       withJavaUtilList:(id<JavaUtilList>)args;
+- (void)addDryRunWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
+                               withJavaUtilList:(id<JavaUtilList>)args;
 
-- (void)addMonochromeWithCCBCucumberOptions:(id<CCBCucumberOptions>)options
-                           withJavaUtilList:(id<JavaUtilList>)args;
+- (void)addMonochromeWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
+                                   withJavaUtilList:(id<JavaUtilList>)args;
 
-- (void)addTagsWithCCBCucumberOptions:(id<CCBCucumberOptions>)options
-                     withJavaUtilList:(id<JavaUtilList>)args;
+- (void)addTagsWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
+                             withJavaUtilList:(id<JavaUtilList>)args;
 
-- (void)addPluginsWithCCBCucumberOptions:(id<CCBCucumberOptions>)options
-                        withJavaUtilList:(id<JavaUtilList>)args;
+- (void)addPluginsWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
+                                withJavaUtilList:(id<JavaUtilList>)args;
 
 - (void)addNullFormatIfNoPluginIsSpecifiedWithJavaUtilList:(id<JavaUtilList>)args;
 
-- (void)addFeaturesWithCCBCucumberOptions:(id<CCBCucumberOptions>)options
-                         withJavaUtilList:(id<JavaUtilList>)args;
+- (void)addFeaturesWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
+                                 withJavaUtilList:(id<JavaUtilList>)args;
 
 - (void)addDefaultFeaturePathIfNoFeaturePathIsSpecifiedWithJavaUtilList:(id<JavaUtilList>)args
                                                            withIOSClass:(IOSClass *)clazz;
 
-- (void)addGlueWithCCBCucumberOptions:(id<CCBCucumberOptions>)options
-                     withJavaUtilList:(id<JavaUtilList>)args;
+- (void)addGlueWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
+                             withJavaUtilList:(id<JavaUtilList>)args;
 
 - (void)addDefaultGlueIfNoGlueIsSpecifiedWithJavaUtilList:(id<JavaUtilList>)args
                                              withIOSClass:(IOSClass *)clazz;
 
-- (void)addStrictWithCCBCucumberOptions:(id<CCBCucumberOptions>)options
-                       withJavaUtilList:(id<JavaUtilList>)args;
+- (void)addStrictWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
+                               withJavaUtilList:(id<JavaUtilList>)args;
 
-- (void)addJunitOptionsWithCCBCucumberOptions:(id<CCBCucumberOptions>)options
-                             withJavaUtilList:(id<JavaUtilList>)args;
+- (void)addJunitOptionsWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
+                                     withJavaUtilList:(id<JavaUtilList>)args;
 
 - (id<JavaUtilList>)buildConverters;
 
@@ -75,7 +75,7 @@
 
 - (jboolean)hasSuperClassWithIOSClass:(IOSClass *)classWithOptions;
 
-- (id<CCBCucumberOptions>)getOptionsWithIOSClass:(IOSClass *)clazz;
+- (id<CucumberApiCucumberOptions>)getOptionsWithIOSClass:(IOSClass *)clazz;
 
 @end
 
@@ -83,31 +83,31 @@ J2OBJC_FIELD_SETTER(CCBRRuntimeOptionsFactory, clazz_, IOSClass *)
 
 __attribute__((unused)) static id<JavaUtilList> CCBRRuntimeOptionsFactory_buildArgsFromOptions(CCBRRuntimeOptionsFactory *self);
 
-__attribute__((unused)) static void CCBRRuntimeOptionsFactory_addNameWithCCBCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CCBCucumberOptions> options, id<JavaUtilList> args);
+__attribute__((unused)) static void CCBRRuntimeOptionsFactory_addNameWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args);
 
-__attribute__((unused)) static void CCBRRuntimeOptionsFactory_addSnippetsWithCCBCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CCBCucumberOptions> options, id<JavaUtilList> args);
+__attribute__((unused)) static void CCBRRuntimeOptionsFactory_addSnippetsWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args);
 
-__attribute__((unused)) static void CCBRRuntimeOptionsFactory_addDryRunWithCCBCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CCBCucumberOptions> options, id<JavaUtilList> args);
+__attribute__((unused)) static void CCBRRuntimeOptionsFactory_addDryRunWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args);
 
-__attribute__((unused)) static void CCBRRuntimeOptionsFactory_addMonochromeWithCCBCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CCBCucumberOptions> options, id<JavaUtilList> args);
+__attribute__((unused)) static void CCBRRuntimeOptionsFactory_addMonochromeWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args);
 
-__attribute__((unused)) static void CCBRRuntimeOptionsFactory_addTagsWithCCBCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CCBCucumberOptions> options, id<JavaUtilList> args);
+__attribute__((unused)) static void CCBRRuntimeOptionsFactory_addTagsWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args);
 
-__attribute__((unused)) static void CCBRRuntimeOptionsFactory_addPluginsWithCCBCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CCBCucumberOptions> options, id<JavaUtilList> args);
+__attribute__((unused)) static void CCBRRuntimeOptionsFactory_addPluginsWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args);
 
 __attribute__((unused)) static void CCBRRuntimeOptionsFactory_addNullFormatIfNoPluginIsSpecifiedWithJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<JavaUtilList> args);
 
-__attribute__((unused)) static void CCBRRuntimeOptionsFactory_addFeaturesWithCCBCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CCBCucumberOptions> options, id<JavaUtilList> args);
+__attribute__((unused)) static void CCBRRuntimeOptionsFactory_addFeaturesWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args);
 
 __attribute__((unused)) static void CCBRRuntimeOptionsFactory_addDefaultFeaturePathIfNoFeaturePathIsSpecifiedWithJavaUtilList_withIOSClass_(CCBRRuntimeOptionsFactory *self, id<JavaUtilList> args, IOSClass *clazz);
 
-__attribute__((unused)) static void CCBRRuntimeOptionsFactory_addGlueWithCCBCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CCBCucumberOptions> options, id<JavaUtilList> args);
+__attribute__((unused)) static void CCBRRuntimeOptionsFactory_addGlueWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args);
 
 __attribute__((unused)) static void CCBRRuntimeOptionsFactory_addDefaultGlueIfNoGlueIsSpecifiedWithJavaUtilList_withIOSClass_(CCBRRuntimeOptionsFactory *self, id<JavaUtilList> args, IOSClass *clazz);
 
-__attribute__((unused)) static void CCBRRuntimeOptionsFactory_addStrictWithCCBCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CCBCucumberOptions> options, id<JavaUtilList> args);
+__attribute__((unused)) static void CCBRRuntimeOptionsFactory_addStrictWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args);
 
-__attribute__((unused)) static void CCBRRuntimeOptionsFactory_addJunitOptionsWithCCBCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CCBCucumberOptions> options, id<JavaUtilList> args);
+__attribute__((unused)) static void CCBRRuntimeOptionsFactory_addJunitOptionsWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args);
 
 __attribute__((unused)) static id<JavaUtilList> CCBRRuntimeOptionsFactory_buildConverters(CCBRRuntimeOptionsFactory *self);
 
@@ -115,7 +115,7 @@ __attribute__((unused)) static jboolean CCBRRuntimeOptionsFactory_runningInEnvir
 
 __attribute__((unused)) static jboolean CCBRRuntimeOptionsFactory_hasSuperClassWithIOSClass_(CCBRRuntimeOptionsFactory *self, IOSClass *classWithOptions);
 
-__attribute__((unused)) static id<CCBCucumberOptions> CCBRRuntimeOptionsFactory_getOptionsWithIOSClass_(CCBRRuntimeOptionsFactory *self, IOSClass *clazz);
+__attribute__((unused)) static id<CucumberApiCucumberOptions> CCBRRuntimeOptionsFactory_getOptionsWithIOSClass_(CCBRRuntimeOptionsFactory *self, IOSClass *clazz);
 
 @implementation CCBRRuntimeOptionsFactory
 
@@ -134,43 +134,43 @@ __attribute__((unused)) static id<CCBCucumberOptions> CCBRRuntimeOptionsFactory_
   return CCBRRuntimeOptionsFactory_buildArgsFromOptions(self);
 }
 
-- (void)addNameWithCCBCucumberOptions:(id<CCBCucumberOptions>)options
-                     withJavaUtilList:(id<JavaUtilList>)args {
-  CCBRRuntimeOptionsFactory_addNameWithCCBCucumberOptions_withJavaUtilList_(self, options, args);
+- (void)addNameWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
+                             withJavaUtilList:(id<JavaUtilList>)args {
+  CCBRRuntimeOptionsFactory_addNameWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
 }
 
-- (void)addSnippetsWithCCBCucumberOptions:(id<CCBCucumberOptions>)options
-                         withJavaUtilList:(id<JavaUtilList>)args {
-  CCBRRuntimeOptionsFactory_addSnippetsWithCCBCucumberOptions_withJavaUtilList_(self, options, args);
+- (void)addSnippetsWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
+                                 withJavaUtilList:(id<JavaUtilList>)args {
+  CCBRRuntimeOptionsFactory_addSnippetsWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
 }
 
-- (void)addDryRunWithCCBCucumberOptions:(id<CCBCucumberOptions>)options
-                       withJavaUtilList:(id<JavaUtilList>)args {
-  CCBRRuntimeOptionsFactory_addDryRunWithCCBCucumberOptions_withJavaUtilList_(self, options, args);
+- (void)addDryRunWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
+                               withJavaUtilList:(id<JavaUtilList>)args {
+  CCBRRuntimeOptionsFactory_addDryRunWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
 }
 
-- (void)addMonochromeWithCCBCucumberOptions:(id<CCBCucumberOptions>)options
-                           withJavaUtilList:(id<JavaUtilList>)args {
-  CCBRRuntimeOptionsFactory_addMonochromeWithCCBCucumberOptions_withJavaUtilList_(self, options, args);
+- (void)addMonochromeWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
+                                   withJavaUtilList:(id<JavaUtilList>)args {
+  CCBRRuntimeOptionsFactory_addMonochromeWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
 }
 
-- (void)addTagsWithCCBCucumberOptions:(id<CCBCucumberOptions>)options
-                     withJavaUtilList:(id<JavaUtilList>)args {
-  CCBRRuntimeOptionsFactory_addTagsWithCCBCucumberOptions_withJavaUtilList_(self, options, args);
+- (void)addTagsWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
+                             withJavaUtilList:(id<JavaUtilList>)args {
+  CCBRRuntimeOptionsFactory_addTagsWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
 }
 
-- (void)addPluginsWithCCBCucumberOptions:(id<CCBCucumberOptions>)options
-                        withJavaUtilList:(id<JavaUtilList>)args {
-  CCBRRuntimeOptionsFactory_addPluginsWithCCBCucumberOptions_withJavaUtilList_(self, options, args);
+- (void)addPluginsWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
+                                withJavaUtilList:(id<JavaUtilList>)args {
+  CCBRRuntimeOptionsFactory_addPluginsWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
 }
 
 - (void)addNullFormatIfNoPluginIsSpecifiedWithJavaUtilList:(id<JavaUtilList>)args {
   CCBRRuntimeOptionsFactory_addNullFormatIfNoPluginIsSpecifiedWithJavaUtilList_(self, args);
 }
 
-- (void)addFeaturesWithCCBCucumberOptions:(id<CCBCucumberOptions>)options
-                         withJavaUtilList:(id<JavaUtilList>)args {
-  CCBRRuntimeOptionsFactory_addFeaturesWithCCBCucumberOptions_withJavaUtilList_(self, options, args);
+- (void)addFeaturesWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
+                                 withJavaUtilList:(id<JavaUtilList>)args {
+  CCBRRuntimeOptionsFactory_addFeaturesWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
 }
 
 - (void)addDefaultFeaturePathIfNoFeaturePathIsSpecifiedWithJavaUtilList:(id<JavaUtilList>)args
@@ -178,9 +178,9 @@ __attribute__((unused)) static id<CCBCucumberOptions> CCBRRuntimeOptionsFactory_
   CCBRRuntimeOptionsFactory_addDefaultFeaturePathIfNoFeaturePathIsSpecifiedWithJavaUtilList_withIOSClass_(self, args, clazz);
 }
 
-- (void)addGlueWithCCBCucumberOptions:(id<CCBCucumberOptions>)options
-                     withJavaUtilList:(id<JavaUtilList>)args {
-  CCBRRuntimeOptionsFactory_addGlueWithCCBCucumberOptions_withJavaUtilList_(self, options, args);
+- (void)addGlueWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
+                             withJavaUtilList:(id<JavaUtilList>)args {
+  CCBRRuntimeOptionsFactory_addGlueWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
 }
 
 - (void)addDefaultGlueIfNoGlueIsSpecifiedWithJavaUtilList:(id<JavaUtilList>)args
@@ -188,14 +188,14 @@ __attribute__((unused)) static id<CCBCucumberOptions> CCBRRuntimeOptionsFactory_
   CCBRRuntimeOptionsFactory_addDefaultGlueIfNoGlueIsSpecifiedWithJavaUtilList_withIOSClass_(self, args, clazz);
 }
 
-- (void)addStrictWithCCBCucumberOptions:(id<CCBCucumberOptions>)options
-                       withJavaUtilList:(id<JavaUtilList>)args {
-  CCBRRuntimeOptionsFactory_addStrictWithCCBCucumberOptions_withJavaUtilList_(self, options, args);
+- (void)addStrictWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
+                               withJavaUtilList:(id<JavaUtilList>)args {
+  CCBRRuntimeOptionsFactory_addStrictWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
 }
 
-- (void)addJunitOptionsWithCCBCucumberOptions:(id<CCBCucumberOptions>)options
-                             withJavaUtilList:(id<JavaUtilList>)args {
-  CCBRRuntimeOptionsFactory_addJunitOptionsWithCCBCucumberOptions_withJavaUtilList_(self, options, args);
+- (void)addJunitOptionsWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
+                                     withJavaUtilList:(id<JavaUtilList>)args {
+  CCBRRuntimeOptionsFactory_addJunitOptionsWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
 }
 
 - (id<JavaUtilList>)buildConverters {
@@ -222,7 +222,7 @@ __attribute__((unused)) static id<CCBCucumberOptions> CCBRRuntimeOptionsFactory_
   return CCBRRuntimeOptionsFactory_hasSuperClassWithIOSClass_(self, classWithOptions);
 }
 
-- (id<CCBCucumberOptions>)getOptionsWithIOSClass:(IOSClass *)clazz {
+- (id<CucumberApiCucumberOptions>)getOptionsWithIOSClass:(IOSClass *)clazz {
   return CCBRRuntimeOptionsFactory_getOptionsWithIOSClass_(self, clazz);
 }
 
@@ -255,7 +255,7 @@ __attribute__((unused)) static id<CCBCucumberOptions> CCBRRuntimeOptionsFactory_
     { NULL, "LNSString;", 0x8, 24, 23, -1, -1, -1, -1 },
     { NULL, "Z", 0x2, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x2, 25, 0, -1, -1, -1, -1 },
-    { NULL, "LCCBCucumberOptions;", 0x2, 26, 0, -1, 27, -1, -1 },
+    { NULL, "LCucumberApiCucumberOptions;", 0x2, 26, 0, -1, 27, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -263,19 +263,19 @@ __attribute__((unused)) static id<CCBCucumberOptions> CCBRRuntimeOptionsFactory_
   methods[0].selector = @selector(initWithIOSClass:);
   methods[1].selector = @selector(create);
   methods[2].selector = @selector(buildArgsFromOptions);
-  methods[3].selector = @selector(addNameWithCCBCucumberOptions:withJavaUtilList:);
-  methods[4].selector = @selector(addSnippetsWithCCBCucumberOptions:withJavaUtilList:);
-  methods[5].selector = @selector(addDryRunWithCCBCucumberOptions:withJavaUtilList:);
-  methods[6].selector = @selector(addMonochromeWithCCBCucumberOptions:withJavaUtilList:);
-  methods[7].selector = @selector(addTagsWithCCBCucumberOptions:withJavaUtilList:);
-  methods[8].selector = @selector(addPluginsWithCCBCucumberOptions:withJavaUtilList:);
+  methods[3].selector = @selector(addNameWithCucumberApiCucumberOptions:withJavaUtilList:);
+  methods[4].selector = @selector(addSnippetsWithCucumberApiCucumberOptions:withJavaUtilList:);
+  methods[5].selector = @selector(addDryRunWithCucumberApiCucumberOptions:withJavaUtilList:);
+  methods[6].selector = @selector(addMonochromeWithCucumberApiCucumberOptions:withJavaUtilList:);
+  methods[7].selector = @selector(addTagsWithCucumberApiCucumberOptions:withJavaUtilList:);
+  methods[8].selector = @selector(addPluginsWithCucumberApiCucumberOptions:withJavaUtilList:);
   methods[9].selector = @selector(addNullFormatIfNoPluginIsSpecifiedWithJavaUtilList:);
-  methods[10].selector = @selector(addFeaturesWithCCBCucumberOptions:withJavaUtilList:);
+  methods[10].selector = @selector(addFeaturesWithCucumberApiCucumberOptions:withJavaUtilList:);
   methods[11].selector = @selector(addDefaultFeaturePathIfNoFeaturePathIsSpecifiedWithJavaUtilList:withIOSClass:);
-  methods[12].selector = @selector(addGlueWithCCBCucumberOptions:withJavaUtilList:);
+  methods[12].selector = @selector(addGlueWithCucumberApiCucumberOptions:withJavaUtilList:);
   methods[13].selector = @selector(addDefaultGlueIfNoGlueIsSpecifiedWithJavaUtilList:withIOSClass:);
-  methods[14].selector = @selector(addStrictWithCCBCucumberOptions:withJavaUtilList:);
-  methods[15].selector = @selector(addJunitOptionsWithCCBCucumberOptions:withJavaUtilList:);
+  methods[14].selector = @selector(addStrictWithCucumberApiCucumberOptions:withJavaUtilList:);
+  methods[15].selector = @selector(addJunitOptionsWithCucumberApiCucumberOptions:withJavaUtilList:);
   methods[16].selector = @selector(buildConverters);
   methods[17].selector = @selector(packagePathWithIOSClass:);
   methods[18].selector = @selector(packagePathWithNSString:);
@@ -290,7 +290,7 @@ __attribute__((unused)) static id<CCBCucumberOptions> CCBRRuntimeOptionsFactory_
     { "glueSpecified_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "pluginSpecified_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LIOSClass;", "()Ljava/util/List<Ljava/lang/String;>;", "addName", "LCCBCucumberOptions;LJavaUtilList;", "(Lcucumber/api/CucumberOptions;Ljava/util/List<Ljava/lang/String;>;)V", "addSnippets", "addDryRun", "addMonochrome", "addTags", "addPlugins", "addNullFormatIfNoPluginIsSpecified", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)V", "addFeatures", "addDefaultFeaturePathIfNoFeaturePathIsSpecified", "LJavaUtilList;LIOSClass;", "(Ljava/util/List<Ljava/lang/String;>;Ljava/lang/Class;)V", "addGlue", "addDefaultGlueIfNoGlueIsSpecified", "addStrict", "addJunitOptions", "()Ljava/util/List<Lcucumber/deps/com/thoughtworks/xstream/annotations/XStreamConverter;>;", "packagePath", "LNSString;", "packageName", "hasSuperClass", "getOptions", "(Ljava/lang/Class<*>;)Lcucumber/api/CucumberOptions;" };
+  static const void *ptrTable[] = { "LIOSClass;", "()Ljava/util/List<Ljava/lang/String;>;", "addName", "LCucumberApiCucumberOptions;LJavaUtilList;", "(Lcucumber/api/CucumberOptions;Ljava/util/List<Ljava/lang/String;>;)V", "addSnippets", "addDryRun", "addMonochrome", "addTags", "addPlugins", "addNullFormatIfNoPluginIsSpecified", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)V", "addFeatures", "addDefaultFeaturePathIfNoFeaturePathIsSpecified", "LJavaUtilList;LIOSClass;", "(Ljava/util/List<Ljava/lang/String;>;Ljava/lang/Class;)V", "addGlue", "addDefaultGlueIfNoGlueIsSpecified", "addStrict", "addJunitOptions", "()Ljava/util/List<Lcucumber/deps/com/thoughtworks/xstream/annotations/XStreamConverter;>;", "packagePath", "LNSString;", "packageName", "hasSuperClass", "getOptions", "(Ljava/lang/Class<*>;)Lcucumber/api/CucumberOptions;" };
   static const J2ObjcClassInfo _CCBRRuntimeOptionsFactory = { "RuntimeOptionsFactory", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 23, 4, -1, -1, -1, -1, -1 };
   return &_CCBRRuntimeOptionsFactory;
 }
@@ -316,18 +316,18 @@ CCBRRuntimeOptionsFactory *create_CCBRRuntimeOptionsFactory_initWithIOSClass_(IO
 id<JavaUtilList> CCBRRuntimeOptionsFactory_buildArgsFromOptions(CCBRRuntimeOptionsFactory *self) {
   id<JavaUtilList> args = create_JavaUtilArrayList_init();
   for (IOSClass *classWithOptions = self->clazz_; CCBRRuntimeOptionsFactory_hasSuperClassWithIOSClass_(self, classWithOptions); classWithOptions = [((IOSClass *) nil_chk(classWithOptions)) getSuperclass]) {
-    id<CCBCucumberOptions> options = CCBRRuntimeOptionsFactory_getOptionsWithIOSClass_(self, classWithOptions);
+    id<CucumberApiCucumberOptions> options = CCBRRuntimeOptionsFactory_getOptionsWithIOSClass_(self, classWithOptions);
     if (options != nil) {
-      CCBRRuntimeOptionsFactory_addDryRunWithCCBCucumberOptions_withJavaUtilList_(self, options, args);
-      CCBRRuntimeOptionsFactory_addMonochromeWithCCBCucumberOptions_withJavaUtilList_(self, options, args);
-      CCBRRuntimeOptionsFactory_addTagsWithCCBCucumberOptions_withJavaUtilList_(self, options, args);
-      CCBRRuntimeOptionsFactory_addPluginsWithCCBCucumberOptions_withJavaUtilList_(self, options, args);
-      CCBRRuntimeOptionsFactory_addStrictWithCCBCucumberOptions_withJavaUtilList_(self, options, args);
-      CCBRRuntimeOptionsFactory_addNameWithCCBCucumberOptions_withJavaUtilList_(self, options, args);
-      CCBRRuntimeOptionsFactory_addSnippetsWithCCBCucumberOptions_withJavaUtilList_(self, options, args);
-      CCBRRuntimeOptionsFactory_addGlueWithCCBCucumberOptions_withJavaUtilList_(self, options, args);
-      CCBRRuntimeOptionsFactory_addFeaturesWithCCBCucumberOptions_withJavaUtilList_(self, options, args);
-      CCBRRuntimeOptionsFactory_addJunitOptionsWithCCBCucumberOptions_withJavaUtilList_(self, options, args);
+      CCBRRuntimeOptionsFactory_addDryRunWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
+      CCBRRuntimeOptionsFactory_addMonochromeWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
+      CCBRRuntimeOptionsFactory_addTagsWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
+      CCBRRuntimeOptionsFactory_addPluginsWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
+      CCBRRuntimeOptionsFactory_addStrictWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
+      CCBRRuntimeOptionsFactory_addNameWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
+      CCBRRuntimeOptionsFactory_addSnippetsWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
+      CCBRRuntimeOptionsFactory_addGlueWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
+      CCBRRuntimeOptionsFactory_addFeaturesWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
+      CCBRRuntimeOptionsFactory_addJunitOptionsWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
     }
   }
   CCBRRuntimeOptionsFactory_addDefaultFeaturePathIfNoFeaturePathIsSpecifiedWithJavaUtilList_withIOSClass_(self, args, self->clazz_);
@@ -336,9 +336,9 @@ id<JavaUtilList> CCBRRuntimeOptionsFactory_buildArgsFromOptions(CCBRRuntimeOptio
   return args;
 }
 
-void CCBRRuntimeOptionsFactory_addNameWithCCBCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CCBCucumberOptions> options, id<JavaUtilList> args) {
+void CCBRRuntimeOptionsFactory_addNameWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args) {
   {
-    IOSObjectArray *a__ = [((id<CCBCucumberOptions>) nil_chk(options)) name];
+    IOSObjectArray *a__ = [((id<CucumberApiCucumberOptions>) nil_chk(options)) name];
     NSString * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
     NSString * const *e__ = b__ + a__->size_;
     while (b__ < e__) {
@@ -349,26 +349,26 @@ void CCBRRuntimeOptionsFactory_addNameWithCCBCucumberOptions_withJavaUtilList_(C
   }
 }
 
-void CCBRRuntimeOptionsFactory_addSnippetsWithCCBCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CCBCucumberOptions> options, id<JavaUtilList> args) {
+void CCBRRuntimeOptionsFactory_addSnippetsWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args) {
   [((id<JavaUtilList>) nil_chk(args)) addWithId:@"--snippets"];
-  [args addWithId:[((CCBSnippetType *) nil_chk([((id<CCBCucumberOptions>) nil_chk(options)) snippets])) description]];
+  [args addWithId:[((CucumberApiSnippetType *) nil_chk([((id<CucumberApiCucumberOptions>) nil_chk(options)) snippets])) description]];
 }
 
-void CCBRRuntimeOptionsFactory_addDryRunWithCCBCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CCBCucumberOptions> options, id<JavaUtilList> args) {
-  if ([((id<CCBCucumberOptions>) nil_chk(options)) dryRun]) {
+void CCBRRuntimeOptionsFactory_addDryRunWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args) {
+  if ([((id<CucumberApiCucumberOptions>) nil_chk(options)) dryRun]) {
     [((id<JavaUtilList>) nil_chk(args)) addWithId:@"--dry-run"];
   }
 }
 
-void CCBRRuntimeOptionsFactory_addMonochromeWithCCBCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CCBCucumberOptions> options, id<JavaUtilList> args) {
-  if ([((id<CCBCucumberOptions>) nil_chk(options)) monochrome] || CCBRRuntimeOptionsFactory_runningInEnvironmentWithoutAnsiSupport(self)) {
+void CCBRRuntimeOptionsFactory_addMonochromeWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args) {
+  if ([((id<CucumberApiCucumberOptions>) nil_chk(options)) monochrome] || CCBRRuntimeOptionsFactory_runningInEnvironmentWithoutAnsiSupport(self)) {
     [((id<JavaUtilList>) nil_chk(args)) addWithId:@"--monochrome"];
   }
 }
 
-void CCBRRuntimeOptionsFactory_addTagsWithCCBCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CCBCucumberOptions> options, id<JavaUtilList> args) {
+void CCBRRuntimeOptionsFactory_addTagsWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args) {
   {
-    IOSObjectArray *a__ = [((id<CCBCucumberOptions>) nil_chk(options)) tags];
+    IOSObjectArray *a__ = [((id<CucumberApiCucumberOptions>) nil_chk(options)) tags];
     NSString * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
     NSString * const *e__ = b__ + a__->size_;
     while (b__ < e__) {
@@ -379,9 +379,9 @@ void CCBRRuntimeOptionsFactory_addTagsWithCCBCucumberOptions_withJavaUtilList_(C
   }
 }
 
-void CCBRRuntimeOptionsFactory_addPluginsWithCCBCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CCBCucumberOptions> options, id<JavaUtilList> args) {
+void CCBRRuntimeOptionsFactory_addPluginsWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args) {
   id<JavaUtilList> plugins = create_JavaUtilArrayList_init();
-  [plugins addAllWithJavaUtilCollection:JavaUtilArrays_asListWithNSObjectArray_([((id<CCBCucumberOptions>) nil_chk(options)) plugin])];
+  [plugins addAllWithJavaUtilCollection:JavaUtilArrays_asListWithNSObjectArray_([((id<CucumberApiCucumberOptions>) nil_chk(options)) plugin])];
   [plugins addAllWithJavaUtilCollection:JavaUtilArrays_asListWithNSObjectArray_([options format])];
   for (NSString * __strong plugin in plugins) {
     [((id<JavaUtilList>) nil_chk(args)) addWithId:@"--plugin"];
@@ -399,7 +399,7 @@ void CCBRRuntimeOptionsFactory_addNullFormatIfNoPluginIsSpecifiedWithJavaUtilLis
   }
 }
 
-void CCBRRuntimeOptionsFactory_addFeaturesWithCCBCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CCBCucumberOptions> options, id<JavaUtilList> args) {
+void CCBRRuntimeOptionsFactory_addFeaturesWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args) {
   if (options != nil && ((IOSObjectArray *) nil_chk([options features]))->size_ != 0) {
     JavaUtilCollections_addAllWithJavaUtilCollection_withNSObjectArray_(args, [options features]);
     self->featuresSpecified_ = true;
@@ -412,9 +412,9 @@ void CCBRRuntimeOptionsFactory_addDefaultFeaturePathIfNoFeaturePathIsSpecifiedWi
   }
 }
 
-void CCBRRuntimeOptionsFactory_addGlueWithCCBCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CCBCucumberOptions> options, id<JavaUtilList> args) {
+void CCBRRuntimeOptionsFactory_addGlueWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args) {
   {
-    IOSObjectArray *a__ = [((id<CCBCucumberOptions>) nil_chk(options)) glue];
+    IOSObjectArray *a__ = [((id<CucumberApiCucumberOptions>) nil_chk(options)) glue];
     NSString * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
     NSString * const *e__ = b__ + a__->size_;
     while (b__ < e__) {
@@ -433,15 +433,15 @@ void CCBRRuntimeOptionsFactory_addDefaultGlueIfNoGlueIsSpecifiedWithJavaUtilList
   }
 }
 
-void CCBRRuntimeOptionsFactory_addStrictWithCCBCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CCBCucumberOptions> options, id<JavaUtilList> args) {
-  if ([((id<CCBCucumberOptions>) nil_chk(options)) strict]) {
+void CCBRRuntimeOptionsFactory_addStrictWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args) {
+  if ([((id<CucumberApiCucumberOptions>) nil_chk(options)) strict]) {
     [((id<JavaUtilList>) nil_chk(args)) addWithId:@"--strict"];
   }
 }
 
-void CCBRRuntimeOptionsFactory_addJunitOptionsWithCCBCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CCBCucumberOptions> options, id<JavaUtilList> args) {
+void CCBRRuntimeOptionsFactory_addJunitOptionsWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args) {
   {
-    IOSObjectArray *a__ = [((id<CCBCucumberOptions>) nil_chk(options)) junit];
+    IOSObjectArray *a__ = [((id<CucumberApiCucumberOptions>) nil_chk(options)) junit];
     NSString * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
     NSString * const *e__ = b__ + a__->size_;
     while (b__ < e__) {
@@ -490,8 +490,8 @@ jboolean CCBRRuntimeOptionsFactory_hasSuperClassWithIOSClass_(CCBRRuntimeOptions
   return classWithOptions != NSObject_class_();
 }
 
-id<CCBCucumberOptions> CCBRRuntimeOptionsFactory_getOptionsWithIOSClass_(CCBRRuntimeOptionsFactory *self, IOSClass *clazz) {
-  return ((id<CCBCucumberOptions>) [((IOSClass *) nil_chk(clazz)) getAnnotationWithIOSClass:CCBCucumberOptions_class_()]);
+id<CucumberApiCucumberOptions> CCBRRuntimeOptionsFactory_getOptionsWithIOSClass_(CCBRRuntimeOptionsFactory *self, IOSClass *clazz) {
+  return ((id<CucumberApiCucumberOptions>) [((IOSClass *) nil_chk(clazz)) getAnnotationWithIOSClass:CucumberApiCucumberOptions_class_()]);
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRRuntimeOptionsFactory)

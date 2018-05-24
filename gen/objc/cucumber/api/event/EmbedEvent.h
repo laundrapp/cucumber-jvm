@@ -18,17 +18,17 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBEmbedEvent_) && (INCLUDE_ALL_CucumberApiEventEmbedEvent || defined(INCLUDE_CCBEmbedEvent))
-#define CCBEmbedEvent_
+#if !defined (CucumberApiEventEmbedEvent_) && (INCLUDE_ALL_CucumberApiEventEmbedEvent || defined(INCLUDE_CucumberApiEventEmbedEvent))
+#define CucumberApiEventEmbedEvent_
 
 #define RESTRICT_CucumberApiEventTimeStampedEvent 1
-#define INCLUDE_CCBTimeStampedEvent 1
+#define INCLUDE_CucumberApiEventTimeStampedEvent 1
 #include "cucumber/api/event/TimeStampedEvent.h"
 
 @class IOSByteArray;
 @class JavaLangLong;
 
-@interface CCBEmbedEvent : CCBTimeStampedEvent {
+@interface CucumberApiEventEmbedEvent : CucumberApiEventTimeStampedEvent {
  @public
   IOSByteArray *data_;
   NSString *mimeType_;
@@ -46,20 +46,18 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBEmbedEvent)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiEventEmbedEvent)
 
-J2OBJC_FIELD_SETTER(CCBEmbedEvent, data_, IOSByteArray *)
-J2OBJC_FIELD_SETTER(CCBEmbedEvent, mimeType_, NSString *)
+J2OBJC_FIELD_SETTER(CucumberApiEventEmbedEvent, data_, IOSByteArray *)
+J2OBJC_FIELD_SETTER(CucumberApiEventEmbedEvent, mimeType_, NSString *)
 
-FOUNDATION_EXPORT void CCBEmbedEvent_initWithJavaLangLong_withByteArray_withNSString_(CCBEmbedEvent *self, JavaLangLong *timeStamp, IOSByteArray *data, NSString *mimeType);
+FOUNDATION_EXPORT void CucumberApiEventEmbedEvent_initWithJavaLangLong_withByteArray_withNSString_(CucumberApiEventEmbedEvent *self, JavaLangLong *timeStamp, IOSByteArray *data, NSString *mimeType);
 
-FOUNDATION_EXPORT CCBEmbedEvent *new_CCBEmbedEvent_initWithJavaLangLong_withByteArray_withNSString_(JavaLangLong *timeStamp, IOSByteArray *data, NSString *mimeType) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CucumberApiEventEmbedEvent *new_CucumberApiEventEmbedEvent_initWithJavaLangLong_withByteArray_withNSString_(JavaLangLong *timeStamp, IOSByteArray *data, NSString *mimeType) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBEmbedEvent *create_CCBEmbedEvent_initWithJavaLangLong_withByteArray_withNSString_(JavaLangLong *timeStamp, IOSByteArray *data, NSString *mimeType);
+FOUNDATION_EXPORT CucumberApiEventEmbedEvent *create_CucumberApiEventEmbedEvent_initWithJavaLangLong_withByteArray_withNSString_(JavaLangLong *timeStamp, IOSByteArray *data, NSString *mimeType);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBEmbedEvent)
-
-@compatibility_alias CucumberApiEventEmbedEvent CCBEmbedEvent;
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventEmbedEvent)
 
 #endif
 

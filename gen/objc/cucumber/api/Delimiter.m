@@ -13,14 +13,14 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *CCBDelimiter__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CucumberApiDelimiter__Annotations$0(void);
 
-@implementation CCBDelimiter
+@implementation CucumberApiDelimiter
 
 @synthesize value = value_;
 
 - (IOSClass *)annotationType {
-  return CCBDelimiter_class_();
+  return CucumberApiDelimiter_class_();
 }
 
 - (NSString *)description {
@@ -52,21 +52,21 @@ __attribute__((unused)) static IOSObjectArray *CCBDelimiter__Annotations$0(void)
   static const J2ObjcFieldInfo fields[] = {
     { "value_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&CCBDelimiter__Annotations$0 };
-  static const J2ObjcClassInfo _CCBDelimiter = { "Delimiter", "cucumber.api", ptrTable, methods, fields, 7, 0x2609, 1, 1, -1, -1, -1, -1, 0 };
-  return &_CCBDelimiter;
+  static const void *ptrTable[] = { (void *)&CucumberApiDelimiter__Annotations$0 };
+  static const J2ObjcClassInfo _CucumberApiDelimiter = { "Delimiter", "cucumber.api", ptrTable, methods, fields, 7, 0x2609, 1, 1, -1, -1, -1, -1, 0 };
+  return &_CucumberApiDelimiter;
 }
 
 @end
 
-id<CCBDelimiter> create_CCBDelimiter(NSString *value) {
-  CCBDelimiter *self = AUTORELEASE([[CCBDelimiter alloc] init]);
+id<CucumberApiDelimiter> create_CucumberApiDelimiter(NSString *value) {
+  CucumberApiDelimiter *self = AUTORELEASE([[CucumberApiDelimiter alloc] init]);
   self->value_ = RETAIN_(value);
   return self;
 }
 
-IOSObjectArray *CCBDelimiter__Annotations$0() {
+IOSObjectArray *CucumberApiDelimiter__Annotations$0() {
   return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, PARAMETER), JreLoadEnum(JavaLangAnnotationElementType, ANNOTATION_TYPE) } count:2 type:JavaLangAnnotationElementType_class_()]) } count:2 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBDelimiter)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiDelimiter)

@@ -30,7 +30,7 @@
 @class CCBRMatch;
 @class GherkinPicklesPickleStep;
 @protocol CCBRStepDefinition;
-@protocol CCBScenario;
+@protocol CucumberApiScenario;
 @protocol JavaUtilList;
 
 @interface CCBRAmbiguousStepDefinitionsMatch : CCBRStepDefinitionMatch
@@ -42,12 +42,12 @@
  withCCBRAmbiguousStepDefinitionsException:(CCBRAmbiguousStepDefinitionsException *)e;
 
 - (void)dryRunStepWithNSString:(NSString *)language
-               withCCBScenario:(id<CCBScenario>)scenario;
+       withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
 
 - (CCBRMatch *)getMatch;
 
 - (void)runStepWithNSString:(NSString *)language
-            withCCBScenario:(id<CCBScenario>)scenario;
+    withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
 
 // Disallowed inherited constructors, do not use.
 

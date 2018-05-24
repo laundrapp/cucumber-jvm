@@ -22,12 +22,12 @@
 #define CCBRTableConverter_
 
 #define RESTRICT_CucumberApiTableConverter 1
-#define INCLUDE_CCBTableConverter 1
+#define INCLUDE_CucumberApiTableConverter 1
 #include "cucumber/api/TableConverter.h"
 
-@class CCBDataTable;
 @class CCBRLocalizedXStreams_LocalizedXStream;
 @class CCBRParameterInfo;
+@class CucumberApiDataTable;
 @class IOSObjectArray;
 @protocol JavaLangReflectType;
 @protocol JavaUtilList;
@@ -36,7 +36,7 @@
 /*!
  @brief This class converts a <code>cucumber.api.DataTable</code> to various other types.
  */
-@interface CCBRTableConverter : NSObject < CCBTableConverter >
+@interface CCBRTableConverter : NSObject < CucumberApiTableConverter >
 
 #pragma mark Public
 
@@ -54,23 +54,23 @@
  @param transposed whether the table should be transposed first.
  @return the transformed object.
  */
-- (id)convertWithCCBDataTable:(CCBDataTable *)dataTable
-      withJavaLangReflectType:(id<JavaLangReflectType>)type
-                  withBoolean:(jboolean)transposed;
+- (id)convertWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
+              withJavaLangReflectType:(id<JavaLangReflectType>)type
+                          withBoolean:(jboolean)transposed;
 
-- (id<JavaUtilList>)toListWithCCBDataTable:(CCBDataTable *)dataTable
-                   withJavaLangReflectType:(id<JavaLangReflectType>)itemType;
+- (id<JavaUtilList>)toListWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
+                           withJavaLangReflectType:(id<JavaLangReflectType>)itemType;
 
-- (id<JavaUtilList>)toListsWithCCBDataTable:(CCBDataTable *)dataTable
-                    withJavaLangReflectType:(id<JavaLangReflectType>)itemType;
+- (id<JavaUtilList>)toListsWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
+                            withJavaLangReflectType:(id<JavaLangReflectType>)itemType;
 
-- (id<JavaUtilMap>)toMapWithCCBDataTable:(CCBDataTable *)dataTable
-                 withJavaLangReflectType:(id<JavaLangReflectType>)keyType
-                 withJavaLangReflectType:(id<JavaLangReflectType>)valueType;
+- (id<JavaUtilMap>)toMapWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
+                         withJavaLangReflectType:(id<JavaLangReflectType>)keyType
+                         withJavaLangReflectType:(id<JavaLangReflectType>)valueType;
 
-- (id<JavaUtilList>)toMapsWithCCBDataTable:(CCBDataTable *)dataTable
-                   withJavaLangReflectType:(id<JavaLangReflectType>)keyType
-                   withJavaLangReflectType:(id<JavaLangReflectType>)valueType;
+- (id<JavaUtilList>)toMapsWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
+                           withJavaLangReflectType:(id<JavaLangReflectType>)keyType
+                           withJavaLangReflectType:(id<JavaLangReflectType>)valueType;
 
 /*!
  @brief Converts a List of objects to a DataTable.
@@ -78,8 +78,8 @@
  @param columnNames an explicit list of column names
  @return a DataTable
  */
-- (CCBDataTable *)toTableWithJavaUtilList:(id<JavaUtilList>)objects
-                        withNSStringArray:(IOSObjectArray *)columnNames;
+- (CucumberApiDataTable *)toTableWithJavaUtilList:(id<JavaUtilList>)objects
+                                withNSStringArray:(IOSObjectArray *)columnNames;
 
 // Disallowed inherited constructors, do not use.
 

@@ -116,7 +116,7 @@ J2OBJC_FIELD_SETTER(CCBRConverterWithFormat, convertibleTypes_, IOSObjectArray *
 @end
 
 void CCBRConverterWithFormat_initWithIOSClassArray_(CCBRConverterWithFormat *self, IOSObjectArray *convertibleTypes) {
-  CCBTransformer_init(self);
+  CucumberApiTransformer_init(self);
   JreStrongAssign(&self->convertibleTypes_, convertibleTypes);
 }
 

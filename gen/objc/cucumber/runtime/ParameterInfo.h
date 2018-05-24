@@ -22,7 +22,7 @@
 #define CCBRParameterInfo_
 
 @class CCBRLocalizedXStreams_LocalizedXStream;
-@class CCBTransformer;
+@class CucumberApiTransformer;
 @class IOSClass;
 @class IOSObjectArray;
 @class JavaLangReflectMethod;
@@ -40,12 +40,12 @@
                                          withNSString:(NSString *)format
                                          withNSString:(NSString *)delimiter
                                           withBoolean:(jboolean)transposed
-                                   withCCBTransformer:(CCBTransformer *)transformer;
+                           withCucumberApiTransformer:(CucumberApiTransformer *)transformer;
 
 - (instancetype __nonnull)initWithJavaLangReflectType:(id<JavaLangReflectType>)type
                                          withNSString:(NSString *)format
                                          withNSString:(NSString *)delimiter
-                                   withCCBTransformer:(CCBTransformer *)transformer;
+                           withCucumberApiTransformer:(CucumberApiTransformer *)transformer;
 
 - (id)convertWithNSString:(NSString *)value
 withCCBRLocalizedXStreams_LocalizedXStream:(CCBRLocalizedXStreams_LocalizedXStream *)xStream;
@@ -81,17 +81,17 @@ FOUNDATION_EXPORT id<JavaUtilList> CCBRParameterInfo_fromMethodWithJavaLangRefle
 
 FOUNDATION_EXPORT id<JavaUtilList> CCBRParameterInfo_fromTypesWithJavaLangReflectTypeArray_(IOSObjectArray *genericParameterTypes);
 
-FOUNDATION_EXPORT void CCBRParameterInfo_initWithJavaLangReflectType_withNSString_withNSString_withCCBTransformer_(CCBRParameterInfo *self, id<JavaLangReflectType> type, NSString *format, NSString *delimiter, CCBTransformer *transformer);
+FOUNDATION_EXPORT void CCBRParameterInfo_initWithJavaLangReflectType_withNSString_withNSString_withCucumberApiTransformer_(CCBRParameterInfo *self, id<JavaLangReflectType> type, NSString *format, NSString *delimiter, CucumberApiTransformer *transformer);
 
-FOUNDATION_EXPORT CCBRParameterInfo *new_CCBRParameterInfo_initWithJavaLangReflectType_withNSString_withNSString_withCCBTransformer_(id<JavaLangReflectType> type, NSString *format, NSString *delimiter, CCBTransformer *transformer) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRParameterInfo *new_CCBRParameterInfo_initWithJavaLangReflectType_withNSString_withNSString_withCucumberApiTransformer_(id<JavaLangReflectType> type, NSString *format, NSString *delimiter, CucumberApiTransformer *transformer) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRParameterInfo *create_CCBRParameterInfo_initWithJavaLangReflectType_withNSString_withNSString_withCCBTransformer_(id<JavaLangReflectType> type, NSString *format, NSString *delimiter, CCBTransformer *transformer);
+FOUNDATION_EXPORT CCBRParameterInfo *create_CCBRParameterInfo_initWithJavaLangReflectType_withNSString_withNSString_withCucumberApiTransformer_(id<JavaLangReflectType> type, NSString *format, NSString *delimiter, CucumberApiTransformer *transformer);
 
-FOUNDATION_EXPORT void CCBRParameterInfo_initWithJavaLangReflectType_withNSString_withNSString_withBoolean_withCCBTransformer_(CCBRParameterInfo *self, id<JavaLangReflectType> type, NSString *format, NSString *delimiter, jboolean transposed, CCBTransformer *transformer);
+FOUNDATION_EXPORT void CCBRParameterInfo_initWithJavaLangReflectType_withNSString_withNSString_withBoolean_withCucumberApiTransformer_(CCBRParameterInfo *self, id<JavaLangReflectType> type, NSString *format, NSString *delimiter, jboolean transposed, CucumberApiTransformer *transformer);
 
-FOUNDATION_EXPORT CCBRParameterInfo *new_CCBRParameterInfo_initWithJavaLangReflectType_withNSString_withNSString_withBoolean_withCCBTransformer_(id<JavaLangReflectType> type, NSString *format, NSString *delimiter, jboolean transposed, CCBTransformer *transformer) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRParameterInfo *new_CCBRParameterInfo_initWithJavaLangReflectType_withNSString_withNSString_withBoolean_withCucumberApiTransformer_(id<JavaLangReflectType> type, NSString *format, NSString *delimiter, jboolean transposed, CucumberApiTransformer *transformer) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRParameterInfo *create_CCBRParameterInfo_initWithJavaLangReflectType_withNSString_withNSString_withBoolean_withCCBTransformer_(id<JavaLangReflectType> type, NSString *format, NSString *delimiter, jboolean transposed, CCBTransformer *transformer);
+FOUNDATION_EXPORT CCBRParameterInfo *create_CCBRParameterInfo_initWithJavaLangReflectType_withNSString_withNSString_withBoolean_withCucumberApiTransformer_(id<JavaLangReflectType> type, NSString *format, NSString *delimiter, jboolean transposed, CucumberApiTransformer *transformer);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRParameterInfo)
 

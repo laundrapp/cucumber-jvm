@@ -58,7 +58,7 @@ J2OBJC_FIELD_SETTER(CCBPickleTestStep, step_, GherkinPicklesPickleStep *)
   return [((GherkinPicklesPickleStep *) nil_chk(step_)) getArgument];
 }
 
-- (CCBHookType *)getHookType {
+- (CucumberApiHookType *)getHookType {
   @throw create_JavaLangUnsupportedOperationException_init();
 }
 
@@ -77,7 +77,7 @@ J2OBJC_FIELD_SETTER(CCBPickleTestStep, step_, GherkinPicklesPickleStep *)
     { NULL, "I", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 1, -1, -1 },
-    { NULL, "LCCBHookType;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCucumberApiHookType;", 0x1, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -103,7 +103,7 @@ J2OBJC_FIELD_SETTER(CCBPickleTestStep, step_, GherkinPicklesPickleStep *)
 @end
 
 void CCBPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_(CCBPickleTestStep *self, NSString *uri, GherkinPicklesPickleStep *step, id<CCBRDefinitionMatch> definitionMatch) {
-  CCBTestStep_initWithCCBRDefinitionMatch_(self, definitionMatch);
+  CucumberApiTestStep_initWithCCBRDefinitionMatch_(self, definitionMatch);
   JreStrongAssign(&self->uri_, uri);
   JreStrongAssign(&self->step_, step);
 }

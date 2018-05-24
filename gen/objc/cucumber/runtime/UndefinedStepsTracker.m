@@ -39,8 +39,8 @@
   id<JavaUtilMap> pathToSourceMap_;
   id<JavaUtilMap> pathToStepMap_;
   jboolean hasUndefinedSteps_;
-  id<CCBEventHandler> testSourceReadHandler_;
-  id<CCBEventHandler> snippetsSuggestedHandler_;
+  id<CucumberApiEventEventHandler> testSourceReadHandler_;
+  id<CucumberApiEventEventHandler> snippetsSuggestedHandler_;
 }
 
 - (NSString *)givenWhenThenKeywordWithNSString:(NSString *)uri
@@ -67,8 +67,8 @@ J2OBJC_FIELD_SETTER(CCBRUndefinedStepsTracker, snippets_, id<JavaUtilList>)
 J2OBJC_FIELD_SETTER(CCBRUndefinedStepsTracker, dialectProvider_, id<GherkinIGherkinDialectProvider>)
 J2OBJC_FIELD_SETTER(CCBRUndefinedStepsTracker, pathToSourceMap_, id<JavaUtilMap>)
 J2OBJC_FIELD_SETTER(CCBRUndefinedStepsTracker, pathToStepMap_, id<JavaUtilMap>)
-J2OBJC_FIELD_SETTER(CCBRUndefinedStepsTracker, testSourceReadHandler_, id<CCBEventHandler>)
-J2OBJC_FIELD_SETTER(CCBRUndefinedStepsTracker, snippetsSuggestedHandler_, id<CCBEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRUndefinedStepsTracker, testSourceReadHandler_, id<CucumberApiEventEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRUndefinedStepsTracker, snippetsSuggestedHandler_, id<CucumberApiEventEventHandler>)
 
 __attribute__((unused)) static NSString *CCBRUndefinedStepsTracker_givenWhenThenKeywordWithNSString_withJavaUtilList_(CCBRUndefinedStepsTracker *self, NSString *uri, id<JavaUtilList> stepLocations);
 
@@ -84,14 +84,14 @@ __attribute__((unused)) static NSString *CCBRUndefinedStepsTracker_getFirstGiven
 
 __attribute__((unused)) static NSString *CCBRUndefinedStepsTracker_convertToCodeKeywordWithNSString_(CCBRUndefinedStepsTracker *self, NSString *keyword);
 
-@interface CCBRUndefinedStepsTracker_1 : NSObject < CCBEventHandler > {
+@interface CCBRUndefinedStepsTracker_1 : NSObject < CucumberApiEventEventHandler > {
  @public
   CCBRUndefinedStepsTracker *this$0_;
 }
 
 - (instancetype __nonnull)initWithCCBRUndefinedStepsTracker:(CCBRUndefinedStepsTracker *)outer$;
 
-- (void)receiveWithCCBEvent:(CCBTestSourceRead *)event;
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestSourceRead *)event;
 
 @end
 
@@ -103,14 +103,14 @@ __attribute__((unused)) static CCBRUndefinedStepsTracker_1 *new_CCBRUndefinedSte
 
 __attribute__((unused)) static CCBRUndefinedStepsTracker_1 *create_CCBRUndefinedStepsTracker_1_initWithCCBRUndefinedStepsTracker_(CCBRUndefinedStepsTracker *outer$);
 
-@interface CCBRUndefinedStepsTracker_2 : NSObject < CCBEventHandler > {
+@interface CCBRUndefinedStepsTracker_2 : NSObject < CucumberApiEventEventHandler > {
  @public
   CCBRUndefinedStepsTracker *this$0_;
 }
 
 - (instancetype __nonnull)initWithCCBRUndefinedStepsTracker:(CCBRUndefinedStepsTracker *)outer$;
 
-- (void)receiveWithCCBEvent:(CCBSnippetsSuggestedEvent *)event;
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventSnippetsSuggestedEvent *)event;
 
 @end
 
@@ -179,9 +179,9 @@ J2OBJC_IGNORE_DESIGNATED_BEGIN
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher {
-  [((id<CCBEventPublisher>) nil_chk(publisher)) registerHandlerForWithIOSClass:CCBTestSourceRead_class_() withCCBEventHandler:testSourceReadHandler_];
-  [publisher registerHandlerForWithIOSClass:CCBSnippetsSuggestedEvent_class_() withCCBEventHandler:snippetsSuggestedHandler_];
+- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher {
+  [((id<CucumberApiEventEventPublisher>) nil_chk(publisher)) registerHandlerForWithIOSClass:CucumberApiEventTestSourceRead_class_() withCucumberApiEventEventHandler:testSourceReadHandler_];
+  [publisher registerHandlerForWithIOSClass:CucumberApiEventSnippetsSuggestedEvent_class_() withCucumberApiEventEventHandler:snippetsSuggestedHandler_];
 }
 
 - (jboolean)hasUndefinedSteps {
@@ -266,7 +266,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(setEventPublisherWithCCBEventPublisher:);
+  methods[1].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
   methods[2].selector = @selector(hasUndefinedSteps);
   methods[3].selector = @selector(getSnippets);
   methods[4].selector = @selector(handleSnippetsSuggestedWithNSString:withJavaUtilList:withJavaUtilList:);
@@ -284,10 +284,10 @@ J2OBJC_IGNORE_DESIGNATED_END
     { "pathToSourceMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 21, -1 },
     { "pathToStepMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 22, -1 },
     { "hasUndefinedSteps_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "testSourceReadHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 23, -1 },
-    { "snippetsSuggestedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 24, -1 },
+    { "testSourceReadHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 23, -1 },
+    { "snippetsSuggestedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 24, -1 },
   };
-  static const void *ptrTable[] = { "setEventPublisher", "LCCBEventPublisher;", "()Ljava/util/List<Ljava/lang/String;>;", "handleSnippetsSuggested", "LNSString;LJavaUtilList;LJavaUtilList;", "(Ljava/lang/String;Ljava/util/List<Lgherkin/pickles/PickleLocation;>;Ljava/util/List<Ljava/lang/String;>;)V", "givenWhenThenKeyword", "LNSString;LJavaUtilList;", "(Ljava/lang/String;Ljava/util/List<Lgherkin/pickles/PickleLocation;>;)Ljava/lang/String;", "getKeywordFromSource", "createFeatureStepMap", "LNSString;", "processScenarioDefinition", "LJavaUtilMap;LCCBRUndefinedStepsTracker_StepNode;LGherkinAstScenarioDefinition;", "(Ljava/util/Map<Ljava/lang/Integer;Lcucumber/runtime/UndefinedStepsTracker$StepNode;>;Lcucumber/runtime/UndefinedStepsTracker$StepNode;Lgherkin/ast/ScenarioDefinition;)Lcucumber/runtime/UndefinedStepsTracker$StepNode;", "getGivenWhenThenKeywords", "LGherkinGherkinDialect;", "(Lgherkin/GherkinDialect;)Ljava/util/List<Ljava/lang/String;>;", "getFirstGivenKeyword", "convertToCodeKeyword", "Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;", "Ljava/util/Map<Ljava/lang/String;Lcucumber/runtime/UndefinedStepsTracker$FeatureStepMap;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/SnippetsSuggestedEvent;>;", "LCCBRUndefinedStepsTracker_FeatureStepMap;LCCBRUndefinedStepsTracker_StepNode;" };
+  static const void *ptrTable[] = { "setEventPublisher", "LCucumberApiEventEventPublisher;", "()Ljava/util/List<Ljava/lang/String;>;", "handleSnippetsSuggested", "LNSString;LJavaUtilList;LJavaUtilList;", "(Ljava/lang/String;Ljava/util/List<Lgherkin/pickles/PickleLocation;>;Ljava/util/List<Ljava/lang/String;>;)V", "givenWhenThenKeyword", "LNSString;LJavaUtilList;", "(Ljava/lang/String;Ljava/util/List<Lgherkin/pickles/PickleLocation;>;)Ljava/lang/String;", "getKeywordFromSource", "createFeatureStepMap", "LNSString;", "processScenarioDefinition", "LJavaUtilMap;LCCBRUndefinedStepsTracker_StepNode;LGherkinAstScenarioDefinition;", "(Ljava/util/Map<Ljava/lang/Integer;Lcucumber/runtime/UndefinedStepsTracker$StepNode;>;Lcucumber/runtime/UndefinedStepsTracker$StepNode;Lgherkin/ast/ScenarioDefinition;)Lcucumber/runtime/UndefinedStepsTracker$StepNode;", "getGivenWhenThenKeywords", "LGherkinGherkinDialect;", "(Lgherkin/GherkinDialect;)Ljava/util/List<Ljava/lang/String;>;", "getFirstGivenKeyword", "convertToCodeKeyword", "Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;", "Ljava/util/Map<Ljava/lang/String;Lcucumber/runtime/UndefinedStepsTracker$FeatureStepMap;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/SnippetsSuggestedEvent;>;", "LCCBRUndefinedStepsTracker_FeatureStepMap;LCCBRUndefinedStepsTracker_StepNode;" };
   static const J2ObjcClassInfo _CCBRUndefinedStepsTracker = { "UndefinedStepsTracker", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 12, 7, -1, 25, -1, -1, -1 };
   return &_CCBRUndefinedStepsTracker;
 }
@@ -410,8 +410,8 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRUndefinedStepsTracker)
   return self;
 }
 
-- (void)receiveWithCCBEvent:(CCBTestSourceRead *)event {
-  [((id<JavaUtilMap>) nil_chk(this$0_->pathToSourceMap_)) putWithId:((CCBTestSourceRead *) nil_chk(event))->uri_ withId:event->source_];
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestSourceRead *)event {
+  [((id<JavaUtilMap>) nil_chk(this$0_->pathToSourceMap_)) putWithId:((CucumberApiEventTestSourceRead *) nil_chk(event))->uri_ withId:event->source_];
 }
 
 - (void)dealloc {
@@ -428,12 +428,12 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRUndefinedStepsTracker)
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRUndefinedStepsTracker:);
-  methods[1].selector = @selector(receiveWithCCBEvent:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCCBRUndefinedStepsTracker;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCCBTestSourceRead;", "LCCBRUndefinedStepsTracker;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;" };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestSourceRead;", "LCCBRUndefinedStepsTracker;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;" };
   static const J2ObjcClassInfo _CCBRUndefinedStepsTracker_1 = { "", "cucumber.runtime", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
   return &_CCBRUndefinedStepsTracker_1;
 }
@@ -460,8 +460,8 @@ CCBRUndefinedStepsTracker_1 *create_CCBRUndefinedStepsTracker_1_initWithCCBRUnde
   return self;
 }
 
-- (void)receiveWithCCBEvent:(CCBSnippetsSuggestedEvent *)event {
-  [this$0_ handleSnippetsSuggestedWithNSString:((CCBSnippetsSuggestedEvent *) nil_chk(event))->uri_ withJavaUtilList:event->stepLocations_ withJavaUtilList:event->snippets_];
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventSnippetsSuggestedEvent *)event {
+  [this$0_ handleSnippetsSuggestedWithNSString:((CucumberApiEventSnippetsSuggestedEvent *) nil_chk(event))->uri_ withJavaUtilList:event->stepLocations_ withJavaUtilList:event->snippets_];
 }
 
 - (void)dealloc {
@@ -478,12 +478,12 @@ CCBRUndefinedStepsTracker_1 *create_CCBRUndefinedStepsTracker_1_initWithCCBRUnde
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRUndefinedStepsTracker:);
-  methods[1].selector = @selector(receiveWithCCBEvent:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCCBRUndefinedStepsTracker;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCCBSnippetsSuggestedEvent;", "LCCBRUndefinedStepsTracker;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/SnippetsSuggestedEvent;>;" };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventSnippetsSuggestedEvent;", "LCCBRUndefinedStepsTracker;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/SnippetsSuggestedEvent;>;" };
   static const J2ObjcClassInfo _CCBRUndefinedStepsTracker_2 = { "", "cucumber.runtime", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
   return &_CCBRUndefinedStepsTracker_2;
 }

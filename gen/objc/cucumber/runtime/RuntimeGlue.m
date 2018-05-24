@@ -129,9 +129,9 @@ __attribute__((unused)) static CCBRRuntimeGlue_CacheEntry *create_CCBRRuntimeGlu
   return CCBRRuntimeGlue_stepDefinitionMatchesWithNSString_withGherkinPicklesPickleStep_(self, featurePath, step);
 }
 
-- (void)reportStepDefinitionsWithCCBStepDefinitionReporter:(id<CCBStepDefinitionReporter>)stepDefinitionReporter {
+- (void)reportStepDefinitionsWithCucumberApiStepDefinitionReporter:(id<CucumberApiStepDefinitionReporter>)stepDefinitionReporter {
   for (id<CCBRStepDefinition> __strong stepDefinition in nil_chk([((id<JavaUtilMap>) nil_chk(stepDefinitionsByPattern_)) values])) {
-    [((id<CCBStepDefinitionReporter>) nil_chk(stepDefinitionReporter)) stepDefinitionWithCCBRStepDefinition:stepDefinition];
+    [((id<CucumberApiStepDefinitionReporter>) nil_chk(stepDefinitionReporter)) stepDefinitionWithCCBRStepDefinition:stepDefinition];
   }
 }
 
@@ -186,7 +186,7 @@ __attribute__((unused)) static CCBRRuntimeGlue_CacheEntry *create_CCBRRuntimeGlu
   methods[6].selector = @selector(getAfterHooks);
   methods[7].selector = @selector(stepDefinitionMatchWithNSString:withGherkinPicklesPickleStep:);
   methods[8].selector = @selector(stepDefinitionMatchesWithNSString:withGherkinPicklesPickleStep:);
-  methods[9].selector = @selector(reportStepDefinitionsWithCCBStepDefinitionReporter:);
+  methods[9].selector = @selector(reportStepDefinitionsWithCucumberApiStepDefinitionReporter:);
   methods[10].selector = @selector(removeScenarioScopedGlue);
   methods[11].selector = @selector(removeScenarioScopedHooksWithJavaUtilList:);
   methods[12].selector = @selector(removeScenarioScopedStepdefs);
@@ -198,7 +198,7 @@ __attribute__((unused)) static CCBRRuntimeGlue_CacheEntry *create_CCBRRuntimeGlu
     { "matchedStepDefinitionsCache_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x10, -1, -1, 20, -1 },
     { "localizedXStreams_", "LCCBRLocalizedXStreams;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCCBRLocalizedXStreams;", "LCCBRUndefinedStepsTracker;LCCBRLocalizedXStreams;", (void *)&CCBRRuntimeGlue__Annotations$0, "addStepDefinition", "LCCBRStepDefinition;", "addBeforeHook", "LCCBRHookDefinition;", "addAfterHook", "()Ljava/util/List<Lcucumber/runtime/HookDefinition;>;", "stepDefinitionMatch", "LNSString;LGherkinPicklesPickleStep;", "stepDefinitionMatches", "(Ljava/lang/String;Lgherkin/pickles/PickleStep;)Ljava/util/List<Lcucumber/runtime/StepDefinitionMatch;>;", "reportStepDefinitions", "LCCBStepDefinitionReporter;", "removeScenarioScopedHooks", "LJavaUtilList;", "(Ljava/util/List<Lcucumber/runtime/HookDefinition;>;)V", "Ljava/util/Map<Ljava/lang/String;Lcucumber/runtime/StepDefinition;>;", "Ljava/util/List<Lcucumber/runtime/HookDefinition;>;", "Ljava/util/Map<Ljava/lang/String;Lcucumber/runtime/RuntimeGlue$CacheEntry;>;", "LCCBRRuntimeGlue_CacheEntry;" };
+  static const void *ptrTable[] = { "LCCBRLocalizedXStreams;", "LCCBRUndefinedStepsTracker;LCCBRLocalizedXStreams;", (void *)&CCBRRuntimeGlue__Annotations$0, "addStepDefinition", "LCCBRStepDefinition;", "addBeforeHook", "LCCBRHookDefinition;", "addAfterHook", "()Ljava/util/List<Lcucumber/runtime/HookDefinition;>;", "stepDefinitionMatch", "LNSString;LGherkinPicklesPickleStep;", "stepDefinitionMatches", "(Ljava/lang/String;Lgherkin/pickles/PickleStep;)Ljava/util/List<Lcucumber/runtime/StepDefinitionMatch;>;", "reportStepDefinitions", "LCucumberApiStepDefinitionReporter;", "removeScenarioScopedHooks", "LJavaUtilList;", "(Ljava/util/List<Lcucumber/runtime/HookDefinition;>;)V", "Ljava/util/Map<Ljava/lang/String;Lcucumber/runtime/StepDefinition;>;", "Ljava/util/List<Lcucumber/runtime/HookDefinition;>;", "Ljava/util/Map<Ljava/lang/String;Lcucumber/runtime/RuntimeGlue$CacheEntry;>;", "LCCBRRuntimeGlue_CacheEntry;" };
   static const J2ObjcClassInfo _CCBRRuntimeGlue = { "RuntimeGlue", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 13, 5, -1, 21, -1, -1, -1 };
   return &_CCBRRuntimeGlue;
 }

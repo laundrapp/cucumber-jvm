@@ -27,8 +27,8 @@
 
 @class IOSObjectArray;
 @class JavaLangReflectMethod;
-@protocol CCBScenario;
 @protocol CucumberApiJavaObjectFactory;
+@protocol CucumberApiScenario;
 @protocol JavaUtilCollection;
 
 @interface CucumberRuntimeJavaJavaHookDefinition : NSObject < CCBRHookDefinition >
@@ -41,7 +41,7 @@
                                                withLong:(jlong)timeoutMillis
                        withCucumberApiJavaObjectFactory:(id<CucumberApiJavaObjectFactory>)objectFactory;
 
-- (void)executeWithCCBScenario:(id<CCBScenario>)scenario;
+- (void)executeWithCucumberApiScenario:(id<CucumberApiScenario>)scenario;
 
 - (NSString *)getLocationWithBoolean:(jboolean)detail;
 

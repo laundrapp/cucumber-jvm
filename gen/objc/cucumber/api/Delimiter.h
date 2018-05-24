@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBDelimiter_) && (INCLUDE_ALL_CucumberApiDelimiter || defined(INCLUDE_CCBDelimiter))
-#define CCBDelimiter_
+#if !defined (CucumberApiDelimiter_) && (INCLUDE_ALL_CucumberApiDelimiter || defined(INCLUDE_CucumberApiDelimiter))
+#define CucumberApiDelimiter_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -54,7 +54,7 @@
  <code>java.util.List</code> without the <code>Delimiter</code> annotation will default to the pattern <code>",\\s?"</code>.
   </p>
  */
-@protocol CCBDelimiter < JavaLangAnnotationAnnotation >
+@protocol CucumberApiDelimiter < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 
@@ -64,20 +64,18 @@
 
 @end
 
-@interface CCBDelimiter : NSObject < CCBDelimiter > {
+@interface CucumberApiDelimiter : NSObject < CucumberApiDelimiter > {
  @public
   NSString *value_;
 }
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBDelimiter)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiDelimiter)
 
-FOUNDATION_EXPORT id<CCBDelimiter> create_CCBDelimiter(NSString *value);
+FOUNDATION_EXPORT id<CucumberApiDelimiter> create_CucumberApiDelimiter(NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBDelimiter)
-
-#define CucumberApiDelimiter CCBDelimiter
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiDelimiter)
 
 #endif
 

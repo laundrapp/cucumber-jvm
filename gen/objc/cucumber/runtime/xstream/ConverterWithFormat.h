@@ -22,7 +22,7 @@
 #define CCBRConverterWithFormat_
 
 #define RESTRICT_CucumberApiTransformer 1
-#define INCLUDE_CCBTransformer 1
+#define INCLUDE_CucumberApiTransformer 1
 #include "cucumber/api/Transformer.h"
 
 @class IOSClass;
@@ -30,7 +30,7 @@
 @class JavaTextFormat;
 @protocol JavaUtilList;
 
-@interface CCBRConverterWithFormat : CCBTransformer
+@interface CCBRConverterWithFormat : CucumberApiTransformer
 
 #pragma mark Public
 

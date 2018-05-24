@@ -25,31 +25,31 @@
 #define INCLUDE_JavaLangRuntimeException 1
 #include "java/lang/RuntimeException.h"
 
-@class CCBDataTable;
+@class CucumberApiDataTable;
 @class JavaLangThrowable;
 
 @interface CCBRTableDiffException : JavaLangRuntimeException
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCCBDataTable:(CCBDataTable *)from
-                              withCCBDataTable:(CCBDataTable *)to
-                              withCCBDataTable:(CCBDataTable *)diff;
+- (instancetype __nonnull)initWithCucumberApiDataTable:(CucumberApiDataTable *)from
+                              withCucumberApiDataTable:(CucumberApiDataTable *)to
+                              withCucumberApiDataTable:(CucumberApiDataTable *)diff;
 
 /*!
  @return the diff itself - represented as a table
  */
-- (CCBDataTable *)getDiff;
+- (CucumberApiDataTable *)getDiff;
 
 /*!
  @return the left side of the diff
  */
-- (CCBDataTable *)getFrom;
+- (CucumberApiDataTable *)getFrom;
 
 /*!
  @return the right side of the diff
  */
-- (CCBDataTable *)getTo;
+- (CucumberApiDataTable *)getTo;
 
 // Disallowed inherited constructors, do not use.
 
@@ -71,11 +71,11 @@
 
 J2OBJC_EMPTY_STATIC_INIT(CCBRTableDiffException)
 
-FOUNDATION_EXPORT void CCBRTableDiffException_initWithCCBDataTable_withCCBDataTable_withCCBDataTable_(CCBRTableDiffException *self, CCBDataTable *from, CCBDataTable *to, CCBDataTable *diff);
+FOUNDATION_EXPORT void CCBRTableDiffException_initWithCucumberApiDataTable_withCucumberApiDataTable_withCucumberApiDataTable_(CCBRTableDiffException *self, CucumberApiDataTable *from, CucumberApiDataTable *to, CucumberApiDataTable *diff);
 
-FOUNDATION_EXPORT CCBRTableDiffException *new_CCBRTableDiffException_initWithCCBDataTable_withCCBDataTable_withCCBDataTable_(CCBDataTable *from, CCBDataTable *to, CCBDataTable *diff) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRTableDiffException *new_CCBRTableDiffException_initWithCucumberApiDataTable_withCucumberApiDataTable_withCucumberApiDataTable_(CucumberApiDataTable *from, CucumberApiDataTable *to, CucumberApiDataTable *diff) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRTableDiffException *create_CCBRTableDiffException_initWithCCBDataTable_withCCBDataTable_withCCBDataTable_(CCBDataTable *from, CCBDataTable *to, CCBDataTable *diff);
+FOUNDATION_EXPORT CCBRTableDiffException *create_CCBRTableDiffException_initWithCucumberApiDataTable_withCucumberApiDataTable_withCucumberApiDataTable_(CucumberApiDataTable *from, CucumberApiDataTable *to, CucumberApiDataTable *diff);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRTableDiffException)
 

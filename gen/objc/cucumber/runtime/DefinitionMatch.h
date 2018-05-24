@@ -22,16 +22,16 @@
 #define CCBRDefinitionMatch_
 
 @class CCBRMatch;
-@protocol CCBScenario;
+@protocol CucumberApiScenario;
 @protocol JavaUtilList;
 
 @protocol CCBRDefinitionMatch < JavaObject >
 
 - (void)runStepWithNSString:(NSString *)language
-            withCCBScenario:(id<CCBScenario>)scenario;
+    withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
 
 - (void)dryRunStepWithNSString:(NSString *)language
-               withCCBScenario:(id<CCBScenario>)scenario;
+       withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
 
 - (CCBRMatch *)getMatch;
 

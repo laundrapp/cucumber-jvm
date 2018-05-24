@@ -22,24 +22,24 @@
 #define CCBUnskipableStep_
 
 #define RESTRICT_CucumberApiTestStep 1
-#define INCLUDE_CCBTestStep 1
+#define INCLUDE_CucumberApiTestStep 1
 #include "cucumber/api/TestStep.h"
 
-@class CCBHookType;
-@class CCBResult_Type;
+@class CucumberApiHookType;
+@class CucumberApiResult_Type;
 @class GherkinPicklesPickleStep;
 @protocol CCBRDefinitionMatch;
-@protocol CCBScenario;
+@protocol CucumberApiScenario;
 @protocol JavaUtilList;
 
-@interface CCBUnskipableStep : CCBTestStep
+@interface CCBUnskipableStep : CucumberApiTestStep
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCCBHookType:(CCBHookType *)hookType
-                      withCCBRDefinitionMatch:(id<CCBRDefinitionMatch>)definitionMatch;
+- (instancetype __nonnull)initWithCucumberApiHookType:(CucumberApiHookType *)hookType
+                              withCCBRDefinitionMatch:(id<CCBRDefinitionMatch>)definitionMatch;
 
-- (CCBHookType *)getHookType;
+- (CucumberApiHookType *)getHookType;
 
 - (GherkinPicklesPickleStep *)getPickleStep;
 
@@ -55,9 +55,9 @@
 
 #pragma mark Protected
 
-- (CCBResult_Type *)executeStepWithNSString:(NSString *)language
-                            withCCBScenario:(id<CCBScenario>)scenario
-                                withBoolean:(jboolean)skipSteps;
+- (CucumberApiResult_Type *)executeStepWithNSString:(NSString *)language
+                            withCucumberApiScenario:(id<CucumberApiScenario>)scenario
+                                        withBoolean:(jboolean)skipSteps;
 
 // Disallowed inherited constructors, do not use.
 
@@ -67,11 +67,11 @@
 
 J2OBJC_EMPTY_STATIC_INIT(CCBUnskipableStep)
 
-FOUNDATION_EXPORT void CCBUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CCBUnskipableStep *self, CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch);
+FOUNDATION_EXPORT void CCBUnskipableStep_initWithCucumberApiHookType_withCCBRDefinitionMatch_(CCBUnskipableStep *self, CucumberApiHookType *hookType, id<CCBRDefinitionMatch> definitionMatch);
 
-FOUNDATION_EXPORT CCBUnskipableStep *new_CCBUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBUnskipableStep *new_CCBUnskipableStep_initWithCucumberApiHookType_withCCBRDefinitionMatch_(CucumberApiHookType *hookType, id<CCBRDefinitionMatch> definitionMatch) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBUnskipableStep *create_CCBUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch);
+FOUNDATION_EXPORT CCBUnskipableStep *create_CCBUnskipableStep_initWithCucumberApiHookType_withCCBRDefinitionMatch_(CucumberApiHookType *hookType, id<CCBRDefinitionMatch> definitionMatch);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBUnskipableStep)
 

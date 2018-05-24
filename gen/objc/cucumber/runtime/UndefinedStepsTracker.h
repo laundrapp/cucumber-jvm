@@ -22,13 +22,13 @@
 #define CCBRUndefinedStepsTracker_
 
 #define RESTRICT_CucumberApiEventEventListener 1
-#define INCLUDE_CCBEventListener 1
+#define INCLUDE_CucumberApiEventEventListener 1
 #include "cucumber/api/event/EventListener.h"
 
-@protocol CCBEventPublisher;
+@protocol CucumberApiEventEventPublisher;
 @protocol JavaUtilList;
 
-@interface CCBRUndefinedStepsTracker : NSObject < CCBEventListener >
+@interface CCBRUndefinedStepsTracker : NSObject < CucumberApiEventEventListener >
 
 #pragma mark Public
 
@@ -38,7 +38,7 @@
 
 - (jboolean)hasUndefinedSteps;
 
-- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher;
+- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
 
 #pragma mark Package-Private
 

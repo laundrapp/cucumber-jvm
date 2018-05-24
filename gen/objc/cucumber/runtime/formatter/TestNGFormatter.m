@@ -64,18 +64,18 @@
   id<OrgW3cDomElement> clazz_;
   id<OrgW3cDomElement> root_;
   CCBRTestNGFormatter_TestMethod *testMethod_;
-  id<CCBEventHandler> testSourceReadHandler_;
-  id<CCBEventHandler> caseStartedHandler_;
-  id<CCBEventHandler> stepFinishedHandler_;
-  id<CCBEventHandler> caseFinishedHandler_;
-  id<CCBEventHandler> runFinishedHandler_;
+  id<CucumberApiEventEventHandler> testSourceReadHandler_;
+  id<CucumberApiEventEventHandler> caseStartedHandler_;
+  id<CucumberApiEventEventHandler> stepFinishedHandler_;
+  id<CucumberApiEventEventHandler> caseFinishedHandler_;
+  id<CucumberApiEventEventHandler> runFinishedHandler_;
 }
 
-- (void)handleTestSourceReadWithCCBTestSourceRead:(CCBTestSourceRead *)event;
+- (void)handleTestSourceReadWithCucumberApiEventTestSourceRead:(CucumberApiEventTestSourceRead *)event;
 
-- (void)handleTestCaseStartedWithCCBTestCaseStarted:(CCBTestCaseStarted *)event;
+- (void)handleTestCaseStartedWithCucumberApiEventTestCaseStarted:(CucumberApiEventTestCaseStarted *)event;
 
-- (void)handleTestStepFinishedWithCCBTestStepFinished:(CCBTestStepFinished *)event;
+- (void)handleTestStepFinishedWithCucumberApiEventTestStepFinished:(CucumberApiEventTestStepFinished *)event;
 
 - (void)handleTestCaseFinished;
 
@@ -99,21 +99,21 @@ J2OBJC_FIELD_SETTER(CCBRTestNGFormatter, test_, id<OrgW3cDomElement>)
 J2OBJC_FIELD_SETTER(CCBRTestNGFormatter, clazz_, id<OrgW3cDomElement>)
 J2OBJC_FIELD_SETTER(CCBRTestNGFormatter, root_, id<OrgW3cDomElement>)
 J2OBJC_FIELD_SETTER(CCBRTestNGFormatter, testMethod_, CCBRTestNGFormatter_TestMethod *)
-J2OBJC_FIELD_SETTER(CCBRTestNGFormatter, testSourceReadHandler_, id<CCBEventHandler>)
-J2OBJC_FIELD_SETTER(CCBRTestNGFormatter, caseStartedHandler_, id<CCBEventHandler>)
-J2OBJC_FIELD_SETTER(CCBRTestNGFormatter, stepFinishedHandler_, id<CCBEventHandler>)
-J2OBJC_FIELD_SETTER(CCBRTestNGFormatter, caseFinishedHandler_, id<CCBEventHandler>)
-J2OBJC_FIELD_SETTER(CCBRTestNGFormatter, runFinishedHandler_, id<CCBEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRTestNGFormatter, testSourceReadHandler_, id<CucumberApiEventEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRTestNGFormatter, caseStartedHandler_, id<CucumberApiEventEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRTestNGFormatter, stepFinishedHandler_, id<CucumberApiEventEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRTestNGFormatter, caseFinishedHandler_, id<CucumberApiEventEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRTestNGFormatter, runFinishedHandler_, id<CucumberApiEventEventHandler>)
 
 inline JavaTextSimpleDateFormat *CCBRTestNGFormatter_get_DATE_FORMAT(void);
 static JavaTextSimpleDateFormat *CCBRTestNGFormatter_DATE_FORMAT;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRTestNGFormatter, DATE_FORMAT, JavaTextSimpleDateFormat *)
 
-__attribute__((unused)) static void CCBRTestNGFormatter_handleTestSourceReadWithCCBTestSourceRead_(CCBRTestNGFormatter *self, CCBTestSourceRead *event);
+__attribute__((unused)) static void CCBRTestNGFormatter_handleTestSourceReadWithCucumberApiEventTestSourceRead_(CCBRTestNGFormatter *self, CucumberApiEventTestSourceRead *event);
 
-__attribute__((unused)) static void CCBRTestNGFormatter_handleTestCaseStartedWithCCBTestCaseStarted_(CCBRTestNGFormatter *self, CCBTestCaseStarted *event);
+__attribute__((unused)) static void CCBRTestNGFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarted_(CCBRTestNGFormatter *self, CucumberApiEventTestCaseStarted *event);
 
-__attribute__((unused)) static void CCBRTestNGFormatter_handleTestStepFinishedWithCCBTestStepFinished_(CCBRTestNGFormatter *self, CCBTestStepFinished *event);
+__attribute__((unused)) static void CCBRTestNGFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(CCBRTestNGFormatter *self, CucumberApiEventTestStepFinished *event);
 
 __attribute__((unused)) static void CCBRTestNGFormatter_handleTestCaseFinished(CCBRTestNGFormatter *self);
 
@@ -125,14 +125,14 @@ __attribute__((unused)) static NSString *CCBRTestNGFormatter_getTotalDurationWit
 
 __attribute__((unused)) static void CCBRTestNGFormatter_closeQuietlyWithJavaIoCloseable_(id<JavaIoCloseable> outArg);
 
-@interface CCBRTestNGFormatter_1 : NSObject < CCBEventHandler > {
+@interface CCBRTestNGFormatter_1 : NSObject < CucumberApiEventEventHandler > {
  @public
   CCBRTestNGFormatter *this$0_;
 }
 
 - (instancetype __nonnull)initWithCCBRTestNGFormatter:(CCBRTestNGFormatter *)outer$;
 
-- (void)receiveWithCCBEvent:(CCBTestSourceRead *)event;
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestSourceRead *)event;
 
 @end
 
@@ -144,14 +144,14 @@ __attribute__((unused)) static CCBRTestNGFormatter_1 *new_CCBRTestNGFormatter_1_
 
 __attribute__((unused)) static CCBRTestNGFormatter_1 *create_CCBRTestNGFormatter_1_initWithCCBRTestNGFormatter_(CCBRTestNGFormatter *outer$);
 
-@interface CCBRTestNGFormatter_2 : NSObject < CCBEventHandler > {
+@interface CCBRTestNGFormatter_2 : NSObject < CucumberApiEventEventHandler > {
  @public
   CCBRTestNGFormatter *this$0_;
 }
 
 - (instancetype __nonnull)initWithCCBRTestNGFormatter:(CCBRTestNGFormatter *)outer$;
 
-- (void)receiveWithCCBEvent:(CCBTestCaseStarted *)event;
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestCaseStarted *)event;
 
 @end
 
@@ -163,14 +163,14 @@ __attribute__((unused)) static CCBRTestNGFormatter_2 *new_CCBRTestNGFormatter_2_
 
 __attribute__((unused)) static CCBRTestNGFormatter_2 *create_CCBRTestNGFormatter_2_initWithCCBRTestNGFormatter_(CCBRTestNGFormatter *outer$);
 
-@interface CCBRTestNGFormatter_3 : NSObject < CCBEventHandler > {
+@interface CCBRTestNGFormatter_3 : NSObject < CucumberApiEventEventHandler > {
  @public
   CCBRTestNGFormatter *this$0_;
 }
 
 - (instancetype __nonnull)initWithCCBRTestNGFormatter:(CCBRTestNGFormatter *)outer$;
 
-- (void)receiveWithCCBEvent:(CCBTestStepFinished *)event;
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepFinished *)event;
 
 @end
 
@@ -182,14 +182,14 @@ __attribute__((unused)) static CCBRTestNGFormatter_3 *new_CCBRTestNGFormatter_3_
 
 __attribute__((unused)) static CCBRTestNGFormatter_3 *create_CCBRTestNGFormatter_3_initWithCCBRTestNGFormatter_(CCBRTestNGFormatter *outer$);
 
-@interface CCBRTestNGFormatter_4 : NSObject < CCBEventHandler > {
+@interface CCBRTestNGFormatter_4 : NSObject < CucumberApiEventEventHandler > {
  @public
   CCBRTestNGFormatter *this$0_;
 }
 
 - (instancetype __nonnull)initWithCCBRTestNGFormatter:(CCBRTestNGFormatter *)outer$;
 
-- (void)receiveWithCCBEvent:(CCBTestCaseFinished *)event;
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestCaseFinished *)event;
 
 @end
 
@@ -201,14 +201,14 @@ __attribute__((unused)) static CCBRTestNGFormatter_4 *new_CCBRTestNGFormatter_4_
 
 __attribute__((unused)) static CCBRTestNGFormatter_4 *create_CCBRTestNGFormatter_4_initWithCCBRTestNGFormatter_(CCBRTestNGFormatter *outer$);
 
-@interface CCBRTestNGFormatter_5 : NSObject < CCBEventHandler > {
+@interface CCBRTestNGFormatter_5 : NSObject < CucumberApiEventEventHandler > {
  @public
   CCBRTestNGFormatter *this$0_;
 }
 
 - (instancetype __nonnull)initWithCCBRTestNGFormatter:(CCBRTestNGFormatter *)outer$;
 
-- (void)receiveWithCCBEvent:(CCBTestRunFinished *)event;
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event;
 
 @end
 
@@ -225,14 +225,14 @@ __attribute__((unused)) static CCBRTestNGFormatter_5 *create_CCBRTestNGFormatter
   id<JavaUtilList> steps_;
   id<JavaUtilList> results_;
   id<JavaUtilList> hooks_;
-  CCBTestCase *scenario_;
+  CucumberApiTestCase *scenario_;
 }
 
-- (instancetype __nonnull)initWithCCBTestCase:(CCBTestCase *)scenario;
+- (instancetype __nonnull)initWithCucumberApiTestCase:(CucumberApiTestCase *)scenario;
 
 - (void)startWithOrgW3cDomElement:(id<OrgW3cDomElement>)element;
 
-- (NSString *)calculateElementNameWithCCBTestCase:(CCBTestCase *)testCase;
+- (NSString *)calculateElementNameWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
 
 - (void)finishWithOrgW3cDomDocument:(id<OrgW3cDomDocument>)doc
                withOrgW3cDomElement:(id<OrgW3cDomElement>)element;
@@ -253,7 +253,7 @@ J2OBJC_STATIC_INIT(CCBRTestNGFormatter_TestMethod)
 J2OBJC_FIELD_SETTER(CCBRTestNGFormatter_TestMethod, steps_, id<JavaUtilList>)
 J2OBJC_FIELD_SETTER(CCBRTestNGFormatter_TestMethod, results_, id<JavaUtilList>)
 J2OBJC_FIELD_SETTER(CCBRTestNGFormatter_TestMethod, hooks_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CCBRTestNGFormatter_TestMethod, scenario_, CCBTestCase *)
+J2OBJC_FIELD_SETTER(CCBRTestNGFormatter_TestMethod, scenario_, CucumberApiTestCase *)
 
 inline NSString *CCBRTestNGFormatter_TestMethod_get_currentFeatureFile(void);
 inline NSString *CCBRTestNGFormatter_TestMethod_set_currentFeatureFile(NSString *value);
@@ -281,15 +281,15 @@ inline CCBRTestSourcesModel *CCBRTestNGFormatter_TestMethod_get_testSources(void
 static CCBRTestSourcesModel *CCBRTestNGFormatter_TestMethod_testSources;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRTestNGFormatter_TestMethod, testSources, CCBRTestSourcesModel *)
 
-__attribute__((unused)) static void CCBRTestNGFormatter_TestMethod_initWithCCBTestCase_(CCBRTestNGFormatter_TestMethod *self, CCBTestCase *scenario);
+__attribute__((unused)) static void CCBRTestNGFormatter_TestMethod_initWithCucumberApiTestCase_(CCBRTestNGFormatter_TestMethod *self, CucumberApiTestCase *scenario);
 
-__attribute__((unused)) static CCBRTestNGFormatter_TestMethod *new_CCBRTestNGFormatter_TestMethod_initWithCCBTestCase_(CCBTestCase *scenario) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRTestNGFormatter_TestMethod *new_CCBRTestNGFormatter_TestMethod_initWithCucumberApiTestCase_(CucumberApiTestCase *scenario) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CCBRTestNGFormatter_TestMethod *create_CCBRTestNGFormatter_TestMethod_initWithCCBTestCase_(CCBTestCase *scenario);
+__attribute__((unused)) static CCBRTestNGFormatter_TestMethod *create_CCBRTestNGFormatter_TestMethod_initWithCucumberApiTestCase_(CucumberApiTestCase *scenario);
 
 __attribute__((unused)) static void CCBRTestNGFormatter_TestMethod_startWithOrgW3cDomElement_(CCBRTestNGFormatter_TestMethod *self, id<OrgW3cDomElement> element);
 
-__attribute__((unused)) static NSString *CCBRTestNGFormatter_TestMethod_calculateElementNameWithCCBTestCase_(CCBRTestNGFormatter_TestMethod *self, CCBTestCase *testCase);
+__attribute__((unused)) static NSString *CCBRTestNGFormatter_TestMethod_calculateElementNameWithCucumberApiTestCase_(CCBRTestNGFormatter_TestMethod *self, CucumberApiTestCase *testCase);
 
 __attribute__((unused)) static NSString *CCBRTestNGFormatter_TestMethod_calculateTotalDurationString(CCBRTestNGFormatter_TestMethod *self);
 
@@ -308,28 +308,28 @@ J2OBJC_INITIALIZED_DEFN(CCBRTestNGFormatter)
   return self;
 }
 
-- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher {
-  [((id<CCBEventPublisher>) nil_chk(publisher)) registerHandlerForWithIOSClass:CCBTestSourceRead_class_() withCCBEventHandler:testSourceReadHandler_];
-  [publisher registerHandlerForWithIOSClass:CCBTestCaseStarted_class_() withCCBEventHandler:caseStartedHandler_];
-  [publisher registerHandlerForWithIOSClass:CCBTestCaseFinished_class_() withCCBEventHandler:caseFinishedHandler_];
-  [publisher registerHandlerForWithIOSClass:CCBTestStepFinished_class_() withCCBEventHandler:stepFinishedHandler_];
-  [publisher registerHandlerForWithIOSClass:CCBTestRunFinished_class_() withCCBEventHandler:runFinishedHandler_];
+- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher {
+  [((id<CucumberApiEventEventPublisher>) nil_chk(publisher)) registerHandlerForWithIOSClass:CucumberApiEventTestSourceRead_class_() withCucumberApiEventEventHandler:testSourceReadHandler_];
+  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestCaseStarted_class_() withCucumberApiEventEventHandler:caseStartedHandler_];
+  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestCaseFinished_class_() withCucumberApiEventEventHandler:caseFinishedHandler_];
+  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestStepFinished_class_() withCucumberApiEventEventHandler:stepFinishedHandler_];
+  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestRunFinished_class_() withCucumberApiEventEventHandler:runFinishedHandler_];
 }
 
 - (void)setStrictWithBoolean:(jboolean)strict {
   *JreLoadStaticRef(CCBRTestNGFormatter_TestMethod, treatSkippedAsFailure) = strict;
 }
 
-- (void)handleTestSourceReadWithCCBTestSourceRead:(CCBTestSourceRead *)event {
-  CCBRTestNGFormatter_handleTestSourceReadWithCCBTestSourceRead_(self, event);
+- (void)handleTestSourceReadWithCucumberApiEventTestSourceRead:(CucumberApiEventTestSourceRead *)event {
+  CCBRTestNGFormatter_handleTestSourceReadWithCucumberApiEventTestSourceRead_(self, event);
 }
 
-- (void)handleTestCaseStartedWithCCBTestCaseStarted:(CCBTestCaseStarted *)event {
-  CCBRTestNGFormatter_handleTestCaseStartedWithCCBTestCaseStarted_(self, event);
+- (void)handleTestCaseStartedWithCucumberApiEventTestCaseStarted:(CucumberApiEventTestCaseStarted *)event {
+  CCBRTestNGFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarted_(self, event);
 }
 
-- (void)handleTestStepFinishedWithCCBTestStepFinished:(CCBTestStepFinished *)event {
-  CCBRTestNGFormatter_handleTestStepFinishedWithCCBTestStepFinished_(self, event);
+- (void)handleTestStepFinishedWithCucumberApiEventTestStepFinished:(CucumberApiEventTestStepFinished *)event {
+  CCBRTestNGFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(self, event);
 }
 
 - (void)handleTestCaseFinished {
@@ -389,11 +389,11 @@ J2OBJC_INITIALIZED_DEFN(CCBRTestNGFormatter)
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaNetURL:);
-  methods[1].selector = @selector(setEventPublisherWithCCBEventPublisher:);
+  methods[1].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
   methods[2].selector = @selector(setStrictWithBoolean:);
-  methods[3].selector = @selector(handleTestSourceReadWithCCBTestSourceRead:);
-  methods[4].selector = @selector(handleTestCaseStartedWithCCBTestCaseStarted:);
-  methods[5].selector = @selector(handleTestStepFinishedWithCCBTestStepFinished:);
+  methods[3].selector = @selector(handleTestSourceReadWithCucumberApiEventTestSourceRead:);
+  methods[4].selector = @selector(handleTestCaseStartedWithCucumberApiEventTestCaseStarted:);
+  methods[5].selector = @selector(handleTestStepFinishedWithCucumberApiEventTestStepFinished:);
   methods[6].selector = @selector(handleTestCaseFinished);
   methods[7].selector = @selector(finishReport);
   methods[8].selector = @selector(getElementsCountByAttributeWithOrgW3cDomNode:withNSString:withNSString:);
@@ -410,13 +410,13 @@ J2OBJC_INITIALIZED_DEFN(CCBRTestNGFormatter)
     { "clazz_", "LOrgW3cDomElement;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "root_", "LOrgW3cDomElement;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "testMethod_", "LCCBRTestNGFormatter_TestMethod;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "testSourceReadHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 19, -1 },
-    { "caseStartedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 20, -1 },
-    { "stepFinishedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 21, -1 },
-    { "caseFinishedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 22, -1 },
-    { "runFinishedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 23, -1 },
+    { "testSourceReadHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 19, -1 },
+    { "caseStartedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 20, -1 },
+    { "stepFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 21, -1 },
+    { "caseFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 22, -1 },
+    { "runFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 23, -1 },
   };
-  static const void *ptrTable[] = { "LJavaNetURL;", "LJavaIoIOException;", "setEventPublisher", "LCCBEventPublisher;", "setStrict", "Z", "handleTestSourceRead", "LCCBTestSourceRead;", "handleTestCaseStarted", "LCCBTestCaseStarted;", "handleTestStepFinished", "LCCBTestStepFinished;", "getElementsCountByAttribute", "LOrgW3cDomNode;LNSString;LNSString;", "getTotalDuration", "LOrgW3cDomNodeList;", "closeQuietly", "LJavaIoCloseable;", &CCBRTestNGFormatter_DATE_FORMAT, "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;", "LCCBRTestNGFormatter_TestMethod;" };
+  static const void *ptrTable[] = { "LJavaNetURL;", "LJavaIoIOException;", "setEventPublisher", "LCucumberApiEventEventPublisher;", "setStrict", "Z", "handleTestSourceRead", "LCucumberApiEventTestSourceRead;", "handleTestCaseStarted", "LCucumberApiEventTestCaseStarted;", "handleTestStepFinished", "LCucumberApiEventTestStepFinished;", "getElementsCountByAttribute", "LOrgW3cDomNode;LNSString;LNSString;", "getTotalDuration", "LOrgW3cDomNodeList;", "closeQuietly", "LJavaIoCloseable;", &CCBRTestNGFormatter_DATE_FORMAT, "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;", "LCCBRTestNGFormatter_TestMethod;" };
   static const J2ObjcClassInfo _CCBRTestNGFormatter = { "TestNGFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x0, 11, 14, -1, 24, -1, -1, -1 };
   return &_CCBRTestNGFormatter;
 }
@@ -462,13 +462,13 @@ CCBRTestNGFormatter *create_CCBRTestNGFormatter_initWithJavaNetURL_(JavaNetURL *
   J2OBJC_CREATE_IMPL(CCBRTestNGFormatter, initWithJavaNetURL_, url)
 }
 
-void CCBRTestNGFormatter_handleTestSourceReadWithCCBTestSourceRead_(CCBRTestNGFormatter *self, CCBTestSourceRead *event) {
-  [((CCBRTestSourcesModel *) nil_chk(JreLoadStatic(CCBRTestNGFormatter_TestMethod, testSources))) addTestSourceReadEventWithNSString:((CCBTestSourceRead *) nil_chk(event))->uri_ withCCBTestSourceRead:event];
+void CCBRTestNGFormatter_handleTestSourceReadWithCucumberApiEventTestSourceRead_(CCBRTestNGFormatter *self, CucumberApiEventTestSourceRead *event) {
+  [((CCBRTestSourcesModel *) nil_chk(JreLoadStatic(CCBRTestNGFormatter_TestMethod, testSources))) addTestSourceReadEventWithNSString:((CucumberApiEventTestSourceRead *) nil_chk(event))->uri_ withCucumberApiEventTestSourceRead:event];
 }
 
-void CCBRTestNGFormatter_handleTestCaseStartedWithCCBTestCaseStarted_(CCBRTestNGFormatter *self, CCBTestCaseStarted *event) {
-  if (JreLoadStatic(CCBRTestNGFormatter_TestMethod, currentFeatureFile) == nil || ![JreLoadStatic(CCBRTestNGFormatter_TestMethod, currentFeatureFile) isEqual:[((CCBTestCase *) nil_chk(((CCBTestCaseStarted *) nil_chk(event))->testCase_)) getUri]]) {
-    JreStrongAssign(JreLoadStaticRef(CCBRTestNGFormatter_TestMethod, currentFeatureFile), [((CCBTestCase *) nil_chk(((CCBTestCaseStarted *) nil_chk(event))->testCase_)) getUri]);
+void CCBRTestNGFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarted_(CCBRTestNGFormatter *self, CucumberApiEventTestCaseStarted *event) {
+  if (JreLoadStatic(CCBRTestNGFormatter_TestMethod, currentFeatureFile) == nil || ![JreLoadStatic(CCBRTestNGFormatter_TestMethod, currentFeatureFile) isEqual:[((CucumberApiTestCase *) nil_chk(((CucumberApiEventTestCaseStarted *) nil_chk(event))->testCase_)) getUri]]) {
+    JreStrongAssign(JreLoadStaticRef(CCBRTestNGFormatter_TestMethod, currentFeatureFile), [((CucumberApiTestCase *) nil_chk(((CucumberApiEventTestCaseStarted *) nil_chk(event))->testCase_)) getUri]);
     JreStrongAssign(JreLoadStaticRef(CCBRTestNGFormatter_TestMethod, previousTestCaseName), @"");
     *JreLoadStaticRef(CCBRTestNGFormatter_TestMethod, exampleNumber) = 1;
     JreStrongAssign(&self->clazz_, [((id<OrgW3cDomDocument>) nil_chk(self->document_)) createElementWithNSString:@"class"]);
@@ -477,12 +477,12 @@ void CCBRTestNGFormatter_handleTestCaseStartedWithCCBTestCaseStarted_(CCBRTestNG
   }
   JreStrongAssign(&self->root_, [((id<OrgW3cDomDocument>) nil_chk(self->document_)) createElementWithNSString:@"test-method"]);
   [((id<OrgW3cDomElement>) nil_chk(self->clazz_)) appendChildWithOrgW3cDomNode:self->root_];
-  JreStrongAssignAndConsume(&self->testMethod_, new_CCBRTestNGFormatter_TestMethod_initWithCCBTestCase_(((CCBTestCaseStarted *) nil_chk(event))->testCase_));
+  JreStrongAssignAndConsume(&self->testMethod_, new_CCBRTestNGFormatter_TestMethod_initWithCucumberApiTestCase_(((CucumberApiEventTestCaseStarted *) nil_chk(event))->testCase_));
   CCBRTestNGFormatter_TestMethod_startWithOrgW3cDomElement_(self->testMethod_, self->root_);
 }
 
-void CCBRTestNGFormatter_handleTestStepFinishedWithCCBTestStepFinished_(CCBRTestNGFormatter *self, CCBTestStepFinished *event) {
-  if (![((CCBTestStep *) nil_chk(((CCBTestStepFinished *) nil_chk(event))->testStep_)) isHook]) {
+void CCBRTestNGFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(CCBRTestNGFormatter *self, CucumberApiEventTestStepFinished *event) {
+  if (![((CucumberApiTestStep *) nil_chk(((CucumberApiEventTestStepFinished *) nil_chk(event))->testStep_)) isHook]) {
     [((id<JavaUtilList>) nil_chk(((CCBRTestNGFormatter_TestMethod *) nil_chk(self->testMethod_))->steps_)) addWithId:event->testStep_];
     [((id<JavaUtilList>) nil_chk(((CCBRTestNGFormatter_TestMethod *) nil_chk(self->testMethod_))->results_)) addWithId:event->result_];
   }
@@ -567,8 +567,8 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTestNGFormatter)
   return self;
 }
 
-- (void)receiveWithCCBEvent:(CCBTestSourceRead *)event {
-  CCBRTestNGFormatter_handleTestSourceReadWithCCBTestSourceRead_(this$0_, event);
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestSourceRead *)event {
+  CCBRTestNGFormatter_handleTestSourceReadWithCucumberApiEventTestSourceRead_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -585,12 +585,12 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTestNGFormatter)
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRTestNGFormatter:);
-  methods[1].selector = @selector(receiveWithCCBEvent:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCCBRTestNGFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCCBTestSourceRead;", "LCCBRTestNGFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;" };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestSourceRead;", "LCCBRTestNGFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;" };
   static const J2ObjcClassInfo _CCBRTestNGFormatter_1 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
   return &_CCBRTestNGFormatter_1;
 }
@@ -617,8 +617,8 @@ CCBRTestNGFormatter_1 *create_CCBRTestNGFormatter_1_initWithCCBRTestNGFormatter_
   return self;
 }
 
-- (void)receiveWithCCBEvent:(CCBTestCaseStarted *)event {
-  CCBRTestNGFormatter_handleTestCaseStartedWithCCBTestCaseStarted_(this$0_, event);
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestCaseStarted *)event {
+  CCBRTestNGFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarted_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -635,12 +635,12 @@ CCBRTestNGFormatter_1 *create_CCBRTestNGFormatter_1_initWithCCBRTestNGFormatter_
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRTestNGFormatter:);
-  methods[1].selector = @selector(receiveWithCCBEvent:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCCBRTestNGFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCCBTestCaseStarted;", "LCCBRTestNGFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;" };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestCaseStarted;", "LCCBRTestNGFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;" };
   static const J2ObjcClassInfo _CCBRTestNGFormatter_2 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
   return &_CCBRTestNGFormatter_2;
 }
@@ -667,8 +667,8 @@ CCBRTestNGFormatter_2 *create_CCBRTestNGFormatter_2_initWithCCBRTestNGFormatter_
   return self;
 }
 
-- (void)receiveWithCCBEvent:(CCBTestStepFinished *)event {
-  CCBRTestNGFormatter_handleTestStepFinishedWithCCBTestStepFinished_(this$0_, event);
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepFinished *)event {
+  CCBRTestNGFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -685,12 +685,12 @@ CCBRTestNGFormatter_2 *create_CCBRTestNGFormatter_2_initWithCCBRTestNGFormatter_
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRTestNGFormatter:);
-  methods[1].selector = @selector(receiveWithCCBEvent:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCCBRTestNGFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCCBTestStepFinished;", "LCCBRTestNGFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;" };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestStepFinished;", "LCCBRTestNGFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;" };
   static const J2ObjcClassInfo _CCBRTestNGFormatter_3 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
   return &_CCBRTestNGFormatter_3;
 }
@@ -717,7 +717,7 @@ CCBRTestNGFormatter_3 *create_CCBRTestNGFormatter_3_initWithCCBRTestNGFormatter_
   return self;
 }
 
-- (void)receiveWithCCBEvent:(CCBTestCaseFinished *)event {
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestCaseFinished *)event {
   CCBRTestNGFormatter_handleTestCaseFinished(this$0_);
 }
 
@@ -735,12 +735,12 @@ CCBRTestNGFormatter_3 *create_CCBRTestNGFormatter_3_initWithCCBRTestNGFormatter_
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRTestNGFormatter:);
-  methods[1].selector = @selector(receiveWithCCBEvent:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCCBRTestNGFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCCBTestCaseFinished;", "LCCBRTestNGFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseFinished;>;" };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestCaseFinished;", "LCCBRTestNGFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseFinished;>;" };
   static const J2ObjcClassInfo _CCBRTestNGFormatter_4 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
   return &_CCBRTestNGFormatter_4;
 }
@@ -767,7 +767,7 @@ CCBRTestNGFormatter_4 *create_CCBRTestNGFormatter_4_initWithCCBRTestNGFormatter_
   return self;
 }
 
-- (void)receiveWithCCBEvent:(CCBTestRunFinished *)event {
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event {
   CCBRTestNGFormatter_finishReport(this$0_);
 }
 
@@ -785,12 +785,12 @@ CCBRTestNGFormatter_4 *create_CCBRTestNGFormatter_4_initWithCCBRTestNGFormatter_
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRTestNGFormatter:);
-  methods[1].selector = @selector(receiveWithCCBEvent:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "this$0_", "LCCBRTestNGFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCCBTestRunFinished;", "LCCBRTestNGFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestRunFinished;", "LCCBRTestNGFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
   static const J2ObjcClassInfo _CCBRTestNGFormatter_5 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
   return &_CCBRTestNGFormatter_5;
 }
@@ -814,8 +814,8 @@ J2OBJC_INITIALIZED_DEFN(CCBRTestNGFormatter_TestMethod)
 
 @implementation CCBRTestNGFormatter_TestMethod
 
-- (instancetype __nonnull)initWithCCBTestCase:(CCBTestCase *)scenario {
-  CCBRTestNGFormatter_TestMethod_initWithCCBTestCase_(self, scenario);
+- (instancetype __nonnull)initWithCucumberApiTestCase:(CucumberApiTestCase *)scenario {
+  CCBRTestNGFormatter_TestMethod_initWithCucumberApiTestCase_(self, scenario);
   return self;
 }
 
@@ -823,8 +823,8 @@ J2OBJC_INITIALIZED_DEFN(CCBRTestNGFormatter_TestMethod)
   CCBRTestNGFormatter_TestMethod_startWithOrgW3cDomElement_(self, element);
 }
 
-- (NSString *)calculateElementNameWithCCBTestCase:(CCBTestCase *)testCase {
-  return CCBRTestNGFormatter_TestMethod_calculateElementNameWithCCBTestCase_(self, testCase);
+- (NSString *)calculateElementNameWithCucumberApiTestCase:(CucumberApiTestCase *)testCase {
+  return CCBRTestNGFormatter_TestMethod_calculateElementNameWithCucumberApiTestCase_(self, testCase);
 }
 
 - (void)finishWithOrgW3cDomDocument:(id<OrgW3cDomDocument>)doc
@@ -833,18 +833,18 @@ J2OBJC_INITIALIZED_DEFN(CCBRTestNGFormatter_TestMethod)
   [element setAttributeWithNSString:@"finished-at" withNSString:[((JavaTextSimpleDateFormat *) nil_chk(JreLoadStatic(CCBRTestNGFormatter, DATE_FORMAT))) formatWithJavaUtilDate:create_JavaUtilDate_init()]];
   JavaLangStringBuilder *stringBuilder = create_JavaLangStringBuilder_init();
   CCBRTestNGFormatter_TestMethod_addStepAndResultListingWithJavaLangStringBuilder_(self, stringBuilder);
-  CCBResult *skipped = nil;
-  CCBResult *failed = nil;
-  for (CCBResult * __strong result in nil_chk(results_)) {
-    if ([((CCBResult *) nil_chk(result)) isWithCCBResult_Type:JreLoadEnum(CCBResult_Type, FAILED)] || [result isWithCCBResult_Type:JreLoadEnum(CCBResult_Type, AMBIGUOUS)]) {
+  CucumberApiResult *skipped = nil;
+  CucumberApiResult *failed = nil;
+  for (CucumberApiResult * __strong result in nil_chk(results_)) {
+    if ([((CucumberApiResult *) nil_chk(result)) isWithCucumberApiResult_Type:JreLoadEnum(CucumberApiResult_Type, FAILED)] || [result isWithCucumberApiResult_Type:JreLoadEnum(CucumberApiResult_Type, AMBIGUOUS)]) {
       failed = result;
     }
-    if ([result isWithCCBResult_Type:JreLoadEnum(CCBResult_Type, UNDEFINED)] || [result isWithCCBResult_Type:JreLoadEnum(CCBResult_Type, PENDING)]) {
+    if ([result isWithCucumberApiResult_Type:JreLoadEnum(CucumberApiResult_Type, UNDEFINED)] || [result isWithCucumberApiResult_Type:JreLoadEnum(CucumberApiResult_Type, PENDING)]) {
       skipped = result;
     }
   }
-  for (CCBResult * __strong result in nil_chk(hooks_)) {
-    if (failed == nil && [((CCBResult *) nil_chk(result)) isWithCCBResult_Type:JreLoadEnum(CCBResult_Type, FAILED)]) {
+  for (CucumberApiResult * __strong result in nil_chk(hooks_)) {
+    if (failed == nil && [((CucumberApiResult *) nil_chk(result)) isWithCucumberApiResult_Type:JreLoadEnum(CucumberApiResult_Type, FAILED)]) {
       failed = result;
     }
   }
@@ -906,9 +906,9 @@ J2OBJC_INITIALIZED_DEFN(CCBRTestNGFormatter_TestMethod)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCCBTestCase:);
+  methods[0].selector = @selector(initWithCucumberApiTestCase:);
   methods[1].selector = @selector(startWithOrgW3cDomElement:);
-  methods[2].selector = @selector(calculateElementNameWithCCBTestCase:);
+  methods[2].selector = @selector(calculateElementNameWithCucumberApiTestCase:);
   methods[3].selector = @selector(finishWithOrgW3cDomDocument:withOrgW3cDomElement:);
   methods[4].selector = @selector(calculateTotalDurationString);
   methods[5].selector = @selector(addStepAndResultListingWithJavaLangStringBuilder:);
@@ -923,9 +923,9 @@ J2OBJC_INITIALIZED_DEFN(CCBRTestNGFormatter_TestMethod)
     { "steps_", "LJavaUtilList;", .constantValue.asLong = 0, 0x10, -1, -1, 15, -1 },
     { "results_", "LJavaUtilList;", .constantValue.asLong = 0, 0x10, -1, -1, 16, -1 },
     { "hooks_", "LJavaUtilList;", .constantValue.asLong = 0, 0x10, -1, -1, 16, -1 },
-    { "scenario_", "LCCBTestCase;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
+    { "scenario_", "LCucumberApiTestCase;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCCBTestCase;", "start", "LOrgW3cDomElement;", "calculateElementName", "finish", "LOrgW3cDomDocument;LOrgW3cDomElement;", "addStepAndResultListing", "LJavaLangStringBuilder;", "createException", "LOrgW3cDomDocument;LNSString;LNSString;LNSString;", &CCBRTestNGFormatter_TestMethod_currentFeatureFile, &CCBRTestNGFormatter_TestMethod_treatSkippedAsFailure, &CCBRTestNGFormatter_TestMethod_previousTestCaseName, &CCBRTestNGFormatter_TestMethod_exampleNumber, &CCBRTestNGFormatter_TestMethod_testSources, "Ljava/util/List<Lcucumber/api/TestStep;>;", "Ljava/util/List<Lcucumber/api/Result;>;", "LCCBRTestNGFormatter;" };
+  static const void *ptrTable[] = { "LCucumberApiTestCase;", "start", "LOrgW3cDomElement;", "calculateElementName", "finish", "LOrgW3cDomDocument;LOrgW3cDomElement;", "addStepAndResultListing", "LJavaLangStringBuilder;", "createException", "LOrgW3cDomDocument;LNSString;LNSString;LNSString;", &CCBRTestNGFormatter_TestMethod_currentFeatureFile, &CCBRTestNGFormatter_TestMethod_treatSkippedAsFailure, &CCBRTestNGFormatter_TestMethod_previousTestCaseName, &CCBRTestNGFormatter_TestMethod_exampleNumber, &CCBRTestNGFormatter_TestMethod_testSources, "Ljava/util/List<Lcucumber/api/TestStep;>;", "Ljava/util/List<Lcucumber/api/Result;>;", "LCCBRTestNGFormatter;" };
   static const J2ObjcClassInfo _CCBRTestNGFormatter_TestMethod = { "TestMethod", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0xa, 7, 9, 17, -1, -1, -1, -1 };
   return &_CCBRTestNGFormatter_TestMethod;
 }
@@ -939,7 +939,7 @@ J2OBJC_INITIALIZED_DEFN(CCBRTestNGFormatter_TestMethod)
 
 @end
 
-void CCBRTestNGFormatter_TestMethod_initWithCCBTestCase_(CCBRTestNGFormatter_TestMethod *self, CCBTestCase *scenario) {
+void CCBRTestNGFormatter_TestMethod_initWithCucumberApiTestCase_(CCBRTestNGFormatter_TestMethod *self, CucumberApiTestCase *scenario) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->steps_, new_JavaUtilArrayList_init());
   JreStrongAssignAndConsume(&self->results_, new_JavaUtilArrayList_init());
@@ -947,21 +947,21 @@ void CCBRTestNGFormatter_TestMethod_initWithCCBTestCase_(CCBRTestNGFormatter_Tes
   JreStrongAssign(&self->scenario_, scenario);
 }
 
-CCBRTestNGFormatter_TestMethod *new_CCBRTestNGFormatter_TestMethod_initWithCCBTestCase_(CCBTestCase *scenario) {
-  J2OBJC_NEW_IMPL(CCBRTestNGFormatter_TestMethod, initWithCCBTestCase_, scenario)
+CCBRTestNGFormatter_TestMethod *new_CCBRTestNGFormatter_TestMethod_initWithCucumberApiTestCase_(CucumberApiTestCase *scenario) {
+  J2OBJC_NEW_IMPL(CCBRTestNGFormatter_TestMethod, initWithCucumberApiTestCase_, scenario)
 }
 
-CCBRTestNGFormatter_TestMethod *create_CCBRTestNGFormatter_TestMethod_initWithCCBTestCase_(CCBTestCase *scenario) {
-  J2OBJC_CREATE_IMPL(CCBRTestNGFormatter_TestMethod, initWithCCBTestCase_, scenario)
+CCBRTestNGFormatter_TestMethod *create_CCBRTestNGFormatter_TestMethod_initWithCucumberApiTestCase_(CucumberApiTestCase *scenario) {
+  J2OBJC_CREATE_IMPL(CCBRTestNGFormatter_TestMethod, initWithCucumberApiTestCase_, scenario)
 }
 
 void CCBRTestNGFormatter_TestMethod_startWithOrgW3cDomElement_(CCBRTestNGFormatter_TestMethod *self, id<OrgW3cDomElement> element) {
-  [((id<OrgW3cDomElement>) nil_chk(element)) setAttributeWithNSString:@"name" withNSString:CCBRTestNGFormatter_TestMethod_calculateElementNameWithCCBTestCase_(self, self->scenario_)];
+  [((id<OrgW3cDomElement>) nil_chk(element)) setAttributeWithNSString:@"name" withNSString:CCBRTestNGFormatter_TestMethod_calculateElementNameWithCucumberApiTestCase_(self, self->scenario_)];
   [element setAttributeWithNSString:@"started-at" withNSString:[((JavaTextSimpleDateFormat *) nil_chk(JreLoadStatic(CCBRTestNGFormatter, DATE_FORMAT))) formatWithJavaUtilDate:create_JavaUtilDate_init()]];
 }
 
-NSString *CCBRTestNGFormatter_TestMethod_calculateElementNameWithCCBTestCase_(CCBRTestNGFormatter_TestMethod *self, CCBTestCase *testCase) {
-  NSString *testCaseName = [((CCBTestCase *) nil_chk(testCase)) getName];
+NSString *CCBRTestNGFormatter_TestMethod_calculateElementNameWithCucumberApiTestCase_(CCBRTestNGFormatter_TestMethod *self, CucumberApiTestCase *testCase) {
+  NSString *testCaseName = [((CucumberApiTestCase *) nil_chk(testCase)) getName];
   if ([((NSString *) nil_chk(testCaseName)) isEqual:CCBRTestNGFormatter_TestMethod_previousTestCaseName]) {
     return JreStrcat("$CI", testCaseName, '_', ++CCBRTestNGFormatter_TestMethod_exampleNumber);
   }
@@ -974,11 +974,11 @@ NSString *CCBRTestNGFormatter_TestMethod_calculateElementNameWithCCBTestCase_(CC
 
 NSString *CCBRTestNGFormatter_TestMethod_calculateTotalDurationString(CCBRTestNGFormatter_TestMethod *self) {
   jlong totalDurationNanos = 0;
-  for (CCBResult * __strong r in nil_chk(self->results_)) {
-    totalDurationNanos += [((CCBResult *) nil_chk(r)) getDuration] == nil ? 0 : [((JavaLangLong *) nil_chk([r getDuration])) longLongValue];
+  for (CucumberApiResult * __strong r in nil_chk(self->results_)) {
+    totalDurationNanos += [((CucumberApiResult *) nil_chk(r)) getDuration] == nil ? 0 : [((JavaLangLong *) nil_chk([r getDuration])) longLongValue];
   }
-  for (CCBResult * __strong r in nil_chk(self->hooks_)) {
-    totalDurationNanos += [((CCBResult *) nil_chk(r)) getDuration] == nil ? 0 : [((JavaLangLong *) nil_chk([r getDuration])) longLongValue];
+  for (CucumberApiResult * __strong r in nil_chk(self->hooks_)) {
+    totalDurationNanos += [((CucumberApiResult *) nil_chk(r)) getDuration] == nil ? 0 : [((JavaLangLong *) nil_chk([r getDuration])) longLongValue];
   }
   return NSString_java_valueOfLong_(totalDurationNanos / 1000000);
 }
@@ -988,9 +988,9 @@ void CCBRTestNGFormatter_TestMethod_addStepAndResultListingWithJavaLangStringBui
     jint length = [((JavaLangStringBuilder *) nil_chk(sb)) java_length];
     NSString *resultStatus = @"not executed";
     if (i < [((id<JavaUtilList>) nil_chk(self->results_)) size]) {
-      resultStatus = [((CCBResult_Type *) nil_chk([((CCBResult *) nil_chk([self->results_ getWithInt:i])) getStatus])) lowerCaseName];
+      resultStatus = [((CucumberApiResult_Type *) nil_chk([((CucumberApiResult *) nil_chk([self->results_ getWithInt:i])) getStatus])) lowerCaseName];
     }
-    [sb appendWithNSString:JreStrcat("$$", [((CCBRTestSourcesModel *) nil_chk(CCBRTestNGFormatter_TestMethod_testSources)) getKeywordFromSourceWithNSString:CCBRTestNGFormatter_TestMethod_currentFeatureFile withInt:[((CCBTestStep *) nil_chk([self->steps_ getWithInt:i])) getStepLine]], [((CCBTestStep *) nil_chk([self->steps_ getWithInt:i])) getStepText])];
+    [sb appendWithNSString:JreStrcat("$$", [((CCBRTestSourcesModel *) nil_chk(CCBRTestNGFormatter_TestMethod_testSources)) getKeywordFromSourceWithNSString:CCBRTestNGFormatter_TestMethod_currentFeatureFile withInt:[((CucumberApiTestStep *) nil_chk([self->steps_ getWithInt:i])) getStepLine]], [((CucumberApiTestStep *) nil_chk([self->steps_ getWithInt:i])) getStepText])];
     do {
       [sb appendWithNSString:@"."];
     }

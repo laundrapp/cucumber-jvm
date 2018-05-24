@@ -63,7 +63,7 @@ J2OBJC_INITIALIZED_DEFN(CCBRScenarioImpl)
   return self;
 }
 
-- (void)addWithCCBResult:(CCBResult *)result {
+- (void)addWithCucumberApiResult:(CucumberApiResult *)result {
   [((id<JavaUtilList>) nil_chk(stepResults_)) addWithId:result];
 }
 
@@ -75,31 +75,31 @@ J2OBJC_INITIALIZED_DEFN(CCBRScenarioImpl)
   return create_JavaUtilArrayList_initWithJavaUtilCollection_(result);
 }
 
-- (CCBResult_Type *)getStatus {
+- (CucumberApiResult_Type *)getStatus {
   if ([((id<JavaUtilList>) nil_chk(stepResults_)) isEmpty]) {
-    return JreLoadEnum(CCBResult_Type, UNDEFINED);
+    return JreLoadEnum(CucumberApiResult_Type, UNDEFINED);
   }
   jint pos = 0;
-  for (CCBResult * __strong stepResult in stepResults_) {
-    pos = JavaLangMath_maxWithInt_withInt_(pos, [((id<JavaUtilList>) nil_chk(CCBRScenarioImpl_SEVERITY)) indexOfWithId:[((CCBResult *) nil_chk(stepResult)) getStatus]]);
+  for (CucumberApiResult * __strong stepResult in stepResults_) {
+    pos = JavaLangMath_maxWithInt_withInt_(pos, [((id<JavaUtilList>) nil_chk(CCBRScenarioImpl_SEVERITY)) indexOfWithId:[((CucumberApiResult *) nil_chk(stepResult)) getStatus]]);
   }
   return [((id<JavaUtilList>) nil_chk(CCBRScenarioImpl_SEVERITY)) getWithInt:pos];
 }
 
 - (jboolean)isFailed {
-  return [self getStatus] == JreLoadEnum(CCBResult_Type, FAILED);
+  return [self getStatus] == JreLoadEnum(CucumberApiResult_Type, FAILED);
 }
 
 - (void)embedWithByteArray:(IOSByteArray *)data
               withNSString:(NSString *)mimeType {
   if (bus_ != nil) {
-    [bus_ sendWithCCBEvent:create_CCBEmbedEvent_initWithJavaLangLong_withByteArray_withNSString_([bus_ getTime], data, mimeType)];
+    [bus_ sendWithCucumberApiEventEvent:create_CucumberApiEventEmbedEvent_initWithJavaLangLong_withByteArray_withNSString_([bus_ getTime], data, mimeType)];
   }
 }
 
 - (void)writeWithNSString:(NSString *)text {
   if (bus_ != nil) {
-    [bus_ sendWithCCBEvent:create_CCBWriteEvent_initWithJavaLangLong_withNSString_([bus_ getTime], text)];
+    [bus_ sendWithCucumberApiEventEvent:create_CucumberApiEventWriteEvent_initWithJavaLangLong_withNSString_([bus_ getTime], text)];
   }
 }
 
@@ -122,8 +122,8 @@ J2OBJC_INITIALIZED_DEFN(CCBRScenarioImpl)
 - (JavaLangThrowable *)getError {
   JavaLangThrowable *error = nil;
   jint maxPos = 0;
-  for (CCBResult * __strong stepResult in nil_chk(stepResults_)) {
-    jint currentPos = [((id<JavaUtilList>) nil_chk(CCBRScenarioImpl_SEVERITY)) indexOfWithId:[((CCBResult *) nil_chk(stepResult)) getStatus]];
+  for (CucumberApiResult * __strong stepResult in nil_chk(stepResults_)) {
+    jint currentPos = [((id<JavaUtilList>) nil_chk(CCBRScenarioImpl_SEVERITY)) indexOfWithId:[((CucumberApiResult *) nil_chk(stepResult)) getStatus]];
     if (currentPos > maxPos) {
       maxPos = currentPos;
       error = [stepResult getError];
@@ -148,7 +148,7 @@ J2OBJC_INITIALIZED_DEFN(CCBRScenarioImpl)
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 1, 2, -1, -1, -1, -1 },
     { NULL, "LJavaUtilCollection;", 0x1, -1, -1, -1, 3, -1, -1 },
-    { NULL, "LCCBResult_Type;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCucumberApiResult_Type;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 4, 5, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 6, 7, -1, -1, -1, -1 },
@@ -162,7 +162,7 @@ J2OBJC_INITIALIZED_DEFN(CCBRScenarioImpl)
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBEventBus:withGherkinEventsPickleEvent:);
-  methods[1].selector = @selector(addWithCCBResult:);
+  methods[1].selector = @selector(addWithCucumberApiResult:);
   methods[2].selector = @selector(getSourceTagNames);
   methods[3].selector = @selector(getStatus);
   methods[4].selector = @selector(isFailed);
@@ -184,14 +184,14 @@ J2OBJC_INITIALIZED_DEFN(CCBRScenarioImpl)
     { "scenarioLines_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 13, -1 },
     { "bus_", "LCCBEventBus;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCCBEventBus;LGherkinEventsPickleEvent;", "add", "LCCBResult;", "()Ljava/util/Collection<Ljava/lang/String;>;", "embed", "[BLNSString;", "write", "LNSString;", "()Ljava/util/List<Ljava/lang/Integer;>;", &CCBRScenarioImpl_SEVERITY, "Ljava/util/List<Lcucumber/api/Result$Type;>;", "Ljava/util/List<Lcucumber/api/Result;>;", "Ljava/util/List<Lgherkin/pickles/PickleTag;>;", "Ljava/util/List<Ljava/lang/Integer;>;" };
+  static const void *ptrTable[] = { "LCCBEventBus;LGherkinEventsPickleEvent;", "add", "LCucumberApiResult;", "()Ljava/util/Collection<Ljava/lang/String;>;", "embed", "[BLNSString;", "write", "LNSString;", "()Ljava/util/List<Ljava/lang/Integer;>;", &CCBRScenarioImpl_SEVERITY, "Ljava/util/List<Lcucumber/api/Result$Type;>;", "Ljava/util/List<Lcucumber/api/Result;>;", "Ljava/util/List<Lgherkin/pickles/PickleTag;>;", "Ljava/util/List<Ljava/lang/Integer;>;" };
   static const J2ObjcClassInfo _CCBRScenarioImpl = { "ScenarioImpl", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 12, 8, -1, -1, -1, -1, -1 };
   return &_CCBRScenarioImpl;
 }
 
 + (void)initialize {
   if (self == [CCBRScenarioImpl class]) {
-    JreStrongAssign(&CCBRScenarioImpl_SEVERITY, JavaUtilArrays_asListWithNSObjectArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(CCBResult_Type, PASSED), JreLoadEnum(CCBResult_Type, SKIPPED), JreLoadEnum(CCBResult_Type, PENDING), JreLoadEnum(CCBResult_Type, UNDEFINED), JreLoadEnum(CCBResult_Type, AMBIGUOUS), JreLoadEnum(CCBResult_Type, FAILED) } count:6 type:CCBResult_Type_class_()]));
+    JreStrongAssign(&CCBRScenarioImpl_SEVERITY, JavaUtilArrays_asListWithNSObjectArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(CucumberApiResult_Type, PASSED), JreLoadEnum(CucumberApiResult_Type, SKIPPED), JreLoadEnum(CucumberApiResult_Type, PENDING), JreLoadEnum(CucumberApiResult_Type, UNDEFINED), JreLoadEnum(CucumberApiResult_Type, AMBIGUOUS), JreLoadEnum(CucumberApiResult_Type, FAILED) } count:6 type:CucumberApiResult_Type_class_()]));
     J2OBJC_SET_INITIALIZED(CCBRScenarioImpl)
   }
 }
