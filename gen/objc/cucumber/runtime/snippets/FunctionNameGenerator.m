@@ -11,41 +11,41 @@
 #include "java/lang/IllegalArgumentException.h"
 #include "java/lang/StringBuilder.h"
 
-@interface CucumberRuntimeSnippetsFunctionNameGenerator () {
+@interface CCBRFunctionNameGenerator () {
  @public
-  id<CucumberRuntimeSnippetsConcatenator> concatenator_;
+  id<CCBRConcatenator> concatenator_;
 }
 
 - (NSString *)removeIllegalCharactersWithNSString:(NSString *)sentence;
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeSnippetsFunctionNameGenerator, concatenator_, id<CucumberRuntimeSnippetsConcatenator>)
+J2OBJC_FIELD_SETTER(CCBRFunctionNameGenerator, concatenator_, id<CCBRConcatenator>)
 
-inline JavaLangCharacter *CucumberRuntimeSnippetsFunctionNameGenerator_get_SUBST(void);
-static JavaLangCharacter *CucumberRuntimeSnippetsFunctionNameGenerator_SUBST;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeSnippetsFunctionNameGenerator, SUBST, JavaLangCharacter *)
+inline JavaLangCharacter *CCBRFunctionNameGenerator_get_SUBST(void);
+static JavaLangCharacter *CCBRFunctionNameGenerator_SUBST;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRFunctionNameGenerator, SUBST, JavaLangCharacter *)
 
-__attribute__((unused)) static NSString *CucumberRuntimeSnippetsFunctionNameGenerator_removeIllegalCharactersWithNSString_(CucumberRuntimeSnippetsFunctionNameGenerator *self, NSString *sentence);
+__attribute__((unused)) static NSString *CCBRFunctionNameGenerator_removeIllegalCharactersWithNSString_(CCBRFunctionNameGenerator *self, NSString *sentence);
 
-J2OBJC_INITIALIZED_DEFN(CucumberRuntimeSnippetsFunctionNameGenerator)
+J2OBJC_INITIALIZED_DEFN(CCBRFunctionNameGenerator)
 
-@implementation CucumberRuntimeSnippetsFunctionNameGenerator
+@implementation CCBRFunctionNameGenerator
 
-- (instancetype __nonnull)initWithCucumberRuntimeSnippetsConcatenator:(id<CucumberRuntimeSnippetsConcatenator>)concatenator {
-  CucumberRuntimeSnippetsFunctionNameGenerator_initWithCucumberRuntimeSnippetsConcatenator_(self, concatenator);
+- (instancetype __nonnull)initWithCCBRConcatenator:(id<CCBRConcatenator>)concatenator {
+  CCBRFunctionNameGenerator_initWithCCBRConcatenator_(self, concatenator);
   return self;
 }
 
 - (NSString *)generateFunctionNameWithNSString:(NSString *)sentence {
-  sentence = CucumberRuntimeSnippetsFunctionNameGenerator_removeIllegalCharactersWithNSString_(self, sentence);
+  sentence = CCBRFunctionNameGenerator_removeIllegalCharactersWithNSString_(self, sentence);
   sentence = [((NSString *) nil_chk(sentence)) java_trim];
   IOSObjectArray *words = [((NSString *) nil_chk(sentence)) java_split:@"\\s"];
-  return [((id<CucumberRuntimeSnippetsConcatenator>) nil_chk(concatenator_)) concatenateWithNSStringArray:words];
+  return [((id<CCBRConcatenator>) nil_chk(concatenator_)) concatenateWithNSStringArray:words];
 }
 
 - (NSString *)removeIllegalCharactersWithNSString:(NSString *)sentence {
-  return CucumberRuntimeSnippetsFunctionNameGenerator_removeIllegalCharactersWithNSString_(self, sentence);
+  return CCBRFunctionNameGenerator_removeIllegalCharactersWithNSString_(self, sentence);
 }
 
 - (void)dealloc {
@@ -62,56 +62,56 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeSnippetsFunctionNameGenerator)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeSnippetsConcatenator:);
+  methods[0].selector = @selector(initWithCCBRConcatenator:);
   methods[1].selector = @selector(generateFunctionNameWithNSString:);
   methods[2].selector = @selector(removeIllegalCharactersWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "SUBST", "LJavaLangCharacter;", .constantValue.asLong = 0, 0x1a, -1, 4, -1, -1 },
-    { "concatenator_", "LCucumberRuntimeSnippetsConcatenator;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "concatenator_", "LCCBRConcatenator;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCucumberRuntimeSnippetsConcatenator;", "generateFunctionName", "LNSString;", "removeIllegalCharacters", &CucumberRuntimeSnippetsFunctionNameGenerator_SUBST };
-  static const J2ObjcClassInfo _CucumberRuntimeSnippetsFunctionNameGenerator = { "FunctionNameGenerator", "cucumber.runtime.snippets", ptrTable, methods, fields, 7, 0x1, 3, 2, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeSnippetsFunctionNameGenerator;
+  static const void *ptrTable[] = { "LCCBRConcatenator;", "generateFunctionName", "LNSString;", "removeIllegalCharacters", &CCBRFunctionNameGenerator_SUBST };
+  static const J2ObjcClassInfo _CCBRFunctionNameGenerator = { "FunctionNameGenerator", "cucumber.runtime.snippets", ptrTable, methods, fields, 7, 0x1, 3, 2, -1, -1, -1, -1, -1 };
+  return &_CCBRFunctionNameGenerator;
 }
 
 + (void)initialize {
-  if (self == [CucumberRuntimeSnippetsFunctionNameGenerator class]) {
-    JreStrongAssign(&CucumberRuntimeSnippetsFunctionNameGenerator_SUBST, JavaLangCharacter_valueOfWithChar_(' '));
-    J2OBJC_SET_INITIALIZED(CucumberRuntimeSnippetsFunctionNameGenerator)
+  if (self == [CCBRFunctionNameGenerator class]) {
+    JreStrongAssign(&CCBRFunctionNameGenerator_SUBST, JavaLangCharacter_valueOfWithChar_(' '));
+    J2OBJC_SET_INITIALIZED(CCBRFunctionNameGenerator)
   }
 }
 
 @end
 
-void CucumberRuntimeSnippetsFunctionNameGenerator_initWithCucumberRuntimeSnippetsConcatenator_(CucumberRuntimeSnippetsFunctionNameGenerator *self, id<CucumberRuntimeSnippetsConcatenator> concatenator) {
+void CCBRFunctionNameGenerator_initWithCCBRConcatenator_(CCBRFunctionNameGenerator *self, id<CCBRConcatenator> concatenator) {
   NSObject_init(self);
   JreStrongAssign(&self->concatenator_, concatenator);
 }
 
-CucumberRuntimeSnippetsFunctionNameGenerator *new_CucumberRuntimeSnippetsFunctionNameGenerator_initWithCucumberRuntimeSnippetsConcatenator_(id<CucumberRuntimeSnippetsConcatenator> concatenator) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeSnippetsFunctionNameGenerator, initWithCucumberRuntimeSnippetsConcatenator_, concatenator)
+CCBRFunctionNameGenerator *new_CCBRFunctionNameGenerator_initWithCCBRConcatenator_(id<CCBRConcatenator> concatenator) {
+  J2OBJC_NEW_IMPL(CCBRFunctionNameGenerator, initWithCCBRConcatenator_, concatenator)
 }
 
-CucumberRuntimeSnippetsFunctionNameGenerator *create_CucumberRuntimeSnippetsFunctionNameGenerator_initWithCucumberRuntimeSnippetsConcatenator_(id<CucumberRuntimeSnippetsConcatenator> concatenator) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeSnippetsFunctionNameGenerator, initWithCucumberRuntimeSnippetsConcatenator_, concatenator)
+CCBRFunctionNameGenerator *create_CCBRFunctionNameGenerator_initWithCCBRConcatenator_(id<CCBRConcatenator> concatenator) {
+  J2OBJC_CREATE_IMPL(CCBRFunctionNameGenerator, initWithCCBRConcatenator_, concatenator)
 }
 
-NSString *CucumberRuntimeSnippetsFunctionNameGenerator_removeIllegalCharactersWithNSString_(CucumberRuntimeSnippetsFunctionNameGenerator *self, NSString *sentence) {
+NSString *CCBRFunctionNameGenerator_removeIllegalCharactersWithNSString_(CCBRFunctionNameGenerator *self, NSString *sentence) {
   if ([((NSString *) nil_chk(sentence)) java_isEmpty]) {
     @throw create_JavaLangIllegalArgumentException_initWithNSString_(@"Cannot create function name from empty sentence");
   }
   JavaLangStringBuilder *sanitized = create_JavaLangStringBuilder_init();
-  [sanitized appendWithChar:JavaLangCharacter_isJavaIdentifierStartWithChar_([sentence charAtWithInt:0]) ? [sentence charAtWithInt:0] : [((JavaLangCharacter *) nil_chk(CucumberRuntimeSnippetsFunctionNameGenerator_SUBST)) charValue]];
+  [sanitized appendWithChar:JavaLangCharacter_isJavaIdentifierStartWithChar_([sentence charAtWithInt:0]) ? [sentence charAtWithInt:0] : [((JavaLangCharacter *) nil_chk(CCBRFunctionNameGenerator_SUBST)) charValue]];
   for (jint i = 1; i < [sentence java_length]; i++) {
     if (JavaLangCharacter_isJavaIdentifierPartWithChar_([sentence charAtWithInt:i])) {
       [sanitized appendWithChar:[sentence charAtWithInt:i]];
     }
-    else if ([sanitized charAtWithInt:[sanitized java_length] - 1] != [((JavaLangCharacter *) nil_chk(CucumberRuntimeSnippetsFunctionNameGenerator_SUBST)) charValue] && i != [sentence java_length] - 1) {
-      [sanitized appendWithId:CucumberRuntimeSnippetsFunctionNameGenerator_SUBST];
+    else if ([sanitized charAtWithInt:[sanitized java_length] - 1] != [((JavaLangCharacter *) nil_chk(CCBRFunctionNameGenerator_SUBST)) charValue] && i != [sentence java_length] - 1) {
+      [sanitized appendWithId:CCBRFunctionNameGenerator_SUBST];
     }
   }
   return [sanitized description];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeSnippetsFunctionNameGenerator)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRFunctionNameGenerator)

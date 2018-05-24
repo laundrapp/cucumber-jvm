@@ -21,9 +21,9 @@
 #include "java/util/Iterator.h"
 #include "java/util/List.h"
 
-@interface CucumberRuntimeReflections () {
+@interface CCBRReflections () {
  @public
-  id<CucumberRuntimeClassFinder> classFinder_;
+  id<CCBRClassFinder> classFinder_;
 }
 
 - (jboolean)hasConstructorWithIOSClass:(IOSClass *)clazz
@@ -31,14 +31,14 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeReflections, classFinder_, id<CucumberRuntimeClassFinder>)
+J2OBJC_FIELD_SETTER(CCBRReflections, classFinder_, id<CCBRClassFinder>)
 
-__attribute__((unused)) static jboolean CucumberRuntimeReflections_hasConstructorWithIOSClass_withIOSClassArray_(CucumberRuntimeReflections *self, IOSClass *clazz, IOSObjectArray *paramTypes);
+__attribute__((unused)) static jboolean CCBRReflections_hasConstructorWithIOSClass_withIOSClassArray_(CCBRReflections *self, IOSClass *clazz, IOSObjectArray *paramTypes);
 
-@implementation CucumberRuntimeReflections
+@implementation CCBRReflections
 
-- (instancetype __nonnull)initWithCucumberRuntimeClassFinder:(id<CucumberRuntimeClassFinder>)classFinder {
-  CucumberRuntimeReflections_initWithCucumberRuntimeClassFinder_(self, classFinder);
+- (instancetype __nonnull)initWithCCBRClassFinder:(id<CCBRClassFinder>)classFinder {
+  CCBRReflections_initWithCCBRClassFinder_(self, classFinder);
   return self;
 }
 
@@ -51,10 +51,10 @@ __attribute__((unused)) static jboolean CucumberRuntimeReflections_hasConstructo
     return [((id<JavaUtilIterator>) nil_chk([instances iterator])) next];
   }
   else if ([instances isEmpty]) {
-    @throw create_CucumberRuntimeNoInstancesException_initWithIOSClass_(parentType);
+    @throw create_CCBRNoInstancesException_initWithIOSClass_(parentType);
   }
   else {
-    @throw create_CucumberRuntimeTooManyInstancesException_initWithJavaUtilCollection_(instances);
+    @throw create_CCBRTooManyInstancesException_initWithJavaUtilCollection_(instances);
   }
 }
 
@@ -63,8 +63,8 @@ __attribute__((unused)) static jboolean CucumberRuntimeReflections_hasConstructo
                                           withIOSClassArray:(IOSObjectArray *)constructorParams
                                           withNSObjectArray:(IOSObjectArray *)constructorArgs {
   id<JavaUtilCollection> result = create_JavaUtilHashSet_init();
-  for (IOSClass * __strong clazz in nil_chk([((id<CucumberRuntimeClassFinder>) nil_chk(classFinder_)) getDescendantsWithIOSClass:parentType withNSString:packageName])) {
-    if (CucumberRuntimeUtils_isInstantiableWithIOSClass_(clazz) && CucumberRuntimeReflections_hasConstructorWithIOSClass_withIOSClassArray_(self, clazz, constructorParams)) {
+  for (IOSClass * __strong clazz in nil_chk([((id<CCBRClassFinder>) nil_chk(classFinder_)) getDescendantsWithIOSClass:parentType withNSString:packageName])) {
+    if (CCBRUtils_isInstantiableWithIOSClass_(clazz) && CCBRReflections_hasConstructorWithIOSClass_withIOSClassArray_(self, clazz, constructorParams)) {
       [result addWithId:[self newInstanceWithIOSClassArray:constructorParams withNSObjectArray:constructorArgs withIOSClass:clazz]];
     }
   }
@@ -82,17 +82,17 @@ __attribute__((unused)) static jboolean CucumberRuntimeReflections_hasConstructo
     }
     @catch (JavaLangException *e) {
       NSString *message = NSString_java_formatWithNSString_withNSObjectArray_(@"Failed to instantiate %s with %s", [IOSObjectArray arrayWithObjects:(id[]){ [constructor toGenericString], JavaUtilArrays_asListWithNSObjectArray_(constructorArgs) } count:2 type:NSObject_class_()]);
-      @throw create_CucumberRuntimeCucumberException_initWithNSString_withJavaLangThrowable_(message, e);
+      @throw create_CCBRCucumberException_initWithNSString_withJavaLangThrowable_(message, e);
     }
   }
   @catch (JavaLangNoSuchMethodException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithJavaLangThrowable_(e);
+    @throw create_CCBRCucumberException_initWithJavaLangThrowable_(e);
   }
 }
 
 - (jboolean)hasConstructorWithIOSClass:(IOSClass *)clazz
                      withIOSClassArray:(IOSObjectArray *)paramTypes {
-  return CucumberRuntimeReflections_hasConstructorWithIOSClass_withIOSClassArray_(self, clazz, paramTypes);
+  return CCBRReflections_hasConstructorWithIOSClass_withIOSClassArray_(self, clazz, paramTypes);
 }
 
 - (void)dealloc {
@@ -111,36 +111,36 @@ __attribute__((unused)) static jboolean CucumberRuntimeReflections_hasConstructo
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeClassFinder:);
+  methods[0].selector = @selector(initWithCCBRClassFinder:);
   methods[1].selector = @selector(instantiateExactlyOneSubclassWithIOSClass:withNSString:withIOSClassArray:withNSObjectArray:);
   methods[2].selector = @selector(instantiateSubclassesWithIOSClass:withNSString:withIOSClassArray:withNSObjectArray:);
   methods[3].selector = @selector(newInstanceWithIOSClassArray:withNSObjectArray:withIOSClass:);
   methods[4].selector = @selector(hasConstructorWithIOSClass:withIOSClassArray:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "classFinder_", "LCucumberRuntimeClassFinder;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "classFinder_", "LCCBRClassFinder;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCucumberRuntimeClassFinder;", "instantiateExactlyOneSubclass", "LIOSClass;LNSString;[LIOSClass;[LNSObject;", "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)TT;", "instantiateSubclasses", "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/util/Collection<+TT;>;", "newInstance", "[LIOSClass;[LNSObject;LIOSClass;", "<T:Ljava/lang/Object;>([Ljava/lang/Class;[Ljava/lang/Object;Ljava/lang/Class<+TT;>;)TT;", "hasConstructor", "LIOSClass;[LIOSClass;", "(Ljava/lang/Class<*>;[Ljava/lang/Class;)Z" };
-  static const J2ObjcClassInfo _CucumberRuntimeReflections = { "Reflections", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 5, 1, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeReflections;
+  static const void *ptrTable[] = { "LCCBRClassFinder;", "instantiateExactlyOneSubclass", "LIOSClass;LNSString;[LIOSClass;[LNSObject;", "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)TT;", "instantiateSubclasses", "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/util/Collection<+TT;>;", "newInstance", "[LIOSClass;[LNSObject;LIOSClass;", "<T:Ljava/lang/Object;>([Ljava/lang/Class;[Ljava/lang/Object;Ljava/lang/Class<+TT;>;)TT;", "hasConstructor", "LIOSClass;[LIOSClass;", "(Ljava/lang/Class<*>;[Ljava/lang/Class;)Z" };
+  static const J2ObjcClassInfo _CCBRReflections = { "Reflections", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 5, 1, -1, -1, -1, -1, -1 };
+  return &_CCBRReflections;
 }
 
 @end
 
-void CucumberRuntimeReflections_initWithCucumberRuntimeClassFinder_(CucumberRuntimeReflections *self, id<CucumberRuntimeClassFinder> classFinder) {
+void CCBRReflections_initWithCCBRClassFinder_(CCBRReflections *self, id<CCBRClassFinder> classFinder) {
   NSObject_init(self);
   JreStrongAssign(&self->classFinder_, classFinder);
 }
 
-CucumberRuntimeReflections *new_CucumberRuntimeReflections_initWithCucumberRuntimeClassFinder_(id<CucumberRuntimeClassFinder> classFinder) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeReflections, initWithCucumberRuntimeClassFinder_, classFinder)
+CCBRReflections *new_CCBRReflections_initWithCCBRClassFinder_(id<CCBRClassFinder> classFinder) {
+  J2OBJC_NEW_IMPL(CCBRReflections, initWithCCBRClassFinder_, classFinder)
 }
 
-CucumberRuntimeReflections *create_CucumberRuntimeReflections_initWithCucumberRuntimeClassFinder_(id<CucumberRuntimeClassFinder> classFinder) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeReflections, initWithCucumberRuntimeClassFinder_, classFinder)
+CCBRReflections *create_CCBRReflections_initWithCCBRClassFinder_(id<CCBRClassFinder> classFinder) {
+  J2OBJC_CREATE_IMPL(CCBRReflections, initWithCCBRClassFinder_, classFinder)
 }
 
-jboolean CucumberRuntimeReflections_hasConstructorWithIOSClass_withIOSClassArray_(CucumberRuntimeReflections *self, IOSClass *clazz, IOSObjectArray *paramTypes) {
+jboolean CCBRReflections_hasConstructorWithIOSClass_withIOSClassArray_(CCBRReflections *self, IOSClass *clazz, IOSObjectArray *paramTypes) {
   @try {
     [((IOSClass *) nil_chk(clazz)) getConstructor:paramTypes];
     return true;
@@ -150,4 +150,4 @@ jboolean CucumberRuntimeReflections_hasConstructorWithIOSClass_withIOSClassArray
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeReflections)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRReflections)

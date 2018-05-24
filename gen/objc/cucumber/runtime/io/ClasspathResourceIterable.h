@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeIoClasspathResourceIterable_) && (INCLUDE_ALL_CucumberRuntimeIoClasspathResourceIterable || defined(INCLUDE_CucumberRuntimeIoClasspathResourceIterable))
-#define CucumberRuntimeIoClasspathResourceIterable_
+#if !defined (CCBRClasspathResourceIterable_) && (INCLUDE_ALL_CucumberRuntimeIoClasspathResourceIterable || defined(INCLUDE_CCBRClasspathResourceIterable))
+#define CCBRClasspathResourceIterable_
 
 #define RESTRICT_JavaLangIterable 1
 #define INCLUDE_JavaLangIterable 1
@@ -30,7 +30,7 @@
 @protocol JavaUtilIterator;
 @protocol JavaUtilSpliterator;
 
-@interface CucumberRuntimeIoClasspathResourceIterable : NSObject < JavaLangIterable >
+@interface CCBRClasspathResourceIterable : NSObject < JavaLangIterable >
 
 #pragma mark Public
 
@@ -48,15 +48,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoClasspathResourceIterable)
+J2OBJC_EMPTY_STATIC_INIT(CCBRClasspathResourceIterable)
 
-FOUNDATION_EXPORT void CucumberRuntimeIoClasspathResourceIterable_initWithJavaLangClassLoader_withNSString_withNSString_(CucumberRuntimeIoClasspathResourceIterable *self, JavaLangClassLoader *classLoader, NSString *path, NSString *suffix);
+FOUNDATION_EXPORT void CCBRClasspathResourceIterable_initWithJavaLangClassLoader_withNSString_withNSString_(CCBRClasspathResourceIterable *self, JavaLangClassLoader *classLoader, NSString *path, NSString *suffix);
 
-FOUNDATION_EXPORT CucumberRuntimeIoClasspathResourceIterable *new_CucumberRuntimeIoClasspathResourceIterable_initWithJavaLangClassLoader_withNSString_withNSString_(JavaLangClassLoader *classLoader, NSString *path, NSString *suffix) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRClasspathResourceIterable *new_CCBRClasspathResourceIterable_initWithJavaLangClassLoader_withNSString_withNSString_(JavaLangClassLoader *classLoader, NSString *path, NSString *suffix) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeIoClasspathResourceIterable *create_CucumberRuntimeIoClasspathResourceIterable_initWithJavaLangClassLoader_withNSString_withNSString_(JavaLangClassLoader *classLoader, NSString *path, NSString *suffix);
+FOUNDATION_EXPORT CCBRClasspathResourceIterable *create_CCBRClasspathResourceIterable_initWithJavaLangClassLoader_withNSString_withNSString_(JavaLangClassLoader *classLoader, NSString *path, NSString *suffix);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoClasspathResourceIterable)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRClasspathResourceIterable)
+
+@compatibility_alias CucumberRuntimeIoClasspathResourceIterable CCBRClasspathResourceIterable;
 
 #endif
 

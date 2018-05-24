@@ -12,20 +12,20 @@
 #include "java/util/List.h"
 #include "java/util/Locale.h"
 
-@interface CucumberRuntimeXstreamConverterWithNumberFormat () {
+@interface CCBRConverterWithNumberFormat () {
  @public
   id<JavaUtilList> formats_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamConverterWithNumberFormat, formats_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRConverterWithNumberFormat, formats_, id<JavaUtilList>)
 
-@implementation CucumberRuntimeXstreamConverterWithNumberFormat
+@implementation CCBRConverterWithNumberFormat
 
 - (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale
                                withIOSClassArray:(IOSObjectArray *)convertibleTypes {
-  CucumberRuntimeXstreamConverterWithNumberFormat_initWithJavaUtilLocale_withIOSClassArray_(self, locale, convertibleTypes);
+  CCBRConverterWithNumberFormat_initWithJavaUtilLocale_withIOSClassArray_(self, locale, convertibleTypes);
   return self;
 }
 
@@ -68,16 +68,16 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamConverterWithNumberFormat, formats_, i
     { "formats_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 8, -1 },
   };
   static const void *ptrTable[] = { "LJavaUtilLocale;[LIOSClass;", "transform", "LNSString;", "(Ljava/lang/String;)TT;", "()Ljava/util/List<Ljava/text/NumberFormat;>;", "downcast", "LNSNumber;", "(Ljava/lang/Number;)TT;", "Ljava/util/List<Ljava/text/NumberFormat;>;", "<T:Ljava/lang/Number;>Lcucumber/runtime/xstream/ConverterWithFormat<TT;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamConverterWithNumberFormat = { "ConverterWithNumberFormat", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x400, 4, 1, -1, -1, -1, 9, -1 };
-  return &_CucumberRuntimeXstreamConverterWithNumberFormat;
+  static const J2ObjcClassInfo _CCBRConverterWithNumberFormat = { "ConverterWithNumberFormat", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x400, 4, 1, -1, -1, -1, 9, -1 };
+  return &_CCBRConverterWithNumberFormat;
 }
 
 @end
 
-void CucumberRuntimeXstreamConverterWithNumberFormat_initWithJavaUtilLocale_withIOSClassArray_(CucumberRuntimeXstreamConverterWithNumberFormat *self, JavaUtilLocale *locale, IOSObjectArray *convertibleTypes) {
-  CucumberRuntimeXstreamConverterWithFormat_initWithIOSClassArray_(self, convertibleTypes);
+void CCBRConverterWithNumberFormat_initWithJavaUtilLocale_withIOSClassArray_(CCBRConverterWithNumberFormat *self, JavaUtilLocale *locale, IOSObjectArray *convertibleTypes) {
+  CCBRConverterWithFormat_initWithIOSClassArray_(self, convertibleTypes);
   JreStrongAssignAndConsume(&self->formats_, new_JavaUtilArrayList_init());
   [self->formats_ addWithId:JavaTextNumberFormat_getNumberInstanceWithJavaUtilLocale_(locale)];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithNumberFormat)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRConverterWithNumberFormat)

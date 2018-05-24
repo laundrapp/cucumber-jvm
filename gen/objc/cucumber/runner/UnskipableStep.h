@@ -22,24 +22,24 @@
 #define CucumberRunnerUnskipableStep_
 
 #define RESTRICT_CucumberApiTestStep 1
-#define INCLUDE_CucumberApiTestStep 1
+#define INCLUDE_CCBTestStep 1
 #include "cucumber/api/TestStep.h"
 
-@class CucumberApiHookType;
-@class CucumberApiResult_Type;
+@class CCBHookType;
+@class CCBResult_Type;
 @class GherkinPicklesPickleStep;
-@protocol CucumberApiScenario;
-@protocol CucumberRuntimeDefinitionMatch;
+@protocol CCBRDefinitionMatch;
+@protocol CCBScenario;
 @protocol JavaUtilList;
 
-@interface CucumberRunnerUnskipableStep : CucumberApiTestStep
+@interface CucumberRunnerUnskipableStep : CCBTestStep
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCucumberApiHookType:(CucumberApiHookType *)hookType
-                   withCucumberRuntimeDefinitionMatch:(id<CucumberRuntimeDefinitionMatch>)definitionMatch;
+- (instancetype __nonnull)initWithCCBHookType:(CCBHookType *)hookType
+                      withCCBRDefinitionMatch:(id<CCBRDefinitionMatch>)definitionMatch;
 
-- (CucumberApiHookType *)getHookType;
+- (CCBHookType *)getHookType;
 
 - (GherkinPicklesPickleStep *)getPickleStep;
 
@@ -55,23 +55,23 @@
 
 #pragma mark Protected
 
-- (CucumberApiResult_Type *)executeStepWithNSString:(NSString *)language
-                            withCucumberApiScenario:(id<CucumberApiScenario>)scenario
-                                        withBoolean:(jboolean)skipSteps;
+- (CCBResult_Type *)executeStepWithNSString:(NSString *)language
+                            withCCBScenario:(id<CCBScenario>)scenario
+                                withBoolean:(jboolean)skipSteps;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype __nonnull)initWithCucumberRuntimeDefinitionMatch:(id<CucumberRuntimeDefinitionMatch>)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithCCBRDefinitionMatch:(id<CCBRDefinitionMatch>)arg0 NS_UNAVAILABLE;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(CucumberRunnerUnskipableStep)
 
-FOUNDATION_EXPORT void CucumberRunnerUnskipableStep_initWithCucumberApiHookType_withCucumberRuntimeDefinitionMatch_(CucumberRunnerUnskipableStep *self, CucumberApiHookType *hookType, id<CucumberRuntimeDefinitionMatch> definitionMatch);
+FOUNDATION_EXPORT void CucumberRunnerUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CucumberRunnerUnskipableStep *self, CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch);
 
-FOUNDATION_EXPORT CucumberRunnerUnskipableStep *new_CucumberRunnerUnskipableStep_initWithCucumberApiHookType_withCucumberRuntimeDefinitionMatch_(CucumberApiHookType *hookType, id<CucumberRuntimeDefinitionMatch> definitionMatch) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CucumberRunnerUnskipableStep *new_CucumberRunnerUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRunnerUnskipableStep *create_CucumberRunnerUnskipableStep_initWithCucumberApiHookType_withCucumberRuntimeDefinitionMatch_(CucumberApiHookType *hookType, id<CucumberRuntimeDefinitionMatch> definitionMatch);
+FOUNDATION_EXPORT CucumberRunnerUnskipableStep *create_CucumberRunnerUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch);
 
 J2OBJC_TYPE_LITERAL_HEADER(CucumberRunnerUnskipableStep)
 

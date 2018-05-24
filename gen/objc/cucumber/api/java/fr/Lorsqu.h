@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaFrLorsqu_) && (INCLUDE_ALL_CucumberApiJavaFrLorsqu || defined(INCLUDE_CucumberApiJavaFrLorsqu))
-#define CucumberApiJavaFrLorsqu_
+#if !defined (CCBLorsqu_) && (INCLUDE_ALL_CucumberApiJavaFrLorsqu || defined(INCLUDE_CCBLorsqu))
+#define CCBLorsqu_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaFrLorsqu < JavaLangAnnotationAnnotation >
+@protocol CCBLorsqu < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaFrLorsqu : NSObject < CucumberApiJavaFrLorsqu > {
+@interface CCBLorsqu : NSObject < CCBLorsqu > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaFrLorsqu)
+J2OBJC_EMPTY_STATIC_INIT(CCBLorsqu)
 
-FOUNDATION_EXPORT id<CucumberApiJavaFrLorsqu> create_CucumberApiJavaFrLorsqu(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBLorsqu> create_CCBLorsqu(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaFrLorsqu)
+J2OBJC_TYPE_LITERAL_HEADER(CCBLorsqu)
+
+#define CucumberApiJavaFrLorsqu CCBLorsqu
 
 #endif
 

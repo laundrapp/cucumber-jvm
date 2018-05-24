@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaPlWtedy_) && (INCLUDE_ALL_CucumberApiJavaPlWtedy || defined(INCLUDE_CucumberApiJavaPlWtedy))
-#define CucumberApiJavaPlWtedy_
+#if !defined (CCBWtedy_) && (INCLUDE_ALL_CucumberApiJavaPlWtedy || defined(INCLUDE_CCBWtedy))
+#define CCBWtedy_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaPlWtedy < JavaLangAnnotationAnnotation >
+@protocol CCBWtedy < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaPlWtedy : NSObject < CucumberApiJavaPlWtedy > {
+@interface CCBWtedy : NSObject < CCBWtedy > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaPlWtedy)
+J2OBJC_EMPTY_STATIC_INIT(CCBWtedy)
 
-FOUNDATION_EXPORT id<CucumberApiJavaPlWtedy> create_CucumberApiJavaPlWtedy(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBWtedy> create_CCBWtedy(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaPlWtedy)
+J2OBJC_TYPE_LITERAL_HEADER(CCBWtedy)
+
+#define CucumberApiJavaPlWtedy CCBWtedy
 
 #endif
 

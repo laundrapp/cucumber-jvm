@@ -18,14 +18,14 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeNoStepDefinition_) && (INCLUDE_ALL_CucumberRuntimeNoStepDefinition || defined(INCLUDE_CucumberRuntimeNoStepDefinition))
-#define CucumberRuntimeNoStepDefinition_
+#if !defined (CCBRNoStepDefinition_) && (INCLUDE_ALL_CucumberRuntimeNoStepDefinition || defined(INCLUDE_CCBRNoStepDefinition))
+#define CCBRNoStepDefinition_
 
 #define RESTRICT_CucumberRuntimeStepDefinition 1
-#define INCLUDE_CucumberRuntimeStepDefinition 1
+#define INCLUDE_CCBRStepDefinition 1
 #include "cucumber/runtime/StepDefinition.h"
 
-@class CucumberRuntimeParameterInfo;
+@class CCBRParameterInfo;
 @class GherkinPicklesPickleStep;
 @class IOSObjectArray;
 @class JavaLangInteger;
@@ -33,7 +33,7 @@
 @protocol JavaLangReflectType;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeNoStepDefinition : NSObject < CucumberRuntimeStepDefinition >
+@interface CCBRNoStepDefinition : NSObject < CCBRStepDefinition >
 
 #pragma mark Public
 
@@ -44,8 +44,8 @@
 
 - (JavaLangInteger *)getParameterCount;
 
-- (CucumberRuntimeParameterInfo *)getParameterTypeWithInt:(jint)n
-                                  withJavaLangReflectType:(id<JavaLangReflectType>)argumentType;
+- (CCBRParameterInfo *)getParameterTypeWithInt:(jint)n
+                       withJavaLangReflectType:(id<JavaLangReflectType>)argumentType;
 
 - (NSString *)getPattern;
 
@@ -61,15 +61,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeNoStepDefinition)
+J2OBJC_EMPTY_STATIC_INIT(CCBRNoStepDefinition)
 
-FOUNDATION_EXPORT void CucumberRuntimeNoStepDefinition_init(CucumberRuntimeNoStepDefinition *self);
+FOUNDATION_EXPORT void CCBRNoStepDefinition_init(CCBRNoStepDefinition *self);
 
-FOUNDATION_EXPORT CucumberRuntimeNoStepDefinition *new_CucumberRuntimeNoStepDefinition_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRNoStepDefinition *new_CCBRNoStepDefinition_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeNoStepDefinition *create_CucumberRuntimeNoStepDefinition_init(void);
+FOUNDATION_EXPORT CCBRNoStepDefinition *create_CCBRNoStepDefinition_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeNoStepDefinition)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRNoStepDefinition)
+
+@compatibility_alias CucumberRuntimeNoStepDefinition CCBRNoStepDefinition;
 
 #endif
 

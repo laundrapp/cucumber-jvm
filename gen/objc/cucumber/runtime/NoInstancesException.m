@@ -9,23 +9,23 @@
 #include "cucumber/runtime/CucumberException.h"
 #include "cucumber/runtime/NoInstancesException.h"
 
-@interface CucumberRuntimeNoInstancesException ()
+@interface CCBRNoInstancesException ()
 
 + (NSString *)createMessageWithIOSClass:(IOSClass *)parentType;
 
 @end
 
-__attribute__((unused)) static NSString *CucumberRuntimeNoInstancesException_createMessageWithIOSClass_(IOSClass *parentType);
+__attribute__((unused)) static NSString *CCBRNoInstancesException_createMessageWithIOSClass_(IOSClass *parentType);
 
-@implementation CucumberRuntimeNoInstancesException
+@implementation CCBRNoInstancesException
 
 - (instancetype __nonnull)initWithIOSClass:(IOSClass *)parentType {
-  CucumberRuntimeNoInstancesException_initWithIOSClass_(self, parentType);
+  CCBRNoInstancesException_initWithIOSClass_(self, parentType);
   return self;
 }
 
 + (NSString *)createMessageWithIOSClass:(IOSClass *)parentType {
-  return CucumberRuntimeNoInstancesException_createMessageWithIOSClass_(parentType);
+  return CCBRNoInstancesException_createMessageWithIOSClass_(parentType);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -40,27 +40,27 @@ __attribute__((unused)) static NSString *CucumberRuntimeNoInstancesException_cre
   methods[1].selector = @selector(createMessageWithIOSClass:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LIOSClass;", "createMessage" };
-  static const J2ObjcClassInfo _CucumberRuntimeNoInstancesException = { "NoInstancesException", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeNoInstancesException;
+  static const J2ObjcClassInfo _CCBRNoInstancesException = { "NoInstancesException", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRNoInstancesException;
 }
 
 @end
 
-void CucumberRuntimeNoInstancesException_initWithIOSClass_(CucumberRuntimeNoInstancesException *self, IOSClass *parentType) {
-  CucumberRuntimeCucumberException_initWithNSString_(self, CucumberRuntimeNoInstancesException_createMessageWithIOSClass_(parentType));
+void CCBRNoInstancesException_initWithIOSClass_(CCBRNoInstancesException *self, IOSClass *parentType) {
+  CCBRCucumberException_initWithNSString_(self, CCBRNoInstancesException_createMessageWithIOSClass_(parentType));
 }
 
-CucumberRuntimeNoInstancesException *new_CucumberRuntimeNoInstancesException_initWithIOSClass_(IOSClass *parentType) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeNoInstancesException, initWithIOSClass_, parentType)
+CCBRNoInstancesException *new_CCBRNoInstancesException_initWithIOSClass_(IOSClass *parentType) {
+  J2OBJC_NEW_IMPL(CCBRNoInstancesException, initWithIOSClass_, parentType)
 }
 
-CucumberRuntimeNoInstancesException *create_CucumberRuntimeNoInstancesException_initWithIOSClass_(IOSClass *parentType) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeNoInstancesException, initWithIOSClass_, parentType)
+CCBRNoInstancesException *create_CCBRNoInstancesException_initWithIOSClass_(IOSClass *parentType) {
+  J2OBJC_CREATE_IMPL(CCBRNoInstancesException, initWithIOSClass_, parentType)
 }
 
-NSString *CucumberRuntimeNoInstancesException_createMessageWithIOSClass_(IOSClass *parentType) {
-  CucumberRuntimeNoInstancesException_initialize();
+NSString *CCBRNoInstancesException_createMessageWithIOSClass_(IOSClass *parentType) {
+  CCBRNoInstancesException_initialize();
   return NSString_java_formatWithNSString_withNSObjectArray_(JreStrcat("$@", @"Couldn't find a single implementation of ", parentType), [IOSObjectArray arrayWithLength:0 type:NSObject_class_()]);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeNoInstancesException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRNoInstancesException)

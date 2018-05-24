@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/runtime/io/Resource.h"
 
-@interface CucumberRuntimeIoResource : NSObject
+@interface CCBRResource : NSObject
 
 @end
 
-@implementation CucumberRuntimeIoResource
+@implementation CCBRResource
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -28,10 +28,10 @@
   methods[3].selector = @selector(getClassNameWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LJavaIoIOException;", "getClassName", "LNSString;" };
-  static const J2ObjcClassInfo _CucumberRuntimeIoResource = { "Resource", "cucumber.runtime.io", ptrTable, methods, NULL, 7, 0x609, 4, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeIoResource;
+  static const J2ObjcClassInfo _CCBRResource = { "Resource", "cucumber.runtime.io", ptrTable, methods, NULL, 7, 0x609, 4, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRResource;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRuntimeIoResource)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBRResource)

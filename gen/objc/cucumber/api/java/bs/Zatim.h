@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaBsZatim_) && (INCLUDE_ALL_CucumberApiJavaBsZatim || defined(INCLUDE_CucumberApiJavaBsZatim))
-#define CucumberApiJavaBsZatim_
+#if !defined (CCBZatim_) && (INCLUDE_ALL_CucumberApiJavaBsZatim || defined(INCLUDE_CCBZatim))
+#define CCBZatim_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaBsZatim < JavaLangAnnotationAnnotation >
+@protocol CCBZatim < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaBsZatim : NSObject < CucumberApiJavaBsZatim > {
+@interface CCBZatim : NSObject < CCBZatim > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaBsZatim)
+J2OBJC_EMPTY_STATIC_INIT(CCBZatim)
 
-FOUNDATION_EXPORT id<CucumberApiJavaBsZatim> create_CucumberApiJavaBsZatim(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBZatim> create_CCBZatim(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaBsZatim)
+J2OBJC_TYPE_LITERAL_HEADER(CCBZatim)
+
+#define CucumberApiJavaBsZatim CCBZatim
 
 #endif
 

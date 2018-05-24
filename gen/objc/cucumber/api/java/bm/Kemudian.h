@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaBmKemudian_) && (INCLUDE_ALL_CucumberApiJavaBmKemudian || defined(INCLUDE_CucumberApiJavaBmKemudian))
-#define CucumberApiJavaBmKemudian_
+#if !defined (CCBKemudian_) && (INCLUDE_ALL_CucumberApiJavaBmKemudian || defined(INCLUDE_CCBKemudian))
+#define CCBKemudian_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaBmKemudian < JavaLangAnnotationAnnotation >
+@protocol CCBKemudian < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaBmKemudian : NSObject < CucumberApiJavaBmKemudian > {
+@interface CCBKemudian : NSObject < CCBKemudian > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaBmKemudian)
+J2OBJC_EMPTY_STATIC_INIT(CCBKemudian)
 
-FOUNDATION_EXPORT id<CucumberApiJavaBmKemudian> create_CucumberApiJavaBmKemudian(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBKemudian> create_CCBKemudian(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaBmKemudian)
+J2OBJC_TYPE_LITERAL_HEADER(CCBKemudian)
+
+#define CucumberApiJavaBmKemudian CCBKemudian
 
 #endif
 

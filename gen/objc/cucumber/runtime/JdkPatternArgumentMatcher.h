@@ -18,13 +18,13 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeJdkPatternArgumentMatcher_) && (INCLUDE_ALL_CucumberRuntimeJdkPatternArgumentMatcher || defined(INCLUDE_CucumberRuntimeJdkPatternArgumentMatcher))
-#define CucumberRuntimeJdkPatternArgumentMatcher_
+#if !defined (CCBRJdkPatternArgumentMatcher_) && (INCLUDE_ALL_CucumberRuntimeJdkPatternArgumentMatcher || defined(INCLUDE_CCBRJdkPatternArgumentMatcher))
+#define CCBRJdkPatternArgumentMatcher_
 
 @class JavaUtilRegexPattern;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeJdkPatternArgumentMatcher : NSObject
+@interface CCBRJdkPatternArgumentMatcher : NSObject
 
 #pragma mark Public
 
@@ -38,15 +38,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeJdkPatternArgumentMatcher)
+J2OBJC_EMPTY_STATIC_INIT(CCBRJdkPatternArgumentMatcher)
 
-FOUNDATION_EXPORT void CucumberRuntimeJdkPatternArgumentMatcher_initWithJavaUtilRegexPattern_(CucumberRuntimeJdkPatternArgumentMatcher *self, JavaUtilRegexPattern *pattern);
+FOUNDATION_EXPORT void CCBRJdkPatternArgumentMatcher_initWithJavaUtilRegexPattern_(CCBRJdkPatternArgumentMatcher *self, JavaUtilRegexPattern *pattern);
 
-FOUNDATION_EXPORT CucumberRuntimeJdkPatternArgumentMatcher *new_CucumberRuntimeJdkPatternArgumentMatcher_initWithJavaUtilRegexPattern_(JavaUtilRegexPattern *pattern) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRJdkPatternArgumentMatcher *new_CCBRJdkPatternArgumentMatcher_initWithJavaUtilRegexPattern_(JavaUtilRegexPattern *pattern) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeJdkPatternArgumentMatcher *create_CucumberRuntimeJdkPatternArgumentMatcher_initWithJavaUtilRegexPattern_(JavaUtilRegexPattern *pattern);
+FOUNDATION_EXPORT CCBRJdkPatternArgumentMatcher *create_CCBRJdkPatternArgumentMatcher_initWithJavaUtilRegexPattern_(JavaUtilRegexPattern *pattern);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeJdkPatternArgumentMatcher)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRJdkPatternArgumentMatcher)
+
+@compatibility_alias CucumberRuntimeJdkPatternArgumentMatcher CCBRJdkPatternArgumentMatcher;
 
 #endif
 

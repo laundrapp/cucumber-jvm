@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaSr_latnZadati_) && (INCLUDE_ALL_CucumberApiJavaSr_latnZadati || defined(INCLUDE_CucumberApiJavaSr_latnZadati))
-#define CucumberApiJavaSr_latnZadati_
+#if !defined (CCBZadati_) && (INCLUDE_ALL_CucumberApiJavaSr_latnZadati || defined(INCLUDE_CCBZadati))
+#define CCBZadati_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaSr_latnZadati < JavaLangAnnotationAnnotation >
+@protocol CCBZadati < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaSr_latnZadati : NSObject < CucumberApiJavaSr_latnZadati > {
+@interface CCBZadati : NSObject < CCBZadati > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaSr_latnZadati)
+J2OBJC_EMPTY_STATIC_INIT(CCBZadati)
 
-FOUNDATION_EXPORT id<CucumberApiJavaSr_latnZadati> create_CucumberApiJavaSr_latnZadati(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBZadati> create_CCBZadati(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaSr_latnZadati)
+J2OBJC_TYPE_LITERAL_HEADER(CCBZadati)
+
+#define CucumberApiJavaSr_latnZadati CCBZadati
 
 #endif
 

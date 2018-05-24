@@ -18,16 +18,16 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamListOfSingleValueWriter_) && (INCLUDE_ALL_CucumberRuntimeXstreamListOfSingleValueWriter || defined(INCLUDE_CucumberRuntimeXstreamListOfSingleValueWriter))
-#define CucumberRuntimeXstreamListOfSingleValueWriter_
+#if !defined (CCBRListOfSingleValueWriter_) && (INCLUDE_ALL_CucumberRuntimeXstreamListOfSingleValueWriter || defined(INCLUDE_CCBRListOfSingleValueWriter))
+#define CCBRListOfSingleValueWriter_
 
 #define RESTRICT_CucumberRuntimeXstreamCellWriter 1
-#define INCLUDE_CucumberRuntimeXstreamCellWriter 1
+#define INCLUDE_CCBRCellWriter 1
 #include "cucumber/runtime/xstream/CellWriter.h"
 
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeXstreamListOfSingleValueWriter : CucumberRuntimeXstreamCellWriter
+@interface CCBRListOfSingleValueWriter : CCBRCellWriter
 
 #pragma mark Public
 
@@ -52,15 +52,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamListOfSingleValueWriter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRListOfSingleValueWriter)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamListOfSingleValueWriter_init(CucumberRuntimeXstreamListOfSingleValueWriter *self);
+FOUNDATION_EXPORT void CCBRListOfSingleValueWriter_init(CCBRListOfSingleValueWriter *self);
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamListOfSingleValueWriter *new_CucumberRuntimeXstreamListOfSingleValueWriter_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRListOfSingleValueWriter *new_CCBRListOfSingleValueWriter_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamListOfSingleValueWriter *create_CucumberRuntimeXstreamListOfSingleValueWriter_init(void);
+FOUNDATION_EXPORT CCBRListOfSingleValueWriter *create_CCBRListOfSingleValueWriter_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamListOfSingleValueWriter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRListOfSingleValueWriter)
+
+@compatibility_alias CucumberRuntimeXstreamListOfSingleValueWriter CCBRListOfSingleValueWriter;
 
 #endif
 

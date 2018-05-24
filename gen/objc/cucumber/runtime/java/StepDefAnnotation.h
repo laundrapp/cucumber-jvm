@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeJavaStepDefAnnotation_) && (INCLUDE_ALL_CucumberRuntimeJavaStepDefAnnotation || defined(INCLUDE_CucumberRuntimeJavaStepDefAnnotation))
-#define CucumberRuntimeJavaStepDefAnnotation_
+#if !defined (CCBStepDefAnnotation_) && (INCLUDE_ALL_CucumberRuntimeJavaStepDefAnnotation || defined(INCLUDE_CCBStepDefAnnotation))
+#define CCBStepDefAnnotation_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberRuntimeJavaStepDefAnnotation < JavaLangAnnotationAnnotation >
+@protocol CCBStepDefAnnotation < JavaLangAnnotationAnnotation >
 
 - (jboolean)isEqual:(id)obj;
 
@@ -35,15 +35,17 @@
 
 @end
 
-@interface CucumberRuntimeJavaStepDefAnnotation : NSObject < CucumberRuntimeJavaStepDefAnnotation >
+@interface CCBStepDefAnnotation : NSObject < CCBStepDefAnnotation >
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeJavaStepDefAnnotation)
+J2OBJC_EMPTY_STATIC_INIT(CCBStepDefAnnotation)
 
-FOUNDATION_EXPORT id<CucumberRuntimeJavaStepDefAnnotation> create_CucumberRuntimeJavaStepDefAnnotation(void);
+FOUNDATION_EXPORT id<CCBStepDefAnnotation> create_CCBStepDefAnnotation(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeJavaStepDefAnnotation)
+J2OBJC_TYPE_LITERAL_HEADER(CCBStepDefAnnotation)
+
+#define CucumberRuntimeJavaStepDefAnnotation CCBStepDefAnnotation
 
 #endif
 

@@ -18,34 +18,36 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeNullSummaryPrinter_) && (INCLUDE_ALL_CucumberRuntimeNullSummaryPrinter || defined(INCLUDE_CucumberRuntimeNullSummaryPrinter))
-#define CucumberRuntimeNullSummaryPrinter_
+#if !defined (CCBRNullSummaryPrinter_) && (INCLUDE_ALL_CucumberRuntimeNullSummaryPrinter || defined(INCLUDE_CCBRNullSummaryPrinter))
+#define CCBRNullSummaryPrinter_
 
 #define RESTRICT_CucumberApiSummaryPrinter 1
-#define INCLUDE_CucumberApiSummaryPrinter 1
+#define INCLUDE_CCBSummaryPrinter 1
 #include "cucumber/api/SummaryPrinter.h"
 
-@class CucumberRuntimeRuntime;
+@class CCBRRuntime;
 
-@interface CucumberRuntimeNullSummaryPrinter : NSObject < CucumberApiSummaryPrinter >
+@interface CCBRNullSummaryPrinter : NSObject < CCBSummaryPrinter >
 
 #pragma mark Public
 
 - (instancetype __nonnull)init;
 
-- (void)printWithCucumberRuntimeRuntime:(CucumberRuntimeRuntime *)runtime;
+- (void)printWithCCBRRuntime:(CCBRRuntime *)runtime;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeNullSummaryPrinter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRNullSummaryPrinter)
 
-FOUNDATION_EXPORT void CucumberRuntimeNullSummaryPrinter_init(CucumberRuntimeNullSummaryPrinter *self);
+FOUNDATION_EXPORT void CCBRNullSummaryPrinter_init(CCBRNullSummaryPrinter *self);
 
-FOUNDATION_EXPORT CucumberRuntimeNullSummaryPrinter *new_CucumberRuntimeNullSummaryPrinter_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRNullSummaryPrinter *new_CCBRNullSummaryPrinter_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeNullSummaryPrinter *create_CucumberRuntimeNullSummaryPrinter_init(void);
+FOUNDATION_EXPORT CCBRNullSummaryPrinter *create_CCBRNullSummaryPrinter_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeNullSummaryPrinter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRNullSummaryPrinter)
+
+@compatibility_alias CucumberRuntimeNullSummaryPrinter CCBRNullSummaryPrinter;
 
 #endif
 

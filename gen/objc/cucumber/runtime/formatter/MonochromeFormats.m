@@ -7,11 +7,11 @@
 #include "cucumber/runtime/formatter/Format.h"
 #include "cucumber/runtime/formatter/MonochromeFormats.h"
 
-inline id<CucumberRuntimeFormatterFormat> CucumberRuntimeFormatterMonochromeFormats_get_FORMAT(void);
-static id<CucumberRuntimeFormatterFormat> CucumberRuntimeFormatterMonochromeFormats_FORMAT;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeFormatterMonochromeFormats, FORMAT, id<CucumberRuntimeFormatterFormat>)
+inline id<CCBRFormat> CCBRMonochromeFormats_get_FORMAT(void);
+static id<CCBRFormat> CCBRMonochromeFormats_FORMAT;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRMonochromeFormats, FORMAT, id<CCBRFormat>)
 
-@interface CucumberRuntimeFormatterMonochromeFormats_1 : NSObject < CucumberRuntimeFormatterFormat >
+@interface CCBRMonochromeFormats_1 : NSObject < CCBRFormat >
 
 - (instancetype __nonnull)init;
 
@@ -19,27 +19,27 @@ J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeFormatterMonochromeFormats, FORMAT,
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterMonochromeFormats_1)
+J2OBJC_EMPTY_STATIC_INIT(CCBRMonochromeFormats_1)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterMonochromeFormats_1_init(CucumberRuntimeFormatterMonochromeFormats_1 *self);
+__attribute__((unused)) static void CCBRMonochromeFormats_1_init(CCBRMonochromeFormats_1 *self);
 
-__attribute__((unused)) static CucumberRuntimeFormatterMonochromeFormats_1 *new_CucumberRuntimeFormatterMonochromeFormats_1_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRMonochromeFormats_1 *new_CCBRMonochromeFormats_1_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterMonochromeFormats_1 *create_CucumberRuntimeFormatterMonochromeFormats_1_init(void);
+__attribute__((unused)) static CCBRMonochromeFormats_1 *create_CCBRMonochromeFormats_1_init(void);
 
-J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFormatterMonochromeFormats)
+J2OBJC_INITIALIZED_DEFN(CCBRMonochromeFormats)
 
-@implementation CucumberRuntimeFormatterMonochromeFormats
+@implementation CCBRMonochromeFormats
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeFormatterMonochromeFormats_init(self);
+  CCBRMonochromeFormats_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (id<CucumberRuntimeFormatterFormat>)getWithNSString:(NSString *)key {
-  return CucumberRuntimeFormatterMonochromeFormats_FORMAT;
+- (id<CCBRFormat>)getWithNSString:(NSString *)key {
+  return CCBRMonochromeFormats_FORMAT;
 }
 
 - (NSString *)upWithInt:(jint)n {
@@ -49,7 +49,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LCucumberRuntimeFormatterFormat;", 0x1, 0, 1, -1, -1, -1, -1 },
+    { NULL, "LCCBRFormat;", 0x1, 0, 1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, 2, 3, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
@@ -60,41 +60,41 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[2].selector = @selector(upWithInt:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "FORMAT", "LCucumberRuntimeFormatterFormat;", .constantValue.asLong = 0, 0x1a, -1, 4, -1, -1 },
+    { "FORMAT", "LCCBRFormat;", .constantValue.asLong = 0, 0x1a, -1, 4, -1, -1 },
   };
-  static const void *ptrTable[] = { "get", "LNSString;", "up", "I", &CucumberRuntimeFormatterMonochromeFormats_FORMAT };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterMonochromeFormats = { "MonochromeFormats", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x11, 3, 1, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeFormatterMonochromeFormats;
+  static const void *ptrTable[] = { "get", "LNSString;", "up", "I", &CCBRMonochromeFormats_FORMAT };
+  static const J2ObjcClassInfo _CCBRMonochromeFormats = { "MonochromeFormats", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x11, 3, 1, -1, -1, -1, -1, -1 };
+  return &_CCBRMonochromeFormats;
 }
 
 + (void)initialize {
-  if (self == [CucumberRuntimeFormatterMonochromeFormats class]) {
-    JreStrongAssignAndConsume(&CucumberRuntimeFormatterMonochromeFormats_FORMAT, new_CucumberRuntimeFormatterMonochromeFormats_1_init());
-    J2OBJC_SET_INITIALIZED(CucumberRuntimeFormatterMonochromeFormats)
+  if (self == [CCBRMonochromeFormats class]) {
+    JreStrongAssignAndConsume(&CCBRMonochromeFormats_FORMAT, new_CCBRMonochromeFormats_1_init());
+    J2OBJC_SET_INITIALIZED(CCBRMonochromeFormats)
   }
 }
 
 @end
 
-void CucumberRuntimeFormatterMonochromeFormats_init(CucumberRuntimeFormatterMonochromeFormats *self) {
+void CCBRMonochromeFormats_init(CCBRMonochromeFormats *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterMonochromeFormats *new_CucumberRuntimeFormatterMonochromeFormats_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterMonochromeFormats, init)
+CCBRMonochromeFormats *new_CCBRMonochromeFormats_init() {
+  J2OBJC_NEW_IMPL(CCBRMonochromeFormats, init)
 }
 
-CucumberRuntimeFormatterMonochromeFormats *create_CucumberRuntimeFormatterMonochromeFormats_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterMonochromeFormats, init)
+CCBRMonochromeFormats *create_CCBRMonochromeFormats_init() {
+  J2OBJC_CREATE_IMPL(CCBRMonochromeFormats, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterMonochromeFormats)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRMonochromeFormats)
 
-@implementation CucumberRuntimeFormatterMonochromeFormats_1
+@implementation CCBRMonochromeFormats_1
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeFormatterMonochromeFormats_1_init(self);
+  CCBRMonochromeFormats_1_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -114,21 +114,21 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(textWithNSString:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "text", "LNSString;", "LCucumberRuntimeFormatterMonochromeFormats;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterMonochromeFormats_1 = { "", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 2, -1, -1, -1, -1 };
-  return &_CucumberRuntimeFormatterMonochromeFormats_1;
+  static const void *ptrTable[] = { "text", "LNSString;", "LCCBRMonochromeFormats;" };
+  static const J2ObjcClassInfo _CCBRMonochromeFormats_1 = { "", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 2, -1, -1, -1, -1 };
+  return &_CCBRMonochromeFormats_1;
 }
 
 @end
 
-void CucumberRuntimeFormatterMonochromeFormats_1_init(CucumberRuntimeFormatterMonochromeFormats_1 *self) {
+void CCBRMonochromeFormats_1_init(CCBRMonochromeFormats_1 *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterMonochromeFormats_1 *new_CucumberRuntimeFormatterMonochromeFormats_1_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterMonochromeFormats_1, init)
+CCBRMonochromeFormats_1 *new_CCBRMonochromeFormats_1_init() {
+  J2OBJC_NEW_IMPL(CCBRMonochromeFormats_1, init)
 }
 
-CucumberRuntimeFormatterMonochromeFormats_1 *create_CucumberRuntimeFormatterMonochromeFormats_1_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterMonochromeFormats_1, init)
+CCBRMonochromeFormats_1 *create_CCBRMonochromeFormats_1_init() {
+  J2OBJC_CREATE_IMPL(CCBRMonochromeFormats_1, init)
 }

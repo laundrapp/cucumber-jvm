@@ -15,36 +15,36 @@
 #include "java/util/Collections.h"
 #include "java/util/List.h"
 
-@interface CucumberRuntimeFailedStepInstantiationMatch () {
+@interface CCBRFailedStepInstantiationMatch () {
  @public
   JavaLangThrowable *throwable_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeFailedStepInstantiationMatch, throwable_, JavaLangThrowable *)
+J2OBJC_FIELD_SETTER(CCBRFailedStepInstantiationMatch, throwable_, JavaLangThrowable *)
 
-@implementation CucumberRuntimeFailedStepInstantiationMatch
+@implementation CCBRFailedStepInstantiationMatch
 
 - (instancetype __nonnull)initWithNSString:(NSString *)uri
               withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
                      withJavaLangThrowable:(JavaLangThrowable *)throwable {
-  CucumberRuntimeFailedStepInstantiationMatch_initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_(self, uri, step, throwable);
+  CCBRFailedStepInstantiationMatch_initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_(self, uri, step, throwable);
   return self;
 }
 
 - (void)runStepWithNSString:(NSString *)language
-    withCucumberApiScenario:(id<CucumberApiScenario>)scenario {
+            withCCBScenario:(id<CCBScenario>)scenario {
   @throw nil_chk(throwable_);
 }
 
 - (void)dryRunStepWithNSString:(NSString *)language
-       withCucumberApiScenario:(id<CucumberApiScenario>)scenario {
-  [self runStepWithNSString:language withCucumberApiScenario:scenario];
+               withCCBScenario:(id<CCBScenario>)scenario {
+  [self runStepWithNSString:language withCCBScenario:scenario];
 }
 
-- (CucumberRuntimeMatch *)getMatch {
-  return JreLoadStatic(CucumberRuntimeMatch, UNDEFINED);
+- (CCBRMatch *)getMatch {
+  return JreLoadStatic(CCBRMatch, UNDEFINED);
 }
 
 - (void)dealloc {
@@ -57,37 +57,37 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeFailedStepInstantiationMatch, throwable_, Jav
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 1, 2, 3, -1, -1, -1 },
     { NULL, "V", 0x1, 4, 2, 3, -1, -1, -1 },
-    { NULL, "LCucumberRuntimeMatch;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCCBRMatch;", 0x1, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithNSString:withGherkinPicklesPickleStep:withJavaLangThrowable:);
-  methods[1].selector = @selector(runStepWithNSString:withCucumberApiScenario:);
-  methods[2].selector = @selector(dryRunStepWithNSString:withCucumberApiScenario:);
+  methods[1].selector = @selector(runStepWithNSString:withCCBScenario:);
+  methods[2].selector = @selector(dryRunStepWithNSString:withCCBScenario:);
   methods[3].selector = @selector(getMatch);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "throwable_", "LJavaLangThrowable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LNSString;LGherkinPicklesPickleStep;LJavaLangThrowable;", "runStep", "LNSString;LCucumberApiScenario;", "LJavaLangThrowable;", "dryRunStep" };
-  static const J2ObjcClassInfo _CucumberRuntimeFailedStepInstantiationMatch = { "FailedStepInstantiationMatch", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 4, 1, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeFailedStepInstantiationMatch;
+  static const void *ptrTable[] = { "LNSString;LGherkinPicklesPickleStep;LJavaLangThrowable;", "runStep", "LNSString;LCCBScenario;", "LJavaLangThrowable;", "dryRunStep" };
+  static const J2ObjcClassInfo _CCBRFailedStepInstantiationMatch = { "FailedStepInstantiationMatch", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 4, 1, -1, -1, -1, -1, -1 };
+  return &_CCBRFailedStepInstantiationMatch;
 }
 
 @end
 
-void CucumberRuntimeFailedStepInstantiationMatch_initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_(CucumberRuntimeFailedStepInstantiationMatch *self, NSString *uri, GherkinPicklesPickleStep *step, JavaLangThrowable *throwable) {
-  CucumberRuntimeStepDefinitionMatch_initWithJavaUtilList_withCucumberRuntimeStepDefinition_withNSString_withGherkinPicklesPickleStep_withCucumberRuntimeXstreamLocalizedXStreams_(self, JavaUtilCollections_emptyList(), create_CucumberRuntimeNoStepDefinition_init(), uri, step, nil);
+void CCBRFailedStepInstantiationMatch_initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_(CCBRFailedStepInstantiationMatch *self, NSString *uri, GherkinPicklesPickleStep *step, JavaLangThrowable *throwable) {
+  CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGherkinPicklesPickleStep_withCCBRLocalizedXStreams_(self, JavaUtilCollections_emptyList(), create_CCBRNoStepDefinition_init(), uri, step, nil);
   JreStrongAssign(&self->throwable_, [self removeFrameworkFramesAndAppendStepLocationWithJavaLangThrowable:throwable withJavaLangStackTraceElement:[self getStepLocation]]);
 }
 
-CucumberRuntimeFailedStepInstantiationMatch *new_CucumberRuntimeFailedStepInstantiationMatch_initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_(NSString *uri, GherkinPicklesPickleStep *step, JavaLangThrowable *throwable) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFailedStepInstantiationMatch, initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_, uri, step, throwable)
+CCBRFailedStepInstantiationMatch *new_CCBRFailedStepInstantiationMatch_initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_(NSString *uri, GherkinPicklesPickleStep *step, JavaLangThrowable *throwable) {
+  J2OBJC_NEW_IMPL(CCBRFailedStepInstantiationMatch, initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_, uri, step, throwable)
 }
 
-CucumberRuntimeFailedStepInstantiationMatch *create_CucumberRuntimeFailedStepInstantiationMatch_initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_(NSString *uri, GherkinPicklesPickleStep *step, JavaLangThrowable *throwable) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFailedStepInstantiationMatch, initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_, uri, step, throwable)
+CCBRFailedStepInstantiationMatch *create_CCBRFailedStepInstantiationMatch_initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_(NSString *uri, GherkinPicklesPickleStep *step, JavaLangThrowable *throwable) {
+  J2OBJC_CREATE_IMPL(CCBRFailedStepInstantiationMatch, initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_, uri, step, throwable)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFailedStepInstantiationMatch)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRFailedStepInstantiationMatch)

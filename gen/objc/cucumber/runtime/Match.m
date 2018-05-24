@@ -8,7 +8,7 @@
 #include "java/util/Collections.h"
 #include "java/util/List.h"
 
-@interface CucumberRuntimeMatch () {
+@interface CCBRMatch () {
  @public
   id<JavaUtilList> arguments_;
   NSString *location_;
@@ -16,18 +16,18 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeMatch, arguments_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeMatch, location_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRMatch, arguments_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRMatch, location_, NSString *)
 
-J2OBJC_INITIALIZED_DEFN(CucumberRuntimeMatch)
+J2OBJC_INITIALIZED_DEFN(CCBRMatch)
 
-CucumberRuntimeMatch *CucumberRuntimeMatch_UNDEFINED;
+CCBRMatch *CCBRMatch_UNDEFINED;
 
-@implementation CucumberRuntimeMatch
+@implementation CCBRMatch
 
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)arguments
                                   withNSString:(NSString *)location {
-  CucumberRuntimeMatch_initWithJavaUtilList_withNSString_(self, arguments, location);
+  CCBRMatch_initWithJavaUtilList_withNSString_(self, arguments, location);
   return self;
 }
 
@@ -61,34 +61,34 @@ CucumberRuntimeMatch *CucumberRuntimeMatch_UNDEFINED;
   static const J2ObjcFieldInfo fields[] = {
     { "arguments_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 3, -1 },
     { "location_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "UNDEFINED", "LCucumberRuntimeMatch;", .constantValue.asLong = 0, 0x19, -1, 4, -1, -1 },
+    { "UNDEFINED", "LCCBRMatch;", .constantValue.asLong = 0, 0x19, -1, 4, -1, -1 },
   };
-  static const void *ptrTable[] = { "LJavaUtilList;LNSString;", "(Ljava/util/List<Lcucumber/runtime/Argument;>;Ljava/lang/String;)V", "()Ljava/util/List<Lcucumber/runtime/Argument;>;", "Ljava/util/List<Lcucumber/runtime/Argument;>;", &CucumberRuntimeMatch_UNDEFINED };
-  static const J2ObjcClassInfo _CucumberRuntimeMatch = { "Match", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 3, 3, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeMatch;
+  static const void *ptrTable[] = { "LJavaUtilList;LNSString;", "(Ljava/util/List<Lcucumber/runtime/Argument;>;Ljava/lang/String;)V", "()Ljava/util/List<Lcucumber/runtime/Argument;>;", "Ljava/util/List<Lcucumber/runtime/Argument;>;", &CCBRMatch_UNDEFINED };
+  static const J2ObjcClassInfo _CCBRMatch = { "Match", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 3, 3, -1, -1, -1, -1, -1 };
+  return &_CCBRMatch;
 }
 
 + (void)initialize {
-  if (self == [CucumberRuntimeMatch class]) {
-    JreStrongAssignAndConsume(&CucumberRuntimeMatch_UNDEFINED, new_CucumberRuntimeMatch_initWithJavaUtilList_withNSString_(JavaUtilCollections_emptyList(), nil));
-    J2OBJC_SET_INITIALIZED(CucumberRuntimeMatch)
+  if (self == [CCBRMatch class]) {
+    JreStrongAssignAndConsume(&CCBRMatch_UNDEFINED, new_CCBRMatch_initWithJavaUtilList_withNSString_(JavaUtilCollections_emptyList(), nil));
+    J2OBJC_SET_INITIALIZED(CCBRMatch)
   }
 }
 
 @end
 
-void CucumberRuntimeMatch_initWithJavaUtilList_withNSString_(CucumberRuntimeMatch *self, id<JavaUtilList> arguments, NSString *location) {
+void CCBRMatch_initWithJavaUtilList_withNSString_(CCBRMatch *self, id<JavaUtilList> arguments, NSString *location) {
   NSObject_init(self);
   JreStrongAssign(&self->arguments_, arguments);
   JreStrongAssign(&self->location_, location);
 }
 
-CucumberRuntimeMatch *new_CucumberRuntimeMatch_initWithJavaUtilList_withNSString_(id<JavaUtilList> arguments, NSString *location) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeMatch, initWithJavaUtilList_withNSString_, arguments, location)
+CCBRMatch *new_CCBRMatch_initWithJavaUtilList_withNSString_(id<JavaUtilList> arguments, NSString *location) {
+  J2OBJC_NEW_IMPL(CCBRMatch, initWithJavaUtilList_withNSString_, arguments, location)
 }
 
-CucumberRuntimeMatch *create_CucumberRuntimeMatch_initWithJavaUtilList_withNSString_(id<JavaUtilList> arguments, NSString *location) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeMatch, initWithJavaUtilList_withNSString_, arguments, location)
+CCBRMatch *create_CCBRMatch_initWithJavaUtilList_withNSString_(id<JavaUtilList> arguments, NSString *location) {
+  J2OBJC_CREATE_IMPL(CCBRMatch, initWithJavaUtilList_withNSString_, arguments, location)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeMatch)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRMatch)

@@ -18,28 +18,28 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiEventTestCaseFinished_) && (INCLUDE_ALL_CucumberApiEventTestCaseFinished || defined(INCLUDE_CucumberApiEventTestCaseFinished))
-#define CucumberApiEventTestCaseFinished_
+#if !defined (CCBTestCaseFinished_) && (INCLUDE_ALL_CucumberApiEventTestCaseFinished || defined(INCLUDE_CCBTestCaseFinished))
+#define CCBTestCaseFinished_
 
 #define RESTRICT_CucumberApiEventTimeStampedEvent 1
-#define INCLUDE_CucumberApiEventTimeStampedEvent 1
+#define INCLUDE_CCBTimeStampedEvent 1
 #include "cucumber/api/event/TimeStampedEvent.h"
 
-@class CucumberApiResult;
-@class CucumberApiTestCase;
+@class CCBResult;
+@class CCBTestCase;
 @class JavaLangLong;
 
-@interface CucumberApiEventTestCaseFinished : CucumberApiEventTimeStampedEvent {
+@interface CCBTestCaseFinished : CCBTimeStampedEvent {
  @public
-  CucumberApiResult *result_;
-  CucumberApiTestCase *testCase_;
+  CCBResult *result_;
+  CCBTestCase *testCase_;
 }
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp
-                       withCucumberApiTestCase:(CucumberApiTestCase *)testCase
-                         withCucumberApiResult:(CucumberApiResult *)result;
+                               withCCBTestCase:(CCBTestCase *)testCase
+                                 withCCBResult:(CCBResult *)result;
 
 // Disallowed inherited constructors, do not use.
 
@@ -47,18 +47,20 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiEventTestCaseFinished)
+J2OBJC_EMPTY_STATIC_INIT(CCBTestCaseFinished)
 
-J2OBJC_FIELD_SETTER(CucumberApiEventTestCaseFinished, result_, CucumberApiResult *)
-J2OBJC_FIELD_SETTER(CucumberApiEventTestCaseFinished, testCase_, CucumberApiTestCase *)
+J2OBJC_FIELD_SETTER(CCBTestCaseFinished, result_, CCBResult *)
+J2OBJC_FIELD_SETTER(CCBTestCaseFinished, testCase_, CCBTestCase *)
 
-FOUNDATION_EXPORT void CucumberApiEventTestCaseFinished_initWithJavaLangLong_withCucumberApiTestCase_withCucumberApiResult_(CucumberApiEventTestCaseFinished *self, JavaLangLong *timeStamp, CucumberApiTestCase *testCase, CucumberApiResult *result);
+FOUNDATION_EXPORT void CCBTestCaseFinished_initWithJavaLangLong_withCCBTestCase_withCCBResult_(CCBTestCaseFinished *self, JavaLangLong *timeStamp, CCBTestCase *testCase, CCBResult *result);
 
-FOUNDATION_EXPORT CucumberApiEventTestCaseFinished *new_CucumberApiEventTestCaseFinished_initWithJavaLangLong_withCucumberApiTestCase_withCucumberApiResult_(JavaLangLong *timeStamp, CucumberApiTestCase *testCase, CucumberApiResult *result) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBTestCaseFinished *new_CCBTestCaseFinished_initWithJavaLangLong_withCCBTestCase_withCCBResult_(JavaLangLong *timeStamp, CCBTestCase *testCase, CCBResult *result) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberApiEventTestCaseFinished *create_CucumberApiEventTestCaseFinished_initWithJavaLangLong_withCucumberApiTestCase_withCucumberApiResult_(JavaLangLong *timeStamp, CucumberApiTestCase *testCase, CucumberApiResult *result);
+FOUNDATION_EXPORT CCBTestCaseFinished *create_CCBTestCaseFinished_initWithJavaLangLong_withCCBTestCase_withCCBResult_(JavaLangLong *timeStamp, CCBTestCase *testCase, CCBResult *result);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventTestCaseFinished)
+J2OBJC_TYPE_LITERAL_HEADER(CCBTestCaseFinished)
+
+@compatibility_alias CucumberApiEventTestCaseFinished CCBTestCaseFinished;
 
 #endif
 

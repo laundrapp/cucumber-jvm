@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/api/SummaryPrinter.h"
 
-@interface CucumberApiSummaryPrinter : NSObject
+@interface CCBSummaryPrinter : NSObject
 
 @end
 
-@implementation CucumberApiSummaryPrinter
+@implementation CCBSummaryPrinter
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -19,13 +19,13 @@
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(printWithCucumberRuntimeRuntime:);
+  methods[0].selector = @selector(printWithCCBRRuntime:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "print", "LCucumberRuntimeRuntime;" };
-  static const J2ObjcClassInfo _CucumberApiSummaryPrinter = { "SummaryPrinter", "cucumber.api", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberApiSummaryPrinter;
+  static const void *ptrTable[] = { "print", "LCCBRRuntime;" };
+  static const J2ObjcClassInfo _CCBSummaryPrinter = { "SummaryPrinter", "cucumber.api", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
+  return &_CCBSummaryPrinter;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiSummaryPrinter)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBSummaryPrinter)

@@ -21,7 +21,7 @@
 #if !defined (CucumberUtilEncoding_) && (INCLUDE_ALL_CucumberUtilEncoding || defined(INCLUDE_CucumberUtilEncoding))
 #define CucumberUtilEncoding_
 
-@protocol CucumberRuntimeIoResource;
+@protocol CCBRResource;
 
 /*!
  @brief Utilities for reading the encoding of a file.
@@ -32,7 +32,7 @@
 
 - (instancetype __nonnull)init;
 
-+ (NSString *)readFileWithCucumberRuntimeIoResource:(id<CucumberRuntimeIoResource>)resource;
++ (NSString *)readFileWithCCBRResource:(id<CCBRResource>)resource;
 
 @end
 
@@ -49,7 +49,7 @@ FOUNDATION_EXPORT CucumberUtilEncoding *new_CucumberUtilEncoding_init(void) NS_R
 
 FOUNDATION_EXPORT CucumberUtilEncoding *create_CucumberUtilEncoding_init(void);
 
-FOUNDATION_EXPORT NSString *CucumberUtilEncoding_readFileWithCucumberRuntimeIoResource_(id<CucumberRuntimeIoResource> resource);
+FOUNDATION_EXPORT NSString *CucumberUtilEncoding_readFileWithCCBRResource_(id<CCBRResource> resource);
 
 J2OBJC_TYPE_LITERAL_HEADER(CucumberUtilEncoding)
 

@@ -18,13 +18,13 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeUnreportedStepExecutor_) && (INCLUDE_ALL_CucumberRuntimeUnreportedStepExecutor || defined(INCLUDE_CucumberRuntimeUnreportedStepExecutor))
-#define CucumberRuntimeUnreportedStepExecutor_
+#if !defined (CCBRUnreportedStepExecutor_) && (INCLUDE_ALL_CucumberRuntimeUnreportedStepExecutor || defined(INCLUDE_CCBRUnreportedStepExecutor))
+#define CCBRUnreportedStepExecutor_
 
 @class GherkinPicklesPickleString;
 @protocol JavaUtilList;
 
-@protocol CucumberRuntimeUnreportedStepExecutor < JavaObject >
+@protocol CCBRUnreportedStepExecutor < JavaObject >
 
 - (void)runUnreportedStepWithNSString:(NSString *)featurePath
                          withNSString:(NSString *)language
@@ -35,9 +35,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeUnreportedStepExecutor)
+J2OBJC_EMPTY_STATIC_INIT(CCBRUnreportedStepExecutor)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeUnreportedStepExecutor)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRUnreportedStepExecutor)
+
+#define CucumberRuntimeUnreportedStepExecutor CCBRUnreportedStepExecutor
 
 #endif
 

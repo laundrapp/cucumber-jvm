@@ -28,84 +28,84 @@
 #include "java/util/List.h"
 #include "java/util/Map.h"
 
-@interface CucumberRuntimeFormatterTestSourcesModel () {
+@interface CCBRTestSourcesModel () {
  @public
   id<JavaUtilMap> pathToReadEventMap_;
   id<JavaUtilMap> pathToAstMap_;
   id<JavaUtilMap> pathToNodeMap_;
 }
 
-- (CucumberApiEventTestSourceRead *)getTestSourceReadEventWithNSString:(NSString *)uri;
+- (CCBTestSourceRead *)getTestSourceReadEventWithNSString:(NSString *)uri;
 
 - (void)parseGherkinSourceWithNSString:(NSString *)path;
 
 - (void)processScenarioDefinitionWithJavaUtilMap:(id<JavaUtilMap>)nodeMap
                 withGherkinAstScenarioDefinition:(GherkinAstScenarioDefinition *)child
-withCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)currentParent;
+                withCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)currentParent;
 
 - (void)processScenarioOutlineExamplesWithJavaUtilMap:(id<JavaUtilMap>)nodeMap
                         withGherkinAstScenarioOutline:(GherkinAstScenarioOutline *)scenarioOutline
- withCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)childNode;
+                     withCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)childNode;
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterTestSourcesModel, pathToReadEventMap_, id<JavaUtilMap>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterTestSourcesModel, pathToAstMap_, id<JavaUtilMap>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterTestSourcesModel, pathToNodeMap_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(CCBRTestSourcesModel, pathToReadEventMap_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(CCBRTestSourcesModel, pathToAstMap_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(CCBRTestSourcesModel, pathToNodeMap_, id<JavaUtilMap>)
 
-__attribute__((unused)) static CucumberApiEventTestSourceRead *CucumberRuntimeFormatterTestSourcesModel_getTestSourceReadEventWithNSString_(CucumberRuntimeFormatterTestSourcesModel *self, NSString *uri);
+__attribute__((unused)) static CCBTestSourceRead *CCBRTestSourcesModel_getTestSourceReadEventWithNSString_(CCBRTestSourcesModel *self, NSString *uri);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterTestSourcesModel_parseGherkinSourceWithNSString_(CucumberRuntimeFormatterTestSourcesModel *self, NSString *path);
+__attribute__((unused)) static void CCBRTestSourcesModel_parseGherkinSourceWithNSString_(CCBRTestSourcesModel *self, NSString *path);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterTestSourcesModel_processScenarioDefinitionWithJavaUtilMap_withGherkinAstScenarioDefinition_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel *self, id<JavaUtilMap> nodeMap, GherkinAstScenarioDefinition *child, CucumberRuntimeFormatterTestSourcesModel_AstNode *currentParent);
+__attribute__((unused)) static void CCBRTestSourcesModel_processScenarioDefinitionWithJavaUtilMap_withGherkinAstScenarioDefinition_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *self, id<JavaUtilMap> nodeMap, GherkinAstScenarioDefinition *child, CCBRTestSourcesModel_AstNode *currentParent);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterTestSourcesModel_processScenarioOutlineExamplesWithJavaUtilMap_withGherkinAstScenarioOutline_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel *self, id<JavaUtilMap> nodeMap, GherkinAstScenarioOutline *scenarioOutline, CucumberRuntimeFormatterTestSourcesModel_AstNode *childNode);
+__attribute__((unused)) static void CCBRTestSourcesModel_processScenarioOutlineExamplesWithJavaUtilMap_withGherkinAstScenarioOutline_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *self, id<JavaUtilMap> nodeMap, GherkinAstScenarioOutline *scenarioOutline, CCBRTestSourcesModel_AstNode *childNode);
 
-@implementation CucumberRuntimeFormatterTestSourcesModel
+@implementation CCBRTestSourcesModel
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeFormatterTestSourcesModel_init(self);
+  CCBRTestSourcesModel_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-+ (GherkinAstFeature *)getFeatureForTestCaseWithCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)astNode {
-  return CucumberRuntimeFormatterTestSourcesModel_getFeatureForTestCaseWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(astNode);
++ (GherkinAstFeature *)getFeatureForTestCaseWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode {
+  return CCBRTestSourcesModel_getFeatureForTestCaseWithCCBRTestSourcesModel_AstNode_(astNode);
 }
 
-+ (GherkinAstBackground *)getBackgroundForTestCaseWithCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)astNode {
-  return CucumberRuntimeFormatterTestSourcesModel_getBackgroundForTestCaseWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(astNode);
++ (GherkinAstBackground *)getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode {
+  return CCBRTestSourcesModel_getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode_(astNode);
 }
 
-+ (GherkinAstScenarioDefinition *)getScenarioDefinitionWithCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)astNode {
-  return CucumberRuntimeFormatterTestSourcesModel_getScenarioDefinitionWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(astNode);
++ (GherkinAstScenarioDefinition *)getScenarioDefinitionWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode {
+  return CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_(astNode);
 }
 
-+ (jboolean)isScenarioOutlineScenarioWithCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)astNode {
-  return CucumberRuntimeFormatterTestSourcesModel_isScenarioOutlineScenarioWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(astNode);
++ (jboolean)isScenarioOutlineScenarioWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode {
+  return CCBRTestSourcesModel_isScenarioOutlineScenarioWithCCBRTestSourcesModel_AstNode_(astNode);
 }
 
-+ (jboolean)isBackgroundStepWithCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)astNode {
-  return CucumberRuntimeFormatterTestSourcesModel_isBackgroundStepWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(astNode);
++ (jboolean)isBackgroundStepWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode {
+  return CCBRTestSourcesModel_isBackgroundStepWithCCBRTestSourcesModel_AstNode_(astNode);
 }
 
-+ (NSString *)calculateIdWithCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)astNode {
-  return CucumberRuntimeFormatterTestSourcesModel_calculateIdWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(astNode);
++ (NSString *)calculateIdWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode {
+  return CCBRTestSourcesModel_calculateIdWithCCBRTestSourcesModel_AstNode_(astNode);
 }
 
 + (NSString *)convertToIdWithNSString:(NSString *)name {
-  return CucumberRuntimeFormatterTestSourcesModel_convertToIdWithNSString_(name);
+  return CCBRTestSourcesModel_convertToIdWithNSString_(name);
 }
 
 - (void)addTestSourceReadEventWithNSString:(NSString *)path
-        withCucumberApiEventTestSourceRead:(CucumberApiEventTestSourceRead *)event {
+                     withCCBTestSourceRead:(CCBTestSourceRead *)event {
   [((id<JavaUtilMap>) nil_chk(pathToReadEventMap_)) putWithId:path withId:event];
 }
 
 - (GherkinAstFeature *)getFeatureWithNSString:(NSString *)path {
   if (![((id<JavaUtilMap>) nil_chk(pathToAstMap_)) containsKeyWithId:path]) {
-    CucumberRuntimeFormatterTestSourcesModel_parseGherkinSourceWithNSString_(self, path);
+    CCBRTestSourcesModel_parseGherkinSourceWithNSString_(self, path);
   }
   if ([pathToAstMap_ containsKeyWithId:path]) {
     return [((GherkinAstGherkinDocument *) nil_chk([pathToAstMap_ getWithId:path])) getFeature];
@@ -115,13 +115,13 @@ J2OBJC_IGNORE_DESIGNATED_END
 
 - (GherkinAstScenarioDefinition *)getScenarioDefinitionWithNSString:(NSString *)path
                                                             withInt:(jint)line {
-  return CucumberRuntimeFormatterTestSourcesModel_getScenarioDefinitionWithCucumberRuntimeFormatterTestSourcesModel_AstNode_([self getAstNodeWithNSString:path withInt:line]);
+  return CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_([self getAstNodeWithNSString:path withInt:line]);
 }
 
-- (CucumberRuntimeFormatterTestSourcesModel_AstNode *)getAstNodeWithNSString:(NSString *)path
-                                                                     withInt:(jint)line {
+- (CCBRTestSourcesModel_AstNode *)getAstNodeWithNSString:(NSString *)path
+                                                 withInt:(jint)line {
   if (![((id<JavaUtilMap>) nil_chk(pathToNodeMap_)) containsKeyWithId:path]) {
-    CucumberRuntimeFormatterTestSourcesModel_parseGherkinSourceWithNSString_(self, path);
+    CCBRTestSourcesModel_parseGherkinSourceWithNSString_(self, path);
   }
   if ([pathToNodeMap_ containsKeyWithId:path]) {
     return [((id<JavaUtilMap>) nil_chk([pathToNodeMap_ getWithId:path])) getWithId:JavaLangInteger_valueOfWithInt_(line)];
@@ -132,11 +132,11 @@ J2OBJC_IGNORE_DESIGNATED_END
 - (jboolean)hasBackgroundWithNSString:(NSString *)path
                               withInt:(jint)line {
   if (![((id<JavaUtilMap>) nil_chk(pathToNodeMap_)) containsKeyWithId:path]) {
-    CucumberRuntimeFormatterTestSourcesModel_parseGherkinSourceWithNSString_(self, path);
+    CCBRTestSourcesModel_parseGherkinSourceWithNSString_(self, path);
   }
   if ([pathToNodeMap_ containsKeyWithId:path]) {
-    CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode = [((id<JavaUtilMap>) nil_chk([pathToNodeMap_ getWithId:path])) getWithId:JavaLangInteger_valueOfWithInt_(line)];
-    return CucumberRuntimeFormatterTestSourcesModel_getBackgroundForTestCaseWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(astNode) != nil;
+    CCBRTestSourcesModel_AstNode *astNode = [((id<JavaUtilMap>) nil_chk([pathToNodeMap_ getWithId:path])) getWithId:JavaLangInteger_valueOfWithInt_(line)];
+    return CCBRTestSourcesModel_getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode_(astNode) != nil;
   }
   return false;
 }
@@ -145,8 +145,8 @@ J2OBJC_IGNORE_DESIGNATED_END
                                        withInt:(jint)stepLine {
   GherkinAstFeature *feature = [self getFeatureWithNSString:uri];
   if (feature != nil) {
-    CucumberApiEventTestSourceRead *event = CucumberRuntimeFormatterTestSourcesModel_getTestSourceReadEventWithNSString_(self, uri);
-    NSString *trimmedSourceLine = [((NSString *) nil_chk(IOSObjectArray_Get(nil_chk([((NSString *) nil_chk(((CucumberApiEventTestSourceRead *) nil_chk(event))->source_)) java_split:@"\n"]), stepLine - 1))) java_trim];
+    CCBTestSourceRead *event = CCBRTestSourcesModel_getTestSourceReadEventWithNSString_(self, uri);
+    NSString *trimmedSourceLine = [((NSString *) nil_chk(IOSObjectArray_Get(nil_chk([((NSString *) nil_chk(((CCBTestSourceRead *) nil_chk(event))->source_)) java_split:@"\n"]), stepLine - 1))) java_trim];
     GherkinGherkinDialect *dialect = [create_GherkinGherkinDialectProvider_initWithNSString_([feature getLanguage]) getDefaultDialect];
     for (NSString * __strong keyword in nil_chk([((GherkinGherkinDialect *) nil_chk(dialect)) getStepKeywords])) {
       if ([((NSString *) nil_chk(trimmedSourceLine)) java_hasPrefix:keyword]) {
@@ -157,8 +157,8 @@ J2OBJC_IGNORE_DESIGNATED_END
   return @"";
 }
 
-- (CucumberApiEventTestSourceRead *)getTestSourceReadEventWithNSString:(NSString *)uri {
-  return CucumberRuntimeFormatterTestSourcesModel_getTestSourceReadEventWithNSString_(self, uri);
+- (CCBTestSourceRead *)getTestSourceReadEventWithNSString:(NSString *)uri {
+  return CCBRTestSourcesModel_getTestSourceReadEventWithNSString_(self, uri);
 }
 
 - (NSString *)getFeatureNameWithNSString:(NSString *)uri {
@@ -170,19 +170,19 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (void)parseGherkinSourceWithNSString:(NSString *)path {
-  CucumberRuntimeFormatterTestSourcesModel_parseGherkinSourceWithNSString_(self, path);
+  CCBRTestSourcesModel_parseGherkinSourceWithNSString_(self, path);
 }
 
 - (void)processScenarioDefinitionWithJavaUtilMap:(id<JavaUtilMap>)nodeMap
                 withGherkinAstScenarioDefinition:(GherkinAstScenarioDefinition *)child
-withCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)currentParent {
-  CucumberRuntimeFormatterTestSourcesModel_processScenarioDefinitionWithJavaUtilMap_withGherkinAstScenarioDefinition_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(self, nodeMap, child, currentParent);
+                withCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)currentParent {
+  CCBRTestSourcesModel_processScenarioDefinitionWithJavaUtilMap_withGherkinAstScenarioDefinition_withCCBRTestSourcesModel_AstNode_(self, nodeMap, child, currentParent);
 }
 
 - (void)processScenarioOutlineExamplesWithJavaUtilMap:(id<JavaUtilMap>)nodeMap
                         withGherkinAstScenarioOutline:(GherkinAstScenarioOutline *)scenarioOutline
- withCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)childNode {
-  CucumberRuntimeFormatterTestSourcesModel_processScenarioOutlineExamplesWithJavaUtilMap_withGherkinAstScenarioOutline_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(self, nodeMap, scenarioOutline, childNode);
+                     withCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)childNode {
+  CCBRTestSourcesModel_processScenarioOutlineExamplesWithJavaUtilMap_withGherkinAstScenarioOutline_withCCBRTestSourcesModel_AstNode_(self, nodeMap, scenarioOutline, childNode);
 }
 
 - (void)dealloc {
@@ -205,10 +205,10 @@ withCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTe
     { NULL, "V", 0x0, 9, 10, -1, -1, -1, -1 },
     { NULL, "LGherkinAstFeature;", 0x0, 11, 8, -1, -1, -1, -1 },
     { NULL, "LGherkinAstScenarioDefinition;", 0x0, 3, 12, -1, -1, -1, -1 },
-    { NULL, "LCucumberRuntimeFormatterTestSourcesModel_AstNode;", 0x0, 13, 12, -1, -1, -1, -1 },
+    { NULL, "LCCBRTestSourcesModel_AstNode;", 0x0, 13, 12, -1, -1, -1, -1 },
     { NULL, "Z", 0x0, 14, 12, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x0, 15, 12, -1, -1, -1, -1 },
-    { NULL, "LCucumberApiEventTestSourceRead;", 0x2, 16, 8, -1, -1, -1, -1 },
+    { NULL, "LCCBTestSourceRead;", 0x2, 16, 8, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x0, 17, 8, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 18, 8, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 19, 20, -1, 21, -1, -1 },
@@ -218,14 +218,14 @@ withCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTe
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(getFeatureForTestCaseWithCucumberRuntimeFormatterTestSourcesModel_AstNode:);
-  methods[2].selector = @selector(getBackgroundForTestCaseWithCucumberRuntimeFormatterTestSourcesModel_AstNode:);
-  methods[3].selector = @selector(getScenarioDefinitionWithCucumberRuntimeFormatterTestSourcesModel_AstNode:);
-  methods[4].selector = @selector(isScenarioOutlineScenarioWithCucumberRuntimeFormatterTestSourcesModel_AstNode:);
-  methods[5].selector = @selector(isBackgroundStepWithCucumberRuntimeFormatterTestSourcesModel_AstNode:);
-  methods[6].selector = @selector(calculateIdWithCucumberRuntimeFormatterTestSourcesModel_AstNode:);
+  methods[1].selector = @selector(getFeatureForTestCaseWithCCBRTestSourcesModel_AstNode:);
+  methods[2].selector = @selector(getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode:);
+  methods[3].selector = @selector(getScenarioDefinitionWithCCBRTestSourcesModel_AstNode:);
+  methods[4].selector = @selector(isScenarioOutlineScenarioWithCCBRTestSourcesModel_AstNode:);
+  methods[5].selector = @selector(isBackgroundStepWithCCBRTestSourcesModel_AstNode:);
+  methods[6].selector = @selector(calculateIdWithCCBRTestSourcesModel_AstNode:);
   methods[7].selector = @selector(convertToIdWithNSString:);
-  methods[8].selector = @selector(addTestSourceReadEventWithNSString:withCucumberApiEventTestSourceRead:);
+  methods[8].selector = @selector(addTestSourceReadEventWithNSString:withCCBTestSourceRead:);
   methods[9].selector = @selector(getFeatureWithNSString:);
   methods[10].selector = @selector(getScenarioDefinitionWithNSString:withInt:);
   methods[11].selector = @selector(getAstNodeWithNSString:withInt:);
@@ -234,47 +234,47 @@ withCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTe
   methods[14].selector = @selector(getTestSourceReadEventWithNSString:);
   methods[15].selector = @selector(getFeatureNameWithNSString:);
   methods[16].selector = @selector(parseGherkinSourceWithNSString:);
-  methods[17].selector = @selector(processScenarioDefinitionWithJavaUtilMap:withGherkinAstScenarioDefinition:withCucumberRuntimeFormatterTestSourcesModel_AstNode:);
-  methods[18].selector = @selector(processScenarioOutlineExamplesWithJavaUtilMap:withGherkinAstScenarioOutline:withCucumberRuntimeFormatterTestSourcesModel_AstNode:);
+  methods[17].selector = @selector(processScenarioDefinitionWithJavaUtilMap:withGherkinAstScenarioDefinition:withCCBRTestSourcesModel_AstNode:);
+  methods[18].selector = @selector(processScenarioOutlineExamplesWithJavaUtilMap:withGherkinAstScenarioOutline:withCCBRTestSourcesModel_AstNode:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "pathToReadEventMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 25, -1 },
     { "pathToAstMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 26, -1 },
     { "pathToNodeMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 27, -1 },
   };
-  static const void *ptrTable[] = { "getFeatureForTestCase", "LCucumberRuntimeFormatterTestSourcesModel_AstNode;", "getBackgroundForTestCase", "getScenarioDefinition", "isScenarioOutlineScenario", "isBackgroundStep", "calculateId", "convertToId", "LNSString;", "addTestSourceReadEvent", "LNSString;LCucumberApiEventTestSourceRead;", "getFeature", "LNSString;I", "getAstNode", "hasBackground", "getKeywordFromSource", "getTestSourceReadEvent", "getFeatureName", "parseGherkinSource", "processScenarioDefinition", "LJavaUtilMap;LGherkinAstScenarioDefinition;LCucumberRuntimeFormatterTestSourcesModel_AstNode;", "(Ljava/util/Map<Ljava/lang/Integer;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;>;Lgherkin/ast/ScenarioDefinition;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;)V", "processScenarioOutlineExamples", "LJavaUtilMap;LGherkinAstScenarioOutline;LCucumberRuntimeFormatterTestSourcesModel_AstNode;", "(Ljava/util/Map<Ljava/lang/Integer;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;>;Lgherkin/ast/ScenarioOutline;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;)V", "Ljava/util/Map<Ljava/lang/String;Lcucumber/api/event/TestSourceRead;>;", "Ljava/util/Map<Ljava/lang/String;Lgherkin/ast/GherkinDocument;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/util/Map<Ljava/lang/Integer;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;>;>;", "LCucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode;LCucumberRuntimeFormatterTestSourcesModel_AstNode;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterTestSourcesModel = { "TestSourcesModel", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 19, 3, -1, 28, -1, -1, -1 };
-  return &_CucumberRuntimeFormatterTestSourcesModel;
+  static const void *ptrTable[] = { "getFeatureForTestCase", "LCCBRTestSourcesModel_AstNode;", "getBackgroundForTestCase", "getScenarioDefinition", "isScenarioOutlineScenario", "isBackgroundStep", "calculateId", "convertToId", "LNSString;", "addTestSourceReadEvent", "LNSString;LCCBTestSourceRead;", "getFeature", "LNSString;I", "getAstNode", "hasBackground", "getKeywordFromSource", "getTestSourceReadEvent", "getFeatureName", "parseGherkinSource", "processScenarioDefinition", "LJavaUtilMap;LGherkinAstScenarioDefinition;LCCBRTestSourcesModel_AstNode;", "(Ljava/util/Map<Ljava/lang/Integer;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;>;Lgherkin/ast/ScenarioDefinition;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;)V", "processScenarioOutlineExamples", "LJavaUtilMap;LGherkinAstScenarioOutline;LCCBRTestSourcesModel_AstNode;", "(Ljava/util/Map<Ljava/lang/Integer;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;>;Lgherkin/ast/ScenarioOutline;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;)V", "Ljava/util/Map<Ljava/lang/String;Lcucumber/api/event/TestSourceRead;>;", "Ljava/util/Map<Ljava/lang/String;Lgherkin/ast/GherkinDocument;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/util/Map<Ljava/lang/Integer;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;>;>;", "LCCBRTestSourcesModel_ExamplesRowWrapperNode;LCCBRTestSourcesModel_AstNode;" };
+  static const J2ObjcClassInfo _CCBRTestSourcesModel = { "TestSourcesModel", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 19, 3, -1, 28, -1, -1, -1 };
+  return &_CCBRTestSourcesModel;
 }
 
 @end
 
-void CucumberRuntimeFormatterTestSourcesModel_init(CucumberRuntimeFormatterTestSourcesModel *self) {
+void CCBRTestSourcesModel_init(CCBRTestSourcesModel *self) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->pathToReadEventMap_, new_JavaUtilHashMap_init());
   JreStrongAssignAndConsume(&self->pathToAstMap_, new_JavaUtilHashMap_init());
   JreStrongAssignAndConsume(&self->pathToNodeMap_, new_JavaUtilHashMap_init());
 }
 
-CucumberRuntimeFormatterTestSourcesModel *new_CucumberRuntimeFormatterTestSourcesModel_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterTestSourcesModel, init)
+CCBRTestSourcesModel *new_CCBRTestSourcesModel_init() {
+  J2OBJC_NEW_IMPL(CCBRTestSourcesModel, init)
 }
 
-CucumberRuntimeFormatterTestSourcesModel *create_CucumberRuntimeFormatterTestSourcesModel_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterTestSourcesModel, init)
+CCBRTestSourcesModel *create_CCBRTestSourcesModel_init() {
+  J2OBJC_CREATE_IMPL(CCBRTestSourcesModel, init)
 }
 
-GherkinAstFeature *CucumberRuntimeFormatterTestSourcesModel_getFeatureForTestCaseWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode) {
-  CucumberRuntimeFormatterTestSourcesModel_initialize();
-  while (((CucumberRuntimeFormatterTestSourcesModel_AstNode *) nil_chk(astNode))->parent_ != nil) {
+GherkinAstFeature *CCBRTestSourcesModel_getFeatureForTestCaseWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode) {
+  CCBRTestSourcesModel_initialize();
+  while (((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->parent_ != nil) {
     astNode = astNode->parent_;
   }
   return (GherkinAstFeature *) cast_chk(astNode->node_, [GherkinAstFeature class]);
 }
 
-GherkinAstBackground *CucumberRuntimeFormatterTestSourcesModel_getBackgroundForTestCaseWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode) {
-  CucumberRuntimeFormatterTestSourcesModel_initialize();
-  GherkinAstFeature *feature = CucumberRuntimeFormatterTestSourcesModel_getFeatureForTestCaseWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(astNode);
+GherkinAstBackground *CCBRTestSourcesModel_getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode) {
+  CCBRTestSourcesModel_initialize();
+  GherkinAstFeature *feature = CCBRTestSourcesModel_getFeatureForTestCaseWithCCBRTestSourcesModel_AstNode_(astNode);
   GherkinAstScenarioDefinition *backgound = [((id<JavaUtilList>) nil_chk([((GherkinAstFeature *) nil_chk(feature)) getChildren])) getWithInt:0];
   if ([backgound isKindOfClass:[GherkinAstBackground class]]) {
     return (GherkinAstBackground *) cast_chk(backgound, [GherkinAstBackground class]);
@@ -284,67 +284,67 @@ GherkinAstBackground *CucumberRuntimeFormatterTestSourcesModel_getBackgroundForT
   }
 }
 
-GherkinAstScenarioDefinition *CucumberRuntimeFormatterTestSourcesModel_getScenarioDefinitionWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode) {
-  CucumberRuntimeFormatterTestSourcesModel_initialize();
-  return [((CucumberRuntimeFormatterTestSourcesModel_AstNode *) nil_chk(astNode))->node_ isKindOfClass:[GherkinAstScenarioDefinition class]] ? (GherkinAstScenarioDefinition *) cast_chk(astNode->node_, [GherkinAstScenarioDefinition class]) : (GherkinAstScenarioDefinition *) cast_chk(((CucumberRuntimeFormatterTestSourcesModel_AstNode *) nil_chk(astNode->parent_))->parent_->node_, [GherkinAstScenarioDefinition class]);
+GherkinAstScenarioDefinition *CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode) {
+  CCBRTestSourcesModel_initialize();
+  return [((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->node_ isKindOfClass:[GherkinAstScenarioDefinition class]] ? (GherkinAstScenarioDefinition *) cast_chk(astNode->node_, [GherkinAstScenarioDefinition class]) : (GherkinAstScenarioDefinition *) cast_chk(((CCBRTestSourcesModel_AstNode *) nil_chk(astNode->parent_))->parent_->node_, [GherkinAstScenarioDefinition class]);
 }
 
-jboolean CucumberRuntimeFormatterTestSourcesModel_isScenarioOutlineScenarioWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode) {
-  CucumberRuntimeFormatterTestSourcesModel_initialize();
-  return !([((CucumberRuntimeFormatterTestSourcesModel_AstNode *) nil_chk(astNode))->node_ isKindOfClass:[GherkinAstScenarioDefinition class]]);
+jboolean CCBRTestSourcesModel_isScenarioOutlineScenarioWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode) {
+  CCBRTestSourcesModel_initialize();
+  return !([((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->node_ isKindOfClass:[GherkinAstScenarioDefinition class]]);
 }
 
-jboolean CucumberRuntimeFormatterTestSourcesModel_isBackgroundStepWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode) {
-  CucumberRuntimeFormatterTestSourcesModel_initialize();
-  return [((CucumberRuntimeFormatterTestSourcesModel_AstNode *) nil_chk(((CucumberRuntimeFormatterTestSourcesModel_AstNode *) nil_chk(astNode))->parent_))->node_ isKindOfClass:[GherkinAstBackground class]];
+jboolean CCBRTestSourcesModel_isBackgroundStepWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode) {
+  CCBRTestSourcesModel_initialize();
+  return [((CCBRTestSourcesModel_AstNode *) nil_chk(((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->parent_))->node_ isKindOfClass:[GherkinAstBackground class]];
 }
 
-NSString *CucumberRuntimeFormatterTestSourcesModel_calculateIdWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode) {
-  CucumberRuntimeFormatterTestSourcesModel_initialize();
-  GherkinAstNode *node = ((CucumberRuntimeFormatterTestSourcesModel_AstNode *) nil_chk(astNode))->node_;
+NSString *CCBRTestSourcesModel_calculateIdWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode) {
+  CCBRTestSourcesModel_initialize();
+  GherkinAstNode *node = ((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->node_;
   if ([node isKindOfClass:[GherkinAstScenarioDefinition class]]) {
-    return JreStrcat("$C$", CucumberRuntimeFormatterTestSourcesModel_calculateIdWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(astNode->parent_), ';', CucumberRuntimeFormatterTestSourcesModel_convertToIdWithNSString_([((GherkinAstScenarioDefinition *) nil_chk(((GherkinAstScenarioDefinition *) cast_chk(node, [GherkinAstScenarioDefinition class])))) getName]));
+    return JreStrcat("$C$", CCBRTestSourcesModel_calculateIdWithCCBRTestSourcesModel_AstNode_(astNode->parent_), ';', CCBRTestSourcesModel_convertToIdWithNSString_([((GherkinAstScenarioDefinition *) nil_chk(((GherkinAstScenarioDefinition *) cast_chk(node, [GherkinAstScenarioDefinition class])))) getName]));
   }
-  if ([node isKindOfClass:[CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode class]]) {
-    return JreStrcat("$C$", CucumberRuntimeFormatterTestSourcesModel_calculateIdWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(astNode->parent_), ';', JavaLangInteger_toStringWithInt_(((CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode *) nil_chk(((CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode *) cast_chk(node, [CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode class]))))->bodyRowIndex_ + 2));
+  if ([node isKindOfClass:[CCBRTestSourcesModel_ExamplesRowWrapperNode class]]) {
+    return JreStrcat("$C$", CCBRTestSourcesModel_calculateIdWithCCBRTestSourcesModel_AstNode_(astNode->parent_), ';', JavaLangInteger_toStringWithInt_(((CCBRTestSourcesModel_ExamplesRowWrapperNode *) nil_chk(((CCBRTestSourcesModel_ExamplesRowWrapperNode *) cast_chk(node, [CCBRTestSourcesModel_ExamplesRowWrapperNode class]))))->bodyRowIndex_ + 2));
   }
   if ([node isKindOfClass:[GherkinAstTableRow class]]) {
-    return JreStrcat("$C$", CucumberRuntimeFormatterTestSourcesModel_calculateIdWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(astNode->parent_), ';', JavaLangInteger_toStringWithInt_(1));
+    return JreStrcat("$C$", CCBRTestSourcesModel_calculateIdWithCCBRTestSourcesModel_AstNode_(astNode->parent_), ';', JavaLangInteger_toStringWithInt_(1));
   }
   if ([node isKindOfClass:[GherkinAstExamples class]]) {
-    return JreStrcat("$C$", CucumberRuntimeFormatterTestSourcesModel_calculateIdWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(astNode->parent_), ';', CucumberRuntimeFormatterTestSourcesModel_convertToIdWithNSString_([((GherkinAstExamples *) nil_chk(((GherkinAstExamples *) cast_chk(node, [GherkinAstExamples class])))) getName]));
+    return JreStrcat("$C$", CCBRTestSourcesModel_calculateIdWithCCBRTestSourcesModel_AstNode_(astNode->parent_), ';', CCBRTestSourcesModel_convertToIdWithNSString_([((GherkinAstExamples *) nil_chk(((GherkinAstExamples *) cast_chk(node, [GherkinAstExamples class])))) getName]));
   }
   if ([node isKindOfClass:[GherkinAstFeature class]]) {
-    return CucumberRuntimeFormatterTestSourcesModel_convertToIdWithNSString_([((GherkinAstFeature *) nil_chk(((GherkinAstFeature *) cast_chk(node, [GherkinAstFeature class])))) getName]);
+    return CCBRTestSourcesModel_convertToIdWithNSString_([((GherkinAstFeature *) nil_chk(((GherkinAstFeature *) cast_chk(node, [GherkinAstFeature class])))) getName]);
   }
   return @"";
 }
 
-NSString *CucumberRuntimeFormatterTestSourcesModel_convertToIdWithNSString_(NSString *name) {
-  CucumberRuntimeFormatterTestSourcesModel_initialize();
+NSString *CCBRTestSourcesModel_convertToIdWithNSString_(NSString *name) {
+  CCBRTestSourcesModel_initialize();
   return [((NSString *) nil_chk([((NSString *) nil_chk(name)) java_replaceAll:@"[\\s'_,!]" withReplacement:@"-"])) lowercaseString];
 }
 
-CucumberApiEventTestSourceRead *CucumberRuntimeFormatterTestSourcesModel_getTestSourceReadEventWithNSString_(CucumberRuntimeFormatterTestSourcesModel *self, NSString *uri) {
+CCBTestSourceRead *CCBRTestSourcesModel_getTestSourceReadEventWithNSString_(CCBRTestSourcesModel *self, NSString *uri) {
   if ([((id<JavaUtilMap>) nil_chk(self->pathToReadEventMap_)) containsKeyWithId:uri]) {
     return [self->pathToReadEventMap_ getWithId:uri];
   }
   return nil;
 }
 
-void CucumberRuntimeFormatterTestSourcesModel_parseGherkinSourceWithNSString_(CucumberRuntimeFormatterTestSourcesModel *self, NSString *path) {
+void CCBRTestSourcesModel_parseGherkinSourceWithNSString_(CCBRTestSourcesModel *self, NSString *path) {
   if (![((id<JavaUtilMap>) nil_chk(self->pathToReadEventMap_)) containsKeyWithId:path]) {
     return;
   }
   GherkinParser *parser = create_GherkinParser_initWithGherkinParser_Builder_(create_GherkinAstBuilder_init());
   GherkinTokenMatcher *matcher = create_GherkinTokenMatcher_init();
   @try {
-    GherkinAstGherkinDocument *gherkinDocument = [parser parseWithNSString:((CucumberApiEventTestSourceRead *) nil_chk([self->pathToReadEventMap_ getWithId:path]))->source_ withGherkinParser_ITokenMatcher:matcher];
+    GherkinAstGherkinDocument *gherkinDocument = [parser parseWithNSString:((CCBTestSourceRead *) nil_chk([self->pathToReadEventMap_ getWithId:path]))->source_ withGherkinParser_ITokenMatcher:matcher];
     [((id<JavaUtilMap>) nil_chk(self->pathToAstMap_)) putWithId:path withId:gherkinDocument];
     id<JavaUtilMap> nodeMap = create_JavaUtilHashMap_init();
-    CucumberRuntimeFormatterTestSourcesModel_AstNode *currentParent = create_CucumberRuntimeFormatterTestSourcesModel_AstNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(self, [((GherkinAstGherkinDocument *) nil_chk(gherkinDocument)) getFeature], nil);
+    CCBRTestSourcesModel_AstNode *currentParent = create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(self, [((GherkinAstGherkinDocument *) nil_chk(gherkinDocument)) getFeature], nil);
     for (GherkinAstScenarioDefinition * __strong child in nil_chk([((GherkinAstFeature *) nil_chk([gherkinDocument getFeature])) getChildren])) {
-      CucumberRuntimeFormatterTestSourcesModel_processScenarioDefinitionWithJavaUtilMap_withGherkinAstScenarioDefinition_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(self, nodeMap, child, currentParent);
+      CCBRTestSourcesModel_processScenarioDefinitionWithJavaUtilMap_withGherkinAstScenarioDefinition_withCCBRTestSourcesModel_AstNode_(self, nodeMap, child, currentParent);
     }
     [((id<JavaUtilMap>) nil_chk(self->pathToNodeMap_)) putWithId:path withId:nodeMap];
   }
@@ -352,40 +352,40 @@ void CucumberRuntimeFormatterTestSourcesModel_parseGherkinSourceWithNSString_(Cu
   }
 }
 
-void CucumberRuntimeFormatterTestSourcesModel_processScenarioDefinitionWithJavaUtilMap_withGherkinAstScenarioDefinition_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel *self, id<JavaUtilMap> nodeMap, GherkinAstScenarioDefinition *child, CucumberRuntimeFormatterTestSourcesModel_AstNode *currentParent) {
-  CucumberRuntimeFormatterTestSourcesModel_AstNode *childNode = create_CucumberRuntimeFormatterTestSourcesModel_AstNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(self, child, currentParent);
+void CCBRTestSourcesModel_processScenarioDefinitionWithJavaUtilMap_withGherkinAstScenarioDefinition_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *self, id<JavaUtilMap> nodeMap, GherkinAstScenarioDefinition *child, CCBRTestSourcesModel_AstNode *currentParent) {
+  CCBRTestSourcesModel_AstNode *childNode = create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(self, child, currentParent);
   [((id<JavaUtilMap>) nil_chk(nodeMap)) putWithId:JavaLangInteger_valueOfWithInt_([((GherkinAstLocation *) nil_chk([((GherkinAstScenarioDefinition *) nil_chk(child)) getLocation])) getLine]) withId:childNode];
   for (GherkinAstStep * __strong step in nil_chk([child getSteps])) {
-    [nodeMap putWithId:JavaLangInteger_valueOfWithInt_([((GherkinAstLocation *) nil_chk([((GherkinAstStep *) nil_chk(step)) getLocation])) getLine]) withId:create_CucumberRuntimeFormatterTestSourcesModel_AstNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(self, step, childNode)];
+    [nodeMap putWithId:JavaLangInteger_valueOfWithInt_([((GherkinAstLocation *) nil_chk([((GherkinAstStep *) nil_chk(step)) getLocation])) getLine]) withId:create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(self, step, childNode)];
   }
   if ([child isKindOfClass:[GherkinAstScenarioOutline class]]) {
-    CucumberRuntimeFormatterTestSourcesModel_processScenarioOutlineExamplesWithJavaUtilMap_withGherkinAstScenarioOutline_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(self, nodeMap, (GherkinAstScenarioOutline *) cast_chk(child, [GherkinAstScenarioOutline class]), childNode);
+    CCBRTestSourcesModel_processScenarioOutlineExamplesWithJavaUtilMap_withGherkinAstScenarioOutline_withCCBRTestSourcesModel_AstNode_(self, nodeMap, (GherkinAstScenarioOutline *) cast_chk(child, [GherkinAstScenarioOutline class]), childNode);
   }
 }
 
-void CucumberRuntimeFormatterTestSourcesModel_processScenarioOutlineExamplesWithJavaUtilMap_withGherkinAstScenarioOutline_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel *self, id<JavaUtilMap> nodeMap, GherkinAstScenarioOutline *scenarioOutline, CucumberRuntimeFormatterTestSourcesModel_AstNode *childNode) {
+void CCBRTestSourcesModel_processScenarioOutlineExamplesWithJavaUtilMap_withGherkinAstScenarioOutline_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *self, id<JavaUtilMap> nodeMap, GherkinAstScenarioOutline *scenarioOutline, CCBRTestSourcesModel_AstNode *childNode) {
   for (GherkinAstExamples * __strong examples in nil_chk([((GherkinAstScenarioOutline *) nil_chk(scenarioOutline)) getExamples])) {
-    CucumberRuntimeFormatterTestSourcesModel_AstNode *examplesNode = create_CucumberRuntimeFormatterTestSourcesModel_AstNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(self, examples, childNode);
+    CCBRTestSourcesModel_AstNode *examplesNode = create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(self, examples, childNode);
     GherkinAstTableRow *headerRow = [((GherkinAstExamples *) nil_chk(examples)) getTableHeader];
-    CucumberRuntimeFormatterTestSourcesModel_AstNode *headerNode = create_CucumberRuntimeFormatterTestSourcesModel_AstNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(self, headerRow, examplesNode);
+    CCBRTestSourcesModel_AstNode *headerNode = create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(self, headerRow, examplesNode);
     [((id<JavaUtilMap>) nil_chk(nodeMap)) putWithId:JavaLangInteger_valueOfWithInt_([((GherkinAstLocation *) nil_chk([((GherkinAstTableRow *) nil_chk(headerRow)) getLocation])) getLine]) withId:headerNode];
     for (jint i = 0; i < [((id<JavaUtilList>) nil_chk([examples getTableBody])) size]; ++i) {
       GherkinAstTableRow *examplesRow = [((id<JavaUtilList>) nil_chk([examples getTableBody])) getWithInt:i];
-      GherkinAstNode *rowNode = create_CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withInt_(self, examplesRow, i);
-      CucumberRuntimeFormatterTestSourcesModel_AstNode *expandedScenarioNode = create_CucumberRuntimeFormatterTestSourcesModel_AstNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(self, rowNode, examplesNode);
+      GherkinAstNode *rowNode = create_CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withInt_(self, examplesRow, i);
+      CCBRTestSourcesModel_AstNode *expandedScenarioNode = create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(self, rowNode, examplesNode);
       [nodeMap putWithId:JavaLangInteger_valueOfWithInt_([((GherkinAstLocation *) nil_chk([((GherkinAstTableRow *) nil_chk(examplesRow)) getLocation])) getLine]) withId:expandedScenarioNode];
     }
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterTestSourcesModel)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTestSourcesModel)
 
-@implementation CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode
+@implementation CCBRTestSourcesModel_ExamplesRowWrapperNode
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterTestSourcesModel:(CucumberRuntimeFormatterTestSourcesModel *)outer$
-                                                        withGherkinAstNode:(GherkinAstNode *)examplesRow
-                                                                   withInt:(jint)bodyRowIndex {
-  CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withInt_(self, outer$, examplesRow, bodyRowIndex);
+- (instancetype __nonnull)initWithCCBRTestSourcesModel:(CCBRTestSourcesModel *)outer$
+                                    withGherkinAstNode:(GherkinAstNode *)examplesRow
+                                               withInt:(jint)bodyRowIndex {
+  CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withInt_(self, outer$, examplesRow, bodyRowIndex);
   return self;
 }
 
@@ -396,39 +396,39 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterTestSourcesModel)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeFormatterTestSourcesModel:withGherkinAstNode:withInt:);
+  methods[0].selector = @selector(initWithCCBRTestSourcesModel:withGherkinAstNode:withInt:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "bodyRowIndex_", "I", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LGherkinAstNode;I", "LCucumberRuntimeFormatterTestSourcesModel;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode = { "ExamplesRowWrapperNode", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x0, 1, 1, 1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode;
+  static const void *ptrTable[] = { "LGherkinAstNode;I", "LCCBRTestSourcesModel;" };
+  static const J2ObjcClassInfo _CCBRTestSourcesModel_ExamplesRowWrapperNode = { "ExamplesRowWrapperNode", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x0, 1, 1, 1, -1, -1, -1, -1 };
+  return &_CCBRTestSourcesModel_ExamplesRowWrapperNode;
 }
 
 @end
 
-void CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withInt_(CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode *self, CucumberRuntimeFormatterTestSourcesModel *outer$, GherkinAstNode *examplesRow, jint bodyRowIndex) {
+void CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withInt_(CCBRTestSourcesModel_ExamplesRowWrapperNode *self, CCBRTestSourcesModel *outer$, GherkinAstNode *examplesRow, jint bodyRowIndex) {
   GherkinAstNode_initWithGherkinAstLocation_(self, [((GherkinAstNode *) nil_chk(examplesRow)) getLocation]);
   self->bodyRowIndex_ = bodyRowIndex;
 }
 
-CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode *new_CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withInt_(CucumberRuntimeFormatterTestSourcesModel *outer$, GherkinAstNode *examplesRow, jint bodyRowIndex) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode, initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withInt_, outer$, examplesRow, bodyRowIndex)
+CCBRTestSourcesModel_ExamplesRowWrapperNode *new_CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withInt_(CCBRTestSourcesModel *outer$, GherkinAstNode *examplesRow, jint bodyRowIndex) {
+  J2OBJC_NEW_IMPL(CCBRTestSourcesModel_ExamplesRowWrapperNode, initWithCCBRTestSourcesModel_withGherkinAstNode_withInt_, outer$, examplesRow, bodyRowIndex)
 }
 
-CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode *create_CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withInt_(CucumberRuntimeFormatterTestSourcesModel *outer$, GherkinAstNode *examplesRow, jint bodyRowIndex) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode, initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withInt_, outer$, examplesRow, bodyRowIndex)
+CCBRTestSourcesModel_ExamplesRowWrapperNode *create_CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withInt_(CCBRTestSourcesModel *outer$, GherkinAstNode *examplesRow, jint bodyRowIndex) {
+  J2OBJC_CREATE_IMPL(CCBRTestSourcesModel_ExamplesRowWrapperNode, initWithCCBRTestSourcesModel_withGherkinAstNode_withInt_, outer$, examplesRow, bodyRowIndex)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTestSourcesModel_ExamplesRowWrapperNode)
 
-@implementation CucumberRuntimeFormatterTestSourcesModel_AstNode
+@implementation CCBRTestSourcesModel_AstNode
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterTestSourcesModel:(CucumberRuntimeFormatterTestSourcesModel *)outer$
-                                                        withGherkinAstNode:(GherkinAstNode *)node
-                      withCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)parent {
-  CucumberRuntimeFormatterTestSourcesModel_AstNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(self, outer$, node, parent);
+- (instancetype __nonnull)initWithCCBRTestSourcesModel:(CCBRTestSourcesModel *)outer$
+                                    withGherkinAstNode:(GherkinAstNode *)node
+                      withCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)parent {
+  CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(self, outer$, node, parent);
   return self;
 }
 
@@ -445,31 +445,31 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterTestSourcesModel_Exampl
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeFormatterTestSourcesModel:withGherkinAstNode:withCucumberRuntimeFormatterTestSourcesModel_AstNode:);
+  methods[0].selector = @selector(initWithCCBRTestSourcesModel:withGherkinAstNode:withCCBRTestSourcesModel_AstNode:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "node_", "LGherkinAstNode;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
-    { "parent_", "LCucumberRuntimeFormatterTestSourcesModel_AstNode;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
+    { "parent_", "LCCBRTestSourcesModel_AstNode;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LGherkinAstNode;LCucumberRuntimeFormatterTestSourcesModel_AstNode;", "LCucumberRuntimeFormatterTestSourcesModel;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterTestSourcesModel_AstNode = { "AstNode", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x0, 1, 2, 1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeFormatterTestSourcesModel_AstNode;
+  static const void *ptrTable[] = { "LGherkinAstNode;LCCBRTestSourcesModel_AstNode;", "LCCBRTestSourcesModel;" };
+  static const J2ObjcClassInfo _CCBRTestSourcesModel_AstNode = { "AstNode", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x0, 1, 2, 1, -1, -1, -1, -1 };
+  return &_CCBRTestSourcesModel_AstNode;
 }
 
 @end
 
-void CucumberRuntimeFormatterTestSourcesModel_AstNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel_AstNode *self, CucumberRuntimeFormatterTestSourcesModel *outer$, GherkinAstNode *node, CucumberRuntimeFormatterTestSourcesModel_AstNode *parent) {
+void CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *self, CCBRTestSourcesModel *outer$, GherkinAstNode *node, CCBRTestSourcesModel_AstNode *parent) {
   NSObject_init(self);
   JreStrongAssign(&self->node_, node);
   JreStrongAssign(&self->parent_, parent);
 }
 
-CucumberRuntimeFormatterTestSourcesModel_AstNode *new_CucumberRuntimeFormatterTestSourcesModel_AstNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel *outer$, GherkinAstNode *node, CucumberRuntimeFormatterTestSourcesModel_AstNode *parent) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterTestSourcesModel_AstNode, initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withCucumberRuntimeFormatterTestSourcesModel_AstNode_, outer$, node, parent)
+CCBRTestSourcesModel_AstNode *new_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *outer$, GherkinAstNode *node, CCBRTestSourcesModel_AstNode *parent) {
+  J2OBJC_NEW_IMPL(CCBRTestSourcesModel_AstNode, initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_, outer$, node, parent)
 }
 
-CucumberRuntimeFormatterTestSourcesModel_AstNode *create_CucumberRuntimeFormatterTestSourcesModel_AstNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel *outer$, GherkinAstNode *node, CucumberRuntimeFormatterTestSourcesModel_AstNode *parent) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterTestSourcesModel_AstNode, initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withCucumberRuntimeFormatterTestSourcesModel_AstNode_, outer$, node, parent)
+CCBRTestSourcesModel_AstNode *create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *outer$, GherkinAstNode *node, CCBRTestSourcesModel_AstNode *parent) {
+  J2OBJC_CREATE_IMPL(CCBRTestSourcesModel_AstNode, initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_, outer$, node, parent)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterTestSourcesModel_AstNode)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTestSourcesModel_AstNode)

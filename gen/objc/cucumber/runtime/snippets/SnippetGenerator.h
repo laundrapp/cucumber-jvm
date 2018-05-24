@@ -18,24 +18,24 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeSnippetsSnippetGenerator_) && (INCLUDE_ALL_CucumberRuntimeSnippetsSnippetGenerator || defined(INCLUDE_CucumberRuntimeSnippetsSnippetGenerator))
-#define CucumberRuntimeSnippetsSnippetGenerator_
+#if !defined (CCBRSnippetGenerator_) && (INCLUDE_ALL_CucumberRuntimeSnippetsSnippetGenerator || defined(INCLUDE_CCBRSnippetGenerator))
+#define CCBRSnippetGenerator_
 
-@class CucumberRuntimeSnippetsFunctionNameGenerator;
+@class CCBRFunctionNameGenerator;
 @class GherkinPicklesPickleStep;
 @class IOSObjectArray;
-@protocol CucumberRuntimeSnippetsSnippet;
+@protocol CCBRSnippet;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeSnippetsSnippetGenerator : NSObject
+@interface CCBRSnippetGenerator : NSObject
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCucumberRuntimeSnippetsSnippet:(id<CucumberRuntimeSnippetsSnippet>)snippet;
+- (instancetype __nonnull)initWithCCBRSnippet:(id<CCBRSnippet>)snippet;
 
 - (NSString *)getSnippetWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
                                         withNSString:(NSString *)keyword
-    withCucumberRuntimeSnippetsFunctionNameGenerator:(CucumberRuntimeSnippetsFunctionNameGenerator *)functionNameGenerator;
+                       withCCBRFunctionNameGenerator:(CCBRFunctionNameGenerator *)functionNameGenerator;
 
 + (NSString *)untypedArgumentsWithJavaUtilList:(id<JavaUtilList>)argumentTypes;
 
@@ -51,17 +51,19 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeSnippetsSnippetGenerator)
+J2OBJC_STATIC_INIT(CCBRSnippetGenerator)
 
-FOUNDATION_EXPORT void CucumberRuntimeSnippetsSnippetGenerator_initWithCucumberRuntimeSnippetsSnippet_(CucumberRuntimeSnippetsSnippetGenerator *self, id<CucumberRuntimeSnippetsSnippet> snippet);
+FOUNDATION_EXPORT void CCBRSnippetGenerator_initWithCCBRSnippet_(CCBRSnippetGenerator *self, id<CCBRSnippet> snippet);
 
-FOUNDATION_EXPORT CucumberRuntimeSnippetsSnippetGenerator *new_CucumberRuntimeSnippetsSnippetGenerator_initWithCucumberRuntimeSnippetsSnippet_(id<CucumberRuntimeSnippetsSnippet> snippet) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRSnippetGenerator *new_CCBRSnippetGenerator_initWithCCBRSnippet_(id<CCBRSnippet> snippet) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeSnippetsSnippetGenerator *create_CucumberRuntimeSnippetsSnippetGenerator_initWithCucumberRuntimeSnippetsSnippet_(id<CucumberRuntimeSnippetsSnippet> snippet);
+FOUNDATION_EXPORT CCBRSnippetGenerator *create_CCBRSnippetGenerator_initWithCCBRSnippet_(id<CCBRSnippet> snippet);
 
-FOUNDATION_EXPORT NSString *CucumberRuntimeSnippetsSnippetGenerator_untypedArgumentsWithJavaUtilList_(id<JavaUtilList> argumentTypes);
+FOUNDATION_EXPORT NSString *CCBRSnippetGenerator_untypedArgumentsWithJavaUtilList_(id<JavaUtilList> argumentTypes);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeSnippetsSnippetGenerator)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRSnippetGenerator)
+
+@compatibility_alias CucumberRuntimeSnippetsSnippetGenerator CCBRSnippetGenerator;
 
 #endif
 

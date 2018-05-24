@@ -18,16 +18,16 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiEventTestRunFinished_) && (INCLUDE_ALL_CucumberApiEventTestRunFinished || defined(INCLUDE_CucumberApiEventTestRunFinished))
-#define CucumberApiEventTestRunFinished_
+#if !defined (CCBTestRunFinished_) && (INCLUDE_ALL_CucumberApiEventTestRunFinished || defined(INCLUDE_CCBTestRunFinished))
+#define CCBTestRunFinished_
 
 #define RESTRICT_CucumberApiEventTimeStampedEvent 1
-#define INCLUDE_CucumberApiEventTimeStampedEvent 1
+#define INCLUDE_CCBTimeStampedEvent 1
 #include "cucumber/api/event/TimeStampedEvent.h"
 
 @class JavaLangLong;
 
-@interface CucumberApiEventTestRunFinished : CucumberApiEventTimeStampedEvent
+@interface CCBTestRunFinished : CCBTimeStampedEvent
 
 #pragma mark Public
 
@@ -35,15 +35,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiEventTestRunFinished)
+J2OBJC_EMPTY_STATIC_INIT(CCBTestRunFinished)
 
-FOUNDATION_EXPORT void CucumberApiEventTestRunFinished_initWithJavaLangLong_(CucumberApiEventTestRunFinished *self, JavaLangLong *timeStamp);
+FOUNDATION_EXPORT void CCBTestRunFinished_initWithJavaLangLong_(CCBTestRunFinished *self, JavaLangLong *timeStamp);
 
-FOUNDATION_EXPORT CucumberApiEventTestRunFinished *new_CucumberApiEventTestRunFinished_initWithJavaLangLong_(JavaLangLong *timeStamp) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBTestRunFinished *new_CCBTestRunFinished_initWithJavaLangLong_(JavaLangLong *timeStamp) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberApiEventTestRunFinished *create_CucumberApiEventTestRunFinished_initWithJavaLangLong_(JavaLangLong *timeStamp);
+FOUNDATION_EXPORT CCBTestRunFinished *create_CCBTestRunFinished_initWithJavaLangLong_(JavaLangLong *timeStamp);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventTestRunFinished)
+J2OBJC_TYPE_LITERAL_HEADER(CCBTestRunFinished)
+
+@compatibility_alias CucumberApiEventTestRunFinished CCBTestRunFinished;
 
 #endif
 

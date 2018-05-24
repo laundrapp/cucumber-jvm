@@ -18,27 +18,27 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeHookComparator_) && (INCLUDE_ALL_CucumberRuntimeHookComparator || defined(INCLUDE_CucumberRuntimeHookComparator))
-#define CucumberRuntimeHookComparator_
+#if !defined (CCBRHookComparator_) && (INCLUDE_ALL_CucumberRuntimeHookComparator || defined(INCLUDE_CCBRHookComparator))
+#define CCBRHookComparator_
 
 #define RESTRICT_JavaUtilComparator 1
 #define INCLUDE_JavaUtilComparator 1
 #include "java/util/Comparator.h"
 
-@protocol CucumberRuntimeHookDefinition;
+@protocol CCBRHookDefinition;
 @protocol JavaUtilFunctionFunction;
 @protocol JavaUtilFunctionToDoubleFunction;
 @protocol JavaUtilFunctionToIntFunction;
 @protocol JavaUtilFunctionToLongFunction;
 
-@interface CucumberRuntimeHookComparator : NSObject < JavaUtilComparator >
+@interface CCBRHookComparator : NSObject < JavaUtilComparator >
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithBoolean:(jboolean)ascending;
 
-- (jint)compareWithId:(id<CucumberRuntimeHookDefinition>)hook1
-               withId:(id<CucumberRuntimeHookDefinition>)hook2;
+- (jint)compareWithId:(id<CCBRHookDefinition>)hook1
+               withId:(id<CCBRHookDefinition>)hook2;
 
 // Disallowed inherited constructors, do not use.
 
@@ -46,15 +46,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeHookComparator)
+J2OBJC_EMPTY_STATIC_INIT(CCBRHookComparator)
 
-FOUNDATION_EXPORT void CucumberRuntimeHookComparator_initWithBoolean_(CucumberRuntimeHookComparator *self, jboolean ascending);
+FOUNDATION_EXPORT void CCBRHookComparator_initWithBoolean_(CCBRHookComparator *self, jboolean ascending);
 
-FOUNDATION_EXPORT CucumberRuntimeHookComparator *new_CucumberRuntimeHookComparator_initWithBoolean_(jboolean ascending) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRHookComparator *new_CCBRHookComparator_initWithBoolean_(jboolean ascending) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeHookComparator *create_CucumberRuntimeHookComparator_initWithBoolean_(jboolean ascending);
+FOUNDATION_EXPORT CCBRHookComparator *create_CCBRHookComparator_initWithBoolean_(jboolean ascending);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeHookComparator)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRHookComparator)
+
+@compatibility_alias CucumberRuntimeHookComparator CCBRHookComparator;
 
 #endif
 

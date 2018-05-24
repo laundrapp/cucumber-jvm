@@ -12,11 +12,11 @@
 #define INCLUDE_ALL_CucumberRuntimeFormatterUsageFormatter 1
 #endif
 #undef RESTRICT_CucumberRuntimeFormatterUsageFormatter
-#ifdef INCLUDE_CucumberRuntimeFormatterUsageFormatter_MedianUsageStatisticStrategy
-#define INCLUDE_CucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy 1
+#ifdef INCLUDE_CCBRUsageFormatter_MedianUsageStatisticStrategy
+#define INCLUDE_CCBRUsageFormatter_UsageStatisticStrategy 1
 #endif
-#ifdef INCLUDE_CucumberRuntimeFormatterUsageFormatter_AverageUsageStatisticStrategy
-#define INCLUDE_CucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy 1
+#ifdef INCLUDE_CCBRUsageFormatter_AverageUsageStatisticStrategy
+#define INCLUDE_CCBRUsageFormatter_UsageStatisticStrategy 1
 #endif
 
 #if __has_feature(nullability)
@@ -24,16 +24,16 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeFormatterUsageFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterUsageFormatter || defined(INCLUDE_CucumberRuntimeFormatterUsageFormatter))
-#define CucumberRuntimeFormatterUsageFormatter_
+#if !defined (CCBRUsageFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterUsageFormatter || defined(INCLUDE_CCBRUsageFormatter))
+#define CCBRUsageFormatter_
 
 #define RESTRICT_CucumberApiFormatterFormatter 1
-#define INCLUDE_CucumberApiFormatterFormatter 1
+#define INCLUDE_CCBFormatter 1
 #include "cucumber/api/formatter/Formatter.h"
 
-@class CucumberApiEventTestStepFinished;
-@protocol CucumberApiEventEventPublisher;
-@protocol CucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy;
+@class CCBTestStepFinished;
+@protocol CCBEventPublisher;
+@protocol CCBRUsageFormatter_UsageStatisticStrategy;
 @protocol JavaLangAppendable;
 @protocol JavaUtilMap;
 
@@ -41,7 +41,7 @@
  @brief Formatter to measure performance of steps.Aggregated results for all steps can be computed
   by adding <code>UsageStatisticStrategy</code> to the usageFormatter
  */
-@interface CucumberRuntimeFormatterUsageFormatter : NSObject < CucumberApiFormatterFormatter > {
+@interface CCBRUsageFormatter : NSObject < CCBFormatter > {
  @public
   id<JavaUtilMap> usageMap_;
 }
@@ -60,15 +60,15 @@
  @param strategy the strategy
  */
 - (void)addUsageStatisticStrategyWithNSString:(NSString *)key
-withCucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy:(id<CucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy>)strategy;
+withCCBRUsageFormatter_UsageStatisticStrategy:(id<CCBRUsageFormatter_UsageStatisticStrategy>)strategy;
 
-- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
+- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher;
 
 #pragma mark Package-Private
 
 - (void)finishReport;
 
-- (void)handleTestStepFinishedWithCucumberApiEventTestStepFinished:(CucumberApiEventTestStepFinished *)event;
+- (void)handleTestStepFinishedWithCCBTestStepFinished:(CCBTestStepFinished *)event;
 
 // Disallowed inherited constructors, do not use.
 
@@ -76,29 +76,31 @@ withCucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy:(id<CucumberRu
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeFormatterUsageFormatter)
+J2OBJC_STATIC_INIT(CCBRUsageFormatter)
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterUsageFormatter, usageMap_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(CCBRUsageFormatter, usageMap_, id<JavaUtilMap>)
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterUsageFormatter_initWithJavaLangAppendable_(CucumberRuntimeFormatterUsageFormatter *self, id<JavaLangAppendable> outArg);
+FOUNDATION_EXPORT void CCBRUsageFormatter_initWithJavaLangAppendable_(CCBRUsageFormatter *self, id<JavaLangAppendable> outArg);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterUsageFormatter *new_CucumberRuntimeFormatterUsageFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRUsageFormatter *new_CCBRUsageFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterUsageFormatter *create_CucumberRuntimeFormatterUsageFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg);
+FOUNDATION_EXPORT CCBRUsageFormatter *create_CCBRUsageFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRUsageFormatter)
+
+@compatibility_alias CucumberRuntimeFormatterUsageFormatter CCBRUsageFormatter;
 
 #endif
 
-#if !defined (CucumberRuntimeFormatterUsageFormatter_StepDefContainer_) && (INCLUDE_ALL_CucumberRuntimeFormatterUsageFormatter || defined(INCLUDE_CucumberRuntimeFormatterUsageFormatter_StepDefContainer))
-#define CucumberRuntimeFormatterUsageFormatter_StepDefContainer_
+#if !defined (CCBRUsageFormatter_StepDefContainer_) && (INCLUDE_ALL_CucumberRuntimeFormatterUsageFormatter || defined(INCLUDE_CCBRUsageFormatter_StepDefContainer))
+#define CCBRUsageFormatter_StepDefContainer_
 
 @protocol JavaUtilList;
 
 /*!
  @brief Container of Step Definitions (patterns)
  */
-@interface CucumberRuntimeFormatterUsageFormatter_StepDefContainer : NSObject {
+@interface CCBRUsageFormatter_StepDefContainer : NSObject {
  @public
   /*!
    @brief The StepDefinition (pattern)
@@ -116,23 +118,23 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterUsageFormatter_StepDefContainer)
+J2OBJC_EMPTY_STATIC_INIT(CCBRUsageFormatter_StepDefContainer)
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterUsageFormatter_StepDefContainer, source_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterUsageFormatter_StepDefContainer, steps_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRUsageFormatter_StepDefContainer, source_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRUsageFormatter_StepDefContainer, steps_, id<JavaUtilList>)
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterUsageFormatter_StepDefContainer_init(CucumberRuntimeFormatterUsageFormatter_StepDefContainer *self);
+FOUNDATION_EXPORT void CCBRUsageFormatter_StepDefContainer_init(CCBRUsageFormatter_StepDefContainer *self);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterUsageFormatter_StepDefContainer *new_CucumberRuntimeFormatterUsageFormatter_StepDefContainer_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRUsageFormatter_StepDefContainer *new_CCBRUsageFormatter_StepDefContainer_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterUsageFormatter_StepDefContainer *create_CucumberRuntimeFormatterUsageFormatter_StepDefContainer_init(void);
+FOUNDATION_EXPORT CCBRUsageFormatter_StepDefContainer *create_CCBRUsageFormatter_StepDefContainer_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter_StepDefContainer)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRUsageFormatter_StepDefContainer)
 
 #endif
 
-#if !defined (CucumberRuntimeFormatterUsageFormatter_StepContainer_) && (INCLUDE_ALL_CucumberRuntimeFormatterUsageFormatter || defined(INCLUDE_CucumberRuntimeFormatterUsageFormatter_StepContainer))
-#define CucumberRuntimeFormatterUsageFormatter_StepContainer_
+#if !defined (CCBRUsageFormatter_StepContainer_) && (INCLUDE_ALL_CucumberRuntimeFormatterUsageFormatter || defined(INCLUDE_CCBRUsageFormatter_StepContainer))
+#define CCBRUsageFormatter_StepContainer_
 
 @protocol JavaUtilList;
 @protocol JavaUtilMap;
@@ -140,7 +142,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter_StepDefContain
 /*!
  @brief Contains for usage-entries of steps
  */
-@interface CucumberRuntimeFormatterUsageFormatter_StepContainer : NSObject {
+@interface CCBRUsageFormatter_StepContainer : NSObject {
  @public
   NSString *name_;
   id<JavaUtilMap> aggregatedDurations_;
@@ -153,28 +155,28 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter_StepDefContain
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterUsageFormatter_StepContainer)
+J2OBJC_EMPTY_STATIC_INIT(CCBRUsageFormatter_StepContainer)
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterUsageFormatter_StepContainer, name_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterUsageFormatter_StepContainer, aggregatedDurations_, id<JavaUtilMap>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterUsageFormatter_StepContainer, durations_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRUsageFormatter_StepContainer, name_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRUsageFormatter_StepContainer, aggregatedDurations_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(CCBRUsageFormatter_StepContainer, durations_, id<JavaUtilList>)
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterUsageFormatter_StepContainer_init(CucumberRuntimeFormatterUsageFormatter_StepContainer *self);
+FOUNDATION_EXPORT void CCBRUsageFormatter_StepContainer_init(CCBRUsageFormatter_StepContainer *self);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterUsageFormatter_StepContainer *new_CucumberRuntimeFormatterUsageFormatter_StepContainer_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRUsageFormatter_StepContainer *new_CCBRUsageFormatter_StepContainer_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterUsageFormatter_StepContainer *create_CucumberRuntimeFormatterUsageFormatter_StepContainer_init(void);
+FOUNDATION_EXPORT CCBRUsageFormatter_StepContainer *create_CCBRUsageFormatter_StepContainer_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter_StepContainer)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRUsageFormatter_StepContainer)
 
 #endif
 
-#if !defined (CucumberRuntimeFormatterUsageFormatter_StepDuration_) && (INCLUDE_ALL_CucumberRuntimeFormatterUsageFormatter || defined(INCLUDE_CucumberRuntimeFormatterUsageFormatter_StepDuration))
-#define CucumberRuntimeFormatterUsageFormatter_StepDuration_
+#if !defined (CCBRUsageFormatter_StepDuration_) && (INCLUDE_ALL_CucumberRuntimeFormatterUsageFormatter || defined(INCLUDE_CCBRUsageFormatter_StepDuration))
+#define CCBRUsageFormatter_StepDuration_
 
 @class JavaMathBigDecimal;
 
-@interface CucumberRuntimeFormatterUsageFormatter_StepDuration : NSObject {
+@interface CCBRUsageFormatter_StepDuration : NSObject {
  @public
   JavaMathBigDecimal *duration_;
   NSString *location_;
@@ -186,23 +188,23 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter_StepContainer)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterUsageFormatter_StepDuration)
+J2OBJC_EMPTY_STATIC_INIT(CCBRUsageFormatter_StepDuration)
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterUsageFormatter_StepDuration, duration_, JavaMathBigDecimal *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterUsageFormatter_StepDuration, location_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRUsageFormatter_StepDuration, duration_, JavaMathBigDecimal *)
+J2OBJC_FIELD_SETTER(CCBRUsageFormatter_StepDuration, location_, NSString *)
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterUsageFormatter_StepDuration_init(CucumberRuntimeFormatterUsageFormatter_StepDuration *self);
+FOUNDATION_EXPORT void CCBRUsageFormatter_StepDuration_init(CCBRUsageFormatter_StepDuration *self);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterUsageFormatter_StepDuration *new_CucumberRuntimeFormatterUsageFormatter_StepDuration_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRUsageFormatter_StepDuration *new_CCBRUsageFormatter_StepDuration_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterUsageFormatter_StepDuration *create_CucumberRuntimeFormatterUsageFormatter_StepDuration_init(void);
+FOUNDATION_EXPORT CCBRUsageFormatter_StepDuration *create_CCBRUsageFormatter_StepDuration_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter_StepDuration)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRUsageFormatter_StepDuration)
 
 #endif
 
-#if !defined (CucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy_) && (INCLUDE_ALL_CucumberRuntimeFormatterUsageFormatter || defined(INCLUDE_CucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy))
-#define CucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy_
+#if !defined (CCBRUsageFormatter_UsageStatisticStrategy_) && (INCLUDE_ALL_CucumberRuntimeFormatterUsageFormatter || defined(INCLUDE_CCBRUsageFormatter_UsageStatisticStrategy))
+#define CCBRUsageFormatter_UsageStatisticStrategy_
 
 @class JavaLangLong;
 @protocol JavaUtilList;
@@ -210,7 +212,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter_StepDuration)
 /*!
  @brief Calculate a statistical value to be displayed in the usage-file
  */
-@protocol CucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy < JavaObject >
+@protocol CCBRUsageFormatter_UsageStatisticStrategy < JavaObject >
 
 /*!
  @param durationEntries list of execution times of steps as nanoseconds
@@ -220,14 +222,14 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter_StepDuration)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy)
+J2OBJC_EMPTY_STATIC_INIT(CCBRUsageFormatter_UsageStatisticStrategy)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRUsageFormatter_UsageStatisticStrategy)
 
 #endif
 
-#if !defined (CucumberRuntimeFormatterUsageFormatter_AverageUsageStatisticStrategy_) && (INCLUDE_ALL_CucumberRuntimeFormatterUsageFormatter || defined(INCLUDE_CucumberRuntimeFormatterUsageFormatter_AverageUsageStatisticStrategy))
-#define CucumberRuntimeFormatterUsageFormatter_AverageUsageStatisticStrategy_
+#if !defined (CCBRUsageFormatter_AverageUsageStatisticStrategy_) && (INCLUDE_ALL_CucumberRuntimeFormatterUsageFormatter || defined(INCLUDE_CCBRUsageFormatter_AverageUsageStatisticStrategy))
+#define CCBRUsageFormatter_AverageUsageStatisticStrategy_
 
 @class JavaLangLong;
 @protocol JavaUtilList;
@@ -235,7 +237,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter_UsageStatistic
 /*!
  @brief Calculate the average of a list of duration entries
  */
-@interface CucumberRuntimeFormatterUsageFormatter_AverageUsageStatisticStrategy : NSObject < CucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy >
+@interface CCBRUsageFormatter_AverageUsageStatisticStrategy : NSObject < CCBRUsageFormatter_UsageStatisticStrategy >
 
 #pragma mark Public
 
@@ -247,20 +249,20 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter_UsageStatistic
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterUsageFormatter_AverageUsageStatisticStrategy)
+J2OBJC_EMPTY_STATIC_INIT(CCBRUsageFormatter_AverageUsageStatisticStrategy)
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterUsageFormatter_AverageUsageStatisticStrategy_init(CucumberRuntimeFormatterUsageFormatter_AverageUsageStatisticStrategy *self);
+FOUNDATION_EXPORT void CCBRUsageFormatter_AverageUsageStatisticStrategy_init(CCBRUsageFormatter_AverageUsageStatisticStrategy *self);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterUsageFormatter_AverageUsageStatisticStrategy *new_CucumberRuntimeFormatterUsageFormatter_AverageUsageStatisticStrategy_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRUsageFormatter_AverageUsageStatisticStrategy *new_CCBRUsageFormatter_AverageUsageStatisticStrategy_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterUsageFormatter_AverageUsageStatisticStrategy *create_CucumberRuntimeFormatterUsageFormatter_AverageUsageStatisticStrategy_init(void);
+FOUNDATION_EXPORT CCBRUsageFormatter_AverageUsageStatisticStrategy *create_CCBRUsageFormatter_AverageUsageStatisticStrategy_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter_AverageUsageStatisticStrategy)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRUsageFormatter_AverageUsageStatisticStrategy)
 
 #endif
 
-#if !defined (CucumberRuntimeFormatterUsageFormatter_MedianUsageStatisticStrategy_) && (INCLUDE_ALL_CucumberRuntimeFormatterUsageFormatter || defined(INCLUDE_CucumberRuntimeFormatterUsageFormatter_MedianUsageStatisticStrategy))
-#define CucumberRuntimeFormatterUsageFormatter_MedianUsageStatisticStrategy_
+#if !defined (CCBRUsageFormatter_MedianUsageStatisticStrategy_) && (INCLUDE_ALL_CucumberRuntimeFormatterUsageFormatter || defined(INCLUDE_CCBRUsageFormatter_MedianUsageStatisticStrategy))
+#define CCBRUsageFormatter_MedianUsageStatisticStrategy_
 
 @class JavaLangLong;
 @protocol JavaUtilList;
@@ -268,7 +270,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter_AverageUsageSt
 /*!
  @brief Calculate the median of a list of duration entries
  */
-@interface CucumberRuntimeFormatterUsageFormatter_MedianUsageStatisticStrategy : NSObject < CucumberRuntimeFormatterUsageFormatter_UsageStatisticStrategy >
+@interface CCBRUsageFormatter_MedianUsageStatisticStrategy : NSObject < CCBRUsageFormatter_UsageStatisticStrategy >
 
 #pragma mark Public
 
@@ -280,15 +282,15 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter_AverageUsageSt
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterUsageFormatter_MedianUsageStatisticStrategy)
+J2OBJC_EMPTY_STATIC_INIT(CCBRUsageFormatter_MedianUsageStatisticStrategy)
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterUsageFormatter_MedianUsageStatisticStrategy_init(CucumberRuntimeFormatterUsageFormatter_MedianUsageStatisticStrategy *self);
+FOUNDATION_EXPORT void CCBRUsageFormatter_MedianUsageStatisticStrategy_init(CCBRUsageFormatter_MedianUsageStatisticStrategy *self);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterUsageFormatter_MedianUsageStatisticStrategy *new_CucumberRuntimeFormatterUsageFormatter_MedianUsageStatisticStrategy_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRUsageFormatter_MedianUsageStatisticStrategy *new_CCBRUsageFormatter_MedianUsageStatisticStrategy_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterUsageFormatter_MedianUsageStatisticStrategy *create_CucumberRuntimeFormatterUsageFormatter_MedianUsageStatisticStrategy_init(void);
+FOUNDATION_EXPORT CCBRUsageFormatter_MedianUsageStatisticStrategy *create_CCBRUsageFormatter_MedianUsageStatisticStrategy_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterUsageFormatter_MedianUsageStatisticStrategy)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRUsageFormatter_MedianUsageStatisticStrategy)
 
 #endif
 

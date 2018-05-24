@@ -13,9 +13,9 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *CucumberApiJavaAfter__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CCBAfter__Annotations$0(void);
 
-@implementation CucumberApiJavaAfter
+@implementation CCBAfter
 
 @synthesize value = value_;
 @synthesize timeout = timeout_;
@@ -34,7 +34,7 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiJavaAfter__Annotations
 }
 
 - (IOSClass *)annotationType {
-  return CucumberApiJavaAfter_class_();
+  return CCBAfter_class_();
 }
 
 - (NSString *)description {
@@ -72,23 +72,23 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiJavaAfter__Annotations
     { "timeout_", "J", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "order_", "I", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&CucumberApiJavaAfter__Annotations$0 };
-  static const J2ObjcClassInfo _CucumberApiJavaAfter = { "After", "cucumber.api.java", ptrTable, methods, fields, 7, 0x2609, 3, 3, -1, -1, -1, -1, 0 };
-  return &_CucumberApiJavaAfter;
+  static const void *ptrTable[] = { (void *)&CCBAfter__Annotations$0 };
+  static const J2ObjcClassInfo _CCBAfter = { "After", "cucumber.api.java", ptrTable, methods, fields, 7, 0x2609, 3, 3, -1, -1, -1, -1, 0 };
+  return &_CCBAfter;
 }
 
 @end
 
-id<CucumberApiJavaAfter> create_CucumberApiJavaAfter(jint order, jlong timeout, IOSObjectArray *value) {
-  CucumberApiJavaAfter *self = AUTORELEASE([[CucumberApiJavaAfter alloc] init]);
+id<CCBAfter> create_CCBAfter(jint order, jlong timeout, IOSObjectArray *value) {
+  CCBAfter *self = AUTORELEASE([[CCBAfter alloc] init]);
   self->order_ = order;
   self->timeout_ = timeout;
   self->value_ = RETAIN_(value);
   return self;
 }
 
-IOSObjectArray *CucumberApiJavaAfter__Annotations$0() {
+IOSObjectArray *CCBAfter__Annotations$0() {
   return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]) } count:2 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiJavaAfter)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBAfter)

@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/runtime/io/ResourceIteratorFactory.h"
 
-@interface CucumberRuntimeIoResourceIteratorFactory : NSObject
+@interface CCBRResourceIteratorFactory : NSObject
 
 @end
 
-@implementation CucumberRuntimeIoResourceIteratorFactory
+@implementation CCBRResourceIteratorFactory
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -24,10 +24,10 @@
   methods[1].selector = @selector(createIteratorWithJavaNetURL:withNSString:withNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "isFactoryFor", "LJavaNetURL;", "createIterator", "LJavaNetURL;LNSString;LNSString;", "(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;)Ljava/util/Iterator<Lcucumber/runtime/io/Resource;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeIoResourceIteratorFactory = { "ResourceIteratorFactory", "cucumber.runtime.io", ptrTable, methods, NULL, 7, 0x609, 2, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeIoResourceIteratorFactory;
+  static const J2ObjcClassInfo _CCBRResourceIteratorFactory = { "ResourceIteratorFactory", "cucumber.runtime.io", ptrTable, methods, NULL, 7, 0x609, 2, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRResourceIteratorFactory;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRuntimeIoResourceIteratorFactory)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBRResourceIteratorFactory)

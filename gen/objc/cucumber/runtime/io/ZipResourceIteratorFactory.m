@@ -12,11 +12,11 @@
 #include "java/net/URL.h"
 #include "java/util/Iterator.h"
 
-@implementation CucumberRuntimeIoZipResourceIteratorFactory
+@implementation CCBRZipResourceIteratorFactory
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeIoZipResourceIteratorFactory_init(self);
+  CCBRZipResourceIteratorFactory_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -29,11 +29,11 @@ J2OBJC_IGNORE_DESIGNATED_END
                                         withNSString:(NSString *)path
                                         withNSString:(NSString *)suffix {
   @try {
-    NSString *jarPath = CucumberRuntimeIoHelpers_jarFilePathWithJavaNetURL_(url);
-    return create_CucumberRuntimeIoZipResourceIterator_initWithNSString_withNSString_withNSString_(jarPath, path, suffix);
+    NSString *jarPath = CCBRHelpers_jarFilePathWithJavaNetURL_(url);
+    return create_CCBRZipResourceIterator_initWithNSString_withNSString_withNSString_(jarPath, path, suffix);
   }
   @catch (JavaIoIOException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithJavaLangThrowable_(e);
+    @throw create_CCBRCucumberException_initWithJavaLangThrowable_(e);
   }
 }
 
@@ -51,22 +51,22 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[2].selector = @selector(createIteratorWithJavaNetURL:withNSString:withNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "isFactoryFor", "LJavaNetURL;", "createIterator", "LJavaNetURL;LNSString;LNSString;", "(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;)Ljava/util/Iterator<Lcucumber/runtime/io/Resource;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeIoZipResourceIteratorFactory = { "ZipResourceIteratorFactory", "cucumber.runtime.io", ptrTable, methods, NULL, 7, 0x1, 3, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeIoZipResourceIteratorFactory;
+  static const J2ObjcClassInfo _CCBRZipResourceIteratorFactory = { "ZipResourceIteratorFactory", "cucumber.runtime.io", ptrTable, methods, NULL, 7, 0x1, 3, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRZipResourceIteratorFactory;
 }
 
 @end
 
-void CucumberRuntimeIoZipResourceIteratorFactory_init(CucumberRuntimeIoZipResourceIteratorFactory *self) {
+void CCBRZipResourceIteratorFactory_init(CCBRZipResourceIteratorFactory *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeIoZipResourceIteratorFactory *new_CucumberRuntimeIoZipResourceIteratorFactory_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeIoZipResourceIteratorFactory, init)
+CCBRZipResourceIteratorFactory *new_CCBRZipResourceIteratorFactory_init() {
+  J2OBJC_NEW_IMPL(CCBRZipResourceIteratorFactory, init)
 }
 
-CucumberRuntimeIoZipResourceIteratorFactory *create_CucumberRuntimeIoZipResourceIteratorFactory_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeIoZipResourceIteratorFactory, init)
+CCBRZipResourceIteratorFactory *create_CCBRZipResourceIteratorFactory_init() {
+  J2OBJC_CREATE_IMPL(CCBRZipResourceIteratorFactory, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoZipResourceIteratorFactory)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRZipResourceIteratorFactory)

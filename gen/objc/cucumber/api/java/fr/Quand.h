@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaFrQuand_) && (INCLUDE_ALL_CucumberApiJavaFrQuand || defined(INCLUDE_CucumberApiJavaFrQuand))
-#define CucumberApiJavaFrQuand_
+#if !defined (CCBQuand_) && (INCLUDE_ALL_CucumberApiJavaFrQuand || defined(INCLUDE_CCBQuand))
+#define CCBQuand_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaFrQuand < JavaLangAnnotationAnnotation >
+@protocol CCBQuand < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaFrQuand : NSObject < CucumberApiJavaFrQuand > {
+@interface CCBQuand : NSObject < CCBQuand > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaFrQuand)
+J2OBJC_EMPTY_STATIC_INIT(CCBQuand)
 
-FOUNDATION_EXPORT id<CucumberApiJavaFrQuand> create_CucumberApiJavaFrQuand(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBQuand> create_CCBQuand(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaFrQuand)
+J2OBJC_TYPE_LITERAL_HEADER(CCBQuand)
+
+#define CucumberApiJavaFrQuand CCBQuand
 
 #endif
 

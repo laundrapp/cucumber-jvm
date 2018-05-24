@@ -25,7 +25,7 @@
 #include "java/util/List.h"
 #include "java/util/Map.h"
 
-@interface CucumberRuntimeFeatureBuilder () {
+@interface CCBRFeatureBuilder () {
  @public
   id<JavaUtilList> cucumberFeatures_;
   jchar fileSeparatorChar_;
@@ -39,68 +39,68 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeFeatureBuilder, cucumberFeatures_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFeatureBuilder, md5_, JavaSecurityMessageDigest *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFeatureBuilder, pathsByChecksum_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(CCBRFeatureBuilder, cucumberFeatures_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRFeatureBuilder, md5_, JavaSecurityMessageDigest *)
+J2OBJC_FIELD_SETTER(CCBRFeatureBuilder, pathsByChecksum_, id<JavaUtilMap>)
 
-inline JavaNioCharsetCharset *CucumberRuntimeFeatureBuilder_get_UTF8(void);
-static JavaNioCharsetCharset *CucumberRuntimeFeatureBuilder_UTF8;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeFeatureBuilder, UTF8, JavaNioCharsetCharset *)
+inline JavaNioCharsetCharset *CCBRFeatureBuilder_get_UTF8(void);
+static JavaNioCharsetCharset *CCBRFeatureBuilder_UTF8;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRFeatureBuilder, UTF8, JavaNioCharsetCharset *)
 
-__attribute__((unused)) static NSString *CucumberRuntimeFeatureBuilder_convertFileSeparatorToForwardSlashWithNSString_(CucumberRuntimeFeatureBuilder *self, NSString *path);
+__attribute__((unused)) static NSString *CCBRFeatureBuilder_convertFileSeparatorToForwardSlashWithNSString_(CCBRFeatureBuilder *self, NSString *path);
 
-__attribute__((unused)) static NSString *CucumberRuntimeFeatureBuilder_checksumWithNSString_(CucumberRuntimeFeatureBuilder *self, NSString *gherkin);
+__attribute__((unused)) static NSString *CCBRFeatureBuilder_checksumWithNSString_(CCBRFeatureBuilder *self, NSString *gherkin);
 
-J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFeatureBuilder)
+J2OBJC_INITIALIZED_DEFN(CCBRFeatureBuilder)
 
-@implementation CucumberRuntimeFeatureBuilder
+@implementation CCBRFeatureBuilder
 
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)cucumberFeatures {
-  CucumberRuntimeFeatureBuilder_initWithJavaUtilList_(self, cucumberFeatures);
+  CCBRFeatureBuilder_initWithJavaUtilList_(self, cucumberFeatures);
   return self;
 }
 
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)cucumberFeatures
                                       withChar:(jchar)fileSeparatorChar {
-  CucumberRuntimeFeatureBuilder_initWithJavaUtilList_withChar_(self, cucumberFeatures, fileSeparatorChar);
+  CCBRFeatureBuilder_initWithJavaUtilList_withChar_(self, cucumberFeatures, fileSeparatorChar);
   return self;
 }
 
-- (void)parseWithCucumberRuntimeIoResource:(id<CucumberRuntimeIoResource>)resource {
-  NSString *gherkin = [self readWithCucumberRuntimeIoResource:resource];
-  NSString *checksum = CucumberRuntimeFeatureBuilder_checksumWithNSString_(self, gherkin);
+- (void)parseWithCCBRResource:(id<CCBRResource>)resource {
+  NSString *gherkin = [self readWithCCBRResource:resource];
+  NSString *checksum = CCBRFeatureBuilder_checksumWithNSString_(self, gherkin);
   NSString *path = [((id<JavaUtilMap>) nil_chk(pathsByChecksum_)) getWithId:checksum];
   if (path != nil) {
     return;
   }
-  [pathsByChecksum_ putWithId:checksum withId:[((id<CucumberRuntimeIoResource>) nil_chk(resource)) getPath]];
+  [pathsByChecksum_ putWithId:checksum withId:[((id<CCBRResource>) nil_chk(resource)) getPath]];
   GherkinParser *parser = create_GherkinParser_initWithGherkinParser_Builder_(create_GherkinAstBuilder_init());
   GherkinTokenMatcher *matcher = create_GherkinTokenMatcher_init();
   @try {
     GherkinAstGherkinDocument *gherkinDocument = [parser parseWithNSString:gherkin withGherkinParser_ITokenMatcher:matcher];
-    CucumberRuntimeModelCucumberFeature *feature = create_CucumberRuntimeModelCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(gherkinDocument, CucumberRuntimeFeatureBuilder_convertFileSeparatorToForwardSlashWithNSString_(self, [resource getPath]), gherkin);
+    CCBRCucumberFeature *feature = create_CCBRCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(gherkinDocument, CCBRFeatureBuilder_convertFileSeparatorToForwardSlashWithNSString_(self, [resource getPath]), gherkin);
     [((id<JavaUtilList>) nil_chk(cucumberFeatures_)) addWithId:feature];
   }
   @catch (GherkinParserException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithJavaLangThrowable_(e);
+    @throw create_CCBRCucumberException_initWithJavaLangThrowable_(e);
   }
 }
 
 - (NSString *)convertFileSeparatorToForwardSlashWithNSString:(NSString *)path {
-  return CucumberRuntimeFeatureBuilder_convertFileSeparatorToForwardSlashWithNSString_(self, path);
+  return CCBRFeatureBuilder_convertFileSeparatorToForwardSlashWithNSString_(self, path);
 }
 
 - (NSString *)checksumWithNSString:(NSString *)gherkin {
-  return CucumberRuntimeFeatureBuilder_checksumWithNSString_(self, gherkin);
+  return CCBRFeatureBuilder_checksumWithNSString_(self, gherkin);
 }
 
-- (NSString *)readWithCucumberRuntimeIoResource:(id<CucumberRuntimeIoResource>)resource {
+- (NSString *)readWithCCBRResource:(id<CCBRResource>)resource {
   @try {
-    NSString *source = CucumberUtilEncoding_readFileWithCucumberRuntimeIoResource_(resource);
+    NSString *source = CucumberUtilEncoding_readFileWithCCBRResource_(resource);
     return source;
   }
   @catch (JavaIoIOException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithNSString_withJavaLangThrowable_(JreStrcat("$$", @"Failed to read resource:", [((id<CucumberRuntimeIoResource>) nil_chk(resource)) getPath]), e);
+    @throw create_CCBRCucumberException_initWithNSString_withJavaLangThrowable_(JreStrcat("$$", @"Failed to read resource:", [((id<CCBRResource>) nil_chk(resource)) getPath]), e);
   }
 }
 
@@ -125,10 +125,10 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFeatureBuilder)
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilList:);
   methods[1].selector = @selector(initWithJavaUtilList:withChar:);
-  methods[2].selector = @selector(parseWithCucumberRuntimeIoResource:);
+  methods[2].selector = @selector(parseWithCCBRResource:);
   methods[3].selector = @selector(convertFileSeparatorToForwardSlashWithNSString:);
   methods[4].selector = @selector(checksumWithNSString:);
-  methods[5].selector = @selector(readWithCucumberRuntimeIoResource:);
+  methods[5].selector = @selector(readWithCCBRResource:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "UTF8", "LJavaNioCharsetCharset;", .constantValue.asLong = 0, 0x1a, -1, 10, -1, -1 },
@@ -137,33 +137,33 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFeatureBuilder)
     { "md5_", "LJavaSecurityMessageDigest;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "pathsByChecksum_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 12, -1 },
   };
-  static const void *ptrTable[] = { "LJavaUtilList;", "(Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;)V", "LJavaUtilList;C", "(Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;C)V", "parse", "LCucumberRuntimeIoResource;", "convertFileSeparatorToForwardSlash", "LNSString;", "checksum", "read", &CucumberRuntimeFeatureBuilder_UTF8, "Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFeatureBuilder = { "FeatureBuilder", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 6, 5, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeFeatureBuilder;
+  static const void *ptrTable[] = { "LJavaUtilList;", "(Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;)V", "LJavaUtilList;C", "(Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;C)V", "parse", "LCCBRResource;", "convertFileSeparatorToForwardSlash", "LNSString;", "checksum", "read", &CCBRFeatureBuilder_UTF8, "Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;" };
+  static const J2ObjcClassInfo _CCBRFeatureBuilder = { "FeatureBuilder", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 6, 5, -1, -1, -1, -1, -1 };
+  return &_CCBRFeatureBuilder;
 }
 
 + (void)initialize {
-  if (self == [CucumberRuntimeFeatureBuilder class]) {
-    JreStrongAssign(&CucumberRuntimeFeatureBuilder_UTF8, JavaNioCharsetCharset_forNameWithNSString_(@"UTF-8"));
-    J2OBJC_SET_INITIALIZED(CucumberRuntimeFeatureBuilder)
+  if (self == [CCBRFeatureBuilder class]) {
+    JreStrongAssign(&CCBRFeatureBuilder_UTF8, JavaNioCharsetCharset_forNameWithNSString_(@"UTF-8"));
+    J2OBJC_SET_INITIALIZED(CCBRFeatureBuilder)
   }
 }
 
 @end
 
-void CucumberRuntimeFeatureBuilder_initWithJavaUtilList_(CucumberRuntimeFeatureBuilder *self, id<JavaUtilList> cucumberFeatures) {
-  CucumberRuntimeFeatureBuilder_initWithJavaUtilList_withChar_(self, cucumberFeatures, JreLoadStatic(JavaIoFile, separatorChar));
+void CCBRFeatureBuilder_initWithJavaUtilList_(CCBRFeatureBuilder *self, id<JavaUtilList> cucumberFeatures) {
+  CCBRFeatureBuilder_initWithJavaUtilList_withChar_(self, cucumberFeatures, JreLoadStatic(JavaIoFile, separatorChar));
 }
 
-CucumberRuntimeFeatureBuilder *new_CucumberRuntimeFeatureBuilder_initWithJavaUtilList_(id<JavaUtilList> cucumberFeatures) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFeatureBuilder, initWithJavaUtilList_, cucumberFeatures)
+CCBRFeatureBuilder *new_CCBRFeatureBuilder_initWithJavaUtilList_(id<JavaUtilList> cucumberFeatures) {
+  J2OBJC_NEW_IMPL(CCBRFeatureBuilder, initWithJavaUtilList_, cucumberFeatures)
 }
 
-CucumberRuntimeFeatureBuilder *create_CucumberRuntimeFeatureBuilder_initWithJavaUtilList_(id<JavaUtilList> cucumberFeatures) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFeatureBuilder, initWithJavaUtilList_, cucumberFeatures)
+CCBRFeatureBuilder *create_CCBRFeatureBuilder_initWithJavaUtilList_(id<JavaUtilList> cucumberFeatures) {
+  J2OBJC_CREATE_IMPL(CCBRFeatureBuilder, initWithJavaUtilList_, cucumberFeatures)
 }
 
-void CucumberRuntimeFeatureBuilder_initWithJavaUtilList_withChar_(CucumberRuntimeFeatureBuilder *self, id<JavaUtilList> cucumberFeatures, jchar fileSeparatorChar) {
+void CCBRFeatureBuilder_initWithJavaUtilList_withChar_(CCBRFeatureBuilder *self, id<JavaUtilList> cucumberFeatures, jchar fileSeparatorChar) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->pathsByChecksum_, new_JavaUtilHashMap_init());
   JreStrongAssign(&self->cucumberFeatures_, cucumberFeatures);
@@ -172,24 +172,24 @@ void CucumberRuntimeFeatureBuilder_initWithJavaUtilList_withChar_(CucumberRuntim
     JreStrongAssign(&self->md5_, JavaSecurityMessageDigest_getInstanceWithNSString_(@"MD5"));
   }
   @catch (JavaSecurityNoSuchAlgorithmException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithJavaLangThrowable_(e);
+    @throw create_CCBRCucumberException_initWithJavaLangThrowable_(e);
   }
 }
 
-CucumberRuntimeFeatureBuilder *new_CucumberRuntimeFeatureBuilder_initWithJavaUtilList_withChar_(id<JavaUtilList> cucumberFeatures, jchar fileSeparatorChar) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFeatureBuilder, initWithJavaUtilList_withChar_, cucumberFeatures, fileSeparatorChar)
+CCBRFeatureBuilder *new_CCBRFeatureBuilder_initWithJavaUtilList_withChar_(id<JavaUtilList> cucumberFeatures, jchar fileSeparatorChar) {
+  J2OBJC_NEW_IMPL(CCBRFeatureBuilder, initWithJavaUtilList_withChar_, cucumberFeatures, fileSeparatorChar)
 }
 
-CucumberRuntimeFeatureBuilder *create_CucumberRuntimeFeatureBuilder_initWithJavaUtilList_withChar_(id<JavaUtilList> cucumberFeatures, jchar fileSeparatorChar) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFeatureBuilder, initWithJavaUtilList_withChar_, cucumberFeatures, fileSeparatorChar)
+CCBRFeatureBuilder *create_CCBRFeatureBuilder_initWithJavaUtilList_withChar_(id<JavaUtilList> cucumberFeatures, jchar fileSeparatorChar) {
+  J2OBJC_CREATE_IMPL(CCBRFeatureBuilder, initWithJavaUtilList_withChar_, cucumberFeatures, fileSeparatorChar)
 }
 
-NSString *CucumberRuntimeFeatureBuilder_convertFileSeparatorToForwardSlashWithNSString_(CucumberRuntimeFeatureBuilder *self, NSString *path) {
+NSString *CCBRFeatureBuilder_convertFileSeparatorToForwardSlashWithNSString_(CCBRFeatureBuilder *self, NSString *path) {
   return [((NSString *) nil_chk(path)) java_replace:self->fileSeparatorChar_ withChar:'/'];
 }
 
-NSString *CucumberRuntimeFeatureBuilder_checksumWithNSString_(CucumberRuntimeFeatureBuilder *self, NSString *gherkin) {
-  return [create_JavaMathBigInteger_initWithInt_withByteArray_(1, [((JavaSecurityMessageDigest *) nil_chk(self->md5_)) digestWithByteArray:[((NSString *) nil_chk(gherkin)) java_getBytesWithCharset:CucumberRuntimeFeatureBuilder_UTF8]]) toStringWithInt:16];
+NSString *CCBRFeatureBuilder_checksumWithNSString_(CCBRFeatureBuilder *self, NSString *gherkin) {
+  return [create_JavaMathBigInteger_initWithInt_withByteArray_(1, [((JavaSecurityMessageDigest *) nil_chk(self->md5_)) digestWithByteArray:[((NSString *) nil_chk(gherkin)) java_getBytesWithCharset:CCBRFeatureBuilder_UTF8]]) toStringWithInt:16];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFeatureBuilder)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRFeatureBuilder)

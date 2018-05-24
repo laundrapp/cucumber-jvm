@@ -18,16 +18,16 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeUndefinedStepDefinitionException_) && (INCLUDE_ALL_CucumberRuntimeUndefinedStepDefinitionException || defined(INCLUDE_CucumberRuntimeUndefinedStepDefinitionException))
-#define CucumberRuntimeUndefinedStepDefinitionException_
+#if !defined (CCBRUndefinedStepDefinitionException_) && (INCLUDE_ALL_CucumberRuntimeUndefinedStepDefinitionException || defined(INCLUDE_CCBRUndefinedStepDefinitionException))
+#define CCBRUndefinedStepDefinitionException_
 
 #define RESTRICT_CucumberRuntimeCucumberException 1
-#define INCLUDE_CucumberRuntimeCucumberException 1
+#define INCLUDE_CCBRCucumberException 1
 #include "cucumber/runtime/CucumberException.h"
 
 @class JavaLangThrowable;
 
-@interface CucumberRuntimeUndefinedStepDefinitionException : CucumberRuntimeCucumberException
+@interface CCBRUndefinedStepDefinitionException : CCBRCucumberException
 
 #pragma mark Public
 
@@ -44,15 +44,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeUndefinedStepDefinitionException)
+J2OBJC_EMPTY_STATIC_INIT(CCBRUndefinedStepDefinitionException)
 
-FOUNDATION_EXPORT void CucumberRuntimeUndefinedStepDefinitionException_init(CucumberRuntimeUndefinedStepDefinitionException *self);
+FOUNDATION_EXPORT void CCBRUndefinedStepDefinitionException_init(CCBRUndefinedStepDefinitionException *self);
 
-FOUNDATION_EXPORT CucumberRuntimeUndefinedStepDefinitionException *new_CucumberRuntimeUndefinedStepDefinitionException_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRUndefinedStepDefinitionException *new_CCBRUndefinedStepDefinitionException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeUndefinedStepDefinitionException *create_CucumberRuntimeUndefinedStepDefinitionException_init(void);
+FOUNDATION_EXPORT CCBRUndefinedStepDefinitionException *create_CCBRUndefinedStepDefinitionException_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeUndefinedStepDefinitionException)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRUndefinedStepDefinitionException)
+
+@compatibility_alias CucumberRuntimeUndefinedStepDefinitionException CCBRUndefinedStepDefinitionException;
 
 #endif
 

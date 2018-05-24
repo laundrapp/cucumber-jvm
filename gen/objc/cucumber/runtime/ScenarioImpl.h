@@ -18,15 +18,15 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeScenarioImpl_) && (INCLUDE_ALL_CucumberRuntimeScenarioImpl || defined(INCLUDE_CucumberRuntimeScenarioImpl))
-#define CucumberRuntimeScenarioImpl_
+#if !defined (CCBRScenarioImpl_) && (INCLUDE_ALL_CucumberRuntimeScenarioImpl || defined(INCLUDE_CCBRScenarioImpl))
+#define CCBRScenarioImpl_
 
 #define RESTRICT_CucumberApiScenario 1
-#define INCLUDE_CucumberApiScenario 1
+#define INCLUDE_CCBScenario 1
 #include "cucumber/api/Scenario.h"
 
-@class CucumberApiResult;
-@class CucumberApiResult_Type;
+@class CCBResult;
+@class CCBResult_Type;
 @class CucumberRunnerEventBus;
 @class GherkinEventsPickleEvent;
 @class IOSByteArray;
@@ -34,14 +34,14 @@
 @protocol JavaUtilCollection;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeScenarioImpl : NSObject < CucumberApiScenario >
+@interface CCBRScenarioImpl : NSObject < CCBScenario >
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus
                             withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent;
 
-- (void)addWithCucumberApiResult:(CucumberApiResult *)result;
+- (void)addWithCCBResult:(CCBResult *)result;
 
 - (void)embedWithByteArray:(IOSByteArray *)data
               withNSString:(NSString *)mimeType;
@@ -56,7 +56,7 @@
 
 - (id<JavaUtilCollection>)getSourceTagNames;
 
-- (CucumberApiResult_Type *)getStatus;
+- (CCBResult_Type *)getStatus;
 
 - (NSString *)getUri;
 
@@ -70,15 +70,17 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeScenarioImpl)
+J2OBJC_STATIC_INIT(CCBRScenarioImpl)
 
-FOUNDATION_EXPORT void CucumberRuntimeScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(CucumberRuntimeScenarioImpl *self, CucumberRunnerEventBus *bus, GherkinEventsPickleEvent *pickleEvent);
+FOUNDATION_EXPORT void CCBRScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(CCBRScenarioImpl *self, CucumberRunnerEventBus *bus, GherkinEventsPickleEvent *pickleEvent);
 
-FOUNDATION_EXPORT CucumberRuntimeScenarioImpl *new_CucumberRuntimeScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(CucumberRunnerEventBus *bus, GherkinEventsPickleEvent *pickleEvent) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRScenarioImpl *new_CCBRScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(CucumberRunnerEventBus *bus, GherkinEventsPickleEvent *pickleEvent) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeScenarioImpl *create_CucumberRuntimeScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(CucumberRunnerEventBus *bus, GherkinEventsPickleEvent *pickleEvent);
+FOUNDATION_EXPORT CCBRScenarioImpl *create_CCBRScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(CucumberRunnerEventBus *bus, GherkinEventsPickleEvent *pickleEvent);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeScenarioImpl)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRScenarioImpl)
+
+@compatibility_alias CucumberRuntimeScenarioImpl CCBRScenarioImpl;
 
 #endif
 

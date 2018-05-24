@@ -18,14 +18,14 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeTablePascalCaseStringConverter_) && (INCLUDE_ALL_CucumberRuntimeTablePascalCaseStringConverter || defined(INCLUDE_CucumberRuntimeTablePascalCaseStringConverter))
-#define CucumberRuntimeTablePascalCaseStringConverter_
+#if !defined (CCBRPascalCaseStringConverter_) && (INCLUDE_ALL_CucumberRuntimeTablePascalCaseStringConverter || defined(INCLUDE_CCBRPascalCaseStringConverter))
+#define CCBRPascalCaseStringConverter_
 
 #define RESTRICT_CucumberRuntimeTableStringConverter 1
-#define INCLUDE_CucumberRuntimeTableStringConverter 1
+#define INCLUDE_CCBRStringConverter 1
 #include "cucumber/runtime/table/StringConverter.h"
 
-@interface CucumberRuntimeTablePascalCaseStringConverter : NSObject < CucumberRuntimeTableStringConverter >
+@interface CCBRPascalCaseStringConverter : NSObject < CCBRStringConverter >
 
 #pragma mark Public
 
@@ -35,15 +35,17 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeTablePascalCaseStringConverter)
+J2OBJC_STATIC_INIT(CCBRPascalCaseStringConverter)
 
-FOUNDATION_EXPORT void CucumberRuntimeTablePascalCaseStringConverter_init(CucumberRuntimeTablePascalCaseStringConverter *self);
+FOUNDATION_EXPORT void CCBRPascalCaseStringConverter_init(CCBRPascalCaseStringConverter *self);
 
-FOUNDATION_EXPORT CucumberRuntimeTablePascalCaseStringConverter *new_CucumberRuntimeTablePascalCaseStringConverter_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRPascalCaseStringConverter *new_CCBRPascalCaseStringConverter_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeTablePascalCaseStringConverter *create_CucumberRuntimeTablePascalCaseStringConverter_init(void);
+FOUNDATION_EXPORT CCBRPascalCaseStringConverter *create_CCBRPascalCaseStringConverter_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTablePascalCaseStringConverter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRPascalCaseStringConverter)
+
+@compatibility_alias CucumberRuntimeTablePascalCaseStringConverter CCBRPascalCaseStringConverter;
 
 #endif
 

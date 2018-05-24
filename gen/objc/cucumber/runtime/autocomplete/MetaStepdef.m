@@ -15,7 +15,7 @@
 #include "java/util/regex/Matcher.h"
 #include "java/util/regex/Pattern.h"
 
-@interface CucumberRuntimeAutocompleteMetaStepdef () {
+@interface CCBRMetaStepdef () {
  @public
   JavaUtilRegexPattern *pattern_;
 }
@@ -24,39 +24,39 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeAutocompleteMetaStepdef, pattern_, JavaUtilRegexPattern *)
+J2OBJC_FIELD_SETTER(CCBRMetaStepdef, pattern_, JavaUtilRegexPattern *)
 
-inline ComGoogleGsonGson *CucumberRuntimeAutocompleteMetaStepdef_get_GSON(void);
-static ComGoogleGsonGson *CucumberRuntimeAutocompleteMetaStepdef_GSON;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeAutocompleteMetaStepdef, GSON, ComGoogleGsonGson *)
+inline ComGoogleGsonGson *CCBRMetaStepdef_get_GSON(void);
+static ComGoogleGsonGson *CCBRMetaStepdef_GSON;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRMetaStepdef, GSON, ComGoogleGsonGson *)
 
-__attribute__((unused)) static JavaUtilRegexPattern *CucumberRuntimeAutocompleteMetaStepdef_pattern(CucumberRuntimeAutocompleteMetaStepdef *self);
+__attribute__((unused)) static JavaUtilRegexPattern *CCBRMetaStepdef_pattern(CCBRMetaStepdef *self);
 
-J2OBJC_INITIALIZED_DEFN(CucumberRuntimeAutocompleteMetaStepdef)
+J2OBJC_INITIALIZED_DEFN(CCBRMetaStepdef)
 
-@implementation CucumberRuntimeAutocompleteMetaStepdef
+@implementation CCBRMetaStepdef
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeAutocompleteMetaStepdef_init(self);
+  CCBRMetaStepdef_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (jboolean)matchesWithNSString:(NSString *)text {
-  JavaUtilRegexPattern *p = CucumberRuntimeAutocompleteMetaStepdef_pattern(self);
+  JavaUtilRegexPattern *p = CCBRMetaStepdef_pattern(self);
   JavaUtilRegexMatcher *m = [((JavaUtilRegexPattern *) nil_chk(p)) matcherWithJavaLangCharSequence:text];
   return [((JavaUtilRegexMatcher *) nil_chk(m)) matches] || [m hitEnd];
 }
 
 - (JavaUtilRegexPattern *)pattern {
-  return CucumberRuntimeAutocompleteMetaStepdef_pattern(self);
+  return CCBRMetaStepdef_pattern(self);
 }
 
 - (jboolean)isEqual:(id)o {
   if (self == o) return true;
   if (o == nil || [self java_getClass] != [o java_getClass]) return false;
-  CucumberRuntimeAutocompleteMetaStepdef *that = (CucumberRuntimeAutocompleteMetaStepdef *) cast_chk(o, [CucumberRuntimeAutocompleteMetaStepdef class]);
+  CCBRMetaStepdef *that = (CCBRMetaStepdef *) cast_chk(o, [CCBRMetaStepdef class]);
   if (![((NSString *) nil_chk(flags_)) isEqual:that->flags_]) return false;
   if (![((NSString *) nil_chk(source_)) isEqual:that->source_]) return false;
   if (![((id<JavaUtilSortedSet>) nil_chk(steps_)) isEqual:that->steps_]) return false;
@@ -71,7 +71,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (NSString *)description {
-  return [((ComGoogleGsonGson *) nil_chk(CucumberRuntimeAutocompleteMetaStepdef_GSON)) toJsonWithId:self];
+  return [((ComGoogleGsonGson *) nil_chk(CCBRMetaStepdef_GSON)) toJsonWithId:self];
 }
 
 - (void)dealloc {
@@ -108,60 +108,60 @@ J2OBJC_IGNORE_DESIGNATED_END
     { "flags_", "LNSString;", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
     { "pattern_", "LJavaUtilRegexPattern;", .constantValue.asLong = 0, 0x82, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "matches", "LNSString;", "equals", "LNSObject;", "hashCode", "toString", &CucumberRuntimeAutocompleteMetaStepdef_GSON, "Ljava/util/SortedSet<Lcucumber/runtime/autocomplete/MetaStepdef$MetaStep;>;", "LCucumberRuntimeAutocompleteMetaStepdef_MetaStep;LCucumberRuntimeAutocompleteMetaStepdef_MetaArgument;" };
-  static const J2ObjcClassInfo _CucumberRuntimeAutocompleteMetaStepdef = { "MetaStepdef", "cucumber.runtime.autocomplete", ptrTable, methods, fields, 7, 0x1, 6, 5, -1, 8, -1, -1, -1 };
-  return &_CucumberRuntimeAutocompleteMetaStepdef;
+  static const void *ptrTable[] = { "matches", "LNSString;", "equals", "LNSObject;", "hashCode", "toString", &CCBRMetaStepdef_GSON, "Ljava/util/SortedSet<Lcucumber/runtime/autocomplete/MetaStepdef$MetaStep;>;", "LCCBRMetaStepdef_MetaStep;LCCBRMetaStepdef_MetaArgument;" };
+  static const J2ObjcClassInfo _CCBRMetaStepdef = { "MetaStepdef", "cucumber.runtime.autocomplete", ptrTable, methods, fields, 7, 0x1, 6, 5, -1, 8, -1, -1, -1 };
+  return &_CCBRMetaStepdef;
 }
 
 + (void)initialize {
-  if (self == [CucumberRuntimeAutocompleteMetaStepdef class]) {
-    JreStrongAssign(&CucumberRuntimeAutocompleteMetaStepdef_GSON, [create_ComGoogleGsonGsonBuilder_init() create]);
-    J2OBJC_SET_INITIALIZED(CucumberRuntimeAutocompleteMetaStepdef)
+  if (self == [CCBRMetaStepdef class]) {
+    JreStrongAssign(&CCBRMetaStepdef_GSON, [create_ComGoogleGsonGsonBuilder_init() create]);
+    J2OBJC_SET_INITIALIZED(CCBRMetaStepdef)
   }
 }
 
 @end
 
-void CucumberRuntimeAutocompleteMetaStepdef_init(CucumberRuntimeAutocompleteMetaStepdef *self) {
+void CCBRMetaStepdef_init(CCBRMetaStepdef *self) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->steps_, new_JavaUtilTreeSet_init());
 }
 
-CucumberRuntimeAutocompleteMetaStepdef *new_CucumberRuntimeAutocompleteMetaStepdef_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeAutocompleteMetaStepdef, init)
+CCBRMetaStepdef *new_CCBRMetaStepdef_init() {
+  J2OBJC_NEW_IMPL(CCBRMetaStepdef, init)
 }
 
-CucumberRuntimeAutocompleteMetaStepdef *create_CucumberRuntimeAutocompleteMetaStepdef_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeAutocompleteMetaStepdef, init)
+CCBRMetaStepdef *create_CCBRMetaStepdef_init() {
+  J2OBJC_CREATE_IMPL(CCBRMetaStepdef, init)
 }
 
-JavaUtilRegexPattern *CucumberRuntimeAutocompleteMetaStepdef_pattern(CucumberRuntimeAutocompleteMetaStepdef *self) {
+JavaUtilRegexPattern *CCBRMetaStepdef_pattern(CCBRMetaStepdef *self) {
   if (self->pattern_ == nil) {
     JreStrongAssign(&self->pattern_, JavaUtilRegexPattern_compileWithNSString_(self->source_));
   }
   return self->pattern_;
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeAutocompleteMetaStepdef)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRMetaStepdef)
 
-@implementation CucumberRuntimeAutocompleteMetaStepdef_MetaStep
+@implementation CCBRMetaStepdef_MetaStep
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeAutocompleteMetaStepdef_MetaStep_init(self);
+  CCBRMetaStepdef_MetaStep_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (jint)compareToWithId:(CucumberRuntimeAutocompleteMetaStepdef_MetaStep *)other {
-  cast_chk(other, [CucumberRuntimeAutocompleteMetaStepdef_MetaStep class]);
-  return [((NSString *) nil_chk(name_)) compareToWithId:((CucumberRuntimeAutocompleteMetaStepdef_MetaStep *) nil_chk(other))->name_];
+- (jint)compareToWithId:(CCBRMetaStepdef_MetaStep *)other {
+  cast_chk(other, [CCBRMetaStepdef_MetaStep class]);
+  return [((NSString *) nil_chk(name_)) compareToWithId:((CCBRMetaStepdef_MetaStep *) nil_chk(other))->name_];
 }
 
 - (jboolean)isEqual:(id)o {
   if (self == o) return true;
   if (o == nil || [self java_getClass] != [o java_getClass]) return false;
-  CucumberRuntimeAutocompleteMetaStepdef_MetaStep *metaStep = (CucumberRuntimeAutocompleteMetaStepdef_MetaStep *) cast_chk(o, [CucumberRuntimeAutocompleteMetaStepdef_MetaStep class]);
+  CCBRMetaStepdef_MetaStep *metaStep = (CCBRMetaStepdef_MetaStep *) cast_chk(o, [CCBRMetaStepdef_MetaStep class]);
   if (![((id<JavaUtilList>) nil_chk(args_)) isEqual:metaStep->args_]) return false;
   if (![((NSString *) nil_chk(name_)) isEqual:metaStep->name_]) return false;
   return true;
@@ -198,33 +198,33 @@ J2OBJC_IGNORE_DESIGNATED_END
     { "name_", "LNSString;", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
     { "args_", "LJavaUtilList;", .constantValue.asLong = 0, 0x11, -1, -1, 5, -1 },
   };
-  static const void *ptrTable[] = { "compareTo", "LCucumberRuntimeAutocompleteMetaStepdef_MetaStep;", "equals", "LNSObject;", "hashCode", "Ljava/util/List<Lcucumber/runtime/autocomplete/MetaStepdef$MetaArgument;>;", "LCucumberRuntimeAutocompleteMetaStepdef;", "Ljava/lang/Object;Ljava/lang/Comparable<Lcucumber/runtime/autocomplete/MetaStepdef$MetaStep;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeAutocompleteMetaStepdef_MetaStep = { "MetaStep", "cucumber.runtime.autocomplete", ptrTable, methods, fields, 7, 0x9, 4, 2, 6, -1, -1, 7, -1 };
-  return &_CucumberRuntimeAutocompleteMetaStepdef_MetaStep;
+  static const void *ptrTable[] = { "compareTo", "LCCBRMetaStepdef_MetaStep;", "equals", "LNSObject;", "hashCode", "Ljava/util/List<Lcucumber/runtime/autocomplete/MetaStepdef$MetaArgument;>;", "LCCBRMetaStepdef;", "Ljava/lang/Object;Ljava/lang/Comparable<Lcucumber/runtime/autocomplete/MetaStepdef$MetaStep;>;" };
+  static const J2ObjcClassInfo _CCBRMetaStepdef_MetaStep = { "MetaStep", "cucumber.runtime.autocomplete", ptrTable, methods, fields, 7, 0x9, 4, 2, 6, -1, -1, 7, -1 };
+  return &_CCBRMetaStepdef_MetaStep;
 }
 
 @end
 
-void CucumberRuntimeAutocompleteMetaStepdef_MetaStep_init(CucumberRuntimeAutocompleteMetaStepdef_MetaStep *self) {
+void CCBRMetaStepdef_MetaStep_init(CCBRMetaStepdef_MetaStep *self) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->args_, new_JavaUtilArrayList_init());
 }
 
-CucumberRuntimeAutocompleteMetaStepdef_MetaStep *new_CucumberRuntimeAutocompleteMetaStepdef_MetaStep_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeAutocompleteMetaStepdef_MetaStep, init)
+CCBRMetaStepdef_MetaStep *new_CCBRMetaStepdef_MetaStep_init() {
+  J2OBJC_NEW_IMPL(CCBRMetaStepdef_MetaStep, init)
 }
 
-CucumberRuntimeAutocompleteMetaStepdef_MetaStep *create_CucumberRuntimeAutocompleteMetaStepdef_MetaStep_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeAutocompleteMetaStepdef_MetaStep, init)
+CCBRMetaStepdef_MetaStep *create_CCBRMetaStepdef_MetaStep_init() {
+  J2OBJC_CREATE_IMPL(CCBRMetaStepdef_MetaStep, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeAutocompleteMetaStepdef_MetaStep)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRMetaStepdef_MetaStep)
 
-@implementation CucumberRuntimeAutocompleteMetaStepdef_MetaArgument
+@implementation CCBRMetaStepdef_MetaArgument
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeAutocompleteMetaStepdef_MetaArgument_init(self);
+  CCBRMetaStepdef_MetaArgument_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -247,23 +247,23 @@ J2OBJC_IGNORE_DESIGNATED_END
     { "offset_", "I", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
     { "val_", "LNSString;", .constantValue.asLong = 0, 0x1, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCucumberRuntimeAutocompleteMetaStepdef;" };
-  static const J2ObjcClassInfo _CucumberRuntimeAutocompleteMetaStepdef_MetaArgument = { "MetaArgument", "cucumber.runtime.autocomplete", ptrTable, methods, fields, 7, 0x9, 1, 2, 0, -1, -1, -1, -1 };
-  return &_CucumberRuntimeAutocompleteMetaStepdef_MetaArgument;
+  static const void *ptrTable[] = { "LCCBRMetaStepdef;" };
+  static const J2ObjcClassInfo _CCBRMetaStepdef_MetaArgument = { "MetaArgument", "cucumber.runtime.autocomplete", ptrTable, methods, fields, 7, 0x9, 1, 2, 0, -1, -1, -1, -1 };
+  return &_CCBRMetaStepdef_MetaArgument;
 }
 
 @end
 
-void CucumberRuntimeAutocompleteMetaStepdef_MetaArgument_init(CucumberRuntimeAutocompleteMetaStepdef_MetaArgument *self) {
+void CCBRMetaStepdef_MetaArgument_init(CCBRMetaStepdef_MetaArgument *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeAutocompleteMetaStepdef_MetaArgument *new_CucumberRuntimeAutocompleteMetaStepdef_MetaArgument_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeAutocompleteMetaStepdef_MetaArgument, init)
+CCBRMetaStepdef_MetaArgument *new_CCBRMetaStepdef_MetaArgument_init() {
+  J2OBJC_NEW_IMPL(CCBRMetaStepdef_MetaArgument, init)
 }
 
-CucumberRuntimeAutocompleteMetaStepdef_MetaArgument *create_CucumberRuntimeAutocompleteMetaStepdef_MetaArgument_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeAutocompleteMetaStepdef_MetaArgument, init)
+CCBRMetaStepdef_MetaArgument *create_CCBRMetaStepdef_MetaArgument_init() {
+  J2OBJC_CREATE_IMPL(CCBRMetaStepdef_MetaArgument, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeAutocompleteMetaStepdef_MetaArgument)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRMetaStepdef_MetaArgument)

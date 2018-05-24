@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaNoGitt_) && (INCLUDE_ALL_CucumberApiJavaNoGitt || defined(INCLUDE_CucumberApiJavaNoGitt))
-#define CucumberApiJavaNoGitt_
+#if !defined (CCBGitt_) && (INCLUDE_ALL_CucumberApiJavaNoGitt || defined(INCLUDE_CCBGitt))
+#define CCBGitt_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaNoGitt < JavaLangAnnotationAnnotation >
+@protocol CCBGitt < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaNoGitt : NSObject < CucumberApiJavaNoGitt > {
+@interface CCBGitt : NSObject < CCBGitt > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaNoGitt)
+J2OBJC_EMPTY_STATIC_INIT(CCBGitt)
 
-FOUNDATION_EXPORT id<CucumberApiJavaNoGitt> create_CucumberApiJavaNoGitt(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBGitt> create_CCBGitt(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaNoGitt)
+J2OBJC_TYPE_LITERAL_HEADER(CCBGitt)
+
+#define CucumberApiJavaNoGitt CCBGitt
 
 #endif
 

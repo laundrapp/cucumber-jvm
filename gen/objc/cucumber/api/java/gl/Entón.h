@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaGlEntón_) && (INCLUDE_ALL_CucumberApiJavaGlEntón || defined(INCLUDE_CucumberApiJavaGlEntón))
-#define CucumberApiJavaGlEntón_
+#if !defined (CCBEntón_) && (INCLUDE_ALL_CucumberApiJavaGlEntón || defined(INCLUDE_CCBEntón))
+#define CCBEntón_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaGlEntón < JavaLangAnnotationAnnotation >
+@protocol CCBEntón < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaGlEntón : NSObject < CucumberApiJavaGlEntón > {
+@interface CCBEntón : NSObject < CCBEntón > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaGlEntón)
+J2OBJC_EMPTY_STATIC_INIT(CCBEntón)
 
-FOUNDATION_EXPORT id<CucumberApiJavaGlEntón> create_CucumberApiJavaGlEntón(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBEntón> create_CCBEntón(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaGlEntón)
+J2OBJC_TYPE_LITERAL_HEADER(CCBEntón)
+
+#define CucumberApiJavaGlEntón CCBEntón
 
 #endif
 

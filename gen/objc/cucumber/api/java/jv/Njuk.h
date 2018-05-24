@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaJvNjuk_) && (INCLUDE_ALL_CucumberApiJavaJvNjuk || defined(INCLUDE_CucumberApiJavaJvNjuk))
-#define CucumberApiJavaJvNjuk_
+#if !defined (CCBNjuk_) && (INCLUDE_ALL_CucumberApiJavaJvNjuk || defined(INCLUDE_CCBNjuk))
+#define CCBNjuk_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaJvNjuk < JavaLangAnnotationAnnotation >
+@protocol CCBNjuk < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaJvNjuk : NSObject < CucumberApiJavaJvNjuk > {
+@interface CCBNjuk : NSObject < CCBNjuk > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaJvNjuk)
+J2OBJC_EMPTY_STATIC_INIT(CCBNjuk)
 
-FOUNDATION_EXPORT id<CucumberApiJavaJvNjuk> create_CucumberApiJavaJvNjuk(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBNjuk> create_CCBNjuk(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaJvNjuk)
+J2OBJC_TYPE_LITERAL_HEADER(CCBNjuk)
+
+#define CucumberApiJavaJvNjuk CCBNjuk
 
 #endif
 

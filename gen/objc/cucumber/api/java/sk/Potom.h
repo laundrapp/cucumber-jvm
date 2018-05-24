@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaSkPotom_) && (INCLUDE_ALL_CucumberApiJavaSkPotom || defined(INCLUDE_CucumberApiJavaSkPotom))
-#define CucumberApiJavaSkPotom_
+#if !defined (CCBPotom_) && (INCLUDE_ALL_CucumberApiJavaSkPotom || defined(INCLUDE_CCBPotom))
+#define CCBPotom_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaSkPotom < JavaLangAnnotationAnnotation >
+@protocol CCBPotom < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaSkPotom : NSObject < CucumberApiJavaSkPotom > {
+@interface CCBPotom : NSObject < CCBPotom > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaSkPotom)
+J2OBJC_EMPTY_STATIC_INIT(CCBPotom)
 
-FOUNDATION_EXPORT id<CucumberApiJavaSkPotom> create_CucumberApiJavaSkPotom(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBPotom> create_CCBPotom(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaSkPotom)
+J2OBJC_TYPE_LITERAL_HEADER(CCBPotom)
+
+#define CucumberApiJavaSkPotom CCBPotom
 
 #endif
 

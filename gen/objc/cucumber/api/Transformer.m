@@ -12,7 +12,7 @@
 #include "java/lang/reflect/Type.h"
 #include "java/util/Locale.h"
 
-@interface CucumberApiTransformer () {
+@interface CCBTransformer () {
  @public
   id<JavaLangReflectType> type_;
   JavaUtilLocale *locale_;
@@ -20,14 +20,14 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberApiTransformer, type_, id<JavaLangReflectType>)
-J2OBJC_FIELD_SETTER(CucumberApiTransformer, locale_, JavaUtilLocale *)
+J2OBJC_FIELD_SETTER(CCBTransformer, type_, id<JavaLangReflectType>)
+J2OBJC_FIELD_SETTER(CCBTransformer, locale_, JavaUtilLocale *)
 
-@implementation CucumberApiTransformer
+@implementation CCBTransformer
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberApiTransformer_init(self);
+  CCBTransformer_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -50,8 +50,8 @@ J2OBJC_IGNORE_DESIGNATED_END
   return 0;
 }
 
-- (void)setParameterInfoAndLocaleWithCucumberRuntimeParameterInfo:(CucumberRuntimeParameterInfo *)parameterInfo
-                                               withJavaUtilLocale:(JavaUtilLocale *)locale {
+- (void)setParameterInfoAndLocaleWithCCBRParameterInfo:(CCBRParameterInfo *)parameterInfo
+                                    withJavaUtilLocale:(JavaUtilLocale *)locale {
   JreStrongAssign(&self->locale_, locale);
 }
 
@@ -83,24 +83,24 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[2].selector = @selector(fromStringWithNSString:);
   methods[3].selector = @selector(canConvertWithIOSClass:);
   methods[4].selector = @selector(transformWithNSString:);
-  methods[5].selector = @selector(setParameterInfoAndLocaleWithCucumberRuntimeParameterInfo:withJavaUtilLocale:);
+  methods[5].selector = @selector(setParameterInfoAndLocaleWithCCBRParameterInfo:withJavaUtilLocale:);
   methods[6].selector = @selector(getLocale);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "type_", "LJavaLangReflectType;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "locale_", "LJavaUtilLocale;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "toString", "LNSObject;", "fromString", "LNSString;", "canConvert", "LIOSClass;", "transform", "(Ljava/lang/String;)TT;", "setParameterInfoAndLocale", "LCucumberRuntimeParameterInfo;LJavaUtilLocale;", "<T:Ljava/lang/Object;>Ljava/lang/Object;Lcucumber/deps/com/thoughtworks/xstream/converters/SingleValueConverter;" };
-  static const J2ObjcClassInfo _CucumberApiTransformer = { "Transformer", "cucumber.api", ptrTable, methods, fields, 7, 0x401, 7, 2, -1, -1, -1, 10, -1 };
-  return &_CucumberApiTransformer;
+  static const void *ptrTable[] = { "toString", "LNSObject;", "fromString", "LNSString;", "canConvert", "LIOSClass;", "transform", "(Ljava/lang/String;)TT;", "setParameterInfoAndLocale", "LCCBRParameterInfo;LJavaUtilLocale;", "<T:Ljava/lang/Object;>Ljava/lang/Object;Lcucumber/deps/com/thoughtworks/xstream/converters/SingleValueConverter;" };
+  static const J2ObjcClassInfo _CCBTransformer = { "Transformer", "cucumber.api", ptrTable, methods, fields, 7, 0x401, 7, 2, -1, -1, -1, 10, -1 };
+  return &_CCBTransformer;
 }
 
 @end
 
-void CucumberApiTransformer_init(CucumberApiTransformer *self) {
+void CCBTransformer_init(CCBTransformer *self) {
   NSObject_init(self);
   id<JavaLangReflectParameterizedType> ptype = (id<JavaLangReflectParameterizedType>) cast_check([[self java_getClass] getGenericSuperclass], JavaLangReflectParameterizedType_class_());
   JreStrongAssign(&self->type_, IOSObjectArray_Get(nil_chk([((id<JavaLangReflectParameterizedType>) nil_chk(ptype)) getActualTypeArguments]), 0));
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiTransformer)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBTransformer)

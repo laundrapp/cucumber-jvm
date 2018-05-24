@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/runtime/HookDefinition.h"
 
-@interface CucumberRuntimeHookDefinition : NSObject
+@interface CCBRHookDefinition : NSObject
 
 @end
 
-@implementation CucumberRuntimeHookDefinition
+@implementation CCBRHookDefinition
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -24,16 +24,16 @@
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(getLocationWithBoolean:);
-  methods[1].selector = @selector(executeWithCucumberApiScenario:);
+  methods[1].selector = @selector(executeWithCCBScenario:);
   methods[2].selector = @selector(matchesWithJavaUtilCollection:);
   methods[3].selector = @selector(getOrder);
   methods[4].selector = @selector(isScenarioScoped);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "getLocation", "Z", "execute", "LCucumberApiScenario;", "LJavaLangThrowable;", "matches", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z" };
-  static const J2ObjcClassInfo _CucumberRuntimeHookDefinition = { "HookDefinition", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 5, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeHookDefinition;
+  static const void *ptrTable[] = { "getLocation", "Z", "execute", "LCCBScenario;", "LJavaLangThrowable;", "matches", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z" };
+  static const J2ObjcClassInfo _CCBRHookDefinition = { "HookDefinition", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 5, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRHookDefinition;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRuntimeHookDefinition)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBRHookDefinition)

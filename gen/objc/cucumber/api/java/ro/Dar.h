@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaRoDar_) && (INCLUDE_ALL_CucumberApiJavaRoDar || defined(INCLUDE_CucumberApiJavaRoDar))
-#define CucumberApiJavaRoDar_
+#if !defined (CCBDar_) && (INCLUDE_ALL_CucumberApiJavaRoDar || defined(INCLUDE_CCBDar))
+#define CCBDar_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaRoDar < JavaLangAnnotationAnnotation >
+@protocol CCBDar < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaRoDar : NSObject < CucumberApiJavaRoDar > {
+@interface CCBDar : NSObject < CCBDar > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaRoDar)
+J2OBJC_EMPTY_STATIC_INIT(CCBDar)
 
-FOUNDATION_EXPORT id<CucumberApiJavaRoDar> create_CucumberApiJavaRoDar(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBDar> create_CCBDar(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaRoDar)
+J2OBJC_TYPE_LITERAL_HEADER(CCBDar)
+
+#define CucumberApiJavaRoDar CCBDar
 
 #endif
 

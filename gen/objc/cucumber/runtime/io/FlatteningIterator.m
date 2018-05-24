@@ -13,7 +13,7 @@
 #include "java/util/NoSuchElementException.h"
 #include "java/util/function/Consumer.h"
 
-@interface CucumberRuntimeIoFlatteningIterator () {
+@interface CCBRFlatteningIterator () {
  @public
   id<JavaUtilDeque> iterators_;
   id next_;
@@ -24,16 +24,16 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoFlatteningIterator, iterators_, id<JavaUtilDeque>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoFlatteningIterator, next_, id)
+J2OBJC_FIELD_SETTER(CCBRFlatteningIterator, iterators_, id<JavaUtilDeque>)
+J2OBJC_FIELD_SETTER(CCBRFlatteningIterator, next_, id)
 
-__attribute__((unused)) static void CucumberRuntimeIoFlatteningIterator_moveToNext(CucumberRuntimeIoFlatteningIterator *self);
+__attribute__((unused)) static void CCBRFlatteningIterator_moveToNext(CCBRFlatteningIterator *self);
 
-@implementation CucumberRuntimeIoFlatteningIterator
+@implementation CCBRFlatteningIterator
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeIoFlatteningIterator_init(self);
+  CCBRFlatteningIterator_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -47,11 +47,11 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (void)moveToNext {
-  CucumberRuntimeIoFlatteningIterator_moveToNext(self);
+  CCBRFlatteningIterator_moveToNext(self);
 }
 
 - (id)next {
-  CucumberRuntimeIoFlatteningIterator_moveToNext(self);
+  CCBRFlatteningIterator_moveToNext(self);
   if (nextBlank_) {
     @throw create_JavaUtilNoSuchElementException_init();
   }
@@ -64,7 +64,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (jboolean)hasNext {
-  CucumberRuntimeIoFlatteningIterator_moveToNext(self);
+  CCBRFlatteningIterator_moveToNext(self);
   return !nextBlank_;
 }
 
@@ -103,37 +103,37 @@ J2OBJC_IGNORE_DESIGNATED_END
     { "nextBlank_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "push", "LJavaUtilIterator;", "(Ljava/util/Iterator<*>;)V", "()TT;", "Ljava/util/Deque<Ljava/util/Iterator<*>;>;", "TT;", "<T:Ljava/lang/Object;>Ljava/lang/Object;Ljava/util/Iterator<TT;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeIoFlatteningIterator = { "FlatteningIterator", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 6, 3, -1, -1, -1, 6, -1 };
-  return &_CucumberRuntimeIoFlatteningIterator;
+  static const J2ObjcClassInfo _CCBRFlatteningIterator = { "FlatteningIterator", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 6, 3, -1, -1, -1, 6, -1 };
+  return &_CCBRFlatteningIterator;
 }
 
 @end
 
-void CucumberRuntimeIoFlatteningIterator_init(CucumberRuntimeIoFlatteningIterator *self) {
+void CCBRFlatteningIterator_init(CCBRFlatteningIterator *self) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->iterators_, new_JavaUtilArrayDeque_init());
   self->nextBlank_ = true;
 }
 
-CucumberRuntimeIoFlatteningIterator *new_CucumberRuntimeIoFlatteningIterator_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeIoFlatteningIterator, init)
+CCBRFlatteningIterator *new_CCBRFlatteningIterator_init() {
+  J2OBJC_NEW_IMPL(CCBRFlatteningIterator, init)
 }
 
-CucumberRuntimeIoFlatteningIterator *create_CucumberRuntimeIoFlatteningIterator_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeIoFlatteningIterator, init)
+CCBRFlatteningIterator *create_CCBRFlatteningIterator_init() {
+  J2OBJC_CREATE_IMPL(CCBRFlatteningIterator, init)
 }
 
-void CucumberRuntimeIoFlatteningIterator_moveToNext(CucumberRuntimeIoFlatteningIterator *self) {
+void CCBRFlatteningIterator_moveToNext(CCBRFlatteningIterator *self) {
   if (self->nextBlank_ && ![((id<JavaUtilDeque>) nil_chk(self->iterators_)) isEmpty]) {
     if (![((id<JavaUtilIterator>) nil_chk([((id<JavaUtilDeque>) nil_chk(self->iterators_)) peek])) hasNext]) {
       [self->iterators_ removeFirst];
-      CucumberRuntimeIoFlatteningIterator_moveToNext(self);
+      CCBRFlatteningIterator_moveToNext(self);
     }
     else {
       id next = [((id<JavaUtilIterator>) nil_chk([self->iterators_ peekFirst])) next];
       if ([JavaUtilIterator_class_() isInstance:next]) {
         [self pushWithJavaUtilIterator:(id<JavaUtilIterator>) cast_check(next, JavaUtilIterator_class_())];
-        CucumberRuntimeIoFlatteningIterator_moveToNext(self);
+        CCBRFlatteningIterator_moveToNext(self);
       }
       else {
         JreStrongAssign(&self->next_, next);
@@ -143,4 +143,4 @@ void CucumberRuntimeIoFlatteningIterator_moveToNext(CucumberRuntimeIoFlatteningI
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoFlatteningIterator)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRFlatteningIterator)

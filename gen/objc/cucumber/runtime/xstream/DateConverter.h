@@ -18,18 +18,18 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamDateConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamDateConverter || defined(INCLUDE_CucumberRuntimeXstreamDateConverter))
-#define CucumberRuntimeXstreamDateConverter_
+#if !defined (CCBRDateConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamDateConverter || defined(INCLUDE_CCBRDateConverter))
+#define CCBRDateConverter_
 
 #define RESTRICT_CucumberRuntimeXstreamTimeConverter 1
-#define INCLUDE_CucumberRuntimeXstreamTimeConverter 1
+#define INCLUDE_CCBRTimeConverter 1
 #include "cucumber/runtime/xstream/TimeConverter.h"
 
 @class IOSObjectArray;
 @class JavaUtilDate;
 @class JavaUtilLocale;
 
-@interface CucumberRuntimeXstreamDateConverter : CucumberRuntimeXstreamTimeConverter
+@interface CCBRDateConverter : CCBRTimeConverter
 
 #pragma mark Public
 
@@ -44,15 +44,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamDateConverter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRDateConverter)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamDateConverter_initWithJavaUtilLocale_(CucumberRuntimeXstreamDateConverter *self, JavaUtilLocale *locale);
+FOUNDATION_EXPORT void CCBRDateConverter_initWithJavaUtilLocale_(CCBRDateConverter *self, JavaUtilLocale *locale);
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamDateConverter *new_CucumberRuntimeXstreamDateConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRDateConverter *new_CCBRDateConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamDateConverter *create_CucumberRuntimeXstreamDateConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale);
+FOUNDATION_EXPORT CCBRDateConverter *create_CCBRDateConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamDateConverter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRDateConverter)
+
+@compatibility_alias CucumberRuntimeXstreamDateConverter CCBRDateConverter;
 
 #endif
 

@@ -18,11 +18,11 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamConverterWithFormat_) && (INCLUDE_ALL_CucumberRuntimeXstreamConverterWithFormat || defined(INCLUDE_CucumberRuntimeXstreamConverterWithFormat))
-#define CucumberRuntimeXstreamConverterWithFormat_
+#if !defined (CCBRConverterWithFormat_) && (INCLUDE_ALL_CucumberRuntimeXstreamConverterWithFormat || defined(INCLUDE_CCBRConverterWithFormat))
+#define CCBRConverterWithFormat_
 
 #define RESTRICT_CucumberApiTransformer 1
-#define INCLUDE_CucumberApiTransformer 1
+#define INCLUDE_CCBTransformer 1
 #include "cucumber/api/Transformer.h"
 
 @class IOSClass;
@@ -30,7 +30,7 @@
 @class JavaTextFormat;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeXstreamConverterWithFormat : CucumberApiTransformer
+@interface CCBRConverterWithFormat : CCBTransformer
 
 #pragma mark Public
 
@@ -62,11 +62,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamConverterWithFormat)
+J2OBJC_EMPTY_STATIC_INIT(CCBRConverterWithFormat)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamConverterWithFormat_initWithIOSClassArray_(CucumberRuntimeXstreamConverterWithFormat *self, IOSObjectArray *convertibleTypes);
+FOUNDATION_EXPORT void CCBRConverterWithFormat_initWithIOSClassArray_(CCBRConverterWithFormat *self, IOSObjectArray *convertibleTypes);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamConverterWithFormat)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRConverterWithFormat)
+
+@compatibility_alias CucumberRuntimeXstreamConverterWithFormat CCBRConverterWithFormat;
 
 #endif
 

@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/runtime/table/StringConverter.h"
 
-@interface CucumberRuntimeTableStringConverter : NSObject
+@interface CCBRStringConverter : NSObject
 
 @end
 
-@implementation CucumberRuntimeTableStringConverter
+@implementation CCBRStringConverter
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -22,10 +22,10 @@
   methods[0].selector = @selector(mapWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "map", "LNSString;" };
-  static const J2ObjcClassInfo _CucumberRuntimeTableStringConverter = { "StringConverter", "cucumber.runtime.table", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeTableStringConverter;
+  static const J2ObjcClassInfo _CCBRStringConverter = { "StringConverter", "cucumber.runtime.table", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRStringConverter;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRuntimeTableStringConverter)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBRStringConverter)

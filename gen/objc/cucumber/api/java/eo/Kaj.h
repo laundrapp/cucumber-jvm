@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaEoKaj_) && (INCLUDE_ALL_CucumberApiJavaEoKaj || defined(INCLUDE_CucumberApiJavaEoKaj))
-#define CucumberApiJavaEoKaj_
+#if !defined (CCBKaj_) && (INCLUDE_ALL_CucumberApiJavaEoKaj || defined(INCLUDE_CCBKaj))
+#define CCBKaj_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaEoKaj < JavaLangAnnotationAnnotation >
+@protocol CCBKaj < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaEoKaj : NSObject < CucumberApiJavaEoKaj > {
+@interface CCBKaj : NSObject < CCBKaj > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEoKaj)
+J2OBJC_EMPTY_STATIC_INIT(CCBKaj)
 
-FOUNDATION_EXPORT id<CucumberApiJavaEoKaj> create_CucumberApiJavaEoKaj(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBKaj> create_CCBKaj(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEoKaj)
+J2OBJC_TYPE_LITERAL_HEADER(CCBKaj)
+
+#define CucumberApiJavaEoKaj CCBKaj
 
 #endif
 

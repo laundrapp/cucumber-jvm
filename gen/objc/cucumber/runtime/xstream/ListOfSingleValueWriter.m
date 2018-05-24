@@ -11,7 +11,7 @@
 #include "java/util/ArrayList.h"
 #include "java/util/List.h"
 
-@interface CucumberRuntimeXstreamListOfSingleValueWriter () {
+@interface CCBRListOfSingleValueWriter () {
  @public
   jint nodeDepth_;
   id<JavaUtilList> values_;
@@ -19,13 +19,13 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamListOfSingleValueWriter, values_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRListOfSingleValueWriter, values_, id<JavaUtilList>)
 
-@implementation CucumberRuntimeXstreamListOfSingleValueWriter
+@implementation CCBRListOfSingleValueWriter
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeXstreamListOfSingleValueWriter_init(self);
+  CCBRListOfSingleValueWriter_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -40,7 +40,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 
 - (void)startNodeWithNSString:(NSString *)name {
   if (nodeDepth_ > 1) {
-    @throw create_CucumberRuntimeCucumberException_initWithNSString_(@"Can only convert List<List<T>> to a table when T is a single value (primitive, string, date etc).");
+    @throw create_CCBRCucumberException_initWithNSString_(@"Can only convert List<List<T>> to a table when T is a single value (primitive, string, date etc).");
   }
   nodeDepth_++;
 }
@@ -100,23 +100,23 @@ J2OBJC_IGNORE_DESIGNATED_END
     { "values_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 6, -1 },
   };
   static const void *ptrTable[] = { "()Ljava/util/List<Ljava/lang/String;>;", "startNode", "LNSString;", "addAttribute", "LNSString;LNSString;", "setValue", "Ljava/util/List<Ljava/lang/String;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamListOfSingleValueWriter = { "ListOfSingleValueWriter", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x1, 9, 2, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeXstreamListOfSingleValueWriter;
+  static const J2ObjcClassInfo _CCBRListOfSingleValueWriter = { "ListOfSingleValueWriter", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x1, 9, 2, -1, -1, -1, -1, -1 };
+  return &_CCBRListOfSingleValueWriter;
 }
 
 @end
 
-void CucumberRuntimeXstreamListOfSingleValueWriter_init(CucumberRuntimeXstreamListOfSingleValueWriter *self) {
-  CucumberRuntimeXstreamCellWriter_init(self);
+void CCBRListOfSingleValueWriter_init(CCBRListOfSingleValueWriter *self) {
+  CCBRCellWriter_init(self);
   JreStrongAssignAndConsume(&self->values_, new_JavaUtilArrayList_init());
 }
 
-CucumberRuntimeXstreamListOfSingleValueWriter *new_CucumberRuntimeXstreamListOfSingleValueWriter_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamListOfSingleValueWriter, init)
+CCBRListOfSingleValueWriter *new_CCBRListOfSingleValueWriter_init() {
+  J2OBJC_NEW_IMPL(CCBRListOfSingleValueWriter, init)
 }
 
-CucumberRuntimeXstreamListOfSingleValueWriter *create_CucumberRuntimeXstreamListOfSingleValueWriter_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamListOfSingleValueWriter, init)
+CCBRListOfSingleValueWriter *create_CCBRListOfSingleValueWriter_init() {
+  J2OBJC_CREATE_IMPL(CCBRListOfSingleValueWriter, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamListOfSingleValueWriter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRListOfSingleValueWriter)

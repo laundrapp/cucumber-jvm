@@ -18,21 +18,21 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeStats_) && (INCLUDE_ALL_CucumberRuntimeStats || defined(INCLUDE_CucumberRuntimeStats))
-#define CucumberRuntimeStats_
+#if !defined (CCBRStats_) && (INCLUDE_ALL_CucumberRuntimeStats || defined(INCLUDE_CCBRStats))
+#define CCBRStats_
 
 #define RESTRICT_CucumberApiEventEventListener 1
-#define INCLUDE_CucumberApiEventEventListener 1
+#define INCLUDE_CCBEventListener 1
 #include "cucumber/api/event/EventListener.h"
 
-@class CucumberApiResult_Type;
+@class CCBResult_Type;
 @class JavaIoPrintStream;
 @class JavaLangLong;
 @class JavaUtilLocale;
-@protocol CucumberApiEventEventPublisher;
+@protocol CCBEventPublisher;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeStats : NSObject < CucumberApiEventEventListener >
+@interface CCBRStats : NSObject < CCBEventListener >
 
 #pragma mark Public
 
@@ -48,14 +48,14 @@
 - (void)printStatsWithJavaIoPrintStream:(JavaIoPrintStream *)outArg
                             withBoolean:(jboolean)isStrict;
 
-- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
+- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher;
 
 #pragma mark Package-Private
 
-- (void)addScenarioWithCucumberApiResult_Type:(CucumberApiResult_Type *)resultStatus
-                                 withNSString:(NSString *)scenarioDesignation;
+- (void)addScenarioWithCCBResult_Type:(CCBResult_Type *)resultStatus
+                         withNSString:(NSString *)scenarioDesignation;
 
-- (void)addStepWithCucumberApiResult_Type:(CucumberApiResult_Type *)resultStatus;
+- (void)addStepWithCCBResult_Type:(CCBResult_Type *)resultStatus;
 
 - (void)setFinishTimeWithJavaLangLong:(JavaLangLong *)finishTime;
 
@@ -67,36 +67,38 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeStats)
+J2OBJC_EMPTY_STATIC_INIT(CCBRStats)
 
-inline jlong CucumberRuntimeStats_get_ONE_SECOND(void);
-#define CucumberRuntimeStats_ONE_SECOND 1000000000LL
-J2OBJC_STATIC_FIELD_CONSTANT(CucumberRuntimeStats, ONE_SECOND, jlong)
+inline jlong CCBRStats_get_ONE_SECOND(void);
+#define CCBRStats_ONE_SECOND 1000000000LL
+J2OBJC_STATIC_FIELD_CONSTANT(CCBRStats, ONE_SECOND, jlong)
 
-inline jlong CucumberRuntimeStats_get_ONE_MINUTE(void);
-#define CucumberRuntimeStats_ONE_MINUTE 60000000000LL
-J2OBJC_STATIC_FIELD_CONSTANT(CucumberRuntimeStats, ONE_MINUTE, jlong)
+inline jlong CCBRStats_get_ONE_MINUTE(void);
+#define CCBRStats_ONE_MINUTE 60000000000LL
+J2OBJC_STATIC_FIELD_CONSTANT(CCBRStats, ONE_MINUTE, jlong)
 
-FOUNDATION_EXPORT void CucumberRuntimeStats_initWithBoolean_(CucumberRuntimeStats *self, jboolean monochrome);
+FOUNDATION_EXPORT void CCBRStats_initWithBoolean_(CCBRStats *self, jboolean monochrome);
 
-FOUNDATION_EXPORT CucumberRuntimeStats *new_CucumberRuntimeStats_initWithBoolean_(jboolean monochrome) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRStats *new_CCBRStats_initWithBoolean_(jboolean monochrome) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeStats *create_CucumberRuntimeStats_initWithBoolean_(jboolean monochrome);
+FOUNDATION_EXPORT CCBRStats *create_CCBRStats_initWithBoolean_(jboolean monochrome);
 
-FOUNDATION_EXPORT void CucumberRuntimeStats_initWithBoolean_withJavaUtilLocale_(CucumberRuntimeStats *self, jboolean monochrome, JavaUtilLocale *locale);
+FOUNDATION_EXPORT void CCBRStats_initWithBoolean_withJavaUtilLocale_(CCBRStats *self, jboolean monochrome, JavaUtilLocale *locale);
 
-FOUNDATION_EXPORT CucumberRuntimeStats *new_CucumberRuntimeStats_initWithBoolean_withJavaUtilLocale_(jboolean monochrome, JavaUtilLocale *locale) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRStats *new_CCBRStats_initWithBoolean_withJavaUtilLocale_(jboolean monochrome, JavaUtilLocale *locale) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeStats *create_CucumberRuntimeStats_initWithBoolean_withJavaUtilLocale_(jboolean monochrome, JavaUtilLocale *locale);
+FOUNDATION_EXPORT CCBRStats *create_CCBRStats_initWithBoolean_withJavaUtilLocale_(jboolean monochrome, JavaUtilLocale *locale);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeStats)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRStats)
+
+@compatibility_alias CucumberRuntimeStats CCBRStats;
 
 #endif
 
-#if !defined (CucumberRuntimeStats_SubCounts_) && (INCLUDE_ALL_CucumberRuntimeStats || defined(INCLUDE_CucumberRuntimeStats_SubCounts))
-#define CucumberRuntimeStats_SubCounts_
+#if !defined (CCBRStats_SubCounts_) && (INCLUDE_ALL_CucumberRuntimeStats || defined(INCLUDE_CCBRStats_SubCounts))
+#define CCBRStats_SubCounts_
 
-@interface CucumberRuntimeStats_SubCounts : NSObject {
+@interface CCBRStats_SubCounts : NSObject {
  @public
   jint passed_;
   jint failed_;
@@ -116,15 +118,15 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeStats)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeStats_SubCounts)
+J2OBJC_EMPTY_STATIC_INIT(CCBRStats_SubCounts)
 
-FOUNDATION_EXPORT void CucumberRuntimeStats_SubCounts_init(CucumberRuntimeStats_SubCounts *self);
+FOUNDATION_EXPORT void CCBRStats_SubCounts_init(CCBRStats_SubCounts *self);
 
-FOUNDATION_EXPORT CucumberRuntimeStats_SubCounts *new_CucumberRuntimeStats_SubCounts_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRStats_SubCounts *new_CCBRStats_SubCounts_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeStats_SubCounts *create_CucumberRuntimeStats_SubCounts_init(void);
+FOUNDATION_EXPORT CCBRStats_SubCounts *create_CCBRStats_SubCounts_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeStats_SubCounts)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRStats_SubCounts)
 
 #endif
 

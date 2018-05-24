@@ -13,34 +13,34 @@
 #include "cucumber/runtime/xstream/SingleValueConverterWrapperExt.h"
 #include "java/lang/reflect/Constructor.h"
 
-@interface CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter ()
+@interface CCBRDynamicClassWithStringAssignableConverter ()
 
 + (JavaLangReflectConstructor *)findAssignableConstructorWithIOSClass:(IOSClass *)type;
 
 @end
 
-__attribute__((unused)) static JavaLangReflectConstructor *CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter_findAssignableConstructorWithIOSClass_(IOSClass *type);
+__attribute__((unused)) static JavaLangReflectConstructor *CCBRDynamicClassWithStringAssignableConverter_findAssignableConstructorWithIOSClass_(IOSClass *type);
 
-@implementation CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter
+@implementation CCBRDynamicClassWithStringAssignableConverter
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter_init(self);
+  CCBRDynamicClassWithStringAssignableConverter_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (CucumberDepsComThoughtworksXstreamConvertersSingleValueConverterWrapper *)converterForClassWithIOSClass:(IOSClass *)type {
-  JavaLangReflectConstructor *assignableConstructor = CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter_findAssignableConstructorWithIOSClass_(type);
-  return create_CucumberRuntimeXstreamSingleValueConverterWrapperExt_initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(create_CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter_initWithJavaLangReflectConstructor_(assignableConstructor));
+  JavaLangReflectConstructor *assignableConstructor = CCBRDynamicClassWithStringAssignableConverter_findAssignableConstructorWithIOSClass_(type);
+  return create_CCBRSingleValueConverterWrapperExt_initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(create_CCBRClassWithStringAssignableConstructorConverter_initWithJavaLangReflectConstructor_(assignableConstructor));
 }
 
 - (jboolean)canConvertWithIOSClass:(IOSClass *)type {
-  return nil != CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter_findAssignableConstructorWithIOSClass_(type);
+  return nil != CCBRDynamicClassWithStringAssignableConverter_findAssignableConstructorWithIOSClass_(type);
 }
 
 + (JavaLangReflectConstructor *)findAssignableConstructorWithIOSClass:(IOSClass *)type {
-  return CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter_findAssignableConstructorWithIOSClass_(type);
+  return CCBRDynamicClassWithStringAssignableConverter_findAssignableConstructorWithIOSClass_(type);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -59,26 +59,26 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[3].selector = @selector(findAssignableConstructorWithIOSClass:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "converterForClass", "LIOSClass;", "canConvert", "findAssignableConstructor" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter = { "DynamicClassWithStringAssignableConverter", "cucumber.runtime.xstream", ptrTable, methods, NULL, 7, 0x0, 4, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter;
+  static const J2ObjcClassInfo _CCBRDynamicClassWithStringAssignableConverter = { "DynamicClassWithStringAssignableConverter", "cucumber.runtime.xstream", ptrTable, methods, NULL, 7, 0x0, 4, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRDynamicClassWithStringAssignableConverter;
 }
 
 @end
 
-void CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter_init(CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter *self) {
-  CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter_init(self);
+void CCBRDynamicClassWithStringAssignableConverter_init(CCBRDynamicClassWithStringAssignableConverter *self) {
+  CCBRDynamicClassBasedSingleValueConverter_init(self);
 }
 
-CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter *new_CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter, init)
+CCBRDynamicClassWithStringAssignableConverter *new_CCBRDynamicClassWithStringAssignableConverter_init() {
+  J2OBJC_NEW_IMPL(CCBRDynamicClassWithStringAssignableConverter, init)
 }
 
-CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter *create_CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter, init)
+CCBRDynamicClassWithStringAssignableConverter *create_CCBRDynamicClassWithStringAssignableConverter_init() {
+  J2OBJC_CREATE_IMPL(CCBRDynamicClassWithStringAssignableConverter, init)
 }
 
-JavaLangReflectConstructor *CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter_findAssignableConstructorWithIOSClass_(IOSClass *type) {
-  CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter_initialize();
+JavaLangReflectConstructor *CCBRDynamicClassWithStringAssignableConverter_findAssignableConstructorWithIOSClass_(IOSClass *type) {
+  CCBRDynamicClassWithStringAssignableConverter_initialize();
   {
     IOSObjectArray *a__ = [((IOSClass *) nil_chk(type)) getConstructors];
     JavaLangReflectConstructor * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
@@ -93,4 +93,4 @@ JavaLangReflectConstructor *CucumberRuntimeXstreamDynamicClassWithStringAssignab
   return nil;
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRDynamicClassWithStringAssignableConverter)

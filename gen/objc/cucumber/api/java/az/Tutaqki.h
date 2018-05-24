@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaAzTutaqki_) && (INCLUDE_ALL_CucumberApiJavaAzTutaqki || defined(INCLUDE_CucumberApiJavaAzTutaqki))
-#define CucumberApiJavaAzTutaqki_
+#if !defined (CCBTutaqki_) && (INCLUDE_ALL_CucumberApiJavaAzTutaqki || defined(INCLUDE_CCBTutaqki))
+#define CCBTutaqki_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaAzTutaqki < JavaLangAnnotationAnnotation >
+@protocol CCBTutaqki < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaAzTutaqki : NSObject < CucumberApiJavaAzTutaqki > {
+@interface CCBTutaqki : NSObject < CCBTutaqki > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaAzTutaqki)
+J2OBJC_EMPTY_STATIC_INIT(CCBTutaqki)
 
-FOUNDATION_EXPORT id<CucumberApiJavaAzTutaqki> create_CucumberApiJavaAzTutaqki(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBTutaqki> create_CCBTutaqki(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaAzTutaqki)
+J2OBJC_TYPE_LITERAL_HEADER(CCBTutaqki)
+
+#define CucumberApiJavaAzTutaqki CCBTutaqki
 
 #endif
 

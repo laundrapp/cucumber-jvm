@@ -18,18 +18,18 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamFloatConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamFloatConverter || defined(INCLUDE_CucumberRuntimeXstreamFloatConverter))
-#define CucumberRuntimeXstreamFloatConverter_
+#if !defined (CCBRFloatConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamFloatConverter || defined(INCLUDE_CCBRFloatConverter))
+#define CCBRFloatConverter_
 
 #define RESTRICT_CucumberRuntimeXstreamConverterWithNumberFormat 1
-#define INCLUDE_CucumberRuntimeXstreamConverterWithNumberFormat 1
+#define INCLUDE_CCBRConverterWithNumberFormat 1
 #include "cucumber/runtime/xstream/ConverterWithNumberFormat.h"
 
 @class IOSObjectArray;
 @class JavaLangFloat;
 @class JavaUtilLocale;
 
-@interface CucumberRuntimeXstreamFloatConverter : CucumberRuntimeXstreamConverterWithNumberFormat
+@interface CCBRFloatConverter : CCBRConverterWithNumberFormat
 
 #pragma mark Public
 
@@ -48,15 +48,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamFloatConverter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRFloatConverter)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamFloatConverter_initWithJavaUtilLocale_(CucumberRuntimeXstreamFloatConverter *self, JavaUtilLocale *locale);
+FOUNDATION_EXPORT void CCBRFloatConverter_initWithJavaUtilLocale_(CCBRFloatConverter *self, JavaUtilLocale *locale);
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamFloatConverter *new_CucumberRuntimeXstreamFloatConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRFloatConverter *new_CCBRFloatConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamFloatConverter *create_CucumberRuntimeXstreamFloatConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale);
+FOUNDATION_EXPORT CCBRFloatConverter *create_CCBRFloatConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamFloatConverter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRFloatConverter)
+
+@compatibility_alias CucumberRuntimeXstreamFloatConverter CCBRFloatConverter;
 
 #endif
 

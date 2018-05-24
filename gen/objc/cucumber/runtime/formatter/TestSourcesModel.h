@@ -18,43 +18,43 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeFormatterTestSourcesModel_) && (INCLUDE_ALL_CucumberRuntimeFormatterTestSourcesModel || defined(INCLUDE_CucumberRuntimeFormatterTestSourcesModel))
-#define CucumberRuntimeFormatterTestSourcesModel_
+#if !defined (CCBRTestSourcesModel_) && (INCLUDE_ALL_CucumberRuntimeFormatterTestSourcesModel || defined(INCLUDE_CCBRTestSourcesModel))
+#define CCBRTestSourcesModel_
 
-@class CucumberApiEventTestSourceRead;
-@class CucumberRuntimeFormatterTestSourcesModel_AstNode;
+@class CCBRTestSourcesModel_AstNode;
+@class CCBTestSourceRead;
 @class GherkinAstBackground;
 @class GherkinAstFeature;
 @class GherkinAstScenarioDefinition;
 
-@interface CucumberRuntimeFormatterTestSourcesModel : NSObject
+@interface CCBRTestSourcesModel : NSObject
 
 #pragma mark Package-Private
 
 - (instancetype __nonnull)init;
 
 - (void)addTestSourceReadEventWithNSString:(NSString *)path
-        withCucumberApiEventTestSourceRead:(CucumberApiEventTestSourceRead *)event;
+                     withCCBTestSourceRead:(CCBTestSourceRead *)event;
 
-+ (NSString *)calculateIdWithCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)astNode;
++ (NSString *)calculateIdWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode;
 
 + (NSString *)convertToIdWithNSString:(NSString *)name;
 
-- (CucumberRuntimeFormatterTestSourcesModel_AstNode *)getAstNodeWithNSString:(NSString *)path
-                                                                     withInt:(jint)line;
+- (CCBRTestSourcesModel_AstNode *)getAstNodeWithNSString:(NSString *)path
+                                                 withInt:(jint)line;
 
-+ (GherkinAstBackground *)getBackgroundForTestCaseWithCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)astNode;
++ (GherkinAstBackground *)getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode;
 
 - (GherkinAstFeature *)getFeatureWithNSString:(NSString *)path;
 
-+ (GherkinAstFeature *)getFeatureForTestCaseWithCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)astNode;
++ (GherkinAstFeature *)getFeatureForTestCaseWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode;
 
 - (NSString *)getFeatureNameWithNSString:(NSString *)uri;
 
 - (NSString *)getKeywordFromSourceWithNSString:(NSString *)uri
                                        withInt:(jint)stepLine;
 
-+ (GherkinAstScenarioDefinition *)getScenarioDefinitionWithCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)astNode;
++ (GherkinAstScenarioDefinition *)getScenarioDefinitionWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode;
 
 - (GherkinAstScenarioDefinition *)getScenarioDefinitionWithNSString:(NSString *)path
                                                             withInt:(jint)line;
@@ -62,58 +62,60 @@
 - (jboolean)hasBackgroundWithNSString:(NSString *)path
                               withInt:(jint)line;
 
-+ (jboolean)isBackgroundStepWithCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)astNode;
++ (jboolean)isBackgroundStepWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode;
 
-+ (jboolean)isScenarioOutlineScenarioWithCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)astNode;
++ (jboolean)isScenarioOutlineScenarioWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterTestSourcesModel)
+J2OBJC_EMPTY_STATIC_INIT(CCBRTestSourcesModel)
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterTestSourcesModel_init(CucumberRuntimeFormatterTestSourcesModel *self);
+FOUNDATION_EXPORT void CCBRTestSourcesModel_init(CCBRTestSourcesModel *self);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterTestSourcesModel *new_CucumberRuntimeFormatterTestSourcesModel_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRTestSourcesModel *new_CCBRTestSourcesModel_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterTestSourcesModel *create_CucumberRuntimeFormatterTestSourcesModel_init(void);
+FOUNDATION_EXPORT CCBRTestSourcesModel *create_CCBRTestSourcesModel_init(void);
 
-FOUNDATION_EXPORT GherkinAstFeature *CucumberRuntimeFormatterTestSourcesModel_getFeatureForTestCaseWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode);
+FOUNDATION_EXPORT GherkinAstFeature *CCBRTestSourcesModel_getFeatureForTestCaseWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode);
 
-FOUNDATION_EXPORT GherkinAstBackground *CucumberRuntimeFormatterTestSourcesModel_getBackgroundForTestCaseWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode);
+FOUNDATION_EXPORT GherkinAstBackground *CCBRTestSourcesModel_getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode);
 
-FOUNDATION_EXPORT GherkinAstScenarioDefinition *CucumberRuntimeFormatterTestSourcesModel_getScenarioDefinitionWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode);
+FOUNDATION_EXPORT GherkinAstScenarioDefinition *CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode);
 
-FOUNDATION_EXPORT jboolean CucumberRuntimeFormatterTestSourcesModel_isScenarioOutlineScenarioWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode);
+FOUNDATION_EXPORT jboolean CCBRTestSourcesModel_isScenarioOutlineScenarioWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode);
 
-FOUNDATION_EXPORT jboolean CucumberRuntimeFormatterTestSourcesModel_isBackgroundStepWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode);
+FOUNDATION_EXPORT jboolean CCBRTestSourcesModel_isBackgroundStepWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode);
 
-FOUNDATION_EXPORT NSString *CucumberRuntimeFormatterTestSourcesModel_calculateIdWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode);
+FOUNDATION_EXPORT NSString *CCBRTestSourcesModel_calculateIdWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode);
 
-FOUNDATION_EXPORT NSString *CucumberRuntimeFormatterTestSourcesModel_convertToIdWithNSString_(NSString *name);
+FOUNDATION_EXPORT NSString *CCBRTestSourcesModel_convertToIdWithNSString_(NSString *name);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterTestSourcesModel)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRTestSourcesModel)
+
+@compatibility_alias CucumberRuntimeFormatterTestSourcesModel CCBRTestSourcesModel;
 
 #endif
 
-#if !defined (CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode_) && (INCLUDE_ALL_CucumberRuntimeFormatterTestSourcesModel || defined(INCLUDE_CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode))
-#define CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode_
+#if !defined (CCBRTestSourcesModel_ExamplesRowWrapperNode_) && (INCLUDE_ALL_CucumberRuntimeFormatterTestSourcesModel || defined(INCLUDE_CCBRTestSourcesModel_ExamplesRowWrapperNode))
+#define CCBRTestSourcesModel_ExamplesRowWrapperNode_
 
 #define RESTRICT_GherkinAstNode 1
 #define INCLUDE_GherkinAstNode 1
 #include "gherkin/ast/Node.h"
 
-@class CucumberRuntimeFormatterTestSourcesModel;
+@class CCBRTestSourcesModel;
 @class GherkinAstLocation;
 
-@interface CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode : GherkinAstNode {
+@interface CCBRTestSourcesModel_ExamplesRowWrapperNode : GherkinAstNode {
  @public
   jint bodyRowIndex_;
 }
 
 #pragma mark Package-Private
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterTestSourcesModel:(CucumberRuntimeFormatterTestSourcesModel *)outer$
-                                                        withGherkinAstNode:(GherkinAstNode *)examplesRow
-                                                                   withInt:(jint)bodyRowIndex;
+- (instancetype __nonnull)initWithCCBRTestSourcesModel:(CCBRTestSourcesModel *)outer$
+                                    withGherkinAstNode:(GherkinAstNode *)examplesRow
+                                               withInt:(jint)bodyRowIndex;
 
 // Disallowed inherited constructors, do not use.
 
@@ -121,35 +123,35 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterTestSourcesModel)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode)
+J2OBJC_EMPTY_STATIC_INIT(CCBRTestSourcesModel_ExamplesRowWrapperNode)
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withInt_(CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode *self, CucumberRuntimeFormatterTestSourcesModel *outer$, GherkinAstNode *examplesRow, jint bodyRowIndex);
+FOUNDATION_EXPORT void CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withInt_(CCBRTestSourcesModel_ExamplesRowWrapperNode *self, CCBRTestSourcesModel *outer$, GherkinAstNode *examplesRow, jint bodyRowIndex);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode *new_CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withInt_(CucumberRuntimeFormatterTestSourcesModel *outer$, GherkinAstNode *examplesRow, jint bodyRowIndex) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRTestSourcesModel_ExamplesRowWrapperNode *new_CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withInt_(CCBRTestSourcesModel *outer$, GherkinAstNode *examplesRow, jint bodyRowIndex) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode *create_CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withInt_(CucumberRuntimeFormatterTestSourcesModel *outer$, GherkinAstNode *examplesRow, jint bodyRowIndex);
+FOUNDATION_EXPORT CCBRTestSourcesModel_ExamplesRowWrapperNode *create_CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withInt_(CCBRTestSourcesModel *outer$, GherkinAstNode *examplesRow, jint bodyRowIndex);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterTestSourcesModel_ExamplesRowWrapperNode)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRTestSourcesModel_ExamplesRowWrapperNode)
 
 #endif
 
-#if !defined (CucumberRuntimeFormatterTestSourcesModel_AstNode_) && (INCLUDE_ALL_CucumberRuntimeFormatterTestSourcesModel || defined(INCLUDE_CucumberRuntimeFormatterTestSourcesModel_AstNode))
-#define CucumberRuntimeFormatterTestSourcesModel_AstNode_
+#if !defined (CCBRTestSourcesModel_AstNode_) && (INCLUDE_ALL_CucumberRuntimeFormatterTestSourcesModel || defined(INCLUDE_CCBRTestSourcesModel_AstNode))
+#define CCBRTestSourcesModel_AstNode_
 
-@class CucumberRuntimeFormatterTestSourcesModel;
+@class CCBRTestSourcesModel;
 @class GherkinAstNode;
 
-@interface CucumberRuntimeFormatterTestSourcesModel_AstNode : NSObject {
+@interface CCBRTestSourcesModel_AstNode : NSObject {
  @public
   GherkinAstNode *node_;
-  CucumberRuntimeFormatterTestSourcesModel_AstNode *parent_;
+  CCBRTestSourcesModel_AstNode *parent_;
 }
 
 #pragma mark Package-Private
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterTestSourcesModel:(CucumberRuntimeFormatterTestSourcesModel *)outer$
-                                                        withGherkinAstNode:(GherkinAstNode *)node
-                      withCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)parent;
+- (instancetype __nonnull)initWithCCBRTestSourcesModel:(CCBRTestSourcesModel *)outer$
+                                    withGherkinAstNode:(GherkinAstNode *)node
+                      withCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)parent;
 
 // Disallowed inherited constructors, do not use.
 
@@ -157,18 +159,18 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterTestSourcesModel_ExamplesRowW
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterTestSourcesModel_AstNode)
+J2OBJC_EMPTY_STATIC_INIT(CCBRTestSourcesModel_AstNode)
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterTestSourcesModel_AstNode, node_, GherkinAstNode *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterTestSourcesModel_AstNode, parent_, CucumberRuntimeFormatterTestSourcesModel_AstNode *)
+J2OBJC_FIELD_SETTER(CCBRTestSourcesModel_AstNode, node_, GherkinAstNode *)
+J2OBJC_FIELD_SETTER(CCBRTestSourcesModel_AstNode, parent_, CCBRTestSourcesModel_AstNode *)
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterTestSourcesModel_AstNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel_AstNode *self, CucumberRuntimeFormatterTestSourcesModel *outer$, GherkinAstNode *node, CucumberRuntimeFormatterTestSourcesModel_AstNode *parent);
+FOUNDATION_EXPORT void CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *self, CCBRTestSourcesModel *outer$, GherkinAstNode *node, CCBRTestSourcesModel_AstNode *parent);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterTestSourcesModel_AstNode *new_CucumberRuntimeFormatterTestSourcesModel_AstNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel *outer$, GherkinAstNode *node, CucumberRuntimeFormatterTestSourcesModel_AstNode *parent) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRTestSourcesModel_AstNode *new_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *outer$, GherkinAstNode *node, CCBRTestSourcesModel_AstNode *parent) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterTestSourcesModel_AstNode *create_CucumberRuntimeFormatterTestSourcesModel_AstNode_initWithCucumberRuntimeFormatterTestSourcesModel_withGherkinAstNode_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterTestSourcesModel *outer$, GherkinAstNode *node, CucumberRuntimeFormatterTestSourcesModel_AstNode *parent);
+FOUNDATION_EXPORT CCBRTestSourcesModel_AstNode *create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *outer$, GherkinAstNode *node, CCBRTestSourcesModel_AstNode *parent);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterTestSourcesModel_AstNode)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRTestSourcesModel_AstNode)
 
 #endif
 

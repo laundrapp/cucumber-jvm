@@ -55,19 +55,19 @@
 
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@interface CucumberRuntimeFormatterPluginFactory () {
+@interface CCBRPluginFactory () {
  @public
   IOSObjectArray *CTOR_PARAMETERS_;
   NSString *defaultOutFormatter_;
   id<JavaLangAppendable> defaultOut_;
 }
 
-- (id<CucumberApiPlugin>)instantiateWithNSString:(NSString *)pluginString
-                                    withIOSClass:(IOSClass *)pluginClass
-                                    withNSString:(NSString *)argument;
+- (id<CCBPlugin>)instantiateWithNSString:(NSString *)pluginString
+                            withIOSClass:(IOSClass *)pluginClass
+                            withNSString:(NSString *)argument;
 
-- (id<CucumberApiPlugin>)newInstanceWithJavaLangReflectConstructor:(JavaLangReflectConstructor *)constructor
-                                                 withNSObjectArray:(IOSObjectArray *)ctorArgs OBJC_METHOD_FAMILY_NONE;
+- (id<CCBPlugin>)newInstanceWithJavaLangReflectConstructor:(JavaLangReflectConstructor *)constructor
+                                         withNSObjectArray:(IOSObjectArray *)ctorArgs OBJC_METHOD_FAMILY_NONE;
 
 - (id)convertOrNullWithNSString:(NSString *)arg
                    withIOSClass:(IOSClass *)ctorArgClass
@@ -87,37 +87,37 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterPluginFactory, CTOR_PARAMETERS_, IOSObjectArray *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterPluginFactory, defaultOutFormatter_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterPluginFactory, defaultOut_, id<JavaLangAppendable>)
+J2OBJC_FIELD_SETTER(CCBRPluginFactory, CTOR_PARAMETERS_, IOSObjectArray *)
+J2OBJC_FIELD_SETTER(CCBRPluginFactory, defaultOutFormatter_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRPluginFactory, defaultOut_, id<JavaLangAppendable>)
 
-inline JavaUtilHashMap *CucumberRuntimeFormatterPluginFactory_get_PLUGIN_CLASSES(void);
-static JavaUtilHashMap *CucumberRuntimeFormatterPluginFactory_PLUGIN_CLASSES;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeFormatterPluginFactory, PLUGIN_CLASSES, JavaUtilHashMap *)
+inline JavaUtilHashMap *CCBRPluginFactory_get_PLUGIN_CLASSES(void);
+static JavaUtilHashMap *CCBRPluginFactory_PLUGIN_CLASSES;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRPluginFactory, PLUGIN_CLASSES, JavaUtilHashMap *)
 
-inline JavaUtilRegexPattern *CucumberRuntimeFormatterPluginFactory_get_PLUGIN_WITH_ARGUMENT_PATTERN(void);
-static JavaUtilRegexPattern *CucumberRuntimeFormatterPluginFactory_PLUGIN_WITH_ARGUMENT_PATTERN;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeFormatterPluginFactory, PLUGIN_WITH_ARGUMENT_PATTERN, JavaUtilRegexPattern *)
+inline JavaUtilRegexPattern *CCBRPluginFactory_get_PLUGIN_WITH_ARGUMENT_PATTERN(void);
+static JavaUtilRegexPattern *CCBRPluginFactory_PLUGIN_WITH_ARGUMENT_PATTERN;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRPluginFactory, PLUGIN_WITH_ARGUMENT_PATTERN, JavaUtilRegexPattern *)
 
-__attribute__((unused)) static id<CucumberApiPlugin> CucumberRuntimeFormatterPluginFactory_instantiateWithNSString_withIOSClass_withNSString_(CucumberRuntimeFormatterPluginFactory *self, NSString *pluginString, IOSClass *pluginClass, NSString *argument);
+__attribute__((unused)) static id<CCBPlugin> CCBRPluginFactory_instantiateWithNSString_withIOSClass_withNSString_(CCBRPluginFactory *self, NSString *pluginString, IOSClass *pluginClass, NSString *argument);
 
-__attribute__((unused)) static id<CucumberApiPlugin> CucumberRuntimeFormatterPluginFactory_newInstanceWithJavaLangReflectConstructor_withNSObjectArray_(CucumberRuntimeFormatterPluginFactory *self, JavaLangReflectConstructor *constructor, IOSObjectArray *ctorArgs);
+__attribute__((unused)) static id<CCBPlugin> CCBRPluginFactory_newInstanceWithJavaLangReflectConstructor_withNSObjectArray_(CCBRPluginFactory *self, JavaLangReflectConstructor *constructor, IOSObjectArray *ctorArgs);
 
-__attribute__((unused)) static id CucumberRuntimeFormatterPluginFactory_convertOrNullWithNSString_withIOSClass_withNSString_(CucumberRuntimeFormatterPluginFactory *self, NSString *arg, IOSClass *ctorArgClass, NSString *formatterString);
+__attribute__((unused)) static id CCBRPluginFactory_convertOrNullWithNSString_withIOSClass_withNSString_(CCBRPluginFactory *self, NSString *arg, IOSClass *ctorArgClass, NSString *formatterString);
 
-__attribute__((unused)) static JavaLangReflectConstructor *CucumberRuntimeFormatterPluginFactory_findSingleArgConstructorWithIOSClass_(CucumberRuntimeFormatterPluginFactory *self, IOSClass *pluginClass);
+__attribute__((unused)) static JavaLangReflectConstructor *CCBRPluginFactory_findSingleArgConstructorWithIOSClass_(CCBRPluginFactory *self, IOSClass *pluginClass);
 
-__attribute__((unused)) static JavaLangReflectConstructor *CucumberRuntimeFormatterPluginFactory_findEmptyConstructorWithIOSClass_(CucumberRuntimeFormatterPluginFactory *self, IOSClass *pluginClass);
+__attribute__((unused)) static JavaLangReflectConstructor *CCBRPluginFactory_findEmptyConstructorWithIOSClass_(CCBRPluginFactory *self, IOSClass *pluginClass);
 
-__attribute__((unused)) static IOSClass *CucumberRuntimeFormatterPluginFactory_pluginClassWithNSString_(NSString *pluginName);
+__attribute__((unused)) static IOSClass *CCBRPluginFactory_pluginClassWithNSString_(NSString *pluginName);
 
-__attribute__((unused)) static IOSClass *CucumberRuntimeFormatterPluginFactory_loadClassWithNSString_(NSString *className_);
+__attribute__((unused)) static IOSClass *CCBRPluginFactory_loadClassWithNSString_(NSString *className_);
 
-__attribute__((unused)) static id<JavaLangAppendable> CucumberRuntimeFormatterPluginFactory_defaultOutOrFailIfAlreadyUsedWithNSString_(CucumberRuntimeFormatterPluginFactory *self, NSString *formatterString);
+__attribute__((unused)) static id<JavaLangAppendable> CCBRPluginFactory_defaultOutOrFailIfAlreadyUsedWithNSString_(CCBRPluginFactory *self, NSString *formatterString);
 
-__attribute__((unused)) static IOSClass *CucumberRuntimeFormatterPluginFactory_getPluginClassWithNSString_(NSString *name);
+__attribute__((unused)) static IOSClass *CCBRPluginFactory_getPluginClassWithNSString_(NSString *name);
 
-@interface CucumberRuntimeFormatterPluginFactory_1 : JavaUtilHashMap
+@interface CCBRPluginFactory_1 : JavaUtilHashMap
 
 - (instancetype __nonnull)init;
 
@@ -152,15 +152,15 @@ withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg2;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterPluginFactory_1)
+J2OBJC_EMPTY_STATIC_INIT(CCBRPluginFactory_1)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPluginFactory_1_init(CucumberRuntimeFormatterPluginFactory_1 *self);
+__attribute__((unused)) static void CCBRPluginFactory_1_init(CCBRPluginFactory_1 *self);
 
-__attribute__((unused)) static CucumberRuntimeFormatterPluginFactory_1 *new_CucumberRuntimeFormatterPluginFactory_1_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRPluginFactory_1 *new_CCBRPluginFactory_1_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterPluginFactory_1 *create_CucumberRuntimeFormatterPluginFactory_1_init(void);
+__attribute__((unused)) static CCBRPluginFactory_1 *create_CCBRPluginFactory_1_init(void);
 
-@interface CucumberRuntimeFormatterPluginFactory_2 : JavaIoPrintStream
+@interface CCBRPluginFactory_2 : JavaIoPrintStream
 
 - (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)x0;
 
@@ -168,27 +168,27 @@ __attribute__((unused)) static CucumberRuntimeFormatterPluginFactory_1 *create_C
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterPluginFactory_2)
+J2OBJC_EMPTY_STATIC_INIT(CCBRPluginFactory_2)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPluginFactory_2_initWithJavaIoOutputStream_(CucumberRuntimeFormatterPluginFactory_2 *self, JavaIoOutputStream *x0);
+__attribute__((unused)) static void CCBRPluginFactory_2_initWithJavaIoOutputStream_(CCBRPluginFactory_2 *self, JavaIoOutputStream *x0);
 
-__attribute__((unused)) static CucumberRuntimeFormatterPluginFactory_2 *new_CucumberRuntimeFormatterPluginFactory_2_initWithJavaIoOutputStream_(JavaIoOutputStream *x0) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRPluginFactory_2 *new_CCBRPluginFactory_2_initWithJavaIoOutputStream_(JavaIoOutputStream *x0) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterPluginFactory_2 *create_CucumberRuntimeFormatterPluginFactory_2_initWithJavaIoOutputStream_(JavaIoOutputStream *x0);
+__attribute__((unused)) static CCBRPluginFactory_2 *create_CCBRPluginFactory_2_initWithJavaIoOutputStream_(JavaIoOutputStream *x0);
 
-J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFormatterPluginFactory)
+J2OBJC_INITIALIZED_DEFN(CCBRPluginFactory)
 
-@implementation CucumberRuntimeFormatterPluginFactory
+@implementation CCBRPluginFactory
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeFormatterPluginFactory_init(self);
+  CCBRPluginFactory_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (id<CucumberApiPlugin>)createWithNSString:(NSString *)pluginString {
-  JavaUtilRegexMatcher *pluginWithArgument = [((JavaUtilRegexPattern *) nil_chk(CucumberRuntimeFormatterPluginFactory_PLUGIN_WITH_ARGUMENT_PATTERN)) matcherWithJavaLangCharSequence:pluginString];
+- (id<CCBPlugin>)createWithNSString:(NSString *)pluginString {
+  JavaUtilRegexMatcher *pluginWithArgument = [((JavaUtilRegexPattern *) nil_chk(CCBRPluginFactory_PLUGIN_WITH_ARGUMENT_PATTERN)) matcherWithJavaLangCharSequence:pluginString];
   NSString *pluginName;
   NSString *argument;
   if ([((JavaUtilRegexMatcher *) nil_chk(pluginWithArgument)) matches]) {
@@ -199,69 +199,69 @@ J2OBJC_IGNORE_DESIGNATED_END
     pluginName = pluginString;
     argument = nil;
   }
-  IOSClass *pluginClass = CucumberRuntimeFormatterPluginFactory_pluginClassWithNSString_(pluginName);
+  IOSClass *pluginClass = CCBRPluginFactory_pluginClassWithNSString_(pluginName);
   @try {
-    return CucumberRuntimeFormatterPluginFactory_instantiateWithNSString_withIOSClass_withNSString_(self, pluginString, pluginClass, argument);
+    return CCBRPluginFactory_instantiateWithNSString_withIOSClass_withNSString_(self, pluginString, pluginClass, argument);
   }
   @catch (JavaIoIOException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithJavaLangThrowable_(e);
+    @throw create_CCBRCucumberException_initWithJavaLangThrowable_(e);
   }
   @catch (JavaNetURISyntaxException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithJavaLangThrowable_(e);
+    @throw create_CCBRCucumberException_initWithJavaLangThrowable_(e);
   }
 }
 
-- (id<CucumberApiPlugin>)instantiateWithNSString:(NSString *)pluginString
-                                    withIOSClass:(IOSClass *)pluginClass
-                                    withNSString:(NSString *)argument {
-  return CucumberRuntimeFormatterPluginFactory_instantiateWithNSString_withIOSClass_withNSString_(self, pluginString, pluginClass, argument);
+- (id<CCBPlugin>)instantiateWithNSString:(NSString *)pluginString
+                            withIOSClass:(IOSClass *)pluginClass
+                            withNSString:(NSString *)argument {
+  return CCBRPluginFactory_instantiateWithNSString_withIOSClass_withNSString_(self, pluginString, pluginClass, argument);
 }
 
-- (id<CucumberApiPlugin>)newInstanceWithJavaLangReflectConstructor:(JavaLangReflectConstructor *)constructor
-                                                 withNSObjectArray:(IOSObjectArray *)ctorArgs {
-  return CucumberRuntimeFormatterPluginFactory_newInstanceWithJavaLangReflectConstructor_withNSObjectArray_(self, constructor, ctorArgs);
+- (id<CCBPlugin>)newInstanceWithJavaLangReflectConstructor:(JavaLangReflectConstructor *)constructor
+                                         withNSObjectArray:(IOSObjectArray *)ctorArgs {
+  return CCBRPluginFactory_newInstanceWithJavaLangReflectConstructor_withNSObjectArray_(self, constructor, ctorArgs);
 }
 
 - (id)convertOrNullWithNSString:(NSString *)arg
                    withIOSClass:(IOSClass *)ctorArgClass
                    withNSString:(NSString *)formatterString {
-  return CucumberRuntimeFormatterPluginFactory_convertOrNullWithNSString_withIOSClass_withNSString_(self, arg, ctorArgClass, formatterString);
+  return CCBRPluginFactory_convertOrNullWithNSString_withIOSClass_withNSString_(self, arg, ctorArgClass, formatterString);
 }
 
 - (JavaLangReflectConstructor *)findSingleArgConstructorWithIOSClass:(IOSClass *)pluginClass {
-  return CucumberRuntimeFormatterPluginFactory_findSingleArgConstructorWithIOSClass_(self, pluginClass);
+  return CCBRPluginFactory_findSingleArgConstructorWithIOSClass_(self, pluginClass);
 }
 
 - (JavaLangReflectConstructor *)findEmptyConstructorWithIOSClass:(IOSClass *)pluginClass {
-  return CucumberRuntimeFormatterPluginFactory_findEmptyConstructorWithIOSClass_(self, pluginClass);
+  return CCBRPluginFactory_findEmptyConstructorWithIOSClass_(self, pluginClass);
 }
 
 + (IOSClass *)pluginClassWithNSString:(NSString *)pluginName {
-  return CucumberRuntimeFormatterPluginFactory_pluginClassWithNSString_(pluginName);
+  return CCBRPluginFactory_pluginClassWithNSString_(pluginName);
 }
 
 + (IOSClass *)loadClassWithNSString:(NSString *)className_ {
-  return CucumberRuntimeFormatterPluginFactory_loadClassWithNSString_(className_);
+  return CCBRPluginFactory_loadClassWithNSString_(className_);
 }
 
 - (id<JavaLangAppendable>)defaultOutOrFailIfAlreadyUsedWithNSString:(NSString *)formatterString {
-  return CucumberRuntimeFormatterPluginFactory_defaultOutOrFailIfAlreadyUsedWithNSString_(self, formatterString);
+  return CCBRPluginFactory_defaultOutOrFailIfAlreadyUsedWithNSString_(self, formatterString);
 }
 
 + (jboolean)isFormatterNameWithNSString:(NSString *)name {
-  return CucumberRuntimeFormatterPluginFactory_isFormatterNameWithNSString_(name);
+  return CCBRPluginFactory_isFormatterNameWithNSString_(name);
 }
 
 + (jboolean)isStepDefinitionReporterNameWithNSString:(NSString *)name {
-  return CucumberRuntimeFormatterPluginFactory_isStepDefinitionReporterNameWithNSString_(name);
+  return CCBRPluginFactory_isStepDefinitionReporterNameWithNSString_(name);
 }
 
 + (jboolean)isSummaryPrinterNameWithNSString:(NSString *)name {
-  return CucumberRuntimeFormatterPluginFactory_isSummaryPrinterNameWithNSString_(name);
+  return CCBRPluginFactory_isSummaryPrinterNameWithNSString_(name);
 }
 
 + (IOSClass *)getPluginClassWithNSString:(NSString *)name {
-  return CucumberRuntimeFormatterPluginFactory_getPluginClassWithNSString_(name);
+  return CCBRPluginFactory_getPluginClassWithNSString_(name);
 }
 
 - (void)dealloc {
@@ -274,9 +274,9 @@ J2OBJC_IGNORE_DESIGNATED_END
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LCucumberApiPlugin;", 0x1, 0, 1, -1, -1, -1, -1 },
-    { NULL, "LCucumberApiPlugin;", 0x2, 2, 3, 4, 5, -1, -1 },
-    { NULL, "LCucumberApiPlugin;", 0x82, 6, 7, -1, 8, -1, -1 },
+    { NULL, "LCCBPlugin;", 0x1, 0, 1, -1, -1, -1, -1 },
+    { NULL, "LCCBPlugin;", 0x2, 2, 3, 4, 5, -1, -1 },
+    { NULL, "LCCBPlugin;", 0x82, 6, 7, -1, 8, -1, -1 },
     { NULL, "LNSObject;", 0x2, 9, 3, 4, -1, -1, -1 },
     { NULL, "LJavaLangReflectConstructor;", 0x2, 10, 11, -1, 12, -1, -1 },
     { NULL, "LJavaLangReflectConstructor;", 0x2, 13, 11, -1, 12, -1, -1 },
@@ -313,69 +313,69 @@ J2OBJC_IGNORE_DESIGNATED_END
     { "defaultOutFormatter_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "defaultOut_", "LJavaLangAppendable;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "create", "LNSString;", "instantiate", "LNSString;LIOSClass;LNSString;", "LJavaIoIOException;LJavaNetURISyntaxException;", "<T::Lcucumber/api/Plugin;>(Ljava/lang/String;Ljava/lang/Class<TT;>;Ljava/lang/String;)TT;", "newInstance", "LJavaLangReflectConstructor;[LNSObject;", "<T::Lcucumber/api/Plugin;>(Ljava/lang/reflect/Constructor<TT;>;[Ljava/lang/Object;)TT;", "convertOrNull", "findSingleArgConstructor", "LIOSClass;", "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;)Ljava/lang/reflect/Constructor<TT;>;", "findEmptyConstructor", "pluginClass", "(Ljava/lang/String;)Ljava/lang/Class<+Lcucumber/api/Plugin;>;", "loadClass", "defaultOutOrFailIfAlreadyUsed", "isFormatterName", "isStepDefinitionReporterName", "isSummaryPrinterName", "getPluginClass", &CucumberRuntimeFormatterPluginFactory_PLUGIN_CLASSES, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Class<+Lcucumber/api/Plugin;>;>;", &CucumberRuntimeFormatterPluginFactory_PLUGIN_WITH_ARGUMENT_PATTERN };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterPluginFactory = { "PluginFactory", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x11, 14, 5, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeFormatterPluginFactory;
+  static const void *ptrTable[] = { "create", "LNSString;", "instantiate", "LNSString;LIOSClass;LNSString;", "LJavaIoIOException;LJavaNetURISyntaxException;", "<T::Lcucumber/api/Plugin;>(Ljava/lang/String;Ljava/lang/Class<TT;>;Ljava/lang/String;)TT;", "newInstance", "LJavaLangReflectConstructor;[LNSObject;", "<T::Lcucumber/api/Plugin;>(Ljava/lang/reflect/Constructor<TT;>;[Ljava/lang/Object;)TT;", "convertOrNull", "findSingleArgConstructor", "LIOSClass;", "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;)Ljava/lang/reflect/Constructor<TT;>;", "findEmptyConstructor", "pluginClass", "(Ljava/lang/String;)Ljava/lang/Class<+Lcucumber/api/Plugin;>;", "loadClass", "defaultOutOrFailIfAlreadyUsed", "isFormatterName", "isStepDefinitionReporterName", "isSummaryPrinterName", "getPluginClass", &CCBRPluginFactory_PLUGIN_CLASSES, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Class<+Lcucumber/api/Plugin;>;>;", &CCBRPluginFactory_PLUGIN_WITH_ARGUMENT_PATTERN };
+  static const J2ObjcClassInfo _CCBRPluginFactory = { "PluginFactory", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x11, 14, 5, -1, -1, -1, -1, -1 };
+  return &_CCBRPluginFactory;
 }
 
 + (void)initialize {
-  if (self == [CucumberRuntimeFormatterPluginFactory class]) {
-    JreStrongAssignAndConsume(&CucumberRuntimeFormatterPluginFactory_PLUGIN_CLASSES, new_CucumberRuntimeFormatterPluginFactory_1_init());
-    JreStrongAssign(&CucumberRuntimeFormatterPluginFactory_PLUGIN_WITH_ARGUMENT_PATTERN, JavaUtilRegexPattern_compileWithNSString_(@"([^:]+):(.*)"));
-    J2OBJC_SET_INITIALIZED(CucumberRuntimeFormatterPluginFactory)
+  if (self == [CCBRPluginFactory class]) {
+    JreStrongAssignAndConsume(&CCBRPluginFactory_PLUGIN_CLASSES, new_CCBRPluginFactory_1_init());
+    JreStrongAssign(&CCBRPluginFactory_PLUGIN_WITH_ARGUMENT_PATTERN, JavaUtilRegexPattern_compileWithNSString_(@"([^:]+):(.*)"));
+    J2OBJC_SET_INITIALIZED(CCBRPluginFactory)
   }
 }
 
 @end
 
-void CucumberRuntimeFormatterPluginFactory_init(CucumberRuntimeFormatterPluginFactory *self) {
+void CCBRPluginFactory_init(CCBRPluginFactory *self) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->CTOR_PARAMETERS_, [IOSObjectArray newArrayWithObjects:(id[]){ NSString_class_(), JavaLangAppendable_class_(), JavaNetURI_class_(), JavaNetURL_class_(), JavaIoFile_class_() } count:5 type:IOSClass_class_()]);
   JreStrongAssign(&self->defaultOutFormatter_, nil);
-  JreStrongAssignAndConsume(&self->defaultOut_, new_CucumberRuntimeFormatterPluginFactory_2_initWithJavaIoOutputStream_(JreLoadStatic(JavaLangSystem, out)));
+  JreStrongAssignAndConsume(&self->defaultOut_, new_CCBRPluginFactory_2_initWithJavaIoOutputStream_(JreLoadStatic(JavaLangSystem, out)));
 }
 
-CucumberRuntimeFormatterPluginFactory *new_CucumberRuntimeFormatterPluginFactory_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterPluginFactory, init)
+CCBRPluginFactory *new_CCBRPluginFactory_init() {
+  J2OBJC_NEW_IMPL(CCBRPluginFactory, init)
 }
 
-CucumberRuntimeFormatterPluginFactory *create_CucumberRuntimeFormatterPluginFactory_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterPluginFactory, init)
+CCBRPluginFactory *create_CCBRPluginFactory_init() {
+  J2OBJC_CREATE_IMPL(CCBRPluginFactory, init)
 }
 
-id<CucumberApiPlugin> CucumberRuntimeFormatterPluginFactory_instantiateWithNSString_withIOSClass_withNSString_(CucumberRuntimeFormatterPluginFactory *self, NSString *pluginString, IOSClass *pluginClass, NSString *argument) {
-  JavaLangReflectConstructor *single = CucumberRuntimeFormatterPluginFactory_findSingleArgConstructorWithIOSClass_(self, pluginClass);
-  JavaLangReflectConstructor *empty = CucumberRuntimeFormatterPluginFactory_findEmptyConstructorWithIOSClass_(self, pluginClass);
+id<CCBPlugin> CCBRPluginFactory_instantiateWithNSString_withIOSClass_withNSString_(CCBRPluginFactory *self, NSString *pluginString, IOSClass *pluginClass, NSString *argument) {
+  JavaLangReflectConstructor *single = CCBRPluginFactory_findSingleArgConstructorWithIOSClass_(self, pluginClass);
+  JavaLangReflectConstructor *empty = CCBRPluginFactory_findEmptyConstructorWithIOSClass_(self, pluginClass);
   if (single != nil) {
-    id ctorArg = CucumberRuntimeFormatterPluginFactory_convertOrNullWithNSString_withIOSClass_withNSString_(self, argument, IOSObjectArray_Get(nil_chk([single getParameterTypes]), 0), pluginString);
-    if (ctorArg != nil) return CucumberRuntimeFormatterPluginFactory_newInstanceWithJavaLangReflectConstructor_withNSObjectArray_(self, single, [IOSObjectArray arrayWithObjects:(id[]){ ctorArg } count:1 type:NSObject_class_()]);
+    id ctorArg = CCBRPluginFactory_convertOrNullWithNSString_withIOSClass_withNSString_(self, argument, IOSObjectArray_Get(nil_chk([single getParameterTypes]), 0), pluginString);
+    if (ctorArg != nil) return CCBRPluginFactory_newInstanceWithJavaLangReflectConstructor_withNSObjectArray_(self, single, [IOSObjectArray arrayWithObjects:(id[]){ ctorArg } count:1 type:NSObject_class_()]);
   }
   if (argument == nil && empty != nil) {
-    return CucumberRuntimeFormatterPluginFactory_newInstanceWithJavaLangReflectConstructor_withNSObjectArray_(self, empty, [IOSObjectArray arrayWithLength:0 type:NSObject_class_()]);
+    return CCBRPluginFactory_newInstanceWithJavaLangReflectConstructor_withNSObjectArray_(self, empty, [IOSObjectArray arrayWithLength:0 type:NSObject_class_()]);
   }
-  if (single != nil) @throw create_CucumberRuntimeCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"You must supply an output argument to %s. Like so: %s:output", [IOSObjectArray arrayWithObjects:(id[]){ pluginString, pluginString } count:2 type:NSObject_class_()]));
-  @throw create_CucumberRuntimeCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"%s must have a constructor that is either empty or a single arg of one of: %s", [IOSObjectArray arrayWithObjects:(id[]){ pluginClass, JavaUtilArrays_asListWithNSObjectArray_(self->CTOR_PARAMETERS_) } count:2 type:NSObject_class_()]));
+  if (single != nil) @throw create_CCBRCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"You must supply an output argument to %s. Like so: %s:output", [IOSObjectArray arrayWithObjects:(id[]){ pluginString, pluginString } count:2 type:NSObject_class_()]));
+  @throw create_CCBRCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"%s must have a constructor that is either empty or a single arg of one of: %s", [IOSObjectArray arrayWithObjects:(id[]){ pluginClass, JavaUtilArrays_asListWithNSObjectArray_(self->CTOR_PARAMETERS_) } count:2 type:NSObject_class_()]));
 }
 
-id<CucumberApiPlugin> CucumberRuntimeFormatterPluginFactory_newInstanceWithJavaLangReflectConstructor_withNSObjectArray_(CucumberRuntimeFormatterPluginFactory *self, JavaLangReflectConstructor *constructor, IOSObjectArray *ctorArgs) {
+id<CCBPlugin> CCBRPluginFactory_newInstanceWithJavaLangReflectConstructor_withNSObjectArray_(CCBRPluginFactory *self, JavaLangReflectConstructor *constructor, IOSObjectArray *ctorArgs) {
   @try {
     return [((JavaLangReflectConstructor *) nil_chk(constructor)) newInstanceWithNSObjectArray:ctorArgs];
   }
   @catch (JavaLangInstantiationException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithJavaLangThrowable_(e);
+    @throw create_CCBRCucumberException_initWithJavaLangThrowable_(e);
   }
   @catch (JavaLangIllegalAccessException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithJavaLangThrowable_(e);
+    @throw create_CCBRCucumberException_initWithJavaLangThrowable_(e);
   }
   @catch (JavaLangReflectInvocationTargetException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithJavaLangThrowable_([e getTargetException]);
+    @throw create_CCBRCucumberException_initWithJavaLangThrowable_([e getTargetException]);
   }
 }
 
-id CucumberRuntimeFormatterPluginFactory_convertOrNullWithNSString_withIOSClass_withNSString_(CucumberRuntimeFormatterPluginFactory *self, NSString *arg, IOSClass *ctorArgClass, NSString *formatterString) {
+id CCBRPluginFactory_convertOrNullWithNSString_withIOSClass_withNSString_(CCBRPluginFactory *self, NSString *arg, IOSClass *ctorArgClass, NSString *formatterString) {
   if (arg == nil) {
     if ([((IOSClass *) nil_chk(ctorArgClass)) isEqual:JavaLangAppendable_class_()]) {
-      return CucumberRuntimeFormatterPluginFactory_defaultOutOrFailIfAlreadyUsedWithNSString_(self, formatterString);
+      return CCBRPluginFactory_defaultOutOrFailIfAlreadyUsedWithNSString_(self, formatterString);
     }
     else {
       return nil;
@@ -385,7 +385,7 @@ id CucumberRuntimeFormatterPluginFactory_convertOrNullWithNSString_withIOSClass_
     return create_JavaNetURI_initWithNSString_(arg);
   }
   if ([ctorArgClass isEqual:JavaNetURL_class_()]) {
-    return CucumberRuntimeUtils_toURLWithNSString_(arg);
+    return CCBRUtils_toURLWithNSString_(arg);
   }
   if ([ctorArgClass isEqual:JavaIoFile_class_()]) {
     return create_JavaIoFile_initWithNSString_(arg);
@@ -394,12 +394,12 @@ id CucumberRuntimeFormatterPluginFactory_convertOrNullWithNSString_withIOSClass_
     return arg;
   }
   if ([ctorArgClass isEqual:JavaLangAppendable_class_()]) {
-    return create_CucumberRuntimeIoUTF8OutputStreamWriter_initWithJavaIoOutputStream_(create_CucumberRuntimeIoURLOutputStream_initWithJavaNetURL_(CucumberRuntimeUtils_toURLWithNSString_(arg)));
+    return create_CCBRUTF8OutputStreamWriter_initWithJavaIoOutputStream_(create_CCBRURLOutputStream_initWithJavaNetURL_(CCBRUtils_toURLWithNSString_(arg)));
   }
   return nil;
 }
 
-JavaLangReflectConstructor *CucumberRuntimeFormatterPluginFactory_findSingleArgConstructorWithIOSClass_(CucumberRuntimeFormatterPluginFactory *self, IOSClass *pluginClass) {
+JavaLangReflectConstructor *CCBRPluginFactory_findSingleArgConstructorWithIOSClass_(CCBRPluginFactory *self, IOSClass *pluginClass) {
   JavaLangReflectConstructor *constructor = nil;
   {
     IOSObjectArray *a__ = self->CTOR_PARAMETERS_;
@@ -410,7 +410,7 @@ JavaLangReflectConstructor *CucumberRuntimeFormatterPluginFactory_findSingleArgC
       @try {
         JavaLangReflectConstructor *candidate = [((IOSClass *) nil_chk(pluginClass)) getConstructor:[IOSObjectArray arrayWithObjects:(id[]){ ctorArgClass } count:1 type:IOSClass_class_()]];
         if (constructor != nil) {
-          @throw create_CucumberRuntimeCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"Plugin %s should only define a single one-argument constructor", [IOSObjectArray arrayWithObjects:(id[]){ [pluginClass getName] } count:1 type:NSObject_class_()]));
+          @throw create_CCBRCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"Plugin %s should only define a single one-argument constructor", [IOSObjectArray arrayWithObjects:(id[]){ [pluginClass getName] } count:1 type:NSObject_class_()]));
         }
         constructor = candidate;
       }
@@ -421,7 +421,7 @@ JavaLangReflectConstructor *CucumberRuntimeFormatterPluginFactory_findSingleArgC
   return constructor;
 }
 
-JavaLangReflectConstructor *CucumberRuntimeFormatterPluginFactory_findEmptyConstructorWithIOSClass_(CucumberRuntimeFormatterPluginFactory *self, IOSClass *pluginClass) {
+JavaLangReflectConstructor *CCBRPluginFactory_findEmptyConstructorWithIOSClass_(CCBRPluginFactory *self, IOSClass *pluginClass) {
   @try {
     return [((IOSClass *) nil_chk(pluginClass)) getConstructor:[IOSObjectArray arrayWithLength:0 type:IOSClass_class_()]];
   }
@@ -430,37 +430,37 @@ JavaLangReflectConstructor *CucumberRuntimeFormatterPluginFactory_findEmptyConst
   }
 }
 
-IOSClass *CucumberRuntimeFormatterPluginFactory_pluginClassWithNSString_(NSString *pluginName) {
-  CucumberRuntimeFormatterPluginFactory_initialize();
-  IOSClass *pluginClass = [((JavaUtilHashMap *) nil_chk(CucumberRuntimeFormatterPluginFactory_PLUGIN_CLASSES)) getWithId:pluginName];
+IOSClass *CCBRPluginFactory_pluginClassWithNSString_(NSString *pluginName) {
+  CCBRPluginFactory_initialize();
+  IOSClass *pluginClass = [((JavaUtilHashMap *) nil_chk(CCBRPluginFactory_PLUGIN_CLASSES)) getWithId:pluginName];
   if (pluginClass == nil) {
-    pluginClass = CucumberRuntimeFormatterPluginFactory_loadClassWithNSString_(pluginName);
+    pluginClass = CCBRPluginFactory_loadClassWithNSString_(pluginName);
   }
   return pluginClass;
 }
 
-IOSClass *CucumberRuntimeFormatterPluginFactory_loadClassWithNSString_(NSString *className_) {
-  CucumberRuntimeFormatterPluginFactory_initialize();
+IOSClass *CCBRPluginFactory_loadClassWithNSString_(NSString *className_) {
+  CCBRPluginFactory_initialize();
   @try {
     IOSClass *aClass = [((JavaLangClassLoader *) nil_chk([((JavaLangThread *) nil_chk(JavaLangThread_currentThread())) getContextClassLoader])) loadClassWithNSString:className_];
-    if ([CucumberApiPlugin_class_() isAssignableFrom:aClass]) {
+    if ([CCBPlugin_class_() isAssignableFrom:aClass]) {
       return aClass;
     }
-    @throw create_CucumberRuntimeCucumberException_initWithNSString_(JreStrcat("$$$$", @"Couldn't load plugin class: ", className_, @". It does not implement ", [CucumberApiPlugin_class_() getName]));
+    @throw create_CCBRCucumberException_initWithNSString_(JreStrcat("$$$$", @"Couldn't load plugin class: ", className_, @". It does not implement ", [CCBPlugin_class_() getName]));
   }
   @catch (JavaLangClassNotFoundException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithNSString_withJavaLangThrowable_(JreStrcat("$$", @"Couldn't load plugin class: ", className_), e);
+    @throw create_CCBRCucumberException_initWithNSString_withJavaLangThrowable_(JreStrcat("$$", @"Couldn't load plugin class: ", className_), e);
   }
 }
 
-id<JavaLangAppendable> CucumberRuntimeFormatterPluginFactory_defaultOutOrFailIfAlreadyUsedWithNSString_(CucumberRuntimeFormatterPluginFactory *self, NSString *formatterString) {
+id<JavaLangAppendable> CCBRPluginFactory_defaultOutOrFailIfAlreadyUsedWithNSString_(CCBRPluginFactory *self, NSString *formatterString) {
   @try {
     if (self->defaultOut_ != nil) {
       JreStrongAssign(&self->defaultOutFormatter_, formatterString);
       return self->defaultOut_;
     }
     else {
-      @throw create_CucumberRuntimeCucumberException_initWithNSString_(JreStrcat("$$$$$", @"Only one formatter can use STDOUT, now both ", self->defaultOutFormatter_, @" and ", formatterString, @" use it. If you use more than one formatter you must specify output path with PLUGIN:PATH_OR_URL"));
+      @throw create_CCBRCucumberException_initWithNSString_(JreStrcat("$$$$$", @"Only one formatter can use STDOUT, now both ", self->defaultOutFormatter_, @" and ", formatterString, @" use it. If you use more than one formatter you must specify output path with PLUGIN:PATH_OR_URL"));
     }
   }
   @finally {
@@ -468,27 +468,27 @@ id<JavaLangAppendable> CucumberRuntimeFormatterPluginFactory_defaultOutOrFailIfA
   }
 }
 
-jboolean CucumberRuntimeFormatterPluginFactory_isFormatterNameWithNSString_(NSString *name) {
-  CucumberRuntimeFormatterPluginFactory_initialize();
-  IOSClass *pluginClass = CucumberRuntimeFormatterPluginFactory_getPluginClassWithNSString_(name);
-  return [CucumberApiFormatterFormatter_class_() isAssignableFrom:pluginClass];
+jboolean CCBRPluginFactory_isFormatterNameWithNSString_(NSString *name) {
+  CCBRPluginFactory_initialize();
+  IOSClass *pluginClass = CCBRPluginFactory_getPluginClassWithNSString_(name);
+  return [CCBFormatter_class_() isAssignableFrom:pluginClass];
 }
 
-jboolean CucumberRuntimeFormatterPluginFactory_isStepDefinitionReporterNameWithNSString_(NSString *name) {
-  CucumberRuntimeFormatterPluginFactory_initialize();
-  IOSClass *pluginClass = CucumberRuntimeFormatterPluginFactory_getPluginClassWithNSString_(name);
-  return [CucumberApiStepDefinitionReporter_class_() isAssignableFrom:pluginClass];
+jboolean CCBRPluginFactory_isStepDefinitionReporterNameWithNSString_(NSString *name) {
+  CCBRPluginFactory_initialize();
+  IOSClass *pluginClass = CCBRPluginFactory_getPluginClassWithNSString_(name);
+  return [CCBStepDefinitionReporter_class_() isAssignableFrom:pluginClass];
 }
 
-jboolean CucumberRuntimeFormatterPluginFactory_isSummaryPrinterNameWithNSString_(NSString *name) {
-  CucumberRuntimeFormatterPluginFactory_initialize();
-  IOSClass *pluginClass = CucumberRuntimeFormatterPluginFactory_getPluginClassWithNSString_(name);
-  return [CucumberApiSummaryPrinter_class_() isAssignableFrom:pluginClass];
+jboolean CCBRPluginFactory_isSummaryPrinterNameWithNSString_(NSString *name) {
+  CCBRPluginFactory_initialize();
+  IOSClass *pluginClass = CCBRPluginFactory_getPluginClassWithNSString_(name);
+  return [CCBSummaryPrinter_class_() isAssignableFrom:pluginClass];
 }
 
-IOSClass *CucumberRuntimeFormatterPluginFactory_getPluginClassWithNSString_(NSString *name) {
-  CucumberRuntimeFormatterPluginFactory_initialize();
-  JavaUtilRegexMatcher *pluginWithFile = [((JavaUtilRegexPattern *) nil_chk(CucumberRuntimeFormatterPluginFactory_PLUGIN_WITH_ARGUMENT_PATTERN)) matcherWithJavaLangCharSequence:name];
+IOSClass *CCBRPluginFactory_getPluginClassWithNSString_(NSString *name) {
+  CCBRPluginFactory_initialize();
+  JavaUtilRegexMatcher *pluginWithFile = [((JavaUtilRegexPattern *) nil_chk(CCBRPluginFactory_PLUGIN_WITH_ARGUMENT_PATTERN)) matcherWithJavaLangCharSequence:name];
   NSString *pluginName;
   if ([((JavaUtilRegexMatcher *) nil_chk(pluginWithFile)) matches]) {
     pluginName = [pluginWithFile groupWithInt:1];
@@ -496,16 +496,16 @@ IOSClass *CucumberRuntimeFormatterPluginFactory_getPluginClassWithNSString_(NSSt
   else {
     pluginName = name;
   }
-  return CucumberRuntimeFormatterPluginFactory_pluginClassWithNSString_(pluginName);
+  return CCBRPluginFactory_pluginClassWithNSString_(pluginName);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterPluginFactory)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRPluginFactory)
 
-@implementation CucumberRuntimeFormatterPluginFactory_1
+@implementation CCBRPluginFactory_1
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeFormatterPluginFactory_1_init(self);
+  CCBRPluginFactory_1_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -519,42 +519,42 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LCucumberRuntimeFormatterPluginFactory;", "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Class<+Lcucumber/api/Plugin;>;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterPluginFactory_1 = { "", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x8018, 1, 0, 0, -1, -1, 1, -1 };
-  return &_CucumberRuntimeFormatterPluginFactory_1;
+  static const void *ptrTable[] = { "LCCBRPluginFactory;", "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Class<+Lcucumber/api/Plugin;>;>;" };
+  static const J2ObjcClassInfo _CCBRPluginFactory_1 = { "", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x8018, 1, 0, 0, -1, -1, 1, -1 };
+  return &_CCBRPluginFactory_1;
 }
 
 @end
 
-void CucumberRuntimeFormatterPluginFactory_1_init(CucumberRuntimeFormatterPluginFactory_1 *self) {
+void CCBRPluginFactory_1_init(CCBRPluginFactory_1 *self) {
   JavaUtilHashMap_init(self);
   {
-    [self putWithId:@"null" withId:CucumberRuntimeFormatterNullFormatter_class_()];
-    [self putWithId:@"junit" withId:CucumberRuntimeFormatterJUnitFormatter_class_()];
-    [self putWithId:@"testng" withId:CucumberRuntimeFormatterTestNGFormatter_class_()];
-    [self putWithId:@"html" withId:CucumberRuntimeFormatterHTMLFormatter_class_()];
-    [self putWithId:@"pretty" withId:CucumberRuntimeFormatterPrettyFormatter_class_()];
-    [self putWithId:@"progress" withId:CucumberRuntimeFormatterProgressFormatter_class_()];
-    [self putWithId:@"json" withId:CucumberRuntimeFormatterJSONFormatter_class_()];
-    [self putWithId:@"usage" withId:CucumberRuntimeFormatterUsageFormatter_class_()];
-    [self putWithId:@"rerun" withId:CucumberRuntimeFormatterRerunFormatter_class_()];
-    [self putWithId:@"default_summary" withId:CucumberRuntimeDefaultSummaryPrinter_class_()];
-    [self putWithId:@"null_summary" withId:CucumberRuntimeNullSummaryPrinter_class_()];
+    [self putWithId:@"null" withId:CCBRNullFormatter_class_()];
+    [self putWithId:@"junit" withId:CCBRJUnitFormatter_class_()];
+    [self putWithId:@"testng" withId:CCBRTestNGFormatter_class_()];
+    [self putWithId:@"html" withId:CCBRHTMLFormatter_class_()];
+    [self putWithId:@"pretty" withId:CCBRPrettyFormatter_class_()];
+    [self putWithId:@"progress" withId:CCBRProgressFormatter_class_()];
+    [self putWithId:@"json" withId:CCBRJSONFormatter_class_()];
+    [self putWithId:@"usage" withId:CCBRUsageFormatter_class_()];
+    [self putWithId:@"rerun" withId:CCBRRerunFormatter_class_()];
+    [self putWithId:@"default_summary" withId:CCBRDefaultSummaryPrinter_class_()];
+    [self putWithId:@"null_summary" withId:CCBRNullSummaryPrinter_class_()];
   }
 }
 
-CucumberRuntimeFormatterPluginFactory_1 *new_CucumberRuntimeFormatterPluginFactory_1_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterPluginFactory_1, init)
+CCBRPluginFactory_1 *new_CCBRPluginFactory_1_init() {
+  J2OBJC_NEW_IMPL(CCBRPluginFactory_1, init)
 }
 
-CucumberRuntimeFormatterPluginFactory_1 *create_CucumberRuntimeFormatterPluginFactory_1_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterPluginFactory_1, init)
+CCBRPluginFactory_1 *create_CCBRPluginFactory_1_init() {
+  J2OBJC_CREATE_IMPL(CCBRPluginFactory_1, init)
 }
 
-@implementation CucumberRuntimeFormatterPluginFactory_2
+@implementation CCBRPluginFactory_2
 
 - (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)x0 {
-  CucumberRuntimeFormatterPluginFactory_2_initWithJavaIoOutputStream_(self, x0);
+  CCBRPluginFactory_2_initWithJavaIoOutputStream_(self, x0);
   return self;
 }
 
@@ -572,21 +572,21 @@ CucumberRuntimeFormatterPluginFactory_1 *create_CucumberRuntimeFormatterPluginFa
   methods[0].selector = @selector(initWithJavaIoOutputStream:);
   methods[1].selector = @selector(close);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LJavaIoOutputStream;", "LCucumberRuntimeFormatterPluginFactory;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterPluginFactory_2 = { "", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeFormatterPluginFactory_2;
+  static const void *ptrTable[] = { "LJavaIoOutputStream;", "LCCBRPluginFactory;" };
+  static const J2ObjcClassInfo _CCBRPluginFactory_2 = { "", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 1, -1, -1, -1, -1 };
+  return &_CCBRPluginFactory_2;
 }
 
 @end
 
-void CucumberRuntimeFormatterPluginFactory_2_initWithJavaIoOutputStream_(CucumberRuntimeFormatterPluginFactory_2 *self, JavaIoOutputStream *x0) {
+void CCBRPluginFactory_2_initWithJavaIoOutputStream_(CCBRPluginFactory_2 *self, JavaIoOutputStream *x0) {
   JavaIoPrintStream_initWithJavaIoOutputStream_(self, x0);
 }
 
-CucumberRuntimeFormatterPluginFactory_2 *new_CucumberRuntimeFormatterPluginFactory_2_initWithJavaIoOutputStream_(JavaIoOutputStream *x0) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterPluginFactory_2, initWithJavaIoOutputStream_, x0)
+CCBRPluginFactory_2 *new_CCBRPluginFactory_2_initWithJavaIoOutputStream_(JavaIoOutputStream *x0) {
+  J2OBJC_NEW_IMPL(CCBRPluginFactory_2, initWithJavaIoOutputStream_, x0)
 }
 
-CucumberRuntimeFormatterPluginFactory_2 *create_CucumberRuntimeFormatterPluginFactory_2_initWithJavaIoOutputStream_(JavaIoOutputStream *x0) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterPluginFactory_2, initWithJavaIoOutputStream_, x0)
+CCBRPluginFactory_2 *create_CCBRPluginFactory_2_initWithJavaIoOutputStream_(JavaIoOutputStream *x0) {
+  J2OBJC_CREATE_IMPL(CCBRPluginFactory_2, initWithJavaIoOutputStream_, x0)
 }

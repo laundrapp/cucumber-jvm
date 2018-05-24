@@ -18,14 +18,14 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeTableCamelCaseStringConverter_) && (INCLUDE_ALL_CucumberRuntimeTableCamelCaseStringConverter || defined(INCLUDE_CucumberRuntimeTableCamelCaseStringConverter))
-#define CucumberRuntimeTableCamelCaseStringConverter_
+#if !defined (CCBRCamelCaseStringConverter_) && (INCLUDE_ALL_CucumberRuntimeTableCamelCaseStringConverter || defined(INCLUDE_CCBRCamelCaseStringConverter))
+#define CCBRCamelCaseStringConverter_
 
 #define RESTRICT_CucumberRuntimeTableStringConverter 1
-#define INCLUDE_CucumberRuntimeTableStringConverter 1
+#define INCLUDE_CCBRStringConverter 1
 #include "cucumber/runtime/table/StringConverter.h"
 
-@interface CucumberRuntimeTableCamelCaseStringConverter : NSObject < CucumberRuntimeTableStringConverter >
+@interface CCBRCamelCaseStringConverter : NSObject < CCBRStringConverter >
 
 #pragma mark Public
 
@@ -35,15 +35,17 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeTableCamelCaseStringConverter)
+J2OBJC_STATIC_INIT(CCBRCamelCaseStringConverter)
 
-FOUNDATION_EXPORT void CucumberRuntimeTableCamelCaseStringConverter_init(CucumberRuntimeTableCamelCaseStringConverter *self);
+FOUNDATION_EXPORT void CCBRCamelCaseStringConverter_init(CCBRCamelCaseStringConverter *self);
 
-FOUNDATION_EXPORT CucumberRuntimeTableCamelCaseStringConverter *new_CucumberRuntimeTableCamelCaseStringConverter_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRCamelCaseStringConverter *new_CCBRCamelCaseStringConverter_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeTableCamelCaseStringConverter *create_CucumberRuntimeTableCamelCaseStringConverter_init(void);
+FOUNDATION_EXPORT CCBRCamelCaseStringConverter *create_CCBRCamelCaseStringConverter_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTableCamelCaseStringConverter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRCamelCaseStringConverter)
+
+@compatibility_alias CucumberRuntimeTableCamelCaseStringConverter CCBRCamelCaseStringConverter;
 
 #endif
 

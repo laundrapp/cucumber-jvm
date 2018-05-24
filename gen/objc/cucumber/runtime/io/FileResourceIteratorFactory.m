@@ -11,11 +11,11 @@
 #include "java/net/URL.h"
 #include "java/util/Iterator.h"
 
-@implementation CucumberRuntimeIoFileResourceIteratorFactory
+@implementation CCBRFileResourceIteratorFactory
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeIoFileResourceIteratorFactory_init(self);
+  CCBRFileResourceIteratorFactory_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -27,9 +27,9 @@ J2OBJC_IGNORE_DESIGNATED_END
 - (id<JavaUtilIterator>)createIteratorWithJavaNetURL:(JavaNetURL *)url
                                         withNSString:(NSString *)path
                                         withNSString:(NSString *)suffix {
-  JavaIoFile *file = create_JavaIoFile_initWithNSString_(CucumberRuntimeIoHelpers_filePathWithJavaNetURL_(url));
+  JavaIoFile *file = create_JavaIoFile_initWithNSString_(CCBRHelpers_filePathWithJavaNetURL_(url));
   JavaIoFile *rootDir = create_JavaIoFile_initWithNSString_([((NSString *) nil_chk([file getAbsolutePath])) java_substring:0 endIndex:[((NSString *) nil_chk([file getAbsolutePath])) java_length] - [((NSString *) nil_chk(path)) java_length]]);
-  return CucumberRuntimeIoFileResourceIterator_createClasspathFileResourceIteratorWithJavaIoFile_withJavaIoFile_withNSString_(rootDir, file, suffix);
+  return CCBRFileResourceIterator_createClasspathFileResourceIteratorWithJavaIoFile_withJavaIoFile_withNSString_(rootDir, file, suffix);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -46,22 +46,22 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[2].selector = @selector(createIteratorWithJavaNetURL:withNSString:withNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "isFactoryFor", "LJavaNetURL;", "createIterator", "LJavaNetURL;LNSString;LNSString;", "(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;)Ljava/util/Iterator<Lcucumber/runtime/io/Resource;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeIoFileResourceIteratorFactory = { "FileResourceIteratorFactory", "cucumber.runtime.io", ptrTable, methods, NULL, 7, 0x1, 3, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeIoFileResourceIteratorFactory;
+  static const J2ObjcClassInfo _CCBRFileResourceIteratorFactory = { "FileResourceIteratorFactory", "cucumber.runtime.io", ptrTable, methods, NULL, 7, 0x1, 3, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRFileResourceIteratorFactory;
 }
 
 @end
 
-void CucumberRuntimeIoFileResourceIteratorFactory_init(CucumberRuntimeIoFileResourceIteratorFactory *self) {
+void CCBRFileResourceIteratorFactory_init(CCBRFileResourceIteratorFactory *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeIoFileResourceIteratorFactory *new_CucumberRuntimeIoFileResourceIteratorFactory_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeIoFileResourceIteratorFactory, init)
+CCBRFileResourceIteratorFactory *new_CCBRFileResourceIteratorFactory_init() {
+  J2OBJC_NEW_IMPL(CCBRFileResourceIteratorFactory, init)
 }
 
-CucumberRuntimeIoFileResourceIteratorFactory *create_CucumberRuntimeIoFileResourceIteratorFactory_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeIoFileResourceIteratorFactory, init)
+CCBRFileResourceIteratorFactory *create_CCBRFileResourceIteratorFactory_init() {
+  J2OBJC_CREATE_IMPL(CCBRFileResourceIteratorFactory, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoFileResourceIteratorFactory)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRFileResourceIteratorFactory)

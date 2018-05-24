@@ -18,12 +18,12 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeSnippetsSnippet_) && (INCLUDE_ALL_CucumberRuntimeSnippetsSnippet || defined(INCLUDE_CucumberRuntimeSnippetsSnippet))
-#define CucumberRuntimeSnippetsSnippet_
+#if !defined (CCBRSnippet_) && (INCLUDE_ALL_CucumberRuntimeSnippetsSnippet || defined(INCLUDE_CCBRSnippet))
+#define CCBRSnippet_
 
 @protocol JavaUtilList;
 
-@protocol CucumberRuntimeSnippetsSnippet < JavaObject >
+@protocol CCBRSnippet < JavaObject >
 
 /*!
  @return a <code>java.text.MessageFormat</code> template used to generate a snippet. The template can access the following variables:
@@ -70,9 +70,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeSnippetsSnippet)
+J2OBJC_EMPTY_STATIC_INIT(CCBRSnippet)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeSnippetsSnippet)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRSnippet)
+
+#define CucumberRuntimeSnippetsSnippet CCBRSnippet
 
 #endif
 

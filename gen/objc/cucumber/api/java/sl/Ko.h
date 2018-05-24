@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaSlKo_) && (INCLUDE_ALL_CucumberApiJavaSlKo || defined(INCLUDE_CucumberApiJavaSlKo))
-#define CucumberApiJavaSlKo_
+#if !defined (CCBKo_) && (INCLUDE_ALL_CucumberApiJavaSlKo || defined(INCLUDE_CCBKo))
+#define CCBKo_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaSlKo < JavaLangAnnotationAnnotation >
+@protocol CCBKo < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaSlKo : NSObject < CucumberApiJavaSlKo > {
+@interface CCBKo : NSObject < CCBKo > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaSlKo)
+J2OBJC_EMPTY_STATIC_INIT(CCBKo)
 
-FOUNDATION_EXPORT id<CucumberApiJavaSlKo> create_CucumberApiJavaSlKo(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBKo> create_CCBKo(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaSlKo)
+J2OBJC_TYPE_LITERAL_HEADER(CCBKo)
+
+#define CucumberApiJavaSlKo CCBKo
 
 #endif
 

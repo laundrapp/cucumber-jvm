@@ -37,16 +37,16 @@ J2OBJC_FIELD_SETTER(CucumberRunnerEventBus, handlers_, id<JavaUtilMap>)
   return JavaLangLong_valueOfWithLong_([((id<CucumberRunnerTimeService>) nil_chk(stopWatch_)) time]);
 }
 
-- (void)sendWithCucumberApiEventEvent:(id<CucumberApiEventEvent>)event {
-  if ([((id<JavaUtilMap>) nil_chk(handlers_)) containsKeyWithId:[((id<CucumberApiEventEvent>) nil_chk(event)) java_getClass]]) {
-    for (id<CucumberApiEventEventHandler> __strong handler in nil_chk([((id<JavaUtilMap>) nil_chk(handlers_)) getWithId:[event java_getClass]])) {
-      [((id<CucumberApiEventEventHandler>) nil_chk(handler)) receiveWithCucumberApiEventEvent:event];
+- (void)sendWithCCBEvent:(id<CCBEvent>)event {
+  if ([((id<JavaUtilMap>) nil_chk(handlers_)) containsKeyWithId:[((id<CCBEvent>) nil_chk(event)) java_getClass]]) {
+    for (id<CCBEventHandler> __strong handler in nil_chk([((id<JavaUtilMap>) nil_chk(handlers_)) getWithId:[event java_getClass]])) {
+      [((id<CCBEventHandler>) nil_chk(handler)) receiveWithCCBEvent:event];
     }
   }
 }
 
 - (void)registerHandlerForWithIOSClass:(IOSClass *)eventType
-      withCucumberApiEventEventHandler:(id<CucumberApiEventEventHandler>)handler {
+                   withCCBEventHandler:(id<CCBEventHandler>)handler {
   if ([((id<JavaUtilMap>) nil_chk(handlers_)) containsKeyWithId:eventType]) {
     [((id<JavaUtilList>) nil_chk([((id<JavaUtilMap>) nil_chk(handlers_)) getWithId:eventType])) addWithId:handler];
   }
@@ -75,14 +75,14 @@ J2OBJC_FIELD_SETTER(CucumberRunnerEventBus, handlers_, id<JavaUtilMap>)
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRunnerTimeService:);
   methods[1].selector = @selector(getTime);
-  methods[2].selector = @selector(sendWithCucumberApiEventEvent:);
-  methods[3].selector = @selector(registerHandlerForWithIOSClass:withCucumberApiEventEventHandler:);
+  methods[2].selector = @selector(sendWithCCBEvent:);
+  methods[3].selector = @selector(registerHandlerForWithIOSClass:withCCBEventHandler:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "stopWatch_", "LCucumberRunnerTimeService;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "handlers_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 6, -1 },
   };
-  static const void *ptrTable[] = { "LCucumberRunnerTimeService;", "send", "LCucumberApiEventEvent;", "registerHandlerFor", "LIOSClass;LCucumberApiEventEventHandler;", "<T::Lcucumber/api/event/Event;>(Ljava/lang/Class<TT;>;Lcucumber/api/event/EventHandler<TT;>;)V", "Ljava/util/Map<Ljava/lang/Class<+Lcucumber/api/event/Event;>;Ljava/util/List<Lcucumber/api/event/EventHandler;>;>;" };
+  static const void *ptrTable[] = { "LCucumberRunnerTimeService;", "send", "LCCBEvent;", "registerHandlerFor", "LIOSClass;LCCBEventHandler;", "<T::Lcucumber/api/event/Event;>(Ljava/lang/Class<TT;>;Lcucumber/api/event/EventHandler<TT;>;)V", "Ljava/util/Map<Ljava/lang/Class<+Lcucumber/api/event/Event;>;Ljava/util/List<Lcucumber/api/event/EventHandler;>;>;" };
   static const J2ObjcClassInfo _CucumberRunnerEventBus = { "EventBus", "cucumber.runner", ptrTable, methods, fields, 7, 0x1, 4, 2, -1, -1, -1, -1, -1 };
   return &_CucumberRunnerEventBus;
 }

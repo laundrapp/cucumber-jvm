@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiTranspose_) && (INCLUDE_ALL_CucumberApiTranspose || defined(INCLUDE_CucumberApiTranspose))
-#define CucumberApiTranspose_
+#if !defined (CCBTranspose_) && (INCLUDE_ALL_CucumberApiTranspose || defined(INCLUDE_CCBTranspose))
+#define CCBTranspose_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -57,7 +57,7 @@
   This annotation also works for data tables that are transformed to a list of beans. 
  </p>
  */
-@protocol CucumberApiTranspose < JavaLangAnnotationAnnotation >
+@protocol CCBTranspose < JavaLangAnnotationAnnotation >
 
 @property (readonly) jboolean value;
 
@@ -67,18 +67,20 @@
 
 @end
 
-@interface CucumberApiTranspose : NSObject < CucumberApiTranspose > {
+@interface CCBTranspose : NSObject < CCBTranspose > {
  @public
   jboolean value_;
 }
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiTranspose)
+J2OBJC_EMPTY_STATIC_INIT(CCBTranspose)
 
-FOUNDATION_EXPORT id<CucumberApiTranspose> create_CucumberApiTranspose(jboolean value);
+FOUNDATION_EXPORT id<CCBTranspose> create_CCBTranspose(jboolean value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiTranspose)
+J2OBJC_TYPE_LITERAL_HEADER(CCBTranspose)
+
+#define CucumberApiTranspose CCBTranspose
 
 #endif
 

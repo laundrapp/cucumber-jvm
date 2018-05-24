@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiPlugin_) && (INCLUDE_ALL_CucumberApiPlugin || defined(INCLUDE_CucumberApiPlugin))
-#define CucumberApiPlugin_
+#if !defined (CCBPlugin_) && (INCLUDE_ALL_CucumberApiPlugin || defined(INCLUDE_CCBPlugin))
+#define CCBPlugin_
 
 /*!
  @brief Marker interface for all plugins.
@@ -47,13 +47,15 @@
   <p>
   To make the parameter optional the plugin must also have a public default constructor.
  */
-@protocol CucumberApiPlugin < JavaObject >
+@protocol CCBPlugin < JavaObject >
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiPlugin)
+J2OBJC_EMPTY_STATIC_INIT(CCBPlugin)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiPlugin)
+J2OBJC_TYPE_LITERAL_HEADER(CCBPlugin)
+
+#define CucumberApiPlugin CCBPlugin
 
 #endif
 

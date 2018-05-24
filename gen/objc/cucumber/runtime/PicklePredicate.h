@@ -18,20 +18,22 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimePicklePredicate_) && (INCLUDE_ALL_CucumberRuntimePicklePredicate || defined(INCLUDE_CucumberRuntimePicklePredicate))
-#define CucumberRuntimePicklePredicate_
+#if !defined (CCBRPicklePredicate_) && (INCLUDE_ALL_CucumberRuntimePicklePredicate || defined(INCLUDE_CCBRPicklePredicate))
+#define CCBRPicklePredicate_
 
 @class GherkinEventsPickleEvent;
 
-@protocol CucumberRuntimePicklePredicate < JavaObject >
+@protocol CCBRPicklePredicate < JavaObject >
 
 - (jboolean)applyWithGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimePicklePredicate)
+J2OBJC_EMPTY_STATIC_INIT(CCBRPicklePredicate)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimePicklePredicate)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRPicklePredicate)
+
+#define CucumberRuntimePicklePredicate CCBRPicklePredicate
 
 #endif
 

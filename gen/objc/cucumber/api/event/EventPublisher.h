@@ -18,13 +18,13 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiEventEventPublisher_) && (INCLUDE_ALL_CucumberApiEventEventPublisher || defined(INCLUDE_CucumberApiEventEventPublisher))
-#define CucumberApiEventEventPublisher_
+#if !defined (CCBEventPublisher_) && (INCLUDE_ALL_CucumberApiEventEventPublisher || defined(INCLUDE_CCBEventPublisher))
+#define CCBEventPublisher_
 
 @class IOSClass;
-@protocol CucumberApiEventEventHandler;
+@protocol CCBEventHandler;
 
-@protocol CucumberApiEventEventPublisher < JavaObject >
+@protocol CCBEventPublisher < JavaObject >
 
 /*!
  @brief Registers an event handler for a specific event.
@@ -45,13 +45,15 @@
  @param handler the event handler
  */
 - (void)registerHandlerForWithIOSClass:(IOSClass *)eventType
-      withCucumberApiEventEventHandler:(id<CucumberApiEventEventHandler>)handler;
+                   withCCBEventHandler:(id<CCBEventHandler>)handler;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiEventEventPublisher)
+J2OBJC_EMPTY_STATIC_INIT(CCBEventPublisher)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventEventPublisher)
+J2OBJC_TYPE_LITERAL_HEADER(CCBEventPublisher)
+
+#define CucumberApiEventEventPublisher CCBEventPublisher
 
 #endif
 

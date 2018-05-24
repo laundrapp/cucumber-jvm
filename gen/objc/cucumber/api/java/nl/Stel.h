@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaNlStel_) && (INCLUDE_ALL_CucumberApiJavaNlStel || defined(INCLUDE_CucumberApiJavaNlStel))
-#define CucumberApiJavaNlStel_
+#if !defined (CCBStel_) && (INCLUDE_ALL_CucumberApiJavaNlStel || defined(INCLUDE_CCBStel))
+#define CCBStel_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaNlStel < JavaLangAnnotationAnnotation >
+@protocol CCBStel < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaNlStel : NSObject < CucumberApiJavaNlStel > {
+@interface CCBStel : NSObject < CCBStel > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaNlStel)
+J2OBJC_EMPTY_STATIC_INIT(CCBStel)
 
-FOUNDATION_EXPORT id<CucumberApiJavaNlStel> create_CucumberApiJavaNlStel(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBStel> create_CCBStel(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaNlStel)
+J2OBJC_TYPE_LITERAL_HEADER(CCBStel)
+
+#define CucumberApiJavaNlStel CCBStel
 
 #endif
 

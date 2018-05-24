@@ -18,17 +18,17 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeTableTableDiffer_) && (INCLUDE_ALL_CucumberRuntimeTableTableDiffer || defined(INCLUDE_CucumberRuntimeTableTableDiffer))
-#define CucumberRuntimeTableTableDiffer_
+#if !defined (CCBRTableDiffer_) && (INCLUDE_ALL_CucumberRuntimeTableTableDiffer || defined(INCLUDE_CCBRTableDiffer))
+#define CCBRTableDiffer_
 
-@class CucumberApiDataTable;
+@class CCBDataTable;
 
-@interface CucumberRuntimeTableTableDiffer : NSObject
+@interface CCBRTableDiffer : NSObject
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCucumberApiDataTable:(CucumberApiDataTable *)fromTable
-                              withCucumberApiDataTable:(CucumberApiDataTable *)toTable;
+- (instancetype __nonnull)initWithCCBDataTable:(CCBDataTable *)fromTable
+                              withCCBDataTable:(CCBDataTable *)toTable;
 
 - (void)calculateDiffs;
 
@@ -40,15 +40,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeTableTableDiffer)
+J2OBJC_EMPTY_STATIC_INIT(CCBRTableDiffer)
 
-FOUNDATION_EXPORT void CucumberRuntimeTableTableDiffer_initWithCucumberApiDataTable_withCucumberApiDataTable_(CucumberRuntimeTableTableDiffer *self, CucumberApiDataTable *fromTable, CucumberApiDataTable *toTable);
+FOUNDATION_EXPORT void CCBRTableDiffer_initWithCCBDataTable_withCCBDataTable_(CCBRTableDiffer *self, CCBDataTable *fromTable, CCBDataTable *toTable);
 
-FOUNDATION_EXPORT CucumberRuntimeTableTableDiffer *new_CucumberRuntimeTableTableDiffer_initWithCucumberApiDataTable_withCucumberApiDataTable_(CucumberApiDataTable *fromTable, CucumberApiDataTable *toTable) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRTableDiffer *new_CCBRTableDiffer_initWithCCBDataTable_withCCBDataTable_(CCBDataTable *fromTable, CCBDataTable *toTable) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeTableTableDiffer *create_CucumberRuntimeTableTableDiffer_initWithCucumberApiDataTable_withCucumberApiDataTable_(CucumberApiDataTable *fromTable, CucumberApiDataTable *toTable);
+FOUNDATION_EXPORT CCBRTableDiffer *create_CCBRTableDiffer_initWithCCBDataTable_withCCBDataTable_(CCBDataTable *fromTable, CCBDataTable *toTable);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTableTableDiffer)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRTableDiffer)
+
+@compatibility_alias CucumberRuntimeTableTableDiffer CCBRTableDiffer;
 
 #endif
 

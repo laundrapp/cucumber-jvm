@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaBmTetapi_) && (INCLUDE_ALL_CucumberApiJavaBmTetapi || defined(INCLUDE_CucumberApiJavaBmTetapi))
-#define CucumberApiJavaBmTetapi_
+#if !defined (CCBTetapi_) && (INCLUDE_ALL_CucumberApiJavaBmTetapi || defined(INCLUDE_CCBTetapi))
+#define CCBTetapi_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaBmTetapi < JavaLangAnnotationAnnotation >
+@protocol CCBTetapi < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaBmTetapi : NSObject < CucumberApiJavaBmTetapi > {
+@interface CCBTetapi : NSObject < CCBTetapi > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaBmTetapi)
+J2OBJC_EMPTY_STATIC_INIT(CCBTetapi)
 
-FOUNDATION_EXPORT id<CucumberApiJavaBmTetapi> create_CucumberApiJavaBmTetapi(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBTetapi> create_CCBTetapi(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaBmTetapi)
+J2OBJC_TYPE_LITERAL_HEADER(CCBTetapi)
+
+#define CucumberApiJavaBmTetapi CCBTetapi
 
 #endif
 

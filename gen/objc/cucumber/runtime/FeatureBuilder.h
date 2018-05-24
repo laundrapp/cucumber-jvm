@@ -18,21 +18,21 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeFeatureBuilder_) && (INCLUDE_ALL_CucumberRuntimeFeatureBuilder || defined(INCLUDE_CucumberRuntimeFeatureBuilder))
-#define CucumberRuntimeFeatureBuilder_
+#if !defined (CCBRFeatureBuilder_) && (INCLUDE_ALL_CucumberRuntimeFeatureBuilder || defined(INCLUDE_CCBRFeatureBuilder))
+#define CCBRFeatureBuilder_
 
-@protocol CucumberRuntimeIoResource;
+@protocol CCBRResource;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeFeatureBuilder : NSObject
+@interface CCBRFeatureBuilder : NSObject
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)cucumberFeatures;
 
-- (void)parseWithCucumberRuntimeIoResource:(id<CucumberRuntimeIoResource>)resource;
+- (void)parseWithCCBRResource:(id<CCBRResource>)resource;
 
-- (NSString *)readWithCucumberRuntimeIoResource:(id<CucumberRuntimeIoResource>)resource;
+- (NSString *)readWithCCBRResource:(id<CCBRResource>)resource;
 
 #pragma mark Package-Private
 
@@ -45,21 +45,23 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeFeatureBuilder)
+J2OBJC_STATIC_INIT(CCBRFeatureBuilder)
 
-FOUNDATION_EXPORT void CucumberRuntimeFeatureBuilder_initWithJavaUtilList_(CucumberRuntimeFeatureBuilder *self, id<JavaUtilList> cucumberFeatures);
+FOUNDATION_EXPORT void CCBRFeatureBuilder_initWithJavaUtilList_(CCBRFeatureBuilder *self, id<JavaUtilList> cucumberFeatures);
 
-FOUNDATION_EXPORT CucumberRuntimeFeatureBuilder *new_CucumberRuntimeFeatureBuilder_initWithJavaUtilList_(id<JavaUtilList> cucumberFeatures) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRFeatureBuilder *new_CCBRFeatureBuilder_initWithJavaUtilList_(id<JavaUtilList> cucumberFeatures) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFeatureBuilder *create_CucumberRuntimeFeatureBuilder_initWithJavaUtilList_(id<JavaUtilList> cucumberFeatures);
+FOUNDATION_EXPORT CCBRFeatureBuilder *create_CCBRFeatureBuilder_initWithJavaUtilList_(id<JavaUtilList> cucumberFeatures);
 
-FOUNDATION_EXPORT void CucumberRuntimeFeatureBuilder_initWithJavaUtilList_withChar_(CucumberRuntimeFeatureBuilder *self, id<JavaUtilList> cucumberFeatures, jchar fileSeparatorChar);
+FOUNDATION_EXPORT void CCBRFeatureBuilder_initWithJavaUtilList_withChar_(CCBRFeatureBuilder *self, id<JavaUtilList> cucumberFeatures, jchar fileSeparatorChar);
 
-FOUNDATION_EXPORT CucumberRuntimeFeatureBuilder *new_CucumberRuntimeFeatureBuilder_initWithJavaUtilList_withChar_(id<JavaUtilList> cucumberFeatures, jchar fileSeparatorChar) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRFeatureBuilder *new_CCBRFeatureBuilder_initWithJavaUtilList_withChar_(id<JavaUtilList> cucumberFeatures, jchar fileSeparatorChar) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFeatureBuilder *create_CucumberRuntimeFeatureBuilder_initWithJavaUtilList_withChar_(id<JavaUtilList> cucumberFeatures, jchar fileSeparatorChar);
+FOUNDATION_EXPORT CCBRFeatureBuilder *create_CCBRFeatureBuilder_initWithJavaUtilList_withChar_(id<JavaUtilList> cucumberFeatures, jchar fileSeparatorChar);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFeatureBuilder)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRFeatureBuilder)
+
+@compatibility_alias CucumberRuntimeFeatureBuilder CCBRFeatureBuilder;
 
 #endif
 

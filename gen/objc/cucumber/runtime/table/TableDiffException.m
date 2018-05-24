@@ -8,37 +8,37 @@
 #include "cucumber/runtime/table/TableDiffException.h"
 #include "java/lang/RuntimeException.h"
 
-@interface CucumberRuntimeTableTableDiffException () {
+@interface CCBRTableDiffException () {
  @public
-  CucumberApiDataTable *from_;
-  CucumberApiDataTable *to_;
-  CucumberApiDataTable *diff_;
+  CCBDataTable *from_;
+  CCBDataTable *to_;
+  CCBDataTable *diff_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeTableTableDiffException, from_, CucumberApiDataTable *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeTableTableDiffException, to_, CucumberApiDataTable *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeTableTableDiffException, diff_, CucumberApiDataTable *)
+J2OBJC_FIELD_SETTER(CCBRTableDiffException, from_, CCBDataTable *)
+J2OBJC_FIELD_SETTER(CCBRTableDiffException, to_, CCBDataTable *)
+J2OBJC_FIELD_SETTER(CCBRTableDiffException, diff_, CCBDataTable *)
 
-@implementation CucumberRuntimeTableTableDiffException
+@implementation CCBRTableDiffException
 
-- (instancetype __nonnull)initWithCucumberApiDataTable:(CucumberApiDataTable *)from
-                              withCucumberApiDataTable:(CucumberApiDataTable *)to
-                              withCucumberApiDataTable:(CucumberApiDataTable *)diff {
-  CucumberRuntimeTableTableDiffException_initWithCucumberApiDataTable_withCucumberApiDataTable_withCucumberApiDataTable_(self, from, to, diff);
+- (instancetype __nonnull)initWithCCBDataTable:(CCBDataTable *)from
+                              withCCBDataTable:(CCBDataTable *)to
+                              withCCBDataTable:(CCBDataTable *)diff {
+  CCBRTableDiffException_initWithCCBDataTable_withCCBDataTable_withCCBDataTable_(self, from, to, diff);
   return self;
 }
 
-- (CucumberApiDataTable *)getFrom {
+- (CCBDataTable *)getFrom {
   return from_;
 }
 
-- (CucumberApiDataTable *)getTo {
+- (CCBDataTable *)getTo {
   return to_;
 }
 
-- (CucumberApiDataTable *)getDiff {
+- (CCBDataTable *)getDiff {
   return diff_;
 }
 
@@ -52,43 +52,43 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeTableTableDiffException, diff_, CucumberApiDa
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
-    { NULL, "LCucumberApiDataTable;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LCucumberApiDataTable;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LCucumberApiDataTable;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCCBDataTable;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCCBDataTable;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCCBDataTable;", 0x1, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberApiDataTable:withCucumberApiDataTable:withCucumberApiDataTable:);
+  methods[0].selector = @selector(initWithCCBDataTable:withCCBDataTable:withCCBDataTable:);
   methods[1].selector = @selector(getFrom);
   methods[2].selector = @selector(getTo);
   methods[3].selector = @selector(getDiff);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "from_", "LCucumberApiDataTable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "to_", "LCucumberApiDataTable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "diff_", "LCucumberApiDataTable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "from_", "LCCBDataTable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "to_", "LCCBDataTable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "diff_", "LCCBDataTable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCucumberApiDataTable;LCucumberApiDataTable;LCucumberApiDataTable;" };
-  static const J2ObjcClassInfo _CucumberRuntimeTableTableDiffException = { "TableDiffException", "cucumber.runtime.table", ptrTable, methods, fields, 7, 0x1, 4, 3, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeTableTableDiffException;
+  static const void *ptrTable[] = { "LCCBDataTable;LCCBDataTable;LCCBDataTable;" };
+  static const J2ObjcClassInfo _CCBRTableDiffException = { "TableDiffException", "cucumber.runtime.table", ptrTable, methods, fields, 7, 0x1, 4, 3, -1, -1, -1, -1, -1 };
+  return &_CCBRTableDiffException;
 }
 
 @end
 
-void CucumberRuntimeTableTableDiffException_initWithCucumberApiDataTable_withCucumberApiDataTable_withCucumberApiDataTable_(CucumberRuntimeTableTableDiffException *self, CucumberApiDataTable *from, CucumberApiDataTable *to, CucumberApiDataTable *diff) {
-  JavaLangRuntimeException_initWithNSString_(self, JreStrcat("$$", @"Tables were not identical:\n", [((CucumberApiDataTable *) nil_chk(diff)) description]));
+void CCBRTableDiffException_initWithCCBDataTable_withCCBDataTable_withCCBDataTable_(CCBRTableDiffException *self, CCBDataTable *from, CCBDataTable *to, CCBDataTable *diff) {
+  JavaLangRuntimeException_initWithNSString_(self, JreStrcat("$$", @"Tables were not identical:\n", [((CCBDataTable *) nil_chk(diff)) description]));
   JreStrongAssign(&self->from_, from);
   JreStrongAssign(&self->to_, to);
   JreStrongAssign(&self->diff_, diff);
 }
 
-CucumberRuntimeTableTableDiffException *new_CucumberRuntimeTableTableDiffException_initWithCucumberApiDataTable_withCucumberApiDataTable_withCucumberApiDataTable_(CucumberApiDataTable *from, CucumberApiDataTable *to, CucumberApiDataTable *diff) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeTableTableDiffException, initWithCucumberApiDataTable_withCucumberApiDataTable_withCucumberApiDataTable_, from, to, diff)
+CCBRTableDiffException *new_CCBRTableDiffException_initWithCCBDataTable_withCCBDataTable_withCCBDataTable_(CCBDataTable *from, CCBDataTable *to, CCBDataTable *diff) {
+  J2OBJC_NEW_IMPL(CCBRTableDiffException, initWithCCBDataTable_withCCBDataTable_withCCBDataTable_, from, to, diff)
 }
 
-CucumberRuntimeTableTableDiffException *create_CucumberRuntimeTableTableDiffException_initWithCucumberApiDataTable_withCucumberApiDataTable_withCucumberApiDataTable_(CucumberApiDataTable *from, CucumberApiDataTable *to, CucumberApiDataTable *diff) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeTableTableDiffException, initWithCucumberApiDataTable_withCucumberApiDataTable_withCucumberApiDataTable_, from, to, diff)
+CCBRTableDiffException *create_CCBRTableDiffException_initWithCCBDataTable_withCCBDataTable_withCCBDataTable_(CCBDataTable *from, CCBDataTable *to, CCBDataTable *diff) {
+  J2OBJC_CREATE_IMPL(CCBRTableDiffException, initWithCCBDataTable_withCCBDataTable_withCCBDataTable_, from, to, diff)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTableTableDiffException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTableDiffException)

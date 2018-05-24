@@ -9,7 +9,7 @@
 #include "java/util/regex/Matcher.h"
 #include "java/util/regex/Pattern.h"
 
-@interface CucumberRuntimeSnippetsArgumentPattern () {
+@interface CCBRArgumentPattern () {
  @public
   JavaUtilRegexPattern *pattern_;
   IOSClass *type_;
@@ -21,24 +21,24 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeSnippetsArgumentPattern, pattern_, JavaUtilRegexPattern *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeSnippetsArgumentPattern, type_, IOSClass *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeSnippetsArgumentPattern, replacement_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRArgumentPattern, pattern_, JavaUtilRegexPattern *)
+J2OBJC_FIELD_SETTER(CCBRArgumentPattern, type_, IOSClass *)
+J2OBJC_FIELD_SETTER(CCBRArgumentPattern, replacement_, NSString *)
 
-__attribute__((unused)) static NSString *CucumberRuntimeSnippetsArgumentPattern_replaceMatchWithWithNSString_withNSString_(CucumberRuntimeSnippetsArgumentPattern *self, NSString *name, NSString *replacement);
+__attribute__((unused)) static NSString *CCBRArgumentPattern_replaceMatchWithWithNSString_withNSString_(CCBRArgumentPattern *self, NSString *name, NSString *replacement);
 
-@implementation CucumberRuntimeSnippetsArgumentPattern
+@implementation CCBRArgumentPattern
 
 - (instancetype __nonnull)initWithJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern
                                           withIOSClass:(IOSClass *)type {
-  CucumberRuntimeSnippetsArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(self, pattern, type);
+  CCBRArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(self, pattern, type);
   return self;
 }
 
 - (instancetype __nonnull)initWithJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern
                                           withNSString:(NSString *)replacement
                                           withIOSClass:(IOSClass *)type {
-  CucumberRuntimeSnippetsArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(self, pattern, replacement, type);
+  CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(self, pattern, replacement, type);
   return self;
 }
 
@@ -51,16 +51,16 @@ __attribute__((unused)) static NSString *CucumberRuntimeSnippetsArgumentPattern_
 }
 
 - (NSString *)replaceMatchesWithGroupsWithNSString:(NSString *)name {
-  return CucumberRuntimeSnippetsArgumentPattern_replaceMatchWithWithNSString_withNSString_(self, name, replacement_);
+  return CCBRArgumentPattern_replaceMatchWithWithNSString_withNSString_(self, name, replacement_);
 }
 
 - (NSString *)replaceMatchesWithSpaceWithNSString:(NSString *)name {
-  return CucumberRuntimeSnippetsArgumentPattern_replaceMatchWithWithNSString_withNSString_(self, name, @" ");
+  return CCBRArgumentPattern_replaceMatchWithWithNSString_withNSString_(self, name, @" ");
 }
 
 - (NSString *)replaceMatchWithWithNSString:(NSString *)name
                               withNSString:(NSString *)replacement {
-  return CucumberRuntimeSnippetsArgumentPattern_replaceMatchWithWithNSString_withNSString_(self, name, replacement);
+  return CCBRArgumentPattern_replaceMatchWithWithNSString_withNSString_(self, name, replacement);
 }
 
 - (void)dealloc {
@@ -97,43 +97,43 @@ __attribute__((unused)) static NSString *CucumberRuntimeSnippetsArgumentPattern_
     { "replacement_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LJavaUtilRegexPattern;LIOSClass;", "(Ljava/util/regex/Pattern;Ljava/lang/Class<*>;)V", "LJavaUtilRegexPattern;LNSString;LIOSClass;", "(Ljava/util/regex/Pattern;Ljava/lang/String;Ljava/lang/Class<*>;)V", "()Ljava/lang/Class<*>;", "replaceMatchesWithGroups", "LNSString;", "replaceMatchesWithSpace", "replaceMatchWith", "LNSString;LNSString;", "Ljava/lang/Class<*>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeSnippetsArgumentPattern = { "ArgumentPattern", "cucumber.runtime.snippets", ptrTable, methods, fields, 7, 0x1, 7, 3, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeSnippetsArgumentPattern;
+  static const J2ObjcClassInfo _CCBRArgumentPattern = { "ArgumentPattern", "cucumber.runtime.snippets", ptrTable, methods, fields, 7, 0x1, 7, 3, -1, -1, -1, -1, -1 };
+  return &_CCBRArgumentPattern;
 }
 
 @end
 
-void CucumberRuntimeSnippetsArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(CucumberRuntimeSnippetsArgumentPattern *self, JavaUtilRegexPattern *pattern, IOSClass *type) {
-  CucumberRuntimeSnippetsArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(self, pattern, [((JavaUtilRegexPattern *) nil_chk(pattern)) pattern], type);
+void CCBRArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(CCBRArgumentPattern *self, JavaUtilRegexPattern *pattern, IOSClass *type) {
+  CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(self, pattern, [((JavaUtilRegexPattern *) nil_chk(pattern)) pattern], type);
 }
 
-CucumberRuntimeSnippetsArgumentPattern *new_CucumberRuntimeSnippetsArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(JavaUtilRegexPattern *pattern, IOSClass *type) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeSnippetsArgumentPattern, initWithJavaUtilRegexPattern_withIOSClass_, pattern, type)
+CCBRArgumentPattern *new_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(JavaUtilRegexPattern *pattern, IOSClass *type) {
+  J2OBJC_NEW_IMPL(CCBRArgumentPattern, initWithJavaUtilRegexPattern_withIOSClass_, pattern, type)
 }
 
-CucumberRuntimeSnippetsArgumentPattern *create_CucumberRuntimeSnippetsArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(JavaUtilRegexPattern *pattern, IOSClass *type) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeSnippetsArgumentPattern, initWithJavaUtilRegexPattern_withIOSClass_, pattern, type)
+CCBRArgumentPattern *create_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(JavaUtilRegexPattern *pattern, IOSClass *type) {
+  J2OBJC_CREATE_IMPL(CCBRArgumentPattern, initWithJavaUtilRegexPattern_withIOSClass_, pattern, type)
 }
 
-void CucumberRuntimeSnippetsArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(CucumberRuntimeSnippetsArgumentPattern *self, JavaUtilRegexPattern *pattern, NSString *replacement, IOSClass *type) {
+void CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(CCBRArgumentPattern *self, JavaUtilRegexPattern *pattern, NSString *replacement, IOSClass *type) {
   NSObject_init(self);
   JreStrongAssign(&self->pattern_, pattern);
   JreStrongAssign(&self->replacement_, replacement);
   JreStrongAssign(&self->type_, type);
 }
 
-CucumberRuntimeSnippetsArgumentPattern *new_CucumberRuntimeSnippetsArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(JavaUtilRegexPattern *pattern, NSString *replacement, IOSClass *type) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeSnippetsArgumentPattern, initWithJavaUtilRegexPattern_withNSString_withIOSClass_, pattern, replacement, type)
+CCBRArgumentPattern *new_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(JavaUtilRegexPattern *pattern, NSString *replacement, IOSClass *type) {
+  J2OBJC_NEW_IMPL(CCBRArgumentPattern, initWithJavaUtilRegexPattern_withNSString_withIOSClass_, pattern, replacement, type)
 }
 
-CucumberRuntimeSnippetsArgumentPattern *create_CucumberRuntimeSnippetsArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(JavaUtilRegexPattern *pattern, NSString *replacement, IOSClass *type) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeSnippetsArgumentPattern, initWithJavaUtilRegexPattern_withNSString_withIOSClass_, pattern, replacement, type)
+CCBRArgumentPattern *create_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(JavaUtilRegexPattern *pattern, NSString *replacement, IOSClass *type) {
+  J2OBJC_CREATE_IMPL(CCBRArgumentPattern, initWithJavaUtilRegexPattern_withNSString_withIOSClass_, pattern, replacement, type)
 }
 
-NSString *CucumberRuntimeSnippetsArgumentPattern_replaceMatchWithWithNSString_withNSString_(CucumberRuntimeSnippetsArgumentPattern *self, NSString *name, NSString *replacement) {
+NSString *CCBRArgumentPattern_replaceMatchWithWithNSString_withNSString_(CCBRArgumentPattern *self, NSString *name, NSString *replacement) {
   JavaUtilRegexMatcher *matcher = [((JavaUtilRegexPattern *) nil_chk(self->pattern_)) matcherWithJavaLangCharSequence:name];
   NSString *quotedReplacement = JavaUtilRegexMatcher_quoteReplacementWithNSString_(replacement);
   return [((JavaUtilRegexMatcher *) nil_chk(matcher)) replaceAllWithNSString:quotedReplacement];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeSnippetsArgumentPattern)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRArgumentPattern)

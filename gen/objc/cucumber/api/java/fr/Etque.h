@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaFrEtque_) && (INCLUDE_ALL_CucumberApiJavaFrEtque || defined(INCLUDE_CucumberApiJavaFrEtque))
-#define CucumberApiJavaFrEtque_
+#if !defined (CCBEtque_) && (INCLUDE_ALL_CucumberApiJavaFrEtque || defined(INCLUDE_CCBEtque))
+#define CCBEtque_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaFrEtque < JavaLangAnnotationAnnotation >
+@protocol CCBEtque < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaFrEtque : NSObject < CucumberApiJavaFrEtque > {
+@interface CCBEtque : NSObject < CCBEtque > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaFrEtque)
+J2OBJC_EMPTY_STATIC_INIT(CCBEtque)
 
-FOUNDATION_EXPORT id<CucumberApiJavaFrEtque> create_CucumberApiJavaFrEtque(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBEtque> create_CCBEtque(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaFrEtque)
+J2OBJC_TYPE_LITERAL_HEADER(CCBEtque)
+
+#define CucumberApiJavaFrEtque CCBEtque
 
 #endif
 

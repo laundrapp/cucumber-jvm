@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaEsCuando_) && (INCLUDE_ALL_CucumberApiJavaEsCuando || defined(INCLUDE_CucumberApiJavaEsCuando))
-#define CucumberApiJavaEsCuando_
+#if !defined (CCBCuando_) && (INCLUDE_ALL_CucumberApiJavaEsCuando || defined(INCLUDE_CCBCuando))
+#define CCBCuando_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaEsCuando < JavaLangAnnotationAnnotation >
+@protocol CCBCuando < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaEsCuando : NSObject < CucumberApiJavaEsCuando > {
+@interface CCBCuando : NSObject < CCBCuando > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEsCuando)
+J2OBJC_EMPTY_STATIC_INIT(CCBCuando)
 
-FOUNDATION_EXPORT id<CucumberApiJavaEsCuando> create_CucumberApiJavaEsCuando(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBCuando> create_CCBCuando(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEsCuando)
+J2OBJC_TYPE_LITERAL_HEADER(CCBCuando)
+
+#define CucumberApiJavaEsCuando CCBCuando
 
 #endif
 

@@ -11,19 +11,19 @@
 #include "java/util/regex/Matcher.h"
 #include "java/util/regex/Pattern.h"
 
-@interface CucumberRuntimeNamePredicate () {
+@interface CCBRNamePredicate () {
  @public
   id<JavaUtilList> patterns_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeNamePredicate, patterns_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRNamePredicate, patterns_, id<JavaUtilList>)
 
-@implementation CucumberRuntimeNamePredicate
+@implementation CCBRNamePredicate
 
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)patterns {
-  CucumberRuntimeNamePredicate_initWithJavaUtilList_(self, patterns);
+  CCBRNamePredicate_initWithJavaUtilList_(self, patterns);
   return self;
 }
 
@@ -57,23 +57,23 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeNamePredicate, patterns_, id<JavaUtilList>)
     { "patterns_", "LJavaUtilList;", .constantValue.asLong = 0, 0x2, -1, -1, 4, -1 },
   };
   static const void *ptrTable[] = { "LJavaUtilList;", "(Ljava/util/List<Ljava/util/regex/Pattern;>;)V", "apply", "LGherkinEventsPickleEvent;", "Ljava/util/List<Ljava/util/regex/Pattern;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeNamePredicate = { "NamePredicate", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 2, 1, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeNamePredicate;
+  static const J2ObjcClassInfo _CCBRNamePredicate = { "NamePredicate", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 2, 1, -1, -1, -1, -1, -1 };
+  return &_CCBRNamePredicate;
 }
 
 @end
 
-void CucumberRuntimeNamePredicate_initWithJavaUtilList_(CucumberRuntimeNamePredicate *self, id<JavaUtilList> patterns) {
+void CCBRNamePredicate_initWithJavaUtilList_(CCBRNamePredicate *self, id<JavaUtilList> patterns) {
   NSObject_init(self);
   JreStrongAssign(&self->patterns_, patterns);
 }
 
-CucumberRuntimeNamePredicate *new_CucumberRuntimeNamePredicate_initWithJavaUtilList_(id<JavaUtilList> patterns) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeNamePredicate, initWithJavaUtilList_, patterns)
+CCBRNamePredicate *new_CCBRNamePredicate_initWithJavaUtilList_(id<JavaUtilList> patterns) {
+  J2OBJC_NEW_IMPL(CCBRNamePredicate, initWithJavaUtilList_, patterns)
 }
 
-CucumberRuntimeNamePredicate *create_CucumberRuntimeNamePredicate_initWithJavaUtilList_(id<JavaUtilList> patterns) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeNamePredicate, initWithJavaUtilList_, patterns)
+CCBRNamePredicate *create_CCBRNamePredicate_initWithJavaUtilList_(id<JavaUtilList> patterns) {
+  J2OBJC_CREATE_IMPL(CCBRNamePredicate, initWithJavaUtilList_, patterns)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeNamePredicate)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRNamePredicate)

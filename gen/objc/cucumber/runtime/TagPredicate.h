@@ -18,18 +18,18 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeTagPredicate_) && (INCLUDE_ALL_CucumberRuntimeTagPredicate || defined(INCLUDE_CucumberRuntimeTagPredicate))
-#define CucumberRuntimeTagPredicate_
+#if !defined (CCBRTagPredicate_) && (INCLUDE_ALL_CucumberRuntimeTagPredicate || defined(INCLUDE_CCBRTagPredicate))
+#define CCBRTagPredicate_
 
 #define RESTRICT_CucumberRuntimePicklePredicate 1
-#define INCLUDE_CucumberRuntimePicklePredicate 1
+#define INCLUDE_CCBRPicklePredicate 1
 #include "cucumber/runtime/PicklePredicate.h"
 
 @class GherkinEventsPickleEvent;
 @protocol JavaUtilCollection;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeTagPredicate : NSObject < CucumberRuntimePicklePredicate >
+@interface CCBRTagPredicate : NSObject < CCBRPicklePredicate >
 
 #pragma mark Public
 
@@ -45,15 +45,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeTagPredicate)
+J2OBJC_EMPTY_STATIC_INIT(CCBRTagPredicate)
 
-FOUNDATION_EXPORT void CucumberRuntimeTagPredicate_initWithJavaUtilList_(CucumberRuntimeTagPredicate *self, id<JavaUtilList> tagExpressions);
+FOUNDATION_EXPORT void CCBRTagPredicate_initWithJavaUtilList_(CCBRTagPredicate *self, id<JavaUtilList> tagExpressions);
 
-FOUNDATION_EXPORT CucumberRuntimeTagPredicate *new_CucumberRuntimeTagPredicate_initWithJavaUtilList_(id<JavaUtilList> tagExpressions) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRTagPredicate *new_CCBRTagPredicate_initWithJavaUtilList_(id<JavaUtilList> tagExpressions) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeTagPredicate *create_CucumberRuntimeTagPredicate_initWithJavaUtilList_(id<JavaUtilList> tagExpressions);
+FOUNDATION_EXPORT CCBRTagPredicate *create_CCBRTagPredicate_initWithJavaUtilList_(id<JavaUtilList> tagExpressions);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTagPredicate)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRTagPredicate)
+
+@compatibility_alias CucumberRuntimeTagPredicate CCBRTagPredicate;
 
 #endif
 

@@ -13,12 +13,12 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *CucumberRuntimeJavaStepDefAnnotation__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CCBStepDefAnnotation__Annotations$0(void);
 
-@implementation CucumberRuntimeJavaStepDefAnnotation
+@implementation CCBStepDefAnnotation
 
 - (IOSClass *)annotationType {
-  return CucumberRuntimeJavaStepDefAnnotation_class_();
+  return CCBStepDefAnnotation_class_();
 }
 
 - (NSString *)description {
@@ -34,20 +34,20 @@ __attribute__((unused)) static IOSObjectArray *CucumberRuntimeJavaStepDefAnnotat
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const void *ptrTable[] = { (void *)&CucumberRuntimeJavaStepDefAnnotation__Annotations$0 };
-  static const J2ObjcClassInfo _CucumberRuntimeJavaStepDefAnnotation = { "StepDefAnnotation", "cucumber.runtime.java", ptrTable, NULL, NULL, 7, 0x2609, 0, 0, -1, -1, -1, -1, 0 };
-  return &_CucumberRuntimeJavaStepDefAnnotation;
+  static const void *ptrTable[] = { (void *)&CCBStepDefAnnotation__Annotations$0 };
+  static const J2ObjcClassInfo _CCBStepDefAnnotation = { "StepDefAnnotation", "cucumber.runtime.java", ptrTable, NULL, NULL, 7, 0x2609, 0, 0, -1, -1, -1, -1, 0 };
+  return &_CCBStepDefAnnotation;
 }
 
 @end
 
-id<CucumberRuntimeJavaStepDefAnnotation> create_CucumberRuntimeJavaStepDefAnnotation() {
-  CucumberRuntimeJavaStepDefAnnotation *self = AUTORELEASE([[CucumberRuntimeJavaStepDefAnnotation alloc] init]);
+id<CCBStepDefAnnotation> create_CCBStepDefAnnotation() {
+  CCBStepDefAnnotation *self = AUTORELEASE([[CCBStepDefAnnotation alloc] init]);
   return self;
 }
 
-IOSObjectArray *CucumberRuntimeJavaStepDefAnnotation__Annotations$0() {
+IOSObjectArray *CCBStepDefAnnotation__Annotations$0() {
   return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, TYPE) } count:1 type:JavaLangAnnotationElementType_class_()]) } count:2 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRuntimeJavaStepDefAnnotation)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBStepDefAnnotation)

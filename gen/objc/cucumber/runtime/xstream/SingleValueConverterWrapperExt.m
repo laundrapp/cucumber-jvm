@@ -8,19 +8,19 @@
 #include "cucumber/deps/com/thoughtworks/xstream/converters/SingleValueConverterWrapper.h"
 #include "cucumber/runtime/xstream/SingleValueConverterWrapperExt.h"
 
-@interface CucumberRuntimeXstreamSingleValueConverterWrapperExt () {
+@interface CCBRSingleValueConverterWrapperExt () {
  @public
   id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> converter_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamSingleValueConverterWrapperExt, converter_, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>)
+J2OBJC_FIELD_SETTER(CCBRSingleValueConverterWrapperExt, converter_, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>)
 
-@implementation CucumberRuntimeXstreamSingleValueConverterWrapperExt
+@implementation CCBRSingleValueConverterWrapperExt
 
 - (instancetype __nonnull)initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>)converter {
-  CucumberRuntimeXstreamSingleValueConverterWrapperExt_initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converter);
+  CCBRSingleValueConverterWrapperExt_initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converter);
   return self;
 }
 
@@ -48,23 +48,23 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamSingleValueConverterWrapperExt, conver
     { "converter_", "LCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamSingleValueConverterWrapperExt = { "SingleValueConverterWrapperExt", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x0, 2, 1, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeXstreamSingleValueConverterWrapperExt;
+  static const J2ObjcClassInfo _CCBRSingleValueConverterWrapperExt = { "SingleValueConverterWrapperExt", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x0, 2, 1, -1, -1, -1, -1, -1 };
+  return &_CCBRSingleValueConverterWrapperExt;
 }
 
 @end
 
-void CucumberRuntimeXstreamSingleValueConverterWrapperExt_initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(CucumberRuntimeXstreamSingleValueConverterWrapperExt *self, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> converter) {
+void CCBRSingleValueConverterWrapperExt_initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(CCBRSingleValueConverterWrapperExt *self, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> converter) {
   CucumberDepsComThoughtworksXstreamConvertersSingleValueConverterWrapper_initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converter);
   JreStrongAssign(&self->converter_, converter);
 }
 
-CucumberRuntimeXstreamSingleValueConverterWrapperExt *new_CucumberRuntimeXstreamSingleValueConverterWrapperExt_initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> converter) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamSingleValueConverterWrapperExt, initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_, converter)
+CCBRSingleValueConverterWrapperExt *new_CCBRSingleValueConverterWrapperExt_initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> converter) {
+  J2OBJC_NEW_IMPL(CCBRSingleValueConverterWrapperExt, initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_, converter)
 }
 
-CucumberRuntimeXstreamSingleValueConverterWrapperExt *create_CucumberRuntimeXstreamSingleValueConverterWrapperExt_initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> converter) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamSingleValueConverterWrapperExt, initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_, converter)
+CCBRSingleValueConverterWrapperExt *create_CCBRSingleValueConverterWrapperExt_initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> converter) {
+  J2OBJC_CREATE_IMPL(CCBRSingleValueConverterWrapperExt, initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_, converter)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamSingleValueConverterWrapperExt)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRSingleValueConverterWrapperExt)

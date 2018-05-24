@@ -18,28 +18,28 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeBackend_) && (INCLUDE_ALL_CucumberRuntimeBackend || defined(INCLUDE_CucumberRuntimeBackend))
-#define CucumberRuntimeBackend_
+#if !defined (CCBRBackend_) && (INCLUDE_ALL_CucumberRuntimeBackend || defined(INCLUDE_CCBRBackend))
+#define CCBRBackend_
 
-@class CucumberRuntimeSnippetsFunctionNameGenerator;
+@class CCBRFunctionNameGenerator;
 @class GherkinPicklesPickleStep;
-@protocol CucumberRuntimeGlue;
-@protocol CucumberRuntimeUnreportedStepExecutor;
+@protocol CCBRGlue;
+@protocol CCBRUnreportedStepExecutor;
 @protocol JavaUtilList;
 
-@protocol CucumberRuntimeBackend < JavaObject >
+@protocol CCBRBackend < JavaObject >
 
 /*!
  @brief Invoked once before all features.This is where stepdefs and hooks should be loaded.
  */
-- (void)loadGlueWithCucumberRuntimeGlue:(id<CucumberRuntimeGlue>)glue
-                       withJavaUtilList:(id<JavaUtilList>)gluePaths;
+- (void)loadGlueWithCCBRGlue:(id<CCBRGlue>)glue
+            withJavaUtilList:(id<JavaUtilList>)gluePaths;
 
 /*!
  @brief Invoked once, handing the backend a reference to a step executor
   in case the backend needs to call steps defined within other steps
  */
-- (void)setUnreportedStepExecutorWithCucumberRuntimeUnreportedStepExecutor:(id<CucumberRuntimeUnreportedStepExecutor>)executor;
+- (void)setUnreportedStepExecutorWithCCBRUnreportedStepExecutor:(id<CCBRUnreportedStepExecutor>)executor;
 
 /*!
  @brief Invoked before a new scenario starts.Implementations should do any necessary
@@ -54,13 +54,15 @@
 
 - (NSString *)getSnippetWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
                                         withNSString:(NSString *)keyword
-    withCucumberRuntimeSnippetsFunctionNameGenerator:(CucumberRuntimeSnippetsFunctionNameGenerator *)functionNameGenerator;
+                       withCCBRFunctionNameGenerator:(CCBRFunctionNameGenerator *)functionNameGenerator;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeBackend)
+J2OBJC_EMPTY_STATIC_INIT(CCBRBackend)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeBackend)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRBackend)
+
+#define CucumberRuntimeBackend CCBRBackend
 
 #endif
 

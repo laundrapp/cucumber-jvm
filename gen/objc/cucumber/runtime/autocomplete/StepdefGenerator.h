@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeAutocompleteStepdefGenerator_) && (INCLUDE_ALL_CucumberRuntimeAutocompleteStepdefGenerator || defined(INCLUDE_CucumberRuntimeAutocompleteStepdefGenerator))
-#define CucumberRuntimeAutocompleteStepdefGenerator_
+#if !defined (CCBRStepdefGenerator_) && (INCLUDE_ALL_CucumberRuntimeAutocompleteStepdefGenerator || defined(INCLUDE_CCBRStepdefGenerator))
+#define CCBRStepdefGenerator_
 
 @protocol JavaUtilCollection;
 @protocol JavaUtilList;
@@ -27,7 +27,7 @@
 /*!
  @brief Generates metadata to be used for Code Completion: https://github.com/cucumber/gherkin/wiki/Code-Completion
  */
-@interface CucumberRuntimeAutocompleteStepdefGenerator : NSObject
+@interface CCBRStepdefGenerator : NSObject
 
 #pragma mark Public
 
@@ -38,15 +38,17 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeAutocompleteStepdefGenerator)
+J2OBJC_STATIC_INIT(CCBRStepdefGenerator)
 
-FOUNDATION_EXPORT void CucumberRuntimeAutocompleteStepdefGenerator_init(CucumberRuntimeAutocompleteStepdefGenerator *self);
+FOUNDATION_EXPORT void CCBRStepdefGenerator_init(CCBRStepdefGenerator *self);
 
-FOUNDATION_EXPORT CucumberRuntimeAutocompleteStepdefGenerator *new_CucumberRuntimeAutocompleteStepdefGenerator_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRStepdefGenerator *new_CCBRStepdefGenerator_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeAutocompleteStepdefGenerator *create_CucumberRuntimeAutocompleteStepdefGenerator_init(void);
+FOUNDATION_EXPORT CCBRStepdefGenerator *create_CCBRStepdefGenerator_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeAutocompleteStepdefGenerator)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRStepdefGenerator)
+
+@compatibility_alias CucumberRuntimeAutocompleteStepdefGenerator CCBRStepdefGenerator;
 
 #endif
 

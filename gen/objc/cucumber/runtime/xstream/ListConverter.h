@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamListConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamListConverter || defined(INCLUDE_CucumberRuntimeXstreamListConverter))
-#define CucumberRuntimeXstreamListConverter_
+#if !defined (CCBRListConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamListConverter || defined(INCLUDE_CCBRListConverter))
+#define CCBRListConverter_
 
 #define RESTRICT_CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter 1
 #define INCLUDE_CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@interface CucumberRuntimeXstreamListConverter : NSObject < CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter >
+@interface CCBRListConverter : NSObject < CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter >
 
 #pragma mark Public
 
@@ -46,15 +46,17 @@ withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<Cucumbe
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamListConverter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRListConverter)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamListConverter_initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(CucumberRuntimeXstreamListConverter *self, NSString *delimiter, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> delegate);
+FOUNDATION_EXPORT void CCBRListConverter_initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(CCBRListConverter *self, NSString *delimiter, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> delegate);
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamListConverter *new_CucumberRuntimeXstreamListConverter_initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(NSString *delimiter, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> delegate) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRListConverter *new_CCBRListConverter_initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(NSString *delimiter, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> delegate) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamListConverter *create_CucumberRuntimeXstreamListConverter_initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(NSString *delimiter, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> delegate);
+FOUNDATION_EXPORT CCBRListConverter *create_CCBRListConverter_initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(NSString *delimiter, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> delegate);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamListConverter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRListConverter)
+
+@compatibility_alias CucumberRuntimeXstreamListConverter CCBRListConverter;
 
 #endif
 

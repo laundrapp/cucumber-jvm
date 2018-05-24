@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeModelCucumberFeature_) && (INCLUDE_ALL_CucumberRuntimeModelCucumberFeature || defined(INCLUDE_CucumberRuntimeModelCucumberFeature))
-#define CucumberRuntimeModelCucumberFeature_
+#if !defined (CCBRCucumberFeature_) && (INCLUDE_ALL_CucumberRuntimeModelCucumberFeature || defined(INCLUDE_CCBRCucumberFeature))
+#define CCBRCucumberFeature_
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
@@ -29,10 +29,10 @@
 @class GherkinAstGherkinDocument;
 @class JavaIoPrintStream;
 @class JavaUtilRegexPattern;
-@protocol CucumberRuntimeIoResourceLoader;
+@protocol CCBRResourceLoader;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeModelCucumberFeature : NSObject < JavaIoSerializable >
+@interface CCBRCucumberFeature : NSObject < JavaIoSerializable >
 
 #pragma mark Public
 
@@ -44,15 +44,15 @@
 
 - (NSString *)getUri;
 
-+ (id<JavaUtilList>)load__WithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                             withJavaUtilList:(id<JavaUtilList>)featurePaths;
++ (id<JavaUtilList>)load__WithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+                                withJavaUtilList:(id<JavaUtilList>)featurePaths;
 
-+ (id<JavaUtilList>)load__WithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                             withJavaUtilList:(id<JavaUtilList>)featurePaths
-                                        withJavaIoPrintStream:(JavaIoPrintStream *)outArg;
++ (id<JavaUtilList>)load__WithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+                                withJavaUtilList:(id<JavaUtilList>)featurePaths
+                           withJavaIoPrintStream:(JavaIoPrintStream *)outArg;
 
-+ (id<JavaUtilList>)loadRerunFileWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                                        withNSString:(NSString *)rerunPath;
++ (id<JavaUtilList>)loadRerunFileWithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+                                           withNSString:(NSString *)rerunPath;
 
 - (void)sendTestSourceReadWithCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus;
 
@@ -62,26 +62,28 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeModelCucumberFeature)
+J2OBJC_STATIC_INIT(CCBRCucumberFeature)
 
-inline JavaUtilRegexPattern *CucumberRuntimeModelCucumberFeature_get_RERUN_PATH_SPECIFICATION(void);
+inline JavaUtilRegexPattern *CCBRCucumberFeature_get_RERUN_PATH_SPECIFICATION(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT JavaUtilRegexPattern *CucumberRuntimeModelCucumberFeature_RERUN_PATH_SPECIFICATION;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeModelCucumberFeature, RERUN_PATH_SPECIFICATION, JavaUtilRegexPattern *)
+FOUNDATION_EXPORT JavaUtilRegexPattern *CCBRCucumberFeature_RERUN_PATH_SPECIFICATION;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRCucumberFeature, RERUN_PATH_SPECIFICATION, JavaUtilRegexPattern *)
 
-FOUNDATION_EXPORT id<JavaUtilList> CucumberRuntimeModelCucumberFeature_load__WithCucumberRuntimeIoResourceLoader_withJavaUtilList_withJavaIoPrintStream_(id<CucumberRuntimeIoResourceLoader> resourceLoader, id<JavaUtilList> featurePaths, JavaIoPrintStream *outArg);
+FOUNDATION_EXPORT id<JavaUtilList> CCBRCucumberFeature_load__WithCCBRResourceLoader_withJavaUtilList_withJavaIoPrintStream_(id<CCBRResourceLoader> resourceLoader, id<JavaUtilList> featurePaths, JavaIoPrintStream *outArg);
 
-FOUNDATION_EXPORT id<JavaUtilList> CucumberRuntimeModelCucumberFeature_load__WithCucumberRuntimeIoResourceLoader_withJavaUtilList_(id<CucumberRuntimeIoResourceLoader> resourceLoader, id<JavaUtilList> featurePaths);
+FOUNDATION_EXPORT id<JavaUtilList> CCBRCucumberFeature_load__WithCCBRResourceLoader_withJavaUtilList_(id<CCBRResourceLoader> resourceLoader, id<JavaUtilList> featurePaths);
 
-FOUNDATION_EXPORT id<JavaUtilList> CucumberRuntimeModelCucumberFeature_loadRerunFileWithCucumberRuntimeIoResourceLoader_withNSString_(id<CucumberRuntimeIoResourceLoader> resourceLoader, NSString *rerunPath);
+FOUNDATION_EXPORT id<JavaUtilList> CCBRCucumberFeature_loadRerunFileWithCCBRResourceLoader_withNSString_(id<CCBRResourceLoader> resourceLoader, NSString *rerunPath);
 
-FOUNDATION_EXPORT void CucumberRuntimeModelCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(CucumberRuntimeModelCucumberFeature *self, GherkinAstGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource);
+FOUNDATION_EXPORT void CCBRCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(CCBRCucumberFeature *self, GherkinAstGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource);
 
-FOUNDATION_EXPORT CucumberRuntimeModelCucumberFeature *new_CucumberRuntimeModelCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(GherkinAstGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRCucumberFeature *new_CCBRCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(GherkinAstGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeModelCucumberFeature *create_CucumberRuntimeModelCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(GherkinAstGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource);
+FOUNDATION_EXPORT CCBRCucumberFeature *create_CCBRCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(GherkinAstGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeModelCucumberFeature)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRCucumberFeature)
+
+@compatibility_alias CucumberRuntimeModelCucumberFeature CCBRCucumberFeature;
 
 #endif
 

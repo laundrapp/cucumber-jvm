@@ -18,40 +18,42 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeGlue_) && (INCLUDE_ALL_CucumberRuntimeGlue || defined(INCLUDE_CucumberRuntimeGlue))
-#define CucumberRuntimeGlue_
+#if !defined (CCBRGlue_) && (INCLUDE_ALL_CucumberRuntimeGlue || defined(INCLUDE_CCBRGlue))
+#define CCBRGlue_
 
-@class CucumberRuntimeStepDefinitionMatch;
+@class CCBRStepDefinitionMatch;
 @class GherkinPicklesPickleStep;
-@protocol CucumberApiStepDefinitionReporter;
-@protocol CucumberRuntimeHookDefinition;
-@protocol CucumberRuntimeStepDefinition;
+@protocol CCBRHookDefinition;
+@protocol CCBRStepDefinition;
+@protocol CCBStepDefinitionReporter;
 @protocol JavaUtilList;
 
-@protocol CucumberRuntimeGlue < JavaObject >
+@protocol CCBRGlue < JavaObject >
 
-- (void)addStepDefinitionWithCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)stepDefinition;
+- (void)addStepDefinitionWithCCBRStepDefinition:(id<CCBRStepDefinition>)stepDefinition;
 
-- (void)addBeforeHookWithCucumberRuntimeHookDefinition:(id<CucumberRuntimeHookDefinition>)hookDefinition;
+- (void)addBeforeHookWithCCBRHookDefinition:(id<CCBRHookDefinition>)hookDefinition;
 
-- (void)addAfterHookWithCucumberRuntimeHookDefinition:(id<CucumberRuntimeHookDefinition>)hookDefinition;
+- (void)addAfterHookWithCCBRHookDefinition:(id<CCBRHookDefinition>)hookDefinition;
 
 - (id<JavaUtilList>)getBeforeHooks;
 
 - (id<JavaUtilList>)getAfterHooks;
 
-- (CucumberRuntimeStepDefinitionMatch *)stepDefinitionMatchWithNSString:(NSString *)featurePath
-                                           withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step;
+- (CCBRStepDefinitionMatch *)stepDefinitionMatchWithNSString:(NSString *)featurePath
+                                withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step;
 
-- (void)reportStepDefinitionsWithCucumberApiStepDefinitionReporter:(id<CucumberApiStepDefinitionReporter>)stepDefinitionReporter;
+- (void)reportStepDefinitionsWithCCBStepDefinitionReporter:(id<CCBStepDefinitionReporter>)stepDefinitionReporter;
 
 - (void)removeScenarioScopedGlue;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeGlue)
+J2OBJC_EMPTY_STATIC_INIT(CCBRGlue)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeGlue)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRGlue)
+
+#define CucumberRuntimeGlue CCBRGlue
 
 #endif
 

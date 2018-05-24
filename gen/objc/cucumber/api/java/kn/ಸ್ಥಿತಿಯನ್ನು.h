@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaKnಸ್ಥಿತಿಯನ್ನು_) && (INCLUDE_ALL_CucumberApiJavaKnಸ_ಥ_ತ_ಯನ_ನ_ || defined(INCLUDE_CucumberApiJavaKnಸ್ಥಿತಿಯನ್ನು))
-#define CucumberApiJavaKnಸ್ಥಿತಿಯನ್ನು_
+#if !defined (CCBಸ್ಥಿತಿಯನ್ನು_) && (INCLUDE_ALL_CucumberApiJavaKnಸ_ಥ_ತ_ಯನ_ನ_ || defined(INCLUDE_CCBಸ್ಥಿತಿಯನ್ನು))
+#define CCBಸ್ಥಿತಿಯನ್ನು_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaKnಸ್ಥಿತಿಯನ್ನು < JavaLangAnnotationAnnotation >
+@protocol CCBಸ್ಥಿತಿಯನ್ನು < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaKnಸ್ಥಿತಿಯನ್ನು : NSObject < CucumberApiJavaKnಸ್ಥಿತಿಯನ್ನು > {
+@interface CCBಸ್ಥಿತಿಯನ್ನು : NSObject < CCBಸ್ಥಿತಿಯನ್ನು > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaKnಸ್ಥಿತಿಯನ್ನು)
+J2OBJC_EMPTY_STATIC_INIT(CCBಸ್ಥಿತಿಯನ್ನು)
 
-FOUNDATION_EXPORT id<CucumberApiJavaKnಸ್ಥಿತಿಯನ್ನು> create_CucumberApiJavaKnಸ್ಥಿತಿಯನ್ನು(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBಸ್ಥಿತಿಯನ್ನು> create_CCBಸ್ಥಿತಿಯನ್ನು(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaKnಸ್ಥಿತಿಯನ್ನು)
+J2OBJC_TYPE_LITERAL_HEADER(CCBಸ್ಥಿತಿಯನ್ನು)
+
+#define CucumberApiJavaKnಸ್ಥಿತಿಯನ್ನು CCBಸ್ಥಿತಿಯನ್ನು
 
 #endif
 

@@ -12,33 +12,33 @@
 #include "java/util/Collections.h"
 #include "java/util/List.h"
 
-@interface CucumberRuntimeHookDefinitionMatch () {
+@interface CCBRHookDefinitionMatch () {
  @public
-  id<CucumberRuntimeHookDefinition> hookDefinition_;
+  id<CCBRHookDefinition> hookDefinition_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeHookDefinitionMatch, hookDefinition_, id<CucumberRuntimeHookDefinition>)
+J2OBJC_FIELD_SETTER(CCBRHookDefinitionMatch, hookDefinition_, id<CCBRHookDefinition>)
 
-@implementation CucumberRuntimeHookDefinitionMatch
+@implementation CCBRHookDefinitionMatch
 
-- (instancetype __nonnull)initWithCucumberRuntimeHookDefinition:(id<CucumberRuntimeHookDefinition>)hookDefinition {
-  CucumberRuntimeHookDefinitionMatch_initWithCucumberRuntimeHookDefinition_(self, hookDefinition);
+- (instancetype __nonnull)initWithCCBRHookDefinition:(id<CCBRHookDefinition>)hookDefinition {
+  CCBRHookDefinitionMatch_initWithCCBRHookDefinition_(self, hookDefinition);
   return self;
 }
 
 - (void)runStepWithNSString:(NSString *)language
-    withCucumberApiScenario:(id<CucumberApiScenario>)scenario {
-  [((id<CucumberRuntimeHookDefinition>) nil_chk(hookDefinition_)) executeWithCucumberApiScenario:scenario];
+            withCCBScenario:(id<CCBScenario>)scenario {
+  [((id<CCBRHookDefinition>) nil_chk(hookDefinition_)) executeWithCCBScenario:scenario];
 }
 
 - (void)dryRunStepWithNSString:(NSString *)language
-       withCucumberApiScenario:(id<CucumberApiScenario>)scenario {
+               withCCBScenario:(id<CCBScenario>)scenario {
 }
 
-- (CucumberRuntimeMatch *)getMatch {
-  return create_CucumberRuntimeMatch_initWithJavaUtilList_withNSString_(JavaUtilCollections_emptyList(), [((id<CucumberRuntimeHookDefinition>) nil_chk(hookDefinition_)) getLocationWithBoolean:false]);
+- (CCBRMatch *)getMatch {
+  return create_CCBRMatch_initWithJavaUtilList_withNSString_(JavaUtilCollections_emptyList(), [((id<CCBRHookDefinition>) nil_chk(hookDefinition_)) getLocationWithBoolean:false]);
 }
 
 - (NSString *)getPattern {
@@ -46,7 +46,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeHookDefinitionMatch, hookDefinition_, id<Cucu
 }
 
 - (NSString *)getCodeLocation {
-  return [((id<CucumberRuntimeHookDefinition>) nil_chk(hookDefinition_)) getLocationWithBoolean:false];
+  return [((id<CCBRHookDefinition>) nil_chk(hookDefinition_)) getLocationWithBoolean:false];
 }
 
 - (id<JavaUtilList>)getArguments {
@@ -63,7 +63,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeHookDefinitionMatch, hookDefinition_, id<Cucu
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 1, 2, 3, -1, -1, -1 },
     { NULL, "V", 0x1, 4, 2, 3, -1, -1, -1 },
-    { NULL, "LCucumberRuntimeMatch;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCCBRMatch;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 5, -1, -1 },
@@ -71,35 +71,35 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeHookDefinitionMatch, hookDefinition_, id<Cucu
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeHookDefinition:);
-  methods[1].selector = @selector(runStepWithNSString:withCucumberApiScenario:);
-  methods[2].selector = @selector(dryRunStepWithNSString:withCucumberApiScenario:);
+  methods[0].selector = @selector(initWithCCBRHookDefinition:);
+  methods[1].selector = @selector(runStepWithNSString:withCCBScenario:);
+  methods[2].selector = @selector(dryRunStepWithNSString:withCCBScenario:);
   methods[3].selector = @selector(getMatch);
   methods[4].selector = @selector(getPattern);
   methods[5].selector = @selector(getCodeLocation);
   methods[6].selector = @selector(getArguments);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "hookDefinition_", "LCucumberRuntimeHookDefinition;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "hookDefinition_", "LCCBRHookDefinition;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCucumberRuntimeHookDefinition;", "runStep", "LNSString;LCucumberApiScenario;", "LJavaLangThrowable;", "dryRunStep", "()Ljava/util/List<Lcucumber/runtime/Argument;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeHookDefinitionMatch = { "HookDefinitionMatch", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 7, 1, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeHookDefinitionMatch;
+  static const void *ptrTable[] = { "LCCBRHookDefinition;", "runStep", "LNSString;LCCBScenario;", "LJavaLangThrowable;", "dryRunStep", "()Ljava/util/List<Lcucumber/runtime/Argument;>;" };
+  static const J2ObjcClassInfo _CCBRHookDefinitionMatch = { "HookDefinitionMatch", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 7, 1, -1, -1, -1, -1, -1 };
+  return &_CCBRHookDefinitionMatch;
 }
 
 @end
 
-void CucumberRuntimeHookDefinitionMatch_initWithCucumberRuntimeHookDefinition_(CucumberRuntimeHookDefinitionMatch *self, id<CucumberRuntimeHookDefinition> hookDefinition) {
+void CCBRHookDefinitionMatch_initWithCCBRHookDefinition_(CCBRHookDefinitionMatch *self, id<CCBRHookDefinition> hookDefinition) {
   NSObject_init(self);
   JreStrongAssign(&self->hookDefinition_, hookDefinition);
 }
 
-CucumberRuntimeHookDefinitionMatch *new_CucumberRuntimeHookDefinitionMatch_initWithCucumberRuntimeHookDefinition_(id<CucumberRuntimeHookDefinition> hookDefinition) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeHookDefinitionMatch, initWithCucumberRuntimeHookDefinition_, hookDefinition)
+CCBRHookDefinitionMatch *new_CCBRHookDefinitionMatch_initWithCCBRHookDefinition_(id<CCBRHookDefinition> hookDefinition) {
+  J2OBJC_NEW_IMPL(CCBRHookDefinitionMatch, initWithCCBRHookDefinition_, hookDefinition)
 }
 
-CucumberRuntimeHookDefinitionMatch *create_CucumberRuntimeHookDefinitionMatch_initWithCucumberRuntimeHookDefinition_(id<CucumberRuntimeHookDefinition> hookDefinition) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeHookDefinitionMatch, initWithCucumberRuntimeHookDefinition_, hookDefinition)
+CCBRHookDefinitionMatch *create_CCBRHookDefinitionMatch_initWithCCBRHookDefinition_(id<CCBRHookDefinition> hookDefinition) {
+  J2OBJC_CREATE_IMPL(CCBRHookDefinitionMatch, initWithCCBRHookDefinition_, hookDefinition)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeHookDefinitionMatch)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRHookDefinitionMatch)

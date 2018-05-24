@@ -18,34 +18,36 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeDefaultSummaryPrinter_) && (INCLUDE_ALL_CucumberRuntimeDefaultSummaryPrinter || defined(INCLUDE_CucumberRuntimeDefaultSummaryPrinter))
-#define CucumberRuntimeDefaultSummaryPrinter_
+#if !defined (CCBRDefaultSummaryPrinter_) && (INCLUDE_ALL_CucumberRuntimeDefaultSummaryPrinter || defined(INCLUDE_CCBRDefaultSummaryPrinter))
+#define CCBRDefaultSummaryPrinter_
 
 #define RESTRICT_CucumberApiSummaryPrinter 1
-#define INCLUDE_CucumberApiSummaryPrinter 1
+#define INCLUDE_CCBSummaryPrinter 1
 #include "cucumber/api/SummaryPrinter.h"
 
-@class CucumberRuntimeRuntime;
+@class CCBRRuntime;
 
-@interface CucumberRuntimeDefaultSummaryPrinter : NSObject < CucumberApiSummaryPrinter >
+@interface CCBRDefaultSummaryPrinter : NSObject < CCBSummaryPrinter >
 
 #pragma mark Public
 
 - (instancetype __nonnull)init;
 
-- (void)printWithCucumberRuntimeRuntime:(CucumberRuntimeRuntime *)runtime;
+- (void)printWithCCBRRuntime:(CCBRRuntime *)runtime;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeDefaultSummaryPrinter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRDefaultSummaryPrinter)
 
-FOUNDATION_EXPORT void CucumberRuntimeDefaultSummaryPrinter_init(CucumberRuntimeDefaultSummaryPrinter *self);
+FOUNDATION_EXPORT void CCBRDefaultSummaryPrinter_init(CCBRDefaultSummaryPrinter *self);
 
-FOUNDATION_EXPORT CucumberRuntimeDefaultSummaryPrinter *new_CucumberRuntimeDefaultSummaryPrinter_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRDefaultSummaryPrinter *new_CCBRDefaultSummaryPrinter_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeDefaultSummaryPrinter *create_CucumberRuntimeDefaultSummaryPrinter_init(void);
+FOUNDATION_EXPORT CCBRDefaultSummaryPrinter *create_CCBRDefaultSummaryPrinter_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeDefaultSummaryPrinter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRDefaultSummaryPrinter)
+
+@compatibility_alias CucumberRuntimeDefaultSummaryPrinter CCBRDefaultSummaryPrinter;
 
 #endif
 

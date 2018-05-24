@@ -18,18 +18,18 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamByteConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamByteConverter || defined(INCLUDE_CucumberRuntimeXstreamByteConverter))
-#define CucumberRuntimeXstreamByteConverter_
+#if !defined (CCBRByteConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamByteConverter || defined(INCLUDE_CCBRByteConverter))
+#define CCBRByteConverter_
 
 #define RESTRICT_CucumberRuntimeXstreamConverterWithNumberFormat 1
-#define INCLUDE_CucumberRuntimeXstreamConverterWithNumberFormat 1
+#define INCLUDE_CCBRConverterWithNumberFormat 1
 #include "cucumber/runtime/xstream/ConverterWithNumberFormat.h"
 
 @class IOSObjectArray;
 @class JavaLangByte;
 @class JavaUtilLocale;
 
-@interface CucumberRuntimeXstreamByteConverter : CucumberRuntimeXstreamConverterWithNumberFormat
+@interface CCBRByteConverter : CCBRConverterWithNumberFormat
 
 #pragma mark Public
 
@@ -48,15 +48,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamByteConverter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRByteConverter)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamByteConverter_initWithJavaUtilLocale_(CucumberRuntimeXstreamByteConverter *self, JavaUtilLocale *locale);
+FOUNDATION_EXPORT void CCBRByteConverter_initWithJavaUtilLocale_(CCBRByteConverter *self, JavaUtilLocale *locale);
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamByteConverter *new_CucumberRuntimeXstreamByteConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRByteConverter *new_CCBRByteConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamByteConverter *create_CucumberRuntimeXstreamByteConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale);
+FOUNDATION_EXPORT CCBRByteConverter *create_CCBRByteConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamByteConverter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRByteConverter)
+
+@compatibility_alias CucumberRuntimeXstreamByteConverter CCBRByteConverter;
 
 #endif
 

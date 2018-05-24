@@ -18,40 +18,42 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeTimeout_) && (INCLUDE_ALL_CucumberRuntimeTimeout || defined(INCLUDE_CucumberRuntimeTimeout))
-#define CucumberRuntimeTimeout_
+#if !defined (CCBRTimeout_) && (INCLUDE_ALL_CucumberRuntimeTimeout || defined(INCLUDE_CCBRTimeout))
+#define CCBRTimeout_
 
-@protocol CucumberRuntimeTimeout_Callback;
+@protocol CCBRTimeout_Callback;
 
-@interface CucumberRuntimeTimeout : NSObject
+@interface CCBRTimeout : NSObject
 
 #pragma mark Public
 
-+ (id)timeoutWithCucumberRuntimeTimeout_Callback:(id<CucumberRuntimeTimeout_Callback>)callback
-                                        withLong:(jlong)timeoutMillis;
++ (id)timeoutWithCCBRTimeout_Callback:(id<CCBRTimeout_Callback>)callback
+                             withLong:(jlong)timeoutMillis;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeTimeout)
+J2OBJC_EMPTY_STATIC_INIT(CCBRTimeout)
 
-FOUNDATION_EXPORT id CucumberRuntimeTimeout_timeoutWithCucumberRuntimeTimeout_Callback_withLong_(id<CucumberRuntimeTimeout_Callback> callback, jlong timeoutMillis);
+FOUNDATION_EXPORT id CCBRTimeout_timeoutWithCCBRTimeout_Callback_withLong_(id<CCBRTimeout_Callback> callback, jlong timeoutMillis);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTimeout)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRTimeout)
+
+@compatibility_alias CucumberRuntimeTimeout CCBRTimeout;
 
 #endif
 
-#if !defined (CucumberRuntimeTimeout_Callback_) && (INCLUDE_ALL_CucumberRuntimeTimeout || defined(INCLUDE_CucumberRuntimeTimeout_Callback))
-#define CucumberRuntimeTimeout_Callback_
+#if !defined (CCBRTimeout_Callback_) && (INCLUDE_ALL_CucumberRuntimeTimeout || defined(INCLUDE_CCBRTimeout_Callback))
+#define CCBRTimeout_Callback_
 
-@protocol CucumberRuntimeTimeout_Callback < JavaObject >
+@protocol CCBRTimeout_Callback < JavaObject >
 
 - (id)call;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeTimeout_Callback)
+J2OBJC_EMPTY_STATIC_INIT(CCBRTimeout_Callback)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTimeout_Callback)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRTimeout_Callback)
 
 #endif
 

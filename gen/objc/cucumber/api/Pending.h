@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiPending_) && (INCLUDE_ALL_CucumberApiPending || defined(INCLUDE_CucumberApiPending))
-#define CucumberApiPending_
+#if !defined (CCBPending_) && (INCLUDE_ALL_CucumberApiPending || defined(INCLUDE_CCBPending))
+#define CCBPending_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -33,7 +33,7 @@
   be pending instead of failed.
  - seealso: PendingException
  */
-@protocol CucumberApiPending < JavaLangAnnotationAnnotation >
+@protocol CCBPending < JavaLangAnnotationAnnotation >
 
 - (jboolean)isEqual:(id)obj;
 
@@ -41,15 +41,17 @@
 
 @end
 
-@interface CucumberApiPending : NSObject < CucumberApiPending >
+@interface CCBPending : NSObject < CCBPending >
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiPending)
+J2OBJC_EMPTY_STATIC_INIT(CCBPending)
 
-FOUNDATION_EXPORT id<CucumberApiPending> create_CucumberApiPending(void);
+FOUNDATION_EXPORT id<CCBPending> create_CCBPending(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiPending)
+J2OBJC_TYPE_LITERAL_HEADER(CCBPending)
+
+#define CucumberApiPending CCBPending
 
 #endif
 

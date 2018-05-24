@@ -18,17 +18,17 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeNoInstancesException_) && (INCLUDE_ALL_CucumberRuntimeNoInstancesException || defined(INCLUDE_CucumberRuntimeNoInstancesException))
-#define CucumberRuntimeNoInstancesException_
+#if !defined (CCBRNoInstancesException_) && (INCLUDE_ALL_CucumberRuntimeNoInstancesException || defined(INCLUDE_CCBRNoInstancesException))
+#define CCBRNoInstancesException_
 
 #define RESTRICT_CucumberRuntimeCucumberException 1
-#define INCLUDE_CucumberRuntimeCucumberException 1
+#define INCLUDE_CCBRCucumberException 1
 #include "cucumber/runtime/CucumberException.h"
 
 @class IOSClass;
 @class JavaLangThrowable;
 
-@interface CucumberRuntimeNoInstancesException : CucumberRuntimeCucumberException
+@interface CCBRNoInstancesException : CCBRCucumberException
 
 #pragma mark Public
 
@@ -45,15 +45,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeNoInstancesException)
+J2OBJC_EMPTY_STATIC_INIT(CCBRNoInstancesException)
 
-FOUNDATION_EXPORT void CucumberRuntimeNoInstancesException_initWithIOSClass_(CucumberRuntimeNoInstancesException *self, IOSClass *parentType);
+FOUNDATION_EXPORT void CCBRNoInstancesException_initWithIOSClass_(CCBRNoInstancesException *self, IOSClass *parentType);
 
-FOUNDATION_EXPORT CucumberRuntimeNoInstancesException *new_CucumberRuntimeNoInstancesException_initWithIOSClass_(IOSClass *parentType) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRNoInstancesException *new_CCBRNoInstancesException_initWithIOSClass_(IOSClass *parentType) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeNoInstancesException *create_CucumberRuntimeNoInstancesException_initWithIOSClass_(IOSClass *parentType);
+FOUNDATION_EXPORT CCBRNoInstancesException *create_CCBRNoInstancesException_initWithIOSClass_(IOSClass *parentType);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeNoInstancesException)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRNoInstancesException)
+
+@compatibility_alias CucumberRuntimeNoInstancesException CCBRNoInstancesException;
 
 #endif
 

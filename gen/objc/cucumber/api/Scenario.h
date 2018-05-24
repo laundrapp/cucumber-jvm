@@ -18,10 +18,10 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiScenario_) && (INCLUDE_ALL_CucumberApiScenario || defined(INCLUDE_CucumberApiScenario))
-#define CucumberApiScenario_
+#if !defined (CCBScenario_) && (INCLUDE_ALL_CucumberApiScenario || defined(INCLUDE_CCBScenario))
+#define CCBScenario_
 
-@class CucumberApiResult_Type;
+@class CCBResult_Type;
 @class IOSByteArray;
 @protocol JavaUtilCollection;
 @protocol JavaUtilList;
@@ -30,7 +30,7 @@
  @brief Before or After Hooks that declare a parameter of this type will receive an instance of this class.
  It allows writing text and embedding media into reports, as well as inspecting results (in an After block).
  */
-@protocol CucumberApiScenario < JavaObject >
+@protocol CCBScenario < JavaObject >
 
 /*!
  @return source_tag_names. Needed for compatibility with Capybara.
@@ -40,7 +40,7 @@
 /*!
  @return the <em>most severe</em> status of the Scenario's Steps.
  */
-- (CucumberApiResult_Type *)getStatus;
+- (CCBResult_Type *)getStatus;
 
 /*!
  @return true if and only if <code>getStatus()</code> returns "failed"
@@ -92,9 +92,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiScenario)
+J2OBJC_EMPTY_STATIC_INIT(CCBScenario)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiScenario)
+J2OBJC_TYPE_LITERAL_HEADER(CCBScenario)
+
+#define CucumberApiScenario CCBScenario
 
 #endif
 

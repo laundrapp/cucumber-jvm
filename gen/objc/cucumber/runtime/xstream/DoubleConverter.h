@@ -18,18 +18,18 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamDoubleConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamDoubleConverter || defined(INCLUDE_CucumberRuntimeXstreamDoubleConverter))
-#define CucumberRuntimeXstreamDoubleConverter_
+#if !defined (CCBRDoubleConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamDoubleConverter || defined(INCLUDE_CCBRDoubleConverter))
+#define CCBRDoubleConverter_
 
 #define RESTRICT_CucumberRuntimeXstreamConverterWithNumberFormat 1
-#define INCLUDE_CucumberRuntimeXstreamConverterWithNumberFormat 1
+#define INCLUDE_CCBRConverterWithNumberFormat 1
 #include "cucumber/runtime/xstream/ConverterWithNumberFormat.h"
 
 @class IOSObjectArray;
 @class JavaLangDouble;
 @class JavaUtilLocale;
 
-@interface CucumberRuntimeXstreamDoubleConverter : CucumberRuntimeXstreamConverterWithNumberFormat
+@interface CCBRDoubleConverter : CCBRConverterWithNumberFormat
 
 #pragma mark Public
 
@@ -48,15 +48,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamDoubleConverter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRDoubleConverter)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamDoubleConverter_initWithJavaUtilLocale_(CucumberRuntimeXstreamDoubleConverter *self, JavaUtilLocale *locale);
+FOUNDATION_EXPORT void CCBRDoubleConverter_initWithJavaUtilLocale_(CCBRDoubleConverter *self, JavaUtilLocale *locale);
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamDoubleConverter *new_CucumberRuntimeXstreamDoubleConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRDoubleConverter *new_CCBRDoubleConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamDoubleConverter *create_CucumberRuntimeXstreamDoubleConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale);
+FOUNDATION_EXPORT CCBRDoubleConverter *create_CCBRDoubleConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamDoubleConverter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRDoubleConverter)
+
+@compatibility_alias CucumberRuntimeXstreamDoubleConverter CCBRDoubleConverter;
 
 #endif
 

@@ -18,18 +18,18 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamShortConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamShortConverter || defined(INCLUDE_CucumberRuntimeXstreamShortConverter))
-#define CucumberRuntimeXstreamShortConverter_
+#if !defined (CCBRShortConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamShortConverter || defined(INCLUDE_CCBRShortConverter))
+#define CCBRShortConverter_
 
 #define RESTRICT_CucumberRuntimeXstreamConverterWithNumberFormat 1
-#define INCLUDE_CucumberRuntimeXstreamConverterWithNumberFormat 1
+#define INCLUDE_CCBRConverterWithNumberFormat 1
 #include "cucumber/runtime/xstream/ConverterWithNumberFormat.h"
 
 @class IOSObjectArray;
 @class JavaLangShort;
 @class JavaUtilLocale;
 
-@interface CucumberRuntimeXstreamShortConverter : CucumberRuntimeXstreamConverterWithNumberFormat
+@interface CCBRShortConverter : CCBRConverterWithNumberFormat
 
 #pragma mark Public
 
@@ -48,15 +48,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamShortConverter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRShortConverter)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamShortConverter_initWithJavaUtilLocale_(CucumberRuntimeXstreamShortConverter *self, JavaUtilLocale *locale);
+FOUNDATION_EXPORT void CCBRShortConverter_initWithJavaUtilLocale_(CCBRShortConverter *self, JavaUtilLocale *locale);
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamShortConverter *new_CucumberRuntimeXstreamShortConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRShortConverter *new_CCBRShortConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamShortConverter *create_CucumberRuntimeXstreamShortConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale);
+FOUNDATION_EXPORT CCBRShortConverter *create_CCBRShortConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamShortConverter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRShortConverter)
+
+@compatibility_alias CucumberRuntimeXstreamShortConverter CCBRShortConverter;
 
 #endif
 

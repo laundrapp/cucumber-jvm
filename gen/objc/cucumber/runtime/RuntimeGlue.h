@@ -18,24 +18,24 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeRuntimeGlue_) && (INCLUDE_ALL_CucumberRuntimeRuntimeGlue || defined(INCLUDE_CucumberRuntimeRuntimeGlue))
-#define CucumberRuntimeRuntimeGlue_
+#if !defined (CCBRRuntimeGlue_) && (INCLUDE_ALL_CucumberRuntimeRuntimeGlue || defined(INCLUDE_CCBRRuntimeGlue))
+#define CCBRRuntimeGlue_
 
 #define RESTRICT_CucumberRuntimeGlue 1
-#define INCLUDE_CucumberRuntimeGlue 1
+#define INCLUDE_CCBRGlue 1
 #include "cucumber/runtime/Glue.h"
 
-@class CucumberRuntimeStepDefinitionMatch;
-@class CucumberRuntimeUndefinedStepsTracker;
-@class CucumberRuntimeXstreamLocalizedXStreams;
+@class CCBRLocalizedXStreams;
+@class CCBRStepDefinitionMatch;
+@class CCBRUndefinedStepsTracker;
 @class GherkinPicklesPickleStep;
-@protocol CucumberApiStepDefinitionReporter;
-@protocol CucumberRuntimeHookDefinition;
-@protocol CucumberRuntimeStepDefinition;
+@protocol CCBRHookDefinition;
+@protocol CCBRStepDefinition;
+@protocol CCBStepDefinitionReporter;
 @protocol JavaUtilList;
 @protocol JavaUtilMap;
 
-@interface CucumberRuntimeRuntimeGlue : NSObject < CucumberRuntimeGlue > {
+@interface CCBRRuntimeGlue : NSObject < CCBRGlue > {
  @public
   id<JavaUtilMap> stepDefinitionsByPattern_;
   id<JavaUtilList> beforeHooks_;
@@ -45,16 +45,16 @@
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCucumberRuntimeXstreamLocalizedXStreams:(CucumberRuntimeXstreamLocalizedXStreams *)localizedXStreams;
+- (instancetype __nonnull)initWithCCBRLocalizedXStreams:(CCBRLocalizedXStreams *)localizedXStreams;
 
-- (instancetype __nonnull)initWithCucumberRuntimeUndefinedStepsTracker:(CucumberRuntimeUndefinedStepsTracker *)tracker
-                           withCucumberRuntimeXstreamLocalizedXStreams:(CucumberRuntimeXstreamLocalizedXStreams *)localizedXStreams;
+- (instancetype __nonnull)initWithCCBRUndefinedStepsTracker:(CCBRUndefinedStepsTracker *)tracker
+                                  withCCBRLocalizedXStreams:(CCBRLocalizedXStreams *)localizedXStreams;
 
-- (void)addAfterHookWithCucumberRuntimeHookDefinition:(id<CucumberRuntimeHookDefinition>)hookDefinition;
+- (void)addAfterHookWithCCBRHookDefinition:(id<CCBRHookDefinition>)hookDefinition;
 
-- (void)addBeforeHookWithCucumberRuntimeHookDefinition:(id<CucumberRuntimeHookDefinition>)hookDefinition;
+- (void)addBeforeHookWithCCBRHookDefinition:(id<CCBRHookDefinition>)hookDefinition;
 
-- (void)addStepDefinitionWithCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)stepDefinition;
+- (void)addStepDefinitionWithCCBRStepDefinition:(id<CCBRStepDefinition>)stepDefinition;
 
 - (id<JavaUtilList>)getAfterHooks;
 
@@ -62,10 +62,10 @@
 
 - (void)removeScenarioScopedGlue;
 
-- (void)reportStepDefinitionsWithCucumberApiStepDefinitionReporter:(id<CucumberApiStepDefinitionReporter>)stepDefinitionReporter;
+- (void)reportStepDefinitionsWithCCBStepDefinitionReporter:(id<CCBStepDefinitionReporter>)stepDefinitionReporter;
 
-- (CucumberRuntimeStepDefinitionMatch *)stepDefinitionMatchWithNSString:(NSString *)featurePath
-                                           withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step;
+- (CCBRStepDefinitionMatch *)stepDefinitionMatchWithNSString:(NSString *)featurePath
+                                withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step;
 
 // Disallowed inherited constructors, do not use.
 
@@ -73,38 +73,40 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeRuntimeGlue)
+J2OBJC_EMPTY_STATIC_INIT(CCBRRuntimeGlue)
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeRuntimeGlue, stepDefinitionsByPattern_, id<JavaUtilMap>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeRuntimeGlue, beforeHooks_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeRuntimeGlue, afterHooks_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeRuntimeGlue, matchedStepDefinitionsCache_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(CCBRRuntimeGlue, stepDefinitionsByPattern_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(CCBRRuntimeGlue, beforeHooks_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRRuntimeGlue, afterHooks_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRRuntimeGlue, matchedStepDefinitionsCache_, id<JavaUtilMap>)
 
-FOUNDATION_EXPORT void CucumberRuntimeRuntimeGlue_initWithCucumberRuntimeXstreamLocalizedXStreams_(CucumberRuntimeRuntimeGlue *self, CucumberRuntimeXstreamLocalizedXStreams *localizedXStreams);
+FOUNDATION_EXPORT void CCBRRuntimeGlue_initWithCCBRLocalizedXStreams_(CCBRRuntimeGlue *self, CCBRLocalizedXStreams *localizedXStreams);
 
-FOUNDATION_EXPORT CucumberRuntimeRuntimeGlue *new_CucumberRuntimeRuntimeGlue_initWithCucumberRuntimeXstreamLocalizedXStreams_(CucumberRuntimeXstreamLocalizedXStreams *localizedXStreams) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRRuntimeGlue *new_CCBRRuntimeGlue_initWithCCBRLocalizedXStreams_(CCBRLocalizedXStreams *localizedXStreams) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeRuntimeGlue *create_CucumberRuntimeRuntimeGlue_initWithCucumberRuntimeXstreamLocalizedXStreams_(CucumberRuntimeXstreamLocalizedXStreams *localizedXStreams);
+FOUNDATION_EXPORT CCBRRuntimeGlue *create_CCBRRuntimeGlue_initWithCCBRLocalizedXStreams_(CCBRLocalizedXStreams *localizedXStreams);
 
-FOUNDATION_EXPORT void CucumberRuntimeRuntimeGlue_initWithCucumberRuntimeUndefinedStepsTracker_withCucumberRuntimeXstreamLocalizedXStreams_(CucumberRuntimeRuntimeGlue *self, CucumberRuntimeUndefinedStepsTracker *tracker, CucumberRuntimeXstreamLocalizedXStreams *localizedXStreams);
+FOUNDATION_EXPORT void CCBRRuntimeGlue_initWithCCBRUndefinedStepsTracker_withCCBRLocalizedXStreams_(CCBRRuntimeGlue *self, CCBRUndefinedStepsTracker *tracker, CCBRLocalizedXStreams *localizedXStreams);
 
-FOUNDATION_EXPORT CucumberRuntimeRuntimeGlue *new_CucumberRuntimeRuntimeGlue_initWithCucumberRuntimeUndefinedStepsTracker_withCucumberRuntimeXstreamLocalizedXStreams_(CucumberRuntimeUndefinedStepsTracker *tracker, CucumberRuntimeXstreamLocalizedXStreams *localizedXStreams) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRRuntimeGlue *new_CCBRRuntimeGlue_initWithCCBRUndefinedStepsTracker_withCCBRLocalizedXStreams_(CCBRUndefinedStepsTracker *tracker, CCBRLocalizedXStreams *localizedXStreams) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeRuntimeGlue *create_CucumberRuntimeRuntimeGlue_initWithCucumberRuntimeUndefinedStepsTracker_withCucumberRuntimeXstreamLocalizedXStreams_(CucumberRuntimeUndefinedStepsTracker *tracker, CucumberRuntimeXstreamLocalizedXStreams *localizedXStreams);
+FOUNDATION_EXPORT CCBRRuntimeGlue *create_CCBRRuntimeGlue_initWithCCBRUndefinedStepsTracker_withCCBRLocalizedXStreams_(CCBRUndefinedStepsTracker *tracker, CCBRLocalizedXStreams *localizedXStreams);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeRuntimeGlue)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRRuntimeGlue)
+
+@compatibility_alias CucumberRuntimeRuntimeGlue CCBRRuntimeGlue;
 
 #endif
 
-#if !defined (CucumberRuntimeRuntimeGlue_CacheEntry_) && (INCLUDE_ALL_CucumberRuntimeRuntimeGlue || defined(INCLUDE_CucumberRuntimeRuntimeGlue_CacheEntry))
-#define CucumberRuntimeRuntimeGlue_CacheEntry_
+#if !defined (CCBRRuntimeGlue_CacheEntry_) && (INCLUDE_ALL_CucumberRuntimeRuntimeGlue || defined(INCLUDE_CCBRRuntimeGlue_CacheEntry))
+#define CCBRRuntimeGlue_CacheEntry_
 
-@protocol CucumberRuntimeStepDefinition;
+@protocol CCBRStepDefinition;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeRuntimeGlue_CacheEntry : NSObject {
+@interface CCBRRuntimeGlue_CacheEntry : NSObject {
  @public
-  id<CucumberRuntimeStepDefinition> stepDefinition_;
+  id<CCBRStepDefinition> stepDefinition_;
   id<JavaUtilList> arguments_;
 }
 
@@ -114,12 +116,12 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeRuntimeGlue)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeRuntimeGlue_CacheEntry)
+J2OBJC_EMPTY_STATIC_INIT(CCBRRuntimeGlue_CacheEntry)
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeRuntimeGlue_CacheEntry, stepDefinition_, id<CucumberRuntimeStepDefinition>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeRuntimeGlue_CacheEntry, arguments_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRRuntimeGlue_CacheEntry, stepDefinition_, id<CCBRStepDefinition>)
+J2OBJC_FIELD_SETTER(CCBRRuntimeGlue_CacheEntry, arguments_, id<JavaUtilList>)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeRuntimeGlue_CacheEntry)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRRuntimeGlue_CacheEntry)
 
 #endif
 

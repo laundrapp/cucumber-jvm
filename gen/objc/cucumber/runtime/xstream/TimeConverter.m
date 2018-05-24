@@ -19,7 +19,7 @@
 #include "java/util/List.h"
 #include "java/util/Locale.h"
 
-@interface CucumberRuntimeXstreamTimeConverter () {
+@interface CCBRTimeConverter () {
  @public
   id<JavaUtilList> formats_;
   NSString *format_;
@@ -29,16 +29,16 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamTimeConverter, formats_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamTimeConverter, format_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRTimeConverter, formats_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRTimeConverter, format_, NSString *)
 
-__attribute__((unused)) static JavaTextFormat *CucumberRuntimeXstreamTimeConverter_getOnlyFormat(CucumberRuntimeXstreamTimeConverter *self);
+__attribute__((unused)) static JavaTextFormat *CCBRTimeConverter_getOnlyFormat(CCBRTimeConverter *self);
 
-@implementation CucumberRuntimeXstreamTimeConverter
+@implementation CCBRTimeConverter
 
 - (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale
                                withIOSClassArray:(IOSObjectArray *)convertibleTypes {
-  CucumberRuntimeXstreamTimeConverter_initWithJavaUtilLocale_withIOSClassArray_(self, locale, convertibleTypes);
+  CCBRTimeConverter_initWithJavaUtilLocale_withIOSClassArray_(self, locale, convertibleTypes);
   return self;
 }
 
@@ -53,11 +53,11 @@ __attribute__((unused)) static JavaTextFormat *CucumberRuntimeXstreamTimeConvert
 }
 
 - (id<JavaUtilList>)getFormats {
-  return format_ == nil ? formats_ : JavaUtilArrays_asListWithNSObjectArray_([IOSObjectArray arrayWithObjects:(id[]){ CucumberRuntimeXstreamTimeConverter_getOnlyFormat(self) } count:1 type:JavaTextFormat_class_()]);
+  return format_ == nil ? formats_ : JavaUtilArrays_asListWithNSObjectArray_([IOSObjectArray arrayWithObjects:(id[]){ CCBRTimeConverter_getOnlyFormat(self) } count:1 type:JavaTextFormat_class_()]);
 }
 
 - (JavaTextFormat *)getOnlyFormat {
-  return CucumberRuntimeXstreamTimeConverter_getOnlyFormat(self);
+  return CCBRTimeConverter_getOnlyFormat(self);
 }
 
 - (NSString *)toStringWithId:(id)obj {
@@ -67,10 +67,10 @@ __attribute__((unused)) static JavaTextFormat *CucumberRuntimeXstreamTimeConvert
   return [super toStringWithId:obj];
 }
 
-- (void)setParameterInfoAndLocaleWithCucumberRuntimeParameterInfo:(CucumberRuntimeParameterInfo *)parameterInfo
-                                               withJavaUtilLocale:(JavaUtilLocale *)locale {
-  [super setParameterInfoAndLocaleWithCucumberRuntimeParameterInfo:parameterInfo withJavaUtilLocale:locale];
-  if ([((CucumberRuntimeParameterInfo *) nil_chk(parameterInfo)) getFormat] != nil) {
+- (void)setParameterInfoAndLocaleWithCCBRParameterInfo:(CCBRParameterInfo *)parameterInfo
+                                    withJavaUtilLocale:(JavaUtilLocale *)locale {
+  [super setParameterInfoAndLocaleWithCCBRParameterInfo:parameterInfo withJavaUtilLocale:locale];
+  if ([((CCBRParameterInfo *) nil_chk(parameterInfo)) getFormat] != nil) {
     JreStrongAssign(&format_, [parameterInfo getFormat]);
   }
 }
@@ -80,7 +80,7 @@ __attribute__((unused)) static JavaTextFormat *CucumberRuntimeXstreamTimeConvert
 }
 
 + (id<JavaUtilList>)getTimeClasses {
-  return CucumberRuntimeXstreamTimeConverter_getTimeClasses();
+  return CCBRTimeConverter_getTimeClasses();
 }
 
 - (void)dealloc {
@@ -110,7 +110,7 @@ __attribute__((unused)) static JavaTextFormat *CucumberRuntimeXstreamTimeConvert
   methods[3].selector = @selector(getFormats);
   methods[4].selector = @selector(getOnlyFormat);
   methods[5].selector = @selector(toStringWithId:);
-  methods[6].selector = @selector(setParameterInfoAndLocaleWithCucumberRuntimeParameterInfo:withJavaUtilLocale:);
+  methods[6].selector = @selector(setParameterInfoAndLocaleWithCCBRParameterInfo:withJavaUtilLocale:);
   methods[7].selector = @selector(removeOnlyFormat);
   methods[8].selector = @selector(getTimeClasses);
   #pragma clang diagnostic pop
@@ -118,15 +118,15 @@ __attribute__((unused)) static JavaTextFormat *CucumberRuntimeXstreamTimeConvert
     { "formats_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 11, -1 },
     { "format_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LJavaUtilLocale;[LIOSClass;", "addFormat", "ILJavaUtilLocale;", "add", "LJavaTextDateFormat;", "()Ljava/util/List<+Ljava/text/Format;>;", "toString", "LNSObject;", "setParameterInfoAndLocale", "LCucumberRuntimeParameterInfo;LJavaUtilLocale;", "()Ljava/util/List<Ljava/lang/Class;>;", "Ljava/util/List<Ljava/text/DateFormat;>;", "<T:Ljava/lang/Object;>Lcucumber/runtime/xstream/ConverterWithFormat<TT;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamTimeConverter = { "TimeConverter", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x400, 9, 2, -1, -1, -1, 12, -1 };
-  return &_CucumberRuntimeXstreamTimeConverter;
+  static const void *ptrTable[] = { "LJavaUtilLocale;[LIOSClass;", "addFormat", "ILJavaUtilLocale;", "add", "LJavaTextDateFormat;", "()Ljava/util/List<+Ljava/text/Format;>;", "toString", "LNSObject;", "setParameterInfoAndLocale", "LCCBRParameterInfo;LJavaUtilLocale;", "()Ljava/util/List<Ljava/lang/Class;>;", "Ljava/util/List<Ljava/text/DateFormat;>;", "<T:Ljava/lang/Object;>Lcucumber/runtime/xstream/ConverterWithFormat<TT;>;" };
+  static const J2ObjcClassInfo _CCBRTimeConverter = { "TimeConverter", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x400, 9, 2, -1, -1, -1, 12, -1 };
+  return &_CCBRTimeConverter;
 }
 
 @end
 
-void CucumberRuntimeXstreamTimeConverter_initWithJavaUtilLocale_withIOSClassArray_(CucumberRuntimeXstreamTimeConverter *self, JavaUtilLocale *locale, IOSObjectArray *convertibleTypes) {
-  CucumberRuntimeXstreamConverterWithFormat_initWithIOSClassArray_(self, convertibleTypes);
+void CCBRTimeConverter_initWithJavaUtilLocale_withIOSClassArray_(CCBRTimeConverter *self, JavaUtilLocale *locale, IOSObjectArray *convertibleTypes) {
+  CCBRConverterWithFormat_initWithIOSClassArray_(self, convertibleTypes);
   JreStrongAssignAndConsume(&self->formats_, new_JavaUtilArrayList_init());
   [self addFormatWithInt:JavaTextDateFormat_SHORT withJavaUtilLocale:locale];
   [self addFormatWithInt:JavaTextDateFormat_MEDIUM withJavaUtilLocale:locale];
@@ -134,18 +134,18 @@ void CucumberRuntimeXstreamTimeConverter_initWithJavaUtilLocale_withIOSClassArra
   [self addFormatWithInt:JavaTextDateFormat_FULL withJavaUtilLocale:locale];
 }
 
-JavaTextFormat *CucumberRuntimeXstreamTimeConverter_getOnlyFormat(CucumberRuntimeXstreamTimeConverter *self) {
+JavaTextFormat *CCBRTimeConverter_getOnlyFormat(CCBRTimeConverter *self) {
   JavaTextDateFormat *dateFormat = create_JavaTextSimpleDateFormat_initWithNSString_withJavaUtilLocale_(self->format_, [self getLocale]);
   [dateFormat setLenientWithBoolean:false];
   return dateFormat;
 }
 
-id<JavaUtilList> CucumberRuntimeXstreamTimeConverter_getTimeClasses() {
-  CucumberRuntimeXstreamTimeConverter_initialize();
+id<JavaUtilList> CCBRTimeConverter_getTimeClasses() {
+  CCBRTimeConverter_initialize();
   id<JavaUtilList> classes = create_JavaUtilArrayList_init();
   [classes addWithId:JavaUtilDate_class_()];
   [classes addWithId:JavaUtilCalendar_class_()];
   return classes;
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamTimeConverter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTimeConverter)

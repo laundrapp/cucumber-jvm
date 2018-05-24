@@ -18,7 +18,7 @@
 #include "java/util/Collection.h"
 #include "java/util/List.h"
 
-@interface CucumberRuntimeTagPredicate () {
+@interface CCBRTagPredicate () {
  @public
   id<JavaUtilList> expressions_;
   id<JavaUtilList> oldStyleExpressions_;
@@ -26,13 +26,13 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeTagPredicate, expressions_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeTagPredicate, oldStyleExpressions_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRTagPredicate, expressions_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRTagPredicate, oldStyleExpressions_, id<JavaUtilList>)
 
-@implementation CucumberRuntimeTagPredicate
+@implementation CCBRTagPredicate
 
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)tagExpressions {
-  CucumberRuntimeTagPredicate_initWithJavaUtilList_(self, tagExpressions);
+  CCBRTagPredicate_initWithJavaUtilList_(self, tagExpressions);
   return self;
 }
 
@@ -41,8 +41,8 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeTagPredicate, oldStyleExpressions_, id<JavaUt
 }
 
 - (jboolean)applyWithJavaUtilCollection:(id<JavaUtilCollection>)pickleTags {
-  for (CucumberRuntimeTagExpressionOld * __strong oldStyleExpression in nil_chk(oldStyleExpressions_)) {
-    if (![((CucumberRuntimeTagExpressionOld *) nil_chk(oldStyleExpression)) evaluateWithJavaUtilCollection:pickleTags]) {
+  for (CCBRTagExpressionOld * __strong oldStyleExpression in nil_chk(oldStyleExpressions_)) {
+    if (![((CCBRTagExpressionOld *) nil_chk(oldStyleExpression)) evaluateWithJavaUtilCollection:pickleTags]) {
       return false;
     }
   }
@@ -82,13 +82,13 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeTagPredicate, oldStyleExpressions_, id<JavaUt
     { "oldStyleExpressions_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 7, -1 },
   };
   static const void *ptrTable[] = { "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)V", "apply", "LGherkinEventsPickleEvent;", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z", "Ljava/util/List<Lio/cucumber/tagexpressions/Expression;>;", "Ljava/util/List<Lcucumber/runtime/TagExpressionOld;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeTagPredicate = { "TagPredicate", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 3, 2, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeTagPredicate;
+  static const J2ObjcClassInfo _CCBRTagPredicate = { "TagPredicate", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 3, 2, -1, -1, -1, -1, -1 };
+  return &_CCBRTagPredicate;
 }
 
 @end
 
-void CucumberRuntimeTagPredicate_initWithJavaUtilList_(CucumberRuntimeTagPredicate *self, id<JavaUtilList> tagExpressions) {
+void CCBRTagPredicate_initWithJavaUtilList_(CCBRTagPredicate *self, id<JavaUtilList> tagExpressions) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->expressions_, new_JavaUtilArrayList_init());
   JreStrongAssignAndConsume(&self->oldStyleExpressions_, new_JavaUtilArrayList_init());
@@ -97,8 +97,8 @@ void CucumberRuntimeTagPredicate_initWithJavaUtilList_(CucumberRuntimeTagPredica
   }
   IoCucumberTagexpressionsTagExpressionParser *parser = create_IoCucumberTagexpressionsTagExpressionParser_init();
   for (NSString * __strong tagExpression in tagExpressions) {
-    if (CucumberRuntimeTagExpressionOld_isOldTagExpressionWithNSString_(tagExpression)) {
-      [self->oldStyleExpressions_ addWithId:create_CucumberRuntimeTagExpressionOld_initWithJavaUtilList_(JavaUtilArrays_asListWithNSObjectArray_([IOSObjectArray arrayWithObjects:(id[]){ tagExpression } count:1 type:NSString_class_()]))];
+    if (CCBRTagExpressionOld_isOldTagExpressionWithNSString_(tagExpression)) {
+      [self->oldStyleExpressions_ addWithId:create_CCBRTagExpressionOld_initWithJavaUtilList_(JavaUtilArrays_asListWithNSObjectArray_([IOSObjectArray arrayWithObjects:(id[]){ tagExpression } count:1 type:NSString_class_()]))];
     }
     else {
       [self->expressions_ addWithId:[parser parseWithNSString:tagExpression]];
@@ -106,12 +106,12 @@ void CucumberRuntimeTagPredicate_initWithJavaUtilList_(CucumberRuntimeTagPredica
   }
 }
 
-CucumberRuntimeTagPredicate *new_CucumberRuntimeTagPredicate_initWithJavaUtilList_(id<JavaUtilList> tagExpressions) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeTagPredicate, initWithJavaUtilList_, tagExpressions)
+CCBRTagPredicate *new_CCBRTagPredicate_initWithJavaUtilList_(id<JavaUtilList> tagExpressions) {
+  J2OBJC_NEW_IMPL(CCBRTagPredicate, initWithJavaUtilList_, tagExpressions)
 }
 
-CucumberRuntimeTagPredicate *create_CucumberRuntimeTagPredicate_initWithJavaUtilList_(id<JavaUtilList> tagExpressions) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeTagPredicate, initWithJavaUtilList_, tagExpressions)
+CCBRTagPredicate *create_CCBRTagPredicate_initWithJavaUtilList_(id<JavaUtilList> tagExpressions) {
+  J2OBJC_CREATE_IMPL(CCBRTagPredicate, initWithJavaUtilList_, tagExpressions)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTagPredicate)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTagPredicate)

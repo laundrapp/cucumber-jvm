@@ -20,9 +20,9 @@
 #include "java/util/Collection.h"
 #include "java/util/List.h"
 
-@interface CucumberRuntimeJavaMethodScanner () {
+@interface CCBMethodScanner () {
  @public
-  id<CucumberRuntimeClassFinder> classFinder_;
+  id<CCBRClassFinder> classFinder_;
 }
 
 - (void)validateMethodWithJavaLangReflectMethod:(JavaLangReflectMethod *)method
@@ -34,26 +34,26 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeJavaMethodScanner, classFinder_, id<CucumberRuntimeClassFinder>)
+J2OBJC_FIELD_SETTER(CCBMethodScanner, classFinder_, id<CCBRClassFinder>)
 
-__attribute__((unused)) static void CucumberRuntimeJavaMethodScanner_validateMethodWithJavaLangReflectMethod_withIOSClass_(CucumberRuntimeJavaMethodScanner *self, JavaLangReflectMethod *method, IOSClass *glueCodeClass);
+__attribute__((unused)) static void CCBMethodScanner_validateMethodWithJavaLangReflectMethod_withIOSClass_(CCBMethodScanner *self, JavaLangReflectMethod *method, IOSClass *glueCodeClass);
 
-__attribute__((unused)) static jboolean CucumberRuntimeJavaMethodScanner_isHookAnnotationWithJavaLangAnnotationAnnotation_(CucumberRuntimeJavaMethodScanner *self, id<JavaLangAnnotationAnnotation> annotation);
+__attribute__((unused)) static jboolean CCBMethodScanner_isHookAnnotationWithJavaLangAnnotationAnnotation_(CCBMethodScanner *self, id<JavaLangAnnotationAnnotation> annotation);
 
-__attribute__((unused)) static jboolean CucumberRuntimeJavaMethodScanner_isStepdefAnnotationWithJavaLangAnnotationAnnotation_(CucumberRuntimeJavaMethodScanner *self, id<JavaLangAnnotationAnnotation> annotation);
+__attribute__((unused)) static jboolean CCBMethodScanner_isStepdefAnnotationWithJavaLangAnnotationAnnotation_(CCBMethodScanner *self, id<JavaLangAnnotationAnnotation> annotation);
 
-@implementation CucumberRuntimeJavaMethodScanner
+@implementation CCBMethodScanner
 
-- (instancetype __nonnull)initWithCucumberRuntimeClassFinder:(id<CucumberRuntimeClassFinder>)classFinder {
-  CucumberRuntimeJavaMethodScanner_initWithCucumberRuntimeClassFinder_(self, classFinder);
+- (instancetype __nonnull)initWithCCBRClassFinder:(id<CCBRClassFinder>)classFinder {
+  CCBMethodScanner_initWithCCBRClassFinder_(self, classFinder);
   return self;
 }
 
-- (void)scanWithCucumberRuntimeJavaJavaBackend:(CucumberRuntimeJavaJavaBackend *)javaBackend
-                              withJavaUtilList:(id<JavaUtilList>)gluePaths {
+- (void)scanWithCCBJavaBackend:(CCBJavaBackend *)javaBackend
+              withJavaUtilList:(id<JavaUtilList>)gluePaths {
   for (NSString * __strong gluePath in nil_chk(gluePaths)) {
-    for (IOSClass * __strong glueCodeClass in nil_chk([((id<CucumberRuntimeClassFinder>) nil_chk(classFinder_)) getDescendantsWithIOSClass:NSObject_class_() withNSString:CucumberRuntimeIoMultiLoader_packageNameWithNSString_(gluePath)])) {
-      while (glueCodeClass != nil && glueCodeClass != NSObject_class_() && !CucumberRuntimeUtils_isInstantiableWithIOSClass_(glueCodeClass)) {
+    for (IOSClass * __strong glueCodeClass in nil_chk([((id<CCBRClassFinder>) nil_chk(classFinder_)) getDescendantsWithIOSClass:NSObject_class_() withNSString:CCBMultiLoader_packageNameWithNSString_(gluePath)])) {
+      while (glueCodeClass != nil && glueCodeClass != NSObject_class_() && !CCBRUtils_isInstantiableWithIOSClass_(glueCodeClass)) {
         glueCodeClass = [glueCodeClass getSuperclass];
       }
       if (glueCodeClass != nil && glueCodeClass != NSObject_class_()) {
@@ -64,7 +64,7 @@ __attribute__((unused)) static jboolean CucumberRuntimeJavaMethodScanner_isStepd
           while (b__ < e__) {
             JavaLangReflectMethod *method = *b__++;
             if ([((JavaLangReflectMethod *) nil_chk(method)) getDeclaringClass] != NSObject_class_()) {
-              [self scanWithCucumberRuntimeJavaJavaBackend:javaBackend withJavaLangReflectMethod:method withIOSClass:glueCodeClass];
+              [self scanWithCCBJavaBackend:javaBackend withJavaLangReflectMethod:method withIOSClass:glueCodeClass];
             }
           }
         }
@@ -73,9 +73,9 @@ __attribute__((unused)) static jboolean CucumberRuntimeJavaMethodScanner_isStepd
   }
 }
 
-- (void)scanWithCucumberRuntimeJavaJavaBackend:(CucumberRuntimeJavaJavaBackend *)javaBackend
-                     withJavaLangReflectMethod:(JavaLangReflectMethod *)method
-                                  withIOSClass:(IOSClass *)glueCodeClass {
+- (void)scanWithCCBJavaBackend:(CCBJavaBackend *)javaBackend
+     withJavaLangReflectMethod:(JavaLangReflectMethod *)method
+                  withIOSClass:(IOSClass *)glueCodeClass {
   IOSObjectArray *methodAnnotations = [((JavaLangReflectMethod *) nil_chk(method)) getAnnotations];
   {
     IOSObjectArray *a__ = methodAnnotations;
@@ -83,13 +83,13 @@ __attribute__((unused)) static jboolean CucumberRuntimeJavaMethodScanner_isStepd
     id<JavaLangAnnotationAnnotation> const *e__ = b__ + a__->size_;
     while (b__ < e__) {
       id<JavaLangAnnotationAnnotation> annotation = *b__++;
-      if (CucumberRuntimeJavaMethodScanner_isHookAnnotationWithJavaLangAnnotationAnnotation_(self, annotation)) {
-        CucumberRuntimeJavaMethodScanner_validateMethodWithJavaLangReflectMethod_withIOSClass_(self, method, glueCodeClass);
-        [((CucumberRuntimeJavaJavaBackend *) nil_chk(javaBackend)) addHookWithJavaLangAnnotationAnnotation:annotation withJavaLangReflectMethod:method];
+      if (CCBMethodScanner_isHookAnnotationWithJavaLangAnnotationAnnotation_(self, annotation)) {
+        CCBMethodScanner_validateMethodWithJavaLangReflectMethod_withIOSClass_(self, method, glueCodeClass);
+        [((CCBJavaBackend *) nil_chk(javaBackend)) addHookWithJavaLangAnnotationAnnotation:annotation withJavaLangReflectMethod:method];
       }
-      else if (CucumberRuntimeJavaMethodScanner_isStepdefAnnotationWithJavaLangAnnotationAnnotation_(self, annotation)) {
-        CucumberRuntimeJavaMethodScanner_validateMethodWithJavaLangReflectMethod_withIOSClass_(self, method, glueCodeClass);
-        [((CucumberRuntimeJavaJavaBackend *) nil_chk(javaBackend)) addStepDefinitionWithJavaLangAnnotationAnnotation:annotation withJavaLangReflectMethod:method];
+      else if (CCBMethodScanner_isStepdefAnnotationWithJavaLangAnnotationAnnotation_(self, annotation)) {
+        CCBMethodScanner_validateMethodWithJavaLangReflectMethod_withIOSClass_(self, method, glueCodeClass);
+        [((CCBJavaBackend *) nil_chk(javaBackend)) addStepDefinitionWithJavaLangAnnotationAnnotation:annotation withJavaLangReflectMethod:method];
       }
     }
   }
@@ -97,15 +97,15 @@ __attribute__((unused)) static jboolean CucumberRuntimeJavaMethodScanner_isStepd
 
 - (void)validateMethodWithJavaLangReflectMethod:(JavaLangReflectMethod *)method
                                    withIOSClass:(IOSClass *)glueCodeClass {
-  CucumberRuntimeJavaMethodScanner_validateMethodWithJavaLangReflectMethod_withIOSClass_(self, method, glueCodeClass);
+  CCBMethodScanner_validateMethodWithJavaLangReflectMethod_withIOSClass_(self, method, glueCodeClass);
 }
 
 - (jboolean)isHookAnnotationWithJavaLangAnnotationAnnotation:(id<JavaLangAnnotationAnnotation>)annotation {
-  return CucumberRuntimeJavaMethodScanner_isHookAnnotationWithJavaLangAnnotationAnnotation_(self, annotation);
+  return CCBMethodScanner_isHookAnnotationWithJavaLangAnnotationAnnotation_(self, annotation);
 }
 
 - (jboolean)isStepdefAnnotationWithJavaLangAnnotationAnnotation:(id<JavaLangAnnotationAnnotation>)annotation {
-  return CucumberRuntimeJavaMethodScanner_isStepdefAnnotationWithJavaLangAnnotationAnnotation_(self, annotation);
+  return CCBMethodScanner_isStepdefAnnotationWithJavaLangAnnotationAnnotation_(self, annotation);
 }
 
 - (void)dealloc {
@@ -125,53 +125,53 @@ __attribute__((unused)) static jboolean CucumberRuntimeJavaMethodScanner_isStepd
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeClassFinder:);
-  methods[1].selector = @selector(scanWithCucumberRuntimeJavaJavaBackend:withJavaUtilList:);
-  methods[2].selector = @selector(scanWithCucumberRuntimeJavaJavaBackend:withJavaLangReflectMethod:withIOSClass:);
+  methods[0].selector = @selector(initWithCCBRClassFinder:);
+  methods[1].selector = @selector(scanWithCCBJavaBackend:withJavaUtilList:);
+  methods[2].selector = @selector(scanWithCCBJavaBackend:withJavaLangReflectMethod:withIOSClass:);
   methods[3].selector = @selector(validateMethodWithJavaLangReflectMethod:withIOSClass:);
   methods[4].selector = @selector(isHookAnnotationWithJavaLangAnnotationAnnotation:);
   methods[5].selector = @selector(isStepdefAnnotationWithJavaLangAnnotationAnnotation:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "classFinder_", "LCucumberRuntimeClassFinder;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "classFinder_", "LCCBRClassFinder;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCucumberRuntimeClassFinder;", "scan", "LCucumberRuntimeJavaJavaBackend;LJavaUtilList;", "(Lcucumber/runtime/java/JavaBackend;Ljava/util/List<Ljava/lang/String;>;)V", "LCucumberRuntimeJavaJavaBackend;LJavaLangReflectMethod;LIOSClass;", "(Lcucumber/runtime/java/JavaBackend;Ljava/lang/reflect/Method;Ljava/lang/Class<*>;)V", "validateMethod", "LJavaLangReflectMethod;LIOSClass;", "(Ljava/lang/reflect/Method;Ljava/lang/Class<*>;)V", "isHookAnnotation", "LJavaLangAnnotationAnnotation;", "isStepdefAnnotation" };
-  static const J2ObjcClassInfo _CucumberRuntimeJavaMethodScanner = { "MethodScanner", "cucumber.runtime.java", ptrTable, methods, fields, 7, 0x0, 6, 1, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeJavaMethodScanner;
+  static const void *ptrTable[] = { "LCCBRClassFinder;", "scan", "LCCBJavaBackend;LJavaUtilList;", "(Lcucumber/runtime/java/JavaBackend;Ljava/util/List<Ljava/lang/String;>;)V", "LCCBJavaBackend;LJavaLangReflectMethod;LIOSClass;", "(Lcucumber/runtime/java/JavaBackend;Ljava/lang/reflect/Method;Ljava/lang/Class<*>;)V", "validateMethod", "LJavaLangReflectMethod;LIOSClass;", "(Ljava/lang/reflect/Method;Ljava/lang/Class<*>;)V", "isHookAnnotation", "LJavaLangAnnotationAnnotation;", "isStepdefAnnotation" };
+  static const J2ObjcClassInfo _CCBMethodScanner = { "MethodScanner", "cucumber.runtime.java", ptrTable, methods, fields, 7, 0x0, 6, 1, -1, -1, -1, -1, -1 };
+  return &_CCBMethodScanner;
 }
 
 @end
 
-void CucumberRuntimeJavaMethodScanner_initWithCucumberRuntimeClassFinder_(CucumberRuntimeJavaMethodScanner *self, id<CucumberRuntimeClassFinder> classFinder) {
+void CCBMethodScanner_initWithCCBRClassFinder_(CCBMethodScanner *self, id<CCBRClassFinder> classFinder) {
   NSObject_init(self);
   JreStrongAssign(&self->classFinder_, classFinder);
 }
 
-CucumberRuntimeJavaMethodScanner *new_CucumberRuntimeJavaMethodScanner_initWithCucumberRuntimeClassFinder_(id<CucumberRuntimeClassFinder> classFinder) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeJavaMethodScanner, initWithCucumberRuntimeClassFinder_, classFinder)
+CCBMethodScanner *new_CCBMethodScanner_initWithCCBRClassFinder_(id<CCBRClassFinder> classFinder) {
+  J2OBJC_NEW_IMPL(CCBMethodScanner, initWithCCBRClassFinder_, classFinder)
 }
 
-CucumberRuntimeJavaMethodScanner *create_CucumberRuntimeJavaMethodScanner_initWithCucumberRuntimeClassFinder_(id<CucumberRuntimeClassFinder> classFinder) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeJavaMethodScanner, initWithCucumberRuntimeClassFinder_, classFinder)
+CCBMethodScanner *create_CCBMethodScanner_initWithCCBRClassFinder_(id<CCBRClassFinder> classFinder) {
+  J2OBJC_CREATE_IMPL(CCBMethodScanner, initWithCCBRClassFinder_, classFinder)
 }
 
-void CucumberRuntimeJavaMethodScanner_validateMethodWithJavaLangReflectMethod_withIOSClass_(CucumberRuntimeJavaMethodScanner *self, JavaLangReflectMethod *method, IOSClass *glueCodeClass) {
+void CCBMethodScanner_validateMethodWithJavaLangReflectMethod_withIOSClass_(CCBMethodScanner *self, JavaLangReflectMethod *method, IOSClass *glueCodeClass) {
   if (![((IOSClass *) nil_chk([((JavaLangReflectMethod *) nil_chk(method)) getDeclaringClass])) isAssignableFrom:glueCodeClass]) {
-    @throw create_CucumberRuntimeCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"%s isn't assignable from %s", [IOSObjectArray arrayWithObjects:(id[]){ [method getDeclaringClass], glueCodeClass } count:2 type:NSObject_class_()]));
+    @throw create_CCBRCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"%s isn't assignable from %s", [IOSObjectArray arrayWithObjects:(id[]){ [method getDeclaringClass], glueCodeClass } count:2 type:NSObject_class_()]));
   }
   if (![((IOSClass *) nil_chk(glueCodeClass)) isEqual:[method getDeclaringClass]]) {
-    @throw create_CucumberRuntimeCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"You're not allowed to extend classes that define Step Definitions or hooks. %s extends %s", [IOSObjectArray arrayWithObjects:(id[]){ glueCodeClass, [method getDeclaringClass] } count:2 type:NSObject_class_()]));
+    @throw create_CCBRCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"You're not allowed to extend classes that define Step Definitions or hooks. %s extends %s", [IOSObjectArray arrayWithObjects:(id[]){ glueCodeClass, [method getDeclaringClass] } count:2 type:NSObject_class_()]));
   }
 }
 
-jboolean CucumberRuntimeJavaMethodScanner_isHookAnnotationWithJavaLangAnnotationAnnotation_(CucumberRuntimeJavaMethodScanner *self, id<JavaLangAnnotationAnnotation> annotation) {
+jboolean CCBMethodScanner_isHookAnnotationWithJavaLangAnnotationAnnotation_(CCBMethodScanner *self, id<JavaLangAnnotationAnnotation> annotation) {
   IOSClass *annotationClass = [((id<JavaLangAnnotationAnnotation>) nil_chk(annotation)) annotationType];
-  return [((IOSClass *) nil_chk(annotationClass)) isEqual:CucumberApiJavaBefore_class_()] || [annotationClass isEqual:CucumberApiJavaAfter_class_()];
+  return [((IOSClass *) nil_chk(annotationClass)) isEqual:CCBBefore_class_()] || [annotationClass isEqual:CCBAfter_class_()];
 }
 
-jboolean CucumberRuntimeJavaMethodScanner_isStepdefAnnotationWithJavaLangAnnotationAnnotation_(CucumberRuntimeJavaMethodScanner *self, id<JavaLangAnnotationAnnotation> annotation) {
+jboolean CCBMethodScanner_isStepdefAnnotationWithJavaLangAnnotationAnnotation_(CCBMethodScanner *self, id<JavaLangAnnotationAnnotation> annotation) {
   IOSClass *annotationClass = [((id<JavaLangAnnotationAnnotation>) nil_chk(annotation)) annotationType];
-  return [((IOSClass *) nil_chk(annotationClass)) getAnnotationWithIOSClass:CucumberRuntimeJavaStepDefAnnotation_class_()] != nil;
+  return [((IOSClass *) nil_chk(annotationClass)) getAnnotationWithIOSClass:CCBStepDefAnnotation_class_()] != nil;
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeJavaMethodScanner)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBMethodScanner)

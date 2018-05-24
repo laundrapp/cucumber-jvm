@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/api/formatter/ColorAware.h"
 
-@interface CucumberApiFormatterColorAware : NSObject
+@interface CCBColorAware : NSObject
 
 @end
 
-@implementation CucumberApiFormatterColorAware
+@implementation CCBColorAware
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -22,10 +22,10 @@
   methods[0].selector = @selector(setMonochromeWithBoolean:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "setMonochrome", "Z" };
-  static const J2ObjcClassInfo _CucumberApiFormatterColorAware = { "ColorAware", "cucumber.api.formatter", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberApiFormatterColorAware;
+  static const J2ObjcClassInfo _CCBColorAware = { "ColorAware", "cucumber.api.formatter", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
+  return &_CCBColorAware;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiFormatterColorAware)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBColorAware)

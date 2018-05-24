@@ -18,18 +18,18 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamConverterWithNumberFormat_) && (INCLUDE_ALL_CucumberRuntimeXstreamConverterWithNumberFormat || defined(INCLUDE_CucumberRuntimeXstreamConverterWithNumberFormat))
-#define CucumberRuntimeXstreamConverterWithNumberFormat_
+#if !defined (CCBRConverterWithNumberFormat_) && (INCLUDE_ALL_CucumberRuntimeXstreamConverterWithNumberFormat || defined(INCLUDE_CCBRConverterWithNumberFormat))
+#define CCBRConverterWithNumberFormat_
 
 #define RESTRICT_CucumberRuntimeXstreamConverterWithFormat 1
-#define INCLUDE_CucumberRuntimeXstreamConverterWithFormat 1
+#define INCLUDE_CCBRConverterWithFormat 1
 #include "cucumber/runtime/xstream/ConverterWithFormat.h"
 
 @class IOSObjectArray;
 @class JavaUtilLocale;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeXstreamConverterWithNumberFormat : CucumberRuntimeXstreamConverterWithFormat
+@interface CCBRConverterWithNumberFormat : CCBRConverterWithFormat
 
 #pragma mark Public
 
@@ -48,11 +48,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamConverterWithNumberFormat)
+J2OBJC_EMPTY_STATIC_INIT(CCBRConverterWithNumberFormat)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamConverterWithNumberFormat_initWithJavaUtilLocale_withIOSClassArray_(CucumberRuntimeXstreamConverterWithNumberFormat *self, JavaUtilLocale *locale, IOSObjectArray *convertibleTypes);
+FOUNDATION_EXPORT void CCBRConverterWithNumberFormat_initWithJavaUtilLocale_withIOSClassArray_(CCBRConverterWithNumberFormat *self, JavaUtilLocale *locale, IOSObjectArray *convertibleTypes);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamConverterWithNumberFormat)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRConverterWithNumberFormat)
+
+@compatibility_alias CucumberRuntimeXstreamConverterWithNumberFormat CCBRConverterWithNumberFormat;
 
 #endif
 

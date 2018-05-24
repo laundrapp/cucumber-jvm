@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaSlNato_) && (INCLUDE_ALL_CucumberApiJavaSlNato || defined(INCLUDE_CucumberApiJavaSlNato))
-#define CucumberApiJavaSlNato_
+#if !defined (CCBNato_) && (INCLUDE_ALL_CucumberApiJavaSlNato || defined(INCLUDE_CCBNato))
+#define CCBNato_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaSlNato < JavaLangAnnotationAnnotation >
+@protocol CCBNato < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaSlNato : NSObject < CucumberApiJavaSlNato > {
+@interface CCBNato : NSObject < CCBNato > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaSlNato)
+J2OBJC_EMPTY_STATIC_INIT(CCBNato)
 
-FOUNDATION_EXPORT id<CucumberApiJavaSlNato> create_CucumberApiJavaSlNato(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBNato> create_CCBNato(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaSlNato)
+J2OBJC_TYPE_LITERAL_HEADER(CCBNato)
+
+#define CucumberApiJavaSlNato CCBNato
 
 #endif
 

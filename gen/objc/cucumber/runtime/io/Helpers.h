@@ -18,12 +18,12 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeIoHelpers_) && (INCLUDE_ALL_CucumberRuntimeIoHelpers || defined(INCLUDE_CucumberRuntimeIoHelpers))
-#define CucumberRuntimeIoHelpers_
+#if !defined (CCBRHelpers_) && (INCLUDE_ALL_CucumberRuntimeIoHelpers || defined(INCLUDE_CCBRHelpers))
+#define CCBRHelpers_
 
 @class JavaNetURL;
 
-@interface CucumberRuntimeIoHelpers : NSObject
+@interface CCBRHelpers : NSObject
 
 #pragma mark Package-Private
 
@@ -36,15 +36,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoHelpers)
+J2OBJC_EMPTY_STATIC_INIT(CCBRHelpers)
 
-FOUNDATION_EXPORT jboolean CucumberRuntimeIoHelpers_hasSuffixWithNSString_withNSString_(NSString *suffix, NSString *name);
+FOUNDATION_EXPORT jboolean CCBRHelpers_hasSuffixWithNSString_withNSString_(NSString *suffix, NSString *name);
 
-FOUNDATION_EXPORT NSString *CucumberRuntimeIoHelpers_filePathWithJavaNetURL_(JavaNetURL *fileUrl);
+FOUNDATION_EXPORT NSString *CCBRHelpers_filePathWithJavaNetURL_(JavaNetURL *fileUrl);
 
-FOUNDATION_EXPORT NSString *CucumberRuntimeIoHelpers_jarFilePathWithJavaNetURL_(JavaNetURL *jarUrl);
+FOUNDATION_EXPORT NSString *CCBRHelpers_jarFilePathWithJavaNetURL_(JavaNetURL *jarUrl);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoHelpers)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRHelpers)
+
+@compatibility_alias CucumberRuntimeIoHelpers CCBRHelpers;
 
 #endif
 

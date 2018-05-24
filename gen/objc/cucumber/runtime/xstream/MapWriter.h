@@ -18,11 +18,11 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamMapWriter_) && (INCLUDE_ALL_CucumberRuntimeXstreamMapWriter || defined(INCLUDE_CucumberRuntimeXstreamMapWriter))
-#define CucumberRuntimeXstreamMapWriter_
+#if !defined (CCBRMapWriter_) && (INCLUDE_ALL_CucumberRuntimeXstreamMapWriter || defined(INCLUDE_CCBRMapWriter))
+#define CCBRMapWriter_
 
 #define RESTRICT_CucumberRuntimeXstreamCellWriter 1
-#define INCLUDE_CucumberRuntimeXstreamCellWriter 1
+#define INCLUDE_CCBRCellWriter 1
 #include "cucumber/runtime/xstream/CellWriter.h"
 
 @protocol JavaUtilList;
@@ -30,7 +30,7 @@
 /*!
  @brief Supports Map&lt;String, Object&gt; as the List item
  */
-@interface CucumberRuntimeXstreamMapWriter : CucumberRuntimeXstreamCellWriter
+@interface CCBRMapWriter : CCBRCellWriter
 
 #pragma mark Public
 
@@ -59,15 +59,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamMapWriter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRMapWriter)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamMapWriter_initWithJavaUtilList_(CucumberRuntimeXstreamMapWriter *self, id<JavaUtilList> columnNames);
+FOUNDATION_EXPORT void CCBRMapWriter_initWithJavaUtilList_(CCBRMapWriter *self, id<JavaUtilList> columnNames);
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamMapWriter *new_CucumberRuntimeXstreamMapWriter_initWithJavaUtilList_(id<JavaUtilList> columnNames) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRMapWriter *new_CCBRMapWriter_initWithJavaUtilList_(id<JavaUtilList> columnNames) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamMapWriter *create_CucumberRuntimeXstreamMapWriter_initWithJavaUtilList_(id<JavaUtilList> columnNames);
+FOUNDATION_EXPORT CCBRMapWriter *create_CCBRMapWriter_initWithJavaUtilList_(id<JavaUtilList> columnNames);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamMapWriter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRMapWriter)
+
+@compatibility_alias CucumberRuntimeXstreamMapWriter CCBRMapWriter;
 
 #endif
 

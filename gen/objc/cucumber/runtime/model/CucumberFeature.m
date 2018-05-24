@@ -36,114 +36,114 @@
 
 #pragma clang diagnostic ignored "-Wprotocol"
 
-@interface CucumberRuntimeModelCucumberFeature () {
+@interface CCBRCucumberFeature () {
  @public
   NSString *uri_;
   GherkinAstGherkinDocument *gherkinDocument_;
   NSString *gherkinSource_;
 }
 
-+ (void)loadFromRerunFileWithCucumberRuntimeFeatureBuilder:(CucumberRuntimeFeatureBuilder *)builder
-                       withCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                              withNSString:(NSString *)rerunPath;
++ (void)loadFromRerunFileWithCCBRFeatureBuilder:(CCBRFeatureBuilder *)builder
+                         withCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+                                   withNSString:(NSString *)rerunPath;
 
-+ (NSString *)readWithCucumberRuntimeIoResource:(id<CucumberRuntimeIoResource>)resource;
++ (NSString *)readWithCCBRResource:(id<CCBRResource>)resource;
 
-+ (void)loadFromFileSystemOrClasspathWithCucumberRuntimeFeatureBuilder:(CucumberRuntimeFeatureBuilder *)builder
-                                   withCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                                          withNSString:(NSString *)featurePath;
++ (void)loadFromFileSystemOrClasspathWithCCBRFeatureBuilder:(CCBRFeatureBuilder *)builder
+                                     withCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+                                               withNSString:(NSString *)featurePath;
 
-+ (void)loadFromFeaturePathWithCucumberRuntimeFeatureBuilder:(CucumberRuntimeFeatureBuilder *)builder
-                         withCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                                withNSString:(NSString *)featurePath
-                                                 withBoolean:(jboolean)failOnNoResource;
++ (void)loadFromFeaturePathWithCCBRFeatureBuilder:(CCBRFeatureBuilder *)builder
+                           withCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+                                     withNSString:(NSString *)featurePath
+                                      withBoolean:(jboolean)failOnNoResource;
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeModelCucumberFeature, uri_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeModelCucumberFeature, gherkinDocument_, GherkinAstGherkinDocument *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeModelCucumberFeature, gherkinSource_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRCucumberFeature, uri_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRCucumberFeature, gherkinDocument_, GherkinAstGherkinDocument *)
+J2OBJC_FIELD_SETTER(CCBRCucumberFeature, gherkinSource_, NSString *)
 
-inline jlong CucumberRuntimeModelCucumberFeature_get_serialVersionUID(void);
-#define CucumberRuntimeModelCucumberFeature_serialVersionUID 1LL
-J2OBJC_STATIC_FIELD_CONSTANT(CucumberRuntimeModelCucumberFeature, serialVersionUID, jlong)
+inline jlong CCBRCucumberFeature_get_serialVersionUID(void);
+#define CCBRCucumberFeature_serialVersionUID 1LL
+J2OBJC_STATIC_FIELD_CONSTANT(CCBRCucumberFeature, serialVersionUID, jlong)
 
-__attribute__((unused)) static void CucumberRuntimeModelCucumberFeature_loadFromRerunFileWithCucumberRuntimeFeatureBuilder_withCucumberRuntimeIoResourceLoader_withNSString_(CucumberRuntimeFeatureBuilder *builder, id<CucumberRuntimeIoResourceLoader> resourceLoader, NSString *rerunPath);
+__attribute__((unused)) static void CCBRCucumberFeature_loadFromRerunFileWithCCBRFeatureBuilder_withCCBRResourceLoader_withNSString_(CCBRFeatureBuilder *builder, id<CCBRResourceLoader> resourceLoader, NSString *rerunPath);
 
-__attribute__((unused)) static NSString *CucumberRuntimeModelCucumberFeature_readWithCucumberRuntimeIoResource_(id<CucumberRuntimeIoResource> resource);
+__attribute__((unused)) static NSString *CCBRCucumberFeature_readWithCCBRResource_(id<CCBRResource> resource);
 
-__attribute__((unused)) static void CucumberRuntimeModelCucumberFeature_loadFromFileSystemOrClasspathWithCucumberRuntimeFeatureBuilder_withCucumberRuntimeIoResourceLoader_withNSString_(CucumberRuntimeFeatureBuilder *builder, id<CucumberRuntimeIoResourceLoader> resourceLoader, NSString *featurePath);
+__attribute__((unused)) static void CCBRCucumberFeature_loadFromFileSystemOrClasspathWithCCBRFeatureBuilder_withCCBRResourceLoader_withNSString_(CCBRFeatureBuilder *builder, id<CCBRResourceLoader> resourceLoader, NSString *featurePath);
 
-__attribute__((unused)) static void CucumberRuntimeModelCucumberFeature_loadFromFeaturePathWithCucumberRuntimeFeatureBuilder_withCucumberRuntimeIoResourceLoader_withNSString_withBoolean_(CucumberRuntimeFeatureBuilder *builder, id<CucumberRuntimeIoResourceLoader> resourceLoader, NSString *featurePath, jboolean failOnNoResource);
+__attribute__((unused)) static void CCBRCucumberFeature_loadFromFeaturePathWithCCBRFeatureBuilder_withCCBRResourceLoader_withNSString_withBoolean_(CCBRFeatureBuilder *builder, id<CCBRResourceLoader> resourceLoader, NSString *featurePath, jboolean failOnNoResource);
 
-@interface CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator : NSObject < JavaUtilComparator >
+@interface CCBRCucumberFeature_CucumberFeatureUriComparator : NSObject < JavaUtilComparator >
 
 - (instancetype __nonnull)init;
 
-- (jint)compareWithId:(CucumberRuntimeModelCucumberFeature *)a
-               withId:(CucumberRuntimeModelCucumberFeature *)b;
+- (jint)compareWithId:(CCBRCucumberFeature *)a
+               withId:(CCBRCucumberFeature *)b;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator)
+J2OBJC_EMPTY_STATIC_INIT(CCBRCucumberFeature_CucumberFeatureUriComparator)
 
-__attribute__((unused)) static void CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator_init(CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator *self);
+__attribute__((unused)) static void CCBRCucumberFeature_CucumberFeatureUriComparator_init(CCBRCucumberFeature_CucumberFeatureUriComparator *self);
 
-__attribute__((unused)) static CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator *new_CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRCucumberFeature_CucumberFeatureUriComparator *new_CCBRCucumberFeature_CucumberFeatureUriComparator_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator *create_CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator_init(void);
+__attribute__((unused)) static CCBRCucumberFeature_CucumberFeatureUriComparator *create_CCBRCucumberFeature_CucumberFeatureUriComparator_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRCucumberFeature_CucumberFeatureUriComparator)
 
-J2OBJC_INITIALIZED_DEFN(CucumberRuntimeModelCucumberFeature)
+J2OBJC_INITIALIZED_DEFN(CCBRCucumberFeature)
 
-JavaUtilRegexPattern *CucumberRuntimeModelCucumberFeature_RERUN_PATH_SPECIFICATION;
+JavaUtilRegexPattern *CCBRCucumberFeature_RERUN_PATH_SPECIFICATION;
 
-@implementation CucumberRuntimeModelCucumberFeature
+@implementation CCBRCucumberFeature
 
-+ (id<JavaUtilList>)load__WithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                             withJavaUtilList:(id<JavaUtilList>)featurePaths
-                                        withJavaIoPrintStream:(JavaIoPrintStream *)outArg {
-  return CucumberRuntimeModelCucumberFeature_load__WithCucumberRuntimeIoResourceLoader_withJavaUtilList_withJavaIoPrintStream_(resourceLoader, featurePaths, outArg);
++ (id<JavaUtilList>)load__WithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+                                withJavaUtilList:(id<JavaUtilList>)featurePaths
+                           withJavaIoPrintStream:(JavaIoPrintStream *)outArg {
+  return CCBRCucumberFeature_load__WithCCBRResourceLoader_withJavaUtilList_withJavaIoPrintStream_(resourceLoader, featurePaths, outArg);
 }
 
-+ (id<JavaUtilList>)load__WithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                             withJavaUtilList:(id<JavaUtilList>)featurePaths {
-  return CucumberRuntimeModelCucumberFeature_load__WithCucumberRuntimeIoResourceLoader_withJavaUtilList_(resourceLoader, featurePaths);
++ (id<JavaUtilList>)load__WithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+                                withJavaUtilList:(id<JavaUtilList>)featurePaths {
+  return CCBRCucumberFeature_load__WithCCBRResourceLoader_withJavaUtilList_(resourceLoader, featurePaths);
 }
 
-+ (void)loadFromRerunFileWithCucumberRuntimeFeatureBuilder:(CucumberRuntimeFeatureBuilder *)builder
-                       withCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                              withNSString:(NSString *)rerunPath {
-  CucumberRuntimeModelCucumberFeature_loadFromRerunFileWithCucumberRuntimeFeatureBuilder_withCucumberRuntimeIoResourceLoader_withNSString_(builder, resourceLoader, rerunPath);
++ (void)loadFromRerunFileWithCCBRFeatureBuilder:(CCBRFeatureBuilder *)builder
+                         withCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+                                   withNSString:(NSString *)rerunPath {
+  CCBRCucumberFeature_loadFromRerunFileWithCCBRFeatureBuilder_withCCBRResourceLoader_withNSString_(builder, resourceLoader, rerunPath);
 }
 
-+ (id<JavaUtilList>)loadRerunFileWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                                        withNSString:(NSString *)rerunPath {
-  return CucumberRuntimeModelCucumberFeature_loadRerunFileWithCucumberRuntimeIoResourceLoader_withNSString_(resourceLoader, rerunPath);
++ (id<JavaUtilList>)loadRerunFileWithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+                                           withNSString:(NSString *)rerunPath {
+  return CCBRCucumberFeature_loadRerunFileWithCCBRResourceLoader_withNSString_(resourceLoader, rerunPath);
 }
 
-+ (NSString *)readWithCucumberRuntimeIoResource:(id<CucumberRuntimeIoResource>)resource {
-  return CucumberRuntimeModelCucumberFeature_readWithCucumberRuntimeIoResource_(resource);
++ (NSString *)readWithCCBRResource:(id<CCBRResource>)resource {
+  return CCBRCucumberFeature_readWithCCBRResource_(resource);
 }
 
-+ (void)loadFromFileSystemOrClasspathWithCucumberRuntimeFeatureBuilder:(CucumberRuntimeFeatureBuilder *)builder
-                                   withCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                                          withNSString:(NSString *)featurePath {
-  CucumberRuntimeModelCucumberFeature_loadFromFileSystemOrClasspathWithCucumberRuntimeFeatureBuilder_withCucumberRuntimeIoResourceLoader_withNSString_(builder, resourceLoader, featurePath);
++ (void)loadFromFileSystemOrClasspathWithCCBRFeatureBuilder:(CCBRFeatureBuilder *)builder
+                                     withCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+                                               withNSString:(NSString *)featurePath {
+  CCBRCucumberFeature_loadFromFileSystemOrClasspathWithCCBRFeatureBuilder_withCCBRResourceLoader_withNSString_(builder, resourceLoader, featurePath);
 }
 
-+ (void)loadFromFeaturePathWithCucumberRuntimeFeatureBuilder:(CucumberRuntimeFeatureBuilder *)builder
-                         withCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                                withNSString:(NSString *)featurePath
-                                                 withBoolean:(jboolean)failOnNoResource {
-  CucumberRuntimeModelCucumberFeature_loadFromFeaturePathWithCucumberRuntimeFeatureBuilder_withCucumberRuntimeIoResourceLoader_withNSString_withBoolean_(builder, resourceLoader, featurePath, failOnNoResource);
++ (void)loadFromFeaturePathWithCCBRFeatureBuilder:(CCBRFeatureBuilder *)builder
+                           withCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+                                     withNSString:(NSString *)featurePath
+                                      withBoolean:(jboolean)failOnNoResource {
+  CCBRCucumberFeature_loadFromFeaturePathWithCCBRFeatureBuilder_withCCBRResourceLoader_withNSString_withBoolean_(builder, resourceLoader, featurePath, failOnNoResource);
 }
 
 - (instancetype __nonnull)initWithGherkinAstGherkinDocument:(GherkinAstGherkinDocument *)gherkinDocument
                                                withNSString:(NSString *)uri
                                                withNSString:(NSString *)gherkinSource {
-  CucumberRuntimeModelCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(self, gherkinDocument, uri, gherkinSource);
+  CCBRCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(self, gherkinDocument, uri, gherkinSource);
   return self;
 }
 
@@ -156,7 +156,7 @@ JavaUtilRegexPattern *CucumberRuntimeModelCucumberFeature_RERUN_PATH_SPECIFICATI
 }
 
 - (void)sendTestSourceReadWithCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus {
-  [((CucumberRunnerEventBus *) nil_chk(bus)) sendWithCucumberApiEventEvent:create_CucumberApiEventTestSourceRead_initWithJavaLangLong_withNSString_withNSString_([bus getTime], uri_, gherkinSource_)];
+  [((CucumberRunnerEventBus *) nil_chk(bus)) sendWithCCBEvent:create_CCBTestSourceRead_initWithJavaLangLong_withNSString_withNSString_([bus getTime], uri_, gherkinSource_)];
 }
 
 - (void)dealloc {
@@ -183,42 +183,42 @@ JavaUtilRegexPattern *CucumberRuntimeModelCucumberFeature_RERUN_PATH_SPECIFICATI
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(load__WithCucumberRuntimeIoResourceLoader:withJavaUtilList:withJavaIoPrintStream:);
-  methods[1].selector = @selector(load__WithCucumberRuntimeIoResourceLoader:withJavaUtilList:);
-  methods[2].selector = @selector(loadFromRerunFileWithCucumberRuntimeFeatureBuilder:withCucumberRuntimeIoResourceLoader:withNSString:);
-  methods[3].selector = @selector(loadRerunFileWithCucumberRuntimeIoResourceLoader:withNSString:);
-  methods[4].selector = @selector(readWithCucumberRuntimeIoResource:);
-  methods[5].selector = @selector(loadFromFileSystemOrClasspathWithCucumberRuntimeFeatureBuilder:withCucumberRuntimeIoResourceLoader:withNSString:);
-  methods[6].selector = @selector(loadFromFeaturePathWithCucumberRuntimeFeatureBuilder:withCucumberRuntimeIoResourceLoader:withNSString:withBoolean:);
+  methods[0].selector = @selector(load__WithCCBRResourceLoader:withJavaUtilList:withJavaIoPrintStream:);
+  methods[1].selector = @selector(load__WithCCBRResourceLoader:withJavaUtilList:);
+  methods[2].selector = @selector(loadFromRerunFileWithCCBRFeatureBuilder:withCCBRResourceLoader:withNSString:);
+  methods[3].selector = @selector(loadRerunFileWithCCBRResourceLoader:withNSString:);
+  methods[4].selector = @selector(readWithCCBRResource:);
+  methods[5].selector = @selector(loadFromFileSystemOrClasspathWithCCBRFeatureBuilder:withCCBRResourceLoader:withNSString:);
+  methods[6].selector = @selector(loadFromFeaturePathWithCCBRFeatureBuilder:withCCBRResourceLoader:withNSString:withBoolean:);
   methods[7].selector = @selector(initWithGherkinAstGherkinDocument:withNSString:withNSString:);
   methods[8].selector = @selector(getGherkinFeature);
   methods[9].selector = @selector(getUri);
   methods[10].selector = @selector(sendTestSourceReadWithCucumberRunnerEventBus:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "serialVersionUID", "J", .constantValue.asLong = CucumberRuntimeModelCucumberFeature_serialVersionUID, 0x1a, -1, -1, -1, -1 },
+    { "serialVersionUID", "J", .constantValue.asLong = CCBRCucumberFeature_serialVersionUID, 0x1a, -1, -1, -1, -1 },
     { "uri_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "gherkinDocument_", "LGherkinAstGherkinDocument;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "gherkinSource_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "RERUN_PATH_SPECIFICATION", "LJavaUtilRegexPattern;", .constantValue.asLong = 0, 0x19, -1, 18, -1, -1 },
   };
-  static const void *ptrTable[] = { "load", "LCucumberRuntimeIoResourceLoader;LJavaUtilList;LJavaIoPrintStream;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/util/List<Ljava/lang/String;>;Ljava/io/PrintStream;)Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;", "LCucumberRuntimeIoResourceLoader;LJavaUtilList;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/util/List<Ljava/lang/String;>;)Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;", "loadFromRerunFile", "LCucumberRuntimeFeatureBuilder;LCucumberRuntimeIoResourceLoader;LNSString;", "loadRerunFile", "LCucumberRuntimeIoResourceLoader;LNSString;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/String;)Ljava/util/List<Lcucumber/runtime/model/PathWithLines;>;", "read", "LCucumberRuntimeIoResource;", "loadFromFileSystemOrClasspath", "loadFromFeaturePath", "LCucumberRuntimeFeatureBuilder;LCucumberRuntimeIoResourceLoader;LNSString;Z", "LGherkinAstGherkinDocument;LNSString;LNSString;", "sendTestSourceRead", "LCucumberRunnerEventBus;", &CucumberRuntimeModelCucumberFeature_RERUN_PATH_SPECIFICATION, "LCucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator;" };
-  static const J2ObjcClassInfo _CucumberRuntimeModelCucumberFeature = { "CucumberFeature", "cucumber.runtime.model", ptrTable, methods, fields, 7, 0x1, 11, 5, -1, 19, -1, -1, -1 };
-  return &_CucumberRuntimeModelCucumberFeature;
+  static const void *ptrTable[] = { "load", "LCCBRResourceLoader;LJavaUtilList;LJavaIoPrintStream;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/util/List<Ljava/lang/String;>;Ljava/io/PrintStream;)Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;", "LCCBRResourceLoader;LJavaUtilList;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/util/List<Ljava/lang/String;>;)Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;", "loadFromRerunFile", "LCCBRFeatureBuilder;LCCBRResourceLoader;LNSString;", "loadRerunFile", "LCCBRResourceLoader;LNSString;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/String;)Ljava/util/List<Lcucumber/runtime/model/PathWithLines;>;", "read", "LCCBRResource;", "loadFromFileSystemOrClasspath", "loadFromFeaturePath", "LCCBRFeatureBuilder;LCCBRResourceLoader;LNSString;Z", "LGherkinAstGherkinDocument;LNSString;LNSString;", "sendTestSourceRead", "LCucumberRunnerEventBus;", &CCBRCucumberFeature_RERUN_PATH_SPECIFICATION, "LCCBRCucumberFeature_CucumberFeatureUriComparator;" };
+  static const J2ObjcClassInfo _CCBRCucumberFeature = { "CucumberFeature", "cucumber.runtime.model", ptrTable, methods, fields, 7, 0x1, 11, 5, -1, 19, -1, -1, -1 };
+  return &_CCBRCucumberFeature;
 }
 
 + (void)initialize {
-  if (self == [CucumberRuntimeModelCucumberFeature class]) {
-    JreStrongAssign(&CucumberRuntimeModelCucumberFeature_RERUN_PATH_SPECIFICATION, JavaUtilRegexPattern_compileWithNSString_(@"(?m:^| |)(.*?\\.feature(?:(?::\\d+)*))"));
-    J2OBJC_SET_INITIALIZED(CucumberRuntimeModelCucumberFeature)
+  if (self == [CCBRCucumberFeature class]) {
+    JreStrongAssign(&CCBRCucumberFeature_RERUN_PATH_SPECIFICATION, JavaUtilRegexPattern_compileWithNSString_(@"(?m:^| |)(.*?\\.feature(?:(?::\\d+)*))"));
+    J2OBJC_SET_INITIALIZED(CCBRCucumberFeature)
   }
 }
 
 @end
 
-id<JavaUtilList> CucumberRuntimeModelCucumberFeature_load__WithCucumberRuntimeIoResourceLoader_withJavaUtilList_withJavaIoPrintStream_(id<CucumberRuntimeIoResourceLoader> resourceLoader, id<JavaUtilList> featurePaths, JavaIoPrintStream *outArg) {
-  CucumberRuntimeModelCucumberFeature_initialize();
-  id<JavaUtilList> cucumberFeatures = CucumberRuntimeModelCucumberFeature_load__WithCucumberRuntimeIoResourceLoader_withJavaUtilList_(resourceLoader, featurePaths);
+id<JavaUtilList> CCBRCucumberFeature_load__WithCCBRResourceLoader_withJavaUtilList_withJavaIoPrintStream_(id<CCBRResourceLoader> resourceLoader, id<JavaUtilList> featurePaths, JavaIoPrintStream *outArg) {
+  CCBRCucumberFeature_initialize();
+  id<JavaUtilList> cucumberFeatures = CCBRCucumberFeature_load__WithCCBRResourceLoader_withJavaUtilList_(resourceLoader, featurePaths);
   if ([((id<JavaUtilList>) nil_chk(cucumberFeatures)) isEmpty]) {
     if ([((id<JavaUtilList>) nil_chk(featurePaths)) isEmpty]) {
       [((JavaIoPrintStream *) nil_chk(outArg)) printlnWithNSString:@"Got no path to feature directory or feature file"];
@@ -230,64 +230,64 @@ id<JavaUtilList> CucumberRuntimeModelCucumberFeature_load__WithCucumberRuntimeIo
   return cucumberFeatures;
 }
 
-id<JavaUtilList> CucumberRuntimeModelCucumberFeature_load__WithCucumberRuntimeIoResourceLoader_withJavaUtilList_(id<CucumberRuntimeIoResourceLoader> resourceLoader, id<JavaUtilList> featurePaths) {
-  CucumberRuntimeModelCucumberFeature_initialize();
+id<JavaUtilList> CCBRCucumberFeature_load__WithCCBRResourceLoader_withJavaUtilList_(id<CCBRResourceLoader> resourceLoader, id<JavaUtilList> featurePaths) {
+  CCBRCucumberFeature_initialize();
   id<JavaUtilList> cucumberFeatures = create_JavaUtilArrayList_init();
-  CucumberRuntimeFeatureBuilder *builder = create_CucumberRuntimeFeatureBuilder_initWithJavaUtilList_(cucumberFeatures);
+  CCBRFeatureBuilder *builder = create_CCBRFeatureBuilder_initWithJavaUtilList_(cucumberFeatures);
   for (NSString * __strong featurePath in nil_chk(featurePaths)) {
     if ([((NSString *) nil_chk(featurePath)) java_hasPrefix:@"@"]) {
-      CucumberRuntimeModelCucumberFeature_loadFromRerunFileWithCucumberRuntimeFeatureBuilder_withCucumberRuntimeIoResourceLoader_withNSString_(builder, resourceLoader, [featurePath java_substring:1]);
+      CCBRCucumberFeature_loadFromRerunFileWithCCBRFeatureBuilder_withCCBRResourceLoader_withNSString_(builder, resourceLoader, [featurePath java_substring:1]);
     }
     else {
-      CucumberRuntimeModelCucumberFeature_loadFromFeaturePathWithCucumberRuntimeFeatureBuilder_withCucumberRuntimeIoResourceLoader_withNSString_withBoolean_(builder, resourceLoader, featurePath, false);
+      CCBRCucumberFeature_loadFromFeaturePathWithCCBRFeatureBuilder_withCCBRResourceLoader_withNSString_withBoolean_(builder, resourceLoader, featurePath, false);
     }
   }
-  JavaUtilCollections_sortWithJavaUtilList_withJavaUtilComparator_(cucumberFeatures, create_CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator_init());
+  JavaUtilCollections_sortWithJavaUtilList_withJavaUtilComparator_(cucumberFeatures, create_CCBRCucumberFeature_CucumberFeatureUriComparator_init());
   return cucumberFeatures;
 }
 
-void CucumberRuntimeModelCucumberFeature_loadFromRerunFileWithCucumberRuntimeFeatureBuilder_withCucumberRuntimeIoResourceLoader_withNSString_(CucumberRuntimeFeatureBuilder *builder, id<CucumberRuntimeIoResourceLoader> resourceLoader, NSString *rerunPath) {
-  CucumberRuntimeModelCucumberFeature_initialize();
-  for (CucumberRuntimeModelPathWithLines * __strong pathWithLines in nil_chk(CucumberRuntimeModelCucumberFeature_loadRerunFileWithCucumberRuntimeIoResourceLoader_withNSString_(resourceLoader, rerunPath))) {
-    CucumberRuntimeModelCucumberFeature_loadFromFileSystemOrClasspathWithCucumberRuntimeFeatureBuilder_withCucumberRuntimeIoResourceLoader_withNSString_(builder, resourceLoader, ((CucumberRuntimeModelPathWithLines *) nil_chk(pathWithLines))->path_);
+void CCBRCucumberFeature_loadFromRerunFileWithCCBRFeatureBuilder_withCCBRResourceLoader_withNSString_(CCBRFeatureBuilder *builder, id<CCBRResourceLoader> resourceLoader, NSString *rerunPath) {
+  CCBRCucumberFeature_initialize();
+  for (CCBRPathWithLines * __strong pathWithLines in nil_chk(CCBRCucumberFeature_loadRerunFileWithCCBRResourceLoader_withNSString_(resourceLoader, rerunPath))) {
+    CCBRCucumberFeature_loadFromFileSystemOrClasspathWithCCBRFeatureBuilder_withCCBRResourceLoader_withNSString_(builder, resourceLoader, ((CCBRPathWithLines *) nil_chk(pathWithLines))->path_);
   }
 }
 
-id<JavaUtilList> CucumberRuntimeModelCucumberFeature_loadRerunFileWithCucumberRuntimeIoResourceLoader_withNSString_(id<CucumberRuntimeIoResourceLoader> resourceLoader, NSString *rerunPath) {
-  CucumberRuntimeModelCucumberFeature_initialize();
+id<JavaUtilList> CCBRCucumberFeature_loadRerunFileWithCCBRResourceLoader_withNSString_(id<CCBRResourceLoader> resourceLoader, NSString *rerunPath) {
+  CCBRCucumberFeature_initialize();
   id<JavaUtilList> featurePaths = create_JavaUtilArrayList_init();
-  id<JavaLangIterable> resources = [((id<CucumberRuntimeIoResourceLoader>) nil_chk(resourceLoader)) resourcesWithNSString:rerunPath withNSString:nil];
-  for (id<CucumberRuntimeIoResource> __strong resource in nil_chk(resources)) {
-    NSString *source = CucumberRuntimeModelCucumberFeature_readWithCucumberRuntimeIoResource_(resource);
+  id<JavaLangIterable> resources = [((id<CCBRResourceLoader>) nil_chk(resourceLoader)) resourcesWithNSString:rerunPath withNSString:nil];
+  for (id<CCBRResource> __strong resource in nil_chk(resources)) {
+    NSString *source = CCBRCucumberFeature_readWithCCBRResource_(resource);
     if (![((NSString *) nil_chk(source)) java_isEmpty]) {
-      JavaUtilRegexMatcher *matcher = [((JavaUtilRegexPattern *) nil_chk(CucumberRuntimeModelCucumberFeature_RERUN_PATH_SPECIFICATION)) matcherWithJavaLangCharSequence:source];
+      JavaUtilRegexMatcher *matcher = [((JavaUtilRegexPattern *) nil_chk(CCBRCucumberFeature_RERUN_PATH_SPECIFICATION)) matcherWithJavaLangCharSequence:source];
       while ([((JavaUtilRegexMatcher *) nil_chk(matcher)) find]) {
-        [featurePaths addWithId:create_CucumberRuntimeModelPathWithLines_initWithNSString_([matcher groupWithInt:1])];
+        [featurePaths addWithId:create_CCBRPathWithLines_initWithNSString_([matcher groupWithInt:1])];
       }
     }
   }
   return featurePaths;
 }
 
-NSString *CucumberRuntimeModelCucumberFeature_readWithCucumberRuntimeIoResource_(id<CucumberRuntimeIoResource> resource) {
-  CucumberRuntimeModelCucumberFeature_initialize();
+NSString *CCBRCucumberFeature_readWithCCBRResource_(id<CCBRResource> resource) {
+  CCBRCucumberFeature_initialize();
   @try {
-    return CucumberUtilEncoding_readFileWithCucumberRuntimeIoResource_(resource);
+    return CucumberUtilEncoding_readFileWithCCBRResource_(resource);
   }
   @catch (JavaIoIOException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithNSString_withJavaLangThrowable_(JreStrcat("$$", @"Failed to read resource:", [((id<CucumberRuntimeIoResource>) nil_chk(resource)) getPath]), e);
+    @throw create_CCBRCucumberException_initWithNSString_withJavaLangThrowable_(JreStrcat("$$", @"Failed to read resource:", [((id<CCBRResource>) nil_chk(resource)) getPath]), e);
   }
 }
 
-void CucumberRuntimeModelCucumberFeature_loadFromFileSystemOrClasspathWithCucumberRuntimeFeatureBuilder_withCucumberRuntimeIoResourceLoader_withNSString_(CucumberRuntimeFeatureBuilder *builder, id<CucumberRuntimeIoResourceLoader> resourceLoader, NSString *featurePath) {
-  CucumberRuntimeModelCucumberFeature_initialize();
+void CCBRCucumberFeature_loadFromFileSystemOrClasspathWithCCBRFeatureBuilder_withCCBRResourceLoader_withNSString_(CCBRFeatureBuilder *builder, id<CCBRResourceLoader> resourceLoader, NSString *featurePath) {
+  CCBRCucumberFeature_initialize();
   @try {
-    CucumberRuntimeModelCucumberFeature_loadFromFeaturePathWithCucumberRuntimeFeatureBuilder_withCucumberRuntimeIoResourceLoader_withNSString_withBoolean_(builder, resourceLoader, featurePath, false);
+    CCBRCucumberFeature_loadFromFeaturePathWithCCBRFeatureBuilder_withCCBRResourceLoader_withNSString_withBoolean_(builder, resourceLoader, featurePath, false);
   }
   @catch (JavaLangIllegalArgumentException *originalException) {
-    if (![((NSString *) nil_chk(featurePath)) java_hasPrefix:CucumberRuntimeIoMultiLoader_CLASSPATH_SCHEME] && [((NSString *) nil_chk([originalException getMessage])) java_contains:@"Not a file or directory"]) {
+    if (![((NSString *) nil_chk(featurePath)) java_hasPrefix:CCBRMultiLoader_CLASSPATH_SCHEME] && [((NSString *) nil_chk([originalException getMessage])) java_contains:@"Not a file or directory"]) {
       @try {
-        CucumberRuntimeModelCucumberFeature_loadFromFeaturePathWithCucumberRuntimeFeatureBuilder_withCucumberRuntimeIoResourceLoader_withNSString_withBoolean_(builder, resourceLoader, JreStrcat("$$", CucumberRuntimeIoMultiLoader_CLASSPATH_SCHEME, featurePath), true);
+        CCBRCucumberFeature_loadFromFeaturePathWithCCBRFeatureBuilder_withCCBRResourceLoader_withNSString_withBoolean_(builder, resourceLoader, JreStrcat("$$", CCBRMultiLoader_CLASSPATH_SCHEME, featurePath), true);
       }
       @catch (JavaLangIllegalArgumentException *secondException) {
         if ([((NSString *) nil_chk([secondException getMessage])) java_contains:@"No resource found for"]) {
@@ -304,46 +304,46 @@ void CucumberRuntimeModelCucumberFeature_loadFromFileSystemOrClasspathWithCucumb
   }
 }
 
-void CucumberRuntimeModelCucumberFeature_loadFromFeaturePathWithCucumberRuntimeFeatureBuilder_withCucumberRuntimeIoResourceLoader_withNSString_withBoolean_(CucumberRuntimeFeatureBuilder *builder, id<CucumberRuntimeIoResourceLoader> resourceLoader, NSString *featurePath, jboolean failOnNoResource) {
-  CucumberRuntimeModelCucumberFeature_initialize();
-  id<JavaLangIterable> resources = [((id<CucumberRuntimeIoResourceLoader>) nil_chk(resourceLoader)) resourcesWithNSString:featurePath withNSString:@".feature"];
+void CCBRCucumberFeature_loadFromFeaturePathWithCCBRFeatureBuilder_withCCBRResourceLoader_withNSString_withBoolean_(CCBRFeatureBuilder *builder, id<CCBRResourceLoader> resourceLoader, NSString *featurePath, jboolean failOnNoResource) {
+  CCBRCucumberFeature_initialize();
+  id<JavaLangIterable> resources = [((id<CCBRResourceLoader>) nil_chk(resourceLoader)) resourcesWithNSString:featurePath withNSString:@".feature"];
   if (failOnNoResource && ![((id<JavaUtilIterator>) nil_chk([((id<JavaLangIterable>) nil_chk(resources)) iterator])) hasNext]) {
     @throw create_JavaLangIllegalArgumentException_initWithNSString_(JreStrcat("$$", @"No resource found for: ", featurePath));
   }
-  for (id<CucumberRuntimeIoResource> __strong resource in nil_chk(resources)) {
-    [((CucumberRuntimeFeatureBuilder *) nil_chk(builder)) parseWithCucumberRuntimeIoResource:resource];
+  for (id<CCBRResource> __strong resource in nil_chk(resources)) {
+    [((CCBRFeatureBuilder *) nil_chk(builder)) parseWithCCBRResource:resource];
   }
 }
 
-void CucumberRuntimeModelCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(CucumberRuntimeModelCucumberFeature *self, GherkinAstGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource) {
+void CCBRCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(CCBRCucumberFeature *self, GherkinAstGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource) {
   NSObject_init(self);
   JreStrongAssign(&self->gherkinDocument_, gherkinDocument);
   JreStrongAssign(&self->uri_, uri);
   JreStrongAssign(&self->gherkinSource_, gherkinSource);
 }
 
-CucumberRuntimeModelCucumberFeature *new_CucumberRuntimeModelCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(GherkinAstGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeModelCucumberFeature, initWithGherkinAstGherkinDocument_withNSString_withNSString_, gherkinDocument, uri, gherkinSource)
+CCBRCucumberFeature *new_CCBRCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(GherkinAstGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource) {
+  J2OBJC_NEW_IMPL(CCBRCucumberFeature, initWithGherkinAstGherkinDocument_withNSString_withNSString_, gherkinDocument, uri, gherkinSource)
 }
 
-CucumberRuntimeModelCucumberFeature *create_CucumberRuntimeModelCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(GherkinAstGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeModelCucumberFeature, initWithGherkinAstGherkinDocument_withNSString_withNSString_, gherkinDocument, uri, gherkinSource)
+CCBRCucumberFeature *create_CCBRCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(GherkinAstGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource) {
+  J2OBJC_CREATE_IMPL(CCBRCucumberFeature, initWithGherkinAstGherkinDocument_withNSString_withNSString_, gherkinDocument, uri, gherkinSource)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeModelCucumberFeature)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRCucumberFeature)
 
-@implementation CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator
+@implementation CCBRCucumberFeature_CucumberFeatureUriComparator
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator_init(self);
+  CCBRCucumberFeature_CucumberFeatureUriComparator_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (jint)compareWithId:(CucumberRuntimeModelCucumberFeature *)a
-               withId:(CucumberRuntimeModelCucumberFeature *)b {
-  return [((NSString *) nil_chk([((CucumberRuntimeModelCucumberFeature *) nil_chk(a)) getUri])) compareToWithId:[((CucumberRuntimeModelCucumberFeature *) nil_chk(b)) getUri]];
+- (jint)compareWithId:(CCBRCucumberFeature *)a
+               withId:(CCBRCucumberFeature *)b {
+  return [((NSString *) nil_chk([((CCBRCucumberFeature *) nil_chk(a)) getUri])) compareToWithId:[((CCBRCucumberFeature *) nil_chk(b)) getUri]];
 }
 
 - (id<JavaUtilComparator>)reversed {
@@ -386,23 +386,23 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(compareWithId:withId:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "compare", "LCucumberRuntimeModelCucumberFeature;LCucumberRuntimeModelCucumberFeature;", "LCucumberRuntimeModelCucumberFeature;", "Ljava/lang/Object;Ljava/util/Comparator<Lcucumber/runtime/model/CucumberFeature;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator = { "CucumberFeatureUriComparator", "cucumber.runtime.model", ptrTable, methods, NULL, 7, 0xa, 2, 0, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator;
+  static const void *ptrTable[] = { "compare", "LCCBRCucumberFeature;LCCBRCucumberFeature;", "LCCBRCucumberFeature;", "Ljava/lang/Object;Ljava/util/Comparator<Lcucumber/runtime/model/CucumberFeature;>;" };
+  static const J2ObjcClassInfo _CCBRCucumberFeature_CucumberFeatureUriComparator = { "CucumberFeatureUriComparator", "cucumber.runtime.model", ptrTable, methods, NULL, 7, 0xa, 2, 0, 2, -1, -1, 3, -1 };
+  return &_CCBRCucumberFeature_CucumberFeatureUriComparator;
 }
 
 @end
 
-void CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator_init(CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator *self) {
+void CCBRCucumberFeature_CucumberFeatureUriComparator_init(CCBRCucumberFeature_CucumberFeatureUriComparator *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator *new_CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator, init)
+CCBRCucumberFeature_CucumberFeatureUriComparator *new_CCBRCucumberFeature_CucumberFeatureUriComparator_init() {
+  J2OBJC_NEW_IMPL(CCBRCucumberFeature_CucumberFeatureUriComparator, init)
 }
 
-CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator *create_CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator, init)
+CCBRCucumberFeature_CucumberFeatureUriComparator *create_CCBRCucumberFeature_CucumberFeatureUriComparator_init() {
+  J2OBJC_CREATE_IMPL(CCBRCucumberFeature_CucumberFeatureUriComparator, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeModelCucumberFeature_CucumberFeatureUriComparator)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRCucumberFeature_CucumberFeatureUriComparator)

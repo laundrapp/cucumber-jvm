@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaPlMając_) && (INCLUDE_ALL_CucumberApiJavaPlMając || defined(INCLUDE_CucumberApiJavaPlMając))
-#define CucumberApiJavaPlMając_
+#if !defined (CCBMając_) && (INCLUDE_ALL_CucumberApiJavaPlMając || defined(INCLUDE_CCBMając))
+#define CCBMając_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaPlMając < JavaLangAnnotationAnnotation >
+@protocol CCBMając < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaPlMając : NSObject < CucumberApiJavaPlMając > {
+@interface CCBMając : NSObject < CCBMając > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaPlMając)
+J2OBJC_EMPTY_STATIC_INIT(CCBMając)
 
-FOUNDATION_EXPORT id<CucumberApiJavaPlMając> create_CucumberApiJavaPlMając(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBMając> create_CCBMając(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaPlMając)
+J2OBJC_TYPE_LITERAL_HEADER(CCBMając)
+
+#define CucumberApiJavaPlMając CCBMając
 
 #endif
 

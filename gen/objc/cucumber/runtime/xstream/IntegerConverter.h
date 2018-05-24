@@ -18,18 +18,18 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamIntegerConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamIntegerConverter || defined(INCLUDE_CucumberRuntimeXstreamIntegerConverter))
-#define CucumberRuntimeXstreamIntegerConverter_
+#if !defined (CCBRIntegerConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamIntegerConverter || defined(INCLUDE_CCBRIntegerConverter))
+#define CCBRIntegerConverter_
 
 #define RESTRICT_CucumberRuntimeXstreamConverterWithNumberFormat 1
-#define INCLUDE_CucumberRuntimeXstreamConverterWithNumberFormat 1
+#define INCLUDE_CCBRConverterWithNumberFormat 1
 #include "cucumber/runtime/xstream/ConverterWithNumberFormat.h"
 
 @class IOSObjectArray;
 @class JavaLangInteger;
 @class JavaUtilLocale;
 
-@interface CucumberRuntimeXstreamIntegerConverter : CucumberRuntimeXstreamConverterWithNumberFormat
+@interface CCBRIntegerConverter : CCBRConverterWithNumberFormat
 
 #pragma mark Public
 
@@ -48,15 +48,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamIntegerConverter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRIntegerConverter)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamIntegerConverter_initWithJavaUtilLocale_(CucumberRuntimeXstreamIntegerConverter *self, JavaUtilLocale *locale);
+FOUNDATION_EXPORT void CCBRIntegerConverter_initWithJavaUtilLocale_(CCBRIntegerConverter *self, JavaUtilLocale *locale);
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamIntegerConverter *new_CucumberRuntimeXstreamIntegerConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRIntegerConverter *new_CCBRIntegerConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamIntegerConverter *create_CucumberRuntimeXstreamIntegerConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale);
+FOUNDATION_EXPORT CCBRIntegerConverter *create_CCBRIntegerConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamIntegerConverter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRIntegerConverter)
+
+@compatibility_alias CucumberRuntimeXstreamIntegerConverter CCBRIntegerConverter;
 
 #endif
 

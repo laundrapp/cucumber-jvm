@@ -18,22 +18,22 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeDefinitionMatch_) && (INCLUDE_ALL_CucumberRuntimeDefinitionMatch || defined(INCLUDE_CucumberRuntimeDefinitionMatch))
-#define CucumberRuntimeDefinitionMatch_
+#if !defined (CCBRDefinitionMatch_) && (INCLUDE_ALL_CucumberRuntimeDefinitionMatch || defined(INCLUDE_CCBRDefinitionMatch))
+#define CCBRDefinitionMatch_
 
-@class CucumberRuntimeMatch;
-@protocol CucumberApiScenario;
+@class CCBRMatch;
+@protocol CCBScenario;
 @protocol JavaUtilList;
 
-@protocol CucumberRuntimeDefinitionMatch < JavaObject >
+@protocol CCBRDefinitionMatch < JavaObject >
 
 - (void)runStepWithNSString:(NSString *)language
-    withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
+            withCCBScenario:(id<CCBScenario>)scenario;
 
 - (void)dryRunStepWithNSString:(NSString *)language
-       withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
+               withCCBScenario:(id<CCBScenario>)scenario;
 
-- (CucumberRuntimeMatch *)getMatch;
+- (CCBRMatch *)getMatch;
 
 - (NSString *)getPattern;
 
@@ -43,9 +43,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeDefinitionMatch)
+J2OBJC_EMPTY_STATIC_INIT(CCBRDefinitionMatch)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeDefinitionMatch)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRDefinitionMatch)
+
+#define CucumberRuntimeDefinitionMatch CCBRDefinitionMatch
 
 #endif
 

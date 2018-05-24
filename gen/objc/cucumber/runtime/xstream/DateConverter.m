@@ -13,10 +13,10 @@
 
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@implementation CucumberRuntimeXstreamDateConverter
+@implementation CCBRDateConverter
 
 - (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale {
-  CucumberRuntimeXstreamDateConverter_initWithJavaUtilLocale_(self, locale);
+  CCBRDateConverter_initWithJavaUtilLocale_(self, locale);
   return self;
 }
 
@@ -30,22 +30,22 @@
   methods[0].selector = @selector(initWithJavaUtilLocale:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LJavaUtilLocale;", "Lcucumber/runtime/xstream/TimeConverter<Ljava/util/Date;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamDateConverter = { "DateConverter", "cucumber.runtime.xstream", ptrTable, methods, NULL, 7, 0x0, 1, 0, -1, -1, -1, 1, -1 };
-  return &_CucumberRuntimeXstreamDateConverter;
+  static const J2ObjcClassInfo _CCBRDateConverter = { "DateConverter", "cucumber.runtime.xstream", ptrTable, methods, NULL, 7, 0x0, 1, 0, -1, -1, -1, 1, -1 };
+  return &_CCBRDateConverter;
 }
 
 @end
 
-void CucumberRuntimeXstreamDateConverter_initWithJavaUtilLocale_(CucumberRuntimeXstreamDateConverter *self, JavaUtilLocale *locale) {
-  CucumberRuntimeXstreamTimeConverter_initWithJavaUtilLocale_withIOSClassArray_(self, locale, [IOSObjectArray arrayWithObjects:(id[]){ JavaUtilDate_class_() } count:1 type:IOSClass_class_()]);
+void CCBRDateConverter_initWithJavaUtilLocale_(CCBRDateConverter *self, JavaUtilLocale *locale) {
+  CCBRTimeConverter_initWithJavaUtilLocale_withIOSClassArray_(self, locale, [IOSObjectArray arrayWithObjects:(id[]){ JavaUtilDate_class_() } count:1 type:IOSClass_class_()]);
 }
 
-CucumberRuntimeXstreamDateConverter *new_CucumberRuntimeXstreamDateConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamDateConverter, initWithJavaUtilLocale_, locale)
+CCBRDateConverter *new_CCBRDateConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
+  J2OBJC_NEW_IMPL(CCBRDateConverter, initWithJavaUtilLocale_, locale)
 }
 
-CucumberRuntimeXstreamDateConverter *create_CucumberRuntimeXstreamDateConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamDateConverter, initWithJavaUtilLocale_, locale)
+CCBRDateConverter *create_CCBRDateConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
+  J2OBJC_CREATE_IMPL(CCBRDateConverter, initWithJavaUtilLocale_, locale)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamDateConverter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRDateConverter)

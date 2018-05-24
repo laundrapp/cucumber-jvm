@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaTrFakat_) && (INCLUDE_ALL_CucumberApiJavaTrFakat || defined(INCLUDE_CucumberApiJavaTrFakat))
-#define CucumberApiJavaTrFakat_
+#if !defined (CCBFakat_) && (INCLUDE_ALL_CucumberApiJavaTrFakat || defined(INCLUDE_CCBFakat))
+#define CCBFakat_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaTrFakat < JavaLangAnnotationAnnotation >
+@protocol CCBFakat < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaTrFakat : NSObject < CucumberApiJavaTrFakat > {
+@interface CCBFakat : NSObject < CCBFakat > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaTrFakat)
+J2OBJC_EMPTY_STATIC_INIT(CCBFakat)
 
-FOUNDATION_EXPORT id<CucumberApiJavaTrFakat> create_CucumberApiJavaTrFakat(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBFakat> create_CCBFakat(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaTrFakat)
+J2OBJC_TYPE_LITERAL_HEADER(CCBFakat)
+
+#define CucumberApiJavaTrFakat CCBFakat
 
 #endif
 

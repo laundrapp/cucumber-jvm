@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaUrلیکن_) && (INCLUDE_ALL_CucumberApiJavaUrلیکن || defined(INCLUDE_CucumberApiJavaUrلیکن))
-#define CucumberApiJavaUrلیکن_
+#if !defined (CCBلیکن_) && (INCLUDE_ALL_CucumberApiJavaUrلیکن || defined(INCLUDE_CCBلیکن))
+#define CCBلیکن_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaUrلیکن < JavaLangAnnotationAnnotation >
+@protocol CCBلیکن < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaUrلیکن : NSObject < CucumberApiJavaUrلیکن > {
+@interface CCBلیکن : NSObject < CCBلیکن > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaUrلیکن)
+J2OBJC_EMPTY_STATIC_INIT(CCBلیکن)
 
-FOUNDATION_EXPORT id<CucumberApiJavaUrلیکن> create_CucumberApiJavaUrلیکن(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBلیکن> create_CCBلیکن(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaUrلیکن)
+J2OBJC_TYPE_LITERAL_HEADER(CCBلیکن)
+
+#define CucumberApiJavaUrلیکن CCBلیکن
 
 #endif
 

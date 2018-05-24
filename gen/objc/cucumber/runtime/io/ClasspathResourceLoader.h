@@ -18,17 +18,17 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeIoClasspathResourceLoader_) && (INCLUDE_ALL_CucumberRuntimeIoClasspathResourceLoader || defined(INCLUDE_CucumberRuntimeIoClasspathResourceLoader))
-#define CucumberRuntimeIoClasspathResourceLoader_
+#if !defined (CCBRClasspathResourceLoader_) && (INCLUDE_ALL_CucumberRuntimeIoClasspathResourceLoader || defined(INCLUDE_CCBRClasspathResourceLoader))
+#define CCBRClasspathResourceLoader_
 
 #define RESTRICT_CucumberRuntimeIoResourceLoader 1
-#define INCLUDE_CucumberRuntimeIoResourceLoader 1
+#define INCLUDE_CCBRResourceLoader 1
 #include "cucumber/runtime/io/ResourceLoader.h"
 
 @class JavaLangClassLoader;
 @protocol JavaLangIterable;
 
-@interface CucumberRuntimeIoClasspathResourceLoader : NSObject < CucumberRuntimeIoResourceLoader >
+@interface CCBRClasspathResourceLoader : NSObject < CCBRResourceLoader >
 
 #pragma mark Public
 
@@ -43,15 +43,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoClasspathResourceLoader)
+J2OBJC_EMPTY_STATIC_INIT(CCBRClasspathResourceLoader)
 
-FOUNDATION_EXPORT void CucumberRuntimeIoClasspathResourceLoader_initWithJavaLangClassLoader_(CucumberRuntimeIoClasspathResourceLoader *self, JavaLangClassLoader *classLoader);
+FOUNDATION_EXPORT void CCBRClasspathResourceLoader_initWithJavaLangClassLoader_(CCBRClasspathResourceLoader *self, JavaLangClassLoader *classLoader);
 
-FOUNDATION_EXPORT CucumberRuntimeIoClasspathResourceLoader *new_CucumberRuntimeIoClasspathResourceLoader_initWithJavaLangClassLoader_(JavaLangClassLoader *classLoader) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRClasspathResourceLoader *new_CCBRClasspathResourceLoader_initWithJavaLangClassLoader_(JavaLangClassLoader *classLoader) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeIoClasspathResourceLoader *create_CucumberRuntimeIoClasspathResourceLoader_initWithJavaLangClassLoader_(JavaLangClassLoader *classLoader);
+FOUNDATION_EXPORT CCBRClasspathResourceLoader *create_CCBRClasspathResourceLoader_initWithJavaLangClassLoader_(JavaLangClassLoader *classLoader);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoClasspathResourceLoader)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRClasspathResourceLoader)
+
+@compatibility_alias CucumberRuntimeIoClasspathResourceLoader CCBRClasspathResourceLoader;
 
 #endif
 

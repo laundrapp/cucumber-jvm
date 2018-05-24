@@ -18,11 +18,11 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeIoZipThenFileResourceIteratorFactory_) && (INCLUDE_ALL_CucumberRuntimeIoZipThenFileResourceIteratorFactory || defined(INCLUDE_CucumberRuntimeIoZipThenFileResourceIteratorFactory))
-#define CucumberRuntimeIoZipThenFileResourceIteratorFactory_
+#if !defined (CCBRZipThenFileResourceIteratorFactory_) && (INCLUDE_ALL_CucumberRuntimeIoZipThenFileResourceIteratorFactory || defined(INCLUDE_CCBRZipThenFileResourceIteratorFactory))
+#define CCBRZipThenFileResourceIteratorFactory_
 
 #define RESTRICT_CucumberRuntimeIoResourceIteratorFactory 1
-#define INCLUDE_CucumberRuntimeIoResourceIteratorFactory 1
+#define INCLUDE_CCBRResourceIteratorFactory 1
 #include "cucumber/runtime/io/ResourceIteratorFactory.h"
 
 @class JavaNetURL;
@@ -31,7 +31,7 @@
 /*!
  @brief Resource iterator factory implementation which delegates to zip then file.
  */
-@interface CucumberRuntimeIoZipThenFileResourceIteratorFactory : NSObject < CucumberRuntimeIoResourceIteratorFactory >
+@interface CCBRZipThenFileResourceIteratorFactory : NSObject < CCBRResourceIteratorFactory >
 
 #pragma mark Public
 
@@ -45,15 +45,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoZipThenFileResourceIteratorFactory)
+J2OBJC_EMPTY_STATIC_INIT(CCBRZipThenFileResourceIteratorFactory)
 
-FOUNDATION_EXPORT void CucumberRuntimeIoZipThenFileResourceIteratorFactory_init(CucumberRuntimeIoZipThenFileResourceIteratorFactory *self);
+FOUNDATION_EXPORT void CCBRZipThenFileResourceIteratorFactory_init(CCBRZipThenFileResourceIteratorFactory *self);
 
-FOUNDATION_EXPORT CucumberRuntimeIoZipThenFileResourceIteratorFactory *new_CucumberRuntimeIoZipThenFileResourceIteratorFactory_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRZipThenFileResourceIteratorFactory *new_CCBRZipThenFileResourceIteratorFactory_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeIoZipThenFileResourceIteratorFactory *create_CucumberRuntimeIoZipThenFileResourceIteratorFactory_init(void);
+FOUNDATION_EXPORT CCBRZipThenFileResourceIteratorFactory *create_CCBRZipThenFileResourceIteratorFactory_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoZipThenFileResourceIteratorFactory)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRZipThenFileResourceIteratorFactory)
+
+@compatibility_alias CucumberRuntimeIoZipThenFileResourceIteratorFactory CCBRZipThenFileResourceIteratorFactory;
 
 #endif
 

@@ -18,27 +18,27 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeFormatterTestNGFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterTestNGFormatter || defined(INCLUDE_CucumberRuntimeFormatterTestNGFormatter))
-#define CucumberRuntimeFormatterTestNGFormatter_
+#if !defined (CCBRTestNGFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterTestNGFormatter || defined(INCLUDE_CCBRTestNGFormatter))
+#define CCBRTestNGFormatter_
 
 #define RESTRICT_CucumberApiFormatterFormatter 1
-#define INCLUDE_CucumberApiFormatterFormatter 1
+#define INCLUDE_CCBFormatter 1
 #include "cucumber/api/formatter/Formatter.h"
 
 #define RESTRICT_CucumberApiFormatterStrictAware 1
-#define INCLUDE_CucumberApiFormatterStrictAware 1
+#define INCLUDE_CCBStrictAware 1
 #include "cucumber/api/formatter/StrictAware.h"
 
 @class JavaNetURL;
-@protocol CucumberApiEventEventPublisher;
+@protocol CCBEventPublisher;
 
-@interface CucumberRuntimeFormatterTestNGFormatter : NSObject < CucumberApiFormatterFormatter, CucumberApiFormatterStrictAware >
+@interface CCBRTestNGFormatter : NSObject < CCBFormatter, CCBStrictAware >
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithJavaNetURL:(JavaNetURL *)url;
 
-- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
+- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher;
 
 - (void)setStrictWithBoolean:(jboolean)strict;
 
@@ -48,15 +48,17 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeFormatterTestNGFormatter)
+J2OBJC_STATIC_INIT(CCBRTestNGFormatter)
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterTestNGFormatter_initWithJavaNetURL_(CucumberRuntimeFormatterTestNGFormatter *self, JavaNetURL *url);
+FOUNDATION_EXPORT void CCBRTestNGFormatter_initWithJavaNetURL_(CCBRTestNGFormatter *self, JavaNetURL *url);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterTestNGFormatter *new_CucumberRuntimeFormatterTestNGFormatter_initWithJavaNetURL_(JavaNetURL *url) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRTestNGFormatter *new_CCBRTestNGFormatter_initWithJavaNetURL_(JavaNetURL *url) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterTestNGFormatter *create_CucumberRuntimeFormatterTestNGFormatter_initWithJavaNetURL_(JavaNetURL *url);
+FOUNDATION_EXPORT CCBRTestNGFormatter *create_CCBRTestNGFormatter_initWithJavaNetURL_(JavaNetURL *url);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterTestNGFormatter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRTestNGFormatter)
+
+@compatibility_alias CucumberRuntimeFormatterTestNGFormatter CCBRTestNGFormatter;
 
 #endif
 

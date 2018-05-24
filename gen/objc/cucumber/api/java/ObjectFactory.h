@@ -18,15 +18,15 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaObjectFactory_) && (INCLUDE_ALL_CucumberApiJavaObjectFactory || defined(INCLUDE_CucumberApiJavaObjectFactory))
-#define CucumberApiJavaObjectFactory_
+#if !defined (CCBObjectFactory_) && (INCLUDE_ALL_CucumberApiJavaObjectFactory || defined(INCLUDE_CCBObjectFactory))
+#define CCBObjectFactory_
 
 @class IOSClass;
 
 /*!
  @brief Minimal facade for Dependency Injection containers
  */
-@protocol CucumberApiJavaObjectFactory < JavaObject >
+@protocol CCBObjectFactory < JavaObject >
 
 /*!
  @brief Instantiate glue code <b>before</b> scenario execution.Called once per scenario.
@@ -55,9 +55,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaObjectFactory)
+J2OBJC_EMPTY_STATIC_INIT(CCBObjectFactory)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaObjectFactory)
+J2OBJC_TYPE_LITERAL_HEADER(CCBObjectFactory)
+
+#define CucumberApiJavaObjectFactory CCBObjectFactory
 
 #endif
 

@@ -7,11 +7,11 @@
 #include "cucumber/runtime/java/LambdaGlueRegistry.h"
 #include "java/lang/ThreadLocal.h"
 
-J2OBJC_INITIALIZED_DEFN(CucumberRuntimeJavaLambdaGlueRegistry)
+J2OBJC_INITIALIZED_DEFN(CCBLambdaGlueRegistry)
 
-JavaLangThreadLocal *CucumberRuntimeJavaLambdaGlueRegistry_INSTANCE;
+JavaLangThreadLocal *CCBLambdaGlueRegistry_INSTANCE;
 
-@implementation CucumberRuntimeJavaLambdaGlueRegistry
+@implementation CCBLambdaGlueRegistry
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -22,25 +22,25 @@ JavaLangThreadLocal *CucumberRuntimeJavaLambdaGlueRegistry_INSTANCE;
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(addStepDefinitionWithCucumberRuntimeStepDefinition:);
-  methods[1].selector = @selector(addBeforeHookDefinitionWithCucumberRuntimeHookDefinition:);
-  methods[2].selector = @selector(addAfterHookDefinitionWithCucumberRuntimeHookDefinition:);
+  methods[0].selector = @selector(addStepDefinitionWithCCBRStepDefinition:);
+  methods[1].selector = @selector(addBeforeHookDefinitionWithCCBRHookDefinition:);
+  methods[2].selector = @selector(addAfterHookDefinitionWithCCBRHookDefinition:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "INSTANCE", "LJavaLangThreadLocal;", .constantValue.asLong = 0, 0x19, -1, 5, 6, -1 },
   };
-  static const void *ptrTable[] = { "addStepDefinition", "LCucumberRuntimeStepDefinition;", "addBeforeHookDefinition", "LCucumberRuntimeHookDefinition;", "addAfterHookDefinition", &CucumberRuntimeJavaLambdaGlueRegistry_INSTANCE, "Ljava/lang/ThreadLocal<Lcucumber/runtime/java/LambdaGlueRegistry;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeJavaLambdaGlueRegistry = { "LambdaGlueRegistry", "cucumber.runtime.java", ptrTable, methods, fields, 7, 0x609, 3, 1, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeJavaLambdaGlueRegistry;
+  static const void *ptrTable[] = { "addStepDefinition", "LCCBRStepDefinition;", "addBeforeHookDefinition", "LCCBRHookDefinition;", "addAfterHookDefinition", &CCBLambdaGlueRegistry_INSTANCE, "Ljava/lang/ThreadLocal<Lcucumber/runtime/java/LambdaGlueRegistry;>;" };
+  static const J2ObjcClassInfo _CCBLambdaGlueRegistry = { "LambdaGlueRegistry", "cucumber.runtime.java", ptrTable, methods, fields, 7, 0x609, 3, 1, -1, -1, -1, -1, -1 };
+  return &_CCBLambdaGlueRegistry;
 }
 
 + (void)initialize {
-  if (self == [CucumberRuntimeJavaLambdaGlueRegistry class]) {
-    JreStrongAssignAndConsume(&CucumberRuntimeJavaLambdaGlueRegistry_INSTANCE, new_JavaLangThreadLocal_init());
-    J2OBJC_SET_INITIALIZED(CucumberRuntimeJavaLambdaGlueRegistry)
+  if (self == [CCBLambdaGlueRegistry class]) {
+    JreStrongAssignAndConsume(&CCBLambdaGlueRegistry_INSTANCE, new_JavaLangThreadLocal_init());
+    J2OBJC_SET_INITIALIZED(CCBLambdaGlueRegistry)
   }
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRuntimeJavaLambdaGlueRegistry)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBLambdaGlueRegistry)

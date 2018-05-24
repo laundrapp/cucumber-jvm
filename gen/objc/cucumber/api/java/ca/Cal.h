@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaCaCal_) && (INCLUDE_ALL_CucumberApiJavaCaCal || defined(INCLUDE_CucumberApiJavaCaCal))
-#define CucumberApiJavaCaCal_
+#if !defined (CCBCal_) && (INCLUDE_ALL_CucumberApiJavaCaCal || defined(INCLUDE_CCBCal))
+#define CCBCal_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaCaCal < JavaLangAnnotationAnnotation >
+@protocol CCBCal < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaCaCal : NSObject < CucumberApiJavaCaCal > {
+@interface CCBCal : NSObject < CCBCal > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaCaCal)
+J2OBJC_EMPTY_STATIC_INIT(CCBCal)
 
-FOUNDATION_EXPORT id<CucumberApiJavaCaCal> create_CucumberApiJavaCaCal(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBCal> create_CCBCal(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaCaCal)
+J2OBJC_TYPE_LITERAL_HEADER(CCBCal)
+
+#define CucumberApiJavaCaCal CCBCal
 
 #endif
 

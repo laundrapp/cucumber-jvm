@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaJaしかし_) && (INCLUDE_ALL_CucumberApiJavaJaしかし || defined(INCLUDE_CucumberApiJavaJaしかし))
-#define CucumberApiJavaJaしかし_
+#if !defined (CCBしかし_) && (INCLUDE_ALL_CucumberApiJavaJaしかし || defined(INCLUDE_CCBしかし))
+#define CCBしかし_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaJaしかし < JavaLangAnnotationAnnotation >
+@protocol CCBしかし < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaJaしかし : NSObject < CucumberApiJavaJaしかし > {
+@interface CCBしかし : NSObject < CCBしかし > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaJaしかし)
+J2OBJC_EMPTY_STATIC_INIT(CCBしかし)
 
-FOUNDATION_EXPORT id<CucumberApiJavaJaしかし> create_CucumberApiJavaJaしかし(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBしかし> create_CCBしかし(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaJaしかし)
+J2OBJC_TYPE_LITERAL_HEADER(CCBしかし)
+
+#define CucumberApiJavaJaしかし CCBしかし
 
 #endif
 

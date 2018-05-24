@@ -18,14 +18,14 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeTagExpressionOld_) && (INCLUDE_ALL_CucumberRuntimeTagExpressionOld || defined(INCLUDE_CucumberRuntimeTagExpressionOld))
-#define CucumberRuntimeTagExpressionOld_
+#if !defined (CCBRTagExpressionOld_) && (INCLUDE_ALL_CucumberRuntimeTagExpressionOld || defined(INCLUDE_CCBRTagExpressionOld))
+#define CCBRTagExpressionOld_
 
 @protocol JavaUtilCollection;
 @protocol JavaUtilList;
 @protocol JavaUtilMap;
 
-@interface CucumberRuntimeTagExpressionOld : NSObject
+@interface CCBRTagExpressionOld : NSObject
 
 #pragma mark Public
 
@@ -45,17 +45,19 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeTagExpressionOld)
+J2OBJC_EMPTY_STATIC_INIT(CCBRTagExpressionOld)
 
-FOUNDATION_EXPORT jboolean CucumberRuntimeTagExpressionOld_isOldTagExpressionWithNSString_(NSString *tagExpression);
+FOUNDATION_EXPORT jboolean CCBRTagExpressionOld_isOldTagExpressionWithNSString_(NSString *tagExpression);
 
-FOUNDATION_EXPORT void CucumberRuntimeTagExpressionOld_initWithJavaUtilList_(CucumberRuntimeTagExpressionOld *self, id<JavaUtilList> tagExpressions);
+FOUNDATION_EXPORT void CCBRTagExpressionOld_initWithJavaUtilList_(CCBRTagExpressionOld *self, id<JavaUtilList> tagExpressions);
 
-FOUNDATION_EXPORT CucumberRuntimeTagExpressionOld *new_CucumberRuntimeTagExpressionOld_initWithJavaUtilList_(id<JavaUtilList> tagExpressions) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRTagExpressionOld *new_CCBRTagExpressionOld_initWithJavaUtilList_(id<JavaUtilList> tagExpressions) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeTagExpressionOld *create_CucumberRuntimeTagExpressionOld_initWithJavaUtilList_(id<JavaUtilList> tagExpressions);
+FOUNDATION_EXPORT CCBRTagExpressionOld *create_CCBRTagExpressionOld_initWithJavaUtilList_(id<JavaUtilList> tagExpressions);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTagExpressionOld)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRTagExpressionOld)
+
+@compatibility_alias CucumberRuntimeTagExpressionOld CCBRTagExpressionOld;
 
 #endif
 

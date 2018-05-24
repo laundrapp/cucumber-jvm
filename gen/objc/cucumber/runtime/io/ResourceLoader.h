@@ -18,21 +18,23 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeIoResourceLoader_) && (INCLUDE_ALL_CucumberRuntimeIoResourceLoader || defined(INCLUDE_CucumberRuntimeIoResourceLoader))
-#define CucumberRuntimeIoResourceLoader_
+#if !defined (CCBRResourceLoader_) && (INCLUDE_ALL_CucumberRuntimeIoResourceLoader || defined(INCLUDE_CCBRResourceLoader))
+#define CCBRResourceLoader_
 
 @protocol JavaLangIterable;
 
-@protocol CucumberRuntimeIoResourceLoader < JavaObject >
+@protocol CCBRResourceLoader < JavaObject >
 
 - (id<JavaLangIterable>)resourcesWithNSString:(NSString *)path
                                  withNSString:(NSString *)suffix;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoResourceLoader)
+J2OBJC_EMPTY_STATIC_INIT(CCBRResourceLoader)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoResourceLoader)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRResourceLoader)
+
+#define CucumberRuntimeIoResourceLoader CCBRResourceLoader
 
 #endif
 

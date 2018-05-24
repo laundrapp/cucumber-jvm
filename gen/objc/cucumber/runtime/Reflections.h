@@ -18,19 +18,19 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeReflections_) && (INCLUDE_ALL_CucumberRuntimeReflections || defined(INCLUDE_CucumberRuntimeReflections))
-#define CucumberRuntimeReflections_
+#if !defined (CCBRReflections_) && (INCLUDE_ALL_CucumberRuntimeReflections || defined(INCLUDE_CCBRReflections))
+#define CCBRReflections_
 
 @class IOSClass;
 @class IOSObjectArray;
-@protocol CucumberRuntimeClassFinder;
+@protocol CCBRClassFinder;
 @protocol JavaUtilCollection;
 
-@interface CucumberRuntimeReflections : NSObject
+@interface CCBRReflections : NSObject
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCucumberRuntimeClassFinder:(id<CucumberRuntimeClassFinder>)classFinder;
+- (instancetype __nonnull)initWithCCBRClassFinder:(id<CCBRClassFinder>)classFinder;
 
 - (id)instantiateExactlyOneSubclassWithIOSClass:(IOSClass *)parentType
                                    withNSString:(NSString *)packageName
@@ -52,15 +52,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeReflections)
+J2OBJC_EMPTY_STATIC_INIT(CCBRReflections)
 
-FOUNDATION_EXPORT void CucumberRuntimeReflections_initWithCucumberRuntimeClassFinder_(CucumberRuntimeReflections *self, id<CucumberRuntimeClassFinder> classFinder);
+FOUNDATION_EXPORT void CCBRReflections_initWithCCBRClassFinder_(CCBRReflections *self, id<CCBRClassFinder> classFinder);
 
-FOUNDATION_EXPORT CucumberRuntimeReflections *new_CucumberRuntimeReflections_initWithCucumberRuntimeClassFinder_(id<CucumberRuntimeClassFinder> classFinder) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRReflections *new_CCBRReflections_initWithCCBRClassFinder_(id<CCBRClassFinder> classFinder) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeReflections *create_CucumberRuntimeReflections_initWithCucumberRuntimeClassFinder_(id<CucumberRuntimeClassFinder> classFinder);
+FOUNDATION_EXPORT CCBRReflections *create_CCBRReflections_initWithCCBRClassFinder_(id<CCBRClassFinder> classFinder);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeReflections)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRReflections)
+
+@compatibility_alias CucumberRuntimeReflections CCBRReflections;
 
 #endif
 

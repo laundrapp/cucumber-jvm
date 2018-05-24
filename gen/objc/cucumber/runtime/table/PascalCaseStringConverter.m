@@ -11,7 +11,7 @@
 #include "java/util/regex/Matcher.h"
 #include "java/util/regex/Pattern.h"
 
-@interface CucumberRuntimeTablePascalCaseStringConverter ()
+@interface CCBRPascalCaseStringConverter ()
 
 - (NSString *)joinWithNSStringArray:(IOSObjectArray *)splitted;
 
@@ -21,49 +21,49 @@
 
 @end
 
-inline NSString *CucumberRuntimeTablePascalCaseStringConverter_get_WHITESPACE(void);
-static NSString *CucumberRuntimeTablePascalCaseStringConverter_WHITESPACE = @" ";
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeTablePascalCaseStringConverter, WHITESPACE, NSString *)
+inline NSString *CCBRPascalCaseStringConverter_get_WHITESPACE(void);
+static NSString *CCBRPascalCaseStringConverter_WHITESPACE = @" ";
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRPascalCaseStringConverter, WHITESPACE, NSString *)
 
-inline JavaUtilRegexPattern *CucumberRuntimeTablePascalCaseStringConverter_get_WHITESPACE_PATTERN(void);
-static JavaUtilRegexPattern *CucumberRuntimeTablePascalCaseStringConverter_WHITESPACE_PATTERN;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeTablePascalCaseStringConverter, WHITESPACE_PATTERN, JavaUtilRegexPattern *)
+inline JavaUtilRegexPattern *CCBRPascalCaseStringConverter_get_WHITESPACE_PATTERN(void);
+static JavaUtilRegexPattern *CCBRPascalCaseStringConverter_WHITESPACE_PATTERN;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRPascalCaseStringConverter, WHITESPACE_PATTERN, JavaUtilRegexPattern *)
 
-__attribute__((unused)) static NSString *CucumberRuntimeTablePascalCaseStringConverter_joinWithNSStringArray_(CucumberRuntimeTablePascalCaseStringConverter *self, IOSObjectArray *splitted);
+__attribute__((unused)) static NSString *CCBRPascalCaseStringConverter_joinWithNSStringArray_(CCBRPascalCaseStringConverter *self, IOSObjectArray *splitted);
 
-__attribute__((unused)) static NSString *CucumberRuntimeTablePascalCaseStringConverter_normalizeSpaceWithNSString_(CucumberRuntimeTablePascalCaseStringConverter *self, NSString *originalHeaderName);
+__attribute__((unused)) static NSString *CCBRPascalCaseStringConverter_normalizeSpaceWithNSString_(CCBRPascalCaseStringConverter *self, NSString *originalHeaderName);
 
-__attribute__((unused)) static NSString *CucumberRuntimeTablePascalCaseStringConverter_capitalizeWithNSString_(CucumberRuntimeTablePascalCaseStringConverter *self, NSString *string);
+__attribute__((unused)) static NSString *CCBRPascalCaseStringConverter_capitalizeWithNSString_(CCBRPascalCaseStringConverter *self, NSString *string);
 
-J2OBJC_INITIALIZED_DEFN(CucumberRuntimeTablePascalCaseStringConverter)
+J2OBJC_INITIALIZED_DEFN(CCBRPascalCaseStringConverter)
 
-@implementation CucumberRuntimeTablePascalCaseStringConverter
+@implementation CCBRPascalCaseStringConverter
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeTablePascalCaseStringConverter_init(self);
+  CCBRPascalCaseStringConverter_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (NSString *)mapWithNSString:(NSString *)string {
-  IOSObjectArray *splitted = [((NSString *) nil_chk(CucumberRuntimeTablePascalCaseStringConverter_normalizeSpaceWithNSString_(self, string))) java_split:CucumberRuntimeTablePascalCaseStringConverter_WHITESPACE];
+  IOSObjectArray *splitted = [((NSString *) nil_chk(CCBRPascalCaseStringConverter_normalizeSpaceWithNSString_(self, string))) java_split:CCBRPascalCaseStringConverter_WHITESPACE];
   for (jint i = 0; i < ((IOSObjectArray *) nil_chk(splitted))->size_; i++) {
-    IOSObjectArray_Set(splitted, i, CucumberRuntimeTablePascalCaseStringConverter_capitalizeWithNSString_(self, IOSObjectArray_Get(splitted, i)));
+    IOSObjectArray_Set(splitted, i, CCBRPascalCaseStringConverter_capitalizeWithNSString_(self, IOSObjectArray_Get(splitted, i)));
   }
-  return CucumberRuntimeTablePascalCaseStringConverter_joinWithNSStringArray_(self, splitted);
+  return CCBRPascalCaseStringConverter_joinWithNSStringArray_(self, splitted);
 }
 
 - (NSString *)joinWithNSStringArray:(IOSObjectArray *)splitted {
-  return CucumberRuntimeTablePascalCaseStringConverter_joinWithNSStringArray_(self, splitted);
+  return CCBRPascalCaseStringConverter_joinWithNSStringArray_(self, splitted);
 }
 
 - (NSString *)normalizeSpaceWithNSString:(NSString *)originalHeaderName {
-  return CucumberRuntimeTablePascalCaseStringConverter_normalizeSpaceWithNSString_(self, originalHeaderName);
+  return CCBRPascalCaseStringConverter_normalizeSpaceWithNSString_(self, originalHeaderName);
 }
 
 - (NSString *)capitalizeWithNSString:(NSString *)string {
-  return CucumberRuntimeTablePascalCaseStringConverter_capitalizeWithNSString_(self, string);
+  return CCBRPascalCaseStringConverter_capitalizeWithNSString_(self, string);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -87,33 +87,33 @@ J2OBJC_IGNORE_DESIGNATED_END
     { "WHITESPACE", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 6, -1, -1 },
     { "WHITESPACE_PATTERN", "LJavaUtilRegexPattern;", .constantValue.asLong = 0, 0x1a, -1, 7, -1, -1 },
   };
-  static const void *ptrTable[] = { "map", "LNSString;", "join", "[LNSString;", "normalizeSpace", "capitalize", &CucumberRuntimeTablePascalCaseStringConverter_WHITESPACE, &CucumberRuntimeTablePascalCaseStringConverter_WHITESPACE_PATTERN };
-  static const J2ObjcClassInfo _CucumberRuntimeTablePascalCaseStringConverter = { "PascalCaseStringConverter", "cucumber.runtime.table", ptrTable, methods, fields, 7, 0x1, 5, 2, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeTablePascalCaseStringConverter;
+  static const void *ptrTable[] = { "map", "LNSString;", "join", "[LNSString;", "normalizeSpace", "capitalize", &CCBRPascalCaseStringConverter_WHITESPACE, &CCBRPascalCaseStringConverter_WHITESPACE_PATTERN };
+  static const J2ObjcClassInfo _CCBRPascalCaseStringConverter = { "PascalCaseStringConverter", "cucumber.runtime.table", ptrTable, methods, fields, 7, 0x1, 5, 2, -1, -1, -1, -1, -1 };
+  return &_CCBRPascalCaseStringConverter;
 }
 
 + (void)initialize {
-  if (self == [CucumberRuntimeTablePascalCaseStringConverter class]) {
-    JreStrongAssign(&CucumberRuntimeTablePascalCaseStringConverter_WHITESPACE_PATTERN, JavaUtilRegexPattern_compileWithNSString_(@"\\s+"));
-    J2OBJC_SET_INITIALIZED(CucumberRuntimeTablePascalCaseStringConverter)
+  if (self == [CCBRPascalCaseStringConverter class]) {
+    JreStrongAssign(&CCBRPascalCaseStringConverter_WHITESPACE_PATTERN, JavaUtilRegexPattern_compileWithNSString_(@"\\s+"));
+    J2OBJC_SET_INITIALIZED(CCBRPascalCaseStringConverter)
   }
 }
 
 @end
 
-void CucumberRuntimeTablePascalCaseStringConverter_init(CucumberRuntimeTablePascalCaseStringConverter *self) {
+void CCBRPascalCaseStringConverter_init(CCBRPascalCaseStringConverter *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeTablePascalCaseStringConverter *new_CucumberRuntimeTablePascalCaseStringConverter_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeTablePascalCaseStringConverter, init)
+CCBRPascalCaseStringConverter *new_CCBRPascalCaseStringConverter_init() {
+  J2OBJC_NEW_IMPL(CCBRPascalCaseStringConverter, init)
 }
 
-CucumberRuntimeTablePascalCaseStringConverter *create_CucumberRuntimeTablePascalCaseStringConverter_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeTablePascalCaseStringConverter, init)
+CCBRPascalCaseStringConverter *create_CCBRPascalCaseStringConverter_init() {
+  J2OBJC_CREATE_IMPL(CCBRPascalCaseStringConverter, init)
 }
 
-NSString *CucumberRuntimeTablePascalCaseStringConverter_joinWithNSStringArray_(CucumberRuntimeTablePascalCaseStringConverter *self, IOSObjectArray *splitted) {
+NSString *CCBRPascalCaseStringConverter_joinWithNSStringArray_(CCBRPascalCaseStringConverter *self, IOSObjectArray *splitted) {
   JavaLangStringBuilder *sb = create_JavaLangStringBuilder_init();
   {
     IOSObjectArray *a__ = splitted;
@@ -127,12 +127,12 @@ NSString *CucumberRuntimeTablePascalCaseStringConverter_joinWithNSStringArray_(C
   return [sb description];
 }
 
-NSString *CucumberRuntimeTablePascalCaseStringConverter_normalizeSpaceWithNSString_(CucumberRuntimeTablePascalCaseStringConverter *self, NSString *originalHeaderName) {
-  return [((JavaUtilRegexMatcher *) nil_chk([((JavaUtilRegexPattern *) nil_chk(CucumberRuntimeTablePascalCaseStringConverter_WHITESPACE_PATTERN)) matcherWithJavaLangCharSequence:[((NSString *) nil_chk(originalHeaderName)) java_trim]])) replaceAllWithNSString:CucumberRuntimeTablePascalCaseStringConverter_WHITESPACE];
+NSString *CCBRPascalCaseStringConverter_normalizeSpaceWithNSString_(CCBRPascalCaseStringConverter *self, NSString *originalHeaderName) {
+  return [((JavaUtilRegexMatcher *) nil_chk([((JavaUtilRegexPattern *) nil_chk(CCBRPascalCaseStringConverter_WHITESPACE_PATTERN)) matcherWithJavaLangCharSequence:[((NSString *) nil_chk(originalHeaderName)) java_trim]])) replaceAllWithNSString:CCBRPascalCaseStringConverter_WHITESPACE];
 }
 
-NSString *CucumberRuntimeTablePascalCaseStringConverter_capitalizeWithNSString_(CucumberRuntimeTablePascalCaseStringConverter *self, NSString *string) {
+NSString *CCBRPascalCaseStringConverter_capitalizeWithNSString_(CCBRPascalCaseStringConverter *self, NSString *string) {
   return [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([create_JavaLangStringBuilder_initWithInt_([((NSString *) nil_chk(string)) java_length]) appendWithChar:JavaLangCharacter_toTitleCaseWithChar_([string charAtWithInt:0])])) appendWithNSString:[string java_substring:1]])) description];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTablePascalCaseStringConverter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRPascalCaseStringConverter)

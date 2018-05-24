@@ -18,28 +18,28 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeJavaMethodScanner_) && (INCLUDE_ALL_CucumberRuntimeJavaMethodScanner || defined(INCLUDE_CucumberRuntimeJavaMethodScanner))
-#define CucumberRuntimeJavaMethodScanner_
+#if !defined (CCBMethodScanner_) && (INCLUDE_ALL_CucumberRuntimeJavaMethodScanner || defined(INCLUDE_CCBMethodScanner))
+#define CCBMethodScanner_
 
-@class CucumberRuntimeJavaJavaBackend;
+@class CCBJavaBackend;
 @class IOSClass;
 @class JavaLangReflectMethod;
-@protocol CucumberRuntimeClassFinder;
+@protocol CCBRClassFinder;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeJavaMethodScanner : NSObject
+@interface CCBMethodScanner : NSObject
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCucumberRuntimeClassFinder:(id<CucumberRuntimeClassFinder>)classFinder;
+- (instancetype __nonnull)initWithCCBRClassFinder:(id<CCBRClassFinder>)classFinder;
 
 /*!
  @brief Registers step definitions and hooks.
  @param javaBackend the backend where stepdefs and hooks will be registered
  @param gluePaths where to look
  */
-- (void)scanWithCucumberRuntimeJavaJavaBackend:(CucumberRuntimeJavaJavaBackend *)javaBackend
-                              withJavaUtilList:(id<JavaUtilList>)gluePaths;
+- (void)scanWithCCBJavaBackend:(CCBJavaBackend *)javaBackend
+              withJavaUtilList:(id<JavaUtilList>)gluePaths;
 
 /*!
  @brief Registers step definitions and hooks.
@@ -47,9 +47,9 @@
  @param method a candidate for being a stepdef or hook.
  @param glueCodeClass the class where the method is declared.
  */
-- (void)scanWithCucumberRuntimeJavaJavaBackend:(CucumberRuntimeJavaJavaBackend *)javaBackend
-                     withJavaLangReflectMethod:(JavaLangReflectMethod *)method
-                                  withIOSClass:(IOSClass *)glueCodeClass;
+- (void)scanWithCCBJavaBackend:(CCBJavaBackend *)javaBackend
+     withJavaLangReflectMethod:(JavaLangReflectMethod *)method
+                  withIOSClass:(IOSClass *)glueCodeClass;
 
 // Disallowed inherited constructors, do not use.
 
@@ -57,15 +57,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeJavaMethodScanner)
+J2OBJC_EMPTY_STATIC_INIT(CCBMethodScanner)
 
-FOUNDATION_EXPORT void CucumberRuntimeJavaMethodScanner_initWithCucumberRuntimeClassFinder_(CucumberRuntimeJavaMethodScanner *self, id<CucumberRuntimeClassFinder> classFinder);
+FOUNDATION_EXPORT void CCBMethodScanner_initWithCCBRClassFinder_(CCBMethodScanner *self, id<CCBRClassFinder> classFinder);
 
-FOUNDATION_EXPORT CucumberRuntimeJavaMethodScanner *new_CucumberRuntimeJavaMethodScanner_initWithCucumberRuntimeClassFinder_(id<CucumberRuntimeClassFinder> classFinder) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBMethodScanner *new_CCBMethodScanner_initWithCCBRClassFinder_(id<CCBRClassFinder> classFinder) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeJavaMethodScanner *create_CucumberRuntimeJavaMethodScanner_initWithCucumberRuntimeClassFinder_(id<CucumberRuntimeClassFinder> classFinder);
+FOUNDATION_EXPORT CCBMethodScanner *create_CCBMethodScanner_initWithCCBRClassFinder_(id<CCBRClassFinder> classFinder);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeJavaMethodScanner)
+J2OBJC_TYPE_LITERAL_HEADER(CCBMethodScanner)
+
+@compatibility_alias CucumberRuntimeJavaMethodScanner CCBMethodScanner;
 
 #endif
 

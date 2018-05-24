@@ -15,9 +15,9 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *CucumberApiJavaBmMaka__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CCBMaka__Annotations$0(void);
 
-@implementation CucumberApiJavaBmMaka
+@implementation CCBMaka
 
 @synthesize value = value_;
 @synthesize timeout = timeout_;
@@ -27,7 +27,7 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiJavaBmMaka__Annotation
 }
 
 - (IOSClass *)annotationType {
-  return CucumberApiJavaBmMaka_class_();
+  return CCBMaka_class_();
 }
 
 - (NSString *)description {
@@ -62,22 +62,22 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiJavaBmMaka__Annotation
     { "value_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "timeout_", "J", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&CucumberApiJavaBmMaka__Annotations$0 };
-  static const J2ObjcClassInfo _CucumberApiJavaBmMaka = { "Maka", "cucumber.api.java.bm", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
-  return &_CucumberApiJavaBmMaka;
+  static const void *ptrTable[] = { (void *)&CCBMaka__Annotations$0 };
+  static const J2ObjcClassInfo _CCBMaka = { "Maka", "cucumber.api.java.bm", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
+  return &_CCBMaka;
 }
 
 @end
 
-id<CucumberApiJavaBmMaka> create_CucumberApiJavaBmMaka(jlong timeout, NSString *value) {
-  CucumberApiJavaBmMaka *self = AUTORELEASE([[CucumberApiJavaBmMaka alloc] init]);
+id<CCBMaka> create_CCBMaka(jlong timeout, NSString *value) {
+  CCBMaka *self = AUTORELEASE([[CCBMaka alloc] init]);
   self->timeout_ = timeout;
   self->value_ = RETAIN_(value);
   return self;
 }
 
-IOSObjectArray *CucumberApiJavaBmMaka__Annotations$0() {
-  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CucumberRuntimeJavaStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
+IOSObjectArray *CCBMaka__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CCBStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiJavaBmMaka)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBMaka)

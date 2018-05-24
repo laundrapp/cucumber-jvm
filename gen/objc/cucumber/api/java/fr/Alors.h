@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaFrAlors_) && (INCLUDE_ALL_CucumberApiJavaFrAlors || defined(INCLUDE_CucumberApiJavaFrAlors))
-#define CucumberApiJavaFrAlors_
+#if !defined (CCBAlors_) && (INCLUDE_ALL_CucumberApiJavaFrAlors || defined(INCLUDE_CCBAlors))
+#define CCBAlors_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaFrAlors < JavaLangAnnotationAnnotation >
+@protocol CCBAlors < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaFrAlors : NSObject < CucumberApiJavaFrAlors > {
+@interface CCBAlors : NSObject < CCBAlors > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaFrAlors)
+J2OBJC_EMPTY_STATIC_INIT(CCBAlors)
 
-FOUNDATION_EXPORT id<CucumberApiJavaFrAlors> create_CucumberApiJavaFrAlors(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBAlors> create_CCBAlors(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaFrAlors)
+J2OBJC_TYPE_LITERAL_HEADER(CCBAlors)
+
+#define CucumberApiJavaFrAlors CCBAlors
 
 #endif
 

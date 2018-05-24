@@ -18,17 +18,17 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeLinePredicate_) && (INCLUDE_ALL_CucumberRuntimeLinePredicate || defined(INCLUDE_CucumberRuntimeLinePredicate))
-#define CucumberRuntimeLinePredicate_
+#if !defined (CCBRLinePredicate_) && (INCLUDE_ALL_CucumberRuntimeLinePredicate || defined(INCLUDE_CCBRLinePredicate))
+#define CCBRLinePredicate_
 
 #define RESTRICT_CucumberRuntimePicklePredicate 1
-#define INCLUDE_CucumberRuntimePicklePredicate 1
+#define INCLUDE_CCBRPicklePredicate 1
 #include "cucumber/runtime/PicklePredicate.h"
 
 @class GherkinEventsPickleEvent;
 @protocol JavaUtilMap;
 
-@interface CucumberRuntimeLinePredicate : NSObject < CucumberRuntimePicklePredicate >
+@interface CCBRLinePredicate : NSObject < CCBRPicklePredicate >
 
 #pragma mark Public
 
@@ -42,15 +42,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeLinePredicate)
+J2OBJC_EMPTY_STATIC_INIT(CCBRLinePredicate)
 
-FOUNDATION_EXPORT void CucumberRuntimeLinePredicate_initWithJavaUtilMap_(CucumberRuntimeLinePredicate *self, id<JavaUtilMap> lineFilters);
+FOUNDATION_EXPORT void CCBRLinePredicate_initWithJavaUtilMap_(CCBRLinePredicate *self, id<JavaUtilMap> lineFilters);
 
-FOUNDATION_EXPORT CucumberRuntimeLinePredicate *new_CucumberRuntimeLinePredicate_initWithJavaUtilMap_(id<JavaUtilMap> lineFilters) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRLinePredicate *new_CCBRLinePredicate_initWithJavaUtilMap_(id<JavaUtilMap> lineFilters) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeLinePredicate *create_CucumberRuntimeLinePredicate_initWithJavaUtilMap_(id<JavaUtilMap> lineFilters);
+FOUNDATION_EXPORT CCBRLinePredicate *create_CCBRLinePredicate_initWithJavaUtilMap_(id<JavaUtilMap> lineFilters);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeLinePredicate)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRLinePredicate)
+
+@compatibility_alias CucumberRuntimeLinePredicate CCBRLinePredicate;
 
 #endif
 

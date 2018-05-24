@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaSlVendar_) && (INCLUDE_ALL_CucumberApiJavaSlVendar || defined(INCLUDE_CucumberApiJavaSlVendar))
-#define CucumberApiJavaSlVendar_
+#if !defined (CCBVendar_) && (INCLUDE_ALL_CucumberApiJavaSlVendar || defined(INCLUDE_CCBVendar))
+#define CCBVendar_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaSlVendar < JavaLangAnnotationAnnotation >
+@protocol CCBVendar < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaSlVendar : NSObject < CucumberApiJavaSlVendar > {
+@interface CCBVendar : NSObject < CCBVendar > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaSlVendar)
+J2OBJC_EMPTY_STATIC_INIT(CCBVendar)
 
-FOUNDATION_EXPORT id<CucumberApiJavaSlVendar> create_CucumberApiJavaSlVendar(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBVendar> create_CCBVendar(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaSlVendar)
+J2OBJC_TYPE_LITERAL_HEADER(CCBVendar)
+
+#define CucumberApiJavaSlVendar CCBVendar
 
 #endif
 

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaTtНәтиҗәдә_) && (INCLUDE_ALL_CucumberApiJavaTtНәтиҗәдә || defined(INCLUDE_CucumberApiJavaTtНәтиҗәдә))
-#define CucumberApiJavaTtНәтиҗәдә_
+#if !defined (CCBНәтиҗәдә_) && (INCLUDE_ALL_CucumberApiJavaTtНәтиҗәдә || defined(INCLUDE_CCBНәтиҗәдә))
+#define CCBНәтиҗәдә_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaTtНәтиҗәдә < JavaLangAnnotationAnnotation >
+@protocol CCBНәтиҗәдә < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaTtНәтиҗәдә : NSObject < CucumberApiJavaTtНәтиҗәдә > {
+@interface CCBНәтиҗәдә : NSObject < CCBНәтиҗәдә > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaTtНәтиҗәдә)
+J2OBJC_EMPTY_STATIC_INIT(CCBНәтиҗәдә)
 
-FOUNDATION_EXPORT id<CucumberApiJavaTtНәтиҗәдә> create_CucumberApiJavaTtНәтиҗәдә(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBНәтиҗәдә> create_CCBНәтиҗәдә(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaTtНәтиҗәдә)
+J2OBJC_TYPE_LITERAL_HEADER(CCBНәтиҗәдә)
+
+#define CucumberApiJavaTtНәтиҗәдә CCBНәтиҗәдә
 
 #endif
 

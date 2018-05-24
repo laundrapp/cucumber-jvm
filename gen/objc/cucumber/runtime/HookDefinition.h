@@ -18,13 +18,13 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeHookDefinition_) && (INCLUDE_ALL_CucumberRuntimeHookDefinition || defined(INCLUDE_CucumberRuntimeHookDefinition))
-#define CucumberRuntimeHookDefinition_
+#if !defined (CCBRHookDefinition_) && (INCLUDE_ALL_CucumberRuntimeHookDefinition || defined(INCLUDE_CCBRHookDefinition))
+#define CCBRHookDefinition_
 
-@protocol CucumberApiScenario;
+@protocol CCBScenario;
 @protocol JavaUtilCollection;
 
-@protocol CucumberRuntimeHookDefinition < JavaObject >
+@protocol CCBRHookDefinition < JavaObject >
 
 /*!
  @brief The source line where the step definition is defined.
@@ -33,7 +33,7 @@
  */
 - (NSString *)getLocationWithBoolean:(jboolean)detail;
 
-- (void)executeWithCucumberApiScenario:(id<CucumberApiScenario>)scenario;
+- (void)executeWithCCBScenario:(id<CCBScenario>)scenario;
 
 - (jboolean)matchesWithJavaUtilCollection:(id<JavaUtilCollection>)tags;
 
@@ -46,9 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeHookDefinition)
+J2OBJC_EMPTY_STATIC_INIT(CCBRHookDefinition)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeHookDefinition)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRHookDefinition)
+
+#define CucumberRuntimeHookDefinition CCBRHookDefinition
 
 #endif
 

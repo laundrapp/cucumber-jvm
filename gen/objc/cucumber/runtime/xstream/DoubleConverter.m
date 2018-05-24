@@ -13,10 +13,10 @@
 
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@implementation CucumberRuntimeXstreamDoubleConverter
+@implementation CCBRDoubleConverter
 
 - (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale {
-  CucumberRuntimeXstreamDoubleConverter_initWithJavaUtilLocale_(self, locale);
+  CCBRDoubleConverter_initWithJavaUtilLocale_(self, locale);
   return self;
 }
 
@@ -36,22 +36,22 @@
   methods[1].selector = @selector(downcastWithNSNumber:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LJavaUtilLocale;", "downcast", "LNSNumber;", "Lcucumber/runtime/xstream/ConverterWithNumberFormat<Ljava/lang/Double;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamDoubleConverter = { "DoubleConverter", "cucumber.runtime.xstream", ptrTable, methods, NULL, 7, 0x0, 2, 0, -1, -1, -1, 3, -1 };
-  return &_CucumberRuntimeXstreamDoubleConverter;
+  static const J2ObjcClassInfo _CCBRDoubleConverter = { "DoubleConverter", "cucumber.runtime.xstream", ptrTable, methods, NULL, 7, 0x0, 2, 0, -1, -1, -1, 3, -1 };
+  return &_CCBRDoubleConverter;
 }
 
 @end
 
-void CucumberRuntimeXstreamDoubleConverter_initWithJavaUtilLocale_(CucumberRuntimeXstreamDoubleConverter *self, JavaUtilLocale *locale) {
-  CucumberRuntimeXstreamConverterWithNumberFormat_initWithJavaUtilLocale_withIOSClassArray_(self, locale, [IOSObjectArray arrayWithObjects:(id[]){ JavaLangDouble_class_(), JreLoadStatic(JavaLangDouble, TYPE) } count:2 type:IOSClass_class_()]);
+void CCBRDoubleConverter_initWithJavaUtilLocale_(CCBRDoubleConverter *self, JavaUtilLocale *locale) {
+  CCBRConverterWithNumberFormat_initWithJavaUtilLocale_withIOSClassArray_(self, locale, [IOSObjectArray arrayWithObjects:(id[]){ JavaLangDouble_class_(), JreLoadStatic(JavaLangDouble, TYPE) } count:2 type:IOSClass_class_()]);
 }
 
-CucumberRuntimeXstreamDoubleConverter *new_CucumberRuntimeXstreamDoubleConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamDoubleConverter, initWithJavaUtilLocale_, locale)
+CCBRDoubleConverter *new_CCBRDoubleConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
+  J2OBJC_NEW_IMPL(CCBRDoubleConverter, initWithJavaUtilLocale_, locale)
 }
 
-CucumberRuntimeXstreamDoubleConverter *create_CucumberRuntimeXstreamDoubleConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamDoubleConverter, initWithJavaUtilLocale_, locale)
+CCBRDoubleConverter *create_CCBRDoubleConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
+  J2OBJC_CREATE_IMPL(CCBRDoubleConverter, initWithJavaUtilLocale_, locale)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamDoubleConverter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRDoubleConverter)

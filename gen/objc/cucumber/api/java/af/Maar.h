@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaAfMaar_) && (INCLUDE_ALL_CucumberApiJavaAfMaar || defined(INCLUDE_CucumberApiJavaAfMaar))
-#define CucumberApiJavaAfMaar_
+#if !defined (CCBMaar_) && (INCLUDE_ALL_CucumberApiJavaAfMaar || defined(INCLUDE_CCBMaar))
+#define CCBMaar_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaAfMaar < JavaLangAnnotationAnnotation >
+@protocol CCBMaar < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaAfMaar : NSObject < CucumberApiJavaAfMaar > {
+@interface CCBMaar : NSObject < CCBMaar > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaAfMaar)
+J2OBJC_EMPTY_STATIC_INIT(CCBMaar)
 
-FOUNDATION_EXPORT id<CucumberApiJavaAfMaar> create_CucumberApiJavaAfMaar(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBMaar> create_CCBMaar(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaAfMaar)
+J2OBJC_TYPE_LITERAL_HEADER(CCBMaar)
+
+#define CucumberApiJavaAfMaar CCBMaar
 
 #endif
 

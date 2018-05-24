@@ -18,16 +18,16 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeSnippetsFunctionNameGenerator_) && (INCLUDE_ALL_CucumberRuntimeSnippetsFunctionNameGenerator || defined(INCLUDE_CucumberRuntimeSnippetsFunctionNameGenerator))
-#define CucumberRuntimeSnippetsFunctionNameGenerator_
+#if !defined (CCBRFunctionNameGenerator_) && (INCLUDE_ALL_CucumberRuntimeSnippetsFunctionNameGenerator || defined(INCLUDE_CCBRFunctionNameGenerator))
+#define CCBRFunctionNameGenerator_
 
-@protocol CucumberRuntimeSnippetsConcatenator;
+@protocol CCBRConcatenator;
 
-@interface CucumberRuntimeSnippetsFunctionNameGenerator : NSObject
+@interface CCBRFunctionNameGenerator : NSObject
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCucumberRuntimeSnippetsConcatenator:(id<CucumberRuntimeSnippetsConcatenator>)concatenator;
+- (instancetype __nonnull)initWithCCBRConcatenator:(id<CCBRConcatenator>)concatenator;
 
 - (NSString *)generateFunctionNameWithNSString:(NSString *)sentence;
 
@@ -37,15 +37,17 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeSnippetsFunctionNameGenerator)
+J2OBJC_STATIC_INIT(CCBRFunctionNameGenerator)
 
-FOUNDATION_EXPORT void CucumberRuntimeSnippetsFunctionNameGenerator_initWithCucumberRuntimeSnippetsConcatenator_(CucumberRuntimeSnippetsFunctionNameGenerator *self, id<CucumberRuntimeSnippetsConcatenator> concatenator);
+FOUNDATION_EXPORT void CCBRFunctionNameGenerator_initWithCCBRConcatenator_(CCBRFunctionNameGenerator *self, id<CCBRConcatenator> concatenator);
 
-FOUNDATION_EXPORT CucumberRuntimeSnippetsFunctionNameGenerator *new_CucumberRuntimeSnippetsFunctionNameGenerator_initWithCucumberRuntimeSnippetsConcatenator_(id<CucumberRuntimeSnippetsConcatenator> concatenator) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRFunctionNameGenerator *new_CCBRFunctionNameGenerator_initWithCCBRConcatenator_(id<CCBRConcatenator> concatenator) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeSnippetsFunctionNameGenerator *create_CucumberRuntimeSnippetsFunctionNameGenerator_initWithCucumberRuntimeSnippetsConcatenator_(id<CucumberRuntimeSnippetsConcatenator> concatenator);
+FOUNDATION_EXPORT CCBRFunctionNameGenerator *create_CCBRFunctionNameGenerator_initWithCCBRConcatenator_(id<CCBRConcatenator> concatenator);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeSnippetsFunctionNameGenerator)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRFunctionNameGenerator)
+
+@compatibility_alias CucumberRuntimeSnippetsFunctionNameGenerator CCBRFunctionNameGenerator;
 
 #endif
 

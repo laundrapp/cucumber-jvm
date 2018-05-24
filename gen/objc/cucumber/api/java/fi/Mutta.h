@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaFiMutta_) && (INCLUDE_ALL_CucumberApiJavaFiMutta || defined(INCLUDE_CucumberApiJavaFiMutta))
-#define CucumberApiJavaFiMutta_
+#if !defined (CCBMutta_) && (INCLUDE_ALL_CucumberApiJavaFiMutta || defined(INCLUDE_CCBMutta))
+#define CCBMutta_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaFiMutta < JavaLangAnnotationAnnotation >
+@protocol CCBMutta < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaFiMutta : NSObject < CucumberApiJavaFiMutta > {
+@interface CCBMutta : NSObject < CCBMutta > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaFiMutta)
+J2OBJC_EMPTY_STATIC_INIT(CCBMutta)
 
-FOUNDATION_EXPORT id<CucumberApiJavaFiMutta> create_CucumberApiJavaFiMutta(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBMutta> create_CCBMutta(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaFiMutta)
+J2OBJC_TYPE_LITERAL_HEADER(CCBMutta)
+
+#define CucumberApiJavaFiMutta CCBMutta
 
 #endif
 

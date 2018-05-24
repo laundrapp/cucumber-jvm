@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaViBiết_) && (INCLUDE_ALL_CucumberApiJavaViBiết || defined(INCLUDE_CucumberApiJavaViBiết))
-#define CucumberApiJavaViBiết_
+#if !defined (CCBBiết_) && (INCLUDE_ALL_CucumberApiJavaViBiết || defined(INCLUDE_CCBBiết))
+#define CCBBiết_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaViBiết < JavaLangAnnotationAnnotation >
+@protocol CCBBiết < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaViBiết : NSObject < CucumberApiJavaViBiết > {
+@interface CCBBiết : NSObject < CCBBiết > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaViBiết)
+J2OBJC_EMPTY_STATIC_INIT(CCBBiết)
 
-FOUNDATION_EXPORT id<CucumberApiJavaViBiết> create_CucumberApiJavaViBiết(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBBiết> create_CCBBiết(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaViBiết)
+J2OBJC_TYPE_LITERAL_HEADER(CCBBiết)
+
+#define CucumberApiJavaViBiết CCBBiết
 
 #endif
 

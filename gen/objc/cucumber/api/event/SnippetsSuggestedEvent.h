@@ -18,17 +18,17 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiEventSnippetsSuggestedEvent_) && (INCLUDE_ALL_CucumberApiEventSnippetsSuggestedEvent || defined(INCLUDE_CucumberApiEventSnippetsSuggestedEvent))
-#define CucumberApiEventSnippetsSuggestedEvent_
+#if !defined (CCBSnippetsSuggestedEvent_) && (INCLUDE_ALL_CucumberApiEventSnippetsSuggestedEvent || defined(INCLUDE_CCBSnippetsSuggestedEvent))
+#define CCBSnippetsSuggestedEvent_
 
 #define RESTRICT_CucumberApiEventTimeStampedEvent 1
-#define INCLUDE_CucumberApiEventTimeStampedEvent 1
+#define INCLUDE_CCBTimeStampedEvent 1
 #include "cucumber/api/event/TimeStampedEvent.h"
 
 @class JavaLangLong;
 @protocol JavaUtilList;
 
-@interface CucumberApiEventSnippetsSuggestedEvent : CucumberApiEventTimeStampedEvent {
+@interface CCBSnippetsSuggestedEvent : CCBTimeStampedEvent {
  @public
   NSString *uri_;
   id<JavaUtilList> stepLocations_;
@@ -48,19 +48,21 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiEventSnippetsSuggestedEvent)
+J2OBJC_EMPTY_STATIC_INIT(CCBSnippetsSuggestedEvent)
 
-J2OBJC_FIELD_SETTER(CucumberApiEventSnippetsSuggestedEvent, uri_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberApiEventSnippetsSuggestedEvent, stepLocations_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CucumberApiEventSnippetsSuggestedEvent, snippets_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBSnippetsSuggestedEvent, uri_, NSString *)
+J2OBJC_FIELD_SETTER(CCBSnippetsSuggestedEvent, stepLocations_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBSnippetsSuggestedEvent, snippets_, id<JavaUtilList>)
 
-FOUNDATION_EXPORT void CucumberApiEventSnippetsSuggestedEvent_initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_(CucumberApiEventSnippetsSuggestedEvent *self, JavaLangLong *timeStamp, NSString *uri, id<JavaUtilList> stepLocations, id<JavaUtilList> snippets);
+FOUNDATION_EXPORT void CCBSnippetsSuggestedEvent_initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_(CCBSnippetsSuggestedEvent *self, JavaLangLong *timeStamp, NSString *uri, id<JavaUtilList> stepLocations, id<JavaUtilList> snippets);
 
-FOUNDATION_EXPORT CucumberApiEventSnippetsSuggestedEvent *new_CucumberApiEventSnippetsSuggestedEvent_initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_(JavaLangLong *timeStamp, NSString *uri, id<JavaUtilList> stepLocations, id<JavaUtilList> snippets) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBSnippetsSuggestedEvent *new_CCBSnippetsSuggestedEvent_initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_(JavaLangLong *timeStamp, NSString *uri, id<JavaUtilList> stepLocations, id<JavaUtilList> snippets) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberApiEventSnippetsSuggestedEvent *create_CucumberApiEventSnippetsSuggestedEvent_initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_(JavaLangLong *timeStamp, NSString *uri, id<JavaUtilList> stepLocations, id<JavaUtilList> snippets);
+FOUNDATION_EXPORT CCBSnippetsSuggestedEvent *create_CCBSnippetsSuggestedEvent_initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_(JavaLangLong *timeStamp, NSString *uri, id<JavaUtilList> stepLocations, id<JavaUtilList> snippets);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventSnippetsSuggestedEvent)
+J2OBJC_TYPE_LITERAL_HEADER(CCBSnippetsSuggestedEvent)
+
+@compatibility_alias CucumberApiEventSnippetsSuggestedEvent CCBSnippetsSuggestedEvent;
 
 #endif
 

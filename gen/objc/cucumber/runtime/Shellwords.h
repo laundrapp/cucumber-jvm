@@ -18,12 +18,12 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeShellwords_) && (INCLUDE_ALL_CucumberRuntimeShellwords || defined(INCLUDE_CucumberRuntimeShellwords))
-#define CucumberRuntimeShellwords_
+#if !defined (CCBRShellwords_) && (INCLUDE_ALL_CucumberRuntimeShellwords || defined(INCLUDE_CCBRShellwords))
+#define CCBRShellwords_
 
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeShellwords : NSObject
+@interface CCBRShellwords : NSObject
 
 #pragma mark Public
 
@@ -31,11 +31,13 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeShellwords)
+J2OBJC_STATIC_INIT(CCBRShellwords)
 
-FOUNDATION_EXPORT id<JavaUtilList> CucumberRuntimeShellwords_parseWithNSString_(NSString *cmdline);
+FOUNDATION_EXPORT id<JavaUtilList> CCBRShellwords_parseWithNSString_(NSString *cmdline);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeShellwords)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRShellwords)
+
+@compatibility_alias CucumberRuntimeShellwords CCBRShellwords;
 
 #endif
 

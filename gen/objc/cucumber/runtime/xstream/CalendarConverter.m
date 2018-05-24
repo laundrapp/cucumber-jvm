@@ -15,10 +15,10 @@
 
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@implementation CucumberRuntimeXstreamCalendarConverter
+@implementation CCBRCalendarConverter
 
 - (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale {
-  CucumberRuntimeXstreamCalendarConverter_initWithJavaUtilLocale_(self, locale);
+  CCBRCalendarConverter_initWithJavaUtilLocale_(self, locale);
   return self;
 }
 
@@ -42,22 +42,22 @@
   methods[1].selector = @selector(transformWithJavaTextFormat:withNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LJavaUtilLocale;", "transform", "LJavaTextFormat;LNSString;", "Lcucumber/runtime/xstream/TimeConverter<Ljava/util/Calendar;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamCalendarConverter = { "CalendarConverter", "cucumber.runtime.xstream", ptrTable, methods, NULL, 7, 0x0, 2, 0, -1, -1, -1, 3, -1 };
-  return &_CucumberRuntimeXstreamCalendarConverter;
+  static const J2ObjcClassInfo _CCBRCalendarConverter = { "CalendarConverter", "cucumber.runtime.xstream", ptrTable, methods, NULL, 7, 0x0, 2, 0, -1, -1, -1, 3, -1 };
+  return &_CCBRCalendarConverter;
 }
 
 @end
 
-void CucumberRuntimeXstreamCalendarConverter_initWithJavaUtilLocale_(CucumberRuntimeXstreamCalendarConverter *self, JavaUtilLocale *locale) {
-  CucumberRuntimeXstreamTimeConverter_initWithJavaUtilLocale_withIOSClassArray_(self, locale, [IOSObjectArray arrayWithObjects:(id[]){ JavaUtilCalendar_class_() } count:1 type:IOSClass_class_()]);
+void CCBRCalendarConverter_initWithJavaUtilLocale_(CCBRCalendarConverter *self, JavaUtilLocale *locale) {
+  CCBRTimeConverter_initWithJavaUtilLocale_withIOSClassArray_(self, locale, [IOSObjectArray arrayWithObjects:(id[]){ JavaUtilCalendar_class_() } count:1 type:IOSClass_class_()]);
 }
 
-CucumberRuntimeXstreamCalendarConverter *new_CucumberRuntimeXstreamCalendarConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamCalendarConverter, initWithJavaUtilLocale_, locale)
+CCBRCalendarConverter *new_CCBRCalendarConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
+  J2OBJC_NEW_IMPL(CCBRCalendarConverter, initWithJavaUtilLocale_, locale)
 }
 
-CucumberRuntimeXstreamCalendarConverter *create_CucumberRuntimeXstreamCalendarConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamCalendarConverter, initWithJavaUtilLocale_, locale)
+CCBRCalendarConverter *create_CCBRCalendarConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
+  J2OBJC_CREATE_IMPL(CCBRCalendarConverter, initWithJavaUtilLocale_, locale)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamCalendarConverter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRCalendarConverter)

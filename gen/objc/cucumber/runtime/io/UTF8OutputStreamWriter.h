@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeIoUTF8OutputStreamWriter_) && (INCLUDE_ALL_CucumberRuntimeIoUTF8OutputStreamWriter || defined(INCLUDE_CucumberRuntimeIoUTF8OutputStreamWriter))
-#define CucumberRuntimeIoUTF8OutputStreamWriter_
+#if !defined (CCBRUTF8OutputStreamWriter_) && (INCLUDE_ALL_CucumberRuntimeIoUTF8OutputStreamWriter || defined(INCLUDE_CCBRUTF8OutputStreamWriter))
+#define CCBRUTF8OutputStreamWriter_
 
 #define RESTRICT_JavaIoOutputStreamWriter 1
 #define INCLUDE_JavaIoOutputStreamWriter 1
@@ -29,7 +29,7 @@
 @class JavaNioCharsetCharset;
 @class JavaNioCharsetCharsetEncoder;
 
-@interface CucumberRuntimeIoUTF8OutputStreamWriter : JavaIoOutputStreamWriter
+@interface CCBRUTF8OutputStreamWriter : JavaIoOutputStreamWriter
 
 #pragma mark Public
 
@@ -48,15 +48,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoUTF8OutputStreamWriter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRUTF8OutputStreamWriter)
 
-FOUNDATION_EXPORT void CucumberRuntimeIoUTF8OutputStreamWriter_initWithJavaIoOutputStream_(CucumberRuntimeIoUTF8OutputStreamWriter *self, JavaIoOutputStream *outArg);
+FOUNDATION_EXPORT void CCBRUTF8OutputStreamWriter_initWithJavaIoOutputStream_(CCBRUTF8OutputStreamWriter *self, JavaIoOutputStream *outArg);
 
-FOUNDATION_EXPORT CucumberRuntimeIoUTF8OutputStreamWriter *new_CucumberRuntimeIoUTF8OutputStreamWriter_initWithJavaIoOutputStream_(JavaIoOutputStream *outArg) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRUTF8OutputStreamWriter *new_CCBRUTF8OutputStreamWriter_initWithJavaIoOutputStream_(JavaIoOutputStream *outArg) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeIoUTF8OutputStreamWriter *create_CucumberRuntimeIoUTF8OutputStreamWriter_initWithJavaIoOutputStream_(JavaIoOutputStream *outArg);
+FOUNDATION_EXPORT CCBRUTF8OutputStreamWriter *create_CCBRUTF8OutputStreamWriter_initWithJavaIoOutputStream_(JavaIoOutputStream *outArg);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoUTF8OutputStreamWriter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRUTF8OutputStreamWriter)
+
+@compatibility_alias CucumberRuntimeIoUTF8OutputStreamWriter CCBRUTF8OutputStreamWriter;
 
 #endif
 

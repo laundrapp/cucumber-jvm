@@ -18,17 +18,17 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiFormatterColorAware_) && (INCLUDE_ALL_CucumberApiFormatterColorAware || defined(INCLUDE_CucumberApiFormatterColorAware))
-#define CucumberApiFormatterColorAware_
+#if !defined (CCBColorAware_) && (INCLUDE_ALL_CucumberApiFormatterColorAware || defined(INCLUDE_CCBColorAware))
+#define CCBColorAware_
 
 #define RESTRICT_CucumberApiFormatterFormatter 1
-#define INCLUDE_CucumberApiFormatterFormatter 1
+#define INCLUDE_CCBFormatter 1
 #include "cucumber/api/formatter/Formatter.h"
 
 /*!
  @brief Interface for Formatters that use ANSI escape codes to print coloured output.
  */
-@protocol CucumberApiFormatterColorAware < CucumberApiFormatterFormatter, JavaObject >
+@protocol CCBColorAware < CCBFormatter, JavaObject >
 
 /*!
  @brief When set to monochrome the formatter should not use colored output.
@@ -40,9 +40,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiFormatterColorAware)
+J2OBJC_EMPTY_STATIC_INIT(CCBColorAware)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiFormatterColorAware)
+J2OBJC_TYPE_LITERAL_HEADER(CCBColorAware)
+
+#define CucumberApiFormatterColorAware CCBColorAware
 
 #endif
 

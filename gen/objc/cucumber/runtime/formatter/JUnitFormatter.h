@@ -18,27 +18,27 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeFormatterJUnitFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterJUnitFormatter || defined(INCLUDE_CucumberRuntimeFormatterJUnitFormatter))
-#define CucumberRuntimeFormatterJUnitFormatter_
+#if !defined (CCBRJUnitFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterJUnitFormatter || defined(INCLUDE_CCBRJUnitFormatter))
+#define CCBRJUnitFormatter_
 
 #define RESTRICT_CucumberApiFormatterFormatter 1
-#define INCLUDE_CucumberApiFormatterFormatter 1
+#define INCLUDE_CCBFormatter 1
 #include "cucumber/api/formatter/Formatter.h"
 
 #define RESTRICT_CucumberApiFormatterStrictAware 1
-#define INCLUDE_CucumberApiFormatterStrictAware 1
+#define INCLUDE_CCBStrictAware 1
 #include "cucumber/api/formatter/StrictAware.h"
 
 @class JavaNetURL;
-@protocol CucumberApiEventEventPublisher;
+@protocol CCBEventPublisher;
 
-@interface CucumberRuntimeFormatterJUnitFormatter : NSObject < CucumberApiFormatterFormatter, CucumberApiFormatterStrictAware >
+@interface CCBRJUnitFormatter : NSObject < CCBFormatter, CCBStrictAware >
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithJavaNetURL:(JavaNetURL *)outArg;
 
-- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
+- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher;
 
 - (void)setStrictWithBoolean:(jboolean)strict;
 
@@ -48,15 +48,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterJUnitFormatter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRJUnitFormatter)
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterJUnitFormatter_initWithJavaNetURL_(CucumberRuntimeFormatterJUnitFormatter *self, JavaNetURL *outArg);
+FOUNDATION_EXPORT void CCBRJUnitFormatter_initWithJavaNetURL_(CCBRJUnitFormatter *self, JavaNetURL *outArg);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterJUnitFormatter *new_CucumberRuntimeFormatterJUnitFormatter_initWithJavaNetURL_(JavaNetURL *outArg) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRJUnitFormatter *new_CCBRJUnitFormatter_initWithJavaNetURL_(JavaNetURL *outArg) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterJUnitFormatter *create_CucumberRuntimeFormatterJUnitFormatter_initWithJavaNetURL_(JavaNetURL *outArg);
+FOUNDATION_EXPORT CCBRJUnitFormatter *create_CCBRJUnitFormatter_initWithJavaNetURL_(JavaNetURL *outArg);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterJUnitFormatter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRJUnitFormatter)
+
+@compatibility_alias CucumberRuntimeFormatterJUnitFormatter CCBRJUnitFormatter;
 
 #endif
 

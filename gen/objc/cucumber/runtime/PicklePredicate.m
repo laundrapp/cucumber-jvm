@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/runtime/PicklePredicate.h"
 
-@interface CucumberRuntimePicklePredicate : NSObject
+@interface CCBRPicklePredicate : NSObject
 
 @end
 
-@implementation CucumberRuntimePicklePredicate
+@implementation CCBRPicklePredicate
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -22,10 +22,10 @@
   methods[0].selector = @selector(applyWithGherkinEventsPickleEvent:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "apply", "LGherkinEventsPickleEvent;" };
-  static const J2ObjcClassInfo _CucumberRuntimePicklePredicate = { "PicklePredicate", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x608, 1, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimePicklePredicate;
+  static const J2ObjcClassInfo _CCBRPicklePredicate = { "PicklePredicate", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x608, 1, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRPicklePredicate;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRuntimePicklePredicate)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBRPicklePredicate)

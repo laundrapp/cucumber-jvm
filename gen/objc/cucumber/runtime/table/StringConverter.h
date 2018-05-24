@@ -18,18 +18,20 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeTableStringConverter_) && (INCLUDE_ALL_CucumberRuntimeTableStringConverter || defined(INCLUDE_CucumberRuntimeTableStringConverter))
-#define CucumberRuntimeTableStringConverter_
+#if !defined (CCBRStringConverter_) && (INCLUDE_ALL_CucumberRuntimeTableStringConverter || defined(INCLUDE_CCBRStringConverter))
+#define CCBRStringConverter_
 
-@protocol CucumberRuntimeTableStringConverter < JavaObject >
+@protocol CCBRStringConverter < JavaObject >
 
 - (NSString *)mapWithNSString:(NSString *)string;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeTableStringConverter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRStringConverter)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTableStringConverter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRStringConverter)
+
+#define CucumberRuntimeTableStringConverter CCBRStringConverter
 
 #endif
 

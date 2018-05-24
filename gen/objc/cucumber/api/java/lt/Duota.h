@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaLtDuota_) && (INCLUDE_ALL_CucumberApiJavaLtDuota || defined(INCLUDE_CucumberApiJavaLtDuota))
-#define CucumberApiJavaLtDuota_
+#if !defined (CCBDuota_) && (INCLUDE_ALL_CucumberApiJavaLtDuota || defined(INCLUDE_CCBDuota))
+#define CCBDuota_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaLtDuota < JavaLangAnnotationAnnotation >
+@protocol CCBDuota < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaLtDuota : NSObject < CucumberApiJavaLtDuota > {
+@interface CCBDuota : NSObject < CCBDuota > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaLtDuota)
+J2OBJC_EMPTY_STATIC_INIT(CCBDuota)
 
-FOUNDATION_EXPORT id<CucumberApiJavaLtDuota> create_CucumberApiJavaLtDuota(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBDuota> create_CCBDuota(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaLtDuota)
+J2OBJC_TYPE_LITERAL_HEADER(CCBDuota)
+
+#define CucumberApiJavaLtDuota CCBDuota
 
 #endif
 

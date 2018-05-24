@@ -10,7 +10,7 @@
 #include "java/io/InputStream.h"
 #include "java/lang/IllegalArgumentException.h"
 
-@interface CucumberRuntimeIoFileResource () {
+@interface CCBRFileResource () {
  @public
   JavaIoFile *root_;
   JavaIoFile *file_;
@@ -23,31 +23,31 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoFileResource, root_, JavaIoFile *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoFileResource, file_, JavaIoFile *)
+J2OBJC_FIELD_SETTER(CCBRFileResource, root_, JavaIoFile *)
+J2OBJC_FIELD_SETTER(CCBRFileResource, file_, JavaIoFile *)
 
-__attribute__((unused)) static void CucumberRuntimeIoFileResource_initWithJavaIoFile_withJavaIoFile_withBoolean_(CucumberRuntimeIoFileResource *self, JavaIoFile *root, JavaIoFile *file, jboolean classpathFileResource);
+__attribute__((unused)) static void CCBRFileResource_initWithJavaIoFile_withJavaIoFile_withBoolean_(CCBRFileResource *self, JavaIoFile *root, JavaIoFile *file, jboolean classpathFileResource);
 
-__attribute__((unused)) static CucumberRuntimeIoFileResource *new_CucumberRuntimeIoFileResource_initWithJavaIoFile_withJavaIoFile_withBoolean_(JavaIoFile *root, JavaIoFile *file, jboolean classpathFileResource) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRFileResource *new_CCBRFileResource_initWithJavaIoFile_withJavaIoFile_withBoolean_(JavaIoFile *root, JavaIoFile *file, jboolean classpathFileResource) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeIoFileResource *create_CucumberRuntimeIoFileResource_initWithJavaIoFile_withJavaIoFile_withBoolean_(JavaIoFile *root, JavaIoFile *file, jboolean classpathFileResource);
+__attribute__((unused)) static CCBRFileResource *create_CCBRFileResource_initWithJavaIoFile_withJavaIoFile_withBoolean_(JavaIoFile *root, JavaIoFile *file, jboolean classpathFileResource);
 
-@implementation CucumberRuntimeIoFileResource
+@implementation CCBRFileResource
 
-+ (CucumberRuntimeIoFileResource *)createFileResourceWithJavaIoFile:(JavaIoFile *)root
-                                                     withJavaIoFile:(JavaIoFile *)file {
-  return CucumberRuntimeIoFileResource_createFileResourceWithJavaIoFile_withJavaIoFile_(root, file);
++ (CCBRFileResource *)createFileResourceWithJavaIoFile:(JavaIoFile *)root
+                                        withJavaIoFile:(JavaIoFile *)file {
+  return CCBRFileResource_createFileResourceWithJavaIoFile_withJavaIoFile_(root, file);
 }
 
-+ (CucumberRuntimeIoFileResource *)createClasspathFileResourceWithJavaIoFile:(JavaIoFile *)root
-                                                              withJavaIoFile:(JavaIoFile *)file {
-  return CucumberRuntimeIoFileResource_createClasspathFileResourceWithJavaIoFile_withJavaIoFile_(root, file);
++ (CCBRFileResource *)createClasspathFileResourceWithJavaIoFile:(JavaIoFile *)root
+                                                 withJavaIoFile:(JavaIoFile *)file {
+  return CCBRFileResource_createClasspathFileResourceWithJavaIoFile_withJavaIoFile_(root, file);
 }
 
 - (instancetype __nonnull)initWithJavaIoFile:(JavaIoFile *)root
                               withJavaIoFile:(JavaIoFile *)file
                                  withBoolean:(jboolean)classpathFileResource {
-  CucumberRuntimeIoFileResource_initWithJavaIoFile_withJavaIoFile_withBoolean_(self, root, file, classpathFileResource);
+  CCBRFileResource_initWithJavaIoFile_withJavaIoFile_withBoolean_(self, root, file, classpathFileResource);
   return self;
 }
 
@@ -85,8 +85,8 @@ __attribute__((unused)) static CucumberRuntimeIoFileResource *create_CucumberRun
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, "LCucumberRuntimeIoFileResource;", 0x9, 0, 1, -1, -1, -1, -1 },
-    { NULL, "LCucumberRuntimeIoFileResource;", 0x9, 2, 1, -1, -1, -1, -1 },
+    { NULL, "LCCBRFileResource;", 0x9, 0, 1, -1, -1, -1, -1 },
+    { NULL, "LCCBRFileResource;", 0x9, 2, 1, -1, -1, -1, -1 },
     { NULL, NULL, 0x2, -1, 3, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
@@ -112,23 +112,23 @@ __attribute__((unused)) static CucumberRuntimeIoFileResource *create_CucumberRun
     { "classpathFileResource_", "Z", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "createFileResource", "LJavaIoFile;LJavaIoFile;", "createClasspathFileResource", "LJavaIoFile;LJavaIoFile;Z", "LJavaIoIOException;", "getClassName", "LNSString;" };
-  static const J2ObjcClassInfo _CucumberRuntimeIoFileResource = { "FileResource", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 8, 3, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeIoFileResource;
+  static const J2ObjcClassInfo _CCBRFileResource = { "FileResource", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 8, 3, -1, -1, -1, -1, -1 };
+  return &_CCBRFileResource;
 }
 
 @end
 
-CucumberRuntimeIoFileResource *CucumberRuntimeIoFileResource_createFileResourceWithJavaIoFile_withJavaIoFile_(JavaIoFile *root, JavaIoFile *file) {
-  CucumberRuntimeIoFileResource_initialize();
-  return create_CucumberRuntimeIoFileResource_initWithJavaIoFile_withJavaIoFile_withBoolean_(root, file, false);
+CCBRFileResource *CCBRFileResource_createFileResourceWithJavaIoFile_withJavaIoFile_(JavaIoFile *root, JavaIoFile *file) {
+  CCBRFileResource_initialize();
+  return create_CCBRFileResource_initWithJavaIoFile_withJavaIoFile_withBoolean_(root, file, false);
 }
 
-CucumberRuntimeIoFileResource *CucumberRuntimeIoFileResource_createClasspathFileResourceWithJavaIoFile_withJavaIoFile_(JavaIoFile *root, JavaIoFile *file) {
-  CucumberRuntimeIoFileResource_initialize();
-  return create_CucumberRuntimeIoFileResource_initWithJavaIoFile_withJavaIoFile_withBoolean_(root, file, true);
+CCBRFileResource *CCBRFileResource_createClasspathFileResourceWithJavaIoFile_withJavaIoFile_(JavaIoFile *root, JavaIoFile *file) {
+  CCBRFileResource_initialize();
+  return create_CCBRFileResource_initWithJavaIoFile_withJavaIoFile_withBoolean_(root, file, true);
 }
 
-void CucumberRuntimeIoFileResource_initWithJavaIoFile_withJavaIoFile_withBoolean_(CucumberRuntimeIoFileResource *self, JavaIoFile *root, JavaIoFile *file, jboolean classpathFileResource) {
+void CCBRFileResource_initWithJavaIoFile_withJavaIoFile_withBoolean_(CCBRFileResource *self, JavaIoFile *root, JavaIoFile *file, jboolean classpathFileResource) {
   NSObject_init(self);
   JreStrongAssign(&self->root_, root);
   JreStrongAssign(&self->file_, file);
@@ -138,12 +138,12 @@ void CucumberRuntimeIoFileResource_initWithJavaIoFile_withJavaIoFile_withBoolean
   }
 }
 
-CucumberRuntimeIoFileResource *new_CucumberRuntimeIoFileResource_initWithJavaIoFile_withJavaIoFile_withBoolean_(JavaIoFile *root, JavaIoFile *file, jboolean classpathFileResource) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeIoFileResource, initWithJavaIoFile_withJavaIoFile_withBoolean_, root, file, classpathFileResource)
+CCBRFileResource *new_CCBRFileResource_initWithJavaIoFile_withJavaIoFile_withBoolean_(JavaIoFile *root, JavaIoFile *file, jboolean classpathFileResource) {
+  J2OBJC_NEW_IMPL(CCBRFileResource, initWithJavaIoFile_withJavaIoFile_withBoolean_, root, file, classpathFileResource)
 }
 
-CucumberRuntimeIoFileResource *create_CucumberRuntimeIoFileResource_initWithJavaIoFile_withJavaIoFile_withBoolean_(JavaIoFile *root, JavaIoFile *file, jboolean classpathFileResource) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeIoFileResource, initWithJavaIoFile_withJavaIoFile_withBoolean_, root, file, classpathFileResource)
+CCBRFileResource *create_CCBRFileResource_initWithJavaIoFile_withJavaIoFile_withBoolean_(JavaIoFile *root, JavaIoFile *file, jboolean classpathFileResource) {
+  J2OBJC_CREATE_IMPL(CCBRFileResource, initWithJavaIoFile_withJavaIoFile_withBoolean_, root, file, classpathFileResource)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoFileResource)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRFileResource)

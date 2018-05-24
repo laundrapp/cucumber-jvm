@@ -42,8 +42,8 @@ J2OBJC_IGNORE_DESIGNATED_BEGIN
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-+ (NSString *)readFileWithCucumberRuntimeIoResource:(id<CucumberRuntimeIoResource>)resource {
-  return CucumberUtilEncoding_readFileWithCucumberRuntimeIoResource_(resource);
++ (NSString *)readFileWithCCBRResource:(id<CCBRResource>)resource {
+  return CucumberUtilEncoding_readFileWithCCBRResource_(resource);
 }
 
 + (NSString *)encodingWithNSString:(NSString *)source {
@@ -60,7 +60,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(readFileWithCucumberRuntimeIoResource:);
+  methods[1].selector = @selector(readFileWithCCBRResource:);
   methods[2].selector = @selector(encodingWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
@@ -68,7 +68,7 @@ J2OBJC_IGNORE_DESIGNATED_END
     { "ENCODING_PATTERN", "LJavaUtilRegexPattern;", .constantValue.asLong = 0, 0x1a, -1, 6, -1, -1 },
     { "DEFAULT_ENCODING", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 7, -1, -1 },
   };
-  static const void *ptrTable[] = { "readFile", "LCucumberRuntimeIoResource;", "LJavaLangRuntimeException;LJavaIoIOException;", "encoding", "LNSString;", &CucumberUtilEncoding_COMMENT_OR_EMPTY_LINE_PATTERN, &CucumberUtilEncoding_ENCODING_PATTERN, &CucumberUtilEncoding_DEFAULT_ENCODING };
+  static const void *ptrTable[] = { "readFile", "LCCBRResource;", "LJavaLangRuntimeException;LJavaIoIOException;", "encoding", "LNSString;", &CucumberUtilEncoding_COMMENT_OR_EMPTY_LINE_PATTERN, &CucumberUtilEncoding_ENCODING_PATTERN, &CucumberUtilEncoding_DEFAULT_ENCODING };
   static const J2ObjcClassInfo _CucumberUtilEncoding = { "Encoding", "cucumber.util", ptrTable, methods, fields, 7, 0x1, 3, 3, -1, -1, -1, -1, -1 };
   return &_CucumberUtilEncoding;
 }
@@ -95,9 +95,9 @@ CucumberUtilEncoding *create_CucumberUtilEncoding_init() {
   J2OBJC_CREATE_IMPL(CucumberUtilEncoding, init)
 }
 
-NSString *CucumberUtilEncoding_readFileWithCucumberRuntimeIoResource_(id<CucumberRuntimeIoResource> resource) {
+NSString *CucumberUtilEncoding_readFileWithCCBRResource_(id<CCBRResource> resource) {
   CucumberUtilEncoding_initialize();
-  NSString *source = CucumberUtilFixJava_readReaderWithJavaIoReader_(create_JavaIoInputStreamReader_initWithJavaIoInputStream_withNSString_([((id<CucumberRuntimeIoResource>) nil_chk(resource)) getInputStream], CucumberUtilEncoding_DEFAULT_ENCODING));
+  NSString *source = CucumberUtilFixJava_readReaderWithJavaIoReader_(create_JavaIoInputStreamReader_initWithJavaIoInputStream_withNSString_([((id<CCBRResource>) nil_chk(resource)) getInputStream], CucumberUtilEncoding_DEFAULT_ENCODING));
   NSString *enc = CucumberUtilEncoding_encodingWithNSString_(source);
   if (![((NSString *) nil_chk(enc)) isEqual:CucumberUtilEncoding_DEFAULT_ENCODING]) {
     source = CucumberUtilFixJava_readReaderWithJavaIoReader_(create_JavaIoInputStreamReader_initWithJavaIoInputStream_withNSString_([resource getInputStream], enc));

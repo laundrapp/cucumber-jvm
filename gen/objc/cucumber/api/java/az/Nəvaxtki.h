@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaAzNəvaxtki_) && (INCLUDE_ALL_CucumberApiJavaAzNəvaxtki || defined(INCLUDE_CucumberApiJavaAzNəvaxtki))
-#define CucumberApiJavaAzNəvaxtki_
+#if !defined (CCBNəvaxtki_) && (INCLUDE_ALL_CucumberApiJavaAzNəvaxtki || defined(INCLUDE_CCBNəvaxtki))
+#define CCBNəvaxtki_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaAzNəvaxtki < JavaLangAnnotationAnnotation >
+@protocol CCBNəvaxtki < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaAzNəvaxtki : NSObject < CucumberApiJavaAzNəvaxtki > {
+@interface CCBNəvaxtki : NSObject < CCBNəvaxtki > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaAzNəvaxtki)
+J2OBJC_EMPTY_STATIC_INIT(CCBNəvaxtki)
 
-FOUNDATION_EXPORT id<CucumberApiJavaAzNəvaxtki> create_CucumberApiJavaAzNəvaxtki(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBNəvaxtki> create_CCBNəvaxtki(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaAzNəvaxtki)
+J2OBJC_TYPE_LITERAL_HEADER(CCBNəvaxtki)
+
+#define CucumberApiJavaAzNəvaxtki CCBNəvaxtki
 
 #endif
 

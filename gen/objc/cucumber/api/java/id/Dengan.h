@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaIdDengan_) && (INCLUDE_ALL_CucumberApiJavaIdDengan || defined(INCLUDE_CucumberApiJavaIdDengan))
-#define CucumberApiJavaIdDengan_
+#if !defined (CCBDengan_) && (INCLUDE_ALL_CucumberApiJavaIdDengan || defined(INCLUDE_CCBDengan))
+#define CCBDengan_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaIdDengan < JavaLangAnnotationAnnotation >
+@protocol CCBDengan < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaIdDengan : NSObject < CucumberApiJavaIdDengan > {
+@interface CCBDengan : NSObject < CCBDengan > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaIdDengan)
+J2OBJC_EMPTY_STATIC_INIT(CCBDengan)
 
-FOUNDATION_EXPORT id<CucumberApiJavaIdDengan> create_CucumberApiJavaIdDengan(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBDengan> create_CCBDengan(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaIdDengan)
+J2OBJC_TYPE_LITERAL_HEADER(CCBDengan)
+
+#define CucumberApiJavaIdDengan CCBDengan
 
 #endif
 

@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/runtime/UnreportedStepExecutor.h"
 
-@interface CucumberRuntimeUnreportedStepExecutor : NSObject
+@interface CCBRUnreportedStepExecutor : NSObject
 
 @end
 
-@implementation CucumberRuntimeUnreportedStepExecutor
+@implementation CCBRUnreportedStepExecutor
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -22,10 +22,10 @@
   methods[0].selector = @selector(runUnreportedStepWithNSString:withNSString:withNSString:withInt:withJavaUtilList:withGherkinPicklesPickleString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "runUnreportedStep", "LNSString;LNSString;LNSString;ILJavaUtilList;LGherkinPicklesPickleString;", "LJavaLangThrowable;", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/util/List<Lgherkin/pickles/PickleRow;>;Lgherkin/pickles/PickleString;)V" };
-  static const J2ObjcClassInfo _CucumberRuntimeUnreportedStepExecutor = { "UnreportedStepExecutor", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeUnreportedStepExecutor;
+  static const J2ObjcClassInfo _CCBRUnreportedStepExecutor = { "UnreportedStepExecutor", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRUnreportedStepExecutor;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRuntimeUnreportedStepExecutor)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBRUnreportedStepExecutor)

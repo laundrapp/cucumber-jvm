@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaEsY_) && (INCLUDE_ALL_CucumberApiJavaEsY || defined(INCLUDE_CucumberApiJavaEsY))
-#define CucumberApiJavaEsY_
+#if !defined (CCBY_) && (INCLUDE_ALL_CucumberApiJavaEsY || defined(INCLUDE_CCBY))
+#define CCBY_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaEsY < JavaLangAnnotationAnnotation >
+@protocol CCBY < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaEsY : NSObject < CucumberApiJavaEsY > {
+@interface CCBY : NSObject < CCBY > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEsY)
+J2OBJC_EMPTY_STATIC_INIT(CCBY)
 
-FOUNDATION_EXPORT id<CucumberApiJavaEsY> create_CucumberApiJavaEsY(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBY> create_CCBY(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEsY)
+J2OBJC_TYPE_LITERAL_HEADER(CCBY)
+
+#define CucumberApiJavaEsY CCBY
 
 #endif
 

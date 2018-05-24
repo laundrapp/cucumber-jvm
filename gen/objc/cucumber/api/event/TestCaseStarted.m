@@ -9,11 +9,11 @@
 #include "cucumber/api/event/TimeStampedEvent.h"
 #include "java/lang/Long.h"
 
-@implementation CucumberApiEventTestCaseStarted
+@implementation CCBTestCaseStarted
 
 - (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp
-                       withCucumberApiTestCase:(CucumberApiTestCase *)testCase {
-  CucumberApiEventTestCaseStarted_initWithJavaLangLong_withCucumberApiTestCase_(self, timeStamp, testCase);
+                               withCCBTestCase:(CCBTestCase *)testCase {
+  CCBTestCaseStarted_initWithJavaLangLong_withCCBTestCase_(self, timeStamp, testCase);
   return self;
 }
 
@@ -29,29 +29,29 @@
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithJavaLangLong:withCucumberApiTestCase:);
+  methods[0].selector = @selector(initWithJavaLangLong:withCCBTestCase:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "testCase_", "LCucumberApiTestCase;", .constantValue.asLong = 0, 0x11, -1, -1, -1, -1 },
+    { "testCase_", "LCCBTestCase;", .constantValue.asLong = 0, 0x11, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LJavaLangLong;LCucumberApiTestCase;" };
-  static const J2ObjcClassInfo _CucumberApiEventTestCaseStarted = { "TestCaseStarted", "cucumber.api.event", ptrTable, methods, fields, 7, 0x11, 1, 1, -1, -1, -1, -1, -1 };
-  return &_CucumberApiEventTestCaseStarted;
+  static const void *ptrTable[] = { "LJavaLangLong;LCCBTestCase;" };
+  static const J2ObjcClassInfo _CCBTestCaseStarted = { "TestCaseStarted", "cucumber.api.event", ptrTable, methods, fields, 7, 0x11, 1, 1, -1, -1, -1, -1, -1 };
+  return &_CCBTestCaseStarted;
 }
 
 @end
 
-void CucumberApiEventTestCaseStarted_initWithJavaLangLong_withCucumberApiTestCase_(CucumberApiEventTestCaseStarted *self, JavaLangLong *timeStamp, CucumberApiTestCase *testCase) {
-  CucumberApiEventTimeStampedEvent_initWithJavaLangLong_(self, timeStamp);
+void CCBTestCaseStarted_initWithJavaLangLong_withCCBTestCase_(CCBTestCaseStarted *self, JavaLangLong *timeStamp, CCBTestCase *testCase) {
+  CCBTimeStampedEvent_initWithJavaLangLong_(self, timeStamp);
   JreStrongAssign(&self->testCase_, testCase);
 }
 
-CucumberApiEventTestCaseStarted *new_CucumberApiEventTestCaseStarted_initWithJavaLangLong_withCucumberApiTestCase_(JavaLangLong *timeStamp, CucumberApiTestCase *testCase) {
-  J2OBJC_NEW_IMPL(CucumberApiEventTestCaseStarted, initWithJavaLangLong_withCucumberApiTestCase_, timeStamp, testCase)
+CCBTestCaseStarted *new_CCBTestCaseStarted_initWithJavaLangLong_withCCBTestCase_(JavaLangLong *timeStamp, CCBTestCase *testCase) {
+  J2OBJC_NEW_IMPL(CCBTestCaseStarted, initWithJavaLangLong_withCCBTestCase_, timeStamp, testCase)
 }
 
-CucumberApiEventTestCaseStarted *create_CucumberApiEventTestCaseStarted_initWithJavaLangLong_withCucumberApiTestCase_(JavaLangLong *timeStamp, CucumberApiTestCase *testCase) {
-  J2OBJC_CREATE_IMPL(CucumberApiEventTestCaseStarted, initWithJavaLangLong_withCucumberApiTestCase_, timeStamp, testCase)
+CCBTestCaseStarted *create_CCBTestCaseStarted_initWithJavaLangLong_withCCBTestCase_(JavaLangLong *timeStamp, CCBTestCase *testCase) {
+  J2OBJC_CREATE_IMPL(CCBTestCaseStarted, initWithJavaLangLong_withCCBTestCase_, timeStamp, testCase)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiEventTestCaseStarted)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBTestCaseStarted)

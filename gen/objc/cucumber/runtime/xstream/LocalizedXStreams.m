@@ -47,28 +47,28 @@
 
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@interface CucumberRuntimeXstreamLocalizedXStreams () {
+@interface CCBRLocalizedXStreams () {
  @public
   id<JavaUtilMap> xStreamsByLocale_;
   id<JavaUtilList> extraConverters_;
   JavaLangClassLoader *classLoader_;
 }
 
-- (CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *)newXStreamWithJavaUtilLocale:(JavaUtilLocale *)locale OBJC_METHOD_FAMILY_NONE;
+- (CCBRLocalizedXStreams_LocalizedXStream *)newXStreamWithJavaUtilLocale:(JavaUtilLocale *)locale OBJC_METHOD_FAMILY_NONE;
 
-- (void)registerExtraConvertersWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream:(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *)xStream;
+- (void)registerExtraConvertersWithCCBRLocalizedXStreams_LocalizedXStream:(CCBRLocalizedXStreams_LocalizedXStream *)xStream;
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamLocalizedXStreams, xStreamsByLocale_, id<JavaUtilMap>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamLocalizedXStreams, extraConverters_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamLocalizedXStreams, classLoader_, JavaLangClassLoader *)
+J2OBJC_FIELD_SETTER(CCBRLocalizedXStreams, xStreamsByLocale_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(CCBRLocalizedXStreams, extraConverters_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRLocalizedXStreams, classLoader_, JavaLangClassLoader *)
 
-__attribute__((unused)) static CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *CucumberRuntimeXstreamLocalizedXStreams_newXStreamWithJavaUtilLocale_(CucumberRuntimeXstreamLocalizedXStreams *self, JavaUtilLocale *locale);
+__attribute__((unused)) static CCBRLocalizedXStreams_LocalizedXStream *CCBRLocalizedXStreams_newXStreamWithJavaUtilLocale_(CCBRLocalizedXStreams *self, JavaUtilLocale *locale);
 
-__attribute__((unused)) static void CucumberRuntimeXstreamLocalizedXStreams_registerExtraConvertersWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_(CucumberRuntimeXstreamLocalizedXStreams *self, CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *xStream);
+__attribute__((unused)) static void CCBRLocalizedXStreams_registerExtraConvertersWithCCBRLocalizedXStreams_LocalizedXStream_(CCBRLocalizedXStreams *self, CCBRLocalizedXStreams_LocalizedXStream *xStream);
 
-@interface CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream () {
+@interface CCBRLocalizedXStreams_LocalizedXStream () {
  @public
   JavaUtilLocale *locale_;
   JavaLangThreadLocal *timeConverters_;
@@ -79,12 +79,12 @@ __attribute__((unused)) static void CucumberRuntimeXstreamLocalizedXStreams_regi
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream, locale_, JavaUtilLocale *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream, timeConverters_, JavaLangThreadLocal *)
+J2OBJC_FIELD_SETTER(CCBRLocalizedXStreams_LocalizedXStream, locale_, JavaUtilLocale *)
+J2OBJC_FIELD_SETTER(CCBRLocalizedXStreams_LocalizedXStream, timeConverters_, JavaLangThreadLocal *)
 
-__attribute__((unused)) static void CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *self, id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry> lookup, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> converter);
+__attribute__((unused)) static void CCBRLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(CCBRLocalizedXStreams_LocalizedXStream *self, id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry> lookup, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> converter);
 
-@interface CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1 : JavaLangThreadLocal
+@interface CCBRLocalizedXStreams_LocalizedXStream_1 : JavaLangThreadLocal
 
 - (instancetype __nonnull)init;
 
@@ -96,43 +96,43 @@ __attribute__((unused)) static void CucumberRuntimeXstreamLocalizedXStreams_Loca
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1)
+J2OBJC_EMPTY_STATIC_INIT(CCBRLocalizedXStreams_LocalizedXStream_1)
 
-__attribute__((unused)) static void CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1_init(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1 *self);
+__attribute__((unused)) static void CCBRLocalizedXStreams_LocalizedXStream_1_init(CCBRLocalizedXStreams_LocalizedXStream_1 *self);
 
-__attribute__((unused)) static CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1 *new_CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRLocalizedXStreams_LocalizedXStream_1 *new_CCBRLocalizedXStreams_LocalizedXStream_1_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1 *create_CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1_init(void);
+__attribute__((unused)) static CCBRLocalizedXStreams_LocalizedXStream_1 *create_CCBRLocalizedXStreams_LocalizedXStream_1_init(void);
 
-@implementation CucumberRuntimeXstreamLocalizedXStreams
+@implementation CCBRLocalizedXStreams
 
 - (instancetype __nonnull)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader
                                      withJavaUtilList:(id<JavaUtilList>)extraConverters {
-  CucumberRuntimeXstreamLocalizedXStreams_initWithJavaLangClassLoader_withJavaUtilList_(self, classLoader, extraConverters);
+  CCBRLocalizedXStreams_initWithJavaLangClassLoader_withJavaUtilList_(self, classLoader, extraConverters);
   return self;
 }
 
 - (instancetype __nonnull)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader {
-  CucumberRuntimeXstreamLocalizedXStreams_initWithJavaLangClassLoader_(self, classLoader);
+  CCBRLocalizedXStreams_initWithJavaLangClassLoader_(self, classLoader);
   return self;
 }
 
-- (CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *)getWithJavaUtilLocale:(JavaUtilLocale *)locale {
-  CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *xStream = [((id<JavaUtilMap>) nil_chk(xStreamsByLocale_)) getWithId:locale];
+- (CCBRLocalizedXStreams_LocalizedXStream *)getWithJavaUtilLocale:(JavaUtilLocale *)locale {
+  CCBRLocalizedXStreams_LocalizedXStream *xStream = [((id<JavaUtilMap>) nil_chk(xStreamsByLocale_)) getWithId:locale];
   if (xStream == nil) {
-    xStream = CucumberRuntimeXstreamLocalizedXStreams_newXStreamWithJavaUtilLocale_(self, locale);
-    CucumberRuntimeXstreamLocalizedXStreams_registerExtraConvertersWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_(self, xStream);
+    xStream = CCBRLocalizedXStreams_newXStreamWithJavaUtilLocale_(self, locale);
+    CCBRLocalizedXStreams_registerExtraConvertersWithCCBRLocalizedXStreams_LocalizedXStream_(self, xStream);
     [xStreamsByLocale_ putWithId:locale withId:xStream];
   }
   return xStream;
 }
 
-- (CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *)newXStreamWithJavaUtilLocale:(JavaUtilLocale *)locale {
-  return CucumberRuntimeXstreamLocalizedXStreams_newXStreamWithJavaUtilLocale_(self, locale);
+- (CCBRLocalizedXStreams_LocalizedXStream *)newXStreamWithJavaUtilLocale:(JavaUtilLocale *)locale {
+  return CCBRLocalizedXStreams_newXStreamWithJavaUtilLocale_(self, locale);
 }
 
-- (void)registerExtraConvertersWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream:(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *)xStream {
-  CucumberRuntimeXstreamLocalizedXStreams_registerExtraConvertersWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_(self, xStream);
+- (void)registerExtraConvertersWithCCBRLocalizedXStreams_LocalizedXStream:(CCBRLocalizedXStreams_LocalizedXStream *)xStream {
+  CCBRLocalizedXStreams_registerExtraConvertersWithCCBRLocalizedXStreams_LocalizedXStream_(self, xStream);
 }
 
 - (void)dealloc {
@@ -146,8 +146,8 @@ __attribute__((unused)) static CucumberRuntimeXstreamLocalizedXStreams_Localized
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, 0, -1, 1, -1, -1 },
     { NULL, NULL, 0x1, -1, 2, -1, -1, -1, -1 },
-    { NULL, "LCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream;", 0x1, 3, 4, -1, -1, -1, -1 },
-    { NULL, "LCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream;", 0x2, 5, 4, -1, -1, -1, -1 },
+    { NULL, "LCCBRLocalizedXStreams_LocalizedXStream;", 0x1, 3, 4, -1, -1, -1, -1 },
+    { NULL, "LCCBRLocalizedXStreams_LocalizedXStream;", 0x2, 5, 4, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 6, 7, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
@@ -157,101 +157,101 @@ __attribute__((unused)) static CucumberRuntimeXstreamLocalizedXStreams_Localized
   methods[1].selector = @selector(initWithJavaLangClassLoader:);
   methods[2].selector = @selector(getWithJavaUtilLocale:);
   methods[3].selector = @selector(newXStreamWithJavaUtilLocale:);
-  methods[4].selector = @selector(registerExtraConvertersWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream:);
+  methods[4].selector = @selector(registerExtraConvertersWithCCBRLocalizedXStreams_LocalizedXStream:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "xStreamsByLocale_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 8, -1 },
     { "extraConverters_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 9, -1 },
     { "classLoader_", "LJavaLangClassLoader;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LJavaLangClassLoader;LJavaUtilList;", "(Ljava/lang/ClassLoader;Ljava/util/List<Lcucumber/deps/com/thoughtworks/xstream/annotations/XStreamConverter;>;)V", "LJavaLangClassLoader;", "get", "LJavaUtilLocale;", "newXStream", "registerExtraConverters", "LCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream;", "Ljava/util/Map<Ljava/util/Locale;Lcucumber/runtime/xstream/LocalizedXStreams$LocalizedXStream;>;", "Ljava/util/List<Lcucumber/deps/com/thoughtworks/xstream/annotations/XStreamConverter;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamLocalizedXStreams = { "LocalizedXStreams", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x1, 5, 3, -1, 7, -1, -1, -1 };
-  return &_CucumberRuntimeXstreamLocalizedXStreams;
+  static const void *ptrTable[] = { "LJavaLangClassLoader;LJavaUtilList;", "(Ljava/lang/ClassLoader;Ljava/util/List<Lcucumber/deps/com/thoughtworks/xstream/annotations/XStreamConverter;>;)V", "LJavaLangClassLoader;", "get", "LJavaUtilLocale;", "newXStream", "registerExtraConverters", "LCCBRLocalizedXStreams_LocalizedXStream;", "Ljava/util/Map<Ljava/util/Locale;Lcucumber/runtime/xstream/LocalizedXStreams$LocalizedXStream;>;", "Ljava/util/List<Lcucumber/deps/com/thoughtworks/xstream/annotations/XStreamConverter;>;" };
+  static const J2ObjcClassInfo _CCBRLocalizedXStreams = { "LocalizedXStreams", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x1, 5, 3, -1, 7, -1, -1, -1 };
+  return &_CCBRLocalizedXStreams;
 }
 
 @end
 
-void CucumberRuntimeXstreamLocalizedXStreams_initWithJavaLangClassLoader_withJavaUtilList_(CucumberRuntimeXstreamLocalizedXStreams *self, JavaLangClassLoader *classLoader, id<JavaUtilList> extraConverters) {
+void CCBRLocalizedXStreams_initWithJavaLangClassLoader_withJavaUtilList_(CCBRLocalizedXStreams *self, JavaLangClassLoader *classLoader, id<JavaUtilList> extraConverters) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->xStreamsByLocale_, new_JavaUtilHashMap_init());
   JreStrongAssign(&self->classLoader_, classLoader);
   JreStrongAssign(&self->extraConverters_, extraConverters);
 }
 
-CucumberRuntimeXstreamLocalizedXStreams *new_CucumberRuntimeXstreamLocalizedXStreams_initWithJavaLangClassLoader_withJavaUtilList_(JavaLangClassLoader *classLoader, id<JavaUtilList> extraConverters) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamLocalizedXStreams, initWithJavaLangClassLoader_withJavaUtilList_, classLoader, extraConverters)
+CCBRLocalizedXStreams *new_CCBRLocalizedXStreams_initWithJavaLangClassLoader_withJavaUtilList_(JavaLangClassLoader *classLoader, id<JavaUtilList> extraConverters) {
+  J2OBJC_NEW_IMPL(CCBRLocalizedXStreams, initWithJavaLangClassLoader_withJavaUtilList_, classLoader, extraConverters)
 }
 
-CucumberRuntimeXstreamLocalizedXStreams *create_CucumberRuntimeXstreamLocalizedXStreams_initWithJavaLangClassLoader_withJavaUtilList_(JavaLangClassLoader *classLoader, id<JavaUtilList> extraConverters) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamLocalizedXStreams, initWithJavaLangClassLoader_withJavaUtilList_, classLoader, extraConverters)
+CCBRLocalizedXStreams *create_CCBRLocalizedXStreams_initWithJavaLangClassLoader_withJavaUtilList_(JavaLangClassLoader *classLoader, id<JavaUtilList> extraConverters) {
+  J2OBJC_CREATE_IMPL(CCBRLocalizedXStreams, initWithJavaLangClassLoader_withJavaUtilList_, classLoader, extraConverters)
 }
 
-void CucumberRuntimeXstreamLocalizedXStreams_initWithJavaLangClassLoader_(CucumberRuntimeXstreamLocalizedXStreams *self, JavaLangClassLoader *classLoader) {
-  CucumberRuntimeXstreamLocalizedXStreams_initWithJavaLangClassLoader_withJavaUtilList_(self, classLoader, JavaUtilCollections_emptyList());
+void CCBRLocalizedXStreams_initWithJavaLangClassLoader_(CCBRLocalizedXStreams *self, JavaLangClassLoader *classLoader) {
+  CCBRLocalizedXStreams_initWithJavaLangClassLoader_withJavaUtilList_(self, classLoader, JavaUtilCollections_emptyList());
 }
 
-CucumberRuntimeXstreamLocalizedXStreams *new_CucumberRuntimeXstreamLocalizedXStreams_initWithJavaLangClassLoader_(JavaLangClassLoader *classLoader) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamLocalizedXStreams, initWithJavaLangClassLoader_, classLoader)
+CCBRLocalizedXStreams *new_CCBRLocalizedXStreams_initWithJavaLangClassLoader_(JavaLangClassLoader *classLoader) {
+  J2OBJC_NEW_IMPL(CCBRLocalizedXStreams, initWithJavaLangClassLoader_, classLoader)
 }
 
-CucumberRuntimeXstreamLocalizedXStreams *create_CucumberRuntimeXstreamLocalizedXStreams_initWithJavaLangClassLoader_(JavaLangClassLoader *classLoader) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamLocalizedXStreams, initWithJavaLangClassLoader_, classLoader)
+CCBRLocalizedXStreams *create_CCBRLocalizedXStreams_initWithJavaLangClassLoader_(JavaLangClassLoader *classLoader) {
+  J2OBJC_CREATE_IMPL(CCBRLocalizedXStreams, initWithJavaLangClassLoader_, classLoader)
 }
 
-CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *CucumberRuntimeXstreamLocalizedXStreams_newXStreamWithJavaUtilLocale_(CucumberRuntimeXstreamLocalizedXStreams *self, JavaUtilLocale *locale) {
+CCBRLocalizedXStreams_LocalizedXStream *CCBRLocalizedXStreams_newXStreamWithJavaUtilLocale_(CCBRLocalizedXStreams *self, JavaUtilLocale *locale) {
   CucumberDepsComThoughtworksXstreamCoreDefaultConverterLookup *lookup = create_CucumberDepsComThoughtworksXstreamCoreDefaultConverterLookup_init();
-  return create_CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_initWithJavaLangClassLoader_withCucumberDepsComThoughtworksXstreamConvertersConverterLookup_withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withJavaUtilLocale_(self->classLoader_, lookup, lookup, locale);
+  return create_CCBRLocalizedXStreams_LocalizedXStream_initWithJavaLangClassLoader_withCucumberDepsComThoughtworksXstreamConvertersConverterLookup_withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withJavaUtilLocale_(self->classLoader_, lookup, lookup, locale);
 }
 
-void CucumberRuntimeXstreamLocalizedXStreams_registerExtraConvertersWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_(CucumberRuntimeXstreamLocalizedXStreams *self, CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *xStream) {
+void CCBRLocalizedXStreams_registerExtraConvertersWithCCBRLocalizedXStreams_LocalizedXStream_(CCBRLocalizedXStreams *self, CCBRLocalizedXStreams_LocalizedXStream *xStream) {
   for (id<CucumberDepsComThoughtworksXstreamAnnotationsXStreamConverter> __strong converter in nil_chk(self->extraConverters_)) {
     @try {
       id<CucumberDepsComThoughtworksXstreamConvertersConverterMatcher> matcher = [((IOSClass *) nil_chk([((id<CucumberDepsComThoughtworksXstreamAnnotationsXStreamConverter>) nil_chk(converter)) value])) newInstance];
       if ([CucumberDepsComThoughtworksXstreamConvertersConverter_class_() isInstance:matcher]) {
-        [((CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *) nil_chk(xStream)) registerConverterWithCucumberDepsComThoughtworksXstreamConvertersConverter:(id<CucumberDepsComThoughtworksXstreamConvertersConverter>) cast_check(matcher, CucumberDepsComThoughtworksXstreamConvertersConverter_class_()) withInt:[converter priority]];
+        [((CCBRLocalizedXStreams_LocalizedXStream *) nil_chk(xStream)) registerConverterWithCucumberDepsComThoughtworksXstreamConvertersConverter:(id<CucumberDepsComThoughtworksXstreamConvertersConverter>) cast_check(matcher, CucumberDepsComThoughtworksXstreamConvertersConverter_class_()) withInt:[converter priority]];
       }
     }
     @catch (JavaLangInstantiationException *e) {
-      @throw create_CucumberRuntimeCucumberException_initWithNSString_withJavaLangThrowable_([e getMessage], e);
+      @throw create_CCBRCucumberException_initWithNSString_withJavaLangThrowable_([e getMessage], e);
     }
     @catch (JavaLangIllegalAccessException *e) {
-      @throw create_CucumberRuntimeCucumberException_initWithNSString_withJavaLangThrowable_([e getMessage], e);
+      @throw create_CCBRCucumberException_initWithNSString_withJavaLangThrowable_([e getMessage], e);
     }
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamLocalizedXStreams)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRLocalizedXStreams)
 
-@implementation CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream
+@implementation CCBRLocalizedXStreams_LocalizedXStream
 
 - (instancetype __nonnull)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader
 withCucumberDepsComThoughtworksXstreamConvertersConverterLookup:(id<CucumberDepsComThoughtworksXstreamConvertersConverterLookup>)converterLookup
 withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry:(id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry>)converterRegistry
                                    withJavaUtilLocale:(JavaUtilLocale *)locale {
-  CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_initWithJavaLangClassLoader_withCucumberDepsComThoughtworksXstreamConvertersConverterLookup_withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withJavaUtilLocale_(self, classLoader, converterLookup, converterRegistry, locale);
+  CCBRLocalizedXStreams_LocalizedXStream_initWithJavaLangClassLoader_withCucumberDepsComThoughtworksXstreamConvertersConverterLookup_withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withJavaUtilLocale_(self, classLoader, converterLookup, converterRegistry, locale);
   return self;
 }
 
 - (void)register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry:(id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry>)lookup
                withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>)converter {
-  CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, lookup, converter);
+  CCBRLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, lookup, converter);
 }
 
-- (void)setParameterInfoWithCucumberRuntimeParameterInfo:(CucumberRuntimeParameterInfo *)parameterInfo {
+- (void)setParameterInfoWithCCBRParameterInfo:(CCBRParameterInfo *)parameterInfo {
   if (parameterInfo != nil) {
-    id<JavaUtilList> timeClasses = CucumberRuntimeXstreamTimeConverter_getTimeClasses();
+    id<JavaUtilList> timeClasses = CCBRTimeConverter_getTimeClasses();
     for (IOSClass * __strong timeClass in nil_chk(timeClasses)) {
-      CucumberRuntimeXstreamSingleValueConverterWrapperExt *converterWrapper = (CucumberRuntimeXstreamSingleValueConverterWrapperExt *) cast_chk([((id<CucumberDepsComThoughtworksXstreamConvertersConverterLookup>) nil_chk([self getConverterLookup])) lookupConverterForTypeWithIOSClass:timeClass], [CucumberRuntimeXstreamSingleValueConverterWrapperExt class]);
-      CucumberRuntimeXstreamTimeConverter *timeConverter = (CucumberRuntimeXstreamTimeConverter *) cast_chk([((CucumberRuntimeXstreamSingleValueConverterWrapperExt *) nil_chk(converterWrapper)) getConverter], [CucumberRuntimeXstreamTimeConverter class]);
-      [((CucumberRuntimeXstreamTimeConverter *) nil_chk(timeConverter)) setParameterInfoAndLocaleWithCucumberRuntimeParameterInfo:parameterInfo withJavaUtilLocale:locale_];
+      CCBRSingleValueConverterWrapperExt *converterWrapper = (CCBRSingleValueConverterWrapperExt *) cast_chk([((id<CucumberDepsComThoughtworksXstreamConvertersConverterLookup>) nil_chk([self getConverterLookup])) lookupConverterForTypeWithIOSClass:timeClass], [CCBRSingleValueConverterWrapperExt class]);
+      CCBRTimeConverter *timeConverter = (CCBRTimeConverter *) cast_chk([((CCBRSingleValueConverterWrapperExt *) nil_chk(converterWrapper)) getConverter], [CCBRTimeConverter class]);
+      [((CCBRTimeConverter *) nil_chk(timeConverter)) setParameterInfoAndLocaleWithCCBRParameterInfo:parameterInfo withJavaUtilLocale:locale_];
       [((id<JavaUtilList>) nil_chk([((JavaLangThreadLocal *) nil_chk(timeConverters_)) get])) addWithId:timeConverter];
     }
   }
 }
 
 - (void)unsetParameterInfo {
-  for (CucumberRuntimeXstreamTimeConverter * __strong timeConverter in nil_chk([((JavaLangThreadLocal *) nil_chk(timeConverters_)) get])) {
-    [((CucumberRuntimeXstreamTimeConverter *) nil_chk(timeConverter)) removeOnlyFormat];
+  for (CCBRTimeConverter * __strong timeConverter in nil_chk([((JavaLangThreadLocal *) nil_chk(timeConverters_)) get])) {
+    [((CCBRTimeConverter *) nil_chk(timeConverter)) removeOnlyFormat];
   }
   [((id<JavaUtilList>) nil_chk([timeConverters_ get])) clear];
 }
@@ -264,8 +264,8 @@ withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry:(id<CucumberDe
     IOSClass *clazz = (IOSClass *) cast_chk(type, [IOSClass class]);
     id<CucumberDepsComThoughtworksXstreamConvertersConverterLookup> converterLookup = [self getConverterLookup];
     id<CucumberDepsComThoughtworksXstreamConvertersConverter> converter = [((id<CucumberDepsComThoughtworksXstreamConvertersConverterLookup>) nil_chk(converterLookup)) lookupConverterForTypeWithIOSClass:clazz];
-    if ([converter isKindOfClass:[CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter class]]) {
-      return [((CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter *) nil_chk(((CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter *) cast_chk(converter, [CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter class])))) converterForClassWithIOSClass:clazz];
+    if ([converter isKindOfClass:[CCBRDynamicClassBasedSingleValueConverter class]]) {
+      return [((CCBRDynamicClassBasedSingleValueConverter *) nil_chk(((CCBRDynamicClassBasedSingleValueConverter *) cast_chk(converter, [CCBRDynamicClassBasedSingleValueConverter class])))) converterForClassWithIOSClass:clazz];
     }
     return [CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_class_() isInstance:converter] ? (id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>) cast_check(converter, CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_class_()) : nil;
   }
@@ -276,7 +276,7 @@ withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry:(id<CucumberDe
 
 - (id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>)createListConverterWithNSString:(NSString *)delimiter
                                    withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>)elementConverter {
-  return create_CucumberRuntimeXstreamListConverter_initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(delimiter, elementConverter);
+  return create_CCBRListConverter_initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(delimiter, elementConverter);
 }
 
 - (JavaUtilLocale *)getLocale {
@@ -304,7 +304,7 @@ withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry:(id<CucumberDe
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangClassLoader:withCucumberDepsComThoughtworksXstreamConvertersConverterLookup:withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry:withJavaUtilLocale:);
   methods[1].selector = @selector(register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry:withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:);
-  methods[2].selector = @selector(setParameterInfoWithCucumberRuntimeParameterInfo:);
+  methods[2].selector = @selector(setParameterInfoWithCCBRParameterInfo:);
   methods[3].selector = @selector(unsetParameterInfo);
   methods[4].selector = @selector(getSingleValueConverterWithJavaLangReflectType:);
   methods[5].selector = @selector(createListConverterWithNSString:withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:);
@@ -314,51 +314,51 @@ withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry:(id<CucumberDe
     { "locale_", "LJavaUtilLocale;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "timeConverters_", "LJavaLangThreadLocal;", .constantValue.asLong = 0, 0x12, -1, -1, 9, -1 },
   };
-  static const void *ptrTable[] = { "LJavaLangClassLoader;LCucumberDepsComThoughtworksXstreamConvertersConverterLookup;LCucumberDepsComThoughtworksXstreamConvertersConverterRegistry;LJavaUtilLocale;", "register", "LCucumberDepsComThoughtworksXstreamConvertersConverterRegistry;LCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter;", "setParameterInfo", "LCucumberRuntimeParameterInfo;", "getSingleValueConverter", "LJavaLangReflectType;", "createListConverter", "LNSString;LCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter;", "Ljava/lang/ThreadLocal<Ljava/util/List<Lcucumber/runtime/xstream/TimeConverter;>;>;", "LCucumberRuntimeXstreamLocalizedXStreams;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream = { "LocalizedXStream", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x9, 7, 2, 10, -1, -1, -1, -1 };
-  return &_CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream;
+  static const void *ptrTable[] = { "LJavaLangClassLoader;LCucumberDepsComThoughtworksXstreamConvertersConverterLookup;LCucumberDepsComThoughtworksXstreamConvertersConverterRegistry;LJavaUtilLocale;", "register", "LCucumberDepsComThoughtworksXstreamConvertersConverterRegistry;LCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter;", "setParameterInfo", "LCCBRParameterInfo;", "getSingleValueConverter", "LJavaLangReflectType;", "createListConverter", "LNSString;LCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter;", "Ljava/lang/ThreadLocal<Ljava/util/List<Lcucumber/runtime/xstream/TimeConverter;>;>;", "LCCBRLocalizedXStreams;" };
+  static const J2ObjcClassInfo _CCBRLocalizedXStreams_LocalizedXStream = { "LocalizedXStream", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x9, 7, 2, 10, -1, -1, -1, -1 };
+  return &_CCBRLocalizedXStreams_LocalizedXStream;
 }
 
 @end
 
-void CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_initWithJavaLangClassLoader_withCucumberDepsComThoughtworksXstreamConvertersConverterLookup_withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withJavaUtilLocale_(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *self, JavaLangClassLoader *classLoader, id<CucumberDepsComThoughtworksXstreamConvertersConverterLookup> converterLookup, id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry> converterRegistry, JavaUtilLocale *locale) {
+void CCBRLocalizedXStreams_LocalizedXStream_initWithJavaLangClassLoader_withCucumberDepsComThoughtworksXstreamConvertersConverterLookup_withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withJavaUtilLocale_(CCBRLocalizedXStreams_LocalizedXStream *self, JavaLangClassLoader *classLoader, id<CucumberDepsComThoughtworksXstreamConvertersConverterLookup> converterLookup, id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry> converterRegistry, JavaUtilLocale *locale) {
   CucumberDepsComThoughtworksXstreamXStream_initWithCucumberDepsComThoughtworksXstreamConvertersReflectionReflectionProvider_withCucumberDepsComThoughtworksXstreamIoHierarchicalStreamDriver_withJavaLangClassLoader_withCucumberDepsComThoughtworksXstreamMapperMapper_withCucumberDepsComThoughtworksXstreamConvertersConverterLookup_withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_(self, nil, nil, classLoader, nil, converterLookup, converterRegistry);
-  JreStrongAssignAndConsume(&self->timeConverters_, new_CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1_init());
+  JreStrongAssignAndConsume(&self->timeConverters_, new_CCBRLocalizedXStreams_LocalizedXStream_1_init());
   JreStrongAssign(&self->locale_, locale);
   [self autodetectAnnotationsWithBoolean:true];
-  CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converterRegistry, create_CucumberRuntimeXstreamBigDecimalConverter_initWithJavaUtilLocale_(locale));
-  CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converterRegistry, create_CucumberRuntimeXstreamBigIntegerConverter_initWithJavaUtilLocale_(locale));
-  CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converterRegistry, create_CucumberRuntimeXstreamByteConverter_initWithJavaUtilLocale_(locale));
-  CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converterRegistry, create_CucumberRuntimeXstreamDateConverter_initWithJavaUtilLocale_(locale));
-  CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converterRegistry, create_CucumberRuntimeXstreamCalendarConverter_initWithJavaUtilLocale_(locale));
-  CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converterRegistry, create_CucumberRuntimeXstreamDoubleConverter_initWithJavaUtilLocale_(locale));
-  CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converterRegistry, create_CucumberRuntimeXstreamFloatConverter_initWithJavaUtilLocale_(locale));
-  CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converterRegistry, create_CucumberRuntimeXstreamIntegerConverter_initWithJavaUtilLocale_(locale));
-  CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converterRegistry, create_CucumberRuntimeXstreamLongConverter_initWithJavaUtilLocale_(locale));
-  CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converterRegistry, create_CucumberRuntimeXstreamPatternConverter_init());
-  [((id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry>) nil_chk(converterRegistry)) registerConverterWithCucumberDepsComThoughtworksXstreamConvertersConverter:create_CucumberRuntimeXstreamDynamicEnumConverter_initWithJavaUtilLocale_(locale) withInt:CucumberDepsComThoughtworksXstreamXStream_PRIORITY_VERY_HIGH];
-  [converterRegistry registerConverterWithCucumberDepsComThoughtworksXstreamConvertersConverter:create_CucumberRuntimeXstreamDynamicClassWithStringAssignableConverter_init() withInt:CucumberDepsComThoughtworksXstreamXStream_PRIORITY_LOW];
+  CCBRLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converterRegistry, create_CCBRBigDecimalConverter_initWithJavaUtilLocale_(locale));
+  CCBRLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converterRegistry, create_CCBRBigIntegerConverter_initWithJavaUtilLocale_(locale));
+  CCBRLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converterRegistry, create_CCBRByteConverter_initWithJavaUtilLocale_(locale));
+  CCBRLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converterRegistry, create_CCBRDateConverter_initWithJavaUtilLocale_(locale));
+  CCBRLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converterRegistry, create_CCBRCalendarConverter_initWithJavaUtilLocale_(locale));
+  CCBRLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converterRegistry, create_CCBRDoubleConverter_initWithJavaUtilLocale_(locale));
+  CCBRLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converterRegistry, create_CCBRFloatConverter_initWithJavaUtilLocale_(locale));
+  CCBRLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converterRegistry, create_CCBRIntegerConverter_initWithJavaUtilLocale_(locale));
+  CCBRLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converterRegistry, create_CCBRLongConverter_initWithJavaUtilLocale_(locale));
+  CCBRLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, converterRegistry, create_CCBRPatternConverter_init());
+  [((id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry>) nil_chk(converterRegistry)) registerConverterWithCucumberDepsComThoughtworksXstreamConvertersConverter:create_CCBRDynamicEnumConverter_initWithJavaUtilLocale_(locale) withInt:CucumberDepsComThoughtworksXstreamXStream_PRIORITY_VERY_HIGH];
+  [converterRegistry registerConverterWithCucumberDepsComThoughtworksXstreamConvertersConverter:create_CCBRDynamicClassWithStringAssignableConverter_init() withInt:CucumberDepsComThoughtworksXstreamXStream_PRIORITY_LOW];
 }
 
-CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *new_CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_initWithJavaLangClassLoader_withCucumberDepsComThoughtworksXstreamConvertersConverterLookup_withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withJavaUtilLocale_(JavaLangClassLoader *classLoader, id<CucumberDepsComThoughtworksXstreamConvertersConverterLookup> converterLookup, id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry> converterRegistry, JavaUtilLocale *locale) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream, initWithJavaLangClassLoader_withCucumberDepsComThoughtworksXstreamConvertersConverterLookup_withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withJavaUtilLocale_, classLoader, converterLookup, converterRegistry, locale)
+CCBRLocalizedXStreams_LocalizedXStream *new_CCBRLocalizedXStreams_LocalizedXStream_initWithJavaLangClassLoader_withCucumberDepsComThoughtworksXstreamConvertersConverterLookup_withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withJavaUtilLocale_(JavaLangClassLoader *classLoader, id<CucumberDepsComThoughtworksXstreamConvertersConverterLookup> converterLookup, id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry> converterRegistry, JavaUtilLocale *locale) {
+  J2OBJC_NEW_IMPL(CCBRLocalizedXStreams_LocalizedXStream, initWithJavaLangClassLoader_withCucumberDepsComThoughtworksXstreamConvertersConverterLookup_withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withJavaUtilLocale_, classLoader, converterLookup, converterRegistry, locale)
 }
 
-CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *create_CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_initWithJavaLangClassLoader_withCucumberDepsComThoughtworksXstreamConvertersConverterLookup_withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withJavaUtilLocale_(JavaLangClassLoader *classLoader, id<CucumberDepsComThoughtworksXstreamConvertersConverterLookup> converterLookup, id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry> converterRegistry, JavaUtilLocale *locale) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream, initWithJavaLangClassLoader_withCucumberDepsComThoughtworksXstreamConvertersConverterLookup_withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withJavaUtilLocale_, classLoader, converterLookup, converterRegistry, locale)
+CCBRLocalizedXStreams_LocalizedXStream *create_CCBRLocalizedXStreams_LocalizedXStream_initWithJavaLangClassLoader_withCucumberDepsComThoughtworksXstreamConvertersConverterLookup_withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withJavaUtilLocale_(JavaLangClassLoader *classLoader, id<CucumberDepsComThoughtworksXstreamConvertersConverterLookup> converterLookup, id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry> converterRegistry, JavaUtilLocale *locale) {
+  J2OBJC_CREATE_IMPL(CCBRLocalizedXStreams_LocalizedXStream, initWithJavaLangClassLoader_withCucumberDepsComThoughtworksXstreamConvertersConverterLookup_withCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withJavaUtilLocale_, classLoader, converterLookup, converterRegistry, locale)
 }
 
-void CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *self, id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry> lookup, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> converter) {
-  [((id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry>) nil_chk(lookup)) registerConverterWithCucumberDepsComThoughtworksXstreamConvertersConverter:create_CucumberRuntimeXstreamSingleValueConverterWrapperExt_initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(converter) withInt:CucumberDepsComThoughtworksXstreamXStream_PRIORITY_VERY_HIGH];
+void CCBRLocalizedXStreams_LocalizedXStream_register__WithCucumberDepsComThoughtworksXstreamConvertersConverterRegistry_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(CCBRLocalizedXStreams_LocalizedXStream *self, id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry> lookup, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> converter) {
+  [((id<CucumberDepsComThoughtworksXstreamConvertersConverterRegistry>) nil_chk(lookup)) registerConverterWithCucumberDepsComThoughtworksXstreamConvertersConverter:create_CCBRSingleValueConverterWrapperExt_initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(converter) withInt:CucumberDepsComThoughtworksXstreamXStream_PRIORITY_VERY_HIGH];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRLocalizedXStreams_LocalizedXStream)
 
-@implementation CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1
+@implementation CCBRLocalizedXStreams_LocalizedXStream_1
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1_init(self);
+  CCBRLocalizedXStreams_LocalizedXStream_1_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -378,21 +378,21 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(initialValue);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "()Ljava/util/List<Lcucumber/runtime/xstream/TimeConverter;>;", "LCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream;", "Ljava/lang/ThreadLocal<Ljava/util/List<Lcucumber/runtime/xstream/TimeConverter;>;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1 = { "", "cucumber.runtime.xstream", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 1, -1, -1, 2, -1 };
-  return &_CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1;
+  static const void *ptrTable[] = { "()Ljava/util/List<Lcucumber/runtime/xstream/TimeConverter;>;", "LCCBRLocalizedXStreams_LocalizedXStream;", "Ljava/lang/ThreadLocal<Ljava/util/List<Lcucumber/runtime/xstream/TimeConverter;>;>;" };
+  static const J2ObjcClassInfo _CCBRLocalizedXStreams_LocalizedXStream_1 = { "", "cucumber.runtime.xstream", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 1, -1, -1, 2, -1 };
+  return &_CCBRLocalizedXStreams_LocalizedXStream_1;
 }
 
 @end
 
-void CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1_init(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1 *self) {
+void CCBRLocalizedXStreams_LocalizedXStream_1_init(CCBRLocalizedXStreams_LocalizedXStream_1 *self) {
   JavaLangThreadLocal_init(self);
 }
 
-CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1 *new_CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1, init)
+CCBRLocalizedXStreams_LocalizedXStream_1 *new_CCBRLocalizedXStreams_LocalizedXStream_1_init() {
+  J2OBJC_NEW_IMPL(CCBRLocalizedXStreams_LocalizedXStream_1, init)
 }
 
-CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1 *create_CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_1, init)
+CCBRLocalizedXStreams_LocalizedXStream_1 *create_CCBRLocalizedXStreams_LocalizedXStream_1_init() {
+  J2OBJC_CREATE_IMPL(CCBRLocalizedXStreams_LocalizedXStream_1, init)
 }

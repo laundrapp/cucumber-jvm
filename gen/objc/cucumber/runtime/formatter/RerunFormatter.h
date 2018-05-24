@@ -18,31 +18,31 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeFormatterRerunFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterRerunFormatter || defined(INCLUDE_CucumberRuntimeFormatterRerunFormatter))
-#define CucumberRuntimeFormatterRerunFormatter_
+#if !defined (CCBRRerunFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterRerunFormatter || defined(INCLUDE_CCBRRerunFormatter))
+#define CCBRRerunFormatter_
 
 #define RESTRICT_CucumberApiFormatterFormatter 1
-#define INCLUDE_CucumberApiFormatterFormatter 1
+#define INCLUDE_CCBFormatter 1
 #include "cucumber/api/formatter/Formatter.h"
 
 #define RESTRICT_CucumberApiFormatterStrictAware 1
-#define INCLUDE_CucumberApiFormatterStrictAware 1
+#define INCLUDE_CCBStrictAware 1
 #include "cucumber/api/formatter/StrictAware.h"
 
-@protocol CucumberApiEventEventPublisher;
+@protocol CCBEventPublisher;
 @protocol JavaLangAppendable;
 
 /*!
  @brief Formatter for reporting all failed test cases and print their locations
   Failed means: results that make the exit code non-zero.
  */
-@interface CucumberRuntimeFormatterRerunFormatter : NSObject < CucumberApiFormatterFormatter, CucumberApiFormatterStrictAware >
+@interface CCBRRerunFormatter : NSObject < CCBFormatter, CCBStrictAware >
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg;
 
-- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
+- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher;
 
 - (void)setStrictWithBoolean:(jboolean)strict;
 
@@ -52,15 +52,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterRerunFormatter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRRerunFormatter)
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterRerunFormatter_initWithJavaLangAppendable_(CucumberRuntimeFormatterRerunFormatter *self, id<JavaLangAppendable> outArg);
+FOUNDATION_EXPORT void CCBRRerunFormatter_initWithJavaLangAppendable_(CCBRRerunFormatter *self, id<JavaLangAppendable> outArg);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterRerunFormatter *new_CucumberRuntimeFormatterRerunFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRRerunFormatter *new_CCBRRerunFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterRerunFormatter *create_CucumberRuntimeFormatterRerunFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg);
+FOUNDATION_EXPORT CCBRRerunFormatter *create_CCBRRerunFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterRerunFormatter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRRerunFormatter)
+
+@compatibility_alias CucumberRuntimeFormatterRerunFormatter CCBRRerunFormatter;
 
 #endif
 

@@ -6,17 +6,17 @@
 #include "J2ObjC_source.h"
 #include "cucumber/runtime/DefinitionMatch.h"
 
-@interface CucumberRuntimeDefinitionMatch : NSObject
+@interface CCBRDefinitionMatch : NSObject
 
 @end
 
-@implementation CucumberRuntimeDefinitionMatch
+@implementation CCBRDefinitionMatch
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, "V", 0x401, 0, 1, 2, -1, -1, -1 },
     { NULL, "V", 0x401, 3, 1, 2, -1, -1, -1 },
-    { NULL, "LCucumberRuntimeMatch;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCCBRMatch;", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "LJavaUtilList;", 0x401, -1, -1, -1, 4, -1, -1 },
@@ -24,18 +24,18 @@
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(runStepWithNSString:withCucumberApiScenario:);
-  methods[1].selector = @selector(dryRunStepWithNSString:withCucumberApiScenario:);
+  methods[0].selector = @selector(runStepWithNSString:withCCBScenario:);
+  methods[1].selector = @selector(dryRunStepWithNSString:withCCBScenario:);
   methods[2].selector = @selector(getMatch);
   methods[3].selector = @selector(getPattern);
   methods[4].selector = @selector(getCodeLocation);
   methods[5].selector = @selector(getArguments);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "runStep", "LNSString;LCucumberApiScenario;", "LJavaLangThrowable;", "dryRunStep", "()Ljava/util/List<Lcucumber/runtime/Argument;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeDefinitionMatch = { "DefinitionMatch", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 6, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeDefinitionMatch;
+  static const void *ptrTable[] = { "runStep", "LNSString;LCCBScenario;", "LJavaLangThrowable;", "dryRunStep", "()Ljava/util/List<Lcucumber/runtime/Argument;>;" };
+  static const J2ObjcClassInfo _CCBRDefinitionMatch = { "DefinitionMatch", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 6, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRDefinitionMatch;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRuntimeDefinitionMatch)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBRDefinitionMatch)

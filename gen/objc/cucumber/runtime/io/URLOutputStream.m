@@ -25,7 +25,7 @@
 #include "java/util/Map.h"
 #include "java/util/Set.h"
 
-@interface CucumberRuntimeIoURLOutputStream () {
+@interface CCBRURLOutputStream () {
  @public
   JavaNetURL *url_;
   NSString *method_;
@@ -38,16 +38,16 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoURLOutputStream, url_, JavaNetURL *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoURLOutputStream, method_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoURLOutputStream, out_, JavaIoOutputStream *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoURLOutputStream, urlConnection_, JavaNetHttpURLConnection *)
+J2OBJC_FIELD_SETTER(CCBRURLOutputStream, url_, JavaNetURL *)
+J2OBJC_FIELD_SETTER(CCBRURLOutputStream, method_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRURLOutputStream, out_, JavaIoOutputStream *)
+J2OBJC_FIELD_SETTER(CCBRURLOutputStream, urlConnection_, JavaNetHttpURLConnection *)
 
-__attribute__((unused)) static void CucumberRuntimeIoURLOutputStream_ensureParentDirExistsWithJavaIoFile_(CucumberRuntimeIoURLOutputStream *self, JavaIoFile *file);
+__attribute__((unused)) static void CCBRURLOutputStream_ensureParentDirExistsWithJavaIoFile_(CCBRURLOutputStream *self, JavaIoFile *file);
 
-@interface CucumberRuntimeIoURLOutputStream_ResponseException () {
+@interface CCBRURLOutputStream_ResponseException () {
  @public
-  CucumberRuntimeIoURLOutputStream *this$0_;
+  CCBRURLOutputStream *this$0_;
   ComGoogleGsonGson *gson_;
   jint responseCode_;
   NSString *contentType_;
@@ -57,15 +57,15 @@ __attribute__((unused)) static void CucumberRuntimeIoURLOutputStream_ensureParen
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoURLOutputStream_ResponseException, gson_, ComGoogleGsonGson *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoURLOutputStream_ResponseException, contentType_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRURLOutputStream_ResponseException, gson_, ComGoogleGsonGson *)
+J2OBJC_FIELD_SETTER(CCBRURLOutputStream_ResponseException, contentType_, NSString *)
 
-__attribute__((unused)) static NSString *CucumberRuntimeIoURLOutputStream_ResponseException_getMessage0WithNSString_(CucumberRuntimeIoURLOutputStream_ResponseException *self, NSString *message);
+__attribute__((unused)) static NSString *CCBRURLOutputStream_ResponseException_getMessage0WithNSString_(CCBRURLOutputStream_ResponseException *self, NSString *message);
 
-@implementation CucumberRuntimeIoURLOutputStream
+@implementation CCBRURLOutputStream
 
 - (instancetype __nonnull)initWithJavaNetURL:(JavaNetURL *)url {
-  CucumberRuntimeIoURLOutputStream_initWithJavaNetURL_(self, url);
+  CCBRURLOutputStream_initWithJavaNetURL_(self, url);
   return self;
 }
 
@@ -73,12 +73,12 @@ __attribute__((unused)) static NSString *CucumberRuntimeIoURLOutputStream_Respon
                                 withNSString:(NSString *)method
                              withJavaUtilMap:(id<JavaUtilMap>)headers
                                      withInt:(jint)expectedResponseCode {
-  CucumberRuntimeIoURLOutputStream_initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_(self, url, method, headers, expectedResponseCode);
+  CCBRURLOutputStream_initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_(self, url, method, headers, expectedResponseCode);
   return self;
 }
 
 - (void)ensureParentDirExistsWithJavaIoFile:(JavaIoFile *)file {
-  CucumberRuntimeIoURLOutputStream_ensureParentDirExistsWithJavaIoFile_(self, file);
+  CCBRURLOutputStream_ensureParentDirExistsWithJavaIoFile_(self, file);
 }
 
 - (void)writeWithByteArray:(IOSByteArray *)buffer
@@ -116,7 +116,7 @@ __attribute__((unused)) static NSString *CucumberRuntimeIoURLOutputStream_Respon
             if (contentType == nil) {
               contentType = @"text/plain";
             }
-            @throw create_CucumberRuntimeIoURLOutputStream_ResponseException_initWithCucumberRuntimeIoURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_(self, responseBody, expected, responseCode, contentType);
+            @throw create_CCBRURLOutputStream_ResponseException_initWithCCBRURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_(self, responseBody, expected, responseCode, contentType);
           }
           else {
             @throw expected;
@@ -168,33 +168,33 @@ __attribute__((unused)) static NSString *CucumberRuntimeIoURLOutputStream_Respon
     { "out_", "LJavaIoOutputStream;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "urlConnection_", "LJavaNetHttpURLConnection;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LJavaNetURL;", "LJavaIoIOException;", "LJavaNetURL;LNSString;LJavaUtilMap;I", "(Ljava/net/URL;Ljava/lang/String;Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;I)V", "ensureParentDirExists", "LJavaIoFile;", "write", "[BII", "[B", "I", "LCucumberRuntimeIoURLOutputStream_ResponseException;" };
-  static const J2ObjcClassInfo _CucumberRuntimeIoURLOutputStream = { "URLOutputStream", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 8, 5, -1, 10, -1, -1, -1 };
-  return &_CucumberRuntimeIoURLOutputStream;
+  static const void *ptrTable[] = { "LJavaNetURL;", "LJavaIoIOException;", "LJavaNetURL;LNSString;LJavaUtilMap;I", "(Ljava/net/URL;Ljava/lang/String;Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;I)V", "ensureParentDirExists", "LJavaIoFile;", "write", "[BII", "[B", "I", "LCCBRURLOutputStream_ResponseException;" };
+  static const J2ObjcClassInfo _CCBRURLOutputStream = { "URLOutputStream", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 8, 5, -1, 10, -1, -1, -1 };
+  return &_CCBRURLOutputStream;
 }
 
 @end
 
-void CucumberRuntimeIoURLOutputStream_initWithJavaNetURL_(CucumberRuntimeIoURLOutputStream *self, JavaNetURL *url) {
-  CucumberRuntimeIoURLOutputStream_initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_(self, url, @"PUT", JavaUtilCollections_emptyMap(), 200);
+void CCBRURLOutputStream_initWithJavaNetURL_(CCBRURLOutputStream *self, JavaNetURL *url) {
+  CCBRURLOutputStream_initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_(self, url, @"PUT", JavaUtilCollections_emptyMap(), 200);
 }
 
-CucumberRuntimeIoURLOutputStream *new_CucumberRuntimeIoURLOutputStream_initWithJavaNetURL_(JavaNetURL *url) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeIoURLOutputStream, initWithJavaNetURL_, url)
+CCBRURLOutputStream *new_CCBRURLOutputStream_initWithJavaNetURL_(JavaNetURL *url) {
+  J2OBJC_NEW_IMPL(CCBRURLOutputStream, initWithJavaNetURL_, url)
 }
 
-CucumberRuntimeIoURLOutputStream *create_CucumberRuntimeIoURLOutputStream_initWithJavaNetURL_(JavaNetURL *url) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeIoURLOutputStream, initWithJavaNetURL_, url)
+CCBRURLOutputStream *create_CCBRURLOutputStream_initWithJavaNetURL_(JavaNetURL *url) {
+  J2OBJC_CREATE_IMPL(CCBRURLOutputStream, initWithJavaNetURL_, url)
 }
 
-void CucumberRuntimeIoURLOutputStream_initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_(CucumberRuntimeIoURLOutputStream *self, JavaNetURL *url, NSString *method, id<JavaUtilMap> headers, jint expectedResponseCode) {
+void CCBRURLOutputStream_initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_(CCBRURLOutputStream *self, JavaNetURL *url, NSString *method, id<JavaUtilMap> headers, jint expectedResponseCode) {
   JavaIoOutputStream_init(self);
   JreStrongAssign(&self->url_, url);
   JreStrongAssign(&self->method_, method);
   self->expectedResponseCode_ = expectedResponseCode;
   if ([((NSString *) nil_chk([((JavaNetURL *) nil_chk(url)) getProtocol])) isEqual:@"file"]) {
     JavaIoFile *file = create_JavaIoFile_initWithNSString_([url getFile]);
-    CucumberRuntimeIoURLOutputStream_ensureParentDirExistsWithJavaIoFile_(self, file);
+    CCBRURLOutputStream_ensureParentDirExistsWithJavaIoFile_(self, file);
     JreStrongAssignAndConsume(&self->out_, new_JavaIoFileOutputStream_initWithJavaIoFile_(file));
     JreStrongAssign(&self->urlConnection_, nil);
   }
@@ -212,15 +212,15 @@ void CucumberRuntimeIoURLOutputStream_initWithJavaNetURL_withNSString_withJavaUt
   }
 }
 
-CucumberRuntimeIoURLOutputStream *new_CucumberRuntimeIoURLOutputStream_initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_(JavaNetURL *url, NSString *method, id<JavaUtilMap> headers, jint expectedResponseCode) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeIoURLOutputStream, initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_, url, method, headers, expectedResponseCode)
+CCBRURLOutputStream *new_CCBRURLOutputStream_initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_(JavaNetURL *url, NSString *method, id<JavaUtilMap> headers, jint expectedResponseCode) {
+  J2OBJC_NEW_IMPL(CCBRURLOutputStream, initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_, url, method, headers, expectedResponseCode)
 }
 
-CucumberRuntimeIoURLOutputStream *create_CucumberRuntimeIoURLOutputStream_initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_(JavaNetURL *url, NSString *method, id<JavaUtilMap> headers, jint expectedResponseCode) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeIoURLOutputStream, initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_, url, method, headers, expectedResponseCode)
+CCBRURLOutputStream *create_CCBRURLOutputStream_initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_(JavaNetURL *url, NSString *method, id<JavaUtilMap> headers, jint expectedResponseCode) {
+  J2OBJC_CREATE_IMPL(CCBRURLOutputStream, initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_, url, method, headers, expectedResponseCode)
 }
 
-void CucumberRuntimeIoURLOutputStream_ensureParentDirExistsWithJavaIoFile_(CucumberRuntimeIoURLOutputStream *self, JavaIoFile *file) {
+void CCBRURLOutputStream_ensureParentDirExistsWithJavaIoFile_(CCBRURLOutputStream *self, JavaIoFile *file) {
   if ([((JavaIoFile *) nil_chk(file)) getParentFile] != nil && ![((JavaIoFile *) nil_chk([file getParentFile])) isDirectory]) {
     jboolean ok = [((JavaIoFile *) nil_chk([file getParentFile])) mkdirs] || [((JavaIoFile *) nil_chk([file getParentFile])) isDirectory];
     if (!ok) {
@@ -229,16 +229,16 @@ void CucumberRuntimeIoURLOutputStream_ensureParentDirExistsWithJavaIoFile_(Cucum
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoURLOutputStream)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRURLOutputStream)
 
-@implementation CucumberRuntimeIoURLOutputStream_ResponseException
+@implementation CCBRURLOutputStream_ResponseException
 
-- (instancetype __nonnull)initWithCucumberRuntimeIoURLOutputStream:(CucumberRuntimeIoURLOutputStream *)outer$
-                                                      withNSString:(NSString *)responseBody
-                                             withJavaIoIOException:(JavaIoIOException *)cause
-                                                           withInt:(jint)responseCode
-                                                      withNSString:(NSString *)contentType {
-  CucumberRuntimeIoURLOutputStream_ResponseException_initWithCucumberRuntimeIoURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_(self, outer$, responseBody, cause, responseCode, contentType);
+- (instancetype __nonnull)initWithCCBRURLOutputStream:(CCBRURLOutputStream *)outer$
+                                         withNSString:(NSString *)responseBody
+                                withJavaIoIOException:(JavaIoIOException *)cause
+                                              withInt:(jint)responseCode
+                                         withNSString:(NSString *)contentType {
+  CCBRURLOutputStream_ResponseException_initWithCCBRURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_(self, outer$, responseBody, cause, responseCode, contentType);
   return self;
 }
 
@@ -246,19 +246,19 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoURLOutputStream)
   if ([((NSString *) nil_chk(contentType_)) isEqual:@"application/json"]) {
     id<JavaUtilMap> map = [((ComGoogleGsonGson *) nil_chk(gson_)) fromJsonWithNSString:[super getMessage] withIOSClass:JavaUtilMap_class_()];
     if ([((id<JavaUtilMap>) nil_chk(map)) containsKeyWithId:@"error"]) {
-      return CucumberRuntimeIoURLOutputStream_ResponseException_getMessage0WithNSString_(self, [nil_chk([map getWithId:@"error"]) description]);
+      return CCBRURLOutputStream_ResponseException_getMessage0WithNSString_(self, [nil_chk([map getWithId:@"error"]) description]);
     }
     else {
-      return CucumberRuntimeIoURLOutputStream_ResponseException_getMessage0WithNSString_(self, [super getMessage]);
+      return CCBRURLOutputStream_ResponseException_getMessage0WithNSString_(self, [super getMessage]);
     }
   }
   else {
-    return CucumberRuntimeIoURLOutputStream_ResponseException_getMessage0WithNSString_(self, [super getMessage]);
+    return CCBRURLOutputStream_ResponseException_getMessage0WithNSString_(self, [super getMessage]);
   }
 }
 
 - (NSString *)getMessage0WithNSString:(NSString *)message {
-  return CucumberRuntimeIoURLOutputStream_ResponseException_getMessage0WithNSString_(self, message);
+  return CCBRURLOutputStream_ResponseException_getMessage0WithNSString_(self, message);
 }
 
 - (void)dealloc {
@@ -277,24 +277,24 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoURLOutputStream)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeIoURLOutputStream:withNSString:withJavaIoIOException:withInt:withNSString:);
+  methods[0].selector = @selector(initWithCCBRURLOutputStream:withNSString:withJavaIoIOException:withInt:withNSString:);
   methods[1].selector = @selector(getMessage);
   methods[2].selector = @selector(getMessage0WithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LCucumberRuntimeIoURLOutputStream;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "this$0_", "LCCBRURLOutputStream;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
     { "gson_", "LComGoogleGsonGson;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "responseCode_", "I", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "contentType_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LNSString;LJavaIoIOException;ILNSString;", "getMessage0", "LNSString;", "LCucumberRuntimeIoURLOutputStream;" };
-  static const J2ObjcClassInfo _CucumberRuntimeIoURLOutputStream_ResponseException = { "ResponseException", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 3, 4, 3, -1, -1, -1, -1 };
-  return &_CucumberRuntimeIoURLOutputStream_ResponseException;
+  static const void *ptrTable[] = { "LNSString;LJavaIoIOException;ILNSString;", "getMessage0", "LNSString;", "LCCBRURLOutputStream;" };
+  static const J2ObjcClassInfo _CCBRURLOutputStream_ResponseException = { "ResponseException", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 3, 4, 3, -1, -1, -1, -1 };
+  return &_CCBRURLOutputStream_ResponseException;
 }
 
 @end
 
-void CucumberRuntimeIoURLOutputStream_ResponseException_initWithCucumberRuntimeIoURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_(CucumberRuntimeIoURLOutputStream_ResponseException *self, CucumberRuntimeIoURLOutputStream *outer$, NSString *responseBody, JavaIoIOException *cause, jint responseCode, NSString *contentType) {
+void CCBRURLOutputStream_ResponseException_initWithCCBRURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_(CCBRURLOutputStream_ResponseException *self, CCBRURLOutputStream *outer$, NSString *responseBody, JavaIoIOException *cause, jint responseCode, NSString *contentType) {
   JreStrongAssign(&self->this$0_, outer$);
   JavaIoIOException_initWithNSString_withJavaLangThrowable_(self, responseBody, cause);
   JreStrongAssignAndConsume(&self->gson_, new_ComGoogleGsonGson_init());
@@ -302,16 +302,16 @@ void CucumberRuntimeIoURLOutputStream_ResponseException_initWithCucumberRuntimeI
   JreStrongAssign(&self->contentType_, contentType);
 }
 
-CucumberRuntimeIoURLOutputStream_ResponseException *new_CucumberRuntimeIoURLOutputStream_ResponseException_initWithCucumberRuntimeIoURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_(CucumberRuntimeIoURLOutputStream *outer$, NSString *responseBody, JavaIoIOException *cause, jint responseCode, NSString *contentType) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeIoURLOutputStream_ResponseException, initWithCucumberRuntimeIoURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_, outer$, responseBody, cause, responseCode, contentType)
+CCBRURLOutputStream_ResponseException *new_CCBRURLOutputStream_ResponseException_initWithCCBRURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_(CCBRURLOutputStream *outer$, NSString *responseBody, JavaIoIOException *cause, jint responseCode, NSString *contentType) {
+  J2OBJC_NEW_IMPL(CCBRURLOutputStream_ResponseException, initWithCCBRURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_, outer$, responseBody, cause, responseCode, contentType)
 }
 
-CucumberRuntimeIoURLOutputStream_ResponseException *create_CucumberRuntimeIoURLOutputStream_ResponseException_initWithCucumberRuntimeIoURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_(CucumberRuntimeIoURLOutputStream *outer$, NSString *responseBody, JavaIoIOException *cause, jint responseCode, NSString *contentType) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeIoURLOutputStream_ResponseException, initWithCucumberRuntimeIoURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_, outer$, responseBody, cause, responseCode, contentType)
+CCBRURLOutputStream_ResponseException *create_CCBRURLOutputStream_ResponseException_initWithCCBRURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_(CCBRURLOutputStream *outer$, NSString *responseBody, JavaIoIOException *cause, jint responseCode, NSString *contentType) {
+  J2OBJC_CREATE_IMPL(CCBRURLOutputStream_ResponseException, initWithCCBRURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_, outer$, responseBody, cause, responseCode, contentType)
 }
 
-NSString *CucumberRuntimeIoURLOutputStream_ResponseException_getMessage0WithNSString_(CucumberRuntimeIoURLOutputStream_ResponseException *self, NSString *message) {
+NSString *CCBRURLOutputStream_ResponseException_getMessage0WithNSString_(CCBRURLOutputStream_ResponseException *self, NSString *message) {
   return NSString_java_formatWithNSString_withNSObjectArray_(@"%s %s\nHTTP %d\n%s", [IOSObjectArray arrayWithObjects:(id[]){ self->this$0_->method_, self->this$0_->url_, JavaLangInteger_valueOfWithInt_(self->responseCode_), message } count:4 type:NSObject_class_()]);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoURLOutputStream_ResponseException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRURLOutputStream_ResponseException)

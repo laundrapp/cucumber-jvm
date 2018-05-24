@@ -18,17 +18,17 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeUndefinedStepsTracker_) && (INCLUDE_ALL_CucumberRuntimeUndefinedStepsTracker || defined(INCLUDE_CucumberRuntimeUndefinedStepsTracker))
-#define CucumberRuntimeUndefinedStepsTracker_
+#if !defined (CCBRUndefinedStepsTracker_) && (INCLUDE_ALL_CucumberRuntimeUndefinedStepsTracker || defined(INCLUDE_CCBRUndefinedStepsTracker))
+#define CCBRUndefinedStepsTracker_
 
 #define RESTRICT_CucumberApiEventEventListener 1
-#define INCLUDE_CucumberApiEventEventListener 1
+#define INCLUDE_CCBEventListener 1
 #include "cucumber/api/event/EventListener.h"
 
-@protocol CucumberApiEventEventPublisher;
+@protocol CCBEventPublisher;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeUndefinedStepsTracker : NSObject < CucumberApiEventEventListener >
+@interface CCBRUndefinedStepsTracker : NSObject < CCBEventListener >
 
 #pragma mark Public
 
@@ -38,7 +38,7 @@
 
 - (jboolean)hasUndefinedSteps;
 
-- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
+- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher;
 
 #pragma mark Package-Private
 
@@ -48,15 +48,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeUndefinedStepsTracker)
+J2OBJC_EMPTY_STATIC_INIT(CCBRUndefinedStepsTracker)
 
-FOUNDATION_EXPORT void CucumberRuntimeUndefinedStepsTracker_init(CucumberRuntimeUndefinedStepsTracker *self);
+FOUNDATION_EXPORT void CCBRUndefinedStepsTracker_init(CCBRUndefinedStepsTracker *self);
 
-FOUNDATION_EXPORT CucumberRuntimeUndefinedStepsTracker *new_CucumberRuntimeUndefinedStepsTracker_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRUndefinedStepsTracker *new_CCBRUndefinedStepsTracker_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeUndefinedStepsTracker *create_CucumberRuntimeUndefinedStepsTracker_init(void);
+FOUNDATION_EXPORT CCBRUndefinedStepsTracker *create_CCBRUndefinedStepsTracker_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeUndefinedStepsTracker)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRUndefinedStepsTracker)
+
+@compatibility_alias CucumberRuntimeUndefinedStepsTracker CCBRUndefinedStepsTracker;
 
 #endif
 

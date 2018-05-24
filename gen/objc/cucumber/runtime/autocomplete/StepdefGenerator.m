@@ -27,34 +27,34 @@
 
 #pragma clang diagnostic ignored "-Wprotocol"
 
-inline id<JavaUtilComparator> CucumberRuntimeAutocompleteStepdefGenerator_get_STEP_DEFINITION_COMPARATOR(void);
-static id<JavaUtilComparator> CucumberRuntimeAutocompleteStepdefGenerator_STEP_DEFINITION_COMPARATOR;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeAutocompleteStepdefGenerator, STEP_DEFINITION_COMPARATOR, id<JavaUtilComparator>)
+inline id<JavaUtilComparator> CCBRStepdefGenerator_get_STEP_DEFINITION_COMPARATOR(void);
+static id<JavaUtilComparator> CCBRStepdefGenerator_STEP_DEFINITION_COMPARATOR;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRStepdefGenerator, STEP_DEFINITION_COMPARATOR, id<JavaUtilComparator>)
 
-@interface CucumberRuntimeAutocompleteStepdefGenerator_1 : NSObject < JavaUtilComparator >
+@interface CCBRStepdefGenerator_1 : NSObject < JavaUtilComparator >
 
 - (instancetype __nonnull)init;
 
-- (jint)compareWithId:(id<CucumberRuntimeStepDefinition>)a
-               withId:(id<CucumberRuntimeStepDefinition>)b;
+- (jint)compareWithId:(id<CCBRStepDefinition>)a
+               withId:(id<CCBRStepDefinition>)b;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeAutocompleteStepdefGenerator_1)
+J2OBJC_EMPTY_STATIC_INIT(CCBRStepdefGenerator_1)
 
-__attribute__((unused)) static void CucumberRuntimeAutocompleteStepdefGenerator_1_init(CucumberRuntimeAutocompleteStepdefGenerator_1 *self);
+__attribute__((unused)) static void CCBRStepdefGenerator_1_init(CCBRStepdefGenerator_1 *self);
 
-__attribute__((unused)) static CucumberRuntimeAutocompleteStepdefGenerator_1 *new_CucumberRuntimeAutocompleteStepdefGenerator_1_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRStepdefGenerator_1 *new_CCBRStepdefGenerator_1_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeAutocompleteStepdefGenerator_1 *create_CucumberRuntimeAutocompleteStepdefGenerator_1_init(void);
+__attribute__((unused)) static CCBRStepdefGenerator_1 *create_CCBRStepdefGenerator_1_init(void);
 
-J2OBJC_INITIALIZED_DEFN(CucumberRuntimeAutocompleteStepdefGenerator)
+J2OBJC_INITIALIZED_DEFN(CCBRStepdefGenerator)
 
-@implementation CucumberRuntimeAutocompleteStepdefGenerator
+@implementation CCBRStepdefGenerator
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeAutocompleteStepdefGenerator_init(self);
+  CCBRStepdefGenerator_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -64,22 +64,22 @@ J2OBJC_IGNORE_DESIGNATED_END
   id<JavaUtilList> result = create_JavaUtilArrayList_init();
   id<JavaUtilList> sortedStepdefs = create_JavaUtilArrayList_init();
   [sortedStepdefs addAllWithJavaUtilCollection:stepDefinitions];
-  JavaUtilCollections_sortWithJavaUtilList_withJavaUtilComparator_(sortedStepdefs, CucumberRuntimeAutocompleteStepdefGenerator_STEP_DEFINITION_COMPARATOR);
+  JavaUtilCollections_sortWithJavaUtilList_withJavaUtilComparator_(sortedStepdefs, CCBRStepdefGenerator_STEP_DEFINITION_COMPARATOR);
   GherkinPicklesCompiler *compiler = create_GherkinPicklesCompiler_init();
-  for (id<CucumberRuntimeStepDefinition> __strong stepDefinition in sortedStepdefs) {
-    CucumberRuntimeAutocompleteMetaStepdef *metaStepdef = create_CucumberRuntimeAutocompleteMetaStepdef_init();
-    JreStrongAssign(&metaStepdef->source_, [((id<CucumberRuntimeStepDefinition>) nil_chk(stepDefinition)) getPattern]);
+  for (id<CCBRStepDefinition> __strong stepDefinition in sortedStepdefs) {
+    CCBRMetaStepdef *metaStepdef = create_CCBRMetaStepdef_init();
+    JreStrongAssign(&metaStepdef->source_, [((id<CCBRStepDefinition>) nil_chk(stepDefinition)) getPattern]);
     JreStrongAssign(&metaStepdef->flags_, @"");
-    for (CucumberRuntimeModelCucumberFeature * __strong feature in nil_chk(features)) {
-      for (GherkinPicklesPickle * __strong pickle in nil_chk([compiler compileWithGherkinAstGherkinDocument:[((CucumberRuntimeModelCucumberFeature *) nil_chk(feature)) getGherkinFeature]])) {
+    for (CCBRCucumberFeature * __strong feature in nil_chk(features)) {
+      for (GherkinPicklesPickle * __strong pickle in nil_chk([compiler compileWithGherkinAstGherkinDocument:[((CCBRCucumberFeature *) nil_chk(feature)) getGherkinFeature]])) {
         for (GherkinPicklesPickleStep * __strong step in nil_chk([((GherkinPicklesPickle *) nil_chk(pickle)) getSteps])) {
           id<JavaUtilList> arguments = [stepDefinition matchedArgumentsWithGherkinPicklesPickleStep:step];
           if (arguments != nil) {
-            CucumberRuntimeAutocompleteMetaStepdef_MetaStep *ms = create_CucumberRuntimeAutocompleteMetaStepdef_MetaStep_init();
+            CCBRMetaStepdef_MetaStep *ms = create_CCBRMetaStepdef_MetaStep_init();
             JreStrongAssign(&ms->name_, [((GherkinPicklesPickleStep *) nil_chk(step)) getText]);
-            for (CucumberRuntimeArgument * __strong argument in arguments) {
-              CucumberRuntimeAutocompleteMetaStepdef_MetaArgument *ma = create_CucumberRuntimeAutocompleteMetaStepdef_MetaArgument_init();
-              ma->offset_ = [((JavaLangInteger *) nil_chk([((CucumberRuntimeArgument *) nil_chk(argument)) getOffset])) intValue];
+            for (CCBRArgument * __strong argument in arguments) {
+              CCBRMetaStepdef_MetaArgument *ma = create_CCBRMetaStepdef_MetaArgument_init();
+              ma->offset_ = [((JavaLangInteger *) nil_chk([((CCBRArgument *) nil_chk(argument)) getOffset])) intValue];
               JreStrongAssign(&ma->val_, [argument getVal]);
               [((id<JavaUtilList>) nil_chk(ms->args_)) addWithId:ma];
             }
@@ -107,46 +107,46 @@ J2OBJC_IGNORE_DESIGNATED_END
   static const J2ObjcFieldInfo fields[] = {
     { "STEP_DEFINITION_COMPARATOR", "LJavaUtilComparator;", .constantValue.asLong = 0, 0x1a, -1, 3, 4, -1 },
   };
-  static const void *ptrTable[] = { "generate", "LJavaUtilCollection;LJavaUtilList;", "(Ljava/util/Collection<Lcucumber/runtime/StepDefinition;>;Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;)Ljava/util/List<Lcucumber/runtime/autocomplete/MetaStepdef;>;", &CucumberRuntimeAutocompleteStepdefGenerator_STEP_DEFINITION_COMPARATOR, "Ljava/util/Comparator<Lcucumber/runtime/StepDefinition;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeAutocompleteStepdefGenerator = { "StepdefGenerator", "cucumber.runtime.autocomplete", ptrTable, methods, fields, 7, 0x1, 2, 1, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeAutocompleteStepdefGenerator;
+  static const void *ptrTable[] = { "generate", "LJavaUtilCollection;LJavaUtilList;", "(Ljava/util/Collection<Lcucumber/runtime/StepDefinition;>;Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;)Ljava/util/List<Lcucumber/runtime/autocomplete/MetaStepdef;>;", &CCBRStepdefGenerator_STEP_DEFINITION_COMPARATOR, "Ljava/util/Comparator<Lcucumber/runtime/StepDefinition;>;" };
+  static const J2ObjcClassInfo _CCBRStepdefGenerator = { "StepdefGenerator", "cucumber.runtime.autocomplete", ptrTable, methods, fields, 7, 0x1, 2, 1, -1, -1, -1, -1, -1 };
+  return &_CCBRStepdefGenerator;
 }
 
 + (void)initialize {
-  if (self == [CucumberRuntimeAutocompleteStepdefGenerator class]) {
-    JreStrongAssignAndConsume(&CucumberRuntimeAutocompleteStepdefGenerator_STEP_DEFINITION_COMPARATOR, new_CucumberRuntimeAutocompleteStepdefGenerator_1_init());
-    J2OBJC_SET_INITIALIZED(CucumberRuntimeAutocompleteStepdefGenerator)
+  if (self == [CCBRStepdefGenerator class]) {
+    JreStrongAssignAndConsume(&CCBRStepdefGenerator_STEP_DEFINITION_COMPARATOR, new_CCBRStepdefGenerator_1_init());
+    J2OBJC_SET_INITIALIZED(CCBRStepdefGenerator)
   }
 }
 
 @end
 
-void CucumberRuntimeAutocompleteStepdefGenerator_init(CucumberRuntimeAutocompleteStepdefGenerator *self) {
+void CCBRStepdefGenerator_init(CCBRStepdefGenerator *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeAutocompleteStepdefGenerator *new_CucumberRuntimeAutocompleteStepdefGenerator_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeAutocompleteStepdefGenerator, init)
+CCBRStepdefGenerator *new_CCBRStepdefGenerator_init() {
+  J2OBJC_NEW_IMPL(CCBRStepdefGenerator, init)
 }
 
-CucumberRuntimeAutocompleteStepdefGenerator *create_CucumberRuntimeAutocompleteStepdefGenerator_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeAutocompleteStepdefGenerator, init)
+CCBRStepdefGenerator *create_CCBRStepdefGenerator_init() {
+  J2OBJC_CREATE_IMPL(CCBRStepdefGenerator, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeAutocompleteStepdefGenerator)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRStepdefGenerator)
 
-@implementation CucumberRuntimeAutocompleteStepdefGenerator_1
+@implementation CCBRStepdefGenerator_1
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeAutocompleteStepdefGenerator_1_init(self);
+  CCBRStepdefGenerator_1_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (jint)compareWithId:(id<CucumberRuntimeStepDefinition>)a
-               withId:(id<CucumberRuntimeStepDefinition>)b {
-  return [((NSString *) nil_chk([((id<CucumberRuntimeStepDefinition>) nil_chk(a)) getPattern])) compareToWithId:[((id<CucumberRuntimeStepDefinition>) nil_chk(b)) getPattern]];
+- (jint)compareWithId:(id<CCBRStepDefinition>)a
+               withId:(id<CCBRStepDefinition>)b {
+  return [((NSString *) nil_chk([((id<CCBRStepDefinition>) nil_chk(a)) getPattern])) compareToWithId:[((id<CCBRStepDefinition>) nil_chk(b)) getPattern]];
 }
 
 - (id<JavaUtilComparator>)reversed {
@@ -189,21 +189,21 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(compareWithId:withId:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "compare", "LCucumberRuntimeStepDefinition;LCucumberRuntimeStepDefinition;", "LCucumberRuntimeAutocompleteStepdefGenerator;", "Ljava/lang/Object;Ljava/util/Comparator<Lcucumber/runtime/StepDefinition;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeAutocompleteStepdefGenerator_1 = { "", "cucumber.runtime.autocomplete", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeAutocompleteStepdefGenerator_1;
+  static const void *ptrTable[] = { "compare", "LCCBRStepDefinition;LCCBRStepDefinition;", "LCCBRStepdefGenerator;", "Ljava/lang/Object;Ljava/util/Comparator<Lcucumber/runtime/StepDefinition;>;" };
+  static const J2ObjcClassInfo _CCBRStepdefGenerator_1 = { "", "cucumber.runtime.autocomplete", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 2, -1, -1, 3, -1 };
+  return &_CCBRStepdefGenerator_1;
 }
 
 @end
 
-void CucumberRuntimeAutocompleteStepdefGenerator_1_init(CucumberRuntimeAutocompleteStepdefGenerator_1 *self) {
+void CCBRStepdefGenerator_1_init(CCBRStepdefGenerator_1 *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeAutocompleteStepdefGenerator_1 *new_CucumberRuntimeAutocompleteStepdefGenerator_1_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeAutocompleteStepdefGenerator_1, init)
+CCBRStepdefGenerator_1 *new_CCBRStepdefGenerator_1_init() {
+  J2OBJC_NEW_IMPL(CCBRStepdefGenerator_1, init)
 }
 
-CucumberRuntimeAutocompleteStepdefGenerator_1 *create_CucumberRuntimeAutocompleteStepdefGenerator_1_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeAutocompleteStepdefGenerator_1, init)
+CCBRStepdefGenerator_1 *create_CCBRStepdefGenerator_1_init() {
+  J2OBJC_CREATE_IMPL(CCBRStepdefGenerator_1, init)
 }

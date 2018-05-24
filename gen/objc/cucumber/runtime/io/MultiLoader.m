@@ -10,10 +10,10 @@
 #include "java/lang/ClassLoader.h"
 #include "java/lang/Iterable.h"
 
-@interface CucumberRuntimeIoMultiLoader () {
+@interface CCBRMultiLoader () {
  @public
-  CucumberRuntimeIoClasspathResourceLoader *classpath_;
-  CucumberRuntimeIoFileResourceLoader *fs_;
+  CCBRClasspathResourceLoader *classpath_;
+  CCBRFileResourceLoader *fs_;
 }
 
 + (jboolean)isClasspathPathWithNSString:(NSString *)path;
@@ -22,42 +22,42 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoMultiLoader, classpath_, CucumberRuntimeIoClasspathResourceLoader *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoMultiLoader, fs_, CucumberRuntimeIoFileResourceLoader *)
+J2OBJC_FIELD_SETTER(CCBRMultiLoader, classpath_, CCBRClasspathResourceLoader *)
+J2OBJC_FIELD_SETTER(CCBRMultiLoader, fs_, CCBRFileResourceLoader *)
 
-__attribute__((unused)) static jboolean CucumberRuntimeIoMultiLoader_isClasspathPathWithNSString_(NSString *path);
+__attribute__((unused)) static jboolean CCBRMultiLoader_isClasspathPathWithNSString_(NSString *path);
 
-__attribute__((unused)) static NSString *CucumberRuntimeIoMultiLoader_stripClasspathPrefixWithNSString_(NSString *path);
+__attribute__((unused)) static NSString *CCBRMultiLoader_stripClasspathPrefixWithNSString_(NSString *path);
 
-NSString *CucumberRuntimeIoMultiLoader_CLASSPATH_SCHEME = @"classpath:";
+NSString *CCBRMultiLoader_CLASSPATH_SCHEME = @"classpath:";
 
-@implementation CucumberRuntimeIoMultiLoader
+@implementation CCBRMultiLoader
 
 - (instancetype __nonnull)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader {
-  CucumberRuntimeIoMultiLoader_initWithJavaLangClassLoader_(self, classLoader);
+  CCBRMultiLoader_initWithJavaLangClassLoader_(self, classLoader);
   return self;
 }
 
 - (id<JavaLangIterable>)resourcesWithNSString:(NSString *)path
                                  withNSString:(NSString *)suffix {
-  if (CucumberRuntimeIoMultiLoader_isClasspathPathWithNSString_(path)) {
-    return [((CucumberRuntimeIoClasspathResourceLoader *) nil_chk(classpath_)) resourcesWithNSString:CucumberRuntimeIoMultiLoader_stripClasspathPrefixWithNSString_(path) withNSString:suffix];
+  if (CCBRMultiLoader_isClasspathPathWithNSString_(path)) {
+    return [((CCBRClasspathResourceLoader *) nil_chk(classpath_)) resourcesWithNSString:CCBRMultiLoader_stripClasspathPrefixWithNSString_(path) withNSString:suffix];
   }
   else {
-    return [((CucumberRuntimeIoFileResourceLoader *) nil_chk(fs_)) resourcesWithNSString:path withNSString:suffix];
+    return [((CCBRFileResourceLoader *) nil_chk(fs_)) resourcesWithNSString:path withNSString:suffix];
   }
 }
 
 + (NSString *)packageNameWithNSString:(NSString *)gluePath {
-  return CucumberRuntimeIoMultiLoader_packageNameWithNSString_(gluePath);
+  return CCBRMultiLoader_packageNameWithNSString_(gluePath);
 }
 
 + (jboolean)isClasspathPathWithNSString:(NSString *)path {
-  return CucumberRuntimeIoMultiLoader_isClasspathPathWithNSString_(path);
+  return CCBRMultiLoader_isClasspathPathWithNSString_(path);
 }
 
 + (NSString *)stripClasspathPrefixWithNSString:(NSString *)path {
-  return CucumberRuntimeIoMultiLoader_stripClasspathPrefixWithNSString_(path);
+  return CCBRMultiLoader_stripClasspathPrefixWithNSString_(path);
 }
 
 - (void)dealloc {
@@ -85,46 +85,46 @@ NSString *CucumberRuntimeIoMultiLoader_CLASSPATH_SCHEME = @"classpath:";
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "CLASSPATH_SCHEME", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 8, -1, -1 },
-    { "classpath_", "LCucumberRuntimeIoClasspathResourceLoader;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "fs_", "LCucumberRuntimeIoFileResourceLoader;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "classpath_", "LCCBRClasspathResourceLoader;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "fs_", "LCCBRFileResourceLoader;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LJavaLangClassLoader;", "resources", "LNSString;LNSString;", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Iterable<Lcucumber/runtime/io/Resource;>;", "packageName", "LNSString;", "isClasspathPath", "stripClasspathPrefix", &CucumberRuntimeIoMultiLoader_CLASSPATH_SCHEME };
-  static const J2ObjcClassInfo _CucumberRuntimeIoMultiLoader = { "MultiLoader", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 5, 3, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeIoMultiLoader;
+  static const void *ptrTable[] = { "LJavaLangClassLoader;", "resources", "LNSString;LNSString;", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Iterable<Lcucumber/runtime/io/Resource;>;", "packageName", "LNSString;", "isClasspathPath", "stripClasspathPrefix", &CCBRMultiLoader_CLASSPATH_SCHEME };
+  static const J2ObjcClassInfo _CCBRMultiLoader = { "MultiLoader", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 5, 3, -1, -1, -1, -1, -1 };
+  return &_CCBRMultiLoader;
 }
 
 @end
 
-void CucumberRuntimeIoMultiLoader_initWithJavaLangClassLoader_(CucumberRuntimeIoMultiLoader *self, JavaLangClassLoader *classLoader) {
+void CCBRMultiLoader_initWithJavaLangClassLoader_(CCBRMultiLoader *self, JavaLangClassLoader *classLoader) {
   NSObject_init(self);
-  JreStrongAssignAndConsume(&self->classpath_, new_CucumberRuntimeIoClasspathResourceLoader_initWithJavaLangClassLoader_(classLoader));
-  JreStrongAssignAndConsume(&self->fs_, new_CucumberRuntimeIoFileResourceLoader_init());
+  JreStrongAssignAndConsume(&self->classpath_, new_CCBRClasspathResourceLoader_initWithJavaLangClassLoader_(classLoader));
+  JreStrongAssignAndConsume(&self->fs_, new_CCBRFileResourceLoader_init());
 }
 
-CucumberRuntimeIoMultiLoader *new_CucumberRuntimeIoMultiLoader_initWithJavaLangClassLoader_(JavaLangClassLoader *classLoader) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeIoMultiLoader, initWithJavaLangClassLoader_, classLoader)
+CCBRMultiLoader *new_CCBRMultiLoader_initWithJavaLangClassLoader_(JavaLangClassLoader *classLoader) {
+  J2OBJC_NEW_IMPL(CCBRMultiLoader, initWithJavaLangClassLoader_, classLoader)
 }
 
-CucumberRuntimeIoMultiLoader *create_CucumberRuntimeIoMultiLoader_initWithJavaLangClassLoader_(JavaLangClassLoader *classLoader) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeIoMultiLoader, initWithJavaLangClassLoader_, classLoader)
+CCBRMultiLoader *create_CCBRMultiLoader_initWithJavaLangClassLoader_(JavaLangClassLoader *classLoader) {
+  J2OBJC_CREATE_IMPL(CCBRMultiLoader, initWithJavaLangClassLoader_, classLoader)
 }
 
-NSString *CucumberRuntimeIoMultiLoader_packageNameWithNSString_(NSString *gluePath) {
-  CucumberRuntimeIoMultiLoader_initialize();
-  if (CucumberRuntimeIoMultiLoader_isClasspathPathWithNSString_(gluePath)) {
-    gluePath = CucumberRuntimeIoMultiLoader_stripClasspathPrefixWithNSString_(gluePath);
+NSString *CCBRMultiLoader_packageNameWithNSString_(NSString *gluePath) {
+  CCBRMultiLoader_initialize();
+  if (CCBRMultiLoader_isClasspathPathWithNSString_(gluePath)) {
+    gluePath = CCBRMultiLoader_stripClasspathPrefixWithNSString_(gluePath);
   }
   return [((NSString *) nil_chk([((NSString *) nil_chk(gluePath)) java_replace:'/' withChar:'.'])) java_replace:'\\' withChar:'.'];
 }
 
-jboolean CucumberRuntimeIoMultiLoader_isClasspathPathWithNSString_(NSString *path) {
-  CucumberRuntimeIoMultiLoader_initialize();
-  return [((NSString *) nil_chk(path)) java_hasPrefix:CucumberRuntimeIoMultiLoader_CLASSPATH_SCHEME];
+jboolean CCBRMultiLoader_isClasspathPathWithNSString_(NSString *path) {
+  CCBRMultiLoader_initialize();
+  return [((NSString *) nil_chk(path)) java_hasPrefix:CCBRMultiLoader_CLASSPATH_SCHEME];
 }
 
-NSString *CucumberRuntimeIoMultiLoader_stripClasspathPrefixWithNSString_(NSString *path) {
-  CucumberRuntimeIoMultiLoader_initialize();
-  return [((NSString *) nil_chk(path)) java_substring:[((NSString *) nil_chk(CucumberRuntimeIoMultiLoader_CLASSPATH_SCHEME)) java_length]];
+NSString *CCBRMultiLoader_stripClasspathPrefixWithNSString_(NSString *path) {
+  CCBRMultiLoader_initialize();
+  return [((NSString *) nil_chk(path)) java_substring:[((NSString *) nil_chk(CCBRMultiLoader_CLASSPATH_SCHEME)) java_length]];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoMultiLoader)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRMultiLoader)

@@ -12,19 +12,19 @@
 #include "java/util/List.h"
 #include "java/util/Map.h"
 
-@interface CucumberRuntimeLinePredicate () {
+@interface CCBRLinePredicate () {
  @public
   id<JavaUtilMap> lineFilters_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeLinePredicate, lineFilters_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(CCBRLinePredicate, lineFilters_, id<JavaUtilMap>)
 
-@implementation CucumberRuntimeLinePredicate
+@implementation CCBRLinePredicate
 
 - (instancetype __nonnull)initWithJavaUtilMap:(id<JavaUtilMap>)lineFilters {
-  CucumberRuntimeLinePredicate_initWithJavaUtilMap_(self, lineFilters);
+  CCBRLinePredicate_initWithJavaUtilMap_(self, lineFilters);
   return self;
 }
 
@@ -63,23 +63,23 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeLinePredicate, lineFilters_, id<JavaUtilMap>)
     { "lineFilters_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 4, -1 },
   };
   static const void *ptrTable[] = { "LJavaUtilMap;", "(Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;>;)V", "apply", "LGherkinEventsPickleEvent;", "Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeLinePredicate = { "LinePredicate", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 2, 1, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeLinePredicate;
+  static const J2ObjcClassInfo _CCBRLinePredicate = { "LinePredicate", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 2, 1, -1, -1, -1, -1, -1 };
+  return &_CCBRLinePredicate;
 }
 
 @end
 
-void CucumberRuntimeLinePredicate_initWithJavaUtilMap_(CucumberRuntimeLinePredicate *self, id<JavaUtilMap> lineFilters) {
+void CCBRLinePredicate_initWithJavaUtilMap_(CCBRLinePredicate *self, id<JavaUtilMap> lineFilters) {
   NSObject_init(self);
   JreStrongAssign(&self->lineFilters_, lineFilters);
 }
 
-CucumberRuntimeLinePredicate *new_CucumberRuntimeLinePredicate_initWithJavaUtilMap_(id<JavaUtilMap> lineFilters) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeLinePredicate, initWithJavaUtilMap_, lineFilters)
+CCBRLinePredicate *new_CCBRLinePredicate_initWithJavaUtilMap_(id<JavaUtilMap> lineFilters) {
+  J2OBJC_NEW_IMPL(CCBRLinePredicate, initWithJavaUtilMap_, lineFilters)
 }
 
-CucumberRuntimeLinePredicate *create_CucumberRuntimeLinePredicate_initWithJavaUtilMap_(id<JavaUtilMap> lineFilters) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeLinePredicate, initWithJavaUtilMap_, lineFilters)
+CCBRLinePredicate *create_CCBRLinePredicate_initWithJavaUtilMap_(id<JavaUtilMap> lineFilters) {
+  J2OBJC_CREATE_IMPL(CCBRLinePredicate, initWithJavaUtilMap_, lineFilters)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeLinePredicate)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRLinePredicate)

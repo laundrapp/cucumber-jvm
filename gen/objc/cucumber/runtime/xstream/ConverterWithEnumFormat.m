@@ -19,7 +19,7 @@
 #include "java/util/List.h"
 #include "java/util/Locale.h"
 
-@interface CucumberRuntimeXstreamConverterWithEnumFormat () {
+@interface CCBRConverterWithEnumFormat () {
  @public
   id<JavaUtilList> formats_;
   JavaUtilLocale *locale_ConverterWithEnumFormat_;
@@ -28,16 +28,16 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamConverterWithEnumFormat, formats_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamConverterWithEnumFormat, locale_ConverterWithEnumFormat_, JavaUtilLocale *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamConverterWithEnumFormat, typeClass_, IOSClass *)
+J2OBJC_FIELD_SETTER(CCBRConverterWithEnumFormat, formats_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRConverterWithEnumFormat, locale_ConverterWithEnumFormat_, JavaUtilLocale *)
+J2OBJC_FIELD_SETTER(CCBRConverterWithEnumFormat, typeClass_, IOSClass *)
 
-@interface CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat : JavaTextFormat {
+@interface CCBRConverterWithEnumFormat_AbstractEnumFormat : JavaTextFormat {
  @public
-  CucumberRuntimeXstreamConverterWithEnumFormat *this$0_;
+  CCBRConverterWithEnumFormat *this$0_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$;
+- (instancetype __nonnull)initWithCCBRConverterWithEnumFormat:(CCBRConverterWithEnumFormat *)outer$;
 
 - (JavaLangStringBuffer *)formatWithId:(id)obj
               withJavaLangStringBuffer:(JavaLangStringBuffer *)toAppendTo
@@ -50,98 +50,98 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamConverterWithEnumFormat, typeClass_, I
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat)
+J2OBJC_EMPTY_STATIC_INIT(CCBRConverterWithEnumFormat_AbstractEnumFormat)
 
-__attribute__((unused)) static void CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat *self, CucumberRuntimeXstreamConverterWithEnumFormat *outer$);
+__attribute__((unused)) static void CCBRConverterWithEnumFormat_AbstractEnumFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat_AbstractEnumFormat *self, CCBRConverterWithEnumFormat *outer$);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRConverterWithEnumFormat_AbstractEnumFormat)
 
-@interface CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat : CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat
+@interface CCBRConverterWithEnumFormat_OriginalFormat : CCBRConverterWithEnumFormat_AbstractEnumFormat
 
-- (instancetype __nonnull)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$;
+- (instancetype __nonnull)initWithCCBRConverterWithEnumFormat:(CCBRConverterWithEnumFormat *)outer$;
 
 - (NSString *)transformSourceWithNSString:(NSString *)source;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat)
+J2OBJC_EMPTY_STATIC_INIT(CCBRConverterWithEnumFormat_OriginalFormat)
 
-__attribute__((unused)) static void CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat *self, CucumberRuntimeXstreamConverterWithEnumFormat *outer$);
+__attribute__((unused)) static void CCBRConverterWithEnumFormat_OriginalFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat_OriginalFormat *self, CCBRConverterWithEnumFormat *outer$);
 
-__attribute__((unused)) static CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat *new_CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRConverterWithEnumFormat_OriginalFormat *new_CCBRConverterWithEnumFormat_OriginalFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat *create_CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat *outer$);
+__attribute__((unused)) static CCBRConverterWithEnumFormat_OriginalFormat *create_CCBRConverterWithEnumFormat_OriginalFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat *outer$);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRConverterWithEnumFormat_OriginalFormat)
 
-@interface CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat : CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat {
+@interface CCBRConverterWithEnumFormat_LowercaseFormat : CCBRConverterWithEnumFormat_AbstractEnumFormat {
  @public
-  CucumberRuntimeXstreamConverterWithEnumFormat *this$1_;
+  CCBRConverterWithEnumFormat *this$1_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$;
+- (instancetype __nonnull)initWithCCBRConverterWithEnumFormat:(CCBRConverterWithEnumFormat *)outer$;
 
 - (NSString *)transformSourceWithNSString:(NSString *)source;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat)
+J2OBJC_EMPTY_STATIC_INIT(CCBRConverterWithEnumFormat_LowercaseFormat)
 
-__attribute__((unused)) static void CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat *self, CucumberRuntimeXstreamConverterWithEnumFormat *outer$);
+__attribute__((unused)) static void CCBRConverterWithEnumFormat_LowercaseFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat_LowercaseFormat *self, CCBRConverterWithEnumFormat *outer$);
 
-__attribute__((unused)) static CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat *new_CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRConverterWithEnumFormat_LowercaseFormat *new_CCBRConverterWithEnumFormat_LowercaseFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat *create_CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat *outer$);
+__attribute__((unused)) static CCBRConverterWithEnumFormat_LowercaseFormat *create_CCBRConverterWithEnumFormat_LowercaseFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat *outer$);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRConverterWithEnumFormat_LowercaseFormat)
 
-@interface CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat : CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat {
+@interface CCBRConverterWithEnumFormat_UppercaseFormat : CCBRConverterWithEnumFormat_AbstractEnumFormat {
  @public
-  CucumberRuntimeXstreamConverterWithEnumFormat *this$1_;
+  CCBRConverterWithEnumFormat *this$1_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$;
+- (instancetype __nonnull)initWithCCBRConverterWithEnumFormat:(CCBRConverterWithEnumFormat *)outer$;
 
 - (NSString *)transformSourceWithNSString:(NSString *)source;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat)
+J2OBJC_EMPTY_STATIC_INIT(CCBRConverterWithEnumFormat_UppercaseFormat)
 
-__attribute__((unused)) static void CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat *self, CucumberRuntimeXstreamConverterWithEnumFormat *outer$);
+__attribute__((unused)) static void CCBRConverterWithEnumFormat_UppercaseFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat_UppercaseFormat *self, CCBRConverterWithEnumFormat *outer$);
 
-__attribute__((unused)) static CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat *new_CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRConverterWithEnumFormat_UppercaseFormat *new_CCBRConverterWithEnumFormat_UppercaseFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat *create_CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat *outer$);
+__attribute__((unused)) static CCBRConverterWithEnumFormat_UppercaseFormat *create_CCBRConverterWithEnumFormat_UppercaseFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat *outer$);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRConverterWithEnumFormat_UppercaseFormat)
 
-@interface CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat : CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat {
+@interface CCBRConverterWithEnumFormat_CapitalizeFormat : CCBRConverterWithEnumFormat_AbstractEnumFormat {
  @public
-  CucumberRuntimeXstreamConverterWithEnumFormat *this$1_;
+  CCBRConverterWithEnumFormat *this$1_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$;
+- (instancetype __nonnull)initWithCCBRConverterWithEnumFormat:(CCBRConverterWithEnumFormat *)outer$;
 
 - (NSString *)transformSourceWithNSString:(NSString *)source;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat)
+J2OBJC_EMPTY_STATIC_INIT(CCBRConverterWithEnumFormat_CapitalizeFormat)
 
-__attribute__((unused)) static void CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat *self, CucumberRuntimeXstreamConverterWithEnumFormat *outer$);
+__attribute__((unused)) static void CCBRConverterWithEnumFormat_CapitalizeFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat_CapitalizeFormat *self, CCBRConverterWithEnumFormat *outer$);
 
-__attribute__((unused)) static CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat *new_CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRConverterWithEnumFormat_CapitalizeFormat *new_CCBRConverterWithEnumFormat_CapitalizeFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat *create_CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat *outer$);
+__attribute__((unused)) static CCBRConverterWithEnumFormat_CapitalizeFormat *create_CCBRConverterWithEnumFormat_CapitalizeFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat *outer$);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRConverterWithEnumFormat_CapitalizeFormat)
 
-@implementation CucumberRuntimeXstreamConverterWithEnumFormat
+@implementation CCBRConverterWithEnumFormat
 
 - (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale
                                     withIOSClass:(IOSClass *)enumClass {
-  CucumberRuntimeXstreamConverterWithEnumFormat_initWithJavaUtilLocale_withIOSClass_(self, locale, enumClass);
+  CCBRConverterWithEnumFormat_initWithJavaUtilLocale_withIOSClass_(self, locale, enumClass);
   return self;
 }
 
@@ -184,38 +184,38 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamConverterWithEnumFormat_Capital
     { "locale_ConverterWithEnumFormat_", "LJavaUtilLocale;", .constantValue.asLong = 0, 0x12, 7, -1, -1, -1 },
     { "typeClass_", "LIOSClass;", .constantValue.asLong = 0, 0x12, -1, -1, 8, -1 },
   };
-  static const void *ptrTable[] = { "LJavaUtilLocale;LIOSClass;", "(Ljava/util/Locale;Ljava/lang/Class<+Ljava/lang/Enum;>;)V", "transform", "LNSString;", "(Ljava/lang/String;)TT;", "()Ljava/util/List<Ljava/text/Format;>;", "Ljava/util/List<Ljava/text/Format;>;", "locale", "Ljava/lang/Class<+Ljava/lang/Enum;>;", "LCucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat;LCucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat;LCucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat;LCucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat;LCucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat;", "<T:Ljava/lang/Enum;>Lcucumber/runtime/xstream/ConverterWithFormat<TT;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamConverterWithEnumFormat = { "ConverterWithEnumFormat", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x0, 3, 3, -1, 9, -1, 10, -1 };
-  return &_CucumberRuntimeXstreamConverterWithEnumFormat;
+  static const void *ptrTable[] = { "LJavaUtilLocale;LIOSClass;", "(Ljava/util/Locale;Ljava/lang/Class<+Ljava/lang/Enum;>;)V", "transform", "LNSString;", "(Ljava/lang/String;)TT;", "()Ljava/util/List<Ljava/text/Format;>;", "Ljava/util/List<Ljava/text/Format;>;", "locale", "Ljava/lang/Class<+Ljava/lang/Enum;>;", "LCCBRConverterWithEnumFormat_OriginalFormat;LCCBRConverterWithEnumFormat_LowercaseFormat;LCCBRConverterWithEnumFormat_UppercaseFormat;LCCBRConverterWithEnumFormat_CapitalizeFormat;LCCBRConverterWithEnumFormat_AbstractEnumFormat;", "<T:Ljava/lang/Enum;>Lcucumber/runtime/xstream/ConverterWithFormat<TT;>;" };
+  static const J2ObjcClassInfo _CCBRConverterWithEnumFormat = { "ConverterWithEnumFormat", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x0, 3, 3, -1, 9, -1, 10, -1 };
+  return &_CCBRConverterWithEnumFormat;
 }
 
 @end
 
-void CucumberRuntimeXstreamConverterWithEnumFormat_initWithJavaUtilLocale_withIOSClass_(CucumberRuntimeXstreamConverterWithEnumFormat *self, JavaUtilLocale *locale, IOSClass *enumClass) {
-  CucumberRuntimeXstreamConverterWithFormat_initWithIOSClassArray_(self, [IOSObjectArray arrayWithObjects:(id[]){ enumClass } count:1 type:IOSClass_class_()]);
+void CCBRConverterWithEnumFormat_initWithJavaUtilLocale_withIOSClass_(CCBRConverterWithEnumFormat *self, JavaUtilLocale *locale, IOSClass *enumClass) {
+  CCBRConverterWithFormat_initWithIOSClassArray_(self, [IOSObjectArray arrayWithObjects:(id[]){ enumClass } count:1 type:IOSClass_class_()]);
   JreStrongAssignAndConsume(&self->formats_, new_JavaUtilArrayList_init());
   JreStrongAssign(&self->locale_ConverterWithEnumFormat_, locale);
   JreStrongAssign(&self->typeClass_, enumClass);
-  [self->formats_ addWithId:create_CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(self)];
-  [self->formats_ addWithId:create_CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(self)];
-  [self->formats_ addWithId:create_CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(self)];
-  [self->formats_ addWithId:create_CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(self)];
+  [self->formats_ addWithId:create_CCBRConverterWithEnumFormat_OriginalFormat_initWithCCBRConverterWithEnumFormat_(self)];
+  [self->formats_ addWithId:create_CCBRConverterWithEnumFormat_LowercaseFormat_initWithCCBRConverterWithEnumFormat_(self)];
+  [self->formats_ addWithId:create_CCBRConverterWithEnumFormat_UppercaseFormat_initWithCCBRConverterWithEnumFormat_(self)];
+  [self->formats_ addWithId:create_CCBRConverterWithEnumFormat_CapitalizeFormat_initWithCCBRConverterWithEnumFormat_(self)];
 }
 
-CucumberRuntimeXstreamConverterWithEnumFormat *new_CucumberRuntimeXstreamConverterWithEnumFormat_initWithJavaUtilLocale_withIOSClass_(JavaUtilLocale *locale, IOSClass *enumClass) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamConverterWithEnumFormat, initWithJavaUtilLocale_withIOSClass_, locale, enumClass)
+CCBRConverterWithEnumFormat *new_CCBRConverterWithEnumFormat_initWithJavaUtilLocale_withIOSClass_(JavaUtilLocale *locale, IOSClass *enumClass) {
+  J2OBJC_NEW_IMPL(CCBRConverterWithEnumFormat, initWithJavaUtilLocale_withIOSClass_, locale, enumClass)
 }
 
-CucumberRuntimeXstreamConverterWithEnumFormat *create_CucumberRuntimeXstreamConverterWithEnumFormat_initWithJavaUtilLocale_withIOSClass_(JavaUtilLocale *locale, IOSClass *enumClass) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamConverterWithEnumFormat, initWithJavaUtilLocale_withIOSClass_, locale, enumClass)
+CCBRConverterWithEnumFormat *create_CCBRConverterWithEnumFormat_initWithJavaUtilLocale_withIOSClass_(JavaUtilLocale *locale, IOSClass *enumClass) {
+  J2OBJC_CREATE_IMPL(CCBRConverterWithEnumFormat, initWithJavaUtilLocale_withIOSClass_, locale, enumClass)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRConverterWithEnumFormat)
 
-@implementation CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat
+@implementation CCBRConverterWithEnumFormat_AbstractEnumFormat
 
-- (instancetype __nonnull)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$ {
-  CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(self, outer$);
+- (instancetype __nonnull)initWithCCBRConverterWithEnumFormat:(CCBRConverterWithEnumFormat *)outer$ {
+  CCBRConverterWithEnumFormat_AbstractEnumFormat_initWithCCBRConverterWithEnumFormat_(self, outer$);
   return self;
 }
 
@@ -251,32 +251,32 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeXstreamConverterWithEnumFormat:);
+  methods[0].selector = @selector(initWithCCBRConverterWithEnumFormat:);
   methods[1].selector = @selector(formatWithId:withJavaLangStringBuffer:withJavaTextFieldPosition:);
   methods[2].selector = @selector(parseObjectWithNSString:withJavaTextParsePosition:);
   methods[3].selector = @selector(transformSourceWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LCucumberRuntimeXstreamConverterWithEnumFormat;", .constantValue.asLong = 0, 0x1012, -1, -1, 6, -1 },
+    { "this$0_", "LCCBRConverterWithEnumFormat;", .constantValue.asLong = 0, 0x1012, -1, -1, 6, -1 },
   };
-  static const void *ptrTable[] = { "format", "LNSObject;LJavaLangStringBuffer;LJavaTextFieldPosition;", "parseObject", "LNSString;LJavaTextParsePosition;", "transformSource", "LNSString;", "Lcucumber/runtime/xstream/ConverterWithEnumFormat<TT;>;", "LCucumberRuntimeXstreamConverterWithEnumFormat;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat = { "AbstractEnumFormat", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x402, 4, 1, 7, -1, -1, -1, -1 };
-  return &_CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat;
+  static const void *ptrTable[] = { "format", "LNSObject;LJavaLangStringBuffer;LJavaTextFieldPosition;", "parseObject", "LNSString;LJavaTextParsePosition;", "transformSource", "LNSString;", "Lcucumber/runtime/xstream/ConverterWithEnumFormat<TT;>;", "LCCBRConverterWithEnumFormat;" };
+  static const J2ObjcClassInfo _CCBRConverterWithEnumFormat_AbstractEnumFormat = { "AbstractEnumFormat", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x402, 4, 1, 7, -1, -1, -1, -1 };
+  return &_CCBRConverterWithEnumFormat_AbstractEnumFormat;
 }
 
 @end
 
-void CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat *self, CucumberRuntimeXstreamConverterWithEnumFormat *outer$) {
+void CCBRConverterWithEnumFormat_AbstractEnumFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat_AbstractEnumFormat *self, CCBRConverterWithEnumFormat *outer$) {
   JreStrongAssign(&self->this$0_, outer$);
   JavaTextFormat_init(self);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRConverterWithEnumFormat_AbstractEnumFormat)
 
-@implementation CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat
+@implementation CCBRConverterWithEnumFormat_OriginalFormat
 
-- (instancetype __nonnull)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$ {
-  CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(self, outer$);
+- (instancetype __nonnull)initWithCCBRConverterWithEnumFormat:(CCBRConverterWithEnumFormat *)outer$ {
+  CCBRConverterWithEnumFormat_OriginalFormat_initWithCCBRConverterWithEnumFormat_(self, outer$);
   return self;
 }
 
@@ -292,34 +292,34 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat_A
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeXstreamConverterWithEnumFormat:);
+  methods[0].selector = @selector(initWithCCBRConverterWithEnumFormat:);
   methods[1].selector = @selector(transformSourceWithNSString:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "transformSource", "LNSString;", "LCucumberRuntimeXstreamConverterWithEnumFormat;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat = { "OriginalFormat", "cucumber.runtime.xstream", ptrTable, methods, NULL, 7, 0x2, 2, 0, 2, -1, -1, -1, -1 };
-  return &_CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat;
+  static const void *ptrTable[] = { "transformSource", "LNSString;", "LCCBRConverterWithEnumFormat;" };
+  static const J2ObjcClassInfo _CCBRConverterWithEnumFormat_OriginalFormat = { "OriginalFormat", "cucumber.runtime.xstream", ptrTable, methods, NULL, 7, 0x2, 2, 0, 2, -1, -1, -1, -1 };
+  return &_CCBRConverterWithEnumFormat_OriginalFormat;
 }
 
 @end
 
-void CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat *self, CucumberRuntimeXstreamConverterWithEnumFormat *outer$) {
-  CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(self, outer$);
+void CCBRConverterWithEnumFormat_OriginalFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat_OriginalFormat *self, CCBRConverterWithEnumFormat *outer$) {
+  CCBRConverterWithEnumFormat_AbstractEnumFormat_initWithCCBRConverterWithEnumFormat_(self, outer$);
 }
 
-CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat *new_CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat, initWithCucumberRuntimeXstreamConverterWithEnumFormat_, outer$)
+CCBRConverterWithEnumFormat_OriginalFormat *new_CCBRConverterWithEnumFormat_OriginalFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat *outer$) {
+  J2OBJC_NEW_IMPL(CCBRConverterWithEnumFormat_OriginalFormat, initWithCCBRConverterWithEnumFormat_, outer$)
 }
 
-CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat *create_CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat, initWithCucumberRuntimeXstreamConverterWithEnumFormat_, outer$)
+CCBRConverterWithEnumFormat_OriginalFormat *create_CCBRConverterWithEnumFormat_OriginalFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRConverterWithEnumFormat_OriginalFormat, initWithCCBRConverterWithEnumFormat_, outer$)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat_OriginalFormat)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRConverterWithEnumFormat_OriginalFormat)
 
-@implementation CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat
+@implementation CCBRConverterWithEnumFormat_LowercaseFormat
 
-- (instancetype __nonnull)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$ {
-  CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(self, outer$);
+- (instancetype __nonnull)initWithCCBRConverterWithEnumFormat:(CCBRConverterWithEnumFormat *)outer$ {
+  CCBRConverterWithEnumFormat_LowercaseFormat_initWithCCBRConverterWithEnumFormat_(self, outer$);
   return self;
 }
 
@@ -340,38 +340,38 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat_O
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeXstreamConverterWithEnumFormat:);
+  methods[0].selector = @selector(initWithCCBRConverterWithEnumFormat:);
   methods[1].selector = @selector(transformSourceWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$1_", "LCucumberRuntimeXstreamConverterWithEnumFormat;", .constantValue.asLong = 0, 0x1012, -1, -1, 2, -1 },
+    { "this$1_", "LCCBRConverterWithEnumFormat;", .constantValue.asLong = 0, 0x1012, -1, -1, 2, -1 },
   };
-  static const void *ptrTable[] = { "transformSource", "LNSString;", "Lcucumber/runtime/xstream/ConverterWithEnumFormat<TT;>;", "LCucumberRuntimeXstreamConverterWithEnumFormat;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat = { "LowercaseFormat", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x2, 2, 1, 3, -1, -1, -1, -1 };
-  return &_CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat;
+  static const void *ptrTable[] = { "transformSource", "LNSString;", "Lcucumber/runtime/xstream/ConverterWithEnumFormat<TT;>;", "LCCBRConverterWithEnumFormat;" };
+  static const J2ObjcClassInfo _CCBRConverterWithEnumFormat_LowercaseFormat = { "LowercaseFormat", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x2, 2, 1, 3, -1, -1, -1, -1 };
+  return &_CCBRConverterWithEnumFormat_LowercaseFormat;
 }
 
 @end
 
-void CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat *self, CucumberRuntimeXstreamConverterWithEnumFormat *outer$) {
+void CCBRConverterWithEnumFormat_LowercaseFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat_LowercaseFormat *self, CCBRConverterWithEnumFormat *outer$) {
   JreStrongAssign(&self->this$1_, outer$);
-  CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(self, outer$);
+  CCBRConverterWithEnumFormat_AbstractEnumFormat_initWithCCBRConverterWithEnumFormat_(self, outer$);
 }
 
-CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat *new_CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat, initWithCucumberRuntimeXstreamConverterWithEnumFormat_, outer$)
+CCBRConverterWithEnumFormat_LowercaseFormat *new_CCBRConverterWithEnumFormat_LowercaseFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat *outer$) {
+  J2OBJC_NEW_IMPL(CCBRConverterWithEnumFormat_LowercaseFormat, initWithCCBRConverterWithEnumFormat_, outer$)
 }
 
-CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat *create_CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat, initWithCucumberRuntimeXstreamConverterWithEnumFormat_, outer$)
+CCBRConverterWithEnumFormat_LowercaseFormat *create_CCBRConverterWithEnumFormat_LowercaseFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRConverterWithEnumFormat_LowercaseFormat, initWithCCBRConverterWithEnumFormat_, outer$)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat_LowercaseFormat)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRConverterWithEnumFormat_LowercaseFormat)
 
-@implementation CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat
+@implementation CCBRConverterWithEnumFormat_UppercaseFormat
 
-- (instancetype __nonnull)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$ {
-  CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(self, outer$);
+- (instancetype __nonnull)initWithCCBRConverterWithEnumFormat:(CCBRConverterWithEnumFormat *)outer$ {
+  CCBRConverterWithEnumFormat_UppercaseFormat_initWithCCBRConverterWithEnumFormat_(self, outer$);
   return self;
 }
 
@@ -392,38 +392,38 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat_L
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeXstreamConverterWithEnumFormat:);
+  methods[0].selector = @selector(initWithCCBRConverterWithEnumFormat:);
   methods[1].selector = @selector(transformSourceWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$1_", "LCucumberRuntimeXstreamConverterWithEnumFormat;", .constantValue.asLong = 0, 0x1012, -1, -1, 2, -1 },
+    { "this$1_", "LCCBRConverterWithEnumFormat;", .constantValue.asLong = 0, 0x1012, -1, -1, 2, -1 },
   };
-  static const void *ptrTable[] = { "transformSource", "LNSString;", "Lcucumber/runtime/xstream/ConverterWithEnumFormat<TT;>;", "LCucumberRuntimeXstreamConverterWithEnumFormat;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat = { "UppercaseFormat", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x2, 2, 1, 3, -1, -1, -1, -1 };
-  return &_CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat;
+  static const void *ptrTable[] = { "transformSource", "LNSString;", "Lcucumber/runtime/xstream/ConverterWithEnumFormat<TT;>;", "LCCBRConverterWithEnumFormat;" };
+  static const J2ObjcClassInfo _CCBRConverterWithEnumFormat_UppercaseFormat = { "UppercaseFormat", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x2, 2, 1, 3, -1, -1, -1, -1 };
+  return &_CCBRConverterWithEnumFormat_UppercaseFormat;
 }
 
 @end
 
-void CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat *self, CucumberRuntimeXstreamConverterWithEnumFormat *outer$) {
+void CCBRConverterWithEnumFormat_UppercaseFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat_UppercaseFormat *self, CCBRConverterWithEnumFormat *outer$) {
   JreStrongAssign(&self->this$1_, outer$);
-  CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(self, outer$);
+  CCBRConverterWithEnumFormat_AbstractEnumFormat_initWithCCBRConverterWithEnumFormat_(self, outer$);
 }
 
-CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat *new_CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat, initWithCucumberRuntimeXstreamConverterWithEnumFormat_, outer$)
+CCBRConverterWithEnumFormat_UppercaseFormat *new_CCBRConverterWithEnumFormat_UppercaseFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat *outer$) {
+  J2OBJC_NEW_IMPL(CCBRConverterWithEnumFormat_UppercaseFormat, initWithCCBRConverterWithEnumFormat_, outer$)
 }
 
-CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat *create_CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat, initWithCucumberRuntimeXstreamConverterWithEnumFormat_, outer$)
+CCBRConverterWithEnumFormat_UppercaseFormat *create_CCBRConverterWithEnumFormat_UppercaseFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRConverterWithEnumFormat_UppercaseFormat, initWithCCBRConverterWithEnumFormat_, outer$)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat_UppercaseFormat)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRConverterWithEnumFormat_UppercaseFormat)
 
-@implementation CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat
+@implementation CCBRConverterWithEnumFormat_CapitalizeFormat
 
-- (instancetype __nonnull)initWithCucumberRuntimeXstreamConverterWithEnumFormat:(CucumberRuntimeXstreamConverterWithEnumFormat *)outer$ {
-  CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(self, outer$);
+- (instancetype __nonnull)initWithCCBRConverterWithEnumFormat:(CCBRConverterWithEnumFormat *)outer$ {
+  CCBRConverterWithEnumFormat_CapitalizeFormat_initWithCCBRConverterWithEnumFormat_(self, outer$);
   return self;
 }
 
@@ -446,30 +446,30 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat_U
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeXstreamConverterWithEnumFormat:);
+  methods[0].selector = @selector(initWithCCBRConverterWithEnumFormat:);
   methods[1].selector = @selector(transformSourceWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$1_", "LCucumberRuntimeXstreamConverterWithEnumFormat;", .constantValue.asLong = 0, 0x1012, -1, -1, 2, -1 },
+    { "this$1_", "LCCBRConverterWithEnumFormat;", .constantValue.asLong = 0, 0x1012, -1, -1, 2, -1 },
   };
-  static const void *ptrTable[] = { "transformSource", "LNSString;", "Lcucumber/runtime/xstream/ConverterWithEnumFormat<TT;>;", "LCucumberRuntimeXstreamConverterWithEnumFormat;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat = { "CapitalizeFormat", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x2, 2, 1, 3, -1, -1, -1, -1 };
-  return &_CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat;
+  static const void *ptrTable[] = { "transformSource", "LNSString;", "Lcucumber/runtime/xstream/ConverterWithEnumFormat<TT;>;", "LCCBRConverterWithEnumFormat;" };
+  static const J2ObjcClassInfo _CCBRConverterWithEnumFormat_CapitalizeFormat = { "CapitalizeFormat", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x2, 2, 1, 3, -1, -1, -1, -1 };
+  return &_CCBRConverterWithEnumFormat_CapitalizeFormat;
 }
 
 @end
 
-void CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat *self, CucumberRuntimeXstreamConverterWithEnumFormat *outer$) {
+void CCBRConverterWithEnumFormat_CapitalizeFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat_CapitalizeFormat *self, CCBRConverterWithEnumFormat *outer$) {
   JreStrongAssign(&self->this$1_, outer$);
-  CucumberRuntimeXstreamConverterWithEnumFormat_AbstractEnumFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(self, outer$);
+  CCBRConverterWithEnumFormat_AbstractEnumFormat_initWithCCBRConverterWithEnumFormat_(self, outer$);
 }
 
-CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat *new_CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat, initWithCucumberRuntimeXstreamConverterWithEnumFormat_, outer$)
+CCBRConverterWithEnumFormat_CapitalizeFormat *new_CCBRConverterWithEnumFormat_CapitalizeFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat *outer$) {
+  J2OBJC_NEW_IMPL(CCBRConverterWithEnumFormat_CapitalizeFormat, initWithCCBRConverterWithEnumFormat_, outer$)
 }
 
-CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat *create_CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat_initWithCucumberRuntimeXstreamConverterWithEnumFormat_(CucumberRuntimeXstreamConverterWithEnumFormat *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat, initWithCucumberRuntimeXstreamConverterWithEnumFormat_, outer$)
+CCBRConverterWithEnumFormat_CapitalizeFormat *create_CCBRConverterWithEnumFormat_CapitalizeFormat_initWithCCBRConverterWithEnumFormat_(CCBRConverterWithEnumFormat *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRConverterWithEnumFormat_CapitalizeFormat, initWithCCBRConverterWithEnumFormat_, outer$)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithEnumFormat_CapitalizeFormat)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRConverterWithEnumFormat_CapitalizeFormat)

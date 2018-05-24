@@ -12,19 +12,19 @@
 #include "java/util/regex/Matcher.h"
 #include "java/util/regex/Pattern.h"
 
-@interface CucumberRuntimeJdkPatternArgumentMatcher () {
+@interface CCBRJdkPatternArgumentMatcher () {
  @public
   JavaUtilRegexPattern *pattern_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeJdkPatternArgumentMatcher, pattern_, JavaUtilRegexPattern *)
+J2OBJC_FIELD_SETTER(CCBRJdkPatternArgumentMatcher, pattern_, JavaUtilRegexPattern *)
 
-@implementation CucumberRuntimeJdkPatternArgumentMatcher
+@implementation CCBRJdkPatternArgumentMatcher
 
 - (instancetype __nonnull)initWithJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern {
-  CucumberRuntimeJdkPatternArgumentMatcher_initWithJavaUtilRegexPattern_(self, pattern);
+  CCBRJdkPatternArgumentMatcher_initWithJavaUtilRegexPattern_(self, pattern);
   return self;
 }
 
@@ -34,7 +34,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeJdkPatternArgumentMatcher, pattern_, JavaUtil
     id<JavaUtilList> arguments = create_JavaUtilArrayList_initWithInt_([matcher groupCount]);
     for (jint i = 1; i <= [matcher groupCount]; i++) {
       jint startIndex = [matcher startWithInt:i];
-      [arguments addWithId:create_CucumberRuntimeArgument_initWithJavaLangInteger_withNSString_(startIndex == -1 ? nil : JavaLangInteger_valueOfWithInt_(startIndex), [matcher groupWithInt:i])];
+      [arguments addWithId:create_CCBRArgument_initWithJavaLangInteger_withNSString_(startIndex == -1 ? nil : JavaLangInteger_valueOfWithInt_(startIndex), [matcher groupWithInt:i])];
     }
     return arguments;
   }
@@ -63,23 +63,23 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeJdkPatternArgumentMatcher, pattern_, JavaUtil
     { "pattern_", "LJavaUtilRegexPattern;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LJavaUtilRegexPattern;", "argumentsFrom", "LNSString;", "(Ljava/lang/String;)Ljava/util/List<Lcucumber/runtime/Argument;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeJdkPatternArgumentMatcher = { "JdkPatternArgumentMatcher", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 2, 1, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeJdkPatternArgumentMatcher;
+  static const J2ObjcClassInfo _CCBRJdkPatternArgumentMatcher = { "JdkPatternArgumentMatcher", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 2, 1, -1, -1, -1, -1, -1 };
+  return &_CCBRJdkPatternArgumentMatcher;
 }
 
 @end
 
-void CucumberRuntimeJdkPatternArgumentMatcher_initWithJavaUtilRegexPattern_(CucumberRuntimeJdkPatternArgumentMatcher *self, JavaUtilRegexPattern *pattern) {
+void CCBRJdkPatternArgumentMatcher_initWithJavaUtilRegexPattern_(CCBRJdkPatternArgumentMatcher *self, JavaUtilRegexPattern *pattern) {
   NSObject_init(self);
   JreStrongAssign(&self->pattern_, pattern);
 }
 
-CucumberRuntimeJdkPatternArgumentMatcher *new_CucumberRuntimeJdkPatternArgumentMatcher_initWithJavaUtilRegexPattern_(JavaUtilRegexPattern *pattern) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeJdkPatternArgumentMatcher, initWithJavaUtilRegexPattern_, pattern)
+CCBRJdkPatternArgumentMatcher *new_CCBRJdkPatternArgumentMatcher_initWithJavaUtilRegexPattern_(JavaUtilRegexPattern *pattern) {
+  J2OBJC_NEW_IMPL(CCBRJdkPatternArgumentMatcher, initWithJavaUtilRegexPattern_, pattern)
 }
 
-CucumberRuntimeJdkPatternArgumentMatcher *create_CucumberRuntimeJdkPatternArgumentMatcher_initWithJavaUtilRegexPattern_(JavaUtilRegexPattern *pattern) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeJdkPatternArgumentMatcher, initWithJavaUtilRegexPattern_, pattern)
+CCBRJdkPatternArgumentMatcher *create_CCBRJdkPatternArgumentMatcher_initWithJavaUtilRegexPattern_(JavaUtilRegexPattern *pattern) {
+  J2OBJC_CREATE_IMPL(CCBRJdkPatternArgumentMatcher, initWithJavaUtilRegexPattern_, pattern)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeJdkPatternArgumentMatcher)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRJdkPatternArgumentMatcher)

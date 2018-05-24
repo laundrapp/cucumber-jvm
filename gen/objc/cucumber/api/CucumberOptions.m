@@ -14,9 +14,9 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *CucumberApiCucumberOptions__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CCBCucumberOptions__Annotations$0(void);
 
-@implementation CucumberApiCucumberOptions
+@implementation CCBCucumberOptions
 
 @synthesize dryRun = dryRun_;
 @synthesize strict = strict_;
@@ -66,8 +66,8 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiCucumberOptions__Annot
   return [IOSObjectArray arrayWithLength:0 type:NSString_class_()];
 }
 
-+ (CucumberApiSnippetType *)snippetsDefault {
-  return JreLoadEnum(CucumberApiSnippetType, UNDERSCORE);
++ (CCBSnippetType *)snippetsDefault {
+  return JreLoadEnum(CCBSnippetType, UNDERSCORE);
 }
 
 + (IOSObjectArray *)junitDefault {
@@ -75,7 +75,7 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiCucumberOptions__Annot
 }
 
 - (IOSClass *)annotationType {
-  return CucumberApiCucumberOptions_class_();
+  return CCBCucumberOptions_class_();
 }
 
 - (NSString *)description {
@@ -113,7 +113,7 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiCucumberOptions__Annot
     { NULL, "[LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "[LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LCucumberApiSnippetType;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCCBSnippetType;", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "[LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
@@ -141,18 +141,18 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiCucumberOptions__Annot
     { "plugin_", "[LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "monochrome_", "Z", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "name_", "[LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
-    { "snippets_", "LCucumberApiSnippetType;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
+    { "snippets_", "LCCBSnippetType;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "junit_", "[LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&CucumberApiCucumberOptions__Annotations$0 };
-  static const J2ObjcClassInfo _CucumberApiCucumberOptions = { "CucumberOptions", "cucumber.api", ptrTable, methods, fields, 7, 0x2609, 11, 11, -1, -1, -1, -1, 0 };
-  return &_CucumberApiCucumberOptions;
+  static const void *ptrTable[] = { (void *)&CCBCucumberOptions__Annotations$0 };
+  static const J2ObjcClassInfo _CCBCucumberOptions = { "CucumberOptions", "cucumber.api", ptrTable, methods, fields, 7, 0x2609, 11, 11, -1, -1, -1, -1, 0 };
+  return &_CCBCucumberOptions;
 }
 
 @end
 
-id<CucumberApiCucumberOptions> create_CucumberApiCucumberOptions(jboolean dryRun, IOSObjectArray *features, IOSObjectArray *format, IOSObjectArray *glue, IOSObjectArray *junit, jboolean monochrome, IOSObjectArray *name, IOSObjectArray *plugin, CucumberApiSnippetType *snippets, jboolean strict, IOSObjectArray *tags) {
-  CucumberApiCucumberOptions *self = AUTORELEASE([[CucumberApiCucumberOptions alloc] init]);
+id<CCBCucumberOptions> create_CCBCucumberOptions(jboolean dryRun, IOSObjectArray *features, IOSObjectArray *format, IOSObjectArray *glue, IOSObjectArray *junit, jboolean monochrome, IOSObjectArray *name, IOSObjectArray *plugin, CCBSnippetType *snippets, jboolean strict, IOSObjectArray *tags) {
+  CCBCucumberOptions *self = AUTORELEASE([[CCBCucumberOptions alloc] init]);
   self->dryRun_ = dryRun;
   self->features_ = RETAIN_(features);
   self->format_ = RETAIN_(format);
@@ -167,8 +167,8 @@ id<CucumberApiCucumberOptions> create_CucumberApiCucumberOptions(jboolean dryRun
   return self;
 }
 
-IOSObjectArray *CucumberApiCucumberOptions__Annotations$0() {
+IOSObjectArray *CCBCucumberOptions__Annotations$0() {
   return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, TYPE) } count:1 type:JavaLangAnnotationElementType_class_()]) } count:2 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiCucumberOptions)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBCucumberOptions)

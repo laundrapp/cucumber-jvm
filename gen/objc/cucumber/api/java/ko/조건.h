@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaKo조건_) && (INCLUDE_ALL_CucumberApiJavaKo조건 || defined(INCLUDE_CucumberApiJavaKo조건))
-#define CucumberApiJavaKo조건_
+#if !defined (CCB조건_) && (INCLUDE_ALL_CucumberApiJavaKo조건 || defined(INCLUDE_CCB조건))
+#define CCB조건_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaKo조건 < JavaLangAnnotationAnnotation >
+@protocol CCB조건 < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaKo조건 : NSObject < CucumberApiJavaKo조건 > {
+@interface CCB조건 : NSObject < CCB조건 > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaKo조건)
+J2OBJC_EMPTY_STATIC_INIT(CCB조건)
 
-FOUNDATION_EXPORT id<CucumberApiJavaKo조건> create_CucumberApiJavaKo조건(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCB조건> create_CCB조건(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaKo조건)
+J2OBJC_TYPE_LITERAL_HEADER(CCB조건)
+
+#define CucumberApiJavaKo조건 CCB조건
 
 #endif
 

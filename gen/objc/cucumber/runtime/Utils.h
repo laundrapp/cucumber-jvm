@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeUtils_) && (INCLUDE_ALL_CucumberRuntimeUtils || defined(INCLUDE_CucumberRuntimeUtils))
-#define CucumberRuntimeUtils_
+#if !defined (CCBRUtils_) && (INCLUDE_ALL_CucumberRuntimeUtils || defined(INCLUDE_CCBRUtils))
+#define CCBRUtils_
 
 @class IOSClass;
 @class IOSObjectArray;
@@ -27,7 +27,7 @@
 @class JavaNetURL;
 @protocol JavaLangReflectType;
 
-@interface CucumberRuntimeUtils : NSObject
+@interface CCBRUtils : NSObject
 
 #pragma mark Public
 
@@ -53,25 +53,27 @@ withJavaLangReflectMethod:(JavaLangReflectMethod *)method
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeUtils)
+J2OBJC_EMPTY_STATIC_INIT(CCBRUtils)
 
-FOUNDATION_EXPORT jboolean CucumberRuntimeUtils_isInstantiableWithIOSClass_(IOSClass *clazz);
+FOUNDATION_EXPORT jboolean CCBRUtils_isInstantiableWithIOSClass_(IOSClass *clazz);
 
-FOUNDATION_EXPORT id CucumberRuntimeUtils_invokeWithId_withJavaLangReflectMethod_withLong_withNSObjectArray_(id target, JavaLangReflectMethod *method, jlong timeoutMillis, IOSObjectArray *args);
+FOUNDATION_EXPORT id CCBRUtils_invokeWithId_withJavaLangReflectMethod_withLong_withNSObjectArray_(id target, JavaLangReflectMethod *method, jlong timeoutMillis, IOSObjectArray *args);
 
-FOUNDATION_EXPORT id<JavaLangReflectType> CucumberRuntimeUtils_listItemTypeWithJavaLangReflectType_(id<JavaLangReflectType> type);
+FOUNDATION_EXPORT id<JavaLangReflectType> CCBRUtils_listItemTypeWithJavaLangReflectType_(id<JavaLangReflectType> type);
 
-FOUNDATION_EXPORT id<JavaLangReflectType> CucumberRuntimeUtils_mapKeyTypeWithJavaLangReflectType_(id<JavaLangReflectType> type);
+FOUNDATION_EXPORT id<JavaLangReflectType> CCBRUtils_mapKeyTypeWithJavaLangReflectType_(id<JavaLangReflectType> type);
 
-FOUNDATION_EXPORT id<JavaLangReflectType> CucumberRuntimeUtils_mapValueTypeWithJavaLangReflectType_(id<JavaLangReflectType> type);
+FOUNDATION_EXPORT id<JavaLangReflectType> CCBRUtils_mapValueTypeWithJavaLangReflectType_(id<JavaLangReflectType> type);
 
-FOUNDATION_EXPORT JavaNetURL *CucumberRuntimeUtils_toURLWithNSString_(NSString *pathOrUrl);
+FOUNDATION_EXPORT JavaNetURL *CCBRUtils_toURLWithNSString_(NSString *pathOrUrl);
 
-FOUNDATION_EXPORT NSString *CucumberRuntimeUtils_htmlEscapeWithNSString_(NSString *s);
+FOUNDATION_EXPORT NSString *CCBRUtils_htmlEscapeWithNSString_(NSString *s);
 
-FOUNDATION_EXPORT NSString *CucumberRuntimeUtils_getUniqueTestNameForScenarioExampleWithNSString_withInt_(NSString *testCaseName, jint exampleNumber);
+FOUNDATION_EXPORT NSString *CCBRUtils_getUniqueTestNameForScenarioExampleWithNSString_withInt_(NSString *testCaseName, jint exampleNumber);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeUtils)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRUtils)
+
+@compatibility_alias CucumberRuntimeUtils CCBRUtils;
 
 #endif
 

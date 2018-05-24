@@ -18,13 +18,13 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeTableDiffableRow_) && (INCLUDE_ALL_CucumberRuntimeTableDiffableRow || defined(INCLUDE_CucumberRuntimeTableDiffableRow))
-#define CucumberRuntimeTableDiffableRow_
+#if !defined (CCBRDiffableRow_) && (INCLUDE_ALL_CucumberRuntimeTableDiffableRow || defined(INCLUDE_CCBRDiffableRow))
+#define CCBRDiffableRow_
 
 @class GherkinPicklesPickleRow;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeTableDiffableRow : NSObject {
+@interface CCBRDiffableRow : NSObject {
  @public
   GherkinPicklesPickleRow *row_;
   id<JavaUtilList> convertedRow_;
@@ -45,18 +45,20 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeTableDiffableRow)
+J2OBJC_EMPTY_STATIC_INIT(CCBRDiffableRow)
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeTableDiffableRow, row_, GherkinPicklesPickleRow *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeTableDiffableRow, convertedRow_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRDiffableRow, row_, GherkinPicklesPickleRow *)
+J2OBJC_FIELD_SETTER(CCBRDiffableRow, convertedRow_, id<JavaUtilList>)
 
-FOUNDATION_EXPORT void CucumberRuntimeTableDiffableRow_initWithGherkinPicklesPickleRow_withJavaUtilList_(CucumberRuntimeTableDiffableRow *self, GherkinPicklesPickleRow *row, id<JavaUtilList> convertedRow);
+FOUNDATION_EXPORT void CCBRDiffableRow_initWithGherkinPicklesPickleRow_withJavaUtilList_(CCBRDiffableRow *self, GherkinPicklesPickleRow *row, id<JavaUtilList> convertedRow);
 
-FOUNDATION_EXPORT CucumberRuntimeTableDiffableRow *new_CucumberRuntimeTableDiffableRow_initWithGherkinPicklesPickleRow_withJavaUtilList_(GherkinPicklesPickleRow *row, id<JavaUtilList> convertedRow) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRDiffableRow *new_CCBRDiffableRow_initWithGherkinPicklesPickleRow_withJavaUtilList_(GherkinPicklesPickleRow *row, id<JavaUtilList> convertedRow) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeTableDiffableRow *create_CucumberRuntimeTableDiffableRow_initWithGherkinPicklesPickleRow_withJavaUtilList_(GherkinPicklesPickleRow *row, id<JavaUtilList> convertedRow);
+FOUNDATION_EXPORT CCBRDiffableRow *create_CCBRDiffableRow_initWithGherkinPicklesPickleRow_withJavaUtilList_(GherkinPicklesPickleRow *row, id<JavaUtilList> convertedRow);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTableDiffableRow)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRDiffableRow)
+
+@compatibility_alias CucumberRuntimeTableDiffableRow CCBRDiffableRow;
 
 #endif
 

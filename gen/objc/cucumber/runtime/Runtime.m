@@ -41,11 +41,11 @@
 #include "java/util/List.h"
 #include "java/util/Map.h"
 
-@interface CucumberRuntimeRuntime () {
+@interface CCBRRuntime () {
  @public
-  CucumberRuntimeUndefinedStepsTracker *undefinedStepsTracker_;
-  CucumberRuntimeRuntimeOptions *runtimeOptions_;
-  id<CucumberRuntimeIoResourceLoader> resourceLoader_;
+  CCBRUndefinedStepsTracker *undefinedStepsTracker_;
+  CCBRRuntimeOptions *runtimeOptions_;
+  id<CCBRResourceLoader> resourceLoader_;
   JavaLangClassLoader *classLoader_;
   CucumberRunnerRunner *runner_;
   id<JavaUtilList> filters_;
@@ -53,81 +53,81 @@
   GherkinPicklesCompiler *compiler_;
 }
 
-+ (id<JavaUtilCollection>)loadBackendsWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                           withCucumberRuntimeClassFinder:(id<CucumberRuntimeClassFinder>)classFinder;
++ (id<JavaUtilCollection>)loadBackendsWithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+                                         withCCBRClassFinder:(id<CCBRClassFinder>)classFinder;
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeRuntime, undefinedStepsTracker_, CucumberRuntimeUndefinedStepsTracker *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeRuntime, runtimeOptions_, CucumberRuntimeRuntimeOptions *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeRuntime, resourceLoader_, id<CucumberRuntimeIoResourceLoader>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeRuntime, classLoader_, JavaLangClassLoader *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeRuntime, runner_, CucumberRunnerRunner *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeRuntime, filters_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeRuntime, bus_, CucumberRunnerEventBus *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeRuntime, compiler_, GherkinPicklesCompiler *)
+J2OBJC_FIELD_SETTER(CCBRRuntime, undefinedStepsTracker_, CCBRUndefinedStepsTracker *)
+J2OBJC_FIELD_SETTER(CCBRRuntime, runtimeOptions_, CCBRRuntimeOptions *)
+J2OBJC_FIELD_SETTER(CCBRRuntime, resourceLoader_, id<CCBRResourceLoader>)
+J2OBJC_FIELD_SETTER(CCBRRuntime, classLoader_, JavaLangClassLoader *)
+J2OBJC_FIELD_SETTER(CCBRRuntime, runner_, CucumberRunnerRunner *)
+J2OBJC_FIELD_SETTER(CCBRRuntime, filters_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRRuntime, bus_, CucumberRunnerEventBus *)
+J2OBJC_FIELD_SETTER(CCBRRuntime, compiler_, GherkinPicklesCompiler *)
 
-__attribute__((unused)) static id<JavaUtilCollection> CucumberRuntimeRuntime_loadBackendsWithCucumberRuntimeIoResourceLoader_withCucumberRuntimeClassFinder_(id<CucumberRuntimeIoResourceLoader> resourceLoader, id<CucumberRuntimeClassFinder> classFinder);
+__attribute__((unused)) static id<JavaUtilCollection> CCBRRuntime_loadBackendsWithCCBRResourceLoader_withCCBRClassFinder_(id<CCBRResourceLoader> resourceLoader, id<CCBRClassFinder> classFinder);
 
-@implementation CucumberRuntimeRuntime
+@implementation CCBRRuntime
 
-- (instancetype __nonnull)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                   withCucumberRuntimeClassFinder:(id<CucumberRuntimeClassFinder>)classFinder
-                                          withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
-                                withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions {
-  CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withCucumberRuntimeClassFinder_withJavaLangClassLoader_withCucumberRuntimeRuntimeOptions_(self, resourceLoader, classFinder, classLoader, runtimeOptions);
+- (instancetype __nonnull)initWithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+                                 withCCBRClassFinder:(id<CCBRClassFinder>)classFinder
+                             withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
+                              withCCBRRuntimeOptions:(CCBRRuntimeOptions *)runtimeOptions {
+  CCBRRuntime_initWithCCBRResourceLoader_withCCBRClassFinder_withJavaLangClassLoader_withCCBRRuntimeOptions_(self, resourceLoader, classFinder, classLoader, runtimeOptions);
   return self;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                          withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
-                                           withJavaUtilCollection:(id<JavaUtilCollection>)backends
-                                withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions {
-  CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_(self, resourceLoader, classLoader, backends, runtimeOptions);
+- (instancetype __nonnull)initWithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+                             withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
+                              withJavaUtilCollection:(id<JavaUtilCollection>)backends
+                              withCCBRRuntimeOptions:(CCBRRuntimeOptions *)runtimeOptions {
+  CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_(self, resourceLoader, classLoader, backends, runtimeOptions);
   return self;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                          withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
-                                           withJavaUtilCollection:(id<JavaUtilCollection>)backends
-                                withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions
-                                          withCucumberRuntimeGlue:(id<CucumberRuntimeGlue>)optionalGlue {
-  CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_withCucumberRuntimeGlue_(self, resourceLoader, classLoader, backends, runtimeOptions, optionalGlue);
+- (instancetype __nonnull)initWithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+                             withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
+                              withJavaUtilCollection:(id<JavaUtilCollection>)backends
+                              withCCBRRuntimeOptions:(CCBRRuntimeOptions *)runtimeOptions
+                                        withCCBRGlue:(id<CCBRGlue>)optionalGlue {
+  CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBRGlue_(self, resourceLoader, classLoader, backends, runtimeOptions, optionalGlue);
   return self;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                          withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
-                                           withJavaUtilCollection:(id<JavaUtilCollection>)backends
-                                withCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)runtimeOptions
-                                    withCucumberRunnerTimeService:(id<CucumberRunnerTimeService>)stopWatch
-                                          withCucumberRuntimeGlue:(id<CucumberRuntimeGlue>)optionalGlue {
-  CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_withCucumberRunnerTimeService_withCucumberRuntimeGlue_(self, resourceLoader, classLoader, backends, runtimeOptions, stopWatch, optionalGlue);
+- (instancetype __nonnull)initWithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+                             withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
+                              withJavaUtilCollection:(id<JavaUtilCollection>)backends
+                              withCCBRRuntimeOptions:(CCBRRuntimeOptions *)runtimeOptions
+                       withCucumberRunnerTimeService:(id<CucumberRunnerTimeService>)stopWatch
+                                        withCCBRGlue:(id<CCBRGlue>)optionalGlue {
+  CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCucumberRunnerTimeService_withCCBRGlue_(self, resourceLoader, classLoader, backends, runtimeOptions, stopWatch, optionalGlue);
   return self;
 }
 
-+ (id<JavaUtilCollection>)loadBackendsWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                           withCucumberRuntimeClassFinder:(id<CucumberRuntimeClassFinder>)classFinder {
-  return CucumberRuntimeRuntime_loadBackendsWithCucumberRuntimeIoResourceLoader_withCucumberRuntimeClassFinder_(resourceLoader, classFinder);
++ (id<JavaUtilCollection>)loadBackendsWithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+                                         withCCBRClassFinder:(id<CCBRClassFinder>)classFinder {
+  return CCBRRuntime_loadBackendsWithCCBRResourceLoader_withCCBRClassFinder_(resourceLoader, classFinder);
 }
 
 - (void)run {
-  id<JavaUtilList> features = [((CucumberRuntimeRuntimeOptions *) nil_chk(runtimeOptions_)) cucumberFeaturesWithCucumberRuntimeIoResourceLoader:resourceLoader_ withCucumberRunnerEventBus:bus_];
-  id<CucumberApiStepDefinitionReporter> stepDefinitionReporter = [runtimeOptions_ stepDefinitionReporterWithJavaLangClassLoader:classLoader_];
-  [self reportStepDefinitionsWithCucumberApiStepDefinitionReporter:stepDefinitionReporter];
-  for (CucumberRuntimeModelCucumberFeature * __strong cucumberFeature in nil_chk(features)) {
-    [self runFeatureWithCucumberRuntimeModelCucumberFeature:cucumberFeature];
+  id<JavaUtilList> features = [((CCBRRuntimeOptions *) nil_chk(runtimeOptions_)) cucumberFeaturesWithCCBRResourceLoader:resourceLoader_ withCucumberRunnerEventBus:bus_];
+  id<CCBStepDefinitionReporter> stepDefinitionReporter = [runtimeOptions_ stepDefinitionReporterWithJavaLangClassLoader:classLoader_];
+  [self reportStepDefinitionsWithCCBStepDefinitionReporter:stepDefinitionReporter];
+  for (CCBRCucumberFeature * __strong cucumberFeature in nil_chk(features)) {
+    [self runFeatureWithCCBRCucumberFeature:cucumberFeature];
   }
-  [((CucumberRunnerEventBus *) nil_chk(bus_)) sendWithCucumberApiEventEvent:create_CucumberApiEventTestRunFinished_initWithJavaLangLong_([bus_ getTime])];
+  [((CucumberRunnerEventBus *) nil_chk(bus_)) sendWithCCBEvent:create_CCBTestRunFinished_initWithJavaLangLong_([bus_ getTime])];
   [self printSummary];
 }
 
-- (void)reportStepDefinitionsWithCucumberApiStepDefinitionReporter:(id<CucumberApiStepDefinitionReporter>)stepDefinitionReporter {
-  [((CucumberRunnerRunner *) nil_chk(runner_)) reportStepDefinitionsWithCucumberApiStepDefinitionReporter:stepDefinitionReporter];
+- (void)reportStepDefinitionsWithCCBStepDefinitionReporter:(id<CCBStepDefinitionReporter>)stepDefinitionReporter {
+  [((CucumberRunnerRunner *) nil_chk(runner_)) reportStepDefinitionsWithCCBStepDefinitionReporter:stepDefinitionReporter];
 }
 
-- (void)runFeatureWithCucumberRuntimeModelCucumberFeature:(CucumberRuntimeModelCucumberFeature *)feature {
-  id<JavaUtilList> pickleEvents = [self compileFeatureWithCucumberRuntimeModelCucumberFeature:feature];
+- (void)runFeatureWithCCBRCucumberFeature:(CCBRCucumberFeature *)feature {
+  id<JavaUtilList> pickleEvents = [self compileFeatureWithCCBRCucumberFeature:feature];
   for (GherkinEventsPickleEvent * __strong pickleEvent in nil_chk(pickleEvents)) {
     if ([self matchesFiltersWithGherkinEventsPickleEvent:pickleEvent]) {
       [((CucumberRunnerRunner *) nil_chk(runner_)) runPickleWithGherkinEventsPickleEvent:pickleEvent];
@@ -135,17 +135,17 @@ __attribute__((unused)) static id<JavaUtilCollection> CucumberRuntimeRuntime_loa
   }
 }
 
-- (id<JavaUtilList>)compileFeatureWithCucumberRuntimeModelCucumberFeature:(CucumberRuntimeModelCucumberFeature *)feature {
+- (id<JavaUtilList>)compileFeatureWithCCBRCucumberFeature:(CCBRCucumberFeature *)feature {
   id<JavaUtilList> pickleEvents = create_JavaUtilArrayList_init();
-  for (GherkinPicklesPickle * __strong pickle in nil_chk([((GherkinPicklesCompiler *) nil_chk(compiler_)) compileWithGherkinAstGherkinDocument:[((CucumberRuntimeModelCucumberFeature *) nil_chk(feature)) getGherkinFeature]])) {
+  for (GherkinPicklesPickle * __strong pickle in nil_chk([((GherkinPicklesCompiler *) nil_chk(compiler_)) compileWithGherkinAstGherkinDocument:[((CCBRCucumberFeature *) nil_chk(feature)) getGherkinFeature]])) {
     [pickleEvents addWithId:create_GherkinEventsPickleEvent_initWithNSString_withGherkinPicklesPickle_([feature getUri], pickle)];
   }
   return pickleEvents;
 }
 
 - (jboolean)matchesFiltersWithGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent {
-  for (id<CucumberRuntimePicklePredicate> __strong filter in nil_chk(filters_)) {
-    if (![((id<CucumberRuntimePicklePredicate>) nil_chk(filter)) applyWithGherkinEventsPickleEvent:pickleEvent]) {
+  for (id<CCBRPicklePredicate> __strong filter in nil_chk(filters_)) {
+    if (![((id<CCBRPicklePredicate>) nil_chk(filter)) applyWithGherkinEventsPickleEvent:pickleEvent]) {
       return false;
     }
   }
@@ -153,27 +153,27 @@ __attribute__((unused)) static id<JavaUtilCollection> CucumberRuntimeRuntime_loa
 }
 
 - (void)printSummary {
-  id<CucumberApiSummaryPrinter> summaryPrinter = [((CucumberRuntimeRuntimeOptions *) nil_chk(runtimeOptions_)) summaryPrinterWithJavaLangClassLoader:classLoader_];
-  [((id<CucumberApiSummaryPrinter>) nil_chk(summaryPrinter)) printWithCucumberRuntimeRuntime:self];
+  id<CCBSummaryPrinter> summaryPrinter = [((CCBRRuntimeOptions *) nil_chk(runtimeOptions_)) summaryPrinterWithJavaLangClassLoader:classLoader_];
+  [((id<CCBSummaryPrinter>) nil_chk(summaryPrinter)) printWithCCBRRuntime:self];
 }
 
 - (void)printStatsWithJavaIoPrintStream:(JavaIoPrintStream *)outArg {
-  [((CucumberRuntimeStats *) nil_chk(stats_)) printStatsWithJavaIoPrintStream:outArg withBoolean:[((CucumberRuntimeRuntimeOptions *) nil_chk(runtimeOptions_)) isStrict]];
+  [((CCBRStats *) nil_chk(stats_)) printStatsWithJavaIoPrintStream:outArg withBoolean:[((CCBRRuntimeOptions *) nil_chk(runtimeOptions_)) isStrict]];
 }
 
 - (id<JavaUtilList>)getErrors {
-  return [((CucumberRuntimeStats *) nil_chk(stats_)) getErrors];
+  return [((CCBRStats *) nil_chk(stats_)) getErrors];
 }
 
 - (jbyte)exitStatus {
-  return [((CucumberRuntimeStats *) nil_chk(stats_)) exitStatusWithBoolean:[((CucumberRuntimeRuntimeOptions *) nil_chk(runtimeOptions_)) isStrict]];
+  return [((CCBRStats *) nil_chk(stats_)) exitStatusWithBoolean:[((CCBRRuntimeOptions *) nil_chk(runtimeOptions_)) isStrict]];
 }
 
 - (id<JavaUtilList>)getSnippets {
-  return [((CucumberRuntimeUndefinedStepsTracker *) nil_chk(undefinedStepsTracker_)) getSnippets];
+  return [((CCBRUndefinedStepsTracker *) nil_chk(undefinedStepsTracker_)) getSnippets];
 }
 
-- (id<CucumberRuntimeGlue>)getGlue {
+- (id<CCBRGlue>)getGlue {
   return [((CucumberRunnerRunner *) nil_chk(runner_)) getGlue];
 }
 
@@ -215,22 +215,22 @@ __attribute__((unused)) static id<JavaUtilCollection> CucumberRuntimeRuntime_loa
     { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 21, -1, -1 },
     { NULL, "B", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 22, -1, -1 },
-    { NULL, "LCucumberRuntimeGlue;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCCBRGlue;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LCucumberRunnerEventBus;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LCucumberRunnerRunner;", 0x1, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeIoResourceLoader:withCucumberRuntimeClassFinder:withJavaLangClassLoader:withCucumberRuntimeRuntimeOptions:);
-  methods[1].selector = @selector(initWithCucumberRuntimeIoResourceLoader:withJavaLangClassLoader:withJavaUtilCollection:withCucumberRuntimeRuntimeOptions:);
-  methods[2].selector = @selector(initWithCucumberRuntimeIoResourceLoader:withJavaLangClassLoader:withJavaUtilCollection:withCucumberRuntimeRuntimeOptions:withCucumberRuntimeGlue:);
-  methods[3].selector = @selector(initWithCucumberRuntimeIoResourceLoader:withJavaLangClassLoader:withJavaUtilCollection:withCucumberRuntimeRuntimeOptions:withCucumberRunnerTimeService:withCucumberRuntimeGlue:);
-  methods[4].selector = @selector(loadBackendsWithCucumberRuntimeIoResourceLoader:withCucumberRuntimeClassFinder:);
+  methods[0].selector = @selector(initWithCCBRResourceLoader:withCCBRClassFinder:withJavaLangClassLoader:withCCBRRuntimeOptions:);
+  methods[1].selector = @selector(initWithCCBRResourceLoader:withJavaLangClassLoader:withJavaUtilCollection:withCCBRRuntimeOptions:);
+  methods[2].selector = @selector(initWithCCBRResourceLoader:withJavaLangClassLoader:withJavaUtilCollection:withCCBRRuntimeOptions:withCCBRGlue:);
+  methods[3].selector = @selector(initWithCCBRResourceLoader:withJavaLangClassLoader:withJavaUtilCollection:withCCBRRuntimeOptions:withCucumberRunnerTimeService:withCCBRGlue:);
+  methods[4].selector = @selector(loadBackendsWithCCBRResourceLoader:withCCBRClassFinder:);
   methods[5].selector = @selector(run);
-  methods[6].selector = @selector(reportStepDefinitionsWithCucumberApiStepDefinitionReporter:);
-  methods[7].selector = @selector(runFeatureWithCucumberRuntimeModelCucumberFeature:);
-  methods[8].selector = @selector(compileFeatureWithCucumberRuntimeModelCucumberFeature:);
+  methods[6].selector = @selector(reportStepDefinitionsWithCCBStepDefinitionReporter:);
+  methods[7].selector = @selector(runFeatureWithCCBRCucumberFeature:);
+  methods[8].selector = @selector(compileFeatureWithCCBRCucumberFeature:);
   methods[9].selector = @selector(matchesFiltersWithGherkinEventsPickleEvent:);
   methods[10].selector = @selector(printSummary);
   methods[11].selector = @selector(printStatsWithJavaIoPrintStream:);
@@ -242,104 +242,104 @@ __attribute__((unused)) static id<JavaUtilCollection> CucumberRuntimeRuntime_loa
   methods[17].selector = @selector(getRunner);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "stats_", "LCucumberRuntimeStats;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
-    { "undefinedStepsTracker_", "LCucumberRuntimeUndefinedStepsTracker;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "runtimeOptions_", "LCucumberRuntimeRuntimeOptions;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "resourceLoader_", "LCucumberRuntimeIoResourceLoader;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "stats_", "LCCBRStats;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
+    { "undefinedStepsTracker_", "LCCBRUndefinedStepsTracker;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "runtimeOptions_", "LCCBRRuntimeOptions;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "resourceLoader_", "LCCBRResourceLoader;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "classLoader_", "LJavaLangClassLoader;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "runner_", "LCucumberRunnerRunner;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "filters_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 23, -1 },
     { "bus_", "LCucumberRunnerEventBus;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "compiler_", "LGherkinPicklesCompiler;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCucumberRuntimeIoResourceLoader;LCucumberRuntimeClassFinder;LJavaLangClassLoader;LCucumberRuntimeRuntimeOptions;", "LCucumberRuntimeIoResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCucumberRuntimeRuntimeOptions;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;)V", "LCucumberRuntimeIoResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCucumberRuntimeRuntimeOptions;LCucumberRuntimeGlue;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;Lcucumber/runtime/Glue;)V", "LCucumberRuntimeIoResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCucumberRuntimeRuntimeOptions;LCucumberRunnerTimeService;LCucumberRuntimeGlue;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;Lcucumber/runner/TimeService;Lcucumber/runtime/Glue;)V", "loadBackends", "LCucumberRuntimeIoResourceLoader;LCucumberRuntimeClassFinder;", "(Lcucumber/runtime/io/ResourceLoader;Lcucumber/runtime/ClassFinder;)Ljava/util/Collection<+Lcucumber/runtime/Backend;>;", "LJavaIoIOException;", "reportStepDefinitions", "LCucumberApiStepDefinitionReporter;", "runFeature", "LCucumberRuntimeModelCucumberFeature;", "compileFeature", "(Lcucumber/runtime/model/CucumberFeature;)Ljava/util/List<Lgherkin/events/PickleEvent;>;", "matchesFilters", "LGherkinEventsPickleEvent;", "printStats", "LJavaIoPrintStream;", "()Ljava/util/List<Ljava/lang/Throwable;>;", "()Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/List<Lcucumber/runtime/PicklePredicate;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeRuntime = { "Runtime", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 18, 9, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeRuntime;
+  static const void *ptrTable[] = { "LCCBRResourceLoader;LCCBRClassFinder;LJavaLangClassLoader;LCCBRRuntimeOptions;", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;)V", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;LCCBRGlue;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;Lcucumber/runtime/Glue;)V", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;LCucumberRunnerTimeService;LCCBRGlue;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;Lcucumber/runner/TimeService;Lcucumber/runtime/Glue;)V", "loadBackends", "LCCBRResourceLoader;LCCBRClassFinder;", "(Lcucumber/runtime/io/ResourceLoader;Lcucumber/runtime/ClassFinder;)Ljava/util/Collection<+Lcucumber/runtime/Backend;>;", "LJavaIoIOException;", "reportStepDefinitions", "LCCBStepDefinitionReporter;", "runFeature", "LCCBRCucumberFeature;", "compileFeature", "(Lcucumber/runtime/model/CucumberFeature;)Ljava/util/List<Lgherkin/events/PickleEvent;>;", "matchesFilters", "LGherkinEventsPickleEvent;", "printStats", "LJavaIoPrintStream;", "()Ljava/util/List<Ljava/lang/Throwable;>;", "()Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/List<Lcucumber/runtime/PicklePredicate;>;" };
+  static const J2ObjcClassInfo _CCBRRuntime = { "Runtime", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 18, 9, -1, -1, -1, -1, -1 };
+  return &_CCBRRuntime;
 }
 
 @end
 
-void CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withCucumberRuntimeClassFinder_withJavaLangClassLoader_withCucumberRuntimeRuntimeOptions_(CucumberRuntimeRuntime *self, id<CucumberRuntimeIoResourceLoader> resourceLoader, id<CucumberRuntimeClassFinder> classFinder, JavaLangClassLoader *classLoader, CucumberRuntimeRuntimeOptions *runtimeOptions) {
-  CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_(self, resourceLoader, classLoader, CucumberRuntimeRuntime_loadBackendsWithCucumberRuntimeIoResourceLoader_withCucumberRuntimeClassFinder_(resourceLoader, classFinder), runtimeOptions);
+void CCBRRuntime_initWithCCBRResourceLoader_withCCBRClassFinder_withJavaLangClassLoader_withCCBRRuntimeOptions_(CCBRRuntime *self, id<CCBRResourceLoader> resourceLoader, id<CCBRClassFinder> classFinder, JavaLangClassLoader *classLoader, CCBRRuntimeOptions *runtimeOptions) {
+  CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_(self, resourceLoader, classLoader, CCBRRuntime_loadBackendsWithCCBRResourceLoader_withCCBRClassFinder_(resourceLoader, classFinder), runtimeOptions);
 }
 
-CucumberRuntimeRuntime *new_CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withCucumberRuntimeClassFinder_withJavaLangClassLoader_withCucumberRuntimeRuntimeOptions_(id<CucumberRuntimeIoResourceLoader> resourceLoader, id<CucumberRuntimeClassFinder> classFinder, JavaLangClassLoader *classLoader, CucumberRuntimeRuntimeOptions *runtimeOptions) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeRuntime, initWithCucumberRuntimeIoResourceLoader_withCucumberRuntimeClassFinder_withJavaLangClassLoader_withCucumberRuntimeRuntimeOptions_, resourceLoader, classFinder, classLoader, runtimeOptions)
+CCBRRuntime *new_CCBRRuntime_initWithCCBRResourceLoader_withCCBRClassFinder_withJavaLangClassLoader_withCCBRRuntimeOptions_(id<CCBRResourceLoader> resourceLoader, id<CCBRClassFinder> classFinder, JavaLangClassLoader *classLoader, CCBRRuntimeOptions *runtimeOptions) {
+  J2OBJC_NEW_IMPL(CCBRRuntime, initWithCCBRResourceLoader_withCCBRClassFinder_withJavaLangClassLoader_withCCBRRuntimeOptions_, resourceLoader, classFinder, classLoader, runtimeOptions)
 }
 
-CucumberRuntimeRuntime *create_CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withCucumberRuntimeClassFinder_withJavaLangClassLoader_withCucumberRuntimeRuntimeOptions_(id<CucumberRuntimeIoResourceLoader> resourceLoader, id<CucumberRuntimeClassFinder> classFinder, JavaLangClassLoader *classLoader, CucumberRuntimeRuntimeOptions *runtimeOptions) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeRuntime, initWithCucumberRuntimeIoResourceLoader_withCucumberRuntimeClassFinder_withJavaLangClassLoader_withCucumberRuntimeRuntimeOptions_, resourceLoader, classFinder, classLoader, runtimeOptions)
+CCBRRuntime *create_CCBRRuntime_initWithCCBRResourceLoader_withCCBRClassFinder_withJavaLangClassLoader_withCCBRRuntimeOptions_(id<CCBRResourceLoader> resourceLoader, id<CCBRClassFinder> classFinder, JavaLangClassLoader *classLoader, CCBRRuntimeOptions *runtimeOptions) {
+  J2OBJC_CREATE_IMPL(CCBRRuntime, initWithCCBRResourceLoader_withCCBRClassFinder_withJavaLangClassLoader_withCCBRRuntimeOptions_, resourceLoader, classFinder, classLoader, runtimeOptions)
 }
 
-void CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_(CucumberRuntimeRuntime *self, id<CucumberRuntimeIoResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CucumberRuntimeRuntimeOptions *runtimeOptions) {
-  CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_withCucumberRunnerTimeService_withCucumberRuntimeGlue_(self, resourceLoader, classLoader, backends, runtimeOptions, JreLoadStatic(CucumberRunnerTimeService, SYSTEM), nil);
+void CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_(CCBRRuntime *self, id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions) {
+  CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCucumberRunnerTimeService_withCCBRGlue_(self, resourceLoader, classLoader, backends, runtimeOptions, JreLoadStatic(CucumberRunnerTimeService, SYSTEM), nil);
 }
 
-CucumberRuntimeRuntime *new_CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_(id<CucumberRuntimeIoResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CucumberRuntimeRuntimeOptions *runtimeOptions) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeRuntime, initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_, resourceLoader, classLoader, backends, runtimeOptions)
+CCBRRuntime *new_CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_(id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions) {
+  J2OBJC_NEW_IMPL(CCBRRuntime, initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_, resourceLoader, classLoader, backends, runtimeOptions)
 }
 
-CucumberRuntimeRuntime *create_CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_(id<CucumberRuntimeIoResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CucumberRuntimeRuntimeOptions *runtimeOptions) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeRuntime, initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_, resourceLoader, classLoader, backends, runtimeOptions)
+CCBRRuntime *create_CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_(id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions) {
+  J2OBJC_CREATE_IMPL(CCBRRuntime, initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_, resourceLoader, classLoader, backends, runtimeOptions)
 }
 
-void CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_withCucumberRuntimeGlue_(CucumberRuntimeRuntime *self, id<CucumberRuntimeIoResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CucumberRuntimeRuntimeOptions *runtimeOptions, id<CucumberRuntimeGlue> optionalGlue) {
-  CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_withCucumberRunnerTimeService_withCucumberRuntimeGlue_(self, resourceLoader, classLoader, backends, runtimeOptions, JreLoadStatic(CucumberRunnerTimeService, SYSTEM), optionalGlue);
+void CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBRGlue_(CCBRRuntime *self, id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CCBRGlue> optionalGlue) {
+  CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCucumberRunnerTimeService_withCCBRGlue_(self, resourceLoader, classLoader, backends, runtimeOptions, JreLoadStatic(CucumberRunnerTimeService, SYSTEM), optionalGlue);
 }
 
-CucumberRuntimeRuntime *new_CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_withCucumberRuntimeGlue_(id<CucumberRuntimeIoResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CucumberRuntimeRuntimeOptions *runtimeOptions, id<CucumberRuntimeGlue> optionalGlue) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeRuntime, initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_withCucumberRuntimeGlue_, resourceLoader, classLoader, backends, runtimeOptions, optionalGlue)
+CCBRRuntime *new_CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBRGlue_(id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CCBRGlue> optionalGlue) {
+  J2OBJC_NEW_IMPL(CCBRRuntime, initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBRGlue_, resourceLoader, classLoader, backends, runtimeOptions, optionalGlue)
 }
 
-CucumberRuntimeRuntime *create_CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_withCucumberRuntimeGlue_(id<CucumberRuntimeIoResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CucumberRuntimeRuntimeOptions *runtimeOptions, id<CucumberRuntimeGlue> optionalGlue) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeRuntime, initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_withCucumberRuntimeGlue_, resourceLoader, classLoader, backends, runtimeOptions, optionalGlue)
+CCBRRuntime *create_CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBRGlue_(id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CCBRGlue> optionalGlue) {
+  J2OBJC_CREATE_IMPL(CCBRRuntime, initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBRGlue_, resourceLoader, classLoader, backends, runtimeOptions, optionalGlue)
 }
 
-void CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_withCucumberRunnerTimeService_withCucumberRuntimeGlue_(CucumberRuntimeRuntime *self, id<CucumberRuntimeIoResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CucumberRuntimeRuntimeOptions *runtimeOptions, id<CucumberRunnerTimeService> stopWatch, id<CucumberRuntimeGlue> optionalGlue) {
+void CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCucumberRunnerTimeService_withCCBRGlue_(CCBRRuntime *self, id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CucumberRunnerTimeService> stopWatch, id<CCBRGlue> optionalGlue) {
   NSObject_init(self);
-  JreStrongAssignAndConsume(&self->undefinedStepsTracker_, new_CucumberRuntimeUndefinedStepsTracker_init());
+  JreStrongAssignAndConsume(&self->undefinedStepsTracker_, new_CCBRUndefinedStepsTracker_init());
   JreStrongAssignAndConsume(&self->compiler_, new_GherkinPicklesCompiler_init());
   if ([((id<JavaUtilCollection>) nil_chk(backends)) isEmpty]) {
-    @throw create_CucumberRuntimeCucumberException_initWithNSString_(@"No backends were found. Please make sure you have a backend module on your CLASSPATH.");
+    @throw create_CCBRCucumberException_initWithNSString_(@"No backends were found. Please make sure you have a backend module on your CLASSPATH.");
   }
   JreStrongAssign(&self->resourceLoader_, resourceLoader);
   JreStrongAssign(&self->classLoader_, classLoader);
   JreStrongAssign(&self->runtimeOptions_, runtimeOptions);
-  id<CucumberRuntimeGlue> glue;
-  glue = optionalGlue == nil ? create_CucumberRuntimeRuntimeGlue_initWithCucumberRuntimeXstreamLocalizedXStreams_(create_CucumberRuntimeXstreamLocalizedXStreams_initWithJavaLangClassLoader_withJavaUtilList_(classLoader, [((CucumberRuntimeRuntimeOptions *) nil_chk(runtimeOptions)) getConverters])) : optionalGlue;
-  JreStrongAssignAndConsume(&self->stats_, new_CucumberRuntimeStats_initWithBoolean_([((CucumberRuntimeRuntimeOptions *) nil_chk(runtimeOptions)) isMonochrome]));
+  id<CCBRGlue> glue;
+  glue = optionalGlue == nil ? create_CCBRRuntimeGlue_initWithCCBRLocalizedXStreams_(create_CCBRLocalizedXStreams_initWithJavaLangClassLoader_withJavaUtilList_(classLoader, [((CCBRRuntimeOptions *) nil_chk(runtimeOptions)) getConverters])) : optionalGlue;
+  JreStrongAssignAndConsume(&self->stats_, new_CCBRStats_initWithBoolean_([((CCBRRuntimeOptions *) nil_chk(runtimeOptions)) isMonochrome]));
   JreStrongAssignAndConsume(&self->bus_, new_CucumberRunnerEventBus_initWithCucumberRunnerTimeService_(stopWatch));
-  JreStrongAssignAndConsume(&self->runner_, new_CucumberRunnerRunner_initWithCucumberRuntimeGlue_withCucumberRunnerEventBus_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_(glue, self->bus_, backends, runtimeOptions));
+  JreStrongAssignAndConsume(&self->runner_, new_CucumberRunnerRunner_initWithCCBRGlue_withCucumberRunnerEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_(glue, self->bus_, backends, runtimeOptions));
   JreStrongAssignAndConsume(&self->filters_, new_JavaUtilArrayList_init());
   id<JavaUtilList> tagFilters = [runtimeOptions getTagFilters];
   if (![((id<JavaUtilList>) nil_chk(tagFilters)) isEmpty]) {
-    [self->filters_ addWithId:create_CucumberRuntimeTagPredicate_initWithJavaUtilList_(tagFilters)];
+    [self->filters_ addWithId:create_CCBRTagPredicate_initWithJavaUtilList_(tagFilters)];
   }
   id<JavaUtilList> nameFilters = [runtimeOptions getNameFilters];
   if (![((id<JavaUtilList>) nil_chk(nameFilters)) isEmpty]) {
-    [self->filters_ addWithId:create_CucumberRuntimeNamePredicate_initWithJavaUtilList_(nameFilters)];
+    [self->filters_ addWithId:create_CCBRNamePredicate_initWithJavaUtilList_(nameFilters)];
   }
-  id<JavaUtilMap> lineFilters = [runtimeOptions getLineFiltersWithCucumberRuntimeIoResourceLoader:resourceLoader];
+  id<JavaUtilMap> lineFilters = [runtimeOptions getLineFiltersWithCCBRResourceLoader:resourceLoader];
   if (![((id<JavaUtilMap>) nil_chk(lineFilters)) isEmpty]) {
-    [self->filters_ addWithId:create_CucumberRuntimeLinePredicate_initWithJavaUtilMap_(lineFilters)];
+    [self->filters_ addWithId:create_CCBRLinePredicate_initWithJavaUtilMap_(lineFilters)];
   }
-  [self->stats_ setEventPublisherWithCucumberApiEventEventPublisher:self->bus_];
-  [self->undefinedStepsTracker_ setEventPublisherWithCucumberApiEventEventPublisher:self->bus_];
+  [self->stats_ setEventPublisherWithCCBEventPublisher:self->bus_];
+  [self->undefinedStepsTracker_ setEventPublisherWithCCBEventPublisher:self->bus_];
   [runtimeOptions setEventBusWithCucumberRunnerEventBus:self->bus_];
 }
 
-CucumberRuntimeRuntime *new_CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_withCucumberRunnerTimeService_withCucumberRuntimeGlue_(id<CucumberRuntimeIoResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CucumberRuntimeRuntimeOptions *runtimeOptions, id<CucumberRunnerTimeService> stopWatch, id<CucumberRuntimeGlue> optionalGlue) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeRuntime, initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_withCucumberRunnerTimeService_withCucumberRuntimeGlue_, resourceLoader, classLoader, backends, runtimeOptions, stopWatch, optionalGlue)
+CCBRRuntime *new_CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCucumberRunnerTimeService_withCCBRGlue_(id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CucumberRunnerTimeService> stopWatch, id<CCBRGlue> optionalGlue) {
+  J2OBJC_NEW_IMPL(CCBRRuntime, initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCucumberRunnerTimeService_withCCBRGlue_, resourceLoader, classLoader, backends, runtimeOptions, stopWatch, optionalGlue)
 }
 
-CucumberRuntimeRuntime *create_CucumberRuntimeRuntime_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_withCucumberRunnerTimeService_withCucumberRuntimeGlue_(id<CucumberRuntimeIoResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CucumberRuntimeRuntimeOptions *runtimeOptions, id<CucumberRunnerTimeService> stopWatch, id<CucumberRuntimeGlue> optionalGlue) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeRuntime, initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCucumberRuntimeRuntimeOptions_withCucumberRunnerTimeService_withCucumberRuntimeGlue_, resourceLoader, classLoader, backends, runtimeOptions, stopWatch, optionalGlue)
+CCBRRuntime *create_CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCucumberRunnerTimeService_withCCBRGlue_(id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CucumberRunnerTimeService> stopWatch, id<CCBRGlue> optionalGlue) {
+  J2OBJC_CREATE_IMPL(CCBRRuntime, initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCucumberRunnerTimeService_withCCBRGlue_, resourceLoader, classLoader, backends, runtimeOptions, stopWatch, optionalGlue)
 }
 
-id<JavaUtilCollection> CucumberRuntimeRuntime_loadBackendsWithCucumberRuntimeIoResourceLoader_withCucumberRuntimeClassFinder_(id<CucumberRuntimeIoResourceLoader> resourceLoader, id<CucumberRuntimeClassFinder> classFinder) {
-  CucumberRuntimeRuntime_initialize();
-  CucumberRuntimeReflections *reflections = create_CucumberRuntimeReflections_initWithCucumberRuntimeClassFinder_(classFinder);
-  return [reflections instantiateSubclassesWithIOSClass:CucumberRuntimeBackend_class_() withNSString:@"cucumber.runtime" withIOSClassArray:[IOSObjectArray arrayWithObjects:(id[]){ CucumberRuntimeIoResourceLoader_class_() } count:1 type:IOSClass_class_()] withNSObjectArray:[IOSObjectArray arrayWithObjects:(id[]){ resourceLoader } count:1 type:NSObject_class_()]];
+id<JavaUtilCollection> CCBRRuntime_loadBackendsWithCCBRResourceLoader_withCCBRClassFinder_(id<CCBRResourceLoader> resourceLoader, id<CCBRClassFinder> classFinder) {
+  CCBRRuntime_initialize();
+  CCBRReflections *reflections = create_CCBRReflections_initWithCCBRClassFinder_(classFinder);
+  return [reflections instantiateSubclassesWithIOSClass:CCBRBackend_class_() withNSString:@"cucumber.runtime" withIOSClassArray:[IOSObjectArray arrayWithObjects:(id[]){ CCBRResourceLoader_class_() } count:1 type:IOSClass_class_()] withNSObjectArray:[IOSObjectArray arrayWithObjects:(id[]){ resourceLoader } count:1 type:NSObject_class_()]];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeRuntime)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRRuntime)

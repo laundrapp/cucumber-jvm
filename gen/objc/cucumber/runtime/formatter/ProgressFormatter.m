@@ -25,69 +25,69 @@
 
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@interface CucumberRuntimeFormatterProgressFormatter () {
+@interface CCBRProgressFormatter () {
  @public
-  CucumberApiFormatterNiceAppendable *out_;
+  CCBNiceAppendable *out_;
   jboolean monochrome_;
-  id<CucumberApiEventEventHandler> stepFinishedhandler_;
-  id<CucumberApiEventEventHandler> writeHandler_;
-  id<CucumberApiEventEventHandler> runFinishHandler_;
+  id<CCBEventHandler> stepFinishedhandler_;
+  id<CCBEventHandler> writeHandler_;
+  id<CCBEventHandler> runFinishHandler_;
 }
 
-- (void)handleTestStepFinishedWithCucumberApiEventTestStepFinished:(CucumberApiEventTestStepFinished *)event;
+- (void)handleTestStepFinishedWithCCBTestStepFinished:(CCBTestStepFinished *)event;
 
-- (void)handleWriteWithCucumberApiEventWriteEvent:(CucumberApiEventWriteEvent *)event;
+- (void)handleWriteWithCCBWriteEvent:(CCBWriteEvent *)event;
 
 - (void)handleTestRunFinished;
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterProgressFormatter, out_, CucumberApiFormatterNiceAppendable *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterProgressFormatter, stepFinishedhandler_, id<CucumberApiEventEventHandler>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterProgressFormatter, writeHandler_, id<CucumberApiEventEventHandler>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterProgressFormatter, runFinishHandler_, id<CucumberApiEventEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRProgressFormatter, out_, CCBNiceAppendable *)
+J2OBJC_FIELD_SETTER(CCBRProgressFormatter, stepFinishedhandler_, id<CCBEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRProgressFormatter, writeHandler_, id<CCBEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRProgressFormatter, runFinishHandler_, id<CCBEventHandler>)
 
-inline id<JavaUtilMap> CucumberRuntimeFormatterProgressFormatter_get_CHARS(void);
-static id<JavaUtilMap> CucumberRuntimeFormatterProgressFormatter_CHARS;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeFormatterProgressFormatter, CHARS, id<JavaUtilMap>)
+inline id<JavaUtilMap> CCBRProgressFormatter_get_CHARS(void);
+static id<JavaUtilMap> CCBRProgressFormatter_CHARS;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRProgressFormatter, CHARS, id<JavaUtilMap>)
 
-inline id<JavaUtilMap> CucumberRuntimeFormatterProgressFormatter_get_ANSI_ESCAPES(void);
-static id<JavaUtilMap> CucumberRuntimeFormatterProgressFormatter_ANSI_ESCAPES;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeFormatterProgressFormatter, ANSI_ESCAPES, id<JavaUtilMap>)
+inline id<JavaUtilMap> CCBRProgressFormatter_get_ANSI_ESCAPES(void);
+static id<JavaUtilMap> CCBRProgressFormatter_ANSI_ESCAPES;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRProgressFormatter, ANSI_ESCAPES, id<JavaUtilMap>)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterProgressFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(CucumberRuntimeFormatterProgressFormatter *self, CucumberApiEventTestStepFinished *event);
+__attribute__((unused)) static void CCBRProgressFormatter_handleTestStepFinishedWithCCBTestStepFinished_(CCBRProgressFormatter *self, CCBTestStepFinished *event);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterProgressFormatter_handleWriteWithCucumberApiEventWriteEvent_(CucumberRuntimeFormatterProgressFormatter *self, CucumberApiEventWriteEvent *event);
+__attribute__((unused)) static void CCBRProgressFormatter_handleWriteWithCCBWriteEvent_(CCBRProgressFormatter *self, CCBWriteEvent *event);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterProgressFormatter_handleTestRunFinished(CucumberRuntimeFormatterProgressFormatter *self);
+__attribute__((unused)) static void CCBRProgressFormatter_handleTestRunFinished(CCBRProgressFormatter *self);
 
-@interface CucumberRuntimeFormatterProgressFormatter_1 : JavaUtilHashMap
+@interface CCBRProgressFormatter_1 : JavaUtilHashMap
 
 - (instancetype __nonnull)init;
 
-- (JavaLangCharacter *)computeIfAbsentWithId:(CucumberApiResult_Type *)arg0
+- (JavaLangCharacter *)computeIfAbsentWithId:(CCBResult_Type *)arg0
                 withJavaUtilFunctionFunction:(id<JavaUtilFunctionFunction>)arg1;
 
 - (JavaLangCharacter *)getWithId:(id)arg0;
 
 - (JavaLangCharacter *)removeWithId:(id)arg0;
 
-- (JavaLangCharacter *)putIfAbsentWithId:(CucumberApiResult_Type *)arg0
+- (JavaLangCharacter *)putIfAbsentWithId:(CCBResult_Type *)arg0
                                   withId:(JavaLangCharacter *)arg1;
 
-- (JavaLangCharacter *)computeIfPresentWithId:(CucumberApiResult_Type *)arg0
+- (JavaLangCharacter *)computeIfPresentWithId:(CCBResult_Type *)arg0
                withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg1;
 
-- (JavaLangCharacter *)replaceWithId:(CucumberApiResult_Type *)arg0
+- (JavaLangCharacter *)replaceWithId:(CCBResult_Type *)arg0
                               withId:(JavaLangCharacter *)arg1;
 
-- (JavaLangCharacter *)putWithId:(CucumberApiResult_Type *)arg0
+- (JavaLangCharacter *)putWithId:(CCBResult_Type *)arg0
                           withId:(JavaLangCharacter *)arg1;
 
-- (JavaLangCharacter *)computeWithId:(CucumberApiResult_Type *)arg0
+- (JavaLangCharacter *)computeWithId:(CCBResult_Type *)arg0
       withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg1;
 
-- (JavaLangCharacter *)mergeWithId:(CucumberApiResult_Type *)arg0
+- (JavaLangCharacter *)mergeWithId:(CCBResult_Type *)arg0
                             withId:(JavaLangCharacter *)arg1
     withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg2;
 
@@ -96,120 +96,120 @@ __attribute__((unused)) static void CucumberRuntimeFormatterProgressFormatter_ha
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterProgressFormatter_1)
+J2OBJC_EMPTY_STATIC_INIT(CCBRProgressFormatter_1)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterProgressFormatter_1_init(CucumberRuntimeFormatterProgressFormatter_1 *self);
+__attribute__((unused)) static void CCBRProgressFormatter_1_init(CCBRProgressFormatter_1 *self);
 
-__attribute__((unused)) static CucumberRuntimeFormatterProgressFormatter_1 *new_CucumberRuntimeFormatterProgressFormatter_1_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRProgressFormatter_1 *new_CCBRProgressFormatter_1_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterProgressFormatter_1 *create_CucumberRuntimeFormatterProgressFormatter_1_init(void);
+__attribute__((unused)) static CCBRProgressFormatter_1 *create_CCBRProgressFormatter_1_init(void);
 
-@interface CucumberRuntimeFormatterProgressFormatter_2 : JavaUtilHashMap
+@interface CCBRProgressFormatter_2 : JavaUtilHashMap
 
 - (instancetype __nonnull)init;
 
-- (CucumberApiFormatterAnsiEscapes *)computeIfAbsentWithId:(CucumberApiResult_Type *)arg0
-                              withJavaUtilFunctionFunction:(id<JavaUtilFunctionFunction>)arg1;
+- (CCBAnsiEscapes *)computeIfAbsentWithId:(CCBResult_Type *)arg0
+             withJavaUtilFunctionFunction:(id<JavaUtilFunctionFunction>)arg1;
 
-- (CucumberApiFormatterAnsiEscapes *)getWithId:(id)arg0;
+- (CCBAnsiEscapes *)getWithId:(id)arg0;
 
-- (CucumberApiFormatterAnsiEscapes *)removeWithId:(id)arg0;
+- (CCBAnsiEscapes *)removeWithId:(id)arg0;
 
-- (CucumberApiFormatterAnsiEscapes *)putIfAbsentWithId:(CucumberApiResult_Type *)arg0
-                                                withId:(CucumberApiFormatterAnsiEscapes *)arg1;
+- (CCBAnsiEscapes *)putIfAbsentWithId:(CCBResult_Type *)arg0
+                               withId:(CCBAnsiEscapes *)arg1;
 
-- (CucumberApiFormatterAnsiEscapes *)computeIfPresentWithId:(CucumberApiResult_Type *)arg0
-                             withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg1;
+- (CCBAnsiEscapes *)computeIfPresentWithId:(CCBResult_Type *)arg0
+            withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg1;
 
-- (CucumberApiFormatterAnsiEscapes *)replaceWithId:(CucumberApiResult_Type *)arg0
-                                            withId:(CucumberApiFormatterAnsiEscapes *)arg1;
+- (CCBAnsiEscapes *)replaceWithId:(CCBResult_Type *)arg0
+                           withId:(CCBAnsiEscapes *)arg1;
 
-- (CucumberApiFormatterAnsiEscapes *)putWithId:(CucumberApiResult_Type *)arg0
-                                        withId:(CucumberApiFormatterAnsiEscapes *)arg1;
+- (CCBAnsiEscapes *)putWithId:(CCBResult_Type *)arg0
+                       withId:(CCBAnsiEscapes *)arg1;
 
-- (CucumberApiFormatterAnsiEscapes *)computeWithId:(CucumberApiResult_Type *)arg0
-                    withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg1;
+- (CCBAnsiEscapes *)computeWithId:(CCBResult_Type *)arg0
+   withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg1;
 
-- (CucumberApiFormatterAnsiEscapes *)mergeWithId:(CucumberApiResult_Type *)arg0
-                                          withId:(CucumberApiFormatterAnsiEscapes *)arg1
-                  withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg2;
+- (CCBAnsiEscapes *)mergeWithId:(CCBResult_Type *)arg0
+                         withId:(CCBAnsiEscapes *)arg1
+ withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg2;
 
-- (CucumberApiFormatterAnsiEscapes *)getOrDefaultWithId:(id)arg0
-                                                 withId:(CucumberApiFormatterAnsiEscapes *)arg1;
+- (CCBAnsiEscapes *)getOrDefaultWithId:(id)arg0
+                                withId:(CCBAnsiEscapes *)arg1;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterProgressFormatter_2)
+J2OBJC_EMPTY_STATIC_INIT(CCBRProgressFormatter_2)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterProgressFormatter_2_init(CucumberRuntimeFormatterProgressFormatter_2 *self);
+__attribute__((unused)) static void CCBRProgressFormatter_2_init(CCBRProgressFormatter_2 *self);
 
-__attribute__((unused)) static CucumberRuntimeFormatterProgressFormatter_2 *new_CucumberRuntimeFormatterProgressFormatter_2_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRProgressFormatter_2 *new_CCBRProgressFormatter_2_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterProgressFormatter_2 *create_CucumberRuntimeFormatterProgressFormatter_2_init(void);
+__attribute__((unused)) static CCBRProgressFormatter_2 *create_CCBRProgressFormatter_2_init(void);
 
-@interface CucumberRuntimeFormatterProgressFormatter_3 : NSObject < CucumberApiEventEventHandler > {
+@interface CCBRProgressFormatter_3 : NSObject < CCBEventHandler > {
  @public
-  CucumberRuntimeFormatterProgressFormatter *this$0_;
+  CCBRProgressFormatter *this$0_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterProgressFormatter:(CucumberRuntimeFormatterProgressFormatter *)outer$;
+- (instancetype __nonnull)initWithCCBRProgressFormatter:(CCBRProgressFormatter *)outer$;
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepFinished *)event;
+- (void)receiveWithCCBEvent:(CCBTestStepFinished *)event;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterProgressFormatter_3)
+J2OBJC_EMPTY_STATIC_INIT(CCBRProgressFormatter_3)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterProgressFormatter_3_initWithCucumberRuntimeFormatterProgressFormatter_(CucumberRuntimeFormatterProgressFormatter_3 *self, CucumberRuntimeFormatterProgressFormatter *outer$);
+__attribute__((unused)) static void CCBRProgressFormatter_3_initWithCCBRProgressFormatter_(CCBRProgressFormatter_3 *self, CCBRProgressFormatter *outer$);
 
-__attribute__((unused)) static CucumberRuntimeFormatterProgressFormatter_3 *new_CucumberRuntimeFormatterProgressFormatter_3_initWithCucumberRuntimeFormatterProgressFormatter_(CucumberRuntimeFormatterProgressFormatter *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRProgressFormatter_3 *new_CCBRProgressFormatter_3_initWithCCBRProgressFormatter_(CCBRProgressFormatter *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterProgressFormatter_3 *create_CucumberRuntimeFormatterProgressFormatter_3_initWithCucumberRuntimeFormatterProgressFormatter_(CucumberRuntimeFormatterProgressFormatter *outer$);
+__attribute__((unused)) static CCBRProgressFormatter_3 *create_CCBRProgressFormatter_3_initWithCCBRProgressFormatter_(CCBRProgressFormatter *outer$);
 
-@interface CucumberRuntimeFormatterProgressFormatter_4 : NSObject < CucumberApiEventEventHandler > {
+@interface CCBRProgressFormatter_4 : NSObject < CCBEventHandler > {
  @public
-  CucumberRuntimeFormatterProgressFormatter *this$0_;
+  CCBRProgressFormatter *this$0_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterProgressFormatter:(CucumberRuntimeFormatterProgressFormatter *)outer$;
+- (instancetype __nonnull)initWithCCBRProgressFormatter:(CCBRProgressFormatter *)outer$;
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventWriteEvent *)event;
+- (void)receiveWithCCBEvent:(CCBWriteEvent *)event;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterProgressFormatter_4)
+J2OBJC_EMPTY_STATIC_INIT(CCBRProgressFormatter_4)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterProgressFormatter_4_initWithCucumberRuntimeFormatterProgressFormatter_(CucumberRuntimeFormatterProgressFormatter_4 *self, CucumberRuntimeFormatterProgressFormatter *outer$);
+__attribute__((unused)) static void CCBRProgressFormatter_4_initWithCCBRProgressFormatter_(CCBRProgressFormatter_4 *self, CCBRProgressFormatter *outer$);
 
-__attribute__((unused)) static CucumberRuntimeFormatterProgressFormatter_4 *new_CucumberRuntimeFormatterProgressFormatter_4_initWithCucumberRuntimeFormatterProgressFormatter_(CucumberRuntimeFormatterProgressFormatter *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRProgressFormatter_4 *new_CCBRProgressFormatter_4_initWithCCBRProgressFormatter_(CCBRProgressFormatter *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterProgressFormatter_4 *create_CucumberRuntimeFormatterProgressFormatter_4_initWithCucumberRuntimeFormatterProgressFormatter_(CucumberRuntimeFormatterProgressFormatter *outer$);
+__attribute__((unused)) static CCBRProgressFormatter_4 *create_CCBRProgressFormatter_4_initWithCCBRProgressFormatter_(CCBRProgressFormatter *outer$);
 
-@interface CucumberRuntimeFormatterProgressFormatter_5 : NSObject < CucumberApiEventEventHandler > {
+@interface CCBRProgressFormatter_5 : NSObject < CCBEventHandler > {
  @public
-  CucumberRuntimeFormatterProgressFormatter *this$0_;
+  CCBRProgressFormatter *this$0_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterProgressFormatter:(CucumberRuntimeFormatterProgressFormatter *)outer$;
+- (instancetype __nonnull)initWithCCBRProgressFormatter:(CCBRProgressFormatter *)outer$;
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event;
+- (void)receiveWithCCBEvent:(CCBTestRunFinished *)event;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterProgressFormatter_5)
+J2OBJC_EMPTY_STATIC_INIT(CCBRProgressFormatter_5)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterProgressFormatter_5_initWithCucumberRuntimeFormatterProgressFormatter_(CucumberRuntimeFormatterProgressFormatter_5 *self, CucumberRuntimeFormatterProgressFormatter *outer$);
+__attribute__((unused)) static void CCBRProgressFormatter_5_initWithCCBRProgressFormatter_(CCBRProgressFormatter_5 *self, CCBRProgressFormatter *outer$);
 
-__attribute__((unused)) static CucumberRuntimeFormatterProgressFormatter_5 *new_CucumberRuntimeFormatterProgressFormatter_5_initWithCucumberRuntimeFormatterProgressFormatter_(CucumberRuntimeFormatterProgressFormatter *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRProgressFormatter_5 *new_CCBRProgressFormatter_5_initWithCCBRProgressFormatter_(CCBRProgressFormatter *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterProgressFormatter_5 *create_CucumberRuntimeFormatterProgressFormatter_5_initWithCucumberRuntimeFormatterProgressFormatter_(CucumberRuntimeFormatterProgressFormatter *outer$);
+__attribute__((unused)) static CCBRProgressFormatter_5 *create_CCBRProgressFormatter_5_initWithCCBRProgressFormatter_(CCBRProgressFormatter *outer$);
 
-J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFormatterProgressFormatter)
+J2OBJC_INITIALIZED_DEFN(CCBRProgressFormatter)
 
-@implementation CucumberRuntimeFormatterProgressFormatter
+@implementation CCBRProgressFormatter
 
 - (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)appendable {
-  CucumberRuntimeFormatterProgressFormatter_initWithJavaLangAppendable_(self, appendable);
+  CCBRProgressFormatter_initWithJavaLangAppendable_(self, appendable);
   return self;
 }
 
@@ -217,22 +217,22 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFormatterProgressFormatter)
   self->monochrome_ = monochrome;
 }
 
-- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher {
-  [((id<CucumberApiEventEventPublisher>) nil_chk(publisher)) registerHandlerForWithIOSClass:CucumberApiEventTestStepFinished_class_() withCucumberApiEventEventHandler:stepFinishedhandler_];
-  [publisher registerHandlerForWithIOSClass:CucumberApiEventWriteEvent_class_() withCucumberApiEventEventHandler:writeHandler_];
-  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestRunFinished_class_() withCucumberApiEventEventHandler:runFinishHandler_];
+- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher {
+  [((id<CCBEventPublisher>) nil_chk(publisher)) registerHandlerForWithIOSClass:CCBTestStepFinished_class_() withCCBEventHandler:stepFinishedhandler_];
+  [publisher registerHandlerForWithIOSClass:CCBWriteEvent_class_() withCCBEventHandler:writeHandler_];
+  [publisher registerHandlerForWithIOSClass:CCBTestRunFinished_class_() withCCBEventHandler:runFinishHandler_];
 }
 
-- (void)handleTestStepFinishedWithCucumberApiEventTestStepFinished:(CucumberApiEventTestStepFinished *)event {
-  CucumberRuntimeFormatterProgressFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(self, event);
+- (void)handleTestStepFinishedWithCCBTestStepFinished:(CCBTestStepFinished *)event {
+  CCBRProgressFormatter_handleTestStepFinishedWithCCBTestStepFinished_(self, event);
 }
 
-- (void)handleWriteWithCucumberApiEventWriteEvent:(CucumberApiEventWriteEvent *)event {
-  CucumberRuntimeFormatterProgressFormatter_handleWriteWithCucumberApiEventWriteEvent_(self, event);
+- (void)handleWriteWithCCBWriteEvent:(CCBWriteEvent *)event {
+  CCBRProgressFormatter_handleWriteWithCCBWriteEvent_(self, event);
 }
 
 - (void)handleTestRunFinished {
-  CucumberRuntimeFormatterProgressFormatter_handleTestRunFinished(self);
+  CCBRProgressFormatter_handleTestRunFinished(self);
 }
 
 - (void)dealloc {
@@ -257,80 +257,80 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFormatterProgressFormatter)
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangAppendable:);
   methods[1].selector = @selector(setMonochromeWithBoolean:);
-  methods[2].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
-  methods[3].selector = @selector(handleTestStepFinishedWithCucumberApiEventTestStepFinished:);
-  methods[4].selector = @selector(handleWriteWithCucumberApiEventWriteEvent:);
+  methods[2].selector = @selector(setEventPublisherWithCCBEventPublisher:);
+  methods[3].selector = @selector(handleTestStepFinishedWithCCBTestStepFinished:);
+  methods[4].selector = @selector(handleWriteWithCCBWriteEvent:);
   methods[5].selector = @selector(handleTestRunFinished);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "CHARS", "LJavaUtilMap;", .constantValue.asLong = 0, 0x1a, -1, 9, 10, -1 },
     { "ANSI_ESCAPES", "LJavaUtilMap;", .constantValue.asLong = 0, 0x1a, -1, 11, 12, -1 },
-    { "out_", "LCucumberApiFormatterNiceAppendable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "out_", "LCCBNiceAppendable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "monochrome_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "stepFinishedhandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 13, -1 },
-    { "writeHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 14, -1 },
-    { "runFinishHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 15, -1 },
+    { "stepFinishedhandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 13, -1 },
+    { "writeHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 14, -1 },
+    { "runFinishHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 15, -1 },
   };
-  static const void *ptrTable[] = { "LJavaLangAppendable;", "setMonochrome", "Z", "setEventPublisher", "LCucumberApiEventEventPublisher;", "handleTestStepFinished", "LCucumberApiEventTestStepFinished;", "handleWrite", "LCucumberApiEventWriteEvent;", &CucumberRuntimeFormatterProgressFormatter_CHARS, "Ljava/util/Map<Lcucumber/api/Result$Type;Ljava/lang/Character;>;", &CucumberRuntimeFormatterProgressFormatter_ANSI_ESCAPES, "Ljava/util/Map<Lcucumber/api/Result$Type;Lcucumber/api/formatter/AnsiEscapes;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterProgressFormatter = { "ProgressFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 6, 7, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeFormatterProgressFormatter;
+  static const void *ptrTable[] = { "LJavaLangAppendable;", "setMonochrome", "Z", "setEventPublisher", "LCCBEventPublisher;", "handleTestStepFinished", "LCCBTestStepFinished;", "handleWrite", "LCCBWriteEvent;", &CCBRProgressFormatter_CHARS, "Ljava/util/Map<Lcucumber/api/Result$Type;Ljava/lang/Character;>;", &CCBRProgressFormatter_ANSI_ESCAPES, "Ljava/util/Map<Lcucumber/api/Result$Type;Lcucumber/api/formatter/AnsiEscapes;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
+  static const J2ObjcClassInfo _CCBRProgressFormatter = { "ProgressFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 6, 7, -1, -1, -1, -1, -1 };
+  return &_CCBRProgressFormatter;
 }
 
 + (void)initialize {
-  if (self == [CucumberRuntimeFormatterProgressFormatter class]) {
-    JreStrongAssignAndConsume(&CucumberRuntimeFormatterProgressFormatter_CHARS, new_CucumberRuntimeFormatterProgressFormatter_1_init());
-    JreStrongAssignAndConsume(&CucumberRuntimeFormatterProgressFormatter_ANSI_ESCAPES, new_CucumberRuntimeFormatterProgressFormatter_2_init());
-    J2OBJC_SET_INITIALIZED(CucumberRuntimeFormatterProgressFormatter)
+  if (self == [CCBRProgressFormatter class]) {
+    JreStrongAssignAndConsume(&CCBRProgressFormatter_CHARS, new_CCBRProgressFormatter_1_init());
+    JreStrongAssignAndConsume(&CCBRProgressFormatter_ANSI_ESCAPES, new_CCBRProgressFormatter_2_init());
+    J2OBJC_SET_INITIALIZED(CCBRProgressFormatter)
   }
 }
 
 @end
 
-void CucumberRuntimeFormatterProgressFormatter_initWithJavaLangAppendable_(CucumberRuntimeFormatterProgressFormatter *self, id<JavaLangAppendable> appendable) {
+void CCBRProgressFormatter_initWithJavaLangAppendable_(CCBRProgressFormatter *self, id<JavaLangAppendable> appendable) {
   NSObject_init(self);
   self->monochrome_ = false;
-  JreStrongAssignAndConsume(&self->stepFinishedhandler_, new_CucumberRuntimeFormatterProgressFormatter_3_initWithCucumberRuntimeFormatterProgressFormatter_(self));
-  JreStrongAssignAndConsume(&self->writeHandler_, new_CucumberRuntimeFormatterProgressFormatter_4_initWithCucumberRuntimeFormatterProgressFormatter_(self));
-  JreStrongAssignAndConsume(&self->runFinishHandler_, new_CucumberRuntimeFormatterProgressFormatter_5_initWithCucumberRuntimeFormatterProgressFormatter_(self));
-  JreStrongAssignAndConsume(&self->out_, new_CucumberApiFormatterNiceAppendable_initWithJavaLangAppendable_(appendable));
+  JreStrongAssignAndConsume(&self->stepFinishedhandler_, new_CCBRProgressFormatter_3_initWithCCBRProgressFormatter_(self));
+  JreStrongAssignAndConsume(&self->writeHandler_, new_CCBRProgressFormatter_4_initWithCCBRProgressFormatter_(self));
+  JreStrongAssignAndConsume(&self->runFinishHandler_, new_CCBRProgressFormatter_5_initWithCCBRProgressFormatter_(self));
+  JreStrongAssignAndConsume(&self->out_, new_CCBNiceAppendable_initWithJavaLangAppendable_(appendable));
 }
 
-CucumberRuntimeFormatterProgressFormatter *new_CucumberRuntimeFormatterProgressFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> appendable) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterProgressFormatter, initWithJavaLangAppendable_, appendable)
+CCBRProgressFormatter *new_CCBRProgressFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> appendable) {
+  J2OBJC_NEW_IMPL(CCBRProgressFormatter, initWithJavaLangAppendable_, appendable)
 }
 
-CucumberRuntimeFormatterProgressFormatter *create_CucumberRuntimeFormatterProgressFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> appendable) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterProgressFormatter, initWithJavaLangAppendable_, appendable)
+CCBRProgressFormatter *create_CCBRProgressFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> appendable) {
+  J2OBJC_CREATE_IMPL(CCBRProgressFormatter, initWithJavaLangAppendable_, appendable)
 }
 
-void CucumberRuntimeFormatterProgressFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(CucumberRuntimeFormatterProgressFormatter *self, CucumberApiEventTestStepFinished *event) {
-  if (![((CucumberApiTestStep *) nil_chk(((CucumberApiEventTestStepFinished *) nil_chk(event))->testStep_)) isHook] || [((CucumberApiResult *) nil_chk(event->result_)) isWithCucumberApiResult_Type:JreLoadEnum(CucumberApiResult_Type, FAILED)]) {
+void CCBRProgressFormatter_handleTestStepFinishedWithCCBTestStepFinished_(CCBRProgressFormatter *self, CCBTestStepFinished *event) {
+  if (![((CCBTestStep *) nil_chk(((CCBTestStepFinished *) nil_chk(event))->testStep_)) isHook] || [((CCBResult *) nil_chk(event->result_)) isWithCCBResult_Type:JreLoadEnum(CCBResult_Type, FAILED)]) {
     if (!self->monochrome_) {
-      [((CucumberApiFormatterAnsiEscapes *) nil_chk([((id<JavaUtilMap>) nil_chk(CucumberRuntimeFormatterProgressFormatter_ANSI_ESCAPES)) getWithId:[((CucumberApiResult *) nil_chk(event->result_)) getStatus]])) appendToWithCucumberApiFormatterNiceAppendable:self->out_];
+      [((CCBAnsiEscapes *) nil_chk([((id<JavaUtilMap>) nil_chk(CCBRProgressFormatter_ANSI_ESCAPES)) getWithId:[((CCBResult *) nil_chk(event->result_)) getStatus]])) appendToWithCCBNiceAppendable:self->out_];
     }
-    [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) appendWithChar:[((JavaLangCharacter *) nil_chk([((id<JavaUtilMap>) nil_chk(CucumberRuntimeFormatterProgressFormatter_CHARS)) getWithId:[((CucumberApiResult *) nil_chk(event->result_)) getStatus]])) charValue]];
+    [((CCBNiceAppendable *) nil_chk(self->out_)) appendWithChar:[((JavaLangCharacter *) nil_chk([((id<JavaUtilMap>) nil_chk(CCBRProgressFormatter_CHARS)) getWithId:[((CCBResult *) nil_chk(event->result_)) getStatus]])) charValue]];
     if (!self->monochrome_) {
-      [((CucumberApiFormatterAnsiEscapes *) nil_chk(JreLoadStatic(CucumberApiFormatterAnsiEscapes, RESET))) appendToWithCucumberApiFormatterNiceAppendable:self->out_];
+      [((CCBAnsiEscapes *) nil_chk(JreLoadStatic(CCBAnsiEscapes, RESET))) appendToWithCCBNiceAppendable:self->out_];
     }
   }
 }
 
-void CucumberRuntimeFormatterProgressFormatter_handleWriteWithCucumberApiEventWriteEvent_(CucumberRuntimeFormatterProgressFormatter *self, CucumberApiEventWriteEvent *event) {
-  [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) appendWithJavaLangCharSequence:((CucumberApiEventWriteEvent *) nil_chk(event))->text_];
+void CCBRProgressFormatter_handleWriteWithCCBWriteEvent_(CCBRProgressFormatter *self, CCBWriteEvent *event) {
+  [((CCBNiceAppendable *) nil_chk(self->out_)) appendWithJavaLangCharSequence:((CCBWriteEvent *) nil_chk(event))->text_];
 }
 
-void CucumberRuntimeFormatterProgressFormatter_handleTestRunFinished(CucumberRuntimeFormatterProgressFormatter *self) {
-  [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) println];
+void CCBRProgressFormatter_handleTestRunFinished(CCBRProgressFormatter *self) {
+  [((CCBNiceAppendable *) nil_chk(self->out_)) println];
   [self->out_ close];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterProgressFormatter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRProgressFormatter)
 
-@implementation CucumberRuntimeFormatterProgressFormatter_1
+@implementation CCBRProgressFormatter_1
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeFormatterProgressFormatter_1_init(self);
+  CCBRProgressFormatter_1_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -344,38 +344,38 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LCucumberRuntimeFormatterProgressFormatter;", "Ljava/util/HashMap<Lcucumber/api/Result$Type;Ljava/lang/Character;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterProgressFormatter_1 = { "", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x8018, 1, 0, 0, -1, -1, 1, -1 };
-  return &_CucumberRuntimeFormatterProgressFormatter_1;
+  static const void *ptrTable[] = { "LCCBRProgressFormatter;", "Ljava/util/HashMap<Lcucumber/api/Result$Type;Ljava/lang/Character;>;" };
+  static const J2ObjcClassInfo _CCBRProgressFormatter_1 = { "", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x8018, 1, 0, 0, -1, -1, 1, -1 };
+  return &_CCBRProgressFormatter_1;
 }
 
 @end
 
-void CucumberRuntimeFormatterProgressFormatter_1_init(CucumberRuntimeFormatterProgressFormatter_1 *self) {
+void CCBRProgressFormatter_1_init(CCBRProgressFormatter_1 *self) {
   JavaUtilHashMap_init(self);
   {
-    [self putWithId:JreLoadEnum(CucumberApiResult_Type, PASSED) withId:JavaLangCharacter_valueOfWithChar_('.')];
-    [self putWithId:JreLoadEnum(CucumberApiResult_Type, UNDEFINED) withId:JavaLangCharacter_valueOfWithChar_('U')];
-    [self putWithId:JreLoadEnum(CucumberApiResult_Type, PENDING) withId:JavaLangCharacter_valueOfWithChar_('P')];
-    [self putWithId:JreLoadEnum(CucumberApiResult_Type, SKIPPED) withId:JavaLangCharacter_valueOfWithChar_('-')];
-    [self putWithId:JreLoadEnum(CucumberApiResult_Type, FAILED) withId:JavaLangCharacter_valueOfWithChar_('F')];
-    [self putWithId:JreLoadEnum(CucumberApiResult_Type, AMBIGUOUS) withId:JavaLangCharacter_valueOfWithChar_('A')];
+    [self putWithId:JreLoadEnum(CCBResult_Type, PASSED) withId:JavaLangCharacter_valueOfWithChar_('.')];
+    [self putWithId:JreLoadEnum(CCBResult_Type, UNDEFINED) withId:JavaLangCharacter_valueOfWithChar_('U')];
+    [self putWithId:JreLoadEnum(CCBResult_Type, PENDING) withId:JavaLangCharacter_valueOfWithChar_('P')];
+    [self putWithId:JreLoadEnum(CCBResult_Type, SKIPPED) withId:JavaLangCharacter_valueOfWithChar_('-')];
+    [self putWithId:JreLoadEnum(CCBResult_Type, FAILED) withId:JavaLangCharacter_valueOfWithChar_('F')];
+    [self putWithId:JreLoadEnum(CCBResult_Type, AMBIGUOUS) withId:JavaLangCharacter_valueOfWithChar_('A')];
   }
 }
 
-CucumberRuntimeFormatterProgressFormatter_1 *new_CucumberRuntimeFormatterProgressFormatter_1_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterProgressFormatter_1, init)
+CCBRProgressFormatter_1 *new_CCBRProgressFormatter_1_init() {
+  J2OBJC_NEW_IMPL(CCBRProgressFormatter_1, init)
 }
 
-CucumberRuntimeFormatterProgressFormatter_1 *create_CucumberRuntimeFormatterProgressFormatter_1_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterProgressFormatter_1, init)
+CCBRProgressFormatter_1 *create_CCBRProgressFormatter_1_init() {
+  J2OBJC_CREATE_IMPL(CCBRProgressFormatter_1, init)
 }
 
-@implementation CucumberRuntimeFormatterProgressFormatter_2
+@implementation CCBRProgressFormatter_2
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeFormatterProgressFormatter_2_init(self);
+  CCBRProgressFormatter_2_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -389,42 +389,42 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LCucumberRuntimeFormatterProgressFormatter;", "Ljava/util/HashMap<Lcucumber/api/Result$Type;Lcucumber/api/formatter/AnsiEscapes;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterProgressFormatter_2 = { "", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x8018, 1, 0, 0, -1, -1, 1, -1 };
-  return &_CucumberRuntimeFormatterProgressFormatter_2;
+  static const void *ptrTable[] = { "LCCBRProgressFormatter;", "Ljava/util/HashMap<Lcucumber/api/Result$Type;Lcucumber/api/formatter/AnsiEscapes;>;" };
+  static const J2ObjcClassInfo _CCBRProgressFormatter_2 = { "", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x8018, 1, 0, 0, -1, -1, 1, -1 };
+  return &_CCBRProgressFormatter_2;
 }
 
 @end
 
-void CucumberRuntimeFormatterProgressFormatter_2_init(CucumberRuntimeFormatterProgressFormatter_2 *self) {
+void CCBRProgressFormatter_2_init(CCBRProgressFormatter_2 *self) {
   JavaUtilHashMap_init(self);
   {
-    [self putWithId:JreLoadEnum(CucumberApiResult_Type, PASSED) withId:JreLoadStatic(CucumberApiFormatterAnsiEscapes, GREEN)];
-    [self putWithId:JreLoadEnum(CucumberApiResult_Type, UNDEFINED) withId:JreLoadStatic(CucumberApiFormatterAnsiEscapes, YELLOW)];
-    [self putWithId:JreLoadEnum(CucumberApiResult_Type, PENDING) withId:JreLoadStatic(CucumberApiFormatterAnsiEscapes, YELLOW)];
-    [self putWithId:JreLoadEnum(CucumberApiResult_Type, SKIPPED) withId:JreLoadStatic(CucumberApiFormatterAnsiEscapes, CYAN)];
-    [self putWithId:JreLoadEnum(CucumberApiResult_Type, FAILED) withId:JreLoadStatic(CucumberApiFormatterAnsiEscapes, RED)];
-    [self putWithId:JreLoadEnum(CucumberApiResult_Type, AMBIGUOUS) withId:JreLoadStatic(CucumberApiFormatterAnsiEscapes, RED)];
+    [self putWithId:JreLoadEnum(CCBResult_Type, PASSED) withId:JreLoadStatic(CCBAnsiEscapes, GREEN)];
+    [self putWithId:JreLoadEnum(CCBResult_Type, UNDEFINED) withId:JreLoadStatic(CCBAnsiEscapes, YELLOW)];
+    [self putWithId:JreLoadEnum(CCBResult_Type, PENDING) withId:JreLoadStatic(CCBAnsiEscapes, YELLOW)];
+    [self putWithId:JreLoadEnum(CCBResult_Type, SKIPPED) withId:JreLoadStatic(CCBAnsiEscapes, CYAN)];
+    [self putWithId:JreLoadEnum(CCBResult_Type, FAILED) withId:JreLoadStatic(CCBAnsiEscapes, RED)];
+    [self putWithId:JreLoadEnum(CCBResult_Type, AMBIGUOUS) withId:JreLoadStatic(CCBAnsiEscapes, RED)];
   }
 }
 
-CucumberRuntimeFormatterProgressFormatter_2 *new_CucumberRuntimeFormatterProgressFormatter_2_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterProgressFormatter_2, init)
+CCBRProgressFormatter_2 *new_CCBRProgressFormatter_2_init() {
+  J2OBJC_NEW_IMPL(CCBRProgressFormatter_2, init)
 }
 
-CucumberRuntimeFormatterProgressFormatter_2 *create_CucumberRuntimeFormatterProgressFormatter_2_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterProgressFormatter_2, init)
+CCBRProgressFormatter_2 *create_CCBRProgressFormatter_2_init() {
+  J2OBJC_CREATE_IMPL(CCBRProgressFormatter_2, init)
 }
 
-@implementation CucumberRuntimeFormatterProgressFormatter_3
+@implementation CCBRProgressFormatter_3
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterProgressFormatter:(CucumberRuntimeFormatterProgressFormatter *)outer$ {
-  CucumberRuntimeFormatterProgressFormatter_3_initWithCucumberRuntimeFormatterProgressFormatter_(self, outer$);
+- (instancetype __nonnull)initWithCCBRProgressFormatter:(CCBRProgressFormatter *)outer$ {
+  CCBRProgressFormatter_3_initWithCCBRProgressFormatter_(self, outer$);
   return self;
 }
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepFinished *)event {
-  CucumberRuntimeFormatterProgressFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(this$0_, event);
+- (void)receiveWithCCBEvent:(CCBTestStepFinished *)event {
+  CCBRProgressFormatter_handleTestStepFinishedWithCCBTestStepFinished_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -440,41 +440,41 @@ CucumberRuntimeFormatterProgressFormatter_2 *create_CucumberRuntimeFormatterProg
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeFormatterProgressFormatter:);
-  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
+  methods[0].selector = @selector(initWithCCBRProgressFormatter:);
+  methods[1].selector = @selector(receiveWithCCBEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LCucumberRuntimeFormatterProgressFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "this$0_", "LCCBRProgressFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestStepFinished;", "LCucumberRuntimeFormatterProgressFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterProgressFormatter_3 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeFormatterProgressFormatter_3;
+  static const void *ptrTable[] = { "receive", "LCCBTestStepFinished;", "LCCBRProgressFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;" };
+  static const J2ObjcClassInfo _CCBRProgressFormatter_3 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
+  return &_CCBRProgressFormatter_3;
 }
 
 @end
 
-void CucumberRuntimeFormatterProgressFormatter_3_initWithCucumberRuntimeFormatterProgressFormatter_(CucumberRuntimeFormatterProgressFormatter_3 *self, CucumberRuntimeFormatterProgressFormatter *outer$) {
+void CCBRProgressFormatter_3_initWithCCBRProgressFormatter_(CCBRProgressFormatter_3 *self, CCBRProgressFormatter *outer$) {
   JreStrongAssign(&self->this$0_, outer$);
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterProgressFormatter_3 *new_CucumberRuntimeFormatterProgressFormatter_3_initWithCucumberRuntimeFormatterProgressFormatter_(CucumberRuntimeFormatterProgressFormatter *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterProgressFormatter_3, initWithCucumberRuntimeFormatterProgressFormatter_, outer$)
+CCBRProgressFormatter_3 *new_CCBRProgressFormatter_3_initWithCCBRProgressFormatter_(CCBRProgressFormatter *outer$) {
+  J2OBJC_NEW_IMPL(CCBRProgressFormatter_3, initWithCCBRProgressFormatter_, outer$)
 }
 
-CucumberRuntimeFormatterProgressFormatter_3 *create_CucumberRuntimeFormatterProgressFormatter_3_initWithCucumberRuntimeFormatterProgressFormatter_(CucumberRuntimeFormatterProgressFormatter *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterProgressFormatter_3, initWithCucumberRuntimeFormatterProgressFormatter_, outer$)
+CCBRProgressFormatter_3 *create_CCBRProgressFormatter_3_initWithCCBRProgressFormatter_(CCBRProgressFormatter *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRProgressFormatter_3, initWithCCBRProgressFormatter_, outer$)
 }
 
-@implementation CucumberRuntimeFormatterProgressFormatter_4
+@implementation CCBRProgressFormatter_4
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterProgressFormatter:(CucumberRuntimeFormatterProgressFormatter *)outer$ {
-  CucumberRuntimeFormatterProgressFormatter_4_initWithCucumberRuntimeFormatterProgressFormatter_(self, outer$);
+- (instancetype __nonnull)initWithCCBRProgressFormatter:(CCBRProgressFormatter *)outer$ {
+  CCBRProgressFormatter_4_initWithCCBRProgressFormatter_(self, outer$);
   return self;
 }
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventWriteEvent *)event {
-  CucumberRuntimeFormatterProgressFormatter_handleWriteWithCucumberApiEventWriteEvent_(this$0_, event);
+- (void)receiveWithCCBEvent:(CCBWriteEvent *)event {
+  CCBRProgressFormatter_handleWriteWithCCBWriteEvent_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -490,41 +490,41 @@ CucumberRuntimeFormatterProgressFormatter_3 *create_CucumberRuntimeFormatterProg
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeFormatterProgressFormatter:);
-  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
+  methods[0].selector = @selector(initWithCCBRProgressFormatter:);
+  methods[1].selector = @selector(receiveWithCCBEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LCucumberRuntimeFormatterProgressFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "this$0_", "LCCBRProgressFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCucumberApiEventWriteEvent;", "LCucumberRuntimeFormatterProgressFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterProgressFormatter_4 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeFormatterProgressFormatter_4;
+  static const void *ptrTable[] = { "receive", "LCCBWriteEvent;", "LCCBRProgressFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;" };
+  static const J2ObjcClassInfo _CCBRProgressFormatter_4 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
+  return &_CCBRProgressFormatter_4;
 }
 
 @end
 
-void CucumberRuntimeFormatterProgressFormatter_4_initWithCucumberRuntimeFormatterProgressFormatter_(CucumberRuntimeFormatterProgressFormatter_4 *self, CucumberRuntimeFormatterProgressFormatter *outer$) {
+void CCBRProgressFormatter_4_initWithCCBRProgressFormatter_(CCBRProgressFormatter_4 *self, CCBRProgressFormatter *outer$) {
   JreStrongAssign(&self->this$0_, outer$);
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterProgressFormatter_4 *new_CucumberRuntimeFormatterProgressFormatter_4_initWithCucumberRuntimeFormatterProgressFormatter_(CucumberRuntimeFormatterProgressFormatter *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterProgressFormatter_4, initWithCucumberRuntimeFormatterProgressFormatter_, outer$)
+CCBRProgressFormatter_4 *new_CCBRProgressFormatter_4_initWithCCBRProgressFormatter_(CCBRProgressFormatter *outer$) {
+  J2OBJC_NEW_IMPL(CCBRProgressFormatter_4, initWithCCBRProgressFormatter_, outer$)
 }
 
-CucumberRuntimeFormatterProgressFormatter_4 *create_CucumberRuntimeFormatterProgressFormatter_4_initWithCucumberRuntimeFormatterProgressFormatter_(CucumberRuntimeFormatterProgressFormatter *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterProgressFormatter_4, initWithCucumberRuntimeFormatterProgressFormatter_, outer$)
+CCBRProgressFormatter_4 *create_CCBRProgressFormatter_4_initWithCCBRProgressFormatter_(CCBRProgressFormatter *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRProgressFormatter_4, initWithCCBRProgressFormatter_, outer$)
 }
 
-@implementation CucumberRuntimeFormatterProgressFormatter_5
+@implementation CCBRProgressFormatter_5
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterProgressFormatter:(CucumberRuntimeFormatterProgressFormatter *)outer$ {
-  CucumberRuntimeFormatterProgressFormatter_5_initWithCucumberRuntimeFormatterProgressFormatter_(self, outer$);
+- (instancetype __nonnull)initWithCCBRProgressFormatter:(CCBRProgressFormatter *)outer$ {
+  CCBRProgressFormatter_5_initWithCCBRProgressFormatter_(self, outer$);
   return self;
 }
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event {
-  CucumberRuntimeFormatterProgressFormatter_handleTestRunFinished(this$0_);
+- (void)receiveWithCCBEvent:(CCBTestRunFinished *)event {
+  CCBRProgressFormatter_handleTestRunFinished(this$0_);
 }
 
 - (void)dealloc {
@@ -540,28 +540,28 @@ CucumberRuntimeFormatterProgressFormatter_4 *create_CucumberRuntimeFormatterProg
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeFormatterProgressFormatter:);
-  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
+  methods[0].selector = @selector(initWithCCBRProgressFormatter:);
+  methods[1].selector = @selector(receiveWithCCBEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LCucumberRuntimeFormatterProgressFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "this$0_", "LCCBRProgressFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestRunFinished;", "LCucumberRuntimeFormatterProgressFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterProgressFormatter_5 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeFormatterProgressFormatter_5;
+  static const void *ptrTable[] = { "receive", "LCCBTestRunFinished;", "LCCBRProgressFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
+  static const J2ObjcClassInfo _CCBRProgressFormatter_5 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
+  return &_CCBRProgressFormatter_5;
 }
 
 @end
 
-void CucumberRuntimeFormatterProgressFormatter_5_initWithCucumberRuntimeFormatterProgressFormatter_(CucumberRuntimeFormatterProgressFormatter_5 *self, CucumberRuntimeFormatterProgressFormatter *outer$) {
+void CCBRProgressFormatter_5_initWithCCBRProgressFormatter_(CCBRProgressFormatter_5 *self, CCBRProgressFormatter *outer$) {
   JreStrongAssign(&self->this$0_, outer$);
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterProgressFormatter_5 *new_CucumberRuntimeFormatterProgressFormatter_5_initWithCucumberRuntimeFormatterProgressFormatter_(CucumberRuntimeFormatterProgressFormatter *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterProgressFormatter_5, initWithCucumberRuntimeFormatterProgressFormatter_, outer$)
+CCBRProgressFormatter_5 *new_CCBRProgressFormatter_5_initWithCCBRProgressFormatter_(CCBRProgressFormatter *outer$) {
+  J2OBJC_NEW_IMPL(CCBRProgressFormatter_5, initWithCCBRProgressFormatter_, outer$)
 }
 
-CucumberRuntimeFormatterProgressFormatter_5 *create_CucumberRuntimeFormatterProgressFormatter_5_initWithCucumberRuntimeFormatterProgressFormatter_(CucumberRuntimeFormatterProgressFormatter *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterProgressFormatter_5, initWithCucumberRuntimeFormatterProgressFormatter_, outer$)
+CCBRProgressFormatter_5 *create_CCBRProgressFormatter_5_initWithCCBRProgressFormatter_(CCBRProgressFormatter *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRProgressFormatter_5, initWithCCBRProgressFormatter_, outer$)
 }

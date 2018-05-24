@@ -9,11 +9,11 @@
 #include "java/io/File.h"
 #include "java/lang/Iterable.h"
 
-@implementation CucumberRuntimeIoFileResourceLoader
+@implementation CCBRFileResourceLoader
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeIoFileResourceLoader_init(self);
+  CCBRFileResourceLoader_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -21,7 +21,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 - (id<JavaLangIterable>)resourcesWithNSString:(NSString *)path
                                  withNSString:(NSString *)suffix {
   JavaIoFile *root = create_JavaIoFile_initWithNSString_(path);
-  return create_CucumberRuntimeIoFileResourceIterable_initWithJavaIoFile_withJavaIoFile_withNSString_(root, root, suffix);
+  return create_CCBRFileResourceIterable_initWithJavaIoFile_withJavaIoFile_withNSString_(root, root, suffix);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -36,22 +36,22 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[1].selector = @selector(resourcesWithNSString:withNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "resources", "LNSString;LNSString;", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Iterable<Lcucumber/runtime/io/Resource;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeIoFileResourceLoader = { "FileResourceLoader", "cucumber.runtime.io", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeIoFileResourceLoader;
+  static const J2ObjcClassInfo _CCBRFileResourceLoader = { "FileResourceLoader", "cucumber.runtime.io", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRFileResourceLoader;
 }
 
 @end
 
-void CucumberRuntimeIoFileResourceLoader_init(CucumberRuntimeIoFileResourceLoader *self) {
+void CCBRFileResourceLoader_init(CCBRFileResourceLoader *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeIoFileResourceLoader *new_CucumberRuntimeIoFileResourceLoader_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeIoFileResourceLoader, init)
+CCBRFileResourceLoader *new_CCBRFileResourceLoader_init() {
+  J2OBJC_NEW_IMPL(CCBRFileResourceLoader, init)
 }
 
-CucumberRuntimeIoFileResourceLoader *create_CucumberRuntimeIoFileResourceLoader_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeIoFileResourceLoader, init)
+CCBRFileResourceLoader *create_CCBRFileResourceLoader_init() {
+  J2OBJC_CREATE_IMPL(CCBRFileResourceLoader, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoFileResourceLoader)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRFileResourceLoader)

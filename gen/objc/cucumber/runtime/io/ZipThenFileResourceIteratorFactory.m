@@ -11,38 +11,38 @@
 #include "java/net/URL.h"
 #include "java/util/Iterator.h"
 
-@interface CucumberRuntimeIoZipThenFileResourceIteratorFactory () {
+@interface CCBRZipThenFileResourceIteratorFactory () {
  @public
-  id<CucumberRuntimeIoResourceIteratorFactory> zipResourceIteratorFactory_;
-  id<CucumberRuntimeIoResourceIteratorFactory> fileResourceIteratorFactory_;
+  id<CCBRResourceIteratorFactory> zipResourceIteratorFactory_;
+  id<CCBRResourceIteratorFactory> fileResourceIteratorFactory_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoZipThenFileResourceIteratorFactory, zipResourceIteratorFactory_, id<CucumberRuntimeIoResourceIteratorFactory>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoZipThenFileResourceIteratorFactory, fileResourceIteratorFactory_, id<CucumberRuntimeIoResourceIteratorFactory>)
+J2OBJC_FIELD_SETTER(CCBRZipThenFileResourceIteratorFactory, zipResourceIteratorFactory_, id<CCBRResourceIteratorFactory>)
+J2OBJC_FIELD_SETTER(CCBRZipThenFileResourceIteratorFactory, fileResourceIteratorFactory_, id<CCBRResourceIteratorFactory>)
 
-@implementation CucumberRuntimeIoZipThenFileResourceIteratorFactory
+@implementation CCBRZipThenFileResourceIteratorFactory
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeIoZipThenFileResourceIteratorFactory_init(self);
+  CCBRZipThenFileResourceIteratorFactory_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (jboolean)isFactoryForWithJavaNetURL:(JavaNetURL *)url {
-  return [((id<CucumberRuntimeIoResourceIteratorFactory>) nil_chk(zipResourceIteratorFactory_)) isFactoryForWithJavaNetURL:url] || [((id<CucumberRuntimeIoResourceIteratorFactory>) nil_chk(fileResourceIteratorFactory_)) isFactoryForWithJavaNetURL:url];
+  return [((id<CCBRResourceIteratorFactory>) nil_chk(zipResourceIteratorFactory_)) isFactoryForWithJavaNetURL:url] || [((id<CCBRResourceIteratorFactory>) nil_chk(fileResourceIteratorFactory_)) isFactoryForWithJavaNetURL:url];
 }
 
 - (id<JavaUtilIterator>)createIteratorWithJavaNetURL:(JavaNetURL *)url
                                         withNSString:(NSString *)path
                                         withNSString:(NSString *)suffix {
-  if ([((id<CucumberRuntimeIoResourceIteratorFactory>) nil_chk(zipResourceIteratorFactory_)) isFactoryForWithJavaNetURL:url]) {
+  if ([((id<CCBRResourceIteratorFactory>) nil_chk(zipResourceIteratorFactory_)) isFactoryForWithJavaNetURL:url]) {
     return [zipResourceIteratorFactory_ createIteratorWithJavaNetURL:url withNSString:path withNSString:suffix];
   }
   else {
-    return [((id<CucumberRuntimeIoResourceIteratorFactory>) nil_chk(fileResourceIteratorFactory_)) createIteratorWithJavaNetURL:url withNSString:path withNSString:suffix];
+    return [((id<CCBRResourceIteratorFactory>) nil_chk(fileResourceIteratorFactory_)) createIteratorWithJavaNetURL:url withNSString:path withNSString:suffix];
   }
 }
 
@@ -66,28 +66,28 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[2].selector = @selector(createIteratorWithJavaNetURL:withNSString:withNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "zipResourceIteratorFactory_", "LCucumberRuntimeIoResourceIteratorFactory;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "fileResourceIteratorFactory_", "LCucumberRuntimeIoResourceIteratorFactory;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "zipResourceIteratorFactory_", "LCCBRResourceIteratorFactory;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "fileResourceIteratorFactory_", "LCCBRResourceIteratorFactory;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "isFactoryFor", "LJavaNetURL;", "createIterator", "LJavaNetURL;LNSString;LNSString;", "(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;)Ljava/util/Iterator<Lcucumber/runtime/io/Resource;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeIoZipThenFileResourceIteratorFactory = { "ZipThenFileResourceIteratorFactory", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 3, 2, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeIoZipThenFileResourceIteratorFactory;
+  static const J2ObjcClassInfo _CCBRZipThenFileResourceIteratorFactory = { "ZipThenFileResourceIteratorFactory", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 3, 2, -1, -1, -1, -1, -1 };
+  return &_CCBRZipThenFileResourceIteratorFactory;
 }
 
 @end
 
-void CucumberRuntimeIoZipThenFileResourceIteratorFactory_init(CucumberRuntimeIoZipThenFileResourceIteratorFactory *self) {
+void CCBRZipThenFileResourceIteratorFactory_init(CCBRZipThenFileResourceIteratorFactory *self) {
   NSObject_init(self);
-  JreStrongAssignAndConsume(&self->zipResourceIteratorFactory_, new_CucumberRuntimeIoZipResourceIteratorFactory_init());
-  JreStrongAssignAndConsume(&self->fileResourceIteratorFactory_, new_CucumberRuntimeIoFileResourceIteratorFactory_init());
+  JreStrongAssignAndConsume(&self->zipResourceIteratorFactory_, new_CCBRZipResourceIteratorFactory_init());
+  JreStrongAssignAndConsume(&self->fileResourceIteratorFactory_, new_CCBRFileResourceIteratorFactory_init());
 }
 
-CucumberRuntimeIoZipThenFileResourceIteratorFactory *new_CucumberRuntimeIoZipThenFileResourceIteratorFactory_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeIoZipThenFileResourceIteratorFactory, init)
+CCBRZipThenFileResourceIteratorFactory *new_CCBRZipThenFileResourceIteratorFactory_init() {
+  J2OBJC_NEW_IMPL(CCBRZipThenFileResourceIteratorFactory, init)
 }
 
-CucumberRuntimeIoZipThenFileResourceIteratorFactory *create_CucumberRuntimeIoZipThenFileResourceIteratorFactory_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeIoZipThenFileResourceIteratorFactory, init)
+CCBRZipThenFileResourceIteratorFactory *create_CCBRZipThenFileResourceIteratorFactory_init() {
+  J2OBJC_CREATE_IMPL(CCBRZipThenFileResourceIteratorFactory, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoZipThenFileResourceIteratorFactory)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRZipThenFileResourceIteratorFactory)

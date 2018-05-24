@@ -15,9 +15,9 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *CucumberApiJavaLuugeholl__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CCBugeholl__Annotations$0(void);
 
-@implementation CucumberApiJavaLuugeholl
+@implementation CCBugeholl
 
 @synthesize value = value_;
 @synthesize timeout = timeout_;
@@ -27,7 +27,7 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiJavaLuugeholl__Annotat
 }
 
 - (IOSClass *)annotationType {
-  return CucumberApiJavaLuugeholl_class_();
+  return CCBugeholl_class_();
 }
 
 - (NSString *)description {
@@ -62,22 +62,22 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiJavaLuugeholl__Annotat
     { "value_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "timeout_", "J", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&CucumberApiJavaLuugeholl__Annotations$0 };
-  static const J2ObjcClassInfo _CucumberApiJavaLuugeholl = { "ugeholl", "cucumber.api.java.lu", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
-  return &_CucumberApiJavaLuugeholl;
+  static const void *ptrTable[] = { (void *)&CCBugeholl__Annotations$0 };
+  static const J2ObjcClassInfo _CCBugeholl = { "ugeholl", "cucumber.api.java.lu", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
+  return &_CCBugeholl;
 }
 
 @end
 
-id<CucumberApiJavaLuugeholl> create_CucumberApiJavaLuugeholl(jlong timeout, NSString *value) {
-  CucumberApiJavaLuugeholl *self = AUTORELEASE([[CucumberApiJavaLuugeholl alloc] init]);
+id<CCBugeholl> create_CCBugeholl(jlong timeout, NSString *value) {
+  CCBugeholl *self = AUTORELEASE([[CCBugeholl alloc] init]);
   self->timeout_ = timeout;
   self->value_ = RETAIN_(value);
   return self;
 }
 
-IOSObjectArray *CucumberApiJavaLuugeholl__Annotations$0() {
-  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CucumberRuntimeJavaStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
+IOSObjectArray *CCBugeholl__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CCBStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiJavaLuugeholl)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBugeholl)

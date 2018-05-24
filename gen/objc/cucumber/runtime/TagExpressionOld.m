@@ -17,69 +17,69 @@
 #include "java/util/List.h"
 #include "java/util/Map.h"
 
-@class CucumberRuntimeTagExpressionOld_And;
+@class CCBRTagExpressionOld_And;
 
-@interface CucumberRuntimeTagExpressionOld () {
+@interface CCBRTagExpressionOld () {
  @public
   id<JavaUtilMap> limits_;
-  CucumberRuntimeTagExpressionOld_And *and__;
+  CCBRTagExpressionOld_And *and__;
 }
 
 - (void)addWithNSStringArray:(IOSObjectArray *)tags;
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeTagExpressionOld, limits_, id<JavaUtilMap>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeTagExpressionOld, and__, CucumberRuntimeTagExpressionOld_And *)
+J2OBJC_FIELD_SETTER(CCBRTagExpressionOld, limits_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(CCBRTagExpressionOld, and__, CCBRTagExpressionOld_And *)
 
-__attribute__((unused)) static void CucumberRuntimeTagExpressionOld_addWithNSStringArray_(CucumberRuntimeTagExpressionOld *self, IOSObjectArray *tags);
+__attribute__((unused)) static void CCBRTagExpressionOld_addWithNSStringArray_(CCBRTagExpressionOld *self, IOSObjectArray *tags);
 
-@protocol CucumberRuntimeTagExpressionOld_Expression < JavaObject >
+@protocol CCBRTagExpressionOld_Expression < JavaObject >
 
 - (jboolean)evalWithJavaUtilCollection:(id<JavaUtilCollection>)tags;
 
 @end
 
-@interface CucumberRuntimeTagExpressionOld_Expression : NSObject
+@interface CCBRTagExpressionOld_Expression : NSObject
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeTagExpressionOld_Expression)
+J2OBJC_EMPTY_STATIC_INIT(CCBRTagExpressionOld_Expression)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTagExpressionOld_Expression)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRTagExpressionOld_Expression)
 
-@interface CucumberRuntimeTagExpressionOld_Not : NSObject < CucumberRuntimeTagExpressionOld_Expression > {
+@interface CCBRTagExpressionOld_Not : NSObject < CCBRTagExpressionOld_Expression > {
  @public
-  id<CucumberRuntimeTagExpressionOld_Expression> expression_;
+  id<CCBRTagExpressionOld_Expression> expression_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeTagExpressionOld:(CucumberRuntimeTagExpressionOld *)outer$
-                   withCucumberRuntimeTagExpressionOld_Expression:(id<CucumberRuntimeTagExpressionOld_Expression>)expression;
+- (instancetype __nonnull)initWithCCBRTagExpressionOld:(CCBRTagExpressionOld *)outer$
+                   withCCBRTagExpressionOld_Expression:(id<CCBRTagExpressionOld_Expression>)expression;
 
 - (jboolean)evalWithJavaUtilCollection:(id<JavaUtilCollection>)tags;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeTagExpressionOld_Not)
+J2OBJC_EMPTY_STATIC_INIT(CCBRTagExpressionOld_Not)
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeTagExpressionOld_Not, expression_, id<CucumberRuntimeTagExpressionOld_Expression>)
+J2OBJC_FIELD_SETTER(CCBRTagExpressionOld_Not, expression_, id<CCBRTagExpressionOld_Expression>)
 
-__attribute__((unused)) static void CucumberRuntimeTagExpressionOld_Not_initWithCucumberRuntimeTagExpressionOld_withCucumberRuntimeTagExpressionOld_Expression_(CucumberRuntimeTagExpressionOld_Not *self, CucumberRuntimeTagExpressionOld *outer$, id<CucumberRuntimeTagExpressionOld_Expression> expression);
+__attribute__((unused)) static void CCBRTagExpressionOld_Not_initWithCCBRTagExpressionOld_withCCBRTagExpressionOld_Expression_(CCBRTagExpressionOld_Not *self, CCBRTagExpressionOld *outer$, id<CCBRTagExpressionOld_Expression> expression);
 
-__attribute__((unused)) static CucumberRuntimeTagExpressionOld_Not *new_CucumberRuntimeTagExpressionOld_Not_initWithCucumberRuntimeTagExpressionOld_withCucumberRuntimeTagExpressionOld_Expression_(CucumberRuntimeTagExpressionOld *outer$, id<CucumberRuntimeTagExpressionOld_Expression> expression) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRTagExpressionOld_Not *new_CCBRTagExpressionOld_Not_initWithCCBRTagExpressionOld_withCCBRTagExpressionOld_Expression_(CCBRTagExpressionOld *outer$, id<CCBRTagExpressionOld_Expression> expression) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeTagExpressionOld_Not *create_CucumberRuntimeTagExpressionOld_Not_initWithCucumberRuntimeTagExpressionOld_withCucumberRuntimeTagExpressionOld_Expression_(CucumberRuntimeTagExpressionOld *outer$, id<CucumberRuntimeTagExpressionOld_Expression> expression);
+__attribute__((unused)) static CCBRTagExpressionOld_Not *create_CCBRTagExpressionOld_Not_initWithCCBRTagExpressionOld_withCCBRTagExpressionOld_Expression_(CCBRTagExpressionOld *outer$, id<CCBRTagExpressionOld_Expression> expression);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTagExpressionOld_Not)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRTagExpressionOld_Not)
 
-@interface CucumberRuntimeTagExpressionOld_And : NSObject < CucumberRuntimeTagExpressionOld_Expression > {
+@interface CCBRTagExpressionOld_And : NSObject < CCBRTagExpressionOld_Expression > {
  @public
   id<JavaUtilList> expressions_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeTagExpressionOld:(CucumberRuntimeTagExpressionOld *)outer$;
+- (instancetype __nonnull)initWithCCBRTagExpressionOld:(CCBRTagExpressionOld *)outer$;
 
-- (void)addWithCucumberRuntimeTagExpressionOld_Expression:(id<CucumberRuntimeTagExpressionOld_Expression>)expression;
+- (void)addWithCCBRTagExpressionOld_Expression:(id<CCBRTagExpressionOld_Expression>)expression;
 
 - (jboolean)evalWithJavaUtilCollection:(id<JavaUtilCollection>)tags;
 
@@ -87,116 +87,116 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTagExpressionOld_Not)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeTagExpressionOld_And)
+J2OBJC_EMPTY_STATIC_INIT(CCBRTagExpressionOld_And)
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeTagExpressionOld_And, expressions_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRTagExpressionOld_And, expressions_, id<JavaUtilList>)
 
-__attribute__((unused)) static void CucumberRuntimeTagExpressionOld_And_initWithCucumberRuntimeTagExpressionOld_(CucumberRuntimeTagExpressionOld_And *self, CucumberRuntimeTagExpressionOld *outer$);
+__attribute__((unused)) static void CCBRTagExpressionOld_And_initWithCCBRTagExpressionOld_(CCBRTagExpressionOld_And *self, CCBRTagExpressionOld *outer$);
 
-__attribute__((unused)) static CucumberRuntimeTagExpressionOld_And *new_CucumberRuntimeTagExpressionOld_And_initWithCucumberRuntimeTagExpressionOld_(CucumberRuntimeTagExpressionOld *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRTagExpressionOld_And *new_CCBRTagExpressionOld_And_initWithCCBRTagExpressionOld_(CCBRTagExpressionOld *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeTagExpressionOld_And *create_CucumberRuntimeTagExpressionOld_And_initWithCucumberRuntimeTagExpressionOld_(CucumberRuntimeTagExpressionOld *outer$);
+__attribute__((unused)) static CCBRTagExpressionOld_And *create_CCBRTagExpressionOld_And_initWithCCBRTagExpressionOld_(CCBRTagExpressionOld *outer$);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTagExpressionOld_And)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRTagExpressionOld_And)
 
-@interface CucumberRuntimeTagExpressionOld_Or : NSObject < CucumberRuntimeTagExpressionOld_Expression > {
+@interface CCBRTagExpressionOld_Or : NSObject < CCBRTagExpressionOld_Expression > {
  @public
   id<JavaUtilList> expressions_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeTagExpressionOld:(CucumberRuntimeTagExpressionOld *)outer$;
+- (instancetype __nonnull)initWithCCBRTagExpressionOld:(CCBRTagExpressionOld *)outer$;
 
-- (void)addWithCucumberRuntimeTagExpressionOld_Expression:(id<CucumberRuntimeTagExpressionOld_Expression>)expression;
+- (void)addWithCCBRTagExpressionOld_Expression:(id<CCBRTagExpressionOld_Expression>)expression;
 
 - (jboolean)evalWithJavaUtilCollection:(id<JavaUtilCollection>)tags;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeTagExpressionOld_Or)
+J2OBJC_EMPTY_STATIC_INIT(CCBRTagExpressionOld_Or)
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeTagExpressionOld_Or, expressions_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRTagExpressionOld_Or, expressions_, id<JavaUtilList>)
 
-__attribute__((unused)) static void CucumberRuntimeTagExpressionOld_Or_initWithCucumberRuntimeTagExpressionOld_(CucumberRuntimeTagExpressionOld_Or *self, CucumberRuntimeTagExpressionOld *outer$);
+__attribute__((unused)) static void CCBRTagExpressionOld_Or_initWithCCBRTagExpressionOld_(CCBRTagExpressionOld_Or *self, CCBRTagExpressionOld *outer$);
 
-__attribute__((unused)) static CucumberRuntimeTagExpressionOld_Or *new_CucumberRuntimeTagExpressionOld_Or_initWithCucumberRuntimeTagExpressionOld_(CucumberRuntimeTagExpressionOld *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRTagExpressionOld_Or *new_CCBRTagExpressionOld_Or_initWithCCBRTagExpressionOld_(CCBRTagExpressionOld *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeTagExpressionOld_Or *create_CucumberRuntimeTagExpressionOld_Or_initWithCucumberRuntimeTagExpressionOld_(CucumberRuntimeTagExpressionOld *outer$);
+__attribute__((unused)) static CCBRTagExpressionOld_Or *create_CCBRTagExpressionOld_Or_initWithCCBRTagExpressionOld_(CCBRTagExpressionOld *outer$);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTagExpressionOld_Or)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRTagExpressionOld_Or)
 
-@interface CucumberRuntimeTagExpressionOld_TagExp : NSObject < CucumberRuntimeTagExpressionOld_Expression > {
+@interface CCBRTagExpressionOld_TagExp : NSObject < CCBRTagExpressionOld_Expression > {
  @public
   NSString *tagName_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeTagExpressionOld:(CucumberRuntimeTagExpressionOld *)outer$
-                                                     withNSString:(NSString *)tagName;
+- (instancetype __nonnull)initWithCCBRTagExpressionOld:(CCBRTagExpressionOld *)outer$
+                                          withNSString:(NSString *)tagName;
 
 - (jboolean)evalWithJavaUtilCollection:(id<JavaUtilCollection>)tags;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeTagExpressionOld_TagExp)
+J2OBJC_EMPTY_STATIC_INIT(CCBRTagExpressionOld_TagExp)
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeTagExpressionOld_TagExp, tagName_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRTagExpressionOld_TagExp, tagName_, NSString *)
 
-__attribute__((unused)) static void CucumberRuntimeTagExpressionOld_TagExp_initWithCucumberRuntimeTagExpressionOld_withNSString_(CucumberRuntimeTagExpressionOld_TagExp *self, CucumberRuntimeTagExpressionOld *outer$, NSString *tagName);
+__attribute__((unused)) static void CCBRTagExpressionOld_TagExp_initWithCCBRTagExpressionOld_withNSString_(CCBRTagExpressionOld_TagExp *self, CCBRTagExpressionOld *outer$, NSString *tagName);
 
-__attribute__((unused)) static CucumberRuntimeTagExpressionOld_TagExp *new_CucumberRuntimeTagExpressionOld_TagExp_initWithCucumberRuntimeTagExpressionOld_withNSString_(CucumberRuntimeTagExpressionOld *outer$, NSString *tagName) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRTagExpressionOld_TagExp *new_CCBRTagExpressionOld_TagExp_initWithCCBRTagExpressionOld_withNSString_(CCBRTagExpressionOld *outer$, NSString *tagName) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeTagExpressionOld_TagExp *create_CucumberRuntimeTagExpressionOld_TagExp_initWithCucumberRuntimeTagExpressionOld_withNSString_(CucumberRuntimeTagExpressionOld *outer$, NSString *tagName);
+__attribute__((unused)) static CCBRTagExpressionOld_TagExp *create_CCBRTagExpressionOld_TagExp_initWithCCBRTagExpressionOld_withNSString_(CCBRTagExpressionOld *outer$, NSString *tagName);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTagExpressionOld_TagExp)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRTagExpressionOld_TagExp)
 
-@interface CucumberRuntimeTagExpressionOld_BadTagException : JavaLangRuntimeException
+@interface CCBRTagExpressionOld_BadTagException : JavaLangRuntimeException
 
-- (instancetype __nonnull)initWithCucumberRuntimeTagExpressionOld:(CucumberRuntimeTagExpressionOld *)outer$
-                                                     withNSString:(NSString *)tagName;
-
-@end
-
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeTagExpressionOld_BadTagException)
-
-__attribute__((unused)) static void CucumberRuntimeTagExpressionOld_BadTagException_initWithCucumberRuntimeTagExpressionOld_withNSString_(CucumberRuntimeTagExpressionOld_BadTagException *self, CucumberRuntimeTagExpressionOld *outer$, NSString *tagName);
-
-__attribute__((unused)) static CucumberRuntimeTagExpressionOld_BadTagException *new_CucumberRuntimeTagExpressionOld_BadTagException_initWithCucumberRuntimeTagExpressionOld_withNSString_(CucumberRuntimeTagExpressionOld *outer$, NSString *tagName) NS_RETURNS_RETAINED;
-
-__attribute__((unused)) static CucumberRuntimeTagExpressionOld_BadTagException *create_CucumberRuntimeTagExpressionOld_BadTagException_initWithCucumberRuntimeTagExpressionOld_withNSString_(CucumberRuntimeTagExpressionOld *outer$, NSString *tagName);
-
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTagExpressionOld_BadTagException)
-
-@interface CucumberRuntimeTagExpressionOld_BadTagLimitException : JavaLangRuntimeException
-
-- (instancetype __nonnull)initWithCucumberRuntimeTagExpressionOld:(CucumberRuntimeTagExpressionOld *)outer$
-                                                     withNSString:(NSString *)tag
-                                                          withInt:(jint)limitA
-                                                          withInt:(jint)limitB;
+- (instancetype __nonnull)initWithCCBRTagExpressionOld:(CCBRTagExpressionOld *)outer$
+                                          withNSString:(NSString *)tagName;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeTagExpressionOld_BadTagLimitException)
+J2OBJC_EMPTY_STATIC_INIT(CCBRTagExpressionOld_BadTagException)
 
-__attribute__((unused)) static void CucumberRuntimeTagExpressionOld_BadTagLimitException_initWithCucumberRuntimeTagExpressionOld_withNSString_withInt_withInt_(CucumberRuntimeTagExpressionOld_BadTagLimitException *self, CucumberRuntimeTagExpressionOld *outer$, NSString *tag, jint limitA, jint limitB);
+__attribute__((unused)) static void CCBRTagExpressionOld_BadTagException_initWithCCBRTagExpressionOld_withNSString_(CCBRTagExpressionOld_BadTagException *self, CCBRTagExpressionOld *outer$, NSString *tagName);
 
-__attribute__((unused)) static CucumberRuntimeTagExpressionOld_BadTagLimitException *new_CucumberRuntimeTagExpressionOld_BadTagLimitException_initWithCucumberRuntimeTagExpressionOld_withNSString_withInt_withInt_(CucumberRuntimeTagExpressionOld *outer$, NSString *tag, jint limitA, jint limitB) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRTagExpressionOld_BadTagException *new_CCBRTagExpressionOld_BadTagException_initWithCCBRTagExpressionOld_withNSString_(CCBRTagExpressionOld *outer$, NSString *tagName) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeTagExpressionOld_BadTagLimitException *create_CucumberRuntimeTagExpressionOld_BadTagLimitException_initWithCucumberRuntimeTagExpressionOld_withNSString_withInt_withInt_(CucumberRuntimeTagExpressionOld *outer$, NSString *tag, jint limitA, jint limitB);
+__attribute__((unused)) static CCBRTagExpressionOld_BadTagException *create_CCBRTagExpressionOld_BadTagException_initWithCCBRTagExpressionOld_withNSString_(CCBRTagExpressionOld *outer$, NSString *tagName);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTagExpressionOld_BadTagLimitException)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRTagExpressionOld_BadTagException)
 
-@implementation CucumberRuntimeTagExpressionOld
+@interface CCBRTagExpressionOld_BadTagLimitException : JavaLangRuntimeException
+
+- (instancetype __nonnull)initWithCCBRTagExpressionOld:(CCBRTagExpressionOld *)outer$
+                                          withNSString:(NSString *)tag
+                                               withInt:(jint)limitA
+                                               withInt:(jint)limitB;
+
+@end
+
+J2OBJC_EMPTY_STATIC_INIT(CCBRTagExpressionOld_BadTagLimitException)
+
+__attribute__((unused)) static void CCBRTagExpressionOld_BadTagLimitException_initWithCCBRTagExpressionOld_withNSString_withInt_withInt_(CCBRTagExpressionOld_BadTagLimitException *self, CCBRTagExpressionOld *outer$, NSString *tag, jint limitA, jint limitB);
+
+__attribute__((unused)) static CCBRTagExpressionOld_BadTagLimitException *new_CCBRTagExpressionOld_BadTagLimitException_initWithCCBRTagExpressionOld_withNSString_withInt_withInt_(CCBRTagExpressionOld *outer$, NSString *tag, jint limitA, jint limitB) NS_RETURNS_RETAINED;
+
+__attribute__((unused)) static CCBRTagExpressionOld_BadTagLimitException *create_CCBRTagExpressionOld_BadTagLimitException_initWithCCBRTagExpressionOld_withNSString_withInt_withInt_(CCBRTagExpressionOld *outer$, NSString *tag, jint limitA, jint limitB);
+
+J2OBJC_TYPE_LITERAL_HEADER(CCBRTagExpressionOld_BadTagLimitException)
+
+@implementation CCBRTagExpressionOld
 
 + (jboolean)isOldTagExpressionWithNSString:(NSString *)tagExpression {
-  return CucumberRuntimeTagExpressionOld_isOldTagExpressionWithNSString_(tagExpression);
+  return CCBRTagExpressionOld_isOldTagExpressionWithNSString_(tagExpression);
 }
 
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)tagExpressions {
-  CucumberRuntimeTagExpressionOld_initWithJavaUtilList_(self, tagExpressions);
+  CCBRTagExpressionOld_initWithJavaUtilList_(self, tagExpressions);
   return self;
 }
 
 - (jboolean)evaluateWithJavaUtilCollection:(id<JavaUtilCollection>)tags {
-  return [((CucumberRuntimeTagExpressionOld_And *) nil_chk(and__)) isEmpty] || [((CucumberRuntimeTagExpressionOld_And *) nil_chk(and__)) evalWithJavaUtilCollection:tags];
+  return [((CCBRTagExpressionOld_And *) nil_chk(and__)) isEmpty] || [((CCBRTagExpressionOld_And *) nil_chk(and__)) evalWithJavaUtilCollection:tags];
 }
 
 - (id<JavaUtilMap>)limits {
@@ -204,11 +204,11 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTagExpressionOld_BadTagLimitException)
 }
 
 - (jboolean)isEmpty {
-  return [((CucumberRuntimeTagExpressionOld_And *) nil_chk(and__)) isEmpty];
+  return [((CCBRTagExpressionOld_And *) nil_chk(and__)) isEmpty];
 }
 
 - (void)addWithNSStringArray:(IOSObjectArray *)tags {
-  CucumberRuntimeTagExpressionOld_addWithNSStringArray_(self, tags);
+  CCBRTagExpressionOld_addWithNSStringArray_(self, tags);
 }
 
 - (void)dealloc {
@@ -238,17 +238,17 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTagExpressionOld_BadTagLimitException)
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "limits_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 10, -1 },
-    { "and__", "LCucumberRuntimeTagExpressionOld_And;", .constantValue.asLong = 0, 0x2, 11, -1, -1, -1 },
+    { "and__", "LCCBRTagExpressionOld_And;", .constantValue.asLong = 0, 0x2, 11, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "isOldTagExpression", "LNSString;", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)V", "evaluate", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z", "()Ljava/util/Map<Ljava/lang/String;Ljava/lang/Integer;>;", "add", "[LNSString;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Integer;>;", "and", "LCucumberRuntimeTagExpressionOld_Expression;LCucumberRuntimeTagExpressionOld_Not;LCucumberRuntimeTagExpressionOld_And;LCucumberRuntimeTagExpressionOld_Or;LCucumberRuntimeTagExpressionOld_TagExp;LCucumberRuntimeTagExpressionOld_BadTagException;LCucumberRuntimeTagExpressionOld_BadTagLimitException;" };
-  static const J2ObjcClassInfo _CucumberRuntimeTagExpressionOld = { "TagExpressionOld", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 6, 2, -1, 12, -1, -1, -1 };
-  return &_CucumberRuntimeTagExpressionOld;
+  static const void *ptrTable[] = { "isOldTagExpression", "LNSString;", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)V", "evaluate", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z", "()Ljava/util/Map<Ljava/lang/String;Ljava/lang/Integer;>;", "add", "[LNSString;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Integer;>;", "and", "LCCBRTagExpressionOld_Expression;LCCBRTagExpressionOld_Not;LCCBRTagExpressionOld_And;LCCBRTagExpressionOld_Or;LCCBRTagExpressionOld_TagExp;LCCBRTagExpressionOld_BadTagException;LCCBRTagExpressionOld_BadTagLimitException;" };
+  static const J2ObjcClassInfo _CCBRTagExpressionOld = { "TagExpressionOld", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 6, 2, -1, 12, -1, -1, -1 };
+  return &_CCBRTagExpressionOld;
 }
 
 @end
 
-jboolean CucumberRuntimeTagExpressionOld_isOldTagExpressionWithNSString_(NSString *tagExpression) {
-  CucumberRuntimeTagExpressionOld_initialize();
+jboolean CCBRTagExpressionOld_isOldTagExpressionWithNSString_(NSString *tagExpression) {
+  CCBRTagExpressionOld_initialize();
   if (tagExpression == nil) {
     return false;
   }
@@ -261,25 +261,25 @@ jboolean CucumberRuntimeTagExpressionOld_isOldTagExpressionWithNSString_(NSStrin
   return [tagExpression java_contains:@","] || [tagExpression java_contains:@"~"];
 }
 
-void CucumberRuntimeTagExpressionOld_initWithJavaUtilList_(CucumberRuntimeTagExpressionOld *self, id<JavaUtilList> tagExpressions) {
+void CCBRTagExpressionOld_initWithJavaUtilList_(CCBRTagExpressionOld *self, id<JavaUtilList> tagExpressions) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->limits_, new_JavaUtilHashMap_init());
-  JreStrongAssignAndConsume(&self->and__, new_CucumberRuntimeTagExpressionOld_And_initWithCucumberRuntimeTagExpressionOld_(self));
+  JreStrongAssignAndConsume(&self->and__, new_CCBRTagExpressionOld_And_initWithCCBRTagExpressionOld_(self));
   for (NSString * __strong tagExpression in nil_chk(tagExpressions)) {
-    CucumberRuntimeTagExpressionOld_addWithNSStringArray_(self, [((NSString *) nil_chk(tagExpression)) java_split:@"\\s*,\\s*"]);
+    CCBRTagExpressionOld_addWithNSStringArray_(self, [((NSString *) nil_chk(tagExpression)) java_split:@"\\s*,\\s*"]);
   }
 }
 
-CucumberRuntimeTagExpressionOld *new_CucumberRuntimeTagExpressionOld_initWithJavaUtilList_(id<JavaUtilList> tagExpressions) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeTagExpressionOld, initWithJavaUtilList_, tagExpressions)
+CCBRTagExpressionOld *new_CCBRTagExpressionOld_initWithJavaUtilList_(id<JavaUtilList> tagExpressions) {
+  J2OBJC_NEW_IMPL(CCBRTagExpressionOld, initWithJavaUtilList_, tagExpressions)
 }
 
-CucumberRuntimeTagExpressionOld *create_CucumberRuntimeTagExpressionOld_initWithJavaUtilList_(id<JavaUtilList> tagExpressions) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeTagExpressionOld, initWithJavaUtilList_, tagExpressions)
+CCBRTagExpressionOld *create_CCBRTagExpressionOld_initWithJavaUtilList_(id<JavaUtilList> tagExpressions) {
+  J2OBJC_CREATE_IMPL(CCBRTagExpressionOld, initWithJavaUtilList_, tagExpressions)
 }
 
-void CucumberRuntimeTagExpressionOld_addWithNSStringArray_(CucumberRuntimeTagExpressionOld *self, IOSObjectArray *tags) {
-  CucumberRuntimeTagExpressionOld_Or *or_ = create_CucumberRuntimeTagExpressionOld_Or_initWithCucumberRuntimeTagExpressionOld_(self);
+void CCBRTagExpressionOld_addWithNSStringArray_(CCBRTagExpressionOld *self, IOSObjectArray *tags) {
+  CCBRTagExpressionOld_Or *or_ = create_CCBRTagExpressionOld_Or_initWithCCBRTagExpressionOld_(self);
   {
     IOSObjectArray *a__ = tags;
     NSString * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
@@ -300,24 +300,24 @@ void CucumberRuntimeTagExpressionOld_addWithNSStringArray_(CucumberRuntimeTagExp
         tag = IOSObjectArray_Get(tagAndLimit, 0);
         jint limit = JavaLangInteger_parseIntWithNSString_(IOSObjectArray_Get(tagAndLimit, 1));
         if ([((id<JavaUtilMap>) nil_chk(self->limits_)) containsKeyWithId:tag] && [((JavaLangInteger *) nil_chk([self->limits_ getWithId:tag])) intValue] != limit) {
-          @throw create_CucumberRuntimeTagExpressionOld_BadTagLimitException_initWithCucumberRuntimeTagExpressionOld_withNSString_withInt_withInt_(self, tag, [((JavaLangInteger *) nil_chk([self->limits_ getWithId:tag])) intValue], limit);
+          @throw create_CCBRTagExpressionOld_BadTagLimitException_initWithCCBRTagExpressionOld_withNSString_withInt_withInt_(self, tag, [((JavaLangInteger *) nil_chk([self->limits_ getWithId:tag])) intValue], limit);
         }
         [self->limits_ putWithId:tag withId:JavaLangInteger_valueOfWithInt_(limit)];
       }
       if (negation) {
-        [or_ addWithCucumberRuntimeTagExpressionOld_Expression:create_CucumberRuntimeTagExpressionOld_Not_initWithCucumberRuntimeTagExpressionOld_withCucumberRuntimeTagExpressionOld_Expression_(self, create_CucumberRuntimeTagExpressionOld_TagExp_initWithCucumberRuntimeTagExpressionOld_withNSString_(self, tag))];
+        [or_ addWithCCBRTagExpressionOld_Expression:create_CCBRTagExpressionOld_Not_initWithCCBRTagExpressionOld_withCCBRTagExpressionOld_Expression_(self, create_CCBRTagExpressionOld_TagExp_initWithCCBRTagExpressionOld_withNSString_(self, tag))];
       }
       else {
-        [or_ addWithCucumberRuntimeTagExpressionOld_Expression:create_CucumberRuntimeTagExpressionOld_TagExp_initWithCucumberRuntimeTagExpressionOld_withNSString_(self, tag)];
+        [or_ addWithCCBRTagExpressionOld_Expression:create_CCBRTagExpressionOld_TagExp_initWithCCBRTagExpressionOld_withNSString_(self, tag)];
       }
     }
   }
-  [((CucumberRuntimeTagExpressionOld_And *) nil_chk(self->and__)) addWithCucumberRuntimeTagExpressionOld_Expression:or_];
+  [((CCBRTagExpressionOld_And *) nil_chk(self->and__)) addWithCCBRTagExpressionOld_Expression:or_];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTagExpressionOld)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTagExpressionOld)
 
-@implementation CucumberRuntimeTagExpressionOld_Expression
+@implementation CCBRTagExpressionOld_Expression
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -328,25 +328,25 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTagExpressionOld)
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(evalWithJavaUtilCollection:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "eval", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z", "LCucumberRuntimeTagExpressionOld;" };
-  static const J2ObjcClassInfo _CucumberRuntimeTagExpressionOld_Expression = { "Expression", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x60a, 1, 0, 3, -1, -1, -1, -1 };
-  return &_CucumberRuntimeTagExpressionOld_Expression;
+  static const void *ptrTable[] = { "eval", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z", "LCCBRTagExpressionOld;" };
+  static const J2ObjcClassInfo _CCBRTagExpressionOld_Expression = { "Expression", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x60a, 1, 0, 3, -1, -1, -1, -1 };
+  return &_CCBRTagExpressionOld_Expression;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRuntimeTagExpressionOld_Expression)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBRTagExpressionOld_Expression)
 
-@implementation CucumberRuntimeTagExpressionOld_Not
+@implementation CCBRTagExpressionOld_Not
 
-- (instancetype __nonnull)initWithCucumberRuntimeTagExpressionOld:(CucumberRuntimeTagExpressionOld *)outer$
-                   withCucumberRuntimeTagExpressionOld_Expression:(id<CucumberRuntimeTagExpressionOld_Expression>)expression {
-  CucumberRuntimeTagExpressionOld_Not_initWithCucumberRuntimeTagExpressionOld_withCucumberRuntimeTagExpressionOld_Expression_(self, outer$, expression);
+- (instancetype __nonnull)initWithCCBRTagExpressionOld:(CCBRTagExpressionOld *)outer$
+                   withCCBRTagExpressionOld_Expression:(id<CCBRTagExpressionOld_Expression>)expression {
+  CCBRTagExpressionOld_Not_initWithCCBRTagExpressionOld_withCCBRTagExpressionOld_Expression_(self, outer$, expression);
   return self;
 }
 
 - (jboolean)evalWithJavaUtilCollection:(id<JavaUtilCollection>)tags {
-  return ![((id<CucumberRuntimeTagExpressionOld_Expression>) nil_chk(expression_)) evalWithJavaUtilCollection:tags];
+  return ![((id<CCBRTagExpressionOld_Expression>) nil_chk(expression_)) evalWithJavaUtilCollection:tags];
 }
 
 - (void)dealloc {
@@ -362,49 +362,49 @@ J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRuntimeTagExpressionOld_Expression)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeTagExpressionOld:withCucumberRuntimeTagExpressionOld_Expression:);
+  methods[0].selector = @selector(initWithCCBRTagExpressionOld:withCCBRTagExpressionOld_Expression:);
   methods[1].selector = @selector(evalWithJavaUtilCollection:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "expression_", "LCucumberRuntimeTagExpressionOld_Expression;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "expression_", "LCCBRTagExpressionOld_Expression;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCucumberRuntimeTagExpressionOld_Expression;", "eval", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z", "LCucumberRuntimeTagExpressionOld;" };
-  static const J2ObjcClassInfo _CucumberRuntimeTagExpressionOld_Not = { "Not", "cucumber.runtime", ptrTable, methods, fields, 7, 0x2, 2, 1, 4, -1, -1, -1, -1 };
-  return &_CucumberRuntimeTagExpressionOld_Not;
+  static const void *ptrTable[] = { "LCCBRTagExpressionOld_Expression;", "eval", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z", "LCCBRTagExpressionOld;" };
+  static const J2ObjcClassInfo _CCBRTagExpressionOld_Not = { "Not", "cucumber.runtime", ptrTable, methods, fields, 7, 0x2, 2, 1, 4, -1, -1, -1, -1 };
+  return &_CCBRTagExpressionOld_Not;
 }
 
 @end
 
-void CucumberRuntimeTagExpressionOld_Not_initWithCucumberRuntimeTagExpressionOld_withCucumberRuntimeTagExpressionOld_Expression_(CucumberRuntimeTagExpressionOld_Not *self, CucumberRuntimeTagExpressionOld *outer$, id<CucumberRuntimeTagExpressionOld_Expression> expression) {
+void CCBRTagExpressionOld_Not_initWithCCBRTagExpressionOld_withCCBRTagExpressionOld_Expression_(CCBRTagExpressionOld_Not *self, CCBRTagExpressionOld *outer$, id<CCBRTagExpressionOld_Expression> expression) {
   NSObject_init(self);
   JreStrongAssign(&self->expression_, expression);
 }
 
-CucumberRuntimeTagExpressionOld_Not *new_CucumberRuntimeTagExpressionOld_Not_initWithCucumberRuntimeTagExpressionOld_withCucumberRuntimeTagExpressionOld_Expression_(CucumberRuntimeTagExpressionOld *outer$, id<CucumberRuntimeTagExpressionOld_Expression> expression) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeTagExpressionOld_Not, initWithCucumberRuntimeTagExpressionOld_withCucumberRuntimeTagExpressionOld_Expression_, outer$, expression)
+CCBRTagExpressionOld_Not *new_CCBRTagExpressionOld_Not_initWithCCBRTagExpressionOld_withCCBRTagExpressionOld_Expression_(CCBRTagExpressionOld *outer$, id<CCBRTagExpressionOld_Expression> expression) {
+  J2OBJC_NEW_IMPL(CCBRTagExpressionOld_Not, initWithCCBRTagExpressionOld_withCCBRTagExpressionOld_Expression_, outer$, expression)
 }
 
-CucumberRuntimeTagExpressionOld_Not *create_CucumberRuntimeTagExpressionOld_Not_initWithCucumberRuntimeTagExpressionOld_withCucumberRuntimeTagExpressionOld_Expression_(CucumberRuntimeTagExpressionOld *outer$, id<CucumberRuntimeTagExpressionOld_Expression> expression) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeTagExpressionOld_Not, initWithCucumberRuntimeTagExpressionOld_withCucumberRuntimeTagExpressionOld_Expression_, outer$, expression)
+CCBRTagExpressionOld_Not *create_CCBRTagExpressionOld_Not_initWithCCBRTagExpressionOld_withCCBRTagExpressionOld_Expression_(CCBRTagExpressionOld *outer$, id<CCBRTagExpressionOld_Expression> expression) {
+  J2OBJC_CREATE_IMPL(CCBRTagExpressionOld_Not, initWithCCBRTagExpressionOld_withCCBRTagExpressionOld_Expression_, outer$, expression)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTagExpressionOld_Not)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTagExpressionOld_Not)
 
-@implementation CucumberRuntimeTagExpressionOld_And
+@implementation CCBRTagExpressionOld_And
 
-- (instancetype __nonnull)initWithCucumberRuntimeTagExpressionOld:(CucumberRuntimeTagExpressionOld *)outer$ {
-  CucumberRuntimeTagExpressionOld_And_initWithCucumberRuntimeTagExpressionOld_(self, outer$);
+- (instancetype __nonnull)initWithCCBRTagExpressionOld:(CCBRTagExpressionOld *)outer$ {
+  CCBRTagExpressionOld_And_initWithCCBRTagExpressionOld_(self, outer$);
   return self;
 }
 
-- (void)addWithCucumberRuntimeTagExpressionOld_Expression:(id<CucumberRuntimeTagExpressionOld_Expression>)expression {
+- (void)addWithCCBRTagExpressionOld_Expression:(id<CCBRTagExpressionOld_Expression>)expression {
   [((id<JavaUtilList>) nil_chk(expressions_)) addWithId:expression];
 }
 
 - (jboolean)evalWithJavaUtilCollection:(id<JavaUtilCollection>)tags {
   jboolean result = true;
-  for (id<CucumberRuntimeTagExpressionOld_Expression> __strong expression in nil_chk(expressions_)) {
-    result = [((id<CucumberRuntimeTagExpressionOld_Expression>) nil_chk(expression)) evalWithJavaUtilCollection:tags];
+  for (id<CCBRTagExpressionOld_Expression> __strong expression in nil_chk(expressions_)) {
+    result = [((id<CCBRTagExpressionOld_Expression>) nil_chk(expression)) evalWithJavaUtilCollection:tags];
     if (!result) break;
   }
   return result;
@@ -429,51 +429,51 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTagExpressionOld_Not)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeTagExpressionOld:);
-  methods[1].selector = @selector(addWithCucumberRuntimeTagExpressionOld_Expression:);
+  methods[0].selector = @selector(initWithCCBRTagExpressionOld:);
+  methods[1].selector = @selector(addWithCCBRTagExpressionOld_Expression:);
   methods[2].selector = @selector(evalWithJavaUtilCollection:);
   methods[3].selector = @selector(isEmpty);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "expressions_", "LJavaUtilList;", .constantValue.asLong = 0, 0x2, -1, -1, 5, -1 },
   };
-  static const void *ptrTable[] = { "add", "LCucumberRuntimeTagExpressionOld_Expression;", "eval", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z", "Ljava/util/List<Lcucumber/runtime/TagExpressionOld$Expression;>;", "LCucumberRuntimeTagExpressionOld;" };
-  static const J2ObjcClassInfo _CucumberRuntimeTagExpressionOld_And = { "And", "cucumber.runtime", ptrTable, methods, fields, 7, 0x2, 4, 1, 6, -1, -1, -1, -1 };
-  return &_CucumberRuntimeTagExpressionOld_And;
+  static const void *ptrTable[] = { "add", "LCCBRTagExpressionOld_Expression;", "eval", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z", "Ljava/util/List<Lcucumber/runtime/TagExpressionOld$Expression;>;", "LCCBRTagExpressionOld;" };
+  static const J2ObjcClassInfo _CCBRTagExpressionOld_And = { "And", "cucumber.runtime", ptrTable, methods, fields, 7, 0x2, 4, 1, 6, -1, -1, -1, -1 };
+  return &_CCBRTagExpressionOld_And;
 }
 
 @end
 
-void CucumberRuntimeTagExpressionOld_And_initWithCucumberRuntimeTagExpressionOld_(CucumberRuntimeTagExpressionOld_And *self, CucumberRuntimeTagExpressionOld *outer$) {
+void CCBRTagExpressionOld_And_initWithCCBRTagExpressionOld_(CCBRTagExpressionOld_And *self, CCBRTagExpressionOld *outer$) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->expressions_, new_JavaUtilArrayList_init());
 }
 
-CucumberRuntimeTagExpressionOld_And *new_CucumberRuntimeTagExpressionOld_And_initWithCucumberRuntimeTagExpressionOld_(CucumberRuntimeTagExpressionOld *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeTagExpressionOld_And, initWithCucumberRuntimeTagExpressionOld_, outer$)
+CCBRTagExpressionOld_And *new_CCBRTagExpressionOld_And_initWithCCBRTagExpressionOld_(CCBRTagExpressionOld *outer$) {
+  J2OBJC_NEW_IMPL(CCBRTagExpressionOld_And, initWithCCBRTagExpressionOld_, outer$)
 }
 
-CucumberRuntimeTagExpressionOld_And *create_CucumberRuntimeTagExpressionOld_And_initWithCucumberRuntimeTagExpressionOld_(CucumberRuntimeTagExpressionOld *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeTagExpressionOld_And, initWithCucumberRuntimeTagExpressionOld_, outer$)
+CCBRTagExpressionOld_And *create_CCBRTagExpressionOld_And_initWithCCBRTagExpressionOld_(CCBRTagExpressionOld *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRTagExpressionOld_And, initWithCCBRTagExpressionOld_, outer$)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTagExpressionOld_And)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTagExpressionOld_And)
 
-@implementation CucumberRuntimeTagExpressionOld_Or
+@implementation CCBRTagExpressionOld_Or
 
-- (instancetype __nonnull)initWithCucumberRuntimeTagExpressionOld:(CucumberRuntimeTagExpressionOld *)outer$ {
-  CucumberRuntimeTagExpressionOld_Or_initWithCucumberRuntimeTagExpressionOld_(self, outer$);
+- (instancetype __nonnull)initWithCCBRTagExpressionOld:(CCBRTagExpressionOld *)outer$ {
+  CCBRTagExpressionOld_Or_initWithCCBRTagExpressionOld_(self, outer$);
   return self;
 }
 
-- (void)addWithCucumberRuntimeTagExpressionOld_Expression:(id<CucumberRuntimeTagExpressionOld_Expression>)expression {
+- (void)addWithCCBRTagExpressionOld_Expression:(id<CCBRTagExpressionOld_Expression>)expression {
   [((id<JavaUtilList>) nil_chk(expressions_)) addWithId:expression];
 }
 
 - (jboolean)evalWithJavaUtilCollection:(id<JavaUtilCollection>)tags {
   jboolean result = false;
-  for (id<CucumberRuntimeTagExpressionOld_Expression> __strong expression in nil_chk(expressions_)) {
-    result = [((id<CucumberRuntimeTagExpressionOld_Expression>) nil_chk(expression)) evalWithJavaUtilCollection:tags];
+  for (id<CCBRTagExpressionOld_Expression> __strong expression in nil_chk(expressions_)) {
+    result = [((id<CCBRTagExpressionOld_Expression>) nil_chk(expression)) evalWithJavaUtilCollection:tags];
     if (result) break;
   }
   return result;
@@ -493,40 +493,40 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTagExpressionOld_And)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeTagExpressionOld:);
-  methods[1].selector = @selector(addWithCucumberRuntimeTagExpressionOld_Expression:);
+  methods[0].selector = @selector(initWithCCBRTagExpressionOld:);
+  methods[1].selector = @selector(addWithCCBRTagExpressionOld_Expression:);
   methods[2].selector = @selector(evalWithJavaUtilCollection:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "expressions_", "LJavaUtilList;", .constantValue.asLong = 0, 0x2, -1, -1, 5, -1 },
   };
-  static const void *ptrTable[] = { "add", "LCucumberRuntimeTagExpressionOld_Expression;", "eval", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z", "Ljava/util/List<Lcucumber/runtime/TagExpressionOld$Expression;>;", "LCucumberRuntimeTagExpressionOld;" };
-  static const J2ObjcClassInfo _CucumberRuntimeTagExpressionOld_Or = { "Or", "cucumber.runtime", ptrTable, methods, fields, 7, 0x2, 3, 1, 6, -1, -1, -1, -1 };
-  return &_CucumberRuntimeTagExpressionOld_Or;
+  static const void *ptrTable[] = { "add", "LCCBRTagExpressionOld_Expression;", "eval", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z", "Ljava/util/List<Lcucumber/runtime/TagExpressionOld$Expression;>;", "LCCBRTagExpressionOld;" };
+  static const J2ObjcClassInfo _CCBRTagExpressionOld_Or = { "Or", "cucumber.runtime", ptrTable, methods, fields, 7, 0x2, 3, 1, 6, -1, -1, -1, -1 };
+  return &_CCBRTagExpressionOld_Or;
 }
 
 @end
 
-void CucumberRuntimeTagExpressionOld_Or_initWithCucumberRuntimeTagExpressionOld_(CucumberRuntimeTagExpressionOld_Or *self, CucumberRuntimeTagExpressionOld *outer$) {
+void CCBRTagExpressionOld_Or_initWithCCBRTagExpressionOld_(CCBRTagExpressionOld_Or *self, CCBRTagExpressionOld *outer$) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->expressions_, new_JavaUtilArrayList_init());
 }
 
-CucumberRuntimeTagExpressionOld_Or *new_CucumberRuntimeTagExpressionOld_Or_initWithCucumberRuntimeTagExpressionOld_(CucumberRuntimeTagExpressionOld *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeTagExpressionOld_Or, initWithCucumberRuntimeTagExpressionOld_, outer$)
+CCBRTagExpressionOld_Or *new_CCBRTagExpressionOld_Or_initWithCCBRTagExpressionOld_(CCBRTagExpressionOld *outer$) {
+  J2OBJC_NEW_IMPL(CCBRTagExpressionOld_Or, initWithCCBRTagExpressionOld_, outer$)
 }
 
-CucumberRuntimeTagExpressionOld_Or *create_CucumberRuntimeTagExpressionOld_Or_initWithCucumberRuntimeTagExpressionOld_(CucumberRuntimeTagExpressionOld *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeTagExpressionOld_Or, initWithCucumberRuntimeTagExpressionOld_, outer$)
+CCBRTagExpressionOld_Or *create_CCBRTagExpressionOld_Or_initWithCCBRTagExpressionOld_(CCBRTagExpressionOld *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRTagExpressionOld_Or, initWithCCBRTagExpressionOld_, outer$)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTagExpressionOld_Or)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTagExpressionOld_Or)
 
-@implementation CucumberRuntimeTagExpressionOld_TagExp
+@implementation CCBRTagExpressionOld_TagExp
 
-- (instancetype __nonnull)initWithCucumberRuntimeTagExpressionOld:(CucumberRuntimeTagExpressionOld *)outer$
-                                                     withNSString:(NSString *)tagName {
-  CucumberRuntimeTagExpressionOld_TagExp_initWithCucumberRuntimeTagExpressionOld_withNSString_(self, outer$, tagName);
+- (instancetype __nonnull)initWithCCBRTagExpressionOld:(CCBRTagExpressionOld *)outer$
+                                          withNSString:(NSString *)tagName {
+  CCBRTagExpressionOld_TagExp_initWithCCBRTagExpressionOld_withNSString_(self, outer$, tagName);
   return self;
 }
 
@@ -552,42 +552,42 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTagExpressionOld_Or)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeTagExpressionOld:withNSString:);
+  methods[0].selector = @selector(initWithCCBRTagExpressionOld:withNSString:);
   methods[1].selector = @selector(evalWithJavaUtilCollection:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "tagName_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LNSString;", "eval", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z", "LCucumberRuntimeTagExpressionOld;" };
-  static const J2ObjcClassInfo _CucumberRuntimeTagExpressionOld_TagExp = { "TagExp", "cucumber.runtime", ptrTable, methods, fields, 7, 0x2, 2, 1, 4, -1, -1, -1, -1 };
-  return &_CucumberRuntimeTagExpressionOld_TagExp;
+  static const void *ptrTable[] = { "LNSString;", "eval", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z", "LCCBRTagExpressionOld;" };
+  static const J2ObjcClassInfo _CCBRTagExpressionOld_TagExp = { "TagExp", "cucumber.runtime", ptrTable, methods, fields, 7, 0x2, 2, 1, 4, -1, -1, -1, -1 };
+  return &_CCBRTagExpressionOld_TagExp;
 }
 
 @end
 
-void CucumberRuntimeTagExpressionOld_TagExp_initWithCucumberRuntimeTagExpressionOld_withNSString_(CucumberRuntimeTagExpressionOld_TagExp *self, CucumberRuntimeTagExpressionOld *outer$, NSString *tagName) {
+void CCBRTagExpressionOld_TagExp_initWithCCBRTagExpressionOld_withNSString_(CCBRTagExpressionOld_TagExp *self, CCBRTagExpressionOld *outer$, NSString *tagName) {
   NSObject_init(self);
   if (![((NSString *) nil_chk(tagName)) java_hasPrefix:@"@"]) {
-    @throw create_CucumberRuntimeTagExpressionOld_BadTagException_initWithCucumberRuntimeTagExpressionOld_withNSString_(outer$, tagName);
+    @throw create_CCBRTagExpressionOld_BadTagException_initWithCCBRTagExpressionOld_withNSString_(outer$, tagName);
   }
   JreStrongAssign(&self->tagName_, tagName);
 }
 
-CucumberRuntimeTagExpressionOld_TagExp *new_CucumberRuntimeTagExpressionOld_TagExp_initWithCucumberRuntimeTagExpressionOld_withNSString_(CucumberRuntimeTagExpressionOld *outer$, NSString *tagName) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeTagExpressionOld_TagExp, initWithCucumberRuntimeTagExpressionOld_withNSString_, outer$, tagName)
+CCBRTagExpressionOld_TagExp *new_CCBRTagExpressionOld_TagExp_initWithCCBRTagExpressionOld_withNSString_(CCBRTagExpressionOld *outer$, NSString *tagName) {
+  J2OBJC_NEW_IMPL(CCBRTagExpressionOld_TagExp, initWithCCBRTagExpressionOld_withNSString_, outer$, tagName)
 }
 
-CucumberRuntimeTagExpressionOld_TagExp *create_CucumberRuntimeTagExpressionOld_TagExp_initWithCucumberRuntimeTagExpressionOld_withNSString_(CucumberRuntimeTagExpressionOld *outer$, NSString *tagName) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeTagExpressionOld_TagExp, initWithCucumberRuntimeTagExpressionOld_withNSString_, outer$, tagName)
+CCBRTagExpressionOld_TagExp *create_CCBRTagExpressionOld_TagExp_initWithCCBRTagExpressionOld_withNSString_(CCBRTagExpressionOld *outer$, NSString *tagName) {
+  J2OBJC_CREATE_IMPL(CCBRTagExpressionOld_TagExp, initWithCCBRTagExpressionOld_withNSString_, outer$, tagName)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTagExpressionOld_TagExp)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTagExpressionOld_TagExp)
 
-@implementation CucumberRuntimeTagExpressionOld_BadTagException
+@implementation CCBRTagExpressionOld_BadTagException
 
-- (instancetype __nonnull)initWithCucumberRuntimeTagExpressionOld:(CucumberRuntimeTagExpressionOld *)outer$
-                                                     withNSString:(NSString *)tagName {
-  CucumberRuntimeTagExpressionOld_BadTagException_initWithCucumberRuntimeTagExpressionOld_withNSString_(self, outer$, tagName);
+- (instancetype __nonnull)initWithCCBRTagExpressionOld:(CCBRTagExpressionOld *)outer$
+                                          withNSString:(NSString *)tagName {
+  CCBRTagExpressionOld_BadTagException_initWithCCBRTagExpressionOld_withNSString_(self, outer$, tagName);
   return self;
 }
 
@@ -598,36 +598,36 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTagExpressionOld_TagExp)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeTagExpressionOld:withNSString:);
+  methods[0].selector = @selector(initWithCCBRTagExpressionOld:withNSString:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LNSString;", "LCucumberRuntimeTagExpressionOld;" };
-  static const J2ObjcClassInfo _CucumberRuntimeTagExpressionOld_BadTagException = { "BadTagException", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x2, 1, 0, 1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeTagExpressionOld_BadTagException;
+  static const void *ptrTable[] = { "LNSString;", "LCCBRTagExpressionOld;" };
+  static const J2ObjcClassInfo _CCBRTagExpressionOld_BadTagException = { "BadTagException", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x2, 1, 0, 1, -1, -1, -1, -1 };
+  return &_CCBRTagExpressionOld_BadTagException;
 }
 
 @end
 
-void CucumberRuntimeTagExpressionOld_BadTagException_initWithCucumberRuntimeTagExpressionOld_withNSString_(CucumberRuntimeTagExpressionOld_BadTagException *self, CucumberRuntimeTagExpressionOld *outer$, NSString *tagName) {
+void CCBRTagExpressionOld_BadTagException_initWithCCBRTagExpressionOld_withNSString_(CCBRTagExpressionOld_BadTagException *self, CCBRTagExpressionOld *outer$, NSString *tagName) {
   JavaLangRuntimeException_initWithNSString_(self, JreStrcat("$$C", @"Bad tag: \"", tagName, '"'));
 }
 
-CucumberRuntimeTagExpressionOld_BadTagException *new_CucumberRuntimeTagExpressionOld_BadTagException_initWithCucumberRuntimeTagExpressionOld_withNSString_(CucumberRuntimeTagExpressionOld *outer$, NSString *tagName) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeTagExpressionOld_BadTagException, initWithCucumberRuntimeTagExpressionOld_withNSString_, outer$, tagName)
+CCBRTagExpressionOld_BadTagException *new_CCBRTagExpressionOld_BadTagException_initWithCCBRTagExpressionOld_withNSString_(CCBRTagExpressionOld *outer$, NSString *tagName) {
+  J2OBJC_NEW_IMPL(CCBRTagExpressionOld_BadTagException, initWithCCBRTagExpressionOld_withNSString_, outer$, tagName)
 }
 
-CucumberRuntimeTagExpressionOld_BadTagException *create_CucumberRuntimeTagExpressionOld_BadTagException_initWithCucumberRuntimeTagExpressionOld_withNSString_(CucumberRuntimeTagExpressionOld *outer$, NSString *tagName) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeTagExpressionOld_BadTagException, initWithCucumberRuntimeTagExpressionOld_withNSString_, outer$, tagName)
+CCBRTagExpressionOld_BadTagException *create_CCBRTagExpressionOld_BadTagException_initWithCCBRTagExpressionOld_withNSString_(CCBRTagExpressionOld *outer$, NSString *tagName) {
+  J2OBJC_CREATE_IMPL(CCBRTagExpressionOld_BadTagException, initWithCCBRTagExpressionOld_withNSString_, outer$, tagName)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTagExpressionOld_BadTagException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTagExpressionOld_BadTagException)
 
-@implementation CucumberRuntimeTagExpressionOld_BadTagLimitException
+@implementation CCBRTagExpressionOld_BadTagLimitException
 
-- (instancetype __nonnull)initWithCucumberRuntimeTagExpressionOld:(CucumberRuntimeTagExpressionOld *)outer$
-                                                     withNSString:(NSString *)tag
-                                                          withInt:(jint)limitA
-                                                          withInt:(jint)limitB {
-  CucumberRuntimeTagExpressionOld_BadTagLimitException_initWithCucumberRuntimeTagExpressionOld_withNSString_withInt_withInt_(self, outer$, tag, limitA, limitB);
+- (instancetype __nonnull)initWithCCBRTagExpressionOld:(CCBRTagExpressionOld *)outer$
+                                          withNSString:(NSString *)tag
+                                               withInt:(jint)limitA
+                                               withInt:(jint)limitB {
+  CCBRTagExpressionOld_BadTagLimitException_initWithCCBRTagExpressionOld_withNSString_withInt_withInt_(self, outer$, tag, limitA, limitB);
   return self;
 }
 
@@ -638,25 +638,25 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTagExpressionOld_BadTagException
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeTagExpressionOld:withNSString:withInt:withInt:);
+  methods[0].selector = @selector(initWithCCBRTagExpressionOld:withNSString:withInt:withInt:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LNSString;II", "LCucumberRuntimeTagExpressionOld;" };
-  static const J2ObjcClassInfo _CucumberRuntimeTagExpressionOld_BadTagLimitException = { "BadTagLimitException", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x2, 1, 0, 1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeTagExpressionOld_BadTagLimitException;
+  static const void *ptrTable[] = { "LNSString;II", "LCCBRTagExpressionOld;" };
+  static const J2ObjcClassInfo _CCBRTagExpressionOld_BadTagLimitException = { "BadTagLimitException", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x2, 1, 0, 1, -1, -1, -1, -1 };
+  return &_CCBRTagExpressionOld_BadTagLimitException;
 }
 
 @end
 
-void CucumberRuntimeTagExpressionOld_BadTagLimitException_initWithCucumberRuntimeTagExpressionOld_withNSString_withInt_withInt_(CucumberRuntimeTagExpressionOld_BadTagLimitException *self, CucumberRuntimeTagExpressionOld *outer$, NSString *tag, jint limitA, jint limitB) {
+void CCBRTagExpressionOld_BadTagLimitException_initWithCCBRTagExpressionOld_withNSString_withInt_withInt_(CCBRTagExpressionOld_BadTagLimitException *self, CCBRTagExpressionOld *outer$, NSString *tag, jint limitA, jint limitB) {
   JavaLangRuntimeException_initWithNSString_(self, JreStrcat("$$$I$I", @"Inconsistent tag limits for ", tag, @": ", limitA, @" and ", limitB));
 }
 
-CucumberRuntimeTagExpressionOld_BadTagLimitException *new_CucumberRuntimeTagExpressionOld_BadTagLimitException_initWithCucumberRuntimeTagExpressionOld_withNSString_withInt_withInt_(CucumberRuntimeTagExpressionOld *outer$, NSString *tag, jint limitA, jint limitB) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeTagExpressionOld_BadTagLimitException, initWithCucumberRuntimeTagExpressionOld_withNSString_withInt_withInt_, outer$, tag, limitA, limitB)
+CCBRTagExpressionOld_BadTagLimitException *new_CCBRTagExpressionOld_BadTagLimitException_initWithCCBRTagExpressionOld_withNSString_withInt_withInt_(CCBRTagExpressionOld *outer$, NSString *tag, jint limitA, jint limitB) {
+  J2OBJC_NEW_IMPL(CCBRTagExpressionOld_BadTagLimitException, initWithCCBRTagExpressionOld_withNSString_withInt_withInt_, outer$, tag, limitA, limitB)
 }
 
-CucumberRuntimeTagExpressionOld_BadTagLimitException *create_CucumberRuntimeTagExpressionOld_BadTagLimitException_initWithCucumberRuntimeTagExpressionOld_withNSString_withInt_withInt_(CucumberRuntimeTagExpressionOld *outer$, NSString *tag, jint limitA, jint limitB) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeTagExpressionOld_BadTagLimitException, initWithCucumberRuntimeTagExpressionOld_withNSString_withInt_withInt_, outer$, tag, limitA, limitB)
+CCBRTagExpressionOld_BadTagLimitException *create_CCBRTagExpressionOld_BadTagLimitException_initWithCCBRTagExpressionOld_withNSString_withInt_withInt_(CCBRTagExpressionOld *outer$, NSString *tag, jint limitA, jint limitB) {
+  J2OBJC_CREATE_IMPL(CCBRTagExpressionOld_BadTagLimitException, initWithCCBRTagExpressionOld_withNSString_withInt_withInt_, outer$, tag, limitA, limitB)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTagExpressionOld_BadTagLimitException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTagExpressionOld_BadTagLimitException)

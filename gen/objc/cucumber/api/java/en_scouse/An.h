@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaEn_scouseAn_) && (INCLUDE_ALL_CucumberApiJavaEn_scouseAn || defined(INCLUDE_CucumberApiJavaEn_scouseAn))
-#define CucumberApiJavaEn_scouseAn_
+#if !defined (CCBAn_) && (INCLUDE_ALL_CucumberApiJavaEn_scouseAn || defined(INCLUDE_CCBAn))
+#define CCBAn_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaEn_scouseAn < JavaLangAnnotationAnnotation >
+@protocol CCBAn < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaEn_scouseAn : NSObject < CucumberApiJavaEn_scouseAn > {
+@interface CCBAn : NSObject < CCBAn > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEn_scouseAn)
+J2OBJC_EMPTY_STATIC_INIT(CCBAn)
 
-FOUNDATION_EXPORT id<CucumberApiJavaEn_scouseAn> create_CucumberApiJavaEn_scouseAn(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBAn> create_CCBAn(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEn_scouseAn)
+J2OBJC_TYPE_LITERAL_HEADER(CCBAn)
+
+#define CucumberApiJavaEn_scouseAn CCBAn
 
 #endif
 

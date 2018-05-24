@@ -14,25 +14,25 @@
 #include "java/util/Collections.h"
 #include "java/util/List.h"
 
-@implementation CucumberRuntimeUndefinedStepDefinitionMatch
+@implementation CCBRUndefinedStepDefinitionMatch
 
 - (instancetype __nonnull)initWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step {
-  CucumberRuntimeUndefinedStepDefinitionMatch_initWithGherkinPicklesPickleStep_(self, step);
+  CCBRUndefinedStepDefinitionMatch_initWithGherkinPicklesPickleStep_(self, step);
   return self;
 }
 
 - (void)runStepWithNSString:(NSString *)language
-    withCucumberApiScenario:(id<CucumberApiScenario>)scenario {
-  @throw create_CucumberRuntimeUndefinedStepDefinitionException_init();
+            withCCBScenario:(id<CCBScenario>)scenario {
+  @throw create_CCBRUndefinedStepDefinitionException_init();
 }
 
 - (void)dryRunStepWithNSString:(NSString *)language
-       withCucumberApiScenario:(id<CucumberApiScenario>)scenario {
-  [self runStepWithNSString:language withCucumberApiScenario:scenario];
+               withCCBScenario:(id<CCBScenario>)scenario {
+  [self runStepWithNSString:language withCCBScenario:scenario];
 }
 
-- (CucumberRuntimeMatch *)getMatch {
-  return JreLoadStatic(CucumberRuntimeMatch, UNDEFINED);
+- (CCBRMatch *)getMatch {
+  return JreLoadStatic(CCBRMatch, UNDEFINED);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -40,33 +40,33 @@
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 1, 2, 3, -1, -1, -1 },
     { NULL, "V", 0x1, 4, 2, 3, -1, -1, -1 },
-    { NULL, "LCucumberRuntimeMatch;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCCBRMatch;", 0x1, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithGherkinPicklesPickleStep:);
-  methods[1].selector = @selector(runStepWithNSString:withCucumberApiScenario:);
-  methods[2].selector = @selector(dryRunStepWithNSString:withCucumberApiScenario:);
+  methods[1].selector = @selector(runStepWithNSString:withCCBScenario:);
+  methods[2].selector = @selector(dryRunStepWithNSString:withCCBScenario:);
   methods[3].selector = @selector(getMatch);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LGherkinPicklesPickleStep;", "runStep", "LNSString;LCucumberApiScenario;", "LJavaLangThrowable;", "dryRunStep" };
-  static const J2ObjcClassInfo _CucumberRuntimeUndefinedStepDefinitionMatch = { "UndefinedStepDefinitionMatch", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x1, 4, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeUndefinedStepDefinitionMatch;
+  static const void *ptrTable[] = { "LGherkinPicklesPickleStep;", "runStep", "LNSString;LCCBScenario;", "LJavaLangThrowable;", "dryRunStep" };
+  static const J2ObjcClassInfo _CCBRUndefinedStepDefinitionMatch = { "UndefinedStepDefinitionMatch", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x1, 4, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRUndefinedStepDefinitionMatch;
 }
 
 @end
 
-void CucumberRuntimeUndefinedStepDefinitionMatch_initWithGherkinPicklesPickleStep_(CucumberRuntimeUndefinedStepDefinitionMatch *self, GherkinPicklesPickleStep *step) {
-  CucumberRuntimeStepDefinitionMatch_initWithJavaUtilList_withCucumberRuntimeStepDefinition_withNSString_withGherkinPicklesPickleStep_withCucumberRuntimeXstreamLocalizedXStreams_(self, JavaUtilCollections_emptyList(), create_CucumberRuntimeNoStepDefinition_init(), nil, step, nil);
+void CCBRUndefinedStepDefinitionMatch_initWithGherkinPicklesPickleStep_(CCBRUndefinedStepDefinitionMatch *self, GherkinPicklesPickleStep *step) {
+  CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGherkinPicklesPickleStep_withCCBRLocalizedXStreams_(self, JavaUtilCollections_emptyList(), create_CCBRNoStepDefinition_init(), nil, step, nil);
 }
 
-CucumberRuntimeUndefinedStepDefinitionMatch *new_CucumberRuntimeUndefinedStepDefinitionMatch_initWithGherkinPicklesPickleStep_(GherkinPicklesPickleStep *step) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeUndefinedStepDefinitionMatch, initWithGherkinPicklesPickleStep_, step)
+CCBRUndefinedStepDefinitionMatch *new_CCBRUndefinedStepDefinitionMatch_initWithGherkinPicklesPickleStep_(GherkinPicklesPickleStep *step) {
+  J2OBJC_NEW_IMPL(CCBRUndefinedStepDefinitionMatch, initWithGherkinPicklesPickleStep_, step)
 }
 
-CucumberRuntimeUndefinedStepDefinitionMatch *create_CucumberRuntimeUndefinedStepDefinitionMatch_initWithGherkinPicklesPickleStep_(GherkinPicklesPickleStep *step) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeUndefinedStepDefinitionMatch, initWithGherkinPicklesPickleStep_, step)
+CCBRUndefinedStepDefinitionMatch *create_CCBRUndefinedStepDefinitionMatch_initWithGherkinPicklesPickleStep_(GherkinPicklesPickleStep *step) {
+  J2OBJC_CREATE_IMPL(CCBRUndefinedStepDefinitionMatch, initWithGherkinPicklesPickleStep_, step)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeUndefinedStepDefinitionMatch)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRUndefinedStepDefinitionMatch)

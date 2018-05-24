@@ -11,54 +11,54 @@
 #include "java/lang/Throwable.h"
 #include "java/util/List.h"
 
-@interface CucumberRuntimeDefaultSummaryPrinter () {
+@interface CCBRDefaultSummaryPrinter () {
  @public
   JavaIoPrintStream *out_;
 }
 
-- (void)printStatsWithCucumberRuntimeRuntime:(CucumberRuntimeRuntime *)runtime;
+- (void)printStatsWithCCBRRuntime:(CCBRRuntime *)runtime;
 
-- (void)printErrorsWithCucumberRuntimeRuntime:(CucumberRuntimeRuntime *)runtime;
+- (void)printErrorsWithCCBRRuntime:(CCBRRuntime *)runtime;
 
-- (void)printSnippetsWithCucumberRuntimeRuntime:(CucumberRuntimeRuntime *)runtime;
+- (void)printSnippetsWithCCBRRuntime:(CCBRRuntime *)runtime;
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeDefaultSummaryPrinter, out_, JavaIoPrintStream *)
+J2OBJC_FIELD_SETTER(CCBRDefaultSummaryPrinter, out_, JavaIoPrintStream *)
 
-__attribute__((unused)) static void CucumberRuntimeDefaultSummaryPrinter_printStatsWithCucumberRuntimeRuntime_(CucumberRuntimeDefaultSummaryPrinter *self, CucumberRuntimeRuntime *runtime);
+__attribute__((unused)) static void CCBRDefaultSummaryPrinter_printStatsWithCCBRRuntime_(CCBRDefaultSummaryPrinter *self, CCBRRuntime *runtime);
 
-__attribute__((unused)) static void CucumberRuntimeDefaultSummaryPrinter_printErrorsWithCucumberRuntimeRuntime_(CucumberRuntimeDefaultSummaryPrinter *self, CucumberRuntimeRuntime *runtime);
+__attribute__((unused)) static void CCBRDefaultSummaryPrinter_printErrorsWithCCBRRuntime_(CCBRDefaultSummaryPrinter *self, CCBRRuntime *runtime);
 
-__attribute__((unused)) static void CucumberRuntimeDefaultSummaryPrinter_printSnippetsWithCucumberRuntimeRuntime_(CucumberRuntimeDefaultSummaryPrinter *self, CucumberRuntimeRuntime *runtime);
+__attribute__((unused)) static void CCBRDefaultSummaryPrinter_printSnippetsWithCCBRRuntime_(CCBRDefaultSummaryPrinter *self, CCBRRuntime *runtime);
 
-@implementation CucumberRuntimeDefaultSummaryPrinter
+@implementation CCBRDefaultSummaryPrinter
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeDefaultSummaryPrinter_init(self);
+  CCBRDefaultSummaryPrinter_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (void)printWithCucumberRuntimeRuntime:(CucumberRuntimeRuntime *)runtime {
+- (void)printWithCCBRRuntime:(CCBRRuntime *)runtime {
   [((JavaIoPrintStream *) nil_chk(out_)) println];
-  CucumberRuntimeDefaultSummaryPrinter_printStatsWithCucumberRuntimeRuntime_(self, runtime);
+  CCBRDefaultSummaryPrinter_printStatsWithCCBRRuntime_(self, runtime);
   [out_ println];
-  CucumberRuntimeDefaultSummaryPrinter_printErrorsWithCucumberRuntimeRuntime_(self, runtime);
-  CucumberRuntimeDefaultSummaryPrinter_printSnippetsWithCucumberRuntimeRuntime_(self, runtime);
+  CCBRDefaultSummaryPrinter_printErrorsWithCCBRRuntime_(self, runtime);
+  CCBRDefaultSummaryPrinter_printSnippetsWithCCBRRuntime_(self, runtime);
 }
 
-- (void)printStatsWithCucumberRuntimeRuntime:(CucumberRuntimeRuntime *)runtime {
-  CucumberRuntimeDefaultSummaryPrinter_printStatsWithCucumberRuntimeRuntime_(self, runtime);
+- (void)printStatsWithCCBRRuntime:(CCBRRuntime *)runtime {
+  CCBRDefaultSummaryPrinter_printStatsWithCCBRRuntime_(self, runtime);
 }
 
-- (void)printErrorsWithCucumberRuntimeRuntime:(CucumberRuntimeRuntime *)runtime {
-  CucumberRuntimeDefaultSummaryPrinter_printErrorsWithCucumberRuntimeRuntime_(self, runtime);
+- (void)printErrorsWithCCBRRuntime:(CCBRRuntime *)runtime {
+  CCBRDefaultSummaryPrinter_printErrorsWithCCBRRuntime_(self, runtime);
 }
 
-- (void)printSnippetsWithCucumberRuntimeRuntime:(CucumberRuntimeRuntime *)runtime {
-  CucumberRuntimeDefaultSummaryPrinter_printSnippetsWithCucumberRuntimeRuntime_(self, runtime);
+- (void)printSnippetsWithCCBRRuntime:(CCBRRuntime *)runtime {
+  CCBRDefaultSummaryPrinter_printSnippetsWithCCBRRuntime_(self, runtime);
 }
 
 - (void)dealloc {
@@ -78,47 +78,47 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(printWithCucumberRuntimeRuntime:);
-  methods[2].selector = @selector(printStatsWithCucumberRuntimeRuntime:);
-  methods[3].selector = @selector(printErrorsWithCucumberRuntimeRuntime:);
-  methods[4].selector = @selector(printSnippetsWithCucumberRuntimeRuntime:);
+  methods[1].selector = @selector(printWithCCBRRuntime:);
+  methods[2].selector = @selector(printStatsWithCCBRRuntime:);
+  methods[3].selector = @selector(printErrorsWithCCBRRuntime:);
+  methods[4].selector = @selector(printSnippetsWithCCBRRuntime:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "out_", "LJavaIoPrintStream;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "print", "LCucumberRuntimeRuntime;", "printStats", "printErrors", "printSnippets" };
-  static const J2ObjcClassInfo _CucumberRuntimeDefaultSummaryPrinter = { "DefaultSummaryPrinter", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 5, 1, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeDefaultSummaryPrinter;
+  static const void *ptrTable[] = { "print", "LCCBRRuntime;", "printStats", "printErrors", "printSnippets" };
+  static const J2ObjcClassInfo _CCBRDefaultSummaryPrinter = { "DefaultSummaryPrinter", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 5, 1, -1, -1, -1, -1, -1 };
+  return &_CCBRDefaultSummaryPrinter;
 }
 
 @end
 
-void CucumberRuntimeDefaultSummaryPrinter_init(CucumberRuntimeDefaultSummaryPrinter *self) {
+void CCBRDefaultSummaryPrinter_init(CCBRDefaultSummaryPrinter *self) {
   NSObject_init(self);
   JreStrongAssign(&self->out_, JreLoadStatic(JavaLangSystem, out));
 }
 
-CucumberRuntimeDefaultSummaryPrinter *new_CucumberRuntimeDefaultSummaryPrinter_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeDefaultSummaryPrinter, init)
+CCBRDefaultSummaryPrinter *new_CCBRDefaultSummaryPrinter_init() {
+  J2OBJC_NEW_IMPL(CCBRDefaultSummaryPrinter, init)
 }
 
-CucumberRuntimeDefaultSummaryPrinter *create_CucumberRuntimeDefaultSummaryPrinter_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeDefaultSummaryPrinter, init)
+CCBRDefaultSummaryPrinter *create_CCBRDefaultSummaryPrinter_init() {
+  J2OBJC_CREATE_IMPL(CCBRDefaultSummaryPrinter, init)
 }
 
-void CucumberRuntimeDefaultSummaryPrinter_printStatsWithCucumberRuntimeRuntime_(CucumberRuntimeDefaultSummaryPrinter *self, CucumberRuntimeRuntime *runtime) {
-  [((CucumberRuntimeRuntime *) nil_chk(runtime)) printStatsWithJavaIoPrintStream:self->out_];
+void CCBRDefaultSummaryPrinter_printStatsWithCCBRRuntime_(CCBRDefaultSummaryPrinter *self, CCBRRuntime *runtime) {
+  [((CCBRRuntime *) nil_chk(runtime)) printStatsWithJavaIoPrintStream:self->out_];
 }
 
-void CucumberRuntimeDefaultSummaryPrinter_printErrorsWithCucumberRuntimeRuntime_(CucumberRuntimeDefaultSummaryPrinter *self, CucumberRuntimeRuntime *runtime) {
-  for (JavaLangThrowable * __strong error in nil_chk([((CucumberRuntimeRuntime *) nil_chk(runtime)) getErrors])) {
+void CCBRDefaultSummaryPrinter_printErrorsWithCCBRRuntime_(CCBRDefaultSummaryPrinter *self, CCBRRuntime *runtime) {
+  for (JavaLangThrowable * __strong error in nil_chk([((CCBRRuntime *) nil_chk(runtime)) getErrors])) {
     [((JavaLangThrowable *) nil_chk(error)) printStackTraceWithJavaIoPrintStream:self->out_];
     [((JavaIoPrintStream *) nil_chk(self->out_)) println];
   }
 }
 
-void CucumberRuntimeDefaultSummaryPrinter_printSnippetsWithCucumberRuntimeRuntime_(CucumberRuntimeDefaultSummaryPrinter *self, CucumberRuntimeRuntime *runtime) {
-  id<JavaUtilList> snippets = [((CucumberRuntimeRuntime *) nil_chk(runtime)) getSnippets];
+void CCBRDefaultSummaryPrinter_printSnippetsWithCCBRRuntime_(CCBRDefaultSummaryPrinter *self, CCBRRuntime *runtime) {
+  id<JavaUtilList> snippets = [((CCBRRuntime *) nil_chk(runtime)) getSnippets];
   if (![((id<JavaUtilList>) nil_chk(snippets)) isEmpty]) {
     [((JavaIoPrintStream *) nil_chk(self->out_)) appendWithJavaLangCharSequence:@"\n"];
     [self->out_ printlnWithNSString:@"You can implement missing steps with the snippets below:"];
@@ -129,4 +129,4 @@ void CucumberRuntimeDefaultSummaryPrinter_printSnippetsWithCucumberRuntimeRuntim
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeDefaultSummaryPrinter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRDefaultSummaryPrinter)

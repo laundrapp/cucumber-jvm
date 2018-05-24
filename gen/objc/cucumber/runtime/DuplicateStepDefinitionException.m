@@ -10,26 +10,26 @@
 #include "cucumber/runtime/DuplicateStepDefinitionException.h"
 #include "cucumber/runtime/StepDefinition.h"
 
-@interface CucumberRuntimeDuplicateStepDefinitionException ()
+@interface CCBRDuplicateStepDefinitionException ()
 
-+ (NSString *)createMessageWithCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)a
-                           withCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)b;
++ (NSString *)createMessageWithCCBRStepDefinition:(id<CCBRStepDefinition>)a
+                           withCCBRStepDefinition:(id<CCBRStepDefinition>)b;
 
 @end
 
-__attribute__((unused)) static NSString *CucumberRuntimeDuplicateStepDefinitionException_createMessageWithCucumberRuntimeStepDefinition_withCucumberRuntimeStepDefinition_(id<CucumberRuntimeStepDefinition> a, id<CucumberRuntimeStepDefinition> b);
+__attribute__((unused)) static NSString *CCBRDuplicateStepDefinitionException_createMessageWithCCBRStepDefinition_withCCBRStepDefinition_(id<CCBRStepDefinition> a, id<CCBRStepDefinition> b);
 
-@implementation CucumberRuntimeDuplicateStepDefinitionException
+@implementation CCBRDuplicateStepDefinitionException
 
-- (instancetype __nonnull)initWithCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)a
-                              withCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)b {
-  CucumberRuntimeDuplicateStepDefinitionException_initWithCucumberRuntimeStepDefinition_withCucumberRuntimeStepDefinition_(self, a, b);
+- (instancetype __nonnull)initWithCCBRStepDefinition:(id<CCBRStepDefinition>)a
+                              withCCBRStepDefinition:(id<CCBRStepDefinition>)b {
+  CCBRDuplicateStepDefinitionException_initWithCCBRStepDefinition_withCCBRStepDefinition_(self, a, b);
   return self;
 }
 
-+ (NSString *)createMessageWithCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)a
-                           withCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)b {
-  return CucumberRuntimeDuplicateStepDefinitionException_createMessageWithCucumberRuntimeStepDefinition_withCucumberRuntimeStepDefinition_(a, b);
++ (NSString *)createMessageWithCCBRStepDefinition:(id<CCBRStepDefinition>)a
+                           withCCBRStepDefinition:(id<CCBRStepDefinition>)b {
+  return CCBRDuplicateStepDefinitionException_createMessageWithCCBRStepDefinition_withCCBRStepDefinition_(a, b);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -40,31 +40,31 @@ __attribute__((unused)) static NSString *CucumberRuntimeDuplicateStepDefinitionE
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeStepDefinition:withCucumberRuntimeStepDefinition:);
-  methods[1].selector = @selector(createMessageWithCucumberRuntimeStepDefinition:withCucumberRuntimeStepDefinition:);
+  methods[0].selector = @selector(initWithCCBRStepDefinition:withCCBRStepDefinition:);
+  methods[1].selector = @selector(createMessageWithCCBRStepDefinition:withCCBRStepDefinition:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LCucumberRuntimeStepDefinition;LCucumberRuntimeStepDefinition;", "createMessage" };
-  static const J2ObjcClassInfo _CucumberRuntimeDuplicateStepDefinitionException = { "DuplicateStepDefinitionException", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeDuplicateStepDefinitionException;
+  static const void *ptrTable[] = { "LCCBRStepDefinition;LCCBRStepDefinition;", "createMessage" };
+  static const J2ObjcClassInfo _CCBRDuplicateStepDefinitionException = { "DuplicateStepDefinitionException", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRDuplicateStepDefinitionException;
 }
 
 @end
 
-void CucumberRuntimeDuplicateStepDefinitionException_initWithCucumberRuntimeStepDefinition_withCucumberRuntimeStepDefinition_(CucumberRuntimeDuplicateStepDefinitionException *self, id<CucumberRuntimeStepDefinition> a, id<CucumberRuntimeStepDefinition> b) {
-  CucumberRuntimeCucumberException_initWithNSString_(self, CucumberRuntimeDuplicateStepDefinitionException_createMessageWithCucumberRuntimeStepDefinition_withCucumberRuntimeStepDefinition_(a, b));
+void CCBRDuplicateStepDefinitionException_initWithCCBRStepDefinition_withCCBRStepDefinition_(CCBRDuplicateStepDefinitionException *self, id<CCBRStepDefinition> a, id<CCBRStepDefinition> b) {
+  CCBRCucumberException_initWithNSString_(self, CCBRDuplicateStepDefinitionException_createMessageWithCCBRStepDefinition_withCCBRStepDefinition_(a, b));
 }
 
-CucumberRuntimeDuplicateStepDefinitionException *new_CucumberRuntimeDuplicateStepDefinitionException_initWithCucumberRuntimeStepDefinition_withCucumberRuntimeStepDefinition_(id<CucumberRuntimeStepDefinition> a, id<CucumberRuntimeStepDefinition> b) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeDuplicateStepDefinitionException, initWithCucumberRuntimeStepDefinition_withCucumberRuntimeStepDefinition_, a, b)
+CCBRDuplicateStepDefinitionException *new_CCBRDuplicateStepDefinitionException_initWithCCBRStepDefinition_withCCBRStepDefinition_(id<CCBRStepDefinition> a, id<CCBRStepDefinition> b) {
+  J2OBJC_NEW_IMPL(CCBRDuplicateStepDefinitionException, initWithCCBRStepDefinition_withCCBRStepDefinition_, a, b)
 }
 
-CucumberRuntimeDuplicateStepDefinitionException *create_CucumberRuntimeDuplicateStepDefinitionException_initWithCucumberRuntimeStepDefinition_withCucumberRuntimeStepDefinition_(id<CucumberRuntimeStepDefinition> a, id<CucumberRuntimeStepDefinition> b) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeDuplicateStepDefinitionException, initWithCucumberRuntimeStepDefinition_withCucumberRuntimeStepDefinition_, a, b)
+CCBRDuplicateStepDefinitionException *create_CCBRDuplicateStepDefinitionException_initWithCCBRStepDefinition_withCCBRStepDefinition_(id<CCBRStepDefinition> a, id<CCBRStepDefinition> b) {
+  J2OBJC_CREATE_IMPL(CCBRDuplicateStepDefinitionException, initWithCCBRStepDefinition_withCCBRStepDefinition_, a, b)
 }
 
-NSString *CucumberRuntimeDuplicateStepDefinitionException_createMessageWithCucumberRuntimeStepDefinition_withCucumberRuntimeStepDefinition_(id<CucumberRuntimeStepDefinition> a, id<CucumberRuntimeStepDefinition> b) {
-  CucumberRuntimeDuplicateStepDefinitionException_initialize();
-  return NSString_java_formatWithNSString_withNSObjectArray_(@"Duplicate step definitions in %s and %s", [IOSObjectArray arrayWithObjects:(id[]){ [((id<CucumberRuntimeStepDefinition>) nil_chk(a)) getLocationWithBoolean:true], [((id<CucumberRuntimeStepDefinition>) nil_chk(b)) getLocationWithBoolean:true] } count:2 type:NSObject_class_()]);
+NSString *CCBRDuplicateStepDefinitionException_createMessageWithCCBRStepDefinition_withCCBRStepDefinition_(id<CCBRStepDefinition> a, id<CCBRStepDefinition> b) {
+  CCBRDuplicateStepDefinitionException_initialize();
+  return NSString_java_formatWithNSString_withNSObjectArray_(@"Duplicate step definitions in %s and %s", [IOSObjectArray arrayWithObjects:(id[]){ [((id<CCBRStepDefinition>) nil_chk(a)) getLocationWithBoolean:true], [((id<CCBRStepDefinition>) nil_chk(b)) getLocationWithBoolean:true] } count:2 type:NSObject_class_()]);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeDuplicateStepDefinitionException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRDuplicateStepDefinitionException)

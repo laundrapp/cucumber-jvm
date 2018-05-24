@@ -7,7 +7,7 @@
 #include "cucumber/runtime/Argument.h"
 #include "java/lang/Integer.h"
 
-@interface CucumberRuntimeArgument () {
+@interface CCBRArgument () {
  @public
   JavaLangInteger *offset_;
   NSString *val_;
@@ -15,18 +15,18 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeArgument, offset_, JavaLangInteger *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeArgument, val_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRArgument, offset_, JavaLangInteger *)
+J2OBJC_FIELD_SETTER(CCBRArgument, val_, NSString *)
 
-inline jlong CucumberRuntimeArgument_get_serialVersionUID(void);
-#define CucumberRuntimeArgument_serialVersionUID 1LL
-J2OBJC_STATIC_FIELD_CONSTANT(CucumberRuntimeArgument, serialVersionUID, jlong)
+inline jlong CCBRArgument_get_serialVersionUID(void);
+#define CCBRArgument_serialVersionUID 1LL
+J2OBJC_STATIC_FIELD_CONSTANT(CCBRArgument, serialVersionUID, jlong)
 
-@implementation CucumberRuntimeArgument
+@implementation CCBRArgument
 
 - (instancetype __nonnull)initWithJavaLangInteger:(JavaLangInteger *)offset
                                      withNSString:(NSString *)val {
-  CucumberRuntimeArgument_initWithJavaLangInteger_withNSString_(self, offset, val);
+  CCBRArgument_initWithJavaLangInteger_withNSString_(self, offset, val);
   return self;
 }
 
@@ -64,29 +64,29 @@ J2OBJC_STATIC_FIELD_CONSTANT(CucumberRuntimeArgument, serialVersionUID, jlong)
   methods[3].selector = @selector(description);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "serialVersionUID", "J", .constantValue.asLong = CucumberRuntimeArgument_serialVersionUID, 0x1a, -1, -1, -1, -1 },
+    { "serialVersionUID", "J", .constantValue.asLong = CCBRArgument_serialVersionUID, 0x1a, -1, -1, -1, -1 },
     { "offset_", "LJavaLangInteger;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "val_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LJavaLangInteger;LNSString;", "toString" };
-  static const J2ObjcClassInfo _CucumberRuntimeArgument = { "Argument", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 4, 3, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeArgument;
+  static const J2ObjcClassInfo _CCBRArgument = { "Argument", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 4, 3, -1, -1, -1, -1, -1 };
+  return &_CCBRArgument;
 }
 
 @end
 
-void CucumberRuntimeArgument_initWithJavaLangInteger_withNSString_(CucumberRuntimeArgument *self, JavaLangInteger *offset, NSString *val) {
+void CCBRArgument_initWithJavaLangInteger_withNSString_(CCBRArgument *self, JavaLangInteger *offset, NSString *val) {
   NSObject_init(self);
   JreStrongAssign(&self->offset_, offset);
   JreStrongAssign(&self->val_, val);
 }
 
-CucumberRuntimeArgument *new_CucumberRuntimeArgument_initWithJavaLangInteger_withNSString_(JavaLangInteger *offset, NSString *val) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeArgument, initWithJavaLangInteger_withNSString_, offset, val)
+CCBRArgument *new_CCBRArgument_initWithJavaLangInteger_withNSString_(JavaLangInteger *offset, NSString *val) {
+  J2OBJC_NEW_IMPL(CCBRArgument, initWithJavaLangInteger_withNSString_, offset, val)
 }
 
-CucumberRuntimeArgument *create_CucumberRuntimeArgument_initWithJavaLangInteger_withNSString_(JavaLangInteger *offset, NSString *val) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeArgument, initWithJavaLangInteger_withNSString_, offset, val)
+CCBRArgument *create_CCBRArgument_initWithJavaLangInteger_withNSString_(JavaLangInteger *offset, NSString *val) {
+  J2OBJC_CREATE_IMPL(CCBRArgument, initWithJavaLangInteger_withNSString_, offset, val)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeArgument)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRArgument)

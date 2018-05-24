@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaFrEt_) && (INCLUDE_ALL_CucumberApiJavaFrEt || defined(INCLUDE_CucumberApiJavaFrEt))
-#define CucumberApiJavaFrEt_
+#if !defined (CCBEt_) && (INCLUDE_ALL_CucumberApiJavaFrEt || defined(INCLUDE_CCBEt))
+#define CCBEt_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaFrEt < JavaLangAnnotationAnnotation >
+@protocol CCBEt < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaFrEt : NSObject < CucumberApiJavaFrEt > {
+@interface CCBEt : NSObject < CCBEt > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaFrEt)
+J2OBJC_EMPTY_STATIC_INIT(CCBEt)
 
-FOUNDATION_EXPORT id<CucumberApiJavaFrEt> create_CucumberApiJavaFrEt(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBEt> create_CCBEt(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaFrEt)
+J2OBJC_TYPE_LITERAL_HEADER(CCBEt)
+
+#define CucumberApiJavaFrEt CCBEt
 
 #endif
 

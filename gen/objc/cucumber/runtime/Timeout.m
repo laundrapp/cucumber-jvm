@@ -16,19 +16,19 @@
 #include "java/util/concurrent/TimeoutException.h"
 #include "java/util/concurrent/atomic/AtomicBoolean.h"
 
-@interface CucumberRuntimeTimeout ()
+@interface CCBRTimeout ()
 
 - (instancetype __nonnull)init;
 
 @end
 
-__attribute__((unused)) static void CucumberRuntimeTimeout_init(CucumberRuntimeTimeout *self);
+__attribute__((unused)) static void CCBRTimeout_init(CCBRTimeout *self);
 
-__attribute__((unused)) static CucumberRuntimeTimeout *new_CucumberRuntimeTimeout_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRTimeout *new_CCBRTimeout_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeTimeout *create_CucumberRuntimeTimeout_init(void);
+__attribute__((unused)) static CCBRTimeout *create_CCBRTimeout_init(void);
 
-@interface CucumberRuntimeTimeout_1 : NSObject < JavaLangRunnable > {
+@interface CCBRTimeout_1 : NSObject < JavaLangRunnable > {
  @public
   id val$monitor_;
   JavaUtilConcurrentAtomicAtomicBoolean *val$done_;
@@ -43,30 +43,30 @@ withJavaUtilConcurrentAtomicAtomicBoolean:(JavaUtilConcurrentAtomicAtomicBoolean
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeTimeout_1)
+J2OBJC_EMPTY_STATIC_INIT(CCBRTimeout_1)
 
-__attribute__((unused)) static void CucumberRuntimeTimeout_1_initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_(CucumberRuntimeTimeout_1 *self, id capture$0, JavaUtilConcurrentAtomicAtomicBoolean *capture$1, JavaLangThread *capture$2);
+__attribute__((unused)) static void CCBRTimeout_1_initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_(CCBRTimeout_1 *self, id capture$0, JavaUtilConcurrentAtomicAtomicBoolean *capture$1, JavaLangThread *capture$2);
 
-__attribute__((unused)) static CucumberRuntimeTimeout_1 *new_CucumberRuntimeTimeout_1_initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_(id capture$0, JavaUtilConcurrentAtomicAtomicBoolean *capture$1, JavaLangThread *capture$2) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRTimeout_1 *new_CCBRTimeout_1_initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_(id capture$0, JavaUtilConcurrentAtomicAtomicBoolean *capture$1, JavaLangThread *capture$2) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeTimeout_1 *create_CucumberRuntimeTimeout_1_initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_(id capture$0, JavaUtilConcurrentAtomicAtomicBoolean *capture$1, JavaLangThread *capture$2);
+__attribute__((unused)) static CCBRTimeout_1 *create_CCBRTimeout_1_initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_(id capture$0, JavaUtilConcurrentAtomicAtomicBoolean *capture$1, JavaLangThread *capture$2);
 
-@interface CucumberRuntimeTimeout_Callback : NSObject
+@interface CCBRTimeout_Callback : NSObject
 
 @end
 
-@implementation CucumberRuntimeTimeout
+@implementation CCBRTimeout
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeTimeout_init(self);
+  CCBRTimeout_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-+ (id)timeoutWithCucumberRuntimeTimeout_Callback:(id<CucumberRuntimeTimeout_Callback>)callback
-                                        withLong:(jlong)timeoutMillis {
-  return CucumberRuntimeTimeout_timeoutWithCucumberRuntimeTimeout_Callback_withLong_(callback, timeoutMillis);
++ (id)timeoutWithCCBRTimeout_Callback:(id<CCBRTimeout_Callback>)callback
+                             withLong:(jlong)timeoutMillis {
+  return CCBRTimeout_timeoutWithCCBRTimeout_Callback_withLong_(callback, timeoutMillis);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -78,39 +78,39 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(timeoutWithCucumberRuntimeTimeout_Callback:withLong:);
+  methods[1].selector = @selector(timeoutWithCCBRTimeout_Callback:withLong:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "timeout", "LCucumberRuntimeTimeout_Callback;J", "LJavaLangThrowable;", "<T:Ljava/lang/Object;>(Lcucumber/runtime/Timeout$Callback<TT;>;J)TT;", "LCucumberRuntimeTimeout_Callback;" };
-  static const J2ObjcClassInfo _CucumberRuntimeTimeout = { "Timeout", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, 4, -1, -1, -1 };
-  return &_CucumberRuntimeTimeout;
+  static const void *ptrTable[] = { "timeout", "LCCBRTimeout_Callback;J", "LJavaLangThrowable;", "<T:Ljava/lang/Object;>(Lcucumber/runtime/Timeout$Callback<TT;>;J)TT;", "LCCBRTimeout_Callback;" };
+  static const J2ObjcClassInfo _CCBRTimeout = { "Timeout", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, 4, -1, -1, -1 };
+  return &_CCBRTimeout;
 }
 
 @end
 
-void CucumberRuntimeTimeout_init(CucumberRuntimeTimeout *self) {
+void CCBRTimeout_init(CCBRTimeout *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeTimeout *new_CucumberRuntimeTimeout_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeTimeout, init)
+CCBRTimeout *new_CCBRTimeout_init() {
+  J2OBJC_NEW_IMPL(CCBRTimeout, init)
 }
 
-CucumberRuntimeTimeout *create_CucumberRuntimeTimeout_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeTimeout, init)
+CCBRTimeout *create_CCBRTimeout_init() {
+  J2OBJC_CREATE_IMPL(CCBRTimeout, init)
 }
 
-id CucumberRuntimeTimeout_timeoutWithCucumberRuntimeTimeout_Callback_withLong_(id<CucumberRuntimeTimeout_Callback> callback, jlong timeoutMillis) {
-  CucumberRuntimeTimeout_initialize();
+id CCBRTimeout_timeoutWithCCBRTimeout_Callback_withLong_(id<CCBRTimeout_Callback> callback, jlong timeoutMillis) {
+  CCBRTimeout_initialize();
   if (timeoutMillis == 0) {
-    return [((id<CucumberRuntimeTimeout_Callback>) nil_chk(callback)) call];
+    return [((id<CCBRTimeout_Callback>) nil_chk(callback)) call];
   }
   JavaLangThread *executionThread = JavaLangThread_currentThread();
   id monitor = create_NSObject_init();
   JavaUtilConcurrentAtomicAtomicBoolean *done = create_JavaUtilConcurrentAtomicAtomicBoolean_init();
   id<JavaUtilConcurrentScheduledExecutorService> executorService = JavaUtilConcurrentExecutors_newSingleThreadScheduledExecutor();
-  id<JavaUtilConcurrentScheduledFuture> timer = [((id<JavaUtilConcurrentScheduledExecutorService>) nil_chk(executorService)) scheduleWithJavaLangRunnable:create_CucumberRuntimeTimeout_1_initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_(monitor, done, executionThread) withLong:timeoutMillis withJavaUtilConcurrentTimeUnit:JreLoadEnum(JavaUtilConcurrentTimeUnit, MILLISECONDS)];
+  id<JavaUtilConcurrentScheduledFuture> timer = [((id<JavaUtilConcurrentScheduledExecutorService>) nil_chk(executorService)) scheduleWithJavaLangRunnable:create_CCBRTimeout_1_initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_(monitor, done, executionThread) withLong:timeoutMillis withJavaUtilConcurrentTimeUnit:JreLoadEnum(JavaUtilConcurrentTimeUnit, MILLISECONDS)];
   @try {
-    id result = [((id<CucumberRuntimeTimeout_Callback>) nil_chk(callback)) call];
+    id result = [((id<CCBRTimeout_Callback>) nil_chk(callback)) call];
     if (JavaLangThread_interrupted()) {
       @throw create_JavaUtilConcurrentTimeoutException_initWithNSString_(JreStrcat("$J$", @"Timed out after ", timeoutMillis, @"ms."));
     }
@@ -129,14 +129,14 @@ id CucumberRuntimeTimeout_timeoutWithCucumberRuntimeTimeout_Callback_withLong_(i
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTimeout)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTimeout)
 
-@implementation CucumberRuntimeTimeout_1
+@implementation CCBRTimeout_1
 
 - (instancetype __nonnull)initWithId:(id)capture$0
 withJavaUtilConcurrentAtomicAtomicBoolean:(JavaUtilConcurrentAtomicAtomicBoolean *)capture$1
                   withJavaLangThread:(JavaLangThread *)capture$2 {
-  CucumberRuntimeTimeout_1_initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_(self, capture$0, capture$1, capture$2);
+  CCBRTimeout_1_initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_(self, capture$0, capture$1, capture$2);
   return self;
 }
 
@@ -171,29 +171,29 @@ withJavaUtilConcurrentAtomicAtomicBoolean:(JavaUtilConcurrentAtomicAtomicBoolean
     { "val$done_", "LJavaUtilConcurrentAtomicAtomicBoolean;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
     { "val$executionThread_", "LJavaLangThread;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCucumberRuntimeTimeout;", "timeoutWithCucumberRuntimeTimeout_Callback:withLong:" };
-  static const J2ObjcClassInfo _CucumberRuntimeTimeout_1 = { "", "cucumber.runtime", ptrTable, methods, fields, 7, 0x8018, 2, 3, 0, -1, 1, -1, -1 };
-  return &_CucumberRuntimeTimeout_1;
+  static const void *ptrTable[] = { "LCCBRTimeout;", "timeoutWithCCBRTimeout_Callback:withLong:" };
+  static const J2ObjcClassInfo _CCBRTimeout_1 = { "", "cucumber.runtime", ptrTable, methods, fields, 7, 0x8018, 2, 3, 0, -1, 1, -1, -1 };
+  return &_CCBRTimeout_1;
 }
 
 @end
 
-void CucumberRuntimeTimeout_1_initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_(CucumberRuntimeTimeout_1 *self, id capture$0, JavaUtilConcurrentAtomicAtomicBoolean *capture$1, JavaLangThread *capture$2) {
+void CCBRTimeout_1_initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_(CCBRTimeout_1 *self, id capture$0, JavaUtilConcurrentAtomicAtomicBoolean *capture$1, JavaLangThread *capture$2) {
   JreStrongAssign(&self->val$monitor_, capture$0);
   JreStrongAssign(&self->val$done_, capture$1);
   JreStrongAssign(&self->val$executionThread_, capture$2);
   NSObject_init(self);
 }
 
-CucumberRuntimeTimeout_1 *new_CucumberRuntimeTimeout_1_initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_(id capture$0, JavaUtilConcurrentAtomicAtomicBoolean *capture$1, JavaLangThread *capture$2) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeTimeout_1, initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_, capture$0, capture$1, capture$2)
+CCBRTimeout_1 *new_CCBRTimeout_1_initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_(id capture$0, JavaUtilConcurrentAtomicAtomicBoolean *capture$1, JavaLangThread *capture$2) {
+  J2OBJC_NEW_IMPL(CCBRTimeout_1, initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_, capture$0, capture$1, capture$2)
 }
 
-CucumberRuntimeTimeout_1 *create_CucumberRuntimeTimeout_1_initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_(id capture$0, JavaUtilConcurrentAtomicAtomicBoolean *capture$1, JavaLangThread *capture$2) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeTimeout_1, initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_, capture$0, capture$1, capture$2)
+CCBRTimeout_1 *create_CCBRTimeout_1_initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_(id capture$0, JavaUtilConcurrentAtomicAtomicBoolean *capture$1, JavaLangThread *capture$2) {
+  J2OBJC_CREATE_IMPL(CCBRTimeout_1, initWithId_withJavaUtilConcurrentAtomicAtomicBoolean_withJavaLangThread_, capture$0, capture$1, capture$2)
 }
 
-@implementation CucumberRuntimeTimeout_Callback
+@implementation CCBRTimeout_Callback
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -204,11 +204,11 @@ CucumberRuntimeTimeout_1 *create_CucumberRuntimeTimeout_1_initWithId_withJavaUti
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(call);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LJavaLangThrowable;", "()TT;", "LCucumberRuntimeTimeout;", "<T:Ljava/lang/Object;>Ljava/lang/Object;" };
-  static const J2ObjcClassInfo _CucumberRuntimeTimeout_Callback = { "Callback", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 1, 0, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeTimeout_Callback;
+  static const void *ptrTable[] = { "LJavaLangThrowable;", "()TT;", "LCCBRTimeout;", "<T:Ljava/lang/Object;>Ljava/lang/Object;" };
+  static const J2ObjcClassInfo _CCBRTimeout_Callback = { "Callback", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 1, 0, 2, -1, -1, 3, -1 };
+  return &_CCBRTimeout_Callback;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRuntimeTimeout_Callback)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBRTimeout_Callback)

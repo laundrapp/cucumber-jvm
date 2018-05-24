@@ -44,48 +44,48 @@
 #include "java/lang/Throwable.h"
 #include "java/util/List.h"
 
-@interface CucumberRuntimeFormatterPrettyFormatter () {
+@interface CCBRPrettyFormatter () {
  @public
-  CucumberRuntimeFormatterTestSourcesModel *testSources_;
-  CucumberApiFormatterNiceAppendable *out_;
-  id<CucumberRuntimeFormatterFormats> formats_;
+  CCBRTestSourcesModel *testSources_;
+  CCBNiceAppendable *out_;
+  id<CCBRFormats> formats_;
   NSString *currentFeatureFile_;
-  CucumberApiTestCase *currentTestCase_;
+  CCBTestCase *currentTestCase_;
   GherkinAstScenarioOutline *currentScenarioOutline_;
   GherkinAstExamples *currentExamples_;
   jint locationIndentation_;
   id<CucumberUtilMapper> tagNameMapper_;
   id<CucumberUtilMapper> pickleTagNameMapper_;
-  id<CucumberApiEventEventHandler> testSourceReadHandler_;
-  id<CucumberApiEventEventHandler> caseStartedHandler_;
-  id<CucumberApiEventEventHandler> stepStartedHandler_;
-  id<CucumberApiEventEventHandler> stepFinishedHandler_;
-  id<CucumberApiEventEventHandler> writeEventhandler_;
-  id<CucumberApiEventEventHandler> runFinishedHandler_;
+  id<CCBEventHandler> testSourceReadHandler_;
+  id<CCBEventHandler> caseStartedHandler_;
+  id<CCBEventHandler> stepStartedHandler_;
+  id<CCBEventHandler> stepFinishedHandler_;
+  id<CCBEventHandler> writeEventhandler_;
+  id<CCBEventHandler> runFinishedHandler_;
 }
 
-- (void)handleTestSourceReadWithCucumberApiEventTestSourceRead:(CucumberApiEventTestSourceRead *)event;
+- (void)handleTestSourceReadWithCCBTestSourceRead:(CCBTestSourceRead *)event;
 
-- (void)handleTestCaseStartedWithCucumberApiEventTestCaseStarted:(CucumberApiEventTestCaseStarted *)event;
+- (void)handleTestCaseStartedWithCCBTestCaseStarted:(CCBTestCaseStarted *)event;
 
-- (void)handleTestStepStartedWithCucumberApiEventTestStepStarted:(CucumberApiEventTestStepStarted *)event;
+- (void)handleTestStepStartedWithCCBTestStepStarted:(CCBTestStepStarted *)event;
 
-- (void)handleTestStepFinishedWithCucumberApiEventTestStepFinished:(CucumberApiEventTestStepFinished *)event;
+- (void)handleTestStepFinishedWithCCBTestStepFinished:(CCBTestStepFinished *)event;
 
-- (void)handleWriteWithCucumberApiEventWriteEvent:(CucumberApiEventWriteEvent *)event;
+- (void)handleWriteWithCCBWriteEvent:(CCBWriteEvent *)event;
 
 - (void)finishReport;
 
-- (void)handleStartOfFeatureWithCucumberApiEventTestCaseStarted:(CucumberApiEventTestCaseStarted *)event;
+- (void)handleStartOfFeatureWithCCBTestCaseStarted:(CCBTestCaseStarted *)event;
 
-- (void)handleScenarioOutlineWithCucumberApiEventTestCaseStarted:(CucumberApiEventTestCaseStarted *)event;
+- (void)handleScenarioOutlineWithCCBTestCaseStarted:(CCBTestCaseStarted *)event;
 
 - (void)printScenarioOutlineWithGherkinAstScenarioOutline:(GherkinAstScenarioOutline *)scenarioOutline;
 
 - (void)printExamplesWithGherkinAstExamples:(GherkinAstExamples *)examples;
 
-- (void)printStepWithCucumberApiTestStep:(CucumberApiTestStep *)testStep
-                   withCucumberApiResult:(CucumberApiResult *)result;
+- (void)printStepWithCCBTestStep:(CCBTestStep *)testStep
+                   withCCBResult:(CCBResult *)result;
 
 - (NSString *)getScenarioDefinitionTextWithGherkinAstScenarioDefinition:(GherkinAstScenarioDefinition *)definition;
 
@@ -94,13 +94,13 @@
 
 - (NSString *)getLocationTextWithNSString:(NSString *)location;
 
-- (JavaLangStringBuffer *)stepTextWithCucumberApiTestStep:(CucumberApiTestStep *)testStep;
+- (JavaLangStringBuffer *)stepTextWithCCBTestStep:(CCBTestStep *)testStep;
 
-- (NSString *)getStepKeywordWithCucumberApiTestStep:(CucumberApiTestStep *)testStep;
+- (NSString *)getStepKeywordWithCCBTestStep:(CCBTestStep *)testStep;
 
-- (jboolean)isFirstStepAfterBackgroundWithCucumberApiTestStep:(CucumberApiTestStep *)testStep;
+- (jboolean)isFirstStepAfterBackgroundWithCCBTestStep:(CCBTestStep *)testStep;
 
-- (jboolean)isBackgroundStepWithCucumberApiTestStep:(CucumberApiTestStep *)testStep;
+- (jboolean)isBackgroundStepWithCCBTestStep:(CCBTestStep *)testStep;
 
 - (void)printFeatureWithNSString:(NSString *)path;
 
@@ -114,11 +114,11 @@
 
 - (void)printDescriptionWithNSString:(NSString *)description_;
 
-- (void)printBackgroundWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
+- (void)printBackgroundWithCCBTestCase:(CCBTestCase *)testCase;
 
-- (void)printScenarioDefinitionWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
+- (void)printScenarioDefinitionWithCCBTestCase:(CCBTestCase *)testCase;
 
-- (void)printErrorWithCucumberApiResult:(CucumberApiResult *)result;
+- (void)printErrorWithCCBResult:(CCBResult *)result;
 
 - (void)calculateLocationIndentationWithNSString:(NSString *)definitionText
                                 withJavaUtilList:(id<JavaUtilList>)testSteps;
@@ -132,93 +132,93 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterPrettyFormatter, testSources_, CucumberRuntimeFormatterTestSourcesModel *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterPrettyFormatter, out_, CucumberApiFormatterNiceAppendable *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterPrettyFormatter, formats_, id<CucumberRuntimeFormatterFormats>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterPrettyFormatter, currentFeatureFile_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterPrettyFormatter, currentTestCase_, CucumberApiTestCase *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterPrettyFormatter, currentScenarioOutline_, GherkinAstScenarioOutline *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterPrettyFormatter, currentExamples_, GherkinAstExamples *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterPrettyFormatter, tagNameMapper_, id<CucumberUtilMapper>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterPrettyFormatter, pickleTagNameMapper_, id<CucumberUtilMapper>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterPrettyFormatter, testSourceReadHandler_, id<CucumberApiEventEventHandler>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterPrettyFormatter, caseStartedHandler_, id<CucumberApiEventEventHandler>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterPrettyFormatter, stepStartedHandler_, id<CucumberApiEventEventHandler>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterPrettyFormatter, stepFinishedHandler_, id<CucumberApiEventEventHandler>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterPrettyFormatter, writeEventhandler_, id<CucumberApiEventEventHandler>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterPrettyFormatter, runFinishedHandler_, id<CucumberApiEventEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, testSources_, CCBRTestSourcesModel *)
+J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, out_, CCBNiceAppendable *)
+J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, formats_, id<CCBRFormats>)
+J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, currentFeatureFile_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, currentTestCase_, CCBTestCase *)
+J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, currentScenarioOutline_, GherkinAstScenarioOutline *)
+J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, currentExamples_, GherkinAstExamples *)
+J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, tagNameMapper_, id<CucumberUtilMapper>)
+J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, pickleTagNameMapper_, id<CucumberUtilMapper>)
+J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, testSourceReadHandler_, id<CCBEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, caseStartedHandler_, id<CCBEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, stepStartedHandler_, id<CCBEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, stepFinishedHandler_, id<CCBEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, writeEventhandler_, id<CCBEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, runFinishedHandler_, id<CCBEventHandler>)
 
-inline NSString *CucumberRuntimeFormatterPrettyFormatter_get_SCENARIO_INDENT(void);
-static NSString *CucumberRuntimeFormatterPrettyFormatter_SCENARIO_INDENT = @"  ";
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeFormatterPrettyFormatter, SCENARIO_INDENT, NSString *)
+inline NSString *CCBRPrettyFormatter_get_SCENARIO_INDENT(void);
+static NSString *CCBRPrettyFormatter_SCENARIO_INDENT = @"  ";
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRPrettyFormatter, SCENARIO_INDENT, NSString *)
 
-inline NSString *CucumberRuntimeFormatterPrettyFormatter_get_STEP_INDENT(void);
-static NSString *CucumberRuntimeFormatterPrettyFormatter_STEP_INDENT = @"    ";
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeFormatterPrettyFormatter, STEP_INDENT, NSString *)
+inline NSString *CCBRPrettyFormatter_get_STEP_INDENT(void);
+static NSString *CCBRPrettyFormatter_STEP_INDENT = @"    ";
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRPrettyFormatter, STEP_INDENT, NSString *)
 
-inline NSString *CucumberRuntimeFormatterPrettyFormatter_get_EXAMPLES_INDENT(void);
-static NSString *CucumberRuntimeFormatterPrettyFormatter_EXAMPLES_INDENT = @"    ";
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeFormatterPrettyFormatter, EXAMPLES_INDENT, NSString *)
+inline NSString *CCBRPrettyFormatter_get_EXAMPLES_INDENT(void);
+static NSString *CCBRPrettyFormatter_EXAMPLES_INDENT = @"    ";
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRPrettyFormatter, EXAMPLES_INDENT, NSString *)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_handleTestSourceReadWithCucumberApiEventTestSourceRead_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiEventTestSourceRead *event);
+__attribute__((unused)) static void CCBRPrettyFormatter_handleTestSourceReadWithCCBTestSourceRead_(CCBRPrettyFormatter *self, CCBTestSourceRead *event);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarted_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiEventTestCaseStarted *event);
+__attribute__((unused)) static void CCBRPrettyFormatter_handleTestCaseStartedWithCCBTestCaseStarted_(CCBRPrettyFormatter *self, CCBTestCaseStarted *event);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_handleTestStepStartedWithCucumberApiEventTestStepStarted_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiEventTestStepStarted *event);
+__attribute__((unused)) static void CCBRPrettyFormatter_handleTestStepStartedWithCCBTestStepStarted_(CCBRPrettyFormatter *self, CCBTestStepStarted *event);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiEventTestStepFinished *event);
+__attribute__((unused)) static void CCBRPrettyFormatter_handleTestStepFinishedWithCCBTestStepFinished_(CCBRPrettyFormatter *self, CCBTestStepFinished *event);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_handleWriteWithCucumberApiEventWriteEvent_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiEventWriteEvent *event);
+__attribute__((unused)) static void CCBRPrettyFormatter_handleWriteWithCCBWriteEvent_(CCBRPrettyFormatter *self, CCBWriteEvent *event);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_finishReport(CucumberRuntimeFormatterPrettyFormatter *self);
+__attribute__((unused)) static void CCBRPrettyFormatter_finishReport(CCBRPrettyFormatter *self);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_handleStartOfFeatureWithCucumberApiEventTestCaseStarted_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiEventTestCaseStarted *event);
+__attribute__((unused)) static void CCBRPrettyFormatter_handleStartOfFeatureWithCCBTestCaseStarted_(CCBRPrettyFormatter *self, CCBTestCaseStarted *event);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_handleScenarioOutlineWithCucumberApiEventTestCaseStarted_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiEventTestCaseStarted *event);
+__attribute__((unused)) static void CCBRPrettyFormatter_handleScenarioOutlineWithCCBTestCaseStarted_(CCBRPrettyFormatter *self, CCBTestCaseStarted *event);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_printScenarioOutlineWithGherkinAstScenarioOutline_(CucumberRuntimeFormatterPrettyFormatter *self, GherkinAstScenarioOutline *scenarioOutline);
+__attribute__((unused)) static void CCBRPrettyFormatter_printScenarioOutlineWithGherkinAstScenarioOutline_(CCBRPrettyFormatter *self, GherkinAstScenarioOutline *scenarioOutline);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_printExamplesWithGherkinAstExamples_(CucumberRuntimeFormatterPrettyFormatter *self, GherkinAstExamples *examples);
+__attribute__((unused)) static void CCBRPrettyFormatter_printExamplesWithGherkinAstExamples_(CCBRPrettyFormatter *self, GherkinAstExamples *examples);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_printStepWithCucumberApiTestStep_withCucumberApiResult_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiTestStep *testStep, CucumberApiResult *result);
+__attribute__((unused)) static void CCBRPrettyFormatter_printStepWithCCBTestStep_withCCBResult_(CCBRPrettyFormatter *self, CCBTestStep *testStep, CCBResult *result);
 
-__attribute__((unused)) static NSString *CucumberRuntimeFormatterPrettyFormatter_getScenarioDefinitionTextWithGherkinAstScenarioDefinition_(CucumberRuntimeFormatterPrettyFormatter *self, GherkinAstScenarioDefinition *definition);
+__attribute__((unused)) static NSString *CCBRPrettyFormatter_getScenarioDefinitionTextWithGherkinAstScenarioDefinition_(CCBRPrettyFormatter *self, GherkinAstScenarioDefinition *definition);
 
-__attribute__((unused)) static NSString *CucumberRuntimeFormatterPrettyFormatter_getLocationTextWithNSString_withInt_(CucumberRuntimeFormatterPrettyFormatter *self, NSString *file, jint line);
+__attribute__((unused)) static NSString *CCBRPrettyFormatter_getLocationTextWithNSString_withInt_(CCBRPrettyFormatter *self, NSString *file, jint line);
 
-__attribute__((unused)) static NSString *CucumberRuntimeFormatterPrettyFormatter_getLocationTextWithNSString_(CucumberRuntimeFormatterPrettyFormatter *self, NSString *location);
+__attribute__((unused)) static NSString *CCBRPrettyFormatter_getLocationTextWithNSString_(CCBRPrettyFormatter *self, NSString *location);
 
-__attribute__((unused)) static JavaLangStringBuffer *CucumberRuntimeFormatterPrettyFormatter_stepTextWithCucumberApiTestStep_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiTestStep *testStep);
+__attribute__((unused)) static JavaLangStringBuffer *CCBRPrettyFormatter_stepTextWithCCBTestStep_(CCBRPrettyFormatter *self, CCBTestStep *testStep);
 
-__attribute__((unused)) static NSString *CucumberRuntimeFormatterPrettyFormatter_getStepKeywordWithCucumberApiTestStep_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiTestStep *testStep);
+__attribute__((unused)) static NSString *CCBRPrettyFormatter_getStepKeywordWithCCBTestStep_(CCBRPrettyFormatter *self, CCBTestStep *testStep);
 
-__attribute__((unused)) static jboolean CucumberRuntimeFormatterPrettyFormatter_isFirstStepAfterBackgroundWithCucumberApiTestStep_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiTestStep *testStep);
+__attribute__((unused)) static jboolean CCBRPrettyFormatter_isFirstStepAfterBackgroundWithCCBTestStep_(CCBRPrettyFormatter *self, CCBTestStep *testStep);
 
-__attribute__((unused)) static jboolean CucumberRuntimeFormatterPrettyFormatter_isBackgroundStepWithCucumberApiTestStep_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiTestStep *testStep);
+__attribute__((unused)) static jboolean CCBRPrettyFormatter_isBackgroundStepWithCCBTestStep_(CCBRPrettyFormatter *self, CCBTestStep *testStep);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_printFeatureWithNSString_(CucumberRuntimeFormatterPrettyFormatter *self, NSString *path);
+__attribute__((unused)) static void CCBRPrettyFormatter_printFeatureWithNSString_(CCBRPrettyFormatter *self, NSString *path);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_printTagsWithJavaUtilList_(CucumberRuntimeFormatterPrettyFormatter *self, id<JavaUtilList> tags);
+__attribute__((unused)) static void CCBRPrettyFormatter_printTagsWithJavaUtilList_(CCBRPrettyFormatter *self, id<JavaUtilList> tags);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_printTagsWithJavaUtilList_withNSString_(CucumberRuntimeFormatterPrettyFormatter *self, id<JavaUtilList> tags, NSString *indent);
+__attribute__((unused)) static void CCBRPrettyFormatter_printTagsWithJavaUtilList_withNSString_(CCBRPrettyFormatter *self, id<JavaUtilList> tags, NSString *indent);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_printPickleTagsWithJavaUtilList_withNSString_(CucumberRuntimeFormatterPrettyFormatter *self, id<JavaUtilList> tags, NSString *indent);
+__attribute__((unused)) static void CCBRPrettyFormatter_printPickleTagsWithJavaUtilList_withNSString_(CCBRPrettyFormatter *self, id<JavaUtilList> tags, NSString *indent);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_printDescriptionWithNSString_(CucumberRuntimeFormatterPrettyFormatter *self, NSString *description_);
+__attribute__((unused)) static void CCBRPrettyFormatter_printDescriptionWithNSString_(CCBRPrettyFormatter *self, NSString *description_);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_printBackgroundWithCucumberApiTestCase_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiTestCase *testCase);
+__attribute__((unused)) static void CCBRPrettyFormatter_printBackgroundWithCCBTestCase_(CCBRPrettyFormatter *self, CCBTestCase *testCase);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_printScenarioDefinitionWithCucumberApiTestCase_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiTestCase *testCase);
+__attribute__((unused)) static void CCBRPrettyFormatter_printScenarioDefinitionWithCCBTestCase_(CCBRPrettyFormatter *self, CCBTestCase *testCase);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_printErrorWithCucumberApiResult_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiResult *result);
+__attribute__((unused)) static void CCBRPrettyFormatter_printErrorWithCCBResult_(CCBRPrettyFormatter *self, CCBResult *result);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_calculateLocationIndentationWithNSString_withJavaUtilList_(CucumberRuntimeFormatterPrettyFormatter *self, NSString *definitionText, id<JavaUtilList> testSteps);
+__attribute__((unused)) static void CCBRPrettyFormatter_calculateLocationIndentationWithNSString_withJavaUtilList_(CCBRPrettyFormatter *self, NSString *definitionText, id<JavaUtilList> testSteps);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_calculateLocationIndentationWithNSString_withJavaUtilList_withBoolean_(CucumberRuntimeFormatterPrettyFormatter *self, NSString *definitionText, id<JavaUtilList> testSteps, jboolean useBackgroundSteps);
+__attribute__((unused)) static void CCBRPrettyFormatter_calculateLocationIndentationWithNSString_withJavaUtilList_withBoolean_(CCBRPrettyFormatter *self, NSString *definitionText, id<JavaUtilList> testSteps, jboolean useBackgroundSteps);
 
-__attribute__((unused)) static NSString *CucumberRuntimeFormatterPrettyFormatter_createPaddingToLocationWithNSString_withNSString_(CucumberRuntimeFormatterPrettyFormatter *self, NSString *indent, NSString *text);
+__attribute__((unused)) static NSString *CCBRPrettyFormatter_createPaddingToLocationWithNSString_withNSString_(CCBRPrettyFormatter *self, NSString *indent, NSString *text);
 
-@interface CucumberRuntimeFormatterPrettyFormatter_1 : NSObject < CucumberUtilMapper >
+@interface CCBRPrettyFormatter_1 : NSObject < CucumberUtilMapper >
 
 - (instancetype __nonnull)init;
 
@@ -226,15 +226,15 @@ __attribute__((unused)) static NSString *CucumberRuntimeFormatterPrettyFormatter
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterPrettyFormatter_1)
+J2OBJC_EMPTY_STATIC_INIT(CCBRPrettyFormatter_1)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_1_init(CucumberRuntimeFormatterPrettyFormatter_1 *self);
+__attribute__((unused)) static void CCBRPrettyFormatter_1_init(CCBRPrettyFormatter_1 *self);
 
-__attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_1 *new_CucumberRuntimeFormatterPrettyFormatter_1_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRPrettyFormatter_1 *new_CCBRPrettyFormatter_1_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_1 *create_CucumberRuntimeFormatterPrettyFormatter_1_init(void);
+__attribute__((unused)) static CCBRPrettyFormatter_1 *create_CCBRPrettyFormatter_1_init(void);
 
-@interface CucumberRuntimeFormatterPrettyFormatter_2 : NSObject < CucumberUtilMapper >
+@interface CCBRPrettyFormatter_2 : NSObject < CucumberUtilMapper >
 
 - (instancetype __nonnull)init;
 
@@ -242,207 +242,207 @@ __attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_1 *create
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterPrettyFormatter_2)
+J2OBJC_EMPTY_STATIC_INIT(CCBRPrettyFormatter_2)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_2_init(CucumberRuntimeFormatterPrettyFormatter_2 *self);
+__attribute__((unused)) static void CCBRPrettyFormatter_2_init(CCBRPrettyFormatter_2 *self);
 
-__attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_2 *new_CucumberRuntimeFormatterPrettyFormatter_2_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRPrettyFormatter_2 *new_CCBRPrettyFormatter_2_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_2 *create_CucumberRuntimeFormatterPrettyFormatter_2_init(void);
+__attribute__((unused)) static CCBRPrettyFormatter_2 *create_CCBRPrettyFormatter_2_init(void);
 
-@interface CucumberRuntimeFormatterPrettyFormatter_3 : NSObject < CucumberApiEventEventHandler > {
+@interface CCBRPrettyFormatter_3 : NSObject < CCBEventHandler > {
  @public
-  CucumberRuntimeFormatterPrettyFormatter *this$0_;
+  CCBRPrettyFormatter *this$0_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$;
+- (instancetype __nonnull)initWithCCBRPrettyFormatter:(CCBRPrettyFormatter *)outer$;
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestSourceRead *)event;
+- (void)receiveWithCCBEvent:(CCBTestSourceRead *)event;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterPrettyFormatter_3)
+J2OBJC_EMPTY_STATIC_INIT(CCBRPrettyFormatter_3)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_3_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter_3 *self, CucumberRuntimeFormatterPrettyFormatter *outer$);
+__attribute__((unused)) static void CCBRPrettyFormatter_3_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter_3 *self, CCBRPrettyFormatter *outer$);
 
-__attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_3 *new_CucumberRuntimeFormatterPrettyFormatter_3_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRPrettyFormatter_3 *new_CCBRPrettyFormatter_3_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_3 *create_CucumberRuntimeFormatterPrettyFormatter_3_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$);
+__attribute__((unused)) static CCBRPrettyFormatter_3 *create_CCBRPrettyFormatter_3_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$);
 
-@interface CucumberRuntimeFormatterPrettyFormatter_4 : NSObject < CucumberApiEventEventHandler > {
+@interface CCBRPrettyFormatter_4 : NSObject < CCBEventHandler > {
  @public
-  CucumberRuntimeFormatterPrettyFormatter *this$0_;
+  CCBRPrettyFormatter *this$0_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$;
+- (instancetype __nonnull)initWithCCBRPrettyFormatter:(CCBRPrettyFormatter *)outer$;
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestCaseStarted *)event;
+- (void)receiveWithCCBEvent:(CCBTestCaseStarted *)event;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterPrettyFormatter_4)
+J2OBJC_EMPTY_STATIC_INIT(CCBRPrettyFormatter_4)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_4_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter_4 *self, CucumberRuntimeFormatterPrettyFormatter *outer$);
+__attribute__((unused)) static void CCBRPrettyFormatter_4_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter_4 *self, CCBRPrettyFormatter *outer$);
 
-__attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_4 *new_CucumberRuntimeFormatterPrettyFormatter_4_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRPrettyFormatter_4 *new_CCBRPrettyFormatter_4_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_4 *create_CucumberRuntimeFormatterPrettyFormatter_4_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$);
+__attribute__((unused)) static CCBRPrettyFormatter_4 *create_CCBRPrettyFormatter_4_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$);
 
-@interface CucumberRuntimeFormatterPrettyFormatter_5 : NSObject < CucumberApiEventEventHandler > {
+@interface CCBRPrettyFormatter_5 : NSObject < CCBEventHandler > {
  @public
-  CucumberRuntimeFormatterPrettyFormatter *this$0_;
+  CCBRPrettyFormatter *this$0_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$;
+- (instancetype __nonnull)initWithCCBRPrettyFormatter:(CCBRPrettyFormatter *)outer$;
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepStarted *)event;
+- (void)receiveWithCCBEvent:(CCBTestStepStarted *)event;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterPrettyFormatter_5)
+J2OBJC_EMPTY_STATIC_INIT(CCBRPrettyFormatter_5)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_5_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter_5 *self, CucumberRuntimeFormatterPrettyFormatter *outer$);
+__attribute__((unused)) static void CCBRPrettyFormatter_5_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter_5 *self, CCBRPrettyFormatter *outer$);
 
-__attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_5 *new_CucumberRuntimeFormatterPrettyFormatter_5_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRPrettyFormatter_5 *new_CCBRPrettyFormatter_5_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_5 *create_CucumberRuntimeFormatterPrettyFormatter_5_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$);
+__attribute__((unused)) static CCBRPrettyFormatter_5 *create_CCBRPrettyFormatter_5_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$);
 
-@interface CucumberRuntimeFormatterPrettyFormatter_6 : NSObject < CucumberApiEventEventHandler > {
+@interface CCBRPrettyFormatter_6 : NSObject < CCBEventHandler > {
  @public
-  CucumberRuntimeFormatterPrettyFormatter *this$0_;
+  CCBRPrettyFormatter *this$0_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$;
+- (instancetype __nonnull)initWithCCBRPrettyFormatter:(CCBRPrettyFormatter *)outer$;
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepFinished *)event;
+- (void)receiveWithCCBEvent:(CCBTestStepFinished *)event;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterPrettyFormatter_6)
+J2OBJC_EMPTY_STATIC_INIT(CCBRPrettyFormatter_6)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_6_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter_6 *self, CucumberRuntimeFormatterPrettyFormatter *outer$);
+__attribute__((unused)) static void CCBRPrettyFormatter_6_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter_6 *self, CCBRPrettyFormatter *outer$);
 
-__attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_6 *new_CucumberRuntimeFormatterPrettyFormatter_6_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRPrettyFormatter_6 *new_CCBRPrettyFormatter_6_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_6 *create_CucumberRuntimeFormatterPrettyFormatter_6_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$);
+__attribute__((unused)) static CCBRPrettyFormatter_6 *create_CCBRPrettyFormatter_6_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$);
 
-@interface CucumberRuntimeFormatterPrettyFormatter_7 : NSObject < CucumberApiEventEventHandler > {
+@interface CCBRPrettyFormatter_7 : NSObject < CCBEventHandler > {
  @public
-  CucumberRuntimeFormatterPrettyFormatter *this$0_;
+  CCBRPrettyFormatter *this$0_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$;
+- (instancetype __nonnull)initWithCCBRPrettyFormatter:(CCBRPrettyFormatter *)outer$;
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventWriteEvent *)event;
+- (void)receiveWithCCBEvent:(CCBWriteEvent *)event;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterPrettyFormatter_7)
+J2OBJC_EMPTY_STATIC_INIT(CCBRPrettyFormatter_7)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_7_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter_7 *self, CucumberRuntimeFormatterPrettyFormatter *outer$);
+__attribute__((unused)) static void CCBRPrettyFormatter_7_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter_7 *self, CCBRPrettyFormatter *outer$);
 
-__attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_7 *new_CucumberRuntimeFormatterPrettyFormatter_7_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRPrettyFormatter_7 *new_CCBRPrettyFormatter_7_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_7 *create_CucumberRuntimeFormatterPrettyFormatter_7_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$);
+__attribute__((unused)) static CCBRPrettyFormatter_7 *create_CCBRPrettyFormatter_7_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$);
 
-@interface CucumberRuntimeFormatterPrettyFormatter_8 : NSObject < CucumberApiEventEventHandler > {
+@interface CCBRPrettyFormatter_8 : NSObject < CCBEventHandler > {
  @public
-  CucumberRuntimeFormatterPrettyFormatter *this$0_;
+  CCBRPrettyFormatter *this$0_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$;
+- (instancetype __nonnull)initWithCCBRPrettyFormatter:(CCBRPrettyFormatter *)outer$;
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event;
+- (void)receiveWithCCBEvent:(CCBTestRunFinished *)event;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterPrettyFormatter_8)
+J2OBJC_EMPTY_STATIC_INIT(CCBRPrettyFormatter_8)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterPrettyFormatter_8_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter_8 *self, CucumberRuntimeFormatterPrettyFormatter *outer$);
+__attribute__((unused)) static void CCBRPrettyFormatter_8_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter_8 *self, CCBRPrettyFormatter *outer$);
 
-__attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_8 *new_CucumberRuntimeFormatterPrettyFormatter_8_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRPrettyFormatter_8 *new_CCBRPrettyFormatter_8_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_8 *create_CucumberRuntimeFormatterPrettyFormatter_8_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$);
+__attribute__((unused)) static CCBRPrettyFormatter_8 *create_CCBRPrettyFormatter_8_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$);
 
-@implementation CucumberRuntimeFormatterPrettyFormatter
+@implementation CCBRPrettyFormatter
 
 - (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg {
-  CucumberRuntimeFormatterPrettyFormatter_initWithJavaLangAppendable_(self, outArg);
+  CCBRPrettyFormatter_initWithJavaLangAppendable_(self, outArg);
   return self;
 }
 
-- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher {
-  [((id<CucumberApiEventEventPublisher>) nil_chk(publisher)) registerHandlerForWithIOSClass:CucumberApiEventTestSourceRead_class_() withCucumberApiEventEventHandler:testSourceReadHandler_];
-  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestCaseStarted_class_() withCucumberApiEventEventHandler:caseStartedHandler_];
-  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestStepStarted_class_() withCucumberApiEventEventHandler:stepStartedHandler_];
-  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestStepFinished_class_() withCucumberApiEventEventHandler:stepFinishedHandler_];
-  [publisher registerHandlerForWithIOSClass:CucumberApiEventWriteEvent_class_() withCucumberApiEventEventHandler:writeEventhandler_];
-  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestRunFinished_class_() withCucumberApiEventEventHandler:runFinishedHandler_];
+- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher {
+  [((id<CCBEventPublisher>) nil_chk(publisher)) registerHandlerForWithIOSClass:CCBTestSourceRead_class_() withCCBEventHandler:testSourceReadHandler_];
+  [publisher registerHandlerForWithIOSClass:CCBTestCaseStarted_class_() withCCBEventHandler:caseStartedHandler_];
+  [publisher registerHandlerForWithIOSClass:CCBTestStepStarted_class_() withCCBEventHandler:stepStartedHandler_];
+  [publisher registerHandlerForWithIOSClass:CCBTestStepFinished_class_() withCCBEventHandler:stepFinishedHandler_];
+  [publisher registerHandlerForWithIOSClass:CCBWriteEvent_class_() withCCBEventHandler:writeEventhandler_];
+  [publisher registerHandlerForWithIOSClass:CCBTestRunFinished_class_() withCCBEventHandler:runFinishedHandler_];
 }
 
 - (void)setMonochromeWithBoolean:(jboolean)monochrome {
   if (monochrome) {
-    JreStrongAssignAndConsume(&formats_, new_CucumberRuntimeFormatterMonochromeFormats_init());
+    JreStrongAssignAndConsume(&formats_, new_CCBRMonochromeFormats_init());
   }
   else {
-    JreStrongAssignAndConsume(&formats_, new_CucumberRuntimeFormatterAnsiFormats_init());
+    JreStrongAssignAndConsume(&formats_, new_CCBRAnsiFormats_init());
   }
 }
 
-- (void)handleTestSourceReadWithCucumberApiEventTestSourceRead:(CucumberApiEventTestSourceRead *)event {
-  CucumberRuntimeFormatterPrettyFormatter_handleTestSourceReadWithCucumberApiEventTestSourceRead_(self, event);
+- (void)handleTestSourceReadWithCCBTestSourceRead:(CCBTestSourceRead *)event {
+  CCBRPrettyFormatter_handleTestSourceReadWithCCBTestSourceRead_(self, event);
 }
 
-- (void)handleTestCaseStartedWithCucumberApiEventTestCaseStarted:(CucumberApiEventTestCaseStarted *)event {
-  CucumberRuntimeFormatterPrettyFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarted_(self, event);
+- (void)handleTestCaseStartedWithCCBTestCaseStarted:(CCBTestCaseStarted *)event {
+  CCBRPrettyFormatter_handleTestCaseStartedWithCCBTestCaseStarted_(self, event);
 }
 
-- (void)handleTestStepStartedWithCucumberApiEventTestStepStarted:(CucumberApiEventTestStepStarted *)event {
-  CucumberRuntimeFormatterPrettyFormatter_handleTestStepStartedWithCucumberApiEventTestStepStarted_(self, event);
+- (void)handleTestStepStartedWithCCBTestStepStarted:(CCBTestStepStarted *)event {
+  CCBRPrettyFormatter_handleTestStepStartedWithCCBTestStepStarted_(self, event);
 }
 
-- (void)handleTestStepFinishedWithCucumberApiEventTestStepFinished:(CucumberApiEventTestStepFinished *)event {
-  CucumberRuntimeFormatterPrettyFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(self, event);
+- (void)handleTestStepFinishedWithCCBTestStepFinished:(CCBTestStepFinished *)event {
+  CCBRPrettyFormatter_handleTestStepFinishedWithCCBTestStepFinished_(self, event);
 }
 
-- (void)handleWriteWithCucumberApiEventWriteEvent:(CucumberApiEventWriteEvent *)event {
-  CucumberRuntimeFormatterPrettyFormatter_handleWriteWithCucumberApiEventWriteEvent_(self, event);
+- (void)handleWriteWithCCBWriteEvent:(CCBWriteEvent *)event {
+  CCBRPrettyFormatter_handleWriteWithCCBWriteEvent_(self, event);
 }
 
 - (void)finishReport {
-  CucumberRuntimeFormatterPrettyFormatter_finishReport(self);
+  CCBRPrettyFormatter_finishReport(self);
 }
 
-- (void)handleStartOfFeatureWithCucumberApiEventTestCaseStarted:(CucumberApiEventTestCaseStarted *)event {
-  CucumberRuntimeFormatterPrettyFormatter_handleStartOfFeatureWithCucumberApiEventTestCaseStarted_(self, event);
+- (void)handleStartOfFeatureWithCCBTestCaseStarted:(CCBTestCaseStarted *)event {
+  CCBRPrettyFormatter_handleStartOfFeatureWithCCBTestCaseStarted_(self, event);
 }
 
-- (void)handleScenarioOutlineWithCucumberApiEventTestCaseStarted:(CucumberApiEventTestCaseStarted *)event {
-  CucumberRuntimeFormatterPrettyFormatter_handleScenarioOutlineWithCucumberApiEventTestCaseStarted_(self, event);
+- (void)handleScenarioOutlineWithCCBTestCaseStarted:(CCBTestCaseStarted *)event {
+  CCBRPrettyFormatter_handleScenarioOutlineWithCCBTestCaseStarted_(self, event);
 }
 
 - (void)printScenarioOutlineWithGherkinAstScenarioOutline:(GherkinAstScenarioOutline *)scenarioOutline {
-  CucumberRuntimeFormatterPrettyFormatter_printScenarioOutlineWithGherkinAstScenarioOutline_(self, scenarioOutline);
+  CCBRPrettyFormatter_printScenarioOutlineWithGherkinAstScenarioOutline_(self, scenarioOutline);
 }
 
 - (void)printExamplesWithGherkinAstExamples:(GherkinAstExamples *)examples {
-  CucumberRuntimeFormatterPrettyFormatter_printExamplesWithGherkinAstExamples_(self, examples);
+  CCBRPrettyFormatter_printExamplesWithGherkinAstExamples_(self, examples);
 }
 
-- (void)printStepWithCucumberApiTestStep:(CucumberApiTestStep *)testStep
-                   withCucumberApiResult:(CucumberApiResult *)result {
-  CucumberRuntimeFormatterPrettyFormatter_printStepWithCucumberApiTestStep_withCucumberApiResult_(self, testStep, result);
+- (void)printStepWithCCBTestStep:(CCBTestStep *)testStep
+                   withCCBResult:(CCBResult *)result {
+  CCBRPrettyFormatter_printStepWithCCBTestStep_withCCBResult_(self, testStep, result);
 }
 
 - (NSString *)formatStepTextWithNSString:(NSString *)keyword
                             withNSString:(NSString *)stepText
-      withCucumberRuntimeFormatterFormat:(id<CucumberRuntimeFormatterFormat>)textFormat
-      withCucumberRuntimeFormatterFormat:(id<CucumberRuntimeFormatterFormat>)argFormat
+                          withCCBRFormat:(id<CCBRFormat>)textFormat
+                          withCCBRFormat:(id<CCBRFormat>)argFormat
                         withJavaUtilList:(id<JavaUtilList>)arguments {
   jint beginIndex = 0;
-  JavaLangStringBuilder *result = create_JavaLangStringBuilder_initWithNSString_([((id<CucumberRuntimeFormatterFormat>) nil_chk(textFormat)) textWithNSString:keyword]);
-  for (CucumberRuntimeArgument * __strong argument in nil_chk(arguments)) {
-    if ([((CucumberRuntimeArgument *) nil_chk(argument)) getOffset] != nil) {
+  JavaLangStringBuilder *result = create_JavaLangStringBuilder_initWithNSString_([((id<CCBRFormat>) nil_chk(textFormat)) textWithNSString:keyword]);
+  for (CCBRArgument * __strong argument in nil_chk(arguments)) {
+    if ([((CCBRArgument *) nil_chk(argument)) getOffset] != nil) {
       jint argumentOffset = [((JavaLangInteger *) nil_chk([argument getOffset])) intValue];
       if (argumentOffset < beginIndex) {
         continue;
@@ -451,7 +451,7 @@ __attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_8 *create
       [result appendWithNSString:[textFormat textWithNSString:text]];
     }
     if ([argument getVal] != nil) {
-      [result appendWithNSString:[((id<CucumberRuntimeFormatterFormat>) nil_chk(argFormat)) textWithNSString:[argument getVal]]];
+      [result appendWithNSString:[((id<CCBRFormat>) nil_chk(argFormat)) textWithNSString:[argument getVal]]];
       beginIndex = [((JavaLangInteger *) nil_chk([argument getOffset])) intValue] + [((NSString *) nil_chk([argument getVal])) java_length];
     }
   }
@@ -463,82 +463,82 @@ __attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_8 *create
 }
 
 - (NSString *)getScenarioDefinitionTextWithGherkinAstScenarioDefinition:(GherkinAstScenarioDefinition *)definition {
-  return CucumberRuntimeFormatterPrettyFormatter_getScenarioDefinitionTextWithGherkinAstScenarioDefinition_(self, definition);
+  return CCBRPrettyFormatter_getScenarioDefinitionTextWithGherkinAstScenarioDefinition_(self, definition);
 }
 
 - (NSString *)getLocationTextWithNSString:(NSString *)file
                                   withInt:(jint)line {
-  return CucumberRuntimeFormatterPrettyFormatter_getLocationTextWithNSString_withInt_(self, file, line);
+  return CCBRPrettyFormatter_getLocationTextWithNSString_withInt_(self, file, line);
 }
 
 - (NSString *)getLocationTextWithNSString:(NSString *)location {
-  return CucumberRuntimeFormatterPrettyFormatter_getLocationTextWithNSString_(self, location);
+  return CCBRPrettyFormatter_getLocationTextWithNSString_(self, location);
 }
 
-- (JavaLangStringBuffer *)stepTextWithCucumberApiTestStep:(CucumberApiTestStep *)testStep {
-  return CucumberRuntimeFormatterPrettyFormatter_stepTextWithCucumberApiTestStep_(self, testStep);
+- (JavaLangStringBuffer *)stepTextWithCCBTestStep:(CCBTestStep *)testStep {
+  return CCBRPrettyFormatter_stepTextWithCCBTestStep_(self, testStep);
 }
 
-- (NSString *)getStepKeywordWithCucumberApiTestStep:(CucumberApiTestStep *)testStep {
-  return CucumberRuntimeFormatterPrettyFormatter_getStepKeywordWithCucumberApiTestStep_(self, testStep);
+- (NSString *)getStepKeywordWithCCBTestStep:(CCBTestStep *)testStep {
+  return CCBRPrettyFormatter_getStepKeywordWithCCBTestStep_(self, testStep);
 }
 
-- (jboolean)isFirstStepAfterBackgroundWithCucumberApiTestStep:(CucumberApiTestStep *)testStep {
-  return CucumberRuntimeFormatterPrettyFormatter_isFirstStepAfterBackgroundWithCucumberApiTestStep_(self, testStep);
+- (jboolean)isFirstStepAfterBackgroundWithCCBTestStep:(CCBTestStep *)testStep {
+  return CCBRPrettyFormatter_isFirstStepAfterBackgroundWithCCBTestStep_(self, testStep);
 }
 
-- (jboolean)isBackgroundStepWithCucumberApiTestStep:(CucumberApiTestStep *)testStep {
-  return CucumberRuntimeFormatterPrettyFormatter_isBackgroundStepWithCucumberApiTestStep_(self, testStep);
+- (jboolean)isBackgroundStepWithCCBTestStep:(CCBTestStep *)testStep {
+  return CCBRPrettyFormatter_isBackgroundStepWithCCBTestStep_(self, testStep);
 }
 
 - (void)printFeatureWithNSString:(NSString *)path {
-  CucumberRuntimeFormatterPrettyFormatter_printFeatureWithNSString_(self, path);
+  CCBRPrettyFormatter_printFeatureWithNSString_(self, path);
 }
 
 - (void)printTagsWithJavaUtilList:(id<JavaUtilList>)tags {
-  CucumberRuntimeFormatterPrettyFormatter_printTagsWithJavaUtilList_(self, tags);
+  CCBRPrettyFormatter_printTagsWithJavaUtilList_(self, tags);
 }
 
 - (void)printTagsWithJavaUtilList:(id<JavaUtilList>)tags
                      withNSString:(NSString *)indent {
-  CucumberRuntimeFormatterPrettyFormatter_printTagsWithJavaUtilList_withNSString_(self, tags, indent);
+  CCBRPrettyFormatter_printTagsWithJavaUtilList_withNSString_(self, tags, indent);
 }
 
 - (void)printPickleTagsWithJavaUtilList:(id<JavaUtilList>)tags
                            withNSString:(NSString *)indent {
-  CucumberRuntimeFormatterPrettyFormatter_printPickleTagsWithJavaUtilList_withNSString_(self, tags, indent);
+  CCBRPrettyFormatter_printPickleTagsWithJavaUtilList_withNSString_(self, tags, indent);
 }
 
 - (void)printDescriptionWithNSString:(NSString *)description_ {
-  CucumberRuntimeFormatterPrettyFormatter_printDescriptionWithNSString_(self, description_);
+  CCBRPrettyFormatter_printDescriptionWithNSString_(self, description_);
 }
 
-- (void)printBackgroundWithCucumberApiTestCase:(CucumberApiTestCase *)testCase {
-  CucumberRuntimeFormatterPrettyFormatter_printBackgroundWithCucumberApiTestCase_(self, testCase);
+- (void)printBackgroundWithCCBTestCase:(CCBTestCase *)testCase {
+  CCBRPrettyFormatter_printBackgroundWithCCBTestCase_(self, testCase);
 }
 
-- (void)printScenarioDefinitionWithCucumberApiTestCase:(CucumberApiTestCase *)testCase {
-  CucumberRuntimeFormatterPrettyFormatter_printScenarioDefinitionWithCucumberApiTestCase_(self, testCase);
+- (void)printScenarioDefinitionWithCCBTestCase:(CCBTestCase *)testCase {
+  CCBRPrettyFormatter_printScenarioDefinitionWithCCBTestCase_(self, testCase);
 }
 
-- (void)printErrorWithCucumberApiResult:(CucumberApiResult *)result {
-  CucumberRuntimeFormatterPrettyFormatter_printErrorWithCucumberApiResult_(self, result);
+- (void)printErrorWithCCBResult:(CCBResult *)result {
+  CCBRPrettyFormatter_printErrorWithCCBResult_(self, result);
 }
 
 - (void)calculateLocationIndentationWithNSString:(NSString *)definitionText
                                 withJavaUtilList:(id<JavaUtilList>)testSteps {
-  CucumberRuntimeFormatterPrettyFormatter_calculateLocationIndentationWithNSString_withJavaUtilList_(self, definitionText, testSteps);
+  CCBRPrettyFormatter_calculateLocationIndentationWithNSString_withJavaUtilList_(self, definitionText, testSteps);
 }
 
 - (void)calculateLocationIndentationWithNSString:(NSString *)definitionText
                                 withJavaUtilList:(id<JavaUtilList>)testSteps
                                      withBoolean:(jboolean)useBackgroundSteps {
-  CucumberRuntimeFormatterPrettyFormatter_calculateLocationIndentationWithNSString_withJavaUtilList_withBoolean_(self, definitionText, testSteps, useBackgroundSteps);
+  CCBRPrettyFormatter_calculateLocationIndentationWithNSString_withJavaUtilList_withBoolean_(self, definitionText, testSteps, useBackgroundSteps);
 }
 
 - (NSString *)createPaddingToLocationWithNSString:(NSString *)indent
                                      withNSString:(NSString *)text {
-  return CucumberRuntimeFormatterPrettyFormatter_createPaddingToLocationWithNSString_withNSString_(self, indent, text);
+  return CCBRPrettyFormatter_createPaddingToLocationWithNSString_withNSString_(self, indent, text);
 }
 
 - (void)dealloc {
@@ -600,35 +600,35 @@ __attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_8 *create
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangAppendable:);
-  methods[1].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
+  methods[1].selector = @selector(setEventPublisherWithCCBEventPublisher:);
   methods[2].selector = @selector(setMonochromeWithBoolean:);
-  methods[3].selector = @selector(handleTestSourceReadWithCucumberApiEventTestSourceRead:);
-  methods[4].selector = @selector(handleTestCaseStartedWithCucumberApiEventTestCaseStarted:);
-  methods[5].selector = @selector(handleTestStepStartedWithCucumberApiEventTestStepStarted:);
-  methods[6].selector = @selector(handleTestStepFinishedWithCucumberApiEventTestStepFinished:);
-  methods[7].selector = @selector(handleWriteWithCucumberApiEventWriteEvent:);
+  methods[3].selector = @selector(handleTestSourceReadWithCCBTestSourceRead:);
+  methods[4].selector = @selector(handleTestCaseStartedWithCCBTestCaseStarted:);
+  methods[5].selector = @selector(handleTestStepStartedWithCCBTestStepStarted:);
+  methods[6].selector = @selector(handleTestStepFinishedWithCCBTestStepFinished:);
+  methods[7].selector = @selector(handleWriteWithCCBWriteEvent:);
   methods[8].selector = @selector(finishReport);
-  methods[9].selector = @selector(handleStartOfFeatureWithCucumberApiEventTestCaseStarted:);
-  methods[10].selector = @selector(handleScenarioOutlineWithCucumberApiEventTestCaseStarted:);
+  methods[9].selector = @selector(handleStartOfFeatureWithCCBTestCaseStarted:);
+  methods[10].selector = @selector(handleScenarioOutlineWithCCBTestCaseStarted:);
   methods[11].selector = @selector(printScenarioOutlineWithGherkinAstScenarioOutline:);
   methods[12].selector = @selector(printExamplesWithGherkinAstExamples:);
-  methods[13].selector = @selector(printStepWithCucumberApiTestStep:withCucumberApiResult:);
-  methods[14].selector = @selector(formatStepTextWithNSString:withNSString:withCucumberRuntimeFormatterFormat:withCucumberRuntimeFormatterFormat:withJavaUtilList:);
+  methods[13].selector = @selector(printStepWithCCBTestStep:withCCBResult:);
+  methods[14].selector = @selector(formatStepTextWithNSString:withNSString:withCCBRFormat:withCCBRFormat:withJavaUtilList:);
   methods[15].selector = @selector(getScenarioDefinitionTextWithGherkinAstScenarioDefinition:);
   methods[16].selector = @selector(getLocationTextWithNSString:withInt:);
   methods[17].selector = @selector(getLocationTextWithNSString:);
-  methods[18].selector = @selector(stepTextWithCucumberApiTestStep:);
-  methods[19].selector = @selector(getStepKeywordWithCucumberApiTestStep:);
-  methods[20].selector = @selector(isFirstStepAfterBackgroundWithCucumberApiTestStep:);
-  methods[21].selector = @selector(isBackgroundStepWithCucumberApiTestStep:);
+  methods[18].selector = @selector(stepTextWithCCBTestStep:);
+  methods[19].selector = @selector(getStepKeywordWithCCBTestStep:);
+  methods[20].selector = @selector(isFirstStepAfterBackgroundWithCCBTestStep:);
+  methods[21].selector = @selector(isBackgroundStepWithCCBTestStep:);
   methods[22].selector = @selector(printFeatureWithNSString:);
   methods[23].selector = @selector(printTagsWithJavaUtilList:);
   methods[24].selector = @selector(printTagsWithJavaUtilList:withNSString:);
   methods[25].selector = @selector(printPickleTagsWithJavaUtilList:withNSString:);
   methods[26].selector = @selector(printDescriptionWithNSString:);
-  methods[27].selector = @selector(printBackgroundWithCucumberApiTestCase:);
-  methods[28].selector = @selector(printScenarioDefinitionWithCucumberApiTestCase:);
-  methods[29].selector = @selector(printErrorWithCucumberApiResult:);
+  methods[27].selector = @selector(printBackgroundWithCCBTestCase:);
+  methods[28].selector = @selector(printScenarioDefinitionWithCCBTestCase:);
+  methods[29].selector = @selector(printErrorWithCCBResult:);
   methods[30].selector = @selector(calculateLocationIndentationWithNSString:withJavaUtilList:);
   methods[31].selector = @selector(calculateLocationIndentationWithNSString:withJavaUtilList:withBoolean:);
   methods[32].selector = @selector(createPaddingToLocationWithNSString:withNSString:);
@@ -637,115 +637,115 @@ __attribute__((unused)) static CucumberRuntimeFormatterPrettyFormatter_8 *create
     { "SCENARIO_INDENT", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 57, -1, -1 },
     { "STEP_INDENT", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 58, -1, -1 },
     { "EXAMPLES_INDENT", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 59, -1, -1 },
-    { "testSources_", "LCucumberRuntimeFormatterTestSourcesModel;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "out_", "LCucumberApiFormatterNiceAppendable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "formats_", "LCucumberRuntimeFormatterFormats;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "testSources_", "LCCBRTestSourcesModel;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "out_", "LCCBNiceAppendable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "formats_", "LCCBRFormats;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "currentFeatureFile_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "currentTestCase_", "LCucumberApiTestCase;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "currentTestCase_", "LCCBTestCase;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "currentScenarioOutline_", "LGherkinAstScenarioOutline;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "currentExamples_", "LGherkinAstExamples;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "locationIndentation_", "I", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "tagNameMapper_", "LCucumberUtilMapper;", .constantValue.asLong = 0, 0x2, -1, -1, 60, -1 },
     { "pickleTagNameMapper_", "LCucumberUtilMapper;", .constantValue.asLong = 0, 0x2, -1, -1, 61, -1 },
-    { "testSourceReadHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 62, -1 },
-    { "caseStartedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 63, -1 },
-    { "stepStartedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 64, -1 },
-    { "stepFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 65, -1 },
-    { "writeEventhandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 66, -1 },
-    { "runFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 67, -1 },
+    { "testSourceReadHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 62, -1 },
+    { "caseStartedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 63, -1 },
+    { "stepStartedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 64, -1 },
+    { "stepFinishedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 65, -1 },
+    { "writeEventhandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 66, -1 },
+    { "runFinishedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 67, -1 },
   };
-  static const void *ptrTable[] = { "LJavaLangAppendable;", "setEventPublisher", "LCucumberApiEventEventPublisher;", "setMonochrome", "Z", "handleTestSourceRead", "LCucumberApiEventTestSourceRead;", "handleTestCaseStarted", "LCucumberApiEventTestCaseStarted;", "handleTestStepStarted", "LCucumberApiEventTestStepStarted;", "handleTestStepFinished", "LCucumberApiEventTestStepFinished;", "handleWrite", "LCucumberApiEventWriteEvent;", "handleStartOfFeature", "handleScenarioOutline", "printScenarioOutline", "LGherkinAstScenarioOutline;", "printExamples", "LGherkinAstExamples;", "printStep", "LCucumberApiTestStep;LCucumberApiResult;", "formatStepText", "LNSString;LNSString;LCucumberRuntimeFormatterFormat;LCucumberRuntimeFormatterFormat;LJavaUtilList;", "(Ljava/lang/String;Ljava/lang/String;Lcucumber/runtime/formatter/Format;Lcucumber/runtime/formatter/Format;Ljava/util/List<Lcucumber/runtime/Argument;>;)Ljava/lang/String;", "getScenarioDefinitionText", "LGherkinAstScenarioDefinition;", "getLocationText", "LNSString;I", "LNSString;", "stepText", "LCucumberApiTestStep;", "getStepKeyword", "isFirstStepAfterBackground", "isBackgroundStep", "printFeature", "printTags", "LJavaUtilList;", "(Ljava/util/List<Lgherkin/ast/Tag;>;)V", "LJavaUtilList;LNSString;", "(Ljava/util/List<Lgherkin/ast/Tag;>;Ljava/lang/String;)V", "printPickleTags", "(Ljava/util/List<Lgherkin/pickles/PickleTag;>;Ljava/lang/String;)V", "printDescription", "printBackground", "LCucumberApiTestCase;", "printScenarioDefinition", "printError", "LCucumberApiResult;", "calculateLocationIndentation", "LNSString;LJavaUtilList;", "(Ljava/lang/String;Ljava/util/List<Lcucumber/api/TestStep;>;)V", "LNSString;LJavaUtilList;Z", "(Ljava/lang/String;Ljava/util/List<Lcucumber/api/TestStep;>;Z)V", "createPaddingToLocation", "LNSString;LNSString;", &CucumberRuntimeFormatterPrettyFormatter_SCENARIO_INDENT, &CucumberRuntimeFormatterPrettyFormatter_STEP_INDENT, &CucumberRuntimeFormatterPrettyFormatter_EXAMPLES_INDENT, "Lcucumber/util/Mapper<Lgherkin/ast/Tag;Ljava/lang/String;>;", "Lcucumber/util/Mapper<Lgherkin/pickles/PickleTag;Ljava/lang/String;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterPrettyFormatter = { "PrettyFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 33, 19, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeFormatterPrettyFormatter;
+  static const void *ptrTable[] = { "LJavaLangAppendable;", "setEventPublisher", "LCCBEventPublisher;", "setMonochrome", "Z", "handleTestSourceRead", "LCCBTestSourceRead;", "handleTestCaseStarted", "LCCBTestCaseStarted;", "handleTestStepStarted", "LCCBTestStepStarted;", "handleTestStepFinished", "LCCBTestStepFinished;", "handleWrite", "LCCBWriteEvent;", "handleStartOfFeature", "handleScenarioOutline", "printScenarioOutline", "LGherkinAstScenarioOutline;", "printExamples", "LGherkinAstExamples;", "printStep", "LCCBTestStep;LCCBResult;", "formatStepText", "LNSString;LNSString;LCCBRFormat;LCCBRFormat;LJavaUtilList;", "(Ljava/lang/String;Ljava/lang/String;Lcucumber/runtime/formatter/Format;Lcucumber/runtime/formatter/Format;Ljava/util/List<Lcucumber/runtime/Argument;>;)Ljava/lang/String;", "getScenarioDefinitionText", "LGherkinAstScenarioDefinition;", "getLocationText", "LNSString;I", "LNSString;", "stepText", "LCCBTestStep;", "getStepKeyword", "isFirstStepAfterBackground", "isBackgroundStep", "printFeature", "printTags", "LJavaUtilList;", "(Ljava/util/List<Lgherkin/ast/Tag;>;)V", "LJavaUtilList;LNSString;", "(Ljava/util/List<Lgherkin/ast/Tag;>;Ljava/lang/String;)V", "printPickleTags", "(Ljava/util/List<Lgherkin/pickles/PickleTag;>;Ljava/lang/String;)V", "printDescription", "printBackground", "LCCBTestCase;", "printScenarioDefinition", "printError", "LCCBResult;", "calculateLocationIndentation", "LNSString;LJavaUtilList;", "(Ljava/lang/String;Ljava/util/List<Lcucumber/api/TestStep;>;)V", "LNSString;LJavaUtilList;Z", "(Ljava/lang/String;Ljava/util/List<Lcucumber/api/TestStep;>;Z)V", "createPaddingToLocation", "LNSString;LNSString;", &CCBRPrettyFormatter_SCENARIO_INDENT, &CCBRPrettyFormatter_STEP_INDENT, &CCBRPrettyFormatter_EXAMPLES_INDENT, "Lcucumber/util/Mapper<Lgherkin/ast/Tag;Ljava/lang/String;>;", "Lcucumber/util/Mapper<Lgherkin/pickles/PickleTag;Ljava/lang/String;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
+  static const J2ObjcClassInfo _CCBRPrettyFormatter = { "PrettyFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 33, 19, -1, -1, -1, -1, -1 };
+  return &_CCBRPrettyFormatter;
 }
 
 @end
 
-void CucumberRuntimeFormatterPrettyFormatter_initWithJavaLangAppendable_(CucumberRuntimeFormatterPrettyFormatter *self, id<JavaLangAppendable> outArg) {
+void CCBRPrettyFormatter_initWithJavaLangAppendable_(CCBRPrettyFormatter *self, id<JavaLangAppendable> outArg) {
   NSObject_init(self);
-  JreStrongAssignAndConsume(&self->testSources_, new_CucumberRuntimeFormatterTestSourcesModel_init());
-  JreStrongAssignAndConsume(&self->tagNameMapper_, new_CucumberRuntimeFormatterPrettyFormatter_1_init());
-  JreStrongAssignAndConsume(&self->pickleTagNameMapper_, new_CucumberRuntimeFormatterPrettyFormatter_2_init());
-  JreStrongAssignAndConsume(&self->testSourceReadHandler_, new_CucumberRuntimeFormatterPrettyFormatter_3_initWithCucumberRuntimeFormatterPrettyFormatter_(self));
-  JreStrongAssignAndConsume(&self->caseStartedHandler_, new_CucumberRuntimeFormatterPrettyFormatter_4_initWithCucumberRuntimeFormatterPrettyFormatter_(self));
-  JreStrongAssignAndConsume(&self->stepStartedHandler_, new_CucumberRuntimeFormatterPrettyFormatter_5_initWithCucumberRuntimeFormatterPrettyFormatter_(self));
-  JreStrongAssignAndConsume(&self->stepFinishedHandler_, new_CucumberRuntimeFormatterPrettyFormatter_6_initWithCucumberRuntimeFormatterPrettyFormatter_(self));
-  JreStrongAssignAndConsume(&self->writeEventhandler_, new_CucumberRuntimeFormatterPrettyFormatter_7_initWithCucumberRuntimeFormatterPrettyFormatter_(self));
-  JreStrongAssignAndConsume(&self->runFinishedHandler_, new_CucumberRuntimeFormatterPrettyFormatter_8_initWithCucumberRuntimeFormatterPrettyFormatter_(self));
-  JreStrongAssignAndConsume(&self->out_, new_CucumberApiFormatterNiceAppendable_initWithJavaLangAppendable_(outArg));
-  JreStrongAssignAndConsume(&self->formats_, new_CucumberRuntimeFormatterAnsiFormats_init());
+  JreStrongAssignAndConsume(&self->testSources_, new_CCBRTestSourcesModel_init());
+  JreStrongAssignAndConsume(&self->tagNameMapper_, new_CCBRPrettyFormatter_1_init());
+  JreStrongAssignAndConsume(&self->pickleTagNameMapper_, new_CCBRPrettyFormatter_2_init());
+  JreStrongAssignAndConsume(&self->testSourceReadHandler_, new_CCBRPrettyFormatter_3_initWithCCBRPrettyFormatter_(self));
+  JreStrongAssignAndConsume(&self->caseStartedHandler_, new_CCBRPrettyFormatter_4_initWithCCBRPrettyFormatter_(self));
+  JreStrongAssignAndConsume(&self->stepStartedHandler_, new_CCBRPrettyFormatter_5_initWithCCBRPrettyFormatter_(self));
+  JreStrongAssignAndConsume(&self->stepFinishedHandler_, new_CCBRPrettyFormatter_6_initWithCCBRPrettyFormatter_(self));
+  JreStrongAssignAndConsume(&self->writeEventhandler_, new_CCBRPrettyFormatter_7_initWithCCBRPrettyFormatter_(self));
+  JreStrongAssignAndConsume(&self->runFinishedHandler_, new_CCBRPrettyFormatter_8_initWithCCBRPrettyFormatter_(self));
+  JreStrongAssignAndConsume(&self->out_, new_CCBNiceAppendable_initWithJavaLangAppendable_(outArg));
+  JreStrongAssignAndConsume(&self->formats_, new_CCBRAnsiFormats_init());
 }
 
-CucumberRuntimeFormatterPrettyFormatter *new_CucumberRuntimeFormatterPrettyFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterPrettyFormatter, initWithJavaLangAppendable_, outArg)
+CCBRPrettyFormatter *new_CCBRPrettyFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) {
+  J2OBJC_NEW_IMPL(CCBRPrettyFormatter, initWithJavaLangAppendable_, outArg)
 }
 
-CucumberRuntimeFormatterPrettyFormatter *create_CucumberRuntimeFormatterPrettyFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterPrettyFormatter, initWithJavaLangAppendable_, outArg)
+CCBRPrettyFormatter *create_CCBRPrettyFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) {
+  J2OBJC_CREATE_IMPL(CCBRPrettyFormatter, initWithJavaLangAppendable_, outArg)
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_handleTestSourceReadWithCucumberApiEventTestSourceRead_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiEventTestSourceRead *event) {
-  [((CucumberRuntimeFormatterTestSourcesModel *) nil_chk(self->testSources_)) addTestSourceReadEventWithNSString:((CucumberApiEventTestSourceRead *) nil_chk(event))->uri_ withCucumberApiEventTestSourceRead:event];
+void CCBRPrettyFormatter_handleTestSourceReadWithCCBTestSourceRead_(CCBRPrettyFormatter *self, CCBTestSourceRead *event) {
+  [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) addTestSourceReadEventWithNSString:((CCBTestSourceRead *) nil_chk(event))->uri_ withCCBTestSourceRead:event];
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarted_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiEventTestCaseStarted *event) {
-  CucumberRuntimeFormatterPrettyFormatter_handleStartOfFeatureWithCucumberApiEventTestCaseStarted_(self, event);
-  CucumberRuntimeFormatterPrettyFormatter_handleScenarioOutlineWithCucumberApiEventTestCaseStarted_(self, event);
-  if ([((CucumberRuntimeFormatterTestSourcesModel *) nil_chk(self->testSources_)) hasBackgroundWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestCase *) nil_chk(((CucumberApiEventTestCaseStarted *) nil_chk(event))->testCase_)) getLine]]) {
-    CucumberRuntimeFormatterPrettyFormatter_printBackgroundWithCucumberApiTestCase_(self, event->testCase_);
+void CCBRPrettyFormatter_handleTestCaseStartedWithCCBTestCaseStarted_(CCBRPrettyFormatter *self, CCBTestCaseStarted *event) {
+  CCBRPrettyFormatter_handleStartOfFeatureWithCCBTestCaseStarted_(self, event);
+  CCBRPrettyFormatter_handleScenarioOutlineWithCCBTestCaseStarted_(self, event);
+  if ([((CCBRTestSourcesModel *) nil_chk(self->testSources_)) hasBackgroundWithNSString:self->currentFeatureFile_ withInt:[((CCBTestCase *) nil_chk(((CCBTestCaseStarted *) nil_chk(event))->testCase_)) getLine]]) {
+    CCBRPrettyFormatter_printBackgroundWithCCBTestCase_(self, event->testCase_);
     JreStrongAssign(&self->currentTestCase_, event->testCase_);
   }
   else {
-    CucumberRuntimeFormatterPrettyFormatter_printScenarioDefinitionWithCucumberApiTestCase_(self, event->testCase_);
+    CCBRPrettyFormatter_printScenarioDefinitionWithCCBTestCase_(self, event->testCase_);
   }
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_handleTestStepStartedWithCucumberApiEventTestStepStarted_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiEventTestStepStarted *event) {
-  if (![((CucumberApiTestStep *) nil_chk(((CucumberApiEventTestStepStarted *) nil_chk(event))->testStep_)) isHook]) {
-    if (CucumberRuntimeFormatterPrettyFormatter_isFirstStepAfterBackgroundWithCucumberApiTestStep_(self, event->testStep_)) {
-      CucumberRuntimeFormatterPrettyFormatter_printScenarioDefinitionWithCucumberApiTestCase_(self, self->currentTestCase_);
+void CCBRPrettyFormatter_handleTestStepStartedWithCCBTestStepStarted_(CCBRPrettyFormatter *self, CCBTestStepStarted *event) {
+  if (![((CCBTestStep *) nil_chk(((CCBTestStepStarted *) nil_chk(event))->testStep_)) isHook]) {
+    if (CCBRPrettyFormatter_isFirstStepAfterBackgroundWithCCBTestStep_(self, event->testStep_)) {
+      CCBRPrettyFormatter_printScenarioDefinitionWithCCBTestCase_(self, self->currentTestCase_);
       JreStrongAssign(&self->currentTestCase_, nil);
     }
   }
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiEventTestStepFinished *event) {
-  CucumberApiTestStep *testStep = ((CucumberApiEventTestStepFinished *) nil_chk(event))->testStep_;
-  if (![((CucumberApiTestStep *) nil_chk(testStep)) isHook]) {
-    CucumberRuntimeFormatterPrettyFormatter_printStepWithCucumberApiTestStep_withCucumberApiResult_(self, testStep, event->result_);
+void CCBRPrettyFormatter_handleTestStepFinishedWithCCBTestStepFinished_(CCBRPrettyFormatter *self, CCBTestStepFinished *event) {
+  CCBTestStep *testStep = ((CCBTestStepFinished *) nil_chk(event))->testStep_;
+  if (![((CCBTestStep *) nil_chk(testStep)) isHook]) {
+    CCBRPrettyFormatter_printStepWithCCBTestStep_withCCBResult_(self, testStep, event->result_);
   }
-  CucumberRuntimeFormatterPrettyFormatter_printErrorWithCucumberApiResult_(self, event->result_);
+  CCBRPrettyFormatter_printErrorWithCCBResult_(self, event->result_);
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_handleWriteWithCucumberApiEventWriteEvent_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiEventWriteEvent *event) {
-  [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) printlnWithJavaLangCharSequence:((CucumberApiEventWriteEvent *) nil_chk(event))->text_];
+void CCBRPrettyFormatter_handleWriteWithCCBWriteEvent_(CCBRPrettyFormatter *self, CCBWriteEvent *event) {
+  [((CCBNiceAppendable *) nil_chk(self->out_)) printlnWithJavaLangCharSequence:((CCBWriteEvent *) nil_chk(event))->text_];
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_finishReport(CucumberRuntimeFormatterPrettyFormatter *self) {
-  [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) close];
+void CCBRPrettyFormatter_finishReport(CCBRPrettyFormatter *self) {
+  [((CCBNiceAppendable *) nil_chk(self->out_)) close];
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_handleStartOfFeatureWithCucumberApiEventTestCaseStarted_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiEventTestCaseStarted *event) {
-  if (self->currentFeatureFile_ == nil || ![self->currentFeatureFile_ isEqual:[((CucumberApiTestCase *) nil_chk(((CucumberApiEventTestCaseStarted *) nil_chk(event))->testCase_)) getUri]]) {
+void CCBRPrettyFormatter_handleStartOfFeatureWithCCBTestCaseStarted_(CCBRPrettyFormatter *self, CCBTestCaseStarted *event) {
+  if (self->currentFeatureFile_ == nil || ![self->currentFeatureFile_ isEqual:[((CCBTestCase *) nil_chk(((CCBTestCaseStarted *) nil_chk(event))->testCase_)) getUri]]) {
     if (self->currentFeatureFile_ != nil) {
-      [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) println];
+      [((CCBNiceAppendable *) nil_chk(self->out_)) println];
     }
-    JreStrongAssign(&self->currentFeatureFile_, [((CucumberApiTestCase *) nil_chk(((CucumberApiEventTestCaseStarted *) nil_chk(event))->testCase_)) getUri]);
-    CucumberRuntimeFormatterPrettyFormatter_printFeatureWithNSString_(self, self->currentFeatureFile_);
+    JreStrongAssign(&self->currentFeatureFile_, [((CCBTestCase *) nil_chk(((CCBTestCaseStarted *) nil_chk(event))->testCase_)) getUri]);
+    CCBRPrettyFormatter_printFeatureWithNSString_(self, self->currentFeatureFile_);
   }
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_handleScenarioOutlineWithCucumberApiEventTestCaseStarted_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiEventTestCaseStarted *event) {
-  CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode = [((CucumberRuntimeFormatterTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestCase *) nil_chk(((CucumberApiEventTestCaseStarted *) nil_chk(event))->testCase_)) getLine]];
-  if (CucumberRuntimeFormatterTestSourcesModel_isScenarioOutlineScenarioWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(astNode)) {
-    GherkinAstScenarioOutline *scenarioOutline = (GherkinAstScenarioOutline *) cast_chk(CucumberRuntimeFormatterTestSourcesModel_getScenarioDefinitionWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(astNode), [GherkinAstScenarioOutline class]);
+void CCBRPrettyFormatter_handleScenarioOutlineWithCCBTestCaseStarted_(CCBRPrettyFormatter *self, CCBTestCaseStarted *event) {
+  CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CCBTestCase *) nil_chk(((CCBTestCaseStarted *) nil_chk(event))->testCase_)) getLine]];
+  if (CCBRTestSourcesModel_isScenarioOutlineScenarioWithCCBRTestSourcesModel_AstNode_(astNode)) {
+    GherkinAstScenarioOutline *scenarioOutline = (GherkinAstScenarioOutline *) cast_chk(CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_(astNode), [GherkinAstScenarioOutline class]);
     if (self->currentScenarioOutline_ == nil || ![self->currentScenarioOutline_ isEqual:scenarioOutline]) {
       JreStrongAssign(&self->currentScenarioOutline_, scenarioOutline);
-      CucumberRuntimeFormatterPrettyFormatter_printScenarioOutlineWithGherkinAstScenarioOutline_(self, self->currentScenarioOutline_);
+      CCBRPrettyFormatter_printScenarioOutlineWithGherkinAstScenarioOutline_(self, self->currentScenarioOutline_);
     }
-    if (self->currentExamples_ == nil || ![self->currentExamples_ isEqual:((CucumberRuntimeFormatterTestSourcesModel_AstNode *) nil_chk(((CucumberRuntimeFormatterTestSourcesModel_AstNode *) nil_chk(astNode))->parent_))->node_]) {
-      JreStrongAssign(&self->currentExamples_, (GherkinAstExamples *) cast_chk(((CucumberRuntimeFormatterTestSourcesModel_AstNode *) nil_chk(((CucumberRuntimeFormatterTestSourcesModel_AstNode *) nil_chk(astNode))->parent_))->node_, [GherkinAstExamples class]));
-      CucumberRuntimeFormatterPrettyFormatter_printExamplesWithGherkinAstExamples_(self, self->currentExamples_);
+    if (self->currentExamples_ == nil || ![self->currentExamples_ isEqual:((CCBRTestSourcesModel_AstNode *) nil_chk(((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->parent_))->node_]) {
+      JreStrongAssign(&self->currentExamples_, (GherkinAstExamples *) cast_chk(((CCBRTestSourcesModel_AstNode *) nil_chk(((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->parent_))->node_, [GherkinAstExamples class]));
+      CCBRPrettyFormatter_printExamplesWithGherkinAstExamples_(self, self->currentExamples_);
     }
   }
   else {
@@ -754,50 +754,50 @@ void CucumberRuntimeFormatterPrettyFormatter_handleScenarioOutlineWithCucumberAp
   }
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_printScenarioOutlineWithGherkinAstScenarioOutline_(CucumberRuntimeFormatterPrettyFormatter *self, GherkinAstScenarioOutline *scenarioOutline) {
-  [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) println];
-  CucumberRuntimeFormatterPrettyFormatter_printTagsWithJavaUtilList_withNSString_(self, [((GherkinAstScenarioOutline *) nil_chk(scenarioOutline)) getTags], CucumberRuntimeFormatterPrettyFormatter_SCENARIO_INDENT);
-  [self->out_ printlnWithJavaLangCharSequence:JreStrcat("$$C$", CucumberRuntimeFormatterPrettyFormatter_SCENARIO_INDENT, CucumberRuntimeFormatterPrettyFormatter_getScenarioDefinitionTextWithGherkinAstScenarioDefinition_(self, scenarioOutline), ' ', CucumberRuntimeFormatterPrettyFormatter_getLocationTextWithNSString_withInt_(self, self->currentFeatureFile_, [((GherkinAstLocation *) nil_chk([scenarioOutline getLocation])) getLine]))];
-  CucumberRuntimeFormatterPrettyFormatter_printDescriptionWithNSString_(self, [scenarioOutline getDescription]);
+void CCBRPrettyFormatter_printScenarioOutlineWithGherkinAstScenarioOutline_(CCBRPrettyFormatter *self, GherkinAstScenarioOutline *scenarioOutline) {
+  [((CCBNiceAppendable *) nil_chk(self->out_)) println];
+  CCBRPrettyFormatter_printTagsWithJavaUtilList_withNSString_(self, [((GherkinAstScenarioOutline *) nil_chk(scenarioOutline)) getTags], CCBRPrettyFormatter_SCENARIO_INDENT);
+  [self->out_ printlnWithJavaLangCharSequence:JreStrcat("$$C$", CCBRPrettyFormatter_SCENARIO_INDENT, CCBRPrettyFormatter_getScenarioDefinitionTextWithGherkinAstScenarioDefinition_(self, scenarioOutline), ' ', CCBRPrettyFormatter_getLocationTextWithNSString_withInt_(self, self->currentFeatureFile_, [((GherkinAstLocation *) nil_chk([scenarioOutline getLocation])) getLine]))];
+  CCBRPrettyFormatter_printDescriptionWithNSString_(self, [scenarioOutline getDescription]);
   for (GherkinAstStep * __strong step in nil_chk([scenarioOutline getSteps])) {
-    [self->out_ printlnWithJavaLangCharSequence:JreStrcat("$$", CucumberRuntimeFormatterPrettyFormatter_STEP_INDENT, [((id<CucumberRuntimeFormatterFormat>) nil_chk([((id<CucumberRuntimeFormatterFormats>) nil_chk(self->formats_)) getWithNSString:@"skipped"])) textWithNSString:JreStrcat("$$", [((GherkinAstStep *) nil_chk(step)) getKeyword], [step getText])])];
+    [self->out_ printlnWithJavaLangCharSequence:JreStrcat("$$", CCBRPrettyFormatter_STEP_INDENT, [((id<CCBRFormat>) nil_chk([((id<CCBRFormats>) nil_chk(self->formats_)) getWithNSString:@"skipped"])) textWithNSString:JreStrcat("$$", [((GherkinAstStep *) nil_chk(step)) getKeyword], [step getText])])];
   }
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_printExamplesWithGherkinAstExamples_(CucumberRuntimeFormatterPrettyFormatter *self, GherkinAstExamples *examples) {
-  [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) println];
-  CucumberRuntimeFormatterPrettyFormatter_printTagsWithJavaUtilList_withNSString_(self, [((GherkinAstExamples *) nil_chk(examples)) getTags], CucumberRuntimeFormatterPrettyFormatter_EXAMPLES_INDENT);
-  [self->out_ printlnWithJavaLangCharSequence:JreStrcat("$$$$", CucumberRuntimeFormatterPrettyFormatter_EXAMPLES_INDENT, [examples getKeyword], @": ", [examples getName])];
-  CucumberRuntimeFormatterPrettyFormatter_printDescriptionWithNSString_(self, [examples getDescription]);
+void CCBRPrettyFormatter_printExamplesWithGherkinAstExamples_(CCBRPrettyFormatter *self, GherkinAstExamples *examples) {
+  [((CCBNiceAppendable *) nil_chk(self->out_)) println];
+  CCBRPrettyFormatter_printTagsWithJavaUtilList_withNSString_(self, [((GherkinAstExamples *) nil_chk(examples)) getTags], CCBRPrettyFormatter_EXAMPLES_INDENT);
+  [self->out_ printlnWithJavaLangCharSequence:JreStrcat("$$$$", CCBRPrettyFormatter_EXAMPLES_INDENT, [examples getKeyword], @": ", [examples getName])];
+  CCBRPrettyFormatter_printDescriptionWithNSString_(self, [examples getDescription]);
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_printStepWithCucumberApiTestStep_withCucumberApiResult_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiTestStep *testStep, CucumberApiResult *result) {
-  NSString *keyword = CucumberRuntimeFormatterPrettyFormatter_getStepKeywordWithCucumberApiTestStep_(self, testStep);
-  NSString *stepText = [((CucumberApiTestStep *) nil_chk(testStep)) getStepText];
-  NSString *locationPadding = CucumberRuntimeFormatterPrettyFormatter_createPaddingToLocationWithNSString_withNSString_(self, CucumberRuntimeFormatterPrettyFormatter_STEP_INDENT, JreStrcat("$$", keyword, stepText));
-  NSString *formattedStepText = [self formatStepTextWithNSString:keyword withNSString:stepText withCucumberRuntimeFormatterFormat:[((id<CucumberRuntimeFormatterFormats>) nil_chk(self->formats_)) getWithNSString:[((CucumberApiResult_Type *) nil_chk([((CucumberApiResult *) nil_chk(result)) getStatus])) lowerCaseName]] withCucumberRuntimeFormatterFormat:[((id<CucumberRuntimeFormatterFormats>) nil_chk(self->formats_)) getWithNSString:JreStrcat("$$", [((CucumberApiResult_Type *) nil_chk([result getStatus])) lowerCaseName], @"_arg")] withJavaUtilList:[testStep getDefinitionArgument]];
-  [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) printlnWithJavaLangCharSequence:JreStrcat("$$$$", CucumberRuntimeFormatterPrettyFormatter_STEP_INDENT, formattedStepText, locationPadding, CucumberRuntimeFormatterPrettyFormatter_getLocationTextWithNSString_(self, [testStep getCodeLocation]))];
+void CCBRPrettyFormatter_printStepWithCCBTestStep_withCCBResult_(CCBRPrettyFormatter *self, CCBTestStep *testStep, CCBResult *result) {
+  NSString *keyword = CCBRPrettyFormatter_getStepKeywordWithCCBTestStep_(self, testStep);
+  NSString *stepText = [((CCBTestStep *) nil_chk(testStep)) getStepText];
+  NSString *locationPadding = CCBRPrettyFormatter_createPaddingToLocationWithNSString_withNSString_(self, CCBRPrettyFormatter_STEP_INDENT, JreStrcat("$$", keyword, stepText));
+  NSString *formattedStepText = [self formatStepTextWithNSString:keyword withNSString:stepText withCCBRFormat:[((id<CCBRFormats>) nil_chk(self->formats_)) getWithNSString:[((CCBResult_Type *) nil_chk([((CCBResult *) nil_chk(result)) getStatus])) lowerCaseName]] withCCBRFormat:[((id<CCBRFormats>) nil_chk(self->formats_)) getWithNSString:JreStrcat("$$", [((CCBResult_Type *) nil_chk([result getStatus])) lowerCaseName], @"_arg")] withJavaUtilList:[testStep getDefinitionArgument]];
+  [((CCBNiceAppendable *) nil_chk(self->out_)) printlnWithJavaLangCharSequence:JreStrcat("$$$$", CCBRPrettyFormatter_STEP_INDENT, formattedStepText, locationPadding, CCBRPrettyFormatter_getLocationTextWithNSString_(self, [testStep getCodeLocation]))];
 }
 
-NSString *CucumberRuntimeFormatterPrettyFormatter_getScenarioDefinitionTextWithGherkinAstScenarioDefinition_(CucumberRuntimeFormatterPrettyFormatter *self, GherkinAstScenarioDefinition *definition) {
+NSString *CCBRPrettyFormatter_getScenarioDefinitionTextWithGherkinAstScenarioDefinition_(CCBRPrettyFormatter *self, GherkinAstScenarioDefinition *definition) {
   return JreStrcat("$$$", [((GherkinAstScenarioDefinition *) nil_chk(definition)) getKeyword], @": ", [definition getName]);
 }
 
-NSString *CucumberRuntimeFormatterPrettyFormatter_getLocationTextWithNSString_withInt_(CucumberRuntimeFormatterPrettyFormatter *self, NSString *file, jint line) {
-  return CucumberRuntimeFormatterPrettyFormatter_getLocationTextWithNSString_(self, JreStrcat("$CI", file, ':', line));
+NSString *CCBRPrettyFormatter_getLocationTextWithNSString_withInt_(CCBRPrettyFormatter *self, NSString *file, jint line) {
+  return CCBRPrettyFormatter_getLocationTextWithNSString_(self, JreStrcat("$CI", file, ':', line));
 }
 
-NSString *CucumberRuntimeFormatterPrettyFormatter_getLocationTextWithNSString_(CucumberRuntimeFormatterPrettyFormatter *self, NSString *location) {
-  return [((id<CucumberRuntimeFormatterFormat>) nil_chk([((id<CucumberRuntimeFormatterFormats>) nil_chk(self->formats_)) getWithNSString:@"comment"])) textWithNSString:JreStrcat("$$", @"# ", location)];
+NSString *CCBRPrettyFormatter_getLocationTextWithNSString_(CCBRPrettyFormatter *self, NSString *location) {
+  return [((id<CCBRFormat>) nil_chk([((id<CCBRFormats>) nil_chk(self->formats_)) getWithNSString:@"comment"])) textWithNSString:JreStrcat("$$", @"# ", location)];
 }
 
-JavaLangStringBuffer *CucumberRuntimeFormatterPrettyFormatter_stepTextWithCucumberApiTestStep_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiTestStep *testStep) {
-  NSString *keyword = CucumberRuntimeFormatterPrettyFormatter_getStepKeywordWithCucumberApiTestStep_(self, testStep);
-  return create_JavaLangStringBuffer_initWithNSString_(JreStrcat("$$", keyword, [((CucumberApiTestStep *) nil_chk(testStep)) getStepText]));
+JavaLangStringBuffer *CCBRPrettyFormatter_stepTextWithCCBTestStep_(CCBRPrettyFormatter *self, CCBTestStep *testStep) {
+  NSString *keyword = CCBRPrettyFormatter_getStepKeywordWithCCBTestStep_(self, testStep);
+  return create_JavaLangStringBuffer_initWithNSString_(JreStrcat("$$", keyword, [((CCBTestStep *) nil_chk(testStep)) getStepText]));
 }
 
-NSString *CucumberRuntimeFormatterPrettyFormatter_getStepKeywordWithCucumberApiTestStep_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiTestStep *testStep) {
-  CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode = [((CucumberRuntimeFormatterTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestStep *) nil_chk(testStep)) getStepLine]];
+NSString *CCBRPrettyFormatter_getStepKeywordWithCCBTestStep_(CCBRPrettyFormatter *self, CCBTestStep *testStep) {
+  CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CCBTestStep *) nil_chk(testStep)) getStepLine]];
   if (astNode != nil) {
     GherkinAstStep *step = (GherkinAstStep *) cast_chk(astNode->node_, [GherkinAstStep class]);
     return [((GherkinAstStep *) nil_chk(step)) getKeyword];
@@ -807,98 +807,98 @@ NSString *CucumberRuntimeFormatterPrettyFormatter_getStepKeywordWithCucumberApiT
   }
 }
 
-jboolean CucumberRuntimeFormatterPrettyFormatter_isFirstStepAfterBackgroundWithCucumberApiTestStep_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiTestStep *testStep) {
-  return self->currentTestCase_ != nil && !CucumberRuntimeFormatterPrettyFormatter_isBackgroundStepWithCucumberApiTestStep_(self, testStep);
+jboolean CCBRPrettyFormatter_isFirstStepAfterBackgroundWithCCBTestStep_(CCBRPrettyFormatter *self, CCBTestStep *testStep) {
+  return self->currentTestCase_ != nil && !CCBRPrettyFormatter_isBackgroundStepWithCCBTestStep_(self, testStep);
 }
 
-jboolean CucumberRuntimeFormatterPrettyFormatter_isBackgroundStepWithCucumberApiTestStep_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiTestStep *testStep) {
-  CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode = [((CucumberRuntimeFormatterTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestStep *) nil_chk(testStep)) getStepLine]];
+jboolean CCBRPrettyFormatter_isBackgroundStepWithCCBTestStep_(CCBRPrettyFormatter *self, CCBTestStep *testStep) {
+  CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CCBTestStep *) nil_chk(testStep)) getStepLine]];
   if (astNode != nil) {
-    return CucumberRuntimeFormatterTestSourcesModel_isBackgroundStepWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(astNode);
+    return CCBRTestSourcesModel_isBackgroundStepWithCCBRTestSourcesModel_AstNode_(astNode);
   }
   return false;
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_printFeatureWithNSString_(CucumberRuntimeFormatterPrettyFormatter *self, NSString *path) {
-  GherkinAstFeature *feature = [((CucumberRuntimeFormatterTestSourcesModel *) nil_chk(self->testSources_)) getFeatureWithNSString:path];
-  CucumberRuntimeFormatterPrettyFormatter_printTagsWithJavaUtilList_(self, [((GherkinAstFeature *) nil_chk(feature)) getTags]);
-  [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) printlnWithJavaLangCharSequence:JreStrcat("$$$", [feature getKeyword], @": ", [feature getName])];
-  CucumberRuntimeFormatterPrettyFormatter_printDescriptionWithNSString_(self, [feature getDescription]);
+void CCBRPrettyFormatter_printFeatureWithNSString_(CCBRPrettyFormatter *self, NSString *path) {
+  GherkinAstFeature *feature = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getFeatureWithNSString:path];
+  CCBRPrettyFormatter_printTagsWithJavaUtilList_(self, [((GherkinAstFeature *) nil_chk(feature)) getTags]);
+  [((CCBNiceAppendable *) nil_chk(self->out_)) printlnWithJavaLangCharSequence:JreStrcat("$$$", [feature getKeyword], @": ", [feature getName])];
+  CCBRPrettyFormatter_printDescriptionWithNSString_(self, [feature getDescription]);
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_printTagsWithJavaUtilList_(CucumberRuntimeFormatterPrettyFormatter *self, id<JavaUtilList> tags) {
-  CucumberRuntimeFormatterPrettyFormatter_printTagsWithJavaUtilList_withNSString_(self, tags, @"");
+void CCBRPrettyFormatter_printTagsWithJavaUtilList_(CCBRPrettyFormatter *self, id<JavaUtilList> tags) {
+  CCBRPrettyFormatter_printTagsWithJavaUtilList_withNSString_(self, tags, @"");
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_printTagsWithJavaUtilList_withNSString_(CucumberRuntimeFormatterPrettyFormatter *self, id<JavaUtilList> tags, NSString *indent) {
+void CCBRPrettyFormatter_printTagsWithJavaUtilList_withNSString_(CCBRPrettyFormatter *self, id<JavaUtilList> tags, NSString *indent) {
   if (![((id<JavaUtilList>) nil_chk(tags)) isEmpty]) {
-    [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) printlnWithJavaLangCharSequence:JreStrcat("$$", indent, CucumberUtilFixJava_joinWithJavaUtilList_withNSString_(CucumberUtilFixJava_mapWithJavaUtilList_withCucumberUtilMapper_(tags, self->tagNameMapper_), @" "))];
+    [((CCBNiceAppendable *) nil_chk(self->out_)) printlnWithJavaLangCharSequence:JreStrcat("$$", indent, CucumberUtilFixJava_joinWithJavaUtilList_withNSString_(CucumberUtilFixJava_mapWithJavaUtilList_withCucumberUtilMapper_(tags, self->tagNameMapper_), @" "))];
   }
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_printPickleTagsWithJavaUtilList_withNSString_(CucumberRuntimeFormatterPrettyFormatter *self, id<JavaUtilList> tags, NSString *indent) {
+void CCBRPrettyFormatter_printPickleTagsWithJavaUtilList_withNSString_(CCBRPrettyFormatter *self, id<JavaUtilList> tags, NSString *indent) {
   if (![((id<JavaUtilList>) nil_chk(tags)) isEmpty]) {
-    [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) printlnWithJavaLangCharSequence:JreStrcat("$$", indent, CucumberUtilFixJava_joinWithJavaUtilList_withNSString_(CucumberUtilFixJava_mapWithJavaUtilList_withCucumberUtilMapper_(tags, self->pickleTagNameMapper_), @" "))];
+    [((CCBNiceAppendable *) nil_chk(self->out_)) printlnWithJavaLangCharSequence:JreStrcat("$$", indent, CucumberUtilFixJava_joinWithJavaUtilList_withNSString_(CucumberUtilFixJava_mapWithJavaUtilList_withCucumberUtilMapper_(tags, self->pickleTagNameMapper_), @" "))];
   }
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_printDescriptionWithNSString_(CucumberRuntimeFormatterPrettyFormatter *self, NSString *description_) {
+void CCBRPrettyFormatter_printDescriptionWithNSString_(CCBRPrettyFormatter *self, NSString *description_) {
   if (description_ != nil) {
-    [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) printlnWithJavaLangCharSequence:description_];
+    [((CCBNiceAppendable *) nil_chk(self->out_)) printlnWithJavaLangCharSequence:description_];
   }
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_printBackgroundWithCucumberApiTestCase_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiTestCase *testCase) {
-  CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode = [((CucumberRuntimeFormatterTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestCase *) nil_chk(testCase)) getLine]];
+void CCBRPrettyFormatter_printBackgroundWithCCBTestCase_(CCBRPrettyFormatter *self, CCBTestCase *testCase) {
+  CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CCBTestCase *) nil_chk(testCase)) getLine]];
   if (astNode != nil) {
-    GherkinAstBackground *background = CucumberRuntimeFormatterTestSourcesModel_getBackgroundForTestCaseWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(astNode);
-    NSString *backgroundText = CucumberRuntimeFormatterPrettyFormatter_getScenarioDefinitionTextWithGherkinAstScenarioDefinition_(self, background);
+    GherkinAstBackground *background = CCBRTestSourcesModel_getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode_(astNode);
+    NSString *backgroundText = CCBRPrettyFormatter_getScenarioDefinitionTextWithGherkinAstScenarioDefinition_(self, background);
     jboolean useBackgroundSteps = true;
-    CucumberRuntimeFormatterPrettyFormatter_calculateLocationIndentationWithNSString_withJavaUtilList_withBoolean_(self, JreStrcat("$$", CucumberRuntimeFormatterPrettyFormatter_SCENARIO_INDENT, backgroundText), [testCase getTestSteps], useBackgroundSteps);
-    NSString *locationPadding = CucumberRuntimeFormatterPrettyFormatter_createPaddingToLocationWithNSString_withNSString_(self, CucumberRuntimeFormatterPrettyFormatter_SCENARIO_INDENT, backgroundText);
-    [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) println];
-    [self->out_ printlnWithJavaLangCharSequence:JreStrcat("$$$$", CucumberRuntimeFormatterPrettyFormatter_SCENARIO_INDENT, backgroundText, locationPadding, CucumberRuntimeFormatterPrettyFormatter_getLocationTextWithNSString_withInt_(self, self->currentFeatureFile_, [((GherkinAstLocation *) nil_chk([((GherkinAstBackground *) nil_chk(background)) getLocation])) getLine]))];
-    CucumberRuntimeFormatterPrettyFormatter_printDescriptionWithNSString_(self, [background getDescription]);
+    CCBRPrettyFormatter_calculateLocationIndentationWithNSString_withJavaUtilList_withBoolean_(self, JreStrcat("$$", CCBRPrettyFormatter_SCENARIO_INDENT, backgroundText), [testCase getTestSteps], useBackgroundSteps);
+    NSString *locationPadding = CCBRPrettyFormatter_createPaddingToLocationWithNSString_withNSString_(self, CCBRPrettyFormatter_SCENARIO_INDENT, backgroundText);
+    [((CCBNiceAppendable *) nil_chk(self->out_)) println];
+    [self->out_ printlnWithJavaLangCharSequence:JreStrcat("$$$$", CCBRPrettyFormatter_SCENARIO_INDENT, backgroundText, locationPadding, CCBRPrettyFormatter_getLocationTextWithNSString_withInt_(self, self->currentFeatureFile_, [((GherkinAstLocation *) nil_chk([((GherkinAstBackground *) nil_chk(background)) getLocation])) getLine]))];
+    CCBRPrettyFormatter_printDescriptionWithNSString_(self, [background getDescription]);
   }
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_printScenarioDefinitionWithCucumberApiTestCase_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiTestCase *testCase) {
-  GherkinAstScenarioDefinition *scenarioDefinition = [((CucumberRuntimeFormatterTestSourcesModel *) nil_chk(self->testSources_)) getScenarioDefinitionWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestCase *) nil_chk(testCase)) getLine]];
+void CCBRPrettyFormatter_printScenarioDefinitionWithCCBTestCase_(CCBRPrettyFormatter *self, CCBTestCase *testCase) {
+  GherkinAstScenarioDefinition *scenarioDefinition = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getScenarioDefinitionWithNSString:self->currentFeatureFile_ withInt:[((CCBTestCase *) nil_chk(testCase)) getLine]];
   NSString *definitionText = JreStrcat("$$$", [((GherkinAstScenarioDefinition *) nil_chk(scenarioDefinition)) getKeyword], @": ", [testCase getName]);
-  CucumberRuntimeFormatterPrettyFormatter_calculateLocationIndentationWithNSString_withJavaUtilList_(self, JreStrcat("$$", CucumberRuntimeFormatterPrettyFormatter_SCENARIO_INDENT, definitionText), [testCase getTestSteps]);
-  NSString *locationPadding = CucumberRuntimeFormatterPrettyFormatter_createPaddingToLocationWithNSString_withNSString_(self, CucumberRuntimeFormatterPrettyFormatter_SCENARIO_INDENT, definitionText);
-  [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) println];
-  CucumberRuntimeFormatterPrettyFormatter_printPickleTagsWithJavaUtilList_withNSString_(self, [testCase getTags], CucumberRuntimeFormatterPrettyFormatter_SCENARIO_INDENT);
-  [self->out_ printlnWithJavaLangCharSequence:JreStrcat("$$$$", CucumberRuntimeFormatterPrettyFormatter_SCENARIO_INDENT, definitionText, locationPadding, CucumberRuntimeFormatterPrettyFormatter_getLocationTextWithNSString_withInt_(self, self->currentFeatureFile_, [testCase getLine]))];
-  CucumberRuntimeFormatterPrettyFormatter_printDescriptionWithNSString_(self, [scenarioDefinition getDescription]);
+  CCBRPrettyFormatter_calculateLocationIndentationWithNSString_withJavaUtilList_(self, JreStrcat("$$", CCBRPrettyFormatter_SCENARIO_INDENT, definitionText), [testCase getTestSteps]);
+  NSString *locationPadding = CCBRPrettyFormatter_createPaddingToLocationWithNSString_withNSString_(self, CCBRPrettyFormatter_SCENARIO_INDENT, definitionText);
+  [((CCBNiceAppendable *) nil_chk(self->out_)) println];
+  CCBRPrettyFormatter_printPickleTagsWithJavaUtilList_withNSString_(self, [testCase getTags], CCBRPrettyFormatter_SCENARIO_INDENT);
+  [self->out_ printlnWithJavaLangCharSequence:JreStrcat("$$$$", CCBRPrettyFormatter_SCENARIO_INDENT, definitionText, locationPadding, CCBRPrettyFormatter_getLocationTextWithNSString_withInt_(self, self->currentFeatureFile_, [testCase getLine]))];
+  CCBRPrettyFormatter_printDescriptionWithNSString_(self, [scenarioDefinition getDescription]);
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_printErrorWithCucumberApiResult_(CucumberRuntimeFormatterPrettyFormatter *self, CucumberApiResult *result) {
-  if ([((CucumberApiResult *) nil_chk(result)) getError] != nil) {
-    [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) printlnWithJavaLangCharSequence:JreStrcat("$$", @"      ", [((id<CucumberRuntimeFormatterFormat>) nil_chk([((id<CucumberRuntimeFormatterFormats>) nil_chk(self->formats_)) getWithNSString:[((CucumberApiResult_Type *) nil_chk([result getStatus])) lowerCaseName]])) textWithNSString:[result getErrorMessage]])];
+void CCBRPrettyFormatter_printErrorWithCCBResult_(CCBRPrettyFormatter *self, CCBResult *result) {
+  if ([((CCBResult *) nil_chk(result)) getError] != nil) {
+    [((CCBNiceAppendable *) nil_chk(self->out_)) printlnWithJavaLangCharSequence:JreStrcat("$$", @"      ", [((id<CCBRFormat>) nil_chk([((id<CCBRFormats>) nil_chk(self->formats_)) getWithNSString:[((CCBResult_Type *) nil_chk([result getStatus])) lowerCaseName]])) textWithNSString:[result getErrorMessage]])];
   }
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_calculateLocationIndentationWithNSString_withJavaUtilList_(CucumberRuntimeFormatterPrettyFormatter *self, NSString *definitionText, id<JavaUtilList> testSteps) {
+void CCBRPrettyFormatter_calculateLocationIndentationWithNSString_withJavaUtilList_(CCBRPrettyFormatter *self, NSString *definitionText, id<JavaUtilList> testSteps) {
   jboolean useBackgroundSteps = false;
-  CucumberRuntimeFormatterPrettyFormatter_calculateLocationIndentationWithNSString_withJavaUtilList_withBoolean_(self, definitionText, testSteps, useBackgroundSteps);
+  CCBRPrettyFormatter_calculateLocationIndentationWithNSString_withJavaUtilList_withBoolean_(self, definitionText, testSteps, useBackgroundSteps);
 }
 
-void CucumberRuntimeFormatterPrettyFormatter_calculateLocationIndentationWithNSString_withJavaUtilList_withBoolean_(CucumberRuntimeFormatterPrettyFormatter *self, NSString *definitionText, id<JavaUtilList> testSteps, jboolean useBackgroundSteps) {
+void CCBRPrettyFormatter_calculateLocationIndentationWithNSString_withJavaUtilList_withBoolean_(CCBRPrettyFormatter *self, NSString *definitionText, id<JavaUtilList> testSteps, jboolean useBackgroundSteps) {
   jint maxTextLength = [((NSString *) nil_chk(definitionText)) java_length];
-  for (CucumberApiTestStep * __strong step in nil_chk(testSteps)) {
-    if ([((CucumberApiTestStep *) nil_chk(step)) isHook]) {
+  for (CCBTestStep * __strong step in nil_chk(testSteps)) {
+    if ([((CCBTestStep *) nil_chk(step)) isHook]) {
       continue;
     }
-    if (CucumberRuntimeFormatterPrettyFormatter_isBackgroundStepWithCucumberApiTestStep_(self, step) == useBackgroundSteps) {
-      JavaLangStringBuffer *stepText = CucumberRuntimeFormatterPrettyFormatter_stepTextWithCucumberApiTestStep_(self, step);
-      maxTextLength = JavaLangMath_maxWithInt_withInt_(maxTextLength, [((NSString *) nil_chk(CucumberRuntimeFormatterPrettyFormatter_STEP_INDENT)) java_length] + [((JavaLangStringBuffer *) nil_chk(stepText)) java_length]);
+    if (CCBRPrettyFormatter_isBackgroundStepWithCCBTestStep_(self, step) == useBackgroundSteps) {
+      JavaLangStringBuffer *stepText = CCBRPrettyFormatter_stepTextWithCCBTestStep_(self, step);
+      maxTextLength = JavaLangMath_maxWithInt_withInt_(maxTextLength, [((NSString *) nil_chk(CCBRPrettyFormatter_STEP_INDENT)) java_length] + [((JavaLangStringBuffer *) nil_chk(stepText)) java_length]);
     }
   }
   self->locationIndentation_ = maxTextLength + 1;
 }
 
-NSString *CucumberRuntimeFormatterPrettyFormatter_createPaddingToLocationWithNSString_withNSString_(CucumberRuntimeFormatterPrettyFormatter *self, NSString *indent, NSString *text) {
+NSString *CCBRPrettyFormatter_createPaddingToLocationWithNSString_withNSString_(CCBRPrettyFormatter *self, NSString *indent, NSString *text) {
   JavaLangStringBuffer *padding = create_JavaLangStringBuffer_init();
   for (jint i = [((NSString *) nil_chk(indent)) java_length] + [((NSString *) nil_chk(text)) java_length]; i < self->locationIndentation_; ++i) {
     [padding appendWithChar:' '];
@@ -906,13 +906,13 @@ NSString *CucumberRuntimeFormatterPrettyFormatter_createPaddingToLocationWithNSS
   return [padding description];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterPrettyFormatter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRPrettyFormatter)
 
-@implementation CucumberRuntimeFormatterPrettyFormatter_1
+@implementation CCBRPrettyFormatter_1
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeFormatterPrettyFormatter_1_init(self);
+  CCBRPrettyFormatter_1_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -932,30 +932,30 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(mapWithId:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "map", "LGherkinAstTag;", "LCucumberRuntimeFormatterPrettyFormatter;", "Ljava/lang/Object;Lcucumber/util/Mapper<Lgherkin/ast/Tag;Ljava/lang/String;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterPrettyFormatter_1 = { "", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeFormatterPrettyFormatter_1;
+  static const void *ptrTable[] = { "map", "LGherkinAstTag;", "LCCBRPrettyFormatter;", "Ljava/lang/Object;Lcucumber/util/Mapper<Lgherkin/ast/Tag;Ljava/lang/String;>;" };
+  static const J2ObjcClassInfo _CCBRPrettyFormatter_1 = { "", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 2, -1, -1, 3, -1 };
+  return &_CCBRPrettyFormatter_1;
 }
 
 @end
 
-void CucumberRuntimeFormatterPrettyFormatter_1_init(CucumberRuntimeFormatterPrettyFormatter_1 *self) {
+void CCBRPrettyFormatter_1_init(CCBRPrettyFormatter_1 *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterPrettyFormatter_1 *new_CucumberRuntimeFormatterPrettyFormatter_1_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterPrettyFormatter_1, init)
+CCBRPrettyFormatter_1 *new_CCBRPrettyFormatter_1_init() {
+  J2OBJC_NEW_IMPL(CCBRPrettyFormatter_1, init)
 }
 
-CucumberRuntimeFormatterPrettyFormatter_1 *create_CucumberRuntimeFormatterPrettyFormatter_1_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterPrettyFormatter_1, init)
+CCBRPrettyFormatter_1 *create_CCBRPrettyFormatter_1_init() {
+  J2OBJC_CREATE_IMPL(CCBRPrettyFormatter_1, init)
 }
 
-@implementation CucumberRuntimeFormatterPrettyFormatter_2
+@implementation CCBRPrettyFormatter_2
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeFormatterPrettyFormatter_2_init(self);
+  CCBRPrettyFormatter_2_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -975,34 +975,34 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(mapWithId:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "map", "LGherkinPicklesPickleTag;", "LCucumberRuntimeFormatterPrettyFormatter;", "Ljava/lang/Object;Lcucumber/util/Mapper<Lgherkin/pickles/PickleTag;Ljava/lang/String;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterPrettyFormatter_2 = { "", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeFormatterPrettyFormatter_2;
+  static const void *ptrTable[] = { "map", "LGherkinPicklesPickleTag;", "LCCBRPrettyFormatter;", "Ljava/lang/Object;Lcucumber/util/Mapper<Lgherkin/pickles/PickleTag;Ljava/lang/String;>;" };
+  static const J2ObjcClassInfo _CCBRPrettyFormatter_2 = { "", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 2, -1, -1, 3, -1 };
+  return &_CCBRPrettyFormatter_2;
 }
 
 @end
 
-void CucumberRuntimeFormatterPrettyFormatter_2_init(CucumberRuntimeFormatterPrettyFormatter_2 *self) {
+void CCBRPrettyFormatter_2_init(CCBRPrettyFormatter_2 *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterPrettyFormatter_2 *new_CucumberRuntimeFormatterPrettyFormatter_2_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterPrettyFormatter_2, init)
+CCBRPrettyFormatter_2 *new_CCBRPrettyFormatter_2_init() {
+  J2OBJC_NEW_IMPL(CCBRPrettyFormatter_2, init)
 }
 
-CucumberRuntimeFormatterPrettyFormatter_2 *create_CucumberRuntimeFormatterPrettyFormatter_2_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterPrettyFormatter_2, init)
+CCBRPrettyFormatter_2 *create_CCBRPrettyFormatter_2_init() {
+  J2OBJC_CREATE_IMPL(CCBRPrettyFormatter_2, init)
 }
 
-@implementation CucumberRuntimeFormatterPrettyFormatter_3
+@implementation CCBRPrettyFormatter_3
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$ {
-  CucumberRuntimeFormatterPrettyFormatter_3_initWithCucumberRuntimeFormatterPrettyFormatter_(self, outer$);
+- (instancetype __nonnull)initWithCCBRPrettyFormatter:(CCBRPrettyFormatter *)outer$ {
+  CCBRPrettyFormatter_3_initWithCCBRPrettyFormatter_(self, outer$);
   return self;
 }
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestSourceRead *)event {
-  CucumberRuntimeFormatterPrettyFormatter_handleTestSourceReadWithCucumberApiEventTestSourceRead_(this$0_, event);
+- (void)receiveWithCCBEvent:(CCBTestSourceRead *)event {
+  CCBRPrettyFormatter_handleTestSourceReadWithCCBTestSourceRead_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -1018,41 +1018,41 @@ CucumberRuntimeFormatterPrettyFormatter_2 *create_CucumberRuntimeFormatterPretty
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeFormatterPrettyFormatter:);
-  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
+  methods[0].selector = @selector(initWithCCBRPrettyFormatter:);
+  methods[1].selector = @selector(receiveWithCCBEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LCucumberRuntimeFormatterPrettyFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "this$0_", "LCCBRPrettyFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestSourceRead;", "LCucumberRuntimeFormatterPrettyFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterPrettyFormatter_3 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeFormatterPrettyFormatter_3;
+  static const void *ptrTable[] = { "receive", "LCCBTestSourceRead;", "LCCBRPrettyFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;" };
+  static const J2ObjcClassInfo _CCBRPrettyFormatter_3 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
+  return &_CCBRPrettyFormatter_3;
 }
 
 @end
 
-void CucumberRuntimeFormatterPrettyFormatter_3_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter_3 *self, CucumberRuntimeFormatterPrettyFormatter *outer$) {
+void CCBRPrettyFormatter_3_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter_3 *self, CCBRPrettyFormatter *outer$) {
   JreStrongAssign(&self->this$0_, outer$);
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterPrettyFormatter_3 *new_CucumberRuntimeFormatterPrettyFormatter_3_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterPrettyFormatter_3, initWithCucumberRuntimeFormatterPrettyFormatter_, outer$)
+CCBRPrettyFormatter_3 *new_CCBRPrettyFormatter_3_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$) {
+  J2OBJC_NEW_IMPL(CCBRPrettyFormatter_3, initWithCCBRPrettyFormatter_, outer$)
 }
 
-CucumberRuntimeFormatterPrettyFormatter_3 *create_CucumberRuntimeFormatterPrettyFormatter_3_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterPrettyFormatter_3, initWithCucumberRuntimeFormatterPrettyFormatter_, outer$)
+CCBRPrettyFormatter_3 *create_CCBRPrettyFormatter_3_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRPrettyFormatter_3, initWithCCBRPrettyFormatter_, outer$)
 }
 
-@implementation CucumberRuntimeFormatterPrettyFormatter_4
+@implementation CCBRPrettyFormatter_4
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$ {
-  CucumberRuntimeFormatterPrettyFormatter_4_initWithCucumberRuntimeFormatterPrettyFormatter_(self, outer$);
+- (instancetype __nonnull)initWithCCBRPrettyFormatter:(CCBRPrettyFormatter *)outer$ {
+  CCBRPrettyFormatter_4_initWithCCBRPrettyFormatter_(self, outer$);
   return self;
 }
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestCaseStarted *)event {
-  CucumberRuntimeFormatterPrettyFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarted_(this$0_, event);
+- (void)receiveWithCCBEvent:(CCBTestCaseStarted *)event {
+  CCBRPrettyFormatter_handleTestCaseStartedWithCCBTestCaseStarted_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -1068,41 +1068,41 @@ CucumberRuntimeFormatterPrettyFormatter_3 *create_CucumberRuntimeFormatterPretty
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeFormatterPrettyFormatter:);
-  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
+  methods[0].selector = @selector(initWithCCBRPrettyFormatter:);
+  methods[1].selector = @selector(receiveWithCCBEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LCucumberRuntimeFormatterPrettyFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "this$0_", "LCCBRPrettyFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestCaseStarted;", "LCucumberRuntimeFormatterPrettyFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterPrettyFormatter_4 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeFormatterPrettyFormatter_4;
+  static const void *ptrTable[] = { "receive", "LCCBTestCaseStarted;", "LCCBRPrettyFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;" };
+  static const J2ObjcClassInfo _CCBRPrettyFormatter_4 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
+  return &_CCBRPrettyFormatter_4;
 }
 
 @end
 
-void CucumberRuntimeFormatterPrettyFormatter_4_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter_4 *self, CucumberRuntimeFormatterPrettyFormatter *outer$) {
+void CCBRPrettyFormatter_4_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter_4 *self, CCBRPrettyFormatter *outer$) {
   JreStrongAssign(&self->this$0_, outer$);
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterPrettyFormatter_4 *new_CucumberRuntimeFormatterPrettyFormatter_4_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterPrettyFormatter_4, initWithCucumberRuntimeFormatterPrettyFormatter_, outer$)
+CCBRPrettyFormatter_4 *new_CCBRPrettyFormatter_4_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$) {
+  J2OBJC_NEW_IMPL(CCBRPrettyFormatter_4, initWithCCBRPrettyFormatter_, outer$)
 }
 
-CucumberRuntimeFormatterPrettyFormatter_4 *create_CucumberRuntimeFormatterPrettyFormatter_4_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterPrettyFormatter_4, initWithCucumberRuntimeFormatterPrettyFormatter_, outer$)
+CCBRPrettyFormatter_4 *create_CCBRPrettyFormatter_4_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRPrettyFormatter_4, initWithCCBRPrettyFormatter_, outer$)
 }
 
-@implementation CucumberRuntimeFormatterPrettyFormatter_5
+@implementation CCBRPrettyFormatter_5
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$ {
-  CucumberRuntimeFormatterPrettyFormatter_5_initWithCucumberRuntimeFormatterPrettyFormatter_(self, outer$);
+- (instancetype __nonnull)initWithCCBRPrettyFormatter:(CCBRPrettyFormatter *)outer$ {
+  CCBRPrettyFormatter_5_initWithCCBRPrettyFormatter_(self, outer$);
   return self;
 }
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepStarted *)event {
-  CucumberRuntimeFormatterPrettyFormatter_handleTestStepStartedWithCucumberApiEventTestStepStarted_(this$0_, event);
+- (void)receiveWithCCBEvent:(CCBTestStepStarted *)event {
+  CCBRPrettyFormatter_handleTestStepStartedWithCCBTestStepStarted_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -1118,41 +1118,41 @@ CucumberRuntimeFormatterPrettyFormatter_4 *create_CucumberRuntimeFormatterPretty
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeFormatterPrettyFormatter:);
-  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
+  methods[0].selector = @selector(initWithCCBRPrettyFormatter:);
+  methods[1].selector = @selector(receiveWithCCBEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LCucumberRuntimeFormatterPrettyFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "this$0_", "LCCBRPrettyFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestStepStarted;", "LCucumberRuntimeFormatterPrettyFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterPrettyFormatter_5 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeFormatterPrettyFormatter_5;
+  static const void *ptrTable[] = { "receive", "LCCBTestStepStarted;", "LCCBRPrettyFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;" };
+  static const J2ObjcClassInfo _CCBRPrettyFormatter_5 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
+  return &_CCBRPrettyFormatter_5;
 }
 
 @end
 
-void CucumberRuntimeFormatterPrettyFormatter_5_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter_5 *self, CucumberRuntimeFormatterPrettyFormatter *outer$) {
+void CCBRPrettyFormatter_5_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter_5 *self, CCBRPrettyFormatter *outer$) {
   JreStrongAssign(&self->this$0_, outer$);
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterPrettyFormatter_5 *new_CucumberRuntimeFormatterPrettyFormatter_5_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterPrettyFormatter_5, initWithCucumberRuntimeFormatterPrettyFormatter_, outer$)
+CCBRPrettyFormatter_5 *new_CCBRPrettyFormatter_5_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$) {
+  J2OBJC_NEW_IMPL(CCBRPrettyFormatter_5, initWithCCBRPrettyFormatter_, outer$)
 }
 
-CucumberRuntimeFormatterPrettyFormatter_5 *create_CucumberRuntimeFormatterPrettyFormatter_5_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterPrettyFormatter_5, initWithCucumberRuntimeFormatterPrettyFormatter_, outer$)
+CCBRPrettyFormatter_5 *create_CCBRPrettyFormatter_5_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRPrettyFormatter_5, initWithCCBRPrettyFormatter_, outer$)
 }
 
-@implementation CucumberRuntimeFormatterPrettyFormatter_6
+@implementation CCBRPrettyFormatter_6
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$ {
-  CucumberRuntimeFormatterPrettyFormatter_6_initWithCucumberRuntimeFormatterPrettyFormatter_(self, outer$);
+- (instancetype __nonnull)initWithCCBRPrettyFormatter:(CCBRPrettyFormatter *)outer$ {
+  CCBRPrettyFormatter_6_initWithCCBRPrettyFormatter_(self, outer$);
   return self;
 }
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepFinished *)event {
-  CucumberRuntimeFormatterPrettyFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(this$0_, event);
+- (void)receiveWithCCBEvent:(CCBTestStepFinished *)event {
+  CCBRPrettyFormatter_handleTestStepFinishedWithCCBTestStepFinished_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -1168,41 +1168,41 @@ CucumberRuntimeFormatterPrettyFormatter_5 *create_CucumberRuntimeFormatterPretty
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeFormatterPrettyFormatter:);
-  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
+  methods[0].selector = @selector(initWithCCBRPrettyFormatter:);
+  methods[1].selector = @selector(receiveWithCCBEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LCucumberRuntimeFormatterPrettyFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "this$0_", "LCCBRPrettyFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestStepFinished;", "LCucumberRuntimeFormatterPrettyFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterPrettyFormatter_6 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeFormatterPrettyFormatter_6;
+  static const void *ptrTable[] = { "receive", "LCCBTestStepFinished;", "LCCBRPrettyFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;" };
+  static const J2ObjcClassInfo _CCBRPrettyFormatter_6 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
+  return &_CCBRPrettyFormatter_6;
 }
 
 @end
 
-void CucumberRuntimeFormatterPrettyFormatter_6_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter_6 *self, CucumberRuntimeFormatterPrettyFormatter *outer$) {
+void CCBRPrettyFormatter_6_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter_6 *self, CCBRPrettyFormatter *outer$) {
   JreStrongAssign(&self->this$0_, outer$);
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterPrettyFormatter_6 *new_CucumberRuntimeFormatterPrettyFormatter_6_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterPrettyFormatter_6, initWithCucumberRuntimeFormatterPrettyFormatter_, outer$)
+CCBRPrettyFormatter_6 *new_CCBRPrettyFormatter_6_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$) {
+  J2OBJC_NEW_IMPL(CCBRPrettyFormatter_6, initWithCCBRPrettyFormatter_, outer$)
 }
 
-CucumberRuntimeFormatterPrettyFormatter_6 *create_CucumberRuntimeFormatterPrettyFormatter_6_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterPrettyFormatter_6, initWithCucumberRuntimeFormatterPrettyFormatter_, outer$)
+CCBRPrettyFormatter_6 *create_CCBRPrettyFormatter_6_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRPrettyFormatter_6, initWithCCBRPrettyFormatter_, outer$)
 }
 
-@implementation CucumberRuntimeFormatterPrettyFormatter_7
+@implementation CCBRPrettyFormatter_7
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$ {
-  CucumberRuntimeFormatterPrettyFormatter_7_initWithCucumberRuntimeFormatterPrettyFormatter_(self, outer$);
+- (instancetype __nonnull)initWithCCBRPrettyFormatter:(CCBRPrettyFormatter *)outer$ {
+  CCBRPrettyFormatter_7_initWithCCBRPrettyFormatter_(self, outer$);
   return self;
 }
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventWriteEvent *)event {
-  CucumberRuntimeFormatterPrettyFormatter_handleWriteWithCucumberApiEventWriteEvent_(this$0_, event);
+- (void)receiveWithCCBEvent:(CCBWriteEvent *)event {
+  CCBRPrettyFormatter_handleWriteWithCCBWriteEvent_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -1218,41 +1218,41 @@ CucumberRuntimeFormatterPrettyFormatter_6 *create_CucumberRuntimeFormatterPretty
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeFormatterPrettyFormatter:);
-  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
+  methods[0].selector = @selector(initWithCCBRPrettyFormatter:);
+  methods[1].selector = @selector(receiveWithCCBEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LCucumberRuntimeFormatterPrettyFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "this$0_", "LCCBRPrettyFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCucumberApiEventWriteEvent;", "LCucumberRuntimeFormatterPrettyFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterPrettyFormatter_7 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeFormatterPrettyFormatter_7;
+  static const void *ptrTable[] = { "receive", "LCCBWriteEvent;", "LCCBRPrettyFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;" };
+  static const J2ObjcClassInfo _CCBRPrettyFormatter_7 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
+  return &_CCBRPrettyFormatter_7;
 }
 
 @end
 
-void CucumberRuntimeFormatterPrettyFormatter_7_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter_7 *self, CucumberRuntimeFormatterPrettyFormatter *outer$) {
+void CCBRPrettyFormatter_7_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter_7 *self, CCBRPrettyFormatter *outer$) {
   JreStrongAssign(&self->this$0_, outer$);
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterPrettyFormatter_7 *new_CucumberRuntimeFormatterPrettyFormatter_7_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterPrettyFormatter_7, initWithCucumberRuntimeFormatterPrettyFormatter_, outer$)
+CCBRPrettyFormatter_7 *new_CCBRPrettyFormatter_7_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$) {
+  J2OBJC_NEW_IMPL(CCBRPrettyFormatter_7, initWithCCBRPrettyFormatter_, outer$)
 }
 
-CucumberRuntimeFormatterPrettyFormatter_7 *create_CucumberRuntimeFormatterPrettyFormatter_7_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterPrettyFormatter_7, initWithCucumberRuntimeFormatterPrettyFormatter_, outer$)
+CCBRPrettyFormatter_7 *create_CCBRPrettyFormatter_7_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRPrettyFormatter_7, initWithCCBRPrettyFormatter_, outer$)
 }
 
-@implementation CucumberRuntimeFormatterPrettyFormatter_8
+@implementation CCBRPrettyFormatter_8
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterPrettyFormatter:(CucumberRuntimeFormatterPrettyFormatter *)outer$ {
-  CucumberRuntimeFormatterPrettyFormatter_8_initWithCucumberRuntimeFormatterPrettyFormatter_(self, outer$);
+- (instancetype __nonnull)initWithCCBRPrettyFormatter:(CCBRPrettyFormatter *)outer$ {
+  CCBRPrettyFormatter_8_initWithCCBRPrettyFormatter_(self, outer$);
   return self;
 }
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event {
-  CucumberRuntimeFormatterPrettyFormatter_finishReport(this$0_);
+- (void)receiveWithCCBEvent:(CCBTestRunFinished *)event {
+  CCBRPrettyFormatter_finishReport(this$0_);
 }
 
 - (void)dealloc {
@@ -1268,28 +1268,28 @@ CucumberRuntimeFormatterPrettyFormatter_7 *create_CucumberRuntimeFormatterPretty
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeFormatterPrettyFormatter:);
-  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
+  methods[0].selector = @selector(initWithCCBRPrettyFormatter:);
+  methods[1].selector = @selector(receiveWithCCBEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LCucumberRuntimeFormatterPrettyFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "this$0_", "LCCBRPrettyFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestRunFinished;", "LCucumberRuntimeFormatterPrettyFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterPrettyFormatter_8 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeFormatterPrettyFormatter_8;
+  static const void *ptrTable[] = { "receive", "LCCBTestRunFinished;", "LCCBRPrettyFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
+  static const J2ObjcClassInfo _CCBRPrettyFormatter_8 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
+  return &_CCBRPrettyFormatter_8;
 }
 
 @end
 
-void CucumberRuntimeFormatterPrettyFormatter_8_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter_8 *self, CucumberRuntimeFormatterPrettyFormatter *outer$) {
+void CCBRPrettyFormatter_8_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter_8 *self, CCBRPrettyFormatter *outer$) {
   JreStrongAssign(&self->this$0_, outer$);
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterPrettyFormatter_8 *new_CucumberRuntimeFormatterPrettyFormatter_8_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterPrettyFormatter_8, initWithCucumberRuntimeFormatterPrettyFormatter_, outer$)
+CCBRPrettyFormatter_8 *new_CCBRPrettyFormatter_8_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$) {
+  J2OBJC_NEW_IMPL(CCBRPrettyFormatter_8, initWithCCBRPrettyFormatter_, outer$)
 }
 
-CucumberRuntimeFormatterPrettyFormatter_8 *create_CucumberRuntimeFormatterPrettyFormatter_8_initWithCucumberRuntimeFormatterPrettyFormatter_(CucumberRuntimeFormatterPrettyFormatter *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterPrettyFormatter_8, initWithCucumberRuntimeFormatterPrettyFormatter_, outer$)
+CCBRPrettyFormatter_8 *create_CCBRPrettyFormatter_8_initWithCCBRPrettyFormatter_(CCBRPrettyFormatter *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRPrettyFormatter_8, initWithCCBRPrettyFormatter_, outer$)
 }

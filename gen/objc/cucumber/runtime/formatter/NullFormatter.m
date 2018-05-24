@@ -7,16 +7,16 @@
 #include "cucumber/api/event/EventPublisher.h"
 #include "cucumber/runtime/formatter/NullFormatter.h"
 
-@implementation CucumberRuntimeFormatterNullFormatter
+@implementation CCBRNullFormatter
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeFormatterNullFormatter_init(self);
+  CCBRNullFormatter_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher {
+- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher {
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -28,25 +28,25 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
+  methods[1].selector = @selector(setEventPublisherWithCCBEventPublisher:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "setEventPublisher", "LCucumberApiEventEventPublisher;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterNullFormatter = { "NullFormatter", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x10, 2, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeFormatterNullFormatter;
+  static const void *ptrTable[] = { "setEventPublisher", "LCCBEventPublisher;" };
+  static const J2ObjcClassInfo _CCBRNullFormatter = { "NullFormatter", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x10, 2, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRNullFormatter;
 }
 
 @end
 
-void CucumberRuntimeFormatterNullFormatter_init(CucumberRuntimeFormatterNullFormatter *self) {
+void CCBRNullFormatter_init(CCBRNullFormatter *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterNullFormatter *new_CucumberRuntimeFormatterNullFormatter_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterNullFormatter, init)
+CCBRNullFormatter *new_CCBRNullFormatter_init() {
+  J2OBJC_NEW_IMPL(CCBRNullFormatter, init)
 }
 
-CucumberRuntimeFormatterNullFormatter *create_CucumberRuntimeFormatterNullFormatter_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterNullFormatter, init)
+CCBRNullFormatter *create_CCBRNullFormatter_init() {
+  J2OBJC_CREATE_IMPL(CCBRNullFormatter, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterNullFormatter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRNullFormatter)

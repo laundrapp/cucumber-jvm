@@ -18,32 +18,32 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeJavaJavaStepDefinition_) && (INCLUDE_ALL_CucumberRuntimeJavaJavaStepDefinition || defined(INCLUDE_CucumberRuntimeJavaJavaStepDefinition))
-#define CucumberRuntimeJavaJavaStepDefinition_
+#if !defined (CCBJavaStepDefinition_) && (INCLUDE_ALL_CucumberRuntimeJavaJavaStepDefinition || defined(INCLUDE_CCBJavaStepDefinition))
+#define CCBJavaStepDefinition_
 
 #define RESTRICT_CucumberRuntimeStepDefinition 1
-#define INCLUDE_CucumberRuntimeStepDefinition 1
+#define INCLUDE_CCBRStepDefinition 1
 #include "cucumber/runtime/StepDefinition.h"
 
-@class CucumberRuntimeParameterInfo;
+@class CCBRParameterInfo;
 @class GherkinPicklesPickleStep;
 @class IOSObjectArray;
 @class JavaLangInteger;
 @class JavaLangReflectMethod;
 @class JavaLangStackTraceElement;
 @class JavaUtilRegexPattern;
-@protocol CucumberApiJavaObjectFactory;
+@protocol CCBObjectFactory;
 @protocol JavaLangReflectType;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeJavaJavaStepDefinition : NSObject < CucumberRuntimeStepDefinition >
+@interface CCBJavaStepDefinition : NSObject < CCBRStepDefinition >
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithJavaLangReflectMethod:(JavaLangReflectMethod *)method
                                withJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern
                                                withLong:(jlong)timeoutMillis
-                       withCucumberApiJavaObjectFactory:(id<CucumberApiJavaObjectFactory>)objectFactory;
+                                   withCCBObjectFactory:(id<CCBObjectFactory>)objectFactory;
 
 - (void)executeWithNSString:(NSString *)language
           withNSObjectArray:(IOSObjectArray *)args;
@@ -52,8 +52,8 @@
 
 - (JavaLangInteger *)getParameterCount;
 
-- (CucumberRuntimeParameterInfo *)getParameterTypeWithInt:(jint)n
-                                  withJavaLangReflectType:(id<JavaLangReflectType>)argumentType;
+- (CCBRParameterInfo *)getParameterTypeWithInt:(jint)n
+                       withJavaLangReflectType:(id<JavaLangReflectType>)argumentType;
 
 - (NSString *)getPattern;
 
@@ -69,15 +69,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeJavaJavaStepDefinition)
+J2OBJC_EMPTY_STATIC_INIT(CCBJavaStepDefinition)
 
-FOUNDATION_EXPORT void CucumberRuntimeJavaJavaStepDefinition_initWithJavaLangReflectMethod_withJavaUtilRegexPattern_withLong_withCucumberApiJavaObjectFactory_(CucumberRuntimeJavaJavaStepDefinition *self, JavaLangReflectMethod *method, JavaUtilRegexPattern *pattern, jlong timeoutMillis, id<CucumberApiJavaObjectFactory> objectFactory);
+FOUNDATION_EXPORT void CCBJavaStepDefinition_initWithJavaLangReflectMethod_withJavaUtilRegexPattern_withLong_withCCBObjectFactory_(CCBJavaStepDefinition *self, JavaLangReflectMethod *method, JavaUtilRegexPattern *pattern, jlong timeoutMillis, id<CCBObjectFactory> objectFactory);
 
-FOUNDATION_EXPORT CucumberRuntimeJavaJavaStepDefinition *new_CucumberRuntimeJavaJavaStepDefinition_initWithJavaLangReflectMethod_withJavaUtilRegexPattern_withLong_withCucumberApiJavaObjectFactory_(JavaLangReflectMethod *method, JavaUtilRegexPattern *pattern, jlong timeoutMillis, id<CucumberApiJavaObjectFactory> objectFactory) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBJavaStepDefinition *new_CCBJavaStepDefinition_initWithJavaLangReflectMethod_withJavaUtilRegexPattern_withLong_withCCBObjectFactory_(JavaLangReflectMethod *method, JavaUtilRegexPattern *pattern, jlong timeoutMillis, id<CCBObjectFactory> objectFactory) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeJavaJavaStepDefinition *create_CucumberRuntimeJavaJavaStepDefinition_initWithJavaLangReflectMethod_withJavaUtilRegexPattern_withLong_withCucumberApiJavaObjectFactory_(JavaLangReflectMethod *method, JavaUtilRegexPattern *pattern, jlong timeoutMillis, id<CucumberApiJavaObjectFactory> objectFactory);
+FOUNDATION_EXPORT CCBJavaStepDefinition *create_CCBJavaStepDefinition_initWithJavaLangReflectMethod_withJavaUtilRegexPattern_withLong_withCCBObjectFactory_(JavaLangReflectMethod *method, JavaUtilRegexPattern *pattern, jlong timeoutMillis, id<CCBObjectFactory> objectFactory);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeJavaJavaStepDefinition)
+J2OBJC_TYPE_LITERAL_HEADER(CCBJavaStepDefinition)
+
+@compatibility_alias CucumberRuntimeJavaJavaStepDefinition CCBJavaStepDefinition;
 
 #endif
 

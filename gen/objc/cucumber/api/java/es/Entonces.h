@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaEsEntonces_) && (INCLUDE_ALL_CucumberApiJavaEsEntonces || defined(INCLUDE_CucumberApiJavaEsEntonces))
-#define CucumberApiJavaEsEntonces_
+#if !defined (CCBEntonces_) && (INCLUDE_ALL_CucumberApiJavaEsEntonces || defined(INCLUDE_CCBEntonces))
+#define CCBEntonces_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaEsEntonces < JavaLangAnnotationAnnotation >
+@protocol CCBEntonces < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaEsEntonces : NSObject < CucumberApiJavaEsEntonces > {
+@interface CCBEntonces : NSObject < CCBEntonces > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEsEntonces)
+J2OBJC_EMPTY_STATIC_INIT(CCBEntonces)
 
-FOUNDATION_EXPORT id<CucumberApiJavaEsEntonces> create_CucumberApiJavaEsEntonces(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBEntonces> create_CCBEntonces(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEsEntonces)
+J2OBJC_TYPE_LITERAL_HEADER(CCBEntonces)
+
+#define CucumberApiJavaEsEntonces CCBEntonces
 
 #endif
 

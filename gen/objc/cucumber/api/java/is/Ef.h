@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaIsEf_) && (INCLUDE_ALL_CucumberApiJavaIsEf || defined(INCLUDE_CucumberApiJavaIsEf))
-#define CucumberApiJavaIsEf_
+#if !defined (CCBEf_) && (INCLUDE_ALL_CucumberApiJavaIsEf || defined(INCLUDE_CCBEf))
+#define CCBEf_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaIsEf < JavaLangAnnotationAnnotation >
+@protocol CCBEf < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaIsEf : NSObject < CucumberApiJavaIsEf > {
+@interface CCBEf : NSObject < CCBEf > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaIsEf)
+J2OBJC_EMPTY_STATIC_INIT(CCBEf)
 
-FOUNDATION_EXPORT id<CucumberApiJavaIsEf> create_CucumberApiJavaIsEf(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBEf> create_CCBEf(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaIsEf)
+J2OBJC_TYPE_LITERAL_HEADER(CCBEf)
+
+#define CucumberApiJavaIsEf CCBEf
 
 #endif
 

@@ -18,14 +18,14 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiTestCase_) && (INCLUDE_ALL_CucumberApiTestCase || defined(INCLUDE_CucumberApiTestCase))
-#define CucumberApiTestCase_
+#if !defined (CCBTestCase_) && (INCLUDE_ALL_CucumberApiTestCase || defined(INCLUDE_CCBTestCase))
+#define CCBTestCase_
 
 @class CucumberRunnerEventBus;
 @class GherkinEventsPickleEvent;
 @protocol JavaUtilList;
 
-@interface CucumberApiTestCase : NSObject
+@interface CCBTestCase : NSObject
 
 #pragma mark Public
 
@@ -71,21 +71,23 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiTestCase)
+J2OBJC_EMPTY_STATIC_INIT(CCBTestCase)
 
-FOUNDATION_EXPORT void CucumberApiTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_(CucumberApiTestCase *self, id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent);
+FOUNDATION_EXPORT void CCBTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_(CCBTestCase *self, id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent);
 
-FOUNDATION_EXPORT CucumberApiTestCase *new_CucumberApiTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_(id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBTestCase *new_CCBTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_(id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberApiTestCase *create_CucumberApiTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_(id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent);
+FOUNDATION_EXPORT CCBTestCase *create_CCBTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_(id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent);
 
-FOUNDATION_EXPORT void CucumberApiTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_(CucumberApiTestCase *self, id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent, jboolean dryRun);
+FOUNDATION_EXPORT void CCBTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_(CCBTestCase *self, id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent, jboolean dryRun);
 
-FOUNDATION_EXPORT CucumberApiTestCase *new_CucumberApiTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_(id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent, jboolean dryRun) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBTestCase *new_CCBTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_(id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent, jboolean dryRun) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberApiTestCase *create_CucumberApiTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_(id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent, jboolean dryRun);
+FOUNDATION_EXPORT CCBTestCase *create_CCBTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_(id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent, jboolean dryRun);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiTestCase)
+J2OBJC_TYPE_LITERAL_HEADER(CCBTestCase)
+
+@compatibility_alias CucumberApiTestCase CCBTestCase;
 
 #endif
 

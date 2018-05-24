@@ -9,7 +9,7 @@
 #include "java/util/zip/ZipEntry.h"
 #include "java/util/zip/ZipFile.h"
 
-@interface CucumberRuntimeIoZipResource () {
+@interface CCBRZipResource () {
  @public
   JavaUtilZipZipFile *jarFile_;
   JavaUtilZipZipEntry *jarEntry_;
@@ -17,14 +17,14 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoZipResource, jarFile_, JavaUtilZipZipFile *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoZipResource, jarEntry_, JavaUtilZipZipEntry *)
+J2OBJC_FIELD_SETTER(CCBRZipResource, jarFile_, JavaUtilZipZipFile *)
+J2OBJC_FIELD_SETTER(CCBRZipResource, jarEntry_, JavaUtilZipZipEntry *)
 
-@implementation CucumberRuntimeIoZipResource
+@implementation CCBRZipResource
 
 - (instancetype __nonnull)initWithJavaUtilZipZipFile:(JavaUtilZipZipFile *)jarFile
                              withJavaUtilZipZipEntry:(JavaUtilZipZipEntry *)jarEntry {
-  CucumberRuntimeIoZipResource_initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_(self, jarFile, jarEntry);
+  CCBRZipResource_initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_(self, jarFile, jarEntry);
   return self;
 }
 
@@ -73,24 +73,24 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeIoZipResource, jarEntry_, JavaUtilZipZipEntry
     { "jarEntry_", "LJavaUtilZipZipEntry;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LJavaUtilZipZipFile;LJavaUtilZipZipEntry;", "LJavaIoIOException;", "getClassName", "LNSString;" };
-  static const J2ObjcClassInfo _CucumberRuntimeIoZipResource = { "ZipResource", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 5, 2, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeIoZipResource;
+  static const J2ObjcClassInfo _CCBRZipResource = { "ZipResource", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 5, 2, -1, -1, -1, -1, -1 };
+  return &_CCBRZipResource;
 }
 
 @end
 
-void CucumberRuntimeIoZipResource_initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_(CucumberRuntimeIoZipResource *self, JavaUtilZipZipFile *jarFile, JavaUtilZipZipEntry *jarEntry) {
+void CCBRZipResource_initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_(CCBRZipResource *self, JavaUtilZipZipFile *jarFile, JavaUtilZipZipEntry *jarEntry) {
   NSObject_init(self);
   JreStrongAssign(&self->jarFile_, jarFile);
   JreStrongAssign(&self->jarEntry_, jarEntry);
 }
 
-CucumberRuntimeIoZipResource *new_CucumberRuntimeIoZipResource_initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_(JavaUtilZipZipFile *jarFile, JavaUtilZipZipEntry *jarEntry) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeIoZipResource, initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_, jarFile, jarEntry)
+CCBRZipResource *new_CCBRZipResource_initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_(JavaUtilZipZipFile *jarFile, JavaUtilZipZipEntry *jarEntry) {
+  J2OBJC_NEW_IMPL(CCBRZipResource, initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_, jarFile, jarEntry)
 }
 
-CucumberRuntimeIoZipResource *create_CucumberRuntimeIoZipResource_initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_(JavaUtilZipZipFile *jarFile, JavaUtilZipZipEntry *jarEntry) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeIoZipResource, initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_, jarFile, jarEntry)
+CCBRZipResource *create_CCBRZipResource_initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_(JavaUtilZipZipFile *jarFile, JavaUtilZipZipEntry *jarEntry) {
+  J2OBJC_CREATE_IMPL(CCBRZipResource, initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_, jarFile, jarEntry)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoZipResource)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRZipResource)

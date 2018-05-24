@@ -12,24 +12,24 @@
 #include "cucumber/runtime/xstream/SingleValueConverterWrapperExt.h"
 #include "java/util/Locale.h"
 
-@interface CucumberRuntimeXstreamDynamicEnumConverter () {
+@interface CCBRDynamicEnumConverter () {
  @public
   JavaUtilLocale *locale_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamDynamicEnumConverter, locale_, JavaUtilLocale *)
+J2OBJC_FIELD_SETTER(CCBRDynamicEnumConverter, locale_, JavaUtilLocale *)
 
-@implementation CucumberRuntimeXstreamDynamicEnumConverter
+@implementation CCBRDynamicEnumConverter
 
 - (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale {
-  CucumberRuntimeXstreamDynamicEnumConverter_initWithJavaUtilLocale_(self, locale);
+  CCBRDynamicEnumConverter_initWithJavaUtilLocale_(self, locale);
   return self;
 }
 
 - (CucumberDepsComThoughtworksXstreamConvertersSingleValueConverterWrapper *)converterForClassWithIOSClass:(IOSClass *)type {
-  return create_CucumberRuntimeXstreamSingleValueConverterWrapperExt_initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(create_CucumberRuntimeXstreamConverterWithEnumFormat_initWithJavaUtilLocale_withIOSClass_(locale_, type));
+  return create_CCBRSingleValueConverterWrapperExt_initWithCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(create_CCBRConverterWithEnumFormat_initWithJavaUtilLocale_withIOSClass_(locale_, type));
 }
 
 - (jboolean)canConvertWithIOSClass:(IOSClass *)type {
@@ -58,23 +58,23 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamDynamicEnumConverter, locale_, JavaUti
     { "locale_", "LJavaUtilLocale;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LJavaUtilLocale;", "converterForClass", "LIOSClass;", "canConvert" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamDynamicEnumConverter = { "DynamicEnumConverter", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x0, 3, 1, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeXstreamDynamicEnumConverter;
+  static const J2ObjcClassInfo _CCBRDynamicEnumConverter = { "DynamicEnumConverter", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x0, 3, 1, -1, -1, -1, -1, -1 };
+  return &_CCBRDynamicEnumConverter;
 }
 
 @end
 
-void CucumberRuntimeXstreamDynamicEnumConverter_initWithJavaUtilLocale_(CucumberRuntimeXstreamDynamicEnumConverter *self, JavaUtilLocale *locale) {
-  CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter_init(self);
+void CCBRDynamicEnumConverter_initWithJavaUtilLocale_(CCBRDynamicEnumConverter *self, JavaUtilLocale *locale) {
+  CCBRDynamicClassBasedSingleValueConverter_init(self);
   JreStrongAssign(&self->locale_, locale);
 }
 
-CucumberRuntimeXstreamDynamicEnumConverter *new_CucumberRuntimeXstreamDynamicEnumConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamDynamicEnumConverter, initWithJavaUtilLocale_, locale)
+CCBRDynamicEnumConverter *new_CCBRDynamicEnumConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
+  J2OBJC_NEW_IMPL(CCBRDynamicEnumConverter, initWithJavaUtilLocale_, locale)
 }
 
-CucumberRuntimeXstreamDynamicEnumConverter *create_CucumberRuntimeXstreamDynamicEnumConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamDynamicEnumConverter, initWithJavaUtilLocale_, locale)
+CCBRDynamicEnumConverter *create_CCBRDynamicEnumConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
+  J2OBJC_CREATE_IMPL(CCBRDynamicEnumConverter, initWithJavaUtilLocale_, locale)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamDynamicEnumConverter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRDynamicEnumConverter)

@@ -16,33 +16,33 @@
 #include "java/util/zip/ZipEntry.h"
 #include "java/util/zip/ZipFile.h"
 
-@interface CucumberRuntimeIoZipResourceIterator () {
+@interface CCBRZipResourceIterator () {
  @public
   NSString *path_;
   NSString *suffix_;
   JavaUtilZipZipFile *jarFile_;
   id<JavaUtilEnumeration> entries_;
-  id<CucumberRuntimeIoResource> next_;
+  id<CCBRResource> next_;
 }
 
 - (void)moveToNext;
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoZipResourceIterator, path_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoZipResourceIterator, suffix_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoZipResourceIterator, jarFile_, JavaUtilZipZipFile *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoZipResourceIterator, entries_, id<JavaUtilEnumeration>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoZipResourceIterator, next_, id<CucumberRuntimeIoResource>)
+J2OBJC_FIELD_SETTER(CCBRZipResourceIterator, path_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRZipResourceIterator, suffix_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRZipResourceIterator, jarFile_, JavaUtilZipZipFile *)
+J2OBJC_FIELD_SETTER(CCBRZipResourceIterator, entries_, id<JavaUtilEnumeration>)
+J2OBJC_FIELD_SETTER(CCBRZipResourceIterator, next_, id<CCBRResource>)
 
-__attribute__((unused)) static void CucumberRuntimeIoZipResourceIterator_moveToNext(CucumberRuntimeIoZipResourceIterator *self);
+__attribute__((unused)) static void CCBRZipResourceIterator_moveToNext(CCBRZipResourceIterator *self);
 
-@implementation CucumberRuntimeIoZipResourceIterator
+@implementation CCBRZipResourceIterator
 
 - (instancetype __nonnull)initWithNSString:(NSString *)zipPath
                               withNSString:(NSString *)path
                               withNSString:(NSString *)suffix {
-  CucumberRuntimeIoZipResourceIterator_initWithNSString_withNSString_withNSString_(self, zipPath, path, suffix);
+  CCBRZipResourceIterator_initWithNSString_withNSString_withNSString_(self, zipPath, path, suffix);
   return self;
 }
 
@@ -50,7 +50,7 @@ __attribute__((unused)) static void CucumberRuntimeIoZipResourceIterator_moveToN
   return next_ != nil;
 }
 
-- (id<CucumberRuntimeIoResource>)next {
+- (id<CCBRResource>)next {
   @try {
     if (next_ == nil) {
       @throw create_JavaUtilNoSuchElementException_init();
@@ -58,7 +58,7 @@ __attribute__((unused)) static void CucumberRuntimeIoZipResourceIterator_moveToN
     return next_;
   }
   @finally {
-    CucumberRuntimeIoZipResourceIterator_moveToNext(self);
+    CCBRZipResourceIterator_moveToNext(self);
   }
 }
 
@@ -67,7 +67,7 @@ __attribute__((unused)) static void CucumberRuntimeIoZipResourceIterator_moveToN
 }
 
 - (void)moveToNext {
-  CucumberRuntimeIoZipResourceIterator_moveToNext(self);
+  CCBRZipResourceIterator_moveToNext(self);
 }
 
 - (void)forEachRemainingWithJavaUtilFunctionConsumer:(id<JavaUtilFunctionConsumer>)arg0 {
@@ -87,7 +87,7 @@ __attribute__((unused)) static void CucumberRuntimeIoZipResourceIterator_moveToN
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, 0, 1, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LCucumberRuntimeIoResource;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCCBRResource;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
   };
@@ -105,42 +105,42 @@ __attribute__((unused)) static void CucumberRuntimeIoZipResourceIterator_moveToN
     { "suffix_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "jarFile_", "LJavaUtilZipZipFile;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "entries_", "LJavaUtilEnumeration;", .constantValue.asLong = 0, 0x12, -1, -1, 2, -1 },
-    { "next_", "LCucumberRuntimeIoResource;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "next_", "LCCBRResource;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LNSString;LNSString;LNSString;", "LJavaIoIOException;", "Ljava/util/Enumeration<+Ljava/util/zip/ZipEntry;>;", "Ljava/lang/Object;Ljava/util/Iterator<Lcucumber/runtime/io/Resource;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeIoZipResourceIterator = { "ZipResourceIterator", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 5, 5, -1, -1, -1, 3, -1 };
-  return &_CucumberRuntimeIoZipResourceIterator;
+  static const J2ObjcClassInfo _CCBRZipResourceIterator = { "ZipResourceIterator", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 5, 5, -1, -1, -1, 3, -1 };
+  return &_CCBRZipResourceIterator;
 }
 
 @end
 
-void CucumberRuntimeIoZipResourceIterator_initWithNSString_withNSString_withNSString_(CucumberRuntimeIoZipResourceIterator *self, NSString *zipPath, NSString *path, NSString *suffix) {
+void CCBRZipResourceIterator_initWithNSString_withNSString_withNSString_(CCBRZipResourceIterator *self, NSString *zipPath, NSString *path, NSString *suffix) {
   NSObject_init(self);
   JreStrongAssign(&self->path_, path);
   JreStrongAssign(&self->suffix_, suffix);
   JreStrongAssignAndConsume(&self->jarFile_, new_JavaUtilZipZipFile_initWithNSString_(zipPath));
   JreStrongAssign(&self->entries_, [self->jarFile_ entries]);
-  CucumberRuntimeIoZipResourceIterator_moveToNext(self);
+  CCBRZipResourceIterator_moveToNext(self);
 }
 
-CucumberRuntimeIoZipResourceIterator *new_CucumberRuntimeIoZipResourceIterator_initWithNSString_withNSString_withNSString_(NSString *zipPath, NSString *path, NSString *suffix) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeIoZipResourceIterator, initWithNSString_withNSString_withNSString_, zipPath, path, suffix)
+CCBRZipResourceIterator *new_CCBRZipResourceIterator_initWithNSString_withNSString_withNSString_(NSString *zipPath, NSString *path, NSString *suffix) {
+  J2OBJC_NEW_IMPL(CCBRZipResourceIterator, initWithNSString_withNSString_withNSString_, zipPath, path, suffix)
 }
 
-CucumberRuntimeIoZipResourceIterator *create_CucumberRuntimeIoZipResourceIterator_initWithNSString_withNSString_withNSString_(NSString *zipPath, NSString *path, NSString *suffix) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeIoZipResourceIterator, initWithNSString_withNSString_withNSString_, zipPath, path, suffix)
+CCBRZipResourceIterator *create_CCBRZipResourceIterator_initWithNSString_withNSString_withNSString_(NSString *zipPath, NSString *path, NSString *suffix) {
+  J2OBJC_CREATE_IMPL(CCBRZipResourceIterator, initWithNSString_withNSString_withNSString_, zipPath, path, suffix)
 }
 
-void CucumberRuntimeIoZipResourceIterator_moveToNext(CucumberRuntimeIoZipResourceIterator *self) {
+void CCBRZipResourceIterator_moveToNext(CCBRZipResourceIterator *self) {
   JreStrongAssign(&self->next_, nil);
   while ([((id<JavaUtilEnumeration>) nil_chk(self->entries_)) hasMoreElements]) {
     JavaUtilZipZipEntry *jarEntry = [self->entries_ nextElement];
     NSString *entryName = [((JavaUtilZipZipEntry *) nil_chk(jarEntry)) getName];
-    if ([((NSString *) nil_chk(entryName)) java_hasPrefix:self->path_] && CucumberRuntimeIoHelpers_hasSuffixWithNSString_withNSString_(self->suffix_, entryName)) {
-      JreStrongAssignAndConsume(&self->next_, new_CucumberRuntimeIoZipResource_initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_(self->jarFile_, jarEntry));
+    if ([((NSString *) nil_chk(entryName)) java_hasPrefix:self->path_] && CCBRHelpers_hasSuffixWithNSString_withNSString_(self->suffix_, entryName)) {
+      JreStrongAssignAndConsume(&self->next_, new_CCBRZipResource_initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_(self->jarFile_, jarEntry));
       break;
     }
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoZipResourceIterator)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRZipResourceIterator)

@@ -18,49 +18,49 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeJavaJavaBackend_) && (INCLUDE_ALL_CucumberRuntimeJavaJavaBackend || defined(INCLUDE_CucumberRuntimeJavaJavaBackend))
-#define CucumberRuntimeJavaJavaBackend_
+#if !defined (CCBJavaBackend_) && (INCLUDE_ALL_CucumberRuntimeJavaJavaBackend || defined(INCLUDE_CCBJavaBackend))
+#define CCBJavaBackend_
 
 #define RESTRICT_CucumberRuntimeBackend 1
-#define INCLUDE_CucumberRuntimeBackend 1
+#define INCLUDE_CCBRBackend 1
 #include "cucumber/runtime/Backend.h"
 
 #define RESTRICT_CucumberRuntimeJavaLambdaGlueRegistry 1
-#define INCLUDE_CucumberRuntimeJavaLambdaGlueRegistry 1
+#define INCLUDE_CCBLambdaGlueRegistry 1
 #include "cucumber/runtime/java/LambdaGlueRegistry.h"
 
-@class CucumberRuntimeSnippetsFunctionNameGenerator;
+@class CCBFunctionNameGenerator;
 @class GherkinPicklesPickleStep;
 @class IOSClass;
 @class JavaLangReflectMethod;
-@protocol CucumberApiJavaObjectFactory;
-@protocol CucumberRuntimeClassFinder;
-@protocol CucumberRuntimeGlue;
-@protocol CucumberRuntimeHookDefinition;
-@protocol CucumberRuntimeIoResourceLoader;
-@protocol CucumberRuntimeStepDefinition;
-@protocol CucumberRuntimeUnreportedStepExecutor;
+@protocol CCBObjectFactory;
+@protocol CCBRClassFinder;
+@protocol CCBRGlue;
+@protocol CCBRHookDefinition;
+@protocol CCBRStepDefinition;
+@protocol CCBRUnreportedStepExecutor;
+@protocol CCBResourceLoader;
 @protocol JavaLangAnnotationAnnotation;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeJavaJavaBackend : NSObject < CucumberRuntimeBackend, CucumberRuntimeJavaLambdaGlueRegistry >
+@interface CCBJavaBackend : NSObject < CCBRBackend, CCBLambdaGlueRegistry >
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCucumberApiJavaObjectFactory:(id<CucumberApiJavaObjectFactory>)objectFactory
-                                withCucumberRuntimeClassFinder:(id<CucumberRuntimeClassFinder>)classFinder;
+- (instancetype __nonnull)initWithCCBObjectFactory:(id<CCBObjectFactory>)objectFactory
+                               withCCBRClassFinder:(id<CCBRClassFinder>)classFinder;
 
 /*!
  @brief The constructor called by reflection by default.
  @param resourceLoader
  */
-- (instancetype __nonnull)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader;
+- (instancetype __nonnull)initWithCCBResourceLoader:(id<CCBResourceLoader>)resourceLoader;
 
-- (void)addAfterHookDefinitionWithCucumberRuntimeHookDefinition:(id<CucumberRuntimeHookDefinition>)afterHook;
+- (void)addAfterHookDefinitionWithCCBRHookDefinition:(id<CCBRHookDefinition>)afterHook;
 
-- (void)addBeforeHookDefinitionWithCucumberRuntimeHookDefinition:(id<CucumberRuntimeHookDefinition>)beforeHook;
+- (void)addBeforeHookDefinitionWithCCBRHookDefinition:(id<CCBRHookDefinition>)beforeHook;
 
-- (void)addStepDefinitionWithCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)stepDefinition;
+- (void)addStepDefinitionWithCCBRStepDefinition:(id<CCBRStepDefinition>)stepDefinition;
 
 - (void)buildWorld;
 
@@ -68,10 +68,10 @@
 
 - (NSString *)getSnippetWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
                                         withNSString:(NSString *)keyword
-    withCucumberRuntimeSnippetsFunctionNameGenerator:(CucumberRuntimeSnippetsFunctionNameGenerator *)functionNameGenerator;
+                        withCCBFunctionNameGenerator:(CCBFunctionNameGenerator *)functionNameGenerator;
 
-- (void)loadGlueWithCucumberRuntimeGlue:(id<CucumberRuntimeGlue>)glue
-                       withJavaUtilList:(id<JavaUtilList>)gluePaths;
+- (void)loadGlueWithCCBRGlue:(id<CCBRGlue>)glue
+            withJavaUtilList:(id<JavaUtilList>)gluePaths;
 
 /*!
  @brief Convenience method for frameworks that wish to load glue from methods explicitly (possibly
@@ -80,11 +80,11 @@
  @param method a candidate method.
  @param glueCodeClass the class implementing the method. Must not be a subclass of the class implementing the method.
  */
-- (void)loadGlueWithCucumberRuntimeGlue:(id<CucumberRuntimeGlue>)glue
-              withJavaLangReflectMethod:(JavaLangReflectMethod *)method
-                           withIOSClass:(IOSClass *)glueCodeClass;
+- (void)loadGlueWithCCBRGlue:(id<CCBRGlue>)glue
+   withJavaLangReflectMethod:(JavaLangReflectMethod *)method
+                withIOSClass:(IOSClass *)glueCodeClass;
 
-- (void)setUnreportedStepExecutorWithCucumberRuntimeUnreportedStepExecutor:(id<CucumberRuntimeUnreportedStepExecutor>)executor;
+- (void)setUnreportedStepExecutorWithCCBRUnreportedStepExecutor:(id<CCBRUnreportedStepExecutor>)executor;
 
 #pragma mark Package-Private
 
@@ -100,21 +100,23 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeJavaJavaBackend)
+J2OBJC_EMPTY_STATIC_INIT(CCBJavaBackend)
 
-FOUNDATION_EXPORT void CucumberRuntimeJavaJavaBackend_initWithCucumberRuntimeIoResourceLoader_(CucumberRuntimeJavaJavaBackend *self, id<CucumberRuntimeIoResourceLoader> resourceLoader);
+FOUNDATION_EXPORT void CCBJavaBackend_initWithCCBResourceLoader_(CCBJavaBackend *self, id<CCBResourceLoader> resourceLoader);
 
-FOUNDATION_EXPORT CucumberRuntimeJavaJavaBackend *new_CucumberRuntimeJavaJavaBackend_initWithCucumberRuntimeIoResourceLoader_(id<CucumberRuntimeIoResourceLoader> resourceLoader) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBJavaBackend *new_CCBJavaBackend_initWithCCBResourceLoader_(id<CCBResourceLoader> resourceLoader) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeJavaJavaBackend *create_CucumberRuntimeJavaJavaBackend_initWithCucumberRuntimeIoResourceLoader_(id<CucumberRuntimeIoResourceLoader> resourceLoader);
+FOUNDATION_EXPORT CCBJavaBackend *create_CCBJavaBackend_initWithCCBResourceLoader_(id<CCBResourceLoader> resourceLoader);
 
-FOUNDATION_EXPORT void CucumberRuntimeJavaJavaBackend_initWithCucumberApiJavaObjectFactory_withCucumberRuntimeClassFinder_(CucumberRuntimeJavaJavaBackend *self, id<CucumberApiJavaObjectFactory> objectFactory, id<CucumberRuntimeClassFinder> classFinder);
+FOUNDATION_EXPORT void CCBJavaBackend_initWithCCBObjectFactory_withCCBRClassFinder_(CCBJavaBackend *self, id<CCBObjectFactory> objectFactory, id<CCBRClassFinder> classFinder);
 
-FOUNDATION_EXPORT CucumberRuntimeJavaJavaBackend *new_CucumberRuntimeJavaJavaBackend_initWithCucumberApiJavaObjectFactory_withCucumberRuntimeClassFinder_(id<CucumberApiJavaObjectFactory> objectFactory, id<CucumberRuntimeClassFinder> classFinder) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBJavaBackend *new_CCBJavaBackend_initWithCCBObjectFactory_withCCBRClassFinder_(id<CCBObjectFactory> objectFactory, id<CCBRClassFinder> classFinder) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeJavaJavaBackend *create_CucumberRuntimeJavaJavaBackend_initWithCucumberApiJavaObjectFactory_withCucumberRuntimeClassFinder_(id<CucumberApiJavaObjectFactory> objectFactory, id<CucumberRuntimeClassFinder> classFinder);
+FOUNDATION_EXPORT CCBJavaBackend *create_CCBJavaBackend_initWithCCBObjectFactory_withCCBRClassFinder_(id<CCBObjectFactory> objectFactory, id<CCBRClassFinder> classFinder);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeJavaJavaBackend)
+J2OBJC_TYPE_LITERAL_HEADER(CCBJavaBackend)
+
+@compatibility_alias CucumberRuntimeJavaJavaBackend CCBJavaBackend;
 
 #endif
 

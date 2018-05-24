@@ -18,12 +18,12 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeArgument_) && (INCLUDE_ALL_CucumberRuntimeArgument || defined(INCLUDE_CucumberRuntimeArgument))
-#define CucumberRuntimeArgument_
+#if !defined (CCBRArgument_) && (INCLUDE_ALL_CucumberRuntimeArgument || defined(INCLUDE_CCBRArgument))
+#define CCBRArgument_
 
 @class JavaLangInteger;
 
-@interface CucumberRuntimeArgument : NSObject
+@interface CCBRArgument : NSObject
 
 #pragma mark Public
 
@@ -42,15 +42,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeArgument)
+J2OBJC_EMPTY_STATIC_INIT(CCBRArgument)
 
-FOUNDATION_EXPORT void CucumberRuntimeArgument_initWithJavaLangInteger_withNSString_(CucumberRuntimeArgument *self, JavaLangInteger *offset, NSString *val);
+FOUNDATION_EXPORT void CCBRArgument_initWithJavaLangInteger_withNSString_(CCBRArgument *self, JavaLangInteger *offset, NSString *val);
 
-FOUNDATION_EXPORT CucumberRuntimeArgument *new_CucumberRuntimeArgument_initWithJavaLangInteger_withNSString_(JavaLangInteger *offset, NSString *val) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRArgument *new_CCBRArgument_initWithJavaLangInteger_withNSString_(JavaLangInteger *offset, NSString *val) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeArgument *create_CucumberRuntimeArgument_initWithJavaLangInteger_withNSString_(JavaLangInteger *offset, NSString *val);
+FOUNDATION_EXPORT CCBRArgument *create_CCBRArgument_initWithJavaLangInteger_withNSString_(JavaLangInteger *offset, NSString *val);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeArgument)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRArgument)
+
+@compatibility_alias CucumberRuntimeArgument CCBRArgument;
 
 #endif
 

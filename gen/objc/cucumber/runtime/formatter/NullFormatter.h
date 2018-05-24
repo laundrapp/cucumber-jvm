@@ -18,34 +18,36 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeFormatterNullFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterNullFormatter || defined(INCLUDE_CucumberRuntimeFormatterNullFormatter))
-#define CucumberRuntimeFormatterNullFormatter_
+#if !defined (CCBRNullFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterNullFormatter || defined(INCLUDE_CCBRNullFormatter))
+#define CCBRNullFormatter_
 
 #define RESTRICT_CucumberApiFormatterFormatter 1
-#define INCLUDE_CucumberApiFormatterFormatter 1
+#define INCLUDE_CCBFormatter 1
 #include "cucumber/api/formatter/Formatter.h"
 
-@protocol CucumberApiEventEventPublisher;
+@protocol CCBEventPublisher;
 
-@interface CucumberRuntimeFormatterNullFormatter : NSObject < CucumberApiFormatterFormatter >
+@interface CCBRNullFormatter : NSObject < CCBFormatter >
 
 #pragma mark Public
 
 - (instancetype __nonnull)init;
 
-- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
+- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterNullFormatter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRNullFormatter)
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterNullFormatter_init(CucumberRuntimeFormatterNullFormatter *self);
+FOUNDATION_EXPORT void CCBRNullFormatter_init(CCBRNullFormatter *self);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterNullFormatter *new_CucumberRuntimeFormatterNullFormatter_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRNullFormatter *new_CCBRNullFormatter_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterNullFormatter *create_CucumberRuntimeFormatterNullFormatter_init(void);
+FOUNDATION_EXPORT CCBRNullFormatter *create_CCBRNullFormatter_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterNullFormatter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRNullFormatter)
+
+@compatibility_alias CucumberRuntimeFormatterNullFormatter CCBRNullFormatter;
 
 #endif
 

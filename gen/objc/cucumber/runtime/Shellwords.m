@@ -10,35 +10,35 @@
 #include "java/util/regex/Matcher.h"
 #include "java/util/regex/Pattern.h"
 
-@interface CucumberRuntimeShellwords ()
+@interface CCBRShellwords ()
 
 - (instancetype __nonnull)init;
 
 @end
 
-inline JavaUtilRegexPattern *CucumberRuntimeShellwords_get_SHELLWORDS_PATTERN(void);
-static JavaUtilRegexPattern *CucumberRuntimeShellwords_SHELLWORDS_PATTERN;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeShellwords, SHELLWORDS_PATTERN, JavaUtilRegexPattern *)
+inline JavaUtilRegexPattern *CCBRShellwords_get_SHELLWORDS_PATTERN(void);
+static JavaUtilRegexPattern *CCBRShellwords_SHELLWORDS_PATTERN;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRShellwords, SHELLWORDS_PATTERN, JavaUtilRegexPattern *)
 
-__attribute__((unused)) static void CucumberRuntimeShellwords_init(CucumberRuntimeShellwords *self);
+__attribute__((unused)) static void CCBRShellwords_init(CCBRShellwords *self);
 
-__attribute__((unused)) static CucumberRuntimeShellwords *new_CucumberRuntimeShellwords_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRShellwords *new_CCBRShellwords_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeShellwords *create_CucumberRuntimeShellwords_init(void);
+__attribute__((unused)) static CCBRShellwords *create_CCBRShellwords_init(void);
 
-J2OBJC_INITIALIZED_DEFN(CucumberRuntimeShellwords)
+J2OBJC_INITIALIZED_DEFN(CCBRShellwords)
 
-@implementation CucumberRuntimeShellwords
+@implementation CCBRShellwords
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeShellwords_init(self);
+  CCBRShellwords_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 + (id<JavaUtilList>)parseWithNSString:(NSString *)cmdline {
-  return CucumberRuntimeShellwords_parseWithNSString_(cmdline);
+  return CCBRShellwords_parseWithNSString_(cmdline);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -55,36 +55,36 @@ J2OBJC_IGNORE_DESIGNATED_END
   static const J2ObjcFieldInfo fields[] = {
     { "SHELLWORDS_PATTERN", "LJavaUtilRegexPattern;", .constantValue.asLong = 0, 0x1a, -1, 3, -1, -1 },
   };
-  static const void *ptrTable[] = { "parse", "LNSString;", "(Ljava/lang/String;)Ljava/util/List<Ljava/lang/String;>;", &CucumberRuntimeShellwords_SHELLWORDS_PATTERN };
-  static const J2ObjcClassInfo _CucumberRuntimeShellwords = { "Shellwords", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 2, 1, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeShellwords;
+  static const void *ptrTable[] = { "parse", "LNSString;", "(Ljava/lang/String;)Ljava/util/List<Ljava/lang/String;>;", &CCBRShellwords_SHELLWORDS_PATTERN };
+  static const J2ObjcClassInfo _CCBRShellwords = { "Shellwords", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 2, 1, -1, -1, -1, -1, -1 };
+  return &_CCBRShellwords;
 }
 
 + (void)initialize {
-  if (self == [CucumberRuntimeShellwords class]) {
-    JreStrongAssign(&CucumberRuntimeShellwords_SHELLWORDS_PATTERN, JavaUtilRegexPattern_compileWithNSString_(@"[^\\s']+|'([^']*)'"));
-    J2OBJC_SET_INITIALIZED(CucumberRuntimeShellwords)
+  if (self == [CCBRShellwords class]) {
+    JreStrongAssign(&CCBRShellwords_SHELLWORDS_PATTERN, JavaUtilRegexPattern_compileWithNSString_(@"[^\\s']+|'([^']*)'"));
+    J2OBJC_SET_INITIALIZED(CCBRShellwords)
   }
 }
 
 @end
 
-void CucumberRuntimeShellwords_init(CucumberRuntimeShellwords *self) {
+void CCBRShellwords_init(CCBRShellwords *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeShellwords *new_CucumberRuntimeShellwords_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeShellwords, init)
+CCBRShellwords *new_CCBRShellwords_init() {
+  J2OBJC_NEW_IMPL(CCBRShellwords, init)
 }
 
-CucumberRuntimeShellwords *create_CucumberRuntimeShellwords_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeShellwords, init)
+CCBRShellwords *create_CCBRShellwords_init() {
+  J2OBJC_CREATE_IMPL(CCBRShellwords, init)
 }
 
-id<JavaUtilList> CucumberRuntimeShellwords_parseWithNSString_(NSString *cmdline) {
-  CucumberRuntimeShellwords_initialize();
+id<JavaUtilList> CCBRShellwords_parseWithNSString_(NSString *cmdline) {
+  CCBRShellwords_initialize();
   id<JavaUtilList> matchList = create_JavaUtilArrayList_init();
-  JavaUtilRegexMatcher *shellwordsMatcher = [((JavaUtilRegexPattern *) nil_chk(CucumberRuntimeShellwords_SHELLWORDS_PATTERN)) matcherWithJavaLangCharSequence:cmdline];
+  JavaUtilRegexMatcher *shellwordsMatcher = [((JavaUtilRegexPattern *) nil_chk(CCBRShellwords_SHELLWORDS_PATTERN)) matcherWithJavaLangCharSequence:cmdline];
   while ([((JavaUtilRegexMatcher *) nil_chk(shellwordsMatcher)) find]) {
     if ([shellwordsMatcher groupWithInt:1] != nil) {
       [matchList addWithId:[shellwordsMatcher groupWithInt:1]];
@@ -96,4 +96,4 @@ id<JavaUtilList> CucumberRuntimeShellwords_parseWithNSString_(NSString *cmdline)
   return matchList;
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeShellwords)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRShellwords)

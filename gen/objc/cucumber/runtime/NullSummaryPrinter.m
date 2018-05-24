@@ -7,16 +7,16 @@
 #include "cucumber/runtime/NullSummaryPrinter.h"
 #include "cucumber/runtime/Runtime.h"
 
-@implementation CucumberRuntimeNullSummaryPrinter
+@implementation CCBRNullSummaryPrinter
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeNullSummaryPrinter_init(self);
+  CCBRNullSummaryPrinter_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (void)printWithCucumberRuntimeRuntime:(CucumberRuntimeRuntime *)runtime {
+- (void)printWithCCBRRuntime:(CCBRRuntime *)runtime {
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -28,25 +28,25 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(printWithCucumberRuntimeRuntime:);
+  methods[1].selector = @selector(printWithCCBRRuntime:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "print", "LCucumberRuntimeRuntime;" };
-  static const J2ObjcClassInfo _CucumberRuntimeNullSummaryPrinter = { "NullSummaryPrinter", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeNullSummaryPrinter;
+  static const void *ptrTable[] = { "print", "LCCBRRuntime;" };
+  static const J2ObjcClassInfo _CCBRNullSummaryPrinter = { "NullSummaryPrinter", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRNullSummaryPrinter;
 }
 
 @end
 
-void CucumberRuntimeNullSummaryPrinter_init(CucumberRuntimeNullSummaryPrinter *self) {
+void CCBRNullSummaryPrinter_init(CCBRNullSummaryPrinter *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeNullSummaryPrinter *new_CucumberRuntimeNullSummaryPrinter_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeNullSummaryPrinter, init)
+CCBRNullSummaryPrinter *new_CCBRNullSummaryPrinter_init() {
+  J2OBJC_NEW_IMPL(CCBRNullSummaryPrinter, init)
 }
 
-CucumberRuntimeNullSummaryPrinter *create_CucumberRuntimeNullSummaryPrinter_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeNullSummaryPrinter, init)
+CCBRNullSummaryPrinter *create_CCBRNullSummaryPrinter_init() {
+  J2OBJC_CREATE_IMPL(CCBRNullSummaryPrinter, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeNullSummaryPrinter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRNullSummaryPrinter)

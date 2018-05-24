@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaZh_tw假如_) && (INCLUDE_ALL_CucumberApiJavaZh_tw假如 || defined(INCLUDE_CucumberApiJavaZh_tw假如))
-#define CucumberApiJavaZh_tw假如_
+#if !defined (CCB假如_) && (INCLUDE_ALL_CucumberApiJavaZh_tw假如 || defined(INCLUDE_CCB假如))
+#define CCB假如_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaZh_tw假如 < JavaLangAnnotationAnnotation >
+@protocol CCB假如 < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaZh_tw假如 : NSObject < CucumberApiJavaZh_tw假如 > {
+@interface CCB假如 : NSObject < CCB假如 > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaZh_tw假如)
+J2OBJC_EMPTY_STATIC_INIT(CCB假如)
 
-FOUNDATION_EXPORT id<CucumberApiJavaZh_tw假如> create_CucumberApiJavaZh_tw假如(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCB假如> create_CCB假如(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaZh_tw假如)
+J2OBJC_TYPE_LITERAL_HEADER(CCB假如)
+
+#define CucumberApiJavaZh_tw假如 CCB假如
 
 #endif
 

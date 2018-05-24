@@ -9,19 +9,19 @@
 #include "java/lang/Character.h"
 #include "java/lang/StringBuilder.h"
 
-@interface CucumberRuntimeSnippetsCamelCaseConcatenator ()
+@interface CCBRCamelCaseConcatenator ()
 
 - (NSString *)capitalizeWithNSString:(NSString *)line;
 
 @end
 
-__attribute__((unused)) static NSString *CucumberRuntimeSnippetsCamelCaseConcatenator_capitalizeWithNSString_(CucumberRuntimeSnippetsCamelCaseConcatenator *self, NSString *line);
+__attribute__((unused)) static NSString *CCBRCamelCaseConcatenator_capitalizeWithNSString_(CCBRCamelCaseConcatenator *self, NSString *line);
 
-@implementation CucumberRuntimeSnippetsCamelCaseConcatenator
+@implementation CCBRCamelCaseConcatenator
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeSnippetsCamelCaseConcatenator_init(self);
+  CCBRCamelCaseConcatenator_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -40,7 +40,7 @@ J2OBJC_IGNORE_DESIGNATED_END
         firstWord = false;
       }
       else {
-        [functionName appendWithNSString:CucumberRuntimeSnippetsCamelCaseConcatenator_capitalizeWithNSString_(self, word)];
+        [functionName appendWithNSString:CCBRCamelCaseConcatenator_capitalizeWithNSString_(self, word)];
       }
     }
   }
@@ -48,7 +48,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (NSString *)capitalizeWithNSString:(NSString *)line {
-  return CucumberRuntimeSnippetsCamelCaseConcatenator_capitalizeWithNSString_(self, line);
+  return CCBRCamelCaseConcatenator_capitalizeWithNSString_(self, line);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -65,26 +65,26 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[2].selector = @selector(capitalizeWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "concatenate", "[LNSString;", "capitalize", "LNSString;" };
-  static const J2ObjcClassInfo _CucumberRuntimeSnippetsCamelCaseConcatenator = { "CamelCaseConcatenator", "cucumber.runtime.snippets", ptrTable, methods, NULL, 7, 0x1, 3, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeSnippetsCamelCaseConcatenator;
+  static const J2ObjcClassInfo _CCBRCamelCaseConcatenator = { "CamelCaseConcatenator", "cucumber.runtime.snippets", ptrTable, methods, NULL, 7, 0x1, 3, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRCamelCaseConcatenator;
 }
 
 @end
 
-void CucumberRuntimeSnippetsCamelCaseConcatenator_init(CucumberRuntimeSnippetsCamelCaseConcatenator *self) {
+void CCBRCamelCaseConcatenator_init(CCBRCamelCaseConcatenator *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeSnippetsCamelCaseConcatenator *new_CucumberRuntimeSnippetsCamelCaseConcatenator_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeSnippetsCamelCaseConcatenator, init)
+CCBRCamelCaseConcatenator *new_CCBRCamelCaseConcatenator_init() {
+  J2OBJC_NEW_IMPL(CCBRCamelCaseConcatenator, init)
 }
 
-CucumberRuntimeSnippetsCamelCaseConcatenator *create_CucumberRuntimeSnippetsCamelCaseConcatenator_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeSnippetsCamelCaseConcatenator, init)
+CCBRCamelCaseConcatenator *create_CCBRCamelCaseConcatenator_init() {
+  J2OBJC_CREATE_IMPL(CCBRCamelCaseConcatenator, init)
 }
 
-NSString *CucumberRuntimeSnippetsCamelCaseConcatenator_capitalizeWithNSString_(CucumberRuntimeSnippetsCamelCaseConcatenator *self, NSString *line) {
+NSString *CCBRCamelCaseConcatenator_capitalizeWithNSString_(CCBRCamelCaseConcatenator *self, NSString *line) {
   return JreStrcat("C$", JavaLangCharacter_toUpperCaseWithChar_([((NSString *) nil_chk(line)) charAtWithInt:0]), [line java_substring:1]);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeSnippetsCamelCaseConcatenator)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRCamelCaseConcatenator)

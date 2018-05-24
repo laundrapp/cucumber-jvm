@@ -10,32 +10,32 @@
 #include "java/lang/StringBuilder.h"
 #include "java/util/List.h"
 
-@interface CucumberRuntimeTableDiffTablePrinter () {
+@interface CCBRDiffTablePrinter () {
  @public
   id<JavaUtilList> diffTypes_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeTableDiffTablePrinter, diffTypes_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRDiffTablePrinter, diffTypes_, id<JavaUtilList>)
 
-@implementation CucumberRuntimeTableDiffTablePrinter
+@implementation CCBRDiffTablePrinter
 
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)diffTypes {
-  CucumberRuntimeTableDiffTablePrinter_initWithJavaUtilList_(self, diffTypes);
+  CCBRDiffTablePrinter_initWithJavaUtilList_(self, diffTypes);
   return self;
 }
 
 - (void)printStartIndentWithJavaLangStringBuilder:(JavaLangStringBuilder *)buffer
                                           withInt:(jint)rowIndex {
-  switch ([((CucumberRuntimeTableDataTableDiff_DiffType *) [((id<JavaUtilList>) nil_chk(diffTypes_)) getWithInt:rowIndex]) ordinal]) {
-    case CucumberRuntimeTableDataTableDiff_DiffType_Enum_NONE:
+  switch ([((CCBRDataTableDiff_DiffType *) [((id<JavaUtilList>) nil_chk(diffTypes_)) getWithInt:rowIndex]) ordinal]) {
+    case CCBRDataTableDiff_DiffType_Enum_NONE:
     [((JavaLangStringBuilder *) nil_chk(buffer)) appendWithNSString:@"      "];
     break;
-    case CucumberRuntimeTableDataTableDiff_DiffType_Enum_DELETE:
+    case CCBRDataTableDiff_DiffType_Enum_DELETE:
     [((JavaLangStringBuilder *) nil_chk(buffer)) appendWithNSString:@"    - "];
     break;
-    case CucumberRuntimeTableDataTableDiff_DiffType_Enum_INSERT:
+    case CCBRDataTableDiff_DiffType_Enum_INSERT:
     [((JavaLangStringBuilder *) nil_chk(buffer)) appendWithNSString:@"    + "];
     break;
   }
@@ -61,23 +61,23 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeTableDiffTablePrinter, diffTypes_, id<JavaUti
     { "diffTypes_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 4, -1 },
   };
   static const void *ptrTable[] = { "LJavaUtilList;", "(Ljava/util/List<Lcucumber/runtime/table/DataTableDiff$DiffType;>;)V", "printStartIndent", "LJavaLangStringBuilder;I", "Ljava/util/List<Lcucumber/runtime/table/DataTableDiff$DiffType;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeTableDiffTablePrinter = { "DiffTablePrinter", "cucumber.runtime.table", ptrTable, methods, fields, 7, 0x1, 2, 1, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeTableDiffTablePrinter;
+  static const J2ObjcClassInfo _CCBRDiffTablePrinter = { "DiffTablePrinter", "cucumber.runtime.table", ptrTable, methods, fields, 7, 0x1, 2, 1, -1, -1, -1, -1, -1 };
+  return &_CCBRDiffTablePrinter;
 }
 
 @end
 
-void CucumberRuntimeTableDiffTablePrinter_initWithJavaUtilList_(CucumberRuntimeTableDiffTablePrinter *self, id<JavaUtilList> diffTypes) {
-  CucumberRuntimeTableTablePrinter_init(self);
+void CCBRDiffTablePrinter_initWithJavaUtilList_(CCBRDiffTablePrinter *self, id<JavaUtilList> diffTypes) {
+  CCBRTablePrinter_init(self);
   JreStrongAssign(&self->diffTypes_, diffTypes);
 }
 
-CucumberRuntimeTableDiffTablePrinter *new_CucumberRuntimeTableDiffTablePrinter_initWithJavaUtilList_(id<JavaUtilList> diffTypes) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeTableDiffTablePrinter, initWithJavaUtilList_, diffTypes)
+CCBRDiffTablePrinter *new_CCBRDiffTablePrinter_initWithJavaUtilList_(id<JavaUtilList> diffTypes) {
+  J2OBJC_NEW_IMPL(CCBRDiffTablePrinter, initWithJavaUtilList_, diffTypes)
 }
 
-CucumberRuntimeTableDiffTablePrinter *create_CucumberRuntimeTableDiffTablePrinter_initWithJavaUtilList_(id<JavaUtilList> diffTypes) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeTableDiffTablePrinter, initWithJavaUtilList_, diffTypes)
+CCBRDiffTablePrinter *create_CCBRDiffTablePrinter_initWithJavaUtilList_(id<JavaUtilList> diffTypes) {
+  J2OBJC_CREATE_IMPL(CCBRDiffTablePrinter, initWithJavaUtilList_, diffTypes)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTableDiffTablePrinter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRDiffTablePrinter)

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaThและ_) && (INCLUDE_ALL_CucumberApiJavaThและ || defined(INCLUDE_CucumberApiJavaThและ))
-#define CucumberApiJavaThและ_
+#if !defined (CCBและ_) && (INCLUDE_ALL_CucumberApiJavaThและ || defined(INCLUDE_CCBและ))
+#define CCBและ_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaThและ < JavaLangAnnotationAnnotation >
+@protocol CCBและ < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaThและ : NSObject < CucumberApiJavaThและ > {
+@interface CCBและ : NSObject < CCBและ > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaThและ)
+J2OBJC_EMPTY_STATIC_INIT(CCBและ)
 
-FOUNDATION_EXPORT id<CucumberApiJavaThและ> create_CucumberApiJavaThและ(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBและ> create_CCBและ(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaThและ)
+J2OBJC_TYPE_LITERAL_HEADER(CCBและ)
+
+#define CucumberApiJavaThและ CCBและ
 
 #endif
 

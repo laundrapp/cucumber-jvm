@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaIdKetika_) && (INCLUDE_ALL_CucumberApiJavaIdKetika || defined(INCLUDE_CucumberApiJavaIdKetika))
-#define CucumberApiJavaIdKetika_
+#if !defined (CCBKetika_) && (INCLUDE_ALL_CucumberApiJavaIdKetika || defined(INCLUDE_CCBKetika))
+#define CCBKetika_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaIdKetika < JavaLangAnnotationAnnotation >
+@protocol CCBKetika < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaIdKetika : NSObject < CucumberApiJavaIdKetika > {
+@interface CCBKetika : NSObject < CCBKetika > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaIdKetika)
+J2OBJC_EMPTY_STATIC_INIT(CCBKetika)
 
-FOUNDATION_EXPORT id<CucumberApiJavaIdKetika> create_CucumberApiJavaIdKetika(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBKetika> create_CCBKetika(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaIdKetika)
+J2OBJC_TYPE_LITERAL_HEADER(CCBKetika)
+
+#define CucumberApiJavaIdKetika CCBKetika
 
 #endif
 

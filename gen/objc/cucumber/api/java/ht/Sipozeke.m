@@ -15,9 +15,9 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *CucumberApiJavaHtSipozeke__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CCBSipozeke__Annotations$0(void);
 
-@implementation CucumberApiJavaHtSipozeke
+@implementation CCBSipozeke
 
 @synthesize value = value_;
 @synthesize timeout = timeout_;
@@ -27,7 +27,7 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiJavaHtSipozeke__Annota
 }
 
 - (IOSClass *)annotationType {
-  return CucumberApiJavaHtSipozeke_class_();
+  return CCBSipozeke_class_();
 }
 
 - (NSString *)description {
@@ -62,22 +62,22 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiJavaHtSipozeke__Annota
     { "value_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "timeout_", "J", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&CucumberApiJavaHtSipozeke__Annotations$0 };
-  static const J2ObjcClassInfo _CucumberApiJavaHtSipozeke = { "Sipozeke", "cucumber.api.java.ht", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
-  return &_CucumberApiJavaHtSipozeke;
+  static const void *ptrTable[] = { (void *)&CCBSipozeke__Annotations$0 };
+  static const J2ObjcClassInfo _CCBSipozeke = { "Sipozeke", "cucumber.api.java.ht", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
+  return &_CCBSipozeke;
 }
 
 @end
 
-id<CucumberApiJavaHtSipozeke> create_CucumberApiJavaHtSipozeke(jlong timeout, NSString *value) {
-  CucumberApiJavaHtSipozeke *self = AUTORELEASE([[CucumberApiJavaHtSipozeke alloc] init]);
+id<CCBSipozeke> create_CCBSipozeke(jlong timeout, NSString *value) {
+  CCBSipozeke *self = AUTORELEASE([[CCBSipozeke alloc] init]);
   self->timeout_ = timeout;
   self->value_ = RETAIN_(value);
   return self;
 }
 
-IOSObjectArray *CucumberApiJavaHtSipozeke__Annotations$0() {
-  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CucumberRuntimeJavaStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
+IOSObjectArray *CCBSipozeke__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CCBStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiJavaHtSipozeke)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBSipozeke)

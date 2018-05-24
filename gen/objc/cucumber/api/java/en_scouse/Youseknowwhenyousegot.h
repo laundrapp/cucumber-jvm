@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaEn_scouseYouseknowwhenyousegot_) && (INCLUDE_ALL_CucumberApiJavaEn_scouseYouseknowwhenyousegot || defined(INCLUDE_CucumberApiJavaEn_scouseYouseknowwhenyousegot))
-#define CucumberApiJavaEn_scouseYouseknowwhenyousegot_
+#if !defined (CCBYouseknowwhenyousegot_) && (INCLUDE_ALL_CucumberApiJavaEn_scouseYouseknowwhenyousegot || defined(INCLUDE_CCBYouseknowwhenyousegot))
+#define CCBYouseknowwhenyousegot_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaEn_scouseYouseknowwhenyousegot < JavaLangAnnotationAnnotation >
+@protocol CCBYouseknowwhenyousegot < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaEn_scouseYouseknowwhenyousegot : NSObject < CucumberApiJavaEn_scouseYouseknowwhenyousegot > {
+@interface CCBYouseknowwhenyousegot : NSObject < CCBYouseknowwhenyousegot > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEn_scouseYouseknowwhenyousegot)
+J2OBJC_EMPTY_STATIC_INIT(CCBYouseknowwhenyousegot)
 
-FOUNDATION_EXPORT id<CucumberApiJavaEn_scouseYouseknowwhenyousegot> create_CucumberApiJavaEn_scouseYouseknowwhenyousegot(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBYouseknowwhenyousegot> create_CCBYouseknowwhenyousegot(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEn_scouseYouseknowwhenyousegot)
+J2OBJC_TYPE_LITERAL_HEADER(CCBYouseknowwhenyousegot)
+
+#define CucumberApiJavaEn_scouseYouseknowwhenyousegot CCBYouseknowwhenyousegot
 
 #endif
 

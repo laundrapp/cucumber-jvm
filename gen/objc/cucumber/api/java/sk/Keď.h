@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaSkKeď_) && (INCLUDE_ALL_CucumberApiJavaSkKeď || defined(INCLUDE_CucumberApiJavaSkKeď))
-#define CucumberApiJavaSkKeď_
+#if !defined (CCBKeď_) && (INCLUDE_ALL_CucumberApiJavaSkKeď || defined(INCLUDE_CCBKeď))
+#define CCBKeď_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaSkKeď < JavaLangAnnotationAnnotation >
+@protocol CCBKeď < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaSkKeď : NSObject < CucumberApiJavaSkKeď > {
+@interface CCBKeď : NSObject < CCBKeď > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaSkKeď)
+J2OBJC_EMPTY_STATIC_INIT(CCBKeď)
 
-FOUNDATION_EXPORT id<CucumberApiJavaSkKeď> create_CucumberApiJavaSkKeď(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBKeď> create_CCBKeď(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaSkKeď)
+J2OBJC_TYPE_LITERAL_HEADER(CCBKeď)
+
+#define CucumberApiJavaSkKeď CCBKeď
 
 #endif
 

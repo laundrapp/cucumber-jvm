@@ -8,11 +8,11 @@
 #include "cucumber/runtime/snippets/UnderscoreConcatenator.h"
 #include "java/lang/StringBuilder.h"
 
-@implementation CucumberRuntimeSnippetsUnderscoreConcatenator
+@implementation CCBRUnderscoreConcatenator
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeSnippetsUnderscoreConcatenator_init(self);
+  CCBRUnderscoreConcatenator_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -51,22 +51,22 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[1].selector = @selector(concatenateWithNSStringArray:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "concatenate", "[LNSString;" };
-  static const J2ObjcClassInfo _CucumberRuntimeSnippetsUnderscoreConcatenator = { "UnderscoreConcatenator", "cucumber.runtime.snippets", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeSnippetsUnderscoreConcatenator;
+  static const J2ObjcClassInfo _CCBRUnderscoreConcatenator = { "UnderscoreConcatenator", "cucumber.runtime.snippets", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRUnderscoreConcatenator;
 }
 
 @end
 
-void CucumberRuntimeSnippetsUnderscoreConcatenator_init(CucumberRuntimeSnippetsUnderscoreConcatenator *self) {
+void CCBRUnderscoreConcatenator_init(CCBRUnderscoreConcatenator *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeSnippetsUnderscoreConcatenator *new_CucumberRuntimeSnippetsUnderscoreConcatenator_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeSnippetsUnderscoreConcatenator, init)
+CCBRUnderscoreConcatenator *new_CCBRUnderscoreConcatenator_init() {
+  J2OBJC_NEW_IMPL(CCBRUnderscoreConcatenator, init)
 }
 
-CucumberRuntimeSnippetsUnderscoreConcatenator *create_CucumberRuntimeSnippetsUnderscoreConcatenator_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeSnippetsUnderscoreConcatenator, init)
+CCBRUnderscoreConcatenator *create_CCBRUnderscoreConcatenator_init() {
+  J2OBJC_CREATE_IMPL(CCBRUnderscoreConcatenator, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeSnippetsUnderscoreConcatenator)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRUnderscoreConcatenator)

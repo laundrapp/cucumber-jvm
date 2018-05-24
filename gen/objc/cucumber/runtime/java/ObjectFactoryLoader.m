@@ -19,7 +19,7 @@
 #include "java/lang/StringBuilder.h"
 #include "java/lang/System.h"
 
-@interface CucumberRuntimeJavaObjectFactoryLoader ()
+@interface CCBObjectFactoryLoader ()
 
 - (instancetype __nonnull)init;
 
@@ -27,93 +27,93 @@
 
 @end
 
-__attribute__((unused)) static void CucumberRuntimeJavaObjectFactoryLoader_init(CucumberRuntimeJavaObjectFactoryLoader *self);
+__attribute__((unused)) static void CCBObjectFactoryLoader_init(CCBObjectFactoryLoader *self);
 
-__attribute__((unused)) static CucumberRuntimeJavaObjectFactoryLoader *new_CucumberRuntimeJavaObjectFactoryLoader_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBObjectFactoryLoader *new_CCBObjectFactoryLoader_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeJavaObjectFactoryLoader *create_CucumberRuntimeJavaObjectFactoryLoader_init(void);
+__attribute__((unused)) static CCBObjectFactoryLoader *create_CCBObjectFactoryLoader_init(void);
 
-__attribute__((unused)) static NSString *CucumberRuntimeJavaObjectFactoryLoader_getMultipleObjectFactoryLogMessage(void);
+__attribute__((unused)) static NSString *CCBObjectFactoryLoader_getMultipleObjectFactoryLogMessage(void);
 
-@implementation CucumberRuntimeJavaObjectFactoryLoader
+@implementation CCBObjectFactoryLoader
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeJavaObjectFactoryLoader_init(self);
+  CCBObjectFactoryLoader_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-+ (id<CucumberApiJavaObjectFactory>)loadObjectFactoryWithCucumberRuntimeClassFinder:(id<CucumberRuntimeClassFinder>)classFinder
-                                                                       withNSString:(NSString *)objectFactoryClassName {
-  return CucumberRuntimeJavaObjectFactoryLoader_loadObjectFactoryWithCucumberRuntimeClassFinder_withNSString_(classFinder, objectFactoryClassName);
++ (id<CCBObjectFactory>)loadObjectFactoryWithCCBRClassFinder:(id<CCBRClassFinder>)classFinder
+                                                withNSString:(NSString *)objectFactoryClassName {
+  return CCBObjectFactoryLoader_loadObjectFactoryWithCCBRClassFinder_withNSString_(classFinder, objectFactoryClassName);
 }
 
 + (NSString *)getMultipleObjectFactoryLogMessage {
-  return CucumberRuntimeJavaObjectFactoryLoader_getMultipleObjectFactoryLogMessage();
+  return CCBObjectFactoryLoader_getMultipleObjectFactoryLogMessage();
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x2, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LCucumberApiJavaObjectFactory;", 0x9, 0, 1, -1, -1, -1, -1 },
+    { NULL, "LCCBObjectFactory;", 0x9, 0, 1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0xa, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(loadObjectFactoryWithCucumberRuntimeClassFinder:withNSString:);
+  methods[1].selector = @selector(loadObjectFactoryWithCCBRClassFinder:withNSString:);
   methods[2].selector = @selector(getMultipleObjectFactoryLogMessage);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "loadObjectFactory", "LCucumberRuntimeClassFinder;LNSString;" };
-  static const J2ObjcClassInfo _CucumberRuntimeJavaObjectFactoryLoader = { "ObjectFactoryLoader", "cucumber.runtime.java", ptrTable, methods, NULL, 7, 0x1, 3, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeJavaObjectFactoryLoader;
+  static const void *ptrTable[] = { "loadObjectFactory", "LCCBRClassFinder;LNSString;" };
+  static const J2ObjcClassInfo _CCBObjectFactoryLoader = { "ObjectFactoryLoader", "cucumber.runtime.java", ptrTable, methods, NULL, 7, 0x1, 3, 0, -1, -1, -1, -1, -1 };
+  return &_CCBObjectFactoryLoader;
 }
 
 @end
 
-void CucumberRuntimeJavaObjectFactoryLoader_init(CucumberRuntimeJavaObjectFactoryLoader *self) {
+void CCBObjectFactoryLoader_init(CCBObjectFactoryLoader *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeJavaObjectFactoryLoader *new_CucumberRuntimeJavaObjectFactoryLoader_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeJavaObjectFactoryLoader, init)
+CCBObjectFactoryLoader *new_CCBObjectFactoryLoader_init() {
+  J2OBJC_NEW_IMPL(CCBObjectFactoryLoader, init)
 }
 
-CucumberRuntimeJavaObjectFactoryLoader *create_CucumberRuntimeJavaObjectFactoryLoader_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeJavaObjectFactoryLoader, init)
+CCBObjectFactoryLoader *create_CCBObjectFactoryLoader_init() {
+  J2OBJC_CREATE_IMPL(CCBObjectFactoryLoader, init)
 }
 
-id<CucumberApiJavaObjectFactory> CucumberRuntimeJavaObjectFactoryLoader_loadObjectFactoryWithCucumberRuntimeClassFinder_withNSString_(id<CucumberRuntimeClassFinder> classFinder, NSString *objectFactoryClassName) {
-  CucumberRuntimeJavaObjectFactoryLoader_initialize();
-  id<CucumberApiJavaObjectFactory> objectFactory;
+id<CCBObjectFactory> CCBObjectFactoryLoader_loadObjectFactoryWithCCBRClassFinder_withNSString_(id<CCBRClassFinder> classFinder, NSString *objectFactoryClassName) {
+  CCBObjectFactoryLoader_initialize();
+  id<CCBObjectFactory> objectFactory;
   @try {
-    CucumberRuntimeReflections *reflections = create_CucumberRuntimeReflections_initWithCucumberRuntimeClassFinder_(classFinder);
+    CCBRReflections *reflections = create_CCBRReflections_initWithCCBRClassFinder_(classFinder);
     if (objectFactoryClassName != nil) {
-      IOSClass *objectFactoryClass = [((id<CucumberRuntimeClassFinder>) nil_chk(classFinder)) loadClassWithNSString:objectFactoryClassName];
+      IOSClass *objectFactoryClass = [((id<CCBRClassFinder>) nil_chk(classFinder)) loadClassWithNSString:objectFactoryClassName];
       objectFactory = [reflections newInstanceWithIOSClassArray:[IOSObjectArray arrayWithLength:0 type:IOSClass_class_()] withNSObjectArray:[IOSObjectArray arrayWithLength:0 type:NSObject_class_()] withIOSClass:objectFactoryClass];
     }
     else {
-      objectFactory = [reflections instantiateExactlyOneSubclassWithIOSClass:CucumberApiJavaObjectFactory_class_() withNSString:@"cucumber.runtime" withIOSClassArray:[IOSObjectArray arrayWithLength:0 type:IOSClass_class_()] withNSObjectArray:[IOSObjectArray arrayWithLength:0 type:NSObject_class_()]];
+      objectFactory = [reflections instantiateExactlyOneSubclassWithIOSClass:CCBObjectFactory_class_() withNSString:@"cucumber.runtime" withIOSClassArray:[IOSObjectArray arrayWithLength:0 type:IOSClass_class_()] withNSObjectArray:[IOSObjectArray arrayWithLength:0 type:NSObject_class_()]];
     }
   }
-  @catch (CucumberRuntimeTooManyInstancesException *e) {
+  @catch (CCBRTooManyInstancesException *e) {
     [((JavaIoPrintStream *) nil_chk(JreLoadStatic(JavaLangSystem, out))) printlnWithNSString:[e getMessage]];
-    [JreLoadStatic(JavaLangSystem, out) printlnWithNSString:CucumberRuntimeJavaObjectFactoryLoader_getMultipleObjectFactoryLogMessage()];
-    objectFactory = create_CucumberRuntimeJavaDefaultJavaObjectFactory_init();
+    [JreLoadStatic(JavaLangSystem, out) printlnWithNSString:CCBObjectFactoryLoader_getMultipleObjectFactoryLogMessage()];
+    objectFactory = create_CCBDefaultJavaObjectFactory_init();
   }
-  @catch (CucumberRuntimeNoInstancesException *e) {
-    objectFactory = create_CucumberRuntimeJavaDefaultJavaObjectFactory_init();
+  @catch (CCBRNoInstancesException *e) {
+    objectFactory = create_CCBDefaultJavaObjectFactory_init();
   }
   @catch (JavaLangClassNotFoundException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithNSString_withJavaLangThrowable_(@"Couldn't instantiate custom ObjectFactory", e);
+    @throw create_CCBRCucumberException_initWithNSString_withJavaLangThrowable_(@"Couldn't instantiate custom ObjectFactory", e);
   }
   return objectFactory;
 }
 
-NSString *CucumberRuntimeJavaObjectFactoryLoader_getMultipleObjectFactoryLogMessage() {
-  CucumberRuntimeJavaObjectFactoryLoader_initialize();
+NSString *CCBObjectFactoryLoader_getMultipleObjectFactoryLogMessage() {
+  CCBObjectFactoryLoader_initialize();
   JavaLangStringBuilder *sb = create_JavaLangStringBuilder_init();
   [sb appendWithNSString:@"More than one Cucumber ObjectFactory was found in the classpath\n\n"];
   [sb appendWithNSString:@"You probably may have included, for instance, cucumber-spring AND cucumber-guice as part of\n"];
@@ -123,4 +123,4 @@ NSString *CucumberRuntimeJavaObjectFactoryLoader_getMultipleObjectFactoryLogMess
   return [sb description];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeJavaObjectFactoryLoader)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBObjectFactoryLoader)

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaHuDe_) && (INCLUDE_ALL_CucumberApiJavaHuDe || defined(INCLUDE_CucumberApiJavaHuDe))
-#define CucumberApiJavaHuDe_
+#if !defined (CCBDe_) && (INCLUDE_ALL_CucumberApiJavaHuDe || defined(INCLUDE_CCBDe))
+#define CCBDe_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaHuDe < JavaLangAnnotationAnnotation >
+@protocol CCBDe < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaHuDe : NSObject < CucumberApiJavaHuDe > {
+@interface CCBDe : NSObject < CCBDe > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaHuDe)
+J2OBJC_EMPTY_STATIC_INIT(CCBDe)
 
-FOUNDATION_EXPORT id<CucumberApiJavaHuDe> create_CucumberApiJavaHuDe(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBDe> create_CCBDe(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaHuDe)
+J2OBJC_TYPE_LITERAL_HEADER(CCBDe)
+
+#define CucumberApiJavaHuDe CCBDe
 
 #endif
 

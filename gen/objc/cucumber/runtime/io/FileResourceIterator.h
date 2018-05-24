@@ -18,32 +18,32 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeIoFileResourceIterator_) && (INCLUDE_ALL_CucumberRuntimeIoFileResourceIterator || defined(INCLUDE_CucumberRuntimeIoFileResourceIterator))
-#define CucumberRuntimeIoFileResourceIterator_
+#if !defined (CCBRFileResourceIterator_) && (INCLUDE_ALL_CucumberRuntimeIoFileResourceIterator || defined(INCLUDE_CCBRFileResourceIterator))
+#define CCBRFileResourceIterator_
 
 #define RESTRICT_JavaUtilIterator 1
 #define INCLUDE_JavaUtilIterator 1
 #include "java/util/Iterator.h"
 
 @class JavaIoFile;
-@protocol CucumberRuntimeIoResource;
+@protocol CCBRResource;
 @protocol JavaUtilFunctionConsumer;
 
-@interface CucumberRuntimeIoFileResourceIterator : NSObject < JavaUtilIterator >
+@interface CCBRFileResourceIterator : NSObject < JavaUtilIterator >
 
 #pragma mark Public
 
-+ (CucumberRuntimeIoFileResourceIterator *)createClasspathFileResourceIteratorWithJavaIoFile:(JavaIoFile *)root
-                                                                              withJavaIoFile:(JavaIoFile *)file
-                                                                                withNSString:(NSString *)suffix;
++ (CCBRFileResourceIterator *)createClasspathFileResourceIteratorWithJavaIoFile:(JavaIoFile *)root
+                                                                 withJavaIoFile:(JavaIoFile *)file
+                                                                   withNSString:(NSString *)suffix;
 
-+ (CucumberRuntimeIoFileResourceIterator *)createFileResourceIteratorWithJavaIoFile:(JavaIoFile *)root
-                                                                     withJavaIoFile:(JavaIoFile *)file
-                                                                       withNSString:(NSString *)suffix;
++ (CCBRFileResourceIterator *)createFileResourceIteratorWithJavaIoFile:(JavaIoFile *)root
+                                                        withJavaIoFile:(JavaIoFile *)file
+                                                          withNSString:(NSString *)suffix;
 
 - (jboolean)hasNext;
 
-- (id<CucumberRuntimeIoResource>)next;
+- (id<CCBRResource>)next;
 
 - (void)remove;
 
@@ -53,13 +53,15 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoFileResourceIterator)
+J2OBJC_EMPTY_STATIC_INIT(CCBRFileResourceIterator)
 
-FOUNDATION_EXPORT CucumberRuntimeIoFileResourceIterator *CucumberRuntimeIoFileResourceIterator_createFileResourceIteratorWithJavaIoFile_withJavaIoFile_withNSString_(JavaIoFile *root, JavaIoFile *file, NSString *suffix);
+FOUNDATION_EXPORT CCBRFileResourceIterator *CCBRFileResourceIterator_createFileResourceIteratorWithJavaIoFile_withJavaIoFile_withNSString_(JavaIoFile *root, JavaIoFile *file, NSString *suffix);
 
-FOUNDATION_EXPORT CucumberRuntimeIoFileResourceIterator *CucumberRuntimeIoFileResourceIterator_createClasspathFileResourceIteratorWithJavaIoFile_withJavaIoFile_withNSString_(JavaIoFile *root, JavaIoFile *file, NSString *suffix);
+FOUNDATION_EXPORT CCBRFileResourceIterator *CCBRFileResourceIterator_createClasspathFileResourceIteratorWithJavaIoFile_withJavaIoFile_withNSString_(JavaIoFile *root, JavaIoFile *file, NSString *suffix);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoFileResourceIterator)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRFileResourceIterator)
+
+@compatibility_alias CucumberRuntimeIoFileResourceIterator CCBRFileResourceIterator;
 
 #endif
 

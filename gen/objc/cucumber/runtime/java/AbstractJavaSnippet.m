@@ -11,11 +11,11 @@
 
 #pragma clang diagnostic ignored "-Wprotocol"
 
-@implementation CucumberRuntimeJavaAbstractJavaSnippet
+@implementation CCBAbstractJavaSnippet
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeJavaAbstractJavaSnippet_init(self);
+  CCBAbstractJavaSnippet_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -76,14 +76,14 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[6].selector = @selector(escapePatternWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "arguments", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/Class<*>;>;)Ljava/lang/String;", "getArgType", "LIOSClass;", "(Ljava/lang/Class<*>;)Ljava/lang/String;", "escapePattern", "LNSString;" };
-  static const J2ObjcClassInfo _CucumberRuntimeJavaAbstractJavaSnippet = { "AbstractJavaSnippet", "cucumber.runtime.java", ptrTable, methods, NULL, 7, 0x401, 7, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeJavaAbstractJavaSnippet;
+  static const J2ObjcClassInfo _CCBAbstractJavaSnippet = { "AbstractJavaSnippet", "cucumber.runtime.java", ptrTable, methods, NULL, 7, 0x401, 7, 0, -1, -1, -1, -1, -1 };
+  return &_CCBAbstractJavaSnippet;
 }
 
 @end
 
-void CucumberRuntimeJavaAbstractJavaSnippet_init(CucumberRuntimeJavaAbstractJavaSnippet *self) {
+void CCBAbstractJavaSnippet_init(CCBAbstractJavaSnippet *self) {
   NSObject_init(self);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeJavaAbstractJavaSnippet)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBAbstractJavaSnippet)

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter || defined(INCLUDE_CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter))
-#define CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter_
+#if !defined (CCBRDynamicClassBasedSingleValueConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter || defined(INCLUDE_CCBRDynamicClassBasedSingleValueConverter))
+#define CCBRDynamicClassBasedSingleValueConverter_
 
 #define RESTRICT_CucumberDepsComThoughtworksXstreamConvertersConverter 1
 #define INCLUDE_CucumberDepsComThoughtworksXstreamConvertersConverter 1
@@ -32,7 +32,7 @@
 @protocol CucumberDepsComThoughtworksXstreamIoHierarchicalStreamReader;
 @protocol CucumberDepsComThoughtworksXstreamIoHierarchicalStreamWriter;
 
-@interface CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter : NSObject < CucumberDepsComThoughtworksXstreamConvertersConverter >
+@interface CCBRDynamicClassBasedSingleValueConverter : NSObject < CucumberDepsComThoughtworksXstreamConvertersConverter >
 
 #pragma mark Public
 
@@ -51,11 +51,13 @@ withCucumberDepsComThoughtworksXstreamConvertersMarshallingContext:(id<CucumberD
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRDynamicClassBasedSingleValueConverter)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter_init(CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter *self);
+FOUNDATION_EXPORT void CCBRDynamicClassBasedSingleValueConverter_init(CCBRDynamicClassBasedSingleValueConverter *self);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRDynamicClassBasedSingleValueConverter)
+
+@compatibility_alias CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter CCBRDynamicClassBasedSingleValueConverter;
 
 #endif
 

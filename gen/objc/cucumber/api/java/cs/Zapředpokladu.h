@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaCsZapředpokladu_) && (INCLUDE_ALL_CucumberApiJavaCsZapředpokladu || defined(INCLUDE_CucumberApiJavaCsZapředpokladu))
-#define CucumberApiJavaCsZapředpokladu_
+#if !defined (CCBZapředpokladu_) && (INCLUDE_ALL_CucumberApiJavaCsZapředpokladu || defined(INCLUDE_CCBZapředpokladu))
+#define CCBZapředpokladu_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaCsZapředpokladu < JavaLangAnnotationAnnotation >
+@protocol CCBZapředpokladu < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaCsZapředpokladu : NSObject < CucumberApiJavaCsZapředpokladu > {
+@interface CCBZapředpokladu : NSObject < CCBZapředpokladu > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaCsZapředpokladu)
+J2OBJC_EMPTY_STATIC_INIT(CCBZapředpokladu)
 
-FOUNDATION_EXPORT id<CucumberApiJavaCsZapředpokladu> create_CucumberApiJavaCsZapředpokladu(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBZapředpokladu> create_CCBZapředpokladu(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaCsZapředpokladu)
+J2OBJC_TYPE_LITERAL_HEADER(CCBZapředpokladu)
+
+#define CucumberApiJavaCsZapředpokladu CCBZapředpokladu
 
 #endif
 

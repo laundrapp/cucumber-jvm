@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaPlOraz_) && (INCLUDE_ALL_CucumberApiJavaPlOraz || defined(INCLUDE_CucumberApiJavaPlOraz))
-#define CucumberApiJavaPlOraz_
+#if !defined (CCBOraz_) && (INCLUDE_ALL_CucumberApiJavaPlOraz || defined(INCLUDE_CCBOraz))
+#define CCBOraz_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaPlOraz < JavaLangAnnotationAnnotation >
+@protocol CCBOraz < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaPlOraz : NSObject < CucumberApiJavaPlOraz > {
+@interface CCBOraz : NSObject < CCBOraz > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaPlOraz)
+J2OBJC_EMPTY_STATIC_INIT(CCBOraz)
 
-FOUNDATION_EXPORT id<CucumberApiJavaPlOraz> create_CucumberApiJavaPlOraz(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBOraz> create_CCBOraz(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaPlOraz)
+J2OBJC_TYPE_LITERAL_HEADER(CCBOraz)
+
+#define CucumberApiJavaPlOraz CCBOraz
 
 #endif
 

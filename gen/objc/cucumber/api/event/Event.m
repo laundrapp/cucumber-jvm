@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/api/event/Event.h"
 
-@interface CucumberApiEventEvent : NSObject
+@interface CCBEvent : NSObject
 
 @end
 
-@implementation CucumberApiEventEvent
+@implementation CCBEvent
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -21,10 +21,10 @@
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(getTimeStamp);
   #pragma clang diagnostic pop
-  static const J2ObjcClassInfo _CucumberApiEventEvent = { "Event", "cucumber.api.event", NULL, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberApiEventEvent;
+  static const J2ObjcClassInfo _CCBEvent = { "Event", "cucumber.api.event", NULL, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
+  return &_CCBEvent;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiEventEvent)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBEvent)

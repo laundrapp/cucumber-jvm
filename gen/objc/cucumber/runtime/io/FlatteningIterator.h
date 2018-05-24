@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeIoFlatteningIterator_) && (INCLUDE_ALL_CucumberRuntimeIoFlatteningIterator || defined(INCLUDE_CucumberRuntimeIoFlatteningIterator))
-#define CucumberRuntimeIoFlatteningIterator_
+#if !defined (CCBRFlatteningIterator_) && (INCLUDE_ALL_CucumberRuntimeIoFlatteningIterator || defined(INCLUDE_CCBRFlatteningIterator))
+#define CCBRFlatteningIterator_
 
 #define RESTRICT_JavaUtilIterator 1
 #define INCLUDE_JavaUtilIterator 1
@@ -27,7 +27,7 @@
 
 @protocol JavaUtilFunctionConsumer;
 
-@interface CucumberRuntimeIoFlatteningIterator : NSObject < JavaUtilIterator >
+@interface CCBRFlatteningIterator : NSObject < JavaUtilIterator >
 
 #pragma mark Public
 
@@ -43,15 +43,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoFlatteningIterator)
+J2OBJC_EMPTY_STATIC_INIT(CCBRFlatteningIterator)
 
-FOUNDATION_EXPORT void CucumberRuntimeIoFlatteningIterator_init(CucumberRuntimeIoFlatteningIterator *self);
+FOUNDATION_EXPORT void CCBRFlatteningIterator_init(CCBRFlatteningIterator *self);
 
-FOUNDATION_EXPORT CucumberRuntimeIoFlatteningIterator *new_CucumberRuntimeIoFlatteningIterator_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRFlatteningIterator *new_CCBRFlatteningIterator_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeIoFlatteningIterator *create_CucumberRuntimeIoFlatteningIterator_init(void);
+FOUNDATION_EXPORT CCBRFlatteningIterator *create_CCBRFlatteningIterator_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoFlatteningIterator)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRFlatteningIterator)
+
+@compatibility_alias CucumberRuntimeIoFlatteningIterator CCBRFlatteningIterator;
 
 #endif
 

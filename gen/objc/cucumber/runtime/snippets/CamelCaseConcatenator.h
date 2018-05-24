@@ -18,16 +18,16 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeSnippetsCamelCaseConcatenator_) && (INCLUDE_ALL_CucumberRuntimeSnippetsCamelCaseConcatenator || defined(INCLUDE_CucumberRuntimeSnippetsCamelCaseConcatenator))
-#define CucumberRuntimeSnippetsCamelCaseConcatenator_
+#if !defined (CCBRCamelCaseConcatenator_) && (INCLUDE_ALL_CucumberRuntimeSnippetsCamelCaseConcatenator || defined(INCLUDE_CCBRCamelCaseConcatenator))
+#define CCBRCamelCaseConcatenator_
 
 #define RESTRICT_CucumberRuntimeSnippetsConcatenator 1
-#define INCLUDE_CucumberRuntimeSnippetsConcatenator 1
+#define INCLUDE_CCBRConcatenator 1
 #include "cucumber/runtime/snippets/Concatenator.h"
 
 @class IOSObjectArray;
 
-@interface CucumberRuntimeSnippetsCamelCaseConcatenator : NSObject < CucumberRuntimeSnippetsConcatenator >
+@interface CCBRCamelCaseConcatenator : NSObject < CCBRConcatenator >
 
 #pragma mark Public
 
@@ -37,15 +37,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeSnippetsCamelCaseConcatenator)
+J2OBJC_EMPTY_STATIC_INIT(CCBRCamelCaseConcatenator)
 
-FOUNDATION_EXPORT void CucumberRuntimeSnippetsCamelCaseConcatenator_init(CucumberRuntimeSnippetsCamelCaseConcatenator *self);
+FOUNDATION_EXPORT void CCBRCamelCaseConcatenator_init(CCBRCamelCaseConcatenator *self);
 
-FOUNDATION_EXPORT CucumberRuntimeSnippetsCamelCaseConcatenator *new_CucumberRuntimeSnippetsCamelCaseConcatenator_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRCamelCaseConcatenator *new_CCBRCamelCaseConcatenator_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeSnippetsCamelCaseConcatenator *create_CucumberRuntimeSnippetsCamelCaseConcatenator_init(void);
+FOUNDATION_EXPORT CCBRCamelCaseConcatenator *create_CCBRCamelCaseConcatenator_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeSnippetsCamelCaseConcatenator)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRCamelCaseConcatenator)
+
+@compatibility_alias CucumberRuntimeSnippetsCamelCaseConcatenator CCBRCamelCaseConcatenator;
 
 #endif
 

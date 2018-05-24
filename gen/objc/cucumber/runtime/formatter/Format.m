@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/runtime/formatter/Format.h"
 
-@interface CucumberRuntimeFormatterFormat : NSObject
+@interface CCBRFormat : NSObject
 
 @end
 
-@implementation CucumberRuntimeFormatterFormat
+@implementation CCBRFormat
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -22,10 +22,10 @@
   methods[0].selector = @selector(textWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "text", "LNSString;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterFormat = { "Format", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeFormatterFormat;
+  static const J2ObjcClassInfo _CCBRFormat = { "Format", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRFormat;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterFormat)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBRFormat)

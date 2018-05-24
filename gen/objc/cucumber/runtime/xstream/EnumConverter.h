@@ -18,17 +18,17 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamEnumConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamEnumConverter || defined(INCLUDE_CucumberRuntimeXstreamEnumConverter))
-#define CucumberRuntimeXstreamEnumConverter_
+#if !defined (CCBREnumConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamEnumConverter || defined(INCLUDE_CCBREnumConverter))
+#define CCBREnumConverter_
 
 #define RESTRICT_CucumberRuntimeXstreamConverterWithEnumFormat 1
-#define INCLUDE_CucumberRuntimeXstreamConverterWithEnumFormat 1
+#define INCLUDE_CCBRConverterWithEnumFormat 1
 #include "cucumber/runtime/xstream/ConverterWithEnumFormat.h"
 
 @class IOSClass;
 @class JavaUtilLocale;
 
-@interface CucumberRuntimeXstreamEnumConverter : CucumberRuntimeXstreamConverterWithEnumFormat
+@interface CCBREnumConverter : CCBRConverterWithEnumFormat
 
 #pragma mark Public
 
@@ -37,15 +37,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamEnumConverter)
+J2OBJC_EMPTY_STATIC_INIT(CCBREnumConverter)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamEnumConverter_initWithJavaUtilLocale_withIOSClass_(CucumberRuntimeXstreamEnumConverter *self, JavaUtilLocale *locale, IOSClass *enumClass);
+FOUNDATION_EXPORT void CCBREnumConverter_initWithJavaUtilLocale_withIOSClass_(CCBREnumConverter *self, JavaUtilLocale *locale, IOSClass *enumClass);
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamEnumConverter *new_CucumberRuntimeXstreamEnumConverter_initWithJavaUtilLocale_withIOSClass_(JavaUtilLocale *locale, IOSClass *enumClass) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBREnumConverter *new_CCBREnumConverter_initWithJavaUtilLocale_withIOSClass_(JavaUtilLocale *locale, IOSClass *enumClass) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamEnumConverter *create_CucumberRuntimeXstreamEnumConverter_initWithJavaUtilLocale_withIOSClass_(JavaUtilLocale *locale, IOSClass *enumClass);
+FOUNDATION_EXPORT CCBREnumConverter *create_CCBREnumConverter_initWithJavaUtilLocale_withIOSClass_(JavaUtilLocale *locale, IOSClass *enumClass);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamEnumConverter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBREnumConverter)
+
+@compatibility_alias CucumberRuntimeXstreamEnumConverter CCBREnumConverter;
 
 #endif
 

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaEtKuid_) && (INCLUDE_ALL_CucumberApiJavaEtKuid || defined(INCLUDE_CucumberApiJavaEtKuid))
-#define CucumberApiJavaEtKuid_
+#if !defined (CCBKuid_) && (INCLUDE_ALL_CucumberApiJavaEtKuid || defined(INCLUDE_CCBKuid))
+#define CCBKuid_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaEtKuid < JavaLangAnnotationAnnotation >
+@protocol CCBKuid < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaEtKuid : NSObject < CucumberApiJavaEtKuid > {
+@interface CCBKuid : NSObject < CCBKuid > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEtKuid)
+J2OBJC_EMPTY_STATIC_INIT(CCBKuid)
 
-FOUNDATION_EXPORT id<CucumberApiJavaEtKuid> create_CucumberApiJavaEtKuid(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBKuid> create_CCBKuid(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEtKuid)
+J2OBJC_TYPE_LITERAL_HEADER(CCBKuid)
+
+#define CucumberApiJavaEtKuid CCBKuid
 
 #endif
 

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaViNhưng_) && (INCLUDE_ALL_CucumberApiJavaViNhưng || defined(INCLUDE_CucumberApiJavaViNhưng))
-#define CucumberApiJavaViNhưng_
+#if !defined (CCBNhưng_) && (INCLUDE_ALL_CucumberApiJavaViNhưng || defined(INCLUDE_CCBNhưng))
+#define CCBNhưng_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaViNhưng < JavaLangAnnotationAnnotation >
+@protocol CCBNhưng < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaViNhưng : NSObject < CucumberApiJavaViNhưng > {
+@interface CCBNhưng : NSObject < CCBNhưng > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaViNhưng)
+J2OBJC_EMPTY_STATIC_INIT(CCBNhưng)
 
-FOUNDATION_EXPORT id<CucumberApiJavaViNhưng> create_CucumberApiJavaViNhưng(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBNhưng> create_CCBNhưng(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaViNhưng)
+J2OBJC_TYPE_LITERAL_HEADER(CCBNhưng)
+
+#define CucumberApiJavaViNhưng CCBNhưng
 
 #endif
 

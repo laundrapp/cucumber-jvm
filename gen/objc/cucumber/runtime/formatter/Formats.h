@@ -18,22 +18,24 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeFormatterFormats_) && (INCLUDE_ALL_CucumberRuntimeFormatterFormats || defined(INCLUDE_CucumberRuntimeFormatterFormats))
-#define CucumberRuntimeFormatterFormats_
+#if !defined (CCBRFormats_) && (INCLUDE_ALL_CucumberRuntimeFormatterFormats || defined(INCLUDE_CCBRFormats))
+#define CCBRFormats_
 
-@protocol CucumberRuntimeFormatterFormat;
+@protocol CCBRFormat;
 
-@protocol CucumberRuntimeFormatterFormats < JavaObject >
+@protocol CCBRFormats < JavaObject >
 
-- (id<CucumberRuntimeFormatterFormat>)getWithNSString:(NSString *)key;
+- (id<CCBRFormat>)getWithNSString:(NSString *)key;
 
 - (NSString *)upWithInt:(jint)n;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterFormats)
+J2OBJC_EMPTY_STATIC_INIT(CCBRFormats)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterFormats)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRFormats)
+
+#define CucumberRuntimeFormatterFormats CCBRFormats
 
 #endif
 

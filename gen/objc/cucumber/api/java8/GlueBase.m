@@ -6,17 +6,17 @@
 #include "J2ObjC_source.h"
 #include "cucumber/api/java8/GlueBase.h"
 
-@interface CucumberApiJava8GlueBase : NSObject
+@interface CCBGlueBase : NSObject
 
 @end
 
-@implementation CucumberApiJava8GlueBase
+@implementation CCBGlueBase
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcClassInfo _CucumberApiJava8GlueBase = { "GlueBase", "cucumber.api.java8", NULL, NULL, NULL, 7, 0x609, 0, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberApiJava8GlueBase;
+  static const J2ObjcClassInfo _CCBGlueBase = { "GlueBase", "cucumber.api.java8", NULL, NULL, NULL, 7, 0x609, 0, 0, -1, -1, -1, -1, -1 };
+  return &_CCBGlueBase;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiJava8GlueBase)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBGlueBase)

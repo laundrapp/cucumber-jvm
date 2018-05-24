@@ -18,13 +18,13 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiCliMain_) && (INCLUDE_ALL_CucumberApiCliMain || defined(INCLUDE_CucumberApiCliMain))
-#define CucumberApiCliMain_
+#if !defined (CCBMain_) && (INCLUDE_ALL_CucumberApiCliMain || defined(INCLUDE_CCBMain))
+#define CCBMain_
 
 @class IOSObjectArray;
 @class JavaLangClassLoader;
 
-@interface CucumberApiCliMain : NSObject
+@interface CCBMain : NSObject
 
 #pragma mark Public
 
@@ -44,19 +44,21 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiCliMain)
+J2OBJC_EMPTY_STATIC_INIT(CCBMain)
 
-FOUNDATION_EXPORT void CucumberApiCliMain_init(CucumberApiCliMain *self);
+FOUNDATION_EXPORT void CCBMain_init(CCBMain *self);
 
-FOUNDATION_EXPORT CucumberApiCliMain *new_CucumberApiCliMain_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBMain *new_CCBMain_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberApiCliMain *create_CucumberApiCliMain_init(void);
+FOUNDATION_EXPORT CCBMain *create_CCBMain_init(void);
 
-FOUNDATION_EXPORT void CucumberApiCliMain_mainWithNSStringArray_(IOSObjectArray *argv);
+FOUNDATION_EXPORT void CCBMain_mainWithNSStringArray_(IOSObjectArray *argv);
 
-FOUNDATION_EXPORT jbyte CucumberApiCliMain_runWithNSStringArray_withJavaLangClassLoader_(IOSObjectArray *argv, JavaLangClassLoader *classLoader);
+FOUNDATION_EXPORT jbyte CCBMain_runWithNSStringArray_withJavaLangClassLoader_(IOSObjectArray *argv, JavaLangClassLoader *classLoader);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiCliMain)
+J2OBJC_TYPE_LITERAL_HEADER(CCBMain)
+
+@compatibility_alias CucumberApiCliMain CCBMain;
 
 #endif
 

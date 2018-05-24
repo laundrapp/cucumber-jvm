@@ -18,35 +18,37 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeJavaLambdaGlueRegistry_) && (INCLUDE_ALL_CucumberRuntimeJavaLambdaGlueRegistry || defined(INCLUDE_CucumberRuntimeJavaLambdaGlueRegistry))
-#define CucumberRuntimeJavaLambdaGlueRegistry_
+#if !defined (CCBLambdaGlueRegistry_) && (INCLUDE_ALL_CucumberRuntimeJavaLambdaGlueRegistry || defined(INCLUDE_CCBLambdaGlueRegistry))
+#define CCBLambdaGlueRegistry_
 
 @class JavaLangThreadLocal;
-@protocol CucumberRuntimeHookDefinition;
-@protocol CucumberRuntimeStepDefinition;
+@protocol CCBRHookDefinition;
+@protocol CCBRStepDefinition;
 
-@protocol CucumberRuntimeJavaLambdaGlueRegistry < JavaObject >
+@protocol CCBLambdaGlueRegistry < JavaObject >
 
-- (void)addStepDefinitionWithCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)stepDefinition;
+- (void)addStepDefinitionWithCCBRStepDefinition:(id<CCBRStepDefinition>)stepDefinition;
 
-- (void)addBeforeHookDefinitionWithCucumberRuntimeHookDefinition:(id<CucumberRuntimeHookDefinition>)beforeHook;
+- (void)addBeforeHookDefinitionWithCCBRHookDefinition:(id<CCBRHookDefinition>)beforeHook;
 
-- (void)addAfterHookDefinitionWithCucumberRuntimeHookDefinition:(id<CucumberRuntimeHookDefinition>)afterHook;
-
-@end
-
-@interface CucumberRuntimeJavaLambdaGlueRegistry : NSObject
+- (void)addAfterHookDefinitionWithCCBRHookDefinition:(id<CCBRHookDefinition>)afterHook;
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeJavaLambdaGlueRegistry)
+@interface CCBLambdaGlueRegistry : NSObject
 
-inline JavaLangThreadLocal *CucumberRuntimeJavaLambdaGlueRegistry_get_INSTANCE(void);
+@end
+
+J2OBJC_STATIC_INIT(CCBLambdaGlueRegistry)
+
+inline JavaLangThreadLocal *CCBLambdaGlueRegistry_get_INSTANCE(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT JavaLangThreadLocal *CucumberRuntimeJavaLambdaGlueRegistry_INSTANCE;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeJavaLambdaGlueRegistry, INSTANCE, JavaLangThreadLocal *)
+FOUNDATION_EXPORT JavaLangThreadLocal *CCBLambdaGlueRegistry_INSTANCE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBLambdaGlueRegistry, INSTANCE, JavaLangThreadLocal *)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeJavaLambdaGlueRegistry)
+J2OBJC_TYPE_LITERAL_HEADER(CCBLambdaGlueRegistry)
+
+#define CucumberRuntimeJavaLambdaGlueRegistry CCBLambdaGlueRegistry
 
 #endif
 

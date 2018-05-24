@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaHeכאשר_) && (INCLUDE_ALL_CucumberApiJavaHeכאשר || defined(INCLUDE_CucumberApiJavaHeכאשר))
-#define CucumberApiJavaHeכאשר_
+#if !defined (CCBכאשר_) && (INCLUDE_ALL_CucumberApiJavaHeכאשר || defined(INCLUDE_CCBכאשר))
+#define CCBכאשר_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaHeכאשר < JavaLangAnnotationAnnotation >
+@protocol CCBכאשר < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaHeכאשר : NSObject < CucumberApiJavaHeכאשר > {
+@interface CCBכאשר : NSObject < CCBכאשר > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaHeכאשר)
+J2OBJC_EMPTY_STATIC_INIT(CCBכאשר)
 
-FOUNDATION_EXPORT id<CucumberApiJavaHeכאשר> create_CucumberApiJavaHeכאשר(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBכאשר> create_CCBכאשר(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaHeכאשר)
+J2OBJC_TYPE_LITERAL_HEADER(CCBכאשר)
+
+#define CucumberApiJavaHeכאשר CCBכאשר
 
 #endif
 

@@ -16,26 +16,26 @@
 
 @interface CucumberRunnerUnskipableStep () {
  @public
-  CucumberApiHookType *hookType_;
+  CCBHookType *hookType_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRunnerUnskipableStep, hookType_, CucumberApiHookType *)
+J2OBJC_FIELD_SETTER(CucumberRunnerUnskipableStep, hookType_, CCBHookType *)
 
 @implementation CucumberRunnerUnskipableStep
 
-- (instancetype __nonnull)initWithCucumberApiHookType:(CucumberApiHookType *)hookType
-                   withCucumberRuntimeDefinitionMatch:(id<CucumberRuntimeDefinitionMatch>)definitionMatch {
-  CucumberRunnerUnskipableStep_initWithCucumberApiHookType_withCucumberRuntimeDefinitionMatch_(self, hookType, definitionMatch);
+- (instancetype __nonnull)initWithCCBHookType:(CCBHookType *)hookType
+                      withCCBRDefinitionMatch:(id<CCBRDefinitionMatch>)definitionMatch {
+  CucumberRunnerUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(self, hookType, definitionMatch);
   return self;
 }
 
-- (CucumberApiResult_Type *)executeStepWithNSString:(NSString *)language
-                            withCucumberApiScenario:(id<CucumberApiScenario>)scenario
-                                        withBoolean:(jboolean)skipSteps {
-  [((id<CucumberRuntimeDefinitionMatch>) nil_chk(definitionMatch_)) runStepWithNSString:language withCucumberApiScenario:scenario];
-  return JreLoadEnum(CucumberApiResult_Type, PASSED);
+- (CCBResult_Type *)executeStepWithNSString:(NSString *)language
+                            withCCBScenario:(id<CCBScenario>)scenario
+                                withBoolean:(jboolean)skipSteps {
+  [((id<CCBRDefinitionMatch>) nil_chk(definitionMatch_)) runStepWithNSString:language withCCBScenario:scenario];
+  return JreLoadEnum(CCBResult_Type, PASSED);
 }
 
 - (jboolean)isHook {
@@ -62,7 +62,7 @@ J2OBJC_FIELD_SETTER(CucumberRunnerUnskipableStep, hookType_, CucumberApiHookType
   @throw create_JavaLangUnsupportedOperationException_init();
 }
 
-- (CucumberApiHookType *)getHookType {
+- (CCBHookType *)getHookType {
   return hookType_;
 }
 
@@ -74,20 +74,20 @@ J2OBJC_FIELD_SETTER(CucumberRunnerUnskipableStep, hookType_, CucumberApiHookType
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
-    { NULL, "LCucumberApiResult_Type;", 0x4, 1, 2, 3, -1, -1, -1 },
+    { NULL, "LCCBResult_Type;", 0x4, 1, 2, 3, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LGherkinPicklesPickleStep;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "I", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 4, -1, -1 },
-    { NULL, "LCucumberApiHookType;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCCBHookType;", 0x1, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberApiHookType:withCucumberRuntimeDefinitionMatch:);
-  methods[1].selector = @selector(executeStepWithNSString:withCucumberApiScenario:withBoolean:);
+  methods[0].selector = @selector(initWithCCBHookType:withCCBRDefinitionMatch:);
+  methods[1].selector = @selector(executeStepWithNSString:withCCBScenario:withBoolean:);
   methods[2].selector = @selector(isHook);
   methods[3].selector = @selector(getPickleStep);
   methods[4].selector = @selector(getStepLocation);
@@ -97,26 +97,26 @@ J2OBJC_FIELD_SETTER(CucumberRunnerUnskipableStep, hookType_, CucumberApiHookType
   methods[8].selector = @selector(getHookType);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "hookType_", "LCucumberApiHookType;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "hookType_", "LCCBHookType;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCucumberApiHookType;LCucumberRuntimeDefinitionMatch;", "executeStep", "LNSString;LCucumberApiScenario;Z", "LJavaLangThrowable;", "()Ljava/util/List<Lgherkin/pickles/Argument;>;" };
+  static const void *ptrTable[] = { "LCCBHookType;LCCBRDefinitionMatch;", "executeStep", "LNSString;LCCBScenario;Z", "LJavaLangThrowable;", "()Ljava/util/List<Lgherkin/pickles/Argument;>;" };
   static const J2ObjcClassInfo _CucumberRunnerUnskipableStep = { "UnskipableStep", "cucumber.runner", ptrTable, methods, fields, 7, 0x1, 9, 1, -1, -1, -1, -1, -1 };
   return &_CucumberRunnerUnskipableStep;
 }
 
 @end
 
-void CucumberRunnerUnskipableStep_initWithCucumberApiHookType_withCucumberRuntimeDefinitionMatch_(CucumberRunnerUnskipableStep *self, CucumberApiHookType *hookType, id<CucumberRuntimeDefinitionMatch> definitionMatch) {
-  CucumberApiTestStep_initWithCucumberRuntimeDefinitionMatch_(self, definitionMatch);
+void CucumberRunnerUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CucumberRunnerUnskipableStep *self, CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch) {
+  CCBTestStep_initWithCCBRDefinitionMatch_(self, definitionMatch);
   JreStrongAssign(&self->hookType_, hookType);
 }
 
-CucumberRunnerUnskipableStep *new_CucumberRunnerUnskipableStep_initWithCucumberApiHookType_withCucumberRuntimeDefinitionMatch_(CucumberApiHookType *hookType, id<CucumberRuntimeDefinitionMatch> definitionMatch) {
-  J2OBJC_NEW_IMPL(CucumberRunnerUnskipableStep, initWithCucumberApiHookType_withCucumberRuntimeDefinitionMatch_, hookType, definitionMatch)
+CucumberRunnerUnskipableStep *new_CucumberRunnerUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch) {
+  J2OBJC_NEW_IMPL(CucumberRunnerUnskipableStep, initWithCCBHookType_withCCBRDefinitionMatch_, hookType, definitionMatch)
 }
 
-CucumberRunnerUnskipableStep *create_CucumberRunnerUnskipableStep_initWithCucumberApiHookType_withCucumberRuntimeDefinitionMatch_(CucumberApiHookType *hookType, id<CucumberRuntimeDefinitionMatch> definitionMatch) {
-  J2OBJC_CREATE_IMPL(CucumberRunnerUnskipableStep, initWithCucumberApiHookType_withCucumberRuntimeDefinitionMatch_, hookType, definitionMatch)
+CucumberRunnerUnskipableStep *create_CucumberRunnerUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch) {
+  J2OBJC_CREATE_IMPL(CucumberRunnerUnskipableStep, initWithCCBHookType_withCCBRDefinitionMatch_, hookType, definitionMatch)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRunnerUnskipableStep)

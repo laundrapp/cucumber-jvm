@@ -14,11 +14,11 @@
 
 #pragma clang diagnostic ignored "-Wprotocol"
 
-@implementation CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter
+@implementation CCBRDynamicClassBasedSingleValueConverter
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter_init(self);
+  CCBRDynamicClassBasedSingleValueConverter_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -57,14 +57,14 @@ withCucumberDepsComThoughtworksXstreamConvertersMarshallingContext:(id<CucumberD
   methods[3].selector = @selector(converterForClassWithIOSClass:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "marshal", "LNSObject;LCucumberDepsComThoughtworksXstreamIoHierarchicalStreamWriter;LCucumberDepsComThoughtworksXstreamConvertersMarshallingContext;", "unmarshal", "LCucumberDepsComThoughtworksXstreamIoHierarchicalStreamReader;LCucumberDepsComThoughtworksXstreamConvertersUnmarshallingContext;", "converterForClass", "LIOSClass;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter = { "DynamicClassBasedSingleValueConverter", "cucumber.runtime.xstream", ptrTable, methods, NULL, 7, 0x400, 4, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter;
+  static const J2ObjcClassInfo _CCBRDynamicClassBasedSingleValueConverter = { "DynamicClassBasedSingleValueConverter", "cucumber.runtime.xstream", ptrTable, methods, NULL, 7, 0x400, 4, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRDynamicClassBasedSingleValueConverter;
 }
 
 @end
 
-void CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter_init(CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter *self) {
+void CCBRDynamicClassBasedSingleValueConverter_init(CCBRDynamicClassBasedSingleValueConverter *self) {
   NSObject_init(self);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRDynamicClassBasedSingleValueConverter)

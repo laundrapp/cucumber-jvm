@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaPlJeżeli_) && (INCLUDE_ALL_CucumberApiJavaPlJeżeli || defined(INCLUDE_CucumberApiJavaPlJeżeli))
-#define CucumberApiJavaPlJeżeli_
+#if !defined (CCBJeżeli_) && (INCLUDE_ALL_CucumberApiJavaPlJeżeli || defined(INCLUDE_CCBJeżeli))
+#define CCBJeżeli_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaPlJeżeli < JavaLangAnnotationAnnotation >
+@protocol CCBJeżeli < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaPlJeżeli : NSObject < CucumberApiJavaPlJeżeli > {
+@interface CCBJeżeli : NSObject < CCBJeżeli > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaPlJeżeli)
+J2OBJC_EMPTY_STATIC_INIT(CCBJeżeli)
 
-FOUNDATION_EXPORT id<CucumberApiJavaPlJeżeli> create_CucumberApiJavaPlJeżeli(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBJeżeli> create_CCBJeżeli(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaPlJeżeli)
+J2OBJC_TYPE_LITERAL_HEADER(CCBJeżeli)
+
+#define CucumberApiJavaPlJeżeli CCBJeżeli
 
 #endif
 

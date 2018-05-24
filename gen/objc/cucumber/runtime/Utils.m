@@ -26,7 +26,7 @@
 #include "java/util/List.h"
 #include "java/util/Map.h"
 
-@interface CucumberRuntimeUtils ()
+@interface CCBRUtils ()
 
 - (instancetype __nonnull)init;
 
@@ -41,19 +41,19 @@
 
 @end
 
-__attribute__((unused)) static void CucumberRuntimeUtils_init(CucumberRuntimeUtils *self);
+__attribute__((unused)) static void CCBRUtils_init(CCBRUtils *self);
 
-__attribute__((unused)) static CucumberRuntimeUtils *new_CucumberRuntimeUtils_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRUtils *new_CCBRUtils_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeUtils *create_CucumberRuntimeUtils_init(void);
+__attribute__((unused)) static CCBRUtils *create_CCBRUtils_init(void);
 
-__attribute__((unused)) static JavaLangReflectMethod *CucumberRuntimeUtils_targetMethodWithId_withJavaLangReflectMethod_(id target, JavaLangReflectMethod *method);
+__attribute__((unused)) static JavaLangReflectMethod *CCBRUtils_targetMethodWithId_withJavaLangReflectMethod_(id target, JavaLangReflectMethod *method);
 
-__attribute__((unused)) static id<JavaLangReflectType> CucumberRuntimeUtils_typeArgWithJavaLangReflectType_withIOSClass_withInt_(id<JavaLangReflectType> type, IOSClass *wantedRawType, jint index);
+__attribute__((unused)) static id<JavaLangReflectType> CCBRUtils_typeArgWithJavaLangReflectType_withIOSClass_withInt_(id<JavaLangReflectType> type, IOSClass *wantedRawType, jint index);
 
-__attribute__((unused)) static jboolean CucumberRuntimeUtils_includesBlankWithNSString_(NSString *testCaseName);
+__attribute__((unused)) static jboolean CCBRUtils_includesBlankWithNSString_(NSString *testCaseName);
 
-@interface CucumberRuntimeUtils_1 : NSObject < CucumberRuntimeTimeout_Callback > {
+@interface CCBRUtils_1 : NSObject < CCBRTimeout_Callback > {
  @public
   JavaLangReflectMethod *val$targetMethod_;
   id val$target_;
@@ -68,72 +68,72 @@ __attribute__((unused)) static jboolean CucumberRuntimeUtils_includesBlankWithNS
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeUtils_1)
+J2OBJC_EMPTY_STATIC_INIT(CCBRUtils_1)
 
-__attribute__((unused)) static void CucumberRuntimeUtils_1_initWithJavaLangReflectMethod_withId_withNSObjectArray_(CucumberRuntimeUtils_1 *self, JavaLangReflectMethod *capture$0, id capture$1, IOSObjectArray *capture$2);
+__attribute__((unused)) static void CCBRUtils_1_initWithJavaLangReflectMethod_withId_withNSObjectArray_(CCBRUtils_1 *self, JavaLangReflectMethod *capture$0, id capture$1, IOSObjectArray *capture$2);
 
-__attribute__((unused)) static CucumberRuntimeUtils_1 *new_CucumberRuntimeUtils_1_initWithJavaLangReflectMethod_withId_withNSObjectArray_(JavaLangReflectMethod *capture$0, id capture$1, IOSObjectArray *capture$2) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRUtils_1 *new_CCBRUtils_1_initWithJavaLangReflectMethod_withId_withNSObjectArray_(JavaLangReflectMethod *capture$0, id capture$1, IOSObjectArray *capture$2) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeUtils_1 *create_CucumberRuntimeUtils_1_initWithJavaLangReflectMethod_withId_withNSObjectArray_(JavaLangReflectMethod *capture$0, id capture$1, IOSObjectArray *capture$2);
+__attribute__((unused)) static CCBRUtils_1 *create_CCBRUtils_1_initWithJavaLangReflectMethod_withId_withNSObjectArray_(JavaLangReflectMethod *capture$0, id capture$1, IOSObjectArray *capture$2);
 
-@implementation CucumberRuntimeUtils
+@implementation CCBRUtils
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeUtils_init(self);
+  CCBRUtils_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 + (jboolean)isInstantiableWithIOSClass:(IOSClass *)clazz {
-  return CucumberRuntimeUtils_isInstantiableWithIOSClass_(clazz);
+  return CCBRUtils_isInstantiableWithIOSClass_(clazz);
 }
 
 + (id)invokeWithId:(id)target
 withJavaLangReflectMethod:(JavaLangReflectMethod *)method
           withLong:(jlong)timeoutMillis
  withNSObjectArray:(IOSObjectArray *)args {
-  return CucumberRuntimeUtils_invokeWithId_withJavaLangReflectMethod_withLong_withNSObjectArray_(target, method, timeoutMillis, args);
+  return CCBRUtils_invokeWithId_withJavaLangReflectMethod_withLong_withNSObjectArray_(target, method, timeoutMillis, args);
 }
 
 + (JavaLangReflectMethod *)targetMethodWithId:(id)target
                     withJavaLangReflectMethod:(JavaLangReflectMethod *)method {
-  return CucumberRuntimeUtils_targetMethodWithId_withJavaLangReflectMethod_(target, method);
+  return CCBRUtils_targetMethodWithId_withJavaLangReflectMethod_(target, method);
 }
 
 + (id<JavaLangReflectType>)listItemTypeWithJavaLangReflectType:(id<JavaLangReflectType>)type {
-  return CucumberRuntimeUtils_listItemTypeWithJavaLangReflectType_(type);
+  return CCBRUtils_listItemTypeWithJavaLangReflectType_(type);
 }
 
 + (id<JavaLangReflectType>)mapKeyTypeWithJavaLangReflectType:(id<JavaLangReflectType>)type {
-  return CucumberRuntimeUtils_mapKeyTypeWithJavaLangReflectType_(type);
+  return CCBRUtils_mapKeyTypeWithJavaLangReflectType_(type);
 }
 
 + (id<JavaLangReflectType>)mapValueTypeWithJavaLangReflectType:(id<JavaLangReflectType>)type {
-  return CucumberRuntimeUtils_mapValueTypeWithJavaLangReflectType_(type);
+  return CCBRUtils_mapValueTypeWithJavaLangReflectType_(type);
 }
 
 + (id<JavaLangReflectType>)typeArgWithJavaLangReflectType:(id<JavaLangReflectType>)type
                                              withIOSClass:(IOSClass *)wantedRawType
                                                   withInt:(jint)index {
-  return CucumberRuntimeUtils_typeArgWithJavaLangReflectType_withIOSClass_withInt_(type, wantedRawType, index);
+  return CCBRUtils_typeArgWithJavaLangReflectType_withIOSClass_withInt_(type, wantedRawType, index);
 }
 
 + (JavaNetURL *)toURLWithNSString:(NSString *)pathOrUrl {
-  return CucumberRuntimeUtils_toURLWithNSString_(pathOrUrl);
+  return CCBRUtils_toURLWithNSString_(pathOrUrl);
 }
 
 + (NSString *)htmlEscapeWithNSString:(NSString *)s {
-  return CucumberRuntimeUtils_htmlEscapeWithNSString_(s);
+  return CCBRUtils_htmlEscapeWithNSString_(s);
 }
 
 + (NSString *)getUniqueTestNameForScenarioExampleWithNSString:(NSString *)testCaseName
                                                       withInt:(jint)exampleNumber {
-  return CucumberRuntimeUtils_getUniqueTestNameForScenarioExampleWithNSString_withInt_(testCaseName, exampleNumber);
+  return CCBRUtils_getUniqueTestNameForScenarioExampleWithNSString_withInt_(testCaseName, exampleNumber);
 }
 
 + (jboolean)includesBlankWithNSString:(NSString *)testCaseName {
-  return CucumberRuntimeUtils_includesBlankWithNSString_(testCaseName);
+  return CCBRUtils_includesBlankWithNSString_(testCaseName);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -168,38 +168,38 @@ withJavaLangReflectMethod:(JavaLangReflectMethod *)method
   methods[11].selector = @selector(includesBlankWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "isInstantiable", "LIOSClass;", "(Ljava/lang/Class<*>;)Z", "invoke", "LNSObject;LJavaLangReflectMethod;J[LNSObject;", "LJavaLangThrowable;", "targetMethod", "LNSObject;LJavaLangReflectMethod;", "LJavaLangNoSuchMethodException;", "listItemType", "LJavaLangReflectType;", "mapKeyType", "mapValueType", "typeArg", "LJavaLangReflectType;LIOSClass;I", "(Ljava/lang/reflect/Type;Ljava/lang/Class<*>;I)Ljava/lang/reflect/Type;", "toURL", "LNSString;", "htmlEscape", "getUniqueTestNameForScenarioExample", "LNSString;I", "includesBlank" };
-  static const J2ObjcClassInfo _CucumberRuntimeUtils = { "Utils", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x1, 12, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeUtils;
+  static const J2ObjcClassInfo _CCBRUtils = { "Utils", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x1, 12, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRUtils;
 }
 
 @end
 
-void CucumberRuntimeUtils_init(CucumberRuntimeUtils *self) {
+void CCBRUtils_init(CCBRUtils *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeUtils *new_CucumberRuntimeUtils_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeUtils, init)
+CCBRUtils *new_CCBRUtils_init() {
+  J2OBJC_NEW_IMPL(CCBRUtils, init)
 }
 
-CucumberRuntimeUtils *create_CucumberRuntimeUtils_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeUtils, init)
+CCBRUtils *create_CCBRUtils_init() {
+  J2OBJC_CREATE_IMPL(CCBRUtils, init)
 }
 
-jboolean CucumberRuntimeUtils_isInstantiableWithIOSClass_(IOSClass *clazz) {
-  CucumberRuntimeUtils_initialize();
+jboolean CCBRUtils_isInstantiableWithIOSClass_(IOSClass *clazz) {
+  CCBRUtils_initialize();
   jboolean isNonStaticInnerClass = !JavaLangReflectModifier_isStaticWithInt_([((IOSClass *) nil_chk(clazz)) getModifiers]) && [clazz getEnclosingClass] != nil;
   return JavaLangReflectModifier_isPublicWithInt_([clazz getModifiers]) && !JavaLangReflectModifier_isAbstractWithInt_([clazz getModifiers]) && !isNonStaticInnerClass;
 }
 
-id CucumberRuntimeUtils_invokeWithId_withJavaLangReflectMethod_withLong_withNSObjectArray_(id target, JavaLangReflectMethod *method, jlong timeoutMillis, IOSObjectArray *args) {
-  CucumberRuntimeUtils_initialize();
-  JavaLangReflectMethod *targetMethod = CucumberRuntimeUtils_targetMethodWithId_withJavaLangReflectMethod_(target, method);
-  return CucumberRuntimeTimeout_timeoutWithCucumberRuntimeTimeout_Callback_withLong_(create_CucumberRuntimeUtils_1_initWithJavaLangReflectMethod_withId_withNSObjectArray_(targetMethod, target, args), timeoutMillis);
+id CCBRUtils_invokeWithId_withJavaLangReflectMethod_withLong_withNSObjectArray_(id target, JavaLangReflectMethod *method, jlong timeoutMillis, IOSObjectArray *args) {
+  CCBRUtils_initialize();
+  JavaLangReflectMethod *targetMethod = CCBRUtils_targetMethodWithId_withJavaLangReflectMethod_(target, method);
+  return CCBRTimeout_timeoutWithCCBRTimeout_Callback_withLong_(create_CCBRUtils_1_initWithJavaLangReflectMethod_withId_withNSObjectArray_(targetMethod, target, args), timeoutMillis);
 }
 
-JavaLangReflectMethod *CucumberRuntimeUtils_targetMethodWithId_withJavaLangReflectMethod_(id target, JavaLangReflectMethod *method) {
-  CucumberRuntimeUtils_initialize();
+JavaLangReflectMethod *CCBRUtils_targetMethodWithId_withJavaLangReflectMethod_(id target, JavaLangReflectMethod *method) {
+  CCBRUtils_initialize();
   IOSClass *targetClass = [nil_chk(target) java_getClass];
   IOSClass *declaringClass = [((JavaLangReflectMethod *) nil_chk(method)) getDeclaringClass];
   if ([((JavaLangClassLoader *) nil_chk([targetClass getClassLoader])) isEqual:[((IOSClass *) nil_chk(declaringClass)) getClassLoader]]) {
@@ -222,30 +222,30 @@ JavaLangReflectMethod *CucumberRuntimeUtils_targetMethodWithId_withJavaLangRefle
   }
 }
 
-id<JavaLangReflectType> CucumberRuntimeUtils_listItemTypeWithJavaLangReflectType_(id<JavaLangReflectType> type) {
-  CucumberRuntimeUtils_initialize();
-  return CucumberRuntimeUtils_typeArgWithJavaLangReflectType_withIOSClass_withInt_(type, JavaUtilList_class_(), 0);
+id<JavaLangReflectType> CCBRUtils_listItemTypeWithJavaLangReflectType_(id<JavaLangReflectType> type) {
+  CCBRUtils_initialize();
+  return CCBRUtils_typeArgWithJavaLangReflectType_withIOSClass_withInt_(type, JavaUtilList_class_(), 0);
 }
 
-id<JavaLangReflectType> CucumberRuntimeUtils_mapKeyTypeWithJavaLangReflectType_(id<JavaLangReflectType> type) {
-  CucumberRuntimeUtils_initialize();
-  return CucumberRuntimeUtils_typeArgWithJavaLangReflectType_withIOSClass_withInt_(type, JavaUtilMap_class_(), 0);
+id<JavaLangReflectType> CCBRUtils_mapKeyTypeWithJavaLangReflectType_(id<JavaLangReflectType> type) {
+  CCBRUtils_initialize();
+  return CCBRUtils_typeArgWithJavaLangReflectType_withIOSClass_withInt_(type, JavaUtilMap_class_(), 0);
 }
 
-id<JavaLangReflectType> CucumberRuntimeUtils_mapValueTypeWithJavaLangReflectType_(id<JavaLangReflectType> type) {
-  CucumberRuntimeUtils_initialize();
-  return CucumberRuntimeUtils_typeArgWithJavaLangReflectType_withIOSClass_withInt_(type, JavaUtilMap_class_(), 1);
+id<JavaLangReflectType> CCBRUtils_mapValueTypeWithJavaLangReflectType_(id<JavaLangReflectType> type) {
+  CCBRUtils_initialize();
+  return CCBRUtils_typeArgWithJavaLangReflectType_withIOSClass_withInt_(type, JavaUtilMap_class_(), 1);
 }
 
-id<JavaLangReflectType> CucumberRuntimeUtils_typeArgWithJavaLangReflectType_withIOSClass_withInt_(id<JavaLangReflectType> type, IOSClass *wantedRawType, jint index) {
-  CucumberRuntimeUtils_initialize();
+id<JavaLangReflectType> CCBRUtils_typeArgWithJavaLangReflectType_withIOSClass_withInt_(id<JavaLangReflectType> type, IOSClass *wantedRawType, jint index) {
+  CCBRUtils_initialize();
   if ([JavaLangReflectParameterizedType_class_() isInstance:type]) {
     id<JavaLangReflectParameterizedType> parameterizedType = (id<JavaLangReflectParameterizedType>) cast_check(type, JavaLangReflectParameterizedType_class_());
     id<JavaLangReflectType> rawType = [((id<JavaLangReflectParameterizedType>) nil_chk(parameterizedType)) getRawType];
     if ([rawType isKindOfClass:[IOSClass class]] && [((IOSClass *) nil_chk(wantedRawType)) isAssignableFrom:(IOSClass *) cast_chk(rawType, [IOSClass class])]) {
       id<JavaLangReflectType> result = IOSObjectArray_Get(nil_chk([parameterizedType getActualTypeArguments]), index);
       if ([JavaLangReflectTypeVariable_class_() isInstance:result]) {
-        @throw create_CucumberRuntimeCucumberException_initWithNSString_(@"Generic types must be explicit");
+        @throw create_CCBRCucumberException_initWithNSString_(@"Generic types must be explicit");
       }
       return result;
     }
@@ -258,8 +258,8 @@ id<JavaLangReflectType> CucumberRuntimeUtils_typeArgWithJavaLangReflectType_with
   }
 }
 
-JavaNetURL *CucumberRuntimeUtils_toURLWithNSString_(NSString *pathOrUrl) {
-  CucumberRuntimeUtils_initialize();
+JavaNetURL *CCBRUtils_toURLWithNSString_(NSString *pathOrUrl) {
+  CCBRUtils_initialize();
   @try {
     if (![((NSString *) nil_chk(pathOrUrl)) java_hasSuffix:@"/"]) {
       pathOrUrl = JreStrcat("$C", pathOrUrl, '/');
@@ -272,33 +272,33 @@ JavaNetURL *CucumberRuntimeUtils_toURLWithNSString_(NSString *pathOrUrl) {
     }
   }
   @catch (JavaNetMalformedURLException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithNSString_withJavaLangThrowable_(JreStrcat("$$", @"Bad URL:", pathOrUrl), e);
+    @throw create_CCBRCucumberException_initWithNSString_withJavaLangThrowable_(JreStrcat("$$", @"Bad URL:", pathOrUrl), e);
   }
 }
 
-NSString *CucumberRuntimeUtils_htmlEscapeWithNSString_(NSString *s) {
-  CucumberRuntimeUtils_initialize();
+NSString *CCBRUtils_htmlEscapeWithNSString_(NSString *s) {
+  CCBRUtils_initialize();
   return [((NSString *) nil_chk([((NSString *) nil_chk([((NSString *) nil_chk([((NSString *) nil_chk([((NSString *) nil_chk([((NSString *) nil_chk(s)) java_replace:@"&" withSequence:@"&amp;"])) java_replace:@"<" withSequence:@"&lt;"])) java_replace:@">" withSequence:@"&gt;"])) java_replace:@"\"" withSequence:@"&quot;"])) java_replace:@"'" withSequence:@"&#x27;"])) java_replace:@"/" withSequence:@"&#x2F;"];
 }
 
-NSString *CucumberRuntimeUtils_getUniqueTestNameForScenarioExampleWithNSString_withInt_(NSString *testCaseName, jint exampleNumber) {
-  CucumberRuntimeUtils_initialize();
-  return JreStrcat("$$I", testCaseName, (CucumberRuntimeUtils_includesBlankWithNSString_(testCaseName) ? @" " : @"_"), exampleNumber);
+NSString *CCBRUtils_getUniqueTestNameForScenarioExampleWithNSString_withInt_(NSString *testCaseName, jint exampleNumber) {
+  CCBRUtils_initialize();
+  return JreStrcat("$$I", testCaseName, (CCBRUtils_includesBlankWithNSString_(testCaseName) ? @" " : @"_"), exampleNumber);
 }
 
-jboolean CucumberRuntimeUtils_includesBlankWithNSString_(NSString *testCaseName) {
-  CucumberRuntimeUtils_initialize();
+jboolean CCBRUtils_includesBlankWithNSString_(NSString *testCaseName) {
+  CCBRUtils_initialize();
   return [((NSString *) nil_chk(testCaseName)) java_indexOf:' '] != -1;
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeUtils)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRUtils)
 
-@implementation CucumberRuntimeUtils_1
+@implementation CCBRUtils_1
 
 - (instancetype __nonnull)initWithJavaLangReflectMethod:(JavaLangReflectMethod *)capture$0
                                                  withId:(id)capture$1
                                       withNSObjectArray:(IOSObjectArray *)capture$2 {
-  CucumberRuntimeUtils_1_initWithJavaLangReflectMethod_withId_withNSObjectArray_(self, capture$0, capture$1, capture$2);
+  CCBRUtils_1_initWithJavaLangReflectMethod_withId_withNSObjectArray_(self, capture$0, capture$1, capture$2);
   return self;
 }
 
@@ -309,13 +309,13 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeUtils)
     return [val$targetMethod_ invokeWithId:val$target_ withNSObjectArray:val$args_];
   }
   @catch (JavaLangIllegalArgumentException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithNSString_withJavaLangThrowable_(JreStrcat("$$$$$$", @"Failed to invoke ", [((CucumberRuntimeMethodFormat *) nil_chk(JreLoadStatic(CucumberRuntimeMethodFormat, FULL))) formatWithJavaLangReflectMethod:val$targetMethod_], @", caused by ", [[e java_getClass] getName], @": ", [e getMessage]), e);
+    @throw create_CCBRCucumberException_initWithNSString_withJavaLangThrowable_(JreStrcat("$$$$$$", @"Failed to invoke ", [((CCBRMethodFormat *) nil_chk(JreLoadStatic(CCBRMethodFormat, FULL))) formatWithJavaLangReflectMethod:val$targetMethod_], @", caused by ", [[e java_getClass] getName], @": ", [e getMessage]), e);
   }
   @catch (JavaLangReflectInvocationTargetException *e) {
     @throw nil_chk([e getTargetException]);
   }
   @catch (JavaLangIllegalAccessException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithNSString_withJavaLangThrowable_(JreStrcat("$$$$$$", @"Failed to invoke ", [((CucumberRuntimeMethodFormat *) nil_chk(JreLoadStatic(CucumberRuntimeMethodFormat, FULL))) formatWithJavaLangReflectMethod:val$targetMethod_], @", caused by ", [[e java_getClass] getName], @": ", [e getMessage]), e);
+    @throw create_CCBRCucumberException_initWithNSString_withJavaLangThrowable_(JreStrcat("$$$$$$", @"Failed to invoke ", [((CCBRMethodFormat *) nil_chk(JreLoadStatic(CCBRMethodFormat, FULL))) formatWithJavaLangReflectMethod:val$targetMethod_], @", caused by ", [[e java_getClass] getName], @": ", [e getMessage]), e);
   }
   @finally {
     [val$targetMethod_ setAccessibleWithBoolean:accessible];
@@ -345,24 +345,24 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeUtils)
     { "val$target_", "LNSObject;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
     { "val$args_", "[LNSObject;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LJavaLangThrowable;", "LCucumberRuntimeUtils;", "invokeWithId:withJavaLangReflectMethod:withLong:withNSObjectArray:", "Ljava/lang/Object;Lcucumber/runtime/Timeout$Callback<Ljava/lang/Object;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeUtils_1 = { "", "cucumber.runtime", ptrTable, methods, fields, 7, 0x8018, 2, 3, 1, -1, 2, 3, -1 };
-  return &_CucumberRuntimeUtils_1;
+  static const void *ptrTable[] = { "LJavaLangThrowable;", "LCCBRUtils;", "invokeWithId:withJavaLangReflectMethod:withLong:withNSObjectArray:", "Ljava/lang/Object;Lcucumber/runtime/Timeout$Callback<Ljava/lang/Object;>;" };
+  static const J2ObjcClassInfo _CCBRUtils_1 = { "", "cucumber.runtime", ptrTable, methods, fields, 7, 0x8018, 2, 3, 1, -1, 2, 3, -1 };
+  return &_CCBRUtils_1;
 }
 
 @end
 
-void CucumberRuntimeUtils_1_initWithJavaLangReflectMethod_withId_withNSObjectArray_(CucumberRuntimeUtils_1 *self, JavaLangReflectMethod *capture$0, id capture$1, IOSObjectArray *capture$2) {
+void CCBRUtils_1_initWithJavaLangReflectMethod_withId_withNSObjectArray_(CCBRUtils_1 *self, JavaLangReflectMethod *capture$0, id capture$1, IOSObjectArray *capture$2) {
   JreStrongAssign(&self->val$targetMethod_, capture$0);
   JreStrongAssign(&self->val$target_, capture$1);
   JreStrongAssign(&self->val$args_, capture$2);
   NSObject_init(self);
 }
 
-CucumberRuntimeUtils_1 *new_CucumberRuntimeUtils_1_initWithJavaLangReflectMethod_withId_withNSObjectArray_(JavaLangReflectMethod *capture$0, id capture$1, IOSObjectArray *capture$2) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeUtils_1, initWithJavaLangReflectMethod_withId_withNSObjectArray_, capture$0, capture$1, capture$2)
+CCBRUtils_1 *new_CCBRUtils_1_initWithJavaLangReflectMethod_withId_withNSObjectArray_(JavaLangReflectMethod *capture$0, id capture$1, IOSObjectArray *capture$2) {
+  J2OBJC_NEW_IMPL(CCBRUtils_1, initWithJavaLangReflectMethod_withId_withNSObjectArray_, capture$0, capture$1, capture$2)
 }
 
-CucumberRuntimeUtils_1 *create_CucumberRuntimeUtils_1_initWithJavaLangReflectMethod_withId_withNSObjectArray_(JavaLangReflectMethod *capture$0, id capture$1, IOSObjectArray *capture$2) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeUtils_1, initWithJavaLangReflectMethod_withId_withNSObjectArray_, capture$0, capture$1, capture$2)
+CCBRUtils_1 *create_CCBRUtils_1_initWithJavaLangReflectMethod_withId_withNSObjectArray_(JavaLangReflectMethod *capture$0, id capture$1, IOSObjectArray *capture$2) {
+  J2OBJC_CREATE_IMPL(CCBRUtils_1, initWithJavaLangReflectMethod_withId_withNSObjectArray_, capture$0, capture$1, capture$2)
 }

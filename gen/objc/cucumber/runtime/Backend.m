@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/runtime/Backend.h"
 
-@interface CucumberRuntimeBackend : NSObject
+@interface CCBRBackend : NSObject
 
 @end
 
-@implementation CucumberRuntimeBackend
+@implementation CCBRBackend
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -23,17 +23,17 @@
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(loadGlueWithCucumberRuntimeGlue:withJavaUtilList:);
-  methods[1].selector = @selector(setUnreportedStepExecutorWithCucumberRuntimeUnreportedStepExecutor:);
+  methods[0].selector = @selector(loadGlueWithCCBRGlue:withJavaUtilList:);
+  methods[1].selector = @selector(setUnreportedStepExecutorWithCCBRUnreportedStepExecutor:);
   methods[2].selector = @selector(buildWorld);
   methods[3].selector = @selector(disposeWorld);
-  methods[4].selector = @selector(getSnippetWithGherkinPicklesPickleStep:withNSString:withCucumberRuntimeSnippetsFunctionNameGenerator:);
+  methods[4].selector = @selector(getSnippetWithGherkinPicklesPickleStep:withNSString:withCCBRFunctionNameGenerator:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "loadGlue", "LCucumberRuntimeGlue;LJavaUtilList;", "(Lcucumber/runtime/Glue;Ljava/util/List<Ljava/lang/String;>;)V", "setUnreportedStepExecutor", "LCucumberRuntimeUnreportedStepExecutor;", "getSnippet", "LGherkinPicklesPickleStep;LNSString;LCucumberRuntimeSnippetsFunctionNameGenerator;" };
-  static const J2ObjcClassInfo _CucumberRuntimeBackend = { "Backend", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 5, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeBackend;
+  static const void *ptrTable[] = { "loadGlue", "LCCBRGlue;LJavaUtilList;", "(Lcucumber/runtime/Glue;Ljava/util/List<Ljava/lang/String;>;)V", "setUnreportedStepExecutor", "LCCBRUnreportedStepExecutor;", "getSnippet", "LGherkinPicklesPickleStep;LNSString;LCCBRFunctionNameGenerator;" };
+  static const J2ObjcClassInfo _CCBRBackend = { "Backend", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 5, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRBackend;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRuntimeBackend)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBRBackend)

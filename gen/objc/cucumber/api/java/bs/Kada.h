@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaBsKada_) && (INCLUDE_ALL_CucumberApiJavaBsKada || defined(INCLUDE_CucumberApiJavaBsKada))
-#define CucumberApiJavaBsKada_
+#if !defined (CCBKada_) && (INCLUDE_ALL_CucumberApiJavaBsKada || defined(INCLUDE_CCBKada))
+#define CCBKada_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaBsKada < JavaLangAnnotationAnnotation >
+@protocol CCBKada < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaBsKada : NSObject < CucumberApiJavaBsKada > {
+@interface CCBKada : NSObject < CCBKada > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaBsKada)
+J2OBJC_EMPTY_STATIC_INIT(CCBKada)
 
-FOUNDATION_EXPORT id<CucumberApiJavaBsKada> create_CucumberApiJavaBsKada(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBKada> create_CCBKada(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaBsKada)
+J2OBJC_TYPE_LITERAL_HEADER(CCBKada)
+
+#define CucumberApiJavaBsKada CCBKada
 
 #endif
 

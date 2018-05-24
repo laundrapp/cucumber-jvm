@@ -15,9 +15,9 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *CucumberApiJavaMk_latnTogash__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CCBTogash__Annotations$0(void);
 
-@implementation CucumberApiJavaMk_latnTogash
+@implementation CCBTogash
 
 @synthesize value = value_;
 @synthesize timeout = timeout_;
@@ -27,7 +27,7 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiJavaMk_latnTogash__Ann
 }
 
 - (IOSClass *)annotationType {
-  return CucumberApiJavaMk_latnTogash_class_();
+  return CCBTogash_class_();
 }
 
 - (NSString *)description {
@@ -62,22 +62,22 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiJavaMk_latnTogash__Ann
     { "value_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "timeout_", "J", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&CucumberApiJavaMk_latnTogash__Annotations$0 };
-  static const J2ObjcClassInfo _CucumberApiJavaMk_latnTogash = { "Togash", "cucumber.api.java.mk_latn", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
-  return &_CucumberApiJavaMk_latnTogash;
+  static const void *ptrTable[] = { (void *)&CCBTogash__Annotations$0 };
+  static const J2ObjcClassInfo _CCBTogash = { "Togash", "cucumber.api.java.mk_latn", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
+  return &_CCBTogash;
 }
 
 @end
 
-id<CucumberApiJavaMk_latnTogash> create_CucumberApiJavaMk_latnTogash(jlong timeout, NSString *value) {
-  CucumberApiJavaMk_latnTogash *self = AUTORELEASE([[CucumberApiJavaMk_latnTogash alloc] init]);
+id<CCBTogash> create_CCBTogash(jlong timeout, NSString *value) {
+  CCBTogash *self = AUTORELEASE([[CCBTogash alloc] init]);
   self->timeout_ = timeout;
   self->value_ = RETAIN_(value);
   return self;
 }
 
-IOSObjectArray *CucumberApiJavaMk_latnTogash__Annotations$0() {
-  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CucumberRuntimeJavaStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
+IOSObjectArray *CCBTogash__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CCBStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiJavaMk_latnTogash)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBTogash)

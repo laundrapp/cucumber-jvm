@@ -18,18 +18,18 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamLongConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamLongConverter || defined(INCLUDE_CucumberRuntimeXstreamLongConverter))
-#define CucumberRuntimeXstreamLongConverter_
+#if !defined (CCBRLongConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamLongConverter || defined(INCLUDE_CCBRLongConverter))
+#define CCBRLongConverter_
 
 #define RESTRICT_CucumberRuntimeXstreamConverterWithNumberFormat 1
-#define INCLUDE_CucumberRuntimeXstreamConverterWithNumberFormat 1
+#define INCLUDE_CCBRConverterWithNumberFormat 1
 #include "cucumber/runtime/xstream/ConverterWithNumberFormat.h"
 
 @class IOSObjectArray;
 @class JavaLangLong;
 @class JavaUtilLocale;
 
-@interface CucumberRuntimeXstreamLongConverter : CucumberRuntimeXstreamConverterWithNumberFormat
+@interface CCBRLongConverter : CCBRConverterWithNumberFormat
 
 #pragma mark Public
 
@@ -48,15 +48,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamLongConverter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRLongConverter)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamLongConverter_initWithJavaUtilLocale_(CucumberRuntimeXstreamLongConverter *self, JavaUtilLocale *locale);
+FOUNDATION_EXPORT void CCBRLongConverter_initWithJavaUtilLocale_(CCBRLongConverter *self, JavaUtilLocale *locale);
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamLongConverter *new_CucumberRuntimeXstreamLongConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRLongConverter *new_CCBRLongConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamLongConverter *create_CucumberRuntimeXstreamLongConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale);
+FOUNDATION_EXPORT CCBRLongConverter *create_CCBRLongConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamLongConverter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRLongConverter)
+
+@compatibility_alias CucumberRuntimeXstreamLongConverter CCBRLongConverter;
 
 #endif
 

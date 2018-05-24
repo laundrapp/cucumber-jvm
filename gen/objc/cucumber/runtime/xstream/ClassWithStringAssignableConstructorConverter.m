@@ -14,19 +14,19 @@
 #include "java/lang/reflect/Constructor.h"
 #include "java/lang/reflect/InvocationTargetException.h"
 
-@interface CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter () {
+@interface CCBRClassWithStringAssignableConstructorConverter () {
  @public
   JavaLangReflectConstructor *ctor_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter, ctor_, JavaLangReflectConstructor *)
+J2OBJC_FIELD_SETTER(CCBRClassWithStringAssignableConstructorConverter, ctor_, JavaLangReflectConstructor *)
 
-@implementation CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter
+@implementation CCBRClassWithStringAssignableConstructorConverter
 
 - (instancetype __nonnull)initWithJavaLangReflectConstructor:(JavaLangReflectConstructor *)constructor {
-  CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter_initWithJavaLangReflectConstructor_(self, constructor);
+  CCBRClassWithStringAssignableConstructorConverter_initWithJavaLangReflectConstructor_(self, constructor);
   return self;
 }
 
@@ -39,13 +39,13 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamClassWithStringAssignableConstructorCo
     return [((JavaLangReflectConstructor *) nil_chk(ctor_)) newInstanceWithNSObjectArray:[IOSObjectArray arrayWithObjects:(id[]){ str } count:1 type:NSObject_class_()]];
   }
   @catch (JavaLangInstantiationException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithJavaLangThrowable_(e);
+    @throw create_CCBRCucumberException_initWithJavaLangThrowable_(e);
   }
   @catch (JavaLangIllegalAccessException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithJavaLangThrowable_(e);
+    @throw create_CCBRCucumberException_initWithJavaLangThrowable_(e);
   }
   @catch (JavaLangReflectInvocationTargetException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithJavaLangThrowable_([e getTargetException]);
+    @throw create_CCBRCucumberException_initWithJavaLangThrowable_([e getTargetException]);
   }
 }
 
@@ -77,23 +77,23 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamClassWithStringAssignableConstructorCo
     { "ctor_", "LJavaLangReflectConstructor;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LJavaLangReflectConstructor;", "toString", "LNSObject;", "fromString", "LNSString;", "canConvert", "LIOSClass;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter = { "ClassWithStringAssignableConstructorConverter", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x0, 4, 1, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter;
+  static const J2ObjcClassInfo _CCBRClassWithStringAssignableConstructorConverter = { "ClassWithStringAssignableConstructorConverter", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x0, 4, 1, -1, -1, -1, -1, -1 };
+  return &_CCBRClassWithStringAssignableConstructorConverter;
 }
 
 @end
 
-void CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter_initWithJavaLangReflectConstructor_(CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter *self, JavaLangReflectConstructor *constructor) {
+void CCBRClassWithStringAssignableConstructorConverter_initWithJavaLangReflectConstructor_(CCBRClassWithStringAssignableConstructorConverter *self, JavaLangReflectConstructor *constructor) {
   NSObject_init(self);
   JreStrongAssign(&self->ctor_, constructor);
 }
 
-CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter *new_CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter_initWithJavaLangReflectConstructor_(JavaLangReflectConstructor *constructor) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter, initWithJavaLangReflectConstructor_, constructor)
+CCBRClassWithStringAssignableConstructorConverter *new_CCBRClassWithStringAssignableConstructorConverter_initWithJavaLangReflectConstructor_(JavaLangReflectConstructor *constructor) {
+  J2OBJC_NEW_IMPL(CCBRClassWithStringAssignableConstructorConverter, initWithJavaLangReflectConstructor_, constructor)
 }
 
-CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter *create_CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter_initWithJavaLangReflectConstructor_(JavaLangReflectConstructor *constructor) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter, initWithJavaLangReflectConstructor_, constructor)
+CCBRClassWithStringAssignableConstructorConverter *create_CCBRClassWithStringAssignableConstructorConverter_initWithJavaLangReflectConstructor_(JavaLangReflectConstructor *constructor) {
+  J2OBJC_CREATE_IMPL(CCBRClassWithStringAssignableConstructorConverter, initWithJavaLangReflectConstructor_, constructor)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamClassWithStringAssignableConstructorConverter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRClassWithStringAssignableConstructorConverter)

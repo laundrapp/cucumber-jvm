@@ -18,16 +18,16 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeTableTableConverter_) && (INCLUDE_ALL_CucumberRuntimeTableTableConverter || defined(INCLUDE_CucumberRuntimeTableTableConverter))
-#define CucumberRuntimeTableTableConverter_
+#if !defined (CCBRTableConverter_) && (INCLUDE_ALL_CucumberRuntimeTableTableConverter || defined(INCLUDE_CCBRTableConverter))
+#define CCBRTableConverter_
 
 #define RESTRICT_CucumberApiTableConverter 1
-#define INCLUDE_CucumberApiTableConverter 1
+#define INCLUDE_CCBTableConverter 1
 #include "cucumber/api/TableConverter.h"
 
-@class CucumberApiDataTable;
-@class CucumberRuntimeParameterInfo;
-@class CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream;
+@class CCBDataTable;
+@class CCBRLocalizedXStreams_LocalizedXStream;
+@class CCBRParameterInfo;
 @class IOSObjectArray;
 @protocol JavaLangReflectType;
 @protocol JavaUtilList;
@@ -36,12 +36,12 @@
 /*!
  @brief This class converts a <code>cucumber.api.DataTable</code> to various other types.
  */
-@interface CucumberRuntimeTableTableConverter : NSObject < CucumberApiTableConverter >
+@interface CCBRTableConverter : NSObject < CCBTableConverter >
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream:(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *)xStream
-                                                          withCucumberRuntimeParameterInfo:(CucumberRuntimeParameterInfo *)parameterInfo;
+- (instancetype __nonnull)initWithCCBRLocalizedXStreams_LocalizedXStream:(CCBRLocalizedXStreams_LocalizedXStream *)xStream
+                                                   withCCBRParameterInfo:(CCBRParameterInfo *)parameterInfo;
 
 /*!
  @brief This method converts a <code>cucumber.api.DataTable</code> to another type.
@@ -54,23 +54,23 @@
  @param transposed whether the table should be transposed first.
  @return the transformed object.
  */
-- (id)convertWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
-              withJavaLangReflectType:(id<JavaLangReflectType>)type
-                          withBoolean:(jboolean)transposed;
+- (id)convertWithCCBDataTable:(CCBDataTable *)dataTable
+      withJavaLangReflectType:(id<JavaLangReflectType>)type
+                  withBoolean:(jboolean)transposed;
 
-- (id<JavaUtilList>)toListWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
-                           withJavaLangReflectType:(id<JavaLangReflectType>)itemType;
+- (id<JavaUtilList>)toListWithCCBDataTable:(CCBDataTable *)dataTable
+                   withJavaLangReflectType:(id<JavaLangReflectType>)itemType;
 
-- (id<JavaUtilList>)toListsWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
-                            withJavaLangReflectType:(id<JavaLangReflectType>)itemType;
+- (id<JavaUtilList>)toListsWithCCBDataTable:(CCBDataTable *)dataTable
+                    withJavaLangReflectType:(id<JavaLangReflectType>)itemType;
 
-- (id<JavaUtilMap>)toMapWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
-                         withJavaLangReflectType:(id<JavaLangReflectType>)keyType
-                         withJavaLangReflectType:(id<JavaLangReflectType>)valueType;
+- (id<JavaUtilMap>)toMapWithCCBDataTable:(CCBDataTable *)dataTable
+                 withJavaLangReflectType:(id<JavaLangReflectType>)keyType
+                 withJavaLangReflectType:(id<JavaLangReflectType>)valueType;
 
-- (id<JavaUtilList>)toMapsWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
-                           withJavaLangReflectType:(id<JavaLangReflectType>)keyType
-                           withJavaLangReflectType:(id<JavaLangReflectType>)valueType;
+- (id<JavaUtilList>)toMapsWithCCBDataTable:(CCBDataTable *)dataTable
+                   withJavaLangReflectType:(id<JavaLangReflectType>)keyType
+                   withJavaLangReflectType:(id<JavaLangReflectType>)valueType;
 
 /*!
  @brief Converts a List of objects to a DataTable.
@@ -78,8 +78,8 @@
  @param columnNames an explicit list of column names
  @return a DataTable
  */
-- (CucumberApiDataTable *)toTableWithJavaUtilList:(id<JavaUtilList>)objects
-                                withNSStringArray:(IOSObjectArray *)columnNames;
+- (CCBDataTable *)toTableWithJavaUtilList:(id<JavaUtilList>)objects
+                        withNSStringArray:(IOSObjectArray *)columnNames;
 
 // Disallowed inherited constructors, do not use.
 
@@ -87,15 +87,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeTableTableConverter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRTableConverter)
 
-FOUNDATION_EXPORT void CucumberRuntimeTableTableConverter_initWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_withCucumberRuntimeParameterInfo_(CucumberRuntimeTableTableConverter *self, CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *xStream, CucumberRuntimeParameterInfo *parameterInfo);
+FOUNDATION_EXPORT void CCBRTableConverter_initWithCCBRLocalizedXStreams_LocalizedXStream_withCCBRParameterInfo_(CCBRTableConverter *self, CCBRLocalizedXStreams_LocalizedXStream *xStream, CCBRParameterInfo *parameterInfo);
 
-FOUNDATION_EXPORT CucumberRuntimeTableTableConverter *new_CucumberRuntimeTableTableConverter_initWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_withCucumberRuntimeParameterInfo_(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *xStream, CucumberRuntimeParameterInfo *parameterInfo) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRTableConverter *new_CCBRTableConverter_initWithCCBRLocalizedXStreams_LocalizedXStream_withCCBRParameterInfo_(CCBRLocalizedXStreams_LocalizedXStream *xStream, CCBRParameterInfo *parameterInfo) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeTableTableConverter *create_CucumberRuntimeTableTableConverter_initWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_withCucumberRuntimeParameterInfo_(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *xStream, CucumberRuntimeParameterInfo *parameterInfo);
+FOUNDATION_EXPORT CCBRTableConverter *create_CCBRTableConverter_initWithCCBRLocalizedXStreams_LocalizedXStream_withCCBRParameterInfo_(CCBRLocalizedXStreams_LocalizedXStream *xStream, CCBRParameterInfo *parameterInfo);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTableTableConverter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRTableConverter)
+
+@compatibility_alias CucumberRuntimeTableTableConverter CCBRTableConverter;
 
 #endif
 

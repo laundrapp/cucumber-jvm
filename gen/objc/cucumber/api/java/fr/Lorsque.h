@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaFrLorsque_) && (INCLUDE_ALL_CucumberApiJavaFrLorsque || defined(INCLUDE_CucumberApiJavaFrLorsque))
-#define CucumberApiJavaFrLorsque_
+#if !defined (CCBLorsque_) && (INCLUDE_ALL_CucumberApiJavaFrLorsque || defined(INCLUDE_CCBLorsque))
+#define CCBLorsque_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaFrLorsque < JavaLangAnnotationAnnotation >
+@protocol CCBLorsque < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaFrLorsque : NSObject < CucumberApiJavaFrLorsque > {
+@interface CCBLorsque : NSObject < CCBLorsque > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaFrLorsque)
+J2OBJC_EMPTY_STATIC_INIT(CCBLorsque)
 
-FOUNDATION_EXPORT id<CucumberApiJavaFrLorsque> create_CucumberApiJavaFrLorsque(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBLorsque> create_CCBLorsque(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaFrLorsque)
+J2OBJC_TYPE_LITERAL_HEADER(CCBLorsque)
+
+#define CucumberApiJavaFrLorsque CCBLorsque
 
 #endif
 

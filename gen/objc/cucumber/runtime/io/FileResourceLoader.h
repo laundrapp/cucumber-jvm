@@ -18,16 +18,16 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeIoFileResourceLoader_) && (INCLUDE_ALL_CucumberRuntimeIoFileResourceLoader || defined(INCLUDE_CucumberRuntimeIoFileResourceLoader))
-#define CucumberRuntimeIoFileResourceLoader_
+#if !defined (CCBRFileResourceLoader_) && (INCLUDE_ALL_CucumberRuntimeIoFileResourceLoader || defined(INCLUDE_CCBRFileResourceLoader))
+#define CCBRFileResourceLoader_
 
 #define RESTRICT_CucumberRuntimeIoResourceLoader 1
-#define INCLUDE_CucumberRuntimeIoResourceLoader 1
+#define INCLUDE_CCBRResourceLoader 1
 #include "cucumber/runtime/io/ResourceLoader.h"
 
 @protocol JavaLangIterable;
 
-@interface CucumberRuntimeIoFileResourceLoader : NSObject < CucumberRuntimeIoResourceLoader >
+@interface CCBRFileResourceLoader : NSObject < CCBRResourceLoader >
 
 #pragma mark Public
 
@@ -38,15 +38,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoFileResourceLoader)
+J2OBJC_EMPTY_STATIC_INIT(CCBRFileResourceLoader)
 
-FOUNDATION_EXPORT void CucumberRuntimeIoFileResourceLoader_init(CucumberRuntimeIoFileResourceLoader *self);
+FOUNDATION_EXPORT void CCBRFileResourceLoader_init(CCBRFileResourceLoader *self);
 
-FOUNDATION_EXPORT CucumberRuntimeIoFileResourceLoader *new_CucumberRuntimeIoFileResourceLoader_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRFileResourceLoader *new_CCBRFileResourceLoader_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeIoFileResourceLoader *create_CucumberRuntimeIoFileResourceLoader_init(void);
+FOUNDATION_EXPORT CCBRFileResourceLoader *create_CCBRFileResourceLoader_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoFileResourceLoader)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRFileResourceLoader)
+
+@compatibility_alias CucumberRuntimeIoFileResourceLoader CCBRFileResourceLoader;
 
 #endif
 

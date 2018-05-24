@@ -7,11 +7,11 @@
 #include "cucumber/runtime/CucumberException.h"
 #include "cucumber/runtime/UndefinedStepDefinitionException.h"
 
-@implementation CucumberRuntimeUndefinedStepDefinitionException
+@implementation CCBRUndefinedStepDefinitionException
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeUndefinedStepDefinitionException_init(self);
+  CCBRUndefinedStepDefinitionException_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -25,22 +25,22 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   #pragma clang diagnostic pop
-  static const J2ObjcClassInfo _CucumberRuntimeUndefinedStepDefinitionException = { "UndefinedStepDefinitionException", "cucumber.runtime", NULL, methods, NULL, 7, 0x1, 1, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeUndefinedStepDefinitionException;
+  static const J2ObjcClassInfo _CCBRUndefinedStepDefinitionException = { "UndefinedStepDefinitionException", "cucumber.runtime", NULL, methods, NULL, 7, 0x1, 1, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRUndefinedStepDefinitionException;
 }
 
 @end
 
-void CucumberRuntimeUndefinedStepDefinitionException_init(CucumberRuntimeUndefinedStepDefinitionException *self) {
-  CucumberRuntimeCucumberException_initWithNSString_(self, @"No step definitions found");
+void CCBRUndefinedStepDefinitionException_init(CCBRUndefinedStepDefinitionException *self) {
+  CCBRCucumberException_initWithNSString_(self, @"No step definitions found");
 }
 
-CucumberRuntimeUndefinedStepDefinitionException *new_CucumberRuntimeUndefinedStepDefinitionException_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeUndefinedStepDefinitionException, init)
+CCBRUndefinedStepDefinitionException *new_CCBRUndefinedStepDefinitionException_init() {
+  J2OBJC_NEW_IMPL(CCBRUndefinedStepDefinitionException, init)
 }
 
-CucumberRuntimeUndefinedStepDefinitionException *create_CucumberRuntimeUndefinedStepDefinitionException_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeUndefinedStepDefinitionException, init)
+CCBRUndefinedStepDefinitionException *create_CCBRUndefinedStepDefinitionException_init() {
+  J2OBJC_CREATE_IMPL(CCBRUndefinedStepDefinitionException, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeUndefinedStepDefinitionException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRUndefinedStepDefinitionException)

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeIoFileResourceIterable_) && (INCLUDE_ALL_CucumberRuntimeIoFileResourceIterable || defined(INCLUDE_CucumberRuntimeIoFileResourceIterable))
-#define CucumberRuntimeIoFileResourceIterable_
+#if !defined (CCBRFileResourceIterable_) && (INCLUDE_ALL_CucumberRuntimeIoFileResourceIterable || defined(INCLUDE_CCBRFileResourceIterable))
+#define CCBRFileResourceIterable_
 
 #define RESTRICT_JavaLangIterable 1
 #define INCLUDE_JavaLangIterable 1
@@ -30,7 +30,7 @@
 @protocol JavaUtilIterator;
 @protocol JavaUtilSpliterator;
 
-@interface CucumberRuntimeIoFileResourceIterable : NSObject < JavaLangIterable >
+@interface CCBRFileResourceIterable : NSObject < JavaLangIterable >
 
 #pragma mark Public
 
@@ -48,15 +48,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoFileResourceIterable)
+J2OBJC_EMPTY_STATIC_INIT(CCBRFileResourceIterable)
 
-FOUNDATION_EXPORT void CucumberRuntimeIoFileResourceIterable_initWithJavaIoFile_withJavaIoFile_withNSString_(CucumberRuntimeIoFileResourceIterable *self, JavaIoFile *root, JavaIoFile *file, NSString *suffix);
+FOUNDATION_EXPORT void CCBRFileResourceIterable_initWithJavaIoFile_withJavaIoFile_withNSString_(CCBRFileResourceIterable *self, JavaIoFile *root, JavaIoFile *file, NSString *suffix);
 
-FOUNDATION_EXPORT CucumberRuntimeIoFileResourceIterable *new_CucumberRuntimeIoFileResourceIterable_initWithJavaIoFile_withJavaIoFile_withNSString_(JavaIoFile *root, JavaIoFile *file, NSString *suffix) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRFileResourceIterable *new_CCBRFileResourceIterable_initWithJavaIoFile_withJavaIoFile_withNSString_(JavaIoFile *root, JavaIoFile *file, NSString *suffix) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeIoFileResourceIterable *create_CucumberRuntimeIoFileResourceIterable_initWithJavaIoFile_withJavaIoFile_withNSString_(JavaIoFile *root, JavaIoFile *file, NSString *suffix);
+FOUNDATION_EXPORT CCBRFileResourceIterable *create_CCBRFileResourceIterable_initWithJavaIoFile_withJavaIoFile_withNSString_(JavaIoFile *root, JavaIoFile *file, NSString *suffix);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoFileResourceIterable)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRFileResourceIterable)
+
+@compatibility_alias CucumberRuntimeIoFileResourceIterable CCBRFileResourceIterable;
 
 #endif
 

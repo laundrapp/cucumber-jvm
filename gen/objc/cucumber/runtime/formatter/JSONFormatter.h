@@ -18,23 +18,23 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeFormatterJSONFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterJSONFormatter || defined(INCLUDE_CucumberRuntimeFormatterJSONFormatter))
-#define CucumberRuntimeFormatterJSONFormatter_
+#if !defined (CCBRJSONFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterJSONFormatter || defined(INCLUDE_CCBRJSONFormatter))
+#define CCBRJSONFormatter_
 
 #define RESTRICT_CucumberApiFormatterFormatter 1
-#define INCLUDE_CucumberApiFormatterFormatter 1
+#define INCLUDE_CCBFormatter 1
 #include "cucumber/api/formatter/Formatter.h"
 
-@protocol CucumberApiEventEventPublisher;
+@protocol CCBEventPublisher;
 @protocol JavaLangAppendable;
 
-@interface CucumberRuntimeFormatterJSONFormatter : NSObject < CucumberApiFormatterFormatter >
+@interface CCBRJSONFormatter : NSObject < CCBFormatter >
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg;
 
-- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
+- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher;
 
 // Disallowed inherited constructors, do not use.
 
@@ -42,15 +42,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterJSONFormatter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRJSONFormatter)
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterJSONFormatter_initWithJavaLangAppendable_(CucumberRuntimeFormatterJSONFormatter *self, id<JavaLangAppendable> outArg);
+FOUNDATION_EXPORT void CCBRJSONFormatter_initWithJavaLangAppendable_(CCBRJSONFormatter *self, id<JavaLangAppendable> outArg);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterJSONFormatter *new_CucumberRuntimeFormatterJSONFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRJSONFormatter *new_CCBRJSONFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterJSONFormatter *create_CucumberRuntimeFormatterJSONFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg);
+FOUNDATION_EXPORT CCBRJSONFormatter *create_CCBRJSONFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterJSONFormatter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRJSONFormatter)
+
+@compatibility_alias CucumberRuntimeFormatterJSONFormatter CCBRJSONFormatter;
 
 #endif
 

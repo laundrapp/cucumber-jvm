@@ -38,24 +38,24 @@
 #include "java/util/List.h"
 #include "java/util/Map.h"
 
-@interface CucumberRuntimeTableTableConverter () {
+@interface CCBRTableConverter () {
  @public
-  CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *xStream_;
-  CucumberRuntimeParameterInfo *parameterInfo_;
+  CCBRLocalizedXStreams_LocalizedXStream *xStream_;
+  CCBRParameterInfo *parameterInfo_;
 }
 
-- (id<JavaUtilList>)toListOfComplexTypeWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
-                                                   withIOSClass:(IOSClass *)itemType;
+- (id<JavaUtilList>)toListOfComplexTypeWithCCBDataTable:(CCBDataTable *)dataTable
+                                           withIOSClass:(IOSClass *)itemType;
 
-- (id<JavaUtilList>)toListWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
+- (id<JavaUtilList>)toListWithCCBDataTable:(CCBDataTable *)dataTable
 withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>)itemConverter;
 
-- (CucumberApiDataTable *)createDataTableWithJavaUtilList:(id<JavaUtilList>)header
-                                         withJavaUtilList:(id<JavaUtilList>)valuesList;
+- (CCBDataTable *)createDataTableWithJavaUtilList:(id<JavaUtilList>)header
+                                 withJavaUtilList:(id<JavaUtilList>)valuesList;
 
 - (GherkinPicklesPickleRow *)gherkinRowWithJavaUtilList:(id<JavaUtilList>)cells;
 
-- (id<JavaUtilList>)convertTopCellsToFieldNamesWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable;
+- (id<JavaUtilList>)convertTopCellsToFieldNamesWithCCBDataTable:(CCBDataTable *)dataTable;
 
 - (jboolean)isListOfSingleValueWithId:(id)object;
 
@@ -63,129 +63,129 @@ withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<Cucumbe
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeTableTableConverter, xStream_, CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeTableTableConverter, parameterInfo_, CucumberRuntimeParameterInfo *)
+J2OBJC_FIELD_SETTER(CCBRTableConverter, xStream_, CCBRLocalizedXStreams_LocalizedXStream *)
+J2OBJC_FIELD_SETTER(CCBRTableConverter, parameterInfo_, CCBRParameterInfo *)
 
-__attribute__((unused)) static id<JavaUtilList> CucumberRuntimeTableTableConverter_toListOfComplexTypeWithCucumberApiDataTable_withIOSClass_(CucumberRuntimeTableTableConverter *self, CucumberApiDataTable *dataTable, IOSClass *itemType);
+__attribute__((unused)) static id<JavaUtilList> CCBRTableConverter_toListOfComplexTypeWithCCBDataTable_withIOSClass_(CCBRTableConverter *self, CCBDataTable *dataTable, IOSClass *itemType);
 
-__attribute__((unused)) static id<JavaUtilList> CucumberRuntimeTableTableConverter_toListWithCucumberApiDataTable_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(CucumberRuntimeTableTableConverter *self, CucumberApiDataTable *dataTable, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> itemConverter);
+__attribute__((unused)) static id<JavaUtilList> CCBRTableConverter_toListWithCCBDataTable_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(CCBRTableConverter *self, CCBDataTable *dataTable, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> itemConverter);
 
-__attribute__((unused)) static CucumberApiDataTable *CucumberRuntimeTableTableConverter_createDataTableWithJavaUtilList_withJavaUtilList_(CucumberRuntimeTableTableConverter *self, id<JavaUtilList> header, id<JavaUtilList> valuesList);
+__attribute__((unused)) static CCBDataTable *CCBRTableConverter_createDataTableWithJavaUtilList_withJavaUtilList_(CCBRTableConverter *self, id<JavaUtilList> header, id<JavaUtilList> valuesList);
 
-__attribute__((unused)) static GherkinPicklesPickleRow *CucumberRuntimeTableTableConverter_gherkinRowWithJavaUtilList_(CucumberRuntimeTableTableConverter *self, id<JavaUtilList> cells);
+__attribute__((unused)) static GherkinPicklesPickleRow *CCBRTableConverter_gherkinRowWithJavaUtilList_(CCBRTableConverter *self, id<JavaUtilList> cells);
 
-__attribute__((unused)) static id<JavaUtilList> CucumberRuntimeTableTableConverter_convertTopCellsToFieldNamesWithCucumberApiDataTable_(CucumberRuntimeTableTableConverter *self, CucumberApiDataTable *dataTable);
+__attribute__((unused)) static id<JavaUtilList> CCBRTableConverter_convertTopCellsToFieldNamesWithCCBDataTable_(CCBRTableConverter *self, CCBDataTable *dataTable);
 
-__attribute__((unused)) static jboolean CucumberRuntimeTableTableConverter_isListOfSingleValueWithId_(CucumberRuntimeTableTableConverter *self, id object);
+__attribute__((unused)) static jboolean CCBRTableConverter_isListOfSingleValueWithId_(CCBRTableConverter *self, id object);
 
-__attribute__((unused)) static jboolean CucumberRuntimeTableTableConverter_isArrayOfSingleValueWithId_(CucumberRuntimeTableTableConverter *self, id object);
+__attribute__((unused)) static jboolean CCBRTableConverter_isArrayOfSingleValueWithId_(CCBRTableConverter *self, id object);
 
-@interface CucumberRuntimeTableTableConverter_1 : NSObject < CucumberUtilMapper > {
+@interface CCBRTableConverter_1 : NSObject < CucumberUtilMapper > {
  @public
-  id<CucumberRuntimeTableStringConverter> val$mapper_;
+  id<CCBRStringConverter> val$mapper_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeTableStringConverter:(id<CucumberRuntimeTableStringConverter>)capture$0;
+- (instancetype __nonnull)initWithCCBRStringConverter:(id<CCBRStringConverter>)capture$0;
 
 - (NSString *)mapWithId:(NSString *)attributeName;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeTableTableConverter_1)
+J2OBJC_EMPTY_STATIC_INIT(CCBRTableConverter_1)
 
-__attribute__((unused)) static void CucumberRuntimeTableTableConverter_1_initWithCucumberRuntimeTableStringConverter_(CucumberRuntimeTableTableConverter_1 *self, id<CucumberRuntimeTableStringConverter> capture$0);
+__attribute__((unused)) static void CCBRTableConverter_1_initWithCCBRStringConverter_(CCBRTableConverter_1 *self, id<CCBRStringConverter> capture$0);
 
-__attribute__((unused)) static CucumberRuntimeTableTableConverter_1 *new_CucumberRuntimeTableTableConverter_1_initWithCucumberRuntimeTableStringConverter_(id<CucumberRuntimeTableStringConverter> capture$0) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRTableConverter_1 *new_CCBRTableConverter_1_initWithCCBRStringConverter_(id<CCBRStringConverter> capture$0) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeTableTableConverter_1 *create_CucumberRuntimeTableTableConverter_1_initWithCucumberRuntimeTableStringConverter_(id<CucumberRuntimeTableStringConverter> capture$0);
+__attribute__((unused)) static CCBRTableConverter_1 *create_CCBRTableConverter_1_initWithCCBRStringConverter_(id<CCBRStringConverter> capture$0);
 
-@implementation CucumberRuntimeTableTableConverter
+@implementation CCBRTableConverter
 
-- (instancetype __nonnull)initWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream:(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *)xStream
-                                                          withCucumberRuntimeParameterInfo:(CucumberRuntimeParameterInfo *)parameterInfo {
-  CucumberRuntimeTableTableConverter_initWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_withCucumberRuntimeParameterInfo_(self, xStream, parameterInfo);
+- (instancetype __nonnull)initWithCCBRLocalizedXStreams_LocalizedXStream:(CCBRLocalizedXStreams_LocalizedXStream *)xStream
+                                                   withCCBRParameterInfo:(CCBRParameterInfo *)parameterInfo {
+  CCBRTableConverter_initWithCCBRLocalizedXStreams_LocalizedXStream_withCCBRParameterInfo_(self, xStream, parameterInfo);
   return self;
 }
 
-- (id)convertWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
-              withJavaLangReflectType:(id<JavaLangReflectType>)type
-                          withBoolean:(jboolean)transposed {
+- (id)convertWithCCBDataTable:(CCBDataTable *)dataTable
+      withJavaLangReflectType:(id<JavaLangReflectType>)type
+                  withBoolean:(jboolean)transposed {
   if (transposed) {
-    dataTable = [((CucumberApiDataTable *) nil_chk(dataTable)) transpose];
+    dataTable = [((CCBDataTable *) nil_chk(dataTable)) transpose];
   }
-  if (type == nil || ([type isKindOfClass:[IOSClass class]] && [((IOSClass *) cast_chk(type, [IOSClass class])) isAssignableFrom:CucumberApiDataTable_class_()])) {
+  if (type == nil || ([type isKindOfClass:[IOSClass class]] && [((IOSClass *) cast_chk(type, [IOSClass class])) isAssignableFrom:CCBDataTable_class_()])) {
     return dataTable;
   }
-  id<JavaLangReflectType> mapKeyType = CucumberRuntimeUtils_mapKeyTypeWithJavaLangReflectType_(type);
+  id<JavaLangReflectType> mapKeyType = CCBRUtils_mapKeyTypeWithJavaLangReflectType_(type);
   if (mapKeyType != nil) {
-    id<JavaLangReflectType> mapValueType = CucumberRuntimeUtils_mapValueTypeWithJavaLangReflectType_(type);
-    return [self toMapWithCucumberApiDataTable:dataTable withJavaLangReflectType:mapKeyType withJavaLangReflectType:mapValueType];
+    id<JavaLangReflectType> mapValueType = CCBRUtils_mapValueTypeWithJavaLangReflectType_(type);
+    return [self toMapWithCCBDataTable:dataTable withJavaLangReflectType:mapKeyType withJavaLangReflectType:mapValueType];
   }
-  id<JavaLangReflectType> itemType = CucumberRuntimeUtils_listItemTypeWithJavaLangReflectType_(type);
+  id<JavaLangReflectType> itemType = CCBRUtils_listItemTypeWithJavaLangReflectType_(type);
   if (itemType == nil) {
-    @throw create_CucumberRuntimeCucumberException_initWithNSString_(JreStrcat("$@", @"Not a Map or List type: ", type));
+    @throw create_CCBRCucumberException_initWithNSString_(JreStrcat("$@", @"Not a Map or List type: ", type));
   }
-  id<JavaLangReflectType> listItemType = CucumberRuntimeUtils_listItemTypeWithJavaLangReflectType_(itemType);
+  id<JavaLangReflectType> listItemType = CCBRUtils_listItemTypeWithJavaLangReflectType_(itemType);
   if (listItemType != nil) {
-    return [self toListsWithCucumberApiDataTable:dataTable withJavaLangReflectType:listItemType];
+    return [self toListsWithCCBDataTable:dataTable withJavaLangReflectType:listItemType];
   }
   else {
-    id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> singleValueConverter = [((CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *) nil_chk(xStream_)) getSingleValueConverterWithJavaLangReflectType:itemType];
+    id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> singleValueConverter = [((CCBRLocalizedXStreams_LocalizedXStream *) nil_chk(xStream_)) getSingleValueConverterWithJavaLangReflectType:itemType];
     if (singleValueConverter != nil) {
-      return CucumberRuntimeTableTableConverter_toListWithCucumberApiDataTable_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, dataTable, singleValueConverter);
+      return CCBRTableConverter_toListWithCCBDataTable_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, dataTable, singleValueConverter);
     }
     else {
       if ([itemType isKindOfClass:[IOSClass class]]) {
         if ([JavaUtilMap_class_() isEqual:itemType]) {
-          return [self toMapsWithCucumberApiDataTable:dataTable withJavaLangReflectType:NSString_class_() withJavaLangReflectType:NSString_class_()];
+          return [self toMapsWithCCBDataTable:dataTable withJavaLangReflectType:NSString_class_() withJavaLangReflectType:NSString_class_()];
         }
         else {
-          return CucumberRuntimeTableTableConverter_toListOfComplexTypeWithCucumberApiDataTable_withIOSClass_(self, dataTable, (IOSClass *) cast_chk(itemType, [IOSClass class]));
+          return CCBRTableConverter_toListOfComplexTypeWithCCBDataTable_withIOSClass_(self, dataTable, (IOSClass *) cast_chk(itemType, [IOSClass class]));
         }
       }
       else {
-        return [self toMapsWithCucumberApiDataTable:dataTable withJavaLangReflectType:CucumberRuntimeUtils_mapKeyTypeWithJavaLangReflectType_(itemType) withJavaLangReflectType:CucumberRuntimeUtils_mapValueTypeWithJavaLangReflectType_(itemType)];
+        return [self toMapsWithCCBDataTable:dataTable withJavaLangReflectType:CCBRUtils_mapKeyTypeWithJavaLangReflectType_(itemType) withJavaLangReflectType:CCBRUtils_mapValueTypeWithJavaLangReflectType_(itemType)];
       }
     }
   }
 }
 
-- (id<JavaUtilList>)toListOfComplexTypeWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
-                                                   withIOSClass:(IOSClass *)itemType {
-  return CucumberRuntimeTableTableConverter_toListOfComplexTypeWithCucumberApiDataTable_withIOSClass_(self, dataTable, itemType);
+- (id<JavaUtilList>)toListOfComplexTypeWithCCBDataTable:(CCBDataTable *)dataTable
+                                           withIOSClass:(IOSClass *)itemType {
+  return CCBRTableConverter_toListOfComplexTypeWithCCBDataTable_withIOSClass_(self, dataTable, itemType);
 }
 
-- (id<JavaUtilList>)toListWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
-                           withJavaLangReflectType:(id<JavaLangReflectType>)itemType {
-  id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> itemConverter = [((CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *) nil_chk(xStream_)) getSingleValueConverterWithJavaLangReflectType:itemType];
+- (id<JavaUtilList>)toListWithCCBDataTable:(CCBDataTable *)dataTable
+                   withJavaLangReflectType:(id<JavaLangReflectType>)itemType {
+  id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> itemConverter = [((CCBRLocalizedXStreams_LocalizedXStream *) nil_chk(xStream_)) getSingleValueConverterWithJavaLangReflectType:itemType];
   if (itemConverter != nil) {
-    return CucumberRuntimeTableTableConverter_toListWithCucumberApiDataTable_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, dataTable, itemConverter);
+    return CCBRTableConverter_toListWithCCBDataTable_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, dataTable, itemConverter);
   }
   else {
     if ([itemType isKindOfClass:[IOSClass class]]) {
-      return CucumberRuntimeTableTableConverter_toListOfComplexTypeWithCucumberApiDataTable_withIOSClass_(self, dataTable, (IOSClass *) cast_chk(itemType, [IOSClass class]));
+      return CCBRTableConverter_toListOfComplexTypeWithCCBDataTable_withIOSClass_(self, dataTable, (IOSClass *) cast_chk(itemType, [IOSClass class]));
     }
     else {
-      @throw create_CucumberRuntimeCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"Can't convert DataTable to List<%s>", [IOSObjectArray arrayWithObjects:(id[]){ itemType } count:1 type:NSObject_class_()]));
+      @throw create_CCBRCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"Can't convert DataTable to List<%s>", [IOSObjectArray arrayWithObjects:(id[]){ itemType } count:1 type:NSObject_class_()]));
     }
   }
 }
 
-- (id<JavaUtilList>)toListWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
+- (id<JavaUtilList>)toListWithCCBDataTable:(CCBDataTable *)dataTable
 withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>)itemConverter {
-  return CucumberRuntimeTableTableConverter_toListWithCucumberApiDataTable_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, dataTable, itemConverter);
+  return CCBRTableConverter_toListWithCCBDataTable_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, dataTable, itemConverter);
 }
 
-- (id<JavaUtilList>)toListsWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
-                            withJavaLangReflectType:(id<JavaLangReflectType>)itemType {
+- (id<JavaUtilList>)toListsWithCCBDataTable:(CCBDataTable *)dataTable
+                    withJavaLangReflectType:(id<JavaLangReflectType>)itemType {
   @try {
-    [((CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *) nil_chk(xStream_)) setParameterInfoWithCucumberRuntimeParameterInfo:parameterInfo_];
+    [((CCBRLocalizedXStreams_LocalizedXStream *) nil_chk(xStream_)) setParameterInfoWithCCBRParameterInfo:parameterInfo_];
     id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> itemConverter = [xStream_ getSingleValueConverterWithJavaLangReflectType:itemType];
     if (itemConverter == nil) {
-      @throw create_CucumberRuntimeCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"Can't convert DataTable to List<List<%s>>", [IOSObjectArray arrayWithObjects:(id[]){ itemType } count:1 type:NSObject_class_()]));
+      @throw create_CCBRCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"Can't convert DataTable to List<List<%s>>", [IOSObjectArray arrayWithObjects:(id[]){ itemType } count:1 type:NSObject_class_()]));
     }
     id<JavaUtilList> result = create_JavaUtilArrayList_init();
-    for (id<JavaUtilList> __strong row in nil_chk([((CucumberApiDataTable *) nil_chk(dataTable)) raw])) {
+    for (id<JavaUtilList> __strong row in nil_chk([((CCBDataTable *) nil_chk(dataTable)) raw])) {
       id<JavaUtilList> convertedRow = create_JavaUtilArrayList_init();
       for (NSString * __strong cell in nil_chk(row)) {
         [convertedRow addWithId:[itemConverter fromStringWithNSString:cell]];
@@ -199,20 +199,20 @@ withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<Cucumbe
   }
 }
 
-- (id<JavaUtilMap>)toMapWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
-                         withJavaLangReflectType:(id<JavaLangReflectType>)keyType
-                         withJavaLangReflectType:(id<JavaLangReflectType>)valueType {
+- (id<JavaUtilMap>)toMapWithCCBDataTable:(CCBDataTable *)dataTable
+                 withJavaLangReflectType:(id<JavaLangReflectType>)keyType
+                 withJavaLangReflectType:(id<JavaLangReflectType>)valueType {
   @try {
-    [((CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *) nil_chk(xStream_)) setParameterInfoWithCucumberRuntimeParameterInfo:parameterInfo_];
+    [((CCBRLocalizedXStreams_LocalizedXStream *) nil_chk(xStream_)) setParameterInfoWithCCBRParameterInfo:parameterInfo_];
     id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> keyConverter = [xStream_ getSingleValueConverterWithJavaLangReflectType:keyType];
     id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> valueConverter = [xStream_ getSingleValueConverterWithJavaLangReflectType:valueType];
     if (keyConverter == nil || valueConverter == nil) {
-      @throw create_CucumberRuntimeCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"Can't convert DataTable to Map<%s,%s>", [IOSObjectArray arrayWithObjects:(id[]){ keyType, valueType } count:2 type:NSObject_class_()]));
+      @throw create_CCBRCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"Can't convert DataTable to Map<%s,%s>", [IOSObjectArray arrayWithObjects:(id[]){ keyType, valueType } count:2 type:NSObject_class_()]));
     }
     id<JavaUtilMap> result = create_JavaUtilLinkedHashMap_init();
-    for (id<JavaUtilList> __strong row in nil_chk([((CucumberApiDataTable *) nil_chk(dataTable)) raw])) {
+    for (id<JavaUtilList> __strong row in nil_chk([((CCBDataTable *) nil_chk(dataTable)) raw])) {
       if ([((id<JavaUtilList>) nil_chk(row)) size] != 2) {
-        @throw create_CucumberRuntimeCucumberException_initWithNSString_(@"A DataTable can only be converted to a Map when there are 2 columns");
+        @throw create_CCBRCucumberException_initWithNSString_(@"A DataTable can only be converted to a Map when there are 2 columns");
       }
       id key = [keyConverter fromStringWithNSString:[row getWithInt:0]];
       id value = [valueConverter fromStringWithNSString:[row getWithInt:1]];
@@ -225,18 +225,18 @@ withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<Cucumbe
   }
 }
 
-- (id<JavaUtilList>)toMapsWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable
-                           withJavaLangReflectType:(id<JavaLangReflectType>)keyType
-                           withJavaLangReflectType:(id<JavaLangReflectType>)valueType {
+- (id<JavaUtilList>)toMapsWithCCBDataTable:(CCBDataTable *)dataTable
+                   withJavaLangReflectType:(id<JavaLangReflectType>)keyType
+                   withJavaLangReflectType:(id<JavaLangReflectType>)valueType {
   @try {
-    [((CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *) nil_chk(xStream_)) setParameterInfoWithCucumberRuntimeParameterInfo:parameterInfo_];
+    [((CCBRLocalizedXStreams_LocalizedXStream *) nil_chk(xStream_)) setParameterInfoWithCCBRParameterInfo:parameterInfo_];
     id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> keyConverter = [xStream_ getSingleValueConverterWithJavaLangReflectType:keyType];
     id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> valueConverter = [xStream_ getSingleValueConverterWithJavaLangReflectType:valueType];
     if (keyConverter == nil || valueConverter == nil) {
-      @throw create_CucumberRuntimeCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"Can't convert DataTable to List<Map<%s,%s>>", [IOSObjectArray arrayWithObjects:(id[]){ keyType, valueType } count:2 type:NSObject_class_()]));
+      @throw create_CCBRCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"Can't convert DataTable to List<Map<%s,%s>>", [IOSObjectArray arrayWithObjects:(id[]){ keyType, valueType } count:2 type:NSObject_class_()]));
     }
     id<JavaUtilList> result = create_JavaUtilArrayList_init();
-    id<JavaUtilList> keyStrings = [((CucumberApiDataTable *) nil_chk(dataTable)) topCells];
+    id<JavaUtilList> keyStrings = [((CCBDataTable *) nil_chk(dataTable)) topCells];
     id<JavaUtilList> keys = create_JavaUtilArrayList_init();
     for (NSString * __strong keyString in nil_chk(keyStrings)) {
       [keys addWithId:[keyConverter fromStringWithNSString:keyString]];
@@ -258,27 +258,27 @@ withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<Cucumbe
   }
 }
 
-- (CucumberApiDataTable *)toTableWithJavaUtilList:(id<JavaUtilList>)objects
-                                withNSStringArray:(IOSObjectArray *)columnNames {
+- (CCBDataTable *)toTableWithJavaUtilList:(id<JavaUtilList>)objects
+                        withNSStringArray:(IOSObjectArray *)columnNames {
   @try {
-    [((CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *) nil_chk(xStream_)) setParameterInfoWithCucumberRuntimeParameterInfo:parameterInfo_];
+    [((CCBRLocalizedXStreams_LocalizedXStream *) nil_chk(xStream_)) setParameterInfoWithCCBRParameterInfo:parameterInfo_];
     id<JavaUtilList> header = nil;
     id<JavaUtilList> valuesList = create_JavaUtilArrayList_init();
     for (id __strong object in nil_chk(objects)) {
-      CucumberRuntimeXstreamCellWriter *writer;
-      if (CucumberRuntimeTableTableConverter_isListOfSingleValueWithId_(self, object)) {
+      CCBRCellWriter *writer;
+      if (CCBRTableConverter_isListOfSingleValueWithId_(self, object)) {
         object = create_JavaUtilArrayList_initWithJavaUtilCollection_((id<JavaUtilList>) cast_check(object, JavaUtilList_class_()));
-        writer = create_CucumberRuntimeXstreamListOfSingleValueWriter_init();
+        writer = create_CCBRListOfSingleValueWriter_init();
       }
-      else if (CucumberRuntimeTableTableConverter_isArrayOfSingleValueWithId_(self, object)) {
+      else if (CCBRTableConverter_isArrayOfSingleValueWithId_(self, object)) {
         object = create_JavaUtilArrayList_initWithJavaUtilCollection_(JavaUtilArrays_asListWithNSObjectArray_((IOSObjectArray *) cast_check(object, IOSClass_arrayType(NSObject_class_(), 1))));
-        writer = create_CucumberRuntimeXstreamListOfSingleValueWriter_init();
+        writer = create_CCBRListOfSingleValueWriter_init();
       }
       else if ([JavaUtilMap_class_() isInstance:object]) {
-        writer = create_CucumberRuntimeXstreamMapWriter_initWithJavaUtilList_(JavaUtilArrays_asListWithNSObjectArray_(columnNames));
+        writer = create_CCBRMapWriter_initWithJavaUtilList_(JavaUtilArrays_asListWithNSObjectArray_(columnNames));
       }
       else {
-        writer = create_CucumberRuntimeXstreamComplexTypeWriter_initWithJavaUtilList_(JavaUtilArrays_asListWithNSObjectArray_(columnNames));
+        writer = create_CCBRComplexTypeWriter_initWithJavaUtilList_(JavaUtilArrays_asListWithNSObjectArray_(columnNames));
       }
       [xStream_ marshalWithId:object withCucumberDepsComThoughtworksXstreamIoHierarchicalStreamWriter:writer];
       if (header == nil) {
@@ -287,32 +287,32 @@ withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<Cucumbe
       id<JavaUtilList> values = [writer getValues];
       [valuesList addWithId:values];
     }
-    return CucumberRuntimeTableTableConverter_createDataTableWithJavaUtilList_withJavaUtilList_(self, header, valuesList);
+    return CCBRTableConverter_createDataTableWithJavaUtilList_withJavaUtilList_(self, header, valuesList);
   }
   @finally {
     [xStream_ unsetParameterInfo];
   }
 }
 
-- (CucumberApiDataTable *)createDataTableWithJavaUtilList:(id<JavaUtilList>)header
-                                         withJavaUtilList:(id<JavaUtilList>)valuesList {
-  return CucumberRuntimeTableTableConverter_createDataTableWithJavaUtilList_withJavaUtilList_(self, header, valuesList);
+- (CCBDataTable *)createDataTableWithJavaUtilList:(id<JavaUtilList>)header
+                                 withJavaUtilList:(id<JavaUtilList>)valuesList {
+  return CCBRTableConverter_createDataTableWithJavaUtilList_withJavaUtilList_(self, header, valuesList);
 }
 
 - (GherkinPicklesPickleRow *)gherkinRowWithJavaUtilList:(id<JavaUtilList>)cells {
-  return CucumberRuntimeTableTableConverter_gherkinRowWithJavaUtilList_(self, cells);
+  return CCBRTableConverter_gherkinRowWithJavaUtilList_(self, cells);
 }
 
-- (id<JavaUtilList>)convertTopCellsToFieldNamesWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable {
-  return CucumberRuntimeTableTableConverter_convertTopCellsToFieldNamesWithCucumberApiDataTable_(self, dataTable);
+- (id<JavaUtilList>)convertTopCellsToFieldNamesWithCCBDataTable:(CCBDataTable *)dataTable {
+  return CCBRTableConverter_convertTopCellsToFieldNamesWithCCBDataTable_(self, dataTable);
 }
 
 - (jboolean)isListOfSingleValueWithId:(id)object {
-  return CucumberRuntimeTableTableConverter_isListOfSingleValueWithId_(self, object);
+  return CCBRTableConverter_isListOfSingleValueWithId_(self, object);
 }
 
 - (jboolean)isArrayOfSingleValueWithId:(id)object {
-  return CucumberRuntimeTableTableConverter_isArrayOfSingleValueWithId_(self, object);
+  return CCBRTableConverter_isArrayOfSingleValueWithId_(self, object);
 }
 
 - (void)dealloc {
@@ -331,8 +331,8 @@ withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<Cucumbe
     { NULL, "LJavaUtilList;", 0x1, 12, 8, -1, 13, -1, -1 },
     { NULL, "LJavaUtilMap;", 0x1, 14, 15, -1, 16, -1, -1 },
     { NULL, "LJavaUtilList;", 0x1, 17, 15, -1, 18, -1, -1 },
-    { NULL, "LCucumberApiDataTable;", 0x81, 19, 20, -1, 21, -1, -1 },
-    { NULL, "LCucumberApiDataTable;", 0x2, 22, 23, -1, 24, -1, -1 },
+    { NULL, "LCCBDataTable;", 0x81, 19, 20, -1, 21, -1, -1 },
+    { NULL, "LCCBDataTable;", 0x2, 22, 23, -1, 24, -1, -1 },
     { NULL, "LGherkinPicklesPickleRow;", 0x2, 25, 26, -1, 27, -1, -1 },
     { NULL, "LJavaUtilList;", 0x2, 28, 29, -1, 30, -1, -1 },
     { NULL, "Z", 0x2, 31, 32, -1, -1, -1, -1 },
@@ -341,64 +341,64 @@ withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<Cucumbe
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream:withCucumberRuntimeParameterInfo:);
-  methods[1].selector = @selector(convertWithCucumberApiDataTable:withJavaLangReflectType:withBoolean:);
-  methods[2].selector = @selector(toListOfComplexTypeWithCucumberApiDataTable:withIOSClass:);
-  methods[3].selector = @selector(toListWithCucumberApiDataTable:withJavaLangReflectType:);
-  methods[4].selector = @selector(toListWithCucumberApiDataTable:withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:);
-  methods[5].selector = @selector(toListsWithCucumberApiDataTable:withJavaLangReflectType:);
-  methods[6].selector = @selector(toMapWithCucumberApiDataTable:withJavaLangReflectType:withJavaLangReflectType:);
-  methods[7].selector = @selector(toMapsWithCucumberApiDataTable:withJavaLangReflectType:withJavaLangReflectType:);
+  methods[0].selector = @selector(initWithCCBRLocalizedXStreams_LocalizedXStream:withCCBRParameterInfo:);
+  methods[1].selector = @selector(convertWithCCBDataTable:withJavaLangReflectType:withBoolean:);
+  methods[2].selector = @selector(toListOfComplexTypeWithCCBDataTable:withIOSClass:);
+  methods[3].selector = @selector(toListWithCCBDataTable:withJavaLangReflectType:);
+  methods[4].selector = @selector(toListWithCCBDataTable:withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:);
+  methods[5].selector = @selector(toListsWithCCBDataTable:withJavaLangReflectType:);
+  methods[6].selector = @selector(toMapWithCCBDataTable:withJavaLangReflectType:withJavaLangReflectType:);
+  methods[7].selector = @selector(toMapsWithCCBDataTable:withJavaLangReflectType:withJavaLangReflectType:);
   methods[8].selector = @selector(toTableWithJavaUtilList:withNSStringArray:);
   methods[9].selector = @selector(createDataTableWithJavaUtilList:withJavaUtilList:);
   methods[10].selector = @selector(gherkinRowWithJavaUtilList:);
-  methods[11].selector = @selector(convertTopCellsToFieldNamesWithCucumberApiDataTable:);
+  methods[11].selector = @selector(convertTopCellsToFieldNamesWithCCBDataTable:);
   methods[12].selector = @selector(isListOfSingleValueWithId:);
   methods[13].selector = @selector(isArrayOfSingleValueWithId:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "xStream_", "LCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "parameterInfo_", "LCucumberRuntimeParameterInfo;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "xStream_", "LCCBRLocalizedXStreams_LocalizedXStream;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "parameterInfo_", "LCCBRParameterInfo;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream;LCucumberRuntimeParameterInfo;", "convert", "LCucumberApiDataTable;LJavaLangReflectType;Z", "<T:Ljava/lang/Object;>(Lcucumber/api/DataTable;Ljava/lang/reflect/Type;Z)TT;", "toListOfComplexType", "LCucumberApiDataTable;LIOSClass;", "<T:Ljava/lang/Object;>(Lcucumber/api/DataTable;Ljava/lang/Class<TT;>;)Ljava/util/List<TT;>;", "toList", "LCucumberApiDataTable;LJavaLangReflectType;", "<T:Ljava/lang/Object;>(Lcucumber/api/DataTable;Ljava/lang/reflect/Type;)Ljava/util/List<TT;>;", "LCucumberApiDataTable;LCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter;", "<T:Ljava/lang/Object;>(Lcucumber/api/DataTable;Lcucumber/deps/com/thoughtworks/xstream/converters/SingleValueConverter;)Ljava/util/List<TT;>;", "toLists", "<T:Ljava/lang/Object;>(Lcucumber/api/DataTable;Ljava/lang/reflect/Type;)Ljava/util/List<Ljava/util/List<TT;>;>;", "toMap", "LCucumberApiDataTable;LJavaLangReflectType;LJavaLangReflectType;", "<K:Ljava/lang/Object;V:Ljava/lang/Object;>(Lcucumber/api/DataTable;Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;)Ljava/util/Map<TK;TV;>;", "toMaps", "<K:Ljava/lang/Object;V:Ljava/lang/Object;>(Lcucumber/api/DataTable;Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;)Ljava/util/List<Ljava/util/Map<TK;TV;>;>;", "toTable", "LJavaUtilList;[LNSString;", "(Ljava/util/List<*>;[Ljava/lang/String;)Lcucumber/api/DataTable;", "createDataTable", "LJavaUtilList;LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;)Lcucumber/api/DataTable;", "gherkinRow", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)Lgherkin/pickles/PickleRow;", "convertTopCellsToFieldNames", "LCucumberApiDataTable;", "(Lcucumber/api/DataTable;)Ljava/util/List<Ljava/lang/String;>;", "isListOfSingleValue", "LNSObject;", "isArrayOfSingleValue" };
-  static const J2ObjcClassInfo _CucumberRuntimeTableTableConverter = { "TableConverter", "cucumber.runtime.table", ptrTable, methods, fields, 7, 0x1, 14, 2, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeTableTableConverter;
+  static const void *ptrTable[] = { "LCCBRLocalizedXStreams_LocalizedXStream;LCCBRParameterInfo;", "convert", "LCCBDataTable;LJavaLangReflectType;Z", "<T:Ljava/lang/Object;>(Lcucumber/api/DataTable;Ljava/lang/reflect/Type;Z)TT;", "toListOfComplexType", "LCCBDataTable;LIOSClass;", "<T:Ljava/lang/Object;>(Lcucumber/api/DataTable;Ljava/lang/Class<TT;>;)Ljava/util/List<TT;>;", "toList", "LCCBDataTable;LJavaLangReflectType;", "<T:Ljava/lang/Object;>(Lcucumber/api/DataTable;Ljava/lang/reflect/Type;)Ljava/util/List<TT;>;", "LCCBDataTable;LCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter;", "<T:Ljava/lang/Object;>(Lcucumber/api/DataTable;Lcucumber/deps/com/thoughtworks/xstream/converters/SingleValueConverter;)Ljava/util/List<TT;>;", "toLists", "<T:Ljava/lang/Object;>(Lcucumber/api/DataTable;Ljava/lang/reflect/Type;)Ljava/util/List<Ljava/util/List<TT;>;>;", "toMap", "LCCBDataTable;LJavaLangReflectType;LJavaLangReflectType;", "<K:Ljava/lang/Object;V:Ljava/lang/Object;>(Lcucumber/api/DataTable;Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;)Ljava/util/Map<TK;TV;>;", "toMaps", "<K:Ljava/lang/Object;V:Ljava/lang/Object;>(Lcucumber/api/DataTable;Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;)Ljava/util/List<Ljava/util/Map<TK;TV;>;>;", "toTable", "LJavaUtilList;[LNSString;", "(Ljava/util/List<*>;[Ljava/lang/String;)Lcucumber/api/DataTable;", "createDataTable", "LJavaUtilList;LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;)Lcucumber/api/DataTable;", "gherkinRow", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)Lgherkin/pickles/PickleRow;", "convertTopCellsToFieldNames", "LCCBDataTable;", "(Lcucumber/api/DataTable;)Ljava/util/List<Ljava/lang/String;>;", "isListOfSingleValue", "LNSObject;", "isArrayOfSingleValue" };
+  static const J2ObjcClassInfo _CCBRTableConverter = { "TableConverter", "cucumber.runtime.table", ptrTable, methods, fields, 7, 0x1, 14, 2, -1, -1, -1, -1, -1 };
+  return &_CCBRTableConverter;
 }
 
 @end
 
-void CucumberRuntimeTableTableConverter_initWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_withCucumberRuntimeParameterInfo_(CucumberRuntimeTableTableConverter *self, CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *xStream, CucumberRuntimeParameterInfo *parameterInfo) {
+void CCBRTableConverter_initWithCCBRLocalizedXStreams_LocalizedXStream_withCCBRParameterInfo_(CCBRTableConverter *self, CCBRLocalizedXStreams_LocalizedXStream *xStream, CCBRParameterInfo *parameterInfo) {
   NSObject_init(self);
   JreStrongAssign(&self->xStream_, xStream);
   JreStrongAssign(&self->parameterInfo_, parameterInfo);
 }
 
-CucumberRuntimeTableTableConverter *new_CucumberRuntimeTableTableConverter_initWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_withCucumberRuntimeParameterInfo_(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *xStream, CucumberRuntimeParameterInfo *parameterInfo) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeTableTableConverter, initWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_withCucumberRuntimeParameterInfo_, xStream, parameterInfo)
+CCBRTableConverter *new_CCBRTableConverter_initWithCCBRLocalizedXStreams_LocalizedXStream_withCCBRParameterInfo_(CCBRLocalizedXStreams_LocalizedXStream *xStream, CCBRParameterInfo *parameterInfo) {
+  J2OBJC_NEW_IMPL(CCBRTableConverter, initWithCCBRLocalizedXStreams_LocalizedXStream_withCCBRParameterInfo_, xStream, parameterInfo)
 }
 
-CucumberRuntimeTableTableConverter *create_CucumberRuntimeTableTableConverter_initWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_withCucumberRuntimeParameterInfo_(CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *xStream, CucumberRuntimeParameterInfo *parameterInfo) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeTableTableConverter, initWithCucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream_withCucumberRuntimeParameterInfo_, xStream, parameterInfo)
+CCBRTableConverter *create_CCBRTableConverter_initWithCCBRLocalizedXStreams_LocalizedXStream_withCCBRParameterInfo_(CCBRLocalizedXStreams_LocalizedXStream *xStream, CCBRParameterInfo *parameterInfo) {
+  J2OBJC_CREATE_IMPL(CCBRTableConverter, initWithCCBRLocalizedXStreams_LocalizedXStream_withCCBRParameterInfo_, xStream, parameterInfo)
 }
 
-id<JavaUtilList> CucumberRuntimeTableTableConverter_toListOfComplexTypeWithCucumberApiDataTable_withIOSClass_(CucumberRuntimeTableTableConverter *self, CucumberApiDataTable *dataTable, IOSClass *itemType) {
-  id<CucumberDepsComThoughtworksXstreamIoHierarchicalStreamReader> reader = create_CucumberRuntimeXstreamListOfComplexTypeReader_initWithIOSClass_withJavaUtilList_withJavaUtilList_(itemType, CucumberRuntimeTableTableConverter_convertTopCellsToFieldNamesWithCucumberApiDataTable_(self, dataTable), [((CucumberApiDataTable *) nil_chk(dataTable)) cellsWithInt:1]);
+id<JavaUtilList> CCBRTableConverter_toListOfComplexTypeWithCCBDataTable_withIOSClass_(CCBRTableConverter *self, CCBDataTable *dataTable, IOSClass *itemType) {
+  id<CucumberDepsComThoughtworksXstreamIoHierarchicalStreamReader> reader = create_CCBRListOfComplexTypeReader_initWithIOSClass_withJavaUtilList_withJavaUtilList_(itemType, CCBRTableConverter_convertTopCellsToFieldNamesWithCCBDataTable_(self, dataTable), [((CCBDataTable *) nil_chk(dataTable)) cellsWithInt:1]);
   @try {
-    [((CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *) nil_chk(self->xStream_)) setParameterInfoWithCucumberRuntimeParameterInfo:self->parameterInfo_];
+    [((CCBRLocalizedXStreams_LocalizedXStream *) nil_chk(self->xStream_)) setParameterInfoWithCCBRParameterInfo:self->parameterInfo_];
     return JavaUtilCollections_unmodifiableListWithJavaUtilList_((id<JavaUtilList>) cast_check([self->xStream_ unmarshalWithCucumberDepsComThoughtworksXstreamIoHierarchicalStreamReader:reader], JavaUtilList_class_()));
   }
   @catch (CucumberDepsComThoughtworksXstreamConvertersReflectionAbstractReflectionConverter_UnknownFieldException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithNSString_([e getShortMessage]);
+    @throw create_CCBRCucumberException_initWithNSString_([e getShortMessage]);
   }
   @catch (CucumberDepsComThoughtworksXstreamConvertersReflectionAbstractReflectionConverter_DuplicateFieldException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithNSString_([e getShortMessage]);
+    @throw create_CCBRCucumberException_initWithNSString_([e getShortMessage]);
   }
   @catch (CucumberDepsComThoughtworksXstreamConvertersConversionException *e) {
     if ([[e getCause] isKindOfClass:[JavaLangNullPointerException class]]) {
-      @throw create_CucumberRuntimeCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"Can't assign null value to one of the primitive fields in %s. Please use boxed types.", [IOSObjectArray arrayWithObjects:(id[]){ [e getWithNSString:@"class"] } count:1 type:NSObject_class_()]));
+      @throw create_CCBRCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"Can't assign null value to one of the primitive fields in %s. Please use boxed types.", [IOSObjectArray arrayWithObjects:(id[]){ [e getWithNSString:@"class"] } count:1 type:NSObject_class_()]));
     }
     else {
-      @throw create_CucumberRuntimeCucumberException_initWithJavaLangThrowable_(e);
+      @throw create_CCBRCucumberException_initWithJavaLangThrowable_(e);
     }
   }
   @finally {
@@ -406,9 +406,9 @@ id<JavaUtilList> CucumberRuntimeTableTableConverter_toListOfComplexTypeWithCucum
   }
 }
 
-id<JavaUtilList> CucumberRuntimeTableTableConverter_toListWithCucumberApiDataTable_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(CucumberRuntimeTableTableConverter *self, CucumberApiDataTable *dataTable, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> itemConverter) {
+id<JavaUtilList> CCBRTableConverter_toListWithCCBDataTable_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(CCBRTableConverter *self, CCBDataTable *dataTable, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> itemConverter) {
   id<JavaUtilList> result = create_JavaUtilArrayList_init();
-  for (id<JavaUtilList> __strong row in nil_chk([((CucumberApiDataTable *) nil_chk(dataTable)) raw])) {
+  for (id<JavaUtilList> __strong row in nil_chk([((CCBDataTable *) nil_chk(dataTable)) raw])) {
     for (NSString * __strong cell in nil_chk(row)) {
       [result addWithId:[((id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>) nil_chk(itemConverter)) fromStringWithNSString:cell]];
     }
@@ -416,18 +416,18 @@ id<JavaUtilList> CucumberRuntimeTableTableConverter_toListWithCucumberApiDataTab
   return JavaUtilCollections_unmodifiableListWithJavaUtilList_(result);
 }
 
-CucumberApiDataTable *CucumberRuntimeTableTableConverter_createDataTableWithJavaUtilList_withJavaUtilList_(CucumberRuntimeTableTableConverter *self, id<JavaUtilList> header, id<JavaUtilList> valuesList) {
+CCBDataTable *CCBRTableConverter_createDataTableWithJavaUtilList_withJavaUtilList_(CCBRTableConverter *self, id<JavaUtilList> header, id<JavaUtilList> valuesList) {
   id<JavaUtilList> gherkinRows = create_JavaUtilArrayList_init();
   if (header != nil) {
-    [gherkinRows addWithId:CucumberRuntimeTableTableConverter_gherkinRowWithJavaUtilList_(self, header)];
+    [gherkinRows addWithId:CCBRTableConverter_gherkinRowWithJavaUtilList_(self, header)];
   }
   for (id<JavaUtilList> __strong values in nil_chk(valuesList)) {
-    [gherkinRows addWithId:CucumberRuntimeTableTableConverter_gherkinRowWithJavaUtilList_(self, values)];
+    [gherkinRows addWithId:CCBRTableConverter_gherkinRowWithJavaUtilList_(self, values)];
   }
-  return create_CucumberApiDataTable_initWithGherkinPicklesPickleTable_withCucumberApiTableConverter_(create_GherkinPicklesPickleTable_initWithJavaUtilList_(gherkinRows), self);
+  return create_CCBDataTable_initWithGherkinPicklesPickleTable_withCCBTableConverter_(create_GherkinPicklesPickleTable_initWithJavaUtilList_(gherkinRows), self);
 }
 
-GherkinPicklesPickleRow *CucumberRuntimeTableTableConverter_gherkinRowWithJavaUtilList_(CucumberRuntimeTableTableConverter *self, id<JavaUtilList> cells) {
+GherkinPicklesPickleRow *CCBRTableConverter_gherkinRowWithJavaUtilList_(CCBRTableConverter *self, id<JavaUtilList> cells) {
   id<JavaUtilList> pickleCells = create_JavaUtilArrayList_initWithInt_([((id<JavaUtilList>) nil_chk(cells)) size]);
   for (NSString * __strong cell in cells) {
     GherkinPicklesPickleCell *pickleCell = create_GherkinPicklesPickleCell_initWithGherkinPicklesPickleLocation_withNSString_(nil, cell);
@@ -436,38 +436,38 @@ GherkinPicklesPickleRow *CucumberRuntimeTableTableConverter_gherkinRowWithJavaUt
   return create_GherkinPicklesPickleRow_initWithJavaUtilList_(pickleCells);
 }
 
-id<JavaUtilList> CucumberRuntimeTableTableConverter_convertTopCellsToFieldNamesWithCucumberApiDataTable_(CucumberRuntimeTableTableConverter *self, CucumberApiDataTable *dataTable) {
-  id<CucumberRuntimeTableStringConverter> mapper = create_CucumberRuntimeTableCamelCaseStringConverter_init();
-  return CucumberUtilFixJava_mapWithJavaUtilList_withCucumberUtilMapper_([((CucumberApiDataTable *) nil_chk(dataTable)) topCells], create_CucumberRuntimeTableTableConverter_1_initWithCucumberRuntimeTableStringConverter_(mapper));
+id<JavaUtilList> CCBRTableConverter_convertTopCellsToFieldNamesWithCCBDataTable_(CCBRTableConverter *self, CCBDataTable *dataTable) {
+  id<CCBRStringConverter> mapper = create_CCBRCamelCaseStringConverter_init();
+  return CucumberUtilFixJava_mapWithJavaUtilList_withCucumberUtilMapper_([((CCBDataTable *) nil_chk(dataTable)) topCells], create_CCBRTableConverter_1_initWithCCBRStringConverter_(mapper));
 }
 
-jboolean CucumberRuntimeTableTableConverter_isListOfSingleValueWithId_(CucumberRuntimeTableTableConverter *self, id object) {
+jboolean CCBRTableConverter_isListOfSingleValueWithId_(CCBRTableConverter *self, id object) {
   if ([JavaUtilList_class_() isInstance:object]) {
     id<JavaUtilList> list = (id<JavaUtilList>) cast_check(object, JavaUtilList_class_());
-    return ![((id<JavaUtilList>) nil_chk(list)) isEmpty] && [((CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *) nil_chk(self->xStream_)) getSingleValueConverterWithJavaLangReflectType:[nil_chk([list getWithInt:0]) java_getClass]] != nil;
+    return ![((id<JavaUtilList>) nil_chk(list)) isEmpty] && [((CCBRLocalizedXStreams_LocalizedXStream *) nil_chk(self->xStream_)) getSingleValueConverterWithJavaLangReflectType:[nil_chk([list getWithInt:0]) java_getClass]] != nil;
   }
   return false;
 }
 
-jboolean CucumberRuntimeTableTableConverter_isArrayOfSingleValueWithId_(CucumberRuntimeTableTableConverter *self, id object) {
+jboolean CCBRTableConverter_isArrayOfSingleValueWithId_(CCBRTableConverter *self, id object) {
   if ([[nil_chk(object) java_getClass] isArray]) {
     IOSObjectArray *array = (IOSObjectArray *) cast_check(object, IOSClass_arrayType(NSObject_class_(), 1));
-    return array->size_ > 0 && [((CucumberRuntimeXstreamLocalizedXStreams_LocalizedXStream *) nil_chk(self->xStream_)) getSingleValueConverterWithJavaLangReflectType:[nil_chk(IOSObjectArray_Get(array, 0)) java_getClass]] != nil;
+    return array->size_ > 0 && [((CCBRLocalizedXStreams_LocalizedXStream *) nil_chk(self->xStream_)) getSingleValueConverterWithJavaLangReflectType:[nil_chk(IOSObjectArray_Get(array, 0)) java_getClass]] != nil;
   }
   return false;
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTableTableConverter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTableConverter)
 
-@implementation CucumberRuntimeTableTableConverter_1
+@implementation CCBRTableConverter_1
 
-- (instancetype __nonnull)initWithCucumberRuntimeTableStringConverter:(id<CucumberRuntimeTableStringConverter>)capture$0 {
-  CucumberRuntimeTableTableConverter_1_initWithCucumberRuntimeTableStringConverter_(self, capture$0);
+- (instancetype __nonnull)initWithCCBRStringConverter:(id<CCBRStringConverter>)capture$0 {
+  CCBRTableConverter_1_initWithCCBRStringConverter_(self, capture$0);
   return self;
 }
 
 - (NSString *)mapWithId:(NSString *)attributeName {
-  return [((id<CucumberRuntimeTableStringConverter>) nil_chk(val$mapper_)) mapWithNSString:attributeName];
+  return [((id<CCBRStringConverter>) nil_chk(val$mapper_)) mapWithNSString:attributeName];
 }
 
 - (void)dealloc {
@@ -483,28 +483,28 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTableTableConverter)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeTableStringConverter:);
+  methods[0].selector = @selector(initWithCCBRStringConverter:);
   methods[1].selector = @selector(mapWithId:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "val$mapper_", "LCucumberRuntimeTableStringConverter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "val$mapper_", "LCCBRStringConverter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "map", "LNSString;", "LCucumberRuntimeTableTableConverter;", "convertTopCellsToFieldNamesWithCucumberApiDataTable:", "Ljava/lang/Object;Lcucumber/util/Mapper<Ljava/lang/String;Ljava/lang/String;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeTableTableConverter_1 = { "", "cucumber.runtime.table", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, 3, 4, -1 };
-  return &_CucumberRuntimeTableTableConverter_1;
+  static const void *ptrTable[] = { "map", "LNSString;", "LCCBRTableConverter;", "convertTopCellsToFieldNamesWithCCBDataTable:", "Ljava/lang/Object;Lcucumber/util/Mapper<Ljava/lang/String;Ljava/lang/String;>;" };
+  static const J2ObjcClassInfo _CCBRTableConverter_1 = { "", "cucumber.runtime.table", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, 3, 4, -1 };
+  return &_CCBRTableConverter_1;
 }
 
 @end
 
-void CucumberRuntimeTableTableConverter_1_initWithCucumberRuntimeTableStringConverter_(CucumberRuntimeTableTableConverter_1 *self, id<CucumberRuntimeTableStringConverter> capture$0) {
+void CCBRTableConverter_1_initWithCCBRStringConverter_(CCBRTableConverter_1 *self, id<CCBRStringConverter> capture$0) {
   JreStrongAssign(&self->val$mapper_, capture$0);
   NSObject_init(self);
 }
 
-CucumberRuntimeTableTableConverter_1 *new_CucumberRuntimeTableTableConverter_1_initWithCucumberRuntimeTableStringConverter_(id<CucumberRuntimeTableStringConverter> capture$0) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeTableTableConverter_1, initWithCucumberRuntimeTableStringConverter_, capture$0)
+CCBRTableConverter_1 *new_CCBRTableConverter_1_initWithCCBRStringConverter_(id<CCBRStringConverter> capture$0) {
+  J2OBJC_NEW_IMPL(CCBRTableConverter_1, initWithCCBRStringConverter_, capture$0)
 }
 
-CucumberRuntimeTableTableConverter_1 *create_CucumberRuntimeTableTableConverter_1_initWithCucumberRuntimeTableStringConverter_(id<CucumberRuntimeTableStringConverter> capture$0) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeTableTableConverter_1, initWithCucumberRuntimeTableStringConverter_, capture$0)
+CCBRTableConverter_1 *create_CCBRTableConverter_1_initWithCCBRStringConverter_(id<CCBRStringConverter> capture$0) {
+  J2OBJC_CREATE_IMPL(CCBRTableConverter_1, initWithCCBRStringConverter_, capture$0)
 }

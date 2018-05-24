@@ -14,9 +14,9 @@
 #include "java/lang/StringBuffer.h"
 #include "java/lang/Throwable.h"
 
-@interface CucumberApiResult () {
+@interface CCBResult () {
  @public
-  CucumberApiResult_Type *status_;
+  CCBResult_Type *status_;
   JavaLangLong *duration_;
   JavaLangThrowable *error_;
 }
@@ -29,37 +29,37 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberApiResult, status_, CucumberApiResult_Type *)
-J2OBJC_FIELD_SETTER(CucumberApiResult, duration_, JavaLangLong *)
-J2OBJC_FIELD_SETTER(CucumberApiResult, error_, JavaLangThrowable *)
+J2OBJC_FIELD_SETTER(CCBResult, status_, CCBResult_Type *)
+J2OBJC_FIELD_SETTER(CCBResult, duration_, JavaLangLong *)
+J2OBJC_FIELD_SETTER(CCBResult, error_, JavaLangThrowable *)
 
-inline jlong CucumberApiResult_get_serialVersionUID(void);
-#define CucumberApiResult_serialVersionUID 1LL
-J2OBJC_STATIC_FIELD_CONSTANT(CucumberApiResult, serialVersionUID, jlong)
+inline jlong CCBResult_get_serialVersionUID(void);
+#define CCBResult_serialVersionUID 1LL
+J2OBJC_STATIC_FIELD_CONSTANT(CCBResult, serialVersionUID, jlong)
 
-__attribute__((unused)) static jboolean CucumberApiResult_hasAlwaysOkStatus(CucumberApiResult *self);
+__attribute__((unused)) static jboolean CCBResult_hasAlwaysOkStatus(CCBResult *self);
 
-__attribute__((unused)) static jboolean CucumberApiResult_hasOkWhenNotStrictStatus(CucumberApiResult *self);
+__attribute__((unused)) static jboolean CCBResult_hasOkWhenNotStrictStatus(CCBResult *self);
 
-__attribute__((unused)) static NSString *CucumberApiResult_getErrorMessageWithJavaLangThrowable_(CucumberApiResult *self, JavaLangThrowable *error);
+__attribute__((unused)) static NSString *CCBResult_getErrorMessageWithJavaLangThrowable_(CCBResult *self, JavaLangThrowable *error);
 
-__attribute__((unused)) static void CucumberApiResult_Type_initWithNSString_withInt_(CucumberApiResult_Type *self, NSString *__name, jint __ordinal);
+__attribute__((unused)) static void CCBResult_Type_initWithNSString_withInt_(CCBResult_Type *self, NSString *__name, jint __ordinal);
 
-J2OBJC_INITIALIZED_DEFN(CucumberApiResult)
+J2OBJC_INITIALIZED_DEFN(CCBResult)
 
-CucumberApiResult *CucumberApiResult_SKIPPED;
-CucumberApiResult *CucumberApiResult_UNDEFINED;
+CCBResult *CCBResult_SKIPPED;
+CCBResult *CCBResult_UNDEFINED;
 
-@implementation CucumberApiResult
+@implementation CCBResult
 
-- (instancetype __nonnull)initWithCucumberApiResult_Type:(CucumberApiResult_Type *)status
-                                        withJavaLangLong:(JavaLangLong *)duration
-                                   withJavaLangThrowable:(JavaLangThrowable *)error {
-  CucumberApiResult_initWithCucumberApiResult_Type_withJavaLangLong_withJavaLangThrowable_(self, status, duration, error);
+- (instancetype __nonnull)initWithCCBResult_Type:(CCBResult_Type *)status
+                                withJavaLangLong:(JavaLangLong *)duration
+                           withJavaLangThrowable:(JavaLangThrowable *)error {
+  CCBResult_initWithCCBResult_Type_withJavaLangLong_withJavaLangThrowable_(self, status, duration, error);
   return self;
 }
 
-- (CucumberApiResult_Type *)getStatus {
+- (CCBResult_Type *)getStatus {
   return status_;
 }
 
@@ -68,31 +68,31 @@ CucumberApiResult *CucumberApiResult_UNDEFINED;
 }
 
 - (NSString *)getErrorMessage {
-  return error_ != nil ? CucumberApiResult_getErrorMessageWithJavaLangThrowable_(self, error_) : nil;
+  return error_ != nil ? CCBResult_getErrorMessageWithJavaLangThrowable_(self, error_) : nil;
 }
 
 - (JavaLangThrowable *)getError {
   return error_;
 }
 
-- (jboolean)isWithCucumberApiResult_Type:(CucumberApiResult_Type *)status {
+- (jboolean)isWithCCBResult_Type:(CCBResult_Type *)status {
   return self->status_ == status;
 }
 
 - (jboolean)isOkWithBoolean:(jboolean)isStrict {
-  return CucumberApiResult_hasAlwaysOkStatus(self) || (!isStrict && CucumberApiResult_hasOkWhenNotStrictStatus(self));
+  return CCBResult_hasAlwaysOkStatus(self) || (!isStrict && CCBResult_hasOkWhenNotStrictStatus(self));
 }
 
 - (jboolean)hasAlwaysOkStatus {
-  return CucumberApiResult_hasAlwaysOkStatus(self);
+  return CCBResult_hasAlwaysOkStatus(self);
 }
 
 - (jboolean)hasOkWhenNotStrictStatus {
-  return CucumberApiResult_hasOkWhenNotStrictStatus(self);
+  return CCBResult_hasOkWhenNotStrictStatus(self);
 }
 
 - (NSString *)getErrorMessageWithJavaLangThrowable:(JavaLangThrowable *)error {
-  return CucumberApiResult_getErrorMessageWithJavaLangThrowable_(self, error);
+  return CCBResult_getErrorMessageWithJavaLangThrowable_(self, error);
 }
 
 - (void)dealloc {
@@ -105,7 +105,7 @@ CucumberApiResult *CucumberApiResult_UNDEFINED;
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
-    { NULL, "LCucumberApiResult_Type;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCCBResult_Type;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LJavaLangLong;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LJavaLangThrowable;", 0x1, -1, -1, -1, -1, -1, -1 },
@@ -118,80 +118,80 @@ CucumberApiResult *CucumberApiResult_UNDEFINED;
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberApiResult_Type:withJavaLangLong:withJavaLangThrowable:);
+  methods[0].selector = @selector(initWithCCBResult_Type:withJavaLangLong:withJavaLangThrowable:);
   methods[1].selector = @selector(getStatus);
   methods[2].selector = @selector(getDuration);
   methods[3].selector = @selector(getErrorMessage);
   methods[4].selector = @selector(getError);
-  methods[5].selector = @selector(isWithCucumberApiResult_Type:);
+  methods[5].selector = @selector(isWithCCBResult_Type:);
   methods[6].selector = @selector(isOkWithBoolean:);
   methods[7].selector = @selector(hasAlwaysOkStatus);
   methods[8].selector = @selector(hasOkWhenNotStrictStatus);
   methods[9].selector = @selector(getErrorMessageWithJavaLangThrowable:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "serialVersionUID", "J", .constantValue.asLong = CucumberApiResult_serialVersionUID, 0x1a, -1, -1, -1, -1 },
-    { "status_", "LCucumberApiResult_Type;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "serialVersionUID", "J", .constantValue.asLong = CCBResult_serialVersionUID, 0x1a, -1, -1, -1, -1 },
+    { "status_", "LCCBResult_Type;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "duration_", "LJavaLangLong;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "error_", "LJavaLangThrowable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "SKIPPED", "LCucumberApiResult;", .constantValue.asLong = 0, 0x19, -1, 7, -1, -1 },
-    { "UNDEFINED", "LCucumberApiResult;", .constantValue.asLong = 0, 0x19, -1, 8, -1, -1 },
+    { "SKIPPED", "LCCBResult;", .constantValue.asLong = 0, 0x19, -1, 7, -1, -1 },
+    { "UNDEFINED", "LCCBResult;", .constantValue.asLong = 0, 0x19, -1, 8, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCucumberApiResult_Type;LJavaLangLong;LJavaLangThrowable;", "is", "LCucumberApiResult_Type;", "isOk", "Z", "getErrorMessage", "LJavaLangThrowable;", &CucumberApiResult_SKIPPED, &CucumberApiResult_UNDEFINED };
-  static const J2ObjcClassInfo _CucumberApiResult = { "Result", "cucumber.api", ptrTable, methods, fields, 7, 0x1, 10, 6, -1, 2, -1, -1, -1 };
-  return &_CucumberApiResult;
+  static const void *ptrTable[] = { "LCCBResult_Type;LJavaLangLong;LJavaLangThrowable;", "is", "LCCBResult_Type;", "isOk", "Z", "getErrorMessage", "LJavaLangThrowable;", &CCBResult_SKIPPED, &CCBResult_UNDEFINED };
+  static const J2ObjcClassInfo _CCBResult = { "Result", "cucumber.api", ptrTable, methods, fields, 7, 0x1, 10, 6, -1, 2, -1, -1, -1 };
+  return &_CCBResult;
 }
 
 + (void)initialize {
-  if (self == [CucumberApiResult class]) {
-    JreStrongAssignAndConsume(&CucumberApiResult_SKIPPED, new_CucumberApiResult_initWithCucumberApiResult_Type_withJavaLangLong_withJavaLangThrowable_(JreLoadEnum(CucumberApiResult_Type, SKIPPED), nil, nil));
-    JreStrongAssignAndConsume(&CucumberApiResult_UNDEFINED, new_CucumberApiResult_initWithCucumberApiResult_Type_withJavaLangLong_withJavaLangThrowable_(JreLoadEnum(CucumberApiResult_Type, UNDEFINED), nil, nil));
-    J2OBJC_SET_INITIALIZED(CucumberApiResult)
+  if (self == [CCBResult class]) {
+    JreStrongAssignAndConsume(&CCBResult_SKIPPED, new_CCBResult_initWithCCBResult_Type_withJavaLangLong_withJavaLangThrowable_(JreLoadEnum(CCBResult_Type, SKIPPED), nil, nil));
+    JreStrongAssignAndConsume(&CCBResult_UNDEFINED, new_CCBResult_initWithCCBResult_Type_withJavaLangLong_withJavaLangThrowable_(JreLoadEnum(CCBResult_Type, UNDEFINED), nil, nil));
+    J2OBJC_SET_INITIALIZED(CCBResult)
   }
 }
 
 @end
 
-void CucumberApiResult_initWithCucumberApiResult_Type_withJavaLangLong_withJavaLangThrowable_(CucumberApiResult *self, CucumberApiResult_Type *status, JavaLangLong *duration, JavaLangThrowable *error) {
+void CCBResult_initWithCCBResult_Type_withJavaLangLong_withJavaLangThrowable_(CCBResult *self, CCBResult_Type *status, JavaLangLong *duration, JavaLangThrowable *error) {
   NSObject_init(self);
   JreStrongAssign(&self->status_, status);
   JreStrongAssign(&self->duration_, duration);
   JreStrongAssign(&self->error_, error);
 }
 
-CucumberApiResult *new_CucumberApiResult_initWithCucumberApiResult_Type_withJavaLangLong_withJavaLangThrowable_(CucumberApiResult_Type *status, JavaLangLong *duration, JavaLangThrowable *error) {
-  J2OBJC_NEW_IMPL(CucumberApiResult, initWithCucumberApiResult_Type_withJavaLangLong_withJavaLangThrowable_, status, duration, error)
+CCBResult *new_CCBResult_initWithCCBResult_Type_withJavaLangLong_withJavaLangThrowable_(CCBResult_Type *status, JavaLangLong *duration, JavaLangThrowable *error) {
+  J2OBJC_NEW_IMPL(CCBResult, initWithCCBResult_Type_withJavaLangLong_withJavaLangThrowable_, status, duration, error)
 }
 
-CucumberApiResult *create_CucumberApiResult_initWithCucumberApiResult_Type_withJavaLangLong_withJavaLangThrowable_(CucumberApiResult_Type *status, JavaLangLong *duration, JavaLangThrowable *error) {
-  J2OBJC_CREATE_IMPL(CucumberApiResult, initWithCucumberApiResult_Type_withJavaLangLong_withJavaLangThrowable_, status, duration, error)
+CCBResult *create_CCBResult_initWithCCBResult_Type_withJavaLangLong_withJavaLangThrowable_(CCBResult_Type *status, JavaLangLong *duration, JavaLangThrowable *error) {
+  J2OBJC_CREATE_IMPL(CCBResult, initWithCCBResult_Type_withJavaLangLong_withJavaLangThrowable_, status, duration, error)
 }
 
-jboolean CucumberApiResult_hasAlwaysOkStatus(CucumberApiResult *self) {
-  return [self isWithCucumberApiResult_Type:JreLoadEnum(CucumberApiResult_Type, PASSED)] || [self isWithCucumberApiResult_Type:JreLoadEnum(CucumberApiResult_Type, SKIPPED)];
+jboolean CCBResult_hasAlwaysOkStatus(CCBResult *self) {
+  return [self isWithCCBResult_Type:JreLoadEnum(CCBResult_Type, PASSED)] || [self isWithCCBResult_Type:JreLoadEnum(CCBResult_Type, SKIPPED)];
 }
 
-jboolean CucumberApiResult_hasOkWhenNotStrictStatus(CucumberApiResult *self) {
-  return [self isWithCucumberApiResult_Type:JreLoadEnum(CucumberApiResult_Type, UNDEFINED)] || [self isWithCucumberApiResult_Type:JreLoadEnum(CucumberApiResult_Type, PENDING)];
+jboolean CCBResult_hasOkWhenNotStrictStatus(CCBResult *self) {
+  return [self isWithCCBResult_Type:JreLoadEnum(CCBResult_Type, UNDEFINED)] || [self isWithCCBResult_Type:JreLoadEnum(CCBResult_Type, PENDING)];
 }
 
-NSString *CucumberApiResult_getErrorMessageWithJavaLangThrowable_(CucumberApiResult *self, JavaLangThrowable *error) {
+NSString *CCBResult_getErrorMessageWithJavaLangThrowable_(CCBResult *self, JavaLangThrowable *error) {
   JavaIoStringWriter *stringWriter = create_JavaIoStringWriter_init();
   JavaIoPrintWriter *printWriter = create_JavaIoPrintWriter_initWithJavaIoWriter_(stringWriter);
   [((JavaLangThrowable *) nil_chk(error)) printStackTraceWithJavaIoPrintWriter:printWriter];
   return [((JavaLangStringBuffer *) nil_chk([stringWriter getBuffer])) description];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiResult)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBResult)
 
-J2OBJC_INITIALIZED_DEFN(CucumberApiResult_Type)
+J2OBJC_INITIALIZED_DEFN(CCBResult_Type)
 
-CucumberApiResult_Type *CucumberApiResult_Type_values_[6];
+CCBResult_Type *CCBResult_Type_values_[6];
 
-@implementation CucumberApiResult_Type
+@implementation CCBResult_Type
 
-+ (CucumberApiResult_Type *)fromLowerCaseNameWithNSString:(NSString *)lowerCaseName {
-  return CucumberApiResult_Type_fromLowerCaseNameWithNSString_(lowerCaseName);
++ (CCBResult_Type *)fromLowerCaseNameWithNSString:(NSString *)lowerCaseName {
+  return CCBResult_Type_fromLowerCaseNameWithNSString_(lowerCaseName);
 }
 
 - (NSString *)lowerCaseName {
@@ -203,20 +203,20 @@ CucumberApiResult_Type *CucumberApiResult_Type_values_[6];
 }
 
 + (IOSObjectArray *)values {
-  return CucumberApiResult_Type_values();
+  return CCBResult_Type_values();
 }
 
-+ (CucumberApiResult_Type *)valueOfWithNSString:(NSString *)name {
-  return CucumberApiResult_Type_valueOfWithNSString_(name);
++ (CCBResult_Type *)valueOfWithNSString:(NSString *)name {
+  return CCBResult_Type_valueOfWithNSString_(name);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, "LCucumberApiResult_Type;", 0x9, 0, 1, -1, -1, -1, -1 },
+    { NULL, "LCCBResult_Type;", 0x9, 0, 1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "[LCucumberApiResult_Type;", 0x9, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LCucumberApiResult_Type;", 0x9, 2, 1, -1, -1, -1, -1 },
+    { NULL, "[LCCBResult_Type;", 0x9, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCCBResult_Type;", 0x9, 2, 1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -228,52 +228,52 @@ CucumberApiResult_Type *CucumberApiResult_Type_values_[6];
   methods[4].selector = @selector(valueOfWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "PASSED", "LCucumberApiResult_Type;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
-    { "SKIPPED", "LCucumberApiResult_Type;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
-    { "PENDING", "LCucumberApiResult_Type;", .constantValue.asLong = 0, 0x4019, -1, 5, -1, -1 },
-    { "UNDEFINED", "LCucumberApiResult_Type;", .constantValue.asLong = 0, 0x4019, -1, 6, -1, -1 },
-    { "AMBIGUOUS", "LCucumberApiResult_Type;", .constantValue.asLong = 0, 0x4019, -1, 7, -1, -1 },
-    { "FAILED", "LCucumberApiResult_Type;", .constantValue.asLong = 0, 0x4019, -1, 8, -1, -1 },
+    { "PASSED", "LCCBResult_Type;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
+    { "SKIPPED", "LCCBResult_Type;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
+    { "PENDING", "LCCBResult_Type;", .constantValue.asLong = 0, 0x4019, -1, 5, -1, -1 },
+    { "UNDEFINED", "LCCBResult_Type;", .constantValue.asLong = 0, 0x4019, -1, 6, -1, -1 },
+    { "AMBIGUOUS", "LCCBResult_Type;", .constantValue.asLong = 0, 0x4019, -1, 7, -1, -1 },
+    { "FAILED", "LCCBResult_Type;", .constantValue.asLong = 0, 0x4019, -1, 8, -1, -1 },
   };
-  static const void *ptrTable[] = { "fromLowerCaseName", "LNSString;", "valueOf", &JreEnum(CucumberApiResult_Type, PASSED), &JreEnum(CucumberApiResult_Type, SKIPPED), &JreEnum(CucumberApiResult_Type, PENDING), &JreEnum(CucumberApiResult_Type, UNDEFINED), &JreEnum(CucumberApiResult_Type, AMBIGUOUS), &JreEnum(CucumberApiResult_Type, FAILED), "LCucumberApiResult;", "Ljava/lang/Enum<Lcucumber/api/Result$Type;>;" };
-  static const J2ObjcClassInfo _CucumberApiResult_Type = { "Type", "cucumber.api", ptrTable, methods, fields, 7, 0x4019, 5, 6, 9, -1, -1, 10, -1 };
-  return &_CucumberApiResult_Type;
+  static const void *ptrTable[] = { "fromLowerCaseName", "LNSString;", "valueOf", &JreEnum(CCBResult_Type, PASSED), &JreEnum(CCBResult_Type, SKIPPED), &JreEnum(CCBResult_Type, PENDING), &JreEnum(CCBResult_Type, UNDEFINED), &JreEnum(CCBResult_Type, AMBIGUOUS), &JreEnum(CCBResult_Type, FAILED), "LCCBResult;", "Ljava/lang/Enum<Lcucumber/api/Result$Type;>;" };
+  static const J2ObjcClassInfo _CCBResult_Type = { "Type", "cucumber.api", ptrTable, methods, fields, 7, 0x4019, 5, 6, 9, -1, -1, 10, -1 };
+  return &_CCBResult_Type;
 }
 
 + (void)initialize {
-  if (self == [CucumberApiResult_Type class]) {
+  if (self == [CCBResult_Type class]) {
     size_t objSize = class_getInstanceSize(self);
     size_t allocSize = 6 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
     for (jint i = 0; i < 6; i++) {
-      ((void)(CucumberApiResult_Type_values_[i] = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
-      CucumberApiResult_Type_initWithNSString_withInt_(e, JreEnumConstantName(CucumberApiResult_Type_class_(), i), i);
+      ((void)(CCBResult_Type_values_[i] = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
+      CCBResult_Type_initWithNSString_withInt_(e, JreEnumConstantName(CCBResult_Type_class_(), i), i);
     }
-    J2OBJC_SET_INITIALIZED(CucumberApiResult_Type)
+    J2OBJC_SET_INITIALIZED(CCBResult_Type)
   }
 }
 
 @end
 
-void CucumberApiResult_Type_initWithNSString_withInt_(CucumberApiResult_Type *self, NSString *__name, jint __ordinal) {
+void CCBResult_Type_initWithNSString_withInt_(CCBResult_Type *self, NSString *__name, jint __ordinal) {
   JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
 }
 
-CucumberApiResult_Type *CucumberApiResult_Type_fromLowerCaseNameWithNSString_(NSString *lowerCaseName) {
-  CucumberApiResult_Type_initialize();
-  return CucumberApiResult_Type_valueOfWithNSString_([((NSString *) nil_chk(lowerCaseName)) uppercaseString]);
+CCBResult_Type *CCBResult_Type_fromLowerCaseNameWithNSString_(NSString *lowerCaseName) {
+  CCBResult_Type_initialize();
+  return CCBResult_Type_valueOfWithNSString_([((NSString *) nil_chk(lowerCaseName)) uppercaseString]);
 }
 
-IOSObjectArray *CucumberApiResult_Type_values() {
-  CucumberApiResult_Type_initialize();
-  return [IOSObjectArray arrayWithObjects:CucumberApiResult_Type_values_ count:6 type:CucumberApiResult_Type_class_()];
+IOSObjectArray *CCBResult_Type_values() {
+  CCBResult_Type_initialize();
+  return [IOSObjectArray arrayWithObjects:CCBResult_Type_values_ count:6 type:CCBResult_Type_class_()];
 }
 
-CucumberApiResult_Type *CucumberApiResult_Type_valueOfWithNSString_(NSString *name) {
-  CucumberApiResult_Type_initialize();
+CCBResult_Type *CCBResult_Type_valueOfWithNSString_(NSString *name) {
+  CCBResult_Type_initialize();
   for (int i = 0; i < 6; i++) {
-    CucumberApiResult_Type *e = CucumberApiResult_Type_values_[i];
+    CCBResult_Type *e = CCBResult_Type_values_[i];
     if ([name isEqual:[e name]]) {
       return e;
     }
@@ -282,12 +282,12 @@ CucumberApiResult_Type *CucumberApiResult_Type_valueOfWithNSString_(NSString *na
   return nil;
 }
 
-CucumberApiResult_Type *CucumberApiResult_Type_fromOrdinal(NSUInteger ordinal) {
-  CucumberApiResult_Type_initialize();
+CCBResult_Type *CCBResult_Type_fromOrdinal(NSUInteger ordinal) {
+  CCBResult_Type_initialize();
   if (ordinal >= 6) {
     return nil;
   }
-  return CucumberApiResult_Type_values_[ordinal];
+  return CCBResult_Type_values_[ordinal];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiResult_Type)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBResult_Type)

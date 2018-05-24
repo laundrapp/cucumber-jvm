@@ -18,11 +18,11 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeIoFileResourceIteratorFactory_) && (INCLUDE_ALL_CucumberRuntimeIoFileResourceIteratorFactory || defined(INCLUDE_CucumberRuntimeIoFileResourceIteratorFactory))
-#define CucumberRuntimeIoFileResourceIteratorFactory_
+#if !defined (CCBRFileResourceIteratorFactory_) && (INCLUDE_ALL_CucumberRuntimeIoFileResourceIteratorFactory || defined(INCLUDE_CCBRFileResourceIteratorFactory))
+#define CCBRFileResourceIteratorFactory_
 
 #define RESTRICT_CucumberRuntimeIoResourceIteratorFactory 1
-#define INCLUDE_CucumberRuntimeIoResourceIteratorFactory 1
+#define INCLUDE_CCBRResourceIteratorFactory 1
 #include "cucumber/runtime/io/ResourceIteratorFactory.h"
 
 @class JavaNetURL;
@@ -38,7 +38,7 @@
   service implementation for <code>ResourceIteratorFactory</code> as it could
   easily hide other service implementations.</p>
  */
-@interface CucumberRuntimeIoFileResourceIteratorFactory : NSObject < CucumberRuntimeIoResourceIteratorFactory >
+@interface CCBRFileResourceIteratorFactory : NSObject < CCBRResourceIteratorFactory >
 
 #pragma mark Public
 
@@ -52,15 +52,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoFileResourceIteratorFactory)
+J2OBJC_EMPTY_STATIC_INIT(CCBRFileResourceIteratorFactory)
 
-FOUNDATION_EXPORT void CucumberRuntimeIoFileResourceIteratorFactory_init(CucumberRuntimeIoFileResourceIteratorFactory *self);
+FOUNDATION_EXPORT void CCBRFileResourceIteratorFactory_init(CCBRFileResourceIteratorFactory *self);
 
-FOUNDATION_EXPORT CucumberRuntimeIoFileResourceIteratorFactory *new_CucumberRuntimeIoFileResourceIteratorFactory_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRFileResourceIteratorFactory *new_CCBRFileResourceIteratorFactory_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeIoFileResourceIteratorFactory *create_CucumberRuntimeIoFileResourceIteratorFactory_init(void);
+FOUNDATION_EXPORT CCBRFileResourceIteratorFactory *create_CCBRFileResourceIteratorFactory_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoFileResourceIteratorFactory)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRFileResourceIteratorFactory)
+
+@compatibility_alias CucumberRuntimeIoFileResourceIteratorFactory CCBRFileResourceIteratorFactory;
 
 #endif
 

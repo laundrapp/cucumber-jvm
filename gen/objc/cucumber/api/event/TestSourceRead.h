@@ -18,16 +18,16 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiEventTestSourceRead_) && (INCLUDE_ALL_CucumberApiEventTestSourceRead || defined(INCLUDE_CucumberApiEventTestSourceRead))
-#define CucumberApiEventTestSourceRead_
+#if !defined (CCBTestSourceRead_) && (INCLUDE_ALL_CucumberApiEventTestSourceRead || defined(INCLUDE_CCBTestSourceRead))
+#define CCBTestSourceRead_
 
 #define RESTRICT_CucumberApiEventTimeStampedEvent 1
-#define INCLUDE_CucumberApiEventTimeStampedEvent 1
+#define INCLUDE_CCBTimeStampedEvent 1
 #include "cucumber/api/event/TimeStampedEvent.h"
 
 @class JavaLangLong;
 
-@interface CucumberApiEventTestSourceRead : CucumberApiEventTimeStampedEvent {
+@interface CCBTestSourceRead : CCBTimeStampedEvent {
  @public
   NSString *uri_;
   NSString *source_;
@@ -45,18 +45,20 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiEventTestSourceRead)
+J2OBJC_EMPTY_STATIC_INIT(CCBTestSourceRead)
 
-J2OBJC_FIELD_SETTER(CucumberApiEventTestSourceRead, uri_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberApiEventTestSourceRead, source_, NSString *)
+J2OBJC_FIELD_SETTER(CCBTestSourceRead, uri_, NSString *)
+J2OBJC_FIELD_SETTER(CCBTestSourceRead, source_, NSString *)
 
-FOUNDATION_EXPORT void CucumberApiEventTestSourceRead_initWithJavaLangLong_withNSString_withNSString_(CucumberApiEventTestSourceRead *self, JavaLangLong *timeStamp, NSString *uri, NSString *source);
+FOUNDATION_EXPORT void CCBTestSourceRead_initWithJavaLangLong_withNSString_withNSString_(CCBTestSourceRead *self, JavaLangLong *timeStamp, NSString *uri, NSString *source);
 
-FOUNDATION_EXPORT CucumberApiEventTestSourceRead *new_CucumberApiEventTestSourceRead_initWithJavaLangLong_withNSString_withNSString_(JavaLangLong *timeStamp, NSString *uri, NSString *source) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBTestSourceRead *new_CCBTestSourceRead_initWithJavaLangLong_withNSString_withNSString_(JavaLangLong *timeStamp, NSString *uri, NSString *source) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberApiEventTestSourceRead *create_CucumberApiEventTestSourceRead_initWithJavaLangLong_withNSString_withNSString_(JavaLangLong *timeStamp, NSString *uri, NSString *source);
+FOUNDATION_EXPORT CCBTestSourceRead *create_CCBTestSourceRead_initWithJavaLangLong_withNSString_withNSString_(JavaLangLong *timeStamp, NSString *uri, NSString *source);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventTestSourceRead)
+J2OBJC_TYPE_LITERAL_HEADER(CCBTestSourceRead)
+
+@compatibility_alias CucumberApiEventTestSourceRead CCBTestSourceRead;
 
 #endif
 

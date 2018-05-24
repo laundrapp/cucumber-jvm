@@ -8,21 +8,21 @@
 #include "java/lang/RuntimeException.h"
 #include "java/lang/Throwable.h"
 
-@implementation CucumberRuntimeCucumberException
+@implementation CCBRCucumberException
 
 - (instancetype __nonnull)initWithNSString:(NSString *)message {
-  CucumberRuntimeCucumberException_initWithNSString_(self, message);
+  CCBRCucumberException_initWithNSString_(self, message);
   return self;
 }
 
 - (instancetype __nonnull)initWithNSString:(NSString *)message
                      withJavaLangThrowable:(JavaLangThrowable *)e {
-  CucumberRuntimeCucumberException_initWithNSString_withJavaLangThrowable_(self, message, e);
+  CCBRCucumberException_initWithNSString_withJavaLangThrowable_(self, message, e);
   return self;
 }
 
 - (instancetype __nonnull)initWithJavaLangThrowable:(JavaLangThrowable *)e {
-  CucumberRuntimeCucumberException_initWithJavaLangThrowable_(self, e);
+  CCBRCucumberException_initWithJavaLangThrowable_(self, e);
   return self;
 }
 
@@ -40,46 +40,46 @@
   methods[2].selector = @selector(initWithJavaLangThrowable:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LNSString;", "LNSString;LJavaLangThrowable;", "LJavaLangThrowable;" };
-  static const J2ObjcClassInfo _CucumberRuntimeCucumberException = { "CucumberException", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x1, 3, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeCucumberException;
+  static const J2ObjcClassInfo _CCBRCucumberException = { "CucumberException", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x1, 3, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRCucumberException;
 }
 
 @end
 
-void CucumberRuntimeCucumberException_initWithNSString_(CucumberRuntimeCucumberException *self, NSString *message) {
+void CCBRCucumberException_initWithNSString_(CCBRCucumberException *self, NSString *message) {
   JavaLangRuntimeException_initWithNSString_(self, message);
 }
 
-CucumberRuntimeCucumberException *new_CucumberRuntimeCucumberException_initWithNSString_(NSString *message) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeCucumberException, initWithNSString_, message)
+CCBRCucumberException *new_CCBRCucumberException_initWithNSString_(NSString *message) {
+  J2OBJC_NEW_IMPL(CCBRCucumberException, initWithNSString_, message)
 }
 
-CucumberRuntimeCucumberException *create_CucumberRuntimeCucumberException_initWithNSString_(NSString *message) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeCucumberException, initWithNSString_, message)
+CCBRCucumberException *create_CCBRCucumberException_initWithNSString_(NSString *message) {
+  J2OBJC_CREATE_IMPL(CCBRCucumberException, initWithNSString_, message)
 }
 
-void CucumberRuntimeCucumberException_initWithNSString_withJavaLangThrowable_(CucumberRuntimeCucumberException *self, NSString *message, JavaLangThrowable *e) {
+void CCBRCucumberException_initWithNSString_withJavaLangThrowable_(CCBRCucumberException *self, NSString *message, JavaLangThrowable *e) {
   JavaLangRuntimeException_initWithNSString_withJavaLangThrowable_(self, message, e);
 }
 
-CucumberRuntimeCucumberException *new_CucumberRuntimeCucumberException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *e) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeCucumberException, initWithNSString_withJavaLangThrowable_, message, e)
+CCBRCucumberException *new_CCBRCucumberException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *e) {
+  J2OBJC_NEW_IMPL(CCBRCucumberException, initWithNSString_withJavaLangThrowable_, message, e)
 }
 
-CucumberRuntimeCucumberException *create_CucumberRuntimeCucumberException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *e) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeCucumberException, initWithNSString_withJavaLangThrowable_, message, e)
+CCBRCucumberException *create_CCBRCucumberException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *e) {
+  J2OBJC_CREATE_IMPL(CCBRCucumberException, initWithNSString_withJavaLangThrowable_, message, e)
 }
 
-void CucumberRuntimeCucumberException_initWithJavaLangThrowable_(CucumberRuntimeCucumberException *self, JavaLangThrowable *e) {
+void CCBRCucumberException_initWithJavaLangThrowable_(CCBRCucumberException *self, JavaLangThrowable *e) {
   JavaLangRuntimeException_initWithJavaLangThrowable_(self, e);
 }
 
-CucumberRuntimeCucumberException *new_CucumberRuntimeCucumberException_initWithJavaLangThrowable_(JavaLangThrowable *e) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeCucumberException, initWithJavaLangThrowable_, e)
+CCBRCucumberException *new_CCBRCucumberException_initWithJavaLangThrowable_(JavaLangThrowable *e) {
+  J2OBJC_NEW_IMPL(CCBRCucumberException, initWithJavaLangThrowable_, e)
 }
 
-CucumberRuntimeCucumberException *create_CucumberRuntimeCucumberException_initWithJavaLangThrowable_(JavaLangThrowable *e) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeCucumberException, initWithJavaLangThrowable_, e)
+CCBRCucumberException *create_CCBRCucumberException_initWithJavaLangThrowable_(JavaLangThrowable *e) {
+  J2OBJC_CREATE_IMPL(CCBRCucumberException, initWithJavaLangThrowable_, e)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeCucumberException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRCucumberException)

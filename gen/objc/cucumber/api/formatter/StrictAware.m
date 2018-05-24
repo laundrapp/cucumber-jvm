@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/api/formatter/StrictAware.h"
 
-@interface CucumberApiFormatterStrictAware : NSObject
+@interface CCBStrictAware : NSObject
 
 @end
 
-@implementation CucumberApiFormatterStrictAware
+@implementation CCBStrictAware
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -22,10 +22,10 @@
   methods[0].selector = @selector(setStrictWithBoolean:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "setStrict", "Z" };
-  static const J2ObjcClassInfo _CucumberApiFormatterStrictAware = { "StrictAware", "cucumber.api.formatter", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberApiFormatterStrictAware;
+  static const J2ObjcClassInfo _CCBStrictAware = { "StrictAware", "cucumber.api.formatter", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
+  return &_CCBStrictAware;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiFormatterStrictAware)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBStrictAware)

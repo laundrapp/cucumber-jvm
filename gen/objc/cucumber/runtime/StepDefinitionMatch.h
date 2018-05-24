@@ -18,41 +18,41 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeStepDefinitionMatch_) && (INCLUDE_ALL_CucumberRuntimeStepDefinitionMatch || defined(INCLUDE_CucumberRuntimeStepDefinitionMatch))
-#define CucumberRuntimeStepDefinitionMatch_
+#if !defined (CCBRStepDefinitionMatch_) && (INCLUDE_ALL_CucumberRuntimeStepDefinitionMatch || defined(INCLUDE_CCBRStepDefinitionMatch))
+#define CCBRStepDefinitionMatch_
 
 #define RESTRICT_CucumberRuntimeMatch 1
-#define INCLUDE_CucumberRuntimeMatch 1
+#define INCLUDE_CCBRMatch 1
 #include "cucumber/runtime/Match.h"
 
 #define RESTRICT_CucumberRuntimeDefinitionMatch 1
-#define INCLUDE_CucumberRuntimeDefinitionMatch 1
+#define INCLUDE_CCBRDefinitionMatch 1
 #include "cucumber/runtime/DefinitionMatch.h"
 
-@class CucumberRuntimeXstreamLocalizedXStreams;
+@class CCBRLocalizedXStreams;
 @class GherkinPicklesPickleStep;
 @class JavaLangStackTraceElement;
 @class JavaLangThrowable;
-@protocol CucumberApiScenario;
-@protocol CucumberRuntimeStepDefinition;
+@protocol CCBRStepDefinition;
+@protocol CCBScenario;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeStepDefinitionMatch : CucumberRuntimeMatch < CucumberRuntimeDefinitionMatch >
+@interface CCBRStepDefinitionMatch : CCBRMatch < CCBRDefinitionMatch >
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)arguments
-             withCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)stepDefinition
+                        withCCBRStepDefinition:(id<CCBRStepDefinition>)stepDefinition
                                   withNSString:(NSString *)featurePath
                   withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
-   withCucumberRuntimeXstreamLocalizedXStreams:(CucumberRuntimeXstreamLocalizedXStreams *)localizedXStreams;
+                     withCCBRLocalizedXStreams:(CCBRLocalizedXStreams *)localizedXStreams;
 
 - (void)dryRunStepWithNSString:(NSString *)language
-       withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
+               withCCBScenario:(id<CCBScenario>)scenario;
 
 - (NSString *)getCodeLocation;
 
-- (CucumberRuntimeMatch *)getMatch;
+- (CCBRMatch *)getMatch;
 
 - (NSString *)getPattern;
 
@@ -61,7 +61,7 @@
 - (JavaLangStackTraceElement *)getStepLocation;
 
 - (void)runStepWithNSString:(NSString *)language
-    withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
+            withCCBScenario:(id<CCBScenario>)scenario;
 
 #pragma mark Protected
 
@@ -70,7 +70,7 @@
 
 #pragma mark Package-Private
 
-- (id<CucumberRuntimeStepDefinition>)getStepDefinition;
+- (id<CCBRStepDefinition>)getStepDefinition;
 
 // Disallowed inherited constructors, do not use.
 
@@ -79,17 +79,19 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeStepDefinitionMatch)
+J2OBJC_EMPTY_STATIC_INIT(CCBRStepDefinitionMatch)
 
-FOUNDATION_EXPORT void CucumberRuntimeStepDefinitionMatch_initWithJavaUtilList_withCucumberRuntimeStepDefinition_withNSString_withGherkinPicklesPickleStep_withCucumberRuntimeXstreamLocalizedXStreams_(CucumberRuntimeStepDefinitionMatch *self, id<JavaUtilList> arguments, id<CucumberRuntimeStepDefinition> stepDefinition, NSString *featurePath, GherkinPicklesPickleStep *step, CucumberRuntimeXstreamLocalizedXStreams *localizedXStreams);
+FOUNDATION_EXPORT void CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGherkinPicklesPickleStep_withCCBRLocalizedXStreams_(CCBRStepDefinitionMatch *self, id<JavaUtilList> arguments, id<CCBRStepDefinition> stepDefinition, NSString *featurePath, GherkinPicklesPickleStep *step, CCBRLocalizedXStreams *localizedXStreams);
 
-FOUNDATION_EXPORT CucumberRuntimeStepDefinitionMatch *new_CucumberRuntimeStepDefinitionMatch_initWithJavaUtilList_withCucumberRuntimeStepDefinition_withNSString_withGherkinPicklesPickleStep_withCucumberRuntimeXstreamLocalizedXStreams_(id<JavaUtilList> arguments, id<CucumberRuntimeStepDefinition> stepDefinition, NSString *featurePath, GherkinPicklesPickleStep *step, CucumberRuntimeXstreamLocalizedXStreams *localizedXStreams) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRStepDefinitionMatch *new_CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGherkinPicklesPickleStep_withCCBRLocalizedXStreams_(id<JavaUtilList> arguments, id<CCBRStepDefinition> stepDefinition, NSString *featurePath, GherkinPicklesPickleStep *step, CCBRLocalizedXStreams *localizedXStreams) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeStepDefinitionMatch *create_CucumberRuntimeStepDefinitionMatch_initWithJavaUtilList_withCucumberRuntimeStepDefinition_withNSString_withGherkinPicklesPickleStep_withCucumberRuntimeXstreamLocalizedXStreams_(id<JavaUtilList> arguments, id<CucumberRuntimeStepDefinition> stepDefinition, NSString *featurePath, GherkinPicklesPickleStep *step, CucumberRuntimeXstreamLocalizedXStreams *localizedXStreams);
+FOUNDATION_EXPORT CCBRStepDefinitionMatch *create_CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGherkinPicklesPickleStep_withCCBRLocalizedXStreams_(id<JavaUtilList> arguments, id<CCBRStepDefinition> stepDefinition, NSString *featurePath, GherkinPicklesPickleStep *step, CCBRLocalizedXStreams *localizedXStreams);
 
-FOUNDATION_EXPORT jint CucumberRuntimeStepDefinitionMatch_getStepLineWithGherkinPicklesPickleStep_(GherkinPicklesPickleStep *step);
+FOUNDATION_EXPORT jint CCBRStepDefinitionMatch_getStepLineWithGherkinPicklesPickleStep_(GherkinPicklesPickleStep *step);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeStepDefinitionMatch)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRStepDefinitionMatch)
+
+@compatibility_alias CucumberRuntimeStepDefinitionMatch CCBRStepDefinitionMatch;
 
 #endif
 

@@ -18,13 +18,13 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeTableTablePrinter_) && (INCLUDE_ALL_CucumberRuntimeTableTablePrinter || defined(INCLUDE_CucumberRuntimeTableTablePrinter))
-#define CucumberRuntimeTableTablePrinter_
+#if !defined (CCBRTablePrinter_) && (INCLUDE_ALL_CucumberRuntimeTableTablePrinter || defined(INCLUDE_CCBRTablePrinter))
+#define CCBRTablePrinter_
 
 @class JavaLangStringBuilder;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeTableTablePrinter : NSObject
+@interface CCBRTablePrinter : NSObject
 
 #pragma mark Public
 
@@ -40,15 +40,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeTableTablePrinter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRTablePrinter)
 
-FOUNDATION_EXPORT void CucumberRuntimeTableTablePrinter_init(CucumberRuntimeTableTablePrinter *self);
+FOUNDATION_EXPORT void CCBRTablePrinter_init(CCBRTablePrinter *self);
 
-FOUNDATION_EXPORT CucumberRuntimeTableTablePrinter *new_CucumberRuntimeTableTablePrinter_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRTablePrinter *new_CCBRTablePrinter_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeTableTablePrinter *create_CucumberRuntimeTableTablePrinter_init(void);
+FOUNDATION_EXPORT CCBRTablePrinter *create_CCBRTablePrinter_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTableTablePrinter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRTablePrinter)
+
+@compatibility_alias CucumberRuntimeTableTablePrinter CCBRTablePrinter;
 
 #endif
 

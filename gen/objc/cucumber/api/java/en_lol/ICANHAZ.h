@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaEn_lolICANHAZ_) && (INCLUDE_ALL_CucumberApiJavaEn_lolICANHAZ || defined(INCLUDE_CucumberApiJavaEn_lolICANHAZ))
-#define CucumberApiJavaEn_lolICANHAZ_
+#if !defined (CCBICANHAZ_) && (INCLUDE_ALL_CucumberApiJavaEn_lolICANHAZ || defined(INCLUDE_CCBICANHAZ))
+#define CCBICANHAZ_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaEn_lolICANHAZ < JavaLangAnnotationAnnotation >
+@protocol CCBICANHAZ < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaEn_lolICANHAZ : NSObject < CucumberApiJavaEn_lolICANHAZ > {
+@interface CCBICANHAZ : NSObject < CCBICANHAZ > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEn_lolICANHAZ)
+J2OBJC_EMPTY_STATIC_INIT(CCBICANHAZ)
 
-FOUNDATION_EXPORT id<CucumberApiJavaEn_lolICANHAZ> create_CucumberApiJavaEn_lolICANHAZ(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBICANHAZ> create_CCBICANHAZ(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEn_lolICANHAZ)
+J2OBJC_TYPE_LITERAL_HEADER(CCBICANHAZ)
+
+#define CucumberApiJavaEn_lolICANHAZ CCBICANHAZ
 
 #endif
 

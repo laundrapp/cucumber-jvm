@@ -18,12 +18,12 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeAutocompleteMetaStepdef_) && (INCLUDE_ALL_CucumberRuntimeAutocompleteMetaStepdef || defined(INCLUDE_CucumberRuntimeAutocompleteMetaStepdef))
-#define CucumberRuntimeAutocompleteMetaStepdef_
+#if !defined (CCBRMetaStepdef_) && (INCLUDE_ALL_CucumberRuntimeAutocompleteMetaStepdef || defined(INCLUDE_CCBRMetaStepdef))
+#define CCBRMetaStepdef_
 
 @protocol JavaUtilSortedSet;
 
-@interface CucumberRuntimeAutocompleteMetaStepdef : NSObject {
+@interface CCBRMetaStepdef : NSObject {
  @public
   id<JavaUtilSortedSet> steps_;
   NSString *source_;
@@ -44,24 +44,26 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeAutocompleteMetaStepdef)
+J2OBJC_STATIC_INIT(CCBRMetaStepdef)
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeAutocompleteMetaStepdef, steps_, id<JavaUtilSortedSet>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeAutocompleteMetaStepdef, source_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeAutocompleteMetaStepdef, flags_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRMetaStepdef, steps_, id<JavaUtilSortedSet>)
+J2OBJC_FIELD_SETTER(CCBRMetaStepdef, source_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRMetaStepdef, flags_, NSString *)
 
-FOUNDATION_EXPORT void CucumberRuntimeAutocompleteMetaStepdef_init(CucumberRuntimeAutocompleteMetaStepdef *self);
+FOUNDATION_EXPORT void CCBRMetaStepdef_init(CCBRMetaStepdef *self);
 
-FOUNDATION_EXPORT CucumberRuntimeAutocompleteMetaStepdef *new_CucumberRuntimeAutocompleteMetaStepdef_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRMetaStepdef *new_CCBRMetaStepdef_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeAutocompleteMetaStepdef *create_CucumberRuntimeAutocompleteMetaStepdef_init(void);
+FOUNDATION_EXPORT CCBRMetaStepdef *create_CCBRMetaStepdef_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeAutocompleteMetaStepdef)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRMetaStepdef)
+
+@compatibility_alias CucumberRuntimeAutocompleteMetaStepdef CCBRMetaStepdef;
 
 #endif
 
-#if !defined (CucumberRuntimeAutocompleteMetaStepdef_MetaStep_) && (INCLUDE_ALL_CucumberRuntimeAutocompleteMetaStepdef || defined(INCLUDE_CucumberRuntimeAutocompleteMetaStepdef_MetaStep))
-#define CucumberRuntimeAutocompleteMetaStepdef_MetaStep_
+#if !defined (CCBRMetaStepdef_MetaStep_) && (INCLUDE_ALL_CucumberRuntimeAutocompleteMetaStepdef || defined(INCLUDE_CCBRMetaStepdef_MetaStep))
+#define CCBRMetaStepdef_MetaStep_
 
 #define RESTRICT_JavaLangComparable 1
 #define INCLUDE_JavaLangComparable 1
@@ -69,7 +71,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeAutocompleteMetaStepdef)
 
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeAutocompleteMetaStepdef_MetaStep : NSObject < JavaLangComparable > {
+@interface CCBRMetaStepdef_MetaStep : NSObject < JavaLangComparable > {
  @public
   NSString *name_;
   id<JavaUtilList> args_;
@@ -79,7 +81,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeAutocompleteMetaStepdef)
 
 - (instancetype __nonnull)init;
 
-- (jint)compareToWithId:(CucumberRuntimeAutocompleteMetaStepdef_MetaStep *)other;
+- (jint)compareToWithId:(CCBRMetaStepdef_MetaStep *)other;
 
 - (jboolean)isEqual:(id)o;
 
@@ -87,25 +89,25 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeAutocompleteMetaStepdef)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeAutocompleteMetaStepdef_MetaStep)
+J2OBJC_EMPTY_STATIC_INIT(CCBRMetaStepdef_MetaStep)
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeAutocompleteMetaStepdef_MetaStep, name_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeAutocompleteMetaStepdef_MetaStep, args_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRMetaStepdef_MetaStep, name_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRMetaStepdef_MetaStep, args_, id<JavaUtilList>)
 
-FOUNDATION_EXPORT void CucumberRuntimeAutocompleteMetaStepdef_MetaStep_init(CucumberRuntimeAutocompleteMetaStepdef_MetaStep *self);
+FOUNDATION_EXPORT void CCBRMetaStepdef_MetaStep_init(CCBRMetaStepdef_MetaStep *self);
 
-FOUNDATION_EXPORT CucumberRuntimeAutocompleteMetaStepdef_MetaStep *new_CucumberRuntimeAutocompleteMetaStepdef_MetaStep_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRMetaStepdef_MetaStep *new_CCBRMetaStepdef_MetaStep_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeAutocompleteMetaStepdef_MetaStep *create_CucumberRuntimeAutocompleteMetaStepdef_MetaStep_init(void);
+FOUNDATION_EXPORT CCBRMetaStepdef_MetaStep *create_CCBRMetaStepdef_MetaStep_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeAutocompleteMetaStepdef_MetaStep)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRMetaStepdef_MetaStep)
 
 #endif
 
-#if !defined (CucumberRuntimeAutocompleteMetaStepdef_MetaArgument_) && (INCLUDE_ALL_CucumberRuntimeAutocompleteMetaStepdef || defined(INCLUDE_CucumberRuntimeAutocompleteMetaStepdef_MetaArgument))
-#define CucumberRuntimeAutocompleteMetaStepdef_MetaArgument_
+#if !defined (CCBRMetaStepdef_MetaArgument_) && (INCLUDE_ALL_CucumberRuntimeAutocompleteMetaStepdef || defined(INCLUDE_CCBRMetaStepdef_MetaArgument))
+#define CCBRMetaStepdef_MetaArgument_
 
-@interface CucumberRuntimeAutocompleteMetaStepdef_MetaArgument : NSObject {
+@interface CCBRMetaStepdef_MetaArgument : NSObject {
  @public
   jint offset_;
   NSString *val_;
@@ -117,17 +119,17 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeAutocompleteMetaStepdef_MetaStep)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeAutocompleteMetaStepdef_MetaArgument)
+J2OBJC_EMPTY_STATIC_INIT(CCBRMetaStepdef_MetaArgument)
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeAutocompleteMetaStepdef_MetaArgument, val_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRMetaStepdef_MetaArgument, val_, NSString *)
 
-FOUNDATION_EXPORT void CucumberRuntimeAutocompleteMetaStepdef_MetaArgument_init(CucumberRuntimeAutocompleteMetaStepdef_MetaArgument *self);
+FOUNDATION_EXPORT void CCBRMetaStepdef_MetaArgument_init(CCBRMetaStepdef_MetaArgument *self);
 
-FOUNDATION_EXPORT CucumberRuntimeAutocompleteMetaStepdef_MetaArgument *new_CucumberRuntimeAutocompleteMetaStepdef_MetaArgument_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRMetaStepdef_MetaArgument *new_CCBRMetaStepdef_MetaArgument_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeAutocompleteMetaStepdef_MetaArgument *create_CucumberRuntimeAutocompleteMetaStepdef_MetaArgument_init(void);
+FOUNDATION_EXPORT CCBRMetaStepdef_MetaArgument *create_CCBRMetaStepdef_MetaArgument_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeAutocompleteMetaStepdef_MetaArgument)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRMetaStepdef_MetaArgument)
 
 #endif
 

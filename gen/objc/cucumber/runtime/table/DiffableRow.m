@@ -9,18 +9,18 @@
 #include "gherkin/pickles/PickleRow.h"
 #include "java/util/List.h"
 
-@implementation CucumberRuntimeTableDiffableRow
+@implementation CCBRDiffableRow
 
 - (instancetype __nonnull)initWithGherkinPicklesPickleRow:(GherkinPicklesPickleRow *)row
                                          withJavaUtilList:(id<JavaUtilList>)convertedRow {
-  CucumberRuntimeTableDiffableRow_initWithGherkinPicklesPickleRow_withJavaUtilList_(self, row, convertedRow);
+  CCBRDiffableRow_initWithGherkinPicklesPickleRow_withJavaUtilList_(self, row, convertedRow);
   return self;
 }
 
 - (jboolean)isEqual:(id)o {
   if (self == o) return true;
   if (o == nil || [self java_getClass] != [o java_getClass]) return false;
-  CucumberRuntimeTableDiffableRow *that = (CucumberRuntimeTableDiffableRow *) cast_chk(o, [CucumberRuntimeTableDiffableRow class]);
+  CCBRDiffableRow *that = (CCBRDiffableRow *) cast_chk(o, [CCBRDiffableRow class]);
   return [((id<JavaUtilList>) nil_chk(convertedRow_)) isEqual:that->convertedRow_];
 }
 
@@ -52,24 +52,24 @@
     { "convertedRow_", "LJavaUtilList;", .constantValue.asLong = 0, 0x11, -1, -1, 5, -1 },
   };
   static const void *ptrTable[] = { "LGherkinPicklesPickleRow;LJavaUtilList;", "(Lgherkin/pickles/PickleRow;Ljava/util/List<Ljava/lang/String;>;)V", "equals", "LNSObject;", "hashCode", "Ljava/util/List<Ljava/lang/String;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeTableDiffableRow = { "DiffableRow", "cucumber.runtime.table", ptrTable, methods, fields, 7, 0x1, 3, 2, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeTableDiffableRow;
+  static const J2ObjcClassInfo _CCBRDiffableRow = { "DiffableRow", "cucumber.runtime.table", ptrTable, methods, fields, 7, 0x1, 3, 2, -1, -1, -1, -1, -1 };
+  return &_CCBRDiffableRow;
 }
 
 @end
 
-void CucumberRuntimeTableDiffableRow_initWithGherkinPicklesPickleRow_withJavaUtilList_(CucumberRuntimeTableDiffableRow *self, GherkinPicklesPickleRow *row, id<JavaUtilList> convertedRow) {
+void CCBRDiffableRow_initWithGherkinPicklesPickleRow_withJavaUtilList_(CCBRDiffableRow *self, GherkinPicklesPickleRow *row, id<JavaUtilList> convertedRow) {
   NSObject_init(self);
   JreStrongAssign(&self->row_, row);
   JreStrongAssign(&self->convertedRow_, convertedRow);
 }
 
-CucumberRuntimeTableDiffableRow *new_CucumberRuntimeTableDiffableRow_initWithGherkinPicklesPickleRow_withJavaUtilList_(GherkinPicklesPickleRow *row, id<JavaUtilList> convertedRow) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeTableDiffableRow, initWithGherkinPicklesPickleRow_withJavaUtilList_, row, convertedRow)
+CCBRDiffableRow *new_CCBRDiffableRow_initWithGherkinPicklesPickleRow_withJavaUtilList_(GherkinPicklesPickleRow *row, id<JavaUtilList> convertedRow) {
+  J2OBJC_NEW_IMPL(CCBRDiffableRow, initWithGherkinPicklesPickleRow_withJavaUtilList_, row, convertedRow)
 }
 
-CucumberRuntimeTableDiffableRow *create_CucumberRuntimeTableDiffableRow_initWithGherkinPicklesPickleRow_withJavaUtilList_(GherkinPicklesPickleRow *row, id<JavaUtilList> convertedRow) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeTableDiffableRow, initWithGherkinPicklesPickleRow_withJavaUtilList_, row, convertedRow)
+CCBRDiffableRow *create_CCBRDiffableRow_initWithGherkinPicklesPickleRow_withJavaUtilList_(GherkinPicklesPickleRow *row, id<JavaUtilList> convertedRow) {
+  J2OBJC_CREATE_IMPL(CCBRDiffableRow, initWithGherkinPicklesPickleRow_withJavaUtilList_, row, convertedRow)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTableDiffableRow)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRDiffableRow)

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaHtSipozeke_) && (INCLUDE_ALL_CucumberApiJavaHtSipozeke || defined(INCLUDE_CucumberApiJavaHtSipozeke))
-#define CucumberApiJavaHtSipozeke_
+#if !defined (CCBSipozeke_) && (INCLUDE_ALL_CucumberApiJavaHtSipozeke || defined(INCLUDE_CCBSipozeke))
+#define CCBSipozeke_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaHtSipozeke < JavaLangAnnotationAnnotation >
+@protocol CCBSipozeke < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaHtSipozeke : NSObject < CucumberApiJavaHtSipozeke > {
+@interface CCBSipozeke : NSObject < CCBSipozeke > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaHtSipozeke)
+J2OBJC_EMPTY_STATIC_INIT(CCBSipozeke)
 
-FOUNDATION_EXPORT id<CucumberApiJavaHtSipozeke> create_CucumberApiJavaHtSipozeke(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBSipozeke> create_CCBSipozeke(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaHtSipozeke)
+J2OBJC_TYPE_LITERAL_HEADER(CCBSipozeke)
+
+#define CucumberApiJavaHtSipozeke CCBSipozeke
 
 #endif
 

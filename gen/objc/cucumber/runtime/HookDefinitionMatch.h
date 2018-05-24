@@ -18,37 +18,37 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeHookDefinitionMatch_) && (INCLUDE_ALL_CucumberRuntimeHookDefinitionMatch || defined(INCLUDE_CucumberRuntimeHookDefinitionMatch))
-#define CucumberRuntimeHookDefinitionMatch_
+#if !defined (CCBRHookDefinitionMatch_) && (INCLUDE_ALL_CucumberRuntimeHookDefinitionMatch || defined(INCLUDE_CCBRHookDefinitionMatch))
+#define CCBRHookDefinitionMatch_
 
 #define RESTRICT_CucumberRuntimeDefinitionMatch 1
-#define INCLUDE_CucumberRuntimeDefinitionMatch 1
+#define INCLUDE_CCBRDefinitionMatch 1
 #include "cucumber/runtime/DefinitionMatch.h"
 
-@class CucumberRuntimeMatch;
-@protocol CucumberApiScenario;
-@protocol CucumberRuntimeHookDefinition;
+@class CCBRMatch;
+@protocol CCBRHookDefinition;
+@protocol CCBScenario;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeHookDefinitionMatch : NSObject < CucumberRuntimeDefinitionMatch >
+@interface CCBRHookDefinitionMatch : NSObject < CCBRDefinitionMatch >
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCucumberRuntimeHookDefinition:(id<CucumberRuntimeHookDefinition>)hookDefinition;
+- (instancetype __nonnull)initWithCCBRHookDefinition:(id<CCBRHookDefinition>)hookDefinition;
 
 - (void)dryRunStepWithNSString:(NSString *)language
-       withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
+               withCCBScenario:(id<CCBScenario>)scenario;
 
 - (id<JavaUtilList>)getArguments;
 
 - (NSString *)getCodeLocation;
 
-- (CucumberRuntimeMatch *)getMatch;
+- (CCBRMatch *)getMatch;
 
 - (NSString *)getPattern;
 
 - (void)runStepWithNSString:(NSString *)language
-    withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
+            withCCBScenario:(id<CCBScenario>)scenario;
 
 // Disallowed inherited constructors, do not use.
 
@@ -56,15 +56,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeHookDefinitionMatch)
+J2OBJC_EMPTY_STATIC_INIT(CCBRHookDefinitionMatch)
 
-FOUNDATION_EXPORT void CucumberRuntimeHookDefinitionMatch_initWithCucumberRuntimeHookDefinition_(CucumberRuntimeHookDefinitionMatch *self, id<CucumberRuntimeHookDefinition> hookDefinition);
+FOUNDATION_EXPORT void CCBRHookDefinitionMatch_initWithCCBRHookDefinition_(CCBRHookDefinitionMatch *self, id<CCBRHookDefinition> hookDefinition);
 
-FOUNDATION_EXPORT CucumberRuntimeHookDefinitionMatch *new_CucumberRuntimeHookDefinitionMatch_initWithCucumberRuntimeHookDefinition_(id<CucumberRuntimeHookDefinition> hookDefinition) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRHookDefinitionMatch *new_CCBRHookDefinitionMatch_initWithCCBRHookDefinition_(id<CCBRHookDefinition> hookDefinition) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeHookDefinitionMatch *create_CucumberRuntimeHookDefinitionMatch_initWithCucumberRuntimeHookDefinition_(id<CucumberRuntimeHookDefinition> hookDefinition);
+FOUNDATION_EXPORT CCBRHookDefinitionMatch *create_CCBRHookDefinitionMatch_initWithCCBRHookDefinition_(id<CCBRHookDefinition> hookDefinition);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeHookDefinitionMatch)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRHookDefinitionMatch)
+
+@compatibility_alias CucumberRuntimeHookDefinitionMatch CCBRHookDefinitionMatch;
 
 #endif
 

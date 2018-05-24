@@ -18,25 +18,25 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeIoFileResource_) && (INCLUDE_ALL_CucumberRuntimeIoFileResource || defined(INCLUDE_CucumberRuntimeIoFileResource))
-#define CucumberRuntimeIoFileResource_
+#if !defined (CCBRFileResource_) && (INCLUDE_ALL_CucumberRuntimeIoFileResource || defined(INCLUDE_CCBRFileResource))
+#define CCBRFileResource_
 
 #define RESTRICT_CucumberRuntimeIoResource 1
-#define INCLUDE_CucumberRuntimeIoResource 1
+#define INCLUDE_CCBRResource 1
 #include "cucumber/runtime/io/Resource.h"
 
 @class JavaIoFile;
 @class JavaIoInputStream;
 
-@interface CucumberRuntimeIoFileResource : NSObject < CucumberRuntimeIoResource >
+@interface CCBRFileResource : NSObject < CCBRResource >
 
 #pragma mark Public
 
-+ (CucumberRuntimeIoFileResource *)createClasspathFileResourceWithJavaIoFile:(JavaIoFile *)root
-                                                              withJavaIoFile:(JavaIoFile *)file;
++ (CCBRFileResource *)createClasspathFileResourceWithJavaIoFile:(JavaIoFile *)root
+                                                 withJavaIoFile:(JavaIoFile *)file;
 
-+ (CucumberRuntimeIoFileResource *)createFileResourceWithJavaIoFile:(JavaIoFile *)root
-                                                     withJavaIoFile:(JavaIoFile *)file;
++ (CCBRFileResource *)createFileResourceWithJavaIoFile:(JavaIoFile *)root
+                                        withJavaIoFile:(JavaIoFile *)file;
 
 - (NSString *)getAbsolutePath;
 
@@ -54,13 +54,15 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoFileResource)
+J2OBJC_EMPTY_STATIC_INIT(CCBRFileResource)
 
-FOUNDATION_EXPORT CucumberRuntimeIoFileResource *CucumberRuntimeIoFileResource_createFileResourceWithJavaIoFile_withJavaIoFile_(JavaIoFile *root, JavaIoFile *file);
+FOUNDATION_EXPORT CCBRFileResource *CCBRFileResource_createFileResourceWithJavaIoFile_withJavaIoFile_(JavaIoFile *root, JavaIoFile *file);
 
-FOUNDATION_EXPORT CucumberRuntimeIoFileResource *CucumberRuntimeIoFileResource_createClasspathFileResourceWithJavaIoFile_withJavaIoFile_(JavaIoFile *root, JavaIoFile *file);
+FOUNDATION_EXPORT CCBRFileResource *CCBRFileResource_createClasspathFileResourceWithJavaIoFile_withJavaIoFile_(JavaIoFile *root, JavaIoFile *file);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoFileResource)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRFileResource)
+
+@compatibility_alias CucumberRuntimeIoFileResource CCBRFileResource;
 
 #endif
 

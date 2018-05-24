@@ -18,15 +18,15 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiDataTable_) && (INCLUDE_ALL_CucumberApiDataTable || defined(INCLUDE_CucumberApiDataTable))
-#define CucumberApiDataTable_
+#if !defined (CCBDataTable_) && (INCLUDE_ALL_CucumberApiDataTable || defined(INCLUDE_CCBDataTable))
+#define CCBDataTable_
 
-@class CucumberRuntimeTableTablePrinter;
+@class CCBRTablePrinter;
 @class GherkinPicklesPickleTable;
 @class IOSClass;
 @class IOSObjectArray;
 @class JavaUtilLocale;
-@protocol CucumberApiTableConverter;
+@protocol CCBTableConverter;
 @protocol JavaUtilList;
 @protocol JavaUtilMap;
 
@@ -34,7 +34,7 @@
  @brief Represents the data from a <a href="http://cucumber.info/gherkin.html#data-tables">Gherkin DataTable</a>.Cucumber will convert the table in Gherkin
   to a DataTable instance and pass it to a step definition.
  */
-@interface CucumberApiDataTable : NSObject
+@interface CCBDataTable : NSObject
 
 #pragma mark Public
 
@@ -44,7 +44,7 @@
  @param tableConverter how to convert the rows.
  */
 - (instancetype __nonnull)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)pickleTable
-                              withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter;
+                                      withCCBTableConverter:(id<CCBTableConverter>)tableConverter;
 
 /*!
  @brief Converts the table to a List.
@@ -85,22 +85,22 @@
 
 - (id<JavaUtilList>)cellsWithInt:(jint)firstRow;
 
-+ (CucumberApiDataTable *)createWithJavaUtilList:(id<JavaUtilList>)raw;
++ (CCBDataTable *)createWithJavaUtilList:(id<JavaUtilList>)raw;
 
-+ (CucumberApiDataTable *)createWithJavaUtilList:(id<JavaUtilList>)raw
-                              withJavaUtilLocale:(JavaUtilLocale *)locale
-                               withNSStringArray:(IOSObjectArray *)columnNames;
++ (CCBDataTable *)createWithJavaUtilList:(id<JavaUtilList>)raw
+                      withJavaUtilLocale:(JavaUtilLocale *)locale
+                       withNSStringArray:(IOSObjectArray *)columnNames;
 
-+ (CucumberApiDataTable *)createWithJavaUtilList:(id<JavaUtilList>)raw
-                                    withNSString:(NSString *)format
-                               withNSStringArray:(IOSObjectArray *)columnNames;
++ (CCBDataTable *)createWithJavaUtilList:(id<JavaUtilList>)raw
+                            withNSString:(NSString *)format
+                       withNSStringArray:(IOSObjectArray *)columnNames;
 
 /*!
  @brief Diffs this table with <code>other</code>.
  @param other the other table to diff with.
  @throw TableDiffExceptionif the tables are different.
  */
-- (void)diffWithCucumberApiDataTable:(CucumberApiDataTable *)other;
+- (void)diffWithCCBDataTable:(CCBDataTable *)other;
 
 /*!
  @brief Diffs this table with <code>other</code>, which can be a <code>List&lt;List&lt;String&gt;&gt;</code> or a 
@@ -120,7 +120,7 @@
  */
 - (id<JavaUtilList>)getPickleRows;
 
-- (id<CucumberApiTableConverter>)getTableConverter;
+- (id<CCBTableConverter>)getTableConverter;
 
 - (NSUInteger)hash;
 
@@ -139,10 +139,10 @@
  @param columnNames optional explicit header columns
  @return a new table
  */
-- (CucumberApiDataTable *)toTableWithJavaUtilList:(id<JavaUtilList>)raw
-                                withNSStringArray:(IOSObjectArray *)columnNames;
+- (CCBDataTable *)toTableWithJavaUtilList:(id<JavaUtilList>)raw
+                        withNSStringArray:(IOSObjectArray *)columnNames;
 
-- (CucumberApiDataTable *)transpose;
+- (CCBDataTable *)transpose;
 
 /*!
  @brief Diffs this table with <code>other</code>.
@@ -150,7 +150,7 @@
  @param other the other table to diff with.
  @throw TableDiffExceptionif the tables are different.
  */
-- (void)unorderedDiffWithCucumberApiDataTable:(CucumberApiDataTable *)other;
+- (void)unorderedDiffWithCCBDataTable:(CCBDataTable *)other;
 
 /*!
  @brief Diffs this table with <code>other</code>, which can be a <code>List&lt;List&lt;String&gt;&gt;</code> or a 
@@ -162,7 +162,7 @@
 
 #pragma mark Protected
 
-- (CucumberRuntimeTableTablePrinter *)createTablePrinter;
+- (CCBRTablePrinter *)createTablePrinter;
 
 // Disallowed inherited constructors, do not use.
 
@@ -170,21 +170,23 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiDataTable)
+J2OBJC_EMPTY_STATIC_INIT(CCBDataTable)
 
-FOUNDATION_EXPORT CucumberApiDataTable *CucumberApiDataTable_createWithJavaUtilList_(id<JavaUtilList> raw);
+FOUNDATION_EXPORT CCBDataTable *CCBDataTable_createWithJavaUtilList_(id<JavaUtilList> raw);
 
-FOUNDATION_EXPORT CucumberApiDataTable *CucumberApiDataTable_createWithJavaUtilList_withNSString_withNSStringArray_(id<JavaUtilList> raw, NSString *format, IOSObjectArray *columnNames);
+FOUNDATION_EXPORT CCBDataTable *CCBDataTable_createWithJavaUtilList_withNSString_withNSStringArray_(id<JavaUtilList> raw, NSString *format, IOSObjectArray *columnNames);
 
-FOUNDATION_EXPORT CucumberApiDataTable *CucumberApiDataTable_createWithJavaUtilList_withJavaUtilLocale_withNSStringArray_(id<JavaUtilList> raw, JavaUtilLocale *locale, IOSObjectArray *columnNames);
+FOUNDATION_EXPORT CCBDataTable *CCBDataTable_createWithJavaUtilList_withJavaUtilLocale_withNSStringArray_(id<JavaUtilList> raw, JavaUtilLocale *locale, IOSObjectArray *columnNames);
 
-FOUNDATION_EXPORT void CucumberApiDataTable_initWithGherkinPicklesPickleTable_withCucumberApiTableConverter_(CucumberApiDataTable *self, GherkinPicklesPickleTable *pickleTable, id<CucumberApiTableConverter> tableConverter);
+FOUNDATION_EXPORT void CCBDataTable_initWithGherkinPicklesPickleTable_withCCBTableConverter_(CCBDataTable *self, GherkinPicklesPickleTable *pickleTable, id<CCBTableConverter> tableConverter);
 
-FOUNDATION_EXPORT CucumberApiDataTable *new_CucumberApiDataTable_initWithGherkinPicklesPickleTable_withCucumberApiTableConverter_(GherkinPicklesPickleTable *pickleTable, id<CucumberApiTableConverter> tableConverter) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBDataTable *new_CCBDataTable_initWithGherkinPicklesPickleTable_withCCBTableConverter_(GherkinPicklesPickleTable *pickleTable, id<CCBTableConverter> tableConverter) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberApiDataTable *create_CucumberApiDataTable_initWithGherkinPicklesPickleTable_withCucumberApiTableConverter_(GherkinPicklesPickleTable *pickleTable, id<CucumberApiTableConverter> tableConverter);
+FOUNDATION_EXPORT CCBDataTable *create_CCBDataTable_initWithGherkinPicklesPickleTable_withCCBTableConverter_(GherkinPicklesPickleTable *pickleTable, id<CCBTableConverter> tableConverter);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiDataTable)
+J2OBJC_TYPE_LITERAL_HEADER(CCBDataTable)
+
+@compatibility_alias CucumberApiDataTable CCBDataTable;
 
 #endif
 

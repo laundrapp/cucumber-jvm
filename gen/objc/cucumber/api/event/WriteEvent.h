@@ -18,16 +18,16 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiEventWriteEvent_) && (INCLUDE_ALL_CucumberApiEventWriteEvent || defined(INCLUDE_CucumberApiEventWriteEvent))
-#define CucumberApiEventWriteEvent_
+#if !defined (CCBWriteEvent_) && (INCLUDE_ALL_CucumberApiEventWriteEvent || defined(INCLUDE_CCBWriteEvent))
+#define CCBWriteEvent_
 
 #define RESTRICT_CucumberApiEventTimeStampedEvent 1
-#define INCLUDE_CucumberApiEventTimeStampedEvent 1
+#define INCLUDE_CCBTimeStampedEvent 1
 #include "cucumber/api/event/TimeStampedEvent.h"
 
 @class JavaLangLong;
 
-@interface CucumberApiEventWriteEvent : CucumberApiEventTimeStampedEvent {
+@interface CCBWriteEvent : CCBTimeStampedEvent {
  @public
   NSString *text_;
 }
@@ -43,17 +43,19 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiEventWriteEvent)
+J2OBJC_EMPTY_STATIC_INIT(CCBWriteEvent)
 
-J2OBJC_FIELD_SETTER(CucumberApiEventWriteEvent, text_, NSString *)
+J2OBJC_FIELD_SETTER(CCBWriteEvent, text_, NSString *)
 
-FOUNDATION_EXPORT void CucumberApiEventWriteEvent_initWithJavaLangLong_withNSString_(CucumberApiEventWriteEvent *self, JavaLangLong *timeStamp, NSString *text);
+FOUNDATION_EXPORT void CCBWriteEvent_initWithJavaLangLong_withNSString_(CCBWriteEvent *self, JavaLangLong *timeStamp, NSString *text);
 
-FOUNDATION_EXPORT CucumberApiEventWriteEvent *new_CucumberApiEventWriteEvent_initWithJavaLangLong_withNSString_(JavaLangLong *timeStamp, NSString *text) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBWriteEvent *new_CCBWriteEvent_initWithJavaLangLong_withNSString_(JavaLangLong *timeStamp, NSString *text) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberApiEventWriteEvent *create_CucumberApiEventWriteEvent_initWithJavaLangLong_withNSString_(JavaLangLong *timeStamp, NSString *text);
+FOUNDATION_EXPORT CCBWriteEvent *create_CCBWriteEvent_initWithJavaLangLong_withNSString_(JavaLangLong *timeStamp, NSString *text);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventWriteEvent)
+J2OBJC_TYPE_LITERAL_HEADER(CCBWriteEvent)
+
+@compatibility_alias CucumberApiEventWriteEvent CCBWriteEvent;
 
 #endif
 

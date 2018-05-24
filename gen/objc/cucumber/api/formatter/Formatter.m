@@ -6,17 +6,17 @@
 #include "J2ObjC_source.h"
 #include "cucumber/api/formatter/Formatter.h"
 
-@interface CucumberApiFormatterFormatter : NSObject
+@interface CCBFormatter : NSObject
 
 @end
 
-@implementation CucumberApiFormatterFormatter
+@implementation CCBFormatter
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcClassInfo _CucumberApiFormatterFormatter = { "Formatter", "cucumber.api.formatter", NULL, NULL, NULL, 7, 0x609, 0, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberApiFormatterFormatter;
+  static const J2ObjcClassInfo _CCBFormatter = { "Formatter", "cucumber.api.formatter", NULL, NULL, NULL, 7, 0x609, 0, 0, -1, -1, -1, -1, -1 };
+  return &_CCBFormatter;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiFormatterFormatter)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBFormatter)

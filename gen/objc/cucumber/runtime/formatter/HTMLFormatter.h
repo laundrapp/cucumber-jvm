@@ -18,29 +18,29 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeFormatterHTMLFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterHTMLFormatter || defined(INCLUDE_CucumberRuntimeFormatterHTMLFormatter))
-#define CucumberRuntimeFormatterHTMLFormatter_
+#if !defined (CCBRHTMLFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterHTMLFormatter || defined(INCLUDE_CCBRHTMLFormatter))
+#define CCBRHTMLFormatter_
 
 #define RESTRICT_CucumberApiFormatterFormatter 1
-#define INCLUDE_CucumberApiFormatterFormatter 1
+#define INCLUDE_CCBFormatter 1
 #include "cucumber/api/formatter/Formatter.h"
 
-@class CucumberApiFormatterNiceAppendable;
+@class CCBNiceAppendable;
 @class JavaNetURL;
-@protocol CucumberApiEventEventPublisher;
+@protocol CCBEventPublisher;
 
-@interface CucumberRuntimeFormatterHTMLFormatter : NSObject < CucumberApiFormatterFormatter >
+@interface CCBRHTMLFormatter : NSObject < CCBFormatter >
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithJavaNetURL:(JavaNetURL *)htmlReportDir;
 
-- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
+- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher;
 
 #pragma mark Package-Private
 
 - (instancetype __nonnull)initWithJavaNetURL:(JavaNetURL *)htmlReportDir
-      withCucumberApiFormatterNiceAppendable:(CucumberApiFormatterNiceAppendable *)jsOut;
+                       withCCBNiceAppendable:(CCBNiceAppendable *)jsOut;
 
 // Disallowed inherited constructors, do not use.
 
@@ -48,21 +48,23 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeFormatterHTMLFormatter)
+J2OBJC_STATIC_INIT(CCBRHTMLFormatter)
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterHTMLFormatter_initWithJavaNetURL_(CucumberRuntimeFormatterHTMLFormatter *self, JavaNetURL *htmlReportDir);
+FOUNDATION_EXPORT void CCBRHTMLFormatter_initWithJavaNetURL_(CCBRHTMLFormatter *self, JavaNetURL *htmlReportDir);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterHTMLFormatter *new_CucumberRuntimeFormatterHTMLFormatter_initWithJavaNetURL_(JavaNetURL *htmlReportDir) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRHTMLFormatter *new_CCBRHTMLFormatter_initWithJavaNetURL_(JavaNetURL *htmlReportDir) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterHTMLFormatter *create_CucumberRuntimeFormatterHTMLFormatter_initWithJavaNetURL_(JavaNetURL *htmlReportDir);
+FOUNDATION_EXPORT CCBRHTMLFormatter *create_CCBRHTMLFormatter_initWithJavaNetURL_(JavaNetURL *htmlReportDir);
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterHTMLFormatter_initWithJavaNetURL_withCucumberApiFormatterNiceAppendable_(CucumberRuntimeFormatterHTMLFormatter *self, JavaNetURL *htmlReportDir, CucumberApiFormatterNiceAppendable *jsOut);
+FOUNDATION_EXPORT void CCBRHTMLFormatter_initWithJavaNetURL_withCCBNiceAppendable_(CCBRHTMLFormatter *self, JavaNetURL *htmlReportDir, CCBNiceAppendable *jsOut);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterHTMLFormatter *new_CucumberRuntimeFormatterHTMLFormatter_initWithJavaNetURL_withCucumberApiFormatterNiceAppendable_(JavaNetURL *htmlReportDir, CucumberApiFormatterNiceAppendable *jsOut) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRHTMLFormatter *new_CCBRHTMLFormatter_initWithJavaNetURL_withCCBNiceAppendable_(JavaNetURL *htmlReportDir, CCBNiceAppendable *jsOut) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterHTMLFormatter *create_CucumberRuntimeFormatterHTMLFormatter_initWithJavaNetURL_withCucumberApiFormatterNiceAppendable_(JavaNetURL *htmlReportDir, CucumberApiFormatterNiceAppendable *jsOut);
+FOUNDATION_EXPORT CCBRHTMLFormatter *create_CCBRHTMLFormatter_initWithJavaNetURL_withCCBNiceAppendable_(JavaNetURL *htmlReportDir, CCBNiceAppendable *jsOut);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterHTMLFormatter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRHTMLFormatter)
+
+@compatibility_alias CucumberRuntimeFormatterHTMLFormatter CCBRHTMLFormatter;
 
 #endif
 

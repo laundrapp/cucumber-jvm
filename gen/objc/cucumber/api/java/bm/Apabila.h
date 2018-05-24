@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaBmApabila_) && (INCLUDE_ALL_CucumberApiJavaBmApabila || defined(INCLUDE_CucumberApiJavaBmApabila))
-#define CucumberApiJavaBmApabila_
+#if !defined (CCBApabila_) && (INCLUDE_ALL_CucumberApiJavaBmApabila || defined(INCLUDE_CCBApabila))
+#define CCBApabila_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaBmApabila < JavaLangAnnotationAnnotation >
+@protocol CCBApabila < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaBmApabila : NSObject < CucumberApiJavaBmApabila > {
+@interface CCBApabila : NSObject < CCBApabila > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaBmApabila)
+J2OBJC_EMPTY_STATIC_INIT(CCBApabila)
 
-FOUNDATION_EXPORT id<CucumberApiJavaBmApabila> create_CucumberApiJavaBmApabila(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBApabila> create_CCBApabila(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaBmApabila)
+J2OBJC_TYPE_LITERAL_HEADER(CCBApabila)
+
+#define CucumberApiJavaBmApabila CCBApabila
 
 #endif
 

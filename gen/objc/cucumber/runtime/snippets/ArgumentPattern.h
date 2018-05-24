@@ -18,13 +18,13 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeSnippetsArgumentPattern_) && (INCLUDE_ALL_CucumberRuntimeSnippetsArgumentPattern || defined(INCLUDE_CucumberRuntimeSnippetsArgumentPattern))
-#define CucumberRuntimeSnippetsArgumentPattern_
+#if !defined (CCBRArgumentPattern_) && (INCLUDE_ALL_CucumberRuntimeSnippetsArgumentPattern || defined(INCLUDE_CCBRArgumentPattern))
+#define CCBRArgumentPattern_
 
 @class IOSClass;
 @class JavaUtilRegexPattern;
 
-@interface CucumberRuntimeSnippetsArgumentPattern : NSObject
+@interface CCBRArgumentPattern : NSObject
 
 #pragma mark Public
 
@@ -49,21 +49,23 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeSnippetsArgumentPattern)
+J2OBJC_EMPTY_STATIC_INIT(CCBRArgumentPattern)
 
-FOUNDATION_EXPORT void CucumberRuntimeSnippetsArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(CucumberRuntimeSnippetsArgumentPattern *self, JavaUtilRegexPattern *pattern, IOSClass *type);
+FOUNDATION_EXPORT void CCBRArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(CCBRArgumentPattern *self, JavaUtilRegexPattern *pattern, IOSClass *type);
 
-FOUNDATION_EXPORT CucumberRuntimeSnippetsArgumentPattern *new_CucumberRuntimeSnippetsArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(JavaUtilRegexPattern *pattern, IOSClass *type) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRArgumentPattern *new_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(JavaUtilRegexPattern *pattern, IOSClass *type) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeSnippetsArgumentPattern *create_CucumberRuntimeSnippetsArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(JavaUtilRegexPattern *pattern, IOSClass *type);
+FOUNDATION_EXPORT CCBRArgumentPattern *create_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(JavaUtilRegexPattern *pattern, IOSClass *type);
 
-FOUNDATION_EXPORT void CucumberRuntimeSnippetsArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(CucumberRuntimeSnippetsArgumentPattern *self, JavaUtilRegexPattern *pattern, NSString *replacement, IOSClass *type);
+FOUNDATION_EXPORT void CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(CCBRArgumentPattern *self, JavaUtilRegexPattern *pattern, NSString *replacement, IOSClass *type);
 
-FOUNDATION_EXPORT CucumberRuntimeSnippetsArgumentPattern *new_CucumberRuntimeSnippetsArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(JavaUtilRegexPattern *pattern, NSString *replacement, IOSClass *type) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRArgumentPattern *new_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(JavaUtilRegexPattern *pattern, NSString *replacement, IOSClass *type) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeSnippetsArgumentPattern *create_CucumberRuntimeSnippetsArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(JavaUtilRegexPattern *pattern, NSString *replacement, IOSClass *type);
+FOUNDATION_EXPORT CCBRArgumentPattern *create_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(JavaUtilRegexPattern *pattern, NSString *replacement, IOSClass *type);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeSnippetsArgumentPattern)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRArgumentPattern)
+
+@compatibility_alias CucumberRuntimeSnippetsArgumentPattern CCBRArgumentPattern;
 
 #endif
 

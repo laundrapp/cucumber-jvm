@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaKaდა_) && (INCLUDE_ALL_CucumberApiJavaKaდა || defined(INCLUDE_CucumberApiJavaKaდა))
-#define CucumberApiJavaKaდა_
+#if !defined (CCBდა_) && (INCLUDE_ALL_CucumberApiJavaKaდა || defined(INCLUDE_CCBდა))
+#define CCBდა_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaKaდა < JavaLangAnnotationAnnotation >
+@protocol CCBდა < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaKaდა : NSObject < CucumberApiJavaKaდა > {
+@interface CCBდა : NSObject < CCBდა > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaKaდა)
+J2OBJC_EMPTY_STATIC_INIT(CCBდა)
 
-FOUNDATION_EXPORT id<CucumberApiJavaKaდა> create_CucumberApiJavaKaდა(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBდა> create_CCBდა(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaKaდა)
+J2OBJC_TYPE_LITERAL_HEADER(CCBდა)
+
+#define CucumberApiJavaKaდა CCBდა
 
 #endif
 

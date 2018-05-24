@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/api/StepDefinitionReporter.h"
 
-@interface CucumberApiStepDefinitionReporter : NSObject
+@interface CCBStepDefinitionReporter : NSObject
 
 @end
 
-@implementation CucumberApiStepDefinitionReporter
+@implementation CCBStepDefinitionReporter
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -19,13 +19,13 @@
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(stepDefinitionWithCucumberRuntimeStepDefinition:);
+  methods[0].selector = @selector(stepDefinitionWithCCBRStepDefinition:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "stepDefinition", "LCucumberRuntimeStepDefinition;" };
-  static const J2ObjcClassInfo _CucumberApiStepDefinitionReporter = { "StepDefinitionReporter", "cucumber.api", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberApiStepDefinitionReporter;
+  static const void *ptrTable[] = { "stepDefinition", "LCCBRStepDefinition;" };
+  static const J2ObjcClassInfo _CCBStepDefinitionReporter = { "StepDefinitionReporter", "cucumber.api", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
+  return &_CCBStepDefinitionReporter;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiStepDefinitionReporter)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBStepDefinitionReporter)

@@ -48,7 +48,7 @@
 #include "java/util/List.h"
 #include "java/util/Map.h"
 
-@interface CucumberRuntimeFormatterJSONFormatter () {
+@interface CCBRJSONFormatter () {
  @public
   NSString *currentFeatureFile_;
   id<JavaUtilList> featureMaps_;
@@ -58,52 +58,52 @@
   id<JavaUtilList> currentStepsList_;
   id<JavaUtilMap> currentStepOrHookMap_;
   ComGoogleGsonGson *gson_;
-  CucumberApiFormatterNiceAppendable *out_;
-  CucumberRuntimeFormatterTestSourcesModel *testSources_;
-  id<CucumberApiEventEventHandler> testSourceReadHandler_;
-  id<CucumberApiEventEventHandler> caseStartedHandler_;
-  id<CucumberApiEventEventHandler> stepStartedHandler_;
-  id<CucumberApiEventEventHandler> stepFinishedHandler_;
-  id<CucumberApiEventEventHandler> runFinishedHandler_;
-  id<CucumberApiEventEventHandler> writeEventhandler_;
-  id<CucumberApiEventEventHandler> embedEventhandler_;
+  CCBNiceAppendable *out_;
+  CCBRTestSourcesModel *testSources_;
+  id<CCBEventHandler> testSourceReadHandler_;
+  id<CCBEventHandler> caseStartedHandler_;
+  id<CCBEventHandler> stepStartedHandler_;
+  id<CCBEventHandler> stepFinishedHandler_;
+  id<CCBEventHandler> runFinishedHandler_;
+  id<CCBEventHandler> writeEventhandler_;
+  id<CCBEventHandler> embedEventhandler_;
 }
 
-- (void)handleTestSourceReadWithCucumberApiEventTestSourceRead:(CucumberApiEventTestSourceRead *)event;
+- (void)handleTestSourceReadWithCCBTestSourceRead:(CCBTestSourceRead *)event;
 
-- (void)handleTestCaseStartedWithCucumberApiEventTestCaseStarted:(CucumberApiEventTestCaseStarted *)event;
+- (void)handleTestCaseStartedWithCCBTestCaseStarted:(CCBTestCaseStarted *)event;
 
-- (void)handleTestStepStartedWithCucumberApiEventTestStepStarted:(CucumberApiEventTestStepStarted *)event;
+- (void)handleTestStepStartedWithCCBTestStepStarted:(CCBTestStepStarted *)event;
 
-- (void)handleWriteWithCucumberApiEventWriteEvent:(CucumberApiEventWriteEvent *)event;
+- (void)handleWriteWithCCBWriteEvent:(CCBWriteEvent *)event;
 
-- (void)handleEmbedWithCucumberApiEventEmbedEvent:(CucumberApiEventEmbedEvent *)event;
+- (void)handleEmbedWithCCBEmbedEvent:(CCBEmbedEvent *)event;
 
-- (void)handleTestStepFinishedWithCucumberApiEventTestStepFinished:(CucumberApiEventTestStepFinished *)event;
+- (void)handleTestStepFinishedWithCCBTestStepFinished:(CCBTestStepFinished *)event;
 
 - (void)finishReport;
 
-- (id<JavaUtilMap>)createFeatureMapWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
+- (id<JavaUtilMap>)createFeatureMapWithCCBTestCase:(CCBTestCase *)testCase;
 
-- (id<JavaUtilMap>)createTestCaseWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
+- (id<JavaUtilMap>)createTestCaseWithCCBTestCase:(CCBTestCase *)testCase;
 
-- (id<JavaUtilMap>)createBackgroundWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
+- (id<JavaUtilMap>)createBackgroundWithCCBTestCase:(CCBTestCase *)testCase;
 
-- (jboolean)isFirstStepAfterBackgroundWithCucumberApiTestStep:(CucumberApiTestStep *)testStep;
+- (jboolean)isFirstStepAfterBackgroundWithCCBTestStep:(CCBTestStep *)testStep;
 
-- (id<JavaUtilMap>)createTestStepWithCucumberApiTestStep:(CucumberApiTestStep *)testStep;
+- (id<JavaUtilMap>)createTestStepWithCCBTestStep:(CCBTestStep *)testStep;
 
 - (id<JavaUtilMap>)createDocStringMapWithGherkinPicklesArgument:(id<GherkinPicklesArgument>)argument
-           withCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)astNode;
+                               withCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode;
 
 - (id<JavaUtilList>)createDataTableListWithGherkinPicklesArgument:(id<GherkinPicklesArgument>)argument;
 
 - (id<JavaUtilList>)createCellListWithGherkinPicklesPickleRow:(GherkinPicklesPickleRow *)row;
 
-- (id<JavaUtilMap>)createHookStepWithCucumberApiTestStep:(CucumberApiTestStep *)testStep;
+- (id<JavaUtilMap>)createHookStepWithCCBTestStep:(CCBTestStep *)testStep;
 
 - (void)addHookStepToTestCaseMapWithJavaUtilMap:(id<JavaUtilMap>)currentStepOrHookMap
-                        withCucumberApiHookType:(CucumberApiHookType *)hookType;
+                                withCCBHookType:(CCBHookType *)hookType;
 
 - (void)addOutputToHookMapWithNSString:(NSString *)text;
 
@@ -113,316 +113,316 @@
 - (id<JavaUtilMap>)createEmbeddingMapWithByteArray:(IOSByteArray *)data
                                       withNSString:(NSString *)mimeType;
 
-- (id<JavaUtilMap>)createMatchMapWithCucumberApiTestStep:(CucumberApiTestStep *)testStep
-                                   withCucumberApiResult:(CucumberApiResult *)result;
+- (id<JavaUtilMap>)createMatchMapWithCCBTestStep:(CCBTestStep *)testStep
+                                   withCCBResult:(CCBResult *)result;
 
-- (id<JavaUtilMap>)createResultMapWithCucumberApiResult:(CucumberApiResult *)result;
+- (id<JavaUtilMap>)createResultMapWithCCBResult:(CCBResult *)result;
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, currentFeatureFile_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, featureMaps_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, currentElementsList_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, currentElementMap_, id<JavaUtilMap>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, currentTestCaseMap_, id<JavaUtilMap>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, currentStepsList_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, currentStepOrHookMap_, id<JavaUtilMap>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, gson_, ComGoogleGsonGson *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, out_, CucumberApiFormatterNiceAppendable *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, testSources_, CucumberRuntimeFormatterTestSourcesModel *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, testSourceReadHandler_, id<CucumberApiEventEventHandler>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, caseStartedHandler_, id<CucumberApiEventEventHandler>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, stepStartedHandler_, id<CucumberApiEventEventHandler>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, stepFinishedHandler_, id<CucumberApiEventEventHandler>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, runFinishedHandler_, id<CucumberApiEventEventHandler>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, writeEventhandler_, id<CucumberApiEventEventHandler>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterJSONFormatter, embedEventhandler_, id<CucumberApiEventEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRJSONFormatter, currentFeatureFile_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRJSONFormatter, featureMaps_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRJSONFormatter, currentElementsList_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRJSONFormatter, currentElementMap_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(CCBRJSONFormatter, currentTestCaseMap_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(CCBRJSONFormatter, currentStepsList_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRJSONFormatter, currentStepOrHookMap_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(CCBRJSONFormatter, gson_, ComGoogleGsonGson *)
+J2OBJC_FIELD_SETTER(CCBRJSONFormatter, out_, CCBNiceAppendable *)
+J2OBJC_FIELD_SETTER(CCBRJSONFormatter, testSources_, CCBRTestSourcesModel *)
+J2OBJC_FIELD_SETTER(CCBRJSONFormatter, testSourceReadHandler_, id<CCBEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRJSONFormatter, caseStartedHandler_, id<CCBEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRJSONFormatter, stepStartedHandler_, id<CCBEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRJSONFormatter, stepFinishedHandler_, id<CCBEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRJSONFormatter, runFinishedHandler_, id<CCBEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRJSONFormatter, writeEventhandler_, id<CCBEventHandler>)
+J2OBJC_FIELD_SETTER(CCBRJSONFormatter, embedEventhandler_, id<CCBEventHandler>)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterJSONFormatter_handleTestSourceReadWithCucumberApiEventTestSourceRead_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiEventTestSourceRead *event);
+__attribute__((unused)) static void CCBRJSONFormatter_handleTestSourceReadWithCCBTestSourceRead_(CCBRJSONFormatter *self, CCBTestSourceRead *event);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterJSONFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarted_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiEventTestCaseStarted *event);
+__attribute__((unused)) static void CCBRJSONFormatter_handleTestCaseStartedWithCCBTestCaseStarted_(CCBRJSONFormatter *self, CCBTestCaseStarted *event);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterJSONFormatter_handleTestStepStartedWithCucumberApiEventTestStepStarted_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiEventTestStepStarted *event);
+__attribute__((unused)) static void CCBRJSONFormatter_handleTestStepStartedWithCCBTestStepStarted_(CCBRJSONFormatter *self, CCBTestStepStarted *event);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterJSONFormatter_handleWriteWithCucumberApiEventWriteEvent_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiEventWriteEvent *event);
+__attribute__((unused)) static void CCBRJSONFormatter_handleWriteWithCCBWriteEvent_(CCBRJSONFormatter *self, CCBWriteEvent *event);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterJSONFormatter_handleEmbedWithCucumberApiEventEmbedEvent_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiEventEmbedEvent *event);
+__attribute__((unused)) static void CCBRJSONFormatter_handleEmbedWithCCBEmbedEvent_(CCBRJSONFormatter *self, CCBEmbedEvent *event);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterJSONFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiEventTestStepFinished *event);
+__attribute__((unused)) static void CCBRJSONFormatter_handleTestStepFinishedWithCCBTestStepFinished_(CCBRJSONFormatter *self, CCBTestStepFinished *event);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterJSONFormatter_finishReport(CucumberRuntimeFormatterJSONFormatter *self);
+__attribute__((unused)) static void CCBRJSONFormatter_finishReport(CCBRJSONFormatter *self);
 
-__attribute__((unused)) static id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createFeatureMapWithCucumberApiTestCase_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiTestCase *testCase);
+__attribute__((unused)) static id<JavaUtilMap> CCBRJSONFormatter_createFeatureMapWithCCBTestCase_(CCBRJSONFormatter *self, CCBTestCase *testCase);
 
-__attribute__((unused)) static id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createTestCaseWithCucumberApiTestCase_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiTestCase *testCase);
+__attribute__((unused)) static id<JavaUtilMap> CCBRJSONFormatter_createTestCaseWithCCBTestCase_(CCBRJSONFormatter *self, CCBTestCase *testCase);
 
-__attribute__((unused)) static id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createBackgroundWithCucumberApiTestCase_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiTestCase *testCase);
+__attribute__((unused)) static id<JavaUtilMap> CCBRJSONFormatter_createBackgroundWithCCBTestCase_(CCBRJSONFormatter *self, CCBTestCase *testCase);
 
-__attribute__((unused)) static jboolean CucumberRuntimeFormatterJSONFormatter_isFirstStepAfterBackgroundWithCucumberApiTestStep_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiTestStep *testStep);
+__attribute__((unused)) static jboolean CCBRJSONFormatter_isFirstStepAfterBackgroundWithCCBTestStep_(CCBRJSONFormatter *self, CCBTestStep *testStep);
 
-__attribute__((unused)) static id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createTestStepWithCucumberApiTestStep_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiTestStep *testStep);
+__attribute__((unused)) static id<JavaUtilMap> CCBRJSONFormatter_createTestStepWithCCBTestStep_(CCBRJSONFormatter *self, CCBTestStep *testStep);
 
-__attribute__((unused)) static id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createDocStringMapWithGherkinPicklesArgument_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterJSONFormatter *self, id<GherkinPicklesArgument> argument, CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode);
+__attribute__((unused)) static id<JavaUtilMap> CCBRJSONFormatter_createDocStringMapWithGherkinPicklesArgument_withCCBRTestSourcesModel_AstNode_(CCBRJSONFormatter *self, id<GherkinPicklesArgument> argument, CCBRTestSourcesModel_AstNode *astNode);
 
-__attribute__((unused)) static id<JavaUtilList> CucumberRuntimeFormatterJSONFormatter_createDataTableListWithGherkinPicklesArgument_(CucumberRuntimeFormatterJSONFormatter *self, id<GherkinPicklesArgument> argument);
+__attribute__((unused)) static id<JavaUtilList> CCBRJSONFormatter_createDataTableListWithGherkinPicklesArgument_(CCBRJSONFormatter *self, id<GherkinPicklesArgument> argument);
 
-__attribute__((unused)) static id<JavaUtilList> CucumberRuntimeFormatterJSONFormatter_createCellListWithGherkinPicklesPickleRow_(CucumberRuntimeFormatterJSONFormatter *self, GherkinPicklesPickleRow *row);
+__attribute__((unused)) static id<JavaUtilList> CCBRJSONFormatter_createCellListWithGherkinPicklesPickleRow_(CCBRJSONFormatter *self, GherkinPicklesPickleRow *row);
 
-__attribute__((unused)) static id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createHookStepWithCucumberApiTestStep_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiTestStep *testStep);
+__attribute__((unused)) static id<JavaUtilMap> CCBRJSONFormatter_createHookStepWithCCBTestStep_(CCBRJSONFormatter *self, CCBTestStep *testStep);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterJSONFormatter_addHookStepToTestCaseMapWithJavaUtilMap_withCucumberApiHookType_(CucumberRuntimeFormatterJSONFormatter *self, id<JavaUtilMap> currentStepOrHookMap, CucumberApiHookType *hookType);
+__attribute__((unused)) static void CCBRJSONFormatter_addHookStepToTestCaseMapWithJavaUtilMap_withCCBHookType_(CCBRJSONFormatter *self, id<JavaUtilMap> currentStepOrHookMap, CCBHookType *hookType);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterJSONFormatter_addOutputToHookMapWithNSString_(CucumberRuntimeFormatterJSONFormatter *self, NSString *text);
+__attribute__((unused)) static void CCBRJSONFormatter_addOutputToHookMapWithNSString_(CCBRJSONFormatter *self, NSString *text);
 
-__attribute__((unused)) static void CucumberRuntimeFormatterJSONFormatter_addEmbeddingToHookMapWithByteArray_withNSString_(CucumberRuntimeFormatterJSONFormatter *self, IOSByteArray *data, NSString *mimeType);
+__attribute__((unused)) static void CCBRJSONFormatter_addEmbeddingToHookMapWithByteArray_withNSString_(CCBRJSONFormatter *self, IOSByteArray *data, NSString *mimeType);
 
-__attribute__((unused)) static id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createEmbeddingMapWithByteArray_withNSString_(CucumberRuntimeFormatterJSONFormatter *self, IOSByteArray *data, NSString *mimeType);
+__attribute__((unused)) static id<JavaUtilMap> CCBRJSONFormatter_createEmbeddingMapWithByteArray_withNSString_(CCBRJSONFormatter *self, IOSByteArray *data, NSString *mimeType);
 
-__attribute__((unused)) static id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createMatchMapWithCucumberApiTestStep_withCucumberApiResult_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiTestStep *testStep, CucumberApiResult *result);
+__attribute__((unused)) static id<JavaUtilMap> CCBRJSONFormatter_createMatchMapWithCCBTestStep_withCCBResult_(CCBRJSONFormatter *self, CCBTestStep *testStep, CCBResult *result);
 
-__attribute__((unused)) static id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createResultMapWithCucumberApiResult_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiResult *result);
+__attribute__((unused)) static id<JavaUtilMap> CCBRJSONFormatter_createResultMapWithCCBResult_(CCBRJSONFormatter *self, CCBResult *result);
 
-@interface CucumberRuntimeFormatterJSONFormatter_1 : NSObject < CucumberApiEventEventHandler > {
+@interface CCBRJSONFormatter_1 : NSObject < CCBEventHandler > {
  @public
-  CucumberRuntimeFormatterJSONFormatter *this$0_;
+  CCBRJSONFormatter *this$0_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
+- (instancetype __nonnull)initWithCCBRJSONFormatter:(CCBRJSONFormatter *)outer$;
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestSourceRead *)event;
+- (void)receiveWithCCBEvent:(CCBTestSourceRead *)event;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterJSONFormatter_1)
+J2OBJC_EMPTY_STATIC_INIT(CCBRJSONFormatter_1)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterJSONFormatter_1_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter_1 *self, CucumberRuntimeFormatterJSONFormatter *outer$);
+__attribute__((unused)) static void CCBRJSONFormatter_1_initWithCCBRJSONFormatter_(CCBRJSONFormatter_1 *self, CCBRJSONFormatter *outer$);
 
-__attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_1 *new_CucumberRuntimeFormatterJSONFormatter_1_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRJSONFormatter_1 *new_CCBRJSONFormatter_1_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_1 *create_CucumberRuntimeFormatterJSONFormatter_1_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$);
+__attribute__((unused)) static CCBRJSONFormatter_1 *create_CCBRJSONFormatter_1_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$);
 
-@interface CucumberRuntimeFormatterJSONFormatter_2 : NSObject < CucumberApiEventEventHandler > {
+@interface CCBRJSONFormatter_2 : NSObject < CCBEventHandler > {
  @public
-  CucumberRuntimeFormatterJSONFormatter *this$0_;
+  CCBRJSONFormatter *this$0_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
+- (instancetype __nonnull)initWithCCBRJSONFormatter:(CCBRJSONFormatter *)outer$;
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestCaseStarted *)event;
+- (void)receiveWithCCBEvent:(CCBTestCaseStarted *)event;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterJSONFormatter_2)
+J2OBJC_EMPTY_STATIC_INIT(CCBRJSONFormatter_2)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterJSONFormatter_2_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter_2 *self, CucumberRuntimeFormatterJSONFormatter *outer$);
+__attribute__((unused)) static void CCBRJSONFormatter_2_initWithCCBRJSONFormatter_(CCBRJSONFormatter_2 *self, CCBRJSONFormatter *outer$);
 
-__attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_2 *new_CucumberRuntimeFormatterJSONFormatter_2_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRJSONFormatter_2 *new_CCBRJSONFormatter_2_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_2 *create_CucumberRuntimeFormatterJSONFormatter_2_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$);
+__attribute__((unused)) static CCBRJSONFormatter_2 *create_CCBRJSONFormatter_2_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$);
 
-@interface CucumberRuntimeFormatterJSONFormatter_3 : NSObject < CucumberApiEventEventHandler > {
+@interface CCBRJSONFormatter_3 : NSObject < CCBEventHandler > {
  @public
-  CucumberRuntimeFormatterJSONFormatter *this$0_;
+  CCBRJSONFormatter *this$0_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
+- (instancetype __nonnull)initWithCCBRJSONFormatter:(CCBRJSONFormatter *)outer$;
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepStarted *)event;
+- (void)receiveWithCCBEvent:(CCBTestStepStarted *)event;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterJSONFormatter_3)
+J2OBJC_EMPTY_STATIC_INIT(CCBRJSONFormatter_3)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterJSONFormatter_3_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter_3 *self, CucumberRuntimeFormatterJSONFormatter *outer$);
+__attribute__((unused)) static void CCBRJSONFormatter_3_initWithCCBRJSONFormatter_(CCBRJSONFormatter_3 *self, CCBRJSONFormatter *outer$);
 
-__attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_3 *new_CucumberRuntimeFormatterJSONFormatter_3_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRJSONFormatter_3 *new_CCBRJSONFormatter_3_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_3 *create_CucumberRuntimeFormatterJSONFormatter_3_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$);
+__attribute__((unused)) static CCBRJSONFormatter_3 *create_CCBRJSONFormatter_3_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$);
 
-@interface CucumberRuntimeFormatterJSONFormatter_4 : NSObject < CucumberApiEventEventHandler > {
+@interface CCBRJSONFormatter_4 : NSObject < CCBEventHandler > {
  @public
-  CucumberRuntimeFormatterJSONFormatter *this$0_;
+  CCBRJSONFormatter *this$0_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
+- (instancetype __nonnull)initWithCCBRJSONFormatter:(CCBRJSONFormatter *)outer$;
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepFinished *)event;
+- (void)receiveWithCCBEvent:(CCBTestStepFinished *)event;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterJSONFormatter_4)
+J2OBJC_EMPTY_STATIC_INIT(CCBRJSONFormatter_4)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterJSONFormatter_4_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter_4 *self, CucumberRuntimeFormatterJSONFormatter *outer$);
+__attribute__((unused)) static void CCBRJSONFormatter_4_initWithCCBRJSONFormatter_(CCBRJSONFormatter_4 *self, CCBRJSONFormatter *outer$);
 
-__attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_4 *new_CucumberRuntimeFormatterJSONFormatter_4_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRJSONFormatter_4 *new_CCBRJSONFormatter_4_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_4 *create_CucumberRuntimeFormatterJSONFormatter_4_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$);
+__attribute__((unused)) static CCBRJSONFormatter_4 *create_CCBRJSONFormatter_4_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$);
 
-@interface CucumberRuntimeFormatterJSONFormatter_5 : NSObject < CucumberApiEventEventHandler > {
+@interface CCBRJSONFormatter_5 : NSObject < CCBEventHandler > {
  @public
-  CucumberRuntimeFormatterJSONFormatter *this$0_;
+  CCBRJSONFormatter *this$0_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
+- (instancetype __nonnull)initWithCCBRJSONFormatter:(CCBRJSONFormatter *)outer$;
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event;
+- (void)receiveWithCCBEvent:(CCBTestRunFinished *)event;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterJSONFormatter_5)
+J2OBJC_EMPTY_STATIC_INIT(CCBRJSONFormatter_5)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterJSONFormatter_5_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter_5 *self, CucumberRuntimeFormatterJSONFormatter *outer$);
+__attribute__((unused)) static void CCBRJSONFormatter_5_initWithCCBRJSONFormatter_(CCBRJSONFormatter_5 *self, CCBRJSONFormatter *outer$);
 
-__attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_5 *new_CucumberRuntimeFormatterJSONFormatter_5_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRJSONFormatter_5 *new_CCBRJSONFormatter_5_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_5 *create_CucumberRuntimeFormatterJSONFormatter_5_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$);
+__attribute__((unused)) static CCBRJSONFormatter_5 *create_CCBRJSONFormatter_5_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$);
 
-@interface CucumberRuntimeFormatterJSONFormatter_6 : NSObject < CucumberApiEventEventHandler > {
+@interface CCBRJSONFormatter_6 : NSObject < CCBEventHandler > {
  @public
-  CucumberRuntimeFormatterJSONFormatter *this$0_;
+  CCBRJSONFormatter *this$0_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
+- (instancetype __nonnull)initWithCCBRJSONFormatter:(CCBRJSONFormatter *)outer$;
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventWriteEvent *)event;
+- (void)receiveWithCCBEvent:(CCBWriteEvent *)event;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterJSONFormatter_6)
+J2OBJC_EMPTY_STATIC_INIT(CCBRJSONFormatter_6)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterJSONFormatter_6_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter_6 *self, CucumberRuntimeFormatterJSONFormatter *outer$);
+__attribute__((unused)) static void CCBRJSONFormatter_6_initWithCCBRJSONFormatter_(CCBRJSONFormatter_6 *self, CCBRJSONFormatter *outer$);
 
-__attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_6 *new_CucumberRuntimeFormatterJSONFormatter_6_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRJSONFormatter_6 *new_CCBRJSONFormatter_6_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_6 *create_CucumberRuntimeFormatterJSONFormatter_6_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$);
+__attribute__((unused)) static CCBRJSONFormatter_6 *create_CCBRJSONFormatter_6_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$);
 
-@interface CucumberRuntimeFormatterJSONFormatter_7 : NSObject < CucumberApiEventEventHandler > {
+@interface CCBRJSONFormatter_7 : NSObject < CCBEventHandler > {
  @public
-  CucumberRuntimeFormatterJSONFormatter *this$0_;
+  CCBRJSONFormatter *this$0_;
 }
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$;
+- (instancetype __nonnull)initWithCCBRJSONFormatter:(CCBRJSONFormatter *)outer$;
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventEmbedEvent *)event;
+- (void)receiveWithCCBEvent:(CCBEmbedEvent *)event;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterJSONFormatter_7)
+J2OBJC_EMPTY_STATIC_INIT(CCBRJSONFormatter_7)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterJSONFormatter_7_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter_7 *self, CucumberRuntimeFormatterJSONFormatter *outer$);
+__attribute__((unused)) static void CCBRJSONFormatter_7_initWithCCBRJSONFormatter_(CCBRJSONFormatter_7 *self, CCBRJSONFormatter *outer$);
 
-__attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_7 *new_CucumberRuntimeFormatterJSONFormatter_7_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRJSONFormatter_7 *new_CCBRJSONFormatter_7_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_7 *create_CucumberRuntimeFormatterJSONFormatter_7_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$);
+__attribute__((unused)) static CCBRJSONFormatter_7 *create_CCBRJSONFormatter_7_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$);
 
-@implementation CucumberRuntimeFormatterJSONFormatter
+@implementation CCBRJSONFormatter
 
 - (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg {
-  CucumberRuntimeFormatterJSONFormatter_initWithJavaLangAppendable_(self, outArg);
+  CCBRJSONFormatter_initWithJavaLangAppendable_(self, outArg);
   return self;
 }
 
-- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher {
-  [((id<CucumberApiEventEventPublisher>) nil_chk(publisher)) registerHandlerForWithIOSClass:CucumberApiEventTestSourceRead_class_() withCucumberApiEventEventHandler:testSourceReadHandler_];
-  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestCaseStarted_class_() withCucumberApiEventEventHandler:caseStartedHandler_];
-  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestStepStarted_class_() withCucumberApiEventEventHandler:stepStartedHandler_];
-  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestStepFinished_class_() withCucumberApiEventEventHandler:stepFinishedHandler_];
-  [publisher registerHandlerForWithIOSClass:CucumberApiEventWriteEvent_class_() withCucumberApiEventEventHandler:writeEventhandler_];
-  [publisher registerHandlerForWithIOSClass:CucumberApiEventEmbedEvent_class_() withCucumberApiEventEventHandler:embedEventhandler_];
-  [publisher registerHandlerForWithIOSClass:CucumberApiEventTestRunFinished_class_() withCucumberApiEventEventHandler:runFinishedHandler_];
+- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher {
+  [((id<CCBEventPublisher>) nil_chk(publisher)) registerHandlerForWithIOSClass:CCBTestSourceRead_class_() withCCBEventHandler:testSourceReadHandler_];
+  [publisher registerHandlerForWithIOSClass:CCBTestCaseStarted_class_() withCCBEventHandler:caseStartedHandler_];
+  [publisher registerHandlerForWithIOSClass:CCBTestStepStarted_class_() withCCBEventHandler:stepStartedHandler_];
+  [publisher registerHandlerForWithIOSClass:CCBTestStepFinished_class_() withCCBEventHandler:stepFinishedHandler_];
+  [publisher registerHandlerForWithIOSClass:CCBWriteEvent_class_() withCCBEventHandler:writeEventhandler_];
+  [publisher registerHandlerForWithIOSClass:CCBEmbedEvent_class_() withCCBEventHandler:embedEventhandler_];
+  [publisher registerHandlerForWithIOSClass:CCBTestRunFinished_class_() withCCBEventHandler:runFinishedHandler_];
 }
 
-- (void)handleTestSourceReadWithCucumberApiEventTestSourceRead:(CucumberApiEventTestSourceRead *)event {
-  CucumberRuntimeFormatterJSONFormatter_handleTestSourceReadWithCucumberApiEventTestSourceRead_(self, event);
+- (void)handleTestSourceReadWithCCBTestSourceRead:(CCBTestSourceRead *)event {
+  CCBRJSONFormatter_handleTestSourceReadWithCCBTestSourceRead_(self, event);
 }
 
-- (void)handleTestCaseStartedWithCucumberApiEventTestCaseStarted:(CucumberApiEventTestCaseStarted *)event {
-  CucumberRuntimeFormatterJSONFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarted_(self, event);
+- (void)handleTestCaseStartedWithCCBTestCaseStarted:(CCBTestCaseStarted *)event {
+  CCBRJSONFormatter_handleTestCaseStartedWithCCBTestCaseStarted_(self, event);
 }
 
-- (void)handleTestStepStartedWithCucumberApiEventTestStepStarted:(CucumberApiEventTestStepStarted *)event {
-  CucumberRuntimeFormatterJSONFormatter_handleTestStepStartedWithCucumberApiEventTestStepStarted_(self, event);
+- (void)handleTestStepStartedWithCCBTestStepStarted:(CCBTestStepStarted *)event {
+  CCBRJSONFormatter_handleTestStepStartedWithCCBTestStepStarted_(self, event);
 }
 
-- (void)handleWriteWithCucumberApiEventWriteEvent:(CucumberApiEventWriteEvent *)event {
-  CucumberRuntimeFormatterJSONFormatter_handleWriteWithCucumberApiEventWriteEvent_(self, event);
+- (void)handleWriteWithCCBWriteEvent:(CCBWriteEvent *)event {
+  CCBRJSONFormatter_handleWriteWithCCBWriteEvent_(self, event);
 }
 
-- (void)handleEmbedWithCucumberApiEventEmbedEvent:(CucumberApiEventEmbedEvent *)event {
-  CucumberRuntimeFormatterJSONFormatter_handleEmbedWithCucumberApiEventEmbedEvent_(self, event);
+- (void)handleEmbedWithCCBEmbedEvent:(CCBEmbedEvent *)event {
+  CCBRJSONFormatter_handleEmbedWithCCBEmbedEvent_(self, event);
 }
 
-- (void)handleTestStepFinishedWithCucumberApiEventTestStepFinished:(CucumberApiEventTestStepFinished *)event {
-  CucumberRuntimeFormatterJSONFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(self, event);
+- (void)handleTestStepFinishedWithCCBTestStepFinished:(CCBTestStepFinished *)event {
+  CCBRJSONFormatter_handleTestStepFinishedWithCCBTestStepFinished_(self, event);
 }
 
 - (void)finishReport {
-  CucumberRuntimeFormatterJSONFormatter_finishReport(self);
+  CCBRJSONFormatter_finishReport(self);
 }
 
-- (id<JavaUtilMap>)createFeatureMapWithCucumberApiTestCase:(CucumberApiTestCase *)testCase {
-  return CucumberRuntimeFormatterJSONFormatter_createFeatureMapWithCucumberApiTestCase_(self, testCase);
+- (id<JavaUtilMap>)createFeatureMapWithCCBTestCase:(CCBTestCase *)testCase {
+  return CCBRJSONFormatter_createFeatureMapWithCCBTestCase_(self, testCase);
 }
 
-- (id<JavaUtilMap>)createTestCaseWithCucumberApiTestCase:(CucumberApiTestCase *)testCase {
-  return CucumberRuntimeFormatterJSONFormatter_createTestCaseWithCucumberApiTestCase_(self, testCase);
+- (id<JavaUtilMap>)createTestCaseWithCCBTestCase:(CCBTestCase *)testCase {
+  return CCBRJSONFormatter_createTestCaseWithCCBTestCase_(self, testCase);
 }
 
-- (id<JavaUtilMap>)createBackgroundWithCucumberApiTestCase:(CucumberApiTestCase *)testCase {
-  return CucumberRuntimeFormatterJSONFormatter_createBackgroundWithCucumberApiTestCase_(self, testCase);
+- (id<JavaUtilMap>)createBackgroundWithCCBTestCase:(CCBTestCase *)testCase {
+  return CCBRJSONFormatter_createBackgroundWithCCBTestCase_(self, testCase);
 }
 
-- (jboolean)isFirstStepAfterBackgroundWithCucumberApiTestStep:(CucumberApiTestStep *)testStep {
-  return CucumberRuntimeFormatterJSONFormatter_isFirstStepAfterBackgroundWithCucumberApiTestStep_(self, testStep);
+- (jboolean)isFirstStepAfterBackgroundWithCCBTestStep:(CCBTestStep *)testStep {
+  return CCBRJSONFormatter_isFirstStepAfterBackgroundWithCCBTestStep_(self, testStep);
 }
 
-- (id<JavaUtilMap>)createTestStepWithCucumberApiTestStep:(CucumberApiTestStep *)testStep {
-  return CucumberRuntimeFormatterJSONFormatter_createTestStepWithCucumberApiTestStep_(self, testStep);
+- (id<JavaUtilMap>)createTestStepWithCCBTestStep:(CCBTestStep *)testStep {
+  return CCBRJSONFormatter_createTestStepWithCCBTestStep_(self, testStep);
 }
 
 - (id<JavaUtilMap>)createDocStringMapWithGherkinPicklesArgument:(id<GherkinPicklesArgument>)argument
-           withCucumberRuntimeFormatterTestSourcesModel_AstNode:(CucumberRuntimeFormatterTestSourcesModel_AstNode *)astNode {
-  return CucumberRuntimeFormatterJSONFormatter_createDocStringMapWithGherkinPicklesArgument_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(self, argument, astNode);
+                               withCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode {
+  return CCBRJSONFormatter_createDocStringMapWithGherkinPicklesArgument_withCCBRTestSourcesModel_AstNode_(self, argument, astNode);
 }
 
 - (id<JavaUtilList>)createDataTableListWithGherkinPicklesArgument:(id<GherkinPicklesArgument>)argument {
-  return CucumberRuntimeFormatterJSONFormatter_createDataTableListWithGherkinPicklesArgument_(self, argument);
+  return CCBRJSONFormatter_createDataTableListWithGherkinPicklesArgument_(self, argument);
 }
 
 - (id<JavaUtilList>)createCellListWithGherkinPicklesPickleRow:(GherkinPicklesPickleRow *)row {
-  return CucumberRuntimeFormatterJSONFormatter_createCellListWithGherkinPicklesPickleRow_(self, row);
+  return CCBRJSONFormatter_createCellListWithGherkinPicklesPickleRow_(self, row);
 }
 
-- (id<JavaUtilMap>)createHookStepWithCucumberApiTestStep:(CucumberApiTestStep *)testStep {
-  return CucumberRuntimeFormatterJSONFormatter_createHookStepWithCucumberApiTestStep_(self, testStep);
+- (id<JavaUtilMap>)createHookStepWithCCBTestStep:(CCBTestStep *)testStep {
+  return CCBRJSONFormatter_createHookStepWithCCBTestStep_(self, testStep);
 }
 
 - (void)addHookStepToTestCaseMapWithJavaUtilMap:(id<JavaUtilMap>)currentStepOrHookMap
-                        withCucumberApiHookType:(CucumberApiHookType *)hookType {
-  CucumberRuntimeFormatterJSONFormatter_addHookStepToTestCaseMapWithJavaUtilMap_withCucumberApiHookType_(self, currentStepOrHookMap, hookType);
+                                withCCBHookType:(CCBHookType *)hookType {
+  CCBRJSONFormatter_addHookStepToTestCaseMapWithJavaUtilMap_withCCBHookType_(self, currentStepOrHookMap, hookType);
 }
 
 - (void)addOutputToHookMapWithNSString:(NSString *)text {
-  CucumberRuntimeFormatterJSONFormatter_addOutputToHookMapWithNSString_(self, text);
+  CCBRJSONFormatter_addOutputToHookMapWithNSString_(self, text);
 }
 
 - (void)addEmbeddingToHookMapWithByteArray:(IOSByteArray *)data
                               withNSString:(NSString *)mimeType {
-  CucumberRuntimeFormatterJSONFormatter_addEmbeddingToHookMapWithByteArray_withNSString_(self, data, mimeType);
+  CCBRJSONFormatter_addEmbeddingToHookMapWithByteArray_withNSString_(self, data, mimeType);
 }
 
 - (id<JavaUtilMap>)createEmbeddingMapWithByteArray:(IOSByteArray *)data
                                       withNSString:(NSString *)mimeType {
-  return CucumberRuntimeFormatterJSONFormatter_createEmbeddingMapWithByteArray_withNSString_(self, data, mimeType);
+  return CCBRJSONFormatter_createEmbeddingMapWithByteArray_withNSString_(self, data, mimeType);
 }
 
-- (id<JavaUtilMap>)createMatchMapWithCucumberApiTestStep:(CucumberApiTestStep *)testStep
-                                   withCucumberApiResult:(CucumberApiResult *)result {
-  return CucumberRuntimeFormatterJSONFormatter_createMatchMapWithCucumberApiTestStep_withCucumberApiResult_(self, testStep, result);
+- (id<JavaUtilMap>)createMatchMapWithCCBTestStep:(CCBTestStep *)testStep
+                                   withCCBResult:(CCBResult *)result {
+  return CCBRJSONFormatter_createMatchMapWithCCBTestStep_withCCBResult_(self, testStep, result);
 }
 
-- (id<JavaUtilMap>)createResultMapWithCucumberApiResult:(CucumberApiResult *)result {
-  return CucumberRuntimeFormatterJSONFormatter_createResultMapWithCucumberApiResult_(self, result);
+- (id<JavaUtilMap>)createResultMapWithCCBResult:(CCBResult *)result {
+  return CCBRJSONFormatter_createResultMapWithCCBResult_(self, result);
 }
 
 - (void)dealloc {
@@ -477,29 +477,29 @@ __attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_7 *create_C
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangAppendable:);
-  methods[1].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
-  methods[2].selector = @selector(handleTestSourceReadWithCucumberApiEventTestSourceRead:);
-  methods[3].selector = @selector(handleTestCaseStartedWithCucumberApiEventTestCaseStarted:);
-  methods[4].selector = @selector(handleTestStepStartedWithCucumberApiEventTestStepStarted:);
-  methods[5].selector = @selector(handleWriteWithCucumberApiEventWriteEvent:);
-  methods[6].selector = @selector(handleEmbedWithCucumberApiEventEmbedEvent:);
-  methods[7].selector = @selector(handleTestStepFinishedWithCucumberApiEventTestStepFinished:);
+  methods[1].selector = @selector(setEventPublisherWithCCBEventPublisher:);
+  methods[2].selector = @selector(handleTestSourceReadWithCCBTestSourceRead:);
+  methods[3].selector = @selector(handleTestCaseStartedWithCCBTestCaseStarted:);
+  methods[4].selector = @selector(handleTestStepStartedWithCCBTestStepStarted:);
+  methods[5].selector = @selector(handleWriteWithCCBWriteEvent:);
+  methods[6].selector = @selector(handleEmbedWithCCBEmbedEvent:);
+  methods[7].selector = @selector(handleTestStepFinishedWithCCBTestStepFinished:);
   methods[8].selector = @selector(finishReport);
-  methods[9].selector = @selector(createFeatureMapWithCucumberApiTestCase:);
-  methods[10].selector = @selector(createTestCaseWithCucumberApiTestCase:);
-  methods[11].selector = @selector(createBackgroundWithCucumberApiTestCase:);
-  methods[12].selector = @selector(isFirstStepAfterBackgroundWithCucumberApiTestStep:);
-  methods[13].selector = @selector(createTestStepWithCucumberApiTestStep:);
-  methods[14].selector = @selector(createDocStringMapWithGherkinPicklesArgument:withCucumberRuntimeFormatterTestSourcesModel_AstNode:);
+  methods[9].selector = @selector(createFeatureMapWithCCBTestCase:);
+  methods[10].selector = @selector(createTestCaseWithCCBTestCase:);
+  methods[11].selector = @selector(createBackgroundWithCCBTestCase:);
+  methods[12].selector = @selector(isFirstStepAfterBackgroundWithCCBTestStep:);
+  methods[13].selector = @selector(createTestStepWithCCBTestStep:);
+  methods[14].selector = @selector(createDocStringMapWithGherkinPicklesArgument:withCCBRTestSourcesModel_AstNode:);
   methods[15].selector = @selector(createDataTableListWithGherkinPicklesArgument:);
   methods[16].selector = @selector(createCellListWithGherkinPicklesPickleRow:);
-  methods[17].selector = @selector(createHookStepWithCucumberApiTestStep:);
-  methods[18].selector = @selector(addHookStepToTestCaseMapWithJavaUtilMap:withCucumberApiHookType:);
+  methods[17].selector = @selector(createHookStepWithCCBTestStep:);
+  methods[18].selector = @selector(addHookStepToTestCaseMapWithJavaUtilMap:withCCBHookType:);
   methods[19].selector = @selector(addOutputToHookMapWithNSString:);
   methods[20].selector = @selector(addEmbeddingToHookMapWithByteArray:withNSString:);
   methods[21].selector = @selector(createEmbeddingMapWithByteArray:withNSString:);
-  methods[22].selector = @selector(createMatchMapWithCucumberApiTestStep:withCucumberApiResult:);
-  methods[23].selector = @selector(createResultMapWithCucumberApiResult:);
+  methods[22].selector = @selector(createMatchMapWithCCBTestStep:withCCBResult:);
+  methods[23].selector = @selector(createResultMapWithCCBResult:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "currentFeatureFile_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
@@ -510,60 +510,60 @@ __attribute__((unused)) static CucumberRuntimeFormatterJSONFormatter_7 *create_C
     { "currentStepsList_", "LJavaUtilList;", .constantValue.asLong = 0, 0x2, -1, -1, 49, -1 },
     { "currentStepOrHookMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 50, -1 },
     { "gson_", "LComGoogleGsonGson;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "out_", "LCucumberApiFormatterNiceAppendable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "testSources_", "LCucumberRuntimeFormatterTestSourcesModel;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "testSourceReadHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 51, -1 },
-    { "caseStartedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 52, -1 },
-    { "stepStartedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 53, -1 },
-    { "stepFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 54, -1 },
-    { "runFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 55, -1 },
-    { "writeEventhandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 56, -1 },
-    { "embedEventhandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 57, -1 },
+    { "out_", "LCCBNiceAppendable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "testSources_", "LCCBRTestSourcesModel;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "testSourceReadHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 51, -1 },
+    { "caseStartedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 52, -1 },
+    { "stepStartedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 53, -1 },
+    { "stepFinishedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 54, -1 },
+    { "runFinishedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 55, -1 },
+    { "writeEventhandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 56, -1 },
+    { "embedEventhandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 57, -1 },
   };
-  static const void *ptrTable[] = { "LJavaLangAppendable;", "setEventPublisher", "LCucumberApiEventEventPublisher;", "handleTestSourceRead", "LCucumberApiEventTestSourceRead;", "handleTestCaseStarted", "LCucumberApiEventTestCaseStarted;", "handleTestStepStarted", "LCucumberApiEventTestStepStarted;", "handleWrite", "LCucumberApiEventWriteEvent;", "handleEmbed", "LCucumberApiEventEmbedEvent;", "handleTestStepFinished", "LCucumberApiEventTestStepFinished;", "createFeatureMap", "LCucumberApiTestCase;", "(Lcucumber/api/TestCase;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createTestCase", "createBackground", "isFirstStepAfterBackground", "LCucumberApiTestStep;", "createTestStep", "(Lcucumber/api/TestStep;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createDocStringMap", "LGherkinPicklesArgument;LCucumberRuntimeFormatterTestSourcesModel_AstNode;", "(Lgherkin/pickles/Argument;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createDataTableList", "LGherkinPicklesArgument;", "(Lgherkin/pickles/Argument;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "createCellList", "LGherkinPicklesPickleRow;", "(Lgherkin/pickles/PickleRow;)Ljava/util/List<Ljava/lang/String;>;", "createHookStep", "addHookStepToTestCaseMap", "LJavaUtilMap;LCucumberApiHookType;", "(Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;Lcucumber/api/HookType;)V", "addOutputToHookMap", "LNSString;", "addEmbeddingToHookMap", "[BLNSString;", "createEmbeddingMap", "([BLjava/lang/String;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createMatchMap", "LCucumberApiTestStep;LCucumberApiResult;", "(Lcucumber/api/TestStep;Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createResultMap", "LCucumberApiResult;", "(Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/EmbedEvent;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterJSONFormatter = { "JSONFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 24, 17, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeFormatterJSONFormatter;
+  static const void *ptrTable[] = { "LJavaLangAppendable;", "setEventPublisher", "LCCBEventPublisher;", "handleTestSourceRead", "LCCBTestSourceRead;", "handleTestCaseStarted", "LCCBTestCaseStarted;", "handleTestStepStarted", "LCCBTestStepStarted;", "handleWrite", "LCCBWriteEvent;", "handleEmbed", "LCCBEmbedEvent;", "handleTestStepFinished", "LCCBTestStepFinished;", "createFeatureMap", "LCCBTestCase;", "(Lcucumber/api/TestCase;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createTestCase", "createBackground", "isFirstStepAfterBackground", "LCCBTestStep;", "createTestStep", "(Lcucumber/api/TestStep;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createDocStringMap", "LGherkinPicklesArgument;LCCBRTestSourcesModel_AstNode;", "(Lgherkin/pickles/Argument;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createDataTableList", "LGherkinPicklesArgument;", "(Lgherkin/pickles/Argument;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "createCellList", "LGherkinPicklesPickleRow;", "(Lgherkin/pickles/PickleRow;)Ljava/util/List<Ljava/lang/String;>;", "createHookStep", "addHookStepToTestCaseMap", "LJavaUtilMap;LCCBHookType;", "(Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;Lcucumber/api/HookType;)V", "addOutputToHookMap", "LNSString;", "addEmbeddingToHookMap", "[BLNSString;", "createEmbeddingMap", "([BLjava/lang/String;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createMatchMap", "LCCBTestStep;LCCBResult;", "(Lcucumber/api/TestStep;Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createResultMap", "LCCBResult;", "(Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/EmbedEvent;>;" };
+  static const J2ObjcClassInfo _CCBRJSONFormatter = { "JSONFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 24, 17, -1, -1, -1, -1, -1 };
+  return &_CCBRJSONFormatter;
 }
 
 @end
 
-void CucumberRuntimeFormatterJSONFormatter_initWithJavaLangAppendable_(CucumberRuntimeFormatterJSONFormatter *self, id<JavaLangAppendable> outArg) {
+void CCBRJSONFormatter_initWithJavaLangAppendable_(CCBRJSONFormatter *self, id<JavaLangAppendable> outArg) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->featureMaps_, new_JavaUtilArrayList_init());
   JreStrongAssign(&self->gson_, [((ComGoogleGsonGsonBuilder *) nil_chk([create_ComGoogleGsonGsonBuilder_init() setPrettyPrinting])) create]);
-  JreStrongAssignAndConsume(&self->testSources_, new_CucumberRuntimeFormatterTestSourcesModel_init());
-  JreStrongAssignAndConsume(&self->testSourceReadHandler_, new_CucumberRuntimeFormatterJSONFormatter_1_initWithCucumberRuntimeFormatterJSONFormatter_(self));
-  JreStrongAssignAndConsume(&self->caseStartedHandler_, new_CucumberRuntimeFormatterJSONFormatter_2_initWithCucumberRuntimeFormatterJSONFormatter_(self));
-  JreStrongAssignAndConsume(&self->stepStartedHandler_, new_CucumberRuntimeFormatterJSONFormatter_3_initWithCucumberRuntimeFormatterJSONFormatter_(self));
-  JreStrongAssignAndConsume(&self->stepFinishedHandler_, new_CucumberRuntimeFormatterJSONFormatter_4_initWithCucumberRuntimeFormatterJSONFormatter_(self));
-  JreStrongAssignAndConsume(&self->runFinishedHandler_, new_CucumberRuntimeFormatterJSONFormatter_5_initWithCucumberRuntimeFormatterJSONFormatter_(self));
-  JreStrongAssignAndConsume(&self->writeEventhandler_, new_CucumberRuntimeFormatterJSONFormatter_6_initWithCucumberRuntimeFormatterJSONFormatter_(self));
-  JreStrongAssignAndConsume(&self->embedEventhandler_, new_CucumberRuntimeFormatterJSONFormatter_7_initWithCucumberRuntimeFormatterJSONFormatter_(self));
-  JreStrongAssignAndConsume(&self->out_, new_CucumberApiFormatterNiceAppendable_initWithJavaLangAppendable_(outArg));
+  JreStrongAssignAndConsume(&self->testSources_, new_CCBRTestSourcesModel_init());
+  JreStrongAssignAndConsume(&self->testSourceReadHandler_, new_CCBRJSONFormatter_1_initWithCCBRJSONFormatter_(self));
+  JreStrongAssignAndConsume(&self->caseStartedHandler_, new_CCBRJSONFormatter_2_initWithCCBRJSONFormatter_(self));
+  JreStrongAssignAndConsume(&self->stepStartedHandler_, new_CCBRJSONFormatter_3_initWithCCBRJSONFormatter_(self));
+  JreStrongAssignAndConsume(&self->stepFinishedHandler_, new_CCBRJSONFormatter_4_initWithCCBRJSONFormatter_(self));
+  JreStrongAssignAndConsume(&self->runFinishedHandler_, new_CCBRJSONFormatter_5_initWithCCBRJSONFormatter_(self));
+  JreStrongAssignAndConsume(&self->writeEventhandler_, new_CCBRJSONFormatter_6_initWithCCBRJSONFormatter_(self));
+  JreStrongAssignAndConsume(&self->embedEventhandler_, new_CCBRJSONFormatter_7_initWithCCBRJSONFormatter_(self));
+  JreStrongAssignAndConsume(&self->out_, new_CCBNiceAppendable_initWithJavaLangAppendable_(outArg));
 }
 
-CucumberRuntimeFormatterJSONFormatter *new_CucumberRuntimeFormatterJSONFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterJSONFormatter, initWithJavaLangAppendable_, outArg)
+CCBRJSONFormatter *new_CCBRJSONFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) {
+  J2OBJC_NEW_IMPL(CCBRJSONFormatter, initWithJavaLangAppendable_, outArg)
 }
 
-CucumberRuntimeFormatterJSONFormatter *create_CucumberRuntimeFormatterJSONFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterJSONFormatter, initWithJavaLangAppendable_, outArg)
+CCBRJSONFormatter *create_CCBRJSONFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) {
+  J2OBJC_CREATE_IMPL(CCBRJSONFormatter, initWithJavaLangAppendable_, outArg)
 }
 
-void CucumberRuntimeFormatterJSONFormatter_handleTestSourceReadWithCucumberApiEventTestSourceRead_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiEventTestSourceRead *event) {
-  [((CucumberRuntimeFormatterTestSourcesModel *) nil_chk(self->testSources_)) addTestSourceReadEventWithNSString:((CucumberApiEventTestSourceRead *) nil_chk(event))->uri_ withCucumberApiEventTestSourceRead:event];
+void CCBRJSONFormatter_handleTestSourceReadWithCCBTestSourceRead_(CCBRJSONFormatter *self, CCBTestSourceRead *event) {
+  [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) addTestSourceReadEventWithNSString:((CCBTestSourceRead *) nil_chk(event))->uri_ withCCBTestSourceRead:event];
 }
 
-void CucumberRuntimeFormatterJSONFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarted_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiEventTestCaseStarted *event) {
-  if (self->currentFeatureFile_ == nil || ![self->currentFeatureFile_ isEqual:[((CucumberApiTestCase *) nil_chk(((CucumberApiEventTestCaseStarted *) nil_chk(event))->testCase_)) getUri]]) {
-    JreStrongAssign(&self->currentFeatureFile_, [((CucumberApiTestCase *) nil_chk(((CucumberApiEventTestCaseStarted *) nil_chk(event))->testCase_)) getUri]);
-    id<JavaUtilMap> currentFeatureMap = CucumberRuntimeFormatterJSONFormatter_createFeatureMapWithCucumberApiTestCase_(self, event->testCase_);
+void CCBRJSONFormatter_handleTestCaseStartedWithCCBTestCaseStarted_(CCBRJSONFormatter *self, CCBTestCaseStarted *event) {
+  if (self->currentFeatureFile_ == nil || ![self->currentFeatureFile_ isEqual:[((CCBTestCase *) nil_chk(((CCBTestCaseStarted *) nil_chk(event))->testCase_)) getUri]]) {
+    JreStrongAssign(&self->currentFeatureFile_, [((CCBTestCase *) nil_chk(((CCBTestCaseStarted *) nil_chk(event))->testCase_)) getUri]);
+    id<JavaUtilMap> currentFeatureMap = CCBRJSONFormatter_createFeatureMapWithCCBTestCase_(self, event->testCase_);
     [((id<JavaUtilList>) nil_chk(self->featureMaps_)) addWithId:currentFeatureMap];
     JreStrongAssign(&self->currentElementsList_, (id<JavaUtilList>) cast_check([((id<JavaUtilMap>) nil_chk(currentFeatureMap)) getWithId:@"elements"], JavaUtilList_class_()));
   }
-  JreStrongAssign(&self->currentTestCaseMap_, CucumberRuntimeFormatterJSONFormatter_createTestCaseWithCucumberApiTestCase_(self, ((CucumberApiEventTestCaseStarted *) nil_chk(event))->testCase_));
-  if ([((CucumberRuntimeFormatterTestSourcesModel *) nil_chk(self->testSources_)) hasBackgroundWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestCase *) nil_chk(event->testCase_)) getLine]]) {
-    JreStrongAssign(&self->currentElementMap_, CucumberRuntimeFormatterJSONFormatter_createBackgroundWithCucumberApiTestCase_(self, event->testCase_));
+  JreStrongAssign(&self->currentTestCaseMap_, CCBRJSONFormatter_createTestCaseWithCCBTestCase_(self, ((CCBTestCaseStarted *) nil_chk(event))->testCase_));
+  if ([((CCBRTestSourcesModel *) nil_chk(self->testSources_)) hasBackgroundWithNSString:self->currentFeatureFile_ withInt:[((CCBTestCase *) nil_chk(event->testCase_)) getLine]]) {
+    JreStrongAssign(&self->currentElementMap_, CCBRJSONFormatter_createBackgroundWithCCBTestCase_(self, event->testCase_));
     [((id<JavaUtilList>) nil_chk(self->currentElementsList_)) addWithId:self->currentElementMap_];
   }
   else {
@@ -573,64 +573,64 @@ void CucumberRuntimeFormatterJSONFormatter_handleTestCaseStartedWithCucumberApiE
   JreStrongAssign(&self->currentStepsList_, (id<JavaUtilList>) cast_check([((id<JavaUtilMap>) nil_chk(self->currentElementMap_)) getWithId:@"steps"], JavaUtilList_class_()));
 }
 
-void CucumberRuntimeFormatterJSONFormatter_handleTestStepStartedWithCucumberApiEventTestStepStarted_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiEventTestStepStarted *event) {
-  if (![((CucumberApiTestStep *) nil_chk(((CucumberApiEventTestStepStarted *) nil_chk(event))->testStep_)) isHook]) {
-    if (CucumberRuntimeFormatterJSONFormatter_isFirstStepAfterBackgroundWithCucumberApiTestStep_(self, event->testStep_)) {
+void CCBRJSONFormatter_handleTestStepStartedWithCCBTestStepStarted_(CCBRJSONFormatter *self, CCBTestStepStarted *event) {
+  if (![((CCBTestStep *) nil_chk(((CCBTestStepStarted *) nil_chk(event))->testStep_)) isHook]) {
+    if (CCBRJSONFormatter_isFirstStepAfterBackgroundWithCCBTestStep_(self, event->testStep_)) {
       JreStrongAssign(&self->currentElementMap_, self->currentTestCaseMap_);
       JreStrongAssign(&self->currentStepsList_, (id<JavaUtilList>) cast_check([((id<JavaUtilMap>) nil_chk(self->currentElementMap_)) getWithId:@"steps"], JavaUtilList_class_()));
     }
-    JreStrongAssign(&self->currentStepOrHookMap_, CucumberRuntimeFormatterJSONFormatter_createTestStepWithCucumberApiTestStep_(self, event->testStep_));
+    JreStrongAssign(&self->currentStepOrHookMap_, CCBRJSONFormatter_createTestStepWithCCBTestStep_(self, event->testStep_));
     [((id<JavaUtilList>) nil_chk(self->currentStepsList_)) addWithId:self->currentStepOrHookMap_];
   }
   else {
-    JreStrongAssign(&self->currentStepOrHookMap_, CucumberRuntimeFormatterJSONFormatter_createHookStepWithCucumberApiTestStep_(self, event->testStep_));
-    CucumberRuntimeFormatterJSONFormatter_addHookStepToTestCaseMapWithJavaUtilMap_withCucumberApiHookType_(self, self->currentStepOrHookMap_, [event->testStep_ getHookType]);
+    JreStrongAssign(&self->currentStepOrHookMap_, CCBRJSONFormatter_createHookStepWithCCBTestStep_(self, event->testStep_));
+    CCBRJSONFormatter_addHookStepToTestCaseMapWithJavaUtilMap_withCCBHookType_(self, self->currentStepOrHookMap_, [event->testStep_ getHookType]);
   }
 }
 
-void CucumberRuntimeFormatterJSONFormatter_handleWriteWithCucumberApiEventWriteEvent_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiEventWriteEvent *event) {
-  CucumberRuntimeFormatterJSONFormatter_addOutputToHookMapWithNSString_(self, ((CucumberApiEventWriteEvent *) nil_chk(event))->text_);
+void CCBRJSONFormatter_handleWriteWithCCBWriteEvent_(CCBRJSONFormatter *self, CCBWriteEvent *event) {
+  CCBRJSONFormatter_addOutputToHookMapWithNSString_(self, ((CCBWriteEvent *) nil_chk(event))->text_);
 }
 
-void CucumberRuntimeFormatterJSONFormatter_handleEmbedWithCucumberApiEventEmbedEvent_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiEventEmbedEvent *event) {
-  CucumberRuntimeFormatterJSONFormatter_addEmbeddingToHookMapWithByteArray_withNSString_(self, ((CucumberApiEventEmbedEvent *) nil_chk(event))->data_, event->mimeType_);
+void CCBRJSONFormatter_handleEmbedWithCCBEmbedEvent_(CCBRJSONFormatter *self, CCBEmbedEvent *event) {
+  CCBRJSONFormatter_addEmbeddingToHookMapWithByteArray_withNSString_(self, ((CCBEmbedEvent *) nil_chk(event))->data_, event->mimeType_);
 }
 
-void CucumberRuntimeFormatterJSONFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiEventTestStepFinished *event) {
-  [((id<JavaUtilMap>) nil_chk(self->currentStepOrHookMap_)) putWithId:@"match" withId:CucumberRuntimeFormatterJSONFormatter_createMatchMapWithCucumberApiTestStep_withCucumberApiResult_(self, ((CucumberApiEventTestStepFinished *) nil_chk(event))->testStep_, event->result_)];
-  [((id<JavaUtilMap>) nil_chk(self->currentStepOrHookMap_)) putWithId:@"result" withId:CucumberRuntimeFormatterJSONFormatter_createResultMapWithCucumberApiResult_(self, event->result_)];
+void CCBRJSONFormatter_handleTestStepFinishedWithCCBTestStepFinished_(CCBRJSONFormatter *self, CCBTestStepFinished *event) {
+  [((id<JavaUtilMap>) nil_chk(self->currentStepOrHookMap_)) putWithId:@"match" withId:CCBRJSONFormatter_createMatchMapWithCCBTestStep_withCCBResult_(self, ((CCBTestStepFinished *) nil_chk(event))->testStep_, event->result_)];
+  [((id<JavaUtilMap>) nil_chk(self->currentStepOrHookMap_)) putWithId:@"result" withId:CCBRJSONFormatter_createResultMapWithCCBResult_(self, event->result_)];
 }
 
-void CucumberRuntimeFormatterJSONFormatter_finishReport(CucumberRuntimeFormatterJSONFormatter *self) {
-  [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) appendWithJavaLangCharSequence:[((ComGoogleGsonGson *) nil_chk(self->gson_)) toJsonWithId:self->featureMaps_]];
+void CCBRJSONFormatter_finishReport(CCBRJSONFormatter *self) {
+  [((CCBNiceAppendable *) nil_chk(self->out_)) appendWithJavaLangCharSequence:[((ComGoogleGsonGson *) nil_chk(self->gson_)) toJsonWithId:self->featureMaps_]];
   [self->out_ close];
 }
 
-id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createFeatureMapWithCucumberApiTestCase_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiTestCase *testCase) {
+id<JavaUtilMap> CCBRJSONFormatter_createFeatureMapWithCCBTestCase_(CCBRJSONFormatter *self, CCBTestCase *testCase) {
   id<JavaUtilMap> featureMap = create_JavaUtilHashMap_init();
-  [featureMap putWithId:@"uri" withId:[((CucumberApiTestCase *) nil_chk(testCase)) getUri]];
+  [featureMap putWithId:@"uri" withId:[((CCBTestCase *) nil_chk(testCase)) getUri]];
   [featureMap putWithId:@"elements" withId:create_JavaUtilArrayList_init()];
-  GherkinAstFeature *feature = [((CucumberRuntimeFormatterTestSourcesModel *) nil_chk(self->testSources_)) getFeatureWithNSString:[testCase getUri]];
+  GherkinAstFeature *feature = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getFeatureWithNSString:[testCase getUri]];
   if (feature != nil) {
     [featureMap putWithId:@"keyword" withId:[feature getKeyword]];
     [featureMap putWithId:@"name" withId:[feature getName]];
     [featureMap putWithId:@"description" withId:[feature getDescription] != nil ? [feature getDescription] : @""];
     [featureMap putWithId:@"line" withId:JavaLangInteger_valueOfWithInt_([((GherkinAstLocation *) nil_chk([feature getLocation])) getLine])];
-    [featureMap putWithId:@"id" withId:CucumberRuntimeFormatterTestSourcesModel_convertToIdWithNSString_([feature getName])];
+    [featureMap putWithId:@"id" withId:CCBRTestSourcesModel_convertToIdWithNSString_([feature getName])];
     [featureMap putWithId:@"tags" withId:[feature getTags]];
   }
   return featureMap;
 }
 
-id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createTestCaseWithCucumberApiTestCase_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiTestCase *testCase) {
+id<JavaUtilMap> CCBRJSONFormatter_createTestCaseWithCCBTestCase_(CCBRJSONFormatter *self, CCBTestCase *testCase) {
   id<JavaUtilMap> testCaseMap = create_JavaUtilHashMap_init();
-  [testCaseMap putWithId:@"name" withId:[((CucumberApiTestCase *) nil_chk(testCase)) getName]];
+  [testCaseMap putWithId:@"name" withId:[((CCBTestCase *) nil_chk(testCase)) getName]];
   [testCaseMap putWithId:@"line" withId:JavaLangInteger_valueOfWithInt_([testCase getLine])];
   [testCaseMap putWithId:@"type" withId:@"scenario"];
-  CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode = [((CucumberRuntimeFormatterTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[testCase getLine]];
+  CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[testCase getLine]];
   if (astNode != nil) {
-    [testCaseMap putWithId:@"id" withId:CucumberRuntimeFormatterTestSourcesModel_calculateIdWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(astNode)];
-    GherkinAstScenarioDefinition *scenarioDefinition = CucumberRuntimeFormatterTestSourcesModel_getScenarioDefinitionWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(astNode);
+    [testCaseMap putWithId:@"id" withId:CCBRTestSourcesModel_calculateIdWithCCBRTestSourcesModel_AstNode_(astNode)];
+    GherkinAstScenarioDefinition *scenarioDefinition = CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_(astNode);
     [testCaseMap putWithId:@"keyword" withId:[((GherkinAstScenarioDefinition *) nil_chk(scenarioDefinition)) getKeyword]];
     [testCaseMap putWithId:@"description" withId:[scenarioDefinition getDescription] != nil ? [scenarioDefinition getDescription] : @""];
   }
@@ -647,10 +647,10 @@ id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createTestCaseWithCucumber
   return testCaseMap;
 }
 
-id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createBackgroundWithCucumberApiTestCase_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiTestCase *testCase) {
-  CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode = [((CucumberRuntimeFormatterTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestCase *) nil_chk(testCase)) getLine]];
+id<JavaUtilMap> CCBRJSONFormatter_createBackgroundWithCCBTestCase_(CCBRJSONFormatter *self, CCBTestCase *testCase) {
+  CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CCBTestCase *) nil_chk(testCase)) getLine]];
   if (astNode != nil) {
-    GherkinAstBackground *background = CucumberRuntimeFormatterTestSourcesModel_getBackgroundForTestCaseWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(astNode);
+    GherkinAstBackground *background = CCBRTestSourcesModel_getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode_(astNode);
     id<JavaUtilMap> testCaseMap = create_JavaUtilHashMap_init();
     [testCaseMap putWithId:@"name" withId:[((GherkinAstBackground *) nil_chk(background)) getName]];
     [testCaseMap putWithId:@"line" withId:JavaLangInteger_valueOfWithInt_([((GherkinAstLocation *) nil_chk([background getLocation])) getLine])];
@@ -663,28 +663,28 @@ id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createBackgroundWithCucumb
   return nil;
 }
 
-jboolean CucumberRuntimeFormatterJSONFormatter_isFirstStepAfterBackgroundWithCucumberApiTestStep_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiTestStep *testStep) {
-  CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode = [((CucumberRuntimeFormatterTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestStep *) nil_chk(testStep)) getStepLine]];
+jboolean CCBRJSONFormatter_isFirstStepAfterBackgroundWithCCBTestStep_(CCBRJSONFormatter *self, CCBTestStep *testStep) {
+  CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CCBTestStep *) nil_chk(testStep)) getStepLine]];
   if (astNode != nil) {
-    if (self->currentElementMap_ != self->currentTestCaseMap_ && !CucumberRuntimeFormatterTestSourcesModel_isBackgroundStepWithCucumberRuntimeFormatterTestSourcesModel_AstNode_(astNode)) {
+    if (self->currentElementMap_ != self->currentTestCaseMap_ && !CCBRTestSourcesModel_isBackgroundStepWithCCBRTestSourcesModel_AstNode_(astNode)) {
       return true;
     }
   }
   return false;
 }
 
-id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createTestStepWithCucumberApiTestStep_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiTestStep *testStep) {
+id<JavaUtilMap> CCBRJSONFormatter_createTestStepWithCCBTestStep_(CCBRJSONFormatter *self, CCBTestStep *testStep) {
   id<JavaUtilMap> stepMap = create_JavaUtilHashMap_init();
-  [stepMap putWithId:@"name" withId:[((CucumberApiTestStep *) nil_chk(testStep)) getStepText]];
+  [stepMap putWithId:@"name" withId:[((CCBTestStep *) nil_chk(testStep)) getStepText]];
   [stepMap putWithId:@"line" withId:JavaLangInteger_valueOfWithInt_([testStep getStepLine])];
-  CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode = [((CucumberRuntimeFormatterTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[testStep getStepLine]];
+  CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[testStep getStepLine]];
   if (![((id<JavaUtilList>) nil_chk([testStep getStepArgument])) isEmpty]) {
     id<GherkinPicklesArgument> argument = [((id<JavaUtilList>) nil_chk([testStep getStepArgument])) getWithInt:0];
     if ([argument isKindOfClass:[GherkinPicklesPickleString class]]) {
-      [stepMap putWithId:@"doc_string" withId:CucumberRuntimeFormatterJSONFormatter_createDocStringMapWithGherkinPicklesArgument_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(self, argument, astNode)];
+      [stepMap putWithId:@"doc_string" withId:CCBRJSONFormatter_createDocStringMapWithGherkinPicklesArgument_withCCBRTestSourcesModel_AstNode_(self, argument, astNode)];
     }
     else if ([argument isKindOfClass:[GherkinPicklesPickleTable class]]) {
-      [stepMap putWithId:@"rows" withId:CucumberRuntimeFormatterJSONFormatter_createDataTableListWithGherkinPicklesArgument_(self, argument)];
+      [stepMap putWithId:@"rows" withId:CCBRJSONFormatter_createDataTableListWithGherkinPicklesArgument_(self, argument)];
     }
   }
   if (astNode != nil) {
@@ -694,7 +694,7 @@ id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createTestStepWithCucumber
   return stepMap;
 }
 
-id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createDocStringMapWithGherkinPicklesArgument_withCucumberRuntimeFormatterTestSourcesModel_AstNode_(CucumberRuntimeFormatterJSONFormatter *self, id<GherkinPicklesArgument> argument, CucumberRuntimeFormatterTestSourcesModel_AstNode *astNode) {
+id<JavaUtilMap> CCBRJSONFormatter_createDocStringMapWithGherkinPicklesArgument_withCCBRTestSourcesModel_AstNode_(CCBRJSONFormatter *self, id<GherkinPicklesArgument> argument, CCBRTestSourcesModel_AstNode *astNode) {
   id<JavaUtilMap> docStringMap = create_JavaUtilHashMap_init();
   GherkinPicklesPickleString *docString = ((GherkinPicklesPickleString *) cast_chk(argument, [GherkinPicklesPickleString class]));
   [docStringMap putWithId:@"value" withId:[((GherkinPicklesPickleString *) nil_chk(docString)) getContent]];
@@ -705,17 +705,17 @@ id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createDocStringMapWithGher
   return docStringMap;
 }
 
-id<JavaUtilList> CucumberRuntimeFormatterJSONFormatter_createDataTableListWithGherkinPicklesArgument_(CucumberRuntimeFormatterJSONFormatter *self, id<GherkinPicklesArgument> argument) {
+id<JavaUtilList> CCBRJSONFormatter_createDataTableListWithGherkinPicklesArgument_(CCBRJSONFormatter *self, id<GherkinPicklesArgument> argument) {
   id<JavaUtilList> rowList = create_JavaUtilArrayList_init();
   for (GherkinPicklesPickleRow * __strong row in nil_chk([((GherkinPicklesPickleTable *) nil_chk(((GherkinPicklesPickleTable *) cast_chk(argument, [GherkinPicklesPickleTable class])))) getRows])) {
     id<JavaUtilMap> rowMap = create_JavaUtilHashMap_init();
-    [rowMap putWithId:@"cells" withId:CucumberRuntimeFormatterJSONFormatter_createCellListWithGherkinPicklesPickleRow_(self, row)];
+    [rowMap putWithId:@"cells" withId:CCBRJSONFormatter_createCellListWithGherkinPicklesPickleRow_(self, row)];
     [rowList addWithId:rowMap];
   }
   return rowList;
 }
 
-id<JavaUtilList> CucumberRuntimeFormatterJSONFormatter_createCellListWithGherkinPicklesPickleRow_(CucumberRuntimeFormatterJSONFormatter *self, GherkinPicklesPickleRow *row) {
+id<JavaUtilList> CCBRJSONFormatter_createCellListWithGherkinPicklesPickleRow_(CCBRJSONFormatter *self, GherkinPicklesPickleRow *row) {
   id<JavaUtilList> cells = create_JavaUtilArrayList_init();
   for (GherkinPicklesPickleCell * __strong cell in nil_chk([((GherkinPicklesPickleRow *) nil_chk(row)) getCells])) {
     [cells addWithId:[((GherkinPicklesPickleCell *) nil_chk(cell)) getValue]];
@@ -723,60 +723,60 @@ id<JavaUtilList> CucumberRuntimeFormatterJSONFormatter_createCellListWithGherkin
   return cells;
 }
 
-id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createHookStepWithCucumberApiTestStep_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiTestStep *testStep) {
+id<JavaUtilMap> CCBRJSONFormatter_createHookStepWithCCBTestStep_(CCBRJSONFormatter *self, CCBTestStep *testStep) {
   return create_JavaUtilHashMap_init();
 }
 
-void CucumberRuntimeFormatterJSONFormatter_addHookStepToTestCaseMapWithJavaUtilMap_withCucumberApiHookType_(CucumberRuntimeFormatterJSONFormatter *self, id<JavaUtilMap> currentStepOrHookMap, CucumberApiHookType *hookType) {
-  if (![((id<JavaUtilMap>) nil_chk(self->currentTestCaseMap_)) containsKeyWithId:[((CucumberApiHookType *) nil_chk(hookType)) description]]) {
+void CCBRJSONFormatter_addHookStepToTestCaseMapWithJavaUtilMap_withCCBHookType_(CCBRJSONFormatter *self, id<JavaUtilMap> currentStepOrHookMap, CCBHookType *hookType) {
+  if (![((id<JavaUtilMap>) nil_chk(self->currentTestCaseMap_)) containsKeyWithId:[((CCBHookType *) nil_chk(hookType)) description]]) {
     [((id<JavaUtilMap>) nil_chk(self->currentTestCaseMap_)) putWithId:[hookType description] withId:create_JavaUtilArrayList_init()];
   }
   [((id<JavaUtilList>) nil_chk(((id<JavaUtilList>) cast_check([((id<JavaUtilMap>) nil_chk(self->currentTestCaseMap_)) getWithId:[hookType description]], JavaUtilList_class_())))) addWithId:currentStepOrHookMap];
 }
 
-void CucumberRuntimeFormatterJSONFormatter_addOutputToHookMapWithNSString_(CucumberRuntimeFormatterJSONFormatter *self, NSString *text) {
+void CCBRJSONFormatter_addOutputToHookMapWithNSString_(CCBRJSONFormatter *self, NSString *text) {
   if (![((id<JavaUtilMap>) nil_chk(self->currentStepOrHookMap_)) containsKeyWithId:@"output"]) {
     [((id<JavaUtilMap>) nil_chk(self->currentStepOrHookMap_)) putWithId:@"output" withId:create_JavaUtilArrayList_init()];
   }
   [((id<JavaUtilList>) nil_chk(((id<JavaUtilList>) cast_check([((id<JavaUtilMap>) nil_chk(self->currentStepOrHookMap_)) getWithId:@"output"], JavaUtilList_class_())))) addWithId:text];
 }
 
-void CucumberRuntimeFormatterJSONFormatter_addEmbeddingToHookMapWithByteArray_withNSString_(CucumberRuntimeFormatterJSONFormatter *self, IOSByteArray *data, NSString *mimeType) {
+void CCBRJSONFormatter_addEmbeddingToHookMapWithByteArray_withNSString_(CCBRJSONFormatter *self, IOSByteArray *data, NSString *mimeType) {
   if (![((id<JavaUtilMap>) nil_chk(self->currentStepOrHookMap_)) containsKeyWithId:@"embeddings"]) {
     [((id<JavaUtilMap>) nil_chk(self->currentStepOrHookMap_)) putWithId:@"embeddings" withId:create_JavaUtilArrayList_init()];
   }
-  id<JavaUtilMap> embedMap = CucumberRuntimeFormatterJSONFormatter_createEmbeddingMapWithByteArray_withNSString_(self, data, mimeType);
+  id<JavaUtilMap> embedMap = CCBRJSONFormatter_createEmbeddingMapWithByteArray_withNSString_(self, data, mimeType);
   [((id<JavaUtilList>) nil_chk(((id<JavaUtilList>) cast_check([((id<JavaUtilMap>) nil_chk(self->currentStepOrHookMap_)) getWithId:@"embeddings"], JavaUtilList_class_())))) addWithId:embedMap];
 }
 
-id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createEmbeddingMapWithByteArray_withNSString_(CucumberRuntimeFormatterJSONFormatter *self, IOSByteArray *data, NSString *mimeType) {
+id<JavaUtilMap> CCBRJSONFormatter_createEmbeddingMapWithByteArray_withNSString_(CCBRJSONFormatter *self, IOSByteArray *data, NSString *mimeType) {
   id<JavaUtilMap> embedMap = create_JavaUtilHashMap_init();
   [embedMap putWithId:@"mime_type" withId:mimeType];
   [embedMap putWithId:@"data" withId:[((JavaUtilBase64_Encoder *) nil_chk(JavaUtilBase64_getEncoder())) encodeWithByteArray:data]];
   return embedMap;
 }
 
-id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createMatchMapWithCucumberApiTestStep_withCucumberApiResult_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiTestStep *testStep, CucumberApiResult *result) {
+id<JavaUtilMap> CCBRJSONFormatter_createMatchMapWithCCBTestStep_withCCBResult_(CCBRJSONFormatter *self, CCBTestStep *testStep, CCBResult *result) {
   id<JavaUtilMap> matchMap = create_JavaUtilHashMap_init();
-  if (![((id<JavaUtilList>) nil_chk([((CucumberApiTestStep *) nil_chk(testStep)) getDefinitionArgument])) isEmpty]) {
+  if (![((id<JavaUtilList>) nil_chk([((CCBTestStep *) nil_chk(testStep)) getDefinitionArgument])) isEmpty]) {
     id<JavaUtilList> argumentList = create_JavaUtilArrayList_init();
-    for (CucumberRuntimeArgument * __strong argument in nil_chk([testStep getDefinitionArgument])) {
+    for (CCBRArgument * __strong argument in nil_chk([testStep getDefinitionArgument])) {
       id<JavaUtilMap> argumentMap = create_JavaUtilHashMap_init();
-      [argumentMap putWithId:@"val" withId:[((CucumberRuntimeArgument *) nil_chk(argument)) getVal]];
+      [argumentMap putWithId:@"val" withId:[((CCBRArgument *) nil_chk(argument)) getVal]];
       [argumentMap putWithId:@"offset" withId:[argument getOffset]];
       [argumentList addWithId:argumentMap];
     }
     [matchMap putWithId:@"arguments" withId:argumentList];
   }
-  if (![((CucumberApiResult *) nil_chk(result)) isWithCucumberApiResult_Type:JreLoadEnum(CucumberApiResult_Type, UNDEFINED)]) {
+  if (![((CCBResult *) nil_chk(result)) isWithCCBResult_Type:JreLoadEnum(CCBResult_Type, UNDEFINED)]) {
     [matchMap putWithId:@"location" withId:[testStep getCodeLocation]];
   }
   return matchMap;
 }
 
-id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createResultMapWithCucumberApiResult_(CucumberRuntimeFormatterJSONFormatter *self, CucumberApiResult *result) {
+id<JavaUtilMap> CCBRJSONFormatter_createResultMapWithCCBResult_(CCBRJSONFormatter *self, CCBResult *result) {
   id<JavaUtilMap> resultMap = create_JavaUtilHashMap_init();
-  [resultMap putWithId:@"status" withId:[((CucumberApiResult_Type *) nil_chk([((CucumberApiResult *) nil_chk(result)) getStatus])) lowerCaseName]];
+  [resultMap putWithId:@"status" withId:[((CCBResult_Type *) nil_chk([((CCBResult *) nil_chk(result)) getStatus])) lowerCaseName]];
   if ([result getErrorMessage] != nil) {
     [resultMap putWithId:@"error_message" withId:[result getErrorMessage]];
   }
@@ -786,17 +786,17 @@ id<JavaUtilMap> CucumberRuntimeFormatterJSONFormatter_createResultMapWithCucumbe
   return resultMap;
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterJSONFormatter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRJSONFormatter)
 
-@implementation CucumberRuntimeFormatterJSONFormatter_1
+@implementation CCBRJSONFormatter_1
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
-  CucumberRuntimeFormatterJSONFormatter_1_initWithCucumberRuntimeFormatterJSONFormatter_(self, outer$);
+- (instancetype __nonnull)initWithCCBRJSONFormatter:(CCBRJSONFormatter *)outer$ {
+  CCBRJSONFormatter_1_initWithCCBRJSONFormatter_(self, outer$);
   return self;
 }
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestSourceRead *)event {
-  CucumberRuntimeFormatterJSONFormatter_handleTestSourceReadWithCucumberApiEventTestSourceRead_(this$0_, event);
+- (void)receiveWithCCBEvent:(CCBTestSourceRead *)event {
+  CCBRJSONFormatter_handleTestSourceReadWithCCBTestSourceRead_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -812,41 +812,41 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterJSONFormatter)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeFormatterJSONFormatter:);
-  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
+  methods[0].selector = @selector(initWithCCBRJSONFormatter:);
+  methods[1].selector = @selector(receiveWithCCBEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LCucumberRuntimeFormatterJSONFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "this$0_", "LCCBRJSONFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestSourceRead;", "LCucumberRuntimeFormatterJSONFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterJSONFormatter_1 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeFormatterJSONFormatter_1;
+  static const void *ptrTable[] = { "receive", "LCCBTestSourceRead;", "LCCBRJSONFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;" };
+  static const J2ObjcClassInfo _CCBRJSONFormatter_1 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
+  return &_CCBRJSONFormatter_1;
 }
 
 @end
 
-void CucumberRuntimeFormatterJSONFormatter_1_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter_1 *self, CucumberRuntimeFormatterJSONFormatter *outer$) {
+void CCBRJSONFormatter_1_initWithCCBRJSONFormatter_(CCBRJSONFormatter_1 *self, CCBRJSONFormatter *outer$) {
   JreStrongAssign(&self->this$0_, outer$);
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterJSONFormatter_1 *new_CucumberRuntimeFormatterJSONFormatter_1_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterJSONFormatter_1, initWithCucumberRuntimeFormatterJSONFormatter_, outer$)
+CCBRJSONFormatter_1 *new_CCBRJSONFormatter_1_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) {
+  J2OBJC_NEW_IMPL(CCBRJSONFormatter_1, initWithCCBRJSONFormatter_, outer$)
 }
 
-CucumberRuntimeFormatterJSONFormatter_1 *create_CucumberRuntimeFormatterJSONFormatter_1_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterJSONFormatter_1, initWithCucumberRuntimeFormatterJSONFormatter_, outer$)
+CCBRJSONFormatter_1 *create_CCBRJSONFormatter_1_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRJSONFormatter_1, initWithCCBRJSONFormatter_, outer$)
 }
 
-@implementation CucumberRuntimeFormatterJSONFormatter_2
+@implementation CCBRJSONFormatter_2
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
-  CucumberRuntimeFormatterJSONFormatter_2_initWithCucumberRuntimeFormatterJSONFormatter_(self, outer$);
+- (instancetype __nonnull)initWithCCBRJSONFormatter:(CCBRJSONFormatter *)outer$ {
+  CCBRJSONFormatter_2_initWithCCBRJSONFormatter_(self, outer$);
   return self;
 }
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestCaseStarted *)event {
-  CucumberRuntimeFormatterJSONFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarted_(this$0_, event);
+- (void)receiveWithCCBEvent:(CCBTestCaseStarted *)event {
+  CCBRJSONFormatter_handleTestCaseStartedWithCCBTestCaseStarted_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -862,41 +862,41 @@ CucumberRuntimeFormatterJSONFormatter_1 *create_CucumberRuntimeFormatterJSONForm
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeFormatterJSONFormatter:);
-  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
+  methods[0].selector = @selector(initWithCCBRJSONFormatter:);
+  methods[1].selector = @selector(receiveWithCCBEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LCucumberRuntimeFormatterJSONFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "this$0_", "LCCBRJSONFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestCaseStarted;", "LCucumberRuntimeFormatterJSONFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterJSONFormatter_2 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeFormatterJSONFormatter_2;
+  static const void *ptrTable[] = { "receive", "LCCBTestCaseStarted;", "LCCBRJSONFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;" };
+  static const J2ObjcClassInfo _CCBRJSONFormatter_2 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
+  return &_CCBRJSONFormatter_2;
 }
 
 @end
 
-void CucumberRuntimeFormatterJSONFormatter_2_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter_2 *self, CucumberRuntimeFormatterJSONFormatter *outer$) {
+void CCBRJSONFormatter_2_initWithCCBRJSONFormatter_(CCBRJSONFormatter_2 *self, CCBRJSONFormatter *outer$) {
   JreStrongAssign(&self->this$0_, outer$);
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterJSONFormatter_2 *new_CucumberRuntimeFormatterJSONFormatter_2_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterJSONFormatter_2, initWithCucumberRuntimeFormatterJSONFormatter_, outer$)
+CCBRJSONFormatter_2 *new_CCBRJSONFormatter_2_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) {
+  J2OBJC_NEW_IMPL(CCBRJSONFormatter_2, initWithCCBRJSONFormatter_, outer$)
 }
 
-CucumberRuntimeFormatterJSONFormatter_2 *create_CucumberRuntimeFormatterJSONFormatter_2_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterJSONFormatter_2, initWithCucumberRuntimeFormatterJSONFormatter_, outer$)
+CCBRJSONFormatter_2 *create_CCBRJSONFormatter_2_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRJSONFormatter_2, initWithCCBRJSONFormatter_, outer$)
 }
 
-@implementation CucumberRuntimeFormatterJSONFormatter_3
+@implementation CCBRJSONFormatter_3
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
-  CucumberRuntimeFormatterJSONFormatter_3_initWithCucumberRuntimeFormatterJSONFormatter_(self, outer$);
+- (instancetype __nonnull)initWithCCBRJSONFormatter:(CCBRJSONFormatter *)outer$ {
+  CCBRJSONFormatter_3_initWithCCBRJSONFormatter_(self, outer$);
   return self;
 }
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepStarted *)event {
-  CucumberRuntimeFormatterJSONFormatter_handleTestStepStartedWithCucumberApiEventTestStepStarted_(this$0_, event);
+- (void)receiveWithCCBEvent:(CCBTestStepStarted *)event {
+  CCBRJSONFormatter_handleTestStepStartedWithCCBTestStepStarted_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -912,41 +912,41 @@ CucumberRuntimeFormatterJSONFormatter_2 *create_CucumberRuntimeFormatterJSONForm
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeFormatterJSONFormatter:);
-  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
+  methods[0].selector = @selector(initWithCCBRJSONFormatter:);
+  methods[1].selector = @selector(receiveWithCCBEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LCucumberRuntimeFormatterJSONFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "this$0_", "LCCBRJSONFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestStepStarted;", "LCucumberRuntimeFormatterJSONFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterJSONFormatter_3 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeFormatterJSONFormatter_3;
+  static const void *ptrTable[] = { "receive", "LCCBTestStepStarted;", "LCCBRJSONFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;" };
+  static const J2ObjcClassInfo _CCBRJSONFormatter_3 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
+  return &_CCBRJSONFormatter_3;
 }
 
 @end
 
-void CucumberRuntimeFormatterJSONFormatter_3_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter_3 *self, CucumberRuntimeFormatterJSONFormatter *outer$) {
+void CCBRJSONFormatter_3_initWithCCBRJSONFormatter_(CCBRJSONFormatter_3 *self, CCBRJSONFormatter *outer$) {
   JreStrongAssign(&self->this$0_, outer$);
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterJSONFormatter_3 *new_CucumberRuntimeFormatterJSONFormatter_3_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterJSONFormatter_3, initWithCucumberRuntimeFormatterJSONFormatter_, outer$)
+CCBRJSONFormatter_3 *new_CCBRJSONFormatter_3_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) {
+  J2OBJC_NEW_IMPL(CCBRJSONFormatter_3, initWithCCBRJSONFormatter_, outer$)
 }
 
-CucumberRuntimeFormatterJSONFormatter_3 *create_CucumberRuntimeFormatterJSONFormatter_3_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterJSONFormatter_3, initWithCucumberRuntimeFormatterJSONFormatter_, outer$)
+CCBRJSONFormatter_3 *create_CCBRJSONFormatter_3_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRJSONFormatter_3, initWithCCBRJSONFormatter_, outer$)
 }
 
-@implementation CucumberRuntimeFormatterJSONFormatter_4
+@implementation CCBRJSONFormatter_4
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
-  CucumberRuntimeFormatterJSONFormatter_4_initWithCucumberRuntimeFormatterJSONFormatter_(self, outer$);
+- (instancetype __nonnull)initWithCCBRJSONFormatter:(CCBRJSONFormatter *)outer$ {
+  CCBRJSONFormatter_4_initWithCCBRJSONFormatter_(self, outer$);
   return self;
 }
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestStepFinished *)event {
-  CucumberRuntimeFormatterJSONFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(this$0_, event);
+- (void)receiveWithCCBEvent:(CCBTestStepFinished *)event {
+  CCBRJSONFormatter_handleTestStepFinishedWithCCBTestStepFinished_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -962,41 +962,41 @@ CucumberRuntimeFormatterJSONFormatter_3 *create_CucumberRuntimeFormatterJSONForm
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeFormatterJSONFormatter:);
-  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
+  methods[0].selector = @selector(initWithCCBRJSONFormatter:);
+  methods[1].selector = @selector(receiveWithCCBEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LCucumberRuntimeFormatterJSONFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "this$0_", "LCCBRJSONFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestStepFinished;", "LCucumberRuntimeFormatterJSONFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterJSONFormatter_4 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeFormatterJSONFormatter_4;
+  static const void *ptrTable[] = { "receive", "LCCBTestStepFinished;", "LCCBRJSONFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;" };
+  static const J2ObjcClassInfo _CCBRJSONFormatter_4 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
+  return &_CCBRJSONFormatter_4;
 }
 
 @end
 
-void CucumberRuntimeFormatterJSONFormatter_4_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter_4 *self, CucumberRuntimeFormatterJSONFormatter *outer$) {
+void CCBRJSONFormatter_4_initWithCCBRJSONFormatter_(CCBRJSONFormatter_4 *self, CCBRJSONFormatter *outer$) {
   JreStrongAssign(&self->this$0_, outer$);
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterJSONFormatter_4 *new_CucumberRuntimeFormatterJSONFormatter_4_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterJSONFormatter_4, initWithCucumberRuntimeFormatterJSONFormatter_, outer$)
+CCBRJSONFormatter_4 *new_CCBRJSONFormatter_4_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) {
+  J2OBJC_NEW_IMPL(CCBRJSONFormatter_4, initWithCCBRJSONFormatter_, outer$)
 }
 
-CucumberRuntimeFormatterJSONFormatter_4 *create_CucumberRuntimeFormatterJSONFormatter_4_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterJSONFormatter_4, initWithCucumberRuntimeFormatterJSONFormatter_, outer$)
+CCBRJSONFormatter_4 *create_CCBRJSONFormatter_4_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRJSONFormatter_4, initWithCCBRJSONFormatter_, outer$)
 }
 
-@implementation CucumberRuntimeFormatterJSONFormatter_5
+@implementation CCBRJSONFormatter_5
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
-  CucumberRuntimeFormatterJSONFormatter_5_initWithCucumberRuntimeFormatterJSONFormatter_(self, outer$);
+- (instancetype __nonnull)initWithCCBRJSONFormatter:(CCBRJSONFormatter *)outer$ {
+  CCBRJSONFormatter_5_initWithCCBRJSONFormatter_(self, outer$);
   return self;
 }
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event {
-  CucumberRuntimeFormatterJSONFormatter_finishReport(this$0_);
+- (void)receiveWithCCBEvent:(CCBTestRunFinished *)event {
+  CCBRJSONFormatter_finishReport(this$0_);
 }
 
 - (void)dealloc {
@@ -1012,41 +1012,41 @@ CucumberRuntimeFormatterJSONFormatter_4 *create_CucumberRuntimeFormatterJSONForm
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeFormatterJSONFormatter:);
-  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
+  methods[0].selector = @selector(initWithCCBRJSONFormatter:);
+  methods[1].selector = @selector(receiveWithCCBEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LCucumberRuntimeFormatterJSONFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "this$0_", "LCCBRJSONFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestRunFinished;", "LCucumberRuntimeFormatterJSONFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterJSONFormatter_5 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeFormatterJSONFormatter_5;
+  static const void *ptrTable[] = { "receive", "LCCBTestRunFinished;", "LCCBRJSONFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
+  static const J2ObjcClassInfo _CCBRJSONFormatter_5 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
+  return &_CCBRJSONFormatter_5;
 }
 
 @end
 
-void CucumberRuntimeFormatterJSONFormatter_5_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter_5 *self, CucumberRuntimeFormatterJSONFormatter *outer$) {
+void CCBRJSONFormatter_5_initWithCCBRJSONFormatter_(CCBRJSONFormatter_5 *self, CCBRJSONFormatter *outer$) {
   JreStrongAssign(&self->this$0_, outer$);
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterJSONFormatter_5 *new_CucumberRuntimeFormatterJSONFormatter_5_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterJSONFormatter_5, initWithCucumberRuntimeFormatterJSONFormatter_, outer$)
+CCBRJSONFormatter_5 *new_CCBRJSONFormatter_5_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) {
+  J2OBJC_NEW_IMPL(CCBRJSONFormatter_5, initWithCCBRJSONFormatter_, outer$)
 }
 
-CucumberRuntimeFormatterJSONFormatter_5 *create_CucumberRuntimeFormatterJSONFormatter_5_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterJSONFormatter_5, initWithCucumberRuntimeFormatterJSONFormatter_, outer$)
+CCBRJSONFormatter_5 *create_CCBRJSONFormatter_5_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRJSONFormatter_5, initWithCCBRJSONFormatter_, outer$)
 }
 
-@implementation CucumberRuntimeFormatterJSONFormatter_6
+@implementation CCBRJSONFormatter_6
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
-  CucumberRuntimeFormatterJSONFormatter_6_initWithCucumberRuntimeFormatterJSONFormatter_(self, outer$);
+- (instancetype __nonnull)initWithCCBRJSONFormatter:(CCBRJSONFormatter *)outer$ {
+  CCBRJSONFormatter_6_initWithCCBRJSONFormatter_(self, outer$);
   return self;
 }
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventWriteEvent *)event {
-  CucumberRuntimeFormatterJSONFormatter_handleWriteWithCucumberApiEventWriteEvent_(this$0_, event);
+- (void)receiveWithCCBEvent:(CCBWriteEvent *)event {
+  CCBRJSONFormatter_handleWriteWithCCBWriteEvent_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -1062,41 +1062,41 @@ CucumberRuntimeFormatterJSONFormatter_5 *create_CucumberRuntimeFormatterJSONForm
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeFormatterJSONFormatter:);
-  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
+  methods[0].selector = @selector(initWithCCBRJSONFormatter:);
+  methods[1].selector = @selector(receiveWithCCBEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LCucumberRuntimeFormatterJSONFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "this$0_", "LCCBRJSONFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCucumberApiEventWriteEvent;", "LCucumberRuntimeFormatterJSONFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterJSONFormatter_6 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeFormatterJSONFormatter_6;
+  static const void *ptrTable[] = { "receive", "LCCBWriteEvent;", "LCCBRJSONFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;" };
+  static const J2ObjcClassInfo _CCBRJSONFormatter_6 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
+  return &_CCBRJSONFormatter_6;
 }
 
 @end
 
-void CucumberRuntimeFormatterJSONFormatter_6_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter_6 *self, CucumberRuntimeFormatterJSONFormatter *outer$) {
+void CCBRJSONFormatter_6_initWithCCBRJSONFormatter_(CCBRJSONFormatter_6 *self, CCBRJSONFormatter *outer$) {
   JreStrongAssign(&self->this$0_, outer$);
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterJSONFormatter_6 *new_CucumberRuntimeFormatterJSONFormatter_6_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterJSONFormatter_6, initWithCucumberRuntimeFormatterJSONFormatter_, outer$)
+CCBRJSONFormatter_6 *new_CCBRJSONFormatter_6_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) {
+  J2OBJC_NEW_IMPL(CCBRJSONFormatter_6, initWithCCBRJSONFormatter_, outer$)
 }
 
-CucumberRuntimeFormatterJSONFormatter_6 *create_CucumberRuntimeFormatterJSONFormatter_6_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterJSONFormatter_6, initWithCucumberRuntimeFormatterJSONFormatter_, outer$)
+CCBRJSONFormatter_6 *create_CCBRJSONFormatter_6_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRJSONFormatter_6, initWithCCBRJSONFormatter_, outer$)
 }
 
-@implementation CucumberRuntimeFormatterJSONFormatter_7
+@implementation CCBRJSONFormatter_7
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterJSONFormatter:(CucumberRuntimeFormatterJSONFormatter *)outer$ {
-  CucumberRuntimeFormatterJSONFormatter_7_initWithCucumberRuntimeFormatterJSONFormatter_(self, outer$);
+- (instancetype __nonnull)initWithCCBRJSONFormatter:(CCBRJSONFormatter *)outer$ {
+  CCBRJSONFormatter_7_initWithCCBRJSONFormatter_(self, outer$);
   return self;
 }
 
-- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventEmbedEvent *)event {
-  CucumberRuntimeFormatterJSONFormatter_handleEmbedWithCucumberApiEventEmbedEvent_(this$0_, event);
+- (void)receiveWithCCBEvent:(CCBEmbedEvent *)event {
+  CCBRJSONFormatter_handleEmbedWithCCBEmbedEvent_(this$0_, event);
 }
 
 - (void)dealloc {
@@ -1112,28 +1112,28 @@ CucumberRuntimeFormatterJSONFormatter_6 *create_CucumberRuntimeFormatterJSONForm
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeFormatterJSONFormatter:);
-  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
+  methods[0].selector = @selector(initWithCCBRJSONFormatter:);
+  methods[1].selector = @selector(receiveWithCCBEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "this$0_", "LCucumberRuntimeFormatterJSONFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+    { "this$0_", "LCCBRJSONFormatter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "receive", "LCucumberApiEventEmbedEvent;", "LCucumberRuntimeFormatterJSONFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/EmbedEvent;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterJSONFormatter_7 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
-  return &_CucumberRuntimeFormatterJSONFormatter_7;
+  static const void *ptrTable[] = { "receive", "LCCBEmbedEvent;", "LCCBRJSONFormatter;", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/EmbedEvent;>;" };
+  static const J2ObjcClassInfo _CCBRJSONFormatter_7 = { "", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, -1, 3, -1 };
+  return &_CCBRJSONFormatter_7;
 }
 
 @end
 
-void CucumberRuntimeFormatterJSONFormatter_7_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter_7 *self, CucumberRuntimeFormatterJSONFormatter *outer$) {
+void CCBRJSONFormatter_7_initWithCCBRJSONFormatter_(CCBRJSONFormatter_7 *self, CCBRJSONFormatter *outer$) {
   JreStrongAssign(&self->this$0_, outer$);
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterJSONFormatter_7 *new_CucumberRuntimeFormatterJSONFormatter_7_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterJSONFormatter_7, initWithCucumberRuntimeFormatterJSONFormatter_, outer$)
+CCBRJSONFormatter_7 *new_CCBRJSONFormatter_7_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) {
+  J2OBJC_NEW_IMPL(CCBRJSONFormatter_7, initWithCCBRJSONFormatter_, outer$)
 }
 
-CucumberRuntimeFormatterJSONFormatter_7 *create_CucumberRuntimeFormatterJSONFormatter_7_initWithCucumberRuntimeFormatterJSONFormatter_(CucumberRuntimeFormatterJSONFormatter *outer$) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterJSONFormatter_7, initWithCucumberRuntimeFormatterJSONFormatter_, outer$)
+CCBRJSONFormatter_7 *create_CCBRJSONFormatter_7_initWithCCBRJSONFormatter_(CCBRJSONFormatter *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRJSONFormatter_7, initWithCCBRJSONFormatter_, outer$)
 }

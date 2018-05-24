@@ -14,7 +14,7 @@
 #include "java/util/Iterator.h"
 #include "java/util/List.h"
 
-@interface CucumberRuntimeXstreamListOfComplexTypeReader () {
+@interface CCBRListOfComplexTypeReader () {
  @public
   IOSClass *itemType_;
   id<JavaUtilList> attributeNames_;
@@ -28,20 +28,20 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamListOfComplexTypeReader, itemType_, IOSClass *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamListOfComplexTypeReader, attributeNames_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamListOfComplexTypeReader, itemIterator_, id<JavaUtilIterator>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamListOfComplexTypeReader, attributeNameIterator_, id<JavaUtilIterator>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamListOfComplexTypeReader, attributeName_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamListOfComplexTypeReader, attributeValueIterator_, id<JavaUtilIterator>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamListOfComplexTypeReader, attributeValue_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRListOfComplexTypeReader, itemType_, IOSClass *)
+J2OBJC_FIELD_SETTER(CCBRListOfComplexTypeReader, attributeNames_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRListOfComplexTypeReader, itemIterator_, id<JavaUtilIterator>)
+J2OBJC_FIELD_SETTER(CCBRListOfComplexTypeReader, attributeNameIterator_, id<JavaUtilIterator>)
+J2OBJC_FIELD_SETTER(CCBRListOfComplexTypeReader, attributeName_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRListOfComplexTypeReader, attributeValueIterator_, id<JavaUtilIterator>)
+J2OBJC_FIELD_SETTER(CCBRListOfComplexTypeReader, attributeValue_, NSString *)
 
-@implementation CucumberRuntimeXstreamListOfComplexTypeReader
+@implementation CCBRListOfComplexTypeReader
 
 - (instancetype __nonnull)initWithIOSClass:(IOSClass *)itemType
                           withJavaUtilList:(id<JavaUtilList>)attributeNames
                           withJavaUtilList:(id<JavaUtilList>)items {
-  CucumberRuntimeXstreamListOfComplexTypeReader_initWithIOSClass_withJavaUtilList_withJavaUtilList_(self, itemType, attributeNames, items);
+  CCBRListOfComplexTypeReader_initWithIOSClass_withJavaUtilList_withJavaUtilList_(self, itemType, attributeNames, items);
   return self;
 }
 
@@ -177,13 +177,13 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamListOfComplexTypeReader, attributeValu
     { "attributeValue_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LIOSClass;LJavaUtilList;LJavaUtilList;", "(Ljava/lang/Class;Ljava/util/List<Ljava/lang/String;>;Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;)V", "getAttribute", "LNSString;", "I", "getAttributeName", "appendErrors", "LCucumberDepsComThoughtworksXstreamConvertersErrorWriter;", "Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/Iterator<Ljava/util/List<Ljava/lang/String;>;>;", "Ljava/util/Iterator<Ljava/lang/String;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamListOfComplexTypeReader = { "ListOfComplexTypeReader", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x1, 13, 8, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeXstreamListOfComplexTypeReader;
+  static const J2ObjcClassInfo _CCBRListOfComplexTypeReader = { "ListOfComplexTypeReader", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x1, 13, 8, -1, -1, -1, -1, -1 };
+  return &_CCBRListOfComplexTypeReader;
 }
 
 @end
 
-void CucumberRuntimeXstreamListOfComplexTypeReader_initWithIOSClass_withJavaUtilList_withJavaUtilList_(CucumberRuntimeXstreamListOfComplexTypeReader *self, IOSClass *itemType, id<JavaUtilList> attributeNames, id<JavaUtilList> items) {
+void CCBRListOfComplexTypeReader_initWithIOSClass_withJavaUtilList_withJavaUtilList_(CCBRListOfComplexTypeReader *self, IOSClass *itemType, id<JavaUtilList> attributeNames, id<JavaUtilList> items) {
   CucumberDepsComThoughtworksXstreamIoAbstractReader_init(self);
   self->depth_ = 0;
   JreStrongAssign(&self->itemType_, itemType);
@@ -191,12 +191,12 @@ void CucumberRuntimeXstreamListOfComplexTypeReader_initWithIOSClass_withJavaUtil
   JreStrongAssign(&self->itemIterator_, [((id<JavaUtilList>) nil_chk(items)) iterator]);
 }
 
-CucumberRuntimeXstreamListOfComplexTypeReader *new_CucumberRuntimeXstreamListOfComplexTypeReader_initWithIOSClass_withJavaUtilList_withJavaUtilList_(IOSClass *itemType, id<JavaUtilList> attributeNames, id<JavaUtilList> items) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamListOfComplexTypeReader, initWithIOSClass_withJavaUtilList_withJavaUtilList_, itemType, attributeNames, items)
+CCBRListOfComplexTypeReader *new_CCBRListOfComplexTypeReader_initWithIOSClass_withJavaUtilList_withJavaUtilList_(IOSClass *itemType, id<JavaUtilList> attributeNames, id<JavaUtilList> items) {
+  J2OBJC_NEW_IMPL(CCBRListOfComplexTypeReader, initWithIOSClass_withJavaUtilList_withJavaUtilList_, itemType, attributeNames, items)
 }
 
-CucumberRuntimeXstreamListOfComplexTypeReader *create_CucumberRuntimeXstreamListOfComplexTypeReader_initWithIOSClass_withJavaUtilList_withJavaUtilList_(IOSClass *itemType, id<JavaUtilList> attributeNames, id<JavaUtilList> items) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamListOfComplexTypeReader, initWithIOSClass_withJavaUtilList_withJavaUtilList_, itemType, attributeNames, items)
+CCBRListOfComplexTypeReader *create_CCBRListOfComplexTypeReader_initWithIOSClass_withJavaUtilList_withJavaUtilList_(IOSClass *itemType, id<JavaUtilList> attributeNames, id<JavaUtilList> items) {
+  J2OBJC_CREATE_IMPL(CCBRListOfComplexTypeReader, initWithIOSClass_withJavaUtilList_withJavaUtilList_, itemType, attributeNames, items)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamListOfComplexTypeReader)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRListOfComplexTypeReader)

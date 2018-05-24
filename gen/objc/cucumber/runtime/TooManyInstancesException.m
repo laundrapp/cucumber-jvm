@@ -10,23 +10,23 @@
 #include "cucumber/runtime/TooManyInstancesException.h"
 #include "java/util/Collection.h"
 
-@interface CucumberRuntimeTooManyInstancesException ()
+@interface CCBRTooManyInstancesException ()
 
 + (NSString *)createMessageWithJavaUtilCollection:(id<JavaUtilCollection>)instances;
 
 @end
 
-__attribute__((unused)) static NSString *CucumberRuntimeTooManyInstancesException_createMessageWithJavaUtilCollection_(id<JavaUtilCollection> instances);
+__attribute__((unused)) static NSString *CCBRTooManyInstancesException_createMessageWithJavaUtilCollection_(id<JavaUtilCollection> instances);
 
-@implementation CucumberRuntimeTooManyInstancesException
+@implementation CCBRTooManyInstancesException
 
 - (instancetype __nonnull)initWithJavaUtilCollection:(id<JavaUtilCollection>)instances {
-  CucumberRuntimeTooManyInstancesException_initWithJavaUtilCollection_(self, instances);
+  CCBRTooManyInstancesException_initWithJavaUtilCollection_(self, instances);
   return self;
 }
 
 + (NSString *)createMessageWithJavaUtilCollection:(id<JavaUtilCollection>)instances {
-  return CucumberRuntimeTooManyInstancesException_createMessageWithJavaUtilCollection_(instances);
+  return CCBRTooManyInstancesException_createMessageWithJavaUtilCollection_(instances);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -41,27 +41,27 @@ __attribute__((unused)) static NSString *CucumberRuntimeTooManyInstancesExceptio
   methods[1].selector = @selector(createMessageWithJavaUtilCollection:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LJavaUtilCollection;", "createMessage" };
-  static const J2ObjcClassInfo _CucumberRuntimeTooManyInstancesException = { "TooManyInstancesException", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeTooManyInstancesException;
+  static const J2ObjcClassInfo _CCBRTooManyInstancesException = { "TooManyInstancesException", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x1, 2, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRTooManyInstancesException;
 }
 
 @end
 
-void CucumberRuntimeTooManyInstancesException_initWithJavaUtilCollection_(CucumberRuntimeTooManyInstancesException *self, id<JavaUtilCollection> instances) {
-  CucumberRuntimeCucumberException_initWithNSString_(self, CucumberRuntimeTooManyInstancesException_createMessageWithJavaUtilCollection_(instances));
+void CCBRTooManyInstancesException_initWithJavaUtilCollection_(CCBRTooManyInstancesException *self, id<JavaUtilCollection> instances) {
+  CCBRCucumberException_initWithNSString_(self, CCBRTooManyInstancesException_createMessageWithJavaUtilCollection_(instances));
 }
 
-CucumberRuntimeTooManyInstancesException *new_CucumberRuntimeTooManyInstancesException_initWithJavaUtilCollection_(id<JavaUtilCollection> instances) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeTooManyInstancesException, initWithJavaUtilCollection_, instances)
+CCBRTooManyInstancesException *new_CCBRTooManyInstancesException_initWithJavaUtilCollection_(id<JavaUtilCollection> instances) {
+  J2OBJC_NEW_IMPL(CCBRTooManyInstancesException, initWithJavaUtilCollection_, instances)
 }
 
-CucumberRuntimeTooManyInstancesException *create_CucumberRuntimeTooManyInstancesException_initWithJavaUtilCollection_(id<JavaUtilCollection> instances) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeTooManyInstancesException, initWithJavaUtilCollection_, instances)
+CCBRTooManyInstancesException *create_CCBRTooManyInstancesException_initWithJavaUtilCollection_(id<JavaUtilCollection> instances) {
+  J2OBJC_CREATE_IMPL(CCBRTooManyInstancesException, initWithJavaUtilCollection_, instances)
 }
 
-NSString *CucumberRuntimeTooManyInstancesException_createMessageWithJavaUtilCollection_(id<JavaUtilCollection> instances) {
-  CucumberRuntimeTooManyInstancesException_initialize();
+NSString *CCBRTooManyInstancesException_createMessageWithJavaUtilCollection_(id<JavaUtilCollection> instances) {
+  CCBRTooManyInstancesException_initialize();
   return NSString_java_formatWithNSString_withNSObjectArray_(JreStrcat("$@", @"Expected only one instance, but found too many: ", instances), [IOSObjectArray arrayWithLength:0 type:NSObject_class_()]);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTooManyInstancesException)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTooManyInstancesException)

@@ -22,7 +22,7 @@
 #include "java/lang/annotation/Annotation.h"
 #include "java/util/List.h"
 
-@interface CucumberApiTestCase () {
+@interface CCBTestCase () {
  @public
   GherkinEventsPickleEvent *pickleEvent_;
   id<JavaUtilList> testSteps_;
@@ -33,46 +33,46 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberApiTestCase, pickleEvent_, GherkinEventsPickleEvent *)
-J2OBJC_FIELD_SETTER(CucumberApiTestCase, testSteps_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBTestCase, pickleEvent_, GherkinEventsPickleEvent *)
+J2OBJC_FIELD_SETTER(CCBTestCase, testSteps_, id<JavaUtilList>)
 
-__attribute__((unused)) static NSString *CucumberApiTestCase_fileColonLineWithGherkinPicklesPickleLocation_(CucumberApiTestCase *self, GherkinPicklesPickleLocation *location);
+__attribute__((unused)) static NSString *CCBTestCase_fileColonLineWithGherkinPicklesPickleLocation_(CCBTestCase *self, GherkinPicklesPickleLocation *location);
 
-__attribute__((unused)) static IOSObjectArray *CucumberApiTestCase__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CCBTestCase__Annotations$0(void);
 
-__attribute__((unused)) static IOSObjectArray *CucumberApiTestCase__Annotations$1(void);
+__attribute__((unused)) static IOSObjectArray *CCBTestCase__Annotations$1(void);
 
-__attribute__((unused)) static IOSObjectArray *CucumberApiTestCase__Annotations$2(void);
+__attribute__((unused)) static IOSObjectArray *CCBTestCase__Annotations$2(void);
 
-@implementation CucumberApiTestCase
+@implementation CCBTestCase
 
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)testSteps
                   withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent {
-  CucumberApiTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_(self, testSteps, pickleEvent);
+  CCBTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_(self, testSteps, pickleEvent);
   return self;
 }
 
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)testSteps
                   withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent
                                    withBoolean:(jboolean)dryRun {
-  CucumberApiTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_(self, testSteps, pickleEvent, dryRun);
+  CCBTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_(self, testSteps, pickleEvent, dryRun);
   return self;
 }
 
 - (void)runWithCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus {
   jboolean skipNextStep = self->dryRun_;
   JavaLangLong *startTime = [((CucumberRunnerEventBus *) nil_chk(bus)) getTime];
-  [bus sendWithCucumberApiEventEvent:create_CucumberApiEventTestCaseStarted_initWithJavaLangLong_withCucumberApiTestCase_(startTime, self)];
-  CucumberRuntimeScenarioImpl *scenarioResult = create_CucumberRuntimeScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(bus, pickleEvent_);
-  for (CucumberApiTestStep * __strong step in nil_chk(testSteps_)) {
-    CucumberApiResult *stepResult = [((CucumberApiTestStep *) nil_chk(step)) runWithCucumberRunnerEventBus:bus withNSString:[((GherkinPicklesPickle *) nil_chk(((GherkinEventsPickleEvent *) nil_chk(pickleEvent_))->pickle_)) getLanguage] withCucumberApiScenario:scenarioResult withBoolean:skipNextStep];
-    if (![((CucumberApiResult *) nil_chk(stepResult)) isWithCucumberApiResult_Type:JreLoadEnum(CucumberApiResult_Type, PASSED)]) {
+  [bus sendWithCCBEvent:create_CCBTestCaseStarted_initWithJavaLangLong_withCCBTestCase_(startTime, self)];
+  CCBRScenarioImpl *scenarioResult = create_CCBRScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(bus, pickleEvent_);
+  for (CCBTestStep * __strong step in nil_chk(testSteps_)) {
+    CCBResult *stepResult = [((CCBTestStep *) nil_chk(step)) runWithCucumberRunnerEventBus:bus withNSString:[((GherkinPicklesPickle *) nil_chk(((GherkinEventsPickleEvent *) nil_chk(pickleEvent_))->pickle_)) getLanguage] withCCBScenario:scenarioResult withBoolean:skipNextStep];
+    if (![((CCBResult *) nil_chk(stepResult)) isWithCCBResult_Type:JreLoadEnum(CCBResult_Type, PASSED)]) {
       skipNextStep = true;
     }
-    [scenarioResult addWithCucumberApiResult:stepResult];
+    [scenarioResult addWithCCBResult:stepResult];
   }
   JavaLangLong *stopTime = [bus getTime];
-  [bus sendWithCucumberApiEventEvent:create_CucumberApiEventTestCaseFinished_initWithJavaLangLong_withCucumberApiTestCase_withCucumberApiResult_(stopTime, self, create_CucumberApiResult_initWithCucumberApiResult_Type_withJavaLangLong_withJavaLangThrowable_([scenarioResult getStatus], JavaLangLong_valueOfWithLong_([((JavaLangLong *) nil_chk(stopTime)) longLongValue] - [((JavaLangLong *) nil_chk(startTime)) longLongValue]), [scenarioResult getError]))];
+  [bus sendWithCCBEvent:create_CCBTestCaseFinished_initWithJavaLangLong_withCCBTestCase_withCCBResult_(stopTime, self, create_CCBResult_initWithCCBResult_Type_withJavaLangLong_withJavaLangThrowable_([scenarioResult getStatus], JavaLangLong_valueOfWithLong_([((JavaLangLong *) nil_chk(stopTime)) longLongValue] - [((JavaLangLong *) nil_chk(startTime)) longLongValue]), [scenarioResult getError]))];
 }
 
 - (id<JavaUtilList>)getTestSteps {
@@ -84,7 +84,7 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiTestCase__Annotations$
 }
 
 - (NSString *)getScenarioDesignation {
-  return JreStrcat("$$$", CucumberApiTestCase_fileColonLineWithGherkinPicklesPickleLocation_(self, [((id<JavaUtilList>) nil_chk([((GherkinPicklesPickle *) nil_chk(((GherkinEventsPickleEvent *) nil_chk(pickleEvent_))->pickle_)) getLocations])) getWithInt:0]), @" # ", [self getName]);
+  return JreStrcat("$$$", CCBTestCase_fileColonLineWithGherkinPicklesPickleLocation_(self, [((id<JavaUtilList>) nil_chk([((GherkinPicklesPickle *) nil_chk(((GherkinEventsPickleEvent *) nil_chk(pickleEvent_))->pickle_)) getLocations])) getWithInt:0]), @" # ", [self getName]);
 }
 
 - (NSString *)getUri {
@@ -96,7 +96,7 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiTestCase__Annotations$
 }
 
 - (NSString *)fileColonLineWithGherkinPicklesPickleLocation:(GherkinPicklesPickleLocation *)location {
-  return CucumberApiTestCase_fileColonLineWithGherkinPicklesPickleLocation_(self, location);
+  return CCBTestCase_fileColonLineWithGherkinPicklesPickleLocation_(self, location);
 }
 
 - (id<JavaUtilList>)getTags {
@@ -141,54 +141,54 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiTestCase__Annotations$
     { "testSteps_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 13, -1 },
     { "dryRun_", "Z", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LJavaUtilList;LGherkinEventsPickleEvent;", "(Ljava/util/List<Lcucumber/api/TestStep;>;Lgherkin/events/PickleEvent;)V", (void *)&CucumberApiTestCase__Annotations$0, "LJavaUtilList;LGherkinEventsPickleEvent;Z", "(Ljava/util/List<Lcucumber/api/TestStep;>;Lgherkin/events/PickleEvent;Z)V", (void *)&CucumberApiTestCase__Annotations$1, "run", "LCucumberRunnerEventBus;", (void *)&CucumberApiTestCase__Annotations$2, "()Ljava/util/List<Lcucumber/api/TestStep;>;", "fileColonLine", "LGherkinPicklesPickleLocation;", "()Ljava/util/List<Lgherkin/pickles/PickleTag;>;", "Ljava/util/List<Lcucumber/api/TestStep;>;" };
-  static const J2ObjcClassInfo _CucumberApiTestCase = { "TestCase", "cucumber.api", ptrTable, methods, fields, 7, 0x1, 10, 3, -1, -1, -1, -1, -1 };
-  return &_CucumberApiTestCase;
+  static const void *ptrTable[] = { "LJavaUtilList;LGherkinEventsPickleEvent;", "(Ljava/util/List<Lcucumber/api/TestStep;>;Lgherkin/events/PickleEvent;)V", (void *)&CCBTestCase__Annotations$0, "LJavaUtilList;LGherkinEventsPickleEvent;Z", "(Ljava/util/List<Lcucumber/api/TestStep;>;Lgherkin/events/PickleEvent;Z)V", (void *)&CCBTestCase__Annotations$1, "run", "LCucumberRunnerEventBus;", (void *)&CCBTestCase__Annotations$2, "()Ljava/util/List<Lcucumber/api/TestStep;>;", "fileColonLine", "LGherkinPicklesPickleLocation;", "()Ljava/util/List<Lgherkin/pickles/PickleTag;>;", "Ljava/util/List<Lcucumber/api/TestStep;>;" };
+  static const J2ObjcClassInfo _CCBTestCase = { "TestCase", "cucumber.api", ptrTable, methods, fields, 7, 0x1, 10, 3, -1, -1, -1, -1, -1 };
+  return &_CCBTestCase;
 }
 
 @end
 
-void CucumberApiTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_(CucumberApiTestCase *self, id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent) {
-  CucumberApiTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_(self, testSteps, pickleEvent, false);
+void CCBTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_(CCBTestCase *self, id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent) {
+  CCBTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_(self, testSteps, pickleEvent, false);
 }
 
-CucumberApiTestCase *new_CucumberApiTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_(id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent) {
-  J2OBJC_NEW_IMPL(CucumberApiTestCase, initWithJavaUtilList_withGherkinEventsPickleEvent_, testSteps, pickleEvent)
+CCBTestCase *new_CCBTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_(id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent) {
+  J2OBJC_NEW_IMPL(CCBTestCase, initWithJavaUtilList_withGherkinEventsPickleEvent_, testSteps, pickleEvent)
 }
 
-CucumberApiTestCase *create_CucumberApiTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_(id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent) {
-  J2OBJC_CREATE_IMPL(CucumberApiTestCase, initWithJavaUtilList_withGherkinEventsPickleEvent_, testSteps, pickleEvent)
+CCBTestCase *create_CCBTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_(id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent) {
+  J2OBJC_CREATE_IMPL(CCBTestCase, initWithJavaUtilList_withGherkinEventsPickleEvent_, testSteps, pickleEvent)
 }
 
-void CucumberApiTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_(CucumberApiTestCase *self, id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent, jboolean dryRun) {
+void CCBTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_(CCBTestCase *self, id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent, jboolean dryRun) {
   NSObject_init(self);
   JreStrongAssign(&self->testSteps_, testSteps);
   JreStrongAssign(&self->pickleEvent_, pickleEvent);
   self->dryRun_ = dryRun;
 }
 
-CucumberApiTestCase *new_CucumberApiTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_(id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent, jboolean dryRun) {
-  J2OBJC_NEW_IMPL(CucumberApiTestCase, initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_, testSteps, pickleEvent, dryRun)
+CCBTestCase *new_CCBTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_(id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent, jboolean dryRun) {
+  J2OBJC_NEW_IMPL(CCBTestCase, initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_, testSteps, pickleEvent, dryRun)
 }
 
-CucumberApiTestCase *create_CucumberApiTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_(id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent, jboolean dryRun) {
-  J2OBJC_CREATE_IMPL(CucumberApiTestCase, initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_, testSteps, pickleEvent, dryRun)
+CCBTestCase *create_CCBTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_(id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent, jboolean dryRun) {
+  J2OBJC_CREATE_IMPL(CCBTestCase, initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_, testSteps, pickleEvent, dryRun)
 }
 
-NSString *CucumberApiTestCase_fileColonLineWithGherkinPicklesPickleLocation_(CucumberApiTestCase *self, GherkinPicklesPickleLocation *location) {
+NSString *CCBTestCase_fileColonLineWithGherkinPicklesPickleLocation_(CCBTestCase *self, GherkinPicklesPickleLocation *location) {
   return JreStrcat("$CI", ((GherkinEventsPickleEvent *) nil_chk(self->pickleEvent_))->uri_, ':', [((GherkinPicklesPickleLocation *) nil_chk(location)) getLine]);
 }
 
-IOSObjectArray *CucumberApiTestCase__Annotations$0() {
+IOSObjectArray *CCBTestCase__Annotations$0() {
   return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *CucumberApiTestCase__Annotations$1() {
+IOSObjectArray *CCBTestCase__Annotations$1() {
   return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-IOSObjectArray *CucumberApiTestCase__Annotations$2() {
+IOSObjectArray *CCBTestCase__Annotations$2() {
   return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiTestCase)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBTestCase)

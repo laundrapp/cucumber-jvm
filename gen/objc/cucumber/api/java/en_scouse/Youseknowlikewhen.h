@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaEn_scouseYouseknowlikewhen_) && (INCLUDE_ALL_CucumberApiJavaEn_scouseYouseknowlikewhen || defined(INCLUDE_CucumberApiJavaEn_scouseYouseknowlikewhen))
-#define CucumberApiJavaEn_scouseYouseknowlikewhen_
+#if !defined (CCBYouseknowlikewhen_) && (INCLUDE_ALL_CucumberApiJavaEn_scouseYouseknowlikewhen || defined(INCLUDE_CCBYouseknowlikewhen))
+#define CCBYouseknowlikewhen_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaEn_scouseYouseknowlikewhen < JavaLangAnnotationAnnotation >
+@protocol CCBYouseknowlikewhen < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaEn_scouseYouseknowlikewhen : NSObject < CucumberApiJavaEn_scouseYouseknowlikewhen > {
+@interface CCBYouseknowlikewhen : NSObject < CCBYouseknowlikewhen > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEn_scouseYouseknowlikewhen)
+J2OBJC_EMPTY_STATIC_INIT(CCBYouseknowlikewhen)
 
-FOUNDATION_EXPORT id<CucumberApiJavaEn_scouseYouseknowlikewhen> create_CucumberApiJavaEn_scouseYouseknowlikewhen(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBYouseknowlikewhen> create_CCBYouseknowlikewhen(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEn_scouseYouseknowlikewhen)
+J2OBJC_TYPE_LITERAL_HEADER(CCBYouseknowlikewhen)
+
+#define CucumberApiJavaEn_scouseYouseknowlikewhen CCBYouseknowlikewhen
 
 #endif
 

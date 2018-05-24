@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaJa前提_) && (INCLUDE_ALL_CucumberApiJavaJa前提 || defined(INCLUDE_CucumberApiJavaJa前提))
-#define CucumberApiJavaJa前提_
+#if !defined (CCB前提_) && (INCLUDE_ALL_CucumberApiJavaJa前提 || defined(INCLUDE_CCB前提))
+#define CCB前提_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaJa前提 < JavaLangAnnotationAnnotation >
+@protocol CCB前提 < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaJa前提 : NSObject < CucumberApiJavaJa前提 > {
+@interface CCB前提 : NSObject < CCB前提 > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaJa前提)
+J2OBJC_EMPTY_STATIC_INIT(CCB前提)
 
-FOUNDATION_EXPORT id<CucumberApiJavaJa前提> create_CucumberApiJavaJa前提(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCB前提> create_CCB前提(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaJa前提)
+J2OBJC_TYPE_LITERAL_HEADER(CCB前提)
+
+#define CucumberApiJavaJa前提 CCB前提
 
 #endif
 

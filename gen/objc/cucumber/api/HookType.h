@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiHookType_) && (INCLUDE_ALL_CucumberApiHookType || defined(INCLUDE_CucumberApiHookType))
-#define CucumberApiHookType_
+#if !defined (CCBHookType_) && (INCLUDE_ALL_CucumberApiHookType || defined(INCLUDE_CCBHookType))
+#define CCBHookType_
 
 #define RESTRICT_JavaLangEnum 1
 #define INCLUDE_JavaLangEnum 1
@@ -27,41 +27,43 @@
 
 @class IOSObjectArray;
 
-typedef NS_ENUM(NSUInteger, CucumberApiHookType_Enum) {
-  CucumberApiHookType_Enum_Before = 0,
-  CucumberApiHookType_Enum_After = 1,
+typedef NS_ENUM(NSUInteger, CCBHookType_Enum) {
+  CCBHookType_Enum_Before = 0,
+  CCBHookType_Enum_After = 1,
 };
 
-@interface CucumberApiHookType : JavaLangEnum
+@interface CCBHookType : JavaLangEnum
 
 #pragma mark Public
 
 - (NSString *)description;
 
-+ (CucumberApiHookType *)valueOfWithNSString:(NSString *)name;
++ (CCBHookType *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberApiHookType)
+J2OBJC_STATIC_INIT(CCBHookType)
 
 /*! INTERNAL ONLY - Use enum accessors declared below. */
-FOUNDATION_EXPORT CucumberApiHookType *CucumberApiHookType_values_[];
+FOUNDATION_EXPORT CCBHookType *CCBHookType_values_[];
 
-inline CucumberApiHookType *CucumberApiHookType_get_Before(void);
-J2OBJC_ENUM_CONSTANT(CucumberApiHookType, Before)
+inline CCBHookType *CCBHookType_get_Before(void);
+J2OBJC_ENUM_CONSTANT(CCBHookType, Before)
 
-inline CucumberApiHookType *CucumberApiHookType_get_After(void);
-J2OBJC_ENUM_CONSTANT(CucumberApiHookType, After)
+inline CCBHookType *CCBHookType_get_After(void);
+J2OBJC_ENUM_CONSTANT(CCBHookType, After)
 
-FOUNDATION_EXPORT IOSObjectArray *CucumberApiHookType_values(void);
+FOUNDATION_EXPORT IOSObjectArray *CCBHookType_values(void);
 
-FOUNDATION_EXPORT CucumberApiHookType *CucumberApiHookType_valueOfWithNSString_(NSString *name);
+FOUNDATION_EXPORT CCBHookType *CCBHookType_valueOfWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT CucumberApiHookType *CucumberApiHookType_fromOrdinal(NSUInteger ordinal);
+FOUNDATION_EXPORT CCBHookType *CCBHookType_fromOrdinal(NSUInteger ordinal);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiHookType)
+J2OBJC_TYPE_LITERAL_HEADER(CCBHookType)
+
+@compatibility_alias CucumberApiHookType CCBHookType;
 
 #endif
 

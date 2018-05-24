@@ -18,12 +18,12 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeMatch_) && (INCLUDE_ALL_CucumberRuntimeMatch || defined(INCLUDE_CucumberRuntimeMatch))
-#define CucumberRuntimeMatch_
+#if !defined (CCBRMatch_) && (INCLUDE_ALL_CucumberRuntimeMatch || defined(INCLUDE_CCBRMatch))
+#define CCBRMatch_
 
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeMatch : NSObject
+@interface CCBRMatch : NSObject
 
 #pragma mark Public
 
@@ -42,20 +42,22 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeMatch)
+J2OBJC_STATIC_INIT(CCBRMatch)
 
-inline CucumberRuntimeMatch *CucumberRuntimeMatch_get_UNDEFINED(void);
+inline CCBRMatch *CCBRMatch_get_UNDEFINED(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT CucumberRuntimeMatch *CucumberRuntimeMatch_UNDEFINED;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeMatch, UNDEFINED, CucumberRuntimeMatch *)
+FOUNDATION_EXPORT CCBRMatch *CCBRMatch_UNDEFINED;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRMatch, UNDEFINED, CCBRMatch *)
 
-FOUNDATION_EXPORT void CucumberRuntimeMatch_initWithJavaUtilList_withNSString_(CucumberRuntimeMatch *self, id<JavaUtilList> arguments, NSString *location);
+FOUNDATION_EXPORT void CCBRMatch_initWithJavaUtilList_withNSString_(CCBRMatch *self, id<JavaUtilList> arguments, NSString *location);
 
-FOUNDATION_EXPORT CucumberRuntimeMatch *new_CucumberRuntimeMatch_initWithJavaUtilList_withNSString_(id<JavaUtilList> arguments, NSString *location) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRMatch *new_CCBRMatch_initWithJavaUtilList_withNSString_(id<JavaUtilList> arguments, NSString *location) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeMatch *create_CucumberRuntimeMatch_initWithJavaUtilList_withNSString_(id<JavaUtilList> arguments, NSString *location);
+FOUNDATION_EXPORT CCBRMatch *create_CCBRMatch_initWithJavaUtilList_withNSString_(id<JavaUtilList> arguments, NSString *location);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeMatch)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRMatch)
+
+@compatibility_alias CucumberRuntimeMatch CCBRMatch;
 
 #endif
 

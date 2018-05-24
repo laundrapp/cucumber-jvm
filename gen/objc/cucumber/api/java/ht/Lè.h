@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaHtLè_) && (INCLUDE_ALL_CucumberApiJavaHtLè || defined(INCLUDE_CucumberApiJavaHtLè))
-#define CucumberApiJavaHtLè_
+#if !defined (CCBLè_) && (INCLUDE_ALL_CucumberApiJavaHtLè || defined(INCLUDE_CCBLè))
+#define CCBLè_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaHtLè < JavaLangAnnotationAnnotation >
+@protocol CCBLè < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaHtLè : NSObject < CucumberApiJavaHtLè > {
+@interface CCBLè : NSObject < CCBLè > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaHtLè)
+J2OBJC_EMPTY_STATIC_INIT(CCBLè)
 
-FOUNDATION_EXPORT id<CucumberApiJavaHtLè> create_CucumberApiJavaHtLè(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBLè> create_CCBLè(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaHtLè)
+J2OBJC_TYPE_LITERAL_HEADER(CCBLè)
+
+#define CucumberApiJavaHtLè CCBLè
 
 #endif
 

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeIoResourceIteratorFactory_) && (INCLUDE_ALL_CucumberRuntimeIoResourceIteratorFactory || defined(INCLUDE_CucumberRuntimeIoResourceIteratorFactory))
-#define CucumberRuntimeIoResourceIteratorFactory_
+#if !defined (CCBRResourceIteratorFactory_) && (INCLUDE_ALL_CucumberRuntimeIoResourceIteratorFactory || defined(INCLUDE_CCBRResourceIteratorFactory))
+#define CCBRResourceIteratorFactory_
 
 @class JavaNetURL;
 @protocol JavaUtilIterator;
@@ -27,7 +27,7 @@
 /*!
  @brief Factory contract for creating resource iterators.
  */
-@protocol CucumberRuntimeIoResourceIteratorFactory < JavaObject >
+@protocol CCBRResourceIteratorFactory < JavaObject >
 
 /*!
  @brief Gets a value indicating whether the factory can create iterators for the
@@ -51,9 +51,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoResourceIteratorFactory)
+J2OBJC_EMPTY_STATIC_INIT(CCBRResourceIteratorFactory)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoResourceIteratorFactory)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRResourceIteratorFactory)
+
+#define CucumberRuntimeIoResourceIteratorFactory CCBRResourceIteratorFactory
 
 #endif
 

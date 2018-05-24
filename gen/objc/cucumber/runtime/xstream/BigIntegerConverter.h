@@ -18,18 +18,18 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamBigIntegerConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamBigIntegerConverter || defined(INCLUDE_CucumberRuntimeXstreamBigIntegerConverter))
-#define CucumberRuntimeXstreamBigIntegerConverter_
+#if !defined (CCBRBigIntegerConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamBigIntegerConverter || defined(INCLUDE_CCBRBigIntegerConverter))
+#define CCBRBigIntegerConverter_
 
 #define RESTRICT_CucumberRuntimeXstreamConverterWithNumberFormat 1
-#define INCLUDE_CucumberRuntimeXstreamConverterWithNumberFormat 1
+#define INCLUDE_CCBRConverterWithNumberFormat 1
 #include "cucumber/runtime/xstream/ConverterWithNumberFormat.h"
 
 @class IOSObjectArray;
 @class JavaMathBigInteger;
 @class JavaUtilLocale;
 
-@interface CucumberRuntimeXstreamBigIntegerConverter : CucumberRuntimeXstreamConverterWithNumberFormat
+@interface CCBRBigIntegerConverter : CCBRConverterWithNumberFormat
 
 #pragma mark Public
 
@@ -48,15 +48,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamBigIntegerConverter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRBigIntegerConverter)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamBigIntegerConverter_initWithJavaUtilLocale_(CucumberRuntimeXstreamBigIntegerConverter *self, JavaUtilLocale *locale);
+FOUNDATION_EXPORT void CCBRBigIntegerConverter_initWithJavaUtilLocale_(CCBRBigIntegerConverter *self, JavaUtilLocale *locale);
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamBigIntegerConverter *new_CucumberRuntimeXstreamBigIntegerConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRBigIntegerConverter *new_CCBRBigIntegerConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamBigIntegerConverter *create_CucumberRuntimeXstreamBigIntegerConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale);
+FOUNDATION_EXPORT CCBRBigIntegerConverter *create_CCBRBigIntegerConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamBigIntegerConverter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRBigIntegerConverter)
+
+@compatibility_alias CucumberRuntimeXstreamBigIntegerConverter CCBRBigIntegerConverter;
 
 #endif
 

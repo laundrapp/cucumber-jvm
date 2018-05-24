@@ -28,7 +28,7 @@
 #include "java/util/List.h"
 #include "java/util/Set.h"
 
-@interface CucumberRuntimeScenarioImpl () {
+@interface CCBRScenarioImpl () {
  @public
   id<JavaUtilList> stepResults_;
   id<JavaUtilList> tags_;
@@ -41,29 +41,29 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeScenarioImpl, stepResults_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeScenarioImpl, tags_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeScenarioImpl, uri_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeScenarioImpl, scenarioName_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeScenarioImpl, scenarioId_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeScenarioImpl, scenarioLines_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeScenarioImpl, bus_, CucumberRunnerEventBus *)
+J2OBJC_FIELD_SETTER(CCBRScenarioImpl, stepResults_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRScenarioImpl, tags_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRScenarioImpl, uri_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRScenarioImpl, scenarioName_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRScenarioImpl, scenarioId_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRScenarioImpl, scenarioLines_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRScenarioImpl, bus_, CucumberRunnerEventBus *)
 
-inline id<JavaUtilList> CucumberRuntimeScenarioImpl_get_SEVERITY(void);
-static id<JavaUtilList> CucumberRuntimeScenarioImpl_SEVERITY;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeScenarioImpl, SEVERITY, id<JavaUtilList>)
+inline id<JavaUtilList> CCBRScenarioImpl_get_SEVERITY(void);
+static id<JavaUtilList> CCBRScenarioImpl_SEVERITY;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRScenarioImpl, SEVERITY, id<JavaUtilList>)
 
-J2OBJC_INITIALIZED_DEFN(CucumberRuntimeScenarioImpl)
+J2OBJC_INITIALIZED_DEFN(CCBRScenarioImpl)
 
-@implementation CucumberRuntimeScenarioImpl
+@implementation CCBRScenarioImpl
 
 - (instancetype __nonnull)initWithCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus
                             withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent {
-  CucumberRuntimeScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(self, bus, pickleEvent);
+  CCBRScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(self, bus, pickleEvent);
   return self;
 }
 
-- (void)addWithCucumberApiResult:(CucumberApiResult *)result {
+- (void)addWithCCBResult:(CCBResult *)result {
   [((id<JavaUtilList>) nil_chk(stepResults_)) addWithId:result];
 }
 
@@ -75,31 +75,31 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeScenarioImpl)
   return create_JavaUtilArrayList_initWithJavaUtilCollection_(result);
 }
 
-- (CucumberApiResult_Type *)getStatus {
+- (CCBResult_Type *)getStatus {
   if ([((id<JavaUtilList>) nil_chk(stepResults_)) isEmpty]) {
-    return JreLoadEnum(CucumberApiResult_Type, UNDEFINED);
+    return JreLoadEnum(CCBResult_Type, UNDEFINED);
   }
   jint pos = 0;
-  for (CucumberApiResult * __strong stepResult in stepResults_) {
-    pos = JavaLangMath_maxWithInt_withInt_(pos, [((id<JavaUtilList>) nil_chk(CucumberRuntimeScenarioImpl_SEVERITY)) indexOfWithId:[((CucumberApiResult *) nil_chk(stepResult)) getStatus]]);
+  for (CCBResult * __strong stepResult in stepResults_) {
+    pos = JavaLangMath_maxWithInt_withInt_(pos, [((id<JavaUtilList>) nil_chk(CCBRScenarioImpl_SEVERITY)) indexOfWithId:[((CCBResult *) nil_chk(stepResult)) getStatus]]);
   }
-  return [((id<JavaUtilList>) nil_chk(CucumberRuntimeScenarioImpl_SEVERITY)) getWithInt:pos];
+  return [((id<JavaUtilList>) nil_chk(CCBRScenarioImpl_SEVERITY)) getWithInt:pos];
 }
 
 - (jboolean)isFailed {
-  return [self getStatus] == JreLoadEnum(CucumberApiResult_Type, FAILED);
+  return [self getStatus] == JreLoadEnum(CCBResult_Type, FAILED);
 }
 
 - (void)embedWithByteArray:(IOSByteArray *)data
               withNSString:(NSString *)mimeType {
   if (bus_ != nil) {
-    [bus_ sendWithCucumberApiEventEvent:create_CucumberApiEventEmbedEvent_initWithJavaLangLong_withByteArray_withNSString_([bus_ getTime], data, mimeType)];
+    [bus_ sendWithCCBEvent:create_CCBEmbedEvent_initWithJavaLangLong_withByteArray_withNSString_([bus_ getTime], data, mimeType)];
   }
 }
 
 - (void)writeWithNSString:(NSString *)text {
   if (bus_ != nil) {
-    [bus_ sendWithCucumberApiEventEvent:create_CucumberApiEventWriteEvent_initWithJavaLangLong_withNSString_([bus_ getTime], text)];
+    [bus_ sendWithCCBEvent:create_CCBWriteEvent_initWithJavaLangLong_withNSString_([bus_ getTime], text)];
   }
 }
 
@@ -122,8 +122,8 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeScenarioImpl)
 - (JavaLangThrowable *)getError {
   JavaLangThrowable *error = nil;
   jint maxPos = 0;
-  for (CucumberApiResult * __strong stepResult in nil_chk(stepResults_)) {
-    jint currentPos = [((id<JavaUtilList>) nil_chk(CucumberRuntimeScenarioImpl_SEVERITY)) indexOfWithId:[((CucumberApiResult *) nil_chk(stepResult)) getStatus]];
+  for (CCBResult * __strong stepResult in nil_chk(stepResults_)) {
+    jint currentPos = [((id<JavaUtilList>) nil_chk(CCBRScenarioImpl_SEVERITY)) indexOfWithId:[((CCBResult *) nil_chk(stepResult)) getStatus]];
     if (currentPos > maxPos) {
       maxPos = currentPos;
       error = [stepResult getError];
@@ -148,7 +148,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeScenarioImpl)
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 1, 2, -1, -1, -1, -1 },
     { NULL, "LJavaUtilCollection;", 0x1, -1, -1, -1, 3, -1, -1 },
-    { NULL, "LCucumberApiResult_Type;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCCBResult_Type;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 4, 5, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 6, 7, -1, -1, -1, -1 },
@@ -162,7 +162,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeScenarioImpl)
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCucumberRunnerEventBus:withGherkinEventsPickleEvent:);
-  methods[1].selector = @selector(addWithCucumberApiResult:);
+  methods[1].selector = @selector(addWithCCBResult:);
   methods[2].selector = @selector(getSourceTagNames);
   methods[3].selector = @selector(getStatus);
   methods[4].selector = @selector(isFailed);
@@ -184,21 +184,21 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeScenarioImpl)
     { "scenarioLines_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 13, -1 },
     { "bus_", "LCucumberRunnerEventBus;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCucumberRunnerEventBus;LGherkinEventsPickleEvent;", "add", "LCucumberApiResult;", "()Ljava/util/Collection<Ljava/lang/String;>;", "embed", "[BLNSString;", "write", "LNSString;", "()Ljava/util/List<Ljava/lang/Integer;>;", &CucumberRuntimeScenarioImpl_SEVERITY, "Ljava/util/List<Lcucumber/api/Result$Type;>;", "Ljava/util/List<Lcucumber/api/Result;>;", "Ljava/util/List<Lgherkin/pickles/PickleTag;>;", "Ljava/util/List<Ljava/lang/Integer;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeScenarioImpl = { "ScenarioImpl", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 12, 8, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeScenarioImpl;
+  static const void *ptrTable[] = { "LCucumberRunnerEventBus;LGherkinEventsPickleEvent;", "add", "LCCBResult;", "()Ljava/util/Collection<Ljava/lang/String;>;", "embed", "[BLNSString;", "write", "LNSString;", "()Ljava/util/List<Ljava/lang/Integer;>;", &CCBRScenarioImpl_SEVERITY, "Ljava/util/List<Lcucumber/api/Result$Type;>;", "Ljava/util/List<Lcucumber/api/Result;>;", "Ljava/util/List<Lgherkin/pickles/PickleTag;>;", "Ljava/util/List<Ljava/lang/Integer;>;" };
+  static const J2ObjcClassInfo _CCBRScenarioImpl = { "ScenarioImpl", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 12, 8, -1, -1, -1, -1, -1 };
+  return &_CCBRScenarioImpl;
 }
 
 + (void)initialize {
-  if (self == [CucumberRuntimeScenarioImpl class]) {
-    JreStrongAssign(&CucumberRuntimeScenarioImpl_SEVERITY, JavaUtilArrays_asListWithNSObjectArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(CucumberApiResult_Type, PASSED), JreLoadEnum(CucumberApiResult_Type, SKIPPED), JreLoadEnum(CucumberApiResult_Type, PENDING), JreLoadEnum(CucumberApiResult_Type, UNDEFINED), JreLoadEnum(CucumberApiResult_Type, AMBIGUOUS), JreLoadEnum(CucumberApiResult_Type, FAILED) } count:6 type:CucumberApiResult_Type_class_()]));
-    J2OBJC_SET_INITIALIZED(CucumberRuntimeScenarioImpl)
+  if (self == [CCBRScenarioImpl class]) {
+    JreStrongAssign(&CCBRScenarioImpl_SEVERITY, JavaUtilArrays_asListWithNSObjectArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(CCBResult_Type, PASSED), JreLoadEnum(CCBResult_Type, SKIPPED), JreLoadEnum(CCBResult_Type, PENDING), JreLoadEnum(CCBResult_Type, UNDEFINED), JreLoadEnum(CCBResult_Type, AMBIGUOUS), JreLoadEnum(CCBResult_Type, FAILED) } count:6 type:CCBResult_Type_class_()]));
+    J2OBJC_SET_INITIALIZED(CCBRScenarioImpl)
   }
 }
 
 @end
 
-void CucumberRuntimeScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(CucumberRuntimeScenarioImpl *self, CucumberRunnerEventBus *bus, GherkinEventsPickleEvent *pickleEvent) {
+void CCBRScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(CCBRScenarioImpl *self, CucumberRunnerEventBus *bus, GherkinEventsPickleEvent *pickleEvent) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->stepResults_, new_JavaUtilArrayList_init());
   JreStrongAssign(&self->bus_, bus);
@@ -215,12 +215,12 @@ void CucumberRuntimeScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEvent
   JreStrongAssign(&self->scenarioLines_, JavaUtilCollections_unmodifiableListWithJavaUtilList_(lines));
 }
 
-CucumberRuntimeScenarioImpl *new_CucumberRuntimeScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(CucumberRunnerEventBus *bus, GherkinEventsPickleEvent *pickleEvent) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeScenarioImpl, initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_, bus, pickleEvent)
+CCBRScenarioImpl *new_CCBRScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(CucumberRunnerEventBus *bus, GherkinEventsPickleEvent *pickleEvent) {
+  J2OBJC_NEW_IMPL(CCBRScenarioImpl, initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_, bus, pickleEvent)
 }
 
-CucumberRuntimeScenarioImpl *create_CucumberRuntimeScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(CucumberRunnerEventBus *bus, GherkinEventsPickleEvent *pickleEvent) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeScenarioImpl, initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_, bus, pickleEvent)
+CCBRScenarioImpl *create_CCBRScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(CucumberRunnerEventBus *bus, GherkinEventsPickleEvent *pickleEvent) {
+  J2OBJC_CREATE_IMPL(CCBRScenarioImpl, initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_, bus, pickleEvent)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeScenarioImpl)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRScenarioImpl)

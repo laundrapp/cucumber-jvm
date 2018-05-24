@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaEoKomence_) && (INCLUDE_ALL_CucumberApiJavaEoKomence || defined(INCLUDE_CucumberApiJavaEoKomence))
-#define CucumberApiJavaEoKomence_
+#if !defined (CCBKomence_) && (INCLUDE_ALL_CucumberApiJavaEoKomence || defined(INCLUDE_CCBKomence))
+#define CCBKomence_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaEoKomence < JavaLangAnnotationAnnotation >
+@protocol CCBKomence < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaEoKomence : NSObject < CucumberApiJavaEoKomence > {
+@interface CCBKomence : NSObject < CCBKomence > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEoKomence)
+J2OBJC_EMPTY_STATIC_INIT(CCBKomence)
 
-FOUNDATION_EXPORT id<CucumberApiJavaEoKomence> create_CucumberApiJavaEoKomence(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBKomence> create_CCBKomence(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEoKomence)
+J2OBJC_TYPE_LITERAL_HEADER(CCBKomence)
+
+#define CucumberApiJavaEoKomence CCBKomence
 
 #endif
 

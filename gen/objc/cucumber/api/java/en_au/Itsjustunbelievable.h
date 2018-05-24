@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaEn_auItsjustunbelievable_) && (INCLUDE_ALL_CucumberApiJavaEn_auItsjustunbelievable || defined(INCLUDE_CucumberApiJavaEn_auItsjustunbelievable))
-#define CucumberApiJavaEn_auItsjustunbelievable_
+#if !defined (CCBItsjustunbelievable_) && (INCLUDE_ALL_CucumberApiJavaEn_auItsjustunbelievable || defined(INCLUDE_CCBItsjustunbelievable))
+#define CCBItsjustunbelievable_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaEn_auItsjustunbelievable < JavaLangAnnotationAnnotation >
+@protocol CCBItsjustunbelievable < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaEn_auItsjustunbelievable : NSObject < CucumberApiJavaEn_auItsjustunbelievable > {
+@interface CCBItsjustunbelievable : NSObject < CCBItsjustunbelievable > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEn_auItsjustunbelievable)
+J2OBJC_EMPTY_STATIC_INIT(CCBItsjustunbelievable)
 
-FOUNDATION_EXPORT id<CucumberApiJavaEn_auItsjustunbelievable> create_CucumberApiJavaEn_auItsjustunbelievable(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBItsjustunbelievable> create_CCBItsjustunbelievable(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEn_auItsjustunbelievable)
+J2OBJC_TYPE_LITERAL_HEADER(CCBItsjustunbelievable)
+
+#define CucumberApiJavaEn_auItsjustunbelievable CCBItsjustunbelievable
 
 #endif
 

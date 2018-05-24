@@ -18,12 +18,12 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeIoResource_) && (INCLUDE_ALL_CucumberRuntimeIoResource || defined(INCLUDE_CucumberRuntimeIoResource))
-#define CucumberRuntimeIoResource_
+#if !defined (CCBRResource_) && (INCLUDE_ALL_CucumberRuntimeIoResource || defined(INCLUDE_CCBRResource))
+#define CCBRResource_
 
 @class JavaIoInputStream;
 
-@protocol CucumberRuntimeIoResource < JavaObject >
+@protocol CCBRResource < JavaObject >
 
 - (NSString *)getPath;
 
@@ -35,9 +35,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoResource)
+J2OBJC_EMPTY_STATIC_INIT(CCBRResource)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoResource)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRResource)
+
+#define CucumberRuntimeIoResource CCBRResource
 
 #endif
 

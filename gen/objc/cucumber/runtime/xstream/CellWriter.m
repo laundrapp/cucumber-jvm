@@ -8,11 +8,11 @@
 #include "cucumber/runtime/xstream/CellWriter.h"
 #include "java/util/List.h"
 
-@implementation CucumberRuntimeXstreamCellWriter
+@implementation CCBRCellWriter
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeXstreamCellWriter_init(self);
+  CCBRCellWriter_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -43,14 +43,14 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[2].selector = @selector(getValues);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "()Ljava/util/List<Ljava/lang/String;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamCellWriter = { "CellWriter", "cucumber.runtime.xstream", ptrTable, methods, NULL, 7, 0x401, 3, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeXstreamCellWriter;
+  static const J2ObjcClassInfo _CCBRCellWriter = { "CellWriter", "cucumber.runtime.xstream", ptrTable, methods, NULL, 7, 0x401, 3, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRCellWriter;
 }
 
 @end
 
-void CucumberRuntimeXstreamCellWriter_init(CucumberRuntimeXstreamCellWriter *self) {
+void CCBRCellWriter_init(CCBRCellWriter *self) {
   CucumberDepsComThoughtworksXstreamIoAbstractWriter_init(self);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamCellWriter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRCellWriter)

@@ -15,9 +15,9 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *CucumberApiJavaEn_lolICANHAZ__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CCBICANHAZ__Annotations$0(void);
 
-@implementation CucumberApiJavaEn_lolICANHAZ
+@implementation CCBICANHAZ
 
 @synthesize value = value_;
 @synthesize timeout = timeout_;
@@ -27,7 +27,7 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiJavaEn_lolICANHAZ__Ann
 }
 
 - (IOSClass *)annotationType {
-  return CucumberApiJavaEn_lolICANHAZ_class_();
+  return CCBICANHAZ_class_();
 }
 
 - (NSString *)description {
@@ -62,22 +62,22 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiJavaEn_lolICANHAZ__Ann
     { "value_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "timeout_", "J", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&CucumberApiJavaEn_lolICANHAZ__Annotations$0 };
-  static const J2ObjcClassInfo _CucumberApiJavaEn_lolICANHAZ = { "ICANHAZ", "cucumber.api.java.en_lol", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
-  return &_CucumberApiJavaEn_lolICANHAZ;
+  static const void *ptrTable[] = { (void *)&CCBICANHAZ__Annotations$0 };
+  static const J2ObjcClassInfo _CCBICANHAZ = { "ICANHAZ", "cucumber.api.java.en_lol", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
+  return &_CCBICANHAZ;
 }
 
 @end
 
-id<CucumberApiJavaEn_lolICANHAZ> create_CucumberApiJavaEn_lolICANHAZ(jlong timeout, NSString *value) {
-  CucumberApiJavaEn_lolICANHAZ *self = AUTORELEASE([[CucumberApiJavaEn_lolICANHAZ alloc] init]);
+id<CCBICANHAZ> create_CCBICANHAZ(jlong timeout, NSString *value) {
+  CCBICANHAZ *self = AUTORELEASE([[CCBICANHAZ alloc] init]);
   self->timeout_ = timeout;
   self->value_ = RETAIN_(value);
   return self;
 }
 
-IOSObjectArray *CucumberApiJavaEn_lolICANHAZ__Annotations$0() {
-  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CucumberRuntimeJavaStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
+IOSObjectArray *CCBICANHAZ__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CCBStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiJavaEn_lolICANHAZ)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBICANHAZ)

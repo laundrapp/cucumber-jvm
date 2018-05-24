@@ -11,38 +11,38 @@
 #include "java/net/URISyntaxException.h"
 #include "java/net/URL.h"
 
-@interface CucumberRuntimeIoHelpers ()
+@interface CCBRHelpers ()
 
 - (instancetype __nonnull)init;
 
 @end
 
-__attribute__((unused)) static void CucumberRuntimeIoHelpers_init(CucumberRuntimeIoHelpers *self);
+__attribute__((unused)) static void CCBRHelpers_init(CCBRHelpers *self);
 
-__attribute__((unused)) static CucumberRuntimeIoHelpers *new_CucumberRuntimeIoHelpers_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRHelpers *new_CCBRHelpers_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeIoHelpers *create_CucumberRuntimeIoHelpers_init(void);
+__attribute__((unused)) static CCBRHelpers *create_CCBRHelpers_init(void);
 
-@implementation CucumberRuntimeIoHelpers
+@implementation CCBRHelpers
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeIoHelpers_init(self);
+  CCBRHelpers_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 + (jboolean)hasSuffixWithNSString:(NSString *)suffix
                      withNSString:(NSString *)name {
-  return CucumberRuntimeIoHelpers_hasSuffixWithNSString_withNSString_(suffix, name);
+  return CCBRHelpers_hasSuffixWithNSString_withNSString_(suffix, name);
 }
 
 + (NSString *)filePathWithJavaNetURL:(JavaNetURL *)fileUrl {
-  return CucumberRuntimeIoHelpers_filePathWithJavaNetURL_(fileUrl);
+  return CCBRHelpers_filePathWithJavaNetURL_(fileUrl);
 }
 
 + (NSString *)jarFilePathWithJavaNetURL:(JavaNetURL *)jarUrl {
-  return CucumberRuntimeIoHelpers_jarFilePathWithJavaNetURL_(jarUrl);
+  return CCBRHelpers_jarFilePathWithJavaNetURL_(jarUrl);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -61,56 +61,56 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[3].selector = @selector(jarFilePathWithJavaNetURL:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "hasSuffix", "LNSString;LNSString;", "filePath", "LJavaNetURL;", "jarFilePath" };
-  static const J2ObjcClassInfo _CucumberRuntimeIoHelpers = { "Helpers", "cucumber.runtime.io", ptrTable, methods, NULL, 7, 0x1, 4, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeIoHelpers;
+  static const J2ObjcClassInfo _CCBRHelpers = { "Helpers", "cucumber.runtime.io", ptrTable, methods, NULL, 7, 0x1, 4, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRHelpers;
 }
 
 @end
 
-void CucumberRuntimeIoHelpers_init(CucumberRuntimeIoHelpers *self) {
+void CCBRHelpers_init(CCBRHelpers *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeIoHelpers *new_CucumberRuntimeIoHelpers_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeIoHelpers, init)
+CCBRHelpers *new_CCBRHelpers_init() {
+  J2OBJC_NEW_IMPL(CCBRHelpers, init)
 }
 
-CucumberRuntimeIoHelpers *create_CucumberRuntimeIoHelpers_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeIoHelpers, init)
+CCBRHelpers *create_CCBRHelpers_init() {
+  J2OBJC_CREATE_IMPL(CCBRHelpers, init)
 }
 
-jboolean CucumberRuntimeIoHelpers_hasSuffixWithNSString_withNSString_(NSString *suffix, NSString *name) {
-  CucumberRuntimeIoHelpers_initialize();
+jboolean CCBRHelpers_hasSuffixWithNSString_withNSString_(NSString *suffix, NSString *name) {
+  CCBRHelpers_initialize();
   return suffix == nil || [((NSString *) nil_chk(name)) java_hasSuffix:suffix];
 }
 
-NSString *CucumberRuntimeIoHelpers_filePathWithJavaNetURL_(JavaNetURL *fileUrl) {
-  CucumberRuntimeIoHelpers_initialize();
+NSString *CCBRHelpers_filePathWithJavaNetURL_(JavaNetURL *fileUrl) {
+  CCBRHelpers_initialize();
   if (![@"file" isEqual:[((JavaNetURL *) nil_chk(fileUrl)) getProtocol]]) {
-    @throw create_CucumberRuntimeCucumberException_initWithNSString_(JreStrcat("$$", @"Expected a file URL:", [fileUrl toExternalForm]));
+    @throw create_CCBRCucumberException_initWithNSString_(JreStrcat("$$", @"Expected a file URL:", [fileUrl toExternalForm]));
   }
   @try {
     return [((JavaNetURI *) nil_chk([fileUrl toURI])) getSchemeSpecificPart];
   }
   @catch (JavaNetURISyntaxException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithJavaLangThrowable_(e);
+    @throw create_CCBRCucumberException_initWithJavaLangThrowable_(e);
   }
 }
 
-NSString *CucumberRuntimeIoHelpers_jarFilePathWithJavaNetURL_(JavaNetURL *jarUrl) {
-  CucumberRuntimeIoHelpers_initialize();
+NSString *CCBRHelpers_jarFilePathWithJavaNetURL_(JavaNetURL *jarUrl) {
+  CCBRHelpers_initialize();
   NSString *urlFile = [((JavaNetURL *) nil_chk(jarUrl)) getFile];
   jint separatorIndex = [((NSString *) nil_chk(urlFile)) java_indexOfString:@"!/"];
   if (separatorIndex == -1) {
-    @throw create_CucumberRuntimeCucumberException_initWithNSString_(JreStrcat("$$", @"Expected a jar URL: ", [jarUrl toExternalForm]));
+    @throw create_CCBRCucumberException_initWithNSString_(JreStrcat("$$", @"Expected a jar URL: ", [jarUrl toExternalForm]));
   }
   @try {
     JavaNetURL *fileUrl = create_JavaNetURL_initWithNSString_([urlFile java_substring:0 endIndex:separatorIndex]);
-    return CucumberRuntimeIoHelpers_filePathWithJavaNetURL_(fileUrl);
+    return CCBRHelpers_filePathWithJavaNetURL_(fileUrl);
   }
   @catch (JavaNetMalformedURLException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithJavaLangThrowable_(e);
+    @throw create_CCBRCucumberException_initWithJavaLangThrowable_(e);
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoHelpers)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRHelpers)

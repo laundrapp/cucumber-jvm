@@ -18,17 +18,17 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeTableDiffTablePrinter_) && (INCLUDE_ALL_CucumberRuntimeTableDiffTablePrinter || defined(INCLUDE_CucumberRuntimeTableDiffTablePrinter))
-#define CucumberRuntimeTableDiffTablePrinter_
+#if !defined (CCBRDiffTablePrinter_) && (INCLUDE_ALL_CucumberRuntimeTableDiffTablePrinter || defined(INCLUDE_CCBRDiffTablePrinter))
+#define CCBRDiffTablePrinter_
 
 #define RESTRICT_CucumberRuntimeTableTablePrinter 1
-#define INCLUDE_CucumberRuntimeTableTablePrinter 1
+#define INCLUDE_CCBRTablePrinter 1
 #include "cucumber/runtime/table/TablePrinter.h"
 
 @class JavaLangStringBuilder;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeTableDiffTablePrinter : CucumberRuntimeTableTablePrinter
+@interface CCBRDiffTablePrinter : CCBRTablePrinter
 
 #pragma mark Public
 
@@ -45,15 +45,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeTableDiffTablePrinter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRDiffTablePrinter)
 
-FOUNDATION_EXPORT void CucumberRuntimeTableDiffTablePrinter_initWithJavaUtilList_(CucumberRuntimeTableDiffTablePrinter *self, id<JavaUtilList> diffTypes);
+FOUNDATION_EXPORT void CCBRDiffTablePrinter_initWithJavaUtilList_(CCBRDiffTablePrinter *self, id<JavaUtilList> diffTypes);
 
-FOUNDATION_EXPORT CucumberRuntimeTableDiffTablePrinter *new_CucumberRuntimeTableDiffTablePrinter_initWithJavaUtilList_(id<JavaUtilList> diffTypes) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRDiffTablePrinter *new_CCBRDiffTablePrinter_initWithJavaUtilList_(id<JavaUtilList> diffTypes) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeTableDiffTablePrinter *create_CucumberRuntimeTableDiffTablePrinter_initWithJavaUtilList_(id<JavaUtilList> diffTypes);
+FOUNDATION_EXPORT CCBRDiffTablePrinter *create_CCBRDiffTablePrinter_initWithJavaUtilList_(id<JavaUtilList> diffTypes);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTableDiffTablePrinter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRDiffTablePrinter)
+
+@compatibility_alias CucumberRuntimeTableDiffTablePrinter CCBRDiffTablePrinter;
 
 #endif
 

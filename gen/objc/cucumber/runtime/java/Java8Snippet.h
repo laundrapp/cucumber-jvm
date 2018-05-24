@@ -18,16 +18,16 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeJavaJava8Snippet_) && (INCLUDE_ALL_CucumberRuntimeJavaJava8Snippet || defined(INCLUDE_CucumberRuntimeJavaJava8Snippet))
-#define CucumberRuntimeJavaJava8Snippet_
+#if !defined (CCBJava8Snippet_) && (INCLUDE_ALL_CucumberRuntimeJavaJava8Snippet || defined(INCLUDE_CCBJava8Snippet))
+#define CCBJava8Snippet_
 
 #define RESTRICT_CucumberRuntimeJavaAbstractJavaSnippet 1
-#define INCLUDE_CucumberRuntimeJavaAbstractJavaSnippet 1
+#define INCLUDE_CCBAbstractJavaSnippet 1
 #include "cucumber/runtime/java/AbstractJavaSnippet.h"
 
 @class IOSClass;
 
-@interface CucumberRuntimeJavaJava8Snippet : CucumberRuntimeJavaAbstractJavaSnippet
+@interface CCBJava8Snippet : CCBAbstractJavaSnippet
 
 #pragma mark Public
 
@@ -43,15 +43,17 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeJavaJava8Snippet)
+J2OBJC_STATIC_INIT(CCBJava8Snippet)
 
-FOUNDATION_EXPORT void CucumberRuntimeJavaJava8Snippet_init(CucumberRuntimeJavaJava8Snippet *self);
+FOUNDATION_EXPORT void CCBJava8Snippet_init(CCBJava8Snippet *self);
 
-FOUNDATION_EXPORT CucumberRuntimeJavaJava8Snippet *new_CucumberRuntimeJavaJava8Snippet_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBJava8Snippet *new_CCBJava8Snippet_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeJavaJava8Snippet *create_CucumberRuntimeJavaJava8Snippet_init(void);
+FOUNDATION_EXPORT CCBJava8Snippet *create_CCBJava8Snippet_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeJavaJava8Snippet)
+J2OBJC_TYPE_LITERAL_HEADER(CCBJava8Snippet)
+
+@compatibility_alias CucumberRuntimeJavaJava8Snippet CCBJava8Snippet;
 
 #endif
 

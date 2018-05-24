@@ -18,11 +18,11 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamDynamicEnumConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamDynamicEnumConverter || defined(INCLUDE_CucumberRuntimeXstreamDynamicEnumConverter))
-#define CucumberRuntimeXstreamDynamicEnumConverter_
+#if !defined (CCBRDynamicEnumConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamDynamicEnumConverter || defined(INCLUDE_CCBRDynamicEnumConverter))
+#define CCBRDynamicEnumConverter_
 
 #define RESTRICT_CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter 1
-#define INCLUDE_CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter 1
+#define INCLUDE_CCBRDynamicClassBasedSingleValueConverter 1
 #include "cucumber/runtime/xstream/DynamicClassBasedSingleValueConverter.h"
 
 @class CucumberDepsComThoughtworksXstreamConvertersSingleValueConverterWrapper;
@@ -32,7 +32,7 @@
 /*!
  @brief Creates an instance of needed <code>cucumber.runtime.xstream.ConverterWithEnumFormat</code> dynamically based on required type
  */
-@interface CucumberRuntimeXstreamDynamicEnumConverter : CucumberRuntimeXstreamDynamicClassBasedSingleValueConverter
+@interface CCBRDynamicEnumConverter : CCBRDynamicClassBasedSingleValueConverter
 
 #pragma mark Public
 
@@ -50,15 +50,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamDynamicEnumConverter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRDynamicEnumConverter)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamDynamicEnumConverter_initWithJavaUtilLocale_(CucumberRuntimeXstreamDynamicEnumConverter *self, JavaUtilLocale *locale);
+FOUNDATION_EXPORT void CCBRDynamicEnumConverter_initWithJavaUtilLocale_(CCBRDynamicEnumConverter *self, JavaUtilLocale *locale);
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamDynamicEnumConverter *new_CucumberRuntimeXstreamDynamicEnumConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRDynamicEnumConverter *new_CCBRDynamicEnumConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamDynamicEnumConverter *create_CucumberRuntimeXstreamDynamicEnumConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale);
+FOUNDATION_EXPORT CCBRDynamicEnumConverter *create_CCBRDynamicEnumConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamDynamicEnumConverter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRDynamicEnumConverter)
+
+@compatibility_alias CucumberRuntimeXstreamDynamicEnumConverter CCBRDynamicEnumConverter;
 
 #endif
 

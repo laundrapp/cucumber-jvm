@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/runtime/Glue.h"
 
-@interface CucumberRuntimeGlue : NSObject
+@interface CCBRGlue : NSObject
 
 @end
 
-@implementation CucumberRuntimeGlue
+@implementation CCBRGlue
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -19,27 +19,27 @@
     { NULL, "V", 0x401, 5, 4, -1, -1, -1, -1 },
     { NULL, "LJavaUtilList;", 0x401, -1, -1, -1, 6, -1, -1 },
     { NULL, "LJavaUtilList;", 0x401, -1, -1, -1, 6, -1, -1 },
-    { NULL, "LCucumberRuntimeStepDefinitionMatch;", 0x401, 7, 8, -1, -1, -1, -1 },
+    { NULL, "LCCBRStepDefinitionMatch;", 0x401, 7, 8, -1, -1, -1, -1 },
     { NULL, "V", 0x401, 9, 10, -1, -1, -1, -1 },
     { NULL, "V", 0x401, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(addStepDefinitionWithCucumberRuntimeStepDefinition:);
-  methods[1].selector = @selector(addBeforeHookWithCucumberRuntimeHookDefinition:);
-  methods[2].selector = @selector(addAfterHookWithCucumberRuntimeHookDefinition:);
+  methods[0].selector = @selector(addStepDefinitionWithCCBRStepDefinition:);
+  methods[1].selector = @selector(addBeforeHookWithCCBRHookDefinition:);
+  methods[2].selector = @selector(addAfterHookWithCCBRHookDefinition:);
   methods[3].selector = @selector(getBeforeHooks);
   methods[4].selector = @selector(getAfterHooks);
   methods[5].selector = @selector(stepDefinitionMatchWithNSString:withGherkinPicklesPickleStep:);
-  methods[6].selector = @selector(reportStepDefinitionsWithCucumberApiStepDefinitionReporter:);
+  methods[6].selector = @selector(reportStepDefinitionsWithCCBStepDefinitionReporter:);
   methods[7].selector = @selector(removeScenarioScopedGlue);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "addStepDefinition", "LCucumberRuntimeStepDefinition;", "LCucumberRuntimeDuplicateStepDefinitionException;", "addBeforeHook", "LCucumberRuntimeHookDefinition;", "addAfterHook", "()Ljava/util/List<Lcucumber/runtime/HookDefinition;>;", "stepDefinitionMatch", "LNSString;LGherkinPicklesPickleStep;", "reportStepDefinitions", "LCucumberApiStepDefinitionReporter;" };
-  static const J2ObjcClassInfo _CucumberRuntimeGlue = { "Glue", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 8, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeGlue;
+  static const void *ptrTable[] = { "addStepDefinition", "LCCBRStepDefinition;", "LCCBRDuplicateStepDefinitionException;", "addBeforeHook", "LCCBRHookDefinition;", "addAfterHook", "()Ljava/util/List<Lcucumber/runtime/HookDefinition;>;", "stepDefinitionMatch", "LNSString;LGherkinPicklesPickleStep;", "reportStepDefinitions", "LCCBStepDefinitionReporter;" };
+  static const J2ObjcClassInfo _CCBRGlue = { "Glue", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 8, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRGlue;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRuntimeGlue)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBRGlue)

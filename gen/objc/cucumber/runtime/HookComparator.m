@@ -14,24 +14,24 @@
 
 #pragma clang diagnostic ignored "-Wprotocol"
 
-@interface CucumberRuntimeHookComparator () {
+@interface CCBRHookComparator () {
  @public
   jboolean ascending_;
 }
 
 @end
 
-@implementation CucumberRuntimeHookComparator
+@implementation CCBRHookComparator
 
 - (instancetype __nonnull)initWithBoolean:(jboolean)ascending {
-  CucumberRuntimeHookComparator_initWithBoolean_(self, ascending);
+  CCBRHookComparator_initWithBoolean_(self, ascending);
   return self;
 }
 
-- (jint)compareWithId:(id<CucumberRuntimeHookDefinition>)hook1
-               withId:(id<CucumberRuntimeHookDefinition>)hook2 {
-  jint x = [((id<CucumberRuntimeHookDefinition>) nil_chk(hook1)) getOrder];
-  jint y = [((id<CucumberRuntimeHookDefinition>) nil_chk(hook2)) getOrder];
+- (jint)compareWithId:(id<CCBRHookDefinition>)hook1
+               withId:(id<CCBRHookDefinition>)hook2 {
+  jint x = [((id<CCBRHookDefinition>) nil_chk(hook1)) getOrder];
+  jint y = [((id<CCBRHookDefinition>) nil_chk(hook2)) getOrder];
   jint comparison = (x < y) ? -1 : ((x == y) ? 0 : 1);
   return ascending_ ? comparison : -comparison;
 }
@@ -79,24 +79,24 @@
   static const J2ObjcFieldInfo fields[] = {
     { "ascending_", "Z", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "Z", "compare", "LCucumberRuntimeHookDefinition;LCucumberRuntimeHookDefinition;", "Ljava/lang/Object;Ljava/util/Comparator<Lcucumber/runtime/HookDefinition;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeHookComparator = { "HookComparator", "cucumber.runtime", ptrTable, methods, fields, 7, 0x0, 2, 1, -1, -1, -1, 3, -1 };
-  return &_CucumberRuntimeHookComparator;
+  static const void *ptrTable[] = { "Z", "compare", "LCCBRHookDefinition;LCCBRHookDefinition;", "Ljava/lang/Object;Ljava/util/Comparator<Lcucumber/runtime/HookDefinition;>;" };
+  static const J2ObjcClassInfo _CCBRHookComparator = { "HookComparator", "cucumber.runtime", ptrTable, methods, fields, 7, 0x0, 2, 1, -1, -1, -1, 3, -1 };
+  return &_CCBRHookComparator;
 }
 
 @end
 
-void CucumberRuntimeHookComparator_initWithBoolean_(CucumberRuntimeHookComparator *self, jboolean ascending) {
+void CCBRHookComparator_initWithBoolean_(CCBRHookComparator *self, jboolean ascending) {
   NSObject_init(self);
   self->ascending_ = ascending;
 }
 
-CucumberRuntimeHookComparator *new_CucumberRuntimeHookComparator_initWithBoolean_(jboolean ascending) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeHookComparator, initWithBoolean_, ascending)
+CCBRHookComparator *new_CCBRHookComparator_initWithBoolean_(jboolean ascending) {
+  J2OBJC_NEW_IMPL(CCBRHookComparator, initWithBoolean_, ascending)
 }
 
-CucumberRuntimeHookComparator *create_CucumberRuntimeHookComparator_initWithBoolean_(jboolean ascending) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeHookComparator, initWithBoolean_, ascending)
+CCBRHookComparator *create_CCBRHookComparator_initWithBoolean_(jboolean ascending) {
+  J2OBJC_CREATE_IMPL(CCBRHookComparator, initWithBoolean_, ascending)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeHookComparator)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRHookComparator)

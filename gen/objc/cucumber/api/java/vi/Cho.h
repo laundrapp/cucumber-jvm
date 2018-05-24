@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaViCho_) && (INCLUDE_ALL_CucumberApiJavaViCho || defined(INCLUDE_CucumberApiJavaViCho))
-#define CucumberApiJavaViCho_
+#if !defined (CCBCho_) && (INCLUDE_ALL_CucumberApiJavaViCho || defined(INCLUDE_CCBCho))
+#define CCBCho_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaViCho < JavaLangAnnotationAnnotation >
+@protocol CCBCho < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaViCho : NSObject < CucumberApiJavaViCho > {
+@interface CCBCho : NSObject < CCBCho > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaViCho)
+J2OBJC_EMPTY_STATIC_INIT(CCBCho)
 
-FOUNDATION_EXPORT id<CucumberApiJavaViCho> create_CucumberApiJavaViCho(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBCho> create_CCBCho(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaViCho)
+J2OBJC_TYPE_LITERAL_HEADER(CCBCho)
+
+#define CucumberApiJavaViCho CCBCho
 
 #endif
 

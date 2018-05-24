@@ -18,13 +18,13 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeClassFinder_) && (INCLUDE_ALL_CucumberRuntimeClassFinder || defined(INCLUDE_CucumberRuntimeClassFinder))
-#define CucumberRuntimeClassFinder_
+#if !defined (CCBRClassFinder_) && (INCLUDE_ALL_CucumberRuntimeClassFinder || defined(INCLUDE_CCBRClassFinder))
+#define CCBRClassFinder_
 
 @class IOSClass;
 @protocol JavaUtilCollection;
 
-@protocol CucumberRuntimeClassFinder < JavaObject >
+@protocol CCBRClassFinder < JavaObject >
 
 - (id<JavaUtilCollection>)getDescendantsWithIOSClass:(IOSClass *)parentType
                                         withNSString:(NSString *)packageName;
@@ -33,9 +33,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeClassFinder)
+J2OBJC_EMPTY_STATIC_INIT(CCBRClassFinder)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeClassFinder)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRClassFinder)
+
+#define CucumberRuntimeClassFinder CCBRClassFinder
 
 #endif
 

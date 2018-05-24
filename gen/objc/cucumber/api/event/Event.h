@@ -18,20 +18,22 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiEventEvent_) && (INCLUDE_ALL_CucumberApiEventEvent || defined(INCLUDE_CucumberApiEventEvent))
-#define CucumberApiEventEvent_
+#if !defined (CCBEvent_) && (INCLUDE_ALL_CucumberApiEventEvent || defined(INCLUDE_CCBEvent))
+#define CCBEvent_
 
 @class JavaLangLong;
 
-@protocol CucumberApiEventEvent < JavaObject >
+@protocol CCBEvent < JavaObject >
 
 - (JavaLangLong *)getTimeStamp;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiEventEvent)
+J2OBJC_EMPTY_STATIC_INIT(CCBEvent)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventEvent)
+J2OBJC_TYPE_LITERAL_HEADER(CCBEvent)
+
+#define CucumberApiEventEvent CCBEvent
 
 #endif
 

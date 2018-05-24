@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamPatternConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamPatternConverter || defined(INCLUDE_CucumberRuntimeXstreamPatternConverter))
-#define CucumberRuntimeXstreamPatternConverter_
+#if !defined (CCBRPatternConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamPatternConverter || defined(INCLUDE_CCBRPatternConverter))
+#define CCBRPatternConverter_
 
 #define RESTRICT_CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter 1
 #define INCLUDE_CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter 1
@@ -42,7 +42,7 @@
       <li>c : CANON_EQ</li>
   </ul>
  */
-@interface CucumberRuntimeXstreamPatternConverter : NSObject < CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter >
+@interface CCBRPatternConverter : NSObject < CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter >
 
 #pragma mark Public
 
@@ -56,15 +56,17 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeXstreamPatternConverter)
+J2OBJC_STATIC_INIT(CCBRPatternConverter)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamPatternConverter_init(CucumberRuntimeXstreamPatternConverter *self);
+FOUNDATION_EXPORT void CCBRPatternConverter_init(CCBRPatternConverter *self);
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamPatternConverter *new_CucumberRuntimeXstreamPatternConverter_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRPatternConverter *new_CCBRPatternConverter_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamPatternConverter *create_CucumberRuntimeXstreamPatternConverter_init(void);
+FOUNDATION_EXPORT CCBRPatternConverter *create_CCBRPatternConverter_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamPatternConverter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRPatternConverter)
+
+@compatibility_alias CucumberRuntimeXstreamPatternConverter CCBRPatternConverter;
 
 #endif
 

@@ -18,16 +18,16 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamComplexTypeWriter_) && (INCLUDE_ALL_CucumberRuntimeXstreamComplexTypeWriter || defined(INCLUDE_CucumberRuntimeXstreamComplexTypeWriter))
-#define CucumberRuntimeXstreamComplexTypeWriter_
+#if !defined (CCBRComplexTypeWriter_) && (INCLUDE_ALL_CucumberRuntimeXstreamComplexTypeWriter || defined(INCLUDE_CCBRComplexTypeWriter))
+#define CCBRComplexTypeWriter_
 
 #define RESTRICT_CucumberRuntimeXstreamCellWriter 1
-#define INCLUDE_CucumberRuntimeXstreamCellWriter 1
+#define INCLUDE_CCBRCellWriter 1
 #include "cucumber/runtime/xstream/CellWriter.h"
 
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeXstreamComplexTypeWriter : CucumberRuntimeXstreamCellWriter
+@interface CCBRComplexTypeWriter : CCBRCellWriter
 
 #pragma mark Public
 
@@ -56,15 +56,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamComplexTypeWriter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRComplexTypeWriter)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamComplexTypeWriter_initWithJavaUtilList_(CucumberRuntimeXstreamComplexTypeWriter *self, id<JavaUtilList> columnNames);
+FOUNDATION_EXPORT void CCBRComplexTypeWriter_initWithJavaUtilList_(CCBRComplexTypeWriter *self, id<JavaUtilList> columnNames);
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamComplexTypeWriter *new_CucumberRuntimeXstreamComplexTypeWriter_initWithJavaUtilList_(id<JavaUtilList> columnNames) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRComplexTypeWriter *new_CCBRComplexTypeWriter_initWithJavaUtilList_(id<JavaUtilList> columnNames) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamComplexTypeWriter *create_CucumberRuntimeXstreamComplexTypeWriter_initWithJavaUtilList_(id<JavaUtilList> columnNames);
+FOUNDATION_EXPORT CCBRComplexTypeWriter *create_CCBRComplexTypeWriter_initWithJavaUtilList_(id<JavaUtilList> columnNames);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamComplexTypeWriter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRComplexTypeWriter)
+
+@compatibility_alias CucumberRuntimeXstreamComplexTypeWriter CCBRComplexTypeWriter;
 
 #endif
 

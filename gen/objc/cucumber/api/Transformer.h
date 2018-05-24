@@ -18,14 +18,14 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiTransformer_) && (INCLUDE_ALL_CucumberApiTransformer || defined(INCLUDE_CucumberApiTransformer))
-#define CucumberApiTransformer_
+#if !defined (CCBTransformer_) && (INCLUDE_ALL_CucumberApiTransformer || defined(INCLUDE_CCBTransformer))
+#define CCBTransformer_
 
 #define RESTRICT_CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter 1
 #define INCLUDE_CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter 1
 #include "cucumber/deps/com/thoughtworks/xstream/converters/SingleValueConverter.h"
 
-@class CucumberRuntimeParameterInfo;
+@class CCBRParameterInfo;
 @class IOSClass;
 @class JavaUtilLocale;
 
@@ -98,7 +98,7 @@ Given today's date is "10/03/1985"
   </p>
  - seealso: Transform
  */
-@interface CucumberApiTransformer : NSObject < CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter >
+@interface CCBTransformer : NSObject < CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter >
 
 #pragma mark Public
 
@@ -108,8 +108,8 @@ Given today's date is "10/03/1985"
 
 - (id)fromStringWithNSString:(NSString *)s;
 
-- (void)setParameterInfoAndLocaleWithCucumberRuntimeParameterInfo:(CucumberRuntimeParameterInfo *)parameterInfo
-                                               withJavaUtilLocale:(JavaUtilLocale *)locale;
+- (void)setParameterInfoAndLocaleWithCCBRParameterInfo:(CCBRParameterInfo *)parameterInfo
+                                    withJavaUtilLocale:(JavaUtilLocale *)locale;
 
 - (NSString *)toStringWithId:(id)o;
 
@@ -124,11 +124,13 @@ Given today's date is "10/03/1985"
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiTransformer)
+J2OBJC_EMPTY_STATIC_INIT(CCBTransformer)
 
-FOUNDATION_EXPORT void CucumberApiTransformer_init(CucumberApiTransformer *self);
+FOUNDATION_EXPORT void CCBTransformer_init(CCBTransformer *self);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiTransformer)
+J2OBJC_TYPE_LITERAL_HEADER(CCBTransformer)
+
+@compatibility_alias CucumberApiTransformer CCBTransformer;
 
 #endif
 

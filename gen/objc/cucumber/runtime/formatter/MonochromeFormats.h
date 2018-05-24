@@ -18,36 +18,38 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeFormatterMonochromeFormats_) && (INCLUDE_ALL_CucumberRuntimeFormatterMonochromeFormats || defined(INCLUDE_CucumberRuntimeFormatterMonochromeFormats))
-#define CucumberRuntimeFormatterMonochromeFormats_
+#if !defined (CCBRMonochromeFormats_) && (INCLUDE_ALL_CucumberRuntimeFormatterMonochromeFormats || defined(INCLUDE_CCBRMonochromeFormats))
+#define CCBRMonochromeFormats_
 
 #define RESTRICT_CucumberRuntimeFormatterFormats 1
-#define INCLUDE_CucumberRuntimeFormatterFormats 1
+#define INCLUDE_CCBRFormats 1
 #include "cucumber/runtime/formatter/Formats.h"
 
-@protocol CucumberRuntimeFormatterFormat;
+@protocol CCBRFormat;
 
-@interface CucumberRuntimeFormatterMonochromeFormats : NSObject < CucumberRuntimeFormatterFormats >
+@interface CCBRMonochromeFormats : NSObject < CCBRFormats >
 
 #pragma mark Public
 
 - (instancetype __nonnull)init;
 
-- (id<CucumberRuntimeFormatterFormat>)getWithNSString:(NSString *)key;
+- (id<CCBRFormat>)getWithNSString:(NSString *)key;
 
 - (NSString *)upWithInt:(jint)n;
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeFormatterMonochromeFormats)
+J2OBJC_STATIC_INIT(CCBRMonochromeFormats)
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterMonochromeFormats_init(CucumberRuntimeFormatterMonochromeFormats *self);
+FOUNDATION_EXPORT void CCBRMonochromeFormats_init(CCBRMonochromeFormats *self);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterMonochromeFormats *new_CucumberRuntimeFormatterMonochromeFormats_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRMonochromeFormats *new_CCBRMonochromeFormats_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterMonochromeFormats *create_CucumberRuntimeFormatterMonochromeFormats_init(void);
+FOUNDATION_EXPORT CCBRMonochromeFormats *create_CCBRMonochromeFormats_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterMonochromeFormats)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRMonochromeFormats)
+
+@compatibility_alias CucumberRuntimeFormatterMonochromeFormats CCBRMonochromeFormats;
 
 #endif
 

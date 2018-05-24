@@ -18,27 +18,27 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeFormatterProgressFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterProgressFormatter || defined(INCLUDE_CucumberRuntimeFormatterProgressFormatter))
-#define CucumberRuntimeFormatterProgressFormatter_
+#if !defined (CCBRProgressFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterProgressFormatter || defined(INCLUDE_CCBRProgressFormatter))
+#define CCBRProgressFormatter_
 
 #define RESTRICT_CucumberApiFormatterFormatter 1
-#define INCLUDE_CucumberApiFormatterFormatter 1
+#define INCLUDE_CCBFormatter 1
 #include "cucumber/api/formatter/Formatter.h"
 
 #define RESTRICT_CucumberApiFormatterColorAware 1
-#define INCLUDE_CucumberApiFormatterColorAware 1
+#define INCLUDE_CCBColorAware 1
 #include "cucumber/api/formatter/ColorAware.h"
 
-@protocol CucumberApiEventEventPublisher;
+@protocol CCBEventPublisher;
 @protocol JavaLangAppendable;
 
-@interface CucumberRuntimeFormatterProgressFormatter : NSObject < CucumberApiFormatterFormatter, CucumberApiFormatterColorAware >
+@interface CCBRProgressFormatter : NSObject < CCBFormatter, CCBColorAware >
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)appendable;
 
-- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
+- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher;
 
 - (void)setMonochromeWithBoolean:(jboolean)monochrome;
 
@@ -48,15 +48,17 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeFormatterProgressFormatter)
+J2OBJC_STATIC_INIT(CCBRProgressFormatter)
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterProgressFormatter_initWithJavaLangAppendable_(CucumberRuntimeFormatterProgressFormatter *self, id<JavaLangAppendable> appendable);
+FOUNDATION_EXPORT void CCBRProgressFormatter_initWithJavaLangAppendable_(CCBRProgressFormatter *self, id<JavaLangAppendable> appendable);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterProgressFormatter *new_CucumberRuntimeFormatterProgressFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> appendable) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRProgressFormatter *new_CCBRProgressFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> appendable) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterProgressFormatter *create_CucumberRuntimeFormatterProgressFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> appendable);
+FOUNDATION_EXPORT CCBRProgressFormatter *create_CCBRProgressFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> appendable);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterProgressFormatter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRProgressFormatter)
+
+@compatibility_alias CucumberRuntimeFormatterProgressFormatter CCBRProgressFormatter;
 
 #endif
 

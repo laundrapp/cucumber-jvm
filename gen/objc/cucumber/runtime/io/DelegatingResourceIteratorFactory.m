@@ -13,46 +13,46 @@
 #include "java/util/Iterator.h"
 #include "java/util/ServiceLoader.h"
 
-@interface CucumberRuntimeIoDelegatingResourceIteratorFactory () {
+@interface CCBRDelegatingResourceIteratorFactory () {
  @public
   id<JavaLangIterable> delegates_;
-  id<CucumberRuntimeIoResourceIteratorFactory> fallbackResourceIteratorFactory_;
+  id<CCBRResourceIteratorFactory> fallbackResourceIteratorFactory_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoDelegatingResourceIteratorFactory, delegates_, id<JavaLangIterable>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoDelegatingResourceIteratorFactory, fallbackResourceIteratorFactory_, id<CucumberRuntimeIoResourceIteratorFactory>)
+J2OBJC_FIELD_SETTER(CCBRDelegatingResourceIteratorFactory, delegates_, id<JavaLangIterable>)
+J2OBJC_FIELD_SETTER(CCBRDelegatingResourceIteratorFactory, fallbackResourceIteratorFactory_, id<CCBRResourceIteratorFactory>)
 
-@implementation CucumberRuntimeIoDelegatingResourceIteratorFactory
+@implementation CCBRDelegatingResourceIteratorFactory
 
-- (instancetype __nonnull)initWithCucumberRuntimeIoResourceIteratorFactory:(id<CucumberRuntimeIoResourceIteratorFactory>)fallbackResourceIteratorFactory {
-  CucumberRuntimeIoDelegatingResourceIteratorFactory_initWithCucumberRuntimeIoResourceIteratorFactory_(self, fallbackResourceIteratorFactory);
+- (instancetype __nonnull)initWithCCBRResourceIteratorFactory:(id<CCBRResourceIteratorFactory>)fallbackResourceIteratorFactory {
+  CCBRDelegatingResourceIteratorFactory_initWithCCBRResourceIteratorFactory_(self, fallbackResourceIteratorFactory);
   return self;
 }
 
 - (jboolean)isFactoryForWithJavaNetURL:(JavaNetURL *)url {
-  for (id<CucumberRuntimeIoResourceIteratorFactory> __strong delegate in nil_chk(delegates_)) {
-    if ([((id<CucumberRuntimeIoResourceIteratorFactory>) nil_chk(delegate)) isFactoryForWithJavaNetURL:url]) {
+  for (id<CCBRResourceIteratorFactory> __strong delegate in nil_chk(delegates_)) {
+    if ([((id<CCBRResourceIteratorFactory>) nil_chk(delegate)) isFactoryForWithJavaNetURL:url]) {
       return true;
     }
   }
-  return [((id<CucumberRuntimeIoResourceIteratorFactory>) nil_chk(fallbackResourceIteratorFactory_)) isFactoryForWithJavaNetURL:url];
+  return [((id<CCBRResourceIteratorFactory>) nil_chk(fallbackResourceIteratorFactory_)) isFactoryForWithJavaNetURL:url];
 }
 
 - (id<JavaUtilIterator>)createIteratorWithJavaNetURL:(JavaNetURL *)url
                                         withNSString:(NSString *)path
                                         withNSString:(NSString *)suffix {
-  for (id<CucumberRuntimeIoResourceIteratorFactory> __strong delegate in nil_chk(delegates_)) {
-    if ([((id<CucumberRuntimeIoResourceIteratorFactory>) nil_chk(delegate)) isFactoryForWithJavaNetURL:url]) {
+  for (id<CCBRResourceIteratorFactory> __strong delegate in nil_chk(delegates_)) {
+    if ([((id<CCBRResourceIteratorFactory>) nil_chk(delegate)) isFactoryForWithJavaNetURL:url]) {
       return [delegate createIteratorWithJavaNetURL:url withNSString:path withNSString:suffix];
     }
   }
-  if ([((id<CucumberRuntimeIoResourceIteratorFactory>) nil_chk(fallbackResourceIteratorFactory_)) isFactoryForWithJavaNetURL:url]) {
+  if ([((id<CCBRResourceIteratorFactory>) nil_chk(fallbackResourceIteratorFactory_)) isFactoryForWithJavaNetURL:url]) {
     return [fallbackResourceIteratorFactory_ createIteratorWithJavaNetURL:url withNSString:path withNSString:suffix];
   }
   else {
-    @throw create_CucumberRuntimeCucumberException_initWithNSString_(JreStrcat("$@", @"Fallback factory cannot handle URL: ", url));
+    @throw create_CCBRCucumberException_initWithNSString_(JreStrcat("$@", @"Fallback factory cannot handle URL: ", url));
   }
 }
 
@@ -71,33 +71,33 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeIoDelegatingResourceIteratorFactory, fallback
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRuntimeIoResourceIteratorFactory:);
+  methods[0].selector = @selector(initWithCCBRResourceIteratorFactory:);
   methods[1].selector = @selector(isFactoryForWithJavaNetURL:);
   methods[2].selector = @selector(createIteratorWithJavaNetURL:withNSString:withNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "delegates_", "LJavaLangIterable;", .constantValue.asLong = 0, 0x12, -1, -1, 6, -1 },
-    { "fallbackResourceIteratorFactory_", "LCucumberRuntimeIoResourceIteratorFactory;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "fallbackResourceIteratorFactory_", "LCCBRResourceIteratorFactory;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCucumberRuntimeIoResourceIteratorFactory;", "isFactoryFor", "LJavaNetURL;", "createIterator", "LJavaNetURL;LNSString;LNSString;", "(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;)Ljava/util/Iterator<Lcucumber/runtime/io/Resource;>;", "Ljava/lang/Iterable<Lcucumber/runtime/io/ResourceIteratorFactory;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeIoDelegatingResourceIteratorFactory = { "DelegatingResourceIteratorFactory", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 3, 2, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeIoDelegatingResourceIteratorFactory;
+  static const void *ptrTable[] = { "LCCBRResourceIteratorFactory;", "isFactoryFor", "LJavaNetURL;", "createIterator", "LJavaNetURL;LNSString;LNSString;", "(Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;)Ljava/util/Iterator<Lcucumber/runtime/io/Resource;>;", "Ljava/lang/Iterable<Lcucumber/runtime/io/ResourceIteratorFactory;>;" };
+  static const J2ObjcClassInfo _CCBRDelegatingResourceIteratorFactory = { "DelegatingResourceIteratorFactory", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 3, 2, -1, -1, -1, -1, -1 };
+  return &_CCBRDelegatingResourceIteratorFactory;
 }
 
 @end
 
-void CucumberRuntimeIoDelegatingResourceIteratorFactory_initWithCucumberRuntimeIoResourceIteratorFactory_(CucumberRuntimeIoDelegatingResourceIteratorFactory *self, id<CucumberRuntimeIoResourceIteratorFactory> fallbackResourceIteratorFactory) {
+void CCBRDelegatingResourceIteratorFactory_initWithCCBRResourceIteratorFactory_(CCBRDelegatingResourceIteratorFactory *self, id<CCBRResourceIteratorFactory> fallbackResourceIteratorFactory) {
   NSObject_init(self);
-  JreStrongAssign(&self->delegates_, JavaUtilServiceLoader_load__WithIOSClass_(CucumberRuntimeIoResourceIteratorFactory_class_()));
+  JreStrongAssign(&self->delegates_, JavaUtilServiceLoader_load__WithIOSClass_(CCBRResourceIteratorFactory_class_()));
   JreStrongAssign(&self->fallbackResourceIteratorFactory_, fallbackResourceIteratorFactory);
 }
 
-CucumberRuntimeIoDelegatingResourceIteratorFactory *new_CucumberRuntimeIoDelegatingResourceIteratorFactory_initWithCucumberRuntimeIoResourceIteratorFactory_(id<CucumberRuntimeIoResourceIteratorFactory> fallbackResourceIteratorFactory) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeIoDelegatingResourceIteratorFactory, initWithCucumberRuntimeIoResourceIteratorFactory_, fallbackResourceIteratorFactory)
+CCBRDelegatingResourceIteratorFactory *new_CCBRDelegatingResourceIteratorFactory_initWithCCBRResourceIteratorFactory_(id<CCBRResourceIteratorFactory> fallbackResourceIteratorFactory) {
+  J2OBJC_NEW_IMPL(CCBRDelegatingResourceIteratorFactory, initWithCCBRResourceIteratorFactory_, fallbackResourceIteratorFactory)
 }
 
-CucumberRuntimeIoDelegatingResourceIteratorFactory *create_CucumberRuntimeIoDelegatingResourceIteratorFactory_initWithCucumberRuntimeIoResourceIteratorFactory_(id<CucumberRuntimeIoResourceIteratorFactory> fallbackResourceIteratorFactory) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeIoDelegatingResourceIteratorFactory, initWithCucumberRuntimeIoResourceIteratorFactory_, fallbackResourceIteratorFactory)
+CCBRDelegatingResourceIteratorFactory *create_CCBRDelegatingResourceIteratorFactory_initWithCCBRResourceIteratorFactory_(id<CCBRResourceIteratorFactory> fallbackResourceIteratorFactory) {
+  J2OBJC_CREATE_IMPL(CCBRDelegatingResourceIteratorFactory, initWithCCBRResourceIteratorFactory_, fallbackResourceIteratorFactory)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoDelegatingResourceIteratorFactory)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRDelegatingResourceIteratorFactory)

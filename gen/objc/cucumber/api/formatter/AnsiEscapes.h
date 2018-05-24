@@ -18,23 +18,23 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiFormatterAnsiEscapes_) && (INCLUDE_ALL_CucumberApiFormatterAnsiEscapes || defined(INCLUDE_CucumberApiFormatterAnsiEscapes))
-#define CucumberApiFormatterAnsiEscapes_
+#if !defined (CCBAnsiEscapes_) && (INCLUDE_ALL_CucumberApiFormatterAnsiEscapes || defined(INCLUDE_CCBAnsiEscapes))
+#define CCBAnsiEscapes_
 
-@class CucumberApiFormatterNiceAppendable;
+@class CCBNiceAppendable;
 @class JavaLangStringBuilder;
 
-@interface CucumberApiFormatterAnsiEscapes : NSObject
+@interface CCBAnsiEscapes : NSObject
 
 #pragma mark Public
 
-- (void)appendToWithCucumberApiFormatterNiceAppendable:(CucumberApiFormatterNiceAppendable *)a;
+- (void)appendToWithCCBNiceAppendable:(CCBNiceAppendable *)a;
 
 - (void)appendToWithJavaLangStringBuilder:(JavaLangStringBuilder *)a;
 
 - (NSString *)description;
 
-+ (CucumberApiFormatterAnsiEscapes *)upWithInt:(jint)count;
++ (CCBAnsiEscapes *)upWithInt:(jint)count;
 
 // Disallowed inherited constructors, do not use.
 
@@ -42,83 +42,85 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberApiFormatterAnsiEscapes)
+J2OBJC_STATIC_INIT(CCBAnsiEscapes)
 
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_get_RESET(void);
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_set_RESET(CucumberApiFormatterAnsiEscapes *value);
+inline CCBAnsiEscapes *CCBAnsiEscapes_get_RESET(void);
+inline CCBAnsiEscapes *CCBAnsiEscapes_set_RESET(CCBAnsiEscapes *value);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_RESET;
-J2OBJC_STATIC_FIELD_OBJ(CucumberApiFormatterAnsiEscapes, RESET, CucumberApiFormatterAnsiEscapes *)
+FOUNDATION_EXPORT CCBAnsiEscapes *CCBAnsiEscapes_RESET;
+J2OBJC_STATIC_FIELD_OBJ(CCBAnsiEscapes, RESET, CCBAnsiEscapes *)
 
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_get_BLACK(void);
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_set_BLACK(CucumberApiFormatterAnsiEscapes *value);
+inline CCBAnsiEscapes *CCBAnsiEscapes_get_BLACK(void);
+inline CCBAnsiEscapes *CCBAnsiEscapes_set_BLACK(CCBAnsiEscapes *value);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_BLACK;
-J2OBJC_STATIC_FIELD_OBJ(CucumberApiFormatterAnsiEscapes, BLACK, CucumberApiFormatterAnsiEscapes *)
+FOUNDATION_EXPORT CCBAnsiEscapes *CCBAnsiEscapes_BLACK;
+J2OBJC_STATIC_FIELD_OBJ(CCBAnsiEscapes, BLACK, CCBAnsiEscapes *)
 
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_get_RED(void);
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_set_RED(CucumberApiFormatterAnsiEscapes *value);
+inline CCBAnsiEscapes *CCBAnsiEscapes_get_RED(void);
+inline CCBAnsiEscapes *CCBAnsiEscapes_set_RED(CCBAnsiEscapes *value);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_RED;
-J2OBJC_STATIC_FIELD_OBJ(CucumberApiFormatterAnsiEscapes, RED, CucumberApiFormatterAnsiEscapes *)
+FOUNDATION_EXPORT CCBAnsiEscapes *CCBAnsiEscapes_RED;
+J2OBJC_STATIC_FIELD_OBJ(CCBAnsiEscapes, RED, CCBAnsiEscapes *)
 
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_get_GREEN(void);
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_set_GREEN(CucumberApiFormatterAnsiEscapes *value);
+inline CCBAnsiEscapes *CCBAnsiEscapes_get_GREEN(void);
+inline CCBAnsiEscapes *CCBAnsiEscapes_set_GREEN(CCBAnsiEscapes *value);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_GREEN;
-J2OBJC_STATIC_FIELD_OBJ(CucumberApiFormatterAnsiEscapes, GREEN, CucumberApiFormatterAnsiEscapes *)
+FOUNDATION_EXPORT CCBAnsiEscapes *CCBAnsiEscapes_GREEN;
+J2OBJC_STATIC_FIELD_OBJ(CCBAnsiEscapes, GREEN, CCBAnsiEscapes *)
 
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_get_YELLOW(void);
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_set_YELLOW(CucumberApiFormatterAnsiEscapes *value);
+inline CCBAnsiEscapes *CCBAnsiEscapes_get_YELLOW(void);
+inline CCBAnsiEscapes *CCBAnsiEscapes_set_YELLOW(CCBAnsiEscapes *value);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_YELLOW;
-J2OBJC_STATIC_FIELD_OBJ(CucumberApiFormatterAnsiEscapes, YELLOW, CucumberApiFormatterAnsiEscapes *)
+FOUNDATION_EXPORT CCBAnsiEscapes *CCBAnsiEscapes_YELLOW;
+J2OBJC_STATIC_FIELD_OBJ(CCBAnsiEscapes, YELLOW, CCBAnsiEscapes *)
 
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_get_BLUE(void);
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_set_BLUE(CucumberApiFormatterAnsiEscapes *value);
+inline CCBAnsiEscapes *CCBAnsiEscapes_get_BLUE(void);
+inline CCBAnsiEscapes *CCBAnsiEscapes_set_BLUE(CCBAnsiEscapes *value);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_BLUE;
-J2OBJC_STATIC_FIELD_OBJ(CucumberApiFormatterAnsiEscapes, BLUE, CucumberApiFormatterAnsiEscapes *)
+FOUNDATION_EXPORT CCBAnsiEscapes *CCBAnsiEscapes_BLUE;
+J2OBJC_STATIC_FIELD_OBJ(CCBAnsiEscapes, BLUE, CCBAnsiEscapes *)
 
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_get_MAGENTA(void);
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_set_MAGENTA(CucumberApiFormatterAnsiEscapes *value);
+inline CCBAnsiEscapes *CCBAnsiEscapes_get_MAGENTA(void);
+inline CCBAnsiEscapes *CCBAnsiEscapes_set_MAGENTA(CCBAnsiEscapes *value);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_MAGENTA;
-J2OBJC_STATIC_FIELD_OBJ(CucumberApiFormatterAnsiEscapes, MAGENTA, CucumberApiFormatterAnsiEscapes *)
+FOUNDATION_EXPORT CCBAnsiEscapes *CCBAnsiEscapes_MAGENTA;
+J2OBJC_STATIC_FIELD_OBJ(CCBAnsiEscapes, MAGENTA, CCBAnsiEscapes *)
 
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_get_CYAN(void);
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_set_CYAN(CucumberApiFormatterAnsiEscapes *value);
+inline CCBAnsiEscapes *CCBAnsiEscapes_get_CYAN(void);
+inline CCBAnsiEscapes *CCBAnsiEscapes_set_CYAN(CCBAnsiEscapes *value);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_CYAN;
-J2OBJC_STATIC_FIELD_OBJ(CucumberApiFormatterAnsiEscapes, CYAN, CucumberApiFormatterAnsiEscapes *)
+FOUNDATION_EXPORT CCBAnsiEscapes *CCBAnsiEscapes_CYAN;
+J2OBJC_STATIC_FIELD_OBJ(CCBAnsiEscapes, CYAN, CCBAnsiEscapes *)
 
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_get_WHITE(void);
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_set_WHITE(CucumberApiFormatterAnsiEscapes *value);
+inline CCBAnsiEscapes *CCBAnsiEscapes_get_WHITE(void);
+inline CCBAnsiEscapes *CCBAnsiEscapes_set_WHITE(CCBAnsiEscapes *value);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_WHITE;
-J2OBJC_STATIC_FIELD_OBJ(CucumberApiFormatterAnsiEscapes, WHITE, CucumberApiFormatterAnsiEscapes *)
+FOUNDATION_EXPORT CCBAnsiEscapes *CCBAnsiEscapes_WHITE;
+J2OBJC_STATIC_FIELD_OBJ(CCBAnsiEscapes, WHITE, CCBAnsiEscapes *)
 
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_get_DEFAULT(void);
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_set_DEFAULT(CucumberApiFormatterAnsiEscapes *value);
+inline CCBAnsiEscapes *CCBAnsiEscapes_get_DEFAULT(void);
+inline CCBAnsiEscapes *CCBAnsiEscapes_set_DEFAULT(CCBAnsiEscapes *value);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_DEFAULT;
-J2OBJC_STATIC_FIELD_OBJ(CucumberApiFormatterAnsiEscapes, DEFAULT, CucumberApiFormatterAnsiEscapes *)
+FOUNDATION_EXPORT CCBAnsiEscapes *CCBAnsiEscapes_DEFAULT;
+J2OBJC_STATIC_FIELD_OBJ(CCBAnsiEscapes, DEFAULT, CCBAnsiEscapes *)
 
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_get_GREY(void);
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_set_GREY(CucumberApiFormatterAnsiEscapes *value);
+inline CCBAnsiEscapes *CCBAnsiEscapes_get_GREY(void);
+inline CCBAnsiEscapes *CCBAnsiEscapes_set_GREY(CCBAnsiEscapes *value);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_GREY;
-J2OBJC_STATIC_FIELD_OBJ(CucumberApiFormatterAnsiEscapes, GREY, CucumberApiFormatterAnsiEscapes *)
+FOUNDATION_EXPORT CCBAnsiEscapes *CCBAnsiEscapes_GREY;
+J2OBJC_STATIC_FIELD_OBJ(CCBAnsiEscapes, GREY, CCBAnsiEscapes *)
 
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_get_INTENSITY_BOLD(void);
-inline CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_set_INTENSITY_BOLD(CucumberApiFormatterAnsiEscapes *value);
+inline CCBAnsiEscapes *CCBAnsiEscapes_get_INTENSITY_BOLD(void);
+inline CCBAnsiEscapes *CCBAnsiEscapes_set_INTENSITY_BOLD(CCBAnsiEscapes *value);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_INTENSITY_BOLD;
-J2OBJC_STATIC_FIELD_OBJ(CucumberApiFormatterAnsiEscapes, INTENSITY_BOLD, CucumberApiFormatterAnsiEscapes *)
+FOUNDATION_EXPORT CCBAnsiEscapes *CCBAnsiEscapes_INTENSITY_BOLD;
+J2OBJC_STATIC_FIELD_OBJ(CCBAnsiEscapes, INTENSITY_BOLD, CCBAnsiEscapes *)
 
-FOUNDATION_EXPORT CucumberApiFormatterAnsiEscapes *CucumberApiFormatterAnsiEscapes_upWithInt_(jint count);
+FOUNDATION_EXPORT CCBAnsiEscapes *CCBAnsiEscapes_upWithInt_(jint count);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiFormatterAnsiEscapes)
+J2OBJC_TYPE_LITERAL_HEADER(CCBAnsiEscapes)
+
+@compatibility_alias CucumberApiFormatterAnsiEscapes CCBAnsiEscapes;
 
 #endif
 

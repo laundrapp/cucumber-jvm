@@ -18,31 +18,31 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeRuntimeOptions_) && (INCLUDE_ALL_CucumberRuntimeRuntimeOptions || defined(INCLUDE_CucumberRuntimeRuntimeOptions))
-#define CucumberRuntimeRuntimeOptions_
+#if !defined (CCBRRuntimeOptions_) && (INCLUDE_ALL_CucumberRuntimeRuntimeOptions || defined(INCLUDE_CCBRRuntimeOptions))
+#define CCBRRuntimeOptions_
 
-@class CucumberApiSnippetType;
+@class CCBREnv;
+@class CCBRPluginFactory;
+@class CCBSnippetType;
 @class CucumberRunnerEventBus;
-@class CucumberRuntimeEnv;
-@class CucumberRuntimeFormatterPluginFactory;
 @class JavaLangClassLoader;
-@protocol CucumberApiFormatterFormatter;
-@protocol CucumberApiStepDefinitionReporter;
-@protocol CucumberApiSummaryPrinter;
-@protocol CucumberRuntimeIoResourceLoader;
+@protocol CCBFormatter;
+@protocol CCBRResourceLoader;
+@protocol CCBStepDefinitionReporter;
+@protocol CCBSummaryPrinter;
 @protocol JavaUtilList;
 @protocol JavaUtilMap;
 
-@interface CucumberRuntimeRuntimeOptions : NSObject
+@interface CCBRRuntimeOptions : NSObject
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCucumberRuntimeEnv:(CucumberRuntimeEnv *)env
-                                    withJavaUtilList:(id<JavaUtilList>)argv;
+- (instancetype __nonnull)initWithCCBREnv:(CCBREnv *)env
+                         withJavaUtilList:(id<JavaUtilList>)argv;
 
-- (instancetype __nonnull)initWithCucumberRuntimeEnv:(CucumberRuntimeEnv *)env
-           withCucumberRuntimeFormatterPluginFactory:(CucumberRuntimeFormatterPluginFactory *)pluginFactory
-                                    withJavaUtilList:(id<JavaUtilList>)argv;
+- (instancetype __nonnull)initWithCCBREnv:(CCBREnv *)env
+                    withCCBRPluginFactory:(CCBRPluginFactory *)pluginFactory
+                         withJavaUtilList:(id<JavaUtilList>)argv;
 
 /*!
  @brief Create a new instance from a list of options, for example:
@@ -53,8 +53,8 @@
  */
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)argv;
 
-- (instancetype __nonnull)initWithCucumberRuntimeFormatterPluginFactory:(CucumberRuntimeFormatterPluginFactory *)pluginFactory
-                                                       withJavaUtilList:(id<JavaUtilList>)argv;
+- (instancetype __nonnull)initWithCCBRPluginFactory:(CCBRPluginFactory *)pluginFactory
+                                   withJavaUtilList:(id<JavaUtilList>)argv;
 
 /*!
  @brief Create a new instance from a string of options, for example:
@@ -65,12 +65,12 @@
  */
 - (instancetype __nonnull)initWithNSString:(NSString *)argv;
 
-- (void)addPluginWithCucumberApiFormatterFormatter:(id<CucumberApiFormatterFormatter>)plugin;
+- (void)addPluginWithCCBFormatter:(id<CCBFormatter>)plugin;
 
-- (id<JavaUtilList>)cucumberFeaturesWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                             withCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus;
+- (id<JavaUtilList>)cucumberFeaturesWithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+                                withCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus;
 
-- (id<CucumberApiFormatterFormatter>)formatterWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
+- (id<CCBFormatter>)formatterWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
 
 - (id<JavaUtilList>)getFeaturePaths;
 
@@ -78,13 +78,13 @@
 
 - (id<JavaUtilList>)getJunitOptions;
 
-- (id<JavaUtilMap>)getLineFiltersWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader;
+- (id<JavaUtilMap>)getLineFiltersWithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader;
 
 - (id<JavaUtilList>)getNameFilters;
 
 - (id<JavaUtilList>)getPlugins;
 
-- (CucumberApiSnippetType *)getSnippetType;
+- (CCBSnippetType *)getSnippetType;
 
 - (id<JavaUtilList>)getTagFilters;
 
@@ -94,9 +94,9 @@
 
 - (jboolean)isStrict;
 
-- (id<CucumberApiStepDefinitionReporter>)stepDefinitionReporterWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
+- (id<CCBStepDefinitionReporter>)stepDefinitionReporterWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
 
-- (id<CucumberApiSummaryPrinter>)summaryPrinterWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
+- (id<CCBSummaryPrinter>)summaryPrinterWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
 
 #pragma mark Package-Private
 
@@ -106,7 +106,7 @@
 
 - (void)setEventBusWithCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus;
 
-- (CucumberRuntimeRuntimeOptions *)withConvertersWithJavaUtilList:(id<JavaUtilList>)converters;
+- (CCBRRuntimeOptions *)withConvertersWithJavaUtilList:(id<JavaUtilList>)converters;
 
 // Disallowed inherited constructors, do not use.
 
@@ -114,72 +114,74 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeRuntimeOptions)
+J2OBJC_STATIC_INIT(CCBRRuntimeOptions)
 
-inline NSString *CucumberRuntimeRuntimeOptions_get_VERSION(void);
+inline NSString *CCBRRuntimeOptions_get_VERSION(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT NSString *CucumberRuntimeRuntimeOptions_VERSION;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeRuntimeOptions, VERSION, NSString *)
+FOUNDATION_EXPORT NSString *CCBRRuntimeOptions_VERSION;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRRuntimeOptions, VERSION, NSString *)
 
-inline NSString *CucumberRuntimeRuntimeOptions_get_USAGE_RESOURCE(void);
+inline NSString *CCBRRuntimeOptions_get_USAGE_RESOURCE(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT NSString *CucumberRuntimeRuntimeOptions_USAGE_RESOURCE;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeRuntimeOptions, USAGE_RESOURCE, NSString *)
+FOUNDATION_EXPORT NSString *CCBRRuntimeOptions_USAGE_RESOURCE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRRuntimeOptions, USAGE_RESOURCE, NSString *)
 
-inline NSString *CucumberRuntimeRuntimeOptions_get_usageText(void);
-inline NSString *CucumberRuntimeRuntimeOptions_set_usageText(NSString *value);
+inline NSString *CCBRRuntimeOptions_get_usageText(void);
+inline NSString *CCBRRuntimeOptions_set_usageText(NSString *value);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT NSString *CucumberRuntimeRuntimeOptions_usageText;
-J2OBJC_STATIC_FIELD_OBJ(CucumberRuntimeRuntimeOptions, usageText, NSString *)
+FOUNDATION_EXPORT NSString *CCBRRuntimeOptions_usageText;
+J2OBJC_STATIC_FIELD_OBJ(CCBRRuntimeOptions, usageText, NSString *)
 
-FOUNDATION_EXPORT void CucumberRuntimeRuntimeOptions_initWithNSString_(CucumberRuntimeRuntimeOptions *self, NSString *argv);
+FOUNDATION_EXPORT void CCBRRuntimeOptions_initWithNSString_(CCBRRuntimeOptions *self, NSString *argv);
 
-FOUNDATION_EXPORT CucumberRuntimeRuntimeOptions *new_CucumberRuntimeRuntimeOptions_initWithNSString_(NSString *argv) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRRuntimeOptions *new_CCBRRuntimeOptions_initWithNSString_(NSString *argv) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeRuntimeOptions *create_CucumberRuntimeRuntimeOptions_initWithNSString_(NSString *argv);
+FOUNDATION_EXPORT CCBRRuntimeOptions *create_CCBRRuntimeOptions_initWithNSString_(NSString *argv);
 
-FOUNDATION_EXPORT void CucumberRuntimeRuntimeOptions_initWithJavaUtilList_(CucumberRuntimeRuntimeOptions *self, id<JavaUtilList> argv);
+FOUNDATION_EXPORT void CCBRRuntimeOptions_initWithJavaUtilList_(CCBRRuntimeOptions *self, id<JavaUtilList> argv);
 
-FOUNDATION_EXPORT CucumberRuntimeRuntimeOptions *new_CucumberRuntimeRuntimeOptions_initWithJavaUtilList_(id<JavaUtilList> argv) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRRuntimeOptions *new_CCBRRuntimeOptions_initWithJavaUtilList_(id<JavaUtilList> argv) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeRuntimeOptions *create_CucumberRuntimeRuntimeOptions_initWithJavaUtilList_(id<JavaUtilList> argv);
+FOUNDATION_EXPORT CCBRRuntimeOptions *create_CCBRRuntimeOptions_initWithJavaUtilList_(id<JavaUtilList> argv);
 
-FOUNDATION_EXPORT void CucumberRuntimeRuntimeOptions_initWithCucumberRuntimeEnv_withJavaUtilList_(CucumberRuntimeRuntimeOptions *self, CucumberRuntimeEnv *env, id<JavaUtilList> argv);
+FOUNDATION_EXPORT void CCBRRuntimeOptions_initWithCCBREnv_withJavaUtilList_(CCBRRuntimeOptions *self, CCBREnv *env, id<JavaUtilList> argv);
 
-FOUNDATION_EXPORT CucumberRuntimeRuntimeOptions *new_CucumberRuntimeRuntimeOptions_initWithCucumberRuntimeEnv_withJavaUtilList_(CucumberRuntimeEnv *env, id<JavaUtilList> argv) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRRuntimeOptions *new_CCBRRuntimeOptions_initWithCCBREnv_withJavaUtilList_(CCBREnv *env, id<JavaUtilList> argv) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeRuntimeOptions *create_CucumberRuntimeRuntimeOptions_initWithCucumberRuntimeEnv_withJavaUtilList_(CucumberRuntimeEnv *env, id<JavaUtilList> argv);
+FOUNDATION_EXPORT CCBRRuntimeOptions *create_CCBRRuntimeOptions_initWithCCBREnv_withJavaUtilList_(CCBREnv *env, id<JavaUtilList> argv);
 
-FOUNDATION_EXPORT void CucumberRuntimeRuntimeOptions_initWithCucumberRuntimeFormatterPluginFactory_withJavaUtilList_(CucumberRuntimeRuntimeOptions *self, CucumberRuntimeFormatterPluginFactory *pluginFactory, id<JavaUtilList> argv);
+FOUNDATION_EXPORT void CCBRRuntimeOptions_initWithCCBRPluginFactory_withJavaUtilList_(CCBRRuntimeOptions *self, CCBRPluginFactory *pluginFactory, id<JavaUtilList> argv);
 
-FOUNDATION_EXPORT CucumberRuntimeRuntimeOptions *new_CucumberRuntimeRuntimeOptions_initWithCucumberRuntimeFormatterPluginFactory_withJavaUtilList_(CucumberRuntimeFormatterPluginFactory *pluginFactory, id<JavaUtilList> argv) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRRuntimeOptions *new_CCBRRuntimeOptions_initWithCCBRPluginFactory_withJavaUtilList_(CCBRPluginFactory *pluginFactory, id<JavaUtilList> argv) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeRuntimeOptions *create_CucumberRuntimeRuntimeOptions_initWithCucumberRuntimeFormatterPluginFactory_withJavaUtilList_(CucumberRuntimeFormatterPluginFactory *pluginFactory, id<JavaUtilList> argv);
+FOUNDATION_EXPORT CCBRRuntimeOptions *create_CCBRRuntimeOptions_initWithCCBRPluginFactory_withJavaUtilList_(CCBRPluginFactory *pluginFactory, id<JavaUtilList> argv);
 
-FOUNDATION_EXPORT void CucumberRuntimeRuntimeOptions_initWithCucumberRuntimeEnv_withCucumberRuntimeFormatterPluginFactory_withJavaUtilList_(CucumberRuntimeRuntimeOptions *self, CucumberRuntimeEnv *env, CucumberRuntimeFormatterPluginFactory *pluginFactory, id<JavaUtilList> argv);
+FOUNDATION_EXPORT void CCBRRuntimeOptions_initWithCCBREnv_withCCBRPluginFactory_withJavaUtilList_(CCBRRuntimeOptions *self, CCBREnv *env, CCBRPluginFactory *pluginFactory, id<JavaUtilList> argv);
 
-FOUNDATION_EXPORT CucumberRuntimeRuntimeOptions *new_CucumberRuntimeRuntimeOptions_initWithCucumberRuntimeEnv_withCucumberRuntimeFormatterPluginFactory_withJavaUtilList_(CucumberRuntimeEnv *env, CucumberRuntimeFormatterPluginFactory *pluginFactory, id<JavaUtilList> argv) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRRuntimeOptions *new_CCBRRuntimeOptions_initWithCCBREnv_withCCBRPluginFactory_withJavaUtilList_(CCBREnv *env, CCBRPluginFactory *pluginFactory, id<JavaUtilList> argv) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeRuntimeOptions *create_CucumberRuntimeRuntimeOptions_initWithCucumberRuntimeEnv_withCucumberRuntimeFormatterPluginFactory_withJavaUtilList_(CucumberRuntimeEnv *env, CucumberRuntimeFormatterPluginFactory *pluginFactory, id<JavaUtilList> argv);
+FOUNDATION_EXPORT CCBRRuntimeOptions *create_CCBRRuntimeOptions_initWithCCBREnv_withCCBRPluginFactory_withJavaUtilList_(CCBREnv *env, CCBRPluginFactory *pluginFactory, id<JavaUtilList> argv);
 
-FOUNDATION_EXPORT void CucumberRuntimeRuntimeOptions_loadUsageTextIfNeeded(void);
+FOUNDATION_EXPORT void CCBRRuntimeOptions_loadUsageTextIfNeeded(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeRuntimeOptions)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRRuntimeOptions)
+
+@compatibility_alias CucumberRuntimeRuntimeOptions CCBRRuntimeOptions;
 
 #endif
 
-#if !defined (CucumberRuntimeRuntimeOptions_ParsedPluginData_) && (INCLUDE_ALL_CucumberRuntimeRuntimeOptions || defined(INCLUDE_CucumberRuntimeRuntimeOptions_ParsedPluginData))
-#define CucumberRuntimeRuntimeOptions_ParsedPluginData_
+#if !defined (CCBRRuntimeOptions_ParsedPluginData_) && (INCLUDE_ALL_CucumberRuntimeRuntimeOptions || defined(INCLUDE_CCBRRuntimeOptions_ParsedPluginData))
+#define CCBRRuntimeOptions_ParsedPluginData_
 
-@class CucumberRuntimeRuntimeOptions;
-@class CucumberRuntimeRuntimeOptions_ParsedOptionNames;
+@class CCBRRuntimeOptions;
+@class CCBRRuntimeOptions_ParsedOptionNames;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeRuntimeOptions_ParsedPluginData : NSObject {
+@interface CCBRRuntimeOptions_ParsedPluginData : NSObject {
  @public
-  CucumberRuntimeRuntimeOptions_ParsedOptionNames *formatterNames_;
-  CucumberRuntimeRuntimeOptions_ParsedOptionNames *stepDefinitionReporterNames_;
-  CucumberRuntimeRuntimeOptions_ParsedOptionNames *summaryPrinterNames_;
+  CCBRRuntimeOptions_ParsedOptionNames *formatterNames_;
+  CCBRRuntimeOptions_ParsedOptionNames *stepDefinitionReporterNames_;
+  CCBRRuntimeOptions_ParsedOptionNames *summaryPrinterNames_;
 }
 
 #pragma mark Public
@@ -195,7 +197,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeRuntimeOptions)
 
 #pragma mark Package-Private
 
-- (instancetype __nonnull)initWithCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)outer$;
+- (instancetype __nonnull)initWithCCBRRuntimeOptions:(CCBRRuntimeOptions *)outer$;
 
 // Disallowed inherited constructors, do not use.
 
@@ -203,29 +205,29 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeRuntimeOptions)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeRuntimeOptions_ParsedPluginData)
+J2OBJC_EMPTY_STATIC_INIT(CCBRRuntimeOptions_ParsedPluginData)
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeRuntimeOptions_ParsedPluginData, formatterNames_, CucumberRuntimeRuntimeOptions_ParsedOptionNames *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeRuntimeOptions_ParsedPluginData, stepDefinitionReporterNames_, CucumberRuntimeRuntimeOptions_ParsedOptionNames *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeRuntimeOptions_ParsedPluginData, summaryPrinterNames_, CucumberRuntimeRuntimeOptions_ParsedOptionNames *)
+J2OBJC_FIELD_SETTER(CCBRRuntimeOptions_ParsedPluginData, formatterNames_, CCBRRuntimeOptions_ParsedOptionNames *)
+J2OBJC_FIELD_SETTER(CCBRRuntimeOptions_ParsedPluginData, stepDefinitionReporterNames_, CCBRRuntimeOptions_ParsedOptionNames *)
+J2OBJC_FIELD_SETTER(CCBRRuntimeOptions_ParsedPluginData, summaryPrinterNames_, CCBRRuntimeOptions_ParsedOptionNames *)
 
-FOUNDATION_EXPORT void CucumberRuntimeRuntimeOptions_ParsedPluginData_initWithCucumberRuntimeRuntimeOptions_(CucumberRuntimeRuntimeOptions_ParsedPluginData *self, CucumberRuntimeRuntimeOptions *outer$);
+FOUNDATION_EXPORT void CCBRRuntimeOptions_ParsedPluginData_initWithCCBRRuntimeOptions_(CCBRRuntimeOptions_ParsedPluginData *self, CCBRRuntimeOptions *outer$);
 
-FOUNDATION_EXPORT CucumberRuntimeRuntimeOptions_ParsedPluginData *new_CucumberRuntimeRuntimeOptions_ParsedPluginData_initWithCucumberRuntimeRuntimeOptions_(CucumberRuntimeRuntimeOptions *outer$) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRRuntimeOptions_ParsedPluginData *new_CCBRRuntimeOptions_ParsedPluginData_initWithCCBRRuntimeOptions_(CCBRRuntimeOptions *outer$) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeRuntimeOptions_ParsedPluginData *create_CucumberRuntimeRuntimeOptions_ParsedPluginData_initWithCucumberRuntimeRuntimeOptions_(CucumberRuntimeRuntimeOptions *outer$);
+FOUNDATION_EXPORT CCBRRuntimeOptions_ParsedPluginData *create_CCBRRuntimeOptions_ParsedPluginData_initWithCCBRRuntimeOptions_(CCBRRuntimeOptions *outer$);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeRuntimeOptions_ParsedPluginData)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRRuntimeOptions_ParsedPluginData)
 
 #endif
 
-#if !defined (CucumberRuntimeRuntimeOptions_ParsedOptionNames_) && (INCLUDE_ALL_CucumberRuntimeRuntimeOptions || defined(INCLUDE_CucumberRuntimeRuntimeOptions_ParsedOptionNames))
-#define CucumberRuntimeRuntimeOptions_ParsedOptionNames_
+#if !defined (CCBRRuntimeOptions_ParsedOptionNames_) && (INCLUDE_ALL_CucumberRuntimeRuntimeOptions || defined(INCLUDE_CCBRRuntimeOptions_ParsedOptionNames))
+#define CCBRRuntimeOptions_ParsedOptionNames_
 
-@class CucumberRuntimeRuntimeOptions;
+@class CCBRRuntimeOptions;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeRuntimeOptions_ParsedOptionNames : NSObject
+@interface CCBRRuntimeOptions_ParsedOptionNames : NSObject
 
 #pragma mark Public
 
@@ -236,7 +238,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeRuntimeOptions_ParsedPluginData)
 
 #pragma mark Package-Private
 
-- (instancetype __nonnull)initWithCucumberRuntimeRuntimeOptions:(CucumberRuntimeRuntimeOptions *)outer$;
+- (instancetype __nonnull)initWithCCBRRuntimeOptions:(CCBRRuntimeOptions *)outer$;
 
 // Disallowed inherited constructors, do not use.
 
@@ -244,15 +246,15 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeRuntimeOptions_ParsedPluginData)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeRuntimeOptions_ParsedOptionNames)
+J2OBJC_EMPTY_STATIC_INIT(CCBRRuntimeOptions_ParsedOptionNames)
 
-FOUNDATION_EXPORT void CucumberRuntimeRuntimeOptions_ParsedOptionNames_initWithCucumberRuntimeRuntimeOptions_(CucumberRuntimeRuntimeOptions_ParsedOptionNames *self, CucumberRuntimeRuntimeOptions *outer$);
+FOUNDATION_EXPORT void CCBRRuntimeOptions_ParsedOptionNames_initWithCCBRRuntimeOptions_(CCBRRuntimeOptions_ParsedOptionNames *self, CCBRRuntimeOptions *outer$);
 
-FOUNDATION_EXPORT CucumberRuntimeRuntimeOptions_ParsedOptionNames *new_CucumberRuntimeRuntimeOptions_ParsedOptionNames_initWithCucumberRuntimeRuntimeOptions_(CucumberRuntimeRuntimeOptions *outer$) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRRuntimeOptions_ParsedOptionNames *new_CCBRRuntimeOptions_ParsedOptionNames_initWithCCBRRuntimeOptions_(CCBRRuntimeOptions *outer$) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeRuntimeOptions_ParsedOptionNames *create_CucumberRuntimeRuntimeOptions_ParsedOptionNames_initWithCucumberRuntimeRuntimeOptions_(CucumberRuntimeRuntimeOptions *outer$);
+FOUNDATION_EXPORT CCBRRuntimeOptions_ParsedOptionNames *create_CCBRRuntimeOptions_ParsedOptionNames_initWithCCBRRuntimeOptions_(CCBRRuntimeOptions *outer$);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeRuntimeOptions_ParsedOptionNames)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRRuntimeOptions_ParsedOptionNames)
 
 #endif
 

@@ -19,9 +19,9 @@
 #include "java/util/Spliterator.h"
 #include "java/util/function/Consumer.h"
 
-@interface CucumberRuntimeIoClasspathResourceIterable () {
+@interface CCBRClasspathResourceIterable () {
  @public
-  id<CucumberRuntimeIoResourceIteratorFactory> resourceIteratorFactory_;
+  id<CCBRResourceIteratorFactory> resourceIteratorFactory_;
   JavaLangClassLoader *classLoader_;
   NSString *path_;
   NSString *suffix_;
@@ -29,33 +29,33 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoClasspathResourceIterable, resourceIteratorFactory_, id<CucumberRuntimeIoResourceIteratorFactory>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoClasspathResourceIterable, classLoader_, JavaLangClassLoader *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoClasspathResourceIterable, path_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeIoClasspathResourceIterable, suffix_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRClasspathResourceIterable, resourceIteratorFactory_, id<CCBRResourceIteratorFactory>)
+J2OBJC_FIELD_SETTER(CCBRClasspathResourceIterable, classLoader_, JavaLangClassLoader *)
+J2OBJC_FIELD_SETTER(CCBRClasspathResourceIterable, path_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRClasspathResourceIterable, suffix_, NSString *)
 
-@implementation CucumberRuntimeIoClasspathResourceIterable
+@implementation CCBRClasspathResourceIterable
 
 - (instancetype __nonnull)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader
                                          withNSString:(NSString *)path
                                          withNSString:(NSString *)suffix {
-  CucumberRuntimeIoClasspathResourceIterable_initWithJavaLangClassLoader_withNSString_withNSString_(self, classLoader, path, suffix);
+  CCBRClasspathResourceIterable_initWithJavaLangClassLoader_withNSString_withNSString_(self, classLoader, path, suffix);
   return self;
 }
 
 - (id<JavaUtilIterator>)iterator {
   @try {
-    CucumberRuntimeIoFlatteningIterator *iterator = create_CucumberRuntimeIoFlatteningIterator_init();
+    CCBRFlatteningIterator *iterator = create_CCBRFlatteningIterator_init();
     id<JavaUtilEnumeration> resources = [((JavaLangClassLoader *) nil_chk(classLoader_)) getResourcesWithNSString:path_];
     while ([((id<JavaUtilEnumeration>) nil_chk(resources)) hasMoreElements]) {
       JavaNetURL *url = [resources nextElement];
-      id<JavaUtilIterator> resourceIterator = [((id<CucumberRuntimeIoResourceIteratorFactory>) nil_chk(resourceIteratorFactory_)) createIteratorWithJavaNetURL:url withNSString:path_ withNSString:suffix_];
+      id<JavaUtilIterator> resourceIterator = [((id<CCBRResourceIteratorFactory>) nil_chk(resourceIteratorFactory_)) createIteratorWithJavaNetURL:url withNSString:path_ withNSString:suffix_];
       [iterator pushWithJavaUtilIterator:resourceIterator];
     }
     return iterator;
   }
   @catch (JavaIoIOException *e) {
-    @throw create_CucumberRuntimeCucumberException_initWithJavaLangThrowable_(e);
+    @throw create_CCBRCucumberException_initWithJavaLangThrowable_(e);
   }
 }
 
@@ -91,32 +91,32 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeIoClasspathResourceIterable, suffix_, NSStrin
   methods[1].selector = @selector(iterator);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "resourceIteratorFactory_", "LCucumberRuntimeIoResourceIteratorFactory;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "resourceIteratorFactory_", "LCCBRResourceIteratorFactory;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "classLoader_", "LJavaLangClassLoader;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "path_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "suffix_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LJavaLangClassLoader;LNSString;LNSString;", "()Ljava/util/Iterator<Lcucumber/runtime/io/Resource;>;", "Ljava/lang/Object;Ljava/lang/Iterable<Lcucumber/runtime/io/Resource;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeIoClasspathResourceIterable = { "ClasspathResourceIterable", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 2, 4, -1, -1, -1, 2, -1 };
-  return &_CucumberRuntimeIoClasspathResourceIterable;
+  static const J2ObjcClassInfo _CCBRClasspathResourceIterable = { "ClasspathResourceIterable", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 2, 4, -1, -1, -1, 2, -1 };
+  return &_CCBRClasspathResourceIterable;
 }
 
 @end
 
-void CucumberRuntimeIoClasspathResourceIterable_initWithJavaLangClassLoader_withNSString_withNSString_(CucumberRuntimeIoClasspathResourceIterable *self, JavaLangClassLoader *classLoader, NSString *path, NSString *suffix) {
+void CCBRClasspathResourceIterable_initWithJavaLangClassLoader_withNSString_withNSString_(CCBRClasspathResourceIterable *self, JavaLangClassLoader *classLoader, NSString *path, NSString *suffix) {
   NSObject_init(self);
-  JreStrongAssignAndConsume(&self->resourceIteratorFactory_, new_CucumberRuntimeIoDelegatingResourceIteratorFactory_initWithCucumberRuntimeIoResourceIteratorFactory_(create_CucumberRuntimeIoZipThenFileResourceIteratorFactory_init()));
+  JreStrongAssignAndConsume(&self->resourceIteratorFactory_, new_CCBRDelegatingResourceIteratorFactory_initWithCCBRResourceIteratorFactory_(create_CCBRZipThenFileResourceIteratorFactory_init()));
   JreStrongAssign(&self->classLoader_, classLoader);
   JreStrongAssign(&self->path_, path);
   JreStrongAssign(&self->suffix_, suffix);
 }
 
-CucumberRuntimeIoClasspathResourceIterable *new_CucumberRuntimeIoClasspathResourceIterable_initWithJavaLangClassLoader_withNSString_withNSString_(JavaLangClassLoader *classLoader, NSString *path, NSString *suffix) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeIoClasspathResourceIterable, initWithJavaLangClassLoader_withNSString_withNSString_, classLoader, path, suffix)
+CCBRClasspathResourceIterable *new_CCBRClasspathResourceIterable_initWithJavaLangClassLoader_withNSString_withNSString_(JavaLangClassLoader *classLoader, NSString *path, NSString *suffix) {
+  J2OBJC_NEW_IMPL(CCBRClasspathResourceIterable, initWithJavaLangClassLoader_withNSString_withNSString_, classLoader, path, suffix)
 }
 
-CucumberRuntimeIoClasspathResourceIterable *create_CucumberRuntimeIoClasspathResourceIterable_initWithJavaLangClassLoader_withNSString_withNSString_(JavaLangClassLoader *classLoader, NSString *path, NSString *suffix) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeIoClasspathResourceIterable, initWithJavaLangClassLoader_withNSString_withNSString_, classLoader, path, suffix)
+CCBRClasspathResourceIterable *create_CCBRClasspathResourceIterable_initWithJavaLangClassLoader_withNSString_withNSString_(JavaLangClassLoader *classLoader, NSString *path, NSString *suffix) {
+  J2OBJC_CREATE_IMPL(CCBRClasspathResourceIterable, initWithJavaLangClassLoader_withNSString_withNSString_, classLoader, path, suffix)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoClasspathResourceIterable)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRClasspathResourceIterable)

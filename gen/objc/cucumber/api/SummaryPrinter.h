@@ -18,28 +18,30 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiSummaryPrinter_) && (INCLUDE_ALL_CucumberApiSummaryPrinter || defined(INCLUDE_CucumberApiSummaryPrinter))
-#define CucumberApiSummaryPrinter_
+#if !defined (CCBSummaryPrinter_) && (INCLUDE_ALL_CucumberApiSummaryPrinter || defined(INCLUDE_CCBSummaryPrinter))
+#define CCBSummaryPrinter_
 
 #define RESTRICT_CucumberApiPlugin 1
-#define INCLUDE_CucumberApiPlugin 1
+#define INCLUDE_CCBPlugin 1
 #include "cucumber/api/Plugin.h"
 
-@class CucumberRuntimeRuntime;
+@class CCBRRuntime;
 
 /*!
  @brief Interface for plugins that print a summary after test execution.
  - seealso: Plugin
  */
-@protocol CucumberApiSummaryPrinter < CucumberApiPlugin, JavaObject >
+@protocol CCBSummaryPrinter < CCBPlugin, JavaObject >
 
-- (void)printWithCucumberRuntimeRuntime:(CucumberRuntimeRuntime *)runtime;
+- (void)printWithCCBRRuntime:(CCBRRuntime *)runtime;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiSummaryPrinter)
+J2OBJC_EMPTY_STATIC_INIT(CCBSummaryPrinter)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiSummaryPrinter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBSummaryPrinter)
+
+#define CucumberApiSummaryPrinter CCBSummaryPrinter
 
 #endif
 

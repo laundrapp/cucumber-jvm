@@ -12,7 +12,7 @@
 #include "java/util/ArrayList.h"
 #include "java/util/List.h"
 
-@interface CucumberRuntimeXstreamListConverter () {
+@interface CCBRListConverter () {
  @public
   NSString *delimiter_;
   id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> delegate_;
@@ -20,14 +20,14 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamListConverter, delimiter_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamListConverter, delegate_, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>)
+J2OBJC_FIELD_SETTER(CCBRListConverter, delimiter_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRListConverter, delegate_, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>)
 
-@implementation CucumberRuntimeXstreamListConverter
+@implementation CCBRListConverter
 
 - (instancetype __nonnull)initWithNSString:(NSString *)delimiter
 withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter>)delegate {
-  CucumberRuntimeXstreamListConverter_initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, delimiter, delegate);
+  CCBRListConverter_initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(self, delimiter, delegate);
   return self;
 }
 
@@ -97,24 +97,24 @@ withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<Cucumbe
     { "delegate_", "LCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LNSString;LCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter;", "toString", "LNSObject;", "fromString", "LNSString;", "canConvert", "LIOSClass;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamListConverter = { "ListConverter", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x0, 4, 2, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeXstreamListConverter;
+  static const J2ObjcClassInfo _CCBRListConverter = { "ListConverter", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x0, 4, 2, -1, -1, -1, -1, -1 };
+  return &_CCBRListConverter;
 }
 
 @end
 
-void CucumberRuntimeXstreamListConverter_initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(CucumberRuntimeXstreamListConverter *self, NSString *delimiter, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> delegate) {
+void CCBRListConverter_initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(CCBRListConverter *self, NSString *delimiter, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> delegate) {
   NSObject_init(self);
   JreStrongAssign(&self->delimiter_, delimiter);
   JreStrongAssign(&self->delegate_, delegate);
 }
 
-CucumberRuntimeXstreamListConverter *new_CucumberRuntimeXstreamListConverter_initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(NSString *delimiter, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> delegate) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamListConverter, initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_, delimiter, delegate)
+CCBRListConverter *new_CCBRListConverter_initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(NSString *delimiter, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> delegate) {
+  J2OBJC_NEW_IMPL(CCBRListConverter, initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_, delimiter, delegate)
 }
 
-CucumberRuntimeXstreamListConverter *create_CucumberRuntimeXstreamListConverter_initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(NSString *delimiter, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> delegate) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamListConverter, initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_, delimiter, delegate)
+CCBRListConverter *create_CCBRListConverter_initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_(NSString *delimiter, id<CucumberDepsComThoughtworksXstreamConvertersSingleValueConverter> delegate) {
+  J2OBJC_CREATE_IMPL(CCBRListConverter, initWithNSString_withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter_, delimiter, delegate)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamListConverter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRListConverter)

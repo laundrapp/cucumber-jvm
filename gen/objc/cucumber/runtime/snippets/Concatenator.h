@@ -18,20 +18,22 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeSnippetsConcatenator_) && (INCLUDE_ALL_CucumberRuntimeSnippetsConcatenator || defined(INCLUDE_CucumberRuntimeSnippetsConcatenator))
-#define CucumberRuntimeSnippetsConcatenator_
+#if !defined (CCBRConcatenator_) && (INCLUDE_ALL_CucumberRuntimeSnippetsConcatenator || defined(INCLUDE_CCBRConcatenator))
+#define CCBRConcatenator_
 
 @class IOSObjectArray;
 
-@protocol CucumberRuntimeSnippetsConcatenator < JavaObject >
+@protocol CCBRConcatenator < JavaObject >
 
 - (NSString *)concatenateWithNSStringArray:(IOSObjectArray *)words;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeSnippetsConcatenator)
+J2OBJC_EMPTY_STATIC_INIT(CCBRConcatenator)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeSnippetsConcatenator)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRConcatenator)
+
+#define CucumberRuntimeSnippetsConcatenator CCBRConcatenator
 
 #endif
 

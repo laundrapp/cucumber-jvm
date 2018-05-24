@@ -19,101 +19,101 @@
 
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-inline id<JavaUtilMap> CucumberRuntimeFormatterAnsiFormats_get_formats(void);
-static id<JavaUtilMap> CucumberRuntimeFormatterAnsiFormats_formats;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeFormatterAnsiFormats, formats, id<JavaUtilMap>)
+inline id<JavaUtilMap> CCBRAnsiFormats_get_formats(void);
+static id<JavaUtilMap> CCBRAnsiFormats_formats;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRAnsiFormats, formats, id<JavaUtilMap>)
 
-@interface CucumberRuntimeFormatterAnsiFormats_1 : JavaUtilHashMap
+@interface CCBRAnsiFormats_1 : JavaUtilHashMap
 
 - (instancetype __nonnull)init;
 
-- (id<CucumberRuntimeFormatterFormat>)computeIfAbsentWithId:(NSString *)arg0
-                               withJavaUtilFunctionFunction:(id<JavaUtilFunctionFunction>)arg1;
+- (id<CCBRFormat>)computeIfAbsentWithId:(NSString *)arg0
+           withJavaUtilFunctionFunction:(id<JavaUtilFunctionFunction>)arg1;
 
-- (id<CucumberRuntimeFormatterFormat>)getWithId:(id)arg0;
+- (id<CCBRFormat>)getWithId:(id)arg0;
 
-- (id<CucumberRuntimeFormatterFormat>)removeWithId:(id)arg0;
+- (id<CCBRFormat>)removeWithId:(id)arg0;
 
-- (id<CucumberRuntimeFormatterFormat>)putIfAbsentWithId:(NSString *)arg0
-                                                 withId:(id<CucumberRuntimeFormatterFormat>)arg1;
+- (id<CCBRFormat>)putIfAbsentWithId:(NSString *)arg0
+                             withId:(id<CCBRFormat>)arg1;
 
-- (id<CucumberRuntimeFormatterFormat>)computeIfPresentWithId:(NSString *)arg0
-                              withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg1;
+- (id<CCBRFormat>)computeIfPresentWithId:(NSString *)arg0
+          withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg1;
 
-- (id<CucumberRuntimeFormatterFormat>)replaceWithId:(NSString *)arg0
-                                             withId:(id<CucumberRuntimeFormatterFormat>)arg1;
+- (id<CCBRFormat>)replaceWithId:(NSString *)arg0
+                         withId:(id<CCBRFormat>)arg1;
 
-- (id<CucumberRuntimeFormatterFormat>)putWithId:(NSString *)arg0
-                                         withId:(id<CucumberRuntimeFormatterFormat>)arg1;
+- (id<CCBRFormat>)putWithId:(NSString *)arg0
+                     withId:(id<CCBRFormat>)arg1;
 
-- (id<CucumberRuntimeFormatterFormat>)computeWithId:(NSString *)arg0
-                     withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg1;
+- (id<CCBRFormat>)computeWithId:(NSString *)arg0
+ withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg1;
 
-- (id<CucumberRuntimeFormatterFormat>)mergeWithId:(NSString *)arg0
-                                           withId:(id<CucumberRuntimeFormatterFormat>)arg1
-                   withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg2;
+- (id<CCBRFormat>)mergeWithId:(NSString *)arg0
+                       withId:(id<CCBRFormat>)arg1
+withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg2;
 
-- (id<CucumberRuntimeFormatterFormat>)getOrDefaultWithId:(id)arg0
-                                                  withId:(id<CucumberRuntimeFormatterFormat>)arg1;
+- (id<CCBRFormat>)getOrDefaultWithId:(id)arg0
+                              withId:(id<CCBRFormat>)arg1;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterAnsiFormats_1)
+J2OBJC_EMPTY_STATIC_INIT(CCBRAnsiFormats_1)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterAnsiFormats_1_init(CucumberRuntimeFormatterAnsiFormats_1 *self);
+__attribute__((unused)) static void CCBRAnsiFormats_1_init(CCBRAnsiFormats_1 *self);
 
-__attribute__((unused)) static CucumberRuntimeFormatterAnsiFormats_1 *new_CucumberRuntimeFormatterAnsiFormats_1_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRAnsiFormats_1 *new_CCBRAnsiFormats_1_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterAnsiFormats_1 *create_CucumberRuntimeFormatterAnsiFormats_1_init(void);
+__attribute__((unused)) static CCBRAnsiFormats_1 *create_CCBRAnsiFormats_1_init(void);
 
-@interface CucumberRuntimeFormatterAnsiFormats_ColorFormat : NSObject < CucumberRuntimeFormatterFormat > {
+@interface CCBRAnsiFormats_ColorFormat : NSObject < CCBRFormat > {
  @public
   IOSObjectArray *escapes_;
 }
 
-- (instancetype __nonnull)initWithCucumberApiFormatterAnsiEscapesArray:(IOSObjectArray *)escapes;
+- (instancetype __nonnull)initWithCCBAnsiEscapesArray:(IOSObjectArray *)escapes;
 
 - (NSString *)textWithNSString:(NSString *)text;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterAnsiFormats_ColorFormat)
+J2OBJC_EMPTY_STATIC_INIT(CCBRAnsiFormats_ColorFormat)
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeFormatterAnsiFormats_ColorFormat, escapes_, IOSObjectArray *)
+J2OBJC_FIELD_SETTER(CCBRAnsiFormats_ColorFormat, escapes_, IOSObjectArray *)
 
-__attribute__((unused)) static void CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_(CucumberRuntimeFormatterAnsiFormats_ColorFormat *self, IOSObjectArray *escapes);
+__attribute__((unused)) static void CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_(CCBRAnsiFormats_ColorFormat *self, IOSObjectArray *escapes);
 
-__attribute__((unused)) static CucumberRuntimeFormatterAnsiFormats_ColorFormat *new_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_(IOSObjectArray *escapes) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRAnsiFormats_ColorFormat *new_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_(IOSObjectArray *escapes) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeFormatterAnsiFormats_ColorFormat *create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_(IOSObjectArray *escapes);
+__attribute__((unused)) static CCBRAnsiFormats_ColorFormat *create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_(IOSObjectArray *escapes);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterAnsiFormats_ColorFormat)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRAnsiFormats_ColorFormat)
 
-J2OBJC_INITIALIZED_DEFN(CucumberRuntimeFormatterAnsiFormats)
+J2OBJC_INITIALIZED_DEFN(CCBRAnsiFormats)
 
-@implementation CucumberRuntimeFormatterAnsiFormats
+@implementation CCBRAnsiFormats
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeFormatterAnsiFormats_init(self);
+  CCBRAnsiFormats_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (id<CucumberRuntimeFormatterFormat>)getWithNSString:(NSString *)key {
-  id<CucumberRuntimeFormatterFormat> format = [((id<JavaUtilMap>) nil_chk(CucumberRuntimeFormatterAnsiFormats_formats)) getWithId:key];
+- (id<CCBRFormat>)getWithNSString:(NSString *)key {
+  id<CCBRFormat> format = [((id<JavaUtilMap>) nil_chk(CCBRAnsiFormats_formats)) getWithId:key];
   if (format == nil) @throw create_JavaLangNullPointerException_initWithNSString_(JreStrcat("$$", @"No format for key ", key));
   return format;
 }
 
 - (NSString *)upWithInt:(jint)n {
-  return [((CucumberApiFormatterAnsiEscapes *) nil_chk(CucumberApiFormatterAnsiEscapes_upWithInt_(n))) description];
+  return [((CCBAnsiEscapes *) nil_chk(CCBAnsiEscapes_upWithInt_(n))) description];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LCucumberRuntimeFormatterFormat;", 0x1, 0, 1, -1, -1, -1, -1 },
+    { NULL, "LCCBRFormat;", 0x1, 0, 1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, 2, 3, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
@@ -126,39 +126,39 @@ J2OBJC_IGNORE_DESIGNATED_END
   static const J2ObjcFieldInfo fields[] = {
     { "formats", "LJavaUtilMap;", .constantValue.asLong = 0, 0x1a, -1, 4, 5, -1 },
   };
-  static const void *ptrTable[] = { "get", "LNSString;", "up", "I", &CucumberRuntimeFormatterAnsiFormats_formats, "Ljava/util/Map<Ljava/lang/String;Lcucumber/runtime/formatter/Format;>;", "LCucumberRuntimeFormatterAnsiFormats_ColorFormat;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterAnsiFormats = { "AnsiFormats", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x11, 3, 1, -1, 6, -1, -1, -1 };
-  return &_CucumberRuntimeFormatterAnsiFormats;
+  static const void *ptrTable[] = { "get", "LNSString;", "up", "I", &CCBRAnsiFormats_formats, "Ljava/util/Map<Ljava/lang/String;Lcucumber/runtime/formatter/Format;>;", "LCCBRAnsiFormats_ColorFormat;" };
+  static const J2ObjcClassInfo _CCBRAnsiFormats = { "AnsiFormats", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x11, 3, 1, -1, 6, -1, -1, -1 };
+  return &_CCBRAnsiFormats;
 }
 
 + (void)initialize {
-  if (self == [CucumberRuntimeFormatterAnsiFormats class]) {
-    JreStrongAssignAndConsume(&CucumberRuntimeFormatterAnsiFormats_formats, new_CucumberRuntimeFormatterAnsiFormats_1_init());
-    J2OBJC_SET_INITIALIZED(CucumberRuntimeFormatterAnsiFormats)
+  if (self == [CCBRAnsiFormats class]) {
+    JreStrongAssignAndConsume(&CCBRAnsiFormats_formats, new_CCBRAnsiFormats_1_init());
+    J2OBJC_SET_INITIALIZED(CCBRAnsiFormats)
   }
 }
 
 @end
 
-void CucumberRuntimeFormatterAnsiFormats_init(CucumberRuntimeFormatterAnsiFormats *self) {
+void CCBRAnsiFormats_init(CCBRAnsiFormats *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeFormatterAnsiFormats *new_CucumberRuntimeFormatterAnsiFormats_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterAnsiFormats, init)
+CCBRAnsiFormats *new_CCBRAnsiFormats_init() {
+  J2OBJC_NEW_IMPL(CCBRAnsiFormats, init)
 }
 
-CucumberRuntimeFormatterAnsiFormats *create_CucumberRuntimeFormatterAnsiFormats_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterAnsiFormats, init)
+CCBRAnsiFormats *create_CCBRAnsiFormats_init() {
+  J2OBJC_CREATE_IMPL(CCBRAnsiFormats, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterAnsiFormats)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRAnsiFormats)
 
-@implementation CucumberRuntimeFormatterAnsiFormats_1
+@implementation CCBRAnsiFormats_1
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeFormatterAnsiFormats_1_init(self);
+  CCBRAnsiFormats_1_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -172,50 +172,50 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LCucumberRuntimeFormatterAnsiFormats;", "Ljava/util/HashMap<Ljava/lang/String;Lcucumber/runtime/formatter/Format;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterAnsiFormats_1 = { "", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x8018, 1, 0, 0, -1, -1, 1, -1 };
-  return &_CucumberRuntimeFormatterAnsiFormats_1;
+  static const void *ptrTable[] = { "LCCBRAnsiFormats;", "Ljava/util/HashMap<Ljava/lang/String;Lcucumber/runtime/formatter/Format;>;" };
+  static const J2ObjcClassInfo _CCBRAnsiFormats_1 = { "", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x8018, 1, 0, 0, -1, -1, 1, -1 };
+  return &_CCBRAnsiFormats_1;
 }
 
 @end
 
-void CucumberRuntimeFormatterAnsiFormats_1_init(CucumberRuntimeFormatterAnsiFormats_1 *self) {
+void CCBRAnsiFormats_1_init(CCBRAnsiFormats_1 *self) {
   JavaUtilHashMap_init(self);
   {
-    [self putWithId:@"undefined" withId:create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, YELLOW) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
-    [self putWithId:@"undefined_arg" withId:create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, YELLOW), JreLoadStatic(CucumberApiFormatterAnsiEscapes, INTENSITY_BOLD) } count:2 type:CucumberApiFormatterAnsiEscapes_class_()])];
-    [self putWithId:@"pending" withId:create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, YELLOW) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
-    [self putWithId:@"pending_arg" withId:create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, YELLOW), JreLoadStatic(CucumberApiFormatterAnsiEscapes, INTENSITY_BOLD) } count:2 type:CucumberApiFormatterAnsiEscapes_class_()])];
-    [self putWithId:@"executing" withId:create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, GREY) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
-    [self putWithId:@"executing_arg" withId:create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, GREY), JreLoadStatic(CucumberApiFormatterAnsiEscapes, INTENSITY_BOLD) } count:2 type:CucumberApiFormatterAnsiEscapes_class_()])];
-    [self putWithId:@"failed" withId:create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, RED) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
-    [self putWithId:@"failed_arg" withId:create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, RED), JreLoadStatic(CucumberApiFormatterAnsiEscapes, INTENSITY_BOLD) } count:2 type:CucumberApiFormatterAnsiEscapes_class_()])];
-    [self putWithId:@"ambiguous" withId:create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, RED) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
-    [self putWithId:@"ambiguous_arg" withId:create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, RED), JreLoadStatic(CucumberApiFormatterAnsiEscapes, INTENSITY_BOLD) } count:2 type:CucumberApiFormatterAnsiEscapes_class_()])];
-    [self putWithId:@"passed" withId:create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, GREEN) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
-    [self putWithId:@"passed_arg" withId:create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, GREEN), JreLoadStatic(CucumberApiFormatterAnsiEscapes, INTENSITY_BOLD) } count:2 type:CucumberApiFormatterAnsiEscapes_class_()])];
-    [self putWithId:@"outline" withId:create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, CYAN) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
-    [self putWithId:@"outline_arg" withId:create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, CYAN), JreLoadStatic(CucumberApiFormatterAnsiEscapes, INTENSITY_BOLD) } count:2 type:CucumberApiFormatterAnsiEscapes_class_()])];
-    [self putWithId:@"skipped" withId:create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, CYAN) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
-    [self putWithId:@"skipped_arg" withId:create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, CYAN), JreLoadStatic(CucumberApiFormatterAnsiEscapes, INTENSITY_BOLD) } count:2 type:CucumberApiFormatterAnsiEscapes_class_()])];
-    [self putWithId:@"comment" withId:create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, GREY) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
-    [self putWithId:@"tag" withId:create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, CYAN) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
-    [self putWithId:@"output" withId:create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CucumberApiFormatterAnsiEscapes, BLUE) } count:1 type:CucumberApiFormatterAnsiEscapes_class_()])];
+    [self putWithId:@"undefined" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, YELLOW) } count:1 type:CCBAnsiEscapes_class_()])];
+    [self putWithId:@"undefined_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, YELLOW), JreLoadStatic(CCBAnsiEscapes, INTENSITY_BOLD) } count:2 type:CCBAnsiEscapes_class_()])];
+    [self putWithId:@"pending" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, YELLOW) } count:1 type:CCBAnsiEscapes_class_()])];
+    [self putWithId:@"pending_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, YELLOW), JreLoadStatic(CCBAnsiEscapes, INTENSITY_BOLD) } count:2 type:CCBAnsiEscapes_class_()])];
+    [self putWithId:@"executing" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, GREY) } count:1 type:CCBAnsiEscapes_class_()])];
+    [self putWithId:@"executing_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, GREY), JreLoadStatic(CCBAnsiEscapes, INTENSITY_BOLD) } count:2 type:CCBAnsiEscapes_class_()])];
+    [self putWithId:@"failed" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, RED) } count:1 type:CCBAnsiEscapes_class_()])];
+    [self putWithId:@"failed_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, RED), JreLoadStatic(CCBAnsiEscapes, INTENSITY_BOLD) } count:2 type:CCBAnsiEscapes_class_()])];
+    [self putWithId:@"ambiguous" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, RED) } count:1 type:CCBAnsiEscapes_class_()])];
+    [self putWithId:@"ambiguous_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, RED), JreLoadStatic(CCBAnsiEscapes, INTENSITY_BOLD) } count:2 type:CCBAnsiEscapes_class_()])];
+    [self putWithId:@"passed" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, GREEN) } count:1 type:CCBAnsiEscapes_class_()])];
+    [self putWithId:@"passed_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, GREEN), JreLoadStatic(CCBAnsiEscapes, INTENSITY_BOLD) } count:2 type:CCBAnsiEscapes_class_()])];
+    [self putWithId:@"outline" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, CYAN) } count:1 type:CCBAnsiEscapes_class_()])];
+    [self putWithId:@"outline_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, CYAN), JreLoadStatic(CCBAnsiEscapes, INTENSITY_BOLD) } count:2 type:CCBAnsiEscapes_class_()])];
+    [self putWithId:@"skipped" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, CYAN) } count:1 type:CCBAnsiEscapes_class_()])];
+    [self putWithId:@"skipped_arg" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, CYAN), JreLoadStatic(CCBAnsiEscapes, INTENSITY_BOLD) } count:2 type:CCBAnsiEscapes_class_()])];
+    [self putWithId:@"comment" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, GREY) } count:1 type:CCBAnsiEscapes_class_()])];
+    [self putWithId:@"tag" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, CYAN) } count:1 type:CCBAnsiEscapes_class_()])];
+    [self putWithId:@"output" withId:create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadStatic(CCBAnsiEscapes, BLUE) } count:1 type:CCBAnsiEscapes_class_()])];
   }
 }
 
-CucumberRuntimeFormatterAnsiFormats_1 *new_CucumberRuntimeFormatterAnsiFormats_1_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterAnsiFormats_1, init)
+CCBRAnsiFormats_1 *new_CCBRAnsiFormats_1_init() {
+  J2OBJC_NEW_IMPL(CCBRAnsiFormats_1, init)
 }
 
-CucumberRuntimeFormatterAnsiFormats_1 *create_CucumberRuntimeFormatterAnsiFormats_1_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterAnsiFormats_1, init)
+CCBRAnsiFormats_1 *create_CCBRAnsiFormats_1_init() {
+  J2OBJC_CREATE_IMPL(CCBRAnsiFormats_1, init)
 }
 
-@implementation CucumberRuntimeFormatterAnsiFormats_ColorFormat
+@implementation CCBRAnsiFormats_ColorFormat
 
-- (instancetype __nonnull)initWithCucumberApiFormatterAnsiEscapesArray:(IOSObjectArray *)escapes {
-  CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_(self, escapes);
+- (instancetype __nonnull)initWithCCBAnsiEscapesArray:(IOSObjectArray *)escapes {
+  CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_(self, escapes);
   return self;
 }
 
@@ -223,15 +223,15 @@ CucumberRuntimeFormatterAnsiFormats_1 *create_CucumberRuntimeFormatterAnsiFormat
   JavaLangStringBuilder *sb = create_JavaLangStringBuilder_init();
   {
     IOSObjectArray *a__ = escapes_;
-    CucumberApiFormatterAnsiEscapes * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
-    CucumberApiFormatterAnsiEscapes * const *e__ = b__ + a__->size_;
+    CCBAnsiEscapes * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
+    CCBAnsiEscapes * const *e__ = b__ + a__->size_;
     while (b__ < e__) {
-      CucumberApiFormatterAnsiEscapes *escape = *b__++;
-      [((CucumberApiFormatterAnsiEscapes *) nil_chk(escape)) appendToWithJavaLangStringBuilder:sb];
+      CCBAnsiEscapes *escape = *b__++;
+      [((CCBAnsiEscapes *) nil_chk(escape)) appendToWithJavaLangStringBuilder:sb];
     }
   }
   [sb appendWithNSString:text];
-  [((CucumberApiFormatterAnsiEscapes *) nil_chk(JreLoadStatic(CucumberApiFormatterAnsiEscapes, RESET))) appendToWithJavaLangStringBuilder:sb];
+  [((CCBAnsiEscapes *) nil_chk(JreLoadStatic(CCBAnsiEscapes, RESET))) appendToWithJavaLangStringBuilder:sb];
   return [sb description];
 }
 
@@ -248,30 +248,30 @@ CucumberRuntimeFormatterAnsiFormats_1 *create_CucumberRuntimeFormatterAnsiFormat
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberApiFormatterAnsiEscapesArray:);
+  methods[0].selector = @selector(initWithCCBAnsiEscapesArray:);
   methods[1].selector = @selector(textWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "escapes_", "[LCucumberApiFormatterAnsiEscapes;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "escapes_", "[LCCBAnsiEscapes;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "[LCucumberApiFormatterAnsiEscapes;", "text", "LNSString;", "LCucumberRuntimeFormatterAnsiFormats;" };
-  static const J2ObjcClassInfo _CucumberRuntimeFormatterAnsiFormats_ColorFormat = { "ColorFormat", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x1a, 2, 1, 3, -1, -1, -1, -1 };
-  return &_CucumberRuntimeFormatterAnsiFormats_ColorFormat;
+  static const void *ptrTable[] = { "[LCCBAnsiEscapes;", "text", "LNSString;", "LCCBRAnsiFormats;" };
+  static const J2ObjcClassInfo _CCBRAnsiFormats_ColorFormat = { "ColorFormat", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x1a, 2, 1, 3, -1, -1, -1, -1 };
+  return &_CCBRAnsiFormats_ColorFormat;
 }
 
 @end
 
-void CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_(CucumberRuntimeFormatterAnsiFormats_ColorFormat *self, IOSObjectArray *escapes) {
+void CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_(CCBRAnsiFormats_ColorFormat *self, IOSObjectArray *escapes) {
   NSObject_init(self);
   JreStrongAssign(&self->escapes_, escapes);
 }
 
-CucumberRuntimeFormatterAnsiFormats_ColorFormat *new_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_(IOSObjectArray *escapes) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeFormatterAnsiFormats_ColorFormat, initWithCucumberApiFormatterAnsiEscapesArray_, escapes)
+CCBRAnsiFormats_ColorFormat *new_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_(IOSObjectArray *escapes) {
+  J2OBJC_NEW_IMPL(CCBRAnsiFormats_ColorFormat, initWithCCBAnsiEscapesArray_, escapes)
 }
 
-CucumberRuntimeFormatterAnsiFormats_ColorFormat *create_CucumberRuntimeFormatterAnsiFormats_ColorFormat_initWithCucumberApiFormatterAnsiEscapesArray_(IOSObjectArray *escapes) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeFormatterAnsiFormats_ColorFormat, initWithCucumberApiFormatterAnsiEscapesArray_, escapes)
+CCBRAnsiFormats_ColorFormat *create_CCBRAnsiFormats_ColorFormat_initWithCCBAnsiEscapesArray_(IOSObjectArray *escapes) {
+  J2OBJC_CREATE_IMPL(CCBRAnsiFormats_ColorFormat, initWithCCBAnsiEscapesArray_, escapes)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeFormatterAnsiFormats_ColorFormat)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRAnsiFormats_ColorFormat)

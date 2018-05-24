@@ -9,12 +9,12 @@
 #include "cucumber/api/event/TimeStampedEvent.h"
 #include "java/lang/Long.h"
 
-@implementation CucumberApiEventEmbedEvent
+@implementation CCBEmbedEvent
 
 - (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp
                                  withByteArray:(IOSByteArray *)data
                                   withNSString:(NSString *)mimeType {
-  CucumberApiEventEmbedEvent_initWithJavaLangLong_withByteArray_withNSString_(self, timeStamp, data, mimeType);
+  CCBEmbedEvent_initWithJavaLangLong_withByteArray_withNSString_(self, timeStamp, data, mimeType);
   return self;
 }
 
@@ -38,24 +38,24 @@
     { "mimeType_", "LNSString;", .constantValue.asLong = 0, 0x11, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LJavaLangLong;[BLNSString;" };
-  static const J2ObjcClassInfo _CucumberApiEventEmbedEvent = { "EmbedEvent", "cucumber.api.event", ptrTable, methods, fields, 7, 0x11, 1, 2, -1, -1, -1, -1, -1 };
-  return &_CucumberApiEventEmbedEvent;
+  static const J2ObjcClassInfo _CCBEmbedEvent = { "EmbedEvent", "cucumber.api.event", ptrTable, methods, fields, 7, 0x11, 1, 2, -1, -1, -1, -1, -1 };
+  return &_CCBEmbedEvent;
 }
 
 @end
 
-void CucumberApiEventEmbedEvent_initWithJavaLangLong_withByteArray_withNSString_(CucumberApiEventEmbedEvent *self, JavaLangLong *timeStamp, IOSByteArray *data, NSString *mimeType) {
-  CucumberApiEventTimeStampedEvent_initWithJavaLangLong_(self, timeStamp);
+void CCBEmbedEvent_initWithJavaLangLong_withByteArray_withNSString_(CCBEmbedEvent *self, JavaLangLong *timeStamp, IOSByteArray *data, NSString *mimeType) {
+  CCBTimeStampedEvent_initWithJavaLangLong_(self, timeStamp);
   JreStrongAssign(&self->data_, data);
   JreStrongAssign(&self->mimeType_, mimeType);
 }
 
-CucumberApiEventEmbedEvent *new_CucumberApiEventEmbedEvent_initWithJavaLangLong_withByteArray_withNSString_(JavaLangLong *timeStamp, IOSByteArray *data, NSString *mimeType) {
-  J2OBJC_NEW_IMPL(CucumberApiEventEmbedEvent, initWithJavaLangLong_withByteArray_withNSString_, timeStamp, data, mimeType)
+CCBEmbedEvent *new_CCBEmbedEvent_initWithJavaLangLong_withByteArray_withNSString_(JavaLangLong *timeStamp, IOSByteArray *data, NSString *mimeType) {
+  J2OBJC_NEW_IMPL(CCBEmbedEvent, initWithJavaLangLong_withByteArray_withNSString_, timeStamp, data, mimeType)
 }
 
-CucumberApiEventEmbedEvent *create_CucumberApiEventEmbedEvent_initWithJavaLangLong_withByteArray_withNSString_(JavaLangLong *timeStamp, IOSByteArray *data, NSString *mimeType) {
-  J2OBJC_CREATE_IMPL(CucumberApiEventEmbedEvent, initWithJavaLangLong_withByteArray_withNSString_, timeStamp, data, mimeType)
+CCBEmbedEvent *create_CCBEmbedEvent_initWithJavaLangLong_withByteArray_withNSString_(JavaLangLong *timeStamp, IOSByteArray *data, NSString *mimeType) {
+  J2OBJC_CREATE_IMPL(CCBEmbedEvent, initWithJavaLangLong_withByteArray_withNSString_, timeStamp, data, mimeType)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiEventEmbedEvent)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBEmbedEvent)

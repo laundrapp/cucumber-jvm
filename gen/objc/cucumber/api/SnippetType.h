@@ -18,55 +18,57 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiSnippetType_) && (INCLUDE_ALL_CucumberApiSnippetType || defined(INCLUDE_CucumberApiSnippetType))
-#define CucumberApiSnippetType_
+#if !defined (CCBSnippetType_) && (INCLUDE_ALL_CucumberApiSnippetType || defined(INCLUDE_CCBSnippetType))
+#define CCBSnippetType_
 
 #define RESTRICT_JavaLangEnum 1
 #define INCLUDE_JavaLangEnum 1
 #include "java/lang/Enum.h"
 
-@class CucumberRuntimeSnippetsFunctionNameGenerator;
+@class CCBRFunctionNameGenerator;
 @class IOSObjectArray;
 
-typedef NS_ENUM(NSUInteger, CucumberApiSnippetType_Enum) {
-  CucumberApiSnippetType_Enum_UNDERSCORE = 0,
-  CucumberApiSnippetType_Enum_CAMELCASE = 1,
+typedef NS_ENUM(NSUInteger, CCBSnippetType_Enum) {
+  CCBSnippetType_Enum_UNDERSCORE = 0,
+  CCBSnippetType_Enum_CAMELCASE = 1,
 };
 
-@interface CucumberApiSnippetType : JavaLangEnum
+@interface CCBSnippetType : JavaLangEnum
 
 #pragma mark Public
 
-+ (CucumberApiSnippetType *)fromStringWithNSString:(NSString *)name;
++ (CCBSnippetType *)fromStringWithNSString:(NSString *)name;
 
-- (CucumberRuntimeSnippetsFunctionNameGenerator *)getFunctionNameGenerator;
+- (CCBRFunctionNameGenerator *)getFunctionNameGenerator;
 
-+ (CucumberApiSnippetType *)valueOfWithNSString:(NSString *)name;
++ (CCBSnippetType *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberApiSnippetType)
+J2OBJC_STATIC_INIT(CCBSnippetType)
 
 /*! INTERNAL ONLY - Use enum accessors declared below. */
-FOUNDATION_EXPORT CucumberApiSnippetType *CucumberApiSnippetType_values_[];
+FOUNDATION_EXPORT CCBSnippetType *CCBSnippetType_values_[];
 
-inline CucumberApiSnippetType *CucumberApiSnippetType_get_UNDERSCORE(void);
-J2OBJC_ENUM_CONSTANT(CucumberApiSnippetType, UNDERSCORE)
+inline CCBSnippetType *CCBSnippetType_get_UNDERSCORE(void);
+J2OBJC_ENUM_CONSTANT(CCBSnippetType, UNDERSCORE)
 
-inline CucumberApiSnippetType *CucumberApiSnippetType_get_CAMELCASE(void);
-J2OBJC_ENUM_CONSTANT(CucumberApiSnippetType, CAMELCASE)
+inline CCBSnippetType *CCBSnippetType_get_CAMELCASE(void);
+J2OBJC_ENUM_CONSTANT(CCBSnippetType, CAMELCASE)
 
-FOUNDATION_EXPORT CucumberApiSnippetType *CucumberApiSnippetType_fromStringWithNSString_(NSString *name);
+FOUNDATION_EXPORT CCBSnippetType *CCBSnippetType_fromStringWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT IOSObjectArray *CucumberApiSnippetType_values(void);
+FOUNDATION_EXPORT IOSObjectArray *CCBSnippetType_values(void);
 
-FOUNDATION_EXPORT CucumberApiSnippetType *CucumberApiSnippetType_valueOfWithNSString_(NSString *name);
+FOUNDATION_EXPORT CCBSnippetType *CCBSnippetType_valueOfWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT CucumberApiSnippetType *CucumberApiSnippetType_fromOrdinal(NSUInteger ordinal);
+FOUNDATION_EXPORT CCBSnippetType *CCBSnippetType_fromOrdinal(NSUInteger ordinal);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiSnippetType)
+J2OBJC_TYPE_LITERAL_HEADER(CCBSnippetType)
+
+@compatibility_alias CucumberApiSnippetType CCBSnippetType;
 
 #endif
 

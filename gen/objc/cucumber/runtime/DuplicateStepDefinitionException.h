@@ -18,22 +18,22 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeDuplicateStepDefinitionException_) && (INCLUDE_ALL_CucumberRuntimeDuplicateStepDefinitionException || defined(INCLUDE_CucumberRuntimeDuplicateStepDefinitionException))
-#define CucumberRuntimeDuplicateStepDefinitionException_
+#if !defined (CCBRDuplicateStepDefinitionException_) && (INCLUDE_ALL_CucumberRuntimeDuplicateStepDefinitionException || defined(INCLUDE_CCBRDuplicateStepDefinitionException))
+#define CCBRDuplicateStepDefinitionException_
 
 #define RESTRICT_CucumberRuntimeCucumberException 1
-#define INCLUDE_CucumberRuntimeCucumberException 1
+#define INCLUDE_CCBRCucumberException 1
 #include "cucumber/runtime/CucumberException.h"
 
 @class JavaLangThrowable;
-@protocol CucumberRuntimeStepDefinition;
+@protocol CCBRStepDefinition;
 
-@interface CucumberRuntimeDuplicateStepDefinitionException : CucumberRuntimeCucumberException
+@interface CCBRDuplicateStepDefinitionException : CCBRCucumberException
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)a
-                              withCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)b;
+- (instancetype __nonnull)initWithCCBRStepDefinition:(id<CCBRStepDefinition>)a
+                              withCCBRStepDefinition:(id<CCBRStepDefinition>)b;
 
 // Disallowed inherited constructors, do not use.
 
@@ -46,15 +46,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeDuplicateStepDefinitionException)
+J2OBJC_EMPTY_STATIC_INIT(CCBRDuplicateStepDefinitionException)
 
-FOUNDATION_EXPORT void CucumberRuntimeDuplicateStepDefinitionException_initWithCucumberRuntimeStepDefinition_withCucumberRuntimeStepDefinition_(CucumberRuntimeDuplicateStepDefinitionException *self, id<CucumberRuntimeStepDefinition> a, id<CucumberRuntimeStepDefinition> b);
+FOUNDATION_EXPORT void CCBRDuplicateStepDefinitionException_initWithCCBRStepDefinition_withCCBRStepDefinition_(CCBRDuplicateStepDefinitionException *self, id<CCBRStepDefinition> a, id<CCBRStepDefinition> b);
 
-FOUNDATION_EXPORT CucumberRuntimeDuplicateStepDefinitionException *new_CucumberRuntimeDuplicateStepDefinitionException_initWithCucumberRuntimeStepDefinition_withCucumberRuntimeStepDefinition_(id<CucumberRuntimeStepDefinition> a, id<CucumberRuntimeStepDefinition> b) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRDuplicateStepDefinitionException *new_CCBRDuplicateStepDefinitionException_initWithCCBRStepDefinition_withCCBRStepDefinition_(id<CCBRStepDefinition> a, id<CCBRStepDefinition> b) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeDuplicateStepDefinitionException *create_CucumberRuntimeDuplicateStepDefinitionException_initWithCucumberRuntimeStepDefinition_withCucumberRuntimeStepDefinition_(id<CucumberRuntimeStepDefinition> a, id<CucumberRuntimeStepDefinition> b);
+FOUNDATION_EXPORT CCBRDuplicateStepDefinitionException *create_CCBRDuplicateStepDefinitionException_initWithCCBRStepDefinition_withCCBRStepDefinition_(id<CCBRStepDefinition> a, id<CCBRStepDefinition> b);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeDuplicateStepDefinitionException)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRDuplicateStepDefinitionException)
+
+@compatibility_alias CucumberRuntimeDuplicateStepDefinitionException CCBRDuplicateStepDefinitionException;
 
 #endif
 

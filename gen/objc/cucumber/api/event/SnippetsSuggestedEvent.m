@@ -10,13 +10,13 @@
 #include "java/util/Collections.h"
 #include "java/util/List.h"
 
-@implementation CucumberApiEventSnippetsSuggestedEvent
+@implementation CCBSnippetsSuggestedEvent
 
 - (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp
                                   withNSString:(NSString *)uri
                               withJavaUtilList:(id<JavaUtilList>)stepLocations
                               withJavaUtilList:(id<JavaUtilList>)snippets {
-  CucumberApiEventSnippetsSuggestedEvent_initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_(self, timeStamp, uri, stepLocations, snippets);
+  CCBSnippetsSuggestedEvent_initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_(self, timeStamp, uri, stepLocations, snippets);
   return self;
 }
 
@@ -42,25 +42,25 @@
     { "snippets_", "LJavaUtilList;", .constantValue.asLong = 0, 0x11, -1, -1, 3, -1 },
   };
   static const void *ptrTable[] = { "LJavaLangLong;LNSString;LJavaUtilList;LJavaUtilList;", "(Ljava/lang/Long;Ljava/lang/String;Ljava/util/List<Lgherkin/pickles/PickleLocation;>;Ljava/util/List<Ljava/lang/String;>;)V", "Ljava/util/List<Lgherkin/pickles/PickleLocation;>;", "Ljava/util/List<Ljava/lang/String;>;" };
-  static const J2ObjcClassInfo _CucumberApiEventSnippetsSuggestedEvent = { "SnippetsSuggestedEvent", "cucumber.api.event", ptrTable, methods, fields, 7, 0x1, 1, 3, -1, -1, -1, -1, -1 };
-  return &_CucumberApiEventSnippetsSuggestedEvent;
+  static const J2ObjcClassInfo _CCBSnippetsSuggestedEvent = { "SnippetsSuggestedEvent", "cucumber.api.event", ptrTable, methods, fields, 7, 0x1, 1, 3, -1, -1, -1, -1, -1 };
+  return &_CCBSnippetsSuggestedEvent;
 }
 
 @end
 
-void CucumberApiEventSnippetsSuggestedEvent_initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_(CucumberApiEventSnippetsSuggestedEvent *self, JavaLangLong *timeStamp, NSString *uri, id<JavaUtilList> stepLocations, id<JavaUtilList> snippets) {
-  CucumberApiEventTimeStampedEvent_initWithJavaLangLong_(self, timeStamp);
+void CCBSnippetsSuggestedEvent_initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_(CCBSnippetsSuggestedEvent *self, JavaLangLong *timeStamp, NSString *uri, id<JavaUtilList> stepLocations, id<JavaUtilList> snippets) {
+  CCBTimeStampedEvent_initWithJavaLangLong_(self, timeStamp);
   JreStrongAssign(&self->uri_, uri);
   JreStrongAssign(&self->stepLocations_, stepLocations);
   JreStrongAssign(&self->snippets_, JavaUtilCollections_unmodifiableListWithJavaUtilList_(snippets));
 }
 
-CucumberApiEventSnippetsSuggestedEvent *new_CucumberApiEventSnippetsSuggestedEvent_initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_(JavaLangLong *timeStamp, NSString *uri, id<JavaUtilList> stepLocations, id<JavaUtilList> snippets) {
-  J2OBJC_NEW_IMPL(CucumberApiEventSnippetsSuggestedEvent, initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_, timeStamp, uri, stepLocations, snippets)
+CCBSnippetsSuggestedEvent *new_CCBSnippetsSuggestedEvent_initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_(JavaLangLong *timeStamp, NSString *uri, id<JavaUtilList> stepLocations, id<JavaUtilList> snippets) {
+  J2OBJC_NEW_IMPL(CCBSnippetsSuggestedEvent, initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_, timeStamp, uri, stepLocations, snippets)
 }
 
-CucumberApiEventSnippetsSuggestedEvent *create_CucumberApiEventSnippetsSuggestedEvent_initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_(JavaLangLong *timeStamp, NSString *uri, id<JavaUtilList> stepLocations, id<JavaUtilList> snippets) {
-  J2OBJC_CREATE_IMPL(CucumberApiEventSnippetsSuggestedEvent, initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_, timeStamp, uri, stepLocations, snippets)
+CCBSnippetsSuggestedEvent *create_CCBSnippetsSuggestedEvent_initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_(JavaLangLong *timeStamp, NSString *uri, id<JavaUtilList> stepLocations, id<JavaUtilList> snippets) {
+  J2OBJC_CREATE_IMPL(CCBSnippetsSuggestedEvent, initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_, timeStamp, uri, stepLocations, snippets)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiEventSnippetsSuggestedEvent)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBSnippetsSuggestedEvent)

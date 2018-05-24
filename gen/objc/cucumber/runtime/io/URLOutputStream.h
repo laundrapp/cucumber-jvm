@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeIoURLOutputStream_) && (INCLUDE_ALL_CucumberRuntimeIoURLOutputStream || defined(INCLUDE_CucumberRuntimeIoURLOutputStream))
-#define CucumberRuntimeIoURLOutputStream_
+#if !defined (CCBRURLOutputStream_) && (INCLUDE_ALL_CucumberRuntimeIoURLOutputStream || defined(INCLUDE_CCBRURLOutputStream))
+#define CCBRURLOutputStream_
 
 #define RESTRICT_JavaIoOutputStream 1
 #define INCLUDE_JavaIoOutputStream 1
@@ -33,7 +33,7 @@
  @brief A stream that can write to both file and http URLs.If it's a file URL, writes with a <code>java.io.FileOutputStream</code>,
   if it's a http or https URL, writes with a HTTP PUT (by default) or with the specified method.
  */
-@interface CucumberRuntimeIoURLOutputStream : JavaIoOutputStream
+@interface CCBRURLOutputStream : JavaIoOutputStream
 
 #pragma mark Public
 
@@ -62,43 +62,45 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoURLOutputStream)
+J2OBJC_EMPTY_STATIC_INIT(CCBRURLOutputStream)
 
-FOUNDATION_EXPORT void CucumberRuntimeIoURLOutputStream_initWithJavaNetURL_(CucumberRuntimeIoURLOutputStream *self, JavaNetURL *url);
+FOUNDATION_EXPORT void CCBRURLOutputStream_initWithJavaNetURL_(CCBRURLOutputStream *self, JavaNetURL *url);
 
-FOUNDATION_EXPORT CucumberRuntimeIoURLOutputStream *new_CucumberRuntimeIoURLOutputStream_initWithJavaNetURL_(JavaNetURL *url) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRURLOutputStream *new_CCBRURLOutputStream_initWithJavaNetURL_(JavaNetURL *url) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeIoURLOutputStream *create_CucumberRuntimeIoURLOutputStream_initWithJavaNetURL_(JavaNetURL *url);
+FOUNDATION_EXPORT CCBRURLOutputStream *create_CCBRURLOutputStream_initWithJavaNetURL_(JavaNetURL *url);
 
-FOUNDATION_EXPORT void CucumberRuntimeIoURLOutputStream_initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_(CucumberRuntimeIoURLOutputStream *self, JavaNetURL *url, NSString *method, id<JavaUtilMap> headers, jint expectedResponseCode);
+FOUNDATION_EXPORT void CCBRURLOutputStream_initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_(CCBRURLOutputStream *self, JavaNetURL *url, NSString *method, id<JavaUtilMap> headers, jint expectedResponseCode);
 
-FOUNDATION_EXPORT CucumberRuntimeIoURLOutputStream *new_CucumberRuntimeIoURLOutputStream_initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_(JavaNetURL *url, NSString *method, id<JavaUtilMap> headers, jint expectedResponseCode) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRURLOutputStream *new_CCBRURLOutputStream_initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_(JavaNetURL *url, NSString *method, id<JavaUtilMap> headers, jint expectedResponseCode) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeIoURLOutputStream *create_CucumberRuntimeIoURLOutputStream_initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_(JavaNetURL *url, NSString *method, id<JavaUtilMap> headers, jint expectedResponseCode);
+FOUNDATION_EXPORT CCBRURLOutputStream *create_CCBRURLOutputStream_initWithJavaNetURL_withNSString_withJavaUtilMap_withInt_(JavaNetURL *url, NSString *method, id<JavaUtilMap> headers, jint expectedResponseCode);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoURLOutputStream)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRURLOutputStream)
+
+@compatibility_alias CucumberRuntimeIoURLOutputStream CCBRURLOutputStream;
 
 #endif
 
-#if !defined (CucumberRuntimeIoURLOutputStream_ResponseException_) && (INCLUDE_ALL_CucumberRuntimeIoURLOutputStream || defined(INCLUDE_CucumberRuntimeIoURLOutputStream_ResponseException))
-#define CucumberRuntimeIoURLOutputStream_ResponseException_
+#if !defined (CCBRURLOutputStream_ResponseException_) && (INCLUDE_ALL_CucumberRuntimeIoURLOutputStream || defined(INCLUDE_CCBRURLOutputStream_ResponseException))
+#define CCBRURLOutputStream_ResponseException_
 
 #define RESTRICT_JavaIoIOException 1
 #define INCLUDE_JavaIoIOException 1
 #include "java/io/IOException.h"
 
-@class CucumberRuntimeIoURLOutputStream;
+@class CCBRURLOutputStream;
 @class JavaLangThrowable;
 
-@interface CucumberRuntimeIoURLOutputStream_ResponseException : JavaIoIOException
+@interface CCBRURLOutputStream_ResponseException : JavaIoIOException
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCucumberRuntimeIoURLOutputStream:(CucumberRuntimeIoURLOutputStream *)outer$
-                                                      withNSString:(NSString *)responseBody
-                                             withJavaIoIOException:(JavaIoIOException *)cause
-                                                           withInt:(jint)responseCode
-                                                      withNSString:(NSString *)contentType;
+- (instancetype __nonnull)initWithCCBRURLOutputStream:(CCBRURLOutputStream *)outer$
+                                         withNSString:(NSString *)responseBody
+                                withJavaIoIOException:(JavaIoIOException *)cause
+                                              withInt:(jint)responseCode
+                                         withNSString:(NSString *)contentType;
 
 - (NSString *)getMessage;
 
@@ -115,15 +117,15 @@ J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoURLOutputStream)
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoURLOutputStream_ResponseException)
+J2OBJC_EMPTY_STATIC_INIT(CCBRURLOutputStream_ResponseException)
 
-FOUNDATION_EXPORT void CucumberRuntimeIoURLOutputStream_ResponseException_initWithCucumberRuntimeIoURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_(CucumberRuntimeIoURLOutputStream_ResponseException *self, CucumberRuntimeIoURLOutputStream *outer$, NSString *responseBody, JavaIoIOException *cause, jint responseCode, NSString *contentType);
+FOUNDATION_EXPORT void CCBRURLOutputStream_ResponseException_initWithCCBRURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_(CCBRURLOutputStream_ResponseException *self, CCBRURLOutputStream *outer$, NSString *responseBody, JavaIoIOException *cause, jint responseCode, NSString *contentType);
 
-FOUNDATION_EXPORT CucumberRuntimeIoURLOutputStream_ResponseException *new_CucumberRuntimeIoURLOutputStream_ResponseException_initWithCucumberRuntimeIoURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_(CucumberRuntimeIoURLOutputStream *outer$, NSString *responseBody, JavaIoIOException *cause, jint responseCode, NSString *contentType) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRURLOutputStream_ResponseException *new_CCBRURLOutputStream_ResponseException_initWithCCBRURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_(CCBRURLOutputStream *outer$, NSString *responseBody, JavaIoIOException *cause, jint responseCode, NSString *contentType) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeIoURLOutputStream_ResponseException *create_CucumberRuntimeIoURLOutputStream_ResponseException_initWithCucumberRuntimeIoURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_(CucumberRuntimeIoURLOutputStream *outer$, NSString *responseBody, JavaIoIOException *cause, jint responseCode, NSString *contentType);
+FOUNDATION_EXPORT CCBRURLOutputStream_ResponseException *create_CCBRURLOutputStream_ResponseException_initWithCCBRURLOutputStream_withNSString_withJavaIoIOException_withInt_withNSString_(CCBRURLOutputStream *outer$, NSString *responseBody, JavaIoIOException *cause, jint responseCode, NSString *contentType);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoURLOutputStream_ResponseException)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRURLOutputStream_ResponseException)
 
 #endif
 

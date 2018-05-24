@@ -13,11 +13,11 @@
 #include "java/lang/reflect/Type.h"
 #include "java/util/List.h"
 
-@implementation CucumberRuntimeNoStepDefinition
+@implementation CCBRNoStepDefinition
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeNoStepDefinition_init(self);
+  CCBRNoStepDefinition_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -34,8 +34,8 @@ J2OBJC_IGNORE_DESIGNATED_END
   return JavaLangInteger_valueOfWithInt_(0);
 }
 
-- (CucumberRuntimeParameterInfo *)getParameterTypeWithInt:(jint)n
-                                  withJavaLangReflectType:(id<JavaLangReflectType>)argumentType {
+- (CCBRParameterInfo *)getParameterTypeWithInt:(jint)n
+                       withJavaLangReflectType:(id<JavaLangReflectType>)argumentType {
   return nil;
 }
 
@@ -61,7 +61,7 @@ J2OBJC_IGNORE_DESIGNATED_END
     { NULL, "LJavaUtilList;", 0x1, 0, 1, -1, 2, -1, -1 },
     { NULL, "LNSString;", 0x1, 3, 4, -1, -1, -1, -1 },
     { NULL, "LJavaLangInteger;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LCucumberRuntimeParameterInfo;", 0x1, 5, 6, 7, -1, -1, -1 },
+    { NULL, "LCCBRParameterInfo;", 0x1, 5, 6, 7, -1, -1, -1 },
     { NULL, "V", 0x1, 8, 9, 10, -1, -1, -1 },
     { NULL, "Z", 0x1, 11, 12, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
@@ -81,22 +81,22 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[8].selector = @selector(isScenarioScoped);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "matchedArguments", "LGherkinPicklesPickleStep;", "(Lgherkin/pickles/PickleStep;)Ljava/util/List<Lcucumber/runtime/Argument;>;", "getLocation", "Z", "getParameterType", "ILJavaLangReflectType;", "LJavaLangIndexOutOfBoundsException;", "execute", "LNSString;[LNSObject;", "LJavaLangThrowable;", "isDefinedAt", "LJavaLangStackTraceElement;" };
-  static const J2ObjcClassInfo _CucumberRuntimeNoStepDefinition = { "NoStepDefinition", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x0, 9, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeNoStepDefinition;
+  static const J2ObjcClassInfo _CCBRNoStepDefinition = { "NoStepDefinition", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x0, 9, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRNoStepDefinition;
 }
 
 @end
 
-void CucumberRuntimeNoStepDefinition_init(CucumberRuntimeNoStepDefinition *self) {
+void CCBRNoStepDefinition_init(CCBRNoStepDefinition *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeNoStepDefinition *new_CucumberRuntimeNoStepDefinition_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeNoStepDefinition, init)
+CCBRNoStepDefinition *new_CCBRNoStepDefinition_init() {
+  J2OBJC_NEW_IMPL(CCBRNoStepDefinition, init)
 }
 
-CucumberRuntimeNoStepDefinition *create_CucumberRuntimeNoStepDefinition_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeNoStepDefinition, init)
+CCBRNoStepDefinition *create_CCBRNoStepDefinition_init() {
+  J2OBJC_CREATE_IMPL(CCBRNoStepDefinition, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeNoStepDefinition)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRNoStepDefinition)

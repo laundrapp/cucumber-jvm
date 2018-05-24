@@ -11,7 +11,7 @@
 #include "java/lang/StringBuilder.h"
 #include "java/util/List.h"
 
-@interface CucumberRuntimeTableTablePrinter () {
+@interface CCBRTablePrinter () {
  @public
   IOSObjectArray *cellLengths_;
   IOSIntArray *maxLengths_;
@@ -33,33 +33,33 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeTableTablePrinter, cellLengths_, IOSObjectArray *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeTableTablePrinter, maxLengths_, IOSIntArray *)
+J2OBJC_FIELD_SETTER(CCBRTablePrinter, cellLengths_, IOSObjectArray *)
+J2OBJC_FIELD_SETTER(CCBRTablePrinter, maxLengths_, IOSIntArray *)
 
-__attribute__((unused)) static void CucumberRuntimeTableTablePrinter_calculateColumnAndMaxLengthsWithJavaUtilList_(CucumberRuntimeTableTablePrinter *self, id<JavaUtilList> rows);
+__attribute__((unused)) static void CCBRTablePrinter_calculateColumnAndMaxLengthsWithJavaUtilList_(CCBRTablePrinter *self, id<JavaUtilList> rows);
 
-__attribute__((unused)) static NSString *CucumberRuntimeTableTablePrinter_getCellSafelyWithJavaUtilList_withInt_(CucumberRuntimeTableTablePrinter *self, id<JavaUtilList> cells, jint colIndex);
+__attribute__((unused)) static NSString *CCBRTablePrinter_getCellSafelyWithJavaUtilList_withInt_(CCBRTablePrinter *self, id<JavaUtilList> cells, jint colIndex);
 
-__attribute__((unused)) static void CucumberRuntimeTableTablePrinter_printRowWithJavaUtilList_withInt_withJavaLangStringBuilder_(CucumberRuntimeTableTablePrinter *self, id<JavaUtilList> cells, jint rowIndex, JavaLangStringBuilder *buffer);
+__attribute__((unused)) static void CCBRTablePrinter_printRowWithJavaUtilList_withInt_withJavaLangStringBuilder_(CCBRTablePrinter *self, id<JavaUtilList> cells, jint rowIndex, JavaLangStringBuilder *buffer);
 
-__attribute__((unused)) static NSString *CucumberRuntimeTableTablePrinter_escapeCellWithNSString_(CucumberRuntimeTableTablePrinter *self, NSString *cell);
+__attribute__((unused)) static NSString *CCBRTablePrinter_escapeCellWithNSString_(CCBRTablePrinter *self, NSString *cell);
 
-__attribute__((unused)) static void CucumberRuntimeTableTablePrinter_padSpaceWithJavaLangStringBuilder_withInt_(CucumberRuntimeTableTablePrinter *self, JavaLangStringBuilder *buffer, jint indent);
+__attribute__((unused)) static void CCBRTablePrinter_padSpaceWithJavaLangStringBuilder_withInt_(CCBRTablePrinter *self, JavaLangStringBuilder *buffer, jint indent);
 
-@implementation CucumberRuntimeTableTablePrinter
+@implementation CCBRTablePrinter
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeTableTablePrinter_init(self);
+  CCBRTablePrinter_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (void)printTableWithJavaUtilList:(id<JavaUtilList>)table
          withJavaLangStringBuilder:(JavaLangStringBuilder *)result {
-  CucumberRuntimeTableTablePrinter_calculateColumnAndMaxLengthsWithJavaUtilList_(self, table);
+  CCBRTablePrinter_calculateColumnAndMaxLengthsWithJavaUtilList_(self, table);
   for (jint i = 0; i < [((id<JavaUtilList>) nil_chk(table)) size]; ++i) {
-    CucumberRuntimeTableTablePrinter_printRowWithJavaUtilList_withInt_withJavaLangStringBuilder_(self, [table getWithInt:i], i, result);
+    CCBRTablePrinter_printRowWithJavaUtilList_withInt_withJavaLangStringBuilder_(self, [table getWithInt:i], i, result);
     [((JavaLangStringBuilder *) nil_chk(result)) appendWithNSString:@"\n"];
   }
 }
@@ -70,27 +70,27 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (void)calculateColumnAndMaxLengthsWithJavaUtilList:(id<JavaUtilList>)rows {
-  CucumberRuntimeTableTablePrinter_calculateColumnAndMaxLengthsWithJavaUtilList_(self, rows);
+  CCBRTablePrinter_calculateColumnAndMaxLengthsWithJavaUtilList_(self, rows);
 }
 
 - (NSString *)getCellSafelyWithJavaUtilList:(id<JavaUtilList>)cells
                                     withInt:(jint)colIndex {
-  return CucumberRuntimeTableTablePrinter_getCellSafelyWithJavaUtilList_withInt_(self, cells, colIndex);
+  return CCBRTablePrinter_getCellSafelyWithJavaUtilList_withInt_(self, cells, colIndex);
 }
 
 - (void)printRowWithJavaUtilList:(id<JavaUtilList>)cells
                          withInt:(jint)rowIndex
        withJavaLangStringBuilder:(JavaLangStringBuilder *)buffer {
-  CucumberRuntimeTableTablePrinter_printRowWithJavaUtilList_withInt_withJavaLangStringBuilder_(self, cells, rowIndex, buffer);
+  CCBRTablePrinter_printRowWithJavaUtilList_withInt_withJavaLangStringBuilder_(self, cells, rowIndex, buffer);
 }
 
 - (NSString *)escapeCellWithNSString:(NSString *)cell {
-  return CucumberRuntimeTableTablePrinter_escapeCellWithNSString_(self, cell);
+  return CCBRTablePrinter_escapeCellWithNSString_(self, cell);
 }
 
 - (void)padSpaceWithJavaLangStringBuilder:(JavaLangStringBuilder *)buffer
                                   withInt:(jint)indent {
-  CucumberRuntimeTableTablePrinter_padSpaceWithJavaLangStringBuilder_withInt_(self, buffer, indent);
+  CCBRTablePrinter_padSpaceWithJavaLangStringBuilder_withInt_(self, buffer, indent);
 }
 
 - (void)dealloc {
@@ -127,25 +127,25 @@ J2OBJC_IGNORE_DESIGNATED_END
     { "maxLengths_", "[I", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "printTable", "LJavaUtilList;LJavaLangStringBuilder;", "(Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;Ljava/lang/StringBuilder;)V", "printStartIndent", "LJavaLangStringBuilder;I", "calculateColumnAndMaxLengths", "LJavaUtilList;", "(Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;)V", "getCellSafely", "LJavaUtilList;I", "(Ljava/util/List<Ljava/lang/String;>;I)Ljava/lang/String;", "printRow", "LJavaUtilList;ILJavaLangStringBuilder;", "(Ljava/util/List<Ljava/lang/String;>;ILjava/lang/StringBuilder;)V", "escapeCell", "LNSString;", "padSpace" };
-  static const J2ObjcClassInfo _CucumberRuntimeTableTablePrinter = { "TablePrinter", "cucumber.runtime.table", ptrTable, methods, fields, 7, 0x1, 8, 2, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeTableTablePrinter;
+  static const J2ObjcClassInfo _CCBRTablePrinter = { "TablePrinter", "cucumber.runtime.table", ptrTable, methods, fields, 7, 0x1, 8, 2, -1, -1, -1, -1, -1 };
+  return &_CCBRTablePrinter;
 }
 
 @end
 
-void CucumberRuntimeTableTablePrinter_init(CucumberRuntimeTableTablePrinter *self) {
+void CCBRTablePrinter_init(CCBRTablePrinter *self) {
   NSObject_init(self);
 }
 
-CucumberRuntimeTableTablePrinter *new_CucumberRuntimeTableTablePrinter_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeTableTablePrinter, init)
+CCBRTablePrinter *new_CCBRTablePrinter_init() {
+  J2OBJC_NEW_IMPL(CCBRTablePrinter, init)
 }
 
-CucumberRuntimeTableTablePrinter *create_CucumberRuntimeTableTablePrinter_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeTableTablePrinter, init)
+CCBRTablePrinter *create_CCBRTablePrinter_init() {
+  J2OBJC_CREATE_IMPL(CCBRTablePrinter, init)
 }
 
-void CucumberRuntimeTableTablePrinter_calculateColumnAndMaxLengthsWithJavaUtilList_(CucumberRuntimeTableTablePrinter *self, id<JavaUtilList> rows) {
+void CCBRTablePrinter_calculateColumnAndMaxLengthsWithJavaUtilList_(CCBRTablePrinter *self, id<JavaUtilList> rows) {
   jint columnCount = 0;
   for (id<JavaUtilList> __strong row in nil_chk(rows)) {
     if (columnCount < [((id<JavaUtilList>) nil_chk(row)) size]) {
@@ -157,26 +157,26 @@ void CucumberRuntimeTableTablePrinter_calculateColumnAndMaxLengthsWithJavaUtilLi
   for (jint rowIndex = 0; rowIndex < [rows size]; rowIndex++) {
     id<JavaUtilList> cells = [rows getWithInt:rowIndex];
     for (jint colIndex = 0; colIndex < columnCount; colIndex++) {
-      NSString *cell = CucumberRuntimeTableTablePrinter_getCellSafelyWithJavaUtilList_withInt_(self, cells, colIndex);
-      jint length = [((NSString *) nil_chk(CucumberRuntimeTableTablePrinter_escapeCellWithNSString_(self, cell))) java_length];
+      NSString *cell = CCBRTablePrinter_getCellSafelyWithJavaUtilList_withInt_(self, cells, colIndex);
+      jint length = [((NSString *) nil_chk(CCBRTablePrinter_escapeCellWithNSString_(self, cell))) java_length];
       *IOSIntArray_GetRef(nil_chk(IOSObjectArray_Get(nil_chk(self->cellLengths_), rowIndex)), colIndex) = length;
       *IOSIntArray_GetRef(nil_chk(self->maxLengths_), colIndex) = JavaLangMath_maxWithInt_withInt_(IOSIntArray_Get(self->maxLengths_, colIndex), length);
     }
   }
 }
 
-NSString *CucumberRuntimeTableTablePrinter_getCellSafelyWithJavaUtilList_withInt_(CucumberRuntimeTableTablePrinter *self, id<JavaUtilList> cells, jint colIndex) {
+NSString *CCBRTablePrinter_getCellSafelyWithJavaUtilList_withInt_(CCBRTablePrinter *self, id<JavaUtilList> cells, jint colIndex) {
   return (colIndex < [((id<JavaUtilList>) nil_chk(cells)) size]) ? [cells getWithInt:colIndex] : @"";
 }
 
-void CucumberRuntimeTableTablePrinter_printRowWithJavaUtilList_withInt_withJavaLangStringBuilder_(CucumberRuntimeTableTablePrinter *self, id<JavaUtilList> cells, jint rowIndex, JavaLangStringBuilder *buffer) {
+void CCBRTablePrinter_printRowWithJavaUtilList_withInt_withJavaLangStringBuilder_(CCBRTablePrinter *self, id<JavaUtilList> cells, jint rowIndex, JavaLangStringBuilder *buffer) {
   [self printStartIndentWithJavaLangStringBuilder:buffer withInt:rowIndex];
   [((JavaLangStringBuilder *) nil_chk(buffer)) appendWithNSString:@"| "];
   for (jint colIndex = 0; colIndex < ((IOSIntArray *) nil_chk(self->maxLengths_))->size_; colIndex++) {
-    NSString *cellText = CucumberRuntimeTableTablePrinter_escapeCellWithNSString_(self, CucumberRuntimeTableTablePrinter_getCellSafelyWithJavaUtilList_withInt_(self, cells, colIndex));
+    NSString *cellText = CCBRTablePrinter_escapeCellWithNSString_(self, CCBRTablePrinter_getCellSafelyWithJavaUtilList_withInt_(self, cells, colIndex));
     [buffer appendWithNSString:cellText];
     jint padding = IOSIntArray_Get(nil_chk(self->maxLengths_), colIndex) - IOSIntArray_Get(nil_chk(IOSObjectArray_Get(nil_chk(self->cellLengths_), rowIndex)), colIndex);
-    CucumberRuntimeTableTablePrinter_padSpaceWithJavaLangStringBuilder_withInt_(self, buffer, padding);
+    CCBRTablePrinter_padSpaceWithJavaLangStringBuilder_withInt_(self, buffer, padding);
     if (colIndex < ((IOSIntArray *) nil_chk(self->maxLengths_))->size_ - 1) {
       [buffer appendWithNSString:@" | "];
     }
@@ -186,14 +186,14 @@ void CucumberRuntimeTableTablePrinter_printRowWithJavaUtilList_withInt_withJavaL
   }
 }
 
-NSString *CucumberRuntimeTableTablePrinter_escapeCellWithNSString_(CucumberRuntimeTableTablePrinter *self, NSString *cell) {
+NSString *CCBRTablePrinter_escapeCellWithNSString_(CCBRTablePrinter *self, NSString *cell) {
   return [((NSString *) nil_chk([((NSString *) nil_chk([((NSString *) nil_chk(cell)) java_replaceAll:@"\\\\(?!\\|)" withReplacement:@"\\\\\\\\"])) java_replaceAll:@"\\n" withReplacement:@"\\\\n"])) java_replaceAll:@"\\|" withReplacement:@"\\\\|"];
 }
 
-void CucumberRuntimeTableTablePrinter_padSpaceWithJavaLangStringBuilder_withInt_(CucumberRuntimeTableTablePrinter *self, JavaLangStringBuilder *buffer, jint indent) {
+void CCBRTablePrinter_padSpaceWithJavaLangStringBuilder_withInt_(CCBRTablePrinter *self, JavaLangStringBuilder *buffer, jint indent) {
   for (jint i = 0; i < indent; i++) {
     [((JavaLangStringBuilder *) nil_chk(buffer)) appendWithNSString:@" "];
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeTableTablePrinter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTablePrinter)

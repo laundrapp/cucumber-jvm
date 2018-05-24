@@ -6,18 +6,18 @@
 #include "J2ObjC_source.h"
 #include "cucumber/runtime/StepDefinition.h"
 
-@interface CucumberRuntimeStepDefinition : NSObject
+@interface CCBRStepDefinition : NSObject
 
 @end
 
-@implementation CucumberRuntimeStepDefinition
+@implementation CCBRStepDefinition
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, "LJavaUtilList;", 0x401, 0, 1, -1, 2, -1, -1 },
     { NULL, "LNSString;", 0x401, 3, 4, -1, -1, -1, -1 },
     { NULL, "LJavaLangInteger;", 0x401, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LCucumberRuntimeParameterInfo;", 0x401, 5, 6, 7, -1, -1, -1 },
+    { NULL, "LCCBRParameterInfo;", 0x401, 5, 6, 7, -1, -1, -1 },
     { NULL, "V", 0x401, 8, 9, 10, -1, -1, -1 },
     { NULL, "Z", 0x401, 11, 12, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
@@ -36,10 +36,10 @@
   methods[7].selector = @selector(isScenarioScoped);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "matchedArguments", "LGherkinPicklesPickleStep;", "(Lgherkin/pickles/PickleStep;)Ljava/util/List<Lcucumber/runtime/Argument;>;", "getLocation", "Z", "getParameterType", "ILJavaLangReflectType;", "LJavaLangIndexOutOfBoundsException;", "execute", "LNSString;[LNSObject;", "LJavaLangThrowable;", "isDefinedAt", "LJavaLangStackTraceElement;" };
-  static const J2ObjcClassInfo _CucumberRuntimeStepDefinition = { "StepDefinition", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 8, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeStepDefinition;
+  static const J2ObjcClassInfo _CCBRStepDefinition = { "StepDefinition", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 8, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRStepDefinition;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRuntimeStepDefinition)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBRStepDefinition)

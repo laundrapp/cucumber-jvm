@@ -9,10 +9,10 @@
 #include "java/io/OutputStreamWriter.h"
 #include "java/nio/charset/Charset.h"
 
-@implementation CucumberRuntimeIoUTF8OutputStreamWriter
+@implementation CCBRUTF8OutputStreamWriter
 
 - (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg {
-  CucumberRuntimeIoUTF8OutputStreamWriter_initWithJavaIoOutputStream_(self, outArg);
+  CCBRUTF8OutputStreamWriter_initWithJavaIoOutputStream_(self, outArg);
   return self;
 }
 
@@ -26,22 +26,22 @@
   methods[0].selector = @selector(initWithJavaIoOutputStream:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LJavaIoOutputStream;", "LJavaIoIOException;" };
-  static const J2ObjcClassInfo _CucumberRuntimeIoUTF8OutputStreamWriter = { "UTF8OutputStreamWriter", "cucumber.runtime.io", ptrTable, methods, NULL, 7, 0x1, 1, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeIoUTF8OutputStreamWriter;
+  static const J2ObjcClassInfo _CCBRUTF8OutputStreamWriter = { "UTF8OutputStreamWriter", "cucumber.runtime.io", ptrTable, methods, NULL, 7, 0x1, 1, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRUTF8OutputStreamWriter;
 }
 
 @end
 
-void CucumberRuntimeIoUTF8OutputStreamWriter_initWithJavaIoOutputStream_(CucumberRuntimeIoUTF8OutputStreamWriter *self, JavaIoOutputStream *outArg) {
+void CCBRUTF8OutputStreamWriter_initWithJavaIoOutputStream_(CCBRUTF8OutputStreamWriter *self, JavaIoOutputStream *outArg) {
   JavaIoOutputStreamWriter_initWithJavaIoOutputStream_withJavaNioCharsetCharset_(self, outArg, JavaNioCharsetCharset_forNameWithNSString_(@"UTF-8"));
 }
 
-CucumberRuntimeIoUTF8OutputStreamWriter *new_CucumberRuntimeIoUTF8OutputStreamWriter_initWithJavaIoOutputStream_(JavaIoOutputStream *outArg) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeIoUTF8OutputStreamWriter, initWithJavaIoOutputStream_, outArg)
+CCBRUTF8OutputStreamWriter *new_CCBRUTF8OutputStreamWriter_initWithJavaIoOutputStream_(JavaIoOutputStream *outArg) {
+  J2OBJC_NEW_IMPL(CCBRUTF8OutputStreamWriter, initWithJavaIoOutputStream_, outArg)
 }
 
-CucumberRuntimeIoUTF8OutputStreamWriter *create_CucumberRuntimeIoUTF8OutputStreamWriter_initWithJavaIoOutputStream_(JavaIoOutputStream *outArg) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeIoUTF8OutputStreamWriter, initWithJavaIoOutputStream_, outArg)
+CCBRUTF8OutputStreamWriter *create_CCBRUTF8OutputStreamWriter_initWithJavaIoOutputStream_(JavaIoOutputStream *outArg) {
+  J2OBJC_CREATE_IMPL(CCBRUTF8OutputStreamWriter, initWithJavaIoOutputStream_, outArg)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeIoUTF8OutputStreamWriter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRUTF8OutputStreamWriter)

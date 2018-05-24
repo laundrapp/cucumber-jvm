@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaPlKiedy_) && (INCLUDE_ALL_CucumberApiJavaPlKiedy || defined(INCLUDE_CucumberApiJavaPlKiedy))
-#define CucumberApiJavaPlKiedy_
+#if !defined (CCBKiedy_) && (INCLUDE_ALL_CucumberApiJavaPlKiedy || defined(INCLUDE_CCBKiedy))
+#define CCBKiedy_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaPlKiedy < JavaLangAnnotationAnnotation >
+@protocol CCBKiedy < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaPlKiedy : NSObject < CucumberApiJavaPlKiedy > {
+@interface CCBKiedy : NSObject < CCBKiedy > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaPlKiedy)
+J2OBJC_EMPTY_STATIC_INIT(CCBKiedy)
 
-FOUNDATION_EXPORT id<CucumberApiJavaPlKiedy> create_CucumberApiJavaPlKiedy(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBKiedy> create_CCBKiedy(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaPlKiedy)
+J2OBJC_TYPE_LITERAL_HEADER(CCBKiedy)
+
+#define CucumberApiJavaPlKiedy CCBKiedy
 
 #endif
 

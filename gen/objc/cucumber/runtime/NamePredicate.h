@@ -18,17 +18,17 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeNamePredicate_) && (INCLUDE_ALL_CucumberRuntimeNamePredicate || defined(INCLUDE_CucumberRuntimeNamePredicate))
-#define CucumberRuntimeNamePredicate_
+#if !defined (CCBRNamePredicate_) && (INCLUDE_ALL_CucumberRuntimeNamePredicate || defined(INCLUDE_CCBRNamePredicate))
+#define CCBRNamePredicate_
 
 #define RESTRICT_CucumberRuntimePicklePredicate 1
-#define INCLUDE_CucumberRuntimePicklePredicate 1
+#define INCLUDE_CCBRPicklePredicate 1
 #include "cucumber/runtime/PicklePredicate.h"
 
 @class GherkinEventsPickleEvent;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeNamePredicate : NSObject < CucumberRuntimePicklePredicate >
+@interface CCBRNamePredicate : NSObject < CCBRPicklePredicate >
 
 #pragma mark Public
 
@@ -42,15 +42,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeNamePredicate)
+J2OBJC_EMPTY_STATIC_INIT(CCBRNamePredicate)
 
-FOUNDATION_EXPORT void CucumberRuntimeNamePredicate_initWithJavaUtilList_(CucumberRuntimeNamePredicate *self, id<JavaUtilList> patterns);
+FOUNDATION_EXPORT void CCBRNamePredicate_initWithJavaUtilList_(CCBRNamePredicate *self, id<JavaUtilList> patterns);
 
-FOUNDATION_EXPORT CucumberRuntimeNamePredicate *new_CucumberRuntimeNamePredicate_initWithJavaUtilList_(id<JavaUtilList> patterns) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRNamePredicate *new_CCBRNamePredicate_initWithJavaUtilList_(id<JavaUtilList> patterns) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeNamePredicate *create_CucumberRuntimeNamePredicate_initWithJavaUtilList_(id<JavaUtilList> patterns);
+FOUNDATION_EXPORT CCBRNamePredicate *create_CCBRNamePredicate_initWithJavaUtilList_(id<JavaUtilList> patterns);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeNamePredicate)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRNamePredicate)
+
+@compatibility_alias CucumberRuntimeNamePredicate CCBRNamePredicate;
 
 #endif
 

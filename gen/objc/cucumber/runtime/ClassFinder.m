@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/runtime/ClassFinder.h"
 
-@interface CucumberRuntimeClassFinder : NSObject
+@interface CCBRClassFinder : NSObject
 
 @end
 
-@implementation CucumberRuntimeClassFinder
+@implementation CCBRClassFinder
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -24,10 +24,10 @@
   methods[1].selector = @selector(loadClassWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "getDescendants", "LIOSClass;LNSString;", "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;Ljava/lang/String;)Ljava/util/Collection<Ljava/lang/Class<+TT;>;>;", "loadClass", "LNSString;", "LJavaLangClassNotFoundException;", "<T:Ljava/lang/Object;>(Ljava/lang/String;)Ljava/lang/Class<+TT;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeClassFinder = { "ClassFinder", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 2, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeClassFinder;
+  static const J2ObjcClassInfo _CCBRClassFinder = { "ClassFinder", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 2, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRClassFinder;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRuntimeClassFinder)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBRClassFinder)

@@ -18,17 +18,17 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeTooManyInstancesException_) && (INCLUDE_ALL_CucumberRuntimeTooManyInstancesException || defined(INCLUDE_CucumberRuntimeTooManyInstancesException))
-#define CucumberRuntimeTooManyInstancesException_
+#if !defined (CCBRTooManyInstancesException_) && (INCLUDE_ALL_CucumberRuntimeTooManyInstancesException || defined(INCLUDE_CCBRTooManyInstancesException))
+#define CCBRTooManyInstancesException_
 
 #define RESTRICT_CucumberRuntimeCucumberException 1
-#define INCLUDE_CucumberRuntimeCucumberException 1
+#define INCLUDE_CCBRCucumberException 1
 #include "cucumber/runtime/CucumberException.h"
 
 @class JavaLangThrowable;
 @protocol JavaUtilCollection;
 
-@interface CucumberRuntimeTooManyInstancesException : CucumberRuntimeCucumberException
+@interface CCBRTooManyInstancesException : CCBRCucumberException
 
 #pragma mark Public
 
@@ -45,15 +45,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeTooManyInstancesException)
+J2OBJC_EMPTY_STATIC_INIT(CCBRTooManyInstancesException)
 
-FOUNDATION_EXPORT void CucumberRuntimeTooManyInstancesException_initWithJavaUtilCollection_(CucumberRuntimeTooManyInstancesException *self, id<JavaUtilCollection> instances);
+FOUNDATION_EXPORT void CCBRTooManyInstancesException_initWithJavaUtilCollection_(CCBRTooManyInstancesException *self, id<JavaUtilCollection> instances);
 
-FOUNDATION_EXPORT CucumberRuntimeTooManyInstancesException *new_CucumberRuntimeTooManyInstancesException_initWithJavaUtilCollection_(id<JavaUtilCollection> instances) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRTooManyInstancesException *new_CCBRTooManyInstancesException_initWithJavaUtilCollection_(id<JavaUtilCollection> instances) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeTooManyInstancesException *create_CucumberRuntimeTooManyInstancesException_initWithJavaUtilCollection_(id<JavaUtilCollection> instances);
+FOUNDATION_EXPORT CCBRTooManyInstancesException *create_CCBRTooManyInstancesException_initWithJavaUtilCollection_(id<JavaUtilCollection> instances);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeTooManyInstancesException)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRTooManyInstancesException)
+
+@compatibility_alias CucumberRuntimeTooManyInstancesException CCBRTooManyInstancesException;
 
 #endif
 

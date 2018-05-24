@@ -18,36 +18,38 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeFormatterAnsiFormats_) && (INCLUDE_ALL_CucumberRuntimeFormatterAnsiFormats || defined(INCLUDE_CucumberRuntimeFormatterAnsiFormats))
-#define CucumberRuntimeFormatterAnsiFormats_
+#if !defined (CCBRAnsiFormats_) && (INCLUDE_ALL_CucumberRuntimeFormatterAnsiFormats || defined(INCLUDE_CCBRAnsiFormats))
+#define CCBRAnsiFormats_
 
 #define RESTRICT_CucumberRuntimeFormatterFormats 1
-#define INCLUDE_CucumberRuntimeFormatterFormats 1
+#define INCLUDE_CCBRFormats 1
 #include "cucumber/runtime/formatter/Formats.h"
 
-@protocol CucumberRuntimeFormatterFormat;
+@protocol CCBRFormat;
 
-@interface CucumberRuntimeFormatterAnsiFormats : NSObject < CucumberRuntimeFormatterFormats >
+@interface CCBRAnsiFormats : NSObject < CCBRFormats >
 
 #pragma mark Public
 
 - (instancetype __nonnull)init;
 
-- (id<CucumberRuntimeFormatterFormat>)getWithNSString:(NSString *)key;
+- (id<CCBRFormat>)getWithNSString:(NSString *)key;
 
 - (NSString *)upWithInt:(jint)n;
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeFormatterAnsiFormats)
+J2OBJC_STATIC_INIT(CCBRAnsiFormats)
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterAnsiFormats_init(CucumberRuntimeFormatterAnsiFormats *self);
+FOUNDATION_EXPORT void CCBRAnsiFormats_init(CCBRAnsiFormats *self);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterAnsiFormats *new_CucumberRuntimeFormatterAnsiFormats_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRAnsiFormats *new_CCBRAnsiFormats_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterAnsiFormats *create_CucumberRuntimeFormatterAnsiFormats_init(void);
+FOUNDATION_EXPORT CCBRAnsiFormats *create_CCBRAnsiFormats_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterAnsiFormats)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRAnsiFormats)
+
+@compatibility_alias CucumberRuntimeFormatterAnsiFormats CCBRAnsiFormats;
 
 #endif
 

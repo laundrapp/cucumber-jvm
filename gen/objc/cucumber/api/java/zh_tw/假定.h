@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaZh_tw假定_) && (INCLUDE_ALL_CucumberApiJavaZh_tw假定 || defined(INCLUDE_CucumberApiJavaZh_tw假定))
-#define CucumberApiJavaZh_tw假定_
+#if !defined (CCB假定_) && (INCLUDE_ALL_CucumberApiJavaZh_tw假定 || defined(INCLUDE_CCB假定))
+#define CCB假定_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaZh_tw假定 < JavaLangAnnotationAnnotation >
+@protocol CCB假定 < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaZh_tw假定 : NSObject < CucumberApiJavaZh_tw假定 > {
+@interface CCB假定 : NSObject < CCB假定 > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaZh_tw假定)
+J2OBJC_EMPTY_STATIC_INIT(CCB假定)
 
-FOUNDATION_EXPORT id<CucumberApiJavaZh_tw假定> create_CucumberApiJavaZh_tw假定(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCB假定> create_CCB假定(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaZh_tw假定)
+J2OBJC_TYPE_LITERAL_HEADER(CCB假定)
+
+#define CucumberApiJavaZh_tw假定 CCB假定
 
 #endif
 

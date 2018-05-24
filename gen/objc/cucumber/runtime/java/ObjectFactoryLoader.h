@@ -18,13 +18,13 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeJavaObjectFactoryLoader_) && (INCLUDE_ALL_CucumberRuntimeJavaObjectFactoryLoader || defined(INCLUDE_CucumberRuntimeJavaObjectFactoryLoader))
-#define CucumberRuntimeJavaObjectFactoryLoader_
+#if !defined (CCBObjectFactoryLoader_) && (INCLUDE_ALL_CucumberRuntimeJavaObjectFactoryLoader || defined(INCLUDE_CCBObjectFactoryLoader))
+#define CCBObjectFactoryLoader_
 
-@protocol CucumberApiJavaObjectFactory;
-@protocol CucumberRuntimeClassFinder;
+@protocol CCBObjectFactory;
+@protocol CCBRClassFinder;
 
-@interface CucumberRuntimeJavaObjectFactoryLoader : NSObject
+@interface CCBObjectFactoryLoader : NSObject
 
 #pragma mark Public
 
@@ -37,16 +37,18 @@ cucumber.runtime
  @param objectFactoryClassName specific class name of <code>ObjectFactory</code>  implementation. May be null.
  @return an instance of <code>ObjectFactory</code>
  */
-+ (id<CucumberApiJavaObjectFactory>)loadObjectFactoryWithCucumberRuntimeClassFinder:(id<CucumberRuntimeClassFinder>)classFinder
-                                                                       withNSString:(NSString *)objectFactoryClassName;
++ (id<CCBObjectFactory>)loadObjectFactoryWithCCBRClassFinder:(id<CCBRClassFinder>)classFinder
+                                                withNSString:(NSString *)objectFactoryClassName;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeJavaObjectFactoryLoader)
+J2OBJC_EMPTY_STATIC_INIT(CCBObjectFactoryLoader)
 
-FOUNDATION_EXPORT id<CucumberApiJavaObjectFactory> CucumberRuntimeJavaObjectFactoryLoader_loadObjectFactoryWithCucumberRuntimeClassFinder_withNSString_(id<CucumberRuntimeClassFinder> classFinder, NSString *objectFactoryClassName);
+FOUNDATION_EXPORT id<CCBObjectFactory> CCBObjectFactoryLoader_loadObjectFactoryWithCCBRClassFinder_withNSString_(id<CCBRClassFinder> classFinder, NSString *objectFactoryClassName);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeJavaObjectFactoryLoader)
+J2OBJC_TYPE_LITERAL_HEADER(CCBObjectFactoryLoader)
+
+@compatibility_alias CucumberRuntimeJavaObjectFactoryLoader CCBObjectFactoryLoader;
 
 #endif
 

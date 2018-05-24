@@ -18,10 +18,10 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeFormatterPluginFactory_) && (INCLUDE_ALL_CucumberRuntimeFormatterPluginFactory || defined(INCLUDE_CucumberRuntimeFormatterPluginFactory))
-#define CucumberRuntimeFormatterPluginFactory_
+#if !defined (CCBRPluginFactory_) && (INCLUDE_ALL_CucumberRuntimeFormatterPluginFactory || defined(INCLUDE_CCBRPluginFactory))
+#define CCBRPluginFactory_
 
-@protocol CucumberApiPlugin;
+@protocol CCBPlugin;
 
 /*!
  @brief This class creates plugin instances from a String.
@@ -31,13 +31,13 @@
  </ul>
  - seealso: Pluginfor specific requirements
  */
-@interface CucumberRuntimeFormatterPluginFactory : NSObject
+@interface CCBRPluginFactory : NSObject
 
 #pragma mark Public
 
 - (instancetype __nonnull)init;
 
-- (id<CucumberApiPlugin>)createWithNSString:(NSString *)pluginString;
+- (id<CCBPlugin>)createWithNSString:(NSString *)pluginString;
 
 + (jboolean)isFormatterNameWithNSString:(NSString *)name;
 
@@ -47,21 +47,23 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeFormatterPluginFactory)
+J2OBJC_STATIC_INIT(CCBRPluginFactory)
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterPluginFactory_init(CucumberRuntimeFormatterPluginFactory *self);
+FOUNDATION_EXPORT void CCBRPluginFactory_init(CCBRPluginFactory *self);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterPluginFactory *new_CucumberRuntimeFormatterPluginFactory_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRPluginFactory *new_CCBRPluginFactory_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterPluginFactory *create_CucumberRuntimeFormatterPluginFactory_init(void);
+FOUNDATION_EXPORT CCBRPluginFactory *create_CCBRPluginFactory_init(void);
 
-FOUNDATION_EXPORT jboolean CucumberRuntimeFormatterPluginFactory_isFormatterNameWithNSString_(NSString *name);
+FOUNDATION_EXPORT jboolean CCBRPluginFactory_isFormatterNameWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT jboolean CucumberRuntimeFormatterPluginFactory_isStepDefinitionReporterNameWithNSString_(NSString *name);
+FOUNDATION_EXPORT jboolean CCBRPluginFactory_isStepDefinitionReporterNameWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT jboolean CucumberRuntimeFormatterPluginFactory_isSummaryPrinterNameWithNSString_(NSString *name);
+FOUNDATION_EXPORT jboolean CCBRPluginFactory_isSummaryPrinterNameWithNSString_(NSString *name);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterPluginFactory)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRPluginFactory)
+
+@compatibility_alias CucumberRuntimeFormatterPluginFactory CCBRPluginFactory;
 
 #endif
 

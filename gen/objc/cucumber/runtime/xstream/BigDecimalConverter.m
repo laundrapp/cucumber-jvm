@@ -14,10 +14,10 @@
 
 #pragma clang diagnostic ignored "-Wincomplete-implementation"
 
-@implementation CucumberRuntimeXstreamBigDecimalConverter
+@implementation CCBRBigDecimalConverter
 
 - (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale {
-  CucumberRuntimeXstreamBigDecimalConverter_initWithJavaUtilLocale_(self, locale);
+  CCBRBigDecimalConverter_initWithJavaUtilLocale_(self, locale);
   return self;
 }
 
@@ -37,22 +37,22 @@
   methods[1].selector = @selector(downcastWithNSNumber:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LJavaUtilLocale;", "downcast", "LNSNumber;", "Lcucumber/runtime/xstream/ConverterWithNumberFormat<Ljava/math/BigDecimal;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamBigDecimalConverter = { "BigDecimalConverter", "cucumber.runtime.xstream", ptrTable, methods, NULL, 7, 0x0, 2, 0, -1, -1, -1, 3, -1 };
-  return &_CucumberRuntimeXstreamBigDecimalConverter;
+  static const J2ObjcClassInfo _CCBRBigDecimalConverter = { "BigDecimalConverter", "cucumber.runtime.xstream", ptrTable, methods, NULL, 7, 0x0, 2, 0, -1, -1, -1, 3, -1 };
+  return &_CCBRBigDecimalConverter;
 }
 
 @end
 
-void CucumberRuntimeXstreamBigDecimalConverter_initWithJavaUtilLocale_(CucumberRuntimeXstreamBigDecimalConverter *self, JavaUtilLocale *locale) {
-  CucumberRuntimeXstreamConverterWithNumberFormat_initWithJavaUtilLocale_withIOSClassArray_(self, locale, [IOSObjectArray arrayWithObjects:(id[]){ JavaMathBigDecimal_class_() } count:1 type:IOSClass_class_()]);
+void CCBRBigDecimalConverter_initWithJavaUtilLocale_(CCBRBigDecimalConverter *self, JavaUtilLocale *locale) {
+  CCBRConverterWithNumberFormat_initWithJavaUtilLocale_withIOSClassArray_(self, locale, [IOSObjectArray arrayWithObjects:(id[]){ JavaMathBigDecimal_class_() } count:1 type:IOSClass_class_()]);
 }
 
-CucumberRuntimeXstreamBigDecimalConverter *new_CucumberRuntimeXstreamBigDecimalConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamBigDecimalConverter, initWithJavaUtilLocale_, locale)
+CCBRBigDecimalConverter *new_CCBRBigDecimalConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
+  J2OBJC_NEW_IMPL(CCBRBigDecimalConverter, initWithJavaUtilLocale_, locale)
 }
 
-CucumberRuntimeXstreamBigDecimalConverter *create_CucumberRuntimeXstreamBigDecimalConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamBigDecimalConverter, initWithJavaUtilLocale_, locale)
+CCBRBigDecimalConverter *create_CCBRBigDecimalConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) {
+  J2OBJC_CREATE_IMPL(CCBRBigDecimalConverter, initWithJavaUtilLocale_, locale)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamBigDecimalConverter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRBigDecimalConverter)

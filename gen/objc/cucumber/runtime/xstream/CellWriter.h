@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamCellWriter_) && (INCLUDE_ALL_CucumberRuntimeXstreamCellWriter || defined(INCLUDE_CucumberRuntimeXstreamCellWriter))
-#define CucumberRuntimeXstreamCellWriter_
+#if !defined (CCBRCellWriter_) && (INCLUDE_ALL_CucumberRuntimeXstreamCellWriter || defined(INCLUDE_CCBRCellWriter))
+#define CCBRCellWriter_
 
 #define RESTRICT_CucumberDepsComThoughtworksXstreamIoAbstractWriter 1
 #define INCLUDE_CucumberDepsComThoughtworksXstreamIoAbstractWriter 1
@@ -27,7 +27,7 @@
 
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeXstreamCellWriter : CucumberDepsComThoughtworksXstreamIoAbstractWriter
+@interface CCBRCellWriter : CucumberDepsComThoughtworksXstreamIoAbstractWriter
 
 #pragma mark Public
 
@@ -39,11 +39,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamCellWriter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRCellWriter)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamCellWriter_init(CucumberRuntimeXstreamCellWriter *self);
+FOUNDATION_EXPORT void CCBRCellWriter_init(CCBRCellWriter *self);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamCellWriter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRCellWriter)
+
+@compatibility_alias CucumberRuntimeXstreamCellWriter CCBRCellWriter;
 
 #endif
 

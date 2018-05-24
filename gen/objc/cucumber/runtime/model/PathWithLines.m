@@ -12,37 +12,37 @@
 #include "java/util/regex/Matcher.h"
 #include "java/util/regex/Pattern.h"
 
-@interface CucumberRuntimeModelPathWithLines ()
+@interface CCBRPathWithLines ()
 
 + (id<JavaUtilList>)toLongsWithNSStringArray:(IOSObjectArray *)strings;
 
 @end
 
-inline JavaUtilRegexPattern *CucumberRuntimeModelPathWithLines_get_FILE_COLON_LINE_PATTERN(void);
-static JavaUtilRegexPattern *CucumberRuntimeModelPathWithLines_FILE_COLON_LINE_PATTERN;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeModelPathWithLines, FILE_COLON_LINE_PATTERN, JavaUtilRegexPattern *)
+inline JavaUtilRegexPattern *CCBRPathWithLines_get_FILE_COLON_LINE_PATTERN(void);
+static JavaUtilRegexPattern *CCBRPathWithLines_FILE_COLON_LINE_PATTERN;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRPathWithLines, FILE_COLON_LINE_PATTERN, JavaUtilRegexPattern *)
 
-__attribute__((unused)) static id<JavaUtilList> CucumberRuntimeModelPathWithLines_toLongsWithNSStringArray_(IOSObjectArray *strings);
+__attribute__((unused)) static id<JavaUtilList> CCBRPathWithLines_toLongsWithNSStringArray_(IOSObjectArray *strings);
 
-J2OBJC_INITIALIZED_DEFN(CucumberRuntimeModelPathWithLines)
+J2OBJC_INITIALIZED_DEFN(CCBRPathWithLines)
 
-@implementation CucumberRuntimeModelPathWithLines
+@implementation CCBRPathWithLines
 
 + (jboolean)hasLineFiltersWithNSString:(NSString *)pathName {
-  return CucumberRuntimeModelPathWithLines_hasLineFiltersWithNSString_(pathName);
+  return CCBRPathWithLines_hasLineFiltersWithNSString_(pathName);
 }
 
 + (NSString *)stripLineFiltersWithNSString:(NSString *)pathName {
-  return CucumberRuntimeModelPathWithLines_stripLineFiltersWithNSString_(pathName);
+  return CCBRPathWithLines_stripLineFiltersWithNSString_(pathName);
 }
 
 - (instancetype __nonnull)initWithNSString:(NSString *)pathName {
-  CucumberRuntimeModelPathWithLines_initWithNSString_(self, pathName);
+  CCBRPathWithLines_initWithNSString_(self, pathName);
   return self;
 }
 
 + (id<JavaUtilList>)toLongsWithNSStringArray:(IOSObjectArray *)strings {
-  return CucumberRuntimeModelPathWithLines_toLongsWithNSStringArray_(strings);
+  return CCBRPathWithLines_toLongsWithNSStringArray_(strings);
 }
 
 - (NSString *)description {
@@ -77,28 +77,28 @@ J2OBJC_INITIALIZED_DEFN(CucumberRuntimeModelPathWithLines)
     { "path_", "LNSString;", .constantValue.asLong = 0, 0x11, -1, -1, -1, -1 },
     { "lines_", "LJavaUtilList;", .constantValue.asLong = 0, 0x11, -1, -1, 8, -1 },
   };
-  static const void *ptrTable[] = { "hasLineFilters", "LNSString;", "stripLineFilters", "toLongs", "[LNSString;", "([Ljava/lang/String;)Ljava/util/List<Ljava/lang/Long;>;", "toString", &CucumberRuntimeModelPathWithLines_FILE_COLON_LINE_PATTERN, "Ljava/util/List<Ljava/lang/Long;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeModelPathWithLines = { "PathWithLines", "cucumber.runtime.model", ptrTable, methods, fields, 7, 0x1, 5, 3, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeModelPathWithLines;
+  static const void *ptrTable[] = { "hasLineFilters", "LNSString;", "stripLineFilters", "toLongs", "[LNSString;", "([Ljava/lang/String;)Ljava/util/List<Ljava/lang/Long;>;", "toString", &CCBRPathWithLines_FILE_COLON_LINE_PATTERN, "Ljava/util/List<Ljava/lang/Long;>;" };
+  static const J2ObjcClassInfo _CCBRPathWithLines = { "PathWithLines", "cucumber.runtime.model", ptrTable, methods, fields, 7, 0x1, 5, 3, -1, -1, -1, -1, -1 };
+  return &_CCBRPathWithLines;
 }
 
 + (void)initialize {
-  if (self == [CucumberRuntimeModelPathWithLines class]) {
-    JreStrongAssign(&CucumberRuntimeModelPathWithLines_FILE_COLON_LINE_PATTERN, JavaUtilRegexPattern_compileWithNSString_(@"^([\\w\\W]*?):([\\d:]+)$"));
-    J2OBJC_SET_INITIALIZED(CucumberRuntimeModelPathWithLines)
+  if (self == [CCBRPathWithLines class]) {
+    JreStrongAssign(&CCBRPathWithLines_FILE_COLON_LINE_PATTERN, JavaUtilRegexPattern_compileWithNSString_(@"^([\\w\\W]*?):([\\d:]+)$"));
+    J2OBJC_SET_INITIALIZED(CCBRPathWithLines)
   }
 }
 
 @end
 
-jboolean CucumberRuntimeModelPathWithLines_hasLineFiltersWithNSString_(NSString *pathName) {
-  CucumberRuntimeModelPathWithLines_initialize();
-  return [((JavaUtilRegexMatcher *) nil_chk([((JavaUtilRegexPattern *) nil_chk(CucumberRuntimeModelPathWithLines_FILE_COLON_LINE_PATTERN)) matcherWithJavaLangCharSequence:pathName])) matches];
+jboolean CCBRPathWithLines_hasLineFiltersWithNSString_(NSString *pathName) {
+  CCBRPathWithLines_initialize();
+  return [((JavaUtilRegexMatcher *) nil_chk([((JavaUtilRegexPattern *) nil_chk(CCBRPathWithLines_FILE_COLON_LINE_PATTERN)) matcherWithJavaLangCharSequence:pathName])) matches];
 }
 
-NSString *CucumberRuntimeModelPathWithLines_stripLineFiltersWithNSString_(NSString *pathName) {
-  CucumberRuntimeModelPathWithLines_initialize();
-  JavaUtilRegexMatcher *matcher = [((JavaUtilRegexPattern *) nil_chk(CucumberRuntimeModelPathWithLines_FILE_COLON_LINE_PATTERN)) matcherWithJavaLangCharSequence:pathName];
+NSString *CCBRPathWithLines_stripLineFiltersWithNSString_(NSString *pathName) {
+  CCBRPathWithLines_initialize();
+  JavaUtilRegexMatcher *matcher = [((JavaUtilRegexPattern *) nil_chk(CCBRPathWithLines_FILE_COLON_LINE_PATTERN)) matcherWithJavaLangCharSequence:pathName];
   if ([((JavaUtilRegexMatcher *) nil_chk(matcher)) matches]) {
     return [matcher groupWithInt:1];
   }
@@ -107,29 +107,29 @@ NSString *CucumberRuntimeModelPathWithLines_stripLineFiltersWithNSString_(NSStri
   }
 }
 
-void CucumberRuntimeModelPathWithLines_initWithNSString_(CucumberRuntimeModelPathWithLines *self, NSString *pathName) {
+void CCBRPathWithLines_initWithNSString_(CCBRPathWithLines *self, NSString *pathName) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->lines_, new_JavaUtilArrayList_init());
-  JavaUtilRegexMatcher *matcher = [((JavaUtilRegexPattern *) nil_chk(CucumberRuntimeModelPathWithLines_FILE_COLON_LINE_PATTERN)) matcherWithJavaLangCharSequence:pathName];
+  JavaUtilRegexMatcher *matcher = [((JavaUtilRegexPattern *) nil_chk(CCBRPathWithLines_FILE_COLON_LINE_PATTERN)) matcherWithJavaLangCharSequence:pathName];
   if ([((JavaUtilRegexMatcher *) nil_chk(matcher)) matches]) {
     JreStrongAssign(&self->path_, [matcher groupWithInt:1]);
-    [self->lines_ addAllWithJavaUtilCollection:CucumberRuntimeModelPathWithLines_toLongsWithNSStringArray_([((NSString *) nil_chk([matcher groupWithInt:2])) java_split:@":"])];
+    [self->lines_ addAllWithJavaUtilCollection:CCBRPathWithLines_toLongsWithNSStringArray_([((NSString *) nil_chk([matcher groupWithInt:2])) java_split:@":"])];
   }
   else {
     JreStrongAssign(&self->path_, pathName);
   }
 }
 
-CucumberRuntimeModelPathWithLines *new_CucumberRuntimeModelPathWithLines_initWithNSString_(NSString *pathName) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeModelPathWithLines, initWithNSString_, pathName)
+CCBRPathWithLines *new_CCBRPathWithLines_initWithNSString_(NSString *pathName) {
+  J2OBJC_NEW_IMPL(CCBRPathWithLines, initWithNSString_, pathName)
 }
 
-CucumberRuntimeModelPathWithLines *create_CucumberRuntimeModelPathWithLines_initWithNSString_(NSString *pathName) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeModelPathWithLines, initWithNSString_, pathName)
+CCBRPathWithLines *create_CCBRPathWithLines_initWithNSString_(NSString *pathName) {
+  J2OBJC_CREATE_IMPL(CCBRPathWithLines, initWithNSString_, pathName)
 }
 
-id<JavaUtilList> CucumberRuntimeModelPathWithLines_toLongsWithNSStringArray_(IOSObjectArray *strings) {
-  CucumberRuntimeModelPathWithLines_initialize();
+id<JavaUtilList> CCBRPathWithLines_toLongsWithNSStringArray_(IOSObjectArray *strings) {
+  CCBRPathWithLines_initialize();
   id<JavaUtilList> result = create_JavaUtilArrayList_init();
   {
     IOSObjectArray *a__ = strings;
@@ -143,4 +143,4 @@ id<JavaUtilList> CucumberRuntimeModelPathWithLines_toLongsWithNSStringArray_(IOS
   return result;
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeModelPathWithLines)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRPathWithLines)

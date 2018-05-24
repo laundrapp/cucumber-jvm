@@ -18,11 +18,11 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamCalendarConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamCalendarConverter || defined(INCLUDE_CucumberRuntimeXstreamCalendarConverter))
-#define CucumberRuntimeXstreamCalendarConverter_
+#if !defined (CCBRCalendarConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamCalendarConverter || defined(INCLUDE_CCBRCalendarConverter))
+#define CCBRCalendarConverter_
 
 #define RESTRICT_CucumberRuntimeXstreamTimeConverter 1
-#define INCLUDE_CucumberRuntimeXstreamTimeConverter 1
+#define INCLUDE_CCBRTimeConverter 1
 #include "cucumber/runtime/xstream/TimeConverter.h"
 
 @class IOSObjectArray;
@@ -30,7 +30,7 @@
 @class JavaUtilCalendar;
 @class JavaUtilLocale;
 
-@interface CucumberRuntimeXstreamCalendarConverter : CucumberRuntimeXstreamTimeConverter
+@interface CCBRCalendarConverter : CCBRTimeConverter
 
 #pragma mark Public
 
@@ -50,15 +50,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamCalendarConverter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRCalendarConverter)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamCalendarConverter_initWithJavaUtilLocale_(CucumberRuntimeXstreamCalendarConverter *self, JavaUtilLocale *locale);
+FOUNDATION_EXPORT void CCBRCalendarConverter_initWithJavaUtilLocale_(CCBRCalendarConverter *self, JavaUtilLocale *locale);
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamCalendarConverter *new_CucumberRuntimeXstreamCalendarConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRCalendarConverter *new_CCBRCalendarConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamCalendarConverter *create_CucumberRuntimeXstreamCalendarConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale);
+FOUNDATION_EXPORT CCBRCalendarConverter *create_CCBRCalendarConverter_initWithJavaUtilLocale_(JavaUtilLocale *locale);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamCalendarConverter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRCalendarConverter)
+
+@compatibility_alias CucumberRuntimeXstreamCalendarConverter CCBRCalendarConverter;
 
 #endif
 

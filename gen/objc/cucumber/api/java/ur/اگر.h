@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaUrاگر_) && (INCLUDE_ALL_CucumberApiJavaUrاگر || defined(INCLUDE_CucumberApiJavaUrاگر))
-#define CucumberApiJavaUrاگر_
+#if !defined (CCBاگر_) && (INCLUDE_ALL_CucumberApiJavaUrاگر || defined(INCLUDE_CCBاگر))
+#define CCBاگر_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaUrاگر < JavaLangAnnotationAnnotation >
+@protocol CCBاگر < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaUrاگر : NSObject < CucumberApiJavaUrاگر > {
+@interface CCBاگر : NSObject < CCBاگر > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaUrاگر)
+J2OBJC_EMPTY_STATIC_INIT(CCBاگر)
 
-FOUNDATION_EXPORT id<CucumberApiJavaUrاگر> create_CucumberApiJavaUrاگر(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBاگر> create_CCBاگر(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaUrاگر)
+J2OBJC_TYPE_LITERAL_HEADER(CCBاگر)
+
+#define CucumberApiJavaUrاگر CCBاگر
 
 #endif
 

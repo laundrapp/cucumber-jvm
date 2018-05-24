@@ -18,20 +18,22 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiEventEventHandler_) && (INCLUDE_ALL_CucumberApiEventEventHandler || defined(INCLUDE_CucumberApiEventEventHandler))
-#define CucumberApiEventEventHandler_
+#if !defined (CCBEventHandler_) && (INCLUDE_ALL_CucumberApiEventEventHandler || defined(INCLUDE_CCBEventHandler))
+#define CCBEventHandler_
 
-@protocol CucumberApiEventEvent;
+@protocol CCBEvent;
 
-@protocol CucumberApiEventEventHandler < JavaObject >
+@protocol CCBEventHandler < JavaObject >
 
-- (void)receiveWithCucumberApiEventEvent:(id<CucumberApiEventEvent>)event;
+- (void)receiveWithCCBEvent:(id<CCBEvent>)event;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiEventEventHandler)
+J2OBJC_EMPTY_STATIC_INIT(CCBEventHandler)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventEventHandler)
+J2OBJC_TYPE_LITERAL_HEADER(CCBEventHandler)
+
+#define CucumberApiEventEventHandler CCBEventHandler
 
 #endif
 

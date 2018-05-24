@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeCucumberException_) && (INCLUDE_ALL_CucumberRuntimeCucumberException || defined(INCLUDE_CucumberRuntimeCucumberException))
-#define CucumberRuntimeCucumberException_
+#if !defined (CCBRCucumberException_) && (INCLUDE_ALL_CucumberRuntimeCucumberException || defined(INCLUDE_CCBRCucumberException))
+#define CCBRCucumberException_
 
 #define RESTRICT_JavaLangRuntimeException 1
 #define INCLUDE_JavaLangRuntimeException 1
@@ -27,7 +27,7 @@
 
 @class JavaLangThrowable;
 
-@interface CucumberRuntimeCucumberException : JavaLangRuntimeException
+@interface CCBRCucumberException : JavaLangRuntimeException
 
 #pragma mark Public
 
@@ -49,27 +49,29 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeCucumberException)
+J2OBJC_EMPTY_STATIC_INIT(CCBRCucumberException)
 
-FOUNDATION_EXPORT void CucumberRuntimeCucumberException_initWithNSString_(CucumberRuntimeCucumberException *self, NSString *message);
+FOUNDATION_EXPORT void CCBRCucumberException_initWithNSString_(CCBRCucumberException *self, NSString *message);
 
-FOUNDATION_EXPORT CucumberRuntimeCucumberException *new_CucumberRuntimeCucumberException_initWithNSString_(NSString *message) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRCucumberException *new_CCBRCucumberException_initWithNSString_(NSString *message) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeCucumberException *create_CucumberRuntimeCucumberException_initWithNSString_(NSString *message);
+FOUNDATION_EXPORT CCBRCucumberException *create_CCBRCucumberException_initWithNSString_(NSString *message);
 
-FOUNDATION_EXPORT void CucumberRuntimeCucumberException_initWithNSString_withJavaLangThrowable_(CucumberRuntimeCucumberException *self, NSString *message, JavaLangThrowable *e);
+FOUNDATION_EXPORT void CCBRCucumberException_initWithNSString_withJavaLangThrowable_(CCBRCucumberException *self, NSString *message, JavaLangThrowable *e);
 
-FOUNDATION_EXPORT CucumberRuntimeCucumberException *new_CucumberRuntimeCucumberException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *e) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRCucumberException *new_CCBRCucumberException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *e) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeCucumberException *create_CucumberRuntimeCucumberException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *e);
+FOUNDATION_EXPORT CCBRCucumberException *create_CCBRCucumberException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *e);
 
-FOUNDATION_EXPORT void CucumberRuntimeCucumberException_initWithJavaLangThrowable_(CucumberRuntimeCucumberException *self, JavaLangThrowable *e);
+FOUNDATION_EXPORT void CCBRCucumberException_initWithJavaLangThrowable_(CCBRCucumberException *self, JavaLangThrowable *e);
 
-FOUNDATION_EXPORT CucumberRuntimeCucumberException *new_CucumberRuntimeCucumberException_initWithJavaLangThrowable_(JavaLangThrowable *e) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRCucumberException *new_CCBRCucumberException_initWithJavaLangThrowable_(JavaLangThrowable *e) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeCucumberException *create_CucumberRuntimeCucumberException_initWithJavaLangThrowable_(JavaLangThrowable *e);
+FOUNDATION_EXPORT CCBRCucumberException *create_CCBRCucumberException_initWithJavaLangThrowable_(JavaLangThrowable *e);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeCucumberException)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRCucumberException)
+
+@compatibility_alias CucumberRuntimeCucumberException CCBRCucumberException;
 
 #endif
 

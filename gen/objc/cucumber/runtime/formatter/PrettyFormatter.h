@@ -18,29 +18,29 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeFormatterPrettyFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterPrettyFormatter || defined(INCLUDE_CucumberRuntimeFormatterPrettyFormatter))
-#define CucumberRuntimeFormatterPrettyFormatter_
+#if !defined (CCBRPrettyFormatter_) && (INCLUDE_ALL_CucumberRuntimeFormatterPrettyFormatter || defined(INCLUDE_CCBRPrettyFormatter))
+#define CCBRPrettyFormatter_
 
 #define RESTRICT_CucumberApiFormatterFormatter 1
-#define INCLUDE_CucumberApiFormatterFormatter 1
+#define INCLUDE_CCBFormatter 1
 #include "cucumber/api/formatter/Formatter.h"
 
 #define RESTRICT_CucumberApiFormatterColorAware 1
-#define INCLUDE_CucumberApiFormatterColorAware 1
+#define INCLUDE_CCBColorAware 1
 #include "cucumber/api/formatter/ColorAware.h"
 
-@protocol CucumberApiEventEventPublisher;
-@protocol CucumberRuntimeFormatterFormat;
+@protocol CCBEventPublisher;
+@protocol CCBRFormat;
 @protocol JavaLangAppendable;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeFormatterPrettyFormatter : NSObject < CucumberApiFormatterFormatter, CucumberApiFormatterColorAware >
+@interface CCBRPrettyFormatter : NSObject < CCBFormatter, CCBColorAware >
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg;
 
-- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
+- (void)setEventPublisherWithCCBEventPublisher:(id<CCBEventPublisher>)publisher;
 
 - (void)setMonochromeWithBoolean:(jboolean)monochrome;
 
@@ -48,8 +48,8 @@
 
 - (NSString *)formatStepTextWithNSString:(NSString *)keyword
                             withNSString:(NSString *)stepText
-      withCucumberRuntimeFormatterFormat:(id<CucumberRuntimeFormatterFormat>)textFormat
-      withCucumberRuntimeFormatterFormat:(id<CucumberRuntimeFormatterFormat>)argFormat
+                          withCCBRFormat:(id<CCBRFormat>)textFormat
+                          withCCBRFormat:(id<CCBRFormat>)argFormat
                         withJavaUtilList:(id<JavaUtilList>)arguments;
 
 // Disallowed inherited constructors, do not use.
@@ -58,15 +58,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFormatterPrettyFormatter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRPrettyFormatter)
 
-FOUNDATION_EXPORT void CucumberRuntimeFormatterPrettyFormatter_initWithJavaLangAppendable_(CucumberRuntimeFormatterPrettyFormatter *self, id<JavaLangAppendable> outArg);
+FOUNDATION_EXPORT void CCBRPrettyFormatter_initWithJavaLangAppendable_(CCBRPrettyFormatter *self, id<JavaLangAppendable> outArg);
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterPrettyFormatter *new_CucumberRuntimeFormatterPrettyFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRPrettyFormatter *new_CCBRPrettyFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFormatterPrettyFormatter *create_CucumberRuntimeFormatterPrettyFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg);
+FOUNDATION_EXPORT CCBRPrettyFormatter *create_CCBRPrettyFormatter_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFormatterPrettyFormatter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRPrettyFormatter)
+
+@compatibility_alias CucumberRuntimeFormatterPrettyFormatter CCBRPrettyFormatter;
 
 #endif
 

@@ -18,19 +18,19 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeRuntimeOptionsFactory_) && (INCLUDE_ALL_CucumberRuntimeRuntimeOptionsFactory || defined(INCLUDE_CucumberRuntimeRuntimeOptionsFactory))
-#define CucumberRuntimeRuntimeOptionsFactory_
+#if !defined (CCBRRuntimeOptionsFactory_) && (INCLUDE_ALL_CucumberRuntimeRuntimeOptionsFactory || defined(INCLUDE_CCBRRuntimeOptionsFactory))
+#define CCBRRuntimeOptionsFactory_
 
-@class CucumberRuntimeRuntimeOptions;
+@class CCBRRuntimeOptions;
 @class IOSClass;
 
-@interface CucumberRuntimeRuntimeOptionsFactory : NSObject
+@interface CCBRRuntimeOptionsFactory : NSObject
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithIOSClass:(IOSClass *)clazz;
 
-- (CucumberRuntimeRuntimeOptions *)create;
+- (CCBRRuntimeOptions *)create;
 
 #pragma mark Package-Private
 
@@ -46,21 +46,23 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeRuntimeOptionsFactory)
+J2OBJC_EMPTY_STATIC_INIT(CCBRRuntimeOptionsFactory)
 
-FOUNDATION_EXPORT void CucumberRuntimeRuntimeOptionsFactory_initWithIOSClass_(CucumberRuntimeRuntimeOptionsFactory *self, IOSClass *clazz);
+FOUNDATION_EXPORT void CCBRRuntimeOptionsFactory_initWithIOSClass_(CCBRRuntimeOptionsFactory *self, IOSClass *clazz);
 
-FOUNDATION_EXPORT CucumberRuntimeRuntimeOptionsFactory *new_CucumberRuntimeRuntimeOptionsFactory_initWithIOSClass_(IOSClass *clazz) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRRuntimeOptionsFactory *new_CCBRRuntimeOptionsFactory_initWithIOSClass_(IOSClass *clazz) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeRuntimeOptionsFactory *create_CucumberRuntimeRuntimeOptionsFactory_initWithIOSClass_(IOSClass *clazz);
+FOUNDATION_EXPORT CCBRRuntimeOptionsFactory *create_CCBRRuntimeOptionsFactory_initWithIOSClass_(IOSClass *clazz);
 
-FOUNDATION_EXPORT NSString *CucumberRuntimeRuntimeOptionsFactory_packagePathWithIOSClass_(IOSClass *clazz);
+FOUNDATION_EXPORT NSString *CCBRRuntimeOptionsFactory_packagePathWithIOSClass_(IOSClass *clazz);
 
-FOUNDATION_EXPORT NSString *CucumberRuntimeRuntimeOptionsFactory_packagePathWithNSString_(NSString *packageName);
+FOUNDATION_EXPORT NSString *CCBRRuntimeOptionsFactory_packagePathWithNSString_(NSString *packageName);
 
-FOUNDATION_EXPORT NSString *CucumberRuntimeRuntimeOptionsFactory_packageNameWithNSString_(NSString *className_);
+FOUNDATION_EXPORT NSString *CCBRRuntimeOptionsFactory_packageNameWithNSString_(NSString *className_);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeRuntimeOptionsFactory)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRRuntimeOptionsFactory)
+
+@compatibility_alias CucumberRuntimeRuntimeOptionsFactory CCBRRuntimeOptionsFactory;
 
 #endif
 

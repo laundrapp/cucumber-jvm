@@ -18,15 +18,15 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeMethodFormat_) && (INCLUDE_ALL_CucumberRuntimeMethodFormat || defined(INCLUDE_CucumberRuntimeMethodFormat))
-#define CucumberRuntimeMethodFormat_
+#if !defined (CCBRMethodFormat_) && (INCLUDE_ALL_CucumberRuntimeMethodFormat || defined(INCLUDE_CCBRMethodFormat))
+#define CCBRMethodFormat_
 
 @class JavaLangReflectMethod;
 
 /*!
  @brief Helper class for formatting a method signature to a shorter form.
  */
-@interface CucumberRuntimeMethodFormat : NSObject
+@interface CCBRMethodFormat : NSObject
 
 #pragma mark Public
 
@@ -38,19 +38,21 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeMethodFormat)
+J2OBJC_STATIC_INIT(CCBRMethodFormat)
 
-inline CucumberRuntimeMethodFormat *CucumberRuntimeMethodFormat_get_SHORT(void);
+inline CCBRMethodFormat *CCBRMethodFormat_get_SHORT(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT CucumberRuntimeMethodFormat *CucumberRuntimeMethodFormat_SHORT;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeMethodFormat, SHORT, CucumberRuntimeMethodFormat *)
+FOUNDATION_EXPORT CCBRMethodFormat *CCBRMethodFormat_SHORT;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRMethodFormat, SHORT, CCBRMethodFormat *)
 
-inline CucumberRuntimeMethodFormat *CucumberRuntimeMethodFormat_get_FULL(void);
+inline CCBRMethodFormat *CCBRMethodFormat_get_FULL(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT CucumberRuntimeMethodFormat *CucumberRuntimeMethodFormat_FULL;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeMethodFormat, FULL, CucumberRuntimeMethodFormat *)
+FOUNDATION_EXPORT CCBRMethodFormat *CCBRMethodFormat_FULL;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRMethodFormat, FULL, CCBRMethodFormat *)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeMethodFormat)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRMethodFormat)
+
+@compatibility_alias CucumberRuntimeMethodFormat CCBRMethodFormat;
 
 #endif
 

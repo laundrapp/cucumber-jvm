@@ -6,17 +6,17 @@
 #include "J2ObjC_source.h"
 #include "cucumber/api/Plugin.h"
 
-@interface CucumberApiPlugin : NSObject
+@interface CCBPlugin : NSObject
 
 @end
 
-@implementation CucumberApiPlugin
+@implementation CCBPlugin
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcClassInfo _CucumberApiPlugin = { "Plugin", "cucumber.api", NULL, NULL, NULL, 7, 0x609, 0, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberApiPlugin;
+  static const J2ObjcClassInfo _CCBPlugin = { "Plugin", "cucumber.api", NULL, NULL, NULL, 7, 0x609, 0, 0, -1, -1, -1, -1, -1 };
+  return &_CCBPlugin;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiPlugin)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBPlugin)

@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/runtime/io/ResourceLoader.h"
 
-@interface CucumberRuntimeIoResourceLoader : NSObject
+@interface CCBRResourceLoader : NSObject
 
 @end
 
-@implementation CucumberRuntimeIoResourceLoader
+@implementation CCBRResourceLoader
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -22,10 +22,10 @@
   methods[0].selector = @selector(resourcesWithNSString:withNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "resources", "LNSString;LNSString;", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Iterable<Lcucumber/runtime/io/Resource;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeIoResourceLoader = { "ResourceLoader", "cucumber.runtime.io", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeIoResourceLoader;
+  static const J2ObjcClassInfo _CCBRResourceLoader = { "ResourceLoader", "cucumber.runtime.io", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRResourceLoader;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRuntimeIoResourceLoader)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBRResourceLoader)

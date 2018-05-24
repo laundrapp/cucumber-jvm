@@ -26,33 +26,33 @@
 #include "java/util/Set.h"
 #include "java/util/Stack.h"
 
-@interface CucumberRuntimeXstreamComplexTypeWriter () {
+@interface CCBRComplexTypeWriter () {
  @public
   id<JavaUtilList> columnNames_;
   id<JavaUtilMap> fields_;
   JavaUtilStack *currentKey_;
 }
 
-+ (CucumberRuntimeCucumberException *)createMissingConverterExceptionWithNSString:(NSString *)clazz
-                                                                     withNSString:(NSString *)field;
++ (CCBRCucumberException *)createMissingConverterExceptionWithNSString:(NSString *)clazz
+                                                          withNSString:(NSString *)field;
 
 + (NSString *)modifierAndTypeOfFieldWithNSString:(NSString *)clazz
                                     withNSString:(NSString *)fieldName;
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamComplexTypeWriter, columnNames_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamComplexTypeWriter, fields_, id<JavaUtilMap>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamComplexTypeWriter, currentKey_, JavaUtilStack *)
+J2OBJC_FIELD_SETTER(CCBRComplexTypeWriter, columnNames_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRComplexTypeWriter, fields_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(CCBRComplexTypeWriter, currentKey_, JavaUtilStack *)
 
-__attribute__((unused)) static CucumberRuntimeCucumberException *CucumberRuntimeXstreamComplexTypeWriter_createMissingConverterExceptionWithNSString_withNSString_(NSString *clazz, NSString *field);
+__attribute__((unused)) static CCBRCucumberException *CCBRComplexTypeWriter_createMissingConverterExceptionWithNSString_withNSString_(NSString *clazz, NSString *field);
 
-__attribute__((unused)) static NSString *CucumberRuntimeXstreamComplexTypeWriter_modifierAndTypeOfFieldWithNSString_withNSString_(NSString *clazz, NSString *fieldName);
+__attribute__((unused)) static NSString *CCBRComplexTypeWriter_modifierAndTypeOfFieldWithNSString_withNSString_(NSString *clazz, NSString *fieldName);
 
-@implementation CucumberRuntimeXstreamComplexTypeWriter
+@implementation CCBRComplexTypeWriter
 
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)columnNames {
-  CucumberRuntimeXstreamComplexTypeWriter_initWithJavaUtilList_(self, columnNames);
+  CCBRComplexTypeWriter_initWithJavaUtilList_(self, columnNames);
   return self;
 }
 
@@ -61,7 +61,7 @@ __attribute__((unused)) static NSString *CucumberRuntimeXstreamComplexTypeWriter
 }
 
 - (id<JavaUtilList>)getValues {
-  CucumberRuntimeTableCamelCaseStringConverter *converter = create_CucumberRuntimeTableCamelCaseStringConverter_init();
+  CCBRCamelCaseStringConverter *converter = create_CCBRCamelCaseStringConverter_init();
   if (![((id<JavaUtilList>) nil_chk(columnNames_)) isEmpty]) {
     IOSObjectArray *explicitFieldValues = [IOSObjectArray arrayWithLength:[columnNames_ size] type:NSString_class_()];
     jint n = 0;
@@ -104,7 +104,7 @@ __attribute__((unused)) static NSString *CucumberRuntimeXstreamComplexTypeWriter
   NSString *clazz = [currentKey_ getWithInt:0];
   NSString *field = [currentKey_ getWithInt:1];
   if (([((id<JavaUtilList>) nil_chk(columnNames_)) isEmpty] || [columnNames_ containsWithId:field])) {
-    @throw nil_chk(CucumberRuntimeXstreamComplexTypeWriter_createMissingConverterExceptionWithNSString_withNSString_(clazz, field));
+    @throw nil_chk(CCBRComplexTypeWriter_createMissingConverterExceptionWithNSString_withNSString_(clazz, field));
   }
 }
 
@@ -120,14 +120,14 @@ __attribute__((unused)) static NSString *CucumberRuntimeXstreamComplexTypeWriter
   @throw create_JavaLangUnsupportedOperationException_init();
 }
 
-+ (CucumberRuntimeCucumberException *)createMissingConverterExceptionWithNSString:(NSString *)clazz
-                                                                     withNSString:(NSString *)field {
-  return CucumberRuntimeXstreamComplexTypeWriter_createMissingConverterExceptionWithNSString_withNSString_(clazz, field);
++ (CCBRCucumberException *)createMissingConverterExceptionWithNSString:(NSString *)clazz
+                                                          withNSString:(NSString *)field {
+  return CCBRComplexTypeWriter_createMissingConverterExceptionWithNSString_withNSString_(clazz, field);
 }
 
 + (NSString *)modifierAndTypeOfFieldWithNSString:(NSString *)clazz
                                     withNSString:(NSString *)fieldName {
-  return CucumberRuntimeXstreamComplexTypeWriter_modifierAndTypeOfFieldWithNSString_withNSString_(clazz, fieldName);
+  return CCBRComplexTypeWriter_modifierAndTypeOfFieldWithNSString_withNSString_(clazz, fieldName);
 }
 
 - (void)dealloc {
@@ -148,7 +148,7 @@ __attribute__((unused)) static NSString *CucumberRuntimeXstreamComplexTypeWriter
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LCucumberRuntimeCucumberException;", 0xa, 8, 6, -1, -1, -1, -1 },
+    { NULL, "LCCBRCucumberException;", 0xa, 8, 6, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0xa, 9, 6, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
@@ -172,35 +172,35 @@ __attribute__((unused)) static NSString *CucumberRuntimeXstreamComplexTypeWriter
     { "currentKey_", "LJavaUtilStack;", .constantValue.asLong = 0, 0x12, -1, -1, 12, -1 },
   };
   static const void *ptrTable[] = { "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)V", "()Ljava/util/List<Ljava/lang/String;>;", "startNode", "LNSString;", "addAttribute", "LNSString;LNSString;", "setValue", "createMissingConverterException", "modifierAndTypeOfField", "Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;", "Ljava/util/Stack<Ljava/lang/String;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamComplexTypeWriter = { "ComplexTypeWriter", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x1, 11, 3, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeXstreamComplexTypeWriter;
+  static const J2ObjcClassInfo _CCBRComplexTypeWriter = { "ComplexTypeWriter", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x1, 11, 3, -1, -1, -1, -1, -1 };
+  return &_CCBRComplexTypeWriter;
 }
 
 @end
 
-void CucumberRuntimeXstreamComplexTypeWriter_initWithJavaUtilList_(CucumberRuntimeXstreamComplexTypeWriter *self, id<JavaUtilList> columnNames) {
-  CucumberRuntimeXstreamCellWriter_init(self);
+void CCBRComplexTypeWriter_initWithJavaUtilList_(CCBRComplexTypeWriter *self, id<JavaUtilList> columnNames) {
+  CCBRCellWriter_init(self);
   JreStrongAssignAndConsume(&self->fields_, new_JavaUtilLinkedHashMap_init());
   JreStrongAssignAndConsume(&self->currentKey_, new_JavaUtilStack_init());
   JreStrongAssign(&self->columnNames_, columnNames);
 }
 
-CucumberRuntimeXstreamComplexTypeWriter *new_CucumberRuntimeXstreamComplexTypeWriter_initWithJavaUtilList_(id<JavaUtilList> columnNames) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamComplexTypeWriter, initWithJavaUtilList_, columnNames)
+CCBRComplexTypeWriter *new_CCBRComplexTypeWriter_initWithJavaUtilList_(id<JavaUtilList> columnNames) {
+  J2OBJC_NEW_IMPL(CCBRComplexTypeWriter, initWithJavaUtilList_, columnNames)
 }
 
-CucumberRuntimeXstreamComplexTypeWriter *create_CucumberRuntimeXstreamComplexTypeWriter_initWithJavaUtilList_(id<JavaUtilList> columnNames) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamComplexTypeWriter, initWithJavaUtilList_, columnNames)
+CCBRComplexTypeWriter *create_CCBRComplexTypeWriter_initWithJavaUtilList_(id<JavaUtilList> columnNames) {
+  J2OBJC_CREATE_IMPL(CCBRComplexTypeWriter, initWithJavaUtilList_, columnNames)
 }
 
-CucumberRuntimeCucumberException *CucumberRuntimeXstreamComplexTypeWriter_createMissingConverterExceptionWithNSString_withNSString_(NSString *clazz, NSString *field) {
-  CucumberRuntimeXstreamComplexTypeWriter_initialize();
-  CucumberRuntimeTablePascalCaseStringConverter *converter = create_CucumberRuntimeTablePascalCaseStringConverter_init();
-  return create_CucumberRuntimeCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"Don't know how to convert \"%s.%s\" into a table entry.\nEither exclude %s from the table by selecting the fields to include:\n\nDataTable.create(entries, \"Field\", \"Other Field\")\n\nOr try writing your own converter:\n\n@%s(%sConverter.class)\n%s %s;\n", [IOSObjectArray arrayWithObjects:(id[]){ clazz, field, field, [CucumberDepsComThoughtworksXstreamAnnotationsXStreamConverter_class_() getName], [converter mapWithNSString:field], CucumberRuntimeXstreamComplexTypeWriter_modifierAndTypeOfFieldWithNSString_withNSString_(clazz, field), field } count:7 type:NSObject_class_()]));
+CCBRCucumberException *CCBRComplexTypeWriter_createMissingConverterExceptionWithNSString_withNSString_(NSString *clazz, NSString *field) {
+  CCBRComplexTypeWriter_initialize();
+  CCBRPascalCaseStringConverter *converter = create_CCBRPascalCaseStringConverter_init();
+  return create_CCBRCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"Don't know how to convert \"%s.%s\" into a table entry.\nEither exclude %s from the table by selecting the fields to include:\n\nDataTable.create(entries, \"Field\", \"Other Field\")\n\nOr try writing your own converter:\n\n@%s(%sConverter.class)\n%s %s;\n", [IOSObjectArray arrayWithObjects:(id[]){ clazz, field, field, [CucumberDepsComThoughtworksXstreamAnnotationsXStreamConverter_class_() getName], [converter mapWithNSString:field], CCBRComplexTypeWriter_modifierAndTypeOfFieldWithNSString_withNSString_(clazz, field), field } count:7 type:NSObject_class_()]));
 }
 
-NSString *CucumberRuntimeXstreamComplexTypeWriter_modifierAndTypeOfFieldWithNSString_withNSString_(NSString *clazz, NSString *fieldName) {
-  CucumberRuntimeXstreamComplexTypeWriter_initialize();
+NSString *CCBRComplexTypeWriter_modifierAndTypeOfFieldWithNSString_withNSString_(NSString *clazz, NSString *fieldName) {
+  CCBRComplexTypeWriter_initialize();
   @try {
     JavaLangReflectField *field = [((IOSClass *) nil_chk(IOSClass_forName_(clazz))) getDeclaredField:fieldName];
     NSString *simpleTypeName = [((IOSClass *) nil_chk([((JavaLangReflectField *) nil_chk(field)) getType])) getSimpleName];
@@ -215,4 +215,4 @@ NSString *CucumberRuntimeXstreamComplexTypeWriter_modifierAndTypeOfFieldWithNSSt
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamComplexTypeWriter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRComplexTypeWriter)

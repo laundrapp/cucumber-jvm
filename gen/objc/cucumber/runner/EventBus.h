@@ -22,16 +22,16 @@
 #define CucumberRunnerEventBus_
 
 #define RESTRICT_CucumberApiEventEventPublisher 1
-#define INCLUDE_CucumberApiEventEventPublisher 1
+#define INCLUDE_CCBEventPublisher 1
 #include "cucumber/api/event/EventPublisher.h"
 
 @class IOSClass;
 @class JavaLangLong;
-@protocol CucumberApiEventEvent;
-@protocol CucumberApiEventEventHandler;
+@protocol CCBEvent;
+@protocol CCBEventHandler;
 @protocol CucumberRunnerTimeService;
 
-@interface CucumberRunnerEventBus : NSObject < CucumberApiEventEventPublisher >
+@interface CucumberRunnerEventBus : NSObject < CCBEventPublisher >
 
 #pragma mark Public
 
@@ -40,9 +40,9 @@
 - (JavaLangLong *)getTime;
 
 - (void)registerHandlerForWithIOSClass:(IOSClass *)eventType
-      withCucumberApiEventEventHandler:(id<CucumberApiEventEventHandler>)handler;
+                   withCCBEventHandler:(id<CCBEventHandler>)handler;
 
-- (void)sendWithCucumberApiEventEvent:(id<CucumberApiEventEvent>)event;
+- (void)sendWithCCBEvent:(id<CCBEvent>)event;
 
 // Disallowed inherited constructors, do not use.
 

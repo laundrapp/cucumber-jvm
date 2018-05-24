@@ -18,18 +18,18 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeIoZipResource_) && (INCLUDE_ALL_CucumberRuntimeIoZipResource || defined(INCLUDE_CucumberRuntimeIoZipResource))
-#define CucumberRuntimeIoZipResource_
+#if !defined (CCBRZipResource_) && (INCLUDE_ALL_CucumberRuntimeIoZipResource || defined(INCLUDE_CCBRZipResource))
+#define CCBRZipResource_
 
 #define RESTRICT_CucumberRuntimeIoResource 1
-#define INCLUDE_CucumberRuntimeIoResource 1
+#define INCLUDE_CCBRResource 1
 #include "cucumber/runtime/io/Resource.h"
 
 @class JavaIoInputStream;
 @class JavaUtilZipZipEntry;
 @class JavaUtilZipZipFile;
 
-@interface CucumberRuntimeIoZipResource : NSObject < CucumberRuntimeIoResource >
+@interface CCBRZipResource : NSObject < CCBRResource >
 
 #pragma mark Public
 
@@ -50,15 +50,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoZipResource)
+J2OBJC_EMPTY_STATIC_INIT(CCBRZipResource)
 
-FOUNDATION_EXPORT void CucumberRuntimeIoZipResource_initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_(CucumberRuntimeIoZipResource *self, JavaUtilZipZipFile *jarFile, JavaUtilZipZipEntry *jarEntry);
+FOUNDATION_EXPORT void CCBRZipResource_initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_(CCBRZipResource *self, JavaUtilZipZipFile *jarFile, JavaUtilZipZipEntry *jarEntry);
 
-FOUNDATION_EXPORT CucumberRuntimeIoZipResource *new_CucumberRuntimeIoZipResource_initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_(JavaUtilZipZipFile *jarFile, JavaUtilZipZipEntry *jarEntry) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRZipResource *new_CCBRZipResource_initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_(JavaUtilZipZipFile *jarFile, JavaUtilZipZipEntry *jarEntry) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeIoZipResource *create_CucumberRuntimeIoZipResource_initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_(JavaUtilZipZipFile *jarFile, JavaUtilZipZipEntry *jarEntry);
+FOUNDATION_EXPORT CCBRZipResource *create_CCBRZipResource_initWithJavaUtilZipZipFile_withJavaUtilZipZipEntry_(JavaUtilZipZipFile *jarFile, JavaUtilZipZipEntry *jarEntry);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoZipResource)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRZipResource)
+
+@compatibility_alias CucumberRuntimeIoZipResource CCBRZipResource;
 
 #endif
 

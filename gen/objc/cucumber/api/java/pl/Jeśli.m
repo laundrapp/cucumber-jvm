@@ -15,9 +15,9 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *CucumberApiJavaPlJeśli__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CCBJeśli__Annotations$0(void);
 
-@implementation CucumberApiJavaPlJeśli
+@implementation CCBJeśli
 
 @synthesize value = value_;
 @synthesize timeout = timeout_;
@@ -27,7 +27,7 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiJavaPlJeśli__Annotati
 }
 
 - (IOSClass *)annotationType {
-  return CucumberApiJavaPlJeśli_class_();
+  return CCBJeśli_class_();
 }
 
 - (NSString *)description {
@@ -62,22 +62,22 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiJavaPlJeśli__Annotati
     { "value_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "timeout_", "J", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&CucumberApiJavaPlJeśli__Annotations$0 };
-  static const J2ObjcClassInfo _CucumberApiJavaPlJeśli = { "Jeśli", "cucumber.api.java.pl", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
-  return &_CucumberApiJavaPlJeśli;
+  static const void *ptrTable[] = { (void *)&CCBJeśli__Annotations$0 };
+  static const J2ObjcClassInfo _CCBJeśli = { "Jeśli", "cucumber.api.java.pl", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
+  return &_CCBJeśli;
 }
 
 @end
 
-id<CucumberApiJavaPlJeśli> create_CucumberApiJavaPlJeśli(jlong timeout, NSString *value) {
-  CucumberApiJavaPlJeśli *self = AUTORELEASE([[CucumberApiJavaPlJeśli alloc] init]);
+id<CCBJeśli> create_CCBJeśli(jlong timeout, NSString *value) {
+  CCBJeśli *self = AUTORELEASE([[CCBJeśli alloc] init]);
   self->timeout_ = timeout;
   self->value_ = RETAIN_(value);
   return self;
 }
 
-IOSObjectArray *CucumberApiJavaPlJeśli__Annotations$0() {
-  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CucumberRuntimeJavaStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
+IOSObjectArray *CCBJeśli__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CCBStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiJavaPlJeśli)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBJeśli)

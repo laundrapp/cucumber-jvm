@@ -18,22 +18,22 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeFailedStepInstantiationMatch_) && (INCLUDE_ALL_CucumberRuntimeFailedStepInstantiationMatch || defined(INCLUDE_CucumberRuntimeFailedStepInstantiationMatch))
-#define CucumberRuntimeFailedStepInstantiationMatch_
+#if !defined (CCBRFailedStepInstantiationMatch_) && (INCLUDE_ALL_CucumberRuntimeFailedStepInstantiationMatch || defined(INCLUDE_CCBRFailedStepInstantiationMatch))
+#define CCBRFailedStepInstantiationMatch_
 
 #define RESTRICT_CucumberRuntimeStepDefinitionMatch 1
-#define INCLUDE_CucumberRuntimeStepDefinitionMatch 1
+#define INCLUDE_CCBRStepDefinitionMatch 1
 #include "cucumber/runtime/StepDefinitionMatch.h"
 
-@class CucumberRuntimeMatch;
-@class CucumberRuntimeXstreamLocalizedXStreams;
+@class CCBRLocalizedXStreams;
+@class CCBRMatch;
 @class GherkinPicklesPickleStep;
 @class JavaLangThrowable;
-@protocol CucumberApiScenario;
-@protocol CucumberRuntimeStepDefinition;
+@protocol CCBRStepDefinition;
+@protocol CCBScenario;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeFailedStepInstantiationMatch : CucumberRuntimeStepDefinitionMatch
+@interface CCBRFailedStepInstantiationMatch : CCBRStepDefinitionMatch
 
 #pragma mark Public
 
@@ -42,32 +42,34 @@
                      withJavaLangThrowable:(JavaLangThrowable *)throwable;
 
 - (void)dryRunStepWithNSString:(NSString *)language
-       withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
+               withCCBScenario:(id<CCBScenario>)scenario;
 
-- (CucumberRuntimeMatch *)getMatch;
+- (CCBRMatch *)getMatch;
 
 - (void)runStepWithNSString:(NSString *)language
-    withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
+            withCCBScenario:(id<CCBScenario>)scenario;
 
 // Disallowed inherited constructors, do not use.
 
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)arg0
-             withCucumberRuntimeStepDefinition:(id<CucumberRuntimeStepDefinition>)arg1
+                        withCCBRStepDefinition:(id<CCBRStepDefinition>)arg1
                                   withNSString:(NSString *)arg2
                   withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)arg3
-   withCucumberRuntimeXstreamLocalizedXStreams:(CucumberRuntimeXstreamLocalizedXStreams *)arg4 NS_UNAVAILABLE;
+                     withCCBRLocalizedXStreams:(CCBRLocalizedXStreams *)arg4 NS_UNAVAILABLE;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeFailedStepInstantiationMatch)
+J2OBJC_EMPTY_STATIC_INIT(CCBRFailedStepInstantiationMatch)
 
-FOUNDATION_EXPORT void CucumberRuntimeFailedStepInstantiationMatch_initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_(CucumberRuntimeFailedStepInstantiationMatch *self, NSString *uri, GherkinPicklesPickleStep *step, JavaLangThrowable *throwable);
+FOUNDATION_EXPORT void CCBRFailedStepInstantiationMatch_initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_(CCBRFailedStepInstantiationMatch *self, NSString *uri, GherkinPicklesPickleStep *step, JavaLangThrowable *throwable);
 
-FOUNDATION_EXPORT CucumberRuntimeFailedStepInstantiationMatch *new_CucumberRuntimeFailedStepInstantiationMatch_initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_(NSString *uri, GherkinPicklesPickleStep *step, JavaLangThrowable *throwable) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRFailedStepInstantiationMatch *new_CCBRFailedStepInstantiationMatch_initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_(NSString *uri, GherkinPicklesPickleStep *step, JavaLangThrowable *throwable) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeFailedStepInstantiationMatch *create_CucumberRuntimeFailedStepInstantiationMatch_initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_(NSString *uri, GherkinPicklesPickleStep *step, JavaLangThrowable *throwable);
+FOUNDATION_EXPORT CCBRFailedStepInstantiationMatch *create_CCBRFailedStepInstantiationMatch_initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_(NSString *uri, GherkinPicklesPickleStep *step, JavaLangThrowable *throwable);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeFailedStepInstantiationMatch)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRFailedStepInstantiationMatch)
+
+@compatibility_alias CucumberRuntimeFailedStepInstantiationMatch CCBRFailedStepInstantiationMatch;
 
 #endif
 

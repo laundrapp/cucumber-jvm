@@ -13,7 +13,7 @@
 #include "java/util/Map.h"
 #include "java/util/Set.h"
 
-@interface CucumberRuntimeXstreamMapWriter () {
+@interface CCBRMapWriter () {
  @public
   id<JavaUtilList> columnNames_;
   id<JavaUtilMap> values_;
@@ -22,14 +22,14 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamMapWriter, columnNames_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamMapWriter, values_, id<JavaUtilMap>)
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamMapWriter, key_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRMapWriter, columnNames_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRMapWriter, values_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(CCBRMapWriter, key_, NSString *)
 
-@implementation CucumberRuntimeXstreamMapWriter
+@implementation CCBRMapWriter
 
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)columnNames {
-  CucumberRuntimeXstreamMapWriter_initWithJavaUtilList_(self, columnNames);
+  CCBRMapWriter_initWithJavaUtilList_(self, columnNames);
   return self;
 }
 
@@ -112,24 +112,24 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamMapWriter, key_, NSString *)
     { "key_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)V", "()Ljava/util/List<Ljava/lang/String;>;", "setValue", "LNSString;", "startNode", "addAttribute", "LNSString;LNSString;", "Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamMapWriter = { "MapWriter", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x1, 9, 3, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeXstreamMapWriter;
+  static const J2ObjcClassInfo _CCBRMapWriter = { "MapWriter", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x1, 9, 3, -1, -1, -1, -1, -1 };
+  return &_CCBRMapWriter;
 }
 
 @end
 
-void CucumberRuntimeXstreamMapWriter_initWithJavaUtilList_(CucumberRuntimeXstreamMapWriter *self, id<JavaUtilList> columnNames) {
-  CucumberRuntimeXstreamCellWriter_init(self);
+void CCBRMapWriter_initWithJavaUtilList_(CCBRMapWriter *self, id<JavaUtilList> columnNames) {
+  CCBRCellWriter_init(self);
   JreStrongAssignAndConsume(&self->values_, new_JavaUtilLinkedHashMap_init());
   JreStrongAssign(&self->columnNames_, columnNames);
 }
 
-CucumberRuntimeXstreamMapWriter *new_CucumberRuntimeXstreamMapWriter_initWithJavaUtilList_(id<JavaUtilList> columnNames) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamMapWriter, initWithJavaUtilList_, columnNames)
+CCBRMapWriter *new_CCBRMapWriter_initWithJavaUtilList_(id<JavaUtilList> columnNames) {
+  J2OBJC_NEW_IMPL(CCBRMapWriter, initWithJavaUtilList_, columnNames)
 }
 
-CucumberRuntimeXstreamMapWriter *create_CucumberRuntimeXstreamMapWriter_initWithJavaUtilList_(id<JavaUtilList> columnNames) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamMapWriter, initWithJavaUtilList_, columnNames)
+CCBRMapWriter *create_CCBRMapWriter_initWithJavaUtilList_(id<JavaUtilList> columnNames) {
+  J2OBJC_CREATE_IMPL(CCBRMapWriter, initWithJavaUtilList_, columnNames)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamMapWriter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRMapWriter)

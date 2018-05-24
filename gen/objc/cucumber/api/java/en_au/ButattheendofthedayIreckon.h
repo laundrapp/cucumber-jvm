@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaEn_auButattheendofthedayIreckon_) && (INCLUDE_ALL_CucumberApiJavaEn_auButattheendofthedayIreckon || defined(INCLUDE_CucumberApiJavaEn_auButattheendofthedayIreckon))
-#define CucumberApiJavaEn_auButattheendofthedayIreckon_
+#if !defined (CCBButattheendofthedayIreckon_) && (INCLUDE_ALL_CucumberApiJavaEn_auButattheendofthedayIreckon || defined(INCLUDE_CCBButattheendofthedayIreckon))
+#define CCBButattheendofthedayIreckon_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaEn_auButattheendofthedayIreckon < JavaLangAnnotationAnnotation >
+@protocol CCBButattheendofthedayIreckon < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaEn_auButattheendofthedayIreckon : NSObject < CucumberApiJavaEn_auButattheendofthedayIreckon > {
+@interface CCBButattheendofthedayIreckon : NSObject < CCBButattheendofthedayIreckon > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEn_auButattheendofthedayIreckon)
+J2OBJC_EMPTY_STATIC_INIT(CCBButattheendofthedayIreckon)
 
-FOUNDATION_EXPORT id<CucumberApiJavaEn_auButattheendofthedayIreckon> create_CucumberApiJavaEn_auButattheendofthedayIreckon(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBButattheendofthedayIreckon> create_CCBButattheendofthedayIreckon(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEn_auButattheendofthedayIreckon)
+J2OBJC_TYPE_LITERAL_HEADER(CCBButattheendofthedayIreckon)
+
+#define CucumberApiJavaEn_auButattheendofthedayIreckon CCBButattheendofthedayIreckon
 
 #endif
 

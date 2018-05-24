@@ -18,16 +18,18 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJava8GlueBase_) && (INCLUDE_ALL_CucumberApiJava8GlueBase || defined(INCLUDE_CucumberApiJava8GlueBase))
-#define CucumberApiJava8GlueBase_
+#if !defined (CCBGlueBase_) && (INCLUDE_ALL_CucumberApiJava8GlueBase || defined(INCLUDE_CCBGlueBase))
+#define CCBGlueBase_
 
-@protocol CucumberApiJava8GlueBase < JavaObject >
+@protocol CCBGlueBase < JavaObject >
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJava8GlueBase)
+J2OBJC_EMPTY_STATIC_INIT(CCBGlueBase)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJava8GlueBase)
+J2OBJC_TYPE_LITERAL_HEADER(CCBGlueBase)
+
+#define CucumberApiJava8GlueBase CCBGlueBase
 
 #endif
 

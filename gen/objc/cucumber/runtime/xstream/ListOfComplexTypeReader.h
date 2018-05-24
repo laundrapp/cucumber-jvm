@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamListOfComplexTypeReader_) && (INCLUDE_ALL_CucumberRuntimeXstreamListOfComplexTypeReader || defined(INCLUDE_CucumberRuntimeXstreamListOfComplexTypeReader))
-#define CucumberRuntimeXstreamListOfComplexTypeReader_
+#if !defined (CCBRListOfComplexTypeReader_) && (INCLUDE_ALL_CucumberRuntimeXstreamListOfComplexTypeReader || defined(INCLUDE_CCBRListOfComplexTypeReader))
+#define CCBRListOfComplexTypeReader_
 
 #define RESTRICT_CucumberDepsComThoughtworksXstreamIoAbstractReader 1
 #define INCLUDE_CucumberDepsComThoughtworksXstreamIoAbstractReader 1
@@ -50,7 +50,7 @@
    
 @endcode
  */
-@interface CucumberRuntimeXstreamListOfComplexTypeReader : CucumberDepsComThoughtworksXstreamIoAbstractReader
+@interface CCBRListOfComplexTypeReader : CucumberDepsComThoughtworksXstreamIoAbstractReader
 
 #pragma mark Public
 
@@ -90,15 +90,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamListOfComplexTypeReader)
+J2OBJC_EMPTY_STATIC_INIT(CCBRListOfComplexTypeReader)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamListOfComplexTypeReader_initWithIOSClass_withJavaUtilList_withJavaUtilList_(CucumberRuntimeXstreamListOfComplexTypeReader *self, IOSClass *itemType, id<JavaUtilList> attributeNames, id<JavaUtilList> items);
+FOUNDATION_EXPORT void CCBRListOfComplexTypeReader_initWithIOSClass_withJavaUtilList_withJavaUtilList_(CCBRListOfComplexTypeReader *self, IOSClass *itemType, id<JavaUtilList> attributeNames, id<JavaUtilList> items);
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamListOfComplexTypeReader *new_CucumberRuntimeXstreamListOfComplexTypeReader_initWithIOSClass_withJavaUtilList_withJavaUtilList_(IOSClass *itemType, id<JavaUtilList> attributeNames, id<JavaUtilList> items) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRListOfComplexTypeReader *new_CCBRListOfComplexTypeReader_initWithIOSClass_withJavaUtilList_withJavaUtilList_(IOSClass *itemType, id<JavaUtilList> attributeNames, id<JavaUtilList> items) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeXstreamListOfComplexTypeReader *create_CucumberRuntimeXstreamListOfComplexTypeReader_initWithIOSClass_withJavaUtilList_withJavaUtilList_(IOSClass *itemType, id<JavaUtilList> attributeNames, id<JavaUtilList> items);
+FOUNDATION_EXPORT CCBRListOfComplexTypeReader *create_CCBRListOfComplexTypeReader_initWithIOSClass_withJavaUtilList_withJavaUtilList_(IOSClass *itemType, id<JavaUtilList> attributeNames, id<JavaUtilList> items);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamListOfComplexTypeReader)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRListOfComplexTypeReader)
+
+@compatibility_alias CucumberRuntimeXstreamListOfComplexTypeReader CCBRListOfComplexTypeReader;
 
 #endif
 

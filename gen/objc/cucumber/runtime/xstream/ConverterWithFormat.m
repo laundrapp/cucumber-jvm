@@ -16,19 +16,19 @@
 #include "java/util/Arrays.h"
 #include "java/util/List.h"
 
-@interface CucumberRuntimeXstreamConverterWithFormat () {
+@interface CCBRConverterWithFormat () {
  @public
   IOSObjectArray *convertibleTypes_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamConverterWithFormat, convertibleTypes_, IOSObjectArray *)
+J2OBJC_FIELD_SETTER(CCBRConverterWithFormat, convertibleTypes_, IOSObjectArray *)
 
-@implementation CucumberRuntimeXstreamConverterWithFormat
+@implementation CCBRConverterWithFormat
 
 - (instancetype __nonnull)initWithIOSClassArray:(IOSObjectArray *)convertibleTypes {
-  CucumberRuntimeXstreamConverterWithFormat_initWithIOSClassArray_(self, convertibleTypes);
+  CCBRConverterWithFormat_initWithIOSClassArray_(self, convertibleTypes);
   return self;
 }
 
@@ -57,7 +57,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamConverterWithFormat, convertibleTypes_
   JavaTextParsePosition *position = create_JavaTextParsePosition_initWithInt_(0);
   id result = [((JavaTextFormat *) nil_chk(format)) parseObjectWithNSString:argument withJavaTextParsePosition:position];
   if ([position getErrorIndex] != -1) {
-    @throw create_CucumberRuntimeCucumberException_initWithNSString_(JreStrcat("$$$@", @"Can't parse '", argument, @"' using format ", format));
+    @throw create_CCBRCucumberException_initWithNSString_(JreStrcat("$$$@", @"Can't parse '", argument, @"' using format ", format));
   }
   return result;
 }
@@ -109,15 +109,15 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeXstreamConverterWithFormat, convertibleTypes_
     { "convertibleTypes_", "[LIOSClass;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "[LIOSClass;", "transform", "LNSString;", "(Ljava/lang/String;)TT;", "()Ljava/util/List<+Ljava/text/Format;>;", "LJavaTextFormat;LNSString;", "toString", "LNSObject;", "canConvert", "LIOSClass;", "<T:Ljava/lang/Object;>Lcucumber/api/Transformer<TT;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamConverterWithFormat = { "ConverterWithFormat", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x400, 6, 1, -1, -1, -1, 10, -1 };
-  return &_CucumberRuntimeXstreamConverterWithFormat;
+  static const J2ObjcClassInfo _CCBRConverterWithFormat = { "ConverterWithFormat", "cucumber.runtime.xstream", ptrTable, methods, fields, 7, 0x400, 6, 1, -1, -1, -1, 10, -1 };
+  return &_CCBRConverterWithFormat;
 }
 
 @end
 
-void CucumberRuntimeXstreamConverterWithFormat_initWithIOSClassArray_(CucumberRuntimeXstreamConverterWithFormat *self, IOSObjectArray *convertibleTypes) {
-  CucumberApiTransformer_init(self);
+void CCBRConverterWithFormat_initWithIOSClassArray_(CCBRConverterWithFormat *self, IOSObjectArray *convertibleTypes) {
+  CCBTransformer_init(self);
   JreStrongAssign(&self->convertibleTypes_, convertibleTypes);
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamConverterWithFormat)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRConverterWithFormat)

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaKaმაგრამ_) && (INCLUDE_ALL_CucumberApiJavaKaმაგრამ || defined(INCLUDE_CucumberApiJavaKaმაგრამ))
-#define CucumberApiJavaKaმაგრამ_
+#if !defined (CCBმაგრამ_) && (INCLUDE_ALL_CucumberApiJavaKaმაგრამ || defined(INCLUDE_CCBმაგრამ))
+#define CCBმაგრამ_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaKaმაგრამ < JavaLangAnnotationAnnotation >
+@protocol CCBმაგრამ < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaKaმაგრამ : NSObject < CucumberApiJavaKaმაგრამ > {
+@interface CCBმაგრამ : NSObject < CCBმაგრამ > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaKaმაგრამ)
+J2OBJC_EMPTY_STATIC_INIT(CCBმაგრამ)
 
-FOUNDATION_EXPORT id<CucumberApiJavaKaმაგრამ> create_CucumberApiJavaKaმაგრამ(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBმაგრამ> create_CCBმაგრამ(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaKaმაგრამ)
+J2OBJC_TYPE_LITERAL_HEADER(CCBმაგრამ)
+
+#define CucumberApiJavaKaმაგრამ CCBმაგრამ
 
 #endif
 

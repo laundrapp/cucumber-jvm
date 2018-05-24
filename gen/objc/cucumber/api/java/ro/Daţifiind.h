@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaRoDaţifiind_) && (INCLUDE_ALL_CucumberApiJavaRoDaţifiind || defined(INCLUDE_CucumberApiJavaRoDaţifiind))
-#define CucumberApiJavaRoDaţifiind_
+#if !defined (CCBDaţifiind_) && (INCLUDE_ALL_CucumberApiJavaRoDaţifiind || defined(INCLUDE_CCBDaţifiind))
+#define CCBDaţifiind_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaRoDaţifiind < JavaLangAnnotationAnnotation >
+@protocol CCBDaţifiind < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaRoDaţifiind : NSObject < CucumberApiJavaRoDaţifiind > {
+@interface CCBDaţifiind : NSObject < CCBDaţifiind > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaRoDaţifiind)
+J2OBJC_EMPTY_STATIC_INIT(CCBDaţifiind)
 
-FOUNDATION_EXPORT id<CucumberApiJavaRoDaţifiind> create_CucumberApiJavaRoDaţifiind(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBDaţifiind> create_CCBDaţifiind(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaRoDaţifiind)
+J2OBJC_TYPE_LITERAL_HEADER(CCBDaţifiind)
+
+#define CucumberApiJavaRoDaţifiind CCBDaţifiind
 
 #endif
 

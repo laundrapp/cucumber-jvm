@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaHrOnda_) && (INCLUDE_ALL_CucumberApiJavaHrOnda || defined(INCLUDE_CucumberApiJavaHrOnda))
-#define CucumberApiJavaHrOnda_
+#if !defined (CCBOnda_) && (INCLUDE_ALL_CucumberApiJavaHrOnda || defined(INCLUDE_CCBOnda))
+#define CCBOnda_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaHrOnda < JavaLangAnnotationAnnotation >
+@protocol CCBOnda < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaHrOnda : NSObject < CucumberApiJavaHrOnda > {
+@interface CCBOnda : NSObject < CCBOnda > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaHrOnda)
+J2OBJC_EMPTY_STATIC_INIT(CCBOnda)
 
-FOUNDATION_EXPORT id<CucumberApiJavaHrOnda> create_CucumberApiJavaHrOnda(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBOnda> create_CCBOnda(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaHrOnda)
+J2OBJC_TYPE_LITERAL_HEADER(CCBOnda)
+
+#define CucumberApiJavaHrOnda CCBOnda
 
 #endif
 

@@ -18,24 +18,24 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeIoResourceLoaderClassFinder_) && (INCLUDE_ALL_CucumberRuntimeIoResourceLoaderClassFinder || defined(INCLUDE_CucumberRuntimeIoResourceLoaderClassFinder))
-#define CucumberRuntimeIoResourceLoaderClassFinder_
+#if !defined (CCBRResourceLoaderClassFinder_) && (INCLUDE_ALL_CucumberRuntimeIoResourceLoaderClassFinder || defined(INCLUDE_CCBRResourceLoaderClassFinder))
+#define CCBRResourceLoaderClassFinder_
 
 #define RESTRICT_CucumberRuntimeClassFinder 1
-#define INCLUDE_CucumberRuntimeClassFinder 1
+#define INCLUDE_CCBRClassFinder 1
 #include "cucumber/runtime/ClassFinder.h"
 
 @class IOSClass;
 @class JavaLangClassLoader;
-@protocol CucumberRuntimeIoResourceLoader;
+@protocol CCBRResourceLoader;
 @protocol JavaUtilCollection;
 
-@interface CucumberRuntimeIoResourceLoaderClassFinder : NSObject < CucumberRuntimeClassFinder >
+@interface CCBRResourceLoaderClassFinder : NSObject < CCBRClassFinder >
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCucumberRuntimeIoResourceLoader:(id<CucumberRuntimeIoResourceLoader>)resourceLoader
-                                          withJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
+- (instancetype __nonnull)initWithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+                             withJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
 
 - (id<JavaUtilCollection>)getDescendantsWithIOSClass:(IOSClass *)parentType
                                         withNSString:(NSString *)packageName;
@@ -48,15 +48,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoResourceLoaderClassFinder)
+J2OBJC_EMPTY_STATIC_INIT(CCBRResourceLoaderClassFinder)
 
-FOUNDATION_EXPORT void CucumberRuntimeIoResourceLoaderClassFinder_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_(CucumberRuntimeIoResourceLoaderClassFinder *self, id<CucumberRuntimeIoResourceLoader> resourceLoader, JavaLangClassLoader *classLoader);
+FOUNDATION_EXPORT void CCBRResourceLoaderClassFinder_initWithCCBRResourceLoader_withJavaLangClassLoader_(CCBRResourceLoaderClassFinder *self, id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader);
 
-FOUNDATION_EXPORT CucumberRuntimeIoResourceLoaderClassFinder *new_CucumberRuntimeIoResourceLoaderClassFinder_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_(id<CucumberRuntimeIoResourceLoader> resourceLoader, JavaLangClassLoader *classLoader) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRResourceLoaderClassFinder *new_CCBRResourceLoaderClassFinder_initWithCCBRResourceLoader_withJavaLangClassLoader_(id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeIoResourceLoaderClassFinder *create_CucumberRuntimeIoResourceLoaderClassFinder_initWithCucumberRuntimeIoResourceLoader_withJavaLangClassLoader_(id<CucumberRuntimeIoResourceLoader> resourceLoader, JavaLangClassLoader *classLoader);
+FOUNDATION_EXPORT CCBRResourceLoaderClassFinder *create_CCBRResourceLoaderClassFinder_initWithCCBRResourceLoader_withJavaLangClassLoader_(id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoResourceLoaderClassFinder)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRResourceLoaderClassFinder)
+
+@compatibility_alias CucumberRuntimeIoResourceLoaderClassFinder CCBRResourceLoaderClassFinder;
 
 #endif
 

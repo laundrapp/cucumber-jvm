@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/runtime/snippets/Snippet.h"
 
-@interface CucumberRuntimeSnippetsSnippet : NSObject
+@interface CCBRSnippet : NSObject
 
 @end
 
-@implementation CucumberRuntimeSnippetsSnippet
+@implementation CCBRSnippet
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -32,10 +32,10 @@
   methods[5].selector = @selector(escapePatternWithNSString:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "template", "arguments", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/Class<*>;>;)Ljava/lang/String;", "escapePattern", "LNSString;" };
-  static const J2ObjcClassInfo _CucumberRuntimeSnippetsSnippet = { "Snippet", "cucumber.runtime.snippets", ptrTable, methods, NULL, 7, 0x609, 6, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeSnippetsSnippet;
+  static const J2ObjcClassInfo _CCBRSnippet = { "Snippet", "cucumber.runtime.snippets", ptrTable, methods, NULL, 7, 0x609, 6, 0, -1, -1, -1, -1, -1 };
+  return &_CCBRSnippet;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRuntimeSnippetsSnippet)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBRSnippet)

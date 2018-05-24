@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeEnv_) && (INCLUDE_ALL_CucumberRuntimeEnv || defined(INCLUDE_CucumberRuntimeEnv))
-#define CucumberRuntimeEnv_
+#if !defined (CCBREnv_) && (INCLUDE_ALL_CucumberRuntimeEnv || defined(INCLUDE_CCBREnv))
+#define CCBREnv_
 
 @class JavaUtilProperties;
 
@@ -31,7 +31,7 @@
   <li>Resource bundle</li>
   </ol>
  */
-@interface CucumberRuntimeEnv : NSObject
+@interface CCBREnv : NSObject
 
 #pragma mark Public
 
@@ -51,38 +51,40 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeEnv)
+J2OBJC_STATIC_INIT(CCBREnv)
 
-inline CucumberRuntimeEnv *CucumberRuntimeEnv_get_INSTANCE(void);
+inline CCBREnv *CCBREnv_get_INSTANCE(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT CucumberRuntimeEnv *CucumberRuntimeEnv_INSTANCE;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeEnv, INSTANCE, CucumberRuntimeEnv *)
+FOUNDATION_EXPORT CCBREnv *CCBREnv_INSTANCE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBREnv, INSTANCE, CCBREnv *)
 
-FOUNDATION_EXPORT void CucumberRuntimeEnv_init(CucumberRuntimeEnv *self);
+FOUNDATION_EXPORT void CCBREnv_init(CCBREnv *self);
 
-FOUNDATION_EXPORT CucumberRuntimeEnv *new_CucumberRuntimeEnv_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBREnv *new_CCBREnv_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeEnv *create_CucumberRuntimeEnv_init(void);
+FOUNDATION_EXPORT CCBREnv *create_CCBREnv_init(void);
 
-FOUNDATION_EXPORT void CucumberRuntimeEnv_initWithNSString_(CucumberRuntimeEnv *self, NSString *bundleName);
+FOUNDATION_EXPORT void CCBREnv_initWithNSString_(CCBREnv *self, NSString *bundleName);
 
-FOUNDATION_EXPORT CucumberRuntimeEnv *new_CucumberRuntimeEnv_initWithNSString_(NSString *bundleName) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBREnv *new_CCBREnv_initWithNSString_(NSString *bundleName) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeEnv *create_CucumberRuntimeEnv_initWithNSString_(NSString *bundleName);
+FOUNDATION_EXPORT CCBREnv *create_CCBREnv_initWithNSString_(NSString *bundleName);
 
-FOUNDATION_EXPORT void CucumberRuntimeEnv_initWithJavaUtilProperties_(CucumberRuntimeEnv *self, JavaUtilProperties *properties);
+FOUNDATION_EXPORT void CCBREnv_initWithJavaUtilProperties_(CCBREnv *self, JavaUtilProperties *properties);
 
-FOUNDATION_EXPORT CucumberRuntimeEnv *new_CucumberRuntimeEnv_initWithJavaUtilProperties_(JavaUtilProperties *properties) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBREnv *new_CCBREnv_initWithJavaUtilProperties_(JavaUtilProperties *properties) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeEnv *create_CucumberRuntimeEnv_initWithJavaUtilProperties_(JavaUtilProperties *properties);
+FOUNDATION_EXPORT CCBREnv *create_CCBREnv_initWithJavaUtilProperties_(JavaUtilProperties *properties);
 
-FOUNDATION_EXPORT void CucumberRuntimeEnv_initWithNSString_withJavaUtilProperties_(CucumberRuntimeEnv *self, NSString *bundleName, JavaUtilProperties *properties);
+FOUNDATION_EXPORT void CCBREnv_initWithNSString_withJavaUtilProperties_(CCBREnv *self, NSString *bundleName, JavaUtilProperties *properties);
 
-FOUNDATION_EXPORT CucumberRuntimeEnv *new_CucumberRuntimeEnv_initWithNSString_withJavaUtilProperties_(NSString *bundleName, JavaUtilProperties *properties) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBREnv *new_CCBREnv_initWithNSString_withJavaUtilProperties_(NSString *bundleName, JavaUtilProperties *properties) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeEnv *create_CucumberRuntimeEnv_initWithNSString_withJavaUtilProperties_(NSString *bundleName, JavaUtilProperties *properties);
+FOUNDATION_EXPORT CCBREnv *create_CCBREnv_initWithNSString_withJavaUtilProperties_(NSString *bundleName, JavaUtilProperties *properties);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeEnv)
+J2OBJC_TYPE_LITERAL_HEADER(CCBREnv)
+
+@compatibility_alias CucumberRuntimeEnv CCBREnv;
 
 #endif
 

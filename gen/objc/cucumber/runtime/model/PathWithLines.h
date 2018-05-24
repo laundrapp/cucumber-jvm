@@ -18,12 +18,12 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeModelPathWithLines_) && (INCLUDE_ALL_CucumberRuntimeModelPathWithLines || defined(INCLUDE_CucumberRuntimeModelPathWithLines))
-#define CucumberRuntimeModelPathWithLines_
+#if !defined (CCBRPathWithLines_) && (INCLUDE_ALL_CucumberRuntimeModelPathWithLines || defined(INCLUDE_CCBRPathWithLines))
+#define CCBRPathWithLines_
 
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeModelPathWithLines : NSObject {
+@interface CCBRPathWithLines : NSObject {
  @public
   NSString *path_;
   id<JavaUtilList> lines_;
@@ -45,22 +45,24 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeModelPathWithLines)
+J2OBJC_STATIC_INIT(CCBRPathWithLines)
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeModelPathWithLines, path_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberRuntimeModelPathWithLines, lines_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRPathWithLines, path_, NSString *)
+J2OBJC_FIELD_SETTER(CCBRPathWithLines, lines_, id<JavaUtilList>)
 
-FOUNDATION_EXPORT jboolean CucumberRuntimeModelPathWithLines_hasLineFiltersWithNSString_(NSString *pathName);
+FOUNDATION_EXPORT jboolean CCBRPathWithLines_hasLineFiltersWithNSString_(NSString *pathName);
 
-FOUNDATION_EXPORT NSString *CucumberRuntimeModelPathWithLines_stripLineFiltersWithNSString_(NSString *pathName);
+FOUNDATION_EXPORT NSString *CCBRPathWithLines_stripLineFiltersWithNSString_(NSString *pathName);
 
-FOUNDATION_EXPORT void CucumberRuntimeModelPathWithLines_initWithNSString_(CucumberRuntimeModelPathWithLines *self, NSString *pathName);
+FOUNDATION_EXPORT void CCBRPathWithLines_initWithNSString_(CCBRPathWithLines *self, NSString *pathName);
 
-FOUNDATION_EXPORT CucumberRuntimeModelPathWithLines *new_CucumberRuntimeModelPathWithLines_initWithNSString_(NSString *pathName) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRPathWithLines *new_CCBRPathWithLines_initWithNSString_(NSString *pathName) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeModelPathWithLines *create_CucumberRuntimeModelPathWithLines_initWithNSString_(NSString *pathName);
+FOUNDATION_EXPORT CCBRPathWithLines *create_CCBRPathWithLines_initWithNSString_(NSString *pathName);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeModelPathWithLines)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRPathWithLines)
+
+@compatibility_alias CucumberRuntimeModelPathWithLines CCBRPathWithLines;
 
 #endif
 

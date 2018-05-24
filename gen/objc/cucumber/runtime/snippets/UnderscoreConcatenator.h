@@ -18,16 +18,16 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeSnippetsUnderscoreConcatenator_) && (INCLUDE_ALL_CucumberRuntimeSnippetsUnderscoreConcatenator || defined(INCLUDE_CucumberRuntimeSnippetsUnderscoreConcatenator))
-#define CucumberRuntimeSnippetsUnderscoreConcatenator_
+#if !defined (CCBRUnderscoreConcatenator_) && (INCLUDE_ALL_CucumberRuntimeSnippetsUnderscoreConcatenator || defined(INCLUDE_CCBRUnderscoreConcatenator))
+#define CCBRUnderscoreConcatenator_
 
 #define RESTRICT_CucumberRuntimeSnippetsConcatenator 1
-#define INCLUDE_CucumberRuntimeSnippetsConcatenator 1
+#define INCLUDE_CCBRConcatenator 1
 #include "cucumber/runtime/snippets/Concatenator.h"
 
 @class IOSObjectArray;
 
-@interface CucumberRuntimeSnippetsUnderscoreConcatenator : NSObject < CucumberRuntimeSnippetsConcatenator >
+@interface CCBRUnderscoreConcatenator : NSObject < CCBRConcatenator >
 
 #pragma mark Public
 
@@ -37,15 +37,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeSnippetsUnderscoreConcatenator)
+J2OBJC_EMPTY_STATIC_INIT(CCBRUnderscoreConcatenator)
 
-FOUNDATION_EXPORT void CucumberRuntimeSnippetsUnderscoreConcatenator_init(CucumberRuntimeSnippetsUnderscoreConcatenator *self);
+FOUNDATION_EXPORT void CCBRUnderscoreConcatenator_init(CCBRUnderscoreConcatenator *self);
 
-FOUNDATION_EXPORT CucumberRuntimeSnippetsUnderscoreConcatenator *new_CucumberRuntimeSnippetsUnderscoreConcatenator_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRUnderscoreConcatenator *new_CCBRUnderscoreConcatenator_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeSnippetsUnderscoreConcatenator *create_CucumberRuntimeSnippetsUnderscoreConcatenator_init(void);
+FOUNDATION_EXPORT CCBRUnderscoreConcatenator *create_CCBRUnderscoreConcatenator_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeSnippetsUnderscoreConcatenator)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRUnderscoreConcatenator)
+
+@compatibility_alias CucumberRuntimeSnippetsUnderscoreConcatenator CCBRUnderscoreConcatenator;
 
 #endif
 

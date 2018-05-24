@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaAfWanneer_) && (INCLUDE_ALL_CucumberApiJavaAfWanneer || defined(INCLUDE_CucumberApiJavaAfWanneer))
-#define CucumberApiJavaAfWanneer_
+#if !defined (CCBWanneer_) && (INCLUDE_ALL_CucumberApiJavaAfWanneer || defined(INCLUDE_CCBWanneer))
+#define CCBWanneer_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaAfWanneer < JavaLangAnnotationAnnotation >
+@protocol CCBWanneer < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaAfWanneer : NSObject < CucumberApiJavaAfWanneer > {
+@interface CCBWanneer : NSObject < CCBWanneer > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaAfWanneer)
+J2OBJC_EMPTY_STATIC_INIT(CCBWanneer)
 
-FOUNDATION_EXPORT id<CucumberApiJavaAfWanneer> create_CucumberApiJavaAfWanneer(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBWanneer> create_CCBWanneer(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaAfWanneer)
+J2OBJC_TYPE_LITERAL_HEADER(CCBWanneer)
+
+#define CucumberApiJavaAfWanneer CCBWanneer
 
 #endif
 

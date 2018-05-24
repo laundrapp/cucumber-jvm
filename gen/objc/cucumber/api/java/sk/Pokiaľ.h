@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaSkPokiaľ_) && (INCLUDE_ALL_CucumberApiJavaSkPokiaľ || defined(INCLUDE_CucumberApiJavaSkPokiaľ))
-#define CucumberApiJavaSkPokiaľ_
+#if !defined (CCBPokiaľ_) && (INCLUDE_ALL_CucumberApiJavaSkPokiaľ || defined(INCLUDE_CCBPokiaľ))
+#define CCBPokiaľ_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaSkPokiaľ < JavaLangAnnotationAnnotation >
+@protocol CCBPokiaľ < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaSkPokiaľ : NSObject < CucumberApiJavaSkPokiaľ > {
+@interface CCBPokiaľ : NSObject < CCBPokiaľ > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaSkPokiaľ)
+J2OBJC_EMPTY_STATIC_INIT(CCBPokiaľ)
 
-FOUNDATION_EXPORT id<CucumberApiJavaSkPokiaľ> create_CucumberApiJavaSkPokiaľ(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBPokiaľ> create_CCBPokiaľ(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaSkPokiaľ)
+J2OBJC_TYPE_LITERAL_HEADER(CCBPokiaľ)
+
+#define CucumberApiJavaSkPokiaľ CCBPokiaľ
 
 #endif
 

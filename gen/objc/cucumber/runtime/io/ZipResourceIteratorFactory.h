@@ -18,11 +18,11 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeIoZipResourceIteratorFactory_) && (INCLUDE_ALL_CucumberRuntimeIoZipResourceIteratorFactory || defined(INCLUDE_CucumberRuntimeIoZipResourceIteratorFactory))
-#define CucumberRuntimeIoZipResourceIteratorFactory_
+#if !defined (CCBRZipResourceIteratorFactory_) && (INCLUDE_ALL_CucumberRuntimeIoZipResourceIteratorFactory || defined(INCLUDE_CCBRZipResourceIteratorFactory))
+#define CCBRZipResourceIteratorFactory_
 
 #define RESTRICT_CucumberRuntimeIoResourceIteratorFactory 1
-#define INCLUDE_CucumberRuntimeIoResourceIteratorFactory 1
+#define INCLUDE_CCBRResourceIteratorFactory 1
 #include "cucumber/runtime/io/ResourceIteratorFactory.h"
 
 @class JavaNetURL;
@@ -32,7 +32,7 @@
  @brief Factory which creates <code>ZipResourceIterator</code>s for URL's with "jar", "zip" and "wsjar"
   protocols.
  */
-@interface CucumberRuntimeIoZipResourceIteratorFactory : NSObject < CucumberRuntimeIoResourceIteratorFactory >
+@interface CCBRZipResourceIteratorFactory : NSObject < CCBRResourceIteratorFactory >
 
 #pragma mark Public
 
@@ -46,15 +46,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoZipResourceIteratorFactory)
+J2OBJC_EMPTY_STATIC_INIT(CCBRZipResourceIteratorFactory)
 
-FOUNDATION_EXPORT void CucumberRuntimeIoZipResourceIteratorFactory_init(CucumberRuntimeIoZipResourceIteratorFactory *self);
+FOUNDATION_EXPORT void CCBRZipResourceIteratorFactory_init(CCBRZipResourceIteratorFactory *self);
 
-FOUNDATION_EXPORT CucumberRuntimeIoZipResourceIteratorFactory *new_CucumberRuntimeIoZipResourceIteratorFactory_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRZipResourceIteratorFactory *new_CCBRZipResourceIteratorFactory_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeIoZipResourceIteratorFactory *create_CucumberRuntimeIoZipResourceIteratorFactory_init(void);
+FOUNDATION_EXPORT CCBRZipResourceIteratorFactory *create_CCBRZipResourceIteratorFactory_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoZipResourceIteratorFactory)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRZipResourceIteratorFactory)
+
+@compatibility_alias CucumberRuntimeIoZipResourceIteratorFactory CCBRZipResourceIteratorFactory;
 
 #endif
 

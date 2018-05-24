@@ -14,7 +14,7 @@
 #include "java/lang/RuntimeException.h"
 #include "java/lang/StringBuilder.h"
 
-@interface CucumberApiFormatterNiceAppendable () {
+@interface CCBNiceAppendable () {
  @public
   id<JavaLangAppendable> out_;
 }
@@ -23,25 +23,25 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberApiFormatterNiceAppendable, out_, id<JavaLangAppendable>)
+J2OBJC_FIELD_SETTER(CCBNiceAppendable, out_, id<JavaLangAppendable>)
 
-inline id<JavaLangCharSequence> CucumberApiFormatterNiceAppendable_get_NL(void);
-static id<JavaLangCharSequence> CucumberApiFormatterNiceAppendable_NL = @"\n";
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberApiFormatterNiceAppendable, NL, id<JavaLangCharSequence>)
+inline id<JavaLangCharSequence> CCBNiceAppendable_get_NL(void);
+static id<JavaLangCharSequence> CCBNiceAppendable_NL = @"\n";
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBNiceAppendable, NL, id<JavaLangCharSequence>)
 
-__attribute__((unused)) static void CucumberApiFormatterNiceAppendable_tryFlush(CucumberApiFormatterNiceAppendable *self);
+__attribute__((unused)) static void CCBNiceAppendable_tryFlush(CCBNiceAppendable *self);
 
-@implementation CucumberApiFormatterNiceAppendable
+@implementation CCBNiceAppendable
 
 - (instancetype __nonnull)initWithJavaLangAppendable:(id<JavaLangAppendable>)outArg {
-  CucumberApiFormatterNiceAppendable_initWithJavaLangAppendable_(self, outArg);
+  CCBNiceAppendable_initWithJavaLangAppendable_(self, outArg);
   return self;
 }
 
-- (CucumberApiFormatterNiceAppendable *)appendWithJavaLangCharSequence:(id<JavaLangCharSequence>)csq {
+- (CCBNiceAppendable *)appendWithJavaLangCharSequence:(id<JavaLangCharSequence>)csq {
   @try {
     [((id<JavaLangAppendable>) nil_chk(out_)) appendWithJavaLangCharSequence:csq];
-    CucumberApiFormatterNiceAppendable_tryFlush(self);
+    CCBNiceAppendable_tryFlush(self);
     return self;
   }
   @catch (JavaIoIOException *e) {
@@ -49,12 +49,12 @@ __attribute__((unused)) static void CucumberApiFormatterNiceAppendable_tryFlush(
   }
 }
 
-- (CucumberApiFormatterNiceAppendable *)appendWithJavaLangCharSequence:(id<JavaLangCharSequence>)csq
-                                                               withInt:(jint)start
-                                                               withInt:(jint)end {
+- (CCBNiceAppendable *)appendWithJavaLangCharSequence:(id<JavaLangCharSequence>)csq
+                                              withInt:(jint)start
+                                              withInt:(jint)end {
   @try {
     [((id<JavaLangAppendable>) nil_chk(out_)) appendWithJavaLangCharSequence:csq withInt:start withInt:end];
-    CucumberApiFormatterNiceAppendable_tryFlush(self);
+    CCBNiceAppendable_tryFlush(self);
     return self;
   }
   @catch (JavaIoIOException *e) {
@@ -62,10 +62,10 @@ __attribute__((unused)) static void CucumberApiFormatterNiceAppendable_tryFlush(
   }
 }
 
-- (CucumberApiFormatterNiceAppendable *)appendWithChar:(jchar)c {
+- (CCBNiceAppendable *)appendWithChar:(jchar)c {
   @try {
     [((id<JavaLangAppendable>) nil_chk(out_)) appendWithChar:c];
-    CucumberApiFormatterNiceAppendable_tryFlush(self);
+    CCBNiceAppendable_tryFlush(self);
     return self;
   }
   @catch (JavaIoIOException *e) {
@@ -73,17 +73,17 @@ __attribute__((unused)) static void CucumberApiFormatterNiceAppendable_tryFlush(
   }
 }
 
-- (CucumberApiFormatterNiceAppendable *)println {
-  return [self appendWithJavaLangCharSequence:CucumberApiFormatterNiceAppendable_NL];
+- (CCBNiceAppendable *)println {
+  return [self appendWithJavaLangCharSequence:CCBNiceAppendable_NL];
 }
 
-- (CucumberApiFormatterNiceAppendable *)printlnWithJavaLangCharSequence:(id<JavaLangCharSequence>)csq {
+- (CCBNiceAppendable *)printlnWithJavaLangCharSequence:(id<JavaLangCharSequence>)csq {
   @try {
     JavaLangStringBuilder *buffer = create_JavaLangStringBuilder_init();
     [buffer appendWithJavaLangCharSequence:csq];
-    [buffer appendWithJavaLangCharSequence:CucumberApiFormatterNiceAppendable_NL];
+    [buffer appendWithJavaLangCharSequence:CCBNiceAppendable_NL];
     [((id<JavaLangAppendable>) nil_chk(out_)) appendWithJavaLangCharSequence:[buffer description]];
-    CucumberApiFormatterNiceAppendable_tryFlush(self);
+    CCBNiceAppendable_tryFlush(self);
     return self;
   }
   @catch (JavaIoIOException *e) {
@@ -93,7 +93,7 @@ __attribute__((unused)) static void CucumberApiFormatterNiceAppendable_tryFlush(
 
 - (void)close {
   @try {
-    CucumberApiFormatterNiceAppendable_tryFlush(self);
+    CCBNiceAppendable_tryFlush(self);
     if ([JavaIoCloseable_class_() isInstance:out_]) {
       [((id<JavaIoCloseable>) nil_chk(((id<JavaIoCloseable>) cast_check(out_, JavaIoCloseable_class_())))) close];
     }
@@ -104,7 +104,7 @@ __attribute__((unused)) static void CucumberApiFormatterNiceAppendable_tryFlush(
 }
 
 - (void)tryFlush {
-  CucumberApiFormatterNiceAppendable_tryFlush(self);
+  CCBNiceAppendable_tryFlush(self);
 }
 
 - (void)dealloc {
@@ -115,11 +115,11 @@ __attribute__((unused)) static void CucumberApiFormatterNiceAppendable_tryFlush(
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
-    { NULL, "LCucumberApiFormatterNiceAppendable;", 0x1, 1, 2, -1, -1, -1, -1 },
-    { NULL, "LCucumberApiFormatterNiceAppendable;", 0x1, 1, 3, -1, -1, -1, -1 },
-    { NULL, "LCucumberApiFormatterNiceAppendable;", 0x1, 1, 4, -1, -1, -1, -1 },
-    { NULL, "LCucumberApiFormatterNiceAppendable;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LCucumberApiFormatterNiceAppendable;", 0x1, 5, 2, -1, -1, -1, -1 },
+    { NULL, "LCCBNiceAppendable;", 0x1, 1, 2, -1, -1, -1, -1 },
+    { NULL, "LCCBNiceAppendable;", 0x1, 1, 3, -1, -1, -1, -1 },
+    { NULL, "LCCBNiceAppendable;", 0x1, 1, 4, -1, -1, -1, -1 },
+    { NULL, "LCCBNiceAppendable;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCCBNiceAppendable;", 0x1, 5, 2, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
   };
@@ -139,27 +139,27 @@ __attribute__((unused)) static void CucumberApiFormatterNiceAppendable_tryFlush(
     { "NL", "LJavaLangCharSequence;", .constantValue.asLong = 0, 0x1a, -1, 6, -1, -1 },
     { "out_", "LJavaLangAppendable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LJavaLangAppendable;", "append", "LJavaLangCharSequence;", "LJavaLangCharSequence;II", "C", "println", &CucumberApiFormatterNiceAppendable_NL };
-  static const J2ObjcClassInfo _CucumberApiFormatterNiceAppendable = { "NiceAppendable", "cucumber.api.formatter", ptrTable, methods, fields, 7, 0x1, 8, 2, -1, -1, -1, -1, -1 };
-  return &_CucumberApiFormatterNiceAppendable;
+  static const void *ptrTable[] = { "LJavaLangAppendable;", "append", "LJavaLangCharSequence;", "LJavaLangCharSequence;II", "C", "println", &CCBNiceAppendable_NL };
+  static const J2ObjcClassInfo _CCBNiceAppendable = { "NiceAppendable", "cucumber.api.formatter", ptrTable, methods, fields, 7, 0x1, 8, 2, -1, -1, -1, -1, -1 };
+  return &_CCBNiceAppendable;
 }
 
 @end
 
-void CucumberApiFormatterNiceAppendable_initWithJavaLangAppendable_(CucumberApiFormatterNiceAppendable *self, id<JavaLangAppendable> outArg) {
+void CCBNiceAppendable_initWithJavaLangAppendable_(CCBNiceAppendable *self, id<JavaLangAppendable> outArg) {
   NSObject_init(self);
   JreStrongAssign(&self->out_, outArg);
 }
 
-CucumberApiFormatterNiceAppendable *new_CucumberApiFormatterNiceAppendable_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) {
-  J2OBJC_NEW_IMPL(CucumberApiFormatterNiceAppendable, initWithJavaLangAppendable_, outArg)
+CCBNiceAppendable *new_CCBNiceAppendable_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) {
+  J2OBJC_NEW_IMPL(CCBNiceAppendable, initWithJavaLangAppendable_, outArg)
 }
 
-CucumberApiFormatterNiceAppendable *create_CucumberApiFormatterNiceAppendable_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) {
-  J2OBJC_CREATE_IMPL(CucumberApiFormatterNiceAppendable, initWithJavaLangAppendable_, outArg)
+CCBNiceAppendable *create_CCBNiceAppendable_initWithJavaLangAppendable_(id<JavaLangAppendable> outArg) {
+  J2OBJC_CREATE_IMPL(CCBNiceAppendable, initWithJavaLangAppendable_, outArg)
 }
 
-void CucumberApiFormatterNiceAppendable_tryFlush(CucumberApiFormatterNiceAppendable *self) {
+void CCBNiceAppendable_tryFlush(CCBNiceAppendable *self) {
   if (!([JavaIoFlushable_class_() isInstance:self->out_])) return;
   @try {
     [((id<JavaIoFlushable>) nil_chk(((id<JavaIoFlushable>) cast_check(self->out_, JavaIoFlushable_class_())))) flush];
@@ -169,4 +169,4 @@ void CucumberApiFormatterNiceAppendable_tryFlush(CucumberApiFormatterNiceAppenda
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiFormatterNiceAppendable)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBNiceAppendable)

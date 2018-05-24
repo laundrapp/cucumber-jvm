@@ -17,7 +17,7 @@
 #include "java/util/regex/Matcher.h"
 #include "java/util/regex/Pattern.h"
 
-@interface CucumberRuntimeMethodFormat () {
+@interface CCBRMethodFormat () {
  @public
   JavaTextMessageFormat *format_;
 }
@@ -44,39 +44,39 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeMethodFormat, format_, JavaTextMessageFormat *)
+J2OBJC_FIELD_SETTER(CCBRMethodFormat, format_, JavaTextMessageFormat *)
 
-inline JavaUtilRegexPattern *CucumberRuntimeMethodFormat_get_METHOD_PATTERN(void);
-static JavaUtilRegexPattern *CucumberRuntimeMethodFormat_METHOD_PATTERN;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeMethodFormat, METHOD_PATTERN, JavaUtilRegexPattern *)
+inline JavaUtilRegexPattern *CCBRMethodFormat_get_METHOD_PATTERN(void);
+static JavaUtilRegexPattern *CCBRMethodFormat_METHOD_PATTERN;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRMethodFormat, METHOD_PATTERN, JavaUtilRegexPattern *)
 
-inline NSString *CucumberRuntimeMethodFormat_get_PACKAGE_PATTERN(void);
-static NSString *CucumberRuntimeMethodFormat_PACKAGE_PATTERN = @"[^,]*\\.";
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeMethodFormat, PACKAGE_PATTERN, NSString *)
+inline NSString *CCBRMethodFormat_get_PACKAGE_PATTERN(void);
+static NSString *CCBRMethodFormat_PACKAGE_PATTERN = @"[^,]*\\.";
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRMethodFormat, PACKAGE_PATTERN, NSString *)
 
-__attribute__((unused)) static void CucumberRuntimeMethodFormat_initWithNSString_(CucumberRuntimeMethodFormat *self, NSString *format);
+__attribute__((unused)) static void CCBRMethodFormat_initWithNSString_(CCBRMethodFormat *self, NSString *format);
 
-__attribute__((unused)) static CucumberRuntimeMethodFormat *new_CucumberRuntimeMethodFormat_initWithNSString_(NSString *format) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRMethodFormat *new_CCBRMethodFormat_initWithNSString_(NSString *format) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRuntimeMethodFormat *create_CucumberRuntimeMethodFormat_initWithNSString_(NSString *format);
+__attribute__((unused)) static CCBRMethodFormat *create_CCBRMethodFormat_initWithNSString_(NSString *format);
 
-__attribute__((unused)) static NSString *CucumberRuntimeMethodFormat_getCodeSourceWithJavaLangReflectMethod_(CucumberRuntimeMethodFormat *self, JavaLangReflectMethod *method);
+__attribute__((unused)) static NSString *CCBRMethodFormat_getCodeSourceWithJavaLangReflectMethod_(CCBRMethodFormat *self, JavaLangReflectMethod *method);
 
-J2OBJC_INITIALIZED_DEFN(CucumberRuntimeMethodFormat)
+J2OBJC_INITIALIZED_DEFN(CCBRMethodFormat)
 
-CucumberRuntimeMethodFormat *CucumberRuntimeMethodFormat_SHORT;
-CucumberRuntimeMethodFormat *CucumberRuntimeMethodFormat_FULL;
+CCBRMethodFormat *CCBRMethodFormat_SHORT;
+CCBRMethodFormat *CCBRMethodFormat_FULL;
 
-@implementation CucumberRuntimeMethodFormat
+@implementation CCBRMethodFormat
 
 - (instancetype __nonnull)initWithNSString:(NSString *)format {
-  CucumberRuntimeMethodFormat_initWithNSString_(self, format);
+  CCBRMethodFormat_initWithNSString_(self, format);
   return self;
 }
 
 - (NSString *)formatWithJavaLangReflectMethod:(JavaLangReflectMethod *)method {
   NSString *signature = [((JavaLangReflectMethod *) nil_chk(method)) toGenericString];
-  JavaUtilRegexMatcher *matcher = [((JavaUtilRegexPattern *) nil_chk(CucumberRuntimeMethodFormat_METHOD_PATTERN)) matcherWithJavaLangCharSequence:signature];
+  JavaUtilRegexMatcher *matcher = [((JavaUtilRegexPattern *) nil_chk(CCBRMethodFormat_METHOD_PATTERN)) matcherWithJavaLangCharSequence:signature];
   if ([((JavaUtilRegexMatcher *) nil_chk(matcher)) find]) {
     NSString *M = [matcher groupWithInt:1];
     NSString *r = [matcher groupWithInt:2];
@@ -84,19 +84,19 @@ CucumberRuntimeMethodFormat *CucumberRuntimeMethodFormat_FULL;
     NSString *m = [matcher groupWithInt:4];
     NSString *qa = [matcher groupWithInt:5];
     NSString *qe = [matcher groupWithInt:6];
-    NSString *c = [((NSString *) nil_chk(qc)) java_replaceAll:CucumberRuntimeMethodFormat_PACKAGE_PATTERN withReplacement:@""];
-    NSString *a = [((NSString *) nil_chk(qa)) java_replaceAll:CucumberRuntimeMethodFormat_PACKAGE_PATTERN withReplacement:@""];
-    NSString *e = [((NSString *) nil_chk(qe)) java_replaceAll:CucumberRuntimeMethodFormat_PACKAGE_PATTERN withReplacement:@""];
-    NSString *s = CucumberRuntimeMethodFormat_getCodeSourceWithJavaLangReflectMethod_(self, method);
+    NSString *c = [((NSString *) nil_chk(qc)) java_replaceAll:CCBRMethodFormat_PACKAGE_PATTERN withReplacement:@""];
+    NSString *a = [((NSString *) nil_chk(qa)) java_replaceAll:CCBRMethodFormat_PACKAGE_PATTERN withReplacement:@""];
+    NSString *e = [((NSString *) nil_chk(qe)) java_replaceAll:CCBRMethodFormat_PACKAGE_PATTERN withReplacement:@""];
+    NSString *s = CCBRMethodFormat_getCodeSourceWithJavaLangReflectMethod_(self, method);
     return [((JavaTextMessageFormat *) nil_chk(format_)) formatWithId:[IOSObjectArray arrayWithObjects:(id[]){ M, r, qc, m, qa, qe, c, a, e, s } count:10 type:NSObject_class_()]];
   }
   else {
-    @throw create_CucumberRuntimeCucumberException_initWithNSString_(JreStrcat("$$", @"Cucumber bug: Couldn't format ", signature));
+    @throw create_CCBRCucumberException_initWithNSString_(JreStrcat("$$", @"Cucumber bug: Couldn't format ", signature));
   }
 }
 
 - (NSString *)getCodeSourceWithJavaLangReflectMethod:(JavaLangReflectMethod *)method {
-  return CucumberRuntimeMethodFormat_getCodeSourceWithJavaLangReflectMethod_(self, method);
+  return CCBRMethodFormat_getCodeSourceWithJavaLangReflectMethod_(self, method);
 }
 
 - (void)dealloc {
@@ -121,40 +121,40 @@ CucumberRuntimeMethodFormat *CucumberRuntimeMethodFormat_FULL;
     { "METHOD_PATTERN", "LJavaUtilRegexPattern;", .constantValue.asLong = 0, 0x1a, -1, 4, -1, -1 },
     { "PACKAGE_PATTERN", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 5, -1, -1 },
     { "format_", "LJavaTextMessageFormat;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "SHORT", "LCucumberRuntimeMethodFormat;", .constantValue.asLong = 0, 0x19, -1, 6, -1, -1 },
-    { "FULL", "LCucumberRuntimeMethodFormat;", .constantValue.asLong = 0, 0x19, -1, 7, -1, -1 },
+    { "SHORT", "LCCBRMethodFormat;", .constantValue.asLong = 0, 0x19, -1, 6, -1, -1 },
+    { "FULL", "LCCBRMethodFormat;", .constantValue.asLong = 0, 0x19, -1, 7, -1, -1 },
   };
-  static const void *ptrTable[] = { "LNSString;", "format", "LJavaLangReflectMethod;", "getCodeSource", &CucumberRuntimeMethodFormat_METHOD_PATTERN, &CucumberRuntimeMethodFormat_PACKAGE_PATTERN, &CucumberRuntimeMethodFormat_SHORT, &CucumberRuntimeMethodFormat_FULL };
-  static const J2ObjcClassInfo _CucumberRuntimeMethodFormat = { "MethodFormat", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 3, 5, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeMethodFormat;
+  static const void *ptrTable[] = { "LNSString;", "format", "LJavaLangReflectMethod;", "getCodeSource", &CCBRMethodFormat_METHOD_PATTERN, &CCBRMethodFormat_PACKAGE_PATTERN, &CCBRMethodFormat_SHORT, &CCBRMethodFormat_FULL };
+  static const J2ObjcClassInfo _CCBRMethodFormat = { "MethodFormat", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 3, 5, -1, -1, -1, -1, -1 };
+  return &_CCBRMethodFormat;
 }
 
 + (void)initialize {
-  if (self == [CucumberRuntimeMethodFormat class]) {
-    JreStrongAssign(&CucumberRuntimeMethodFormat_METHOD_PATTERN, JavaUtilRegexPattern_compileWithNSString_(@"((?:static\\s|public\\s)+)([^\\s]*)\\s\\.?(.*)\\.([^\\(]*)\\(([^\\)]*)\\)(?: throws )?(.*)"));
-    JreStrongAssignAndConsume(&CucumberRuntimeMethodFormat_SHORT, new_CucumberRuntimeMethodFormat_initWithNSString_(@"%c.%m(%a)"));
-    JreStrongAssignAndConsume(&CucumberRuntimeMethodFormat_FULL, new_CucumberRuntimeMethodFormat_initWithNSString_(@"%qc.%m(%a) in %s"));
-    J2OBJC_SET_INITIALIZED(CucumberRuntimeMethodFormat)
+  if (self == [CCBRMethodFormat class]) {
+    JreStrongAssign(&CCBRMethodFormat_METHOD_PATTERN, JavaUtilRegexPattern_compileWithNSString_(@"((?:static\\s|public\\s)+)([^\\s]*)\\s\\.?(.*)\\.([^\\(]*)\\(([^\\)]*)\\)(?: throws )?(.*)"));
+    JreStrongAssignAndConsume(&CCBRMethodFormat_SHORT, new_CCBRMethodFormat_initWithNSString_(@"%c.%m(%a)"));
+    JreStrongAssignAndConsume(&CCBRMethodFormat_FULL, new_CCBRMethodFormat_initWithNSString_(@"%qc.%m(%a) in %s"));
+    J2OBJC_SET_INITIALIZED(CCBRMethodFormat)
   }
 }
 
 @end
 
-void CucumberRuntimeMethodFormat_initWithNSString_(CucumberRuntimeMethodFormat *self, NSString *format) {
+void CCBRMethodFormat_initWithNSString_(CCBRMethodFormat *self, NSString *format) {
   NSObject_init(self);
   NSString *pattern = [((NSString *) nil_chk([((NSString *) nil_chk([((NSString *) nil_chk([((NSString *) nil_chk([((NSString *) nil_chk([((NSString *) nil_chk([((NSString *) nil_chk([((NSString *) nil_chk([((NSString *) nil_chk([((NSString *) nil_chk(format)) java_replaceAll:@"%M" withReplacement:@"{0}"])) java_replaceAll:@"%r" withReplacement:@"{1}"])) java_replaceAll:@"%qc" withReplacement:@"{2}"])) java_replaceAll:@"%m" withReplacement:@"{3}"])) java_replaceAll:@"%qa" withReplacement:@"{4}"])) java_replaceAll:@"%qe" withReplacement:@"{5}"])) java_replaceAll:@"%c" withReplacement:@"{6}"])) java_replaceAll:@"%a" withReplacement:@"{7}"])) java_replaceAll:@"%e" withReplacement:@"{8}"])) java_replaceAll:@"%s" withReplacement:@"{9}"];
   JreStrongAssignAndConsume(&self->format_, new_JavaTextMessageFormat_initWithNSString_(pattern));
 }
 
-CucumberRuntimeMethodFormat *new_CucumberRuntimeMethodFormat_initWithNSString_(NSString *format) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeMethodFormat, initWithNSString_, format)
+CCBRMethodFormat *new_CCBRMethodFormat_initWithNSString_(NSString *format) {
+  J2OBJC_NEW_IMPL(CCBRMethodFormat, initWithNSString_, format)
 }
 
-CucumberRuntimeMethodFormat *create_CucumberRuntimeMethodFormat_initWithNSString_(NSString *format) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeMethodFormat, initWithNSString_, format)
+CCBRMethodFormat *create_CCBRMethodFormat_initWithNSString_(NSString *format) {
+  J2OBJC_CREATE_IMPL(CCBRMethodFormat, initWithNSString_, format)
 }
 
-NSString *CucumberRuntimeMethodFormat_getCodeSourceWithJavaLangReflectMethod_(CucumberRuntimeMethodFormat *self, JavaLangReflectMethod *method) {
+NSString *CCBRMethodFormat_getCodeSourceWithJavaLangReflectMethod_(CCBRMethodFormat *self, JavaLangReflectMethod *method) {
   @try {
     JavaSecurityProtectionDomain *protectionDomain = [((IOSClass *) nil_chk([((JavaLangReflectMethod *) nil_chk(method)) getDeclaringClass])) getProtectionDomain];
     return [((JavaNetURL *) nil_chk([((JavaSecurityCodeSource *) nil_chk([((JavaSecurityProtectionDomain *) nil_chk(protectionDomain)) getCodeSource])) getLocation])) toExternalForm];
@@ -164,4 +164,4 @@ NSString *CucumberRuntimeMethodFormat_getCodeSourceWithJavaLangReflectMethod_(Cu
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeMethodFormat)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRMethodFormat)

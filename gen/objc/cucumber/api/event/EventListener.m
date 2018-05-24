@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/api/event/EventListener.h"
 
-@interface CucumberApiEventEventListener : NSObject
+@interface CCBEventListener : NSObject
 
 @end
 
-@implementation CucumberApiEventEventListener
+@implementation CCBEventListener
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -19,13 +19,13 @@
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
+  methods[0].selector = @selector(setEventPublisherWithCCBEventPublisher:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "setEventPublisher", "LCucumberApiEventEventPublisher;" };
-  static const J2ObjcClassInfo _CucumberApiEventEventListener = { "EventListener", "cucumber.api.event", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberApiEventEventListener;
+  static const void *ptrTable[] = { "setEventPublisher", "LCCBEventPublisher;" };
+  static const J2ObjcClassInfo _CCBEventListener = { "EventListener", "cucumber.api.event", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
+  return &_CCBEventListener;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiEventEventListener)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBEventListener)

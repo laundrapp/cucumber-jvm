@@ -18,20 +18,20 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeXstreamTimeConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamTimeConverter || defined(INCLUDE_CucumberRuntimeXstreamTimeConverter))
-#define CucumberRuntimeXstreamTimeConverter_
+#if !defined (CCBRTimeConverter_) && (INCLUDE_ALL_CucumberRuntimeXstreamTimeConverter || defined(INCLUDE_CCBRTimeConverter))
+#define CCBRTimeConverter_
 
 #define RESTRICT_CucumberRuntimeXstreamConverterWithFormat 1
-#define INCLUDE_CucumberRuntimeXstreamConverterWithFormat 1
+#define INCLUDE_CCBRConverterWithFormat 1
 #include "cucumber/runtime/xstream/ConverterWithFormat.h"
 
-@class CucumberRuntimeParameterInfo;
+@class CCBRParameterInfo;
 @class IOSObjectArray;
 @class JavaTextDateFormat;
 @class JavaUtilLocale;
 @protocol JavaUtilList;
 
-@interface CucumberRuntimeXstreamTimeConverter : CucumberRuntimeXstreamConverterWithFormat
+@interface CCBRTimeConverter : CCBRConverterWithFormat
 
 #pragma mark Public
 
@@ -41,8 +41,8 @@
 
 - (void)removeOnlyFormat;
 
-- (void)setParameterInfoAndLocaleWithCucumberRuntimeParameterInfo:(CucumberRuntimeParameterInfo *)parameterInfo
-                                               withJavaUtilLocale:(JavaUtilLocale *)locale;
+- (void)setParameterInfoAndLocaleWithCCBRParameterInfo:(CCBRParameterInfo *)parameterInfo
+                                    withJavaUtilLocale:(JavaUtilLocale *)locale;
 
 - (NSString *)toStringWithId:(id)obj;
 
@@ -58,13 +58,15 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeXstreamTimeConverter)
+J2OBJC_EMPTY_STATIC_INIT(CCBRTimeConverter)
 
-FOUNDATION_EXPORT void CucumberRuntimeXstreamTimeConverter_initWithJavaUtilLocale_withIOSClassArray_(CucumberRuntimeXstreamTimeConverter *self, JavaUtilLocale *locale, IOSObjectArray *convertibleTypes);
+FOUNDATION_EXPORT void CCBRTimeConverter_initWithJavaUtilLocale_withIOSClassArray_(CCBRTimeConverter *self, JavaUtilLocale *locale, IOSObjectArray *convertibleTypes);
 
-FOUNDATION_EXPORT id<JavaUtilList> CucumberRuntimeXstreamTimeConverter_getTimeClasses(void);
+FOUNDATION_EXPORT id<JavaUtilList> CCBRTimeConverter_getTimeClasses(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeXstreamTimeConverter)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRTimeConverter)
+
+@compatibility_alias CucumberRuntimeXstreamTimeConverter CCBRTimeConverter;
 
 #endif
 

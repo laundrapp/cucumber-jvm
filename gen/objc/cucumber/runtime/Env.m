@@ -13,7 +13,7 @@
 #include "java/util/ResourceBundle.h"
 #include "java/util/Set.h"
 
-@interface CucumberRuntimeEnv () {
+@interface CCBREnv () {
  @public
   id<JavaUtilMap> map_;
 }
@@ -23,42 +23,42 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRuntimeEnv, map_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(CCBREnv, map_, id<JavaUtilMap>)
 
-__attribute__((unused)) static void CucumberRuntimeEnv_putWithNSString_withNSString_(CucumberRuntimeEnv *self, NSString *key, NSString *string);
+__attribute__((unused)) static void CCBREnv_putWithNSString_withNSString_(CCBREnv *self, NSString *key, NSString *string);
 
-J2OBJC_INITIALIZED_DEFN(CucumberRuntimeEnv)
+J2OBJC_INITIALIZED_DEFN(CCBREnv)
 
-CucumberRuntimeEnv *CucumberRuntimeEnv_INSTANCE;
+CCBREnv *CCBREnv_INSTANCE;
 
-@implementation CucumberRuntimeEnv
+@implementation CCBREnv
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRuntimeEnv_init(self);
+  CCBREnv_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 - (instancetype __nonnull)initWithNSString:(NSString *)bundleName {
-  CucumberRuntimeEnv_initWithNSString_(self, bundleName);
+  CCBREnv_initWithNSString_(self, bundleName);
   return self;
 }
 
 - (instancetype __nonnull)initWithJavaUtilProperties:(JavaUtilProperties *)properties {
-  CucumberRuntimeEnv_initWithJavaUtilProperties_(self, properties);
+  CCBREnv_initWithJavaUtilProperties_(self, properties);
   return self;
 }
 
 - (instancetype __nonnull)initWithNSString:(NSString *)bundleName
                     withJavaUtilProperties:(JavaUtilProperties *)properties {
-  CucumberRuntimeEnv_initWithNSString_withJavaUtilProperties_(self, bundleName, properties);
+  CCBREnv_initWithNSString_withJavaUtilProperties_(self, bundleName, properties);
   return self;
 }
 
 - (void)putWithNSString:(NSString *)key
            withNSString:(NSString *)string {
-  CucumberRuntimeEnv_putWithNSString_withNSString_(self, key, string);
+  CCBREnv_putWithNSString_withNSString_(self, key, string);
 }
 
 - (NSString *)getWithNSString:(NSString *)key {
@@ -98,67 +98,67 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[6].selector = @selector(getWithNSString:withNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "INSTANCE", "LCucumberRuntimeEnv;", .constantValue.asLong = 0, 0x19, -1, 6, -1, -1 },
+    { "INSTANCE", "LCCBREnv;", .constantValue.asLong = 0, 0x19, -1, 6, -1, -1 },
     { "map_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 7, -1 },
   };
-  static const void *ptrTable[] = { "LNSString;", "LJavaUtilProperties;", "LNSString;LJavaUtilProperties;", "put", "LNSString;LNSString;", "get", &CucumberRuntimeEnv_INSTANCE, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeEnv = { "Env", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 7, 2, -1, -1, -1, -1, -1 };
-  return &_CucumberRuntimeEnv;
+  static const void *ptrTable[] = { "LNSString;", "LJavaUtilProperties;", "LNSString;LJavaUtilProperties;", "put", "LNSString;LNSString;", "get", &CCBREnv_INSTANCE, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;" };
+  static const J2ObjcClassInfo _CCBREnv = { "Env", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 7, 2, -1, -1, -1, -1, -1 };
+  return &_CCBREnv;
 }
 
 + (void)initialize {
-  if (self == [CucumberRuntimeEnv class]) {
-    JreStrongAssignAndConsume(&CucumberRuntimeEnv_INSTANCE, new_CucumberRuntimeEnv_initWithNSString_(@"cucumber"));
-    J2OBJC_SET_INITIALIZED(CucumberRuntimeEnv)
+  if (self == [CCBREnv class]) {
+    JreStrongAssignAndConsume(&CCBREnv_INSTANCE, new_CCBREnv_initWithNSString_(@"cucumber"));
+    J2OBJC_SET_INITIALIZED(CCBREnv)
   }
 }
 
 @end
 
-void CucumberRuntimeEnv_init(CucumberRuntimeEnv *self) {
-  CucumberRuntimeEnv_initWithNSString_withJavaUtilProperties_(self, nil, JavaLangSystem_getProperties());
+void CCBREnv_init(CCBREnv *self) {
+  CCBREnv_initWithNSString_withJavaUtilProperties_(self, nil, JavaLangSystem_getProperties());
 }
 
-CucumberRuntimeEnv *new_CucumberRuntimeEnv_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeEnv, init)
+CCBREnv *new_CCBREnv_init() {
+  J2OBJC_NEW_IMPL(CCBREnv, init)
 }
 
-CucumberRuntimeEnv *create_CucumberRuntimeEnv_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeEnv, init)
+CCBREnv *create_CCBREnv_init() {
+  J2OBJC_CREATE_IMPL(CCBREnv, init)
 }
 
-void CucumberRuntimeEnv_initWithNSString_(CucumberRuntimeEnv *self, NSString *bundleName) {
-  CucumberRuntimeEnv_initWithNSString_withJavaUtilProperties_(self, bundleName, JavaLangSystem_getProperties());
+void CCBREnv_initWithNSString_(CCBREnv *self, NSString *bundleName) {
+  CCBREnv_initWithNSString_withJavaUtilProperties_(self, bundleName, JavaLangSystem_getProperties());
 }
 
-CucumberRuntimeEnv *new_CucumberRuntimeEnv_initWithNSString_(NSString *bundleName) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeEnv, initWithNSString_, bundleName)
+CCBREnv *new_CCBREnv_initWithNSString_(NSString *bundleName) {
+  J2OBJC_NEW_IMPL(CCBREnv, initWithNSString_, bundleName)
 }
 
-CucumberRuntimeEnv *create_CucumberRuntimeEnv_initWithNSString_(NSString *bundleName) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeEnv, initWithNSString_, bundleName)
+CCBREnv *create_CCBREnv_initWithNSString_(NSString *bundleName) {
+  J2OBJC_CREATE_IMPL(CCBREnv, initWithNSString_, bundleName)
 }
 
-void CucumberRuntimeEnv_initWithJavaUtilProperties_(CucumberRuntimeEnv *self, JavaUtilProperties *properties) {
-  CucumberRuntimeEnv_initWithNSString_withJavaUtilProperties_(self, nil, properties);
+void CCBREnv_initWithJavaUtilProperties_(CCBREnv *self, JavaUtilProperties *properties) {
+  CCBREnv_initWithNSString_withJavaUtilProperties_(self, nil, properties);
 }
 
-CucumberRuntimeEnv *new_CucumberRuntimeEnv_initWithJavaUtilProperties_(JavaUtilProperties *properties) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeEnv, initWithJavaUtilProperties_, properties)
+CCBREnv *new_CCBREnv_initWithJavaUtilProperties_(JavaUtilProperties *properties) {
+  J2OBJC_NEW_IMPL(CCBREnv, initWithJavaUtilProperties_, properties)
 }
 
-CucumberRuntimeEnv *create_CucumberRuntimeEnv_initWithJavaUtilProperties_(JavaUtilProperties *properties) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeEnv, initWithJavaUtilProperties_, properties)
+CCBREnv *create_CCBREnv_initWithJavaUtilProperties_(JavaUtilProperties *properties) {
+  J2OBJC_CREATE_IMPL(CCBREnv, initWithJavaUtilProperties_, properties)
 }
 
-void CucumberRuntimeEnv_initWithNSString_withJavaUtilProperties_(CucumberRuntimeEnv *self, NSString *bundleName, JavaUtilProperties *properties) {
+void CCBREnv_initWithNSString_withJavaUtilProperties_(CCBREnv *self, NSString *bundleName, JavaUtilProperties *properties) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->map_, new_JavaUtilHashMap_init());
   if (bundleName != nil) {
     @try {
       JavaUtilResourceBundle *bundle = JavaUtilResourceBundle_getBundleWithNSString_(bundleName);
       for (NSString * __strong key in nil_chk([((JavaUtilResourceBundle *) nil_chk(bundle)) keySet])) {
-        CucumberRuntimeEnv_putWithNSString_withNSString_(self, key, [bundle getStringWithNSString:key]);
+        CCBREnv_putWithNSString_withNSString_(self, key, [bundle getStringWithNSString:key]);
       }
     }
     @catch (JavaUtilMissingResourceException *ignore) {
@@ -166,27 +166,27 @@ void CucumberRuntimeEnv_initWithNSString_withJavaUtilProperties_(CucumberRuntime
   }
   if (properties != nil) {
     for (NSString * __strong key in nil_chk([properties stringPropertyNames])) {
-      CucumberRuntimeEnv_putWithNSString_withNSString_(self, key, [properties getPropertyWithNSString:key]);
+      CCBREnv_putWithNSString_withNSString_(self, key, [properties getPropertyWithNSString:key]);
     }
   }
   id<JavaUtilMap> env = JavaLangSystem_getenv();
   for (NSString * __strong key in nil_chk([((id<JavaUtilMap>) nil_chk(env)) keySet])) {
-    CucumberRuntimeEnv_putWithNSString_withNSString_(self, key, [env getWithId:key]);
+    CCBREnv_putWithNSString_withNSString_(self, key, [env getWithId:key]);
   }
 }
 
-CucumberRuntimeEnv *new_CucumberRuntimeEnv_initWithNSString_withJavaUtilProperties_(NSString *bundleName, JavaUtilProperties *properties) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeEnv, initWithNSString_withJavaUtilProperties_, bundleName, properties)
+CCBREnv *new_CCBREnv_initWithNSString_withJavaUtilProperties_(NSString *bundleName, JavaUtilProperties *properties) {
+  J2OBJC_NEW_IMPL(CCBREnv, initWithNSString_withJavaUtilProperties_, bundleName, properties)
 }
 
-CucumberRuntimeEnv *create_CucumberRuntimeEnv_initWithNSString_withJavaUtilProperties_(NSString *bundleName, JavaUtilProperties *properties) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeEnv, initWithNSString_withJavaUtilProperties_, bundleName, properties)
+CCBREnv *create_CCBREnv_initWithNSString_withJavaUtilProperties_(NSString *bundleName, JavaUtilProperties *properties) {
+  J2OBJC_CREATE_IMPL(CCBREnv, initWithNSString_withJavaUtilProperties_, bundleName, properties)
 }
 
-void CucumberRuntimeEnv_putWithNSString_withNSString_(CucumberRuntimeEnv *self, NSString *key, NSString *string) {
+void CCBREnv_putWithNSString_withNSString_(CCBREnv *self, NSString *key, NSString *string) {
   [((id<JavaUtilMap>) nil_chk(self->map_)) putWithId:key withId:string];
   [self->map_ putWithId:[((NSString *) nil_chk([((NSString *) nil_chk(key)) java_replace:'.' withChar:'_'])) uppercaseString] withId:string];
   [self->map_ putWithId:[((NSString *) nil_chk([key java_replace:'_' withChar:'.'])) lowercaseString] withId:string];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeEnv)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBREnv)

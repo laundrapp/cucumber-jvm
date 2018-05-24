@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaEn_pirateGangway_) && (INCLUDE_ALL_CucumberApiJavaEn_pirateGangway || defined(INCLUDE_CucumberApiJavaEn_pirateGangway))
-#define CucumberApiJavaEn_pirateGangway_
+#if !defined (CCBGangway_) && (INCLUDE_ALL_CucumberApiJavaEn_pirateGangway || defined(INCLUDE_CCBGangway))
+#define CCBGangway_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaEn_pirateGangway < JavaLangAnnotationAnnotation >
+@protocol CCBGangway < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaEn_pirateGangway : NSObject < CucumberApiJavaEn_pirateGangway > {
+@interface CCBGangway : NSObject < CCBGangway > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEn_pirateGangway)
+J2OBJC_EMPTY_STATIC_INIT(CCBGangway)
 
-FOUNDATION_EXPORT id<CucumberApiJavaEn_pirateGangway> create_CucumberApiJavaEn_pirateGangway(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBGangway> create_CCBGangway(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEn_pirateGangway)
+J2OBJC_TYPE_LITERAL_HEADER(CCBGangway)
+
+#define CucumberApiJavaEn_pirateGangway CCBGangway
 
 #endif
 

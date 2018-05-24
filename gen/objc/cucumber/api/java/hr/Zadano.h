@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaHrZadano_) && (INCLUDE_ALL_CucumberApiJavaHrZadano || defined(INCLUDE_CucumberApiJavaHrZadano))
-#define CucumberApiJavaHrZadano_
+#if !defined (CCBZadano_) && (INCLUDE_ALL_CucumberApiJavaHrZadano || defined(INCLUDE_CCBZadano))
+#define CCBZadano_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaHrZadano < JavaLangAnnotationAnnotation >
+@protocol CCBZadano < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaHrZadano : NSObject < CucumberApiJavaHrZadano > {
+@interface CCBZadano : NSObject < CCBZadano > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaHrZadano)
+J2OBJC_EMPTY_STATIC_INIT(CCBZadano)
 
-FOUNDATION_EXPORT id<CucumberApiJavaHrZadano> create_CucumberApiJavaHrZadano(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBZadano> create_CCBZadano(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaHrZadano)
+J2OBJC_TYPE_LITERAL_HEADER(CCBZadano)
+
+#define CucumberApiJavaHrZadano CCBZadano
 
 #endif
 

@@ -18,10 +18,10 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeStepDefinition_) && (INCLUDE_ALL_CucumberRuntimeStepDefinition || defined(INCLUDE_CucumberRuntimeStepDefinition))
-#define CucumberRuntimeStepDefinition_
+#if !defined (CCBRStepDefinition_) && (INCLUDE_ALL_CucumberRuntimeStepDefinition || defined(INCLUDE_CCBRStepDefinition))
+#define CCBRStepDefinition_
 
-@class CucumberRuntimeParameterInfo;
+@class CCBRParameterInfo;
 @class GherkinPicklesPickleStep;
 @class IOSObjectArray;
 @class JavaLangInteger;
@@ -29,7 +29,7 @@
 @protocol JavaLangReflectType;
 @protocol JavaUtilList;
 
-@protocol CucumberRuntimeStepDefinition < JavaObject >
+@protocol CCBRStepDefinition < JavaObject >
 
 /*!
  @brief Returns a list of arguments.Return null if the step definition
@@ -58,8 +58,8 @@
   Statically typed languages will typically ignore the <code>argumentType</code> while dynamically
   typed ones will use it to infer a "good type". It's also ok to return null.
  */
-- (CucumberRuntimeParameterInfo *)getParameterTypeWithInt:(jint)n
-                                  withJavaLangReflectType:(id<JavaLangReflectType>)argumentType;
+- (CCBRParameterInfo *)getParameterTypeWithInt:(jint)n
+                       withJavaLangReflectType:(id<JavaLangReflectType>)argumentType;
 
 /*!
  @brief Invokes the step definition.The method should raise a Throwable
@@ -86,9 +86,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeStepDefinition)
+J2OBJC_EMPTY_STATIC_INIT(CCBRStepDefinition)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeStepDefinition)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRStepDefinition)
+
+#define CucumberRuntimeStepDefinition CCBRStepDefinition
 
 #endif
 

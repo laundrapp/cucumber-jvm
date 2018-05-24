@@ -13,14 +13,14 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *CucumberApiFormat__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CCBFormat__Annotations$0(void);
 
-@implementation CucumberApiFormat
+@implementation CCBFormat
 
 @synthesize value = value_;
 
 - (IOSClass *)annotationType {
-  return CucumberApiFormat_class_();
+  return CCBFormat_class_();
 }
 
 - (NSString *)description {
@@ -52,21 +52,21 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiFormat__Annotations$0(
   static const J2ObjcFieldInfo fields[] = {
     { "value_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&CucumberApiFormat__Annotations$0 };
-  static const J2ObjcClassInfo _CucumberApiFormat = { "Format", "cucumber.api", ptrTable, methods, fields, 7, 0x2609, 1, 1, -1, -1, -1, -1, 0 };
-  return &_CucumberApiFormat;
+  static const void *ptrTable[] = { (void *)&CCBFormat__Annotations$0 };
+  static const J2ObjcClassInfo _CCBFormat = { "Format", "cucumber.api", ptrTable, methods, fields, 7, 0x2609, 1, 1, -1, -1, -1, -1, 0 };
+  return &_CCBFormat;
 }
 
 @end
 
-id<CucumberApiFormat> create_CucumberApiFormat(NSString *value) {
-  CucumberApiFormat *self = AUTORELEASE([[CucumberApiFormat alloc] init]);
+id<CCBFormat> create_CCBFormat(NSString *value) {
+  CCBFormat *self = AUTORELEASE([[CCBFormat alloc] init]);
   self->value_ = RETAIN_(value);
   return self;
 }
 
-IOSObjectArray *CucumberApiFormat__Annotations$0() {
+IOSObjectArray *CCBFormat__Annotations$0() {
   return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, PARAMETER), JreLoadEnum(JavaLangAnnotationElementType, ANNOTATION_TYPE) } count:2 type:JavaLangAnnotationElementType_class_()]) } count:2 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiFormat)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBFormat)

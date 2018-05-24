@@ -9,11 +9,11 @@
 #include "cucumber/runtime/xstream/EnumConverter.h"
 #include "java/util/Locale.h"
 
-@implementation CucumberRuntimeXstreamEnumConverter
+@implementation CCBREnumConverter
 
 - (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale
                                     withIOSClass:(IOSClass *)enumClass {
-  CucumberRuntimeXstreamEnumConverter_initWithJavaUtilLocale_withIOSClass_(self, locale, enumClass);
+  CCBREnumConverter_initWithJavaUtilLocale_withIOSClass_(self, locale, enumClass);
   return self;
 }
 
@@ -27,22 +27,22 @@
   methods[0].selector = @selector(initWithJavaUtilLocale:withIOSClass:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "LJavaUtilLocale;LIOSClass;", "(Ljava/util/Locale;Ljava/lang/Class<+Ljava/lang/Enum;>;)V", "Lcucumber/runtime/xstream/ConverterWithEnumFormat<Ljava/lang/Enum;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeXstreamEnumConverter = { "EnumConverter", "cucumber.runtime.xstream", ptrTable, methods, NULL, 7, 0x0, 1, 0, -1, -1, -1, 2, -1 };
-  return &_CucumberRuntimeXstreamEnumConverter;
+  static const J2ObjcClassInfo _CCBREnumConverter = { "EnumConverter", "cucumber.runtime.xstream", ptrTable, methods, NULL, 7, 0x0, 1, 0, -1, -1, -1, 2, -1 };
+  return &_CCBREnumConverter;
 }
 
 @end
 
-void CucumberRuntimeXstreamEnumConverter_initWithJavaUtilLocale_withIOSClass_(CucumberRuntimeXstreamEnumConverter *self, JavaUtilLocale *locale, IOSClass *enumClass) {
-  CucumberRuntimeXstreamConverterWithEnumFormat_initWithJavaUtilLocale_withIOSClass_(self, locale, enumClass);
+void CCBREnumConverter_initWithJavaUtilLocale_withIOSClass_(CCBREnumConverter *self, JavaUtilLocale *locale, IOSClass *enumClass) {
+  CCBRConverterWithEnumFormat_initWithJavaUtilLocale_withIOSClass_(self, locale, enumClass);
 }
 
-CucumberRuntimeXstreamEnumConverter *new_CucumberRuntimeXstreamEnumConverter_initWithJavaUtilLocale_withIOSClass_(JavaUtilLocale *locale, IOSClass *enumClass) {
-  J2OBJC_NEW_IMPL(CucumberRuntimeXstreamEnumConverter, initWithJavaUtilLocale_withIOSClass_, locale, enumClass)
+CCBREnumConverter *new_CCBREnumConverter_initWithJavaUtilLocale_withIOSClass_(JavaUtilLocale *locale, IOSClass *enumClass) {
+  J2OBJC_NEW_IMPL(CCBREnumConverter, initWithJavaUtilLocale_withIOSClass_, locale, enumClass)
 }
 
-CucumberRuntimeXstreamEnumConverter *create_CucumberRuntimeXstreamEnumConverter_initWithJavaUtilLocale_withIOSClass_(JavaUtilLocale *locale, IOSClass *enumClass) {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeXstreamEnumConverter, initWithJavaUtilLocale_withIOSClass_, locale, enumClass)
+CCBREnumConverter *create_CCBREnumConverter_initWithJavaUtilLocale_withIOSClass_(JavaUtilLocale *locale, IOSClass *enumClass) {
+  J2OBJC_CREATE_IMPL(CCBREnumConverter, initWithJavaUtilLocale_withIOSClass_, locale, enumClass)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeXstreamEnumConverter)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBREnumConverter)

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberApiJavaFrMais_) && (INCLUDE_ALL_CucumberApiJavaFrMais || defined(INCLUDE_CucumberApiJavaFrMais))
-#define CucumberApiJavaFrMais_
+#if !defined (CCBMais_) && (INCLUDE_ALL_CucumberApiJavaFrMais || defined(INCLUDE_CCBMais))
+#define CCBMais_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CucumberApiJavaFrMais < JavaLangAnnotationAnnotation >
+@protocol CCBMais < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CucumberApiJavaFrMais : NSObject < CucumberApiJavaFrMais > {
+@interface CCBMais : NSObject < CCBMais > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,11 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaFrMais)
+J2OBJC_EMPTY_STATIC_INIT(CCBMais)
 
-FOUNDATION_EXPORT id<CucumberApiJavaFrMais> create_CucumberApiJavaFrMais(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CCBMais> create_CCBMais(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaFrMais)
+J2OBJC_TYPE_LITERAL_HEADER(CCBMais)
+
+#define CucumberApiJavaFrMais CCBMais
 
 #endif
 

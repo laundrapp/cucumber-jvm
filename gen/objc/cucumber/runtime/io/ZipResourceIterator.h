@@ -18,17 +18,17 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeIoZipResourceIterator_) && (INCLUDE_ALL_CucumberRuntimeIoZipResourceIterator || defined(INCLUDE_CucumberRuntimeIoZipResourceIterator))
-#define CucumberRuntimeIoZipResourceIterator_
+#if !defined (CCBRZipResourceIterator_) && (INCLUDE_ALL_CucumberRuntimeIoZipResourceIterator || defined(INCLUDE_CCBRZipResourceIterator))
+#define CCBRZipResourceIterator_
 
 #define RESTRICT_JavaUtilIterator 1
 #define INCLUDE_JavaUtilIterator 1
 #include "java/util/Iterator.h"
 
-@protocol CucumberRuntimeIoResource;
+@protocol CCBRResource;
 @protocol JavaUtilFunctionConsumer;
 
-@interface CucumberRuntimeIoZipResourceIterator : NSObject < JavaUtilIterator >
+@interface CCBRZipResourceIterator : NSObject < JavaUtilIterator >
 
 #pragma mark Public
 
@@ -38,7 +38,7 @@
 
 - (jboolean)hasNext;
 
-- (id<CucumberRuntimeIoResource>)next;
+- (id<CCBRResource>)next;
 
 - (void)remove;
 
@@ -48,15 +48,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoZipResourceIterator)
+J2OBJC_EMPTY_STATIC_INIT(CCBRZipResourceIterator)
 
-FOUNDATION_EXPORT void CucumberRuntimeIoZipResourceIterator_initWithNSString_withNSString_withNSString_(CucumberRuntimeIoZipResourceIterator *self, NSString *zipPath, NSString *path, NSString *suffix);
+FOUNDATION_EXPORT void CCBRZipResourceIterator_initWithNSString_withNSString_withNSString_(CCBRZipResourceIterator *self, NSString *zipPath, NSString *path, NSString *suffix);
 
-FOUNDATION_EXPORT CucumberRuntimeIoZipResourceIterator *new_CucumberRuntimeIoZipResourceIterator_initWithNSString_withNSString_withNSString_(NSString *zipPath, NSString *path, NSString *suffix) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRZipResourceIterator *new_CCBRZipResourceIterator_initWithNSString_withNSString_withNSString_(NSString *zipPath, NSString *path, NSString *suffix) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeIoZipResourceIterator *create_CucumberRuntimeIoZipResourceIterator_initWithNSString_withNSString_withNSString_(NSString *zipPath, NSString *path, NSString *suffix);
+FOUNDATION_EXPORT CCBRZipResourceIterator *create_CCBRZipResourceIterator_initWithNSString_withNSString_withNSString_(NSString *zipPath, NSString *path, NSString *suffix);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoZipResourceIterator)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRZipResourceIterator)
+
+@compatibility_alias CucumberRuntimeIoZipResourceIterator CCBRZipResourceIterator;
 
 #endif
 

@@ -18,17 +18,17 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRuntimeIoMultiLoader_) && (INCLUDE_ALL_CucumberRuntimeIoMultiLoader || defined(INCLUDE_CucumberRuntimeIoMultiLoader))
-#define CucumberRuntimeIoMultiLoader_
+#if !defined (CCBRMultiLoader_) && (INCLUDE_ALL_CucumberRuntimeIoMultiLoader || defined(INCLUDE_CCBRMultiLoader))
+#define CCBRMultiLoader_
 
 #define RESTRICT_CucumberRuntimeIoResourceLoader 1
-#define INCLUDE_CucumberRuntimeIoResourceLoader 1
+#define INCLUDE_CCBRResourceLoader 1
 #include "cucumber/runtime/io/ResourceLoader.h"
 
 @class JavaLangClassLoader;
 @protocol JavaLangIterable;
 
-@interface CucumberRuntimeIoMultiLoader : NSObject < CucumberRuntimeIoResourceLoader >
+@interface CCBRMultiLoader : NSObject < CCBRResourceLoader >
 
 #pragma mark Public
 
@@ -45,22 +45,24 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeIoMultiLoader)
+J2OBJC_EMPTY_STATIC_INIT(CCBRMultiLoader)
 
-inline NSString *CucumberRuntimeIoMultiLoader_get_CLASSPATH_SCHEME(void);
+inline NSString *CCBRMultiLoader_get_CLASSPATH_SCHEME(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT NSString *CucumberRuntimeIoMultiLoader_CLASSPATH_SCHEME;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeIoMultiLoader, CLASSPATH_SCHEME, NSString *)
+FOUNDATION_EXPORT NSString *CCBRMultiLoader_CLASSPATH_SCHEME;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRMultiLoader, CLASSPATH_SCHEME, NSString *)
 
-FOUNDATION_EXPORT void CucumberRuntimeIoMultiLoader_initWithJavaLangClassLoader_(CucumberRuntimeIoMultiLoader *self, JavaLangClassLoader *classLoader);
+FOUNDATION_EXPORT void CCBRMultiLoader_initWithJavaLangClassLoader_(CCBRMultiLoader *self, JavaLangClassLoader *classLoader);
 
-FOUNDATION_EXPORT CucumberRuntimeIoMultiLoader *new_CucumberRuntimeIoMultiLoader_initWithJavaLangClassLoader_(JavaLangClassLoader *classLoader) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRMultiLoader *new_CCBRMultiLoader_initWithJavaLangClassLoader_(JavaLangClassLoader *classLoader) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeIoMultiLoader *create_CucumberRuntimeIoMultiLoader_initWithJavaLangClassLoader_(JavaLangClassLoader *classLoader);
+FOUNDATION_EXPORT CCBRMultiLoader *create_CCBRMultiLoader_initWithJavaLangClassLoader_(JavaLangClassLoader *classLoader);
 
-FOUNDATION_EXPORT NSString *CucumberRuntimeIoMultiLoader_packageNameWithNSString_(NSString *gluePath);
+FOUNDATION_EXPORT NSString *CCBRMultiLoader_packageNameWithNSString_(NSString *gluePath);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeIoMultiLoader)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRMultiLoader)
+
+@compatibility_alias CucumberRuntimeIoMultiLoader CCBRMultiLoader;
 
 #endif
 
