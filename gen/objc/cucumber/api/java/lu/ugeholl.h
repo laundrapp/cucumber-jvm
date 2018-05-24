@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBugeholl_) && (INCLUDE_ALL_CucumberApiJavaLuUgeholl || defined(INCLUDE_CCBugeholl))
-#define CCBugeholl_
+#if !defined (CucumberApiJavaLuugeholl_) && (INCLUDE_ALL_CucumberApiJavaLuUgeholl || defined(INCLUDE_CucumberApiJavaLuugeholl))
+#define CucumberApiJavaLuugeholl_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBugeholl < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaLuugeholl < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBugeholl : NSObject < CCBugeholl > {
+@interface CucumberApiJavaLuugeholl : NSObject < CucumberApiJavaLuugeholl > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBugeholl)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaLuugeholl)
 
-FOUNDATION_EXPORT id<CCBugeholl> create_CCBugeholl(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaLuugeholl> create_CucumberApiJavaLuugeholl(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBugeholl)
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaLuugeholl)
 
-#define CucumberApiJavaLuUgeholl CCBugeholl
+#define CucumberApiJavaLuUgeholl CucumberApiJavaLuugeholl
 
 #endif
 

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBLèsaa_) && (INCLUDE_ALL_CucumberApiJavaHtLèsaa || defined(INCLUDE_CCBLèsaa))
-#define CCBLèsaa_
+#if !defined (CucumberApiJavaHtLèsaa_) && (INCLUDE_ALL_CucumberApiJavaHtLèsaa || defined(INCLUDE_CucumberApiJavaHtLèsaa))
+#define CucumberApiJavaHtLèsaa_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBLèsaa < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaHtLèsaa < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBLèsaa : NSObject < CCBLèsaa > {
+@interface CucumberApiJavaHtLèsaa : NSObject < CucumberApiJavaHtLèsaa > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBLèsaa)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaHtLèsaa)
 
-FOUNDATION_EXPORT id<CCBLèsaa> create_CCBLèsaa(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaHtLèsaa> create_CucumberApiJavaHtLèsaa(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBLèsaa)
-
-#define CucumberApiJavaHtLèsaa CCBLèsaa
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaHtLèsaa)
 
 #endif
 

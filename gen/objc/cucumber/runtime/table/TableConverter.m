@@ -80,7 +80,7 @@ __attribute__((unused)) static jboolean CCBRTableConverter_isListOfSingleValueWi
 
 __attribute__((unused)) static jboolean CCBRTableConverter_isArrayOfSingleValueWithId_(CCBRTableConverter *self, id object);
 
-@interface CCBRTableConverter_1 : NSObject < CucumberUtilMapper > {
+@interface CCBRTableConverter_1 : NSObject < CCBMapper > {
  @public
   id<CCBRStringConverter> val$mapper_;
 }
@@ -438,7 +438,7 @@ GherkinPicklesPickleRow *CCBRTableConverter_gherkinRowWithJavaUtilList_(CCBRTabl
 
 id<JavaUtilList> CCBRTableConverter_convertTopCellsToFieldNamesWithCCBDataTable_(CCBRTableConverter *self, CCBDataTable *dataTable) {
   id<CCBRStringConverter> mapper = create_CCBRCamelCaseStringConverter_init();
-  return CucumberUtilFixJava_mapWithJavaUtilList_withCucumberUtilMapper_([((CCBDataTable *) nil_chk(dataTable)) topCells], create_CCBRTableConverter_1_initWithCCBRStringConverter_(mapper));
+  return CCBFixJava_mapWithJavaUtilList_withCCBMapper_([((CCBDataTable *) nil_chk(dataTable)) topCells], create_CCBRTableConverter_1_initWithCCBRStringConverter_(mapper));
 }
 
 jboolean CCBRTableConverter_isListOfSingleValueWithId_(CCBRTableConverter *self, id object) {

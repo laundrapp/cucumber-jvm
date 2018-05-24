@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBਜੇਕਰ_) && (INCLUDE_ALL_CucumberApiJavaPaਜ_ਕਰ || defined(INCLUDE_CCBਜੇਕਰ))
-#define CCBਜੇਕਰ_
+#if !defined (CucumberApiJavaPaਜੇਕਰ_) && (INCLUDE_ALL_CucumberApiJavaPaਜ_ਕਰ || defined(INCLUDE_CucumberApiJavaPaਜੇਕਰ))
+#define CucumberApiJavaPaਜੇਕਰ_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBਜੇਕਰ < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaPaਜੇਕਰ < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBਜੇਕਰ : NSObject < CCBਜੇਕਰ > {
+@interface CucumberApiJavaPaਜੇਕਰ : NSObject < CucumberApiJavaPaਜੇਕਰ > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBਜੇਕਰ)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaPaਜੇਕਰ)
 
-FOUNDATION_EXPORT id<CCBਜੇਕਰ> create_CCBਜੇਕਰ(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaPaਜੇਕਰ> create_CucumberApiJavaPaਜੇਕਰ(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBਜੇਕਰ)
-
-#define CucumberApiJavaPaਜੇਕਰ CCBਜੇਕਰ
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaPaਜੇਕਰ)
 
 #endif
 

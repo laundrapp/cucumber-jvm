@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBMaisqu_) && (INCLUDE_ALL_CucumberApiJavaFrMaisqu || defined(INCLUDE_CCBMaisqu))
-#define CCBMaisqu_
+#if !defined (CucumberApiJavaFrMaisqu_) && (INCLUDE_ALL_CucumberApiJavaFrMaisqu || defined(INCLUDE_CucumberApiJavaFrMaisqu))
+#define CucumberApiJavaFrMaisqu_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBMaisqu < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaFrMaisqu < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBMaisqu : NSObject < CCBMaisqu > {
+@interface CucumberApiJavaFrMaisqu : NSObject < CucumberApiJavaFrMaisqu > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBMaisqu)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaFrMaisqu)
 
-FOUNDATION_EXPORT id<CCBMaisqu> create_CCBMaisqu(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaFrMaisqu> create_CucumberApiJavaFrMaisqu(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBMaisqu)
-
-#define CucumberApiJavaFrMaisqu CCBMaisqu
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaFrMaisqu)
 
 #endif
 

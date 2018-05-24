@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBMaisque_) && (INCLUDE_ALL_CucumberApiJavaFrMaisque || defined(INCLUDE_CCBMaisque))
-#define CCBMaisque_
+#if !defined (CucumberApiJavaFrMaisque_) && (INCLUDE_ALL_CucumberApiJavaFrMaisque || defined(INCLUDE_CucumberApiJavaFrMaisque))
+#define CucumberApiJavaFrMaisque_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBMaisque < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaFrMaisque < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBMaisque : NSObject < CCBMaisque > {
+@interface CucumberApiJavaFrMaisque : NSObject < CucumberApiJavaFrMaisque > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBMaisque)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaFrMaisque)
 
-FOUNDATION_EXPORT id<CCBMaisque> create_CCBMaisque(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaFrMaisque> create_CucumberApiJavaFrMaisque(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBMaisque)
-
-#define CucumberApiJavaFrMaisque CCBMaisque
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaFrMaisque)
 
 #endif
 

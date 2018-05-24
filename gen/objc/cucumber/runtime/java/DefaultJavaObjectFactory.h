@@ -18,11 +18,11 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBDefaultJavaObjectFactory_) && (INCLUDE_ALL_CucumberRuntimeJavaDefaultJavaObjectFactory || defined(INCLUDE_CCBDefaultJavaObjectFactory))
-#define CCBDefaultJavaObjectFactory_
+#if !defined (CucumberRuntimeJavaDefaultJavaObjectFactory_) && (INCLUDE_ALL_CucumberRuntimeJavaDefaultJavaObjectFactory || defined(INCLUDE_CucumberRuntimeJavaDefaultJavaObjectFactory))
+#define CucumberRuntimeJavaDefaultJavaObjectFactory_
 
 #define RESTRICT_CucumberApiJavaObjectFactory 1
-#define INCLUDE_CCBObjectFactory 1
+#define INCLUDE_CucumberApiJavaObjectFactory 1
 #include "cucumber/api/java/ObjectFactory.h"
 
 @class IOSClass;
@@ -31,7 +31,7 @@
  @brief This class has package scope so it doesn't get loaded by reflection,
   thereby colliding with other DI implementations.
  */
-@interface CCBDefaultJavaObjectFactory : NSObject < CCBObjectFactory >
+@interface CucumberRuntimeJavaDefaultJavaObjectFactory : NSObject < CucumberApiJavaObjectFactory >
 
 #pragma mark Public
 
@@ -49,17 +49,15 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBDefaultJavaObjectFactory)
+J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeJavaDefaultJavaObjectFactory)
 
-FOUNDATION_EXPORT void CCBDefaultJavaObjectFactory_init(CCBDefaultJavaObjectFactory *self);
+FOUNDATION_EXPORT void CucumberRuntimeJavaDefaultJavaObjectFactory_init(CucumberRuntimeJavaDefaultJavaObjectFactory *self);
 
-FOUNDATION_EXPORT CCBDefaultJavaObjectFactory *new_CCBDefaultJavaObjectFactory_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CucumberRuntimeJavaDefaultJavaObjectFactory *new_CucumberRuntimeJavaDefaultJavaObjectFactory_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBDefaultJavaObjectFactory *create_CCBDefaultJavaObjectFactory_init(void);
+FOUNDATION_EXPORT CucumberRuntimeJavaDefaultJavaObjectFactory *create_CucumberRuntimeJavaDefaultJavaObjectFactory_init(void);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBDefaultJavaObjectFactory)
-
-@compatibility_alias CucumberRuntimeJavaDefaultJavaObjectFactory CCBDefaultJavaObjectFactory;
+J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeJavaDefaultJavaObjectFactory)
 
 #endif
 

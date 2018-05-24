@@ -18,17 +18,17 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBAbstractJavaSnippet_) && (INCLUDE_ALL_CucumberRuntimeJavaAbstractJavaSnippet || defined(INCLUDE_CCBAbstractJavaSnippet))
-#define CCBAbstractJavaSnippet_
+#if !defined (CucumberRuntimeJavaAbstractJavaSnippet_) && (INCLUDE_ALL_CucumberRuntimeJavaAbstractJavaSnippet || defined(INCLUDE_CucumberRuntimeJavaAbstractJavaSnippet))
+#define CucumberRuntimeJavaAbstractJavaSnippet_
 
 #define RESTRICT_CucumberRuntimeSnippetsSnippet 1
-#define INCLUDE_CCBSnippet 1
+#define INCLUDE_CCBRSnippet 1
 #include "cucumber/runtime/snippets/Snippet.h"
 
 @class IOSClass;
 @protocol JavaUtilList;
 
-@interface CCBAbstractJavaSnippet : NSObject < CCBSnippet >
+@interface CucumberRuntimeJavaAbstractJavaSnippet : NSObject < CCBRSnippet >
 
 #pragma mark Public
 
@@ -50,13 +50,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBAbstractJavaSnippet)
+J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeJavaAbstractJavaSnippet)
 
-FOUNDATION_EXPORT void CCBAbstractJavaSnippet_init(CCBAbstractJavaSnippet *self);
+FOUNDATION_EXPORT void CucumberRuntimeJavaAbstractJavaSnippet_init(CucumberRuntimeJavaAbstractJavaSnippet *self);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBAbstractJavaSnippet)
-
-@compatibility_alias CucumberRuntimeJavaAbstractJavaSnippet CCBAbstractJavaSnippet;
+J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeJavaAbstractJavaSnippet)
 
 #endif
 

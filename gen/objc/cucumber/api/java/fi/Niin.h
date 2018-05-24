@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBNiin_) && (INCLUDE_ALL_CucumberApiJavaFiNiin || defined(INCLUDE_CCBNiin))
-#define CCBNiin_
+#if !defined (CucumberApiJavaFiNiin_) && (INCLUDE_ALL_CucumberApiJavaFiNiin || defined(INCLUDE_CucumberApiJavaFiNiin))
+#define CucumberApiJavaFiNiin_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBNiin < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaFiNiin < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBNiin : NSObject < CCBNiin > {
+@interface CucumberApiJavaFiNiin : NSObject < CucumberApiJavaFiNiin > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBNiin)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaFiNiin)
 
-FOUNDATION_EXPORT id<CCBNiin> create_CCBNiin(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaFiNiin> create_CucumberApiJavaFiNiin(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBNiin)
-
-#define CucumberApiJavaFiNiin CCBNiin
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaFiNiin)
 
 #endif
 

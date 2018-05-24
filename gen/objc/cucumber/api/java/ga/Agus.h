@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBAgus_) && (INCLUDE_ALL_CucumberApiJavaGaAgus || defined(INCLUDE_CCBAgus))
-#define CCBAgus_
+#if !defined (CucumberApiJavaGaAgus_) && (INCLUDE_ALL_CucumberApiJavaGaAgus || defined(INCLUDE_CucumberApiJavaGaAgus))
+#define CucumberApiJavaGaAgus_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBAgus < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaGaAgus < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBAgus : NSObject < CCBAgus > {
+@interface CucumberApiJavaGaAgus : NSObject < CucumberApiJavaGaAgus > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBAgus)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaGaAgus)
 
-FOUNDATION_EXPORT id<CCBAgus> create_CCBAgus(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaGaAgus> create_CucumberApiJavaGaAgus(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBAgus)
-
-#define CucumberApiJavaGaAgus CCBAgus
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaGaAgus)
 
 #endif
 

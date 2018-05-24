@@ -8,11 +8,11 @@
 #include "cucumber/runtime/java/AbstractJavaSnippet.h"
 #include "cucumber/runtime/java/JavaSnippet.h"
 
-@implementation CCBJavaSnippet
+@implementation CucumberRuntimeJavaJavaSnippet
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CCBJavaSnippet_init(self);
+  CucumberRuntimeJavaJavaSnippet_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -39,22 +39,22 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[2].selector = @selector(template__);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "getArgType", "LIOSClass;", "(Ljava/lang/Class<*>;)Ljava/lang/String;", "template" };
-  static const J2ObjcClassInfo _CCBJavaSnippet = { "JavaSnippet", "cucumber.runtime.java", ptrTable, methods, NULL, 7, 0x0, 3, 0, -1, -1, -1, -1, -1 };
-  return &_CCBJavaSnippet;
+  static const J2ObjcClassInfo _CucumberRuntimeJavaJavaSnippet = { "JavaSnippet", "cucumber.runtime.java", ptrTable, methods, NULL, 7, 0x0, 3, 0, -1, -1, -1, -1, -1 };
+  return &_CucumberRuntimeJavaJavaSnippet;
 }
 
 @end
 
-void CCBJavaSnippet_init(CCBJavaSnippet *self) {
-  CCBAbstractJavaSnippet_init(self);
+void CucumberRuntimeJavaJavaSnippet_init(CucumberRuntimeJavaJavaSnippet *self) {
+  CucumberRuntimeJavaAbstractJavaSnippet_init(self);
 }
 
-CCBJavaSnippet *new_CCBJavaSnippet_init() {
-  J2OBJC_NEW_IMPL(CCBJavaSnippet, init)
+CucumberRuntimeJavaJavaSnippet *new_CucumberRuntimeJavaJavaSnippet_init() {
+  J2OBJC_NEW_IMPL(CucumberRuntimeJavaJavaSnippet, init)
 }
 
-CCBJavaSnippet *create_CCBJavaSnippet_init() {
-  J2OBJC_CREATE_IMPL(CCBJavaSnippet, init)
+CucumberRuntimeJavaJavaSnippet *create_CucumberRuntimeJavaJavaSnippet_init() {
+  J2OBJC_CREATE_IMPL(CucumberRuntimeJavaJavaSnippet, init)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBJavaSnippet)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeJavaJavaSnippet)

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBOnd_) && (INCLUDE_ALL_CucumberApiJavaCy_gbOnd || defined(INCLUDE_CCBOnd))
-#define CCBOnd_
+#if !defined (CucumberApiJavaCy_gbOnd_) && (INCLUDE_ALL_CucumberApiJavaCy_gbOnd || defined(INCLUDE_CucumberApiJavaCy_gbOnd))
+#define CucumberApiJavaCy_gbOnd_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBOnd < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaCy_gbOnd < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBOnd : NSObject < CCBOnd > {
+@interface CucumberApiJavaCy_gbOnd : NSObject < CucumberApiJavaCy_gbOnd > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBOnd)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaCy_gbOnd)
 
-FOUNDATION_EXPORT id<CCBOnd> create_CCBOnd(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaCy_gbOnd> create_CucumberApiJavaCy_gbOnd(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBOnd)
-
-#define CucumberApiJavaCy_gbOnd CCBOnd
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaCy_gbOnd)
 
 #endif
 

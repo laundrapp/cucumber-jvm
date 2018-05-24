@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBan_) && (INCLUDE_ALL_CucumberApiJavaLuAn || defined(INCLUDE_CCBan))
-#define CCBan_
+#if !defined (CucumberApiJavaLuan_) && (INCLUDE_ALL_CucumberApiJavaLuAn || defined(INCLUDE_CucumberApiJavaLuan))
+#define CucumberApiJavaLuan_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBan < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaLuan < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBan : NSObject < CCBan > {
+@interface CucumberApiJavaLuan : NSObject < CucumberApiJavaLuan > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBan)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaLuan)
 
-FOUNDATION_EXPORT id<CCBan> create_CCBan(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaLuan> create_CucumberApiJavaLuan(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBan)
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaLuan)
 
-#define CucumberApiJavaLuAn CCBan
+#define CucumberApiJavaLuAn CucumberApiJavaLuan
 
 #endif
 

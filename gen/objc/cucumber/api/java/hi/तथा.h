@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBतथा_) && (INCLUDE_ALL_CucumberApiJavaHiतथ_ || defined(INCLUDE_CCBतथा))
-#define CCBतथा_
+#if !defined (CucumberApiJavaHiतथा_) && (INCLUDE_ALL_CucumberApiJavaHiतथ_ || defined(INCLUDE_CucumberApiJavaHiतथा))
+#define CucumberApiJavaHiतथा_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBतथा < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaHiतथा < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBतथा : NSObject < CCBतथा > {
+@interface CucumberApiJavaHiतथा : NSObject < CucumberApiJavaHiतथा > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBतथा)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaHiतथा)
 
-FOUNDATION_EXPORT id<CCBतथा> create_CCBतथा(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaHiतथा> create_CucumberApiJavaHiतथा(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBतथा)
-
-#define CucumberApiJavaHiतथा CCBतथा
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaHiतथा)
 
 #endif
 

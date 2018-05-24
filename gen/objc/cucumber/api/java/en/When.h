@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBWhen_) && (INCLUDE_ALL_CucumberApiJavaEnWhen || defined(INCLUDE_CCBWhen))
-#define CCBWhen_
+#if !defined (CucumberApiJavaEnWhen_) && (INCLUDE_ALL_CucumberApiJavaEnWhen || defined(INCLUDE_CucumberApiJavaEnWhen))
+#define CucumberApiJavaEnWhen_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBWhen < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaEnWhen < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBWhen : NSObject < CCBWhen > {
+@interface CucumberApiJavaEnWhen : NSObject < CucumberApiJavaEnWhen > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBWhen)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEnWhen)
 
-FOUNDATION_EXPORT id<CCBWhen> create_CCBWhen(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaEnWhen> create_CucumberApiJavaEnWhen(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBWhen)
-
-#define CucumberApiJavaEnWhen CCBWhen
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEnWhen)
 
 #endif
 

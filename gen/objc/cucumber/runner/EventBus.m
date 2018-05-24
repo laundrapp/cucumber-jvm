@@ -15,26 +15,26 @@
 #include "java/util/List.h"
 #include "java/util/Map.h"
 
-@interface CucumberRunnerEventBus () {
+@interface CCBEventBus () {
  @public
-  id<CucumberRunnerTimeService> stopWatch_;
+  id<CCBTimeService> stopWatch_;
   id<JavaUtilMap> handlers_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRunnerEventBus, stopWatch_, id<CucumberRunnerTimeService>)
-J2OBJC_FIELD_SETTER(CucumberRunnerEventBus, handlers_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(CCBEventBus, stopWatch_, id<CCBTimeService>)
+J2OBJC_FIELD_SETTER(CCBEventBus, handlers_, id<JavaUtilMap>)
 
-@implementation CucumberRunnerEventBus
+@implementation CCBEventBus
 
-- (instancetype __nonnull)initWithCucumberRunnerTimeService:(id<CucumberRunnerTimeService>)stopWatch {
-  CucumberRunnerEventBus_initWithCucumberRunnerTimeService_(self, stopWatch);
+- (instancetype __nonnull)initWithCCBTimeService:(id<CCBTimeService>)stopWatch {
+  CCBEventBus_initWithCCBTimeService_(self, stopWatch);
   return self;
 }
 
 - (JavaLangLong *)getTime {
-  return JavaLangLong_valueOfWithLong_([((id<CucumberRunnerTimeService>) nil_chk(stopWatch_)) time]);
+  return JavaLangLong_valueOfWithLong_([((id<CCBTimeService>) nil_chk(stopWatch_)) time]);
 }
 
 - (void)sendWithCCBEvent:(id<CCBEvent>)event {
@@ -73,34 +73,34 @@ J2OBJC_FIELD_SETTER(CucumberRunnerEventBus, handlers_, id<JavaUtilMap>)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRunnerTimeService:);
+  methods[0].selector = @selector(initWithCCBTimeService:);
   methods[1].selector = @selector(getTime);
   methods[2].selector = @selector(sendWithCCBEvent:);
   methods[3].selector = @selector(registerHandlerForWithIOSClass:withCCBEventHandler:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "stopWatch_", "LCucumberRunnerTimeService;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "stopWatch_", "LCCBTimeService;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "handlers_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 6, -1 },
   };
-  static const void *ptrTable[] = { "LCucumberRunnerTimeService;", "send", "LCCBEvent;", "registerHandlerFor", "LIOSClass;LCCBEventHandler;", "<T::Lcucumber/api/event/Event;>(Ljava/lang/Class<TT;>;Lcucumber/api/event/EventHandler<TT;>;)V", "Ljava/util/Map<Ljava/lang/Class<+Lcucumber/api/event/Event;>;Ljava/util/List<Lcucumber/api/event/EventHandler;>;>;" };
-  static const J2ObjcClassInfo _CucumberRunnerEventBus = { "EventBus", "cucumber.runner", ptrTable, methods, fields, 7, 0x1, 4, 2, -1, -1, -1, -1, -1 };
-  return &_CucumberRunnerEventBus;
+  static const void *ptrTable[] = { "LCCBTimeService;", "send", "LCCBEvent;", "registerHandlerFor", "LIOSClass;LCCBEventHandler;", "<T::Lcucumber/api/event/Event;>(Ljava/lang/Class<TT;>;Lcucumber/api/event/EventHandler<TT;>;)V", "Ljava/util/Map<Ljava/lang/Class<+Lcucumber/api/event/Event;>;Ljava/util/List<Lcucumber/api/event/EventHandler;>;>;" };
+  static const J2ObjcClassInfo _CCBEventBus = { "EventBus", "cucumber.runner", ptrTable, methods, fields, 7, 0x1, 4, 2, -1, -1, -1, -1, -1 };
+  return &_CCBEventBus;
 }
 
 @end
 
-void CucumberRunnerEventBus_initWithCucumberRunnerTimeService_(CucumberRunnerEventBus *self, id<CucumberRunnerTimeService> stopWatch) {
+void CCBEventBus_initWithCCBTimeService_(CCBEventBus *self, id<CCBTimeService> stopWatch) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->handlers_, new_JavaUtilHashMap_init());
   JreStrongAssign(&self->stopWatch_, stopWatch);
 }
 
-CucumberRunnerEventBus *new_CucumberRunnerEventBus_initWithCucumberRunnerTimeService_(id<CucumberRunnerTimeService> stopWatch) {
-  J2OBJC_NEW_IMPL(CucumberRunnerEventBus, initWithCucumberRunnerTimeService_, stopWatch)
+CCBEventBus *new_CCBEventBus_initWithCCBTimeService_(id<CCBTimeService> stopWatch) {
+  J2OBJC_NEW_IMPL(CCBEventBus, initWithCCBTimeService_, stopWatch)
 }
 
-CucumberRunnerEventBus *create_CucumberRunnerEventBus_initWithCucumberRunnerTimeService_(id<CucumberRunnerTimeService> stopWatch) {
-  J2OBJC_CREATE_IMPL(CucumberRunnerEventBus, initWithCucumberRunnerTimeService_, stopWatch)
+CCBEventBus *create_CCBEventBus_initWithCCBTimeService_(id<CCBTimeService> stopWatch) {
+  J2OBJC_CREATE_IMPL(CCBEventBus, initWithCCBTimeService_, stopWatch)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRunnerEventBus)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBEventBus)

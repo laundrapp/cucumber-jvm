@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCB만일_) && (INCLUDE_ALL_CucumberApiJavaKo만일 || defined(INCLUDE_CCB만일))
-#define CCB만일_
+#if !defined (CucumberApiJavaKo만일_) && (INCLUDE_ALL_CucumberApiJavaKo만일 || defined(INCLUDE_CucumberApiJavaKo만일))
+#define CucumberApiJavaKo만일_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCB만일 < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaKo만일 < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCB만일 : NSObject < CCB만일 > {
+@interface CucumberApiJavaKo만일 : NSObject < CucumberApiJavaKo만일 > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCB만일)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaKo만일)
 
-FOUNDATION_EXPORT id<CCB만일> create_CCB만일(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaKo만일> create_CucumberApiJavaKo만일(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCB만일)
-
-#define CucumberApiJavaKo만일 CCB만일
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaKo만일)
 
 #endif
 

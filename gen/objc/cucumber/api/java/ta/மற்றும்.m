@@ -15,9 +15,9 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *CCBமற்றும்__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CucumberApiJavaTaமற்றும்__Annotations$0(void);
 
-@implementation CCBமற்றும்
+@implementation CucumberApiJavaTaமற்றும்
 
 @synthesize value = value_;
 @synthesize timeout = timeout_;
@@ -27,7 +27,7 @@ __attribute__((unused)) static IOSObjectArray *CCBமற்றும்__Annotat
 }
 
 - (IOSClass *)annotationType {
-  return CCBமற்றும்_class_();
+  return CucumberApiJavaTaமற்றும்_class_();
 }
 
 - (NSString *)description {
@@ -62,22 +62,22 @@ __attribute__((unused)) static IOSObjectArray *CCBமற்றும்__Annotat
     { "value_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "timeout_", "J", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&CCBமற்றும்__Annotations$0 };
-  static const J2ObjcClassInfo _CCBமற்றும் = { "மற்றும்", "cucumber.api.java.ta", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
-  return &_CCBமற்றும்;
+  static const void *ptrTable[] = { (void *)&CucumberApiJavaTaமற்றும்__Annotations$0 };
+  static const J2ObjcClassInfo _CucumberApiJavaTaமற்றும் = { "மற்றும்", "cucumber.api.java.ta", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
+  return &_CucumberApiJavaTaமற்றும்;
 }
 
 @end
 
-id<CCBமற்றும்> create_CCBமற்றும்(jlong timeout, NSString *value) {
-  CCBமற்றும் *self = AUTORELEASE([[CCBமற்றும் alloc] init]);
+id<CucumberApiJavaTaமற்றும்> create_CucumberApiJavaTaமற்றும்(jlong timeout, NSString *value) {
+  CucumberApiJavaTaமற்றும் *self = AUTORELEASE([[CucumberApiJavaTaமற்றும் alloc] init]);
   self->timeout_ = timeout;
   self->value_ = RETAIN_(value);
   return self;
 }
 
-IOSObjectArray *CCBமற்றும்__Annotations$0() {
-  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CCBStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
+IOSObjectArray *CucumberApiJavaTaமற்றும்__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CucumberRuntimeJavaStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBமற்றும்)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiJavaTaமற்றும்)

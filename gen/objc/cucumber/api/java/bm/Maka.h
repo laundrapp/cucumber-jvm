@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBMaka_) && (INCLUDE_ALL_CucumberApiJavaBmMaka || defined(INCLUDE_CCBMaka))
-#define CCBMaka_
+#if !defined (CucumberApiJavaBmMaka_) && (INCLUDE_ALL_CucumberApiJavaBmMaka || defined(INCLUDE_CucumberApiJavaBmMaka))
+#define CucumberApiJavaBmMaka_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBMaka < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaBmMaka < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBMaka : NSObject < CCBMaka > {
+@interface CucumberApiJavaBmMaka : NSObject < CucumberApiJavaBmMaka > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBMaka)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaBmMaka)
 
-FOUNDATION_EXPORT id<CCBMaka> create_CCBMaka(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaBmMaka> create_CucumberApiJavaBmMaka(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBMaka)
-
-#define CucumberApiJavaBmMaka CCBMaka
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaBmMaka)
 
 #endif
 

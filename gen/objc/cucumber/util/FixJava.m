@@ -19,35 +19,35 @@
 #include "java/util/ArrayList.h"
 #include "java/util/List.h"
 
-@implementation CucumberUtilFixJava
+@implementation CCBFixJava
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberUtilFixJava_init(self);
+  CCBFixJava_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 + (NSString *)joinWithJavaUtilList:(id<JavaUtilList>)strings
                       withNSString:(NSString *)separator {
-  return CucumberUtilFixJava_joinWithJavaUtilList_withNSString_(strings, separator);
+  return CCBFixJava_joinWithJavaUtilList_withNSString_(strings, separator);
 }
 
 + (id<JavaUtilList>)mapWithJavaUtilList:(id<JavaUtilList>)objects
-                 withCucumberUtilMapper:(id<CucumberUtilMapper>)mapper {
-  return CucumberUtilFixJava_mapWithJavaUtilList_withCucumberUtilMapper_(objects, mapper);
+                          withCCBMapper:(id<CCBMapper>)mapper {
+  return CCBFixJava_mapWithJavaUtilList_withCCBMapper_(objects, mapper);
 }
 
 + (NSString *)readResourceWithNSString:(NSString *)resourcePath {
-  return CucumberUtilFixJava_readResourceWithNSString_(resourcePath);
+  return CCBFixJava_readResourceWithNSString_(resourcePath);
 }
 
 + (NSString *)readReaderWithJavaIoReader:(JavaIoReader *)inArg {
-  return CucumberUtilFixJava_readReaderWithJavaIoReader_(inArg);
+  return CCBFixJava_readReaderWithJavaIoReader_(inArg);
 }
 
 + (IOSByteArray *)readStreamWithJavaIoInputStream:(JavaIoInputStream *)inArg {
-  return CucumberUtilFixJava_readStreamWithJavaIoInputStream_(inArg);
+  return CCBFixJava_readStreamWithJavaIoInputStream_(inArg);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -64,32 +64,32 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(joinWithJavaUtilList:withNSString:);
-  methods[2].selector = @selector(mapWithJavaUtilList:withCucumberUtilMapper:);
+  methods[2].selector = @selector(mapWithJavaUtilList:withCCBMapper:);
   methods[3].selector = @selector(readResourceWithNSString:);
   methods[4].selector = @selector(readReaderWithJavaIoReader:);
   methods[5].selector = @selector(readStreamWithJavaIoInputStream:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "join", "LJavaUtilList;LNSString;", "(Ljava/util/List<Ljava/lang/String;>;Ljava/lang/String;)Ljava/lang/String;", "map", "LJavaUtilList;LCucumberUtilMapper;", "<T:Ljava/lang/Object;R:Ljava/lang/Object;>(Ljava/util/List<TT;>;Lcucumber/util/Mapper<TT;TR;>;)Ljava/util/List<TR;>;", "readResource", "LNSString;", "LJavaLangRuntimeException;", "readReader", "LJavaIoReader;", "readStream", "LJavaIoInputStream;" };
-  static const J2ObjcClassInfo _CucumberUtilFixJava = { "FixJava", "cucumber.util", ptrTable, methods, NULL, 7, 0x1, 6, 0, -1, -1, -1, -1, -1 };
-  return &_CucumberUtilFixJava;
+  static const void *ptrTable[] = { "join", "LJavaUtilList;LNSString;", "(Ljava/util/List<Ljava/lang/String;>;Ljava/lang/String;)Ljava/lang/String;", "map", "LJavaUtilList;LCCBMapper;", "<T:Ljava/lang/Object;R:Ljava/lang/Object;>(Ljava/util/List<TT;>;Lcucumber/util/Mapper<TT;TR;>;)Ljava/util/List<TR;>;", "readResource", "LNSString;", "LJavaLangRuntimeException;", "readReader", "LJavaIoReader;", "readStream", "LJavaIoInputStream;" };
+  static const J2ObjcClassInfo _CCBFixJava = { "FixJava", "cucumber.util", ptrTable, methods, NULL, 7, 0x1, 6, 0, -1, -1, -1, -1, -1 };
+  return &_CCBFixJava;
 }
 
 @end
 
-void CucumberUtilFixJava_init(CucumberUtilFixJava *self) {
+void CCBFixJava_init(CCBFixJava *self) {
   NSObject_init(self);
 }
 
-CucumberUtilFixJava *new_CucumberUtilFixJava_init() {
-  J2OBJC_NEW_IMPL(CucumberUtilFixJava, init)
+CCBFixJava *new_CCBFixJava_init() {
+  J2OBJC_NEW_IMPL(CCBFixJava, init)
 }
 
-CucumberUtilFixJava *create_CucumberUtilFixJava_init() {
-  J2OBJC_CREATE_IMPL(CucumberUtilFixJava, init)
+CCBFixJava *create_CCBFixJava_init() {
+  J2OBJC_CREATE_IMPL(CCBFixJava, init)
 }
 
-NSString *CucumberUtilFixJava_joinWithJavaUtilList_withNSString_(id<JavaUtilList> strings, NSString *separator) {
-  CucumberUtilFixJava_initialize();
+NSString *CCBFixJava_joinWithJavaUtilList_withNSString_(id<JavaUtilList> strings, NSString *separator) {
+  CCBFixJava_initialize();
   JavaLangStringBuilder *sb = create_JavaLangStringBuilder_init();
   jint i = 0;
   for (NSString * __strong s in nil_chk(strings)) {
@@ -100,28 +100,28 @@ NSString *CucumberUtilFixJava_joinWithJavaUtilList_withNSString_(id<JavaUtilList
   return [sb description];
 }
 
-id<JavaUtilList> CucumberUtilFixJava_mapWithJavaUtilList_withCucumberUtilMapper_(id<JavaUtilList> objects, id<CucumberUtilMapper> mapper) {
-  CucumberUtilFixJava_initialize();
+id<JavaUtilList> CCBFixJava_mapWithJavaUtilList_withCCBMapper_(id<JavaUtilList> objects, id<CCBMapper> mapper) {
+  CCBFixJava_initialize();
   id<JavaUtilList> result = create_JavaUtilArrayList_initWithInt_([((id<JavaUtilList>) nil_chk(objects)) size]);
   for (id __strong o in objects) {
-    [result addWithId:[((id<CucumberUtilMapper>) nil_chk(mapper)) mapWithId:o]];
+    [result addWithId:[((id<CCBMapper>) nil_chk(mapper)) mapWithId:o]];
   }
   return result;
 }
 
-NSString *CucumberUtilFixJava_readResourceWithNSString_(NSString *resourcePath) {
-  CucumberUtilFixJava_initialize();
+NSString *CCBFixJava_readResourceWithNSString_(NSString *resourcePath) {
+  CCBFixJava_initialize();
   @try {
-    JavaIoReader *reader = create_JavaIoInputStreamReader_initWithJavaIoInputStream_withNSString_([CucumberUtilFixJava_class_() getResourceAsStream:resourcePath], @"UTF-8");
-    return CucumberUtilFixJava_readReaderWithJavaIoReader_(reader);
+    JavaIoReader *reader = create_JavaIoInputStreamReader_initWithJavaIoInputStream_withNSString_([CCBFixJava_class_() getResourceAsStream:resourcePath], @"UTF-8");
+    return CCBFixJava_readReaderWithJavaIoReader_(reader);
   }
   @catch (JavaIoUnsupportedEncodingException *e) {
     @throw create_JavaLangRuntimeException_initWithJavaLangThrowable_(e);
   }
 }
 
-NSString *CucumberUtilFixJava_readReaderWithJavaIoReader_(JavaIoReader *inArg) {
-  CucumberUtilFixJava_initialize();
+NSString *CCBFixJava_readReaderWithJavaIoReader_(JavaIoReader *inArg) {
+  CCBFixJava_initialize();
   @try {
     JavaLangStringBuilder *buffer = create_JavaLangStringBuilder_init();
     IOSCharArray *data = [IOSCharArray arrayWithLength:(jint) 0x10000];
@@ -136,8 +136,8 @@ NSString *CucumberUtilFixJava_readReaderWithJavaIoReader_(JavaIoReader *inArg) {
   }
 }
 
-IOSByteArray *CucumberUtilFixJava_readStreamWithJavaIoInputStream_(JavaIoInputStream *inArg) {
-  CucumberUtilFixJava_initialize();
+IOSByteArray *CCBFixJava_readStreamWithJavaIoInputStream_(JavaIoInputStream *inArg) {
+  CCBFixJava_initialize();
   @try {
     JavaIoByteArrayOutputStream *buffer = create_JavaIoByteArrayOutputStream_init();
     IOSByteArray *data = [IOSByteArray arrayWithLength:(jint) 0x10000];
@@ -153,4 +153,4 @@ IOSByteArray *CucumberUtilFixJava_readStreamWithJavaIoInputStream_(JavaIoInputSt
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberUtilFixJava)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBFixJava)

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBBut_) && (INCLUDE_ALL_CucumberApiJavaEnBut || defined(INCLUDE_CCBBut))
-#define CCBBut_
+#if !defined (CucumberApiJavaEnBut_) && (INCLUDE_ALL_CucumberApiJavaEnBut || defined(INCLUDE_CucumberApiJavaEnBut))
+#define CucumberApiJavaEnBut_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBBut < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaEnBut < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBBut : NSObject < CCBBut > {
+@interface CucumberApiJavaEnBut : NSObject < CucumberApiJavaEnBut > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBBut)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEnBut)
 
-FOUNDATION_EXPORT id<CCBBut> create_CCBBut(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaEnBut> create_CucumberApiJavaEnBut(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBBut)
-
-#define CucumberApiJavaEnBut CCBBut
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEnBut)
 
 #endif
 

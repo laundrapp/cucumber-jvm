@@ -47,9 +47,9 @@
   CCBRRuntimeOptions *runtimeOptions_;
   id<CCBRResourceLoader> resourceLoader_;
   JavaLangClassLoader *classLoader_;
-  CucumberRunnerRunner *runner_;
+  CCBRunner *runner_;
   id<JavaUtilList> filters_;
-  CucumberRunnerEventBus *bus_;
+  CCBEventBus *bus_;
   GherkinPicklesCompiler *compiler_;
 }
 
@@ -62,9 +62,9 @@ J2OBJC_FIELD_SETTER(CCBRRuntime, undefinedStepsTracker_, CCBRUndefinedStepsTrack
 J2OBJC_FIELD_SETTER(CCBRRuntime, runtimeOptions_, CCBRRuntimeOptions *)
 J2OBJC_FIELD_SETTER(CCBRRuntime, resourceLoader_, id<CCBRResourceLoader>)
 J2OBJC_FIELD_SETTER(CCBRRuntime, classLoader_, JavaLangClassLoader *)
-J2OBJC_FIELD_SETTER(CCBRRuntime, runner_, CucumberRunnerRunner *)
+J2OBJC_FIELD_SETTER(CCBRRuntime, runner_, CCBRunner *)
 J2OBJC_FIELD_SETTER(CCBRRuntime, filters_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CCBRRuntime, bus_, CucumberRunnerEventBus *)
+J2OBJC_FIELD_SETTER(CCBRRuntime, bus_, CCBEventBus *)
 J2OBJC_FIELD_SETTER(CCBRRuntime, compiler_, GherkinPicklesCompiler *)
 
 __attribute__((unused)) static id<JavaUtilCollection> CCBRRuntime_loadBackendsWithCCBRResourceLoader_withCCBRClassFinder_(id<CCBRResourceLoader> resourceLoader, id<CCBRClassFinder> classFinder);
@@ -100,9 +100,9 @@ __attribute__((unused)) static id<JavaUtilCollection> CCBRRuntime_loadBackendsWi
                              withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
                               withJavaUtilCollection:(id<JavaUtilCollection>)backends
                               withCCBRRuntimeOptions:(CCBRRuntimeOptions *)runtimeOptions
-                       withCucumberRunnerTimeService:(id<CucumberRunnerTimeService>)stopWatch
+                                  withCCBTimeService:(id<CCBTimeService>)stopWatch
                                         withCCBRGlue:(id<CCBRGlue>)optionalGlue {
-  CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCucumberRunnerTimeService_withCCBRGlue_(self, resourceLoader, classLoader, backends, runtimeOptions, stopWatch, optionalGlue);
+  CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBTimeService_withCCBRGlue_(self, resourceLoader, classLoader, backends, runtimeOptions, stopWatch, optionalGlue);
   return self;
 }
 
@@ -112,25 +112,25 @@ __attribute__((unused)) static id<JavaUtilCollection> CCBRRuntime_loadBackendsWi
 }
 
 - (void)run {
-  id<JavaUtilList> features = [((CCBRRuntimeOptions *) nil_chk(runtimeOptions_)) cucumberFeaturesWithCCBRResourceLoader:resourceLoader_ withCucumberRunnerEventBus:bus_];
+  id<JavaUtilList> features = [((CCBRRuntimeOptions *) nil_chk(runtimeOptions_)) cucumberFeaturesWithCCBRResourceLoader:resourceLoader_ withCCBEventBus:bus_];
   id<CCBStepDefinitionReporter> stepDefinitionReporter = [runtimeOptions_ stepDefinitionReporterWithJavaLangClassLoader:classLoader_];
   [self reportStepDefinitionsWithCCBStepDefinitionReporter:stepDefinitionReporter];
   for (CCBRCucumberFeature * __strong cucumberFeature in nil_chk(features)) {
     [self runFeatureWithCCBRCucumberFeature:cucumberFeature];
   }
-  [((CucumberRunnerEventBus *) nil_chk(bus_)) sendWithCCBEvent:create_CCBTestRunFinished_initWithJavaLangLong_([bus_ getTime])];
+  [((CCBEventBus *) nil_chk(bus_)) sendWithCCBEvent:create_CCBTestRunFinished_initWithJavaLangLong_([bus_ getTime])];
   [self printSummary];
 }
 
 - (void)reportStepDefinitionsWithCCBStepDefinitionReporter:(id<CCBStepDefinitionReporter>)stepDefinitionReporter {
-  [((CucumberRunnerRunner *) nil_chk(runner_)) reportStepDefinitionsWithCCBStepDefinitionReporter:stepDefinitionReporter];
+  [((CCBRunner *) nil_chk(runner_)) reportStepDefinitionsWithCCBStepDefinitionReporter:stepDefinitionReporter];
 }
 
 - (void)runFeatureWithCCBRCucumberFeature:(CCBRCucumberFeature *)feature {
   id<JavaUtilList> pickleEvents = [self compileFeatureWithCCBRCucumberFeature:feature];
   for (GherkinEventsPickleEvent * __strong pickleEvent in nil_chk(pickleEvents)) {
     if ([self matchesFiltersWithGherkinEventsPickleEvent:pickleEvent]) {
-      [((CucumberRunnerRunner *) nil_chk(runner_)) runPickleWithGherkinEventsPickleEvent:pickleEvent];
+      [((CCBRunner *) nil_chk(runner_)) runPickleWithGherkinEventsPickleEvent:pickleEvent];
     }
   }
 }
@@ -174,14 +174,14 @@ __attribute__((unused)) static id<JavaUtilCollection> CCBRRuntime_loadBackendsWi
 }
 
 - (id<CCBRGlue>)getGlue {
-  return [((CucumberRunnerRunner *) nil_chk(runner_)) getGlue];
+  return [((CCBRunner *) nil_chk(runner_)) getGlue];
 }
 
-- (CucumberRunnerEventBus *)getEventBus {
+- (CCBEventBus *)getEventBus {
   return bus_;
 }
 
-- (CucumberRunnerRunner *)getRunner {
+- (CCBRunner *)getRunner {
   return runner_;
 }
 
@@ -216,8 +216,8 @@ __attribute__((unused)) static id<JavaUtilCollection> CCBRRuntime_loadBackendsWi
     { NULL, "B", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 22, -1, -1 },
     { NULL, "LCCBRGlue;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LCucumberRunnerEventBus;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LCucumberRunnerRunner;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCCBEventBus;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LCCBRunner;", 0x1, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -225,7 +225,7 @@ __attribute__((unused)) static id<JavaUtilCollection> CCBRRuntime_loadBackendsWi
   methods[0].selector = @selector(initWithCCBRResourceLoader:withCCBRClassFinder:withJavaLangClassLoader:withCCBRRuntimeOptions:);
   methods[1].selector = @selector(initWithCCBRResourceLoader:withJavaLangClassLoader:withJavaUtilCollection:withCCBRRuntimeOptions:);
   methods[2].selector = @selector(initWithCCBRResourceLoader:withJavaLangClassLoader:withJavaUtilCollection:withCCBRRuntimeOptions:withCCBRGlue:);
-  methods[3].selector = @selector(initWithCCBRResourceLoader:withJavaLangClassLoader:withJavaUtilCollection:withCCBRRuntimeOptions:withCucumberRunnerTimeService:withCCBRGlue:);
+  methods[3].selector = @selector(initWithCCBRResourceLoader:withJavaLangClassLoader:withJavaUtilCollection:withCCBRRuntimeOptions:withCCBTimeService:withCCBRGlue:);
   methods[4].selector = @selector(loadBackendsWithCCBRResourceLoader:withCCBRClassFinder:);
   methods[5].selector = @selector(run);
   methods[6].selector = @selector(reportStepDefinitionsWithCCBStepDefinitionReporter:);
@@ -247,12 +247,12 @@ __attribute__((unused)) static id<JavaUtilCollection> CCBRRuntime_loadBackendsWi
     { "runtimeOptions_", "LCCBRRuntimeOptions;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "resourceLoader_", "LCCBRResourceLoader;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "classLoader_", "LJavaLangClassLoader;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "runner_", "LCucumberRunnerRunner;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "runner_", "LCCBRunner;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "filters_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 23, -1 },
-    { "bus_", "LCucumberRunnerEventBus;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "bus_", "LCCBEventBus;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "compiler_", "LGherkinPicklesCompiler;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCCBRResourceLoader;LCCBRClassFinder;LJavaLangClassLoader;LCCBRRuntimeOptions;", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;)V", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;LCCBRGlue;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;Lcucumber/runtime/Glue;)V", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;LCucumberRunnerTimeService;LCCBRGlue;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;Lcucumber/runner/TimeService;Lcucumber/runtime/Glue;)V", "loadBackends", "LCCBRResourceLoader;LCCBRClassFinder;", "(Lcucumber/runtime/io/ResourceLoader;Lcucumber/runtime/ClassFinder;)Ljava/util/Collection<+Lcucumber/runtime/Backend;>;", "LJavaIoIOException;", "reportStepDefinitions", "LCCBStepDefinitionReporter;", "runFeature", "LCCBRCucumberFeature;", "compileFeature", "(Lcucumber/runtime/model/CucumberFeature;)Ljava/util/List<Lgherkin/events/PickleEvent;>;", "matchesFilters", "LGherkinEventsPickleEvent;", "printStats", "LJavaIoPrintStream;", "()Ljava/util/List<Ljava/lang/Throwable;>;", "()Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/List<Lcucumber/runtime/PicklePredicate;>;" };
+  static const void *ptrTable[] = { "LCCBRResourceLoader;LCCBRClassFinder;LJavaLangClassLoader;LCCBRRuntimeOptions;", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;)V", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;LCCBRGlue;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;Lcucumber/runtime/Glue;)V", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;LCCBTimeService;LCCBRGlue;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;Lcucumber/runner/TimeService;Lcucumber/runtime/Glue;)V", "loadBackends", "LCCBRResourceLoader;LCCBRClassFinder;", "(Lcucumber/runtime/io/ResourceLoader;Lcucumber/runtime/ClassFinder;)Ljava/util/Collection<+Lcucumber/runtime/Backend;>;", "LJavaIoIOException;", "reportStepDefinitions", "LCCBStepDefinitionReporter;", "runFeature", "LCCBRCucumberFeature;", "compileFeature", "(Lcucumber/runtime/model/CucumberFeature;)Ljava/util/List<Lgherkin/events/PickleEvent;>;", "matchesFilters", "LGherkinEventsPickleEvent;", "printStats", "LJavaIoPrintStream;", "()Ljava/util/List<Ljava/lang/Throwable;>;", "()Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/List<Lcucumber/runtime/PicklePredicate;>;" };
   static const J2ObjcClassInfo _CCBRRuntime = { "Runtime", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 18, 9, -1, -1, -1, -1, -1 };
   return &_CCBRRuntime;
 }
@@ -272,7 +272,7 @@ CCBRRuntime *create_CCBRRuntime_initWithCCBRResourceLoader_withCCBRClassFinder_w
 }
 
 void CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_(CCBRRuntime *self, id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions) {
-  CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCucumberRunnerTimeService_withCCBRGlue_(self, resourceLoader, classLoader, backends, runtimeOptions, JreLoadStatic(CucumberRunnerTimeService, SYSTEM), nil);
+  CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBTimeService_withCCBRGlue_(self, resourceLoader, classLoader, backends, runtimeOptions, JreLoadStatic(CCBTimeService, SYSTEM), nil);
 }
 
 CCBRRuntime *new_CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_(id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions) {
@@ -284,7 +284,7 @@ CCBRRuntime *create_CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoad
 }
 
 void CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBRGlue_(CCBRRuntime *self, id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CCBRGlue> optionalGlue) {
-  CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCucumberRunnerTimeService_withCCBRGlue_(self, resourceLoader, classLoader, backends, runtimeOptions, JreLoadStatic(CucumberRunnerTimeService, SYSTEM), optionalGlue);
+  CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBTimeService_withCCBRGlue_(self, resourceLoader, classLoader, backends, runtimeOptions, JreLoadStatic(CCBTimeService, SYSTEM), optionalGlue);
 }
 
 CCBRRuntime *new_CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBRGlue_(id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CCBRGlue> optionalGlue) {
@@ -295,7 +295,7 @@ CCBRRuntime *create_CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoad
   J2OBJC_CREATE_IMPL(CCBRRuntime, initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBRGlue_, resourceLoader, classLoader, backends, runtimeOptions, optionalGlue)
 }
 
-void CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCucumberRunnerTimeService_withCCBRGlue_(CCBRRuntime *self, id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CucumberRunnerTimeService> stopWatch, id<CCBRGlue> optionalGlue) {
+void CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBTimeService_withCCBRGlue_(CCBRRuntime *self, id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CCBTimeService> stopWatch, id<CCBRGlue> optionalGlue) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->undefinedStepsTracker_, new_CCBRUndefinedStepsTracker_init());
   JreStrongAssignAndConsume(&self->compiler_, new_GherkinPicklesCompiler_init());
@@ -308,8 +308,8 @@ void CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtil
   id<CCBRGlue> glue;
   glue = optionalGlue == nil ? create_CCBRRuntimeGlue_initWithCCBRLocalizedXStreams_(create_CCBRLocalizedXStreams_initWithJavaLangClassLoader_withJavaUtilList_(classLoader, [((CCBRRuntimeOptions *) nil_chk(runtimeOptions)) getConverters])) : optionalGlue;
   JreStrongAssignAndConsume(&self->stats_, new_CCBRStats_initWithBoolean_([((CCBRRuntimeOptions *) nil_chk(runtimeOptions)) isMonochrome]));
-  JreStrongAssignAndConsume(&self->bus_, new_CucumberRunnerEventBus_initWithCucumberRunnerTimeService_(stopWatch));
-  JreStrongAssignAndConsume(&self->runner_, new_CucumberRunnerRunner_initWithCCBRGlue_withCucumberRunnerEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_(glue, self->bus_, backends, runtimeOptions));
+  JreStrongAssignAndConsume(&self->bus_, new_CCBEventBus_initWithCCBTimeService_(stopWatch));
+  JreStrongAssignAndConsume(&self->runner_, new_CCBRunner_initWithCCBRGlue_withCCBEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_(glue, self->bus_, backends, runtimeOptions));
   JreStrongAssignAndConsume(&self->filters_, new_JavaUtilArrayList_init());
   id<JavaUtilList> tagFilters = [runtimeOptions getTagFilters];
   if (![((id<JavaUtilList>) nil_chk(tagFilters)) isEmpty]) {
@@ -325,15 +325,15 @@ void CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtil
   }
   [self->stats_ setEventPublisherWithCCBEventPublisher:self->bus_];
   [self->undefinedStepsTracker_ setEventPublisherWithCCBEventPublisher:self->bus_];
-  [runtimeOptions setEventBusWithCucumberRunnerEventBus:self->bus_];
+  [runtimeOptions setEventBusWithCCBEventBus:self->bus_];
 }
 
-CCBRRuntime *new_CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCucumberRunnerTimeService_withCCBRGlue_(id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CucumberRunnerTimeService> stopWatch, id<CCBRGlue> optionalGlue) {
-  J2OBJC_NEW_IMPL(CCBRRuntime, initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCucumberRunnerTimeService_withCCBRGlue_, resourceLoader, classLoader, backends, runtimeOptions, stopWatch, optionalGlue)
+CCBRRuntime *new_CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBTimeService_withCCBRGlue_(id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CCBTimeService> stopWatch, id<CCBRGlue> optionalGlue) {
+  J2OBJC_NEW_IMPL(CCBRRuntime, initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBTimeService_withCCBRGlue_, resourceLoader, classLoader, backends, runtimeOptions, stopWatch, optionalGlue)
 }
 
-CCBRRuntime *create_CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCucumberRunnerTimeService_withCCBRGlue_(id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CucumberRunnerTimeService> stopWatch, id<CCBRGlue> optionalGlue) {
-  J2OBJC_CREATE_IMPL(CCBRRuntime, initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCucumberRunnerTimeService_withCCBRGlue_, resourceLoader, classLoader, backends, runtimeOptions, stopWatch, optionalGlue)
+CCBRRuntime *create_CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBTimeService_withCCBRGlue_(id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CCBTimeService> stopWatch, id<CCBRGlue> optionalGlue) {
+  J2OBJC_CREATE_IMPL(CCBRRuntime, initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBTimeService_withCCBRGlue_, resourceLoader, classLoader, backends, runtimeOptions, stopWatch, optionalGlue)
 }
 
 id<JavaUtilCollection> CCBRRuntime_loadBackendsWithCCBRResourceLoader_withCCBRClassFinder_(id<CCBRResourceLoader> resourceLoader, id<CCBRClassFinder> classFinder) {

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBBlimey_) && (INCLUDE_ALL_CucumberApiJavaEn_pirateBlimey || defined(INCLUDE_CCBBlimey))
-#define CCBBlimey_
+#if !defined (CucumberApiJavaEn_pirateBlimey_) && (INCLUDE_ALL_CucumberApiJavaEn_pirateBlimey || defined(INCLUDE_CucumberApiJavaEn_pirateBlimey))
+#define CucumberApiJavaEn_pirateBlimey_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBBlimey < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaEn_pirateBlimey < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBBlimey : NSObject < CCBBlimey > {
+@interface CucumberApiJavaEn_pirateBlimey : NSObject < CucumberApiJavaEn_pirateBlimey > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBBlimey)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEn_pirateBlimey)
 
-FOUNDATION_EXPORT id<CCBBlimey> create_CCBBlimey(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaEn_pirateBlimey> create_CucumberApiJavaEn_pirateBlimey(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBBlimey)
-
-#define CucumberApiJavaEn_pirateBlimey CCBBlimey
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEn_pirateBlimey)
 
 #endif
 

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRunnerPickleTestStep_) && (INCLUDE_ALL_CucumberRunnerPickleTestStep || defined(INCLUDE_CucumberRunnerPickleTestStep))
-#define CucumberRunnerPickleTestStep_
+#if !defined (CCBPickleTestStep_) && (INCLUDE_ALL_CucumberRunnerPickleTestStep || defined(INCLUDE_CCBPickleTestStep))
+#define CCBPickleTestStep_
 
 #define RESTRICT_CucumberApiTestStep 1
 #define INCLUDE_CCBTestStep 1
@@ -30,7 +30,7 @@
 @protocol CCBRDefinitionMatch;
 @protocol JavaUtilList;
 
-@interface CucumberRunnerPickleTestStep : CCBTestStep
+@interface CCBPickleTestStep : CCBTestStep
 
 #pragma mark Public
 
@@ -58,15 +58,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRunnerPickleTestStep)
+J2OBJC_EMPTY_STATIC_INIT(CCBPickleTestStep)
 
-FOUNDATION_EXPORT void CucumberRunnerPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_(CucumberRunnerPickleTestStep *self, NSString *uri, GherkinPicklesPickleStep *step, id<CCBRDefinitionMatch> definitionMatch);
+FOUNDATION_EXPORT void CCBPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_(CCBPickleTestStep *self, NSString *uri, GherkinPicklesPickleStep *step, id<CCBRDefinitionMatch> definitionMatch);
 
-FOUNDATION_EXPORT CucumberRunnerPickleTestStep *new_CucumberRunnerPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_(NSString *uri, GherkinPicklesPickleStep *step, id<CCBRDefinitionMatch> definitionMatch) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBPickleTestStep *new_CCBPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_(NSString *uri, GherkinPicklesPickleStep *step, id<CCBRDefinitionMatch> definitionMatch) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRunnerPickleTestStep *create_CucumberRunnerPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_(NSString *uri, GherkinPicklesPickleStep *step, id<CCBRDefinitionMatch> definitionMatch);
+FOUNDATION_EXPORT CCBPickleTestStep *create_CCBPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_(NSString *uri, GherkinPicklesPickleStep *step, id<CCBRDefinitionMatch> definitionMatch);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRunnerPickleTestStep)
+J2OBJC_TYPE_LITERAL_HEADER(CCBPickleTestStep)
+
+@compatibility_alias CucumberRunnerPickleTestStep CCBPickleTestStep;
 
 #endif
 

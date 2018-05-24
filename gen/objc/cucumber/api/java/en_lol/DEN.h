@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBDEN_) && (INCLUDE_ALL_CucumberApiJavaEn_lolDEN || defined(INCLUDE_CCBDEN))
-#define CCBDEN_
+#if !defined (CucumberApiJavaEn_lolDEN_) && (INCLUDE_ALL_CucumberApiJavaEn_lolDEN || defined(INCLUDE_CucumberApiJavaEn_lolDEN))
+#define CucumberApiJavaEn_lolDEN_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBDEN < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaEn_lolDEN < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBDEN : NSObject < CCBDEN > {
+@interface CucumberApiJavaEn_lolDEN : NSObject < CucumberApiJavaEn_lolDEN > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBDEN)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEn_lolDEN)
 
-FOUNDATION_EXPORT id<CCBDEN> create_CCBDEN(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaEn_lolDEN> create_CucumberApiJavaEn_lolDEN(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBDEN)
-
-#define CucumberApiJavaEn_lolDEN CCBDEN
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEn_lolDEN)
 
 #endif
 

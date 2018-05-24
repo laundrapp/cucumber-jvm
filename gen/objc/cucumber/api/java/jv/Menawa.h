@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBMenawa_) && (INCLUDE_ALL_CucumberApiJavaJvMenawa || defined(INCLUDE_CCBMenawa))
-#define CCBMenawa_
+#if !defined (CucumberApiJavaJvMenawa_) && (INCLUDE_ALL_CucumberApiJavaJvMenawa || defined(INCLUDE_CucumberApiJavaJvMenawa))
+#define CucumberApiJavaJvMenawa_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBMenawa < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaJvMenawa < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBMenawa : NSObject < CCBMenawa > {
+@interface CucumberApiJavaJvMenawa : NSObject < CucumberApiJavaJvMenawa > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBMenawa)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaJvMenawa)
 
-FOUNDATION_EXPORT id<CCBMenawa> create_CCBMenawa(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaJvMenawa> create_CucumberApiJavaJvMenawa(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBMenawa)
-
-#define CucumberApiJavaJvMenawa CCBMenawa
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaJvMenawa)
 
 #endif
 

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBDate_) && (INCLUDE_ALL_CucumberApiJavaItDate || defined(INCLUDE_CCBDate))
-#define CCBDate_
+#if !defined (CucumberApiJavaItDate_) && (INCLUDE_ALL_CucumberApiJavaItDate || defined(INCLUDE_CucumberApiJavaItDate))
+#define CucumberApiJavaItDate_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBDate < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaItDate < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBDate : NSObject < CCBDate > {
+@interface CucumberApiJavaItDate : NSObject < CucumberApiJavaItDate > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBDate)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaItDate)
 
-FOUNDATION_EXPORT id<CCBDate> create_CCBDate(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaItDate> create_CucumberApiJavaItDate(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBDate)
-
-#define CucumberApiJavaItDate CCBDate
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaItDate)
 
 #endif
 

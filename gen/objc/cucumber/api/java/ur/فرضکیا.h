@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBفرضکیا_) && (INCLUDE_ALL_CucumberApiJavaUrفرضکیا || defined(INCLUDE_CCBفرضکیا))
-#define CCBفرضکیا_
+#if !defined (CucumberApiJavaUrفرضکیا_) && (INCLUDE_ALL_CucumberApiJavaUrفرضکیا || defined(INCLUDE_CucumberApiJavaUrفرضکیا))
+#define CucumberApiJavaUrفرضکیا_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBفرضکیا < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaUrفرضکیا < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBفرضکیا : NSObject < CCBفرضکیا > {
+@interface CucumberApiJavaUrفرضکیا : NSObject < CucumberApiJavaUrفرضکیا > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBفرضکیا)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaUrفرضکیا)
 
-FOUNDATION_EXPORT id<CCBفرضکیا> create_CCBفرضکیا(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaUrفرضکیا> create_CucumberApiJavaUrفرضکیا(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBفرضکیا)
-
-#define CucumberApiJavaUrفرضکیا CCBفرضکیا
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaUrفرضکیا)
 
 #endif
 

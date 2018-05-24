@@ -14,20 +14,20 @@
 #include "java/lang/UnsupportedOperationException.h"
 #include "java/util/List.h"
 
-@interface CucumberRunnerUnskipableStep () {
+@interface CCBUnskipableStep () {
  @public
   CCBHookType *hookType_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRunnerUnskipableStep, hookType_, CCBHookType *)
+J2OBJC_FIELD_SETTER(CCBUnskipableStep, hookType_, CCBHookType *)
 
-@implementation CucumberRunnerUnskipableStep
+@implementation CCBUnskipableStep
 
 - (instancetype __nonnull)initWithCCBHookType:(CCBHookType *)hookType
                       withCCBRDefinitionMatch:(id<CCBRDefinitionMatch>)definitionMatch {
-  CucumberRunnerUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(self, hookType, definitionMatch);
+  CCBUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(self, hookType, definitionMatch);
   return self;
 }
 
@@ -100,23 +100,23 @@ J2OBJC_FIELD_SETTER(CucumberRunnerUnskipableStep, hookType_, CCBHookType *)
     { "hookType_", "LCCBHookType;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LCCBHookType;LCCBRDefinitionMatch;", "executeStep", "LNSString;LCCBScenario;Z", "LJavaLangThrowable;", "()Ljava/util/List<Lgherkin/pickles/Argument;>;" };
-  static const J2ObjcClassInfo _CucumberRunnerUnskipableStep = { "UnskipableStep", "cucumber.runner", ptrTable, methods, fields, 7, 0x1, 9, 1, -1, -1, -1, -1, -1 };
-  return &_CucumberRunnerUnskipableStep;
+  static const J2ObjcClassInfo _CCBUnskipableStep = { "UnskipableStep", "cucumber.runner", ptrTable, methods, fields, 7, 0x1, 9, 1, -1, -1, -1, -1, -1 };
+  return &_CCBUnskipableStep;
 }
 
 @end
 
-void CucumberRunnerUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CucumberRunnerUnskipableStep *self, CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch) {
+void CCBUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CCBUnskipableStep *self, CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch) {
   CCBTestStep_initWithCCBRDefinitionMatch_(self, definitionMatch);
   JreStrongAssign(&self->hookType_, hookType);
 }
 
-CucumberRunnerUnskipableStep *new_CucumberRunnerUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch) {
-  J2OBJC_NEW_IMPL(CucumberRunnerUnskipableStep, initWithCCBHookType_withCCBRDefinitionMatch_, hookType, definitionMatch)
+CCBUnskipableStep *new_CCBUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch) {
+  J2OBJC_NEW_IMPL(CCBUnskipableStep, initWithCCBHookType_withCCBRDefinitionMatch_, hookType, definitionMatch)
 }
 
-CucumberRunnerUnskipableStep *create_CucumberRunnerUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch) {
-  J2OBJC_CREATE_IMPL(CucumberRunnerUnskipableStep, initWithCCBHookType_withCCBRDefinitionMatch_, hookType, definitionMatch)
+CCBUnskipableStep *create_CCBUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch) {
+  J2OBJC_CREATE_IMPL(CCBUnskipableStep, initWithCCBHookType_withCCBRDefinitionMatch_, hookType, definitionMatch)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRunnerUnskipableStep)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBUnskipableStep)

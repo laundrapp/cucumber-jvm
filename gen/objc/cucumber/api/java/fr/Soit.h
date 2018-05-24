@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBSoit_) && (INCLUDE_ALL_CucumberApiJavaFrSoit || defined(INCLUDE_CCBSoit))
-#define CCBSoit_
+#if !defined (CucumberApiJavaFrSoit_) && (INCLUDE_ALL_CucumberApiJavaFrSoit || defined(INCLUDE_CucumberApiJavaFrSoit))
+#define CucumberApiJavaFrSoit_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBSoit < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaFrSoit < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBSoit : NSObject < CCBSoit > {
+@interface CucumberApiJavaFrSoit : NSObject < CucumberApiJavaFrSoit > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBSoit)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaFrSoit)
 
-FOUNDATION_EXPORT id<CCBSoit> create_CCBSoit(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaFrSoit> create_CucumberApiJavaFrSoit(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBSoit)
-
-#define CucumberApiJavaFrSoit CCBSoit
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaFrSoit)
 
 #endif
 

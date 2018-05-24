@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBCuando_) && (INCLUDE_ALL_CucumberApiJavaAstCuando || defined(INCLUDE_CCBCuando))
-#define CCBCuando_
+#if !defined (CucumberApiJavaAstCuando_) && (INCLUDE_ALL_CucumberApiJavaAstCuando || defined(INCLUDE_CucumberApiJavaAstCuando))
+#define CucumberApiJavaAstCuando_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBCuando < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaAstCuando < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBCuando : NSObject < CCBCuando > {
+@interface CucumberApiJavaAstCuando : NSObject < CucumberApiJavaAstCuando > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBCuando)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaAstCuando)
 
-FOUNDATION_EXPORT id<CCBCuando> create_CCBCuando(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaAstCuando> create_CucumberApiJavaAstCuando(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBCuando)
-
-#define CucumberApiJavaAstCuando CCBCuando
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaAstCuando)
 
 #endif
 

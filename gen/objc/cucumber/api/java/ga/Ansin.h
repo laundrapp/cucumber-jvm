@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBAnsin_) && (INCLUDE_ALL_CucumberApiJavaGaAnsin || defined(INCLUDE_CCBAnsin))
-#define CCBAnsin_
+#if !defined (CucumberApiJavaGaAnsin_) && (INCLUDE_ALL_CucumberApiJavaGaAnsin || defined(INCLUDE_CucumberApiJavaGaAnsin))
+#define CucumberApiJavaGaAnsin_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBAnsin < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaGaAnsin < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBAnsin : NSObject < CCBAnsin > {
+@interface CucumberApiJavaGaAnsin : NSObject < CucumberApiJavaGaAnsin > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBAnsin)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaGaAnsin)
 
-FOUNDATION_EXPORT id<CCBAnsin> create_CCBAnsin(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaGaAnsin> create_CucumberApiJavaGaAnsin(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBAnsin)
-
-#define CucumberApiJavaGaAnsin CCBAnsin
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaGaAnsin)
 
 #endif
 

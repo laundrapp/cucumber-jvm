@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCB그리고_) && (INCLUDE_ALL_CucumberApiJavaKo그리고 || defined(INCLUDE_CCB그리고))
-#define CCB그리고_
+#if !defined (CucumberApiJavaKo그리고_) && (INCLUDE_ALL_CucumberApiJavaKo그리고 || defined(INCLUDE_CucumberApiJavaKo그리고))
+#define CucumberApiJavaKo그리고_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCB그리고 < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaKo그리고 < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCB그리고 : NSObject < CCB그리고 > {
+@interface CucumberApiJavaKo그리고 : NSObject < CucumberApiJavaKo그리고 > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCB그리고)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaKo그리고)
 
-FOUNDATION_EXPORT id<CCB그리고> create_CCB그리고(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaKo그리고> create_CucumberApiJavaKo그리고(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCB그리고)
-
-#define CucumberApiJavaKo그리고 CCB그리고
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaKo그리고)
 
 #endif
 

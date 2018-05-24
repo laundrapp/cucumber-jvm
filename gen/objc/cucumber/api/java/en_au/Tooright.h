@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBTooright_) && (INCLUDE_ALL_CucumberApiJavaEn_auTooright || defined(INCLUDE_CCBTooright))
-#define CCBTooright_
+#if !defined (CucumberApiJavaEn_auTooright_) && (INCLUDE_ALL_CucumberApiJavaEn_auTooright || defined(INCLUDE_CucumberApiJavaEn_auTooright))
+#define CucumberApiJavaEn_auTooright_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBTooright < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaEn_auTooright < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBTooright : NSObject < CCBTooright > {
+@interface CucumberApiJavaEn_auTooright : NSObject < CucumberApiJavaEn_auTooright > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBTooright)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEn_auTooright)
 
-FOUNDATION_EXPORT id<CCBTooright> create_CCBTooright(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaEn_auTooright> create_CucumberApiJavaEn_auTooright(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBTooright)
-
-#define CucumberApiJavaEn_auTooright CCBTooright
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEn_auTooright)
 
 #endif
 

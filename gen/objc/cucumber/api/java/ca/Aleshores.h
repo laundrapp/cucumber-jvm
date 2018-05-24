@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBAleshores_) && (INCLUDE_ALL_CucumberApiJavaCaAleshores || defined(INCLUDE_CCBAleshores))
-#define CCBAleshores_
+#if !defined (CucumberApiJavaCaAleshores_) && (INCLUDE_ALL_CucumberApiJavaCaAleshores || defined(INCLUDE_CucumberApiJavaCaAleshores))
+#define CucumberApiJavaCaAleshores_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBAleshores < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaCaAleshores < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBAleshores : NSObject < CCBAleshores > {
+@interface CucumberApiJavaCaAleshores : NSObject < CucumberApiJavaCaAleshores > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBAleshores)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaCaAleshores)
 
-FOUNDATION_EXPORT id<CCBAleshores> create_CCBAleshores(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaCaAleshores> create_CucumberApiJavaCaAleshores(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBAleshores)
-
-#define CucumberApiJavaCaAleshores CCBAleshores
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaCaAleshores)
 
 #endif
 

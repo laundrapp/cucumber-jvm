@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBBefore_) && (INCLUDE_ALL_CucumberApiJavaBefore || defined(INCLUDE_CCBBefore))
-#define CCBBefore_
+#if !defined (CucumberApiJavaBefore_) && (INCLUDE_ALL_CucumberApiJavaBefore || defined(INCLUDE_CucumberApiJavaBefore))
+#define CucumberApiJavaBefore_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -28,7 +28,7 @@
 @class IOSClass;
 @class IOSObjectArray;
 
-@protocol CCBBefore < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaBefore < JavaLangAnnotationAnnotation >
 
 @property (readonly) IOSObjectArray *value;
 @property (readonly) jlong timeout;
@@ -40,7 +40,7 @@
 
 @end
 
-@interface CCBBefore : NSObject < CCBBefore > {
+@interface CucumberApiJavaBefore : NSObject < CucumberApiJavaBefore > {
  @public
   IOSObjectArray *value_;
   jlong timeout_;
@@ -49,13 +49,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBBefore)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaBefore)
 
-FOUNDATION_EXPORT id<CCBBefore> create_CCBBefore(jint order, jlong timeout, IOSObjectArray *value);
+FOUNDATION_EXPORT id<CucumberApiJavaBefore> create_CucumberApiJavaBefore(jint order, jlong timeout, IOSObjectArray *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBBefore)
-
-#define CucumberApiJavaBefore CCBBefore
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaBefore)
 
 #endif
 

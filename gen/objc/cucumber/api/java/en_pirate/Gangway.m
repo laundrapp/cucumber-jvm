@@ -15,9 +15,9 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *CCBGangway__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CucumberApiJavaEn_pirateGangway__Annotations$0(void);
 
-@implementation CCBGangway
+@implementation CucumberApiJavaEn_pirateGangway
 
 @synthesize value = value_;
 @synthesize timeout = timeout_;
@@ -27,7 +27,7 @@ __attribute__((unused)) static IOSObjectArray *CCBGangway__Annotations$0(void);
 }
 
 - (IOSClass *)annotationType {
-  return CCBGangway_class_();
+  return CucumberApiJavaEn_pirateGangway_class_();
 }
 
 - (NSString *)description {
@@ -62,22 +62,22 @@ __attribute__((unused)) static IOSObjectArray *CCBGangway__Annotations$0(void);
     { "value_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "timeout_", "J", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&CCBGangway__Annotations$0 };
-  static const J2ObjcClassInfo _CCBGangway = { "Gangway", "cucumber.api.java.en_pirate", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
-  return &_CCBGangway;
+  static const void *ptrTable[] = { (void *)&CucumberApiJavaEn_pirateGangway__Annotations$0 };
+  static const J2ObjcClassInfo _CucumberApiJavaEn_pirateGangway = { "Gangway", "cucumber.api.java.en_pirate", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
+  return &_CucumberApiJavaEn_pirateGangway;
 }
 
 @end
 
-id<CCBGangway> create_CCBGangway(jlong timeout, NSString *value) {
-  CCBGangway *self = AUTORELEASE([[CCBGangway alloc] init]);
+id<CucumberApiJavaEn_pirateGangway> create_CucumberApiJavaEn_pirateGangway(jlong timeout, NSString *value) {
+  CucumberApiJavaEn_pirateGangway *self = AUTORELEASE([[CucumberApiJavaEn_pirateGangway alloc] init]);
   self->timeout_ = timeout;
   self->value_ = RETAIN_(value);
   return self;
 }
 
-IOSObjectArray *CCBGangway__Annotations$0() {
-  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CCBStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
+IOSObjectArray *CucumberApiJavaEn_pirateGangway__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CucumberRuntimeJavaStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBGangway)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiJavaEn_pirateGangway)

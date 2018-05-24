@@ -13,41 +13,41 @@
 #include "java/util/regex/Matcher.h"
 #include "java/util/regex/Pattern.h"
 
-@interface CucumberUtilEncoding ()
+@interface CCBEncoding ()
 
 + (NSString *)encodingWithNSString:(NSString *)source;
 
 @end
 
-inline JavaUtilRegexPattern *CucumberUtilEncoding_get_COMMENT_OR_EMPTY_LINE_PATTERN(void);
-static JavaUtilRegexPattern *CucumberUtilEncoding_COMMENT_OR_EMPTY_LINE_PATTERN;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberUtilEncoding, COMMENT_OR_EMPTY_LINE_PATTERN, JavaUtilRegexPattern *)
+inline JavaUtilRegexPattern *CCBEncoding_get_COMMENT_OR_EMPTY_LINE_PATTERN(void);
+static JavaUtilRegexPattern *CCBEncoding_COMMENT_OR_EMPTY_LINE_PATTERN;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBEncoding, COMMENT_OR_EMPTY_LINE_PATTERN, JavaUtilRegexPattern *)
 
-inline JavaUtilRegexPattern *CucumberUtilEncoding_get_ENCODING_PATTERN(void);
-static JavaUtilRegexPattern *CucumberUtilEncoding_ENCODING_PATTERN;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberUtilEncoding, ENCODING_PATTERN, JavaUtilRegexPattern *)
+inline JavaUtilRegexPattern *CCBEncoding_get_ENCODING_PATTERN(void);
+static JavaUtilRegexPattern *CCBEncoding_ENCODING_PATTERN;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBEncoding, ENCODING_PATTERN, JavaUtilRegexPattern *)
 
-__attribute__((unused)) static NSString *CucumberUtilEncoding_encodingWithNSString_(NSString *source);
+__attribute__((unused)) static NSString *CCBEncoding_encodingWithNSString_(NSString *source);
 
-J2OBJC_INITIALIZED_DEFN(CucumberUtilEncoding)
+J2OBJC_INITIALIZED_DEFN(CCBEncoding)
 
-NSString *CucumberUtilEncoding_DEFAULT_ENCODING = @"UTF-8";
+NSString *CCBEncoding_DEFAULT_ENCODING = @"UTF-8";
 
-@implementation CucumberUtilEncoding
+@implementation CCBEncoding
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberUtilEncoding_init(self);
+  CCBEncoding_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
 + (NSString *)readFileWithCCBRResource:(id<CCBRResource>)resource {
-  return CucumberUtilEncoding_readFileWithCCBRResource_(resource);
+  return CCBEncoding_readFileWithCCBRResource_(resource);
 }
 
 + (NSString *)encodingWithNSString:(NSString *)source {
-  return CucumberUtilEncoding_encodingWithNSString_(source);
+  return CCBEncoding_encodingWithNSString_(source);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -68,56 +68,56 @@ J2OBJC_IGNORE_DESIGNATED_END
     { "ENCODING_PATTERN", "LJavaUtilRegexPattern;", .constantValue.asLong = 0, 0x1a, -1, 6, -1, -1 },
     { "DEFAULT_ENCODING", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 7, -1, -1 },
   };
-  static const void *ptrTable[] = { "readFile", "LCCBRResource;", "LJavaLangRuntimeException;LJavaIoIOException;", "encoding", "LNSString;", &CucumberUtilEncoding_COMMENT_OR_EMPTY_LINE_PATTERN, &CucumberUtilEncoding_ENCODING_PATTERN, &CucumberUtilEncoding_DEFAULT_ENCODING };
-  static const J2ObjcClassInfo _CucumberUtilEncoding = { "Encoding", "cucumber.util", ptrTable, methods, fields, 7, 0x1, 3, 3, -1, -1, -1, -1, -1 };
-  return &_CucumberUtilEncoding;
+  static const void *ptrTable[] = { "readFile", "LCCBRResource;", "LJavaLangRuntimeException;LJavaIoIOException;", "encoding", "LNSString;", &CCBEncoding_COMMENT_OR_EMPTY_LINE_PATTERN, &CCBEncoding_ENCODING_PATTERN, &CCBEncoding_DEFAULT_ENCODING };
+  static const J2ObjcClassInfo _CCBEncoding = { "Encoding", "cucumber.util", ptrTable, methods, fields, 7, 0x1, 3, 3, -1, -1, -1, -1, -1 };
+  return &_CCBEncoding;
 }
 
 + (void)initialize {
-  if (self == [CucumberUtilEncoding class]) {
-    JreStrongAssign(&CucumberUtilEncoding_COMMENT_OR_EMPTY_LINE_PATTERN, JavaUtilRegexPattern_compileWithNSString_(@"^\\s*#|^\\s*$"));
-    JreStrongAssign(&CucumberUtilEncoding_ENCODING_PATTERN, JavaUtilRegexPattern_compileWithNSString_withInt_(@"^\\s*#\\s*encoding\\s*:\\s*([0-9a-zA-Z\\-]+)", JavaUtilRegexPattern_CASE_INSENSITIVE));
-    J2OBJC_SET_INITIALIZED(CucumberUtilEncoding)
+  if (self == [CCBEncoding class]) {
+    JreStrongAssign(&CCBEncoding_COMMENT_OR_EMPTY_LINE_PATTERN, JavaUtilRegexPattern_compileWithNSString_(@"^\\s*#|^\\s*$"));
+    JreStrongAssign(&CCBEncoding_ENCODING_PATTERN, JavaUtilRegexPattern_compileWithNSString_withInt_(@"^\\s*#\\s*encoding\\s*:\\s*([0-9a-zA-Z\\-]+)", JavaUtilRegexPattern_CASE_INSENSITIVE));
+    J2OBJC_SET_INITIALIZED(CCBEncoding)
   }
 }
 
 @end
 
-void CucumberUtilEncoding_init(CucumberUtilEncoding *self) {
+void CCBEncoding_init(CCBEncoding *self) {
   NSObject_init(self);
 }
 
-CucumberUtilEncoding *new_CucumberUtilEncoding_init() {
-  J2OBJC_NEW_IMPL(CucumberUtilEncoding, init)
+CCBEncoding *new_CCBEncoding_init() {
+  J2OBJC_NEW_IMPL(CCBEncoding, init)
 }
 
-CucumberUtilEncoding *create_CucumberUtilEncoding_init() {
-  J2OBJC_CREATE_IMPL(CucumberUtilEncoding, init)
+CCBEncoding *create_CCBEncoding_init() {
+  J2OBJC_CREATE_IMPL(CCBEncoding, init)
 }
 
-NSString *CucumberUtilEncoding_readFileWithCCBRResource_(id<CCBRResource> resource) {
-  CucumberUtilEncoding_initialize();
-  NSString *source = CucumberUtilFixJava_readReaderWithJavaIoReader_(create_JavaIoInputStreamReader_initWithJavaIoInputStream_withNSString_([((id<CCBRResource>) nil_chk(resource)) getInputStream], CucumberUtilEncoding_DEFAULT_ENCODING));
-  NSString *enc = CucumberUtilEncoding_encodingWithNSString_(source);
-  if (![((NSString *) nil_chk(enc)) isEqual:CucumberUtilEncoding_DEFAULT_ENCODING]) {
-    source = CucumberUtilFixJava_readReaderWithJavaIoReader_(create_JavaIoInputStreamReader_initWithJavaIoInputStream_withNSString_([resource getInputStream], enc));
+NSString *CCBEncoding_readFileWithCCBRResource_(id<CCBRResource> resource) {
+  CCBEncoding_initialize();
+  NSString *source = CCBFixJava_readReaderWithJavaIoReader_(create_JavaIoInputStreamReader_initWithJavaIoInputStream_withNSString_([((id<CCBRResource>) nil_chk(resource)) getInputStream], CCBEncoding_DEFAULT_ENCODING));
+  NSString *enc = CCBEncoding_encodingWithNSString_(source);
+  if (![((NSString *) nil_chk(enc)) isEqual:CCBEncoding_DEFAULT_ENCODING]) {
+    source = CCBFixJava_readReaderWithJavaIoReader_(create_JavaIoInputStreamReader_initWithJavaIoInputStream_withNSString_([resource getInputStream], enc));
   }
   return source;
 }
 
-NSString *CucumberUtilEncoding_encodingWithNSString_(NSString *source) {
-  CucumberUtilEncoding_initialize();
-  NSString *encoding = CucumberUtilEncoding_DEFAULT_ENCODING;
+NSString *CCBEncoding_encodingWithNSString_(NSString *source) {
+  CCBEncoding_initialize();
+  NSString *encoding = CCBEncoding_DEFAULT_ENCODING;
   {
     IOSObjectArray *a__ = [((NSString *) nil_chk(source)) java_split:@"\\n"];
     NSString * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
     NSString * const *e__ = b__ + a__->size_;
     while (b__ < e__) {
       NSString *line = *b__++;
-      if (![((JavaUtilRegexMatcher *) nil_chk([((JavaUtilRegexPattern *) nil_chk(CucumberUtilEncoding_COMMENT_OR_EMPTY_LINE_PATTERN)) matcherWithJavaLangCharSequence:line])) find]) {
+      if (![((JavaUtilRegexMatcher *) nil_chk([((JavaUtilRegexPattern *) nil_chk(CCBEncoding_COMMENT_OR_EMPTY_LINE_PATTERN)) matcherWithJavaLangCharSequence:line])) find]) {
         break;
       }
-      JavaUtilRegexMatcher *matcher = [((JavaUtilRegexPattern *) nil_chk(CucumberUtilEncoding_ENCODING_PATTERN)) matcherWithJavaLangCharSequence:line];
+      JavaUtilRegexMatcher *matcher = [((JavaUtilRegexPattern *) nil_chk(CCBEncoding_ENCODING_PATTERN)) matcherWithJavaLangCharSequence:line];
       if ([((JavaUtilRegexMatcher *) nil_chk(matcher)) find]) {
         encoding = [matcher groupWithInt:1];
         break;
@@ -127,4 +127,4 @@ NSString *CucumberUtilEncoding_encodingWithNSString_(NSString *source) {
   return [((NSString *) nil_chk(encoding)) uppercaseString];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberUtilEncoding)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBEncoding)

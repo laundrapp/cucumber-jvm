@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBAvast_) && (INCLUDE_ALL_CucumberApiJavaEn_pirateAvast || defined(INCLUDE_CCBAvast))
-#define CCBAvast_
+#if !defined (CucumberApiJavaEn_pirateAvast_) && (INCLUDE_ALL_CucumberApiJavaEn_pirateAvast || defined(INCLUDE_CucumberApiJavaEn_pirateAvast))
+#define CucumberApiJavaEn_pirateAvast_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBAvast < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaEn_pirateAvast < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBAvast : NSObject < CCBAvast > {
+@interface CucumberApiJavaEn_pirateAvast : NSObject < CucumberApiJavaEn_pirateAvast > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBAvast)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEn_pirateAvast)
 
-FOUNDATION_EXPORT id<CCBAvast> create_CCBAvast(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaEn_pirateAvast> create_CucumberApiJavaEn_pirateAvast(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBAvast)
-
-#define CucumberApiJavaEn_pirateAvast CCBAvast
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEn_pirateAvast)
 
 #endif
 

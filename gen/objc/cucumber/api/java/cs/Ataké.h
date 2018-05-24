@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBAtaké_) && (INCLUDE_ALL_CucumberApiJavaCsAtaké || defined(INCLUDE_CCBAtaké))
-#define CCBAtaké_
+#if !defined (CucumberApiJavaCsAtaké_) && (INCLUDE_ALL_CucumberApiJavaCsAtaké || defined(INCLUDE_CucumberApiJavaCsAtaké))
+#define CucumberApiJavaCsAtaké_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBAtaké < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaCsAtaké < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBAtaké : NSObject < CCBAtaké > {
+@interface CucumberApiJavaCsAtaké : NSObject < CucumberApiJavaCsAtaké > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBAtaké)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaCsAtaké)
 
-FOUNDATION_EXPORT id<CCBAtaké> create_CCBAtaké(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaCsAtaké> create_CucumberApiJavaCsAtaké(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBAtaké)
-
-#define CucumberApiJavaCsAtaké CCBAtaké
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaCsAtaké)
 
 #endif
 

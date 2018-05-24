@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBЗадати_) && (INCLUDE_ALL_CucumberApiJavaSr_cyrlЗадати || defined(INCLUDE_CCBЗадати))
-#define CCBЗадати_
+#if !defined (CucumberApiJavaSr_cyrlЗадати_) && (INCLUDE_ALL_CucumberApiJavaSr_cyrlЗадати || defined(INCLUDE_CucumberApiJavaSr_cyrlЗадати))
+#define CucumberApiJavaSr_cyrlЗадати_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBЗадати < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaSr_cyrlЗадати < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBЗадати : NSObject < CCBЗадати > {
+@interface CucumberApiJavaSr_cyrlЗадати : NSObject < CucumberApiJavaSr_cyrlЗадати > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBЗадати)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaSr_cyrlЗадати)
 
-FOUNDATION_EXPORT id<CCBЗадати> create_CCBЗадати(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaSr_cyrlЗадати> create_CucumberApiJavaSr_cyrlЗадати(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBЗадати)
-
-#define CucumberApiJavaSr_cyrlЗадати CCBЗадати
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaSr_cyrlЗадати)
 
 #endif
 

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBDado_) && (INCLUDE_ALL_CucumberApiJavaPtDado || defined(INCLUDE_CCBDado))
-#define CCBDado_
+#if !defined (CucumberApiJavaPtDado_) && (INCLUDE_ALL_CucumberApiJavaPtDado || defined(INCLUDE_CucumberApiJavaPtDado))
+#define CucumberApiJavaPtDado_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBDado < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaPtDado < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBDado : NSObject < CCBDado > {
+@interface CucumberApiJavaPtDado : NSObject < CucumberApiJavaPtDado > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBDado)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaPtDado)
 
-FOUNDATION_EXPORT id<CCBDado> create_CCBDado(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaPtDado> create_CucumberApiJavaPtDado(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBDado)
-
-#define CucumberApiJavaPtDado CCBDado
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaPtDado)
 
 #endif
 

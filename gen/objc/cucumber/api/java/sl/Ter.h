@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBTer_) && (INCLUDE_ALL_CucumberApiJavaSlTer || defined(INCLUDE_CCBTer))
-#define CCBTer_
+#if !defined (CucumberApiJavaSlTer_) && (INCLUDE_ALL_CucumberApiJavaSlTer || defined(INCLUDE_CucumberApiJavaSlTer))
+#define CucumberApiJavaSlTer_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBTer < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaSlTer < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBTer : NSObject < CCBTer > {
+@interface CucumberApiJavaSlTer : NSObject < CucumberApiJavaSlTer > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBTer)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaSlTer)
 
-FOUNDATION_EXPORT id<CCBTer> create_CCBTer(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaSlTer> create_CucumberApiJavaSlTer(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBTer)
-
-#define CucumberApiJavaSlTer CCBTer
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaSlTer)
 
 #endif
 

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBAtesa_) && (INCLUDE_ALL_CucumberApiJavaCaAtesa || defined(INCLUDE_CCBAtesa))
-#define CCBAtesa_
+#if !defined (CucumberApiJavaCaAtesa_) && (INCLUDE_ALL_CucumberApiJavaCaAtesa || defined(INCLUDE_CucumberApiJavaCaAtesa))
+#define CucumberApiJavaCaAtesa_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBAtesa < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaCaAtesa < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBAtesa : NSObject < CCBAtesa > {
+@interface CucumberApiJavaCaAtesa : NSObject < CucumberApiJavaCaAtesa > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBAtesa)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaCaAtesa)
 
-FOUNDATION_EXPORT id<CCBAtesa> create_CCBAtesa(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaCaAtesa> create_CucumberApiJavaCaAtesa(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBAtesa)
-
-#define CucumberApiJavaCaAtesa CCBAtesa
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaCaAtesa)
 
 #endif
 

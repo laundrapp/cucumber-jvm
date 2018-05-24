@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBPokud_) && (INCLUDE_ALL_CucumberApiJavaCsPokud || defined(INCLUDE_CCBPokud))
-#define CCBPokud_
+#if !defined (CucumberApiJavaCsPokud_) && (INCLUDE_ALL_CucumberApiJavaCsPokud || defined(INCLUDE_CucumberApiJavaCsPokud))
+#define CucumberApiJavaCsPokud_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBPokud < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaCsPokud < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBPokud : NSObject < CCBPokud > {
+@interface CucumberApiJavaCsPokud : NSObject < CucumberApiJavaCsPokud > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBPokud)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaCsPokud)
 
-FOUNDATION_EXPORT id<CCBPokud> create_CCBPokud(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaCsPokud> create_CucumberApiJavaCsPokud(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBPokud)
-
-#define CucumberApiJavaCsPokud CCBPokud
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaCsPokud)
 
 #endif
 

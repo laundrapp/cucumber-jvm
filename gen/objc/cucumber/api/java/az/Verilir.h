@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBVerilir_) && (INCLUDE_ALL_CucumberApiJavaAzVerilir || defined(INCLUDE_CCBVerilir))
-#define CCBVerilir_
+#if !defined (CucumberApiJavaAzVerilir_) && (INCLUDE_ALL_CucumberApiJavaAzVerilir || defined(INCLUDE_CucumberApiJavaAzVerilir))
+#define CucumberApiJavaAzVerilir_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBVerilir < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaAzVerilir < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBVerilir : NSObject < CCBVerilir > {
+@interface CucumberApiJavaAzVerilir : NSObject < CucumberApiJavaAzVerilir > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBVerilir)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaAzVerilir)
 
-FOUNDATION_EXPORT id<CCBVerilir> create_CCBVerilir(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaAzVerilir> create_CucumberApiJavaAzVerilir(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBVerilir)
-
-#define CucumberApiJavaAzVerilir CCBVerilir
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaAzVerilir)
 
 #endif
 

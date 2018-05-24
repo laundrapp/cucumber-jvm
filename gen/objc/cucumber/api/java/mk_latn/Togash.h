@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBTogash_) && (INCLUDE_ALL_CucumberApiJavaMk_latnTogash || defined(INCLUDE_CCBTogash))
-#define CCBTogash_
+#if !defined (CucumberApiJavaMk_latnTogash_) && (INCLUDE_ALL_CucumberApiJavaMk_latnTogash || defined(INCLUDE_CucumberApiJavaMk_latnTogash))
+#define CucumberApiJavaMk_latnTogash_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBTogash < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaMk_latnTogash < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBTogash : NSObject < CCBTogash > {
+@interface CucumberApiJavaMk_latnTogash : NSObject < CucumberApiJavaMk_latnTogash > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBTogash)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaMk_latnTogash)
 
-FOUNDATION_EXPORT id<CCBTogash> create_CCBTogash(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaMk_latnTogash> create_CucumberApiJavaMk_latnTogash(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBTogash)
-
-#define CucumberApiJavaMk_latnTogash CCBTogash
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaMk_latnTogash)
 
 #endif
 

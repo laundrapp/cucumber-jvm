@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBKun_) && (INCLUDE_ALL_CucumberApiJavaFiKun || defined(INCLUDE_CCBKun))
-#define CCBKun_
+#if !defined (CucumberApiJavaFiKun_) && (INCLUDE_ALL_CucumberApiJavaFiKun || defined(INCLUDE_CucumberApiJavaFiKun))
+#define CucumberApiJavaFiKun_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBKun < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaFiKun < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBKun : NSObject < CCBKun > {
+@interface CucumberApiJavaFiKun : NSObject < CucumberApiJavaFiKun > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBKun)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaFiKun)
 
-FOUNDATION_EXPORT id<CCBKun> create_CCBKun(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaFiKun> create_CucumberApiJavaFiKun(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBKun)
-
-#define CucumberApiJavaFiKun CCBKun
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaFiKun)
 
 #endif
 

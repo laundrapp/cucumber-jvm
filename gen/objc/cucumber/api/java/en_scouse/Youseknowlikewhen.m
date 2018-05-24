@@ -15,9 +15,9 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *CCBYouseknowlikewhen__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CucumberApiJavaEn_scouseYouseknowlikewhen__Annotations$0(void);
 
-@implementation CCBYouseknowlikewhen
+@implementation CucumberApiJavaEn_scouseYouseknowlikewhen
 
 @synthesize value = value_;
 @synthesize timeout = timeout_;
@@ -27,7 +27,7 @@ __attribute__((unused)) static IOSObjectArray *CCBYouseknowlikewhen__Annotations
 }
 
 - (IOSClass *)annotationType {
-  return CCBYouseknowlikewhen_class_();
+  return CucumberApiJavaEn_scouseYouseknowlikewhen_class_();
 }
 
 - (NSString *)description {
@@ -62,22 +62,22 @@ __attribute__((unused)) static IOSObjectArray *CCBYouseknowlikewhen__Annotations
     { "value_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "timeout_", "J", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&CCBYouseknowlikewhen__Annotations$0 };
-  static const J2ObjcClassInfo _CCBYouseknowlikewhen = { "Youseknowlikewhen", "cucumber.api.java.en_scouse", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
-  return &_CCBYouseknowlikewhen;
+  static const void *ptrTable[] = { (void *)&CucumberApiJavaEn_scouseYouseknowlikewhen__Annotations$0 };
+  static const J2ObjcClassInfo _CucumberApiJavaEn_scouseYouseknowlikewhen = { "Youseknowlikewhen", "cucumber.api.java.en_scouse", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
+  return &_CucumberApiJavaEn_scouseYouseknowlikewhen;
 }
 
 @end
 
-id<CCBYouseknowlikewhen> create_CCBYouseknowlikewhen(jlong timeout, NSString *value) {
-  CCBYouseknowlikewhen *self = AUTORELEASE([[CCBYouseknowlikewhen alloc] init]);
+id<CucumberApiJavaEn_scouseYouseknowlikewhen> create_CucumberApiJavaEn_scouseYouseknowlikewhen(jlong timeout, NSString *value) {
+  CucumberApiJavaEn_scouseYouseknowlikewhen *self = AUTORELEASE([[CucumberApiJavaEn_scouseYouseknowlikewhen alloc] init]);
   self->timeout_ = timeout;
   self->value_ = RETAIN_(value);
   return self;
 }
 
-IOSObjectArray *CCBYouseknowlikewhen__Annotations$0() {
-  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CCBStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
+IOSObjectArray *CucumberApiJavaEn_scouseYouseknowlikewhen__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CucumberRuntimeJavaStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBYouseknowlikewhen)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiJavaEn_scouseYouseknowlikewhen)

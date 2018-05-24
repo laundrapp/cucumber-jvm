@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBQuando_) && (INCLUDE_ALL_CucumberApiJavaItQuando || defined(INCLUDE_CCBQuando))
-#define CCBQuando_
+#if !defined (CucumberApiJavaItQuando_) && (INCLUDE_ALL_CucumberApiJavaItQuando || defined(INCLUDE_CucumberApiJavaItQuando))
+#define CucumberApiJavaItQuando_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBQuando < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaItQuando < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBQuando : NSObject < CCBQuando > {
+@interface CucumberApiJavaItQuando : NSObject < CucumberApiJavaItQuando > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBQuando)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaItQuando)
 
-FOUNDATION_EXPORT id<CCBQuando> create_CCBQuando(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaItQuando> create_CucumberApiJavaItQuando(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBQuando)
-
-#define CucumberApiJavaItQuando CCBQuando
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaItQuando)
 
 #endif
 

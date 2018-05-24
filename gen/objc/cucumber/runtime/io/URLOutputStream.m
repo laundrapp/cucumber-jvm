@@ -111,7 +111,7 @@ __attribute__((unused)) static NSString *CCBRURLOutputStream_ResponseException_g
         @catch (JavaIoIOException *expected) {
           JavaIoInputStream *errorStream = [urlConnection_ getErrorStream];
           if (errorStream != nil) {
-            NSString *responseBody = CucumberUtilFixJava_readReaderWithJavaIoReader_(create_JavaIoInputStreamReader_initWithJavaIoInputStream_withNSString_(errorStream, @"UTF-8"));
+            NSString *responseBody = CCBFixJava_readReaderWithJavaIoReader_(create_JavaIoInputStreamReader_initWithJavaIoInputStream_withNSString_(errorStream, @"UTF-8"));
             NSString *contentType = [urlConnection_ getHeaderFieldWithNSString:@"Content-Type"];
             if (contentType == nil) {
               contentType = @"text/plain";

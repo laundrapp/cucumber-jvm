@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBEeldades_) && (INCLUDE_ALL_CucumberApiJavaEtEeldades || defined(INCLUDE_CCBEeldades))
-#define CCBEeldades_
+#if !defined (CucumberApiJavaEtEeldades_) && (INCLUDE_ALL_CucumberApiJavaEtEeldades || defined(INCLUDE_CucumberApiJavaEtEeldades))
+#define CucumberApiJavaEtEeldades_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBEeldades < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaEtEeldades < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBEeldades : NSObject < CCBEeldades > {
+@interface CucumberApiJavaEtEeldades : NSObject < CucumberApiJavaEtEeldades > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBEeldades)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEtEeldades)
 
-FOUNDATION_EXPORT id<CCBEeldades> create_CCBEeldades(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaEtEeldades> create_CucumberApiJavaEtEeldades(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBEeldades)
-
-#define CucumberApiJavaEtEeldades CCBEeldades
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEtEeldades)
 
 #endif
 

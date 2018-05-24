@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBAnrhegediga_) && (INCLUDE_ALL_CucumberApiJavaCy_gbAnrhegediga || defined(INCLUDE_CCBAnrhegediga))
-#define CCBAnrhegediga_
+#if !defined (CucumberApiJavaCy_gbAnrhegediga_) && (INCLUDE_ALL_CucumberApiJavaCy_gbAnrhegediga || defined(INCLUDE_CucumberApiJavaCy_gbAnrhegediga))
+#define CucumberApiJavaCy_gbAnrhegediga_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBAnrhegediga < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaCy_gbAnrhegediga < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBAnrhegediga : NSObject < CCBAnrhegediga > {
+@interface CucumberApiJavaCy_gbAnrhegediga : NSObject < CucumberApiJavaCy_gbAnrhegediga > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBAnrhegediga)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaCy_gbAnrhegediga)
 
-FOUNDATION_EXPORT id<CCBAnrhegediga> create_CCBAnrhegediga(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaCy_gbAnrhegediga> create_CucumberApiJavaCy_gbAnrhegediga(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBAnrhegediga)
-
-#define CucumberApiJavaCy_gbAnrhegediga CCBAnrhegediga
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaCy_gbAnrhegediga)
 
 #endif
 

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBPodano_) && (INCLUDE_ALL_CucumberApiJavaSlPodano || defined(INCLUDE_CCBPodano))
-#define CCBPodano_
+#if !defined (CucumberApiJavaSlPodano_) && (INCLUDE_ALL_CucumberApiJavaSlPodano || defined(INCLUDE_CucumberApiJavaSlPodano))
+#define CucumberApiJavaSlPodano_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBPodano < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaSlPodano < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBPodano : NSObject < CCBPodano > {
+@interface CucumberApiJavaSlPodano : NSObject < CucumberApiJavaSlPodano > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBPodano)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaSlPodano)
 
-FOUNDATION_EXPORT id<CCBPodano> create_CCBPodano(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaSlPodano> create_CucumberApiJavaSlPodano(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBPodano)
-
-#define CucumberApiJavaSlPodano CCBPodano
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaSlPodano)
 
 #endif
 

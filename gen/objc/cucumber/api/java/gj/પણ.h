@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBપણ_) && (INCLUDE_ALL_CucumberApiJavaGjપણ || defined(INCLUDE_CCBપણ))
-#define CCBપણ_
+#if !defined (CucumberApiJavaGjપણ_) && (INCLUDE_ALL_CucumberApiJavaGjપણ || defined(INCLUDE_CucumberApiJavaGjપણ))
+#define CucumberApiJavaGjપણ_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBપણ < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaGjપણ < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBપણ : NSObject < CCBપણ > {
+@interface CucumberApiJavaGjપણ : NSObject < CucumberApiJavaGjપણ > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBપણ)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaGjપણ)
 
-FOUNDATION_EXPORT id<CCBપણ> create_CCBપણ(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaGjપણ> create_CucumberApiJavaGjપણ(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBપણ)
-
-#define CucumberApiJavaGjપણ CCBપણ
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaGjપણ)
 
 #endif
 

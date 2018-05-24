@@ -155,8 +155,8 @@ JavaUtilRegexPattern *CCBRCucumberFeature_RERUN_PATH_SPECIFICATION;
   return uri_;
 }
 
-- (void)sendTestSourceReadWithCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus {
-  [((CucumberRunnerEventBus *) nil_chk(bus)) sendWithCCBEvent:create_CCBTestSourceRead_initWithJavaLangLong_withNSString_withNSString_([bus getTime], uri_, gherkinSource_)];
+- (void)sendTestSourceReadWithCCBEventBus:(CCBEventBus *)bus {
+  [((CCBEventBus *) nil_chk(bus)) sendWithCCBEvent:create_CCBTestSourceRead_initWithJavaLangLong_withNSString_withNSString_([bus getTime], uri_, gherkinSource_)];
 }
 
 - (void)dealloc {
@@ -193,7 +193,7 @@ JavaUtilRegexPattern *CCBRCucumberFeature_RERUN_PATH_SPECIFICATION;
   methods[7].selector = @selector(initWithGherkinAstGherkinDocument:withNSString:withNSString:);
   methods[8].selector = @selector(getGherkinFeature);
   methods[9].selector = @selector(getUri);
-  methods[10].selector = @selector(sendTestSourceReadWithCucumberRunnerEventBus:);
+  methods[10].selector = @selector(sendTestSourceReadWithCCBEventBus:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "serialVersionUID", "J", .constantValue.asLong = CCBRCucumberFeature_serialVersionUID, 0x1a, -1, -1, -1, -1 },
@@ -202,7 +202,7 @@ JavaUtilRegexPattern *CCBRCucumberFeature_RERUN_PATH_SPECIFICATION;
     { "gherkinSource_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "RERUN_PATH_SPECIFICATION", "LJavaUtilRegexPattern;", .constantValue.asLong = 0, 0x19, -1, 18, -1, -1 },
   };
-  static const void *ptrTable[] = { "load", "LCCBRResourceLoader;LJavaUtilList;LJavaIoPrintStream;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/util/List<Ljava/lang/String;>;Ljava/io/PrintStream;)Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;", "LCCBRResourceLoader;LJavaUtilList;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/util/List<Ljava/lang/String;>;)Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;", "loadFromRerunFile", "LCCBRFeatureBuilder;LCCBRResourceLoader;LNSString;", "loadRerunFile", "LCCBRResourceLoader;LNSString;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/String;)Ljava/util/List<Lcucumber/runtime/model/PathWithLines;>;", "read", "LCCBRResource;", "loadFromFileSystemOrClasspath", "loadFromFeaturePath", "LCCBRFeatureBuilder;LCCBRResourceLoader;LNSString;Z", "LGherkinAstGherkinDocument;LNSString;LNSString;", "sendTestSourceRead", "LCucumberRunnerEventBus;", &CCBRCucumberFeature_RERUN_PATH_SPECIFICATION, "LCCBRCucumberFeature_CucumberFeatureUriComparator;" };
+  static const void *ptrTable[] = { "load", "LCCBRResourceLoader;LJavaUtilList;LJavaIoPrintStream;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/util/List<Ljava/lang/String;>;Ljava/io/PrintStream;)Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;", "LCCBRResourceLoader;LJavaUtilList;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/util/List<Ljava/lang/String;>;)Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;", "loadFromRerunFile", "LCCBRFeatureBuilder;LCCBRResourceLoader;LNSString;", "loadRerunFile", "LCCBRResourceLoader;LNSString;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/String;)Ljava/util/List<Lcucumber/runtime/model/PathWithLines;>;", "read", "LCCBRResource;", "loadFromFileSystemOrClasspath", "loadFromFeaturePath", "LCCBRFeatureBuilder;LCCBRResourceLoader;LNSString;Z", "LGherkinAstGherkinDocument;LNSString;LNSString;", "sendTestSourceRead", "LCCBEventBus;", &CCBRCucumberFeature_RERUN_PATH_SPECIFICATION, "LCCBRCucumberFeature_CucumberFeatureUriComparator;" };
   static const J2ObjcClassInfo _CCBRCucumberFeature = { "CucumberFeature", "cucumber.runtime.model", ptrTable, methods, fields, 7, 0x1, 11, 5, -1, 19, -1, -1, -1 };
   return &_CCBRCucumberFeature;
 }
@@ -272,7 +272,7 @@ id<JavaUtilList> CCBRCucumberFeature_loadRerunFileWithCCBRResourceLoader_withNSS
 NSString *CCBRCucumberFeature_readWithCCBRResource_(id<CCBRResource> resource) {
   CCBRCucumberFeature_initialize();
   @try {
-    return CucumberUtilEncoding_readFileWithCCBRResource_(resource);
+    return CCBEncoding_readFileWithCCBRResource_(resource);
   }
   @catch (JavaIoIOException *e) {
     @throw create_CCBRCucumberException_initWithNSString_withJavaLangThrowable_(JreStrcat("$$", @"Failed to read resource:", [((id<CCBRResource>) nil_chk(resource)) getPath]), e);

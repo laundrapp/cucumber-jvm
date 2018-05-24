@@ -18,15 +18,15 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRunnerRunner_) && (INCLUDE_ALL_CucumberRunnerRunner || defined(INCLUDE_CucumberRunnerRunner))
-#define CucumberRunnerRunner_
+#if !defined (CCBRunner_) && (INCLUDE_ALL_CucumberRunnerRunner || defined(INCLUDE_CCBRunner))
+#define CCBRunner_
 
 #define RESTRICT_CucumberRuntimeUnreportedStepExecutor 1
 #define INCLUDE_CCBRUnreportedStepExecutor 1
 #include "cucumber/runtime/UnreportedStepExecutor.h"
 
+@class CCBEventBus;
 @class CCBRRuntimeOptions;
-@class CucumberRunnerEventBus;
 @class GherkinEventsPickleEvent;
 @class GherkinPicklesPickleString;
 @protocol CCBRGlue;
@@ -34,12 +34,12 @@
 @protocol JavaUtilCollection;
 @protocol JavaUtilList;
 
-@interface CucumberRunnerRunner : NSObject < CCBRUnreportedStepExecutor >
+@interface CCBRunner : NSObject < CCBRUnreportedStepExecutor >
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithCCBRGlue:(id<CCBRGlue>)glue
-                withCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus
+                           withCCBEventBus:(CCBEventBus *)bus
                     withJavaUtilCollection:(id<JavaUtilCollection>)backends
                     withCCBRRuntimeOptions:(CCBRRuntimeOptions *)runtimeOptions;
 
@@ -62,15 +62,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRunnerRunner)
+J2OBJC_EMPTY_STATIC_INIT(CCBRunner)
 
-FOUNDATION_EXPORT void CucumberRunnerRunner_initWithCCBRGlue_withCucumberRunnerEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_(CucumberRunnerRunner *self, id<CCBRGlue> glue, CucumberRunnerEventBus *bus, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions);
+FOUNDATION_EXPORT void CCBRunner_initWithCCBRGlue_withCCBEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_(CCBRunner *self, id<CCBRGlue> glue, CCBEventBus *bus, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions);
 
-FOUNDATION_EXPORT CucumberRunnerRunner *new_CucumberRunnerRunner_initWithCCBRGlue_withCucumberRunnerEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_(id<CCBRGlue> glue, CucumberRunnerEventBus *bus, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRunner *new_CCBRunner_initWithCCBRGlue_withCCBEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_(id<CCBRGlue> glue, CCBEventBus *bus, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRunnerRunner *create_CucumberRunnerRunner_initWithCCBRGlue_withCucumberRunnerEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_(id<CCBRGlue> glue, CucumberRunnerEventBus *bus, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions);
+FOUNDATION_EXPORT CCBRunner *create_CCBRunner_initWithCCBRGlue_withCCBEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_(id<CCBRGlue> glue, CCBEventBus *bus, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRunnerRunner)
+J2OBJC_TYPE_LITERAL_HEADER(CCBRunner)
+
+@compatibility_alias CucumberRunnerRunner CCBRunner;
 
 #endif
 

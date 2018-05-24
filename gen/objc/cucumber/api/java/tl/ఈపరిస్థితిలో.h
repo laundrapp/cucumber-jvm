@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBఈపరిస్థితిలో_) && (INCLUDE_ALL_CucumberApiJavaTlఈపర_స_థ_త_ల_ || defined(INCLUDE_CCBఈపరిస్థితిలో))
-#define CCBఈపరిస్థితిలో_
+#if !defined (CucumberApiJavaTlఈపరిస్థితిలో_) && (INCLUDE_ALL_CucumberApiJavaTlఈపర_స_థ_త_ల_ || defined(INCLUDE_CucumberApiJavaTlఈపరిస్థితిలో))
+#define CucumberApiJavaTlఈపరిస్థితిలో_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBఈపరిస్థితిలో < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaTlఈపరిస్థితిలో < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBఈపరిస్థితిలో : NSObject < CCBఈపరిస్థితిలో > {
+@interface CucumberApiJavaTlఈపరిస్థితిలో : NSObject < CucumberApiJavaTlఈపరిస్థితిలో > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBఈపరిస్థితిలో)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaTlఈపరిస్థితిలో)
 
-FOUNDATION_EXPORT id<CCBఈపరిస్థితిలో> create_CCBఈపరిస్థితిలో(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaTlఈపరిస్థితిలో> create_CucumberApiJavaTlఈపరిస్థితిలో(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBఈపరిస్థితిలో)
-
-#define CucumberApiJavaTlఈపరిస్థితిలో CCBఈపరిస్థితిలో
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaTlఈపరిస్థితిలో)
 
 #endif
 

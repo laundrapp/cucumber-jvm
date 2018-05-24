@@ -18,15 +18,15 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberUtilEncoding_) && (INCLUDE_ALL_CucumberUtilEncoding || defined(INCLUDE_CucumberUtilEncoding))
-#define CucumberUtilEncoding_
+#if !defined (CCBEncoding_) && (INCLUDE_ALL_CucumberUtilEncoding || defined(INCLUDE_CCBEncoding))
+#define CCBEncoding_
 
 @protocol CCBRResource;
 
 /*!
  @brief Utilities for reading the encoding of a file.
  */
-@interface CucumberUtilEncoding : NSObject
+@interface CCBEncoding : NSObject
 
 #pragma mark Public
 
@@ -36,22 +36,24 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberUtilEncoding)
+J2OBJC_STATIC_INIT(CCBEncoding)
 
-inline NSString *CucumberUtilEncoding_get_DEFAULT_ENCODING(void);
+inline NSString *CCBEncoding_get_DEFAULT_ENCODING(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT NSString *CucumberUtilEncoding_DEFAULT_ENCODING;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberUtilEncoding, DEFAULT_ENCODING, NSString *)
+FOUNDATION_EXPORT NSString *CCBEncoding_DEFAULT_ENCODING;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBEncoding, DEFAULT_ENCODING, NSString *)
 
-FOUNDATION_EXPORT void CucumberUtilEncoding_init(CucumberUtilEncoding *self);
+FOUNDATION_EXPORT void CCBEncoding_init(CCBEncoding *self);
 
-FOUNDATION_EXPORT CucumberUtilEncoding *new_CucumberUtilEncoding_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBEncoding *new_CCBEncoding_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberUtilEncoding *create_CucumberUtilEncoding_init(void);
+FOUNDATION_EXPORT CCBEncoding *create_CCBEncoding_init(void);
 
-FOUNDATION_EXPORT NSString *CucumberUtilEncoding_readFileWithCCBRResource_(id<CCBRResource> resource);
+FOUNDATION_EXPORT NSString *CCBEncoding_readFileWithCCBRResource_(id<CCBRResource> resource);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberUtilEncoding)
+J2OBJC_TYPE_LITERAL_HEADER(CCBEncoding)
+
+@compatibility_alias CucumberUtilEncoding CCBEncoding;
 
 #endif
 

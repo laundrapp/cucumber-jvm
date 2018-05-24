@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBTak_) && (INCLUDE_ALL_CucumberApiJavaSkTak || defined(INCLUDE_CCBTak))
-#define CCBTak_
+#if !defined (CucumberApiJavaSkTak_) && (INCLUDE_ALL_CucumberApiJavaSkTak || defined(INCLUDE_CucumberApiJavaSkTak))
+#define CucumberApiJavaSkTak_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBTak < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaSkTak < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBTak : NSObject < CCBTak > {
+@interface CucumberApiJavaSkTak : NSObject < CucumberApiJavaSkTak > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBTak)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaSkTak)
 
-FOUNDATION_EXPORT id<CCBTak> create_CCBTak(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaSkTak> create_CucumberApiJavaSkTak(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBTak)
-
-#define CucumberApiJavaSkTak CCBTak
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaSkTak)
 
 #endif
 

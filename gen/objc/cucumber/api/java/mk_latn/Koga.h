@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBKoga_) && (INCLUDE_ALL_CucumberApiJavaMk_latnKoga || defined(INCLUDE_CCBKoga))
-#define CCBKoga_
+#if !defined (CucumberApiJavaMk_latnKoga_) && (INCLUDE_ALL_CucumberApiJavaMk_latnKoga || defined(INCLUDE_CucumberApiJavaMk_latnKoga))
+#define CucumberApiJavaMk_latnKoga_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBKoga < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaMk_latnKoga < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBKoga : NSObject < CCBKoga > {
+@interface CucumberApiJavaMk_latnKoga : NSObject < CucumberApiJavaMk_latnKoga > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBKoga)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaMk_latnKoga)
 
-FOUNDATION_EXPORT id<CCBKoga> create_CCBKoga(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaMk_latnKoga> create_CucumberApiJavaMk_latnKoga(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBKoga)
-
-#define CucumberApiJavaMk_latnKoga CCBKoga
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaMk_latnKoga)
 
 #endif
 

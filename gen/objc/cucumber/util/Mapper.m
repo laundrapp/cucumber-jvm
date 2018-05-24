@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/util/Mapper.h"
 
-@interface CucumberUtilMapper : NSObject
+@interface CCBMapper : NSObject
 
 @end
 
-@implementation CucumberUtilMapper
+@implementation CCBMapper
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -22,10 +22,10 @@
   methods[0].selector = @selector(mapWithId:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "map", "LNSObject;", "(TT;)TR;", "<T:Ljava/lang/Object;R:Ljava/lang/Object;>Ljava/lang/Object;" };
-  static const J2ObjcClassInfo _CucumberUtilMapper = { "Mapper", "cucumber.util", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, 3, -1 };
-  return &_CucumberUtilMapper;
+  static const J2ObjcClassInfo _CCBMapper = { "Mapper", "cucumber.util", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, 3, -1 };
+  return &_CCBMapper;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberUtilMapper)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBMapper)

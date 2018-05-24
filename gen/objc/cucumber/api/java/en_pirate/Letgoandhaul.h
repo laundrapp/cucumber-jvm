@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBLetgoandhaul_) && (INCLUDE_ALL_CucumberApiJavaEn_pirateLetgoandhaul || defined(INCLUDE_CCBLetgoandhaul))
-#define CCBLetgoandhaul_
+#if !defined (CucumberApiJavaEn_pirateLetgoandhaul_) && (INCLUDE_ALL_CucumberApiJavaEn_pirateLetgoandhaul || defined(INCLUDE_CucumberApiJavaEn_pirateLetgoandhaul))
+#define CucumberApiJavaEn_pirateLetgoandhaul_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBLetgoandhaul < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaEn_pirateLetgoandhaul < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBLetgoandhaul : NSObject < CCBLetgoandhaul > {
+@interface CucumberApiJavaEn_pirateLetgoandhaul : NSObject < CucumberApiJavaEn_pirateLetgoandhaul > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBLetgoandhaul)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEn_pirateLetgoandhaul)
 
-FOUNDATION_EXPORT id<CCBLetgoandhaul> create_CCBLetgoandhaul(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaEn_pirateLetgoandhaul> create_CucumberApiJavaEn_pirateLetgoandhaul(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBLetgoandhaul)
-
-#define CucumberApiJavaEn_pirateLetgoandhaul CCBLetgoandhaul
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEn_pirateLetgoandhaul)
 
 #endif
 

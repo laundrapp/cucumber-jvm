@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBPotem_) && (INCLUDE_ALL_CucumberApiJavaSlPotem || defined(INCLUDE_CCBPotem))
-#define CCBPotem_
+#if !defined (CucumberApiJavaSlPotem_) && (INCLUDE_ALL_CucumberApiJavaSlPotem || defined(INCLUDE_CucumberApiJavaSlPotem))
+#define CucumberApiJavaSlPotem_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBPotem < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaSlPotem < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBPotem : NSObject < CCBPotem > {
+@interface CucumberApiJavaSlPotem : NSObject < CucumberApiJavaSlPotem > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBPotem)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaSlPotem)
 
-FOUNDATION_EXPORT id<CCBPotem> create_CCBPotem(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaSlPotem> create_CucumberApiJavaSlPotem(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBPotem)
-
-#define CucumberApiJavaSlPotem CCBPotem
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaSlPotem)
 
 #endif
 

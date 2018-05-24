@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBNår_) && (INCLUDE_ALL_CucumberApiJavaDaNår || defined(INCLUDE_CCBNår))
-#define CCBNår_
+#if !defined (CucumberApiJavaDaNår_) && (INCLUDE_ALL_CucumberApiJavaDaNår || defined(INCLUDE_CucumberApiJavaDaNår))
+#define CucumberApiJavaDaNår_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBNår < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaDaNår < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBNår : NSObject < CCBNår > {
+@interface CucumberApiJavaDaNår : NSObject < CucumberApiJavaDaNår > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBNår)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaDaNår)
 
-FOUNDATION_EXPORT id<CCBNår> create_CCBNår(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaDaNår> create_CucumberApiJavaDaNår(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBNår)
-
-#define CucumberApiJavaDaNår CCBNår
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaDaNår)
 
 #endif
 

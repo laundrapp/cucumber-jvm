@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBNuaira_) && (INCLUDE_ALL_CucumberApiJavaGaNuaira || defined(INCLUDE_CCBNuaira))
-#define CCBNuaira_
+#if !defined (CucumberApiJavaGaNuaira_) && (INCLUDE_ALL_CucumberApiJavaGaNuaira || defined(INCLUDE_CucumberApiJavaGaNuaira))
+#define CucumberApiJavaGaNuaira_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBNuaira < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaGaNuaira < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBNuaira : NSObject < CCBNuaira > {
+@interface CucumberApiJavaGaNuaira : NSObject < CucumberApiJavaGaNuaira > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBNuaira)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaGaNuaira)
 
-FOUNDATION_EXPORT id<CCBNuaira> create_CCBNuaira(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaGaNuaira> create_CucumberApiJavaGaNuaira(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBNuaira)
-
-#define CucumberApiJavaGaNuaira CCBNuaira
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaGaNuaira)
 
 #endif
 

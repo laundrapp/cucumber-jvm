@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBHa_) && (INCLUDE_ALL_CucumberApiJavaHuHa || defined(INCLUDE_CCBHa))
-#define CCBHa_
+#if !defined (CucumberApiJavaHuHa_) && (INCLUDE_ALL_CucumberApiJavaHuHa || defined(INCLUDE_CucumberApiJavaHuHa))
+#define CucumberApiJavaHuHa_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBHa < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaHuHa < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBHa : NSObject < CCBHa > {
+@interface CucumberApiJavaHuHa : NSObject < CucumberApiJavaHuHa > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBHa)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaHuHa)
 
-FOUNDATION_EXPORT id<CCBHa> create_CCBHa(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaHuHa> create_CucumberApiJavaHuHa(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBHa)
-
-#define CucumberApiJavaHuHa CCBHa
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaHuHa)
 
 #endif
 

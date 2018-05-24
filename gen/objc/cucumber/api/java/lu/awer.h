@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBawer_) && (INCLUDE_ALL_CucumberApiJavaLuAwer || defined(INCLUDE_CCBawer))
-#define CCBawer_
+#if !defined (CucumberApiJavaLuawer_) && (INCLUDE_ALL_CucumberApiJavaLuAwer || defined(INCLUDE_CucumberApiJavaLuawer))
+#define CucumberApiJavaLuawer_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBawer < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaLuawer < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBawer : NSObject < CCBawer > {
+@interface CucumberApiJavaLuawer : NSObject < CucumberApiJavaLuawer > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBawer)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaLuawer)
 
-FOUNDATION_EXPORT id<CCBawer> create_CCBawer(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaLuawer> create_CucumberApiJavaLuawer(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBawer)
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaLuawer)
 
-#define CucumberApiJavaLuAwer CCBawer
+#define CucumberApiJavaLuAwer CucumberApiJavaLuawer
 
 #endif
 

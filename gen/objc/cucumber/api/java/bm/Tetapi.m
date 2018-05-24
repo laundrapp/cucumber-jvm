@@ -15,9 +15,9 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *CCBTetapi__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CucumberApiJavaBmTetapi__Annotations$0(void);
 
-@implementation CCBTetapi
+@implementation CucumberApiJavaBmTetapi
 
 @synthesize value = value_;
 @synthesize timeout = timeout_;
@@ -27,7 +27,7 @@ __attribute__((unused)) static IOSObjectArray *CCBTetapi__Annotations$0(void);
 }
 
 - (IOSClass *)annotationType {
-  return CCBTetapi_class_();
+  return CucumberApiJavaBmTetapi_class_();
 }
 
 - (NSString *)description {
@@ -62,22 +62,22 @@ __attribute__((unused)) static IOSObjectArray *CCBTetapi__Annotations$0(void);
     { "value_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "timeout_", "J", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&CCBTetapi__Annotations$0 };
-  static const J2ObjcClassInfo _CCBTetapi = { "Tetapi", "cucumber.api.java.bm", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
-  return &_CCBTetapi;
+  static const void *ptrTable[] = { (void *)&CucumberApiJavaBmTetapi__Annotations$0 };
+  static const J2ObjcClassInfo _CucumberApiJavaBmTetapi = { "Tetapi", "cucumber.api.java.bm", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
+  return &_CucumberApiJavaBmTetapi;
 }
 
 @end
 
-id<CCBTetapi> create_CCBTetapi(jlong timeout, NSString *value) {
-  CCBTetapi *self = AUTORELEASE([[CCBTetapi alloc] init]);
+id<CucumberApiJavaBmTetapi> create_CucumberApiJavaBmTetapi(jlong timeout, NSString *value) {
+  CucumberApiJavaBmTetapi *self = AUTORELEASE([[CucumberApiJavaBmTetapi alloc] init]);
   self->timeout_ = timeout;
   self->value_ = RETAIN_(value);
   return self;
 }
 
-IOSObjectArray *CCBTetapi__Annotations$0() {
-  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CCBStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
+IOSObjectArray *CucumberApiJavaBmTetapi__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CucumberRuntimeJavaStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBTetapi)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiJavaBmTetapi)

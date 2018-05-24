@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBOhalda_) && (INCLUDE_ALL_CucumberApiJavaAzOhalda || defined(INCLUDE_CCBOhalda))
-#define CCBOhalda_
+#if !defined (CucumberApiJavaAzOhalda_) && (INCLUDE_ALL_CucumberApiJavaAzOhalda || defined(INCLUDE_CucumberApiJavaAzOhalda))
+#define CucumberApiJavaAzOhalda_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBOhalda < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaAzOhalda < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBOhalda : NSObject < CCBOhalda > {
+@interface CucumberApiJavaAzOhalda : NSObject < CucumberApiJavaAzOhalda > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBOhalda)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaAzOhalda)
 
-FOUNDATION_EXPORT id<CCBOhalda> create_CCBOhalda(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaAzOhalda> create_CucumberApiJavaAzOhalda(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBOhalda)
-
-#define CucumberApiJavaAzOhalda CCBOhalda
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaAzOhalda)
 
 #endif
 

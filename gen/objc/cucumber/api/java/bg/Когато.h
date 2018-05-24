@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBКогато_) && (INCLUDE_ALL_CucumberApiJavaBgКогато || defined(INCLUDE_CCBКогато))
-#define CCBКогато_
+#if !defined (CucumberApiJavaBgКогато_) && (INCLUDE_ALL_CucumberApiJavaBgКогато || defined(INCLUDE_CucumberApiJavaBgКогато))
+#define CucumberApiJavaBgКогато_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBКогато < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaBgКогато < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBКогато : NSObject < CCBКогато > {
+@interface CucumberApiJavaBgКогато : NSObject < CucumberApiJavaBgКогато > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBКогато)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaBgКогато)
 
-FOUNDATION_EXPORT id<CCBКогато> create_CCBКогато(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaBgКогато> create_CucumberApiJavaBgКогато(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBКогато)
-
-#define CucumberApiJavaBgКогато CCBКогато
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaBgКогато)
 
 #endif
 

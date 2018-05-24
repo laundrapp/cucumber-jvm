@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBBet_) && (INCLUDE_ALL_CucumberApiJavaLvBet || defined(INCLUDE_CCBBet))
-#define CCBBet_
+#if !defined (CucumberApiJavaLvBet_) && (INCLUDE_ALL_CucumberApiJavaLvBet || defined(INCLUDE_CucumberApiJavaLvBet))
+#define CucumberApiJavaLvBet_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBBet < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaLvBet < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBBet : NSObject < CCBBet > {
+@interface CucumberApiJavaLvBet : NSObject < CucumberApiJavaLvBet > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBBet)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaLvBet)
 
-FOUNDATION_EXPORT id<CCBBet> create_CCBBet(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaLvBet> create_CucumberApiJavaLvBet(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBBet)
-
-#define CucumberApiJavaLvBet CCBBet
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaLvBet)
 
 #endif
 

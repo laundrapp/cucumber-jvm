@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBبفرض_) && (INCLUDE_ALL_CucumberApiJavaArبفرض || defined(INCLUDE_CCBبفرض))
-#define CCBبفرض_
+#if !defined (CucumberApiJavaArبفرض_) && (INCLUDE_ALL_CucumberApiJavaArبفرض || defined(INCLUDE_CucumberApiJavaArبفرض))
+#define CucumberApiJavaArبفرض_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBبفرض < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaArبفرض < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBبفرض : NSObject < CCBبفرض > {
+@interface CucumberApiJavaArبفرض : NSObject < CucumberApiJavaArبفرض > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBبفرض)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaArبفرض)
 
-FOUNDATION_EXPORT id<CCBبفرض> create_CCBبفرض(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaArبفرض> create_CucumberApiJavaArبفرض(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBبفرض)
-
-#define CucumberApiJavaArبفرض CCBبفرض
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaArبفرض)
 
 #endif
 

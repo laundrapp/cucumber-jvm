@@ -18,29 +18,29 @@
 #include "java/util/Collection.h"
 #include "java/util/List.h"
 
-@interface CCBJavaHookDefinition () {
+@interface CucumberRuntimeJavaJavaHookDefinition () {
  @public
   JavaLangReflectMethod *method_;
   jlong timeoutMillis_;
   CCBRTagPredicate *tagPredicate_;
   jint order_;
-  id<CCBObjectFactory> objectFactory_;
+  id<CucumberApiJavaObjectFactory> objectFactory_;
 }
 
 @end
 
-J2OBJC_FIELD_SETTER(CCBJavaHookDefinition, method_, JavaLangReflectMethod *)
-J2OBJC_FIELD_SETTER(CCBJavaHookDefinition, tagPredicate_, CCBRTagPredicate *)
-J2OBJC_FIELD_SETTER(CCBJavaHookDefinition, objectFactory_, id<CCBObjectFactory>)
+J2OBJC_FIELD_SETTER(CucumberRuntimeJavaJavaHookDefinition, method_, JavaLangReflectMethod *)
+J2OBJC_FIELD_SETTER(CucumberRuntimeJavaJavaHookDefinition, tagPredicate_, CCBRTagPredicate *)
+J2OBJC_FIELD_SETTER(CucumberRuntimeJavaJavaHookDefinition, objectFactory_, id<CucumberApiJavaObjectFactory>)
 
-@implementation CCBJavaHookDefinition
+@implementation CucumberRuntimeJavaJavaHookDefinition
 
 - (instancetype __nonnull)initWithJavaLangReflectMethod:(JavaLangReflectMethod *)method
                                       withNSStringArray:(IOSObjectArray *)tagExpressions
                                                 withInt:(jint)order
                                                withLong:(jlong)timeoutMillis
-                                   withCCBObjectFactory:(id<CCBObjectFactory>)objectFactory {
-  CCBJavaHookDefinition_initWithJavaLangReflectMethod_withNSStringArray_withInt_withLong_withCCBObjectFactory_(self, method, tagExpressions, order, timeoutMillis, objectFactory);
+                       withCucumberApiJavaObjectFactory:(id<CucumberApiJavaObjectFactory>)objectFactory {
+  CucumberRuntimeJavaJavaHookDefinition_initWithJavaLangReflectMethod_withNSStringArray_withInt_withLong_withCucumberApiJavaObjectFactory_(self, method, tagExpressions, order, timeoutMillis, objectFactory);
   return self;
 }
 
@@ -68,7 +68,7 @@ J2OBJC_FIELD_SETTER(CCBJavaHookDefinition, objectFactory_, id<CCBObjectFactory>)
     default:
     @throw create_CCBRCucumberException_initWithNSString_(JreStrcat("$$", @"Hooks must declare 0 or 1 arguments. ", [method_ description]));
   }
-  CCBRUtils_invokeWithId_withJavaLangReflectMethod_withLong_withNSObjectArray_([((id<CCBObjectFactory>) nil_chk(objectFactory_)) getInstanceWithIOSClass:[method_ getDeclaringClass]], method_, timeoutMillis_, args);
+  CCBRUtils_invokeWithId_withJavaLangReflectMethod_withLong_withNSObjectArray_([((id<CucumberApiJavaObjectFactory>) nil_chk(objectFactory_)) getInstanceWithIOSClass:[method_ getDeclaringClass]], method_, timeoutMillis_, args);
 }
 
 - (jboolean)matchesWithJavaUtilCollection:(id<JavaUtilCollection>)tags {
@@ -103,7 +103,7 @@ J2OBJC_FIELD_SETTER(CCBJavaHookDefinition, objectFactory_, id<CCBObjectFactory>)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithJavaLangReflectMethod:withNSStringArray:withInt:withLong:withCCBObjectFactory:);
+  methods[0].selector = @selector(initWithJavaLangReflectMethod:withNSStringArray:withInt:withLong:withCucumberApiJavaObjectFactory:);
   methods[1].selector = @selector(getMethod);
   methods[2].selector = @selector(getLocationWithBoolean:);
   methods[3].selector = @selector(executeWithCCBScenario:);
@@ -116,16 +116,16 @@ J2OBJC_FIELD_SETTER(CCBJavaHookDefinition, objectFactory_, id<CCBObjectFactory>)
     { "timeoutMillis_", "J", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "tagPredicate_", "LCCBRTagPredicate;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "order_", "I", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "objectFactory_", "LCCBObjectFactory;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "objectFactory_", "LCucumberApiJavaObjectFactory;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LJavaLangReflectMethod;[LNSString;IJLCCBObjectFactory;", "getLocation", "Z", "execute", "LCCBScenario;", "LJavaLangThrowable;", "matches", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z" };
-  static const J2ObjcClassInfo _CCBJavaHookDefinition = { "JavaHookDefinition", "cucumber.runtime.java", ptrTable, methods, fields, 7, 0x0, 7, 5, -1, -1, -1, -1, -1 };
-  return &_CCBJavaHookDefinition;
+  static const void *ptrTable[] = { "LJavaLangReflectMethod;[LNSString;IJLCucumberApiJavaObjectFactory;", "getLocation", "Z", "execute", "LCCBScenario;", "LJavaLangThrowable;", "matches", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z" };
+  static const J2ObjcClassInfo _CucumberRuntimeJavaJavaHookDefinition = { "JavaHookDefinition", "cucumber.runtime.java", ptrTable, methods, fields, 7, 0x0, 7, 5, -1, -1, -1, -1, -1 };
+  return &_CucumberRuntimeJavaJavaHookDefinition;
 }
 
 @end
 
-void CCBJavaHookDefinition_initWithJavaLangReflectMethod_withNSStringArray_withInt_withLong_withCCBObjectFactory_(CCBJavaHookDefinition *self, JavaLangReflectMethod *method, IOSObjectArray *tagExpressions, jint order, jlong timeoutMillis, id<CCBObjectFactory> objectFactory) {
+void CucumberRuntimeJavaJavaHookDefinition_initWithJavaLangReflectMethod_withNSStringArray_withInt_withLong_withCucumberApiJavaObjectFactory_(CucumberRuntimeJavaJavaHookDefinition *self, JavaLangReflectMethod *method, IOSObjectArray *tagExpressions, jint order, jlong timeoutMillis, id<CucumberApiJavaObjectFactory> objectFactory) {
   NSObject_init(self);
   JreStrongAssign(&self->method_, method);
   self->timeoutMillis_ = timeoutMillis;
@@ -134,12 +134,12 @@ void CCBJavaHookDefinition_initWithJavaLangReflectMethod_withNSStringArray_withI
   JreStrongAssign(&self->objectFactory_, objectFactory);
 }
 
-CCBJavaHookDefinition *new_CCBJavaHookDefinition_initWithJavaLangReflectMethod_withNSStringArray_withInt_withLong_withCCBObjectFactory_(JavaLangReflectMethod *method, IOSObjectArray *tagExpressions, jint order, jlong timeoutMillis, id<CCBObjectFactory> objectFactory) {
-  J2OBJC_NEW_IMPL(CCBJavaHookDefinition, initWithJavaLangReflectMethod_withNSStringArray_withInt_withLong_withCCBObjectFactory_, method, tagExpressions, order, timeoutMillis, objectFactory)
+CucumberRuntimeJavaJavaHookDefinition *new_CucumberRuntimeJavaJavaHookDefinition_initWithJavaLangReflectMethod_withNSStringArray_withInt_withLong_withCucumberApiJavaObjectFactory_(JavaLangReflectMethod *method, IOSObjectArray *tagExpressions, jint order, jlong timeoutMillis, id<CucumberApiJavaObjectFactory> objectFactory) {
+  J2OBJC_NEW_IMPL(CucumberRuntimeJavaJavaHookDefinition, initWithJavaLangReflectMethod_withNSStringArray_withInt_withLong_withCucumberApiJavaObjectFactory_, method, tagExpressions, order, timeoutMillis, objectFactory)
 }
 
-CCBJavaHookDefinition *create_CCBJavaHookDefinition_initWithJavaLangReflectMethod_withNSStringArray_withInt_withLong_withCCBObjectFactory_(JavaLangReflectMethod *method, IOSObjectArray *tagExpressions, jint order, jlong timeoutMillis, id<CCBObjectFactory> objectFactory) {
-  J2OBJC_CREATE_IMPL(CCBJavaHookDefinition, initWithJavaLangReflectMethod_withNSStringArray_withInt_withLong_withCCBObjectFactory_, method, tagExpressions, order, timeoutMillis, objectFactory)
+CucumberRuntimeJavaJavaHookDefinition *create_CucumberRuntimeJavaJavaHookDefinition_initWithJavaLangReflectMethod_withNSStringArray_withInt_withLong_withCucumberApiJavaObjectFactory_(JavaLangReflectMethod *method, IOSObjectArray *tagExpressions, jint order, jlong timeoutMillis, id<CucumberApiJavaObjectFactory> objectFactory) {
+  J2OBJC_CREATE_IMPL(CucumberRuntimeJavaJavaHookDefinition, initWithJavaLangReflectMethod_withNSStringArray_withInt_withLong_withCucumberApiJavaObjectFactory_, method, tagExpressions, order, timeoutMillis, objectFactory)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBJavaHookDefinition)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeJavaJavaHookDefinition)

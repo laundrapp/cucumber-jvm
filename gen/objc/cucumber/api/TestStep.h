@@ -21,10 +21,10 @@
 #if !defined (CCBTestStep_) && (INCLUDE_ALL_CucumberApiTestStep || defined(INCLUDE_CCBTestStep))
 #define CCBTestStep_
 
+@class CCBEventBus;
 @class CCBHookType;
 @class CCBResult;
 @class CCBResult_Type;
-@class CucumberRunnerEventBus;
 @class GherkinPicklesPickleStep;
 @protocol CCBRDefinitionMatch;
 @protocol CCBScenario;
@@ -72,10 +72,10 @@
  @param skipSteps if this step should be skipped
  @return result of running this step
  */
-- (CCBResult *)runWithCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus
-                                withNSString:(NSString *)language
-                             withCCBScenario:(id<CCBScenario>)scenario
-                                 withBoolean:(jboolean)skipSteps;
+- (CCBResult *)runWithCCBEventBus:(CCBEventBus *)bus
+                     withNSString:(NSString *)language
+                  withCCBScenario:(id<CCBScenario>)scenario
+                      withBoolean:(jboolean)skipSteps;
 
 #pragma mark Protected
 

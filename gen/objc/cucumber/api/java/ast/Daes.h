@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBDaes_) && (INCLUDE_ALL_CucumberApiJavaAstDaes || defined(INCLUDE_CCBDaes))
-#define CCBDaes_
+#if !defined (CucumberApiJavaAstDaes_) && (INCLUDE_ALL_CucumberApiJavaAstDaes || defined(INCLUDE_CucumberApiJavaAstDaes))
+#define CucumberApiJavaAstDaes_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBDaes < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaAstDaes < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBDaes : NSObject < CCBDaes > {
+@interface CucumberApiJavaAstDaes : NSObject < CucumberApiJavaAstDaes > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBDaes)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaAstDaes)
 
-FOUNDATION_EXPORT id<CCBDaes> create_CCBDaes(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaAstDaes> create_CucumberApiJavaAstDaes(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBDaes)
-
-#define CucumberApiJavaAstDaes CCBDaes
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaAstDaes)
 
 #endif
 

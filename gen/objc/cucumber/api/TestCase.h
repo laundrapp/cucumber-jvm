@@ -21,7 +21,7 @@
 #if !defined (CCBTestCase_) && (INCLUDE_ALL_CucumberApiTestCase || defined(INCLUDE_CCBTestCase))
 #define CCBTestCase_
 
-@class CucumberRunnerEventBus;
+@class CCBEventBus;
 @class GherkinEventsPickleEvent;
 @protocol JavaUtilList;
 
@@ -63,7 +63,7 @@
  @brief Executes the test case.
  @param bus to which events should be broadcast
  */
-- (void)runWithCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus;
+- (void)runWithCCBEventBus:(CCBEventBus *)bus;
 
 // Disallowed inherited constructors, do not use.
 

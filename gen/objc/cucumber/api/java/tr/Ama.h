@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBAma_) && (INCLUDE_ALL_CucumberApiJavaTrAma || defined(INCLUDE_CCBAma))
-#define CCBAma_
+#if !defined (CucumberApiJavaTrAma_) && (INCLUDE_ALL_CucumberApiJavaTrAma || defined(INCLUDE_CucumberApiJavaTrAma))
+#define CucumberApiJavaTrAma_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBAma < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaTrAma < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBAma : NSObject < CCBAma > {
+@interface CucumberApiJavaTrAma : NSObject < CucumberApiJavaTrAma > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBAma)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaTrAma)
 
-FOUNDATION_EXPORT id<CCBAma> create_CCBAma(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaTrAma> create_CucumberApiJavaTrAma(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBAma)
-
-#define CucumberApiJavaTrAma CCBAma
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaTrAma)
 
 #endif
 

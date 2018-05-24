@@ -72,7 +72,7 @@
   jboolean monochrome_;
   CCBSnippetType *snippetType_;
   jboolean pluginNamesInstantiated_;
-  CucumberRunnerEventBus *bus_;
+  CCBEventBus *bus_;
 }
 
 - (void)parseWithJavaUtilList:(id<JavaUtilList>)args;
@@ -129,15 +129,15 @@ J2OBJC_FIELD_SETTER(CCBRRuntimeOptions, pluginFactory_, CCBRPluginFactory *)
 J2OBJC_FIELD_SETTER(CCBRRuntimeOptions, plugins_, id<JavaUtilList>)
 J2OBJC_FIELD_SETTER(CCBRRuntimeOptions, converters_, id<JavaUtilList>)
 J2OBJC_FIELD_SETTER(CCBRRuntimeOptions, snippetType_, CCBSnippetType *)
-J2OBJC_FIELD_SETTER(CCBRRuntimeOptions, bus_, CucumberRunnerEventBus *)
+J2OBJC_FIELD_SETTER(CCBRRuntimeOptions, bus_, CCBEventBus *)
 
-inline id<CucumberUtilMapper> CCBRRuntimeOptions_get_QUOTE_MAPPER(void);
-static id<CucumberUtilMapper> CCBRRuntimeOptions_QUOTE_MAPPER;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRRuntimeOptions, QUOTE_MAPPER, id<CucumberUtilMapper>)
+inline id<CCBMapper> CCBRRuntimeOptions_get_QUOTE_MAPPER(void);
+static id<CCBMapper> CCBRRuntimeOptions_QUOTE_MAPPER;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRRuntimeOptions, QUOTE_MAPPER, id<CCBMapper>)
 
-inline id<CucumberUtilMapper> CCBRRuntimeOptions_get_CODE_KEYWORD_MAPPER(void);
-static id<CucumberUtilMapper> CCBRRuntimeOptions_CODE_KEYWORD_MAPPER;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRRuntimeOptions, CODE_KEYWORD_MAPPER, id<CucumberUtilMapper>)
+inline id<CCBMapper> CCBRRuntimeOptions_get_CODE_KEYWORD_MAPPER(void);
+static id<CCBMapper> CCBRRuntimeOptions_CODE_KEYWORD_MAPPER;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRRuntimeOptions, CODE_KEYWORD_MAPPER, id<CCBMapper>)
 
 __attribute__((unused)) static void CCBRRuntimeOptions_parseWithJavaUtilList_(CCBRRuntimeOptions *self, id<JavaUtilList> args);
 
@@ -165,7 +165,7 @@ __attribute__((unused)) static void CCBRRuntimeOptions_setEventBusFormatterPlugi
 
 __attribute__((unused)) static void CCBRRuntimeOptions_processRerunFilesWithCCBRResourceLoader_(CCBRRuntimeOptions *self, id<CCBRResourceLoader> resourceLoader);
 
-@interface CCBRRuntimeOptions_1 : NSObject < CucumberUtilMapper >
+@interface CCBRRuntimeOptions_1 : NSObject < CCBMapper >
 
 - (instancetype __nonnull)init;
 
@@ -181,7 +181,7 @@ __attribute__((unused)) static CCBRRuntimeOptions_1 *new_CCBRRuntimeOptions_1_in
 
 __attribute__((unused)) static CCBRRuntimeOptions_1 *create_CCBRRuntimeOptions_1_init(void);
 
-@interface CCBRRuntimeOptions_2 : NSObject < CucumberUtilMapper >
+@interface CCBRRuntimeOptions_2 : NSObject < CCBMapper >
 
 - (instancetype __nonnull)init;
 
@@ -315,12 +315,12 @@ NSString *CCBRRuntimeOptions_usageText;
 }
 
 - (id<JavaUtilList>)cucumberFeaturesWithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
-                                withCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus {
+                                           withCCBEventBus:(CCBEventBus *)bus {
   id<JavaUtilList> features = CCBRCucumberFeature_load__WithCCBRResourceLoader_withJavaUtilList_withJavaIoPrintStream_(resourceLoader, featurePaths_, JreLoadStatic(JavaLangSystem, out));
   [self getPlugins];
-  [((CucumberRunnerEventBus *) nil_chk(bus)) sendWithCCBEvent:create_CCBTestRunStarted_initWithJavaLangLong_([bus getTime])];
+  [((CCBEventBus *) nil_chk(bus)) sendWithCCBEvent:create_CCBTestRunStarted_initWithJavaLangLong_([bus getTime])];
   for (CCBRCucumberFeature * __strong feature in nil_chk(features)) {
-    [((CCBRCucumberFeature *) nil_chk(feature)) sendTestSourceReadWithCucumberRunnerEventBus:bus];
+    [((CCBRCucumberFeature *) nil_chk(feature)) sendTestSourceReadWithCCBEventBus:bus];
   }
   return features;
 }
@@ -430,7 +430,7 @@ NSString *CCBRRuntimeOptions_usageText;
   return junitOptions_;
 }
 
-- (void)setEventBusWithCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus {
+- (void)setEventBusWithCCBEventBus:(CCBEventBus *)bus {
   JreStrongAssign(&self->bus_, bus);
 }
 
@@ -511,7 +511,7 @@ NSString *CCBRRuntimeOptions_usageText;
   methods[12].selector = @selector(printKeywordsForWithGherkinGherkinDialect:);
   methods[13].selector = @selector(addCodeKeywordRowWithJavaUtilList:withNSString:withJavaUtilList:);
   methods[14].selector = @selector(addKeywordRowWithJavaUtilList:withNSString:withJavaUtilList:);
-  methods[15].selector = @selector(cucumberFeaturesWithCCBRResourceLoader:withCucumberRunnerEventBus:);
+  methods[15].selector = @selector(cucumberFeaturesWithCCBRResourceLoader:withCCBEventBus:);
   methods[16].selector = @selector(getPlugins);
   methods[17].selector = @selector(getConverters);
   methods[18].selector = @selector(formatterWithJavaLangClassLoader:);
@@ -533,14 +533,14 @@ NSString *CCBRRuntimeOptions_usageText;
   methods[34].selector = @selector(isMonochrome);
   methods[35].selector = @selector(getSnippetType);
   methods[36].selector = @selector(getJunitOptions);
-  methods[37].selector = @selector(setEventBusWithCucumberRunnerEventBus:);
+  methods[37].selector = @selector(setEventBusWithCCBEventBus:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "VERSION", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 50, -1, -1 },
     { "USAGE_RESOURCE", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 51, -1, -1 },
     { "usageText", "LNSString;", .constantValue.asLong = 0, 0x8, -1, 52, -1, -1 },
-    { "QUOTE_MAPPER", "LCucumberUtilMapper;", .constantValue.asLong = 0, 0x1a, -1, 53, 54, -1 },
-    { "CODE_KEYWORD_MAPPER", "LCucumberUtilMapper;", .constantValue.asLong = 0, 0x1a, -1, 55, 54, -1 },
+    { "QUOTE_MAPPER", "LCCBMapper;", .constantValue.asLong = 0, 0x1a, -1, 53, 54, -1 },
+    { "CODE_KEYWORD_MAPPER", "LCCBMapper;", .constantValue.asLong = 0, 0x1a, -1, 55, 54, -1 },
     { "glue_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 56, -1 },
     { "tagFilters_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 56, -1 },
     { "nameFilters_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 57, -1 },
@@ -558,9 +558,9 @@ NSString *CCBRRuntimeOptions_usageText;
     { "monochrome_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "snippetType_", "LCCBSnippetType;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "pluginNamesInstantiated_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "bus_", "LCucumberRunnerEventBus;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "bus_", "LCCBEventBus;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LNSString;", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)V", "LCCBREnv;LJavaUtilList;", "(Lcucumber/runtime/Env;Ljava/util/List<Ljava/lang/String;>;)V", "LCCBRPluginFactory;LJavaUtilList;", "(Lcucumber/runtime/formatter/PluginFactory;Ljava/util/List<Ljava/lang/String;>;)V", "LCCBREnv;LCCBRPluginFactory;LJavaUtilList;", "(Lcucumber/runtime/Env;Lcucumber/runtime/formatter/PluginFactory;Ljava/util/List<Ljava/lang/String;>;)V", "parse", "withConverters", "(Ljava/util/List<Lcucumber/deps/com/thoughtworks/xstream/annotations/XStreamConverter;>;)Lcucumber/runtime/RuntimeOptions;", "addLineFilters", "LJavaUtilMap;LNSString;LJavaUtilList;", "(Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;>;Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;)V", "haveLineFilters", "(Ljava/util/List<Ljava/lang/String;>;)Z", "printI18n", "printKeywordsFor", "LGherkinGherkinDialect;", "addCodeKeywordRow", "LJavaUtilList;LNSString;LJavaUtilList;", "(Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;Ljava/lang/String;Ljava/util/List<Ljava/lang/String;>;)V", "addKeywordRow", "cucumberFeatures", "LCCBRResourceLoader;LCucumberRunnerEventBus;", "(Lcucumber/runtime/io/ResourceLoader;Lcucumber/runner/EventBus;)Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;", "()Ljava/util/List<Lcucumber/api/Plugin;>;", "()Ljava/util/List<Lcucumber/deps/com/thoughtworks/xstream/annotations/XStreamConverter;>;", "formatter", "LJavaLangClassLoader;", "stepDefinitionReporter", "summaryPrinter", "pluginProxy", "LJavaLangClassLoader;LIOSClass;", "<T:Ljava/lang/Object;>(Ljava/lang/ClassLoader;Ljava/lang/Class<TT;>;)TT;", "setMonochromeOnColorAwarePlugins", "LNSObject;", "setStrictOnStrictAwarePlugins", "setEventBusFormatterPlugins", "()Ljava/util/List<Ljava/lang/String;>;", "addPlugin", "LCCBFormatter;", "()Ljava/util/List<Ljava/util/regex/Pattern;>;", "getLineFilters", "LCCBRResourceLoader;", "(Lcucumber/runtime/io/ResourceLoader;)Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;>;", "processRerunFiles", "setEventBus", "LCucumberRunnerEventBus;", &CCBRRuntimeOptions_VERSION, &CCBRRuntimeOptions_USAGE_RESOURCE, &CCBRRuntimeOptions_usageText, &CCBRRuntimeOptions_QUOTE_MAPPER, "Lcucumber/util/Mapper<Ljava/lang/String;Ljava/lang/String;>;", &CCBRRuntimeOptions_CODE_KEYWORD_MAPPER, "Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/List<Ljava/util/regex/Pattern;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;>;", "Ljava/util/List<Lcucumber/api/Plugin;>;", "Ljava/util/List<Lcucumber/deps/com/thoughtworks/xstream/annotations/XStreamConverter;>;", "LCCBRRuntimeOptions_ParsedPluginData;LCCBRRuntimeOptions_ParsedOptionNames;" };
+  static const void *ptrTable[] = { "LNSString;", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)V", "LCCBREnv;LJavaUtilList;", "(Lcucumber/runtime/Env;Ljava/util/List<Ljava/lang/String;>;)V", "LCCBRPluginFactory;LJavaUtilList;", "(Lcucumber/runtime/formatter/PluginFactory;Ljava/util/List<Ljava/lang/String;>;)V", "LCCBREnv;LCCBRPluginFactory;LJavaUtilList;", "(Lcucumber/runtime/Env;Lcucumber/runtime/formatter/PluginFactory;Ljava/util/List<Ljava/lang/String;>;)V", "parse", "withConverters", "(Ljava/util/List<Lcucumber/deps/com/thoughtworks/xstream/annotations/XStreamConverter;>;)Lcucumber/runtime/RuntimeOptions;", "addLineFilters", "LJavaUtilMap;LNSString;LJavaUtilList;", "(Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;>;Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;)V", "haveLineFilters", "(Ljava/util/List<Ljava/lang/String;>;)Z", "printI18n", "printKeywordsFor", "LGherkinGherkinDialect;", "addCodeKeywordRow", "LJavaUtilList;LNSString;LJavaUtilList;", "(Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;Ljava/lang/String;Ljava/util/List<Ljava/lang/String;>;)V", "addKeywordRow", "cucumberFeatures", "LCCBRResourceLoader;LCCBEventBus;", "(Lcucumber/runtime/io/ResourceLoader;Lcucumber/runner/EventBus;)Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;", "()Ljava/util/List<Lcucumber/api/Plugin;>;", "()Ljava/util/List<Lcucumber/deps/com/thoughtworks/xstream/annotations/XStreamConverter;>;", "formatter", "LJavaLangClassLoader;", "stepDefinitionReporter", "summaryPrinter", "pluginProxy", "LJavaLangClassLoader;LIOSClass;", "<T:Ljava/lang/Object;>(Ljava/lang/ClassLoader;Ljava/lang/Class<TT;>;)TT;", "setMonochromeOnColorAwarePlugins", "LNSObject;", "setStrictOnStrictAwarePlugins", "setEventBusFormatterPlugins", "()Ljava/util/List<Ljava/lang/String;>;", "addPlugin", "LCCBFormatter;", "()Ljava/util/List<Ljava/util/regex/Pattern;>;", "getLineFilters", "LCCBRResourceLoader;", "(Lcucumber/runtime/io/ResourceLoader;)Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;>;", "processRerunFiles", "setEventBus", "LCCBEventBus;", &CCBRRuntimeOptions_VERSION, &CCBRRuntimeOptions_USAGE_RESOURCE, &CCBRRuntimeOptions_usageText, &CCBRRuntimeOptions_QUOTE_MAPPER, "Lcucumber/util/Mapper<Ljava/lang/String;Ljava/lang/String;>;", &CCBRRuntimeOptions_CODE_KEYWORD_MAPPER, "Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/List<Ljava/util/regex/Pattern;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;>;", "Ljava/util/List<Lcucumber/api/Plugin;>;", "Ljava/util/List<Lcucumber/deps/com/thoughtworks/xstream/annotations/XStreamConverter;>;", "LCCBRRuntimeOptions_ParsedPluginData;LCCBRRuntimeOptions_ParsedOptionNames;" };
   static const J2ObjcClassInfo _CCBRRuntimeOptions = { "RuntimeOptions", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 38, 23, -1, 61, -1, -1, -1 };
   return &_CCBRRuntimeOptions;
 }
@@ -795,8 +795,8 @@ void CCBRRuntimeOptions_loadUsageTextIfNeeded() {
   CCBRRuntimeOptions_initialize();
   if (CCBRRuntimeOptions_usageText == nil) {
     @try {
-      JavaIoReader *reader = create_JavaIoInputStreamReader_initWithJavaIoInputStream_withNSString_([CucumberUtilFixJava_class_() getResourceAsStream:CCBRRuntimeOptions_USAGE_RESOURCE], @"UTF-8");
-      JreStrongAssign(&CCBRRuntimeOptions_usageText, CucumberUtilFixJava_readReaderWithJavaIoReader_(reader));
+      JavaIoReader *reader = create_JavaIoInputStreamReader_initWithJavaIoInputStream_withNSString_([CCBFixJava_class_() getResourceAsStream:CCBRRuntimeOptions_USAGE_RESOURCE], @"UTF-8");
+      JreStrongAssign(&CCBRRuntimeOptions_usageText, CCBFixJava_readReaderWithJavaIoReader_(reader));
     }
     @catch (JavaLangException *e) {
       JreStrongAssign(&CCBRRuntimeOptions_usageText, JreStrcat("$$", @"Could not load usage text: ", [e description]));
@@ -847,11 +847,11 @@ jint CCBRRuntimeOptions_printKeywordsForWithGherkinGherkinDialect_(CCBRRuntimeOp
 void CCBRRuntimeOptions_addCodeKeywordRowWithJavaUtilList_withNSString_withJavaUtilList_(CCBRRuntimeOptions *self, id<JavaUtilList> table, NSString *key, id<JavaUtilList> keywords) {
   id<JavaUtilList> codeKeywordList = create_JavaUtilArrayList_initWithJavaUtilCollection_(keywords);
   [codeKeywordList removeWithId:@"* "];
-  CCBRRuntimeOptions_addKeywordRowWithJavaUtilList_withNSString_withJavaUtilList_(self, table, JreStrcat("$$", key, @" (code)"), CucumberUtilFixJava_mapWithJavaUtilList_withCucumberUtilMapper_(codeKeywordList, CCBRRuntimeOptions_CODE_KEYWORD_MAPPER));
+  CCBRRuntimeOptions_addKeywordRowWithJavaUtilList_withNSString_withJavaUtilList_(self, table, JreStrcat("$$", key, @" (code)"), CCBFixJava_mapWithJavaUtilList_withCCBMapper_(codeKeywordList, CCBRRuntimeOptions_CODE_KEYWORD_MAPPER));
 }
 
 void CCBRRuntimeOptions_addKeywordRowWithJavaUtilList_withNSString_withJavaUtilList_(CCBRRuntimeOptions *self, id<JavaUtilList> table, NSString *key, id<JavaUtilList> keywords) {
-  id<JavaUtilList> cells = JavaUtilArrays_asListWithNSObjectArray_([IOSObjectArray arrayWithObjects:(id[]){ key, CucumberUtilFixJava_joinWithJavaUtilList_withNSString_(CucumberUtilFixJava_mapWithJavaUtilList_withCucumberUtilMapper_(keywords, CCBRRuntimeOptions_QUOTE_MAPPER), @", ") } count:2 type:NSString_class_()]);
+  id<JavaUtilList> cells = JavaUtilArrays_asListWithNSObjectArray_([IOSObjectArray arrayWithObjects:(id[]){ key, CCBFixJava_joinWithJavaUtilList_withNSString_(CCBFixJava_mapWithJavaUtilList_withCCBMapper_(keywords, CCBRRuntimeOptions_QUOTE_MAPPER), @", ") } count:2 type:NSString_class_()]);
   [((id<JavaUtilList>) nil_chk(table)) addWithId:cells];
 }
 

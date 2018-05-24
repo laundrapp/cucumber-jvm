@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBAtunci_) && (INCLUDE_ALL_CucumberApiJavaRoAtunci || defined(INCLUDE_CCBAtunci))
-#define CCBAtunci_
+#if !defined (CucumberApiJavaRoAtunci_) && (INCLUDE_ALL_CucumberApiJavaRoAtunci || defined(INCLUDE_CucumberApiJavaRoAtunci))
+#define CucumberApiJavaRoAtunci_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBAtunci < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaRoAtunci < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBAtunci : NSObject < CCBAtunci > {
+@interface CucumberApiJavaRoAtunci : NSObject < CucumberApiJavaRoAtunci > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBAtunci)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaRoAtunci)
 
-FOUNDATION_EXPORT id<CCBAtunci> create_CCBAtunci(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaRoAtunci> create_CucumberApiJavaRoAtunci(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBAtunci)
-
-#define CucumberApiJavaRoAtunci CCBAtunci
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaRoAtunci)
 
 #endif
 

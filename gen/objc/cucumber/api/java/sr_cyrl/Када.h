@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBКада_) && (INCLUDE_ALL_CucumberApiJavaSr_cyrlКада || defined(INCLUDE_CCBКада))
-#define CCBКада_
+#if !defined (CucumberApiJavaSr_cyrlКада_) && (INCLUDE_ALL_CucumberApiJavaSr_cyrlКада || defined(INCLUDE_CucumberApiJavaSr_cyrlКада))
+#define CucumberApiJavaSr_cyrlКада_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBКада < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaSr_cyrlКада < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBКада : NSObject < CCBКада > {
+@interface CucumberApiJavaSr_cyrlКада : NSObject < CucumberApiJavaSr_cyrlКада > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBКада)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaSr_cyrlКада)
 
-FOUNDATION_EXPORT id<CCBКада> create_CCBКада(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaSr_cyrlКада> create_CucumberApiJavaSr_cyrlКада(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBКада)
-
-#define CucumberApiJavaSr_cyrlКада CCBКада
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaSr_cyrlКада)
 
 #endif
 

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBAfter_) && (INCLUDE_ALL_CucumberApiJavaAfter || defined(INCLUDE_CCBAfter))
-#define CCBAfter_
+#if !defined (CucumberApiJavaAfter_) && (INCLUDE_ALL_CucumberApiJavaAfter || defined(INCLUDE_CucumberApiJavaAfter))
+#define CucumberApiJavaAfter_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -28,7 +28,7 @@
 @class IOSClass;
 @class IOSObjectArray;
 
-@protocol CCBAfter < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaAfter < JavaLangAnnotationAnnotation >
 
 @property (readonly) IOSObjectArray *value;
 @property (readonly) jlong timeout;
@@ -40,7 +40,7 @@
 
 @end
 
-@interface CCBAfter : NSObject < CCBAfter > {
+@interface CucumberApiJavaAfter : NSObject < CucumberApiJavaAfter > {
  @public
   IOSObjectArray *value_;
   jlong timeout_;
@@ -49,13 +49,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBAfter)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaAfter)
 
-FOUNDATION_EXPORT id<CCBAfter> create_CCBAfter(jint order, jlong timeout, IOSObjectArray *value);
+FOUNDATION_EXPORT id<CucumberApiJavaAfter> create_CucumberApiJavaAfter(jint order, jlong timeout, IOSObjectArray *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBAfter)
-
-#define CucumberApiJavaAfter CCBAfter
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaAfter)
 
 #endif
 

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBGdy_) && (INCLUDE_ALL_CucumberApiJavaPlGdy || defined(INCLUDE_CCBGdy))
-#define CCBGdy_
+#if !defined (CucumberApiJavaPlGdy_) && (INCLUDE_ALL_CucumberApiJavaPlGdy || defined(INCLUDE_CucumberApiJavaPlGdy))
+#define CucumberApiJavaPlGdy_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBGdy < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaPlGdy < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBGdy : NSObject < CCBGdy > {
+@interface CucumberApiJavaPlGdy : NSObject < CucumberApiJavaPlGdy > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBGdy)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaPlGdy)
 
-FOUNDATION_EXPORT id<CCBGdy> create_CCBGdy(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaPlGdy> create_CucumberApiJavaPlGdy(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBGdy)
-
-#define CucumberApiJavaPlGdy CCBGdy
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaPlGdy)
 
 #endif
 

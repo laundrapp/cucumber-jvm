@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCB當_) && (INCLUDE_ALL_CucumberApiJavaZh_tw當 || defined(INCLUDE_CCB當))
-#define CCB當_
+#if !defined (CucumberApiJavaZh_tw當_) && (INCLUDE_ALL_CucumberApiJavaZh_tw當 || defined(INCLUDE_CucumberApiJavaZh_tw當))
+#define CucumberApiJavaZh_tw當_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCB當 < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaZh_tw當 < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCB當 : NSObject < CCB當 > {
+@interface CucumberApiJavaZh_tw當 : NSObject < CucumberApiJavaZh_tw當 > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCB當)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaZh_tw當)
 
-FOUNDATION_EXPORT id<CCB當> create_CCB當(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaZh_tw當> create_CucumberApiJavaZh_tw當(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCB當)
-
-#define CucumberApiJavaZh_tw當 CCB當
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaZh_tw當)
 
 #endif
 

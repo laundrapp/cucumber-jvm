@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBEntós_) && (INCLUDE_ALL_CucumberApiJavaAstEntós || defined(INCLUDE_CCBEntós))
-#define CCBEntós_
+#if !defined (CucumberApiJavaAstEntós_) && (INCLUDE_ALL_CucumberApiJavaAstEntós || defined(INCLUDE_CucumberApiJavaAstEntós))
+#define CucumberApiJavaAstEntós_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBEntós < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaAstEntós < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBEntós : NSObject < CCBEntós > {
+@interface CucumberApiJavaAstEntós : NSObject < CucumberApiJavaAstEntós > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBEntós)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaAstEntós)
 
-FOUNDATION_EXPORT id<CCBEntós> create_CCBEntós(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaAstEntós> create_CucumberApiJavaAstEntós(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBEntós)
-
-#define CucumberApiJavaAstEntós CCBEntós
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaAstEntós)
 
 #endif
 

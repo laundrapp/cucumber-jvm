@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBNanging_) && (INCLUDE_ALL_CucumberApiJavaJvNanging || defined(INCLUDE_CCBNanging))
-#define CCBNanging_
+#if !defined (CucumberApiJavaJvNanging_) && (INCLUDE_ALL_CucumberApiJavaJvNanging || defined(INCLUDE_CucumberApiJavaJvNanging))
+#define CucumberApiJavaJvNanging_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBNanging < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaJvNanging < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBNanging : NSObject < CCBNanging > {
+@interface CucumberApiJavaJvNanging : NSObject < CucumberApiJavaJvNanging > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBNanging)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaJvNanging)
 
-FOUNDATION_EXPORT id<CCBNanging> create_CCBNanging(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaJvNanging> create_CucumberApiJavaJvNanging(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBNanging)
-
-#define CucumberApiJavaJvNanging CCBNanging
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaJvNanging)
 
 #endif
 

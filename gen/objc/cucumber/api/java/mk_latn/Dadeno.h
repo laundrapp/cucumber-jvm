@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBDadeno_) && (INCLUDE_ALL_CucumberApiJavaMk_latnDadeno || defined(INCLUDE_CCBDadeno))
-#define CCBDadeno_
+#if !defined (CucumberApiJavaMk_latnDadeno_) && (INCLUDE_ALL_CucumberApiJavaMk_latnDadeno || defined(INCLUDE_CucumberApiJavaMk_latnDadeno))
+#define CucumberApiJavaMk_latnDadeno_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBDadeno < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaMk_latnDadeno < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBDadeno : NSObject < CCBDadeno > {
+@interface CucumberApiJavaMk_latnDadeno : NSObject < CucumberApiJavaMk_latnDadeno > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBDadeno)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaMk_latnDadeno)
 
-FOUNDATION_EXPORT id<CCBDadeno> create_CCBDadeno(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaMk_latnDadeno> create_CucumberApiJavaMk_latnDadeno(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBDadeno)
-
-#define CucumberApiJavaMk_latnDadeno CCBDadeno
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaMk_latnDadeno)
 
 #endif
 

@@ -18,18 +18,20 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberUtilMapper_) && (INCLUDE_ALL_CucumberUtilMapper || defined(INCLUDE_CucumberUtilMapper))
-#define CucumberUtilMapper_
+#if !defined (CCBMapper_) && (INCLUDE_ALL_CucumberUtilMapper || defined(INCLUDE_CCBMapper))
+#define CCBMapper_
 
-@protocol CucumberUtilMapper < JavaObject >
+@protocol CCBMapper < JavaObject >
 
 - (id)mapWithId:(id)o;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberUtilMapper)
+J2OBJC_EMPTY_STATIC_INIT(CCBMapper)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberUtilMapper)
+J2OBJC_TYPE_LITERAL_HEADER(CCBMapper)
+
+#define CucumberUtilMapper CCBMapper
 
 #endif
 

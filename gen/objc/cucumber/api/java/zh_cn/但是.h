@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCB但是_) && (INCLUDE_ALL_CucumberApiJavaZh_cn但是 || defined(INCLUDE_CCB但是))
-#define CCB但是_
+#if !defined (CucumberApiJavaZh_cn但是_) && (INCLUDE_ALL_CucumberApiJavaZh_cn但是 || defined(INCLUDE_CucumberApiJavaZh_cn但是))
+#define CucumberApiJavaZh_cn但是_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCB但是 < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaZh_cn但是 < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCB但是 : NSObject < CCB但是 > {
+@interface CucumberApiJavaZh_cn但是 : NSObject < CucumberApiJavaZh_cn但是 > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCB但是)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaZh_cn但是)
 
-FOUNDATION_EXPORT id<CCB但是> create_CCB但是(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaZh_cn但是> create_CucumberApiJavaZh_cn但是(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCB但是)
-
-#define CucumberApiJavaZh_cn但是 CCB但是
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaZh_cn但是)
 
 #endif
 

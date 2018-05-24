@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBOzaman_) && (INCLUDE_ALL_CucumberApiJavaTrOzaman || defined(INCLUDE_CCBOzaman))
-#define CCBOzaman_
+#if !defined (CucumberApiJavaTrOzaman_) && (INCLUDE_ALL_CucumberApiJavaTrOzaman || defined(INCLUDE_CucumberApiJavaTrOzaman))
+#define CucumberApiJavaTrOzaman_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBOzaman < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaTrOzaman < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBOzaman : NSObject < CCBOzaman > {
+@interface CucumberApiJavaTrOzaman : NSObject < CucumberApiJavaTrOzaman > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBOzaman)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaTrOzaman)
 
-FOUNDATION_EXPORT id<CCBOzaman> create_CCBOzaman(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaTrOzaman> create_CucumberApiJavaTrOzaman(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBOzaman)
-
-#define CucumberApiJavaTrOzaman CCBOzaman
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaTrOzaman)
 
 #endif
 

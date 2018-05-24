@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBWEN_) && (INCLUDE_ALL_CucumberApiJavaEn_lolWEN || defined(INCLUDE_CCBWEN))
-#define CCBWEN_
+#if !defined (CucumberApiJavaEn_lolWEN_) && (INCLUDE_ALL_CucumberApiJavaEn_lolWEN || defined(INCLUDE_CucumberApiJavaEn_lolWEN))
+#define CucumberApiJavaEn_lolWEN_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBWEN < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaEn_lolWEN < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBWEN : NSObject < CCBWEN > {
+@interface CucumberApiJavaEn_lolWEN : NSObject < CucumberApiJavaEn_lolWEN > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBWEN)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEn_lolWEN)
 
-FOUNDATION_EXPORT id<CCBWEN> create_CCBWEN(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaEn_lolWEN> create_CucumberApiJavaEn_lolWEN(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBWEN)
-
-#define CucumberApiJavaEn_lolWEN CCBWEN
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEn_lolWEN)
 
 #endif
 

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRunnerUnskipableStep_) && (INCLUDE_ALL_CucumberRunnerUnskipableStep || defined(INCLUDE_CucumberRunnerUnskipableStep))
-#define CucumberRunnerUnskipableStep_
+#if !defined (CCBUnskipableStep_) && (INCLUDE_ALL_CucumberRunnerUnskipableStep || defined(INCLUDE_CCBUnskipableStep))
+#define CCBUnskipableStep_
 
 #define RESTRICT_CucumberApiTestStep 1
 #define INCLUDE_CCBTestStep 1
@@ -32,7 +32,7 @@
 @protocol CCBScenario;
 @protocol JavaUtilList;
 
-@interface CucumberRunnerUnskipableStep : CCBTestStep
+@interface CCBUnskipableStep : CCBTestStep
 
 #pragma mark Public
 
@@ -65,15 +65,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRunnerUnskipableStep)
+J2OBJC_EMPTY_STATIC_INIT(CCBUnskipableStep)
 
-FOUNDATION_EXPORT void CucumberRunnerUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CucumberRunnerUnskipableStep *self, CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch);
+FOUNDATION_EXPORT void CCBUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CCBUnskipableStep *self, CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch);
 
-FOUNDATION_EXPORT CucumberRunnerUnskipableStep *new_CucumberRunnerUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBUnskipableStep *new_CCBUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRunnerUnskipableStep *create_CucumberRunnerUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch);
+FOUNDATION_EXPORT CCBUnskipableStep *create_CCBUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(CCBHookType *hookType, id<CCBRDefinitionMatch> definitionMatch);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRunnerUnskipableStep)
+J2OBJC_TYPE_LITERAL_HEADER(CCBUnskipableStep)
+
+@compatibility_alias CucumberRunnerUnskipableStep CCBUnskipableStep;
 
 #endif
 

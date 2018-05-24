@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBPrivzeto_) && (INCLUDE_ALL_CucumberApiJavaSlPrivzeto || defined(INCLUDE_CCBPrivzeto))
-#define CCBPrivzeto_
+#if !defined (CucumberApiJavaSlPrivzeto_) && (INCLUDE_ALL_CucumberApiJavaSlPrivzeto || defined(INCLUDE_CucumberApiJavaSlPrivzeto))
+#define CucumberApiJavaSlPrivzeto_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBPrivzeto < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaSlPrivzeto < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBPrivzeto : NSObject < CCBPrivzeto > {
+@interface CucumberApiJavaSlPrivzeto : NSObject < CucumberApiJavaSlPrivzeto > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBPrivzeto)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaSlPrivzeto)
 
-FOUNDATION_EXPORT id<CCBPrivzeto> create_CCBPrivzeto(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaSlPrivzeto> create_CucumberApiJavaSlPrivzeto(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBPrivzeto)
-
-#define CucumberApiJavaSlPrivzeto CCBPrivzeto
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaSlPrivzeto)
 
 #endif
 

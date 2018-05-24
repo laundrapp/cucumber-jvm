@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRunnerEventBus_) && (INCLUDE_ALL_CucumberRunnerEventBus || defined(INCLUDE_CucumberRunnerEventBus))
-#define CucumberRunnerEventBus_
+#if !defined (CCBEventBus_) && (INCLUDE_ALL_CucumberRunnerEventBus || defined(INCLUDE_CCBEventBus))
+#define CCBEventBus_
 
 #define RESTRICT_CucumberApiEventEventPublisher 1
 #define INCLUDE_CCBEventPublisher 1
@@ -29,13 +29,13 @@
 @class JavaLangLong;
 @protocol CCBEvent;
 @protocol CCBEventHandler;
-@protocol CucumberRunnerTimeService;
+@protocol CCBTimeService;
 
-@interface CucumberRunnerEventBus : NSObject < CCBEventPublisher >
+@interface CCBEventBus : NSObject < CCBEventPublisher >
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCucumberRunnerTimeService:(id<CucumberRunnerTimeService>)stopWatch;
+- (instancetype __nonnull)initWithCCBTimeService:(id<CCBTimeService>)stopWatch;
 
 - (JavaLangLong *)getTime;
 
@@ -50,15 +50,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRunnerEventBus)
+J2OBJC_EMPTY_STATIC_INIT(CCBEventBus)
 
-FOUNDATION_EXPORT void CucumberRunnerEventBus_initWithCucumberRunnerTimeService_(CucumberRunnerEventBus *self, id<CucumberRunnerTimeService> stopWatch);
+FOUNDATION_EXPORT void CCBEventBus_initWithCCBTimeService_(CCBEventBus *self, id<CCBTimeService> stopWatch);
 
-FOUNDATION_EXPORT CucumberRunnerEventBus *new_CucumberRunnerEventBus_initWithCucumberRunnerTimeService_(id<CucumberRunnerTimeService> stopWatch) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBEventBus *new_CCBEventBus_initWithCCBTimeService_(id<CCBTimeService> stopWatch) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRunnerEventBus *create_CucumberRunnerEventBus_initWithCucumberRunnerTimeService_(id<CucumberRunnerTimeService> stopWatch);
+FOUNDATION_EXPORT CCBEventBus *create_CCBEventBus_initWithCCBTimeService_(id<CCBTimeService> stopWatch);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRunnerEventBus)
+J2OBJC_TYPE_LITERAL_HEADER(CCBEventBus)
+
+@compatibility_alias CucumberRunnerEventBus CCBEventBus;
 
 #endif
 

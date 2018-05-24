@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBAmikor_) && (INCLUDE_ALL_CucumberApiJavaHuAmikor || defined(INCLUDE_CCBAmikor))
-#define CCBAmikor_
+#if !defined (CucumberApiJavaHuAmikor_) && (INCLUDE_ALL_CucumberApiJavaHuAmikor || defined(INCLUDE_CucumberApiJavaHuAmikor))
+#define CucumberApiJavaHuAmikor_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBAmikor < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaHuAmikor < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBAmikor : NSObject < CCBAmikor > {
+@interface CucumberApiJavaHuAmikor : NSObject < CucumberApiJavaHuAmikor > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBAmikor)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaHuAmikor)
 
-FOUNDATION_EXPORT id<CCBAmikor> create_CCBAmikor(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaHuAmikor> create_CucumberApiJavaHuAmikor(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBAmikor)
-
-#define CucumberApiJavaHuAmikor CCBAmikor
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaHuAmikor)
 
 #endif
 

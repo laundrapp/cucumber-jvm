@@ -42,10 +42,10 @@
 #include "java/util/Collections.h"
 #include "java/util/List.h"
 
-@interface CucumberRunnerRunner () {
+@interface CCBRunner () {
  @public
   id<CCBRGlue> glue_;
-  CucumberRunnerEventBus *bus_;
+  CCBEventBus *bus_;
   id<JavaUtilCollection> backends_;
   CCBRRuntimeOptions *runtimeOptions_;
 }
@@ -72,32 +72,32 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRunnerRunner, glue_, id<CCBRGlue>)
-J2OBJC_FIELD_SETTER(CucumberRunnerRunner, bus_, CucumberRunnerEventBus *)
-J2OBJC_FIELD_SETTER(CucumberRunnerRunner, backends_, id<JavaUtilCollection>)
-J2OBJC_FIELD_SETTER(CucumberRunnerRunner, runtimeOptions_, CCBRRuntimeOptions *)
+J2OBJC_FIELD_SETTER(CCBRunner, glue_, id<CCBRGlue>)
+J2OBJC_FIELD_SETTER(CCBRunner, bus_, CCBEventBus *)
+J2OBJC_FIELD_SETTER(CCBRunner, backends_, id<JavaUtilCollection>)
+J2OBJC_FIELD_SETTER(CCBRunner, runtimeOptions_, CCBRRuntimeOptions *)
 
-__attribute__((unused)) static CCBTestCase *CucumberRunnerRunner_createTestCaseForPickleWithGherkinEventsPickleEvent_(CucumberRunnerRunner *self, GherkinEventsPickleEvent *pickleEvent);
+__attribute__((unused)) static CCBTestCase *CCBRunner_createTestCaseForPickleWithGherkinEventsPickleEvent_(CCBRunner *self, GherkinEventsPickleEvent *pickleEvent);
 
-__attribute__((unused)) static void CucumberRunnerRunner_addTestStepsForPickleStepsWithJavaUtilList_withGherkinEventsPickleEvent_(CucumberRunnerRunner *self, id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent);
+__attribute__((unused)) static void CCBRunner_addTestStepsForPickleStepsWithJavaUtilList_withGherkinEventsPickleEvent_(CCBRunner *self, id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent);
 
-__attribute__((unused)) static void CucumberRunnerRunner_addTestStepsForBeforeHooksWithJavaUtilList_withJavaUtilList_(CucumberRunnerRunner *self, id<JavaUtilList> testSteps, id<JavaUtilList> tags);
+__attribute__((unused)) static void CCBRunner_addTestStepsForBeforeHooksWithJavaUtilList_withJavaUtilList_(CCBRunner *self, id<JavaUtilList> testSteps, id<JavaUtilList> tags);
 
-__attribute__((unused)) static void CucumberRunnerRunner_addTestStepsForAfterHooksWithJavaUtilList_withJavaUtilList_(CucumberRunnerRunner *self, id<JavaUtilList> testSteps, id<JavaUtilList> tags);
+__attribute__((unused)) static void CCBRunner_addTestStepsForAfterHooksWithJavaUtilList_withJavaUtilList_(CCBRunner *self, id<JavaUtilList> testSteps, id<JavaUtilList> tags);
 
-__attribute__((unused)) static void CucumberRunnerRunner_addTestStepsForHooksWithJavaUtilList_withJavaUtilList_withJavaUtilList_withCCBHookType_(CucumberRunnerRunner *self, id<JavaUtilList> testSteps, id<JavaUtilList> tags, id<JavaUtilList> hooks, CCBHookType *hookType);
+__attribute__((unused)) static void CCBRunner_addTestStepsForHooksWithJavaUtilList_withJavaUtilList_withJavaUtilList_withCCBHookType_(CCBRunner *self, id<JavaUtilList> testSteps, id<JavaUtilList> tags, id<JavaUtilList> hooks, CCBHookType *hookType);
 
-__attribute__((unused)) static void CucumberRunnerRunner_buildBackendWorlds(CucumberRunnerRunner *self);
+__attribute__((unused)) static void CCBRunner_buildBackendWorlds(CCBRunner *self);
 
-__attribute__((unused)) static void CucumberRunnerRunner_disposeBackendWorlds(CucumberRunnerRunner *self);
+__attribute__((unused)) static void CCBRunner_disposeBackendWorlds(CCBRunner *self);
 
-@implementation CucumberRunnerRunner
+@implementation CCBRunner
 
 - (instancetype __nonnull)initWithCCBRGlue:(id<CCBRGlue>)glue
-                withCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus
+                           withCCBEventBus:(CCBEventBus *)bus
                     withJavaUtilCollection:(id<JavaUtilCollection>)backends
                     withCCBRRuntimeOptions:(CCBRRuntimeOptions *)runtimeOptions {
-  CucumberRunnerRunner_initWithCCBRGlue_withCucumberRunnerEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_(self, glue, bus, backends, runtimeOptions);
+  CCBRunner_initWithCCBRGlue_withCCBEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_(self, glue, bus, backends, runtimeOptions);
   return self;
 }
 
@@ -117,7 +117,7 @@ __attribute__((unused)) static void CucumberRunnerRunner_disposeBackendWorlds(Cu
   GherkinPicklesPickleStep *step = create_GherkinPicklesPickleStep_initWithNSString_withJavaUtilList_withJavaUtilList_(stepName, arguments, JavaUtilCollections_emptyList());
   CCBRStepDefinitionMatch *match = [((id<CCBRGlue>) nil_chk(glue_)) stepDefinitionMatchWithNSString:featurePath withGherkinPicklesPickleStep:step];
   if (match == nil) {
-    CucumberRunnerUndefinedStepException *error = create_CucumberRunnerUndefinedStepException_initWithGherkinPicklesPickleStep_(step);
+    CCBUndefinedStepException *error = create_CCBUndefinedStepException_initWithGherkinPicklesPickleStep_(step);
     IOSObjectArray *originalTrace = [error getStackTrace];
     IOSObjectArray *newTrace = [IOSObjectArray arrayWithLength:((IOSObjectArray *) nil_chk(originalTrace))->size_ + 1 type:JavaLangStackTraceElement_class_()];
     IOSObjectArray_SetAndConsume(newTrace, 0, new_JavaLangStackTraceElement_initWithNSString_withNSString_withNSString_withInt_(@"\u273d", @"StepDefinition", featurePath, line));
@@ -129,10 +129,10 @@ __attribute__((unused)) static void CucumberRunnerRunner_disposeBackendWorlds(Cu
 }
 
 - (void)runPickleWithGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickle {
-  CucumberRunnerRunner_buildBackendWorlds(self);
-  CCBTestCase *testCase = CucumberRunnerRunner_createTestCaseForPickleWithGherkinEventsPickleEvent_(self, pickle);
-  [((CCBTestCase *) nil_chk(testCase)) runWithCucumberRunnerEventBus:bus_];
-  CucumberRunnerRunner_disposeBackendWorlds(self);
+  CCBRunner_buildBackendWorlds(self);
+  CCBTestCase *testCase = CCBRunner_createTestCaseForPickleWithGherkinEventsPickleEvent_(self, pickle);
+  [((CCBTestCase *) nil_chk(testCase)) runWithCCBEventBus:bus_];
+  CCBRunner_disposeBackendWorlds(self);
 }
 
 - (id<CCBRGlue>)getGlue {
@@ -144,37 +144,37 @@ __attribute__((unused)) static void CucumberRunnerRunner_disposeBackendWorlds(Cu
 }
 
 - (CCBTestCase *)createTestCaseForPickleWithGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent {
-  return CucumberRunnerRunner_createTestCaseForPickleWithGherkinEventsPickleEvent_(self, pickleEvent);
+  return CCBRunner_createTestCaseForPickleWithGherkinEventsPickleEvent_(self, pickleEvent);
 }
 
 - (void)addTestStepsForPickleStepsWithJavaUtilList:(id<JavaUtilList>)testSteps
                       withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent {
-  CucumberRunnerRunner_addTestStepsForPickleStepsWithJavaUtilList_withGherkinEventsPickleEvent_(self, testSteps, pickleEvent);
+  CCBRunner_addTestStepsForPickleStepsWithJavaUtilList_withGherkinEventsPickleEvent_(self, testSteps, pickleEvent);
 }
 
 - (void)addTestStepsForBeforeHooksWithJavaUtilList:(id<JavaUtilList>)testSteps
                                   withJavaUtilList:(id<JavaUtilList>)tags {
-  CucumberRunnerRunner_addTestStepsForBeforeHooksWithJavaUtilList_withJavaUtilList_(self, testSteps, tags);
+  CCBRunner_addTestStepsForBeforeHooksWithJavaUtilList_withJavaUtilList_(self, testSteps, tags);
 }
 
 - (void)addTestStepsForAfterHooksWithJavaUtilList:(id<JavaUtilList>)testSteps
                                  withJavaUtilList:(id<JavaUtilList>)tags {
-  CucumberRunnerRunner_addTestStepsForAfterHooksWithJavaUtilList_withJavaUtilList_(self, testSteps, tags);
+  CCBRunner_addTestStepsForAfterHooksWithJavaUtilList_withJavaUtilList_(self, testSteps, tags);
 }
 
 - (void)addTestStepsForHooksWithJavaUtilList:(id<JavaUtilList>)testSteps
                             withJavaUtilList:(id<JavaUtilList>)tags
                             withJavaUtilList:(id<JavaUtilList>)hooks
                              withCCBHookType:(CCBHookType *)hookType {
-  CucumberRunnerRunner_addTestStepsForHooksWithJavaUtilList_withJavaUtilList_withJavaUtilList_withCCBHookType_(self, testSteps, tags, hooks, hookType);
+  CCBRunner_addTestStepsForHooksWithJavaUtilList_withJavaUtilList_withJavaUtilList_withCCBHookType_(self, testSteps, tags, hooks, hookType);
 }
 
 - (void)buildBackendWorlds {
-  CucumberRunnerRunner_buildBackendWorlds(self);
+  CCBRunner_buildBackendWorlds(self);
 }
 
 - (void)disposeBackendWorlds {
-  CucumberRunnerRunner_disposeBackendWorlds(self);
+  CCBRunner_disposeBackendWorlds(self);
 }
 
 - (void)dealloc {
@@ -203,7 +203,7 @@ __attribute__((unused)) static void CucumberRunnerRunner_disposeBackendWorlds(Cu
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCCBRGlue:withCucumberRunnerEventBus:withJavaUtilCollection:withCCBRRuntimeOptions:);
+  methods[0].selector = @selector(initWithCCBRGlue:withCCBEventBus:withJavaUtilCollection:withCCBRRuntimeOptions:);
   methods[1].selector = @selector(runUnreportedStepWithNSString:withNSString:withNSString:withInt:withJavaUtilList:withGherkinPicklesPickleString:);
   methods[2].selector = @selector(runPickleWithGherkinEventsPickleEvent:);
   methods[3].selector = @selector(getGlue);
@@ -218,18 +218,18 @@ __attribute__((unused)) static void CucumberRunnerRunner_disposeBackendWorlds(Cu
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "glue_", "LCCBRGlue;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "bus_", "LCucumberRunnerEventBus;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "bus_", "LCCBEventBus;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "backends_", "LJavaUtilCollection;", .constantValue.asLong = 0, 0x12, -1, -1, 21, -1 },
     { "runtimeOptions_", "LCCBRRuntimeOptions;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCCBRGlue;LCucumberRunnerEventBus;LJavaUtilCollection;LCCBRRuntimeOptions;", "(Lcucumber/runtime/Glue;Lcucumber/runner/EventBus;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;)V", "runUnreportedStep", "LNSString;LNSString;LNSString;ILJavaUtilList;LGherkinPicklesPickleString;", "LJavaLangThrowable;", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/util/List<Lgherkin/pickles/PickleRow;>;Lgherkin/pickles/PickleString;)V", "runPickle", "LGherkinEventsPickleEvent;", "reportStepDefinitions", "LCCBStepDefinitionReporter;", "createTestCaseForPickle", "addTestStepsForPickleSteps", "LJavaUtilList;LGherkinEventsPickleEvent;", "(Ljava/util/List<Lcucumber/api/TestStep;>;Lgherkin/events/PickleEvent;)V", "addTestStepsForBeforeHooks", "LJavaUtilList;LJavaUtilList;", "(Ljava/util/List<Lcucumber/api/TestStep;>;Ljava/util/List<Lgherkin/pickles/PickleTag;>;)V", "addTestStepsForAfterHooks", "addTestStepsForHooks", "LJavaUtilList;LJavaUtilList;LJavaUtilList;LCCBHookType;", "(Ljava/util/List<Lcucumber/api/TestStep;>;Ljava/util/List<Lgherkin/pickles/PickleTag;>;Ljava/util/List<Lcucumber/runtime/HookDefinition;>;Lcucumber/api/HookType;)V", "Ljava/util/Collection<+Lcucumber/runtime/Backend;>;" };
-  static const J2ObjcClassInfo _CucumberRunnerRunner = { "Runner", "cucumber.runner", ptrTable, methods, fields, 7, 0x1, 12, 4, -1, -1, -1, -1, -1 };
-  return &_CucumberRunnerRunner;
+  static const void *ptrTable[] = { "LCCBRGlue;LCCBEventBus;LJavaUtilCollection;LCCBRRuntimeOptions;", "(Lcucumber/runtime/Glue;Lcucumber/runner/EventBus;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;)V", "runUnreportedStep", "LNSString;LNSString;LNSString;ILJavaUtilList;LGherkinPicklesPickleString;", "LJavaLangThrowable;", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/util/List<Lgherkin/pickles/PickleRow;>;Lgherkin/pickles/PickleString;)V", "runPickle", "LGherkinEventsPickleEvent;", "reportStepDefinitions", "LCCBStepDefinitionReporter;", "createTestCaseForPickle", "addTestStepsForPickleSteps", "LJavaUtilList;LGherkinEventsPickleEvent;", "(Ljava/util/List<Lcucumber/api/TestStep;>;Lgherkin/events/PickleEvent;)V", "addTestStepsForBeforeHooks", "LJavaUtilList;LJavaUtilList;", "(Ljava/util/List<Lcucumber/api/TestStep;>;Ljava/util/List<Lgherkin/pickles/PickleTag;>;)V", "addTestStepsForAfterHooks", "addTestStepsForHooks", "LJavaUtilList;LJavaUtilList;LJavaUtilList;LCCBHookType;", "(Ljava/util/List<Lcucumber/api/TestStep;>;Ljava/util/List<Lgherkin/pickles/PickleTag;>;Ljava/util/List<Lcucumber/runtime/HookDefinition;>;Lcucumber/api/HookType;)V", "Ljava/util/Collection<+Lcucumber/runtime/Backend;>;" };
+  static const J2ObjcClassInfo _CCBRunner = { "Runner", "cucumber.runner", ptrTable, methods, fields, 7, 0x1, 12, 4, -1, -1, -1, -1, -1 };
+  return &_CCBRunner;
 }
 
 @end
 
-void CucumberRunnerRunner_initWithCCBRGlue_withCucumberRunnerEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_(CucumberRunnerRunner *self, id<CCBRGlue> glue, CucumberRunnerEventBus *bus, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions) {
+void CCBRunner_initWithCCBRGlue_withCCBEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_(CCBRunner *self, id<CCBRGlue> glue, CCBEventBus *bus, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions) {
   NSObject_init(self);
   JreStrongAssign(&self->glue_, glue);
   JreStrongAssign(&self->bus_, bus);
@@ -241,29 +241,29 @@ void CucumberRunnerRunner_initWithCCBRGlue_withCucumberRunnerEventBus_withJavaUt
   }
 }
 
-CucumberRunnerRunner *new_CucumberRunnerRunner_initWithCCBRGlue_withCucumberRunnerEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_(id<CCBRGlue> glue, CucumberRunnerEventBus *bus, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions) {
-  J2OBJC_NEW_IMPL(CucumberRunnerRunner, initWithCCBRGlue_withCucumberRunnerEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_, glue, bus, backends, runtimeOptions)
+CCBRunner *new_CCBRunner_initWithCCBRGlue_withCCBEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_(id<CCBRGlue> glue, CCBEventBus *bus, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions) {
+  J2OBJC_NEW_IMPL(CCBRunner, initWithCCBRGlue_withCCBEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_, glue, bus, backends, runtimeOptions)
 }
 
-CucumberRunnerRunner *create_CucumberRunnerRunner_initWithCCBRGlue_withCucumberRunnerEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_(id<CCBRGlue> glue, CucumberRunnerEventBus *bus, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions) {
-  J2OBJC_CREATE_IMPL(CucumberRunnerRunner, initWithCCBRGlue_withCucumberRunnerEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_, glue, bus, backends, runtimeOptions)
+CCBRunner *create_CCBRunner_initWithCCBRGlue_withCCBEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_(id<CCBRGlue> glue, CCBEventBus *bus, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions) {
+  J2OBJC_CREATE_IMPL(CCBRunner, initWithCCBRGlue_withCCBEventBus_withJavaUtilCollection_withCCBRRuntimeOptions_, glue, bus, backends, runtimeOptions)
 }
 
-CCBTestCase *CucumberRunnerRunner_createTestCaseForPickleWithGherkinEventsPickleEvent_(CucumberRunnerRunner *self, GherkinEventsPickleEvent *pickleEvent) {
+CCBTestCase *CCBRunner_createTestCaseForPickleWithGherkinEventsPickleEvent_(CCBRunner *self, GherkinEventsPickleEvent *pickleEvent) {
   id<JavaUtilList> testSteps = create_JavaUtilArrayList_init();
   if (![((id<JavaUtilList>) nil_chk([((GherkinPicklesPickle *) nil_chk(((GherkinEventsPickleEvent *) nil_chk(pickleEvent))->pickle_)) getSteps])) isEmpty]) {
     if (![((CCBRRuntimeOptions *) nil_chk(self->runtimeOptions_)) isDryRun]) {
-      CucumberRunnerRunner_addTestStepsForBeforeHooksWithJavaUtilList_withJavaUtilList_(self, testSteps, [pickleEvent->pickle_ getTags]);
+      CCBRunner_addTestStepsForBeforeHooksWithJavaUtilList_withJavaUtilList_(self, testSteps, [pickleEvent->pickle_ getTags]);
     }
-    CucumberRunnerRunner_addTestStepsForPickleStepsWithJavaUtilList_withGherkinEventsPickleEvent_(self, testSteps, pickleEvent);
+    CCBRunner_addTestStepsForPickleStepsWithJavaUtilList_withGherkinEventsPickleEvent_(self, testSteps, pickleEvent);
     if (![self->runtimeOptions_ isDryRun]) {
-      CucumberRunnerRunner_addTestStepsForAfterHooksWithJavaUtilList_withJavaUtilList_(self, testSteps, [pickleEvent->pickle_ getTags]);
+      CCBRunner_addTestStepsForAfterHooksWithJavaUtilList_withJavaUtilList_(self, testSteps, [pickleEvent->pickle_ getTags]);
     }
   }
   return create_CCBTestCase_initWithJavaUtilList_withGherkinEventsPickleEvent_withBoolean_(testSteps, pickleEvent, [((CCBRRuntimeOptions *) nil_chk(self->runtimeOptions_)) isDryRun]);
 }
 
-void CucumberRunnerRunner_addTestStepsForPickleStepsWithJavaUtilList_withGherkinEventsPickleEvent_(CucumberRunnerRunner *self, id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent) {
+void CCBRunner_addTestStepsForPickleStepsWithJavaUtilList_withGherkinEventsPickleEvent_(CCBRunner *self, id<JavaUtilList> testSteps, GherkinEventsPickleEvent *pickleEvent) {
   for (GherkinPicklesPickleStep * __strong step in nil_chk([((GherkinPicklesPickle *) nil_chk(((GherkinEventsPickleEvent *) nil_chk(pickleEvent))->pickle_)) getSteps])) {
     CCBRStepDefinitionMatch *match;
     @try {
@@ -277,7 +277,7 @@ void CucumberRunnerRunner_addTestStepsForPickleStepsWithJavaUtilList_withGherkin
           }
         }
         if (![snippets isEmpty]) {
-          [((CucumberRunnerEventBus *) nil_chk(self->bus_)) sendWithCCBEvent:create_CCBSnippetsSuggestedEvent_initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_([self->bus_ getTime], pickleEvent->uri_, [((GherkinPicklesPickleStep *) nil_chk(step)) getLocations], snippets)];
+          [((CCBEventBus *) nil_chk(self->bus_)) sendWithCCBEvent:create_CCBSnippetsSuggestedEvent_initWithJavaLangLong_withNSString_withJavaUtilList_withJavaUtilList_([self->bus_ getTime], pickleEvent->uri_, [((GherkinPicklesPickleStep *) nil_chk(step)) getLocations], snippets)];
         }
         match = create_CCBRUndefinedStepDefinitionMatch_initWithGherkinPicklesPickleStep_(step);
       }
@@ -288,38 +288,38 @@ void CucumberRunnerRunner_addTestStepsForPickleStepsWithJavaUtilList_withGherkin
     @catch (JavaLangThrowable *t) {
       match = create_CCBRFailedStepInstantiationMatch_initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_(pickleEvent->uri_, step, t);
     }
-    [((id<JavaUtilList>) nil_chk(testSteps)) addWithId:create_CucumberRunnerPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_(pickleEvent->uri_, step, match)];
+    [((id<JavaUtilList>) nil_chk(testSteps)) addWithId:create_CCBPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_(pickleEvent->uri_, step, match)];
   }
 }
 
-void CucumberRunnerRunner_addTestStepsForBeforeHooksWithJavaUtilList_withJavaUtilList_(CucumberRunnerRunner *self, id<JavaUtilList> testSteps, id<JavaUtilList> tags) {
-  CucumberRunnerRunner_addTestStepsForHooksWithJavaUtilList_withJavaUtilList_withJavaUtilList_withCCBHookType_(self, testSteps, tags, [((id<CCBRGlue>) nil_chk(self->glue_)) getBeforeHooks], JreLoadEnum(CCBHookType, Before));
+void CCBRunner_addTestStepsForBeforeHooksWithJavaUtilList_withJavaUtilList_(CCBRunner *self, id<JavaUtilList> testSteps, id<JavaUtilList> tags) {
+  CCBRunner_addTestStepsForHooksWithJavaUtilList_withJavaUtilList_withJavaUtilList_withCCBHookType_(self, testSteps, tags, [((id<CCBRGlue>) nil_chk(self->glue_)) getBeforeHooks], JreLoadEnum(CCBHookType, Before));
 }
 
-void CucumberRunnerRunner_addTestStepsForAfterHooksWithJavaUtilList_withJavaUtilList_(CucumberRunnerRunner *self, id<JavaUtilList> testSteps, id<JavaUtilList> tags) {
-  CucumberRunnerRunner_addTestStepsForHooksWithJavaUtilList_withJavaUtilList_withJavaUtilList_withCCBHookType_(self, testSteps, tags, [((id<CCBRGlue>) nil_chk(self->glue_)) getAfterHooks], JreLoadEnum(CCBHookType, After));
+void CCBRunner_addTestStepsForAfterHooksWithJavaUtilList_withJavaUtilList_(CCBRunner *self, id<JavaUtilList> testSteps, id<JavaUtilList> tags) {
+  CCBRunner_addTestStepsForHooksWithJavaUtilList_withJavaUtilList_withJavaUtilList_withCCBHookType_(self, testSteps, tags, [((id<CCBRGlue>) nil_chk(self->glue_)) getAfterHooks], JreLoadEnum(CCBHookType, After));
 }
 
-void CucumberRunnerRunner_addTestStepsForHooksWithJavaUtilList_withJavaUtilList_withJavaUtilList_withCCBHookType_(CucumberRunnerRunner *self, id<JavaUtilList> testSteps, id<JavaUtilList> tags, id<JavaUtilList> hooks, CCBHookType *hookType) {
+void CCBRunner_addTestStepsForHooksWithJavaUtilList_withJavaUtilList_withJavaUtilList_withCCBHookType_(CCBRunner *self, id<JavaUtilList> testSteps, id<JavaUtilList> tags, id<JavaUtilList> hooks, CCBHookType *hookType) {
   for (id<CCBRHookDefinition> __strong hook in nil_chk(hooks)) {
     if ([((id<CCBRHookDefinition>) nil_chk(hook)) matchesWithJavaUtilCollection:tags]) {
-      CCBTestStep *testStep = create_CucumberRunnerUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(hookType, create_CCBRHookDefinitionMatch_initWithCCBRHookDefinition_(hook));
+      CCBTestStep *testStep = create_CCBUnskipableStep_initWithCCBHookType_withCCBRDefinitionMatch_(hookType, create_CCBRHookDefinitionMatch_initWithCCBRHookDefinition_(hook));
       [((id<JavaUtilList>) nil_chk(testSteps)) addWithId:testStep];
     }
   }
 }
 
-void CucumberRunnerRunner_buildBackendWorlds(CucumberRunnerRunner *self) {
+void CCBRunner_buildBackendWorlds(CCBRunner *self) {
   [((CCBRRuntimeOptions *) nil_chk(self->runtimeOptions_)) getPlugins];
   for (id<CCBRBackend> __strong backend in nil_chk(self->backends_)) {
     [((id<CCBRBackend>) nil_chk(backend)) buildWorld];
   }
 }
 
-void CucumberRunnerRunner_disposeBackendWorlds(CucumberRunnerRunner *self) {
+void CCBRunner_disposeBackendWorlds(CCBRunner *self) {
   for (id<CCBRBackend> __strong backend in nil_chk(self->backends_)) {
     [((id<CCBRBackend>) nil_chk(backend)) disposeWorld];
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRunnerRunner)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRunner)

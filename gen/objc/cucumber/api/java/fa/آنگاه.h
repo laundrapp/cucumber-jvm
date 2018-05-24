@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBآنگاه_) && (INCLUDE_ALL_CucumberApiJavaFaآنگاه || defined(INCLUDE_CCBآنگاه))
-#define CCBآنگاه_
+#if !defined (CucumberApiJavaFaآنگاه_) && (INCLUDE_ALL_CucumberApiJavaFaآنگاه || defined(INCLUDE_CucumberApiJavaFaآنگاه))
+#define CucumberApiJavaFaآنگاه_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBآنگاه < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaFaآنگاه < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBآنگاه : NSObject < CCBآنگاه > {
+@interface CucumberApiJavaFaآنگاه : NSObject < CucumberApiJavaFaآنگاه > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBآنگاه)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaFaآنگاه)
 
-FOUNDATION_EXPORT id<CCBآنگاه> create_CCBآنگاه(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaFaآنگاه> create_CucumberApiJavaFaآنگاه(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBآنگاه)
-
-#define CucumberApiJavaFaآنگاه CCBآنگاه
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaFaآنگاه)
 
 #endif
 

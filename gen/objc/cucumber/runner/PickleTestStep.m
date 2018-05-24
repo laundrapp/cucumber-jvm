@@ -14,7 +14,7 @@
 #include "java/lang/UnsupportedOperationException.h"
 #include "java/util/List.h"
 
-@interface CucumberRunnerPickleTestStep () {
+@interface CCBPickleTestStep () {
  @public
   NSString *uri_;
   GherkinPicklesPickleStep *step_;
@@ -22,15 +22,15 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberRunnerPickleTestStep, uri_, NSString *)
-J2OBJC_FIELD_SETTER(CucumberRunnerPickleTestStep, step_, GherkinPicklesPickleStep *)
+J2OBJC_FIELD_SETTER(CCBPickleTestStep, uri_, NSString *)
+J2OBJC_FIELD_SETTER(CCBPickleTestStep, step_, GherkinPicklesPickleStep *)
 
-@implementation CucumberRunnerPickleTestStep
+@implementation CCBPickleTestStep
 
 - (instancetype __nonnull)initWithNSString:(NSString *)uri
               withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
                    withCCBRDefinitionMatch:(id<CCBRDefinitionMatch>)definitionMatch {
-  CucumberRunnerPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_(self, uri, step, definitionMatch);
+  CCBPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_(self, uri, step, definitionMatch);
   return self;
 }
 
@@ -96,24 +96,24 @@ J2OBJC_FIELD_SETTER(CucumberRunnerPickleTestStep, step_, GherkinPicklesPickleSte
     { "step_", "LGherkinPicklesPickleStep;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "LNSString;LGherkinPicklesPickleStep;LCCBRDefinitionMatch;", "()Ljava/util/List<Lgherkin/pickles/Argument;>;" };
-  static const J2ObjcClassInfo _CucumberRunnerPickleTestStep = { "PickleTestStep", "cucumber.runner", ptrTable, methods, fields, 7, 0x1, 8, 2, -1, -1, -1, -1, -1 };
-  return &_CucumberRunnerPickleTestStep;
+  static const J2ObjcClassInfo _CCBPickleTestStep = { "PickleTestStep", "cucumber.runner", ptrTable, methods, fields, 7, 0x1, 8, 2, -1, -1, -1, -1, -1 };
+  return &_CCBPickleTestStep;
 }
 
 @end
 
-void CucumberRunnerPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_(CucumberRunnerPickleTestStep *self, NSString *uri, GherkinPicklesPickleStep *step, id<CCBRDefinitionMatch> definitionMatch) {
+void CCBPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_(CCBPickleTestStep *self, NSString *uri, GherkinPicklesPickleStep *step, id<CCBRDefinitionMatch> definitionMatch) {
   CCBTestStep_initWithCCBRDefinitionMatch_(self, definitionMatch);
   JreStrongAssign(&self->uri_, uri);
   JreStrongAssign(&self->step_, step);
 }
 
-CucumberRunnerPickleTestStep *new_CucumberRunnerPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_(NSString *uri, GherkinPicklesPickleStep *step, id<CCBRDefinitionMatch> definitionMatch) {
-  J2OBJC_NEW_IMPL(CucumberRunnerPickleTestStep, initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_, uri, step, definitionMatch)
+CCBPickleTestStep *new_CCBPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_(NSString *uri, GherkinPicklesPickleStep *step, id<CCBRDefinitionMatch> definitionMatch) {
+  J2OBJC_NEW_IMPL(CCBPickleTestStep, initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_, uri, step, definitionMatch)
 }
 
-CucumberRunnerPickleTestStep *create_CucumberRunnerPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_(NSString *uri, GherkinPicklesPickleStep *step, id<CCBRDefinitionMatch> definitionMatch) {
-  J2OBJC_CREATE_IMPL(CucumberRunnerPickleTestStep, initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_, uri, step, definitionMatch)
+CCBPickleTestStep *create_CCBPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_(NSString *uri, GherkinPicklesPickleStep *step, id<CCBRDefinitionMatch> definitionMatch) {
+  J2OBJC_CREATE_IMPL(CCBPickleTestStep, initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_, uri, step, definitionMatch)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRunnerPickleTestStep)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBPickleTestStep)

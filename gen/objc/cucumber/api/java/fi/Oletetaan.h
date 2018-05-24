@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBOletetaan_) && (INCLUDE_ALL_CucumberApiJavaFiOletetaan || defined(INCLUDE_CCBOletetaan))
-#define CCBOletetaan_
+#if !defined (CucumberApiJavaFiOletetaan_) && (INCLUDE_ALL_CucumberApiJavaFiOletetaan || defined(INCLUDE_CucumberApiJavaFiOletetaan))
+#define CucumberApiJavaFiOletetaan_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBOletetaan < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaFiOletetaan < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBOletetaan : NSObject < CCBOletetaan > {
+@interface CucumberApiJavaFiOletetaan : NSObject < CucumberApiJavaFiOletetaan > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBOletetaan)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaFiOletetaan)
 
-FOUNDATION_EXPORT id<CCBOletetaan> create_CCBOletetaan(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaFiOletetaan> create_CucumberApiJavaFiOletetaan(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBOletetaan)
-
-#define CucumberApiJavaFiOletetaan CCBOletetaan
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaFiOletetaan)
 
 #endif
 

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBAmpak_) && (INCLUDE_ALL_CucumberApiJavaSlAmpak || defined(INCLUDE_CCBAmpak))
-#define CCBAmpak_
+#if !defined (CucumberApiJavaSlAmpak_) && (INCLUDE_ALL_CucumberApiJavaSlAmpak || defined(INCLUDE_CucumberApiJavaSlAmpak))
+#define CucumberApiJavaSlAmpak_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBAmpak < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaSlAmpak < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBAmpak : NSObject < CCBAmpak > {
+@interface CucumberApiJavaSlAmpak : NSObject < CucumberApiJavaSlAmpak > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBAmpak)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaSlAmpak)
 
-FOUNDATION_EXPORT id<CCBAmpak> create_CCBAmpak(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaSlAmpak> create_CucumberApiJavaSlAmpak(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBAmpak)
-
-#define CucumberApiJavaSlAmpak CCBAmpak
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaSlAmpak)
 
 #endif
 

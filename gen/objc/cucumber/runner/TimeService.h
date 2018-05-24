@@ -18,27 +18,29 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRunnerTimeService_) && (INCLUDE_ALL_CucumberRunnerTimeService || defined(INCLUDE_CucumberRunnerTimeService))
-#define CucumberRunnerTimeService_
+#if !defined (CCBTimeService_) && (INCLUDE_ALL_CucumberRunnerTimeService || defined(INCLUDE_CCBTimeService))
+#define CCBTimeService_
 
-@protocol CucumberRunnerTimeService < JavaObject >
+@protocol CCBTimeService < JavaObject >
 
 - (jlong)time;
 
 @end
 
-@interface CucumberRunnerTimeService : NSObject
+@interface CCBTimeService : NSObject
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRunnerTimeService)
+J2OBJC_STATIC_INIT(CCBTimeService)
 
-inline id<CucumberRunnerTimeService> CucumberRunnerTimeService_get_SYSTEM(void);
+inline id<CCBTimeService> CCBTimeService_get_SYSTEM(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT id<CucumberRunnerTimeService> CucumberRunnerTimeService_SYSTEM;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRunnerTimeService, SYSTEM, id<CucumberRunnerTimeService>)
+FOUNDATION_EXPORT id<CCBTimeService> CCBTimeService_SYSTEM;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBTimeService, SYSTEM, id<CCBTimeService>)
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRunnerTimeService)
+J2OBJC_TYPE_LITERAL_HEADER(CCBTimeService)
+
+#define CucumberRunnerTimeService CCBTimeService
 
 #endif
 

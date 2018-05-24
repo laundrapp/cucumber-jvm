@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBNalikaning_) && (INCLUDE_ALL_CucumberApiJavaJvNalikaning || defined(INCLUDE_CCBNalikaning))
-#define CCBNalikaning_
+#if !defined (CucumberApiJavaJvNalikaning_) && (INCLUDE_ALL_CucumberApiJavaJvNalikaning || defined(INCLUDE_CucumberApiJavaJvNalikaning))
+#define CucumberApiJavaJvNalikaning_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBNalikaning < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaJvNalikaning < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBNalikaning : NSObject < CCBNalikaning > {
+@interface CucumberApiJavaJvNalikaning : NSObject < CucumberApiJavaJvNalikaning > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBNalikaning)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaJvNalikaning)
 
-FOUNDATION_EXPORT id<CCBNalikaning> create_CCBNalikaning(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaJvNalikaning> create_CucumberApiJavaJvNalikaning(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBNalikaning)
-
-#define CucumberApiJavaJvNalikaning CCBNalikaning
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaJvNalikaning)
 
 #endif
 

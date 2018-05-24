@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBNalika_) && (INCLUDE_ALL_CucumberApiJavaJvNalika || defined(INCLUDE_CCBNalika))
-#define CCBNalika_
+#if !defined (CucumberApiJavaJvNalika_) && (INCLUDE_ALL_CucumberApiJavaJvNalika || defined(INCLUDE_CucumberApiJavaJvNalika))
+#define CucumberApiJavaJvNalika_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBNalika < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaJvNalika < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBNalika : NSObject < CCBNalika > {
+@interface CucumberApiJavaJvNalika : NSObject < CucumberApiJavaJvNalika > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBNalika)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaJvNalika)
 
-FOUNDATION_EXPORT id<CCBNalika> create_CCBNalika(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaJvNalika> create_CucumberApiJavaJvNalika(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBNalika)
-
-#define CucumberApiJavaJvNalika CCBNalika
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaJvNalika)
 
 #endif
 

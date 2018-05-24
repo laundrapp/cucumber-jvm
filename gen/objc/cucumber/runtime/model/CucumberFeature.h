@@ -25,7 +25,7 @@
 #define INCLUDE_JavaIoSerializable 1
 #include "java/io/Serializable.h"
 
-@class CucumberRunnerEventBus;
+@class CCBEventBus;
 @class GherkinAstGherkinDocument;
 @class JavaIoPrintStream;
 @class JavaUtilRegexPattern;
@@ -54,7 +54,7 @@
 + (id<JavaUtilList>)loadRerunFileWithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
                                            withNSString:(NSString *)rerunPath;
 
-- (void)sendTestSourceReadWithCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus;
+- (void)sendTestSourceReadWithCCBEventBus:(CCBEventBus *)bus;
 
 // Disallowed inherited constructors, do not use.
 

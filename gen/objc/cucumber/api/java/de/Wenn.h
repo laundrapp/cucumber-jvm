@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBWenn_) && (INCLUDE_ALL_CucumberApiJavaDeWenn || defined(INCLUDE_CCBWenn))
-#define CCBWenn_
+#if !defined (CucumberApiJavaDeWenn_) && (INCLUDE_ALL_CucumberApiJavaDeWenn || defined(INCLUDE_CucumberApiJavaDeWenn))
+#define CucumberApiJavaDeWenn_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBWenn < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaDeWenn < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBWenn : NSObject < CCBWenn > {
+@interface CucumberApiJavaDeWenn : NSObject < CucumberApiJavaDeWenn > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBWenn)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaDeWenn)
 
-FOUNDATION_EXPORT id<CCBWenn> create_CCBWenn(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaDeWenn> create_CucumberApiJavaDeWenn(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBWenn)
-
-#define CucumberApiJavaDeWenn CCBWenn
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaDeWenn)
 
 #endif
 

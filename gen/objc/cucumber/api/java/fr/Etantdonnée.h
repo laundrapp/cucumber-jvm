@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBEtantdonnée_) && (INCLUDE_ALL_CucumberApiJavaFrEtantdonnée || defined(INCLUDE_CCBEtantdonnée))
-#define CCBEtantdonnée_
+#if !defined (CucumberApiJavaFrEtantdonnée_) && (INCLUDE_ALL_CucumberApiJavaFrEtantdonnée || defined(INCLUDE_CucumberApiJavaFrEtantdonnée))
+#define CucumberApiJavaFrEtantdonnée_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBEtantdonnée < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaFrEtantdonnée < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBEtantdonnée : NSObject < CCBEtantdonnée > {
+@interface CucumberApiJavaFrEtantdonnée : NSObject < CucumberApiJavaFrEtantdonnée > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBEtantdonnée)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaFrEtantdonnée)
 
-FOUNDATION_EXPORT id<CCBEtantdonnée> create_CCBEtantdonnée(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaFrEtantdonnée> create_CucumberApiJavaFrEtantdonnée(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBEtantdonnée)
-
-#define CucumberApiJavaFrEtantdonnée CCBEtantdonnée
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaFrEtantdonnée)
 
 #endif
 

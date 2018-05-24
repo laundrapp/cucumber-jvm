@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBSed_) && (INCLUDE_ALL_CucumberApiJavaEoSed || defined(INCLUDE_CCBSed))
-#define CCBSed_
+#if !defined (CucumberApiJavaEoSed_) && (INCLUDE_ALL_CucumberApiJavaEoSed || defined(INCLUDE_CucumberApiJavaEoSed))
+#define CucumberApiJavaEoSed_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBSed < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaEoSed < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBSed : NSObject < CCBSed > {
+@interface CucumberApiJavaEoSed : NSObject < CucumberApiJavaEoSed > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBSed)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEoSed)
 
-FOUNDATION_EXPORT id<CCBSed> create_CCBSed(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaEoSed> create_CucumberApiJavaEoSed(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBSed)
-
-#define CucumberApiJavaEoSed CCBSed
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEoSed)
 
 #endif
 

@@ -18,16 +18,16 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberUtilFixJava_) && (INCLUDE_ALL_CucumberUtilFixJava || defined(INCLUDE_CucumberUtilFixJava))
-#define CucumberUtilFixJava_
+#if !defined (CCBFixJava_) && (INCLUDE_ALL_CucumberUtilFixJava || defined(INCLUDE_CCBFixJava))
+#define CCBFixJava_
 
 @class IOSByteArray;
 @class JavaIoInputStream;
 @class JavaIoReader;
-@protocol CucumberUtilMapper;
+@protocol CCBMapper;
 @protocol JavaUtilList;
 
-@interface CucumberUtilFixJava : NSObject
+@interface CCBFixJava : NSObject
 
 #pragma mark Public
 
@@ -37,7 +37,7 @@
                       withNSString:(NSString *)separator;
 
 + (id<JavaUtilList>)mapWithJavaUtilList:(id<JavaUtilList>)objects
-                 withCucumberUtilMapper:(id<CucumberUtilMapper>)mapper;
+                          withCCBMapper:(id<CCBMapper>)mapper;
 
 + (NSString *)readReaderWithJavaIoReader:(JavaIoReader *)inArg;
 
@@ -47,25 +47,27 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberUtilFixJava)
+J2OBJC_EMPTY_STATIC_INIT(CCBFixJava)
 
-FOUNDATION_EXPORT void CucumberUtilFixJava_init(CucumberUtilFixJava *self);
+FOUNDATION_EXPORT void CCBFixJava_init(CCBFixJava *self);
 
-FOUNDATION_EXPORT CucumberUtilFixJava *new_CucumberUtilFixJava_init(void) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBFixJava *new_CCBFixJava_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberUtilFixJava *create_CucumberUtilFixJava_init(void);
+FOUNDATION_EXPORT CCBFixJava *create_CCBFixJava_init(void);
 
-FOUNDATION_EXPORT NSString *CucumberUtilFixJava_joinWithJavaUtilList_withNSString_(id<JavaUtilList> strings, NSString *separator);
+FOUNDATION_EXPORT NSString *CCBFixJava_joinWithJavaUtilList_withNSString_(id<JavaUtilList> strings, NSString *separator);
 
-FOUNDATION_EXPORT id<JavaUtilList> CucumberUtilFixJava_mapWithJavaUtilList_withCucumberUtilMapper_(id<JavaUtilList> objects, id<CucumberUtilMapper> mapper);
+FOUNDATION_EXPORT id<JavaUtilList> CCBFixJava_mapWithJavaUtilList_withCCBMapper_(id<JavaUtilList> objects, id<CCBMapper> mapper);
 
-FOUNDATION_EXPORT NSString *CucumberUtilFixJava_readResourceWithNSString_(NSString *resourcePath);
+FOUNDATION_EXPORT NSString *CCBFixJava_readResourceWithNSString_(NSString *resourcePath);
 
-FOUNDATION_EXPORT NSString *CucumberUtilFixJava_readReaderWithJavaIoReader_(JavaIoReader *inArg);
+FOUNDATION_EXPORT NSString *CCBFixJava_readReaderWithJavaIoReader_(JavaIoReader *inArg);
 
-FOUNDATION_EXPORT IOSByteArray *CucumberUtilFixJava_readStreamWithJavaIoInputStream_(JavaIoInputStream *inArg);
+FOUNDATION_EXPORT IOSByteArray *CCBFixJava_readStreamWithJavaIoInputStream_(JavaIoInputStream *inArg);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberUtilFixJava)
+J2OBJC_TYPE_LITERAL_HEADER(CCBFixJava)
+
+@compatibility_alias CucumberUtilFixJava CCBFixJava;
 
 #endif
 

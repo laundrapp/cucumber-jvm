@@ -21,11 +21,11 @@
 #if !defined (CCBRRuntime_) && (INCLUDE_ALL_CucumberRuntimeRuntime || defined(INCLUDE_CCBRRuntime))
 #define CCBRRuntime_
 
+@class CCBEventBus;
 @class CCBRCucumberFeature;
 @class CCBRRuntimeOptions;
 @class CCBRStats;
-@class CucumberRunnerEventBus;
-@class CucumberRunnerRunner;
+@class CCBRunner;
 @class GherkinEventsPickleEvent;
 @class JavaIoPrintStream;
 @class JavaLangClassLoader;
@@ -33,7 +33,7 @@
 @protocol CCBRGlue;
 @protocol CCBRResourceLoader;
 @protocol CCBStepDefinitionReporter;
-@protocol CucumberRunnerTimeService;
+@protocol CCBTimeService;
 @protocol JavaUtilCollection;
 @protocol JavaUtilList;
 
@@ -67,7 +67,7 @@
                              withJavaLangClassLoader:(JavaLangClassLoader *)classLoader
                               withJavaUtilCollection:(id<JavaUtilCollection>)backends
                               withCCBRRuntimeOptions:(CCBRRuntimeOptions *)runtimeOptions
-                       withCucumberRunnerTimeService:(id<CucumberRunnerTimeService>)stopWatch
+                                  withCCBTimeService:(id<CCBTimeService>)stopWatch
                                         withCCBRGlue:(id<CCBRGlue>)optionalGlue;
 
 - (id<JavaUtilList>)compileFeatureWithCCBRCucumberFeature:(CCBRCucumberFeature *)feature;
@@ -76,11 +76,11 @@
 
 - (id<JavaUtilList>)getErrors;
 
-- (CucumberRunnerEventBus *)getEventBus;
+- (CCBEventBus *)getEventBus;
 
 - (id<CCBRGlue>)getGlue;
 
-- (CucumberRunnerRunner *)getRunner;
+- (CCBRunner *)getRunner;
 
 - (id<JavaUtilList>)getSnippets;
 
@@ -129,11 +129,11 @@ FOUNDATION_EXPORT CCBRRuntime *new_CCBRRuntime_initWithCCBRResourceLoader_withJa
 
 FOUNDATION_EXPORT CCBRRuntime *create_CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBRGlue_(id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CCBRGlue> optionalGlue);
 
-FOUNDATION_EXPORT void CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCucumberRunnerTimeService_withCCBRGlue_(CCBRRuntime *self, id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CucumberRunnerTimeService> stopWatch, id<CCBRGlue> optionalGlue);
+FOUNDATION_EXPORT void CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBTimeService_withCCBRGlue_(CCBRRuntime *self, id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CCBTimeService> stopWatch, id<CCBRGlue> optionalGlue);
 
-FOUNDATION_EXPORT CCBRRuntime *new_CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCucumberRunnerTimeService_withCCBRGlue_(id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CucumberRunnerTimeService> stopWatch, id<CCBRGlue> optionalGlue) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRRuntime *new_CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBTimeService_withCCBRGlue_(id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CCBTimeService> stopWatch, id<CCBRGlue> optionalGlue) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRRuntime *create_CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCucumberRunnerTimeService_withCCBRGlue_(id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CucumberRunnerTimeService> stopWatch, id<CCBRGlue> optionalGlue);
+FOUNDATION_EXPORT CCBRRuntime *create_CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBTimeService_withCCBRGlue_(id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CCBTimeService> stopWatch, id<CCBRGlue> optionalGlue);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRRuntime)
 

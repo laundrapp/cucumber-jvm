@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CucumberRunnerUndefinedStepException_) && (INCLUDE_ALL_CucumberRunnerUndefinedStepException || defined(INCLUDE_CucumberRunnerUndefinedStepException))
-#define CucumberRunnerUndefinedStepException_
+#if !defined (CCBUndefinedStepException_) && (INCLUDE_ALL_CucumberRunnerUndefinedStepException || defined(INCLUDE_CCBUndefinedStepException))
+#define CCBUndefinedStepException_
 
 #define RESTRICT_JavaLangThrowable 1
 #define INCLUDE_JavaLangThrowable 1
@@ -27,7 +27,7 @@
 
 @class GherkinPicklesPickleStep;
 
-@interface CucumberRunnerUndefinedStepException : JavaLangThrowable
+@interface CCBUndefinedStepException : JavaLangThrowable
 
 #pragma mark Public
 
@@ -51,15 +51,17 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRunnerUndefinedStepException)
+J2OBJC_EMPTY_STATIC_INIT(CCBUndefinedStepException)
 
-FOUNDATION_EXPORT void CucumberRunnerUndefinedStepException_initWithGherkinPicklesPickleStep_(CucumberRunnerUndefinedStepException *self, GherkinPicklesPickleStep *step);
+FOUNDATION_EXPORT void CCBUndefinedStepException_initWithGherkinPicklesPickleStep_(CCBUndefinedStepException *self, GherkinPicklesPickleStep *step);
 
-FOUNDATION_EXPORT CucumberRunnerUndefinedStepException *new_CucumberRunnerUndefinedStepException_initWithGherkinPicklesPickleStep_(GherkinPicklesPickleStep *step) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBUndefinedStepException *new_CCBUndefinedStepException_initWithGherkinPicklesPickleStep_(GherkinPicklesPickleStep *step) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRunnerUndefinedStepException *create_CucumberRunnerUndefinedStepException_initWithGherkinPicklesPickleStep_(GherkinPicklesPickleStep *step);
+FOUNDATION_EXPORT CCBUndefinedStepException *create_CCBUndefinedStepException_initWithGherkinPicklesPickleStep_(GherkinPicklesPickleStep *step);
 
-J2OBJC_TYPE_LITERAL_HEADER(CucumberRunnerUndefinedStepException)
+J2OBJC_TYPE_LITERAL_HEADER(CCBUndefinedStepException)
+
+@compatibility_alias CucumberRunnerUndefinedStepException CCBUndefinedStepException;
 
 #endif
 

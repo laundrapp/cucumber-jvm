@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBБирок_) && (INCLUDE_ALL_CucumberApiJavaUzБирок || defined(INCLUDE_CCBБирок))
-#define CCBБирок_
+#if !defined (CucumberApiJavaUzБирок_) && (INCLUDE_ALL_CucumberApiJavaUzБирок || defined(INCLUDE_CucumberApiJavaUzБирок))
+#define CucumberApiJavaUzБирок_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBБирок < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaUzБирок < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBБирок : NSObject < CCBБирок > {
+@interface CucumberApiJavaUzБирок : NSObject < CucumberApiJavaUzБирок > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBБирок)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaUzБирок)
 
-FOUNDATION_EXPORT id<CCBБирок> create_CCBБирок(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaUzБирок> create_CucumberApiJavaUzБирок(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBБирок)
-
-#define CucumberApiJavaUzБирок CCBБирок
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaUzБирок)
 
 #endif
 

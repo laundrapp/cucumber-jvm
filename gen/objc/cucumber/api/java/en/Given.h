@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBGiven_) && (INCLUDE_ALL_CucumberApiJavaEnGiven || defined(INCLUDE_CCBGiven))
-#define CCBGiven_
+#if !defined (CucumberApiJavaEnGiven_) && (INCLUDE_ALL_CucumberApiJavaEnGiven || defined(INCLUDE_CucumberApiJavaEnGiven))
+#define CucumberApiJavaEnGiven_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBGiven < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaEnGiven < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBGiven : NSObject < CCBGiven > {
+@interface CucumberApiJavaEnGiven : NSObject < CucumberApiJavaEnGiven > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBGiven)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEnGiven)
 
-FOUNDATION_EXPORT id<CCBGiven> create_CCBGiven(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaEnGiven> create_CucumberApiJavaEnGiven(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBGiven)
-
-#define CucumberApiJavaEnGiven CCBGiven
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEnGiven)
 
 #endif
 

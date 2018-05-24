@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBMas_) && (INCLUDE_ALL_CucumberApiJavaPtMas || defined(INCLUDE_CCBMas))
-#define CCBMas_
+#if !defined (CucumberApiJavaPtMas_) && (INCLUDE_ALL_CucumberApiJavaPtMas || defined(INCLUDE_CucumberApiJavaPtMas))
+#define CucumberApiJavaPtMas_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBMas < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaPtMas < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBMas : NSObject < CCBMas > {
+@interface CucumberApiJavaPtMas : NSObject < CucumberApiJavaPtMas > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBMas)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaPtMas)
 
-FOUNDATION_EXPORT id<CCBMas> create_CCBMas(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaPtMas> create_CucumberApiJavaPtMas(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBMas)
-
-#define CucumberApiJavaPtMas CCBMas
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaPtMas)
 
 #endif
 

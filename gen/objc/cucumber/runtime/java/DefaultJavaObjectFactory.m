@@ -14,7 +14,7 @@
 #include "java/util/HashMap.h"
 #include "java/util/Map.h"
 
-@interface CCBDefaultJavaObjectFactory () {
+@interface CucumberRuntimeJavaDefaultJavaObjectFactory () {
  @public
   id<JavaUtilMap> instances_;
 }
@@ -23,15 +23,15 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CCBDefaultJavaObjectFactory, instances_, id<JavaUtilMap>)
+J2OBJC_FIELD_SETTER(CucumberRuntimeJavaDefaultJavaObjectFactory, instances_, id<JavaUtilMap>)
 
-__attribute__((unused)) static id CCBDefaultJavaObjectFactory_cacheNewInstanceWithIOSClass_(CCBDefaultJavaObjectFactory *self, IOSClass *type);
+__attribute__((unused)) static id CucumberRuntimeJavaDefaultJavaObjectFactory_cacheNewInstanceWithIOSClass_(CucumberRuntimeJavaDefaultJavaObjectFactory *self, IOSClass *type);
 
-@implementation CCBDefaultJavaObjectFactory
+@implementation CucumberRuntimeJavaDefaultJavaObjectFactory
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CCBDefaultJavaObjectFactory_init(self);
+  CucumberRuntimeJavaDefaultJavaObjectFactory_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -50,13 +50,13 @@ J2OBJC_IGNORE_DESIGNATED_END
 - (id)getInstanceWithIOSClass:(IOSClass *)type {
   id instance = [((IOSClass *) nil_chk(type)) cast:[((id<JavaUtilMap>) nil_chk(instances_)) getWithId:type]];
   if (instance == nil) {
-    instance = CCBDefaultJavaObjectFactory_cacheNewInstanceWithIOSClass_(self, type);
+    instance = CucumberRuntimeJavaDefaultJavaObjectFactory_cacheNewInstanceWithIOSClass_(self, type);
   }
   return instance;
 }
 
 - (id)cacheNewInstanceWithIOSClass:(IOSClass *)type {
-  return CCBDefaultJavaObjectFactory_cacheNewInstanceWithIOSClass_(self, type);
+  return CucumberRuntimeJavaDefaultJavaObjectFactory_cacheNewInstanceWithIOSClass_(self, type);
 }
 
 - (void)dealloc {
@@ -87,26 +87,26 @@ J2OBJC_IGNORE_DESIGNATED_END
     { "instances_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 6, -1 },
   };
   static const void *ptrTable[] = { "addClass", "LIOSClass;", "(Ljava/lang/Class<*>;)Z", "getInstance", "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;)TT;", "cacheNewInstance", "Ljava/util/Map<Ljava/lang/Class<*>;Ljava/lang/Object;>;" };
-  static const J2ObjcClassInfo _CCBDefaultJavaObjectFactory = { "DefaultJavaObjectFactory", "cucumber.runtime.java", ptrTable, methods, fields, 7, 0x0, 6, 1, -1, -1, -1, -1, -1 };
-  return &_CCBDefaultJavaObjectFactory;
+  static const J2ObjcClassInfo _CucumberRuntimeJavaDefaultJavaObjectFactory = { "DefaultJavaObjectFactory", "cucumber.runtime.java", ptrTable, methods, fields, 7, 0x0, 6, 1, -1, -1, -1, -1, -1 };
+  return &_CucumberRuntimeJavaDefaultJavaObjectFactory;
 }
 
 @end
 
-void CCBDefaultJavaObjectFactory_init(CCBDefaultJavaObjectFactory *self) {
+void CucumberRuntimeJavaDefaultJavaObjectFactory_init(CucumberRuntimeJavaDefaultJavaObjectFactory *self) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->instances_, new_JavaUtilHashMap_init());
 }
 
-CCBDefaultJavaObjectFactory *new_CCBDefaultJavaObjectFactory_init() {
-  J2OBJC_NEW_IMPL(CCBDefaultJavaObjectFactory, init)
+CucumberRuntimeJavaDefaultJavaObjectFactory *new_CucumberRuntimeJavaDefaultJavaObjectFactory_init() {
+  J2OBJC_NEW_IMPL(CucumberRuntimeJavaDefaultJavaObjectFactory, init)
 }
 
-CCBDefaultJavaObjectFactory *create_CCBDefaultJavaObjectFactory_init() {
-  J2OBJC_CREATE_IMPL(CCBDefaultJavaObjectFactory, init)
+CucumberRuntimeJavaDefaultJavaObjectFactory *create_CucumberRuntimeJavaDefaultJavaObjectFactory_init() {
+  J2OBJC_CREATE_IMPL(CucumberRuntimeJavaDefaultJavaObjectFactory, init)
 }
 
-id CCBDefaultJavaObjectFactory_cacheNewInstanceWithIOSClass_(CCBDefaultJavaObjectFactory *self, IOSClass *type) {
+id CucumberRuntimeJavaDefaultJavaObjectFactory_cacheNewInstanceWithIOSClass_(CucumberRuntimeJavaDefaultJavaObjectFactory *self, IOSClass *type) {
   @try {
     JavaLangReflectConstructor *constructor = [((IOSClass *) nil_chk(type)) getConstructor:[IOSObjectArray arrayWithLength:0 type:IOSClass_class_()]];
     id instance = [((JavaLangReflectConstructor *) nil_chk(constructor)) newInstanceWithNSObjectArray:[IOSObjectArray arrayWithLength:0 type:NSObject_class_()]];
@@ -121,4 +121,4 @@ id CCBDefaultJavaObjectFactory_cacheNewInstanceWithIOSClass_(CCBDefaultJavaObjec
   }
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBDefaultJavaObjectFactory)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeJavaDefaultJavaObjectFactory)

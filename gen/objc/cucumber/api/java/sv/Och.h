@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBOch_) && (INCLUDE_ALL_CucumberApiJavaSvOch || defined(INCLUDE_CCBOch))
-#define CCBOch_
+#if !defined (CucumberApiJavaSvOch_) && (INCLUDE_ALL_CucumberApiJavaSvOch || defined(INCLUDE_CucumberApiJavaSvOch))
+#define CucumberApiJavaSvOch_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBOch < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaSvOch < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBOch : NSObject < CCBOch > {
+@interface CucumberApiJavaSvOch : NSObject < CucumberApiJavaSvOch > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBOch)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaSvOch)
 
-FOUNDATION_EXPORT id<CCBOch> create_CCBOch(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaSvOch> create_CucumberApiJavaSvOch(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBOch)
-
-#define CucumberApiJavaSvOch CCBOch
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaSvOch)
 
 #endif
 

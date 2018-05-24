@@ -83,7 +83,7 @@ __attribute__((unused)) static id<JavaUtilList> CCBRStepDefinitionMatch_createAr
 
 __attribute__((unused)) static JavaUtilLocale *CCBRStepDefinitionMatch_localeForWithNSString_(CCBRStepDefinitionMatch *self, NSString *language);
 
-@interface CCBRStepDefinitionMatch_1 : NSObject < CucumberUtilMapper >
+@interface CCBRStepDefinitionMatch_1 : NSObject < CCBMapper >
 
 - (instancetype __nonnull)init;
 
@@ -334,7 +334,7 @@ id<JavaUtilList> CCBRStepDefinitionMatch_createArgumentsForErrorMessageWithGherk
       [arguments addWithId:create_CCBRArgument_initWithJavaLangInteger_withNSString_(JavaLangInteger_valueOfWithInt_(-1), JreStrcat("$$", @"DocString:", [((GherkinPicklesPickleString *) nil_chk(((GherkinPicklesPickleString *) cast_chk(stepArgument, [GherkinPicklesPickleString class])))) getContent]))];
     }
     else if ([stepArgument isKindOfClass:[GherkinPicklesPickleTable class]]) {
-      id<JavaUtilList> rows = CucumberUtilFixJava_mapWithJavaUtilList_withCucumberUtilMapper_([((GherkinPicklesPickleTable *) nil_chk(((GherkinPicklesPickleTable *) cast_chk(stepArgument, [GherkinPicklesPickleTable class])))) getRows], create_CCBRStepDefinitionMatch_1_init());
+      id<JavaUtilList> rows = CCBFixJava_mapWithJavaUtilList_withCCBMapper_([((GherkinPicklesPickleTable *) nil_chk(((GherkinPicklesPickleTable *) cast_chk(stepArgument, [GherkinPicklesPickleTable class])))) getRows], create_CCBRStepDefinitionMatch_1_init());
       [arguments addWithId:create_CCBRArgument_initWithJavaLangInteger_withNSString_(JavaLangInteger_valueOfWithInt_(-1), JreStrcat("$$", @"Table:", [((id<JavaUtilList>) nil_chk(rows)) description]))];
     }
   }

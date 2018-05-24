@@ -116,11 +116,11 @@ J2OBJC_INITIALIZED_DEFN(CCBTestStep)
   return 0;
 }
 
-- (CCBResult *)runWithCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus
-                                withNSString:(NSString *)language
-                             withCCBScenario:(id<CCBScenario>)scenario
-                                 withBoolean:(jboolean)skipSteps {
-  JavaLangLong *startTime = [((CucumberRunnerEventBus *) nil_chk(bus)) getTime];
+- (CCBResult *)runWithCCBEventBus:(CCBEventBus *)bus
+                     withNSString:(NSString *)language
+                  withCCBScenario:(id<CCBScenario>)scenario
+                      withBoolean:(jboolean)skipSteps {
+  JavaLangLong *startTime = [((CCBEventBus *) nil_chk(bus)) getTime];
   [bus sendWithCCBEvent:create_CCBTestStepStarted_initWithJavaLangLong_withCCBTestStep_(startTime, self)];
   CCBResult_Type *status;
   JavaLangThrowable *error = nil;
@@ -202,7 +202,7 @@ J2OBJC_INITIALIZED_DEFN(CCBTestStep)
   methods[8].selector = @selector(getStepLine);
   methods[9].selector = @selector(getStepArgument);
   methods[10].selector = @selector(getHookType);
-  methods[11].selector = @selector(runWithCucumberRunnerEventBus:withNSString:withCCBScenario:withBoolean:);
+  methods[11].selector = @selector(runWithCCBEventBus:withNSString:withCCBScenario:withBoolean:);
   methods[12].selector = @selector(nonExceptionStatusWithBoolean:);
   methods[13].selector = @selector(executeStepWithNSString:withCCBScenario:withBoolean:);
   methods[14].selector = @selector(mapThrowableToStatusWithJavaLangThrowable:);
@@ -212,7 +212,7 @@ J2OBJC_INITIALIZED_DEFN(CCBTestStep)
     { "ASSUMPTION_VIOLATED_EXCEPTIONS", "[LNSString;", .constantValue.asLong = 0, 0x1a, -1, 17, -1, -1 },
     { "definitionMatch_", "LCCBRDefinitionMatch;", .constantValue.asLong = 0, 0x14, -1, -1, -1, 18 },
   };
-  static const void *ptrTable[] = { "LCCBRDefinitionMatch;", (void *)&CCBTestStep__Annotations$0, "()Ljava/util/List<Lcucumber/runtime/Argument;>;", "()Ljava/util/List<Lgherkin/pickles/Argument;>;", "run", "LCucumberRunnerEventBus;LNSString;LCCBScenario;Z", (void *)&CCBTestStep__Annotations$1, "nonExceptionStatus", "Z", (void *)&CCBTestStep__Annotations$2, "executeStep", "LNSString;LCCBScenario;Z", "LJavaLangThrowable;", (void *)&CCBTestStep__Annotations$3, "mapThrowableToStatus", "mapStatusToResult", "LCCBResult_Type;LJavaLangThrowable;J", &CCBTestStep_ASSUMPTION_VIOLATED_EXCEPTIONS, (void *)&CCBTestStep__Annotations$4 };
+  static const void *ptrTable[] = { "LCCBRDefinitionMatch;", (void *)&CCBTestStep__Annotations$0, "()Ljava/util/List<Lcucumber/runtime/Argument;>;", "()Ljava/util/List<Lgherkin/pickles/Argument;>;", "run", "LCCBEventBus;LNSString;LCCBScenario;Z", (void *)&CCBTestStep__Annotations$1, "nonExceptionStatus", "Z", (void *)&CCBTestStep__Annotations$2, "executeStep", "LNSString;LCCBScenario;Z", "LJavaLangThrowable;", (void *)&CCBTestStep__Annotations$3, "mapThrowableToStatus", "mapStatusToResult", "LCCBResult_Type;LJavaLangThrowable;J", &CCBTestStep_ASSUMPTION_VIOLATED_EXCEPTIONS, (void *)&CCBTestStep__Annotations$4 };
   static const J2ObjcClassInfo _CCBTestStep = { "TestStep", "cucumber.api", ptrTable, methods, fields, 7, 0x401, 16, 2, -1, -1, -1, -1, -1 };
   return &_CCBTestStep;
 }

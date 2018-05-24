@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBกำหนดให้_) && (INCLUDE_ALL_CucumberApiJavaThกำหนดให_ || defined(INCLUDE_CCBกำหนดให้))
-#define CCBกำหนดให้_
+#if !defined (CucumberApiJavaThกำหนดให้_) && (INCLUDE_ALL_CucumberApiJavaThกำหนดให_ || defined(INCLUDE_CucumberApiJavaThกำหนดให้))
+#define CucumberApiJavaThกำหนดให้_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBกำหนดให้ < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaThกำหนดให้ < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBกำหนดให้ : NSObject < CCBกำหนดให้ > {
+@interface CucumberApiJavaThกำหนดให้ : NSObject < CucumberApiJavaThกำหนดให้ > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBกำหนดให้)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaThกำหนดให้)
 
-FOUNDATION_EXPORT id<CCBกำหนดให้> create_CCBกำหนดให้(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaThกำหนดให้> create_CucumberApiJavaThกำหนดให้(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBกำหนดให้)
-
-#define CucumberApiJavaThกำหนดให้ CCBกำหนดให้
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaThกำหนดให้)
 
 #endif
 

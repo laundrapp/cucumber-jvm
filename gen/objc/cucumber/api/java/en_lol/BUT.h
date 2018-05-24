@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBBUT_) && (INCLUDE_ALL_CucumberApiJavaEn_lolBUT || defined(INCLUDE_CCBBUT))
-#define CCBBUT_
+#if !defined (CucumberApiJavaEn_lolBUT_) && (INCLUDE_ALL_CucumberApiJavaEn_lolBUT || defined(INCLUDE_CucumberApiJavaEn_lolBUT))
+#define CucumberApiJavaEn_lolBUT_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBBUT < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaEn_lolBUT < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBBUT : NSObject < CCBBUT > {
+@interface CucumberApiJavaEn_lolBUT : NSObject < CucumberApiJavaEn_lolBUT > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBBUT)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEn_lolBUT)
 
-FOUNDATION_EXPORT id<CCBBUT> create_CCBBUT(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaEn_lolBUT> create_CucumberApiJavaEn_lolBUT(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBBUT)
-
-#define CucumberApiJavaEn_lolBUT CCBBUT
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEn_lolBUT)
 
 #endif
 

@@ -6,11 +6,11 @@
 #include "J2ObjC_source.h"
 #include "cucumber/api/java/ObjectFactory.h"
 
-@interface CCBObjectFactory : NSObject
+@interface CucumberApiJavaObjectFactory : NSObject
 
 @end
 
-@implementation CCBObjectFactory
+@implementation CucumberApiJavaObjectFactory
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -28,10 +28,10 @@
   methods[3].selector = @selector(getInstanceWithIOSClass:);
   #pragma clang diagnostic pop
   static const void *ptrTable[] = { "addClass", "LIOSClass;", "(Ljava/lang/Class<*>;)Z", "getInstance", "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;)TT;" };
-  static const J2ObjcClassInfo _CCBObjectFactory = { "ObjectFactory", "cucumber.api.java", ptrTable, methods, NULL, 7, 0x609, 4, 0, -1, -1, -1, -1, -1 };
-  return &_CCBObjectFactory;
+  static const J2ObjcClassInfo _CucumberApiJavaObjectFactory = { "ObjectFactory", "cucumber.api.java", ptrTable, methods, NULL, 7, 0x609, 4, 0, -1, -1, -1, -1, -1 };
+  return &_CucumberApiJavaObjectFactory;
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBObjectFactory)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiJavaObjectFactory)

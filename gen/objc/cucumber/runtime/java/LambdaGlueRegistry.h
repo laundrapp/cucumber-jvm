@@ -18,14 +18,14 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBLambdaGlueRegistry_) && (INCLUDE_ALL_CucumberRuntimeJavaLambdaGlueRegistry || defined(INCLUDE_CCBLambdaGlueRegistry))
-#define CCBLambdaGlueRegistry_
+#if !defined (CucumberRuntimeJavaLambdaGlueRegistry_) && (INCLUDE_ALL_CucumberRuntimeJavaLambdaGlueRegistry || defined(INCLUDE_CucumberRuntimeJavaLambdaGlueRegistry))
+#define CucumberRuntimeJavaLambdaGlueRegistry_
 
 @class JavaLangThreadLocal;
 @protocol CCBRHookDefinition;
 @protocol CCBRStepDefinition;
 
-@protocol CCBLambdaGlueRegistry < JavaObject >
+@protocol CucumberRuntimeJavaLambdaGlueRegistry < JavaObject >
 
 - (void)addStepDefinitionWithCCBRStepDefinition:(id<CCBRStepDefinition>)stepDefinition;
 
@@ -35,20 +35,18 @@
 
 @end
 
-@interface CCBLambdaGlueRegistry : NSObject
+@interface CucumberRuntimeJavaLambdaGlueRegistry : NSObject
 
 @end
 
-J2OBJC_STATIC_INIT(CCBLambdaGlueRegistry)
+J2OBJC_STATIC_INIT(CucumberRuntimeJavaLambdaGlueRegistry)
 
-inline JavaLangThreadLocal *CCBLambdaGlueRegistry_get_INSTANCE(void);
+inline JavaLangThreadLocal *CucumberRuntimeJavaLambdaGlueRegistry_get_INSTANCE(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
-FOUNDATION_EXPORT JavaLangThreadLocal *CCBLambdaGlueRegistry_INSTANCE;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBLambdaGlueRegistry, INSTANCE, JavaLangThreadLocal *)
+FOUNDATION_EXPORT JavaLangThreadLocal *CucumberRuntimeJavaLambdaGlueRegistry_INSTANCE;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeJavaLambdaGlueRegistry, INSTANCE, JavaLangThreadLocal *)
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBLambdaGlueRegistry)
-
-#define CucumberRuntimeJavaLambdaGlueRegistry CCBLambdaGlueRegistry
+J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeJavaLambdaGlueRegistry)
 
 #endif
 

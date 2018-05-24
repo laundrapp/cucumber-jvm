@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBKadar_) && (INCLUDE_ALL_CucumberApiJavaSlKadar || defined(INCLUDE_CCBKadar))
-#define CCBKadar_
+#if !defined (CucumberApiJavaSlKadar_) && (INCLUDE_ALL_CucumberApiJavaSlKadar || defined(INCLUDE_CucumberApiJavaSlKadar))
+#define CucumberApiJavaSlKadar_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBKadar < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaSlKadar < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBKadar : NSObject < CCBKadar > {
+@interface CucumberApiJavaSlKadar : NSObject < CucumberApiJavaSlKadar > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBKadar)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaSlKadar)
 
-FOUNDATION_EXPORT id<CCBKadar> create_CCBKadar(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaSlKadar> create_CucumberApiJavaSlKadar(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBKadar)
-
-#define CucumberApiJavaSlKadar CCBKadar
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaSlKadar)
 
 #endif
 

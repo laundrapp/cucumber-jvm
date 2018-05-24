@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBÉs_) && (INCLUDE_ALL_CucumberApiJavaHuÉs || defined(INCLUDE_CCBÉs))
-#define CCBÉs_
+#if !defined (CucumberApiJavaHuÉs_) && (INCLUDE_ALL_CucumberApiJavaHuÉs || defined(INCLUDE_CucumberApiJavaHuÉs))
+#define CucumberApiJavaHuÉs_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBÉs < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaHuÉs < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBÉs : NSObject < CCBÉs > {
+@interface CucumberApiJavaHuÉs : NSObject < CucumberApiJavaHuÉs > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBÉs)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaHuÉs)
 
-FOUNDATION_EXPORT id<CCBÉs> create_CCBÉs(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaHuÉs> create_CucumberApiJavaHuÉs(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBÉs)
-
-#define CucumberApiJavaHuÉs CCBÉs
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaHuÉs)
 
 #endif
 

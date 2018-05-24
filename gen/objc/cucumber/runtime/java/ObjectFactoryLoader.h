@@ -18,13 +18,13 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBObjectFactoryLoader_) && (INCLUDE_ALL_CucumberRuntimeJavaObjectFactoryLoader || defined(INCLUDE_CCBObjectFactoryLoader))
-#define CCBObjectFactoryLoader_
+#if !defined (CucumberRuntimeJavaObjectFactoryLoader_) && (INCLUDE_ALL_CucumberRuntimeJavaObjectFactoryLoader || defined(INCLUDE_CucumberRuntimeJavaObjectFactoryLoader))
+#define CucumberRuntimeJavaObjectFactoryLoader_
 
-@protocol CCBObjectFactory;
 @protocol CCBRClassFinder;
+@protocol CucumberApiJavaObjectFactory;
 
-@interface CCBObjectFactoryLoader : NSObject
+@interface CucumberRuntimeJavaObjectFactoryLoader : NSObject
 
 #pragma mark Public
 
@@ -37,18 +37,16 @@ cucumber.runtime
  @param objectFactoryClassName specific class name of <code>ObjectFactory</code>  implementation. May be null.
  @return an instance of <code>ObjectFactory</code>
  */
-+ (id<CCBObjectFactory>)loadObjectFactoryWithCCBRClassFinder:(id<CCBRClassFinder>)classFinder
-                                                withNSString:(NSString *)objectFactoryClassName;
++ (id<CucumberApiJavaObjectFactory>)loadObjectFactoryWithCCBRClassFinder:(id<CCBRClassFinder>)classFinder
+                                                            withNSString:(NSString *)objectFactoryClassName;
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBObjectFactoryLoader)
+J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeJavaObjectFactoryLoader)
 
-FOUNDATION_EXPORT id<CCBObjectFactory> CCBObjectFactoryLoader_loadObjectFactoryWithCCBRClassFinder_withNSString_(id<CCBRClassFinder> classFinder, NSString *objectFactoryClassName);
+FOUNDATION_EXPORT id<CucumberApiJavaObjectFactory> CucumberRuntimeJavaObjectFactoryLoader_loadObjectFactoryWithCCBRClassFinder_withNSString_(id<CCBRClassFinder> classFinder, NSString *objectFactoryClassName);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBObjectFactoryLoader)
-
-@compatibility_alias CucumberRuntimeJavaObjectFactoryLoader CCBObjectFactoryLoader;
+J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeJavaObjectFactoryLoader)
 
 #endif
 

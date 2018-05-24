@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBΔεδομένου_) && (INCLUDE_ALL_CucumberApiJavaElΔεδομένου || defined(INCLUDE_CCBΔεδομένου))
-#define CCBΔεδομένου_
+#if !defined (CucumberApiJavaElΔεδομένου_) && (INCLUDE_ALL_CucumberApiJavaElΔεδομένου || defined(INCLUDE_CucumberApiJavaElΔεδομένου))
+#define CucumberApiJavaElΔεδομένου_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBΔεδομένου < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaElΔεδομένου < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBΔεδομένου : NSObject < CCBΔεδομένου > {
+@interface CucumberApiJavaElΔεδομένου : NSObject < CucumberApiJavaElΔεδομένου > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBΔεδομένου)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaElΔεδομένου)
 
-FOUNDATION_EXPORT id<CCBΔεδομένου> create_CCBΔεδομένου(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaElΔεδομένου> create_CucumberApiJavaElΔεδομένου(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBΔεδομένου)
-
-#define CucumberApiJavaElΔεδομένου CCBΔεδομένου
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaElΔεδομένου)
 
 #endif
 

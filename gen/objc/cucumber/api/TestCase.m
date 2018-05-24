@@ -59,13 +59,13 @@ __attribute__((unused)) static IOSObjectArray *CCBTestCase__Annotations$2(void);
   return self;
 }
 
-- (void)runWithCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus {
+- (void)runWithCCBEventBus:(CCBEventBus *)bus {
   jboolean skipNextStep = self->dryRun_;
-  JavaLangLong *startTime = [((CucumberRunnerEventBus *) nil_chk(bus)) getTime];
+  JavaLangLong *startTime = [((CCBEventBus *) nil_chk(bus)) getTime];
   [bus sendWithCCBEvent:create_CCBTestCaseStarted_initWithJavaLangLong_withCCBTestCase_(startTime, self)];
-  CCBRScenarioImpl *scenarioResult = create_CCBRScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(bus, pickleEvent_);
+  CCBRScenarioImpl *scenarioResult = create_CCBRScenarioImpl_initWithCCBEventBus_withGherkinEventsPickleEvent_(bus, pickleEvent_);
   for (CCBTestStep * __strong step in nil_chk(testSteps_)) {
-    CCBResult *stepResult = [((CCBTestStep *) nil_chk(step)) runWithCucumberRunnerEventBus:bus withNSString:[((GherkinPicklesPickle *) nil_chk(((GherkinEventsPickleEvent *) nil_chk(pickleEvent_))->pickle_)) getLanguage] withCCBScenario:scenarioResult withBoolean:skipNextStep];
+    CCBResult *stepResult = [((CCBTestStep *) nil_chk(step)) runWithCCBEventBus:bus withNSString:[((GherkinPicklesPickle *) nil_chk(((GherkinEventsPickleEvent *) nil_chk(pickleEvent_))->pickle_)) getLanguage] withCCBScenario:scenarioResult withBoolean:skipNextStep];
     if (![((CCBResult *) nil_chk(stepResult)) isWithCCBResult_Type:JreLoadEnum(CCBResult_Type, PASSED)]) {
       skipNextStep = true;
     }
@@ -127,7 +127,7 @@ __attribute__((unused)) static IOSObjectArray *CCBTestCase__Annotations$2(void);
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilList:withGherkinEventsPickleEvent:);
   methods[1].selector = @selector(initWithJavaUtilList:withGherkinEventsPickleEvent:withBoolean:);
-  methods[2].selector = @selector(runWithCucumberRunnerEventBus:);
+  methods[2].selector = @selector(runWithCCBEventBus:);
   methods[3].selector = @selector(getTestSteps);
   methods[4].selector = @selector(getName);
   methods[5].selector = @selector(getScenarioDesignation);
@@ -141,7 +141,7 @@ __attribute__((unused)) static IOSObjectArray *CCBTestCase__Annotations$2(void);
     { "testSteps_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 13, -1 },
     { "dryRun_", "Z", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LJavaUtilList;LGherkinEventsPickleEvent;", "(Ljava/util/List<Lcucumber/api/TestStep;>;Lgherkin/events/PickleEvent;)V", (void *)&CCBTestCase__Annotations$0, "LJavaUtilList;LGherkinEventsPickleEvent;Z", "(Ljava/util/List<Lcucumber/api/TestStep;>;Lgherkin/events/PickleEvent;Z)V", (void *)&CCBTestCase__Annotations$1, "run", "LCucumberRunnerEventBus;", (void *)&CCBTestCase__Annotations$2, "()Ljava/util/List<Lcucumber/api/TestStep;>;", "fileColonLine", "LGherkinPicklesPickleLocation;", "()Ljava/util/List<Lgherkin/pickles/PickleTag;>;", "Ljava/util/List<Lcucumber/api/TestStep;>;" };
+  static const void *ptrTable[] = { "LJavaUtilList;LGherkinEventsPickleEvent;", "(Ljava/util/List<Lcucumber/api/TestStep;>;Lgherkin/events/PickleEvent;)V", (void *)&CCBTestCase__Annotations$0, "LJavaUtilList;LGherkinEventsPickleEvent;Z", "(Ljava/util/List<Lcucumber/api/TestStep;>;Lgherkin/events/PickleEvent;Z)V", (void *)&CCBTestCase__Annotations$1, "run", "LCCBEventBus;", (void *)&CCBTestCase__Annotations$2, "()Ljava/util/List<Lcucumber/api/TestStep;>;", "fileColonLine", "LGherkinPicklesPickleLocation;", "()Ljava/util/List<Lgherkin/pickles/PickleTag;>;", "Ljava/util/List<Lcucumber/api/TestStep;>;" };
   static const J2ObjcClassInfo _CCBTestCase = { "TestCase", "cucumber.api", ptrTable, methods, fields, 7, 0x1, 10, 3, -1, -1, -1, -1, -1 };
   return &_CCBTestCase;
 }

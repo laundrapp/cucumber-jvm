@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBТэгээд_) && (INCLUDE_ALL_CucumberApiJavaMnТэгээд || defined(INCLUDE_CCBТэгээд))
-#define CCBТэгээд_
+#if !defined (CucumberApiJavaMnТэгээд_) && (INCLUDE_ALL_CucumberApiJavaMnТэгээд || defined(INCLUDE_CucumberApiJavaMnТэгээд))
+#define CucumberApiJavaMnТэгээд_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBТэгээд < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaMnТэгээд < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBТэгээд : NSObject < CCBТэгээд > {
+@interface CucumberApiJavaMnТэгээд : NSObject < CucumberApiJavaMnТэгээд > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBТэгээд)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaMnТэгээд)
 
-FOUNDATION_EXPORT id<CCBТэгээд> create_CCBТэгээд(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaMnТэгээд> create_CucumberApiJavaMnТэгээд(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBТэгээд)
-
-#define CucumberApiJavaMnТэгээд CCBТэгээд
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaMnТэгээд)
 
 #endif
 

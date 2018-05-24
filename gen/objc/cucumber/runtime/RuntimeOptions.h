@@ -21,10 +21,10 @@
 #if !defined (CCBRRuntimeOptions_) && (INCLUDE_ALL_CucumberRuntimeRuntimeOptions || defined(INCLUDE_CCBRRuntimeOptions))
 #define CCBRRuntimeOptions_
 
+@class CCBEventBus;
 @class CCBREnv;
 @class CCBRPluginFactory;
 @class CCBSnippetType;
-@class CucumberRunnerEventBus;
 @class JavaLangClassLoader;
 @protocol CCBFormatter;
 @protocol CCBRResourceLoader;
@@ -68,7 +68,7 @@
 - (void)addPluginWithCCBFormatter:(id<CCBFormatter>)plugin;
 
 - (id<JavaUtilList>)cucumberFeaturesWithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
-                                withCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus;
+                                           withCCBEventBus:(CCBEventBus *)bus;
 
 - (id<CCBFormatter>)formatterWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
 
@@ -104,7 +104,7 @@
 
 + (void)loadUsageTextIfNeeded;
 
-- (void)setEventBusWithCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus;
+- (void)setEventBusWithCCBEventBus:(CCBEventBus *)bus;
 
 - (CCBRRuntimeOptions *)withConvertersWithJavaUtilList:(id<JavaUtilList>)converters;
 

@@ -15,9 +15,9 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *CCBYa__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CucumberApiJavaAstYa__Annotations$0(void);
 
-@implementation CCBYa
+@implementation CucumberApiJavaAstYa
 
 @synthesize value = value_;
 @synthesize timeout = timeout_;
@@ -27,7 +27,7 @@ __attribute__((unused)) static IOSObjectArray *CCBYa__Annotations$0(void);
 }
 
 - (IOSClass *)annotationType {
-  return CCBYa_class_();
+  return CucumberApiJavaAstYa_class_();
 }
 
 - (NSString *)description {
@@ -62,22 +62,22 @@ __attribute__((unused)) static IOSObjectArray *CCBYa__Annotations$0(void);
     { "value_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "timeout_", "J", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&CCBYa__Annotations$0 };
-  static const J2ObjcClassInfo _CCBYa = { "Ya", "cucumber.api.java.ast", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
-  return &_CCBYa;
+  static const void *ptrTable[] = { (void *)&CucumberApiJavaAstYa__Annotations$0 };
+  static const J2ObjcClassInfo _CucumberApiJavaAstYa = { "Ya", "cucumber.api.java.ast", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
+  return &_CucumberApiJavaAstYa;
 }
 
 @end
 
-id<CCBYa> create_CCBYa(jlong timeout, NSString *value) {
-  CCBYa *self = AUTORELEASE([[CCBYa alloc] init]);
+id<CucumberApiJavaAstYa> create_CucumberApiJavaAstYa(jlong timeout, NSString *value) {
+  CucumberApiJavaAstYa *self = AUTORELEASE([[CucumberApiJavaAstYa alloc] init]);
   self->timeout_ = timeout;
   self->value_ = RETAIN_(value);
   return self;
 }
 
-IOSObjectArray *CCBYa__Annotations$0() {
-  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CCBStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
+IOSObjectArray *CucumberApiJavaAstYa__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CucumberRuntimeJavaStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBYa)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiJavaAstYa)

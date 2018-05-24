@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBPak_) && (INCLUDE_ALL_CucumberApiJavaCsPak || defined(INCLUDE_CCBPak))
-#define CCBPak_
+#if !defined (CucumberApiJavaCsPak_) && (INCLUDE_ALL_CucumberApiJavaCsPak || defined(INCLUDE_CucumberApiJavaCsPak))
+#define CucumberApiJavaCsPak_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBPak < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaCsPak < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBPak : NSObject < CCBPak > {
+@interface CucumberApiJavaCsPak : NSObject < CucumberApiJavaCsPak > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBPak)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaCsPak)
 
-FOUNDATION_EXPORT id<CCBPak> create_CCBPak(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaCsPak> create_CucumberApiJavaCsPak(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBPak)
-
-#define CucumberApiJavaCsPak CCBPak
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaCsPak)
 
 #endif
 

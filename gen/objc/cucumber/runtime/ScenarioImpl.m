@@ -36,7 +36,7 @@
   NSString *scenarioName_;
   NSString *scenarioId_;
   id<JavaUtilList> scenarioLines_;
-  CucumberRunnerEventBus *bus_;
+  CCBEventBus *bus_;
 }
 
 @end
@@ -47,7 +47,7 @@ J2OBJC_FIELD_SETTER(CCBRScenarioImpl, uri_, NSString *)
 J2OBJC_FIELD_SETTER(CCBRScenarioImpl, scenarioName_, NSString *)
 J2OBJC_FIELD_SETTER(CCBRScenarioImpl, scenarioId_, NSString *)
 J2OBJC_FIELD_SETTER(CCBRScenarioImpl, scenarioLines_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CCBRScenarioImpl, bus_, CucumberRunnerEventBus *)
+J2OBJC_FIELD_SETTER(CCBRScenarioImpl, bus_, CCBEventBus *)
 
 inline id<JavaUtilList> CCBRScenarioImpl_get_SEVERITY(void);
 static id<JavaUtilList> CCBRScenarioImpl_SEVERITY;
@@ -57,9 +57,9 @@ J2OBJC_INITIALIZED_DEFN(CCBRScenarioImpl)
 
 @implementation CCBRScenarioImpl
 
-- (instancetype __nonnull)initWithCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus
-                            withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent {
-  CCBRScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(self, bus, pickleEvent);
+- (instancetype __nonnull)initWithCCBEventBus:(CCBEventBus *)bus
+                 withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent {
+  CCBRScenarioImpl_initWithCCBEventBus_withGherkinEventsPickleEvent_(self, bus, pickleEvent);
   return self;
 }
 
@@ -161,7 +161,7 @@ J2OBJC_INITIALIZED_DEFN(CCBRScenarioImpl)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCucumberRunnerEventBus:withGherkinEventsPickleEvent:);
+  methods[0].selector = @selector(initWithCCBEventBus:withGherkinEventsPickleEvent:);
   methods[1].selector = @selector(addWithCCBResult:);
   methods[2].selector = @selector(getSourceTagNames);
   methods[3].selector = @selector(getStatus);
@@ -182,9 +182,9 @@ J2OBJC_INITIALIZED_DEFN(CCBRScenarioImpl)
     { "scenarioName_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "scenarioId_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "scenarioLines_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 13, -1 },
-    { "bus_", "LCucumberRunnerEventBus;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "bus_", "LCCBEventBus;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCucumberRunnerEventBus;LGherkinEventsPickleEvent;", "add", "LCCBResult;", "()Ljava/util/Collection<Ljava/lang/String;>;", "embed", "[BLNSString;", "write", "LNSString;", "()Ljava/util/List<Ljava/lang/Integer;>;", &CCBRScenarioImpl_SEVERITY, "Ljava/util/List<Lcucumber/api/Result$Type;>;", "Ljava/util/List<Lcucumber/api/Result;>;", "Ljava/util/List<Lgherkin/pickles/PickleTag;>;", "Ljava/util/List<Ljava/lang/Integer;>;" };
+  static const void *ptrTable[] = { "LCCBEventBus;LGherkinEventsPickleEvent;", "add", "LCCBResult;", "()Ljava/util/Collection<Ljava/lang/String;>;", "embed", "[BLNSString;", "write", "LNSString;", "()Ljava/util/List<Ljava/lang/Integer;>;", &CCBRScenarioImpl_SEVERITY, "Ljava/util/List<Lcucumber/api/Result$Type;>;", "Ljava/util/List<Lcucumber/api/Result;>;", "Ljava/util/List<Lgherkin/pickles/PickleTag;>;", "Ljava/util/List<Ljava/lang/Integer;>;" };
   static const J2ObjcClassInfo _CCBRScenarioImpl = { "ScenarioImpl", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 12, 8, -1, -1, -1, -1, -1 };
   return &_CCBRScenarioImpl;
 }
@@ -198,7 +198,7 @@ J2OBJC_INITIALIZED_DEFN(CCBRScenarioImpl)
 
 @end
 
-void CCBRScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(CCBRScenarioImpl *self, CucumberRunnerEventBus *bus, GherkinEventsPickleEvent *pickleEvent) {
+void CCBRScenarioImpl_initWithCCBEventBus_withGherkinEventsPickleEvent_(CCBRScenarioImpl *self, CCBEventBus *bus, GherkinEventsPickleEvent *pickleEvent) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->stepResults_, new_JavaUtilArrayList_init());
   JreStrongAssign(&self->bus_, bus);
@@ -215,12 +215,12 @@ void CCBRScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEven
   JreStrongAssign(&self->scenarioLines_, JavaUtilCollections_unmodifiableListWithJavaUtilList_(lines));
 }
 
-CCBRScenarioImpl *new_CCBRScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(CucumberRunnerEventBus *bus, GherkinEventsPickleEvent *pickleEvent) {
-  J2OBJC_NEW_IMPL(CCBRScenarioImpl, initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_, bus, pickleEvent)
+CCBRScenarioImpl *new_CCBRScenarioImpl_initWithCCBEventBus_withGherkinEventsPickleEvent_(CCBEventBus *bus, GherkinEventsPickleEvent *pickleEvent) {
+  J2OBJC_NEW_IMPL(CCBRScenarioImpl, initWithCCBEventBus_withGherkinEventsPickleEvent_, bus, pickleEvent)
 }
 
-CCBRScenarioImpl *create_CCBRScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(CucumberRunnerEventBus *bus, GherkinEventsPickleEvent *pickleEvent) {
-  J2OBJC_CREATE_IMPL(CCBRScenarioImpl, initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_, bus, pickleEvent)
+CCBRScenarioImpl *create_CCBRScenarioImpl_initWithCCBEventBus_withGherkinEventsPickleEvent_(CCBEventBus *bus, GherkinEventsPickleEvent *pickleEvent) {
+  J2OBJC_CREATE_IMPL(CCBRScenarioImpl, initWithCCBEventBus_withGherkinEventsPickleEvent_, bus, pickleEvent)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRScenarioImpl)

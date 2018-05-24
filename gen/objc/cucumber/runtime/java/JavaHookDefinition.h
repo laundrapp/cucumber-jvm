@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBJavaHookDefinition_) && (INCLUDE_ALL_CucumberRuntimeJavaJavaHookDefinition || defined(INCLUDE_CCBJavaHookDefinition))
-#define CCBJavaHookDefinition_
+#if !defined (CucumberRuntimeJavaJavaHookDefinition_) && (INCLUDE_ALL_CucumberRuntimeJavaJavaHookDefinition || defined(INCLUDE_CucumberRuntimeJavaJavaHookDefinition))
+#define CucumberRuntimeJavaJavaHookDefinition_
 
 #define RESTRICT_CucumberRuntimeHookDefinition 1
 #define INCLUDE_CCBRHookDefinition 1
@@ -27,11 +27,11 @@
 
 @class IOSObjectArray;
 @class JavaLangReflectMethod;
-@protocol CCBObjectFactory;
 @protocol CCBScenario;
+@protocol CucumberApiJavaObjectFactory;
 @protocol JavaUtilCollection;
 
-@interface CCBJavaHookDefinition : NSObject < CCBRHookDefinition >
+@interface CucumberRuntimeJavaJavaHookDefinition : NSObject < CCBRHookDefinition >
 
 #pragma mark Public
 
@@ -39,7 +39,7 @@
                                       withNSStringArray:(IOSObjectArray *)tagExpressions
                                                 withInt:(jint)order
                                                withLong:(jlong)timeoutMillis
-                                   withCCBObjectFactory:(id<CCBObjectFactory>)objectFactory;
+                       withCucumberApiJavaObjectFactory:(id<CucumberApiJavaObjectFactory>)objectFactory;
 
 - (void)executeWithCCBScenario:(id<CCBScenario>)scenario;
 
@@ -61,17 +61,15 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBJavaHookDefinition)
+J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeJavaJavaHookDefinition)
 
-FOUNDATION_EXPORT void CCBJavaHookDefinition_initWithJavaLangReflectMethod_withNSStringArray_withInt_withLong_withCCBObjectFactory_(CCBJavaHookDefinition *self, JavaLangReflectMethod *method, IOSObjectArray *tagExpressions, jint order, jlong timeoutMillis, id<CCBObjectFactory> objectFactory);
+FOUNDATION_EXPORT void CucumberRuntimeJavaJavaHookDefinition_initWithJavaLangReflectMethod_withNSStringArray_withInt_withLong_withCucumberApiJavaObjectFactory_(CucumberRuntimeJavaJavaHookDefinition *self, JavaLangReflectMethod *method, IOSObjectArray *tagExpressions, jint order, jlong timeoutMillis, id<CucumberApiJavaObjectFactory> objectFactory);
 
-FOUNDATION_EXPORT CCBJavaHookDefinition *new_CCBJavaHookDefinition_initWithJavaLangReflectMethod_withNSStringArray_withInt_withLong_withCCBObjectFactory_(JavaLangReflectMethod *method, IOSObjectArray *tagExpressions, jint order, jlong timeoutMillis, id<CCBObjectFactory> objectFactory) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CucumberRuntimeJavaJavaHookDefinition *new_CucumberRuntimeJavaJavaHookDefinition_initWithJavaLangReflectMethod_withNSStringArray_withInt_withLong_withCucumberApiJavaObjectFactory_(JavaLangReflectMethod *method, IOSObjectArray *tagExpressions, jint order, jlong timeoutMillis, id<CucumberApiJavaObjectFactory> objectFactory) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBJavaHookDefinition *create_CCBJavaHookDefinition_initWithJavaLangReflectMethod_withNSStringArray_withInt_withLong_withCCBObjectFactory_(JavaLangReflectMethod *method, IOSObjectArray *tagExpressions, jint order, jlong timeoutMillis, id<CCBObjectFactory> objectFactory);
+FOUNDATION_EXPORT CucumberRuntimeJavaJavaHookDefinition *create_CucumberRuntimeJavaJavaHookDefinition_initWithJavaLangReflectMethod_withNSStringArray_withInt_withLong_withCucumberApiJavaObjectFactory_(JavaLangReflectMethod *method, IOSObjectArray *tagExpressions, jint order, jlong timeoutMillis, id<CucumberApiJavaObjectFactory> objectFactory);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBJavaHookDefinition)
-
-@compatibility_alias CucumberRuntimeJavaJavaHookDefinition CCBJavaHookDefinition;
+J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeJavaJavaHookDefinition)
 
 #endif
 

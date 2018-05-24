@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBQuan_) && (INCLUDE_ALL_CucumberApiJavaCaQuan || defined(INCLUDE_CCBQuan))
-#define CCBQuan_
+#if !defined (CucumberApiJavaCaQuan_) && (INCLUDE_ALL_CucumberApiJavaCaQuan || defined(INCLUDE_CucumberApiJavaCaQuan))
+#define CucumberApiJavaCaQuan_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBQuan < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaCaQuan < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBQuan : NSObject < CCBQuan > {
+@interface CucumberApiJavaCaQuan : NSObject < CucumberApiJavaCaQuan > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBQuan)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaCaQuan)
 
-FOUNDATION_EXPORT id<CCBQuan> create_CCBQuan(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaCaQuan> create_CucumberApiJavaCaQuan(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBQuan)
-
-#define CucumberApiJavaCaQuan CCBQuan
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaCaQuan)
 
 #endif
 

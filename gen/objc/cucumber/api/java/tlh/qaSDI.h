@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBqaSDI_) && (INCLUDE_ALL_CucumberApiJavaTlhQaSDI || defined(INCLUDE_CCBqaSDI))
-#define CCBqaSDI_
+#if !defined (CucumberApiJavaTlhqaSDI_) && (INCLUDE_ALL_CucumberApiJavaTlhQaSDI || defined(INCLUDE_CucumberApiJavaTlhqaSDI))
+#define CucumberApiJavaTlhqaSDI_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBqaSDI < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaTlhqaSDI < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBqaSDI : NSObject < CCBqaSDI > {
+@interface CucumberApiJavaTlhqaSDI : NSObject < CucumberApiJavaTlhqaSDI > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,13 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBqaSDI)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaTlhqaSDI)
 
-FOUNDATION_EXPORT id<CCBqaSDI> create_CCBqaSDI(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaTlhqaSDI> create_CucumberApiJavaTlhqaSDI(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBqaSDI)
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaTlhqaSDI)
 
-#define CucumberApiJavaTlhQaSDI CCBqaSDI
+#define CucumberApiJavaTlhQaSDI CucumberApiJavaTlhqaSDI
 
 #endif
 

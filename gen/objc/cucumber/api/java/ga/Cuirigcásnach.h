@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBCuirigcásnach_) && (INCLUDE_ALL_CucumberApiJavaGaCuirigcásnach || defined(INCLUDE_CCBCuirigcásnach))
-#define CCBCuirigcásnach_
+#if !defined (CucumberApiJavaGaCuirigcásnach_) && (INCLUDE_ALL_CucumberApiJavaGaCuirigcásnach || defined(INCLUDE_CucumberApiJavaGaCuirigcásnach))
+#define CucumberApiJavaGaCuirigcásnach_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBCuirigcásnach < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaGaCuirigcásnach < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBCuirigcásnach : NSObject < CCBCuirigcásnach > {
+@interface CucumberApiJavaGaCuirigcásnach : NSObject < CucumberApiJavaGaCuirigcásnach > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBCuirigcásnach)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaGaCuirigcásnach)
 
-FOUNDATION_EXPORT id<CCBCuirigcásnach> create_CCBCuirigcásnach(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaGaCuirigcásnach> create_CucumberApiJavaGaCuirigcásnach(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBCuirigcásnach)
-
-#define CucumberApiJavaGaCuirigcásnach CCBCuirigcásnach
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaGaCuirigcásnach)
 
 #endif
 

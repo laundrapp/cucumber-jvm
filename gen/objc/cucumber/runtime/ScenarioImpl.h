@@ -25,9 +25,9 @@
 #define INCLUDE_CCBScenario 1
 #include "cucumber/api/Scenario.h"
 
+@class CCBEventBus;
 @class CCBResult;
 @class CCBResult_Type;
-@class CucumberRunnerEventBus;
 @class GherkinEventsPickleEvent;
 @class IOSByteArray;
 @class JavaLangThrowable;
@@ -38,8 +38,8 @@
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCucumberRunnerEventBus:(CucumberRunnerEventBus *)bus
-                            withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent;
+- (instancetype __nonnull)initWithCCBEventBus:(CCBEventBus *)bus
+                 withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent;
 
 - (void)addWithCCBResult:(CCBResult *)result;
 
@@ -72,11 +72,11 @@
 
 J2OBJC_STATIC_INIT(CCBRScenarioImpl)
 
-FOUNDATION_EXPORT void CCBRScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(CCBRScenarioImpl *self, CucumberRunnerEventBus *bus, GherkinEventsPickleEvent *pickleEvent);
+FOUNDATION_EXPORT void CCBRScenarioImpl_initWithCCBEventBus_withGherkinEventsPickleEvent_(CCBRScenarioImpl *self, CCBEventBus *bus, GherkinEventsPickleEvent *pickleEvent);
 
-FOUNDATION_EXPORT CCBRScenarioImpl *new_CCBRScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(CucumberRunnerEventBus *bus, GherkinEventsPickleEvent *pickleEvent) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRScenarioImpl *new_CCBRScenarioImpl_initWithCCBEventBus_withGherkinEventsPickleEvent_(CCBEventBus *bus, GherkinEventsPickleEvent *pickleEvent) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRScenarioImpl *create_CCBRScenarioImpl_initWithCucumberRunnerEventBus_withGherkinEventsPickleEvent_(CucumberRunnerEventBus *bus, GherkinEventsPickleEvent *pickleEvent);
+FOUNDATION_EXPORT CCBRScenarioImpl *create_CCBRScenarioImpl_initWithCCBEventBus_withGherkinEventsPickleEvent_(CCBEventBus *bus, GherkinEventsPickleEvent *pickleEvent);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRScenarioImpl)
 

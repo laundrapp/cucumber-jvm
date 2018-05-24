@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBPeru_) && (INCLUDE_ALL_CucumberApiJavaAstPeru || defined(INCLUDE_CCBPeru))
-#define CCBPeru_
+#if !defined (CucumberApiJavaAstPeru_) && (INCLUDE_ALL_CucumberApiJavaAstPeru || defined(INCLUDE_CucumberApiJavaAstPeru))
+#define CucumberApiJavaAstPeru_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBPeru < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaAstPeru < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBPeru : NSObject < CCBPeru > {
+@interface CucumberApiJavaAstPeru : NSObject < CucumberApiJavaAstPeru > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBPeru)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaAstPeru)
 
-FOUNDATION_EXPORT id<CCBPeru> create_CCBPeru(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaAstPeru> create_CucumberApiJavaAstPeru(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBPeru)
-
-#define CucumberApiJavaAstPeru CCBPeru
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaAstPeru)
 
 #endif
 

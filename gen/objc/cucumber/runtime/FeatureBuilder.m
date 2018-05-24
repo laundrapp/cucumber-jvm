@@ -96,7 +96,7 @@ J2OBJC_INITIALIZED_DEFN(CCBRFeatureBuilder)
 
 - (NSString *)readWithCCBRResource:(id<CCBRResource>)resource {
   @try {
-    NSString *source = CucumberUtilEncoding_readFileWithCCBRResource_(resource);
+    NSString *source = CCBEncoding_readFileWithCCBRResource_(resource);
     return source;
   }
   @catch (JavaIoIOException *e) {

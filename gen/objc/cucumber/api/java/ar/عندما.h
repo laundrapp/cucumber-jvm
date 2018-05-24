@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBعندما_) && (INCLUDE_ALL_CucumberApiJavaArعندما || defined(INCLUDE_CCBعندما))
-#define CCBعندما_
+#if !defined (CucumberApiJavaArعندما_) && (INCLUDE_ALL_CucumberApiJavaArعندما || defined(INCLUDE_CucumberApiJavaArعندما))
+#define CucumberApiJavaArعندما_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBعندما < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaArعندما < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBعندما : NSObject < CCBعندما > {
+@interface CucumberApiJavaArعندما : NSObject < CucumberApiJavaArعندما > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBعندما)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaArعندما)
 
-FOUNDATION_EXPORT id<CCBعندما> create_CCBعندما(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaArعندما> create_CucumberApiJavaArعندما(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBعندما)
-
-#define CucumberApiJavaArعندما CCBعندما
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaArعندما)
 
 #endif
 

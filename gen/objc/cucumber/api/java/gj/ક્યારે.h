@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBક્યારે_) && (INCLUDE_ALL_CucumberApiJavaGjક_ય_ર_ || defined(INCLUDE_CCBક્યારે))
-#define CCBક્યારે_
+#if !defined (CucumberApiJavaGjક્યારે_) && (INCLUDE_ALL_CucumberApiJavaGjક_ય_ર_ || defined(INCLUDE_CucumberApiJavaGjક્યારે))
+#define CucumberApiJavaGjક્યારે_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBક્યારે < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaGjક્યારે < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBક્યારે : NSObject < CCBક્યારે > {
+@interface CucumberApiJavaGjક્યારે : NSObject < CucumberApiJavaGjક્યારે > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBક્યારે)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaGjક્યારે)
 
-FOUNDATION_EXPORT id<CCBક્યારે> create_CCBક્યારે(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaGjક્યારે> create_CucumberApiJavaGjક્યારે(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBક્યારે)
-
-#define CucumberApiJavaGjક્યારે CCBક્યારે
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaGjક્યારે)
 
 #endif
 

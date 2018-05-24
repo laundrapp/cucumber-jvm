@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBAllora_) && (INCLUDE_ALL_CucumberApiJavaItAllora || defined(INCLUDE_CCBAllora))
-#define CCBAllora_
+#if !defined (CucumberApiJavaItAllora_) && (INCLUDE_ALL_CucumberApiJavaItAllora || defined(INCLUDE_CucumberApiJavaItAllora))
+#define CucumberApiJavaItAllora_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBAllora < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaItAllora < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBAllora : NSObject < CCBAllora > {
+@interface CucumberApiJavaItAllora : NSObject < CucumberApiJavaItAllora > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBAllora)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaItAllora)
 
-FOUNDATION_EXPORT id<CCBAllora> create_CCBAllora(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaItAllora> create_CucumberApiJavaItAllora(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBAllora)
-
-#define CucumberApiJavaItAllora CCBAllora
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaItAllora)
 
 #endif
 

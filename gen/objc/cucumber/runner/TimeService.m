@@ -7,7 +7,7 @@
 #include "cucumber/runner/TimeService.h"
 #include "java/lang/System.h"
 
-@interface CucumberRunnerTimeService_1 : NSObject < CucumberRunnerTimeService >
+@interface CCBTimeService_1 : NSObject < CCBTimeService >
 
 - (instancetype __nonnull)init;
 
@@ -15,19 +15,19 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CucumberRunnerTimeService_1)
+J2OBJC_EMPTY_STATIC_INIT(CCBTimeService_1)
 
-__attribute__((unused)) static void CucumberRunnerTimeService_1_init(CucumberRunnerTimeService_1 *self);
+__attribute__((unused)) static void CCBTimeService_1_init(CCBTimeService_1 *self);
 
-__attribute__((unused)) static CucumberRunnerTimeService_1 *new_CucumberRunnerTimeService_1_init(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBTimeService_1 *new_CCBTimeService_1_init(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberRunnerTimeService_1 *create_CucumberRunnerTimeService_1_init(void);
+__attribute__((unused)) static CCBTimeService_1 *create_CCBTimeService_1_init(void);
 
-J2OBJC_INITIALIZED_DEFN(CucumberRunnerTimeService)
+J2OBJC_INITIALIZED_DEFN(CCBTimeService)
 
-id<CucumberRunnerTimeService> CucumberRunnerTimeService_SYSTEM;
+id<CCBTimeService> CCBTimeService_SYSTEM;
 
-@implementation CucumberRunnerTimeService
+@implementation CCBTimeService
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -39,29 +39,29 @@ id<CucumberRunnerTimeService> CucumberRunnerTimeService_SYSTEM;
   methods[0].selector = @selector(time);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "SYSTEM", "LCucumberRunnerTimeService;", .constantValue.asLong = 0, 0x19, -1, 0, -1, -1 },
+    { "SYSTEM", "LCCBTimeService;", .constantValue.asLong = 0, 0x19, -1, 0, -1, -1 },
   };
-  static const void *ptrTable[] = { &CucumberRunnerTimeService_SYSTEM };
-  static const J2ObjcClassInfo _CucumberRunnerTimeService = { "TimeService", "cucumber.runner", ptrTable, methods, fields, 7, 0x609, 1, 1, -1, -1, -1, -1, -1 };
-  return &_CucumberRunnerTimeService;
+  static const void *ptrTable[] = { &CCBTimeService_SYSTEM };
+  static const J2ObjcClassInfo _CCBTimeService = { "TimeService", "cucumber.runner", ptrTable, methods, fields, 7, 0x609, 1, 1, -1, -1, -1, -1, -1 };
+  return &_CCBTimeService;
 }
 
 + (void)initialize {
-  if (self == [CucumberRunnerTimeService class]) {
-    JreStrongAssignAndConsume(&CucumberRunnerTimeService_SYSTEM, new_CucumberRunnerTimeService_1_init());
-    J2OBJC_SET_INITIALIZED(CucumberRunnerTimeService)
+  if (self == [CCBTimeService class]) {
+    JreStrongAssignAndConsume(&CCBTimeService_SYSTEM, new_CCBTimeService_1_init());
+    J2OBJC_SET_INITIALIZED(CCBTimeService)
   }
 }
 
 @end
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberRunnerTimeService)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBTimeService)
 
-@implementation CucumberRunnerTimeService_1
+@implementation CCBTimeService_1
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
 - (instancetype __nonnull)init {
-  CucumberRunnerTimeService_1_init(self);
+  CCBTimeService_1_init(self);
   return self;
 }
 J2OBJC_IGNORE_DESIGNATED_END
@@ -81,21 +81,21 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(time);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LCucumberRunnerTimeService;" };
-  static const J2ObjcClassInfo _CucumberRunnerTimeService_1 = { "", "cucumber.runner", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 0, -1, -1, -1, -1 };
-  return &_CucumberRunnerTimeService_1;
+  static const void *ptrTable[] = { "LCCBTimeService;" };
+  static const J2ObjcClassInfo _CCBTimeService_1 = { "", "cucumber.runner", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 0, -1, -1, -1, -1 };
+  return &_CCBTimeService_1;
 }
 
 @end
 
-void CucumberRunnerTimeService_1_init(CucumberRunnerTimeService_1 *self) {
+void CCBTimeService_1_init(CCBTimeService_1 *self) {
   NSObject_init(self);
 }
 
-CucumberRunnerTimeService_1 *new_CucumberRunnerTimeService_1_init() {
-  J2OBJC_NEW_IMPL(CucumberRunnerTimeService_1, init)
+CCBTimeService_1 *new_CCBTimeService_1_init() {
+  J2OBJC_NEW_IMPL(CCBTimeService_1, init)
 }
 
-CucumberRunnerTimeService_1 *create_CucumberRunnerTimeService_1_init() {
-  J2OBJC_CREATE_IMPL(CucumberRunnerTimeService_1, init)
+CCBTimeService_1 *create_CCBTimeService_1_init() {
+  J2OBJC_CREATE_IMPL(CCBTimeService_1, init)
 }

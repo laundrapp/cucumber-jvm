@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBPero_) && (INCLUDE_ALL_CucumberApiJavaEsPero || defined(INCLUDE_CCBPero))
-#define CCBPero_
+#if !defined (CucumberApiJavaEsPero_) && (INCLUDE_ALL_CucumberApiJavaEsPero || defined(INCLUDE_CucumberApiJavaEsPero))
+#define CucumberApiJavaEsPero_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBPero < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaEsPero < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBPero : NSObject < CCBPero > {
+@interface CucumberApiJavaEsPero : NSObject < CucumberApiJavaEsPero > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBPero)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaEsPero)
 
-FOUNDATION_EXPORT id<CCBPero> create_CCBPero(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaEsPero> create_CucumberApiJavaEsPero(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBPero)
-
-#define CucumberApiJavaEsPero CCBPero
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaEsPero)
 
 #endif
 

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCB하지만_) && (INCLUDE_ALL_CucumberApiJavaKo하지만 || defined(INCLUDE_CCB하지만))
-#define CCB하지만_
+#if !defined (CucumberApiJavaKo하지만_) && (INCLUDE_ALL_CucumberApiJavaKo하지만 || defined(INCLUDE_CucumberApiJavaKo하지만))
+#define CucumberApiJavaKo하지만_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCB하지만 < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaKo하지만 < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCB하지만 : NSObject < CCB하지만 > {
+@interface CucumberApiJavaKo하지만 : NSObject < CucumberApiJavaKo하지만 > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCB하지만)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaKo하지만)
 
-FOUNDATION_EXPORT id<CCB하지만> create_CCB하지만(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaKo하지만> create_CucumberApiJavaKo하지만(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCB하지만)
-
-#define CucumberApiJavaKo하지만 CCB하지만
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaKo하지만)
 
 #endif
 

@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBCando_) && (INCLUDE_ALL_CucumberApiJavaGlCando || defined(INCLUDE_CCBCando))
-#define CCBCando_
+#if !defined (CucumberApiJavaGlCando_) && (INCLUDE_ALL_CucumberApiJavaGlCando || defined(INCLUDE_CucumberApiJavaGlCando))
+#define CucumberApiJavaGlCando_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBCando < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaGlCando < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBCando : NSObject < CCBCando > {
+@interface CucumberApiJavaGlCando : NSObject < CucumberApiJavaGlCando > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBCando)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaGlCando)
 
-FOUNDATION_EXPORT id<CCBCando> create_CCBCando(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaGlCando> create_CucumberApiJavaGlCando(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBCando)
-
-#define CucumberApiJavaGlCando CCBCando
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaGlCando)
 
 #endif
 

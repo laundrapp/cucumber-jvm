@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBMajd_) && (INCLUDE_ALL_CucumberApiJavaHuMajd || defined(INCLUDE_CCBMajd))
-#define CCBMajd_
+#if !defined (CucumberApiJavaHuMajd_) && (INCLUDE_ALL_CucumberApiJavaHuMajd || defined(INCLUDE_CucumberApiJavaHuMajd))
+#define CucumberApiJavaHuMajd_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBMajd < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaHuMajd < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBMajd : NSObject < CCBMajd > {
+@interface CucumberApiJavaHuMajd : NSObject < CucumberApiJavaHuMajd > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBMajd)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaHuMajd)
 
-FOUNDATION_EXPORT id<CCBMajd> create_CCBMajd(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaHuMajd> create_CucumberApiJavaHuMajd(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBMajd)
-
-#define CucumberApiJavaHuMajd CCBMajd
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaHuMajd)
 
 #endif
 

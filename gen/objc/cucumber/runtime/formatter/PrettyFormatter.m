@@ -54,8 +54,8 @@
   GherkinAstScenarioOutline *currentScenarioOutline_;
   GherkinAstExamples *currentExamples_;
   jint locationIndentation_;
-  id<CucumberUtilMapper> tagNameMapper_;
-  id<CucumberUtilMapper> pickleTagNameMapper_;
+  id<CCBMapper> tagNameMapper_;
+  id<CCBMapper> pickleTagNameMapper_;
   id<CCBEventHandler> testSourceReadHandler_;
   id<CCBEventHandler> caseStartedHandler_;
   id<CCBEventHandler> stepStartedHandler_;
@@ -139,8 +139,8 @@ J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, currentFeatureFile_, NSString *)
 J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, currentTestCase_, CCBTestCase *)
 J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, currentScenarioOutline_, GherkinAstScenarioOutline *)
 J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, currentExamples_, GherkinAstExamples *)
-J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, tagNameMapper_, id<CucumberUtilMapper>)
-J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, pickleTagNameMapper_, id<CucumberUtilMapper>)
+J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, tagNameMapper_, id<CCBMapper>)
+J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, pickleTagNameMapper_, id<CCBMapper>)
 J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, testSourceReadHandler_, id<CCBEventHandler>)
 J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, caseStartedHandler_, id<CCBEventHandler>)
 J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, stepStartedHandler_, id<CCBEventHandler>)
@@ -218,7 +218,7 @@ __attribute__((unused)) static void CCBRPrettyFormatter_calculateLocationIndenta
 
 __attribute__((unused)) static NSString *CCBRPrettyFormatter_createPaddingToLocationWithNSString_withNSString_(CCBRPrettyFormatter *self, NSString *indent, NSString *text);
 
-@interface CCBRPrettyFormatter_1 : NSObject < CucumberUtilMapper >
+@interface CCBRPrettyFormatter_1 : NSObject < CCBMapper >
 
 - (instancetype __nonnull)init;
 
@@ -234,7 +234,7 @@ __attribute__((unused)) static CCBRPrettyFormatter_1 *new_CCBRPrettyFormatter_1_
 
 __attribute__((unused)) static CCBRPrettyFormatter_1 *create_CCBRPrettyFormatter_1_init(void);
 
-@interface CCBRPrettyFormatter_2 : NSObject < CucumberUtilMapper >
+@interface CCBRPrettyFormatter_2 : NSObject < CCBMapper >
 
 - (instancetype __nonnull)init;
 
@@ -645,8 +645,8 @@ __attribute__((unused)) static CCBRPrettyFormatter_8 *create_CCBRPrettyFormatter
     { "currentScenarioOutline_", "LGherkinAstScenarioOutline;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "currentExamples_", "LGherkinAstExamples;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "locationIndentation_", "I", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "tagNameMapper_", "LCucumberUtilMapper;", .constantValue.asLong = 0, 0x2, -1, -1, 60, -1 },
-    { "pickleTagNameMapper_", "LCucumberUtilMapper;", .constantValue.asLong = 0, 0x2, -1, -1, 61, -1 },
+    { "tagNameMapper_", "LCCBMapper;", .constantValue.asLong = 0, 0x2, -1, -1, 60, -1 },
+    { "pickleTagNameMapper_", "LCCBMapper;", .constantValue.asLong = 0, 0x2, -1, -1, 61, -1 },
     { "testSourceReadHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 62, -1 },
     { "caseStartedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 63, -1 },
     { "stepStartedHandler_", "LCCBEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 64, -1 },
@@ -832,13 +832,13 @@ void CCBRPrettyFormatter_printTagsWithJavaUtilList_(CCBRPrettyFormatter *self, i
 
 void CCBRPrettyFormatter_printTagsWithJavaUtilList_withNSString_(CCBRPrettyFormatter *self, id<JavaUtilList> tags, NSString *indent) {
   if (![((id<JavaUtilList>) nil_chk(tags)) isEmpty]) {
-    [((CCBNiceAppendable *) nil_chk(self->out_)) printlnWithJavaLangCharSequence:JreStrcat("$$", indent, CucumberUtilFixJava_joinWithJavaUtilList_withNSString_(CucumberUtilFixJava_mapWithJavaUtilList_withCucumberUtilMapper_(tags, self->tagNameMapper_), @" "))];
+    [((CCBNiceAppendable *) nil_chk(self->out_)) printlnWithJavaLangCharSequence:JreStrcat("$$", indent, CCBFixJava_joinWithJavaUtilList_withNSString_(CCBFixJava_mapWithJavaUtilList_withCCBMapper_(tags, self->tagNameMapper_), @" "))];
   }
 }
 
 void CCBRPrettyFormatter_printPickleTagsWithJavaUtilList_withNSString_(CCBRPrettyFormatter *self, id<JavaUtilList> tags, NSString *indent) {
   if (![((id<JavaUtilList>) nil_chk(tags)) isEmpty]) {
-    [((CCBNiceAppendable *) nil_chk(self->out_)) printlnWithJavaLangCharSequence:JreStrcat("$$", indent, CucumberUtilFixJava_joinWithJavaUtilList_withNSString_(CucumberUtilFixJava_mapWithJavaUtilList_withCucumberUtilMapper_(tags, self->pickleTagNameMapper_), @" "))];
+    [((CCBNiceAppendable *) nil_chk(self->out_)) printlnWithJavaLangCharSequence:JreStrcat("$$", indent, CCBFixJava_joinWithJavaUtilList_withNSString_(CCBFixJava_mapWithJavaUtilList_withCCBMapper_(tags, self->pickleTagNameMapper_), @" "))];
   }
 }
 

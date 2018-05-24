@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBTakrat_) && (INCLUDE_ALL_CucumberApiJavaSlTakrat || defined(INCLUDE_CCBTakrat))
-#define CCBTakrat_
+#if !defined (CucumberApiJavaSlTakrat_) && (INCLUDE_ALL_CucumberApiJavaSlTakrat || defined(INCLUDE_CucumberApiJavaSlTakrat))
+#define CucumberApiJavaSlTakrat_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBTakrat < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaSlTakrat < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBTakrat : NSObject < CCBTakrat > {
+@interface CucumberApiJavaSlTakrat : NSObject < CucumberApiJavaSlTakrat > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBTakrat)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaSlTakrat)
 
-FOUNDATION_EXPORT id<CCBTakrat> create_CCBTakrat(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaSlTakrat> create_CucumberApiJavaSlTakrat(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBTakrat)
-
-#define CucumberApiJavaSlTakrat CCBTakrat
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaSlTakrat)
 
 #endif
 

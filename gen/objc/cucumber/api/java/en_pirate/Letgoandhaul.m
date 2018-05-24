@@ -15,9 +15,9 @@
 #include "java/lang/annotation/RetentionPolicy.h"
 #include "java/lang/annotation/Target.h"
 
-__attribute__((unused)) static IOSObjectArray *CCBLetgoandhaul__Annotations$0(void);
+__attribute__((unused)) static IOSObjectArray *CucumberApiJavaEn_pirateLetgoandhaul__Annotations$0(void);
 
-@implementation CCBLetgoandhaul
+@implementation CucumberApiJavaEn_pirateLetgoandhaul
 
 @synthesize value = value_;
 @synthesize timeout = timeout_;
@@ -27,7 +27,7 @@ __attribute__((unused)) static IOSObjectArray *CCBLetgoandhaul__Annotations$0(vo
 }
 
 - (IOSClass *)annotationType {
-  return CCBLetgoandhaul_class_();
+  return CucumberApiJavaEn_pirateLetgoandhaul_class_();
 }
 
 - (NSString *)description {
@@ -62,22 +62,22 @@ __attribute__((unused)) static IOSObjectArray *CCBLetgoandhaul__Annotations$0(vo
     { "value_", "LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "timeout_", "J", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { (void *)&CCBLetgoandhaul__Annotations$0 };
-  static const J2ObjcClassInfo _CCBLetgoandhaul = { "Letgoandhaul", "cucumber.api.java.en_pirate", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
-  return &_CCBLetgoandhaul;
+  static const void *ptrTable[] = { (void *)&CucumberApiJavaEn_pirateLetgoandhaul__Annotations$0 };
+  static const J2ObjcClassInfo _CucumberApiJavaEn_pirateLetgoandhaul = { "Letgoandhaul", "cucumber.api.java.en_pirate", ptrTable, methods, fields, 7, 0x2609, 2, 2, -1, -1, -1, -1, 0 };
+  return &_CucumberApiJavaEn_pirateLetgoandhaul;
 }
 
 @end
 
-id<CCBLetgoandhaul> create_CCBLetgoandhaul(jlong timeout, NSString *value) {
-  CCBLetgoandhaul *self = AUTORELEASE([[CCBLetgoandhaul alloc] init]);
+id<CucumberApiJavaEn_pirateLetgoandhaul> create_CucumberApiJavaEn_pirateLetgoandhaul(jlong timeout, NSString *value) {
+  CucumberApiJavaEn_pirateLetgoandhaul *self = AUTORELEASE([[CucumberApiJavaEn_pirateLetgoandhaul alloc] init]);
   self->timeout_ = timeout;
   self->value_ = RETAIN_(value);
   return self;
 }
 
-IOSObjectArray *CCBLetgoandhaul__Annotations$0() {
-  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CCBStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
+IOSObjectArray *CucumberApiJavaEn_pirateLetgoandhaul__Annotations$0() {
+  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangAnnotationRetention(JreLoadEnum(JavaLangAnnotationRetentionPolicy, RUNTIME)), create_JavaLangAnnotationTarget([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(JavaLangAnnotationElementType, METHOD) } count:1 type:JavaLangAnnotationElementType_class_()]), create_CucumberRuntimeJavaStepDefAnnotation(), create_JavaLangAnnotationDocumented() } count:4 type:JavaLangAnnotationAnnotation_class_()];
 }
 
-J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CCBLetgoandhaul)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiJavaEn_pirateLetgoandhaul)

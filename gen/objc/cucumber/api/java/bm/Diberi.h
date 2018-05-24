@@ -18,8 +18,8 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (CCBDiberi_) && (INCLUDE_ALL_CucumberApiJavaBmDiberi || defined(INCLUDE_CCBDiberi))
-#define CCBDiberi_
+#if !defined (CucumberApiJavaBmDiberi_) && (INCLUDE_ALL_CucumberApiJavaBmDiberi || defined(INCLUDE_CucumberApiJavaBmDiberi))
+#define CucumberApiJavaBmDiberi_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
@@ -27,7 +27,7 @@
 
 @class IOSClass;
 
-@protocol CCBDiberi < JavaLangAnnotationAnnotation >
+@protocol CucumberApiJavaBmDiberi < JavaLangAnnotationAnnotation >
 
 @property (readonly) NSString *value;
 @property (readonly) jlong timeout;
@@ -38,7 +38,7 @@
 
 @end
 
-@interface CCBDiberi : NSObject < CCBDiberi > {
+@interface CucumberApiJavaBmDiberi : NSObject < CucumberApiJavaBmDiberi > {
  @public
   NSString *value_;
   jlong timeout_;
@@ -46,13 +46,11 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(CCBDiberi)
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiJavaBmDiberi)
 
-FOUNDATION_EXPORT id<CCBDiberi> create_CCBDiberi(jlong timeout, NSString *value);
+FOUNDATION_EXPORT id<CucumberApiJavaBmDiberi> create_CucumberApiJavaBmDiberi(jlong timeout, NSString *value);
 
-J2OBJC_TYPE_LITERAL_HEADER(CCBDiberi)
-
-#define CucumberApiJavaBmDiberi CCBDiberi
+J2OBJC_TYPE_LITERAL_HEADER(CucumberApiJavaBmDiberi)
 
 #endif
 
