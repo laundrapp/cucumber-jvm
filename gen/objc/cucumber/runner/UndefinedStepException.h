@@ -25,13 +25,13 @@
 #define INCLUDE_JavaLangThrowable 1
 #include "java/lang/Throwable.h"
 
-@class GherkinPicklesPickleStep;
+@class GHKPickleStep;
 
 @interface CCBUndefinedStepException : JavaLangThrowable
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step;
+- (instancetype __nonnull)initWithGHKPickleStep:(GHKPickleStep *)step;
 
 // Disallowed inherited constructors, do not use.
 
@@ -53,11 +53,11 @@
 
 J2OBJC_EMPTY_STATIC_INIT(CCBUndefinedStepException)
 
-FOUNDATION_EXPORT void CCBUndefinedStepException_initWithGherkinPicklesPickleStep_(CCBUndefinedStepException *self, GherkinPicklesPickleStep *step);
+FOUNDATION_EXPORT void CCBUndefinedStepException_initWithGHKPickleStep_(CCBUndefinedStepException *self, GHKPickleStep *step);
 
-FOUNDATION_EXPORT CCBUndefinedStepException *new_CCBUndefinedStepException_initWithGherkinPicklesPickleStep_(GherkinPicklesPickleStep *step) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBUndefinedStepException *new_CCBUndefinedStepException_initWithGHKPickleStep_(GHKPickleStep *step) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBUndefinedStepException *create_CCBUndefinedStepException_initWithGherkinPicklesPickleStep_(GherkinPicklesPickleStep *step);
+FOUNDATION_EXPORT CCBUndefinedStepException *create_CCBUndefinedStepException_initWithGHKPickleStep_(GHKPickleStep *step);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBUndefinedStepException)
 

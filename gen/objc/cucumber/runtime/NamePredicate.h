@@ -25,7 +25,7 @@
 #define INCLUDE_CCBRPicklePredicate 1
 #include "cucumber/runtime/PicklePredicate.h"
 
-@class GherkinEventsPickleEvent;
+@class GHKPickleEvent;
 @protocol JavaUtilList;
 
 @interface CCBRNamePredicate : NSObject < CCBRPicklePredicate >
@@ -34,7 +34,7 @@
 
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)patterns;
 
-- (jboolean)applyWithGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent;
+- (jboolean)applyWithGHKPickleEvent:(GHKPickleEvent *)pickleEvent;
 
 // Disallowed inherited constructors, do not use.
 

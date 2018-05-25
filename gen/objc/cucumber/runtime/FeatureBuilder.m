@@ -74,14 +74,14 @@ J2OBJC_INITIALIZED_DEFN(CCBRFeatureBuilder)
     return;
   }
   [pathsByChecksum_ putWithId:checksum withId:[((id<CCBRResource>) nil_chk(resource)) getPath]];
-  GherkinParser *parser = create_GherkinParser_initWithGherkinParser_Builder_(create_GherkinAstBuilder_init());
-  GherkinTokenMatcher *matcher = create_GherkinTokenMatcher_init();
+  GHKParser *parser = create_GHKParser_initWithGHKParser_Builder_(create_GHKAstBuilder_init());
+  GHKTokenMatcher *matcher = create_GHKTokenMatcher_init();
   @try {
-    GherkinAstGherkinDocument *gherkinDocument = [parser parseWithNSString:gherkin withGherkinParser_ITokenMatcher:matcher];
-    CCBRCucumberFeature *feature = create_CCBRCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(gherkinDocument, CCBRFeatureBuilder_convertFileSeparatorToForwardSlashWithNSString_(self, [resource getPath]), gherkin);
+    GHKAGherkinDocument *gherkinDocument = [parser parseWithNSString:gherkin withGHKParser_ITokenMatcher:matcher];
+    CCBRCucumberFeature *feature = create_CCBRCucumberFeature_initWithGHKAGherkinDocument_withNSString_withNSString_(gherkinDocument, CCBRFeatureBuilder_convertFileSeparatorToForwardSlashWithNSString_(self, [resource getPath]), gherkin);
     [((id<JavaUtilList>) nil_chk(cucumberFeatures_)) addWithId:feature];
   }
-  @catch (GherkinParserException *e) {
+  @catch (GHKParserException *e) {
     @throw create_CCBRCucumberException_initWithJavaLangThrowable_(e);
   }
 }

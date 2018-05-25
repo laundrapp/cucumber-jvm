@@ -39,7 +39,7 @@
 @interface CCBRCucumberFeature () {
  @public
   NSString *uri_;
-  GherkinAstGherkinDocument *gherkinDocument_;
+  GHKAGherkinDocument *gherkinDocument_;
   NSString *gherkinSource_;
 }
 
@@ -61,7 +61,7 @@
 @end
 
 J2OBJC_FIELD_SETTER(CCBRCucumberFeature, uri_, NSString *)
-J2OBJC_FIELD_SETTER(CCBRCucumberFeature, gherkinDocument_, GherkinAstGherkinDocument *)
+J2OBJC_FIELD_SETTER(CCBRCucumberFeature, gherkinDocument_, GHKAGherkinDocument *)
 J2OBJC_FIELD_SETTER(CCBRCucumberFeature, gherkinSource_, NSString *)
 
 inline jlong CCBRCucumberFeature_get_serialVersionUID(void);
@@ -140,14 +140,14 @@ JavaUtilRegexPattern *CCBRCucumberFeature_RERUN_PATH_SPECIFICATION;
   CCBRCucumberFeature_loadFromFeaturePathWithCCBRFeatureBuilder_withCCBRResourceLoader_withNSString_withBoolean_(builder, resourceLoader, featurePath, failOnNoResource);
 }
 
-- (instancetype __nonnull)initWithGherkinAstGherkinDocument:(GherkinAstGherkinDocument *)gherkinDocument
-                                               withNSString:(NSString *)uri
-                                               withNSString:(NSString *)gherkinSource {
-  CCBRCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(self, gherkinDocument, uri, gherkinSource);
+- (instancetype __nonnull)initWithGHKAGherkinDocument:(GHKAGherkinDocument *)gherkinDocument
+                                         withNSString:(NSString *)uri
+                                         withNSString:(NSString *)gherkinSource {
+  CCBRCucumberFeature_initWithGHKAGherkinDocument_withNSString_withNSString_(self, gherkinDocument, uri, gherkinSource);
   return self;
 }
 
-- (GherkinAstGherkinDocument *)getGherkinFeature {
+- (GHKAGherkinDocument *)getGherkinFeature {
   return gherkinDocument_;
 }
 
@@ -176,7 +176,7 @@ JavaUtilRegexPattern *CCBRCucumberFeature_RERUN_PATH_SPECIFICATION;
     { NULL, "V", 0xa, 12, 6, -1, -1, -1, -1 },
     { NULL, "V", 0xa, 13, 14, -1, -1, -1, -1 },
     { NULL, NULL, 0x1, -1, 15, -1, -1, -1, -1 },
-    { NULL, "LGherkinAstGherkinDocument;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LGHKAGherkinDocument;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 16, 17, -1, -1, -1, -1 },
   };
@@ -190,7 +190,7 @@ JavaUtilRegexPattern *CCBRCucumberFeature_RERUN_PATH_SPECIFICATION;
   methods[4].selector = @selector(readWithCCBRResource:);
   methods[5].selector = @selector(loadFromFileSystemOrClasspathWithCCBRFeatureBuilder:withCCBRResourceLoader:withNSString:);
   methods[6].selector = @selector(loadFromFeaturePathWithCCBRFeatureBuilder:withCCBRResourceLoader:withNSString:withBoolean:);
-  methods[7].selector = @selector(initWithGherkinAstGherkinDocument:withNSString:withNSString:);
+  methods[7].selector = @selector(initWithGHKAGherkinDocument:withNSString:withNSString:);
   methods[8].selector = @selector(getGherkinFeature);
   methods[9].selector = @selector(getUri);
   methods[10].selector = @selector(sendTestSourceReadWithCCBEventBus:);
@@ -198,11 +198,11 @@ JavaUtilRegexPattern *CCBRCucumberFeature_RERUN_PATH_SPECIFICATION;
   static const J2ObjcFieldInfo fields[] = {
     { "serialVersionUID", "J", .constantValue.asLong = CCBRCucumberFeature_serialVersionUID, 0x1a, -1, -1, -1, -1 },
     { "uri_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "gherkinDocument_", "LGherkinAstGherkinDocument;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "gherkinDocument_", "LGHKAGherkinDocument;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "gherkinSource_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "RERUN_PATH_SPECIFICATION", "LJavaUtilRegexPattern;", .constantValue.asLong = 0, 0x19, -1, 18, -1, -1 },
   };
-  static const void *ptrTable[] = { "load", "LCCBRResourceLoader;LJavaUtilList;LJavaIoPrintStream;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/util/List<Ljava/lang/String;>;Ljava/io/PrintStream;)Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;", "LCCBRResourceLoader;LJavaUtilList;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/util/List<Ljava/lang/String;>;)Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;", "loadFromRerunFile", "LCCBRFeatureBuilder;LCCBRResourceLoader;LNSString;", "loadRerunFile", "LCCBRResourceLoader;LNSString;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/String;)Ljava/util/List<Lcucumber/runtime/model/PathWithLines;>;", "read", "LCCBRResource;", "loadFromFileSystemOrClasspath", "loadFromFeaturePath", "LCCBRFeatureBuilder;LCCBRResourceLoader;LNSString;Z", "LGherkinAstGherkinDocument;LNSString;LNSString;", "sendTestSourceRead", "LCCBEventBus;", &CCBRCucumberFeature_RERUN_PATH_SPECIFICATION, "LCCBRCucumberFeature_CucumberFeatureUriComparator;" };
+  static const void *ptrTable[] = { "load", "LCCBRResourceLoader;LJavaUtilList;LJavaIoPrintStream;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/util/List<Ljava/lang/String;>;Ljava/io/PrintStream;)Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;", "LCCBRResourceLoader;LJavaUtilList;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/util/List<Ljava/lang/String;>;)Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;", "loadFromRerunFile", "LCCBRFeatureBuilder;LCCBRResourceLoader;LNSString;", "loadRerunFile", "LCCBRResourceLoader;LNSString;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/String;)Ljava/util/List<Lcucumber/runtime/model/PathWithLines;>;", "read", "LCCBRResource;", "loadFromFileSystemOrClasspath", "loadFromFeaturePath", "LCCBRFeatureBuilder;LCCBRResourceLoader;LNSString;Z", "LGHKAGherkinDocument;LNSString;LNSString;", "sendTestSourceRead", "LCCBEventBus;", &CCBRCucumberFeature_RERUN_PATH_SPECIFICATION, "LCCBRCucumberFeature_CucumberFeatureUriComparator;" };
   static const J2ObjcClassInfo _CCBRCucumberFeature = { "CucumberFeature", "cucumber.runtime.model", ptrTable, methods, fields, 7, 0x1, 11, 5, -1, 19, -1, -1, -1 };
   return &_CCBRCucumberFeature;
 }
@@ -315,19 +315,19 @@ void CCBRCucumberFeature_loadFromFeaturePathWithCCBRFeatureBuilder_withCCBRResou
   }
 }
 
-void CCBRCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(CCBRCucumberFeature *self, GherkinAstGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource) {
+void CCBRCucumberFeature_initWithGHKAGherkinDocument_withNSString_withNSString_(CCBRCucumberFeature *self, GHKAGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource) {
   NSObject_init(self);
   JreStrongAssign(&self->gherkinDocument_, gherkinDocument);
   JreStrongAssign(&self->uri_, uri);
   JreStrongAssign(&self->gherkinSource_, gherkinSource);
 }
 
-CCBRCucumberFeature *new_CCBRCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(GherkinAstGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource) {
-  J2OBJC_NEW_IMPL(CCBRCucumberFeature, initWithGherkinAstGherkinDocument_withNSString_withNSString_, gherkinDocument, uri, gherkinSource)
+CCBRCucumberFeature *new_CCBRCucumberFeature_initWithGHKAGherkinDocument_withNSString_withNSString_(GHKAGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource) {
+  J2OBJC_NEW_IMPL(CCBRCucumberFeature, initWithGHKAGherkinDocument_withNSString_withNSString_, gherkinDocument, uri, gherkinSource)
 }
 
-CCBRCucumberFeature *create_CCBRCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(GherkinAstGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource) {
-  J2OBJC_CREATE_IMPL(CCBRCucumberFeature, initWithGherkinAstGherkinDocument_withNSString_withNSString_, gherkinDocument, uri, gherkinSource)
+CCBRCucumberFeature *create_CCBRCucumberFeature_initWithGHKAGherkinDocument_withNSString_withNSString_(GHKAGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource) {
+  J2OBJC_CREATE_IMPL(CCBRCucumberFeature, initWithGHKAGherkinDocument_withNSString_withNSString_, gherkinDocument, uri, gherkinSource)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRCucumberFeature)

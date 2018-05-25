@@ -22,7 +22,7 @@
 #define CucumberApiDataTable_
 
 @class CCBRTablePrinter;
-@class GherkinPicklesPickleTable;
+@class GHKPickleTable;
 @class IOSClass;
 @class IOSObjectArray;
 @class JavaUtilLocale;
@@ -43,8 +43,8 @@
  @param pickleTable the underlying table.
  @param tableConverter how to convert the rows.
  */
-- (instancetype __nonnull)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)pickleTable
-                              withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter;
+- (instancetype __nonnull)initWithGHKPickleTable:(GHKPickleTable *)pickleTable
+                   withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter;
 
 /*!
  @brief Converts the table to a List.
@@ -178,11 +178,11 @@ FOUNDATION_EXPORT CucumberApiDataTable *CucumberApiDataTable_createWithJavaUtilL
 
 FOUNDATION_EXPORT CucumberApiDataTable *CucumberApiDataTable_createWithJavaUtilList_withJavaUtilLocale_withNSStringArray_(id<JavaUtilList> raw, JavaUtilLocale *locale, IOSObjectArray *columnNames);
 
-FOUNDATION_EXPORT void CucumberApiDataTable_initWithGherkinPicklesPickleTable_withCucumberApiTableConverter_(CucumberApiDataTable *self, GherkinPicklesPickleTable *pickleTable, id<CucumberApiTableConverter> tableConverter);
+FOUNDATION_EXPORT void CucumberApiDataTable_initWithGHKPickleTable_withCucumberApiTableConverter_(CucumberApiDataTable *self, GHKPickleTable *pickleTable, id<CucumberApiTableConverter> tableConverter);
 
-FOUNDATION_EXPORT CucumberApiDataTable *new_CucumberApiDataTable_initWithGherkinPicklesPickleTable_withCucumberApiTableConverter_(GherkinPicklesPickleTable *pickleTable, id<CucumberApiTableConverter> tableConverter) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CucumberApiDataTable *new_CucumberApiDataTable_initWithGHKPickleTable_withCucumberApiTableConverter_(GHKPickleTable *pickleTable, id<CucumberApiTableConverter> tableConverter) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberApiDataTable *create_CucumberApiDataTable_initWithGherkinPicklesPickleTable_withCucumberApiTableConverter_(GherkinPicklesPickleTable *pickleTable, id<CucumberApiTableConverter> tableConverter);
+FOUNDATION_EXPORT CucumberApiDataTable *create_CucumberApiDataTable_initWithGHKPickleTable_withCucumberApiTableConverter_(GHKPickleTable *pickleTable, id<CucumberApiTableConverter> tableConverter);
 
 J2OBJC_TYPE_LITERAL_HEADER(CucumberApiDataTable)
 

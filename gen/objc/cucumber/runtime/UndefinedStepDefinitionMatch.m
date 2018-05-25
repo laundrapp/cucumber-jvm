@@ -16,8 +16,8 @@
 
 @implementation CCBRUndefinedStepDefinitionMatch
 
-- (instancetype __nonnull)initWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step {
-  CCBRUndefinedStepDefinitionMatch_initWithGherkinPicklesPickleStep_(self, step);
+- (instancetype __nonnull)initWithGHKPickleStep:(GHKPickleStep *)step {
+  CCBRUndefinedStepDefinitionMatch_initWithGHKPickleStep_(self, step);
   return self;
 }
 
@@ -45,28 +45,28 @@
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithGherkinPicklesPickleStep:);
+  methods[0].selector = @selector(initWithGHKPickleStep:);
   methods[1].selector = @selector(runStepWithNSString:withCucumberApiScenario:);
   methods[2].selector = @selector(dryRunStepWithNSString:withCucumberApiScenario:);
   methods[3].selector = @selector(getMatch);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LGherkinPicklesPickleStep;", "runStep", "LNSString;LCucumberApiScenario;", "LJavaLangThrowable;", "dryRunStep" };
+  static const void *ptrTable[] = { "LGHKPickleStep;", "runStep", "LNSString;LCucumberApiScenario;", "LJavaLangThrowable;", "dryRunStep" };
   static const J2ObjcClassInfo _CCBRUndefinedStepDefinitionMatch = { "UndefinedStepDefinitionMatch", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x1, 4, 0, -1, -1, -1, -1, -1 };
   return &_CCBRUndefinedStepDefinitionMatch;
 }
 
 @end
 
-void CCBRUndefinedStepDefinitionMatch_initWithGherkinPicklesPickleStep_(CCBRUndefinedStepDefinitionMatch *self, GherkinPicklesPickleStep *step) {
-  CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGherkinPicklesPickleStep_withCCBRLocalizedXStreams_(self, JavaUtilCollections_emptyList(), create_CCBRNoStepDefinition_init(), nil, step, nil);
+void CCBRUndefinedStepDefinitionMatch_initWithGHKPickleStep_(CCBRUndefinedStepDefinitionMatch *self, GHKPickleStep *step) {
+  CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGHKPickleStep_withCCBRLocalizedXStreams_(self, JavaUtilCollections_emptyList(), create_CCBRNoStepDefinition_init(), nil, step, nil);
 }
 
-CCBRUndefinedStepDefinitionMatch *new_CCBRUndefinedStepDefinitionMatch_initWithGherkinPicklesPickleStep_(GherkinPicklesPickleStep *step) {
-  J2OBJC_NEW_IMPL(CCBRUndefinedStepDefinitionMatch, initWithGherkinPicklesPickleStep_, step)
+CCBRUndefinedStepDefinitionMatch *new_CCBRUndefinedStepDefinitionMatch_initWithGHKPickleStep_(GHKPickleStep *step) {
+  J2OBJC_NEW_IMPL(CCBRUndefinedStepDefinitionMatch, initWithGHKPickleStep_, step)
 }
 
-CCBRUndefinedStepDefinitionMatch *create_CCBRUndefinedStepDefinitionMatch_initWithGherkinPicklesPickleStep_(GherkinPicklesPickleStep *step) {
-  J2OBJC_CREATE_IMPL(CCBRUndefinedStepDefinitionMatch, initWithGherkinPicklesPickleStep_, step)
+CCBRUndefinedStepDefinitionMatch *create_CCBRUndefinedStepDefinitionMatch_initWithGHKPickleStep_(GHKPickleStep *step) {
+  J2OBJC_CREATE_IMPL(CCBRUndefinedStepDefinitionMatch, initWithGHKPickleStep_, step)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRUndefinedStepDefinitionMatch)

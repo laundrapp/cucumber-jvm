@@ -28,7 +28,7 @@
 @class CCBRLocalizedXStreams;
 @class CCBRStepDefinitionMatch;
 @class CCBRUndefinedStepsTracker;
-@class GherkinPicklesPickleStep;
+@class GHKPickleStep;
 @protocol CCBRHookDefinition;
 @protocol CCBRStepDefinition;
 @protocol CucumberApiStepDefinitionReporter;
@@ -65,7 +65,7 @@
 - (void)reportStepDefinitionsWithCucumberApiStepDefinitionReporter:(id<CucumberApiStepDefinitionReporter>)stepDefinitionReporter;
 
 - (CCBRStepDefinitionMatch *)stepDefinitionMatchWithNSString:(NSString *)featurePath
-                                withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step;
+                                           withGHKPickleStep:(GHKPickleStep *)step;
 
 // Disallowed inherited constructors, do not use.
 

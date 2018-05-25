@@ -26,7 +26,7 @@
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(matchedArgumentsWithGherkinPicklesPickleStep:);
+  methods[0].selector = @selector(matchedArgumentsWithGHKPickleStep:);
   methods[1].selector = @selector(getLocationWithBoolean:);
   methods[2].selector = @selector(getParameterCount);
   methods[3].selector = @selector(getParameterTypeWithInt:withJavaLangReflectType:);
@@ -35,7 +35,7 @@
   methods[6].selector = @selector(getPattern);
   methods[7].selector = @selector(isScenarioScoped);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "matchedArguments", "LGherkinPicklesPickleStep;", "(Lgherkin/pickles/PickleStep;)Ljava/util/List<Lcucumber/runtime/Argument;>;", "getLocation", "Z", "getParameterType", "ILJavaLangReflectType;", "LJavaLangIndexOutOfBoundsException;", "execute", "LNSString;[LNSObject;", "LJavaLangThrowable;", "isDefinedAt", "LJavaLangStackTraceElement;" };
+  static const void *ptrTable[] = { "matchedArguments", "LGHKPickleStep;", "(Lgherkin/pickles/PickleStep;)Ljava/util/List<Lcucumber/runtime/Argument;>;", "getLocation", "Z", "getParameterType", "ILJavaLangReflectType;", "LJavaLangIndexOutOfBoundsException;", "execute", "LNSString;[LNSObject;", "LJavaLangThrowable;", "isDefinedAt", "LJavaLangStackTraceElement;" };
   static const J2ObjcClassInfo _CCBRStepDefinition = { "StepDefinition", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 8, 0, -1, -1, -1, -1, -1 };
   return &_CCBRStepDefinition;
 }

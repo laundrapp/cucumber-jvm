@@ -58,8 +58,8 @@ J2OBJC_INITIALIZED_DEFN(CCBRScenarioImpl)
 @implementation CCBRScenarioImpl
 
 - (instancetype __nonnull)initWithCCBEventBus:(CCBEventBus *)bus
-                 withGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent {
-  CCBRScenarioImpl_initWithCCBEventBus_withGherkinEventsPickleEvent_(self, bus, pickleEvent);
+                           withGHKPickleEvent:(GHKPickleEvent *)pickleEvent {
+  CCBRScenarioImpl_initWithCCBEventBus_withGHKPickleEvent_(self, bus, pickleEvent);
   return self;
 }
 
@@ -69,8 +69,8 @@ J2OBJC_INITIALIZED_DEFN(CCBRScenarioImpl)
 
 - (id<JavaUtilCollection>)getSourceTagNames {
   id<JavaUtilSet> result = create_JavaUtilHashSet_init();
-  for (GherkinPicklesPickleTag * __strong tag in nil_chk(tags_)) {
-    [result addWithId:[((GherkinPicklesPickleTag *) nil_chk(tag)) getName]];
+  for (GHKPickleTag * __strong tag in nil_chk(tags_)) {
+    [result addWithId:[((GHKPickleTag *) nil_chk(tag)) getName]];
   }
   return create_JavaUtilArrayList_initWithJavaUtilCollection_(result);
 }
@@ -161,7 +161,7 @@ J2OBJC_INITIALIZED_DEFN(CCBRScenarioImpl)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCCBEventBus:withGherkinEventsPickleEvent:);
+  methods[0].selector = @selector(initWithCCBEventBus:withGHKPickleEvent:);
   methods[1].selector = @selector(addWithCucumberApiResult:);
   methods[2].selector = @selector(getSourceTagNames);
   methods[3].selector = @selector(getStatus);
@@ -184,7 +184,7 @@ J2OBJC_INITIALIZED_DEFN(CCBRScenarioImpl)
     { "scenarioLines_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 13, -1 },
     { "bus_", "LCCBEventBus;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCCBEventBus;LGherkinEventsPickleEvent;", "add", "LCucumberApiResult;", "()Ljava/util/Collection<Ljava/lang/String;>;", "embed", "[BLNSString;", "write", "LNSString;", "()Ljava/util/List<Ljava/lang/Integer;>;", &CCBRScenarioImpl_SEVERITY, "Ljava/util/List<Lcucumber/api/Result$Type;>;", "Ljava/util/List<Lcucumber/api/Result;>;", "Ljava/util/List<Lgherkin/pickles/PickleTag;>;", "Ljava/util/List<Ljava/lang/Integer;>;" };
+  static const void *ptrTable[] = { "LCCBEventBus;LGHKPickleEvent;", "add", "LCucumberApiResult;", "()Ljava/util/Collection<Ljava/lang/String;>;", "embed", "[BLNSString;", "write", "LNSString;", "()Ljava/util/List<Ljava/lang/Integer;>;", &CCBRScenarioImpl_SEVERITY, "Ljava/util/List<Lcucumber/api/Result$Type;>;", "Ljava/util/List<Lcucumber/api/Result;>;", "Ljava/util/List<Lgherkin/pickles/PickleTag;>;", "Ljava/util/List<Ljava/lang/Integer;>;" };
   static const J2ObjcClassInfo _CCBRScenarioImpl = { "ScenarioImpl", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 12, 8, -1, -1, -1, -1, -1 };
   return &_CCBRScenarioImpl;
 }
@@ -198,29 +198,29 @@ J2OBJC_INITIALIZED_DEFN(CCBRScenarioImpl)
 
 @end
 
-void CCBRScenarioImpl_initWithCCBEventBus_withGherkinEventsPickleEvent_(CCBRScenarioImpl *self, CCBEventBus *bus, GherkinEventsPickleEvent *pickleEvent) {
+void CCBRScenarioImpl_initWithCCBEventBus_withGHKPickleEvent_(CCBRScenarioImpl *self, CCBEventBus *bus, GHKPickleEvent *pickleEvent) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->stepResults_, new_JavaUtilArrayList_init());
   JreStrongAssign(&self->bus_, bus);
-  GherkinPicklesPickle *pickle = ((GherkinEventsPickleEvent *) nil_chk(pickleEvent))->pickle_;
-  JreStrongAssign(&self->tags_, [((GherkinPicklesPickle *) nil_chk(pickle)) getTags]);
+  GHKPickle *pickle = ((GHKPickleEvent *) nil_chk(pickleEvent))->pickle_;
+  JreStrongAssign(&self->tags_, [((GHKPickle *) nil_chk(pickle)) getTags]);
   JreStrongAssign(&self->uri_, pickleEvent->uri_);
   JreStrongAssign(&self->scenarioName_, [pickle getName]);
   id<JavaUtilList> locations = [pickle getLocations];
-  JreStrongAssign(&self->scenarioId_, JreStrcat("$C$", pickleEvent->uri_, ':', JavaLangInteger_toStringWithInt_([((GherkinPicklesPickleLocation *) nil_chk([((id<JavaUtilList>) nil_chk(locations)) getWithInt:0])) getLine])));
+  JreStrongAssign(&self->scenarioId_, JreStrcat("$C$", pickleEvent->uri_, ':', JavaLangInteger_toStringWithInt_([((GHKPickleLocation *) nil_chk([((id<JavaUtilList>) nil_chk(locations)) getWithInt:0])) getLine])));
   JavaUtilArrayList *lines = create_JavaUtilArrayList_init();
-  for (GherkinPicklesPickleLocation * __strong location in locations) {
-    [lines addWithId:JavaLangInteger_valueOfWithInt_([((GherkinPicklesPickleLocation *) nil_chk(location)) getLine])];
+  for (GHKPickleLocation * __strong location in locations) {
+    [lines addWithId:JavaLangInteger_valueOfWithInt_([((GHKPickleLocation *) nil_chk(location)) getLine])];
   }
   JreStrongAssign(&self->scenarioLines_, JavaUtilCollections_unmodifiableListWithJavaUtilList_(lines));
 }
 
-CCBRScenarioImpl *new_CCBRScenarioImpl_initWithCCBEventBus_withGherkinEventsPickleEvent_(CCBEventBus *bus, GherkinEventsPickleEvent *pickleEvent) {
-  J2OBJC_NEW_IMPL(CCBRScenarioImpl, initWithCCBEventBus_withGherkinEventsPickleEvent_, bus, pickleEvent)
+CCBRScenarioImpl *new_CCBRScenarioImpl_initWithCCBEventBus_withGHKPickleEvent_(CCBEventBus *bus, GHKPickleEvent *pickleEvent) {
+  J2OBJC_NEW_IMPL(CCBRScenarioImpl, initWithCCBEventBus_withGHKPickleEvent_, bus, pickleEvent)
 }
 
-CCBRScenarioImpl *create_CCBRScenarioImpl_initWithCCBEventBus_withGherkinEventsPickleEvent_(CCBEventBus *bus, GherkinEventsPickleEvent *pickleEvent) {
-  J2OBJC_CREATE_IMPL(CCBRScenarioImpl, initWithCCBEventBus_withGherkinEventsPickleEvent_, bus, pickleEvent)
+CCBRScenarioImpl *create_CCBRScenarioImpl_initWithCCBEventBus_withGHKPickleEvent_(CCBEventBus *bus, GHKPickleEvent *pickleEvent) {
+  J2OBJC_CREATE_IMPL(CCBRScenarioImpl, initWithCCBEventBus_withGHKPickleEvent_, bus, pickleEvent)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRScenarioImpl)

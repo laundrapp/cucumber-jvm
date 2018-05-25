@@ -19,9 +19,9 @@
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(applyWithGherkinEventsPickleEvent:);
+  methods[0].selector = @selector(applyWithGHKPickleEvent:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "apply", "LGherkinEventsPickleEvent;" };
+  static const void *ptrTable[] = { "apply", "LGHKPickleEvent;" };
   static const J2ObjcClassInfo _CCBRPicklePredicate = { "PicklePredicate", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x608, 1, 0, -1, -1, -1, -1, -1 };
   return &_CCBRPicklePredicate;
 }

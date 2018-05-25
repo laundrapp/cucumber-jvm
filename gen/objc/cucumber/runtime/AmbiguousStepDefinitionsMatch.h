@@ -28,7 +28,7 @@
 @class CCBRAmbiguousStepDefinitionsException;
 @class CCBRLocalizedXStreams;
 @class CCBRMatch;
-@class GherkinPicklesPickleStep;
+@class GHKPickleStep;
 @protocol CCBRStepDefinition;
 @protocol CucumberApiScenario;
 @protocol JavaUtilList;
@@ -38,7 +38,7 @@
 #pragma mark Public
 
 - (instancetype __nonnull)initWithNSString:(NSString *)uri
-              withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
+                         withGHKPickleStep:(GHKPickleStep *)step
  withCCBRAmbiguousStepDefinitionsException:(CCBRAmbiguousStepDefinitionsException *)e;
 
 - (void)dryRunStepWithNSString:(NSString *)language
@@ -54,18 +54,18 @@
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)arg0
                         withCCBRStepDefinition:(id<CCBRStepDefinition>)arg1
                                   withNSString:(NSString *)arg2
-                  withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)arg3
+                             withGHKPickleStep:(GHKPickleStep *)arg3
                      withCCBRLocalizedXStreams:(CCBRLocalizedXStreams *)arg4 NS_UNAVAILABLE;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(CCBRAmbiguousStepDefinitionsMatch)
 
-FOUNDATION_EXPORT void CCBRAmbiguousStepDefinitionsMatch_initWithNSString_withGherkinPicklesPickleStep_withCCBRAmbiguousStepDefinitionsException_(CCBRAmbiguousStepDefinitionsMatch *self, NSString *uri, GherkinPicklesPickleStep *step, CCBRAmbiguousStepDefinitionsException *e);
+FOUNDATION_EXPORT void CCBRAmbiguousStepDefinitionsMatch_initWithNSString_withGHKPickleStep_withCCBRAmbiguousStepDefinitionsException_(CCBRAmbiguousStepDefinitionsMatch *self, NSString *uri, GHKPickleStep *step, CCBRAmbiguousStepDefinitionsException *e);
 
-FOUNDATION_EXPORT CCBRAmbiguousStepDefinitionsMatch *new_CCBRAmbiguousStepDefinitionsMatch_initWithNSString_withGherkinPicklesPickleStep_withCCBRAmbiguousStepDefinitionsException_(NSString *uri, GherkinPicklesPickleStep *step, CCBRAmbiguousStepDefinitionsException *e) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRAmbiguousStepDefinitionsMatch *new_CCBRAmbiguousStepDefinitionsMatch_initWithNSString_withGHKPickleStep_withCCBRAmbiguousStepDefinitionsException_(NSString *uri, GHKPickleStep *step, CCBRAmbiguousStepDefinitionsException *e) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRAmbiguousStepDefinitionsMatch *create_CCBRAmbiguousStepDefinitionsMatch_initWithNSString_withGherkinPicklesPickleStep_withCCBRAmbiguousStepDefinitionsException_(NSString *uri, GherkinPicklesPickleStep *step, CCBRAmbiguousStepDefinitionsException *e);
+FOUNDATION_EXPORT CCBRAmbiguousStepDefinitionsMatch *create_CCBRAmbiguousStepDefinitionsMatch_initWithNSString_withGHKPickleStep_withCCBRAmbiguousStepDefinitionsException_(NSString *uri, GHKPickleStep *step, CCBRAmbiguousStepDefinitionsException *e);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRAmbiguousStepDefinitionsMatch)
 

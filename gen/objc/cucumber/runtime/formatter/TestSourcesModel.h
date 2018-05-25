@@ -23,9 +23,9 @@
 
 @class CCBRTestSourcesModel_AstNode;
 @class CucumberApiEventTestSourceRead;
-@class GherkinAstBackground;
-@class GherkinAstFeature;
-@class GherkinAstScenarioDefinition;
+@class GHKABackground;
+@class GHKAFeature;
+@class GHKAScenarioDefinition;
 
 @interface CCBRTestSourcesModel : NSObject
 
@@ -43,21 +43,21 @@
 - (CCBRTestSourcesModel_AstNode *)getAstNodeWithNSString:(NSString *)path
                                                  withInt:(jint)line;
 
-+ (GherkinAstBackground *)getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode;
++ (GHKABackground *)getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode;
 
-- (GherkinAstFeature *)getFeatureWithNSString:(NSString *)path;
+- (GHKAFeature *)getFeatureWithNSString:(NSString *)path;
 
-+ (GherkinAstFeature *)getFeatureForTestCaseWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode;
++ (GHKAFeature *)getFeatureForTestCaseWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode;
 
 - (NSString *)getFeatureNameWithNSString:(NSString *)uri;
 
 - (NSString *)getKeywordFromSourceWithNSString:(NSString *)uri
                                        withInt:(jint)stepLine;
 
-+ (GherkinAstScenarioDefinition *)getScenarioDefinitionWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode;
++ (GHKAScenarioDefinition *)getScenarioDefinitionWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode;
 
-- (GherkinAstScenarioDefinition *)getScenarioDefinitionWithNSString:(NSString *)path
-                                                            withInt:(jint)line;
+- (GHKAScenarioDefinition *)getScenarioDefinitionWithNSString:(NSString *)path
+                                                      withInt:(jint)line;
 
 - (jboolean)hasBackgroundWithNSString:(NSString *)path
                               withInt:(jint)line;
@@ -76,11 +76,11 @@ FOUNDATION_EXPORT CCBRTestSourcesModel *new_CCBRTestSourcesModel_init(void) NS_R
 
 FOUNDATION_EXPORT CCBRTestSourcesModel *create_CCBRTestSourcesModel_init(void);
 
-FOUNDATION_EXPORT GherkinAstFeature *CCBRTestSourcesModel_getFeatureForTestCaseWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode);
+FOUNDATION_EXPORT GHKAFeature *CCBRTestSourcesModel_getFeatureForTestCaseWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode);
 
-FOUNDATION_EXPORT GherkinAstBackground *CCBRTestSourcesModel_getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode);
+FOUNDATION_EXPORT GHKABackground *CCBRTestSourcesModel_getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode);
 
-FOUNDATION_EXPORT GherkinAstScenarioDefinition *CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode);
+FOUNDATION_EXPORT GHKAScenarioDefinition *CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode);
 
 FOUNDATION_EXPORT jboolean CCBRTestSourcesModel_isScenarioOutlineScenarioWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode);
 
@@ -100,13 +100,13 @@ J2OBJC_TYPE_LITERAL_HEADER(CCBRTestSourcesModel)
 #define CCBRTestSourcesModel_ExamplesRowWrapperNode_
 
 #define RESTRICT_GherkinAstNode 1
-#define INCLUDE_GherkinAstNode 1
+#define INCLUDE_GHKANode 1
 #include "gherkin/ast/Node.h"
 
 @class CCBRTestSourcesModel;
-@class GherkinAstLocation;
+@class GHKALocation;
 
-@interface CCBRTestSourcesModel_ExamplesRowWrapperNode : GherkinAstNode {
+@interface CCBRTestSourcesModel_ExamplesRowWrapperNode : GHKANode {
  @public
   jint bodyRowIndex_;
 }
@@ -114,22 +114,22 @@ J2OBJC_TYPE_LITERAL_HEADER(CCBRTestSourcesModel)
 #pragma mark Package-Private
 
 - (instancetype __nonnull)initWithCCBRTestSourcesModel:(CCBRTestSourcesModel *)outer$
-                                    withGherkinAstNode:(GherkinAstNode *)examplesRow
+                                          withGHKANode:(GHKANode *)examplesRow
                                                withInt:(jint)bodyRowIndex;
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype __nonnull)initWithGherkinAstLocation:(GherkinAstLocation *)arg0 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithGHKALocation:(GHKALocation *)arg0 NS_UNAVAILABLE;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(CCBRTestSourcesModel_ExamplesRowWrapperNode)
 
-FOUNDATION_EXPORT void CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withInt_(CCBRTestSourcesModel_ExamplesRowWrapperNode *self, CCBRTestSourcesModel *outer$, GherkinAstNode *examplesRow, jint bodyRowIndex);
+FOUNDATION_EXPORT void CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGHKANode_withInt_(CCBRTestSourcesModel_ExamplesRowWrapperNode *self, CCBRTestSourcesModel *outer$, GHKANode *examplesRow, jint bodyRowIndex);
 
-FOUNDATION_EXPORT CCBRTestSourcesModel_ExamplesRowWrapperNode *new_CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withInt_(CCBRTestSourcesModel *outer$, GherkinAstNode *examplesRow, jint bodyRowIndex) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRTestSourcesModel_ExamplesRowWrapperNode *new_CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGHKANode_withInt_(CCBRTestSourcesModel *outer$, GHKANode *examplesRow, jint bodyRowIndex) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRTestSourcesModel_ExamplesRowWrapperNode *create_CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withInt_(CCBRTestSourcesModel *outer$, GherkinAstNode *examplesRow, jint bodyRowIndex);
+FOUNDATION_EXPORT CCBRTestSourcesModel_ExamplesRowWrapperNode *create_CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGHKANode_withInt_(CCBRTestSourcesModel *outer$, GHKANode *examplesRow, jint bodyRowIndex);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRTestSourcesModel_ExamplesRowWrapperNode)
 
@@ -139,18 +139,18 @@ J2OBJC_TYPE_LITERAL_HEADER(CCBRTestSourcesModel_ExamplesRowWrapperNode)
 #define CCBRTestSourcesModel_AstNode_
 
 @class CCBRTestSourcesModel;
-@class GherkinAstNode;
+@class GHKANode;
 
 @interface CCBRTestSourcesModel_AstNode : NSObject {
  @public
-  GherkinAstNode *node_;
+  GHKANode *node_;
   CCBRTestSourcesModel_AstNode *parent_;
 }
 
 #pragma mark Package-Private
 
 - (instancetype __nonnull)initWithCCBRTestSourcesModel:(CCBRTestSourcesModel *)outer$
-                                    withGherkinAstNode:(GherkinAstNode *)node
+                                          withGHKANode:(GHKANode *)node
                       withCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)parent;
 
 // Disallowed inherited constructors, do not use.
@@ -161,14 +161,14 @@ J2OBJC_TYPE_LITERAL_HEADER(CCBRTestSourcesModel_ExamplesRowWrapperNode)
 
 J2OBJC_EMPTY_STATIC_INIT(CCBRTestSourcesModel_AstNode)
 
-J2OBJC_FIELD_SETTER(CCBRTestSourcesModel_AstNode, node_, GherkinAstNode *)
+J2OBJC_FIELD_SETTER(CCBRTestSourcesModel_AstNode, node_, GHKANode *)
 J2OBJC_FIELD_SETTER(CCBRTestSourcesModel_AstNode, parent_, CCBRTestSourcesModel_AstNode *)
 
-FOUNDATION_EXPORT void CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *self, CCBRTestSourcesModel *outer$, GherkinAstNode *node, CCBRTestSourcesModel_AstNode *parent);
+FOUNDATION_EXPORT void CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGHKANode_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *self, CCBRTestSourcesModel *outer$, GHKANode *node, CCBRTestSourcesModel_AstNode *parent);
 
-FOUNDATION_EXPORT CCBRTestSourcesModel_AstNode *new_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *outer$, GherkinAstNode *node, CCBRTestSourcesModel_AstNode *parent) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRTestSourcesModel_AstNode *new_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGHKANode_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *outer$, GHKANode *node, CCBRTestSourcesModel_AstNode *parent) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRTestSourcesModel_AstNode *create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *outer$, GherkinAstNode *node, CCBRTestSourcesModel_AstNode *parent);
+FOUNDATION_EXPORT CCBRTestSourcesModel_AstNode *create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGHKANode_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *outer$, GHKANode *node, CCBRTestSourcesModel_AstNode *parent);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRTestSourcesModel_AstNode)
 

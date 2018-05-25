@@ -27,8 +27,8 @@
 
 @class CCBEventBus;
 @class CCBRRuntimeOptions;
-@class GherkinEventsPickleEvent;
-@class GherkinPicklesPickleString;
+@class GHKPickleEvent;
+@class GHKPickleString;
 @protocol CCBRGlue;
 @protocol CucumberApiStepDefinitionReporter;
 @protocol JavaUtilCollection;
@@ -47,14 +47,14 @@
 
 - (void)reportStepDefinitionsWithCucumberApiStepDefinitionReporter:(id<CucumberApiStepDefinitionReporter>)stepDefinitionReporter;
 
-- (void)runPickleWithGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickle;
+- (void)runPickleWithGHKPickleEvent:(GHKPickleEvent *)pickle;
 
 - (void)runUnreportedStepWithNSString:(NSString *)featurePath
                          withNSString:(NSString *)language
                          withNSString:(NSString *)stepName
                               withInt:(jint)line
                      withJavaUtilList:(id<JavaUtilList>)dataTableRows
-       withGherkinPicklesPickleString:(GherkinPicklesPickleString *)docString;
+                  withGHKPickleString:(GHKPickleString *)docString;
 
 // Disallowed inherited constructors, do not use.
 

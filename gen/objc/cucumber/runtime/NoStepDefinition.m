@@ -22,7 +22,7 @@ J2OBJC_IGNORE_DESIGNATED_BEGIN
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (id<JavaUtilList>)matchedArgumentsWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step {
+- (id<JavaUtilList>)matchedArgumentsWithGHKPickleStep:(GHKPickleStep *)step {
   return nil;
 }
 
@@ -71,7 +71,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(matchedArgumentsWithGherkinPicklesPickleStep:);
+  methods[1].selector = @selector(matchedArgumentsWithGHKPickleStep:);
   methods[2].selector = @selector(getLocationWithBoolean:);
   methods[3].selector = @selector(getParameterCount);
   methods[4].selector = @selector(getParameterTypeWithInt:withJavaLangReflectType:);
@@ -80,7 +80,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[7].selector = @selector(getPattern);
   methods[8].selector = @selector(isScenarioScoped);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "matchedArguments", "LGherkinPicklesPickleStep;", "(Lgherkin/pickles/PickleStep;)Ljava/util/List<Lcucumber/runtime/Argument;>;", "getLocation", "Z", "getParameterType", "ILJavaLangReflectType;", "LJavaLangIndexOutOfBoundsException;", "execute", "LNSString;[LNSObject;", "LJavaLangThrowable;", "isDefinedAt", "LJavaLangStackTraceElement;" };
+  static const void *ptrTable[] = { "matchedArguments", "LGHKPickleStep;", "(Lgherkin/pickles/PickleStep;)Ljava/util/List<Lcucumber/runtime/Argument;>;", "getLocation", "Z", "getParameterType", "ILJavaLangReflectType;", "LJavaLangIndexOutOfBoundsException;", "execute", "LNSString;[LNSObject;", "LJavaLangThrowable;", "isDefinedAt", "LJavaLangStackTraceElement;" };
   static const J2ObjcClassInfo _CCBRNoStepDefinition = { "NoStepDefinition", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x0, 9, 0, -1, -1, -1, -1, -1 };
   return &_CCBRNoStepDefinition;
 }

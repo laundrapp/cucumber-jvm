@@ -36,8 +36,8 @@ J2OBJC_FIELD_SETTER(CCBRTagPredicate, oldStyleExpressions_, id<JavaUtilList>)
   return self;
 }
 
-- (jboolean)applyWithGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent {
-  return [self applyWithJavaUtilCollection:[((GherkinPicklesPickle *) nil_chk(((GherkinEventsPickleEvent *) nil_chk(pickleEvent))->pickle_)) getTags]];
+- (jboolean)applyWithGHKPickleEvent:(GHKPickleEvent *)pickleEvent {
+  return [self applyWithJavaUtilCollection:[((GHKPickle *) nil_chk(((GHKPickleEvent *) nil_chk(pickleEvent))->pickle_)) getTags]];
 }
 
 - (jboolean)applyWithJavaUtilCollection:(id<JavaUtilCollection>)pickleTags {
@@ -47,8 +47,8 @@ J2OBJC_FIELD_SETTER(CCBRTagPredicate, oldStyleExpressions_, id<JavaUtilList>)
     }
   }
   id<JavaUtilList> tags = create_JavaUtilArrayList_init();
-  for (GherkinPicklesPickleTag * __strong pickleTag in nil_chk(pickleTags)) {
-    [tags addWithId:[((GherkinPicklesPickleTag *) nil_chk(pickleTag)) getName]];
+  for (GHKPickleTag * __strong pickleTag in nil_chk(pickleTags)) {
+    [tags addWithId:[((GHKPickleTag *) nil_chk(pickleTag)) getName]];
   }
   for (id<IoCucumberTagexpressionsExpression> __strong expression in nil_chk(expressions_)) {
     if (![((id<IoCucumberTagexpressionsExpression>) nil_chk(expression)) evaluateWithJavaUtilList:tags]) {
@@ -74,14 +74,14 @@ J2OBJC_FIELD_SETTER(CCBRTagPredicate, oldStyleExpressions_, id<JavaUtilList>)
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilList:);
-  methods[1].selector = @selector(applyWithGherkinEventsPickleEvent:);
+  methods[1].selector = @selector(applyWithGHKPickleEvent:);
   methods[2].selector = @selector(applyWithJavaUtilCollection:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "expressions_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 6, -1 },
     { "oldStyleExpressions_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 7, -1 },
   };
-  static const void *ptrTable[] = { "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)V", "apply", "LGherkinEventsPickleEvent;", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z", "Ljava/util/List<Lio/cucumber/tagexpressions/Expression;>;", "Ljava/util/List<Lcucumber/runtime/TagExpressionOld;>;" };
+  static const void *ptrTable[] = { "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)V", "apply", "LGHKPickleEvent;", "LJavaUtilCollection;", "(Ljava/util/Collection<Lgherkin/pickles/PickleTag;>;)Z", "Ljava/util/List<Lio/cucumber/tagexpressions/Expression;>;", "Ljava/util/List<Lcucumber/runtime/TagExpressionOld;>;" };
   static const J2ObjcClassInfo _CCBRTagPredicate = { "TagPredicate", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 3, 2, -1, -1, -1, -1, -1 };
   return &_CCBRTagPredicate;
 }

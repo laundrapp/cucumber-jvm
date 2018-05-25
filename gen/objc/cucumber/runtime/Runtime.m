@@ -50,7 +50,7 @@
   CCBRunner *runner_;
   id<JavaUtilList> filters_;
   CCBEventBus *bus_;
-  GherkinPicklesCompiler *compiler_;
+  GHKCompiler *compiler_;
 }
 
 + (id<JavaUtilCollection>)loadBackendsWithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
@@ -65,7 +65,7 @@ J2OBJC_FIELD_SETTER(CCBRRuntime, classLoader_, JavaLangClassLoader *)
 J2OBJC_FIELD_SETTER(CCBRRuntime, runner_, CCBRunner *)
 J2OBJC_FIELD_SETTER(CCBRRuntime, filters_, id<JavaUtilList>)
 J2OBJC_FIELD_SETTER(CCBRRuntime, bus_, CCBEventBus *)
-J2OBJC_FIELD_SETTER(CCBRRuntime, compiler_, GherkinPicklesCompiler *)
+J2OBJC_FIELD_SETTER(CCBRRuntime, compiler_, GHKCompiler *)
 
 __attribute__((unused)) static id<JavaUtilCollection> CCBRRuntime_loadBackendsWithCCBRResourceLoader_withCCBRClassFinder_(id<CCBRResourceLoader> resourceLoader, id<CCBRClassFinder> classFinder);
 
@@ -128,24 +128,24 @@ __attribute__((unused)) static id<JavaUtilCollection> CCBRRuntime_loadBackendsWi
 
 - (void)runFeatureWithCCBRCucumberFeature:(CCBRCucumberFeature *)feature {
   id<JavaUtilList> pickleEvents = [self compileFeatureWithCCBRCucumberFeature:feature];
-  for (GherkinEventsPickleEvent * __strong pickleEvent in nil_chk(pickleEvents)) {
-    if ([self matchesFiltersWithGherkinEventsPickleEvent:pickleEvent]) {
-      [((CCBRunner *) nil_chk(runner_)) runPickleWithGherkinEventsPickleEvent:pickleEvent];
+  for (GHKPickleEvent * __strong pickleEvent in nil_chk(pickleEvents)) {
+    if ([self matchesFiltersWithGHKPickleEvent:pickleEvent]) {
+      [((CCBRunner *) nil_chk(runner_)) runPickleWithGHKPickleEvent:pickleEvent];
     }
   }
 }
 
 - (id<JavaUtilList>)compileFeatureWithCCBRCucumberFeature:(CCBRCucumberFeature *)feature {
   id<JavaUtilList> pickleEvents = create_JavaUtilArrayList_init();
-  for (GherkinPicklesPickle * __strong pickle in nil_chk([((GherkinPicklesCompiler *) nil_chk(compiler_)) compileWithGherkinAstGherkinDocument:[((CCBRCucumberFeature *) nil_chk(feature)) getGherkinFeature]])) {
-    [pickleEvents addWithId:create_GherkinEventsPickleEvent_initWithNSString_withGherkinPicklesPickle_([feature getUri], pickle)];
+  for (GHKPickle * __strong pickle in nil_chk([((GHKCompiler *) nil_chk(compiler_)) compileWithGHKAGherkinDocument:[((CCBRCucumberFeature *) nil_chk(feature)) getGherkinFeature]])) {
+    [pickleEvents addWithId:create_GHKPickleEvent_initWithNSString_withGHKPickle_([feature getUri], pickle)];
   }
   return pickleEvents;
 }
 
-- (jboolean)matchesFiltersWithGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent {
+- (jboolean)matchesFiltersWithGHKPickleEvent:(GHKPickleEvent *)pickleEvent {
   for (id<CCBRPicklePredicate> __strong filter in nil_chk(filters_)) {
-    if (![((id<CCBRPicklePredicate>) nil_chk(filter)) applyWithGherkinEventsPickleEvent:pickleEvent]) {
+    if (![((id<CCBRPicklePredicate>) nil_chk(filter)) applyWithGHKPickleEvent:pickleEvent]) {
       return false;
     }
   }
@@ -231,7 +231,7 @@ __attribute__((unused)) static id<JavaUtilCollection> CCBRRuntime_loadBackendsWi
   methods[6].selector = @selector(reportStepDefinitionsWithCucumberApiStepDefinitionReporter:);
   methods[7].selector = @selector(runFeatureWithCCBRCucumberFeature:);
   methods[8].selector = @selector(compileFeatureWithCCBRCucumberFeature:);
-  methods[9].selector = @selector(matchesFiltersWithGherkinEventsPickleEvent:);
+  methods[9].selector = @selector(matchesFiltersWithGHKPickleEvent:);
   methods[10].selector = @selector(printSummary);
   methods[11].selector = @selector(printStatsWithJavaIoPrintStream:);
   methods[12].selector = @selector(getErrors);
@@ -250,9 +250,9 @@ __attribute__((unused)) static id<JavaUtilCollection> CCBRRuntime_loadBackendsWi
     { "runner_", "LCCBRunner;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "filters_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 23, -1 },
     { "bus_", "LCCBEventBus;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "compiler_", "LGherkinPicklesCompiler;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "compiler_", "LGHKCompiler;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCCBRResourceLoader;LCCBRClassFinder;LJavaLangClassLoader;LCCBRRuntimeOptions;", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;)V", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;LCCBRGlue;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;Lcucumber/runtime/Glue;)V", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;LCCBTimeService;LCCBRGlue;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;Lcucumber/runner/TimeService;Lcucumber/runtime/Glue;)V", "loadBackends", "LCCBRResourceLoader;LCCBRClassFinder;", "(Lcucumber/runtime/io/ResourceLoader;Lcucumber/runtime/ClassFinder;)Ljava/util/Collection<+Lcucumber/runtime/Backend;>;", "LJavaIoIOException;", "reportStepDefinitions", "LCucumberApiStepDefinitionReporter;", "runFeature", "LCCBRCucumberFeature;", "compileFeature", "(Lcucumber/runtime/model/CucumberFeature;)Ljava/util/List<Lgherkin/events/PickleEvent;>;", "matchesFilters", "LGherkinEventsPickleEvent;", "printStats", "LJavaIoPrintStream;", "()Ljava/util/List<Ljava/lang/Throwable;>;", "()Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/List<Lcucumber/runtime/PicklePredicate;>;" };
+  static const void *ptrTable[] = { "LCCBRResourceLoader;LCCBRClassFinder;LJavaLangClassLoader;LCCBRRuntimeOptions;", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;)V", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;LCCBRGlue;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;Lcucumber/runtime/Glue;)V", "LCCBRResourceLoader;LJavaLangClassLoader;LJavaUtilCollection;LCCBRRuntimeOptions;LCCBTimeService;LCCBRGlue;", "(Lcucumber/runtime/io/ResourceLoader;Ljava/lang/ClassLoader;Ljava/util/Collection<+Lcucumber/runtime/Backend;>;Lcucumber/runtime/RuntimeOptions;Lcucumber/runner/TimeService;Lcucumber/runtime/Glue;)V", "loadBackends", "LCCBRResourceLoader;LCCBRClassFinder;", "(Lcucumber/runtime/io/ResourceLoader;Lcucumber/runtime/ClassFinder;)Ljava/util/Collection<+Lcucumber/runtime/Backend;>;", "LJavaIoIOException;", "reportStepDefinitions", "LCucumberApiStepDefinitionReporter;", "runFeature", "LCCBRCucumberFeature;", "compileFeature", "(Lcucumber/runtime/model/CucumberFeature;)Ljava/util/List<Lgherkin/events/PickleEvent;>;", "matchesFilters", "LGHKPickleEvent;", "printStats", "LJavaIoPrintStream;", "()Ljava/util/List<Ljava/lang/Throwable;>;", "()Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/List<Lcucumber/runtime/PicklePredicate;>;" };
   static const J2ObjcClassInfo _CCBRRuntime = { "Runtime", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 18, 9, -1, -1, -1, -1, -1 };
   return &_CCBRRuntime;
 }
@@ -298,7 +298,7 @@ CCBRRuntime *create_CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoad
 void CCBRRuntime_initWithCCBRResourceLoader_withJavaLangClassLoader_withJavaUtilCollection_withCCBRRuntimeOptions_withCCBTimeService_withCCBRGlue_(CCBRRuntime *self, id<CCBRResourceLoader> resourceLoader, JavaLangClassLoader *classLoader, id<JavaUtilCollection> backends, CCBRRuntimeOptions *runtimeOptions, id<CCBTimeService> stopWatch, id<CCBRGlue> optionalGlue) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->undefinedStepsTracker_, new_CCBRUndefinedStepsTracker_init());
-  JreStrongAssignAndConsume(&self->compiler_, new_GherkinPicklesCompiler_init());
+  JreStrongAssignAndConsume(&self->compiler_, new_GHKCompiler_init());
   if ([((id<JavaUtilCollection>) nil_chk(backends)) isEmpty]) {
     @throw create_CCBRCucumberException_initWithNSString_(@"No backends were found. Please make sure you have a backend module on your CLASSPATH.");
   }

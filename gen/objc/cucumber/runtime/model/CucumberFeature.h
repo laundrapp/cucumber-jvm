@@ -26,7 +26,7 @@
 #include "java/io/Serializable.h"
 
 @class CCBEventBus;
-@class GherkinAstGherkinDocument;
+@class GHKAGherkinDocument;
 @class JavaIoPrintStream;
 @class JavaUtilRegexPattern;
 @protocol CCBRResourceLoader;
@@ -36,11 +36,11 @@
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithGherkinAstGherkinDocument:(GherkinAstGherkinDocument *)gherkinDocument
-                                               withNSString:(NSString *)uri
-                                               withNSString:(NSString *)gherkinSource;
+- (instancetype __nonnull)initWithGHKAGherkinDocument:(GHKAGherkinDocument *)gherkinDocument
+                                         withNSString:(NSString *)uri
+                                         withNSString:(NSString *)gherkinSource;
 
-- (GherkinAstGherkinDocument *)getGherkinFeature;
+- (GHKAGherkinDocument *)getGherkinFeature;
 
 - (NSString *)getUri;
 
@@ -75,11 +75,11 @@ FOUNDATION_EXPORT id<JavaUtilList> CCBRCucumberFeature_load__WithCCBRResourceLoa
 
 FOUNDATION_EXPORT id<JavaUtilList> CCBRCucumberFeature_loadRerunFileWithCCBRResourceLoader_withNSString_(id<CCBRResourceLoader> resourceLoader, NSString *rerunPath);
 
-FOUNDATION_EXPORT void CCBRCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(CCBRCucumberFeature *self, GherkinAstGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource);
+FOUNDATION_EXPORT void CCBRCucumberFeature_initWithGHKAGherkinDocument_withNSString_withNSString_(CCBRCucumberFeature *self, GHKAGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource);
 
-FOUNDATION_EXPORT CCBRCucumberFeature *new_CCBRCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(GherkinAstGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRCucumberFeature *new_CCBRCucumberFeature_initWithGHKAGherkinDocument_withNSString_withNSString_(GHKAGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRCucumberFeature *create_CCBRCucumberFeature_initWithGherkinAstGherkinDocument_withNSString_withNSString_(GherkinAstGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource);
+FOUNDATION_EXPORT CCBRCucumberFeature *create_CCBRCucumberFeature_initWithGHKAGherkinDocument_withNSString_withNSString_(GHKAGherkinDocument *gherkinDocument, NSString *uri, NSString *gherkinSource);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRCucumberFeature)
 

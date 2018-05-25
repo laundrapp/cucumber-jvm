@@ -531,8 +531,8 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTagExpressionOld_Or)
 }
 
 - (jboolean)evalWithJavaUtilCollection:(id<JavaUtilCollection>)tags {
-  for (GherkinPicklesPickleTag * __strong tag in nil_chk(tags)) {
-    if ([((NSString *) nil_chk(tagName_)) isEqual:[((GherkinPicklesPickleTag *) nil_chk(tag)) getName]]) {
+  for (GHKPickleTag * __strong tag in nil_chk(tags)) {
+    if ([((NSString *) nil_chk(tagName_)) isEqual:[((GHKPickleTag *) nil_chk(tag)) getName]]) {
       return true;
     }
   }

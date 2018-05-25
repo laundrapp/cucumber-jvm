@@ -27,7 +27,7 @@
 
 @class CucumberApiHookType;
 @class CucumberApiResult_Type;
-@class GherkinPicklesPickleStep;
+@class GHKPickleStep;
 @protocol CCBRDefinitionMatch;
 @protocol CucumberApiScenario;
 @protocol JavaUtilList;
@@ -41,7 +41,7 @@
 
 - (CucumberApiHookType *)getHookType;
 
-- (GherkinPicklesPickleStep *)getPickleStep;
+- (GHKPickleStep *)getPickleStep;
 
 - (id<JavaUtilList>)getStepArgument;
 

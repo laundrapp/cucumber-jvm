@@ -153,10 +153,10 @@ __attribute__((unused)) static jlong CucumberRuntimeJavaJavaBackend_timeoutMilli
   [((id<CucumberApiJavaObjectFactory>) nil_chk(objectFactory_)) stop];
 }
 
-- (NSString *)getSnippetWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
-                                        withNSString:(NSString *)keyword
-                       withCCBRFunctionNameGenerator:(CCBRFunctionNameGenerator *)functionNameGenerator {
-  return [((CCBRSnippetGenerator *) nil_chk(snippetGenerator_)) getSnippetWithGherkinPicklesPickleStep:step withNSString:keyword withCCBRFunctionNameGenerator:functionNameGenerator];
+- (NSString *)getSnippetWithGHKPickleStep:(GHKPickleStep *)step
+                             withNSString:(NSString *)keyword
+            withCCBRFunctionNameGenerator:(CCBRFunctionNameGenerator *)functionNameGenerator {
+  return [((CCBRSnippetGenerator *) nil_chk(snippetGenerator_)) getSnippetWithGHKPickleStep:step withNSString:keyword withCCBRFunctionNameGenerator:functionNameGenerator];
 }
 
 - (void)addStepDefinitionWithJavaLangAnnotationAnnotation:(id<JavaLangAnnotationAnnotation>)annotation
@@ -252,7 +252,7 @@ __attribute__((unused)) static jlong CucumberRuntimeJavaJavaBackend_timeoutMilli
   methods[6].selector = @selector(setUnreportedStepExecutorWithCCBRUnreportedStepExecutor:);
   methods[7].selector = @selector(buildWorld);
   methods[8].selector = @selector(disposeWorld);
-  methods[9].selector = @selector(getSnippetWithGherkinPicklesPickleStep:withNSString:withCCBRFunctionNameGenerator:);
+  methods[9].selector = @selector(getSnippetWithGHKPickleStep:withNSString:withCCBRFunctionNameGenerator:);
   methods[10].selector = @selector(addStepDefinitionWithJavaLangAnnotationAnnotation:withJavaLangReflectMethod:);
   methods[11].selector = @selector(addStepDefinitionWithCCBRStepDefinition:);
   methods[12].selector = @selector(addHookWithJavaLangAnnotationAnnotation:withJavaLangReflectMethod:);
@@ -269,7 +269,7 @@ __attribute__((unused)) static jlong CucumberRuntimeJavaJavaBackend_timeoutMilli
     { "glue_", "LCCBRGlue;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "glueBaseClasses_", "LJavaUtilList;", .constantValue.asLong = 0, 0x2, -1, -1, 23, -1 },
   };
-  static const void *ptrTable[] = { "LCCBRResourceLoader;", "LCCBRClassFinder;", "LCucumberApiJavaObjectFactory;LCCBRClassFinder;", "loadGlue", "LCCBRGlue;LJavaUtilList;", "(Lcucumber/runtime/Glue;Ljava/util/List<Ljava/lang/String;>;)V", "LCCBRGlue;LJavaLangReflectMethod;LIOSClass;", "(Lcucumber/runtime/Glue;Ljava/lang/reflect/Method;Ljava/lang/Class<*>;)V", "setUnreportedStepExecutor", "LCCBRUnreportedStepExecutor;", "getSnippet", "LGherkinPicklesPickleStep;LNSString;LCCBRFunctionNameGenerator;", "addStepDefinition", "LJavaLangAnnotationAnnotation;LJavaLangReflectMethod;", "LCCBRStepDefinition;", "addHook", "addBeforeHookDefinition", "LCCBRHookDefinition;", "addAfterHookDefinition", "pattern", "LJavaLangAnnotationAnnotation;", "LJavaLangThrowable;", "timeoutMillis", "Ljava/util/List<Ljava/lang/Class<+Lcucumber/api/java8/GlueBase;>;>;" };
+  static const void *ptrTable[] = { "LCCBRResourceLoader;", "LCCBRClassFinder;", "LCucumberApiJavaObjectFactory;LCCBRClassFinder;", "loadGlue", "LCCBRGlue;LJavaUtilList;", "(Lcucumber/runtime/Glue;Ljava/util/List<Ljava/lang/String;>;)V", "LCCBRGlue;LJavaLangReflectMethod;LIOSClass;", "(Lcucumber/runtime/Glue;Ljava/lang/reflect/Method;Ljava/lang/Class<*>;)V", "setUnreportedStepExecutor", "LCCBRUnreportedStepExecutor;", "getSnippet", "LGHKPickleStep;LNSString;LCCBRFunctionNameGenerator;", "addStepDefinition", "LJavaLangAnnotationAnnotation;LJavaLangReflectMethod;", "LCCBRStepDefinition;", "addHook", "addBeforeHookDefinition", "LCCBRHookDefinition;", "addAfterHookDefinition", "pattern", "LJavaLangAnnotationAnnotation;", "LJavaLangThrowable;", "timeoutMillis", "Ljava/util/List<Ljava/lang/Class<+Lcucumber/api/java8/GlueBase;>;>;" };
   static const J2ObjcClassInfo _CucumberRuntimeJavaJavaBackend = { "JavaBackend", "cucumber.runtime.java", ptrTable, methods, fields, 7, 0x1, 17, 6, -1, -1, -1, -1, -1 };
   return &_CucumberRuntimeJavaJavaBackend;
 }

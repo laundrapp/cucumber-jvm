@@ -53,7 +53,7 @@ withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<Cucumbe
 - (CucumberApiDataTable *)createDataTableWithJavaUtilList:(id<JavaUtilList>)header
                                          withJavaUtilList:(id<JavaUtilList>)valuesList;
 
-- (GherkinPicklesPickleRow *)gherkinRowWithJavaUtilList:(id<JavaUtilList>)cells;
+- (GHKPickleRow *)gherkinRowWithJavaUtilList:(id<JavaUtilList>)cells;
 
 - (id<JavaUtilList>)convertTopCellsToFieldNamesWithCucumberApiDataTable:(CucumberApiDataTable *)dataTable;
 
@@ -72,7 +72,7 @@ __attribute__((unused)) static id<JavaUtilList> CCBRTableConverter_toListWithCuc
 
 __attribute__((unused)) static CucumberApiDataTable *CCBRTableConverter_createDataTableWithJavaUtilList_withJavaUtilList_(CCBRTableConverter *self, id<JavaUtilList> header, id<JavaUtilList> valuesList);
 
-__attribute__((unused)) static GherkinPicklesPickleRow *CCBRTableConverter_gherkinRowWithJavaUtilList_(CCBRTableConverter *self, id<JavaUtilList> cells);
+__attribute__((unused)) static GHKPickleRow *CCBRTableConverter_gherkinRowWithJavaUtilList_(CCBRTableConverter *self, id<JavaUtilList> cells);
 
 __attribute__((unused)) static id<JavaUtilList> CCBRTableConverter_convertTopCellsToFieldNamesWithCucumberApiDataTable_(CCBRTableConverter *self, CucumberApiDataTable *dataTable);
 
@@ -299,7 +299,7 @@ withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<Cucumbe
   return CCBRTableConverter_createDataTableWithJavaUtilList_withJavaUtilList_(self, header, valuesList);
 }
 
-- (GherkinPicklesPickleRow *)gherkinRowWithJavaUtilList:(id<JavaUtilList>)cells {
+- (GHKPickleRow *)gherkinRowWithJavaUtilList:(id<JavaUtilList>)cells {
   return CCBRTableConverter_gherkinRowWithJavaUtilList_(self, cells);
 }
 
@@ -333,7 +333,7 @@ withCucumberDepsComThoughtworksXstreamConvertersSingleValueConverter:(id<Cucumbe
     { NULL, "LJavaUtilList;", 0x1, 17, 15, -1, 18, -1, -1 },
     { NULL, "LCucumberApiDataTable;", 0x81, 19, 20, -1, 21, -1, -1 },
     { NULL, "LCucumberApiDataTable;", 0x2, 22, 23, -1, 24, -1, -1 },
-    { NULL, "LGherkinPicklesPickleRow;", 0x2, 25, 26, -1, 27, -1, -1 },
+    { NULL, "LGHKPickleRow;", 0x2, 25, 26, -1, 27, -1, -1 },
     { NULL, "LJavaUtilList;", 0x2, 28, 29, -1, 30, -1, -1 },
     { NULL, "Z", 0x2, 31, 32, -1, -1, -1, -1 },
     { NULL, "Z", 0x2, 33, 32, -1, -1, -1, -1 },
@@ -424,16 +424,16 @@ CucumberApiDataTable *CCBRTableConverter_createDataTableWithJavaUtilList_withJav
   for (id<JavaUtilList> __strong values in nil_chk(valuesList)) {
     [gherkinRows addWithId:CCBRTableConverter_gherkinRowWithJavaUtilList_(self, values)];
   }
-  return create_CucumberApiDataTable_initWithGherkinPicklesPickleTable_withCucumberApiTableConverter_(create_GherkinPicklesPickleTable_initWithJavaUtilList_(gherkinRows), self);
+  return create_CucumberApiDataTable_initWithGHKPickleTable_withCucumberApiTableConverter_(create_GHKPickleTable_initWithJavaUtilList_(gherkinRows), self);
 }
 
-GherkinPicklesPickleRow *CCBRTableConverter_gherkinRowWithJavaUtilList_(CCBRTableConverter *self, id<JavaUtilList> cells) {
+GHKPickleRow *CCBRTableConverter_gherkinRowWithJavaUtilList_(CCBRTableConverter *self, id<JavaUtilList> cells) {
   id<JavaUtilList> pickleCells = create_JavaUtilArrayList_initWithInt_([((id<JavaUtilList>) nil_chk(cells)) size]);
   for (NSString * __strong cell in cells) {
-    GherkinPicklesPickleCell *pickleCell = create_GherkinPicklesPickleCell_initWithGherkinPicklesPickleLocation_withNSString_(nil, cell);
+    GHKPickleCell *pickleCell = create_GHKPickleCell_initWithGHKPickleLocation_withNSString_(nil, cell);
     [pickleCells addWithId:pickleCell];
   }
-  return create_GherkinPicklesPickleRow_initWithJavaUtilList_(pickleCells);
+  return create_GHKPickleRow_initWithJavaUtilList_(pickleCells);
 }
 
 id<JavaUtilList> CCBRTableConverter_convertTopCellsToFieldNamesWithCucumberApiDataTable_(CCBRTableConverter *self, CucumberApiDataTable *dataTable) {

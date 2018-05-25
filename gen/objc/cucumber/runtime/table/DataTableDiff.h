@@ -26,7 +26,7 @@
 #include "cucumber/api/DataTable.h"
 
 @class CCBRTablePrinter;
-@class GherkinPicklesPickleTable;
+@class GHKPickleTable;
 @protocol CucumberApiTableConverter;
 @protocol JavaUtilList;
 
@@ -34,9 +34,9 @@
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)pickleTable
-                                           withJavaUtilList:(id<JavaUtilList>)diffTypes
-                              withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter;
+- (instancetype __nonnull)initWithGHKPickleTable:(GHKPickleTable *)pickleTable
+                                withJavaUtilList:(id<JavaUtilList>)diffTypes
+                   withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter;
 
 + (CCBRDataTableDiff *)createWithJavaUtilList:(id<JavaUtilList>)diffTableRows
                 withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter;
@@ -47,8 +47,8 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype __nonnull)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)arg0
-                              withCucumberApiTableConverter:(id<CucumberApiTableConverter>)arg1 NS_UNAVAILABLE;
+- (instancetype __nonnull)initWithGHKPickleTable:(GHKPickleTable *)arg0
+                   withCucumberApiTableConverter:(id<CucumberApiTableConverter>)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -56,11 +56,11 @@ J2OBJC_EMPTY_STATIC_INIT(CCBRDataTableDiff)
 
 FOUNDATION_EXPORT CCBRDataTableDiff *CCBRDataTableDiff_createWithJavaUtilList_withCucumberApiTableConverter_(id<JavaUtilList> diffTableRows, id<CucumberApiTableConverter> tableConverter);
 
-FOUNDATION_EXPORT void CCBRDataTableDiff_initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_(CCBRDataTableDiff *self, GherkinPicklesPickleTable *pickleTable, id<JavaUtilList> diffTypes, id<CucumberApiTableConverter> tableConverter);
+FOUNDATION_EXPORT void CCBRDataTableDiff_initWithGHKPickleTable_withJavaUtilList_withCucumberApiTableConverter_(CCBRDataTableDiff *self, GHKPickleTable *pickleTable, id<JavaUtilList> diffTypes, id<CucumberApiTableConverter> tableConverter);
 
-FOUNDATION_EXPORT CCBRDataTableDiff *new_CCBRDataTableDiff_initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_(GherkinPicklesPickleTable *pickleTable, id<JavaUtilList> diffTypes, id<CucumberApiTableConverter> tableConverter) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRDataTableDiff *new_CCBRDataTableDiff_initWithGHKPickleTable_withJavaUtilList_withCucumberApiTableConverter_(GHKPickleTable *pickleTable, id<JavaUtilList> diffTypes, id<CucumberApiTableConverter> tableConverter) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRDataTableDiff *create_CCBRDataTableDiff_initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_(GherkinPicklesPickleTable *pickleTable, id<JavaUtilList> diffTypes, id<CucumberApiTableConverter> tableConverter);
+FOUNDATION_EXPORT CCBRDataTableDiff *create_CCBRDataTableDiff_initWithGHKPickleTable_withJavaUtilList_withCucumberApiTableConverter_(GHKPickleTable *pickleTable, id<JavaUtilList> diffTypes, id<CucumberApiTableConverter> tableConverter);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRDataTableDiff)
 

@@ -26,7 +26,7 @@
 #include "cucumber/api/TestStep.h"
 
 @class CucumberApiHookType;
-@class GherkinPicklesPickleStep;
+@class GHKPickleStep;
 @protocol CCBRDefinitionMatch;
 @protocol JavaUtilList;
 
@@ -35,12 +35,12 @@
 #pragma mark Public
 
 - (instancetype __nonnull)initWithNSString:(NSString *)uri
-              withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
+                         withGHKPickleStep:(GHKPickleStep *)step
                    withCCBRDefinitionMatch:(id<CCBRDefinitionMatch>)definitionMatch;
 
 - (CucumberApiHookType *)getHookType;
 
-- (GherkinPicklesPickleStep *)getPickleStep;
+- (GHKPickleStep *)getPickleStep;
 
 - (id<JavaUtilList>)getStepArgument;
 
@@ -60,11 +60,11 @@
 
 J2OBJC_EMPTY_STATIC_INIT(CCBPickleTestStep)
 
-FOUNDATION_EXPORT void CCBPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_(CCBPickleTestStep *self, NSString *uri, GherkinPicklesPickleStep *step, id<CCBRDefinitionMatch> definitionMatch);
+FOUNDATION_EXPORT void CCBPickleTestStep_initWithNSString_withGHKPickleStep_withCCBRDefinitionMatch_(CCBPickleTestStep *self, NSString *uri, GHKPickleStep *step, id<CCBRDefinitionMatch> definitionMatch);
 
-FOUNDATION_EXPORT CCBPickleTestStep *new_CCBPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_(NSString *uri, GherkinPicklesPickleStep *step, id<CCBRDefinitionMatch> definitionMatch) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBPickleTestStep *new_CCBPickleTestStep_initWithNSString_withGHKPickleStep_withCCBRDefinitionMatch_(NSString *uri, GHKPickleStep *step, id<CCBRDefinitionMatch> definitionMatch) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBPickleTestStep *create_CCBPickleTestStep_initWithNSString_withGherkinPicklesPickleStep_withCCBRDefinitionMatch_(NSString *uri, GherkinPicklesPickleStep *step, id<CCBRDefinitionMatch> definitionMatch);
+FOUNDATION_EXPORT CCBPickleTestStep *create_CCBPickleTestStep_initWithNSString_withGHKPickleStep_withCCBRDefinitionMatch_(NSString *uri, GHKPickleStep *step, id<CCBRDefinitionMatch> definitionMatch);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBPickleTestStep)
 

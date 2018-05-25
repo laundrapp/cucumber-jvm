@@ -39,7 +39,7 @@
  @public
   id<CCBRStepDefinition> stepDefinition_;
   NSString *featurePath_;
-  GherkinPicklesPickleStep *step_;
+  GHKPickleStep *step_;
   CCBRLocalizedXStreams *localizedXStreams_;
 }
 
@@ -48,19 +48,19 @@
  @param xStream used to convert a string to declared stepdef arguments
  @return an Array matching the types or <code>parameterTypes</code>, or an array of String if <code>parameterTypes</code> is null
  */
-- (IOSObjectArray *)transformedArgsWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
-                     withCCBRLocalizedXStreams_LocalizedXStream:(CCBRLocalizedXStreams_LocalizedXStream *)xStream;
+- (IOSObjectArray *)transformedArgsWithGHKPickleStep:(GHKPickleStep *)step
+          withCCBRLocalizedXStreams_LocalizedXStream:(CCBRLocalizedXStreams_LocalizedXStream *)xStream;
 
 - (CCBRParameterInfo *)getParameterTypeWithInt:(jint)n
                        withJavaLangReflectType:(id<JavaLangReflectType>)argumentType;
 
-- (id)tableArgumentWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)stepArgument
-                                         withInt:(jint)argIndex
-      withCCBRLocalizedXStreams_LocalizedXStream:(CCBRLocalizedXStreams_LocalizedXStream *)xStream;
+- (id)tableArgumentWithGHKPickleTable:(GHKPickleTable *)stepArgument
+                              withInt:(jint)argIndex
+withCCBRLocalizedXStreams_LocalizedXStream:(CCBRLocalizedXStreams_LocalizedXStream *)xStream;
 
 - (CCBRCucumberException *)arityMismatchWithInt:(jint)parameterCount;
 
-- (id<JavaUtilList>)createArgumentsForErrorMessageWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step;
+- (id<JavaUtilList>)createArgumentsForErrorMessageWithGHKPickleStep:(GHKPickleStep *)step;
 
 - (JavaUtilLocale *)localeForWithNSString:(NSString *)language;
 
@@ -68,18 +68,18 @@
 
 J2OBJC_FIELD_SETTER(CCBRStepDefinitionMatch, stepDefinition_, id<CCBRStepDefinition>)
 J2OBJC_FIELD_SETTER(CCBRStepDefinitionMatch, featurePath_, NSString *)
-J2OBJC_FIELD_SETTER(CCBRStepDefinitionMatch, step_, GherkinPicklesPickleStep *)
+J2OBJC_FIELD_SETTER(CCBRStepDefinitionMatch, step_, GHKPickleStep *)
 J2OBJC_FIELD_SETTER(CCBRStepDefinitionMatch, localizedXStreams_, CCBRLocalizedXStreams *)
 
-__attribute__((unused)) static IOSObjectArray *CCBRStepDefinitionMatch_transformedArgsWithGherkinPicklesPickleStep_withCCBRLocalizedXStreams_LocalizedXStream_(CCBRStepDefinitionMatch *self, GherkinPicklesPickleStep *step, CCBRLocalizedXStreams_LocalizedXStream *xStream);
+__attribute__((unused)) static IOSObjectArray *CCBRStepDefinitionMatch_transformedArgsWithGHKPickleStep_withCCBRLocalizedXStreams_LocalizedXStream_(CCBRStepDefinitionMatch *self, GHKPickleStep *step, CCBRLocalizedXStreams_LocalizedXStream *xStream);
 
 __attribute__((unused)) static CCBRParameterInfo *CCBRStepDefinitionMatch_getParameterTypeWithInt_withJavaLangReflectType_(CCBRStepDefinitionMatch *self, jint n, id<JavaLangReflectType> argumentType);
 
-__attribute__((unused)) static id CCBRStepDefinitionMatch_tableArgumentWithGherkinPicklesPickleTable_withInt_withCCBRLocalizedXStreams_LocalizedXStream_(CCBRStepDefinitionMatch *self, GherkinPicklesPickleTable *stepArgument, jint argIndex, CCBRLocalizedXStreams_LocalizedXStream *xStream);
+__attribute__((unused)) static id CCBRStepDefinitionMatch_tableArgumentWithGHKPickleTable_withInt_withCCBRLocalizedXStreams_LocalizedXStream_(CCBRStepDefinitionMatch *self, GHKPickleTable *stepArgument, jint argIndex, CCBRLocalizedXStreams_LocalizedXStream *xStream);
 
 __attribute__((unused)) static CCBRCucumberException *CCBRStepDefinitionMatch_arityMismatchWithInt_(CCBRStepDefinitionMatch *self, jint parameterCount);
 
-__attribute__((unused)) static id<JavaUtilList> CCBRStepDefinitionMatch_createArgumentsForErrorMessageWithGherkinPicklesPickleStep_(CCBRStepDefinitionMatch *self, GherkinPicklesPickleStep *step);
+__attribute__((unused)) static id<JavaUtilList> CCBRStepDefinitionMatch_createArgumentsForErrorMessageWithGHKPickleStep_(CCBRStepDefinitionMatch *self, GHKPickleStep *step);
 
 __attribute__((unused)) static JavaUtilLocale *CCBRStepDefinitionMatch_localeForWithNSString_(CCBRStepDefinitionMatch *self, NSString *language);
 
@@ -87,7 +87,7 @@ __attribute__((unused)) static JavaUtilLocale *CCBRStepDefinitionMatch_localeFor
 
 - (instancetype __nonnull)init;
 
-- (id<JavaUtilList>)mapWithId:(GherkinPicklesPickleRow *)row;
+- (id<JavaUtilList>)mapWithId:(GHKPickleRow *)row;
 
 @end
 
@@ -104,16 +104,16 @@ __attribute__((unused)) static CCBRStepDefinitionMatch_1 *create_CCBRStepDefinit
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)arguments
                         withCCBRStepDefinition:(id<CCBRStepDefinition>)stepDefinition
                                   withNSString:(NSString *)featurePath
-                  withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
+                             withGHKPickleStep:(GHKPickleStep *)step
                      withCCBRLocalizedXStreams:(CCBRLocalizedXStreams *)localizedXStreams {
-  CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGherkinPicklesPickleStep_withCCBRLocalizedXStreams_(self, arguments, stepDefinition, featurePath, step, localizedXStreams);
+  CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGHKPickleStep_withCCBRLocalizedXStreams_(self, arguments, stepDefinition, featurePath, step, localizedXStreams);
   return self;
 }
 
 - (void)runStepWithNSString:(NSString *)language
     withCucumberApiScenario:(id<CucumberApiScenario>)scenario {
   @try {
-    [((id<CCBRStepDefinition>) nil_chk(stepDefinition_)) executeWithNSString:language withNSObjectArray:CCBRStepDefinitionMatch_transformedArgsWithGherkinPicklesPickleStep_withCCBRLocalizedXStreams_LocalizedXStream_(self, step_, [((CCBRLocalizedXStreams *) nil_chk(localizedXStreams_)) getWithJavaUtilLocale:CCBRStepDefinitionMatch_localeForWithNSString_(self, language)])];
+    [((id<CCBRStepDefinition>) nil_chk(stepDefinition_)) executeWithNSString:language withNSObjectArray:CCBRStepDefinitionMatch_transformedArgsWithGHKPickleStep_withCCBRLocalizedXStreams_LocalizedXStream_(self, step_, [((CCBRLocalizedXStreams *) nil_chk(localizedXStreams_)) getWithJavaUtilLocale:CCBRStepDefinitionMatch_localeForWithNSString_(self, language)])];
   }
   @catch (CCBRCucumberException *e) {
     @throw e;
@@ -127,9 +127,9 @@ __attribute__((unused)) static CCBRStepDefinitionMatch_1 *create_CCBRStepDefinit
        withCucumberApiScenario:(id<CucumberApiScenario>)scenario {
 }
 
-- (IOSObjectArray *)transformedArgsWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
-                     withCCBRLocalizedXStreams_LocalizedXStream:(CCBRLocalizedXStreams_LocalizedXStream *)xStream {
-  return CCBRStepDefinitionMatch_transformedArgsWithGherkinPicklesPickleStep_withCCBRLocalizedXStreams_LocalizedXStream_(self, step, xStream);
+- (IOSObjectArray *)transformedArgsWithGHKPickleStep:(GHKPickleStep *)step
+          withCCBRLocalizedXStreams_LocalizedXStream:(CCBRLocalizedXStreams_LocalizedXStream *)xStream {
+  return CCBRStepDefinitionMatch_transformedArgsWithGHKPickleStep_withCCBRLocalizedXStreams_LocalizedXStream_(self, step, xStream);
 }
 
 - (CCBRParameterInfo *)getParameterTypeWithInt:(jint)n
@@ -137,18 +137,18 @@ __attribute__((unused)) static CCBRStepDefinitionMatch_1 *create_CCBRStepDefinit
   return CCBRStepDefinitionMatch_getParameterTypeWithInt_withJavaLangReflectType_(self, n, argumentType);
 }
 
-- (id)tableArgumentWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)stepArgument
-                                         withInt:(jint)argIndex
-      withCCBRLocalizedXStreams_LocalizedXStream:(CCBRLocalizedXStreams_LocalizedXStream *)xStream {
-  return CCBRStepDefinitionMatch_tableArgumentWithGherkinPicklesPickleTable_withInt_withCCBRLocalizedXStreams_LocalizedXStream_(self, stepArgument, argIndex, xStream);
+- (id)tableArgumentWithGHKPickleTable:(GHKPickleTable *)stepArgument
+                              withInt:(jint)argIndex
+withCCBRLocalizedXStreams_LocalizedXStream:(CCBRLocalizedXStreams_LocalizedXStream *)xStream {
+  return CCBRStepDefinitionMatch_tableArgumentWithGHKPickleTable_withInt_withCCBRLocalizedXStreams_LocalizedXStream_(self, stepArgument, argIndex, xStream);
 }
 
 - (CCBRCucumberException *)arityMismatchWithInt:(jint)parameterCount {
   return CCBRStepDefinitionMatch_arityMismatchWithInt_(self, parameterCount);
 }
 
-- (id<JavaUtilList>)createArgumentsForErrorMessageWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step {
-  return CCBRStepDefinitionMatch_createArgumentsForErrorMessageWithGherkinPicklesPickleStep_(self, step);
+- (id<JavaUtilList>)createArgumentsForErrorMessageWithGHKPickleStep:(GHKPickleStep *)step {
+  return CCBRStepDefinitionMatch_createArgumentsForErrorMessageWithGHKPickleStep_(self, step);
 }
 
 - (JavaLangThrowable *)removeFrameworkFramesAndAppendStepLocationWithJavaLangThrowable:(JavaLangThrowable *)error
@@ -179,7 +179,7 @@ __attribute__((unused)) static CCBRStepDefinitionMatch_1 *create_CCBRStepDefinit
 }
 
 - (JavaLangStackTraceElement *)getStepLocation {
-  return create_JavaLangStackTraceElement_initWithNSString_withNSString_withNSString_withInt_(@"\u273d", [((GherkinPicklesPickleStep *) nil_chk(step_)) getText], featurePath_, CCBRStepDefinitionMatch_getStepLineWithGherkinPicklesPickleStep_(step_));
+  return create_JavaLangStackTraceElement_initWithNSString_withNSString_withNSString_withInt_(@"\u273d", [((GHKPickleStep *) nil_chk(step_)) getText], featurePath_, CCBRStepDefinitionMatch_getStepLineWithGHKPickleStep_(step_));
 }
 
 - (CCBRMatch *)getMatch {
@@ -194,8 +194,8 @@ __attribute__((unused)) static CCBRStepDefinitionMatch_1 *create_CCBRStepDefinit
   return [((id<CCBRStepDefinition>) nil_chk(stepDefinition_)) getLocationWithBoolean:false];
 }
 
-+ (jint)getStepLineWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step {
-  return CCBRStepDefinitionMatch_getStepLineWithGherkinPicklesPickleStep_(step);
++ (jint)getStepLineWithGHKPickleStep:(GHKPickleStep *)step {
+  return CCBRStepDefinitionMatch_getStepLineWithGHKPickleStep_(step);
 }
 
 - (void)dealloc {
@@ -228,14 +228,14 @@ __attribute__((unused)) static CCBRStepDefinitionMatch_1 *create_CCBRStepDefinit
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithJavaUtilList:withCCBRStepDefinition:withNSString:withGherkinPicklesPickleStep:withCCBRLocalizedXStreams:);
+  methods[0].selector = @selector(initWithJavaUtilList:withCCBRStepDefinition:withNSString:withGHKPickleStep:withCCBRLocalizedXStreams:);
   methods[1].selector = @selector(runStepWithNSString:withCucumberApiScenario:);
   methods[2].selector = @selector(dryRunStepWithNSString:withCucumberApiScenario:);
-  methods[3].selector = @selector(transformedArgsWithGherkinPicklesPickleStep:withCCBRLocalizedXStreams_LocalizedXStream:);
+  methods[3].selector = @selector(transformedArgsWithGHKPickleStep:withCCBRLocalizedXStreams_LocalizedXStream:);
   methods[4].selector = @selector(getParameterTypeWithInt:withJavaLangReflectType:);
-  methods[5].selector = @selector(tableArgumentWithGherkinPicklesPickleTable:withInt:withCCBRLocalizedXStreams_LocalizedXStream:);
+  methods[5].selector = @selector(tableArgumentWithGHKPickleTable:withInt:withCCBRLocalizedXStreams_LocalizedXStream:);
   methods[6].selector = @selector(arityMismatchWithInt:);
-  methods[7].selector = @selector(createArgumentsForErrorMessageWithGherkinPicklesPickleStep:);
+  methods[7].selector = @selector(createArgumentsForErrorMessageWithGHKPickleStep:);
   methods[8].selector = @selector(removeFrameworkFramesAndAppendStepLocationWithJavaLangThrowable:withJavaLangStackTraceElement:);
   methods[9].selector = @selector(localeForWithNSString:);
   methods[10].selector = @selector(getPattern);
@@ -243,22 +243,22 @@ __attribute__((unused)) static CCBRStepDefinitionMatch_1 *create_CCBRStepDefinit
   methods[12].selector = @selector(getMatch);
   methods[13].selector = @selector(getStepDefinition);
   methods[14].selector = @selector(getCodeLocation);
-  methods[15].selector = @selector(getStepLineWithGherkinPicklesPickleStep:);
+  methods[15].selector = @selector(getStepLineWithGHKPickleStep:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "stepDefinition_", "LCCBRStepDefinition;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "featurePath_", "LNSString;", .constantValue.asLong = 0, 0x92, -1, -1, -1, -1 },
-    { "step_", "LGherkinPicklesPickleStep;", .constantValue.asLong = 0, 0x92, -1, -1, -1, -1 },
+    { "step_", "LGHKPickleStep;", .constantValue.asLong = 0, 0x92, -1, -1, -1, -1 },
     { "localizedXStreams_", "LCCBRLocalizedXStreams;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LJavaUtilList;LCCBRStepDefinition;LNSString;LGherkinPicklesPickleStep;LCCBRLocalizedXStreams;", "(Ljava/util/List<Lcucumber/runtime/Argument;>;Lcucumber/runtime/StepDefinition;Ljava/lang/String;Lgherkin/pickles/PickleStep;Lcucumber/runtime/xstream/LocalizedXStreams;)V", "runStep", "LNSString;LCucumberApiScenario;", "LJavaLangThrowable;", "dryRunStep", "transformedArgs", "LGherkinPicklesPickleStep;LCCBRLocalizedXStreams_LocalizedXStream;", "getParameterType", "ILJavaLangReflectType;", "tableArgument", "LGherkinPicklesPickleTable;ILCCBRLocalizedXStreams_LocalizedXStream;", "arityMismatch", "I", "createArgumentsForErrorMessage", "LGherkinPicklesPickleStep;", "(Lgherkin/pickles/PickleStep;)Ljava/util/List<Lcucumber/runtime/Argument;>;", "removeFrameworkFramesAndAppendStepLocation", "LJavaLangThrowable;LJavaLangStackTraceElement;", "localeFor", "LNSString;", "getStepLine" };
+  static const void *ptrTable[] = { "LJavaUtilList;LCCBRStepDefinition;LNSString;LGHKPickleStep;LCCBRLocalizedXStreams;", "(Ljava/util/List<Lcucumber/runtime/Argument;>;Lcucumber/runtime/StepDefinition;Ljava/lang/String;Lgherkin/pickles/PickleStep;Lcucumber/runtime/xstream/LocalizedXStreams;)V", "runStep", "LNSString;LCucumberApiScenario;", "LJavaLangThrowable;", "dryRunStep", "transformedArgs", "LGHKPickleStep;LCCBRLocalizedXStreams_LocalizedXStream;", "getParameterType", "ILJavaLangReflectType;", "tableArgument", "LGHKPickleTable;ILCCBRLocalizedXStreams_LocalizedXStream;", "arityMismatch", "I", "createArgumentsForErrorMessage", "LGHKPickleStep;", "(Lgherkin/pickles/PickleStep;)Ljava/util/List<Lcucumber/runtime/Argument;>;", "removeFrameworkFramesAndAppendStepLocation", "LJavaLangThrowable;LJavaLangStackTraceElement;", "localeFor", "LNSString;", "getStepLine" };
   static const J2ObjcClassInfo _CCBRStepDefinitionMatch = { "StepDefinitionMatch", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 16, 4, -1, -1, -1, -1, -1 };
   return &_CCBRStepDefinitionMatch;
 }
 
 @end
 
-void CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGherkinPicklesPickleStep_withCCBRLocalizedXStreams_(CCBRStepDefinitionMatch *self, id<JavaUtilList> arguments, id<CCBRStepDefinition> stepDefinition, NSString *featurePath, GherkinPicklesPickleStep *step, CCBRLocalizedXStreams *localizedXStreams) {
+void CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGHKPickleStep_withCCBRLocalizedXStreams_(CCBRStepDefinitionMatch *self, id<JavaUtilList> arguments, id<CCBRStepDefinition> stepDefinition, NSString *featurePath, GHKPickleStep *step, CCBRLocalizedXStreams *localizedXStreams) {
   CCBRMatch_initWithJavaUtilList_withNSString_(self, arguments, [((id<CCBRStepDefinition>) nil_chk(stepDefinition)) getLocationWithBoolean:false]);
   JreStrongAssign(&self->stepDefinition_, stepDefinition);
   JreStrongAssign(&self->featurePath_, featurePath);
@@ -266,17 +266,17 @@ void CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSS
   JreStrongAssign(&self->localizedXStreams_, localizedXStreams);
 }
 
-CCBRStepDefinitionMatch *new_CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGherkinPicklesPickleStep_withCCBRLocalizedXStreams_(id<JavaUtilList> arguments, id<CCBRStepDefinition> stepDefinition, NSString *featurePath, GherkinPicklesPickleStep *step, CCBRLocalizedXStreams *localizedXStreams) {
-  J2OBJC_NEW_IMPL(CCBRStepDefinitionMatch, initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGherkinPicklesPickleStep_withCCBRLocalizedXStreams_, arguments, stepDefinition, featurePath, step, localizedXStreams)
+CCBRStepDefinitionMatch *new_CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGHKPickleStep_withCCBRLocalizedXStreams_(id<JavaUtilList> arguments, id<CCBRStepDefinition> stepDefinition, NSString *featurePath, GHKPickleStep *step, CCBRLocalizedXStreams *localizedXStreams) {
+  J2OBJC_NEW_IMPL(CCBRStepDefinitionMatch, initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGHKPickleStep_withCCBRLocalizedXStreams_, arguments, stepDefinition, featurePath, step, localizedXStreams)
 }
 
-CCBRStepDefinitionMatch *create_CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGherkinPicklesPickleStep_withCCBRLocalizedXStreams_(id<JavaUtilList> arguments, id<CCBRStepDefinition> stepDefinition, NSString *featurePath, GherkinPicklesPickleStep *step, CCBRLocalizedXStreams *localizedXStreams) {
-  J2OBJC_CREATE_IMPL(CCBRStepDefinitionMatch, initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGherkinPicklesPickleStep_withCCBRLocalizedXStreams_, arguments, stepDefinition, featurePath, step, localizedXStreams)
+CCBRStepDefinitionMatch *create_CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGHKPickleStep_withCCBRLocalizedXStreams_(id<JavaUtilList> arguments, id<CCBRStepDefinition> stepDefinition, NSString *featurePath, GHKPickleStep *step, CCBRLocalizedXStreams *localizedXStreams) {
+  J2OBJC_CREATE_IMPL(CCBRStepDefinitionMatch, initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGHKPickleStep_withCCBRLocalizedXStreams_, arguments, stepDefinition, featurePath, step, localizedXStreams)
 }
 
-IOSObjectArray *CCBRStepDefinitionMatch_transformedArgsWithGherkinPicklesPickleStep_withCCBRLocalizedXStreams_LocalizedXStream_(CCBRStepDefinitionMatch *self, GherkinPicklesPickleStep *step, CCBRLocalizedXStreams_LocalizedXStream *xStream) {
+IOSObjectArray *CCBRStepDefinitionMatch_transformedArgsWithGHKPickleStep_withCCBRLocalizedXStreams_LocalizedXStream_(CCBRStepDefinitionMatch *self, GHKPickleStep *step, CCBRLocalizedXStreams_LocalizedXStream *xStream) {
   jint argumentCount = [((id<JavaUtilList>) nil_chk([self getArguments])) size];
-  if (![((id<JavaUtilList>) nil_chk([((GherkinPicklesPickleStep *) nil_chk(step)) getArgument])) isEmpty]) {
+  if (![((id<JavaUtilList>) nil_chk([((GHKPickleStep *) nil_chk(step)) getArgument])) isEmpty]) {
     argumentCount++;
   }
   JavaLangInteger *parameterCount = [((id<CCBRStepDefinition>) nil_chk(self->stepDefinition_)) getParameterCount];
@@ -292,13 +292,13 @@ IOSObjectArray *CCBRStepDefinitionMatch_transformedArgsWithGherkinPicklesPickleS
     n++;
   }
   if (![((id<JavaUtilList>) nil_chk([step getArgument])) isEmpty]) {
-    id<GherkinPicklesArgument> stepArgument = [((id<JavaUtilList>) nil_chk([step getArgument])) getWithInt:0];
-    if ([stepArgument isKindOfClass:[GherkinPicklesPickleTable class]]) {
-      [result addWithId:CCBRStepDefinitionMatch_tableArgumentWithGherkinPicklesPickleTable_withInt_withCCBRLocalizedXStreams_LocalizedXStream_(self, (GherkinPicklesPickleTable *) cast_chk(stepArgument, [GherkinPicklesPickleTable class]), n, xStream)];
+    id<GHKArgument> stepArgument = [((id<JavaUtilList>) nil_chk([step getArgument])) getWithInt:0];
+    if ([stepArgument isKindOfClass:[GHKPickleTable class]]) {
+      [result addWithId:CCBRStepDefinitionMatch_tableArgumentWithGHKPickleTable_withInt_withCCBRLocalizedXStreams_LocalizedXStream_(self, (GHKPickleTable *) cast_chk(stepArgument, [GHKPickleTable class]), n, xStream)];
     }
-    else if ([stepArgument isKindOfClass:[GherkinPicklesPickleString class]]) {
+    else if ([stepArgument isKindOfClass:[GHKPickleString class]]) {
       CCBRParameterInfo *parameterInfo = CCBRStepDefinitionMatch_getParameterTypeWithInt_withJavaLangReflectType_(self, n, NSString_class_());
-      id arg = [((CCBRParameterInfo *) nil_chk(parameterInfo)) convertWithNSString:[((GherkinPicklesPickleString *) nil_chk(((GherkinPicklesPickleString *) cast_chk(stepArgument, [GherkinPicklesPickleString class])))) getContent] withCCBRLocalizedXStreams_LocalizedXStream:xStream];
+      id arg = [((CCBRParameterInfo *) nil_chk(parameterInfo)) convertWithNSString:[((GHKPickleString *) nil_chk(((GHKPickleString *) cast_chk(stepArgument, [GHKPickleString class])))) getContent] withCCBRLocalizedXStreams_LocalizedXStream:xStream];
       [result addWithId:arg];
     }
   }
@@ -313,28 +313,28 @@ CCBRParameterInfo *CCBRStepDefinitionMatch_getParameterTypeWithInt_withJavaLangR
   return parameterInfo;
 }
 
-id CCBRStepDefinitionMatch_tableArgumentWithGherkinPicklesPickleTable_withInt_withCCBRLocalizedXStreams_LocalizedXStream_(CCBRStepDefinitionMatch *self, GherkinPicklesPickleTable *stepArgument, jint argIndex, CCBRLocalizedXStreams_LocalizedXStream *xStream) {
+id CCBRStepDefinitionMatch_tableArgumentWithGHKPickleTable_withInt_withCCBRLocalizedXStreams_LocalizedXStream_(CCBRStepDefinitionMatch *self, GHKPickleTable *stepArgument, jint argIndex, CCBRLocalizedXStreams_LocalizedXStream *xStream) {
   CCBRParameterInfo *parameterInfo = CCBRStepDefinitionMatch_getParameterTypeWithInt_withJavaLangReflectType_(self, argIndex, CucumberApiDataTable_class_());
   id<CucumberApiTableConverter> tableConverter = create_CCBRTableConverter_initWithCCBRLocalizedXStreams_LocalizedXStream_withCCBRParameterInfo_(xStream, parameterInfo);
-  CucumberApiDataTable *table = create_CucumberApiDataTable_initWithGherkinPicklesPickleTable_withCucumberApiTableConverter_(stepArgument, tableConverter);
+  CucumberApiDataTable *table = create_CucumberApiDataTable_initWithGHKPickleTable_withCucumberApiTableConverter_(stepArgument, tableConverter);
   id<JavaLangReflectType> type = [((CCBRParameterInfo *) nil_chk(parameterInfo)) getType];
   return [tableConverter convertWithCucumberApiDataTable:table withJavaLangReflectType:type withBoolean:[parameterInfo isTransposed]];
 }
 
 CCBRCucumberException *CCBRStepDefinitionMatch_arityMismatchWithInt_(CCBRStepDefinitionMatch *self, jint parameterCount) {
-  id<JavaUtilList> arguments = CCBRStepDefinitionMatch_createArgumentsForErrorMessageWithGherkinPicklesPickleStep_(self, self->step_);
-  return create_CCBRCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"Arity mismatch: Step Definition '%s' with pattern [%s] is declared with %s parameters. However, the gherkin step has %s arguments %s. \nStep text: %s", [IOSObjectArray arrayWithObjects:(id[]){ [((id<CCBRStepDefinition>) nil_chk(self->stepDefinition_)) getLocationWithBoolean:true], [self->stepDefinition_ getPattern], JavaLangInteger_valueOfWithInt_(parameterCount), JavaLangInteger_valueOfWithInt_([((id<JavaUtilList>) nil_chk(arguments)) size]), arguments, [((GherkinPicklesPickleStep *) nil_chk(self->step_)) getText] } count:6 type:NSObject_class_()]));
+  id<JavaUtilList> arguments = CCBRStepDefinitionMatch_createArgumentsForErrorMessageWithGHKPickleStep_(self, self->step_);
+  return create_CCBRCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"Arity mismatch: Step Definition '%s' with pattern [%s] is declared with %s parameters. However, the gherkin step has %s arguments %s. \nStep text: %s", [IOSObjectArray arrayWithObjects:(id[]){ [((id<CCBRStepDefinition>) nil_chk(self->stepDefinition_)) getLocationWithBoolean:true], [self->stepDefinition_ getPattern], JavaLangInteger_valueOfWithInt_(parameterCount), JavaLangInteger_valueOfWithInt_([((id<JavaUtilList>) nil_chk(arguments)) size]), arguments, [((GHKPickleStep *) nil_chk(self->step_)) getText] } count:6 type:NSObject_class_()]));
 }
 
-id<JavaUtilList> CCBRStepDefinitionMatch_createArgumentsForErrorMessageWithGherkinPicklesPickleStep_(CCBRStepDefinitionMatch *self, GherkinPicklesPickleStep *step) {
+id<JavaUtilList> CCBRStepDefinitionMatch_createArgumentsForErrorMessageWithGHKPickleStep_(CCBRStepDefinitionMatch *self, GHKPickleStep *step) {
   id<JavaUtilList> arguments = create_JavaUtilArrayList_initWithJavaUtilCollection_([self getArguments]);
-  if (![((id<JavaUtilList>) nil_chk([((GherkinPicklesPickleStep *) nil_chk(step)) getArgument])) isEmpty]) {
-    id<GherkinPicklesArgument> stepArgument = [((id<JavaUtilList>) nil_chk([step getArgument])) getWithInt:0];
-    if ([stepArgument isKindOfClass:[GherkinPicklesPickleString class]]) {
-      [arguments addWithId:create_CCBRArgument_initWithJavaLangInteger_withNSString_(JavaLangInteger_valueOfWithInt_(-1), JreStrcat("$$", @"DocString:", [((GherkinPicklesPickleString *) nil_chk(((GherkinPicklesPickleString *) cast_chk(stepArgument, [GherkinPicklesPickleString class])))) getContent]))];
+  if (![((id<JavaUtilList>) nil_chk([((GHKPickleStep *) nil_chk(step)) getArgument])) isEmpty]) {
+    id<GHKArgument> stepArgument = [((id<JavaUtilList>) nil_chk([step getArgument])) getWithInt:0];
+    if ([stepArgument isKindOfClass:[GHKPickleString class]]) {
+      [arguments addWithId:create_CCBRArgument_initWithJavaLangInteger_withNSString_(JavaLangInteger_valueOfWithInt_(-1), JreStrcat("$$", @"DocString:", [((GHKPickleString *) nil_chk(((GHKPickleString *) cast_chk(stepArgument, [GHKPickleString class])))) getContent]))];
     }
-    else if ([stepArgument isKindOfClass:[GherkinPicklesPickleTable class]]) {
-      id<JavaUtilList> rows = CCBFixJava_mapWithJavaUtilList_withCCBMapper_([((GherkinPicklesPickleTable *) nil_chk(((GherkinPicklesPickleTable *) cast_chk(stepArgument, [GherkinPicklesPickleTable class])))) getRows], create_CCBRStepDefinitionMatch_1_init());
+    else if ([stepArgument isKindOfClass:[GHKPickleTable class]]) {
+      id<JavaUtilList> rows = CCBFixJava_mapWithJavaUtilList_withCCBMapper_([((GHKPickleTable *) nil_chk(((GHKPickleTable *) cast_chk(stepArgument, [GHKPickleTable class])))) getRows], create_CCBRStepDefinitionMatch_1_init());
       [arguments addWithId:create_CCBRArgument_initWithJavaLangInteger_withNSString_(JavaLangInteger_valueOfWithInt_(-1), JreStrcat("$$", @"Table:", [((id<JavaUtilList>) nil_chk(rows)) description]))];
     }
   }
@@ -351,9 +351,9 @@ JavaUtilLocale *CCBRStepDefinitionMatch_localeForWithNSString_(CCBRStepDefinitio
   }
 }
 
-jint CCBRStepDefinitionMatch_getStepLineWithGherkinPicklesPickleStep_(GherkinPicklesPickleStep *step) {
+jint CCBRStepDefinitionMatch_getStepLineWithGHKPickleStep_(GHKPickleStep *step) {
   CCBRStepDefinitionMatch_initialize();
-  return [((GherkinPicklesPickleLocation *) nil_chk([((id<JavaUtilList>) nil_chk([((GherkinPicklesPickleStep *) nil_chk(step)) getLocations])) getWithInt:[((id<JavaUtilList>) nil_chk([step getLocations])) size] - 1])) getLine];
+  return [((GHKPickleLocation *) nil_chk([((id<JavaUtilList>) nil_chk([((GHKPickleStep *) nil_chk(step)) getLocations])) getWithInt:[((id<JavaUtilList>) nil_chk([step getLocations])) size] - 1])) getLine];
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRStepDefinitionMatch)
@@ -367,10 +367,10 @@ J2OBJC_IGNORE_DESIGNATED_BEGIN
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (id<JavaUtilList>)mapWithId:(GherkinPicklesPickleRow *)row {
-  id<JavaUtilList> raw = create_JavaUtilArrayList_initWithInt_([((id<JavaUtilList>) nil_chk([((GherkinPicklesPickleRow *) nil_chk(row)) getCells])) size]);
-  for (GherkinPicklesPickleCell * __strong pickleCell in nil_chk([row getCells])) {
-    [raw addWithId:[((GherkinPicklesPickleCell *) nil_chk(pickleCell)) getValue]];
+- (id<JavaUtilList>)mapWithId:(GHKPickleRow *)row {
+  id<JavaUtilList> raw = create_JavaUtilArrayList_initWithInt_([((id<JavaUtilList>) nil_chk([((GHKPickleRow *) nil_chk(row)) getCells])) size]);
+  for (GHKPickleCell * __strong pickleCell in nil_chk([row getCells])) {
+    [raw addWithId:[((GHKPickleCell *) nil_chk(pickleCell)) getValue]];
   }
   return raw;
 }
@@ -386,7 +386,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(mapWithId:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "map", "LGherkinPicklesPickleRow;", "(Lgherkin/pickles/PickleRow;)Ljava/util/List<Ljava/lang/String;>;", "LCCBRStepDefinitionMatch;", "createArgumentsForErrorMessageWithGherkinPicklesPickleStep:", "Ljava/lang/Object;Lcucumber/util/Mapper<Lgherkin/pickles/PickleRow;Ljava/util/List<Ljava/lang/String;>;>;" };
+  static const void *ptrTable[] = { "map", "LGHKPickleRow;", "(Lgherkin/pickles/PickleRow;)Ljava/util/List<Ljava/lang/String;>;", "LCCBRStepDefinitionMatch;", "createArgumentsForErrorMessageWithGHKPickleStep:", "Ljava/lang/Object;Lcucumber/util/Mapper<Lgherkin/pickles/PickleRow;Ljava/util/List<Ljava/lang/String;>;>;" };
   static const J2ObjcClassInfo _CCBRStepDefinitionMatch_1 = { "", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 3, -1, 4, 5, -1 };
   return &_CCBRStepDefinitionMatch_1;
 }

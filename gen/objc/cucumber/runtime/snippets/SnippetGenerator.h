@@ -22,7 +22,7 @@
 #define CCBRSnippetGenerator_
 
 @class CCBRFunctionNameGenerator;
-@class GherkinPicklesPickleStep;
+@class GHKPickleStep;
 @class IOSObjectArray;
 @protocol CCBRSnippet;
 @protocol JavaUtilList;
@@ -33,9 +33,9 @@
 
 - (instancetype __nonnull)initWithCCBRSnippet:(id<CCBRSnippet>)snippet;
 
-- (NSString *)getSnippetWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
-                                        withNSString:(NSString *)keyword
-                       withCCBRFunctionNameGenerator:(CCBRFunctionNameGenerator *)functionNameGenerator;
+- (NSString *)getSnippetWithGHKPickleStep:(GHKPickleStep *)step
+                             withNSString:(NSString *)keyword
+            withCCBRFunctionNameGenerator:(CCBRFunctionNameGenerator *)functionNameGenerator;
 
 + (NSString *)untypedArgumentsWithJavaUtilList:(id<JavaUtilList>)argumentTypes;
 

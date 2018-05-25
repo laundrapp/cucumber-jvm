@@ -31,7 +31,7 @@
 @interface CucumberApiDataTable () {
  @public
   id<JavaUtilList> raw_;
-  GherkinPicklesPickleTable *pickleTable_;
+  GHKPickleTable *pickleTable_;
   id<CucumberApiTableConverter> tableConverter_;
 }
 
@@ -40,23 +40,23 @@
                                     withNSString:(NSString *)format
                                withNSStringArray:(IOSObjectArray *)columnNames;
 
-- (instancetype __nonnull)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)pickleTable
-                                           withJavaUtilList:(id<JavaUtilList>)raw
-                              withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter;
+- (instancetype __nonnull)initWithGHKPickleTable:(GHKPickleTable *)pickleTable
+                                withJavaUtilList:(id<JavaUtilList>)raw
+                   withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter;
 
 @end
 
 J2OBJC_FIELD_SETTER(CucumberApiDataTable, raw_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CucumberApiDataTable, pickleTable_, GherkinPicklesPickleTable *)
+J2OBJC_FIELD_SETTER(CucumberApiDataTable, pickleTable_, GHKPickleTable *)
 J2OBJC_FIELD_SETTER(CucumberApiDataTable, tableConverter_, id<CucumberApiTableConverter>)
 
 __attribute__((unused)) static CucumberApiDataTable *CucumberApiDataTable_createWithJavaUtilList_withJavaUtilLocale_withNSString_withNSStringArray_(id<JavaUtilList> raw, JavaUtilLocale *locale, NSString *format, IOSObjectArray *columnNames);
 
-__attribute__((unused)) static void CucumberApiDataTable_initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_(CucumberApiDataTable *self, GherkinPicklesPickleTable *pickleTable, id<JavaUtilList> raw, id<CucumberApiTableConverter> tableConverter);
+__attribute__((unused)) static void CucumberApiDataTable_initWithGHKPickleTable_withJavaUtilList_withCucumberApiTableConverter_(CucumberApiDataTable *self, GHKPickleTable *pickleTable, id<JavaUtilList> raw, id<CucumberApiTableConverter> tableConverter);
 
-__attribute__((unused)) static CucumberApiDataTable *new_CucumberApiDataTable_initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_(GherkinPicklesPickleTable *pickleTable, id<JavaUtilList> raw, id<CucumberApiTableConverter> tableConverter) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CucumberApiDataTable *new_CucumberApiDataTable_initWithGHKPickleTable_withJavaUtilList_withCucumberApiTableConverter_(GHKPickleTable *pickleTable, id<JavaUtilList> raw, id<CucumberApiTableConverter> tableConverter) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CucumberApiDataTable *create_CucumberApiDataTable_initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_(GherkinPicklesPickleTable *pickleTable, id<JavaUtilList> raw, id<CucumberApiTableConverter> tableConverter);
+__attribute__((unused)) static CucumberApiDataTable *create_CucumberApiDataTable_initWithGHKPickleTable_withJavaUtilList_withCucumberApiTableConverter_(GHKPickleTable *pickleTable, id<JavaUtilList> raw, id<CucumberApiTableConverter> tableConverter);
 
 @implementation CucumberApiDataTable
 
@@ -83,16 +83,16 @@ __attribute__((unused)) static CucumberApiDataTable *create_CucumberApiDataTable
   return CucumberApiDataTable_createWithJavaUtilList_withJavaUtilLocale_withNSString_withNSStringArray_(raw, locale, format, columnNames);
 }
 
-- (instancetype __nonnull)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)pickleTable
-                              withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter {
-  CucumberApiDataTable_initWithGherkinPicklesPickleTable_withCucumberApiTableConverter_(self, pickleTable, tableConverter);
+- (instancetype __nonnull)initWithGHKPickleTable:(GHKPickleTable *)pickleTable
+                   withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter {
+  CucumberApiDataTable_initWithGHKPickleTable_withCucumberApiTableConverter_(self, pickleTable, tableConverter);
   return self;
 }
 
-- (instancetype __nonnull)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)pickleTable
-                                           withJavaUtilList:(id<JavaUtilList>)raw
-                              withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter {
-  CucumberApiDataTable_initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_(self, pickleTable, raw, tableConverter);
+- (instancetype __nonnull)initWithGHKPickleTable:(GHKPickleTable *)pickleTable
+                                withJavaUtilList:(id<JavaUtilList>)raw
+                   withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter {
+  CucumberApiDataTable_initWithGHKPickleTable_withJavaUtilList_withCucumberApiTableConverter_(self, pickleTable, raw, tableConverter);
   return self;
 }
 
@@ -152,7 +152,7 @@ __attribute__((unused)) static CucumberApiDataTable *create_CucumberApiDataTable
 }
 
 - (id<JavaUtilList>)getPickleRows {
-  return JavaUtilCollections_unmodifiableListWithJavaUtilList_([((GherkinPicklesPickleTable *) nil_chk(pickleTable_)) getRows]);
+  return JavaUtilCollections_unmodifiableListWithJavaUtilList_([((GHKPickleTable *) nil_chk(pickleTable_)) getRows]);
 }
 
 - (NSString *)description {
@@ -166,7 +166,7 @@ __attribute__((unused)) static CucumberApiDataTable *create_CucumberApiDataTable
   id<JavaUtilList> result = create_JavaUtilArrayList_init();
   id<JavaUtilList> convertedRows = [self raw];
   for (jint i = 0; i < [((id<JavaUtilList>) nil_chk(convertedRows)) size]; i++) {
-    [result addWithId:create_CCBRDiffableRow_initWithGherkinPicklesPickleRow_withJavaUtilList_([((id<JavaUtilList>) nil_chk([self getPickleRows])) getWithInt:i], [convertedRows getWithInt:i])];
+    [result addWithId:create_CCBRDiffableRow_initWithGHKPickleRow_withJavaUtilList_([((id<JavaUtilList>) nil_chk([self getPickleRows])) getWithInt:i], [convertedRows getWithInt:i])];
   }
   return result;
 }
@@ -177,9 +177,9 @@ __attribute__((unused)) static CucumberApiDataTable *create_CucumberApiDataTable
 
 - (CucumberApiDataTable *)transpose {
   id<JavaUtilList> transposed = create_JavaUtilArrayList_init();
-  for (jint i = 0; i < [((id<JavaUtilList>) nil_chk([((GherkinPicklesPickleTable *) nil_chk(pickleTable_)) getRows])) size]; i++) {
-    GherkinPicklesPickleRow *pickleRow = [((id<JavaUtilList>) nil_chk([pickleTable_ getRows])) getWithInt:i];
-    for (jint j = 0; j < [((id<JavaUtilList>) nil_chk([((GherkinPicklesPickleRow *) nil_chk(pickleRow)) getCells])) size]; j++) {
+  for (jint i = 0; i < [((id<JavaUtilList>) nil_chk([((GHKPickleTable *) nil_chk(pickleTable_)) getRows])) size]; i++) {
+    GHKPickleRow *pickleRow = [((id<JavaUtilList>) nil_chk([pickleTable_ getRows])) getWithInt:i];
+    for (jint j = 0; j < [((id<JavaUtilList>) nil_chk([((GHKPickleRow *) nil_chk(pickleRow)) getCells])) size]; j++) {
       id<JavaUtilList> row = nil;
       if (j < [transposed size]) {
         row = [transposed getWithInt:j];
@@ -188,10 +188,10 @@ __attribute__((unused)) static CucumberApiDataTable *create_CucumberApiDataTable
         row = create_JavaUtilArrayList_init();
         [transposed addWithId:row];
       }
-      [row addWithId:[((GherkinPicklesPickleCell *) nil_chk([((id<JavaUtilList>) nil_chk([pickleRow getCells])) getWithInt:j])) getValue]];
+      [row addWithId:[((GHKPickleCell *) nil_chk([((id<JavaUtilList>) nil_chk([pickleRow getCells])) getWithInt:j])) getValue]];
     }
   }
-  return create_CucumberApiDataTable_initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_(self->pickleTable_, transposed, self->tableConverter_);
+  return create_CucumberApiDataTable_initWithGHKPickleTable_withJavaUtilList_withCucumberApiTableConverter_(self->pickleTable_, transposed, self->tableConverter_);
 }
 
 - (jboolean)isEqual:(id)o {
@@ -252,8 +252,8 @@ __attribute__((unused)) static CucumberApiDataTable *create_CucumberApiDataTable
   methods[1].selector = @selector(createWithJavaUtilList:withNSString:withNSStringArray:);
   methods[2].selector = @selector(createWithJavaUtilList:withJavaUtilLocale:withNSStringArray:);
   methods[3].selector = @selector(createWithJavaUtilList:withJavaUtilLocale:withNSString:withNSStringArray:);
-  methods[4].selector = @selector(initWithGherkinPicklesPickleTable:withCucumberApiTableConverter:);
-  methods[5].selector = @selector(initWithGherkinPicklesPickleTable:withJavaUtilList:withCucumberApiTableConverter:);
+  methods[4].selector = @selector(initWithGHKPickleTable:withCucumberApiTableConverter:);
+  methods[5].selector = @selector(initWithGHKPickleTable:withJavaUtilList:withCucumberApiTableConverter:);
   methods[6].selector = @selector(raw);
   methods[7].selector = @selector(asMapsWithIOSClass:withIOSClass:);
   methods[8].selector = @selector(asMapWithIOSClass:withIOSClass:);
@@ -277,10 +277,10 @@ __attribute__((unused)) static CucumberApiDataTable *create_CucumberApiDataTable
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "raw_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 41, -1 },
-    { "pickleTable_", "LGherkinPicklesPickleTable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "pickleTable_", "LGHKPickleTable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "tableConverter_", "LCucumberApiTableConverter;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "create", "LJavaUtilList;", "(Ljava/util/List<*>;)Lcucumber/api/DataTable;", "LJavaUtilList;LNSString;[LNSString;", "(Ljava/util/List<*>;Ljava/lang/String;[Ljava/lang/String;)Lcucumber/api/DataTable;", "LJavaUtilList;LJavaUtilLocale;[LNSString;", "(Ljava/util/List<*>;Ljava/util/Locale;[Ljava/lang/String;)Lcucumber/api/DataTable;", "LJavaUtilList;LJavaUtilLocale;LNSString;[LNSString;", "(Ljava/util/List<*>;Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/String;)Lcucumber/api/DataTable;", "LGherkinPicklesPickleTable;LCucumberApiTableConverter;", "LGherkinPicklesPickleTable;LJavaUtilList;LCucumberApiTableConverter;", "(Lgherkin/pickles/PickleTable;Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;Lcucumber/api/TableConverter;)V", "()Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;", "asMaps", "LIOSClass;LIOSClass;", "<K:Ljava/lang/Object;V:Ljava/lang/Object;>(Ljava/lang/Class<TK;>;Ljava/lang/Class<TV;>;)Ljava/util/List<Ljava/util/Map<TK;TV;>;>;", "asMap", "<K:Ljava/lang/Object;V:Ljava/lang/Object;>(Ljava/lang/Class<TK;>;Ljava/lang/Class<TV;>;)Ljava/util/Map<TK;TV;>;", "asList", "LIOSClass;", "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;)Ljava/util/List<TT;>;", "asLists", "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;)Ljava/util/List<Ljava/util/List<TT;>;>;", "()Ljava/util/List<Ljava/lang/String;>;", "cells", "I", "(I)Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;", "toTable", "LJavaUtilList;[LNSString;", "(Ljava/util/List<*>;[Ljava/lang/String;)Lcucumber/api/DataTable;", "diff", "LCCBRTableDiffException;", "(Ljava/util/List<*>;)V", "LCucumberApiDataTable;", "unorderedDiff", "()Ljava/util/List<Lgherkin/pickles/PickleRow;>;", "toString", "()Ljava/util/List<Lcucumber/runtime/table/DiffableRow;>;", "equals", "LNSObject;", "hashCode", "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;" };
+  static const void *ptrTable[] = { "create", "LJavaUtilList;", "(Ljava/util/List<*>;)Lcucumber/api/DataTable;", "LJavaUtilList;LNSString;[LNSString;", "(Ljava/util/List<*>;Ljava/lang/String;[Ljava/lang/String;)Lcucumber/api/DataTable;", "LJavaUtilList;LJavaUtilLocale;[LNSString;", "(Ljava/util/List<*>;Ljava/util/Locale;[Ljava/lang/String;)Lcucumber/api/DataTable;", "LJavaUtilList;LJavaUtilLocale;LNSString;[LNSString;", "(Ljava/util/List<*>;Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/String;)Lcucumber/api/DataTable;", "LGHKPickleTable;LCucumberApiTableConverter;", "LGHKPickleTable;LJavaUtilList;LCucumberApiTableConverter;", "(Lgherkin/pickles/PickleTable;Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;Lcucumber/api/TableConverter;)V", "()Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;", "asMaps", "LIOSClass;LIOSClass;", "<K:Ljava/lang/Object;V:Ljava/lang/Object;>(Ljava/lang/Class<TK;>;Ljava/lang/Class<TV;>;)Ljava/util/List<Ljava/util/Map<TK;TV;>;>;", "asMap", "<K:Ljava/lang/Object;V:Ljava/lang/Object;>(Ljava/lang/Class<TK;>;Ljava/lang/Class<TV;>;)Ljava/util/Map<TK;TV;>;", "asList", "LIOSClass;", "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;)Ljava/util/List<TT;>;", "asLists", "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;)Ljava/util/List<Ljava/util/List<TT;>;>;", "()Ljava/util/List<Ljava/lang/String;>;", "cells", "I", "(I)Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;", "toTable", "LJavaUtilList;[LNSString;", "(Ljava/util/List<*>;[Ljava/lang/String;)Lcucumber/api/DataTable;", "diff", "LCCBRTableDiffException;", "(Ljava/util/List<*>;)V", "LCucumberApiDataTable;", "unorderedDiff", "()Ljava/util/List<Lgherkin/pickles/PickleRow;>;", "toString", "()Ljava/util/List<Lcucumber/runtime/table/DiffableRow;>;", "equals", "LNSObject;", "hashCode", "Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;" };
   static const J2ObjcClassInfo _CucumberApiDataTable = { "DataTable", "cucumber.api", ptrTable, methods, fields, 7, 0x1, 26, 3, -1, -1, -1, -1, -1 };
   return &_CucumberApiDataTable;
 }
@@ -309,16 +309,16 @@ CucumberApiDataTable *CucumberApiDataTable_createWithJavaUtilList_withJavaUtilLo
   return [tableConverter toTableWithJavaUtilList:raw withNSStringArray:columnNames];
 }
 
-void CucumberApiDataTable_initWithGherkinPicklesPickleTable_withCucumberApiTableConverter_(CucumberApiDataTable *self, GherkinPicklesPickleTable *pickleTable, id<CucumberApiTableConverter> tableConverter) {
+void CucumberApiDataTable_initWithGHKPickleTable_withCucumberApiTableConverter_(CucumberApiDataTable *self, GHKPickleTable *pickleTable, id<CucumberApiTableConverter> tableConverter) {
   NSObject_init(self);
   JreStrongAssign(&self->pickleTable_, pickleTable);
   JreStrongAssign(&self->tableConverter_, tableConverter);
-  jint columns = [((id<JavaUtilList>) nil_chk([((GherkinPicklesPickleTable *) nil_chk(pickleTable)) getRows])) isEmpty] ? 0 : [((id<JavaUtilList>) nil_chk([((GherkinPicklesPickleRow *) nil_chk([((id<JavaUtilList>) nil_chk([pickleTable getRows])) getWithInt:0])) getCells])) size];
+  jint columns = [((id<JavaUtilList>) nil_chk([((GHKPickleTable *) nil_chk(pickleTable)) getRows])) isEmpty] ? 0 : [((id<JavaUtilList>) nil_chk([((GHKPickleRow *) nil_chk([((id<JavaUtilList>) nil_chk([pickleTable getRows])) getWithInt:0])) getCells])) size];
   id<JavaUtilList> raw = create_JavaUtilArrayList_init();
-  for (GherkinPicklesPickleRow * __strong row in nil_chk([pickleTable getRows])) {
+  for (GHKPickleRow * __strong row in nil_chk([pickleTable getRows])) {
     id<JavaUtilList> list = create_JavaUtilArrayList_init();
-    for (GherkinPicklesPickleCell * __strong cell in nil_chk([((GherkinPicklesPickleRow *) nil_chk(row)) getCells])) {
-      [list addWithId:[((GherkinPicklesPickleCell *) nil_chk(cell)) getValue]];
+    for (GHKPickleCell * __strong cell in nil_chk([((GHKPickleRow *) nil_chk(row)) getCells])) {
+      [list addWithId:[((GHKPickleCell *) nil_chk(cell)) getValue]];
     }
     if (columns != [((id<JavaUtilList>) nil_chk([row getCells])) size]) {
       @throw create_CCBRCucumberException_initWithNSString_(NSString_java_formatWithNSString_withNSObjectArray_(@"Table is unbalanced: expected %s column(s) but found %s.", [IOSObjectArray arrayWithObjects:(id[]){ JavaLangInteger_valueOfWithInt_(columns), JavaLangInteger_valueOfWithInt_([((id<JavaUtilList>) nil_chk([row getCells])) size]) } count:2 type:NSObject_class_()]));
@@ -328,27 +328,27 @@ void CucumberApiDataTable_initWithGherkinPicklesPickleTable_withCucumberApiTable
   JreStrongAssign(&self->raw_, JavaUtilCollections_unmodifiableListWithJavaUtilList_(raw));
 }
 
-CucumberApiDataTable *new_CucumberApiDataTable_initWithGherkinPicklesPickleTable_withCucumberApiTableConverter_(GherkinPicklesPickleTable *pickleTable, id<CucumberApiTableConverter> tableConverter) {
-  J2OBJC_NEW_IMPL(CucumberApiDataTable, initWithGherkinPicklesPickleTable_withCucumberApiTableConverter_, pickleTable, tableConverter)
+CucumberApiDataTable *new_CucumberApiDataTable_initWithGHKPickleTable_withCucumberApiTableConverter_(GHKPickleTable *pickleTable, id<CucumberApiTableConverter> tableConverter) {
+  J2OBJC_NEW_IMPL(CucumberApiDataTable, initWithGHKPickleTable_withCucumberApiTableConverter_, pickleTable, tableConverter)
 }
 
-CucumberApiDataTable *create_CucumberApiDataTable_initWithGherkinPicklesPickleTable_withCucumberApiTableConverter_(GherkinPicklesPickleTable *pickleTable, id<CucumberApiTableConverter> tableConverter) {
-  J2OBJC_CREATE_IMPL(CucumberApiDataTable, initWithGherkinPicklesPickleTable_withCucumberApiTableConverter_, pickleTable, tableConverter)
+CucumberApiDataTable *create_CucumberApiDataTable_initWithGHKPickleTable_withCucumberApiTableConverter_(GHKPickleTable *pickleTable, id<CucumberApiTableConverter> tableConverter) {
+  J2OBJC_CREATE_IMPL(CucumberApiDataTable, initWithGHKPickleTable_withCucumberApiTableConverter_, pickleTable, tableConverter)
 }
 
-void CucumberApiDataTable_initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_(CucumberApiDataTable *self, GherkinPicklesPickleTable *pickleTable, id<JavaUtilList> raw, id<CucumberApiTableConverter> tableConverter) {
+void CucumberApiDataTable_initWithGHKPickleTable_withJavaUtilList_withCucumberApiTableConverter_(CucumberApiDataTable *self, GHKPickleTable *pickleTable, id<JavaUtilList> raw, id<CucumberApiTableConverter> tableConverter) {
   NSObject_init(self);
   JreStrongAssign(&self->pickleTable_, pickleTable);
   JreStrongAssign(&self->tableConverter_, tableConverter);
   JreStrongAssign(&self->raw_, JavaUtilCollections_unmodifiableListWithJavaUtilList_(raw));
 }
 
-CucumberApiDataTable *new_CucumberApiDataTable_initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_(GherkinPicklesPickleTable *pickleTable, id<JavaUtilList> raw, id<CucumberApiTableConverter> tableConverter) {
-  J2OBJC_NEW_IMPL(CucumberApiDataTable, initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_, pickleTable, raw, tableConverter)
+CucumberApiDataTable *new_CucumberApiDataTable_initWithGHKPickleTable_withJavaUtilList_withCucumberApiTableConverter_(GHKPickleTable *pickleTable, id<JavaUtilList> raw, id<CucumberApiTableConverter> tableConverter) {
+  J2OBJC_NEW_IMPL(CucumberApiDataTable, initWithGHKPickleTable_withJavaUtilList_withCucumberApiTableConverter_, pickleTable, raw, tableConverter)
 }
 
-CucumberApiDataTable *create_CucumberApiDataTable_initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_(GherkinPicklesPickleTable *pickleTable, id<JavaUtilList> raw, id<CucumberApiTableConverter> tableConverter) {
-  J2OBJC_CREATE_IMPL(CucumberApiDataTable, initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_, pickleTable, raw, tableConverter)
+CucumberApiDataTable *create_CucumberApiDataTable_initWithGHKPickleTable_withJavaUtilList_withCucumberApiTableConverter_(GHKPickleTable *pickleTable, id<JavaUtilList> raw, id<CucumberApiTableConverter> tableConverter) {
+  J2OBJC_CREATE_IMPL(CucumberApiDataTable, initWithGHKPickleTable_withJavaUtilList_withCucumberApiTableConverter_, pickleTable, raw, tableConverter)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiDataTable)

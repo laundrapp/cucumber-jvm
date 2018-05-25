@@ -22,7 +22,7 @@
 #define CCBRStepDefinition_
 
 @class CCBRParameterInfo;
-@class GherkinPicklesPickleStep;
+@class GHKPickleStep;
 @class IOSObjectArray;
 @class JavaLangInteger;
 @class JavaLangStackTraceElement;
@@ -37,7 +37,7 @@
  Return an empty List if it matches with 0 arguments
   and bigger sizes if it matches several.
  */
-- (id<JavaUtilList>)matchedArgumentsWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step;
+- (id<JavaUtilList>)matchedArgumentsWithGHKPickleStep:(GHKPickleStep *)step;
 
 /*!
  @brief The source line where the step definition is defined.

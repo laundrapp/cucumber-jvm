@@ -34,7 +34,7 @@
 
 - (NSString *)withNamedGroupsWithNSString:(NSString *)snippetPattern;
 
-- (id<JavaUtilList>)argumentTypesWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step;
+- (id<JavaUtilList>)argumentTypesWithGHKPickleStep:(GHKPickleStep *)step;
 
 @end
 
@@ -60,7 +60,7 @@ __attribute__((unused)) static NSString *CCBRSnippetGenerator_functionNameWithNS
 
 __attribute__((unused)) static NSString *CCBRSnippetGenerator_withNamedGroupsWithNSString_(CCBRSnippetGenerator *self, NSString *snippetPattern);
 
-__attribute__((unused)) static id<JavaUtilList> CCBRSnippetGenerator_argumentTypesWithGherkinPicklesPickleStep_(CCBRSnippetGenerator *self, GherkinPicklesPickleStep *step);
+__attribute__((unused)) static id<JavaUtilList> CCBRSnippetGenerator_argumentTypesWithGHKPickleStep_(CCBRSnippetGenerator *self, GHKPickleStep *step);
 
 J2OBJC_INITIALIZED_DEFN(CCBRSnippetGenerator)
 
@@ -71,10 +71,10 @@ J2OBJC_INITIALIZED_DEFN(CCBRSnippetGenerator)
   return self;
 }
 
-- (NSString *)getSnippetWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
-                                        withNSString:(NSString *)keyword
-                       withCCBRFunctionNameGenerator:(CCBRFunctionNameGenerator *)functionNameGenerator {
-  return JavaTextMessageFormat_formatWithNSString_withNSObjectArray_([((id<CCBRSnippet>) nil_chk(snippet_)) template__], [IOSObjectArray arrayWithObjects:(id[]){ keyword, [snippet_ escapePatternWithNSString:[self patternForWithNSString:[((GherkinPicklesPickleStep *) nil_chk(step)) getText]]], CCBRSnippetGenerator_functionNameWithNSString_withCCBRFunctionNameGenerator_(self, [step getText], functionNameGenerator), [snippet_ argumentsWithJavaUtilList:CCBRSnippetGenerator_argumentTypesWithGherkinPicklesPickleStep_(self, step)], CCBRSnippetGenerator_REGEXP_HINT, ![((id<JavaUtilList>) nil_chk([step getArgument])) isEmpty] && [[((id<JavaUtilList>) nil_chk([step getArgument])) getWithInt:0] isKindOfClass:[GherkinPicklesPickleTable class]] ? [snippet_ tableHint] : @"" } count:6 type:NSObject_class_()]);
+- (NSString *)getSnippetWithGHKPickleStep:(GHKPickleStep *)step
+                             withNSString:(NSString *)keyword
+            withCCBRFunctionNameGenerator:(CCBRFunctionNameGenerator *)functionNameGenerator {
+  return JavaTextMessageFormat_formatWithNSString_withNSObjectArray_([((id<CCBRSnippet>) nil_chk(snippet_)) template__], [IOSObjectArray arrayWithObjects:(id[]){ keyword, [snippet_ escapePatternWithNSString:[self patternForWithNSString:[((GHKPickleStep *) nil_chk(step)) getText]]], CCBRSnippetGenerator_functionNameWithNSString_withCCBRFunctionNameGenerator_(self, [step getText], functionNameGenerator), [snippet_ argumentsWithJavaUtilList:CCBRSnippetGenerator_argumentTypesWithGHKPickleStep_(self, step)], CCBRSnippetGenerator_REGEXP_HINT, ![((id<JavaUtilList>) nil_chk([step getArgument])) isEmpty] && [[((id<JavaUtilList>) nil_chk([step getArgument])) getWithInt:0] isKindOfClass:[GHKPickleTable class]] ? [snippet_ tableHint] : @"" } count:6 type:NSObject_class_()]);
 }
 
 - (NSString *)patternForWithNSString:(NSString *)stepName {
@@ -114,8 +114,8 @@ J2OBJC_INITIALIZED_DEFN(CCBRSnippetGenerator)
   return CCBRSnippetGenerator_withNamedGroupsWithNSString_(self, snippetPattern);
 }
 
-- (id<JavaUtilList>)argumentTypesWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step {
-  return CCBRSnippetGenerator_argumentTypesWithGherkinPicklesPickleStep_(self, step);
+- (id<JavaUtilList>)argumentTypesWithGHKPickleStep:(GHKPickleStep *)step {
+  return CCBRSnippetGenerator_argumentTypesWithGHKPickleStep_(self, step);
 }
 
 - (IOSObjectArray *)argumentPatterns {
@@ -146,11 +146,11 @@ J2OBJC_INITIALIZED_DEFN(CCBRSnippetGenerator)
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRSnippet:);
-  methods[1].selector = @selector(getSnippetWithGherkinPicklesPickleStep:withNSString:withCCBRFunctionNameGenerator:);
+  methods[1].selector = @selector(getSnippetWithGHKPickleStep:withNSString:withCCBRFunctionNameGenerator:);
   methods[2].selector = @selector(patternForWithNSString:);
   methods[3].selector = @selector(functionNameWithNSString:withCCBRFunctionNameGenerator:);
   methods[4].selector = @selector(withNamedGroupsWithNSString:);
-  methods[5].selector = @selector(argumentTypesWithGherkinPicklesPickleStep:);
+  methods[5].selector = @selector(argumentTypesWithGHKPickleStep:);
   methods[6].selector = @selector(argumentPatterns);
   methods[7].selector = @selector(untypedArgumentsWithJavaUtilList:);
   #pragma clang diagnostic pop
@@ -161,7 +161,7 @@ J2OBJC_INITIALIZED_DEFN(CCBRSnippetGenerator)
     { "REGEXP_HINT", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 17, -1, -1 },
     { "snippet_", "LCCBRSnippet;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCCBRSnippet;", "getSnippet", "LGherkinPicklesPickleStep;LNSString;LCCBRFunctionNameGenerator;", "patternFor", "LNSString;", "functionName", "LNSString;LCCBRFunctionNameGenerator;", "withNamedGroups", "argumentTypes", "LGherkinPicklesPickleStep;", "(Lgherkin/pickles/PickleStep;)Ljava/util/List<Ljava/lang/Class<*>;>;", "untypedArguments", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/Class<*>;>;)Ljava/lang/String;", &CCBRSnippetGenerator_DEFAULT_ARGUMENT_PATTERNS, &CCBRSnippetGenerator_GROUP_PATTERN, &CCBRSnippetGenerator_ESCAPE_PATTERNS, &CCBRSnippetGenerator_REGEXP_HINT };
+  static const void *ptrTable[] = { "LCCBRSnippet;", "getSnippet", "LGHKPickleStep;LNSString;LCCBRFunctionNameGenerator;", "patternFor", "LNSString;", "functionName", "LNSString;LCCBRFunctionNameGenerator;", "withNamedGroups", "argumentTypes", "LGHKPickleStep;", "(Lgherkin/pickles/PickleStep;)Ljava/util/List<Ljava/lang/Class<*>;>;", "untypedArguments", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/Class<*>;>;)Ljava/lang/String;", &CCBRSnippetGenerator_DEFAULT_ARGUMENT_PATTERNS, &CCBRSnippetGenerator_GROUP_PATTERN, &CCBRSnippetGenerator_ESCAPE_PATTERNS, &CCBRSnippetGenerator_REGEXP_HINT };
   static const J2ObjcClassInfo _CCBRSnippetGenerator = { "SnippetGenerator", "cucumber.runtime.snippets", ptrTable, methods, fields, 7, 0x1, 8, 5, -1, -1, -1, -1, -1 };
   return &_CCBRSnippetGenerator;
 }
@@ -217,8 +217,8 @@ NSString *CCBRSnippetGenerator_withNamedGroupsWithNSString_(CCBRSnippetGenerator
   return [sb description];
 }
 
-id<JavaUtilList> CCBRSnippetGenerator_argumentTypesWithGherkinPicklesPickleStep_(CCBRSnippetGenerator *self, GherkinPicklesPickleStep *step) {
-  NSString *name = [((GherkinPicklesPickleStep *) nil_chk(step)) getText];
+id<JavaUtilList> CCBRSnippetGenerator_argumentTypesWithGHKPickleStep_(CCBRSnippetGenerator *self, GHKPickleStep *step) {
+  NSString *name = [((GHKPickleStep *) nil_chk(step)) getText];
   id<JavaUtilList> argTypes = create_JavaUtilArrayList_init();
   IOSObjectArray *matchers = [IOSObjectArray arrayWithLength:((IOSObjectArray *) nil_chk([self argumentPatterns]))->size_ type:JavaUtilRegexMatcher_class_()];
   for (jint i = 0; i < ((IOSObjectArray *) nil_chk([self argumentPatterns]))->size_; i++) {
@@ -242,11 +242,11 @@ id<JavaUtilList> CCBRSnippetGenerator_argumentTypesWithGherkinPicklesPickleStep_
     }
   }
   if (![((id<JavaUtilList>) nil_chk([step getArgument])) isEmpty]) {
-    id<GherkinPicklesArgument> arg = [((id<JavaUtilList>) nil_chk([step getArgument])) getWithInt:0];
-    if ([arg isKindOfClass:[GherkinPicklesPickleString class]]) {
+    id<GHKArgument> arg = [((id<JavaUtilList>) nil_chk([step getArgument])) getWithInt:0];
+    if ([arg isKindOfClass:[GHKPickleString class]]) {
       [argTypes addWithId:NSString_class_()];
     }
-    if ([arg isKindOfClass:[GherkinPicklesPickleTable class]]) {
+    if ([arg isKindOfClass:[GHKPickleTable class]]) {
       [argTypes addWithId:CucumberApiDataTable_class_()];
     }
   }

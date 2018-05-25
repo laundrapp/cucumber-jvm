@@ -35,7 +35,7 @@
 @interface CCBRUndefinedStepsTracker () {
  @public
   id<JavaUtilList> snippets_;
-  id<GherkinIGherkinDialectProvider> dialectProvider_;
+  id<GHKIGherkinDialectProvider> dialectProvider_;
   id<JavaUtilMap> pathToSourceMap_;
   id<JavaUtilMap> pathToStepMap_;
   jboolean hasUndefinedSteps_;
@@ -53,18 +53,18 @@
 
 - (CCBRUndefinedStepsTracker_StepNode *)processScenarioDefinitionWithJavaUtilMap:(id<JavaUtilMap>)stepMap
                                           withCCBRUndefinedStepsTracker_StepNode:(CCBRUndefinedStepsTracker_StepNode *)initialPreviousNode
-                                                withGherkinAstScenarioDefinition:(GherkinAstScenarioDefinition *)child;
+                                                      withGHKAScenarioDefinition:(GHKAScenarioDefinition *)child;
 
-- (id<JavaUtilList>)getGivenWhenThenKeywordsWithGherkinGherkinDialect:(GherkinGherkinDialect *)dialect;
+- (id<JavaUtilList>)getGivenWhenThenKeywordsWithGHKGherkinDialect:(GHKGherkinDialect *)dialect;
 
-- (NSString *)getFirstGivenKeywordWithGherkinGherkinDialect:(GherkinGherkinDialect *)i18n;
+- (NSString *)getFirstGivenKeywordWithGHKGherkinDialect:(GHKGherkinDialect *)i18n;
 
 - (NSString *)convertToCodeKeywordWithNSString:(NSString *)keyword;
 
 @end
 
 J2OBJC_FIELD_SETTER(CCBRUndefinedStepsTracker, snippets_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CCBRUndefinedStepsTracker, dialectProvider_, id<GherkinIGherkinDialectProvider>)
+J2OBJC_FIELD_SETTER(CCBRUndefinedStepsTracker, dialectProvider_, id<GHKIGherkinDialectProvider>)
 J2OBJC_FIELD_SETTER(CCBRUndefinedStepsTracker, pathToSourceMap_, id<JavaUtilMap>)
 J2OBJC_FIELD_SETTER(CCBRUndefinedStepsTracker, pathToStepMap_, id<JavaUtilMap>)
 J2OBJC_FIELD_SETTER(CCBRUndefinedStepsTracker, testSourceReadHandler_, id<CucumberApiEventEventHandler>)
@@ -76,11 +76,11 @@ __attribute__((unused)) static NSString *CCBRUndefinedStepsTracker_getKeywordFro
 
 __attribute__((unused)) static void CCBRUndefinedStepsTracker_createFeatureStepMapWithNSString_(CCBRUndefinedStepsTracker *self, NSString *path);
 
-__attribute__((unused)) static CCBRUndefinedStepsTracker_StepNode *CCBRUndefinedStepsTracker_processScenarioDefinitionWithJavaUtilMap_withCCBRUndefinedStepsTracker_StepNode_withGherkinAstScenarioDefinition_(CCBRUndefinedStepsTracker *self, id<JavaUtilMap> stepMap, CCBRUndefinedStepsTracker_StepNode *initialPreviousNode, GherkinAstScenarioDefinition *child);
+__attribute__((unused)) static CCBRUndefinedStepsTracker_StepNode *CCBRUndefinedStepsTracker_processScenarioDefinitionWithJavaUtilMap_withCCBRUndefinedStepsTracker_StepNode_withGHKAScenarioDefinition_(CCBRUndefinedStepsTracker *self, id<JavaUtilMap> stepMap, CCBRUndefinedStepsTracker_StepNode *initialPreviousNode, GHKAScenarioDefinition *child);
 
-__attribute__((unused)) static id<JavaUtilList> CCBRUndefinedStepsTracker_getGivenWhenThenKeywordsWithGherkinGherkinDialect_(CCBRUndefinedStepsTracker *self, GherkinGherkinDialect *dialect);
+__attribute__((unused)) static id<JavaUtilList> CCBRUndefinedStepsTracker_getGivenWhenThenKeywordsWithGHKGherkinDialect_(CCBRUndefinedStepsTracker *self, GHKGherkinDialect *dialect);
 
-__attribute__((unused)) static NSString *CCBRUndefinedStepsTracker_getFirstGivenKeywordWithGherkinGherkinDialect_(CCBRUndefinedStepsTracker *self, GherkinGherkinDialect *i18n);
+__attribute__((unused)) static NSString *CCBRUndefinedStepsTracker_getFirstGivenKeywordWithGHKGherkinDialect_(CCBRUndefinedStepsTracker *self, GHKGherkinDialect *i18n);
 
 __attribute__((unused)) static NSString *CCBRUndefinedStepsTracker_convertToCodeKeywordWithNSString_(CCBRUndefinedStepsTracker *self, NSString *keyword);
 
@@ -124,49 +124,49 @@ __attribute__((unused)) static CCBRUndefinedStepsTracker_2 *create_CCBRUndefined
 
 @interface CCBRUndefinedStepsTracker_FeatureStepMap : NSObject {
  @public
-  GherkinGherkinDialect *dialect_;
+  GHKGherkinDialect *dialect_;
   id<JavaUtilMap> stepMap_;
 }
 
-- (instancetype __nonnull)initWithGherkinGherkinDialect:(GherkinGherkinDialect *)dialect
-                                        withJavaUtilMap:(id<JavaUtilMap>)stepMap;
+- (instancetype __nonnull)initWithGHKGherkinDialect:(GHKGherkinDialect *)dialect
+                                    withJavaUtilMap:(id<JavaUtilMap>)stepMap;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(CCBRUndefinedStepsTracker_FeatureStepMap)
 
-J2OBJC_FIELD_SETTER(CCBRUndefinedStepsTracker_FeatureStepMap, dialect_, GherkinGherkinDialect *)
+J2OBJC_FIELD_SETTER(CCBRUndefinedStepsTracker_FeatureStepMap, dialect_, GHKGherkinDialect *)
 J2OBJC_FIELD_SETTER(CCBRUndefinedStepsTracker_FeatureStepMap, stepMap_, id<JavaUtilMap>)
 
-__attribute__((unused)) static void CCBRUndefinedStepsTracker_FeatureStepMap_initWithGherkinGherkinDialect_withJavaUtilMap_(CCBRUndefinedStepsTracker_FeatureStepMap *self, GherkinGherkinDialect *dialect, id<JavaUtilMap> stepMap);
+__attribute__((unused)) static void CCBRUndefinedStepsTracker_FeatureStepMap_initWithGHKGherkinDialect_withJavaUtilMap_(CCBRUndefinedStepsTracker_FeatureStepMap *self, GHKGherkinDialect *dialect, id<JavaUtilMap> stepMap);
 
-__attribute__((unused)) static CCBRUndefinedStepsTracker_FeatureStepMap *new_CCBRUndefinedStepsTracker_FeatureStepMap_initWithGherkinGherkinDialect_withJavaUtilMap_(GherkinGherkinDialect *dialect, id<JavaUtilMap> stepMap) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRUndefinedStepsTracker_FeatureStepMap *new_CCBRUndefinedStepsTracker_FeatureStepMap_initWithGHKGherkinDialect_withJavaUtilMap_(GHKGherkinDialect *dialect, id<JavaUtilMap> stepMap) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CCBRUndefinedStepsTracker_FeatureStepMap *create_CCBRUndefinedStepsTracker_FeatureStepMap_initWithGherkinGherkinDialect_withJavaUtilMap_(GherkinGherkinDialect *dialect, id<JavaUtilMap> stepMap);
+__attribute__((unused)) static CCBRUndefinedStepsTracker_FeatureStepMap *create_CCBRUndefinedStepsTracker_FeatureStepMap_initWithGHKGherkinDialect_withJavaUtilMap_(GHKGherkinDialect *dialect, id<JavaUtilMap> stepMap);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRUndefinedStepsTracker_FeatureStepMap)
 
 @interface CCBRUndefinedStepsTracker_StepNode : NSObject {
  @public
-  GherkinAstStep *step_;
+  GHKAStep *step_;
   CCBRUndefinedStepsTracker_StepNode *previous_;
 }
 
-- (instancetype __nonnull)initWithGherkinAstStep:(GherkinAstStep *)step
-          withCCBRUndefinedStepsTracker_StepNode:(CCBRUndefinedStepsTracker_StepNode *)previous;
+- (instancetype __nonnull)initWithGHKAStep:(GHKAStep *)step
+    withCCBRUndefinedStepsTracker_StepNode:(CCBRUndefinedStepsTracker_StepNode *)previous;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(CCBRUndefinedStepsTracker_StepNode)
 
-J2OBJC_FIELD_SETTER(CCBRUndefinedStepsTracker_StepNode, step_, GherkinAstStep *)
+J2OBJC_FIELD_SETTER(CCBRUndefinedStepsTracker_StepNode, step_, GHKAStep *)
 J2OBJC_FIELD_SETTER(CCBRUndefinedStepsTracker_StepNode, previous_, CCBRUndefinedStepsTracker_StepNode *)
 
-__attribute__((unused)) static void CCBRUndefinedStepsTracker_StepNode_initWithGherkinAstStep_withCCBRUndefinedStepsTracker_StepNode_(CCBRUndefinedStepsTracker_StepNode *self, GherkinAstStep *step, CCBRUndefinedStepsTracker_StepNode *previous);
+__attribute__((unused)) static void CCBRUndefinedStepsTracker_StepNode_initWithGHKAStep_withCCBRUndefinedStepsTracker_StepNode_(CCBRUndefinedStepsTracker_StepNode *self, GHKAStep *step, CCBRUndefinedStepsTracker_StepNode *previous);
 
-__attribute__((unused)) static CCBRUndefinedStepsTracker_StepNode *new_CCBRUndefinedStepsTracker_StepNode_initWithGherkinAstStep_withCCBRUndefinedStepsTracker_StepNode_(GherkinAstStep *step, CCBRUndefinedStepsTracker_StepNode *previous) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRUndefinedStepsTracker_StepNode *new_CCBRUndefinedStepsTracker_StepNode_initWithGHKAStep_withCCBRUndefinedStepsTracker_StepNode_(GHKAStep *step, CCBRUndefinedStepsTracker_StepNode *previous) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CCBRUndefinedStepsTracker_StepNode *create_CCBRUndefinedStepsTracker_StepNode_initWithGherkinAstStep_withCCBRUndefinedStepsTracker_StepNode_(GherkinAstStep *step, CCBRUndefinedStepsTracker_StepNode *previous);
+__attribute__((unused)) static CCBRUndefinedStepsTracker_StepNode *create_CCBRUndefinedStepsTracker_StepNode_initWithGHKAStep_withCCBRUndefinedStepsTracker_StepNode_(GHKAStep *step, CCBRUndefinedStepsTracker_StepNode *previous);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRUndefinedStepsTracker_StepNode)
 
@@ -221,16 +221,16 @@ J2OBJC_IGNORE_DESIGNATED_END
 
 - (CCBRUndefinedStepsTracker_StepNode *)processScenarioDefinitionWithJavaUtilMap:(id<JavaUtilMap>)stepMap
                                           withCCBRUndefinedStepsTracker_StepNode:(CCBRUndefinedStepsTracker_StepNode *)initialPreviousNode
-                                                withGherkinAstScenarioDefinition:(GherkinAstScenarioDefinition *)child {
-  return CCBRUndefinedStepsTracker_processScenarioDefinitionWithJavaUtilMap_withCCBRUndefinedStepsTracker_StepNode_withGherkinAstScenarioDefinition_(self, stepMap, initialPreviousNode, child);
+                                                      withGHKAScenarioDefinition:(GHKAScenarioDefinition *)child {
+  return CCBRUndefinedStepsTracker_processScenarioDefinitionWithJavaUtilMap_withCCBRUndefinedStepsTracker_StepNode_withGHKAScenarioDefinition_(self, stepMap, initialPreviousNode, child);
 }
 
-- (id<JavaUtilList>)getGivenWhenThenKeywordsWithGherkinGherkinDialect:(GherkinGherkinDialect *)dialect {
-  return CCBRUndefinedStepsTracker_getGivenWhenThenKeywordsWithGherkinGherkinDialect_(self, dialect);
+- (id<JavaUtilList>)getGivenWhenThenKeywordsWithGHKGherkinDialect:(GHKGherkinDialect *)dialect {
+  return CCBRUndefinedStepsTracker_getGivenWhenThenKeywordsWithGHKGherkinDialect_(self, dialect);
 }
 
-- (NSString *)getFirstGivenKeywordWithGherkinGherkinDialect:(GherkinGherkinDialect *)i18n {
-  return CCBRUndefinedStepsTracker_getFirstGivenKeywordWithGherkinGherkinDialect_(self, i18n);
+- (NSString *)getFirstGivenKeywordWithGHKGherkinDialect:(GHKGherkinDialect *)i18n {
+  return CCBRUndefinedStepsTracker_getFirstGivenKeywordWithGHKGherkinDialect_(self, i18n);
 }
 
 - (NSString *)convertToCodeKeywordWithNSString:(NSString *)keyword {
@@ -273,21 +273,21 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[5].selector = @selector(givenWhenThenKeywordWithNSString:withJavaUtilList:);
   methods[6].selector = @selector(getKeywordFromSourceWithNSString:withJavaUtilList:);
   methods[7].selector = @selector(createFeatureStepMapWithNSString:);
-  methods[8].selector = @selector(processScenarioDefinitionWithJavaUtilMap:withCCBRUndefinedStepsTracker_StepNode:withGherkinAstScenarioDefinition:);
-  methods[9].selector = @selector(getGivenWhenThenKeywordsWithGherkinGherkinDialect:);
-  methods[10].selector = @selector(getFirstGivenKeywordWithGherkinGherkinDialect:);
+  methods[8].selector = @selector(processScenarioDefinitionWithJavaUtilMap:withCCBRUndefinedStepsTracker_StepNode:withGHKAScenarioDefinition:);
+  methods[9].selector = @selector(getGivenWhenThenKeywordsWithGHKGherkinDialect:);
+  methods[10].selector = @selector(getFirstGivenKeywordWithGHKGherkinDialect:);
   methods[11].selector = @selector(convertToCodeKeywordWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "snippets_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 20, -1 },
-    { "dialectProvider_", "LGherkinIGherkinDialectProvider;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "dialectProvider_", "LGHKIGherkinDialectProvider;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "pathToSourceMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 21, -1 },
     { "pathToStepMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 22, -1 },
     { "hasUndefinedSteps_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "testSourceReadHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 23, -1 },
     { "snippetsSuggestedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 24, -1 },
   };
-  static const void *ptrTable[] = { "setEventPublisher", "LCucumberApiEventEventPublisher;", "()Ljava/util/List<Ljava/lang/String;>;", "handleSnippetsSuggested", "LNSString;LJavaUtilList;LJavaUtilList;", "(Ljava/lang/String;Ljava/util/List<Lgherkin/pickles/PickleLocation;>;Ljava/util/List<Ljava/lang/String;>;)V", "givenWhenThenKeyword", "LNSString;LJavaUtilList;", "(Ljava/lang/String;Ljava/util/List<Lgherkin/pickles/PickleLocation;>;)Ljava/lang/String;", "getKeywordFromSource", "createFeatureStepMap", "LNSString;", "processScenarioDefinition", "LJavaUtilMap;LCCBRUndefinedStepsTracker_StepNode;LGherkinAstScenarioDefinition;", "(Ljava/util/Map<Ljava/lang/Integer;Lcucumber/runtime/UndefinedStepsTracker$StepNode;>;Lcucumber/runtime/UndefinedStepsTracker$StepNode;Lgherkin/ast/ScenarioDefinition;)Lcucumber/runtime/UndefinedStepsTracker$StepNode;", "getGivenWhenThenKeywords", "LGherkinGherkinDialect;", "(Lgherkin/GherkinDialect;)Ljava/util/List<Ljava/lang/String;>;", "getFirstGivenKeyword", "convertToCodeKeyword", "Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;", "Ljava/util/Map<Ljava/lang/String;Lcucumber/runtime/UndefinedStepsTracker$FeatureStepMap;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/SnippetsSuggestedEvent;>;", "LCCBRUndefinedStepsTracker_FeatureStepMap;LCCBRUndefinedStepsTracker_StepNode;" };
+  static const void *ptrTable[] = { "setEventPublisher", "LCucumberApiEventEventPublisher;", "()Ljava/util/List<Ljava/lang/String;>;", "handleSnippetsSuggested", "LNSString;LJavaUtilList;LJavaUtilList;", "(Ljava/lang/String;Ljava/util/List<Lgherkin/pickles/PickleLocation;>;Ljava/util/List<Ljava/lang/String;>;)V", "givenWhenThenKeyword", "LNSString;LJavaUtilList;", "(Ljava/lang/String;Ljava/util/List<Lgherkin/pickles/PickleLocation;>;)Ljava/lang/String;", "getKeywordFromSource", "createFeatureStepMap", "LNSString;", "processScenarioDefinition", "LJavaUtilMap;LCCBRUndefinedStepsTracker_StepNode;LGHKAScenarioDefinition;", "(Ljava/util/Map<Ljava/lang/Integer;Lcucumber/runtime/UndefinedStepsTracker$StepNode;>;Lcucumber/runtime/UndefinedStepsTracker$StepNode;Lgherkin/ast/ScenarioDefinition;)Lcucumber/runtime/UndefinedStepsTracker$StepNode;", "getGivenWhenThenKeywords", "LGHKGherkinDialect;", "(Lgherkin/GherkinDialect;)Ljava/util/List<Ljava/lang/String;>;", "getFirstGivenKeyword", "convertToCodeKeyword", "Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;", "Ljava/util/Map<Ljava/lang/String;Lcucumber/runtime/UndefinedStepsTracker$FeatureStepMap;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/SnippetsSuggestedEvent;>;", "LCCBRUndefinedStepsTracker_FeatureStepMap;LCCBRUndefinedStepsTracker_StepNode;" };
   static const J2ObjcClassInfo _CCBRUndefinedStepsTracker = { "UndefinedStepsTracker", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 12, 7, -1, 25, -1, -1, -1 };
   return &_CCBRUndefinedStepsTracker;
 }
@@ -297,7 +297,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 void CCBRUndefinedStepsTracker_init(CCBRUndefinedStepsTracker *self) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->snippets_, new_JavaUtilArrayList_init());
-  JreStrongAssignAndConsume(&self->dialectProvider_, new_GherkinGherkinDialectProvider_init());
+  JreStrongAssignAndConsume(&self->dialectProvider_, new_GHKGherkinDialectProvider_init());
   JreStrongAssignAndConsume(&self->pathToSourceMap_, new_JavaUtilHashMap_init());
   JreStrongAssignAndConsume(&self->pathToStepMap_, new_JavaUtilHashMap_init());
   self->hasUndefinedSteps_ = false;
@@ -320,7 +320,7 @@ NSString *CCBRUndefinedStepsTracker_givenWhenThenKeywordWithNSString_withJavaUti
       keyword = CCBRUndefinedStepsTracker_getKeywordFromSourceWithNSString_withJavaUtilList_(self, uri, stepLocations);
     }
   }
-  return keyword != nil ? keyword : CCBRUndefinedStepsTracker_getFirstGivenKeywordWithGherkinGherkinDialect_(self, [((id<GherkinIGherkinDialectProvider>) nil_chk(self->dialectProvider_)) getDefaultDialect]);
+  return keyword != nil ? keyword : CCBRUndefinedStepsTracker_getFirstGivenKeywordWithGHKGherkinDialect_(self, [((id<GHKIGherkinDialectProvider>) nil_chk(self->dialectProvider_)) getDefaultDialect]);
 }
 
 NSString *CCBRUndefinedStepsTracker_getKeywordFromSourceWithNSString_withJavaUtilList_(CCBRUndefinedStepsTracker *self, NSString *path, id<JavaUtilList> stepLocations) {
@@ -330,66 +330,66 @@ NSString *CCBRUndefinedStepsTracker_getKeywordFromSourceWithNSString_withJavaUti
   if (![self->pathToStepMap_ containsKeyWithId:path]) {
     return nil;
   }
-  GherkinGherkinDialect *featureDialect = ((CCBRUndefinedStepsTracker_FeatureStepMap *) nil_chk([self->pathToStepMap_ getWithId:path]))->dialect_;
-  id<JavaUtilList> givenThenWhenKeywords = CCBRUndefinedStepsTracker_getGivenWhenThenKeywordsWithGherkinGherkinDialect_(self, featureDialect);
+  GHKGherkinDialect *featureDialect = ((CCBRUndefinedStepsTracker_FeatureStepMap *) nil_chk([self->pathToStepMap_ getWithId:path]))->dialect_;
+  id<JavaUtilList> givenThenWhenKeywords = CCBRUndefinedStepsTracker_getGivenWhenThenKeywordsWithGHKGherkinDialect_(self, featureDialect);
   id<JavaUtilMap> stepMap = ((CCBRUndefinedStepsTracker_FeatureStepMap *) nil_chk([self->pathToStepMap_ getWithId:path]))->stepMap_;
-  for (GherkinPicklesPickleLocation * __strong stepLocation in nil_chk(stepLocations)) {
-    if (![((id<JavaUtilMap>) nil_chk(stepMap)) containsKeyWithId:JavaLangInteger_valueOfWithInt_([((GherkinPicklesPickleLocation *) nil_chk(stepLocation)) getLine])]) {
+  for (GHKPickleLocation * __strong stepLocation in nil_chk(stepLocations)) {
+    if (![((id<JavaUtilMap>) nil_chk(stepMap)) containsKeyWithId:JavaLangInteger_valueOfWithInt_([((GHKPickleLocation *) nil_chk(stepLocation)) getLine])]) {
       continue;
     }
     for (CCBRUndefinedStepsTracker_StepNode *stepNode = [stepMap getWithId:JavaLangInteger_valueOfWithInt_([stepLocation getLine])]; stepNode != nil; stepNode = stepNode->previous_) {
       for (NSString * __strong keyword in nil_chk(givenThenWhenKeywords)) {
-        if (![((NSString *) nil_chk(keyword)) isEqual:@"* "] && keyword == [((GherkinAstStep *) nil_chk(stepNode->step_)) getKeyword]) {
+        if (![((NSString *) nil_chk(keyword)) isEqual:@"* "] && keyword == [((GHKAStep *) nil_chk(stepNode->step_)) getKeyword]) {
           return CCBRUndefinedStepsTracker_convertToCodeKeywordWithNSString_(self, keyword);
         }
       }
     }
   }
-  return CCBRUndefinedStepsTracker_getFirstGivenKeywordWithGherkinGherkinDialect_(self, featureDialect);
+  return CCBRUndefinedStepsTracker_getFirstGivenKeywordWithGHKGherkinDialect_(self, featureDialect);
 }
 
 void CCBRUndefinedStepsTracker_createFeatureStepMapWithNSString_(CCBRUndefinedStepsTracker *self, NSString *path) {
   if (![((id<JavaUtilMap>) nil_chk(self->pathToSourceMap_)) containsKeyWithId:path]) {
     return;
   }
-  GherkinParser *parser = create_GherkinParser_initWithGherkinParser_Builder_(create_GherkinAstBuilder_init());
-  GherkinTokenMatcher *matcher = create_GherkinTokenMatcher_init();
+  GHKParser *parser = create_GHKParser_initWithGHKParser_Builder_(create_GHKAstBuilder_init());
+  GHKTokenMatcher *matcher = create_GHKTokenMatcher_init();
   @try {
-    GherkinAstGherkinDocument *gherkinDocument = [parser parseWithNSString:[self->pathToSourceMap_ getWithId:path] withGherkinParser_ITokenMatcher:matcher];
+    GHKAGherkinDocument *gherkinDocument = [parser parseWithNSString:[self->pathToSourceMap_ getWithId:path] withGHKParser_ITokenMatcher:matcher];
     id<JavaUtilMap> stepMap = create_JavaUtilHashMap_init();
     CCBRUndefinedStepsTracker_StepNode *initialPreviousNode = nil;
-    for (GherkinAstScenarioDefinition * __strong child in nil_chk([((GherkinAstFeature *) nil_chk([((GherkinAstGherkinDocument *) nil_chk(gherkinDocument)) getFeature])) getChildren])) {
-      CCBRUndefinedStepsTracker_StepNode *lastStepNode = CCBRUndefinedStepsTracker_processScenarioDefinitionWithJavaUtilMap_withCCBRUndefinedStepsTracker_StepNode_withGherkinAstScenarioDefinition_(self, stepMap, initialPreviousNode, child);
-      if ([child isKindOfClass:[GherkinAstBackground class]]) {
+    for (GHKAScenarioDefinition * __strong child in nil_chk([((GHKAFeature *) nil_chk([((GHKAGherkinDocument *) nil_chk(gherkinDocument)) getFeature])) getChildren])) {
+      CCBRUndefinedStepsTracker_StepNode *lastStepNode = CCBRUndefinedStepsTracker_processScenarioDefinitionWithJavaUtilMap_withCCBRUndefinedStepsTracker_StepNode_withGHKAScenarioDefinition_(self, stepMap, initialPreviousNode, child);
+      if ([child isKindOfClass:[GHKABackground class]]) {
         initialPreviousNode = lastStepNode;
       }
     }
-    [((id<JavaUtilMap>) nil_chk(self->pathToStepMap_)) putWithId:path withId:create_CCBRUndefinedStepsTracker_FeatureStepMap_initWithGherkinGherkinDialect_withJavaUtilMap_([create_GherkinGherkinDialectProvider_initWithNSString_([((GherkinAstFeature *) nil_chk([gherkinDocument getFeature])) getLanguage]) getDefaultDialect], stepMap)];
+    [((id<JavaUtilMap>) nil_chk(self->pathToStepMap_)) putWithId:path withId:create_CCBRUndefinedStepsTracker_FeatureStepMap_initWithGHKGherkinDialect_withJavaUtilMap_([create_GHKGherkinDialectProvider_initWithNSString_([((GHKAFeature *) nil_chk([gherkinDocument getFeature])) getLanguage]) getDefaultDialect], stepMap)];
   }
-  @catch (GherkinParserException *e) {
+  @catch (GHKParserException *e) {
   }
 }
 
-CCBRUndefinedStepsTracker_StepNode *CCBRUndefinedStepsTracker_processScenarioDefinitionWithJavaUtilMap_withCCBRUndefinedStepsTracker_StepNode_withGherkinAstScenarioDefinition_(CCBRUndefinedStepsTracker *self, id<JavaUtilMap> stepMap, CCBRUndefinedStepsTracker_StepNode *initialPreviousNode, GherkinAstScenarioDefinition *child) {
+CCBRUndefinedStepsTracker_StepNode *CCBRUndefinedStepsTracker_processScenarioDefinitionWithJavaUtilMap_withCCBRUndefinedStepsTracker_StepNode_withGHKAScenarioDefinition_(CCBRUndefinedStepsTracker *self, id<JavaUtilMap> stepMap, CCBRUndefinedStepsTracker_StepNode *initialPreviousNode, GHKAScenarioDefinition *child) {
   CCBRUndefinedStepsTracker_StepNode *previousNode = initialPreviousNode;
-  for (GherkinAstStep * __strong step in nil_chk([((GherkinAstScenarioDefinition *) nil_chk(child)) getSteps])) {
-    CCBRUndefinedStepsTracker_StepNode *stepNode = create_CCBRUndefinedStepsTracker_StepNode_initWithGherkinAstStep_withCCBRUndefinedStepsTracker_StepNode_(step, previousNode);
-    [((id<JavaUtilMap>) nil_chk(stepMap)) putWithId:JavaLangInteger_valueOfWithInt_([((GherkinAstLocation *) nil_chk([((GherkinAstStep *) nil_chk(step)) getLocation])) getLine]) withId:stepNode];
+  for (GHKAStep * __strong step in nil_chk([((GHKAScenarioDefinition *) nil_chk(child)) getSteps])) {
+    CCBRUndefinedStepsTracker_StepNode *stepNode = create_CCBRUndefinedStepsTracker_StepNode_initWithGHKAStep_withCCBRUndefinedStepsTracker_StepNode_(step, previousNode);
+    [((id<JavaUtilMap>) nil_chk(stepMap)) putWithId:JavaLangInteger_valueOfWithInt_([((GHKALocation *) nil_chk([((GHKAStep *) nil_chk(step)) getLocation])) getLine]) withId:stepNode];
     previousNode = stepNode;
   }
   return previousNode;
 }
 
-id<JavaUtilList> CCBRUndefinedStepsTracker_getGivenWhenThenKeywordsWithGherkinGherkinDialect_(CCBRUndefinedStepsTracker *self, GherkinGherkinDialect *dialect) {
+id<JavaUtilList> CCBRUndefinedStepsTracker_getGivenWhenThenKeywordsWithGHKGherkinDialect_(CCBRUndefinedStepsTracker *self, GHKGherkinDialect *dialect) {
   id<JavaUtilList> keywords = create_JavaUtilArrayList_init();
-  [keywords addAllWithJavaUtilCollection:[((GherkinGherkinDialect *) nil_chk(dialect)) getGivenKeywords]];
+  [keywords addAllWithJavaUtilCollection:[((GHKGherkinDialect *) nil_chk(dialect)) getGivenKeywords]];
   [keywords addAllWithJavaUtilCollection:[dialect getWhenKeywords]];
   [keywords addAllWithJavaUtilCollection:[dialect getThenKeywords]];
   return keywords;
 }
 
-NSString *CCBRUndefinedStepsTracker_getFirstGivenKeywordWithGherkinGherkinDialect_(CCBRUndefinedStepsTracker *self, GherkinGherkinDialect *i18n) {
-  for (NSString * __strong keyword in nil_chk([((GherkinGherkinDialect *) nil_chk(i18n)) getGivenKeywords])) {
+NSString *CCBRUndefinedStepsTracker_getFirstGivenKeywordWithGHKGherkinDialect_(CCBRUndefinedStepsTracker *self, GHKGherkinDialect *i18n) {
+  for (NSString * __strong keyword in nil_chk([((GHKGherkinDialect *) nil_chk(i18n)) getGivenKeywords])) {
     if (![((NSString *) nil_chk(keyword)) isEqual:@"* "]) {
       return CCBRUndefinedStepsTracker_convertToCodeKeywordWithNSString_(self, keyword);
     }
@@ -505,9 +505,9 @@ CCBRUndefinedStepsTracker_2 *create_CCBRUndefinedStepsTracker_2_initWithCCBRUnde
 
 @implementation CCBRUndefinedStepsTracker_FeatureStepMap
 
-- (instancetype __nonnull)initWithGherkinGherkinDialect:(GherkinGherkinDialect *)dialect
-                                        withJavaUtilMap:(id<JavaUtilMap>)stepMap {
-  CCBRUndefinedStepsTracker_FeatureStepMap_initWithGherkinGherkinDialect_withJavaUtilMap_(self, dialect, stepMap);
+- (instancetype __nonnull)initWithGHKGherkinDialect:(GHKGherkinDialect *)dialect
+                                    withJavaUtilMap:(id<JavaUtilMap>)stepMap {
+  CCBRUndefinedStepsTracker_FeatureStepMap_initWithGHKGherkinDialect_withJavaUtilMap_(self, dialect, stepMap);
   return self;
 }
 
@@ -524,40 +524,40 @@ CCBRUndefinedStepsTracker_2 *create_CCBRUndefinedStepsTracker_2_initWithCCBRUnde
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithGherkinGherkinDialect:withJavaUtilMap:);
+  methods[0].selector = @selector(initWithGHKGherkinDialect:withJavaUtilMap:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "dialect_", "LGherkinGherkinDialect;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
+    { "dialect_", "LGHKGherkinDialect;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
     { "stepMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x10, -1, -1, 2, -1 },
   };
-  static const void *ptrTable[] = { "LGherkinGherkinDialect;LJavaUtilMap;", "(Lgherkin/GherkinDialect;Ljava/util/Map<Ljava/lang/Integer;Lcucumber/runtime/UndefinedStepsTracker$StepNode;>;)V", "Ljava/util/Map<Ljava/lang/Integer;Lcucumber/runtime/UndefinedStepsTracker$StepNode;>;", "LCCBRUndefinedStepsTracker;" };
+  static const void *ptrTable[] = { "LGHKGherkinDialect;LJavaUtilMap;", "(Lgherkin/GherkinDialect;Ljava/util/Map<Ljava/lang/Integer;Lcucumber/runtime/UndefinedStepsTracker$StepNode;>;)V", "Ljava/util/Map<Ljava/lang/Integer;Lcucumber/runtime/UndefinedStepsTracker$StepNode;>;", "LCCBRUndefinedStepsTracker;" };
   static const J2ObjcClassInfo _CCBRUndefinedStepsTracker_FeatureStepMap = { "FeatureStepMap", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1a, 1, 2, 3, -1, -1, -1, -1 };
   return &_CCBRUndefinedStepsTracker_FeatureStepMap;
 }
 
 @end
 
-void CCBRUndefinedStepsTracker_FeatureStepMap_initWithGherkinGherkinDialect_withJavaUtilMap_(CCBRUndefinedStepsTracker_FeatureStepMap *self, GherkinGherkinDialect *dialect, id<JavaUtilMap> stepMap) {
+void CCBRUndefinedStepsTracker_FeatureStepMap_initWithGHKGherkinDialect_withJavaUtilMap_(CCBRUndefinedStepsTracker_FeatureStepMap *self, GHKGherkinDialect *dialect, id<JavaUtilMap> stepMap) {
   NSObject_init(self);
   JreStrongAssign(&self->dialect_, dialect);
   JreStrongAssign(&self->stepMap_, stepMap);
 }
 
-CCBRUndefinedStepsTracker_FeatureStepMap *new_CCBRUndefinedStepsTracker_FeatureStepMap_initWithGherkinGherkinDialect_withJavaUtilMap_(GherkinGherkinDialect *dialect, id<JavaUtilMap> stepMap) {
-  J2OBJC_NEW_IMPL(CCBRUndefinedStepsTracker_FeatureStepMap, initWithGherkinGherkinDialect_withJavaUtilMap_, dialect, stepMap)
+CCBRUndefinedStepsTracker_FeatureStepMap *new_CCBRUndefinedStepsTracker_FeatureStepMap_initWithGHKGherkinDialect_withJavaUtilMap_(GHKGherkinDialect *dialect, id<JavaUtilMap> stepMap) {
+  J2OBJC_NEW_IMPL(CCBRUndefinedStepsTracker_FeatureStepMap, initWithGHKGherkinDialect_withJavaUtilMap_, dialect, stepMap)
 }
 
-CCBRUndefinedStepsTracker_FeatureStepMap *create_CCBRUndefinedStepsTracker_FeatureStepMap_initWithGherkinGherkinDialect_withJavaUtilMap_(GherkinGherkinDialect *dialect, id<JavaUtilMap> stepMap) {
-  J2OBJC_CREATE_IMPL(CCBRUndefinedStepsTracker_FeatureStepMap, initWithGherkinGherkinDialect_withJavaUtilMap_, dialect, stepMap)
+CCBRUndefinedStepsTracker_FeatureStepMap *create_CCBRUndefinedStepsTracker_FeatureStepMap_initWithGHKGherkinDialect_withJavaUtilMap_(GHKGherkinDialect *dialect, id<JavaUtilMap> stepMap) {
+  J2OBJC_CREATE_IMPL(CCBRUndefinedStepsTracker_FeatureStepMap, initWithGHKGherkinDialect_withJavaUtilMap_, dialect, stepMap)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRUndefinedStepsTracker_FeatureStepMap)
 
 @implementation CCBRUndefinedStepsTracker_StepNode
 
-- (instancetype __nonnull)initWithGherkinAstStep:(GherkinAstStep *)step
-          withCCBRUndefinedStepsTracker_StepNode:(CCBRUndefinedStepsTracker_StepNode *)previous {
-  CCBRUndefinedStepsTracker_StepNode_initWithGherkinAstStep_withCCBRUndefinedStepsTracker_StepNode_(self, step, previous);
+- (instancetype __nonnull)initWithGHKAStep:(GHKAStep *)step
+    withCCBRUndefinedStepsTracker_StepNode:(CCBRUndefinedStepsTracker_StepNode *)previous {
+  CCBRUndefinedStepsTracker_StepNode_initWithGHKAStep_withCCBRUndefinedStepsTracker_StepNode_(self, step, previous);
   return self;
 }
 
@@ -574,31 +574,31 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRUndefinedStepsTracker_FeatureStepMap)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithGherkinAstStep:withCCBRUndefinedStepsTracker_StepNode:);
+  methods[0].selector = @selector(initWithGHKAStep:withCCBRUndefinedStepsTracker_StepNode:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "step_", "LGherkinAstStep;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
+    { "step_", "LGHKAStep;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
     { "previous_", "LCCBRUndefinedStepsTracker_StepNode;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LGherkinAstStep;LCCBRUndefinedStepsTracker_StepNode;", "LCCBRUndefinedStepsTracker;" };
+  static const void *ptrTable[] = { "LGHKAStep;LCCBRUndefinedStepsTracker_StepNode;", "LCCBRUndefinedStepsTracker;" };
   static const J2ObjcClassInfo _CCBRUndefinedStepsTracker_StepNode = { "StepNode", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1a, 1, 2, 1, -1, -1, -1, -1 };
   return &_CCBRUndefinedStepsTracker_StepNode;
 }
 
 @end
 
-void CCBRUndefinedStepsTracker_StepNode_initWithGherkinAstStep_withCCBRUndefinedStepsTracker_StepNode_(CCBRUndefinedStepsTracker_StepNode *self, GherkinAstStep *step, CCBRUndefinedStepsTracker_StepNode *previous) {
+void CCBRUndefinedStepsTracker_StepNode_initWithGHKAStep_withCCBRUndefinedStepsTracker_StepNode_(CCBRUndefinedStepsTracker_StepNode *self, GHKAStep *step, CCBRUndefinedStepsTracker_StepNode *previous) {
   NSObject_init(self);
   JreStrongAssign(&self->step_, step);
   JreStrongAssign(&self->previous_, previous);
 }
 
-CCBRUndefinedStepsTracker_StepNode *new_CCBRUndefinedStepsTracker_StepNode_initWithGherkinAstStep_withCCBRUndefinedStepsTracker_StepNode_(GherkinAstStep *step, CCBRUndefinedStepsTracker_StepNode *previous) {
-  J2OBJC_NEW_IMPL(CCBRUndefinedStepsTracker_StepNode, initWithGherkinAstStep_withCCBRUndefinedStepsTracker_StepNode_, step, previous)
+CCBRUndefinedStepsTracker_StepNode *new_CCBRUndefinedStepsTracker_StepNode_initWithGHKAStep_withCCBRUndefinedStepsTracker_StepNode_(GHKAStep *step, CCBRUndefinedStepsTracker_StepNode *previous) {
+  J2OBJC_NEW_IMPL(CCBRUndefinedStepsTracker_StepNode, initWithGHKAStep_withCCBRUndefinedStepsTracker_StepNode_, step, previous)
 }
 
-CCBRUndefinedStepsTracker_StepNode *create_CCBRUndefinedStepsTracker_StepNode_initWithGherkinAstStep_withCCBRUndefinedStepsTracker_StepNode_(GherkinAstStep *step, CCBRUndefinedStepsTracker_StepNode *previous) {
-  J2OBJC_CREATE_IMPL(CCBRUndefinedStepsTracker_StepNode, initWithGherkinAstStep_withCCBRUndefinedStepsTracker_StepNode_, step, previous)
+CCBRUndefinedStepsTracker_StepNode *create_CCBRUndefinedStepsTracker_StepNode_initWithGHKAStep_withCCBRUndefinedStepsTracker_StepNode_(GHKAStep *step, CCBRUndefinedStepsTracker_StepNode *previous) {
+  J2OBJC_CREATE_IMPL(CCBRUndefinedStepsTracker_StepNode, initWithGHKAStep_withCCBRUndefinedStepsTracker_StepNode_, step, previous)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRUndefinedStepsTracker_StepNode)

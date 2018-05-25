@@ -53,8 +53,8 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeJavaJavaStepDefinition, parameterInfos_, id<J
   CCBRUtils_invokeWithId_withJavaLangReflectMethod_withLong_withNSObjectArray_([((id<CucumberApiJavaObjectFactory>) nil_chk(objectFactory_)) getInstanceWithIOSClass:[((JavaLangReflectMethod *) nil_chk(method_)) getDeclaringClass]], method_, timeoutMillis_, args);
 }
 
-- (id<JavaUtilList>)matchedArgumentsWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step {
-  return [((CCBRJdkPatternArgumentMatcher *) nil_chk(argumentMatcher_)) argumentsFromWithNSString:[((GherkinPicklesPickleStep *) nil_chk(step)) getText]];
+- (id<JavaUtilList>)matchedArgumentsWithGHKPickleStep:(GHKPickleStep *)step {
+  return [((CCBRJdkPatternArgumentMatcher *) nil_chk(argumentMatcher_)) argumentsFromWithNSString:[((GHKPickleStep *) nil_chk(step)) getText]];
 }
 
 - (NSString *)getLocationWithBoolean:(jboolean)detail {
@@ -109,7 +109,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeJavaJavaStepDefinition, parameterInfos_, id<J
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangReflectMethod:withJavaUtilRegexPattern:withLong:withCucumberApiJavaObjectFactory:);
   methods[1].selector = @selector(executeWithNSString:withNSObjectArray:);
-  methods[2].selector = @selector(matchedArgumentsWithGherkinPicklesPickleStep:);
+  methods[2].selector = @selector(matchedArgumentsWithGHKPickleStep:);
   methods[3].selector = @selector(getLocationWithBoolean:);
   methods[4].selector = @selector(getParameterCount);
   methods[5].selector = @selector(getParameterTypeWithInt:withJavaLangReflectType:);
@@ -125,7 +125,7 @@ J2OBJC_FIELD_SETTER(CucumberRuntimeJavaJavaStepDefinition, parameterInfos_, id<J
     { "argumentMatcher_", "LCCBRJdkPatternArgumentMatcher;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "parameterInfos_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 13, -1 },
   };
-  static const void *ptrTable[] = { "LJavaLangReflectMethod;LJavaUtilRegexPattern;JLCucumberApiJavaObjectFactory;", "execute", "LNSString;[LNSObject;", "LJavaLangThrowable;", "matchedArguments", "LGherkinPicklesPickleStep;", "(Lgherkin/pickles/PickleStep;)Ljava/util/List<Lcucumber/runtime/Argument;>;", "getLocation", "Z", "getParameterType", "ILJavaLangReflectType;", "isDefinedAt", "LJavaLangStackTraceElement;", "Ljava/util/List<Lcucumber/runtime/ParameterInfo;>;" };
+  static const void *ptrTable[] = { "LJavaLangReflectMethod;LJavaUtilRegexPattern;JLCucumberApiJavaObjectFactory;", "execute", "LNSString;[LNSObject;", "LJavaLangThrowable;", "matchedArguments", "LGHKPickleStep;", "(Lgherkin/pickles/PickleStep;)Ljava/util/List<Lcucumber/runtime/Argument;>;", "getLocation", "Z", "getParameterType", "ILJavaLangReflectType;", "isDefinedAt", "LJavaLangStackTraceElement;", "Ljava/util/List<Lcucumber/runtime/ParameterInfo;>;" };
   static const J2ObjcClassInfo _CucumberRuntimeJavaJavaStepDefinition = { "JavaStepDefinition", "cucumber.runtime.java", ptrTable, methods, fields, 7, 0x0, 9, 6, -1, -1, -1, -1, -1 };
   return &_CucumberRuntimeJavaJavaStepDefinition;
 }

@@ -65,18 +65,18 @@ J2OBJC_IGNORE_DESIGNATED_END
   id<JavaUtilList> sortedStepdefs = create_JavaUtilArrayList_init();
   [sortedStepdefs addAllWithJavaUtilCollection:stepDefinitions];
   JavaUtilCollections_sortWithJavaUtilList_withJavaUtilComparator_(sortedStepdefs, CCBRStepdefGenerator_STEP_DEFINITION_COMPARATOR);
-  GherkinPicklesCompiler *compiler = create_GherkinPicklesCompiler_init();
+  GHKCompiler *compiler = create_GHKCompiler_init();
   for (id<CCBRStepDefinition> __strong stepDefinition in sortedStepdefs) {
     CCBRMetaStepdef *metaStepdef = create_CCBRMetaStepdef_init();
     JreStrongAssign(&metaStepdef->source_, [((id<CCBRStepDefinition>) nil_chk(stepDefinition)) getPattern]);
     JreStrongAssign(&metaStepdef->flags_, @"");
     for (CCBRCucumberFeature * __strong feature in nil_chk(features)) {
-      for (GherkinPicklesPickle * __strong pickle in nil_chk([compiler compileWithGherkinAstGherkinDocument:[((CCBRCucumberFeature *) nil_chk(feature)) getGherkinFeature]])) {
-        for (GherkinPicklesPickleStep * __strong step in nil_chk([((GherkinPicklesPickle *) nil_chk(pickle)) getSteps])) {
-          id<JavaUtilList> arguments = [stepDefinition matchedArgumentsWithGherkinPicklesPickleStep:step];
+      for (GHKPickle * __strong pickle in nil_chk([compiler compileWithGHKAGherkinDocument:[((CCBRCucumberFeature *) nil_chk(feature)) getGherkinFeature]])) {
+        for (GHKPickleStep * __strong step in nil_chk([((GHKPickle *) nil_chk(pickle)) getSteps])) {
+          id<JavaUtilList> arguments = [stepDefinition matchedArgumentsWithGHKPickleStep:step];
           if (arguments != nil) {
             CCBRMetaStepdef_MetaStep *ms = create_CCBRMetaStepdef_MetaStep_init();
-            JreStrongAssign(&ms->name_, [((GherkinPicklesPickleStep *) nil_chk(step)) getText]);
+            JreStrongAssign(&ms->name_, [((GHKPickleStep *) nil_chk(step)) getText]);
             for (CCBRArgument * __strong argument in arguments) {
               CCBRMetaStepdef_MetaArgument *ma = create_CCBRMetaStepdef_MetaArgument_init();
               ma->offset_ = [((JavaLangInteger *) nil_chk([((CCBRArgument *) nil_chk(argument)) getOffset])) intValue];

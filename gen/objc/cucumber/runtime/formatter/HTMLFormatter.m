@@ -71,8 +71,8 @@
   jboolean firstFeature_;
   NSString *currentFeatureFile_;
   id<JavaUtilMap> currentTestCaseMap_;
-  GherkinAstScenarioOutline *currentScenarioOutline_;
-  GherkinAstExamples *currentExamples_;
+  GHKAScenarioOutline *currentScenarioOutline_;
+  GHKAExamples *currentExamples_;
   jint embeddedIndex_;
   id<CucumberApiEventEventHandler> testSourceReadHandler_;
   id<CucumberApiEventEventHandler> caseStartedHandler_;
@@ -105,19 +105,19 @@
 
 - (void)handleScenarioOutlineWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
 
-- (id<JavaUtilMap>)createScenarioOutlineWithGherkinAstScenarioOutline:(GherkinAstScenarioOutline *)scenarioOutline;
+- (id<JavaUtilMap>)createScenarioOutlineWithGHKAScenarioOutline:(GHKAScenarioOutline *)scenarioOutline;
 
-- (void)addOutlineStepsToReportWithGherkinAstScenarioOutline:(GherkinAstScenarioOutline *)scenarioOutline;
+- (void)addOutlineStepsToReportWithGHKAScenarioOutline:(GHKAScenarioOutline *)scenarioOutline;
 
-- (id<JavaUtilMap>)createDocStringMapWithGherkinAstDocString:(GherkinAstDocString *)docString;
+- (id<JavaUtilMap>)createDocStringMapWithGHKADocString:(GHKADocString *)docString;
 
-- (id<JavaUtilList>)createDataTableListWithGherkinAstDataTable:(GherkinAstDataTable *)dataTable;
+- (id<JavaUtilList>)createDataTableListWithGHKADataTable:(GHKADataTable *)dataTable;
 
-- (id<JavaUtilMap>)createRowMapWithGherkinAstTableRow:(GherkinAstTableRow *)row;
+- (id<JavaUtilMap>)createRowMapWithGHKATableRow:(GHKATableRow *)row;
 
-- (id<JavaUtilList>)createCellListWithGherkinAstTableRow:(GherkinAstTableRow *)row;
+- (id<JavaUtilList>)createCellListWithGHKATableRow:(GHKATableRow *)row;
 
-- (id<JavaUtilMap>)createExamplesWithGherkinAstExamples:(GherkinAstExamples *)examples;
+- (id<JavaUtilMap>)createExamplesWithGHKAExamples:(GHKAExamples *)examples;
 
 - (id<JavaUtilMap>)createTestCaseWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
 
@@ -127,13 +127,13 @@
 
 - (id<JavaUtilMap>)createTestStepWithCucumberApiTestStep:(CucumberApiTestStep *)testStep;
 
-- (id<JavaUtilMap>)createDocStringMapWithGherkinPicklesPickleString:(GherkinPicklesPickleString *)docString;
+- (id<JavaUtilMap>)createDocStringMapWithGHKPickleString:(GHKPickleString *)docString;
 
-- (id<JavaUtilList>)createDataTableListWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)dataTable;
+- (id<JavaUtilList>)createDataTableListWithGHKPickleTable:(GHKPickleTable *)dataTable;
 
-- (id<JavaUtilMap>)createRowMapWithGherkinPicklesPickleRow:(GherkinPicklesPickleRow *)row;
+- (id<JavaUtilMap>)createRowMapWithGHKPickleRow:(GHKPickleRow *)row;
 
-- (id<JavaUtilList>)createCellListWithGherkinPicklesPickleRow:(GherkinPicklesPickleRow *)row;
+- (id<JavaUtilList>)createCellListWithGHKPickleRow:(GHKPickleRow *)row;
 
 - (id<JavaUtilMap>)createMatchMapWithCucumberApiTestStep:(CucumberApiTestStep *)testStep
                                    withCucumberApiResult:(CucumberApiResult *)result;
@@ -166,8 +166,8 @@ J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, htmlReportDir_, JavaNetURL *)
 J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, jsOut_, CucumberApiFormatterNiceAppendable *)
 J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, currentFeatureFile_, NSString *)
 J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, currentTestCaseMap_, id<JavaUtilMap>)
-J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, currentScenarioOutline_, GherkinAstScenarioOutline *)
-J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, currentExamples_, GherkinAstExamples *)
+J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, currentScenarioOutline_, GHKAScenarioOutline *)
+J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, currentExamples_, GHKAExamples *)
 J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, testSourceReadHandler_, id<CucumberApiEventEventHandler>)
 J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, caseStartedHandler_, id<CucumberApiEventEventHandler>)
 J2OBJC_FIELD_SETTER(CCBRHTMLFormatter, stepStartedHandler_, id<CucumberApiEventEventHandler>)
@@ -218,19 +218,19 @@ __attribute__((unused)) static id<JavaUtilList> CCBRHTMLFormatter_createTagListW
 
 __attribute__((unused)) static void CCBRHTMLFormatter_handleScenarioOutlineWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase);
 
-__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createScenarioOutlineWithGherkinAstScenarioOutline_(CCBRHTMLFormatter *self, GherkinAstScenarioOutline *scenarioOutline);
+__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createScenarioOutlineWithGHKAScenarioOutline_(CCBRHTMLFormatter *self, GHKAScenarioOutline *scenarioOutline);
 
-__attribute__((unused)) static void CCBRHTMLFormatter_addOutlineStepsToReportWithGherkinAstScenarioOutline_(CCBRHTMLFormatter *self, GherkinAstScenarioOutline *scenarioOutline);
+__attribute__((unused)) static void CCBRHTMLFormatter_addOutlineStepsToReportWithGHKAScenarioOutline_(CCBRHTMLFormatter *self, GHKAScenarioOutline *scenarioOutline);
 
-__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createDocStringMapWithGherkinAstDocString_(CCBRHTMLFormatter *self, GherkinAstDocString *docString);
+__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createDocStringMapWithGHKADocString_(CCBRHTMLFormatter *self, GHKADocString *docString);
 
-__attribute__((unused)) static id<JavaUtilList> CCBRHTMLFormatter_createDataTableListWithGherkinAstDataTable_(CCBRHTMLFormatter *self, GherkinAstDataTable *dataTable);
+__attribute__((unused)) static id<JavaUtilList> CCBRHTMLFormatter_createDataTableListWithGHKADataTable_(CCBRHTMLFormatter *self, GHKADataTable *dataTable);
 
-__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createRowMapWithGherkinAstTableRow_(CCBRHTMLFormatter *self, GherkinAstTableRow *row);
+__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createRowMapWithGHKATableRow_(CCBRHTMLFormatter *self, GHKATableRow *row);
 
-__attribute__((unused)) static id<JavaUtilList> CCBRHTMLFormatter_createCellListWithGherkinAstTableRow_(CCBRHTMLFormatter *self, GherkinAstTableRow *row);
+__attribute__((unused)) static id<JavaUtilList> CCBRHTMLFormatter_createCellListWithGHKATableRow_(CCBRHTMLFormatter *self, GHKATableRow *row);
 
-__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createExamplesWithGherkinAstExamples_(CCBRHTMLFormatter *self, GherkinAstExamples *examples);
+__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createExamplesWithGHKAExamples_(CCBRHTMLFormatter *self, GHKAExamples *examples);
 
 __attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createTestCaseWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase);
 
@@ -240,13 +240,13 @@ __attribute__((unused)) static jboolean CCBRHTMLFormatter_isFirstStepAfterBackgr
 
 __attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createTestStepWithCucumberApiTestStep_(CCBRHTMLFormatter *self, CucumberApiTestStep *testStep);
 
-__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createDocStringMapWithGherkinPicklesPickleString_(CCBRHTMLFormatter *self, GherkinPicklesPickleString *docString);
+__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createDocStringMapWithGHKPickleString_(CCBRHTMLFormatter *self, GHKPickleString *docString);
 
-__attribute__((unused)) static id<JavaUtilList> CCBRHTMLFormatter_createDataTableListWithGherkinPicklesPickleTable_(CCBRHTMLFormatter *self, GherkinPicklesPickleTable *dataTable);
+__attribute__((unused)) static id<JavaUtilList> CCBRHTMLFormatter_createDataTableListWithGHKPickleTable_(CCBRHTMLFormatter *self, GHKPickleTable *dataTable);
 
-__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createRowMapWithGherkinPicklesPickleRow_(CCBRHTMLFormatter *self, GherkinPicklesPickleRow *row);
+__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createRowMapWithGHKPickleRow_(CCBRHTMLFormatter *self, GHKPickleRow *row);
 
-__attribute__((unused)) static id<JavaUtilList> CCBRHTMLFormatter_createCellListWithGherkinPicklesPickleRow_(CCBRHTMLFormatter *self, GherkinPicklesPickleRow *row);
+__attribute__((unused)) static id<JavaUtilList> CCBRHTMLFormatter_createCellListWithGHKPickleRow_(CCBRHTMLFormatter *self, GHKPickleRow *row);
 
 __attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createMatchMapWithCucumberApiTestStep_withCucumberApiResult_(CCBRHTMLFormatter *self, CucumberApiTestStep *testStep, CucumberApiResult *result);
 
@@ -513,32 +513,32 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
   CCBRHTMLFormatter_handleScenarioOutlineWithCucumberApiTestCase_(self, testCase);
 }
 
-- (id<JavaUtilMap>)createScenarioOutlineWithGherkinAstScenarioOutline:(GherkinAstScenarioOutline *)scenarioOutline {
-  return CCBRHTMLFormatter_createScenarioOutlineWithGherkinAstScenarioOutline_(self, scenarioOutline);
+- (id<JavaUtilMap>)createScenarioOutlineWithGHKAScenarioOutline:(GHKAScenarioOutline *)scenarioOutline {
+  return CCBRHTMLFormatter_createScenarioOutlineWithGHKAScenarioOutline_(self, scenarioOutline);
 }
 
-- (void)addOutlineStepsToReportWithGherkinAstScenarioOutline:(GherkinAstScenarioOutline *)scenarioOutline {
-  CCBRHTMLFormatter_addOutlineStepsToReportWithGherkinAstScenarioOutline_(self, scenarioOutline);
+- (void)addOutlineStepsToReportWithGHKAScenarioOutline:(GHKAScenarioOutline *)scenarioOutline {
+  CCBRHTMLFormatter_addOutlineStepsToReportWithGHKAScenarioOutline_(self, scenarioOutline);
 }
 
-- (id<JavaUtilMap>)createDocStringMapWithGherkinAstDocString:(GherkinAstDocString *)docString {
-  return CCBRHTMLFormatter_createDocStringMapWithGherkinAstDocString_(self, docString);
+- (id<JavaUtilMap>)createDocStringMapWithGHKADocString:(GHKADocString *)docString {
+  return CCBRHTMLFormatter_createDocStringMapWithGHKADocString_(self, docString);
 }
 
-- (id<JavaUtilList>)createDataTableListWithGherkinAstDataTable:(GherkinAstDataTable *)dataTable {
-  return CCBRHTMLFormatter_createDataTableListWithGherkinAstDataTable_(self, dataTable);
+- (id<JavaUtilList>)createDataTableListWithGHKADataTable:(GHKADataTable *)dataTable {
+  return CCBRHTMLFormatter_createDataTableListWithGHKADataTable_(self, dataTable);
 }
 
-- (id<JavaUtilMap>)createRowMapWithGherkinAstTableRow:(GherkinAstTableRow *)row {
-  return CCBRHTMLFormatter_createRowMapWithGherkinAstTableRow_(self, row);
+- (id<JavaUtilMap>)createRowMapWithGHKATableRow:(GHKATableRow *)row {
+  return CCBRHTMLFormatter_createRowMapWithGHKATableRow_(self, row);
 }
 
-- (id<JavaUtilList>)createCellListWithGherkinAstTableRow:(GherkinAstTableRow *)row {
-  return CCBRHTMLFormatter_createCellListWithGherkinAstTableRow_(self, row);
+- (id<JavaUtilList>)createCellListWithGHKATableRow:(GHKATableRow *)row {
+  return CCBRHTMLFormatter_createCellListWithGHKATableRow_(self, row);
 }
 
-- (id<JavaUtilMap>)createExamplesWithGherkinAstExamples:(GherkinAstExamples *)examples {
-  return CCBRHTMLFormatter_createExamplesWithGherkinAstExamples_(self, examples);
+- (id<JavaUtilMap>)createExamplesWithGHKAExamples:(GHKAExamples *)examples {
+  return CCBRHTMLFormatter_createExamplesWithGHKAExamples_(self, examples);
 }
 
 - (id<JavaUtilMap>)createTestCaseWithCucumberApiTestCase:(CucumberApiTestCase *)testCase {
@@ -557,20 +557,20 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
   return CCBRHTMLFormatter_createTestStepWithCucumberApiTestStep_(self, testStep);
 }
 
-- (id<JavaUtilMap>)createDocStringMapWithGherkinPicklesPickleString:(GherkinPicklesPickleString *)docString {
-  return CCBRHTMLFormatter_createDocStringMapWithGherkinPicklesPickleString_(self, docString);
+- (id<JavaUtilMap>)createDocStringMapWithGHKPickleString:(GHKPickleString *)docString {
+  return CCBRHTMLFormatter_createDocStringMapWithGHKPickleString_(self, docString);
 }
 
-- (id<JavaUtilList>)createDataTableListWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)dataTable {
-  return CCBRHTMLFormatter_createDataTableListWithGherkinPicklesPickleTable_(self, dataTable);
+- (id<JavaUtilList>)createDataTableListWithGHKPickleTable:(GHKPickleTable *)dataTable {
+  return CCBRHTMLFormatter_createDataTableListWithGHKPickleTable_(self, dataTable);
 }
 
-- (id<JavaUtilMap>)createRowMapWithGherkinPicklesPickleRow:(GherkinPicklesPickleRow *)row {
-  return CCBRHTMLFormatter_createRowMapWithGherkinPicklesPickleRow_(self, row);
+- (id<JavaUtilMap>)createRowMapWithGHKPickleRow:(GHKPickleRow *)row {
+  return CCBRHTMLFormatter_createRowMapWithGHKPickleRow_(self, row);
 }
 
-- (id<JavaUtilList>)createCellListWithGherkinPicklesPickleRow:(GherkinPicklesPickleRow *)row {
-  return CCBRHTMLFormatter_createCellListWithGherkinPicklesPickleRow_(self, row);
+- (id<JavaUtilList>)createCellListWithGHKPickleRow:(GHKPickleRow *)row {
+  return CCBRHTMLFormatter_createCellListWithGHKPickleRow_(self, row);
 }
 
 - (id<JavaUtilMap>)createMatchMapWithCucumberApiTestStep:(CucumberApiTestStep *)testStep
@@ -694,21 +694,21 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
   methods[11].selector = @selector(createFeatureWithCucumberApiTestCase:);
   methods[12].selector = @selector(createTagListWithJavaUtilList:);
   methods[13].selector = @selector(handleScenarioOutlineWithCucumberApiTestCase:);
-  methods[14].selector = @selector(createScenarioOutlineWithGherkinAstScenarioOutline:);
-  methods[15].selector = @selector(addOutlineStepsToReportWithGherkinAstScenarioOutline:);
-  methods[16].selector = @selector(createDocStringMapWithGherkinAstDocString:);
-  methods[17].selector = @selector(createDataTableListWithGherkinAstDataTable:);
-  methods[18].selector = @selector(createRowMapWithGherkinAstTableRow:);
-  methods[19].selector = @selector(createCellListWithGherkinAstTableRow:);
-  methods[20].selector = @selector(createExamplesWithGherkinAstExamples:);
+  methods[14].selector = @selector(createScenarioOutlineWithGHKAScenarioOutline:);
+  methods[15].selector = @selector(addOutlineStepsToReportWithGHKAScenarioOutline:);
+  methods[16].selector = @selector(createDocStringMapWithGHKADocString:);
+  methods[17].selector = @selector(createDataTableListWithGHKADataTable:);
+  methods[18].selector = @selector(createRowMapWithGHKATableRow:);
+  methods[19].selector = @selector(createCellListWithGHKATableRow:);
+  methods[20].selector = @selector(createExamplesWithGHKAExamples:);
   methods[21].selector = @selector(createTestCaseWithCucumberApiTestCase:);
   methods[22].selector = @selector(createBackgroundWithCucumberApiTestCase:);
   methods[23].selector = @selector(isFirstStepAfterBackgroundWithCucumberApiTestStep:);
   methods[24].selector = @selector(createTestStepWithCucumberApiTestStep:);
-  methods[25].selector = @selector(createDocStringMapWithGherkinPicklesPickleString:);
-  methods[26].selector = @selector(createDataTableListWithGherkinPicklesPickleTable:);
-  methods[27].selector = @selector(createRowMapWithGherkinPicklesPickleRow:);
-  methods[28].selector = @selector(createCellListWithGherkinPicklesPickleRow:);
+  methods[25].selector = @selector(createDocStringMapWithGHKPickleString:);
+  methods[26].selector = @selector(createDataTableListWithGHKPickleTable:);
+  methods[27].selector = @selector(createRowMapWithGHKPickleRow:);
+  methods[28].selector = @selector(createCellListWithGHKPickleRow:);
   methods[29].selector = @selector(createMatchMapWithCucumberApiTestStep:withCucumberApiResult:);
   methods[30].selector = @selector(createResultMapWithCucumberApiResult:);
   methods[31].selector = @selector(jsFunctionCallWithNSString:withNSObjectArray:);
@@ -732,8 +732,8 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
     { "firstFeature_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "currentFeatureFile_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "currentTestCaseMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 80, -1 },
-    { "currentScenarioOutline_", "LGherkinAstScenarioOutline;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "currentExamples_", "LGherkinAstExamples;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "currentScenarioOutline_", "LGHKAScenarioOutline;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "currentExamples_", "LGHKAExamples;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "embeddedIndex_", "I", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "testSourceReadHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 81, -1 },
     { "caseStartedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 82, -1 },
@@ -743,7 +743,7 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
     { "writeEventhandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 86, -1 },
     { "runFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 87, -1 },
   };
-  static const void *ptrTable[] = { "LJavaNetURL;", "LJavaNetURL;LCucumberApiFormatterNiceAppendable;", "setEventPublisher", "LCucumberApiEventEventPublisher;", "handleTestSourceRead", "LCucumberApiEventTestSourceRead;", "handleTestCaseStarted", "LCucumberApiEventTestCaseStarted;", "handleTestStepStarted", "LCucumberApiEventTestStepStarted;", "handleTestStepFinished", "LCucumberApiEventTestStepFinished;", "handleEmbed", "LCucumberApiEventEmbedEvent;", "handleWrite", "LCucumberApiEventWriteEvent;", "handleStartOfFeature", "LCucumberApiTestCase;", "createFeature", "(Lcucumber/api/TestCase;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createTagList", "LJavaUtilList;", "(Ljava/util/List<Lgherkin/ast/Tag;>;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "handleScenarioOutline", "createScenarioOutline", "LGherkinAstScenarioOutline;", "(Lgherkin/ast/ScenarioOutline;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "addOutlineStepsToReport", "createDocStringMap", "LGherkinAstDocString;", "(Lgherkin/ast/DocString;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createDataTableList", "LGherkinAstDataTable;", "(Lgherkin/ast/DataTable;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "createRowMap", "LGherkinAstTableRow;", "(Lgherkin/ast/TableRow;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createCellList", "(Lgherkin/ast/TableRow;)Ljava/util/List<Ljava/lang/String;>;", "createExamples", "LGherkinAstExamples;", "(Lgherkin/ast/Examples;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createTestCase", "createBackground", "isFirstStepAfterBackground", "LCucumberApiTestStep;", "createTestStep", "(Lcucumber/api/TestStep;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "LGherkinPicklesPickleString;", "(Lgherkin/pickles/PickleString;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "LGherkinPicklesPickleTable;", "(Lgherkin/pickles/PickleTable;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "LGherkinPicklesPickleRow;", "(Lgherkin/pickles/PickleRow;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "(Lgherkin/pickles/PickleRow;)Ljava/util/List<Ljava/lang/String;>;", "createMatchMap", "LCucumberApiTestStep;LCucumberApiResult;", "(Lcucumber/api/TestStep;Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createResultMap", "LCucumberApiResult;", "(Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "jsFunctionCall", "LNSString;[LNSObject;", "toUrl", "LNSString;", "writeStreamToURL", "LJavaIoInputStream;LJavaNetURL;", "writeBytesToURL", "[BLJavaNetURL;", "LCCBRCucumberException;", "createJsOut", "createReportFileOutputStream", "closeQuietly", "LJavaIoCloseable;", &CCBRHTMLFormatter_gson, &CCBRHTMLFormatter_JS_FORMATTER_VAR, &CCBRHTMLFormatter_JS_REPORT_FILENAME, &CCBRHTMLFormatter_TEXT_ASSETS, &CCBRHTMLFormatter_MIME_TYPES_EXTENSIONS, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/EmbedEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
+  static const void *ptrTable[] = { "LJavaNetURL;", "LJavaNetURL;LCucumberApiFormatterNiceAppendable;", "setEventPublisher", "LCucumberApiEventEventPublisher;", "handleTestSourceRead", "LCucumberApiEventTestSourceRead;", "handleTestCaseStarted", "LCucumberApiEventTestCaseStarted;", "handleTestStepStarted", "LCucumberApiEventTestStepStarted;", "handleTestStepFinished", "LCucumberApiEventTestStepFinished;", "handleEmbed", "LCucumberApiEventEmbedEvent;", "handleWrite", "LCucumberApiEventWriteEvent;", "handleStartOfFeature", "LCucumberApiTestCase;", "createFeature", "(Lcucumber/api/TestCase;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createTagList", "LJavaUtilList;", "(Ljava/util/List<Lgherkin/ast/Tag;>;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "handleScenarioOutline", "createScenarioOutline", "LGHKAScenarioOutline;", "(Lgherkin/ast/ScenarioOutline;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "addOutlineStepsToReport", "createDocStringMap", "LGHKADocString;", "(Lgherkin/ast/DocString;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createDataTableList", "LGHKADataTable;", "(Lgherkin/ast/DataTable;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "createRowMap", "LGHKATableRow;", "(Lgherkin/ast/TableRow;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createCellList", "(Lgherkin/ast/TableRow;)Ljava/util/List<Ljava/lang/String;>;", "createExamples", "LGHKAExamples;", "(Lgherkin/ast/Examples;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createTestCase", "createBackground", "isFirstStepAfterBackground", "LCucumberApiTestStep;", "createTestStep", "(Lcucumber/api/TestStep;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "LGHKPickleString;", "(Lgherkin/pickles/PickleString;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "LGHKPickleTable;", "(Lgherkin/pickles/PickleTable;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "LGHKPickleRow;", "(Lgherkin/pickles/PickleRow;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "(Lgherkin/pickles/PickleRow;)Ljava/util/List<Ljava/lang/String;>;", "createMatchMap", "LCucumberApiTestStep;LCucumberApiResult;", "(Lcucumber/api/TestStep;Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createResultMap", "LCucumberApiResult;", "(Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "jsFunctionCall", "LNSString;[LNSObject;", "toUrl", "LNSString;", "writeStreamToURL", "LJavaIoInputStream;LJavaNetURL;", "writeBytesToURL", "[BLJavaNetURL;", "LCCBRCucumberException;", "createJsOut", "createReportFileOutputStream", "closeQuietly", "LJavaIoCloseable;", &CCBRHTMLFormatter_gson, &CCBRHTMLFormatter_JS_FORMATTER_VAR, &CCBRHTMLFormatter_JS_REPORT_FILENAME, &CCBRHTMLFormatter_TEXT_ASSETS, &CCBRHTMLFormatter_MIME_TYPES_EXTENSIONS, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/EmbedEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
   static const J2ObjcClassInfo _CCBRHTMLFormatter = { "HTMLFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 39, 21, -1, -1, -1, -1, -1 };
   return &_CCBRHTMLFormatter;
 }
@@ -872,7 +872,7 @@ void CCBRHTMLFormatter_handleStartOfFeatureWithCucumberApiTestCase_(CCBRHTMLForm
 
 id<JavaUtilMap> CCBRHTMLFormatter_createFeatureWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase) {
   id<JavaUtilMap> featureMap = create_JavaUtilHashMap_init();
-  GherkinAstFeature *feature = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getFeatureWithNSString:[((CucumberApiTestCase *) nil_chk(testCase)) getUri]];
+  GHKAFeature *feature = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getFeatureWithNSString:[((CucumberApiTestCase *) nil_chk(testCase)) getUri]];
   if (feature != nil) {
     [featureMap putWithId:@"keyword" withId:[feature getKeyword]];
     [featureMap putWithId:@"name" withId:[feature getName]];
@@ -886,9 +886,9 @@ id<JavaUtilMap> CCBRHTMLFormatter_createFeatureWithCucumberApiTestCase_(CCBRHTML
 
 id<JavaUtilList> CCBRHTMLFormatter_createTagListWithJavaUtilList_(CCBRHTMLFormatter *self, id<JavaUtilList> tags) {
   id<JavaUtilList> tagList = create_JavaUtilArrayList_init();
-  for (GherkinAstTag * __strong tag in nil_chk(tags)) {
+  for (GHKATag * __strong tag in nil_chk(tags)) {
     id<JavaUtilMap> tagMap = create_JavaUtilHashMap_init();
-    [tagMap putWithId:@"name" withId:[((GherkinAstTag *) nil_chk(tag)) getName]];
+    [tagMap putWithId:@"name" withId:[((GHKATag *) nil_chk(tag)) getName]];
     [tagList addWithId:tagMap];
   }
   return tagList;
@@ -897,16 +897,16 @@ id<JavaUtilList> CCBRHTMLFormatter_createTagListWithJavaUtilList_(CCBRHTMLFormat
 void CCBRHTMLFormatter_handleScenarioOutlineWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase) {
   CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestCase *) nil_chk(testCase)) getLine]];
   if (CCBRTestSourcesModel_isScenarioOutlineScenarioWithCCBRTestSourcesModel_AstNode_(astNode)) {
-    GherkinAstScenarioOutline *scenarioOutline = (GherkinAstScenarioOutline *) cast_chk(CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_(astNode), [GherkinAstScenarioOutline class]);
+    GHKAScenarioOutline *scenarioOutline = (GHKAScenarioOutline *) cast_chk(CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_(astNode), [GHKAScenarioOutline class]);
     if (self->currentScenarioOutline_ == nil || ![self->currentScenarioOutline_ isEqual:scenarioOutline]) {
       JreStrongAssign(&self->currentScenarioOutline_, scenarioOutline);
-      CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"scenarioOutline", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createScenarioOutlineWithGherkinAstScenarioOutline_(self, self->currentScenarioOutline_) } count:1 type:NSObject_class_()]);
-      CCBRHTMLFormatter_addOutlineStepsToReportWithGherkinAstScenarioOutline_(self, scenarioOutline);
+      CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"scenarioOutline", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createScenarioOutlineWithGHKAScenarioOutline_(self, self->currentScenarioOutline_) } count:1 type:NSObject_class_()]);
+      CCBRHTMLFormatter_addOutlineStepsToReportWithGHKAScenarioOutline_(self, scenarioOutline);
     }
-    GherkinAstExamples *examples = (GherkinAstExamples *) cast_chk(((CCBRTestSourcesModel_AstNode *) nil_chk(((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->parent_))->node_, [GherkinAstExamples class]);
+    GHKAExamples *examples = (GHKAExamples *) cast_chk(((CCBRTestSourcesModel_AstNode *) nil_chk(((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->parent_))->node_, [GHKAExamples class]);
     if (self->currentExamples_ == nil || ![self->currentExamples_ isEqual:examples]) {
       JreStrongAssign(&self->currentExamples_, examples);
-      CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"examples", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createExamplesWithGherkinAstExamples_(self, self->currentExamples_) } count:1 type:NSObject_class_()]);
+      CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"examples", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createExamplesWithGHKAExamples_(self, self->currentExamples_) } count:1 type:NSObject_class_()]);
     }
   }
   else {
@@ -915,9 +915,9 @@ void CCBRHTMLFormatter_handleScenarioOutlineWithCucumberApiTestCase_(CCBRHTMLFor
   }
 }
 
-id<JavaUtilMap> CCBRHTMLFormatter_createScenarioOutlineWithGherkinAstScenarioOutline_(CCBRHTMLFormatter *self, GherkinAstScenarioOutline *scenarioOutline) {
+id<JavaUtilMap> CCBRHTMLFormatter_createScenarioOutlineWithGHKAScenarioOutline_(CCBRHTMLFormatter *self, GHKAScenarioOutline *scenarioOutline) {
   id<JavaUtilMap> scenarioOutlineMap = create_JavaUtilHashMap_init();
-  [scenarioOutlineMap putWithId:@"name" withId:[((GherkinAstScenarioOutline *) nil_chk(scenarioOutline)) getName]];
+  [scenarioOutlineMap putWithId:@"name" withId:[((GHKAScenarioOutline *) nil_chk(scenarioOutline)) getName]];
   [scenarioOutlineMap putWithId:@"keyword" withId:[scenarioOutline getKeyword]];
   [scenarioOutlineMap putWithId:@"description" withId:[scenarioOutline getDescription] != nil ? [scenarioOutline getDescription] : @""];
   if (![((id<JavaUtilList>) nil_chk([scenarioOutline getTags])) isEmpty]) {
@@ -926,61 +926,61 @@ id<JavaUtilMap> CCBRHTMLFormatter_createScenarioOutlineWithGherkinAstScenarioOut
   return scenarioOutlineMap;
 }
 
-void CCBRHTMLFormatter_addOutlineStepsToReportWithGherkinAstScenarioOutline_(CCBRHTMLFormatter *self, GherkinAstScenarioOutline *scenarioOutline) {
-  for (GherkinAstStep * __strong step in nil_chk([((GherkinAstScenarioOutline *) nil_chk(scenarioOutline)) getSteps])) {
+void CCBRHTMLFormatter_addOutlineStepsToReportWithGHKAScenarioOutline_(CCBRHTMLFormatter *self, GHKAScenarioOutline *scenarioOutline) {
+  for (GHKAStep * __strong step in nil_chk([((GHKAScenarioOutline *) nil_chk(scenarioOutline)) getSteps])) {
     id<JavaUtilMap> stepMap = create_JavaUtilHashMap_init();
-    [stepMap putWithId:@"name" withId:[((GherkinAstStep *) nil_chk(step)) getText]];
+    [stepMap putWithId:@"name" withId:[((GHKAStep *) nil_chk(step)) getText]];
     [stepMap putWithId:@"keyword" withId:[step getKeyword]];
     if ([step getArgument] != nil) {
-      GherkinAstNode *argument = [step getArgument];
-      if ([argument isKindOfClass:[GherkinAstDocString class]]) {
-        [stepMap putWithId:@"doc_string" withId:CCBRHTMLFormatter_createDocStringMapWithGherkinAstDocString_(self, (GherkinAstDocString *) cast_chk(argument, [GherkinAstDocString class]))];
+      GHKANode *argument = [step getArgument];
+      if ([argument isKindOfClass:[GHKADocString class]]) {
+        [stepMap putWithId:@"doc_string" withId:CCBRHTMLFormatter_createDocStringMapWithGHKADocString_(self, (GHKADocString *) cast_chk(argument, [GHKADocString class]))];
       }
-      else if ([argument isKindOfClass:[GherkinAstDataTable class]]) {
-        [stepMap putWithId:@"rows" withId:CCBRHTMLFormatter_createDataTableListWithGherkinAstDataTable_(self, (GherkinAstDataTable *) cast_chk(argument, [GherkinAstDataTable class]))];
+      else if ([argument isKindOfClass:[GHKADataTable class]]) {
+        [stepMap putWithId:@"rows" withId:CCBRHTMLFormatter_createDataTableListWithGHKADataTable_(self, (GHKADataTable *) cast_chk(argument, [GHKADataTable class]))];
       }
     }
     CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"step", [IOSObjectArray arrayWithObjects:(id[]){ stepMap } count:1 type:NSObject_class_()]);
   }
 }
 
-id<JavaUtilMap> CCBRHTMLFormatter_createDocStringMapWithGherkinAstDocString_(CCBRHTMLFormatter *self, GherkinAstDocString *docString) {
+id<JavaUtilMap> CCBRHTMLFormatter_createDocStringMapWithGHKADocString_(CCBRHTMLFormatter *self, GHKADocString *docString) {
   id<JavaUtilMap> docStringMap = create_JavaUtilHashMap_init();
-  [docStringMap putWithId:@"value" withId:[((GherkinAstDocString *) nil_chk(docString)) getContent]];
+  [docStringMap putWithId:@"value" withId:[((GHKADocString *) nil_chk(docString)) getContent]];
   return docStringMap;
 }
 
-id<JavaUtilList> CCBRHTMLFormatter_createDataTableListWithGherkinAstDataTable_(CCBRHTMLFormatter *self, GherkinAstDataTable *dataTable) {
+id<JavaUtilList> CCBRHTMLFormatter_createDataTableListWithGHKADataTable_(CCBRHTMLFormatter *self, GHKADataTable *dataTable) {
   id<JavaUtilList> rowList = create_JavaUtilArrayList_init();
-  for (GherkinAstTableRow * __strong row in nil_chk([((GherkinAstDataTable *) nil_chk(dataTable)) getRows])) {
-    [rowList addWithId:CCBRHTMLFormatter_createRowMapWithGherkinAstTableRow_(self, row)];
+  for (GHKATableRow * __strong row in nil_chk([((GHKADataTable *) nil_chk(dataTable)) getRows])) {
+    [rowList addWithId:CCBRHTMLFormatter_createRowMapWithGHKATableRow_(self, row)];
   }
   return rowList;
 }
 
-id<JavaUtilMap> CCBRHTMLFormatter_createRowMapWithGherkinAstTableRow_(CCBRHTMLFormatter *self, GherkinAstTableRow *row) {
+id<JavaUtilMap> CCBRHTMLFormatter_createRowMapWithGHKATableRow_(CCBRHTMLFormatter *self, GHKATableRow *row) {
   id<JavaUtilMap> rowMap = create_JavaUtilHashMap_init();
-  [rowMap putWithId:@"cells" withId:CCBRHTMLFormatter_createCellListWithGherkinAstTableRow_(self, row)];
+  [rowMap putWithId:@"cells" withId:CCBRHTMLFormatter_createCellListWithGHKATableRow_(self, row)];
   return rowMap;
 }
 
-id<JavaUtilList> CCBRHTMLFormatter_createCellListWithGherkinAstTableRow_(CCBRHTMLFormatter *self, GherkinAstTableRow *row) {
+id<JavaUtilList> CCBRHTMLFormatter_createCellListWithGHKATableRow_(CCBRHTMLFormatter *self, GHKATableRow *row) {
   id<JavaUtilList> cells = create_JavaUtilArrayList_init();
-  for (GherkinAstTableCell * __strong cell in nil_chk([((GherkinAstTableRow *) nil_chk(row)) getCells])) {
-    [cells addWithId:[((GherkinAstTableCell *) nil_chk(cell)) getValue]];
+  for (GHKATableCell * __strong cell in nil_chk([((GHKATableRow *) nil_chk(row)) getCells])) {
+    [cells addWithId:[((GHKATableCell *) nil_chk(cell)) getValue]];
   }
   return cells;
 }
 
-id<JavaUtilMap> CCBRHTMLFormatter_createExamplesWithGherkinAstExamples_(CCBRHTMLFormatter *self, GherkinAstExamples *examples) {
+id<JavaUtilMap> CCBRHTMLFormatter_createExamplesWithGHKAExamples_(CCBRHTMLFormatter *self, GHKAExamples *examples) {
   id<JavaUtilMap> examplesMap = create_JavaUtilHashMap_init();
-  [examplesMap putWithId:@"name" withId:[((GherkinAstExamples *) nil_chk(examples)) getName]];
+  [examplesMap putWithId:@"name" withId:[((GHKAExamples *) nil_chk(examples)) getName]];
   [examplesMap putWithId:@"keyword" withId:[examples getKeyword]];
   [examplesMap putWithId:@"description" withId:[examples getDescription] != nil ? [examples getDescription] : @""];
   id<JavaUtilList> rowList = create_JavaUtilArrayList_init();
-  [rowList addWithId:CCBRHTMLFormatter_createRowMapWithGherkinAstTableRow_(self, [examples getTableHeader])];
-  for (GherkinAstTableRow * __strong row in nil_chk([examples getTableBody])) {
-    [rowList addWithId:CCBRHTMLFormatter_createRowMapWithGherkinAstTableRow_(self, row)];
+  [rowList addWithId:CCBRHTMLFormatter_createRowMapWithGHKATableRow_(self, [examples getTableHeader])];
+  for (GHKATableRow * __strong row in nil_chk([examples getTableBody])) {
+    [rowList addWithId:CCBRHTMLFormatter_createRowMapWithGHKATableRow_(self, row)];
   }
   [examplesMap putWithId:@"rows" withId:rowList];
   if (![((id<JavaUtilList>) nil_chk([examples getTags])) isEmpty]) {
@@ -994,15 +994,15 @@ id<JavaUtilMap> CCBRHTMLFormatter_createTestCaseWithCucumberApiTestCase_(CCBRHTM
   [testCaseMap putWithId:@"name" withId:[((CucumberApiTestCase *) nil_chk(testCase)) getName]];
   CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[testCase getLine]];
   if (astNode != nil) {
-    GherkinAstScenarioDefinition *scenarioDefinition = CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_(astNode);
-    [testCaseMap putWithId:@"keyword" withId:[((GherkinAstScenarioDefinition *) nil_chk(scenarioDefinition)) getKeyword]];
+    GHKAScenarioDefinition *scenarioDefinition = CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_(astNode);
+    [testCaseMap putWithId:@"keyword" withId:[((GHKAScenarioDefinition *) nil_chk(scenarioDefinition)) getKeyword]];
     [testCaseMap putWithId:@"description" withId:[scenarioDefinition getDescription] != nil ? [scenarioDefinition getDescription] : @""];
   }
   if (![((id<JavaUtilList>) nil_chk([testCase getTags])) isEmpty]) {
     id<JavaUtilList> tagList = create_JavaUtilArrayList_init();
-    for (GherkinPicklesPickleTag * __strong tag in nil_chk([testCase getTags])) {
+    for (GHKPickleTag * __strong tag in nil_chk([testCase getTags])) {
       id<JavaUtilMap> tagMap = create_JavaUtilHashMap_init();
-      [tagMap putWithId:@"name" withId:[((GherkinPicklesPickleTag *) nil_chk(tag)) getName]];
+      [tagMap putWithId:@"name" withId:[((GHKPickleTag *) nil_chk(tag)) getName]];
       [tagList addWithId:tagMap];
     }
     [testCaseMap putWithId:@"tags" withId:tagList];
@@ -1013,9 +1013,9 @@ id<JavaUtilMap> CCBRHTMLFormatter_createTestCaseWithCucumberApiTestCase_(CCBRHTM
 id<JavaUtilMap> CCBRHTMLFormatter_createBackgroundWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase) {
   CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestCase *) nil_chk(testCase)) getLine]];
   if (astNode != nil) {
-    GherkinAstBackground *background = CCBRTestSourcesModel_getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode_(astNode);
+    GHKABackground *background = CCBRTestSourcesModel_getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode_(astNode);
     id<JavaUtilMap> testCaseMap = create_JavaUtilHashMap_init();
-    [testCaseMap putWithId:@"name" withId:[((GherkinAstBackground *) nil_chk(background)) getName]];
+    [testCaseMap putWithId:@"name" withId:[((GHKABackground *) nil_chk(background)) getName]];
     [testCaseMap putWithId:@"keyword" withId:[background getKeyword]];
     [testCaseMap putWithId:@"description" withId:[background getDescription] != nil ? [background getDescription] : @""];
     return testCaseMap;
@@ -1037,46 +1037,46 @@ id<JavaUtilMap> CCBRHTMLFormatter_createTestStepWithCucumberApiTestStep_(CCBRHTM
   id<JavaUtilMap> stepMap = create_JavaUtilHashMap_init();
   [stepMap putWithId:@"name" withId:[((CucumberApiTestStep *) nil_chk(testStep)) getStepText]];
   if (![((id<JavaUtilList>) nil_chk([testStep getStepArgument])) isEmpty]) {
-    id<GherkinPicklesArgument> argument = [((id<JavaUtilList>) nil_chk([testStep getStepArgument])) getWithInt:0];
-    if ([argument isKindOfClass:[GherkinPicklesPickleString class]]) {
-      [stepMap putWithId:@"doc_string" withId:CCBRHTMLFormatter_createDocStringMapWithGherkinPicklesPickleString_(self, (GherkinPicklesPickleString *) cast_chk(argument, [GherkinPicklesPickleString class]))];
+    id<GHKArgument> argument = [((id<JavaUtilList>) nil_chk([testStep getStepArgument])) getWithInt:0];
+    if ([argument isKindOfClass:[GHKPickleString class]]) {
+      [stepMap putWithId:@"doc_string" withId:CCBRHTMLFormatter_createDocStringMapWithGHKPickleString_(self, (GHKPickleString *) cast_chk(argument, [GHKPickleString class]))];
     }
-    else if ([argument isKindOfClass:[GherkinPicklesPickleTable class]]) {
-      [stepMap putWithId:@"rows" withId:CCBRHTMLFormatter_createDataTableListWithGherkinPicklesPickleTable_(self, (GherkinPicklesPickleTable *) cast_chk(argument, [GherkinPicklesPickleTable class]))];
+    else if ([argument isKindOfClass:[GHKPickleTable class]]) {
+      [stepMap putWithId:@"rows" withId:CCBRHTMLFormatter_createDataTableListWithGHKPickleTable_(self, (GHKPickleTable *) cast_chk(argument, [GHKPickleTable class]))];
     }
   }
   CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[testStep getStepLine]];
   if (astNode != nil) {
-    GherkinAstStep *step = (GherkinAstStep *) cast_chk(astNode->node_, [GherkinAstStep class]);
-    [stepMap putWithId:@"keyword" withId:[((GherkinAstStep *) nil_chk(step)) getKeyword]];
+    GHKAStep *step = (GHKAStep *) cast_chk(astNode->node_, [GHKAStep class]);
+    [stepMap putWithId:@"keyword" withId:[((GHKAStep *) nil_chk(step)) getKeyword]];
   }
   return stepMap;
 }
 
-id<JavaUtilMap> CCBRHTMLFormatter_createDocStringMapWithGherkinPicklesPickleString_(CCBRHTMLFormatter *self, GherkinPicklesPickleString *docString) {
+id<JavaUtilMap> CCBRHTMLFormatter_createDocStringMapWithGHKPickleString_(CCBRHTMLFormatter *self, GHKPickleString *docString) {
   id<JavaUtilMap> docStringMap = create_JavaUtilHashMap_init();
-  [docStringMap putWithId:@"value" withId:[((GherkinPicklesPickleString *) nil_chk(docString)) getContent]];
+  [docStringMap putWithId:@"value" withId:[((GHKPickleString *) nil_chk(docString)) getContent]];
   return docStringMap;
 }
 
-id<JavaUtilList> CCBRHTMLFormatter_createDataTableListWithGherkinPicklesPickleTable_(CCBRHTMLFormatter *self, GherkinPicklesPickleTable *dataTable) {
+id<JavaUtilList> CCBRHTMLFormatter_createDataTableListWithGHKPickleTable_(CCBRHTMLFormatter *self, GHKPickleTable *dataTable) {
   id<JavaUtilList> rowList = create_JavaUtilArrayList_init();
-  for (GherkinPicklesPickleRow * __strong row in nil_chk([((GherkinPicklesPickleTable *) nil_chk(dataTable)) getRows])) {
-    [rowList addWithId:CCBRHTMLFormatter_createRowMapWithGherkinPicklesPickleRow_(self, row)];
+  for (GHKPickleRow * __strong row in nil_chk([((GHKPickleTable *) nil_chk(dataTable)) getRows])) {
+    [rowList addWithId:CCBRHTMLFormatter_createRowMapWithGHKPickleRow_(self, row)];
   }
   return rowList;
 }
 
-id<JavaUtilMap> CCBRHTMLFormatter_createRowMapWithGherkinPicklesPickleRow_(CCBRHTMLFormatter *self, GherkinPicklesPickleRow *row) {
+id<JavaUtilMap> CCBRHTMLFormatter_createRowMapWithGHKPickleRow_(CCBRHTMLFormatter *self, GHKPickleRow *row) {
   id<JavaUtilMap> rowMap = create_JavaUtilHashMap_init();
-  [rowMap putWithId:@"cells" withId:CCBRHTMLFormatter_createCellListWithGherkinPicklesPickleRow_(self, row)];
+  [rowMap putWithId:@"cells" withId:CCBRHTMLFormatter_createCellListWithGHKPickleRow_(self, row)];
   return rowMap;
 }
 
-id<JavaUtilList> CCBRHTMLFormatter_createCellListWithGherkinPicklesPickleRow_(CCBRHTMLFormatter *self, GherkinPicklesPickleRow *row) {
+id<JavaUtilList> CCBRHTMLFormatter_createCellListWithGHKPickleRow_(CCBRHTMLFormatter *self, GHKPickleRow *row) {
   id<JavaUtilList> cells = create_JavaUtilArrayList_init();
-  for (GherkinPicklesPickleCell * __strong cell in nil_chk([((GherkinPicklesPickleRow *) nil_chk(row)) getCells])) {
-    [cells addWithId:[((GherkinPicklesPickleCell *) nil_chk(cell)) getValue]];
+  for (GHKPickleCell * __strong cell in nil_chk([((GHKPickleRow *) nil_chk(row)) getCells])) {
+    [cells addWithId:[((GHKPickleCell *) nil_chk(cell)) getValue]];
   }
   return cells;
 }

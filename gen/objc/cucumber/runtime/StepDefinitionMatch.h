@@ -30,7 +30,7 @@
 #include "cucumber/runtime/DefinitionMatch.h"
 
 @class CCBRLocalizedXStreams;
-@class GherkinPicklesPickleStep;
+@class GHKPickleStep;
 @class JavaLangStackTraceElement;
 @class JavaLangThrowable;
 @protocol CCBRStepDefinition;
@@ -44,7 +44,7 @@
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)arguments
                         withCCBRStepDefinition:(id<CCBRStepDefinition>)stepDefinition
                                   withNSString:(NSString *)featurePath
-                  withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
+                             withGHKPickleStep:(GHKPickleStep *)step
                      withCCBRLocalizedXStreams:(CCBRLocalizedXStreams *)localizedXStreams;
 
 - (void)dryRunStepWithNSString:(NSString *)language
@@ -56,7 +56,7 @@
 
 - (NSString *)getPattern;
 
-+ (jint)getStepLineWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step;
++ (jint)getStepLineWithGHKPickleStep:(GHKPickleStep *)step;
 
 - (JavaLangStackTraceElement *)getStepLocation;
 
@@ -81,13 +81,13 @@
 
 J2OBJC_EMPTY_STATIC_INIT(CCBRStepDefinitionMatch)
 
-FOUNDATION_EXPORT void CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGherkinPicklesPickleStep_withCCBRLocalizedXStreams_(CCBRStepDefinitionMatch *self, id<JavaUtilList> arguments, id<CCBRStepDefinition> stepDefinition, NSString *featurePath, GherkinPicklesPickleStep *step, CCBRLocalizedXStreams *localizedXStreams);
+FOUNDATION_EXPORT void CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGHKPickleStep_withCCBRLocalizedXStreams_(CCBRStepDefinitionMatch *self, id<JavaUtilList> arguments, id<CCBRStepDefinition> stepDefinition, NSString *featurePath, GHKPickleStep *step, CCBRLocalizedXStreams *localizedXStreams);
 
-FOUNDATION_EXPORT CCBRStepDefinitionMatch *new_CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGherkinPicklesPickleStep_withCCBRLocalizedXStreams_(id<JavaUtilList> arguments, id<CCBRStepDefinition> stepDefinition, NSString *featurePath, GherkinPicklesPickleStep *step, CCBRLocalizedXStreams *localizedXStreams) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRStepDefinitionMatch *new_CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGHKPickleStep_withCCBRLocalizedXStreams_(id<JavaUtilList> arguments, id<CCBRStepDefinition> stepDefinition, NSString *featurePath, GHKPickleStep *step, CCBRLocalizedXStreams *localizedXStreams) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRStepDefinitionMatch *create_CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGherkinPicklesPickleStep_withCCBRLocalizedXStreams_(id<JavaUtilList> arguments, id<CCBRStepDefinition> stepDefinition, NSString *featurePath, GherkinPicklesPickleStep *step, CCBRLocalizedXStreams *localizedXStreams);
+FOUNDATION_EXPORT CCBRStepDefinitionMatch *create_CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGHKPickleStep_withCCBRLocalizedXStreams_(id<JavaUtilList> arguments, id<CCBRStepDefinition> stepDefinition, NSString *featurePath, GHKPickleStep *step, CCBRLocalizedXStreams *localizedXStreams);
 
-FOUNDATION_EXPORT jint CCBRStepDefinitionMatch_getStepLineWithGherkinPicklesPickleStep_(GherkinPicklesPickleStep *step);
+FOUNDATION_EXPORT jint CCBRStepDefinitionMatch_getStepLineWithGHKPickleStep_(GHKPickleStep *step);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRStepDefinitionMatch)
 

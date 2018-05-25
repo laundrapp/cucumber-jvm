@@ -42,7 +42,7 @@ J2OBJC_FIELD_SETTER(CCBUnskipableStep, hookType_, CucumberApiHookType *)
   return true;
 }
 
-- (GherkinPicklesPickleStep *)getPickleStep {
+- (GHKPickleStep *)getPickleStep {
   @throw create_JavaLangUnsupportedOperationException_init();
 }
 
@@ -76,7 +76,7 @@ J2OBJC_FIELD_SETTER(CCBUnskipableStep, hookType_, CucumberApiHookType *)
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
     { NULL, "LCucumberApiResult_Type;", 0x4, 1, 2, 3, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LGherkinPicklesPickleStep;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LGHKPickleStep;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "I", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },

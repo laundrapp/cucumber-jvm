@@ -27,9 +27,9 @@
   methods[1].selector = @selector(setUnreportedStepExecutorWithCCBRUnreportedStepExecutor:);
   methods[2].selector = @selector(buildWorld);
   methods[3].selector = @selector(disposeWorld);
-  methods[4].selector = @selector(getSnippetWithGherkinPicklesPickleStep:withNSString:withCCBRFunctionNameGenerator:);
+  methods[4].selector = @selector(getSnippetWithGHKPickleStep:withNSString:withCCBRFunctionNameGenerator:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "loadGlue", "LCCBRGlue;LJavaUtilList;", "(Lcucumber/runtime/Glue;Ljava/util/List<Ljava/lang/String;>;)V", "setUnreportedStepExecutor", "LCCBRUnreportedStepExecutor;", "getSnippet", "LGherkinPicklesPickleStep;LNSString;LCCBRFunctionNameGenerator;" };
+  static const void *ptrTable[] = { "loadGlue", "LCCBRGlue;LJavaUtilList;", "(Lcucumber/runtime/Glue;Ljava/util/List<Ljava/lang/String;>;)V", "setUnreportedStepExecutor", "LCCBRUnreportedStepExecutor;", "getSnippet", "LGHKPickleStep;LNSString;LCCBRFunctionNameGenerator;" };
   static const J2ObjcClassInfo _CCBRBackend = { "Backend", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 5, 0, -1, -1, -1, -1, -1 };
   return &_CCBRBackend;
 }

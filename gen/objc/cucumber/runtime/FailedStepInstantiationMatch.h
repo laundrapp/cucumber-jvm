@@ -27,7 +27,7 @@
 
 @class CCBRLocalizedXStreams;
 @class CCBRMatch;
-@class GherkinPicklesPickleStep;
+@class GHKPickleStep;
 @class JavaLangThrowable;
 @protocol CCBRStepDefinition;
 @protocol CucumberApiScenario;
@@ -38,7 +38,7 @@
 #pragma mark Public
 
 - (instancetype __nonnull)initWithNSString:(NSString *)uri
-              withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
+                         withGHKPickleStep:(GHKPickleStep *)step
                      withJavaLangThrowable:(JavaLangThrowable *)throwable;
 
 - (void)dryRunStepWithNSString:(NSString *)language
@@ -54,18 +54,18 @@
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)arg0
                         withCCBRStepDefinition:(id<CCBRStepDefinition>)arg1
                                   withNSString:(NSString *)arg2
-                  withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)arg3
+                             withGHKPickleStep:(GHKPickleStep *)arg3
                      withCCBRLocalizedXStreams:(CCBRLocalizedXStreams *)arg4 NS_UNAVAILABLE;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(CCBRFailedStepInstantiationMatch)
 
-FOUNDATION_EXPORT void CCBRFailedStepInstantiationMatch_initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_(CCBRFailedStepInstantiationMatch *self, NSString *uri, GherkinPicklesPickleStep *step, JavaLangThrowable *throwable);
+FOUNDATION_EXPORT void CCBRFailedStepInstantiationMatch_initWithNSString_withGHKPickleStep_withJavaLangThrowable_(CCBRFailedStepInstantiationMatch *self, NSString *uri, GHKPickleStep *step, JavaLangThrowable *throwable);
 
-FOUNDATION_EXPORT CCBRFailedStepInstantiationMatch *new_CCBRFailedStepInstantiationMatch_initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_(NSString *uri, GherkinPicklesPickleStep *step, JavaLangThrowable *throwable) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRFailedStepInstantiationMatch *new_CCBRFailedStepInstantiationMatch_initWithNSString_withGHKPickleStep_withJavaLangThrowable_(NSString *uri, GHKPickleStep *step, JavaLangThrowable *throwable) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRFailedStepInstantiationMatch *create_CCBRFailedStepInstantiationMatch_initWithNSString_withGherkinPicklesPickleStep_withJavaLangThrowable_(NSString *uri, GherkinPicklesPickleStep *step, JavaLangThrowable *throwable);
+FOUNDATION_EXPORT CCBRFailedStepInstantiationMatch *create_CCBRFailedStepInstantiationMatch_initWithNSString_withGHKPickleStep_withJavaLangThrowable_(NSString *uri, GHKPickleStep *step, JavaLangThrowable *throwable);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRFailedStepInstantiationMatch)
 

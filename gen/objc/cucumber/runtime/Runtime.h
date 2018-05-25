@@ -26,7 +26,7 @@
 @class CCBRRuntimeOptions;
 @class CCBRStats;
 @class CCBRunner;
-@class GherkinEventsPickleEvent;
+@class GHKPickleEvent;
 @class JavaIoPrintStream;
 @class JavaLangClassLoader;
 @protocol CCBRClassFinder;
@@ -84,7 +84,7 @@
 
 - (id<JavaUtilList>)getSnippets;
 
-- (jboolean)matchesFiltersWithGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent;
+- (jboolean)matchesFiltersWithGHKPickleEvent:(GHKPickleEvent *)pickleEvent;
 
 - (void)printSummary;
 

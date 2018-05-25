@@ -12,8 +12,8 @@
 
 @implementation CCBUndefinedStepException
 
-- (instancetype __nonnull)initWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step {
-  CCBUndefinedStepException_initWithGherkinPicklesPickleStep_(self, step);
+- (instancetype __nonnull)initWithGHKPickleStep:(GHKPickleStep *)step {
+  CCBUndefinedStepException_initWithGHKPickleStep_(self, step);
   return self;
 }
 
@@ -24,25 +24,25 @@
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithGherkinPicklesPickleStep:);
+  methods[0].selector = @selector(initWithGHKPickleStep:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LGherkinPicklesPickleStep;" };
+  static const void *ptrTable[] = { "LGHKPickleStep;" };
   static const J2ObjcClassInfo _CCBUndefinedStepException = { "UndefinedStepException", "cucumber.runner", ptrTable, methods, NULL, 7, 0x0, 1, 0, -1, -1, -1, -1, -1 };
   return &_CCBUndefinedStepException;
 }
 
 @end
 
-void CCBUndefinedStepException_initWithGherkinPicklesPickleStep_(CCBUndefinedStepException *self, GherkinPicklesPickleStep *step) {
-  JavaLangThrowable_initWithNSString_(self, NSString_java_formatWithNSString_withNSObjectArray_(@"Undefined Step: %s", [IOSObjectArray arrayWithObjects:(id[]){ [((GherkinPicklesPickleStep *) nil_chk(step)) getText] } count:1 type:NSObject_class_()]));
+void CCBUndefinedStepException_initWithGHKPickleStep_(CCBUndefinedStepException *self, GHKPickleStep *step) {
+  JavaLangThrowable_initWithNSString_(self, NSString_java_formatWithNSString_withNSObjectArray_(@"Undefined Step: %s", [IOSObjectArray arrayWithObjects:(id[]){ [((GHKPickleStep *) nil_chk(step)) getText] } count:1 type:NSObject_class_()]));
 }
 
-CCBUndefinedStepException *new_CCBUndefinedStepException_initWithGherkinPicklesPickleStep_(GherkinPicklesPickleStep *step) {
-  J2OBJC_NEW_IMPL(CCBUndefinedStepException, initWithGherkinPicklesPickleStep_, step)
+CCBUndefinedStepException *new_CCBUndefinedStepException_initWithGHKPickleStep_(GHKPickleStep *step) {
+  J2OBJC_NEW_IMPL(CCBUndefinedStepException, initWithGHKPickleStep_, step)
 }
 
-CCBUndefinedStepException *create_CCBUndefinedStepException_initWithGherkinPicklesPickleStep_(GherkinPicklesPickleStep *step) {
-  J2OBJC_CREATE_IMPL(CCBUndefinedStepException, initWithGherkinPicklesPickleStep_, step)
+CCBUndefinedStepException *create_CCBUndefinedStepException_initWithGHKPickleStep_(GHKPickleStep *step) {
+  J2OBJC_CREATE_IMPL(CCBUndefinedStepException, initWithGHKPickleStep_, step)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBUndefinedStepException)

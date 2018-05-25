@@ -16,8 +16,8 @@
   id<JavaUtilList> matches_;
 }
 
-+ (NSString *)createMessageWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
-                                       withJavaUtilList:(id<JavaUtilList>)matches;
++ (NSString *)createMessageWithGHKPickleStep:(GHKPickleStep *)step
+                            withJavaUtilList:(id<JavaUtilList>)matches;
 
 + (NSString *)quoteTextWithNSString:(NSString *)text;
 
@@ -25,21 +25,21 @@
 
 J2OBJC_FIELD_SETTER(CCBRAmbiguousStepDefinitionsException, matches_, id<JavaUtilList>)
 
-__attribute__((unused)) static NSString *CCBRAmbiguousStepDefinitionsException_createMessageWithGherkinPicklesPickleStep_withJavaUtilList_(GherkinPicklesPickleStep *step, id<JavaUtilList> matches);
+__attribute__((unused)) static NSString *CCBRAmbiguousStepDefinitionsException_createMessageWithGHKPickleStep_withJavaUtilList_(GHKPickleStep *step, id<JavaUtilList> matches);
 
 __attribute__((unused)) static NSString *CCBRAmbiguousStepDefinitionsException_quoteTextWithNSString_(NSString *text);
 
 @implementation CCBRAmbiguousStepDefinitionsException
 
-- (instancetype __nonnull)initWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
-                                          withJavaUtilList:(id<JavaUtilList>)matches {
-  CCBRAmbiguousStepDefinitionsException_initWithGherkinPicklesPickleStep_withJavaUtilList_(self, step, matches);
+- (instancetype __nonnull)initWithGHKPickleStep:(GHKPickleStep *)step
+                               withJavaUtilList:(id<JavaUtilList>)matches {
+  CCBRAmbiguousStepDefinitionsException_initWithGHKPickleStep_withJavaUtilList_(self, step, matches);
   return self;
 }
 
-+ (NSString *)createMessageWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
-                                       withJavaUtilList:(id<JavaUtilList>)matches {
-  return CCBRAmbiguousStepDefinitionsException_createMessageWithGherkinPicklesPickleStep_withJavaUtilList_(step, matches);
++ (NSString *)createMessageWithGHKPickleStep:(GHKPickleStep *)step
+                            withJavaUtilList:(id<JavaUtilList>)matches {
+  return CCBRAmbiguousStepDefinitionsException_createMessageWithGHKPickleStep_withJavaUtilList_(step, matches);
 }
 
 + (NSString *)quoteTextWithNSString:(NSString *)text {
@@ -65,38 +65,38 @@ __attribute__((unused)) static NSString *CCBRAmbiguousStepDefinitionsException_q
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithGherkinPicklesPickleStep:withJavaUtilList:);
-  methods[1].selector = @selector(createMessageWithGherkinPicklesPickleStep:withJavaUtilList:);
+  methods[0].selector = @selector(initWithGHKPickleStep:withJavaUtilList:);
+  methods[1].selector = @selector(createMessageWithGHKPickleStep:withJavaUtilList:);
   methods[2].selector = @selector(quoteTextWithNSString:);
   methods[3].selector = @selector(getMatches);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "matches_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 7, -1 },
   };
-  static const void *ptrTable[] = { "LGherkinPicklesPickleStep;LJavaUtilList;", "(Lgherkin/pickles/PickleStep;Ljava/util/List<Lcucumber/runtime/StepDefinitionMatch;>;)V", "createMessage", "(Lgherkin/pickles/PickleStep;Ljava/util/List<Lcucumber/runtime/StepDefinitionMatch;>;)Ljava/lang/String;", "quoteText", "LNSString;", "()Ljava/util/List<Lcucumber/runtime/StepDefinitionMatch;>;", "Ljava/util/List<Lcucumber/runtime/StepDefinitionMatch;>;" };
+  static const void *ptrTable[] = { "LGHKPickleStep;LJavaUtilList;", "(Lgherkin/pickles/PickleStep;Ljava/util/List<Lcucumber/runtime/StepDefinitionMatch;>;)V", "createMessage", "(Lgherkin/pickles/PickleStep;Ljava/util/List<Lcucumber/runtime/StepDefinitionMatch;>;)Ljava/lang/String;", "quoteText", "LNSString;", "()Ljava/util/List<Lcucumber/runtime/StepDefinitionMatch;>;", "Ljava/util/List<Lcucumber/runtime/StepDefinitionMatch;>;" };
   static const J2ObjcClassInfo _CCBRAmbiguousStepDefinitionsException = { "AmbiguousStepDefinitionsException", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 4, 1, -1, -1, -1, -1, -1 };
   return &_CCBRAmbiguousStepDefinitionsException;
 }
 
 @end
 
-void CCBRAmbiguousStepDefinitionsException_initWithGherkinPicklesPickleStep_withJavaUtilList_(CCBRAmbiguousStepDefinitionsException *self, GherkinPicklesPickleStep *step, id<JavaUtilList> matches) {
-  CCBRCucumberException_initWithNSString_(self, CCBRAmbiguousStepDefinitionsException_createMessageWithGherkinPicklesPickleStep_withJavaUtilList_(step, matches));
+void CCBRAmbiguousStepDefinitionsException_initWithGHKPickleStep_withJavaUtilList_(CCBRAmbiguousStepDefinitionsException *self, GHKPickleStep *step, id<JavaUtilList> matches) {
+  CCBRCucumberException_initWithNSString_(self, CCBRAmbiguousStepDefinitionsException_createMessageWithGHKPickleStep_withJavaUtilList_(step, matches));
   JreStrongAssign(&self->matches_, matches);
 }
 
-CCBRAmbiguousStepDefinitionsException *new_CCBRAmbiguousStepDefinitionsException_initWithGherkinPicklesPickleStep_withJavaUtilList_(GherkinPicklesPickleStep *step, id<JavaUtilList> matches) {
-  J2OBJC_NEW_IMPL(CCBRAmbiguousStepDefinitionsException, initWithGherkinPicklesPickleStep_withJavaUtilList_, step, matches)
+CCBRAmbiguousStepDefinitionsException *new_CCBRAmbiguousStepDefinitionsException_initWithGHKPickleStep_withJavaUtilList_(GHKPickleStep *step, id<JavaUtilList> matches) {
+  J2OBJC_NEW_IMPL(CCBRAmbiguousStepDefinitionsException, initWithGHKPickleStep_withJavaUtilList_, step, matches)
 }
 
-CCBRAmbiguousStepDefinitionsException *create_CCBRAmbiguousStepDefinitionsException_initWithGherkinPicklesPickleStep_withJavaUtilList_(GherkinPicklesPickleStep *step, id<JavaUtilList> matches) {
-  J2OBJC_CREATE_IMPL(CCBRAmbiguousStepDefinitionsException, initWithGherkinPicklesPickleStep_withJavaUtilList_, step, matches)
+CCBRAmbiguousStepDefinitionsException *create_CCBRAmbiguousStepDefinitionsException_initWithGHKPickleStep_withJavaUtilList_(GHKPickleStep *step, id<JavaUtilList> matches) {
+  J2OBJC_CREATE_IMPL(CCBRAmbiguousStepDefinitionsException, initWithGHKPickleStep_withJavaUtilList_, step, matches)
 }
 
-NSString *CCBRAmbiguousStepDefinitionsException_createMessageWithGherkinPicklesPickleStep_withJavaUtilList_(GherkinPicklesPickleStep *step, id<JavaUtilList> matches) {
+NSString *CCBRAmbiguousStepDefinitionsException_createMessageWithGHKPickleStep_withJavaUtilList_(GHKPickleStep *step, id<JavaUtilList> matches) {
   CCBRAmbiguousStepDefinitionsException_initialize();
   JavaLangStringBuilder *msg = create_JavaLangStringBuilder_init();
-  [((JavaLangStringBuilder *) nil_chk([msg appendWithNSString:CCBRAmbiguousStepDefinitionsException_quoteTextWithNSString_([((GherkinPicklesPickleStep *) nil_chk(step)) getText])])) appendWithNSString:@" matches more than one step definition:\n"];
+  [((JavaLangStringBuilder *) nil_chk([msg appendWithNSString:CCBRAmbiguousStepDefinitionsException_quoteTextWithNSString_([((GHKPickleStep *) nil_chk(step)) getText])])) appendWithNSString:@" matches more than one step definition:\n"];
   for (CCBRStepDefinitionMatch * __strong match in nil_chk(matches)) {
     [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([msg appendWithNSString:@"  "])) appendWithNSString:CCBRAmbiguousStepDefinitionsException_quoteTextWithNSString_([((CCBRStepDefinitionMatch *) nil_chk(match)) getPattern])])) appendWithNSString:@" in "])) appendWithNSString:[match getLocation]])) appendWithNSString:@"\n"];
   }

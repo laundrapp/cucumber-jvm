@@ -21,19 +21,19 @@
 #if !defined (CCBRDiffableRow_) && (INCLUDE_ALL_CucumberRuntimeTableDiffableRow || defined(INCLUDE_CCBRDiffableRow))
 #define CCBRDiffableRow_
 
-@class GherkinPicklesPickleRow;
+@class GHKPickleRow;
 @protocol JavaUtilList;
 
 @interface CCBRDiffableRow : NSObject {
  @public
-  GherkinPicklesPickleRow *row_;
+  GHKPickleRow *row_;
   id<JavaUtilList> convertedRow_;
 }
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithGherkinPicklesPickleRow:(GherkinPicklesPickleRow *)row
-                                         withJavaUtilList:(id<JavaUtilList>)convertedRow;
+- (instancetype __nonnull)initWithGHKPickleRow:(GHKPickleRow *)row
+                              withJavaUtilList:(id<JavaUtilList>)convertedRow;
 
 - (jboolean)isEqual:(id)o;
 
@@ -47,14 +47,14 @@
 
 J2OBJC_EMPTY_STATIC_INIT(CCBRDiffableRow)
 
-J2OBJC_FIELD_SETTER(CCBRDiffableRow, row_, GherkinPicklesPickleRow *)
+J2OBJC_FIELD_SETTER(CCBRDiffableRow, row_, GHKPickleRow *)
 J2OBJC_FIELD_SETTER(CCBRDiffableRow, convertedRow_, id<JavaUtilList>)
 
-FOUNDATION_EXPORT void CCBRDiffableRow_initWithGherkinPicklesPickleRow_withJavaUtilList_(CCBRDiffableRow *self, GherkinPicklesPickleRow *row, id<JavaUtilList> convertedRow);
+FOUNDATION_EXPORT void CCBRDiffableRow_initWithGHKPickleRow_withJavaUtilList_(CCBRDiffableRow *self, GHKPickleRow *row, id<JavaUtilList> convertedRow);
 
-FOUNDATION_EXPORT CCBRDiffableRow *new_CCBRDiffableRow_initWithGherkinPicklesPickleRow_withJavaUtilList_(GherkinPicklesPickleRow *row, id<JavaUtilList> convertedRow) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRDiffableRow *new_CCBRDiffableRow_initWithGHKPickleRow_withJavaUtilList_(GHKPickleRow *row, id<JavaUtilList> convertedRow) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRDiffableRow *create_CCBRDiffableRow_initWithGherkinPicklesPickleRow_withJavaUtilList_(GherkinPicklesPickleRow *row, id<JavaUtilList> convertedRow);
+FOUNDATION_EXPORT CCBRDiffableRow *create_CCBRDiffableRow_initWithGHKPickleRow_withJavaUtilList_(GHKPickleRow *row, id<JavaUtilList> convertedRow);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRDiffableRow)
 

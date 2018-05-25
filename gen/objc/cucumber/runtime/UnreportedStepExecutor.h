@@ -21,7 +21,7 @@
 #if !defined (CCBRUnreportedStepExecutor_) && (INCLUDE_ALL_CucumberRuntimeUnreportedStepExecutor || defined(INCLUDE_CCBRUnreportedStepExecutor))
 #define CCBRUnreportedStepExecutor_
 
-@class GherkinPicklesPickleString;
+@class GHKPickleString;
 @protocol JavaUtilList;
 
 @protocol CCBRUnreportedStepExecutor < JavaObject >
@@ -31,7 +31,7 @@
                          withNSString:(NSString *)stepName
                               withInt:(jint)line
                      withJavaUtilList:(id<JavaUtilList>)dataTableRows
-       withGherkinPicklesPickleString:(GherkinPicklesPickleString *)docString;
+                  withGHKPickleString:(GHKPickleString *)docString;
 
 @end
 

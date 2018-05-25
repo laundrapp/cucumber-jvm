@@ -51,8 +51,8 @@
   id<CCBRFormats> formats_;
   NSString *currentFeatureFile_;
   CucumberApiTestCase *currentTestCase_;
-  GherkinAstScenarioOutline *currentScenarioOutline_;
-  GherkinAstExamples *currentExamples_;
+  GHKAScenarioOutline *currentScenarioOutline_;
+  GHKAExamples *currentExamples_;
   jint locationIndentation_;
   id<CCBMapper> tagNameMapper_;
   id<CCBMapper> pickleTagNameMapper_;
@@ -80,14 +80,14 @@
 
 - (void)handleScenarioOutlineWithCucumberApiEventTestCaseStarted:(CucumberApiEventTestCaseStarted *)event;
 
-- (void)printScenarioOutlineWithGherkinAstScenarioOutline:(GherkinAstScenarioOutline *)scenarioOutline;
+- (void)printScenarioOutlineWithGHKAScenarioOutline:(GHKAScenarioOutline *)scenarioOutline;
 
-- (void)printExamplesWithGherkinAstExamples:(GherkinAstExamples *)examples;
+- (void)printExamplesWithGHKAExamples:(GHKAExamples *)examples;
 
 - (void)printStepWithCucumberApiTestStep:(CucumberApiTestStep *)testStep
                    withCucumberApiResult:(CucumberApiResult *)result;
 
-- (NSString *)getScenarioDefinitionTextWithGherkinAstScenarioDefinition:(GherkinAstScenarioDefinition *)definition;
+- (NSString *)getScenarioDefinitionTextWithGHKAScenarioDefinition:(GHKAScenarioDefinition *)definition;
 
 - (NSString *)getLocationTextWithNSString:(NSString *)file
                                   withInt:(jint)line;
@@ -137,8 +137,8 @@ J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, out_, CucumberApiFormatterNiceAppendabl
 J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, formats_, id<CCBRFormats>)
 J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, currentFeatureFile_, NSString *)
 J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, currentTestCase_, CucumberApiTestCase *)
-J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, currentScenarioOutline_, GherkinAstScenarioOutline *)
-J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, currentExamples_, GherkinAstExamples *)
+J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, currentScenarioOutline_, GHKAScenarioOutline *)
+J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, currentExamples_, GHKAExamples *)
 J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, tagNameMapper_, id<CCBMapper>)
 J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, pickleTagNameMapper_, id<CCBMapper>)
 J2OBJC_FIELD_SETTER(CCBRPrettyFormatter, testSourceReadHandler_, id<CucumberApiEventEventHandler>)
@@ -176,13 +176,13 @@ __attribute__((unused)) static void CCBRPrettyFormatter_handleStartOfFeatureWith
 
 __attribute__((unused)) static void CCBRPrettyFormatter_handleScenarioOutlineWithCucumberApiEventTestCaseStarted_(CCBRPrettyFormatter *self, CucumberApiEventTestCaseStarted *event);
 
-__attribute__((unused)) static void CCBRPrettyFormatter_printScenarioOutlineWithGherkinAstScenarioOutline_(CCBRPrettyFormatter *self, GherkinAstScenarioOutline *scenarioOutline);
+__attribute__((unused)) static void CCBRPrettyFormatter_printScenarioOutlineWithGHKAScenarioOutline_(CCBRPrettyFormatter *self, GHKAScenarioOutline *scenarioOutline);
 
-__attribute__((unused)) static void CCBRPrettyFormatter_printExamplesWithGherkinAstExamples_(CCBRPrettyFormatter *self, GherkinAstExamples *examples);
+__attribute__((unused)) static void CCBRPrettyFormatter_printExamplesWithGHKAExamples_(CCBRPrettyFormatter *self, GHKAExamples *examples);
 
 __attribute__((unused)) static void CCBRPrettyFormatter_printStepWithCucumberApiTestStep_withCucumberApiResult_(CCBRPrettyFormatter *self, CucumberApiTestStep *testStep, CucumberApiResult *result);
 
-__attribute__((unused)) static NSString *CCBRPrettyFormatter_getScenarioDefinitionTextWithGherkinAstScenarioDefinition_(CCBRPrettyFormatter *self, GherkinAstScenarioDefinition *definition);
+__attribute__((unused)) static NSString *CCBRPrettyFormatter_getScenarioDefinitionTextWithGHKAScenarioDefinition_(CCBRPrettyFormatter *self, GHKAScenarioDefinition *definition);
 
 __attribute__((unused)) static NSString *CCBRPrettyFormatter_getLocationTextWithNSString_withInt_(CCBRPrettyFormatter *self, NSString *file, jint line);
 
@@ -222,7 +222,7 @@ __attribute__((unused)) static NSString *CCBRPrettyFormatter_createPaddingToLoca
 
 - (instancetype __nonnull)init;
 
-- (NSString *)mapWithId:(GherkinAstTag *)tag;
+- (NSString *)mapWithId:(GHKATag *)tag;
 
 @end
 
@@ -238,7 +238,7 @@ __attribute__((unused)) static CCBRPrettyFormatter_1 *create_CCBRPrettyFormatter
 
 - (instancetype __nonnull)init;
 
-- (NSString *)mapWithId:(GherkinPicklesPickleTag *)pickleTag;
+- (NSString *)mapWithId:(GHKPickleTag *)pickleTag;
 
 @end
 
@@ -421,12 +421,12 @@ __attribute__((unused)) static CCBRPrettyFormatter_8 *create_CCBRPrettyFormatter
   CCBRPrettyFormatter_handleScenarioOutlineWithCucumberApiEventTestCaseStarted_(self, event);
 }
 
-- (void)printScenarioOutlineWithGherkinAstScenarioOutline:(GherkinAstScenarioOutline *)scenarioOutline {
-  CCBRPrettyFormatter_printScenarioOutlineWithGherkinAstScenarioOutline_(self, scenarioOutline);
+- (void)printScenarioOutlineWithGHKAScenarioOutline:(GHKAScenarioOutline *)scenarioOutline {
+  CCBRPrettyFormatter_printScenarioOutlineWithGHKAScenarioOutline_(self, scenarioOutline);
 }
 
-- (void)printExamplesWithGherkinAstExamples:(GherkinAstExamples *)examples {
-  CCBRPrettyFormatter_printExamplesWithGherkinAstExamples_(self, examples);
+- (void)printExamplesWithGHKAExamples:(GHKAExamples *)examples {
+  CCBRPrettyFormatter_printExamplesWithGHKAExamples_(self, examples);
 }
 
 - (void)printStepWithCucumberApiTestStep:(CucumberApiTestStep *)testStep
@@ -462,8 +462,8 @@ __attribute__((unused)) static CCBRPrettyFormatter_8 *create_CCBRPrettyFormatter
   return [result description];
 }
 
-- (NSString *)getScenarioDefinitionTextWithGherkinAstScenarioDefinition:(GherkinAstScenarioDefinition *)definition {
-  return CCBRPrettyFormatter_getScenarioDefinitionTextWithGherkinAstScenarioDefinition_(self, definition);
+- (NSString *)getScenarioDefinitionTextWithGHKAScenarioDefinition:(GHKAScenarioDefinition *)definition {
+  return CCBRPrettyFormatter_getScenarioDefinitionTextWithGHKAScenarioDefinition_(self, definition);
 }
 
 - (NSString *)getLocationTextWithNSString:(NSString *)file
@@ -610,11 +610,11 @@ __attribute__((unused)) static CCBRPrettyFormatter_8 *create_CCBRPrettyFormatter
   methods[8].selector = @selector(finishReport);
   methods[9].selector = @selector(handleStartOfFeatureWithCucumberApiEventTestCaseStarted:);
   methods[10].selector = @selector(handleScenarioOutlineWithCucumberApiEventTestCaseStarted:);
-  methods[11].selector = @selector(printScenarioOutlineWithGherkinAstScenarioOutline:);
-  methods[12].selector = @selector(printExamplesWithGherkinAstExamples:);
+  methods[11].selector = @selector(printScenarioOutlineWithGHKAScenarioOutline:);
+  methods[12].selector = @selector(printExamplesWithGHKAExamples:);
   methods[13].selector = @selector(printStepWithCucumberApiTestStep:withCucumberApiResult:);
   methods[14].selector = @selector(formatStepTextWithNSString:withNSString:withCCBRFormat:withCCBRFormat:withJavaUtilList:);
-  methods[15].selector = @selector(getScenarioDefinitionTextWithGherkinAstScenarioDefinition:);
+  methods[15].selector = @selector(getScenarioDefinitionTextWithGHKAScenarioDefinition:);
   methods[16].selector = @selector(getLocationTextWithNSString:withInt:);
   methods[17].selector = @selector(getLocationTextWithNSString:);
   methods[18].selector = @selector(stepTextWithCucumberApiTestStep:);
@@ -642,8 +642,8 @@ __attribute__((unused)) static CCBRPrettyFormatter_8 *create_CCBRPrettyFormatter
     { "formats_", "LCCBRFormats;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "currentFeatureFile_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "currentTestCase_", "LCucumberApiTestCase;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "currentScenarioOutline_", "LGherkinAstScenarioOutline;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "currentExamples_", "LGherkinAstExamples;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "currentScenarioOutline_", "LGHKAScenarioOutline;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
+    { "currentExamples_", "LGHKAExamples;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "locationIndentation_", "I", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "tagNameMapper_", "LCCBMapper;", .constantValue.asLong = 0, 0x2, -1, -1, 60, -1 },
     { "pickleTagNameMapper_", "LCCBMapper;", .constantValue.asLong = 0, 0x2, -1, -1, 61, -1 },
@@ -654,7 +654,7 @@ __attribute__((unused)) static CCBRPrettyFormatter_8 *create_CCBRPrettyFormatter
     { "writeEventhandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 66, -1 },
     { "runFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 67, -1 },
   };
-  static const void *ptrTable[] = { "LJavaLangAppendable;", "setEventPublisher", "LCucumberApiEventEventPublisher;", "setMonochrome", "Z", "handleTestSourceRead", "LCucumberApiEventTestSourceRead;", "handleTestCaseStarted", "LCucumberApiEventTestCaseStarted;", "handleTestStepStarted", "LCucumberApiEventTestStepStarted;", "handleTestStepFinished", "LCucumberApiEventTestStepFinished;", "handleWrite", "LCucumberApiEventWriteEvent;", "handleStartOfFeature", "handleScenarioOutline", "printScenarioOutline", "LGherkinAstScenarioOutline;", "printExamples", "LGherkinAstExamples;", "printStep", "LCucumberApiTestStep;LCucumberApiResult;", "formatStepText", "LNSString;LNSString;LCCBRFormat;LCCBRFormat;LJavaUtilList;", "(Ljava/lang/String;Ljava/lang/String;Lcucumber/runtime/formatter/Format;Lcucumber/runtime/formatter/Format;Ljava/util/List<Lcucumber/runtime/Argument;>;)Ljava/lang/String;", "getScenarioDefinitionText", "LGherkinAstScenarioDefinition;", "getLocationText", "LNSString;I", "LNSString;", "stepText", "LCucumberApiTestStep;", "getStepKeyword", "isFirstStepAfterBackground", "isBackgroundStep", "printFeature", "printTags", "LJavaUtilList;", "(Ljava/util/List<Lgherkin/ast/Tag;>;)V", "LJavaUtilList;LNSString;", "(Ljava/util/List<Lgherkin/ast/Tag;>;Ljava/lang/String;)V", "printPickleTags", "(Ljava/util/List<Lgherkin/pickles/PickleTag;>;Ljava/lang/String;)V", "printDescription", "printBackground", "LCucumberApiTestCase;", "printScenarioDefinition", "printError", "LCucumberApiResult;", "calculateLocationIndentation", "LNSString;LJavaUtilList;", "(Ljava/lang/String;Ljava/util/List<Lcucumber/api/TestStep;>;)V", "LNSString;LJavaUtilList;Z", "(Ljava/lang/String;Ljava/util/List<Lcucumber/api/TestStep;>;Z)V", "createPaddingToLocation", "LNSString;LNSString;", &CCBRPrettyFormatter_SCENARIO_INDENT, &CCBRPrettyFormatter_STEP_INDENT, &CCBRPrettyFormatter_EXAMPLES_INDENT, "Lcucumber/util/Mapper<Lgherkin/ast/Tag;Ljava/lang/String;>;", "Lcucumber/util/Mapper<Lgherkin/pickles/PickleTag;Ljava/lang/String;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
+  static const void *ptrTable[] = { "LJavaLangAppendable;", "setEventPublisher", "LCucumberApiEventEventPublisher;", "setMonochrome", "Z", "handleTestSourceRead", "LCucumberApiEventTestSourceRead;", "handleTestCaseStarted", "LCucumberApiEventTestCaseStarted;", "handleTestStepStarted", "LCucumberApiEventTestStepStarted;", "handleTestStepFinished", "LCucumberApiEventTestStepFinished;", "handleWrite", "LCucumberApiEventWriteEvent;", "handleStartOfFeature", "handleScenarioOutline", "printScenarioOutline", "LGHKAScenarioOutline;", "printExamples", "LGHKAExamples;", "printStep", "LCucumberApiTestStep;LCucumberApiResult;", "formatStepText", "LNSString;LNSString;LCCBRFormat;LCCBRFormat;LJavaUtilList;", "(Ljava/lang/String;Ljava/lang/String;Lcucumber/runtime/formatter/Format;Lcucumber/runtime/formatter/Format;Ljava/util/List<Lcucumber/runtime/Argument;>;)Ljava/lang/String;", "getScenarioDefinitionText", "LGHKAScenarioDefinition;", "getLocationText", "LNSString;I", "LNSString;", "stepText", "LCucumberApiTestStep;", "getStepKeyword", "isFirstStepAfterBackground", "isBackgroundStep", "printFeature", "printTags", "LJavaUtilList;", "(Ljava/util/List<Lgherkin/ast/Tag;>;)V", "LJavaUtilList;LNSString;", "(Ljava/util/List<Lgherkin/ast/Tag;>;Ljava/lang/String;)V", "printPickleTags", "(Ljava/util/List<Lgherkin/pickles/PickleTag;>;Ljava/lang/String;)V", "printDescription", "printBackground", "LCucumberApiTestCase;", "printScenarioDefinition", "printError", "LCucumberApiResult;", "calculateLocationIndentation", "LNSString;LJavaUtilList;", "(Ljava/lang/String;Ljava/util/List<Lcucumber/api/TestStep;>;)V", "LNSString;LJavaUtilList;Z", "(Ljava/lang/String;Ljava/util/List<Lcucumber/api/TestStep;>;Z)V", "createPaddingToLocation", "LNSString;LNSString;", &CCBRPrettyFormatter_SCENARIO_INDENT, &CCBRPrettyFormatter_STEP_INDENT, &CCBRPrettyFormatter_EXAMPLES_INDENT, "Lcucumber/util/Mapper<Lgherkin/ast/Tag;Ljava/lang/String;>;", "Lcucumber/util/Mapper<Lgherkin/pickles/PickleTag;Ljava/lang/String;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
   static const J2ObjcClassInfo _CCBRPrettyFormatter = { "PrettyFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 33, 19, -1, -1, -1, -1, -1 };
   return &_CCBRPrettyFormatter;
 }
@@ -738,14 +738,14 @@ void CCBRPrettyFormatter_handleStartOfFeatureWithCucumberApiEventTestCaseStarted
 void CCBRPrettyFormatter_handleScenarioOutlineWithCucumberApiEventTestCaseStarted_(CCBRPrettyFormatter *self, CucumberApiEventTestCaseStarted *event) {
   CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestCase *) nil_chk(((CucumberApiEventTestCaseStarted *) nil_chk(event))->testCase_)) getLine]];
   if (CCBRTestSourcesModel_isScenarioOutlineScenarioWithCCBRTestSourcesModel_AstNode_(astNode)) {
-    GherkinAstScenarioOutline *scenarioOutline = (GherkinAstScenarioOutline *) cast_chk(CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_(astNode), [GherkinAstScenarioOutline class]);
+    GHKAScenarioOutline *scenarioOutline = (GHKAScenarioOutline *) cast_chk(CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_(astNode), [GHKAScenarioOutline class]);
     if (self->currentScenarioOutline_ == nil || ![self->currentScenarioOutline_ isEqual:scenarioOutline]) {
       JreStrongAssign(&self->currentScenarioOutline_, scenarioOutline);
-      CCBRPrettyFormatter_printScenarioOutlineWithGherkinAstScenarioOutline_(self, self->currentScenarioOutline_);
+      CCBRPrettyFormatter_printScenarioOutlineWithGHKAScenarioOutline_(self, self->currentScenarioOutline_);
     }
     if (self->currentExamples_ == nil || ![self->currentExamples_ isEqual:((CCBRTestSourcesModel_AstNode *) nil_chk(((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->parent_))->node_]) {
-      JreStrongAssign(&self->currentExamples_, (GherkinAstExamples *) cast_chk(((CCBRTestSourcesModel_AstNode *) nil_chk(((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->parent_))->node_, [GherkinAstExamples class]));
-      CCBRPrettyFormatter_printExamplesWithGherkinAstExamples_(self, self->currentExamples_);
+      JreStrongAssign(&self->currentExamples_, (GHKAExamples *) cast_chk(((CCBRTestSourcesModel_AstNode *) nil_chk(((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->parent_))->node_, [GHKAExamples class]));
+      CCBRPrettyFormatter_printExamplesWithGHKAExamples_(self, self->currentExamples_);
     }
   }
   else {
@@ -754,19 +754,19 @@ void CCBRPrettyFormatter_handleScenarioOutlineWithCucumberApiEventTestCaseStarte
   }
 }
 
-void CCBRPrettyFormatter_printScenarioOutlineWithGherkinAstScenarioOutline_(CCBRPrettyFormatter *self, GherkinAstScenarioOutline *scenarioOutline) {
+void CCBRPrettyFormatter_printScenarioOutlineWithGHKAScenarioOutline_(CCBRPrettyFormatter *self, GHKAScenarioOutline *scenarioOutline) {
   [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) println];
-  CCBRPrettyFormatter_printTagsWithJavaUtilList_withNSString_(self, [((GherkinAstScenarioOutline *) nil_chk(scenarioOutline)) getTags], CCBRPrettyFormatter_SCENARIO_INDENT);
-  [self->out_ printlnWithJavaLangCharSequence:JreStrcat("$$C$", CCBRPrettyFormatter_SCENARIO_INDENT, CCBRPrettyFormatter_getScenarioDefinitionTextWithGherkinAstScenarioDefinition_(self, scenarioOutline), ' ', CCBRPrettyFormatter_getLocationTextWithNSString_withInt_(self, self->currentFeatureFile_, [((GherkinAstLocation *) nil_chk([scenarioOutline getLocation])) getLine]))];
+  CCBRPrettyFormatter_printTagsWithJavaUtilList_withNSString_(self, [((GHKAScenarioOutline *) nil_chk(scenarioOutline)) getTags], CCBRPrettyFormatter_SCENARIO_INDENT);
+  [self->out_ printlnWithJavaLangCharSequence:JreStrcat("$$C$", CCBRPrettyFormatter_SCENARIO_INDENT, CCBRPrettyFormatter_getScenarioDefinitionTextWithGHKAScenarioDefinition_(self, scenarioOutline), ' ', CCBRPrettyFormatter_getLocationTextWithNSString_withInt_(self, self->currentFeatureFile_, [((GHKALocation *) nil_chk([scenarioOutline getLocation])) getLine]))];
   CCBRPrettyFormatter_printDescriptionWithNSString_(self, [scenarioOutline getDescription]);
-  for (GherkinAstStep * __strong step in nil_chk([scenarioOutline getSteps])) {
-    [self->out_ printlnWithJavaLangCharSequence:JreStrcat("$$", CCBRPrettyFormatter_STEP_INDENT, [((id<CCBRFormat>) nil_chk([((id<CCBRFormats>) nil_chk(self->formats_)) getWithNSString:@"skipped"])) textWithNSString:JreStrcat("$$", [((GherkinAstStep *) nil_chk(step)) getKeyword], [step getText])])];
+  for (GHKAStep * __strong step in nil_chk([scenarioOutline getSteps])) {
+    [self->out_ printlnWithJavaLangCharSequence:JreStrcat("$$", CCBRPrettyFormatter_STEP_INDENT, [((id<CCBRFormat>) nil_chk([((id<CCBRFormats>) nil_chk(self->formats_)) getWithNSString:@"skipped"])) textWithNSString:JreStrcat("$$", [((GHKAStep *) nil_chk(step)) getKeyword], [step getText])])];
   }
 }
 
-void CCBRPrettyFormatter_printExamplesWithGherkinAstExamples_(CCBRPrettyFormatter *self, GherkinAstExamples *examples) {
+void CCBRPrettyFormatter_printExamplesWithGHKAExamples_(CCBRPrettyFormatter *self, GHKAExamples *examples) {
   [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) println];
-  CCBRPrettyFormatter_printTagsWithJavaUtilList_withNSString_(self, [((GherkinAstExamples *) nil_chk(examples)) getTags], CCBRPrettyFormatter_EXAMPLES_INDENT);
+  CCBRPrettyFormatter_printTagsWithJavaUtilList_withNSString_(self, [((GHKAExamples *) nil_chk(examples)) getTags], CCBRPrettyFormatter_EXAMPLES_INDENT);
   [self->out_ printlnWithJavaLangCharSequence:JreStrcat("$$$$", CCBRPrettyFormatter_EXAMPLES_INDENT, [examples getKeyword], @": ", [examples getName])];
   CCBRPrettyFormatter_printDescriptionWithNSString_(self, [examples getDescription]);
 }
@@ -779,8 +779,8 @@ void CCBRPrettyFormatter_printStepWithCucumberApiTestStep_withCucumberApiResult_
   [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) printlnWithJavaLangCharSequence:JreStrcat("$$$$", CCBRPrettyFormatter_STEP_INDENT, formattedStepText, locationPadding, CCBRPrettyFormatter_getLocationTextWithNSString_(self, [testStep getCodeLocation]))];
 }
 
-NSString *CCBRPrettyFormatter_getScenarioDefinitionTextWithGherkinAstScenarioDefinition_(CCBRPrettyFormatter *self, GherkinAstScenarioDefinition *definition) {
-  return JreStrcat("$$$", [((GherkinAstScenarioDefinition *) nil_chk(definition)) getKeyword], @": ", [definition getName]);
+NSString *CCBRPrettyFormatter_getScenarioDefinitionTextWithGHKAScenarioDefinition_(CCBRPrettyFormatter *self, GHKAScenarioDefinition *definition) {
+  return JreStrcat("$$$", [((GHKAScenarioDefinition *) nil_chk(definition)) getKeyword], @": ", [definition getName]);
 }
 
 NSString *CCBRPrettyFormatter_getLocationTextWithNSString_withInt_(CCBRPrettyFormatter *self, NSString *file, jint line) {
@@ -799,8 +799,8 @@ JavaLangStringBuffer *CCBRPrettyFormatter_stepTextWithCucumberApiTestStep_(CCBRP
 NSString *CCBRPrettyFormatter_getStepKeywordWithCucumberApiTestStep_(CCBRPrettyFormatter *self, CucumberApiTestStep *testStep) {
   CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestStep *) nil_chk(testStep)) getStepLine]];
   if (astNode != nil) {
-    GherkinAstStep *step = (GherkinAstStep *) cast_chk(astNode->node_, [GherkinAstStep class]);
-    return [((GherkinAstStep *) nil_chk(step)) getKeyword];
+    GHKAStep *step = (GHKAStep *) cast_chk(astNode->node_, [GHKAStep class]);
+    return [((GHKAStep *) nil_chk(step)) getKeyword];
   }
   else {
     return @"";
@@ -820,8 +820,8 @@ jboolean CCBRPrettyFormatter_isBackgroundStepWithCucumberApiTestStep_(CCBRPretty
 }
 
 void CCBRPrettyFormatter_printFeatureWithNSString_(CCBRPrettyFormatter *self, NSString *path) {
-  GherkinAstFeature *feature = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getFeatureWithNSString:path];
-  CCBRPrettyFormatter_printTagsWithJavaUtilList_(self, [((GherkinAstFeature *) nil_chk(feature)) getTags]);
+  GHKAFeature *feature = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getFeatureWithNSString:path];
+  CCBRPrettyFormatter_printTagsWithJavaUtilList_(self, [((GHKAFeature *) nil_chk(feature)) getTags]);
   [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) printlnWithJavaLangCharSequence:JreStrcat("$$$", [feature getKeyword], @": ", [feature getName])];
   CCBRPrettyFormatter_printDescriptionWithNSString_(self, [feature getDescription]);
 }
@@ -851,20 +851,20 @@ void CCBRPrettyFormatter_printDescriptionWithNSString_(CCBRPrettyFormatter *self
 void CCBRPrettyFormatter_printBackgroundWithCucumberApiTestCase_(CCBRPrettyFormatter *self, CucumberApiTestCase *testCase) {
   CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestCase *) nil_chk(testCase)) getLine]];
   if (astNode != nil) {
-    GherkinAstBackground *background = CCBRTestSourcesModel_getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode_(astNode);
-    NSString *backgroundText = CCBRPrettyFormatter_getScenarioDefinitionTextWithGherkinAstScenarioDefinition_(self, background);
+    GHKABackground *background = CCBRTestSourcesModel_getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode_(astNode);
+    NSString *backgroundText = CCBRPrettyFormatter_getScenarioDefinitionTextWithGHKAScenarioDefinition_(self, background);
     jboolean useBackgroundSteps = true;
     CCBRPrettyFormatter_calculateLocationIndentationWithNSString_withJavaUtilList_withBoolean_(self, JreStrcat("$$", CCBRPrettyFormatter_SCENARIO_INDENT, backgroundText), [testCase getTestSteps], useBackgroundSteps);
     NSString *locationPadding = CCBRPrettyFormatter_createPaddingToLocationWithNSString_withNSString_(self, CCBRPrettyFormatter_SCENARIO_INDENT, backgroundText);
     [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) println];
-    [self->out_ printlnWithJavaLangCharSequence:JreStrcat("$$$$", CCBRPrettyFormatter_SCENARIO_INDENT, backgroundText, locationPadding, CCBRPrettyFormatter_getLocationTextWithNSString_withInt_(self, self->currentFeatureFile_, [((GherkinAstLocation *) nil_chk([((GherkinAstBackground *) nil_chk(background)) getLocation])) getLine]))];
+    [self->out_ printlnWithJavaLangCharSequence:JreStrcat("$$$$", CCBRPrettyFormatter_SCENARIO_INDENT, backgroundText, locationPadding, CCBRPrettyFormatter_getLocationTextWithNSString_withInt_(self, self->currentFeatureFile_, [((GHKALocation *) nil_chk([((GHKABackground *) nil_chk(background)) getLocation])) getLine]))];
     CCBRPrettyFormatter_printDescriptionWithNSString_(self, [background getDescription]);
   }
 }
 
 void CCBRPrettyFormatter_printScenarioDefinitionWithCucumberApiTestCase_(CCBRPrettyFormatter *self, CucumberApiTestCase *testCase) {
-  GherkinAstScenarioDefinition *scenarioDefinition = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getScenarioDefinitionWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestCase *) nil_chk(testCase)) getLine]];
-  NSString *definitionText = JreStrcat("$$$", [((GherkinAstScenarioDefinition *) nil_chk(scenarioDefinition)) getKeyword], @": ", [testCase getName]);
+  GHKAScenarioDefinition *scenarioDefinition = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getScenarioDefinitionWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestCase *) nil_chk(testCase)) getLine]];
+  NSString *definitionText = JreStrcat("$$$", [((GHKAScenarioDefinition *) nil_chk(scenarioDefinition)) getKeyword], @": ", [testCase getName]);
   CCBRPrettyFormatter_calculateLocationIndentationWithNSString_withJavaUtilList_(self, JreStrcat("$$", CCBRPrettyFormatter_SCENARIO_INDENT, definitionText), [testCase getTestSteps]);
   NSString *locationPadding = CCBRPrettyFormatter_createPaddingToLocationWithNSString_withNSString_(self, CCBRPrettyFormatter_SCENARIO_INDENT, definitionText);
   [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) println];
@@ -917,8 +917,8 @@ J2OBJC_IGNORE_DESIGNATED_BEGIN
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (NSString *)mapWithId:(GherkinAstTag *)tag {
-  return [((GherkinAstTag *) nil_chk(tag)) getName];
+- (NSString *)mapWithId:(GHKATag *)tag {
+  return [((GHKATag *) nil_chk(tag)) getName];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -932,7 +932,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(mapWithId:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "map", "LGherkinAstTag;", "LCCBRPrettyFormatter;", "Ljava/lang/Object;Lcucumber/util/Mapper<Lgherkin/ast/Tag;Ljava/lang/String;>;" };
+  static const void *ptrTable[] = { "map", "LGHKATag;", "LCCBRPrettyFormatter;", "Ljava/lang/Object;Lcucumber/util/Mapper<Lgherkin/ast/Tag;Ljava/lang/String;>;" };
   static const J2ObjcClassInfo _CCBRPrettyFormatter_1 = { "", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 2, -1, -1, 3, -1 };
   return &_CCBRPrettyFormatter_1;
 }
@@ -960,8 +960,8 @@ J2OBJC_IGNORE_DESIGNATED_BEGIN
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (NSString *)mapWithId:(GherkinPicklesPickleTag *)pickleTag {
-  return [((GherkinPicklesPickleTag *) nil_chk(pickleTag)) getName];
+- (NSString *)mapWithId:(GHKPickleTag *)pickleTag {
+  return [((GHKPickleTag *) nil_chk(pickleTag)) getName];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -975,7 +975,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[0].selector = @selector(init);
   methods[1].selector = @selector(mapWithId:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "map", "LGherkinPicklesPickleTag;", "LCCBRPrettyFormatter;", "Ljava/lang/Object;Lcucumber/util/Mapper<Lgherkin/pickles/PickleTag;Ljava/lang/String;>;" };
+  static const void *ptrTable[] = { "map", "LGHKPickleTag;", "LCCBRPrettyFormatter;", "Ljava/lang/Object;Lcucumber/util/Mapper<Lgherkin/pickles/PickleTag;Ljava/lang/String;>;" };
   static const J2ObjcClassInfo _CCBRPrettyFormatter_2 = { "", "cucumber.runtime.formatter", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 2, -1, -1, 3, -1 };
   return &_CCBRPrettyFormatter_2;
 }

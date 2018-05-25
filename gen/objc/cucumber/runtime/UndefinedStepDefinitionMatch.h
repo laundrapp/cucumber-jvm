@@ -27,7 +27,7 @@
 
 @class CCBRLocalizedXStreams;
 @class CCBRMatch;
-@class GherkinPicklesPickleStep;
+@class GHKPickleStep;
 @protocol CCBRStepDefinition;
 @protocol CucumberApiScenario;
 @protocol JavaUtilList;
@@ -36,7 +36,7 @@
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step;
+- (instancetype __nonnull)initWithGHKPickleStep:(GHKPickleStep *)step;
 
 - (void)dryRunStepWithNSString:(NSString *)language
        withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
@@ -51,18 +51,18 @@
 - (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)arg0
                         withCCBRStepDefinition:(id<CCBRStepDefinition>)arg1
                                   withNSString:(NSString *)arg2
-                  withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)arg3
+                             withGHKPickleStep:(GHKPickleStep *)arg3
                      withCCBRLocalizedXStreams:(CCBRLocalizedXStreams *)arg4 NS_UNAVAILABLE;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(CCBRUndefinedStepDefinitionMatch)
 
-FOUNDATION_EXPORT void CCBRUndefinedStepDefinitionMatch_initWithGherkinPicklesPickleStep_(CCBRUndefinedStepDefinitionMatch *self, GherkinPicklesPickleStep *step);
+FOUNDATION_EXPORT void CCBRUndefinedStepDefinitionMatch_initWithGHKPickleStep_(CCBRUndefinedStepDefinitionMatch *self, GHKPickleStep *step);
 
-FOUNDATION_EXPORT CCBRUndefinedStepDefinitionMatch *new_CCBRUndefinedStepDefinitionMatch_initWithGherkinPicklesPickleStep_(GherkinPicklesPickleStep *step) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRUndefinedStepDefinitionMatch *new_CCBRUndefinedStepDefinitionMatch_initWithGHKPickleStep_(GHKPickleStep *step) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRUndefinedStepDefinitionMatch *create_CCBRUndefinedStepDefinitionMatch_initWithGherkinPicklesPickleStep_(GherkinPicklesPickleStep *step);
+FOUNDATION_EXPORT CCBRUndefinedStepDefinitionMatch *create_CCBRUndefinedStepDefinitionMatch_initWithGHKPickleStep_(GHKPickleStep *step);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRUndefinedStepDefinitionMatch)
 

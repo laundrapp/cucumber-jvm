@@ -26,7 +26,7 @@
 #include "cucumber/runtime/StepDefinition.h"
 
 @class CCBRParameterInfo;
-@class GherkinPicklesPickleStep;
+@class GHKPickleStep;
 @class IOSObjectArray;
 @class JavaLangInteger;
 @class JavaLangReflectMethod;
@@ -61,7 +61,7 @@
 
 - (jboolean)isScenarioScoped;
 
-- (id<JavaUtilList>)matchedArgumentsWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step;
+- (id<JavaUtilList>)matchedArgumentsWithGHKPickleStep:(GHKPickleStep *)step;
 
 // Disallowed inherited constructors, do not use.
 

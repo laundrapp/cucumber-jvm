@@ -30,7 +30,7 @@
 #include "cucumber/runtime/java/LambdaGlueRegistry.h"
 
 @class CCBRFunctionNameGenerator;
-@class GherkinPicklesPickleStep;
+@class GHKPickleStep;
 @class IOSClass;
 @class JavaLangReflectMethod;
 @protocol CCBRClassFinder;
@@ -66,9 +66,9 @@
 
 - (void)disposeWorld;
 
-- (NSString *)getSnippetWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
-                                        withNSString:(NSString *)keyword
-                       withCCBRFunctionNameGenerator:(CCBRFunctionNameGenerator *)functionNameGenerator;
+- (NSString *)getSnippetWithGHKPickleStep:(GHKPickleStep *)step
+                             withNSString:(NSString *)keyword
+            withCCBRFunctionNameGenerator:(CCBRFunctionNameGenerator *)functionNameGenerator;
 
 - (void)loadGlueWithCCBRGlue:(id<CCBRGlue>)glue
             withJavaUtilList:(id<JavaUtilList>)gluePaths;

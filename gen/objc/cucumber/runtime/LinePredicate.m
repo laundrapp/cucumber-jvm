@@ -28,14 +28,14 @@ J2OBJC_FIELD_SETTER(CCBRLinePredicate, lineFilters_, id<JavaUtilMap>)
   return self;
 }
 
-- (jboolean)applyWithGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent {
-  NSString *picklePath = ((GherkinEventsPickleEvent *) nil_chk(pickleEvent))->uri_;
+- (jboolean)applyWithGHKPickleEvent:(GHKPickleEvent *)pickleEvent {
+  NSString *picklePath = ((GHKPickleEvent *) nil_chk(pickleEvent))->uri_;
   if (![((id<JavaUtilMap>) nil_chk(lineFilters_)) containsKeyWithId:picklePath]) {
     return true;
   }
   for (JavaLangLong * __strong line in nil_chk([((id<JavaUtilMap>) nil_chk(lineFilters_)) getWithId:picklePath])) {
-    for (GherkinPicklesPickleLocation * __strong location in nil_chk([((GherkinPicklesPickle *) nil_chk(pickleEvent->pickle_)) getLocations])) {
-      if ([((JavaLangLong *) nil_chk(line)) longLongValue] == [((GherkinPicklesPickleLocation *) nil_chk(location)) getLine]) {
+    for (GHKPickleLocation * __strong location in nil_chk([((GHKPickle *) nil_chk(pickleEvent->pickle_)) getLocations])) {
+      if ([((JavaLangLong *) nil_chk(line)) longLongValue] == [((GHKPickleLocation *) nil_chk(location)) getLine]) {
         return true;
       }
     }
@@ -57,12 +57,12 @@ J2OBJC_FIELD_SETTER(CCBRLinePredicate, lineFilters_, id<JavaUtilMap>)
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilMap:);
-  methods[1].selector = @selector(applyWithGherkinEventsPickleEvent:);
+  methods[1].selector = @selector(applyWithGHKPickleEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "lineFilters_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 4, -1 },
   };
-  static const void *ptrTable[] = { "LJavaUtilMap;", "(Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;>;)V", "apply", "LGherkinEventsPickleEvent;", "Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;>;" };
+  static const void *ptrTable[] = { "LJavaUtilMap;", "(Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;>;)V", "apply", "LGHKPickleEvent;", "Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;>;" };
   static const J2ObjcClassInfo _CCBRLinePredicate = { "LinePredicate", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 2, 1, -1, -1, -1, -1, -1 };
   return &_CCBRLinePredicate;
 }

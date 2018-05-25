@@ -21,11 +21,11 @@
 #if !defined (CCBRPicklePredicate_) && (INCLUDE_ALL_CucumberRuntimePicklePredicate || defined(INCLUDE_CCBRPicklePredicate))
 #define CCBRPicklePredicate_
 
-@class GherkinEventsPickleEvent;
+@class GHKPickleEvent;
 
 @protocol CCBRPicklePredicate < JavaObject >
 
-- (jboolean)applyWithGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent;
+- (jboolean)applyWithGHKPickleEvent:(GHKPickleEvent *)pickleEvent;
 
 @end
 

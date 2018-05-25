@@ -27,8 +27,8 @@ J2OBJC_FIELD_SETTER(CCBRNamePredicate, patterns_, id<JavaUtilList>)
   return self;
 }
 
-- (jboolean)applyWithGherkinEventsPickleEvent:(GherkinEventsPickleEvent *)pickleEvent {
-  NSString *name = [((GherkinPicklesPickle *) nil_chk(((GherkinEventsPickleEvent *) nil_chk(pickleEvent))->pickle_)) getName];
+- (jboolean)applyWithGHKPickleEvent:(GHKPickleEvent *)pickleEvent {
+  NSString *name = [((GHKPickle *) nil_chk(((GHKPickleEvent *) nil_chk(pickleEvent))->pickle_)) getName];
   for (JavaUtilRegexPattern * __strong pattern in nil_chk(patterns_)) {
     if ([((JavaUtilRegexMatcher *) nil_chk([((JavaUtilRegexPattern *) nil_chk(pattern)) matcherWithJavaLangCharSequence:name])) find]) {
       return true;
@@ -51,12 +51,12 @@ J2OBJC_FIELD_SETTER(CCBRNamePredicate, patterns_, id<JavaUtilList>)
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaUtilList:);
-  methods[1].selector = @selector(applyWithGherkinEventsPickleEvent:);
+  methods[1].selector = @selector(applyWithGHKPickleEvent:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "patterns_", "LJavaUtilList;", .constantValue.asLong = 0, 0x2, -1, -1, 4, -1 },
   };
-  static const void *ptrTable[] = { "LJavaUtilList;", "(Ljava/util/List<Ljava/util/regex/Pattern;>;)V", "apply", "LGherkinEventsPickleEvent;", "Ljava/util/List<Ljava/util/regex/Pattern;>;" };
+  static const void *ptrTable[] = { "LJavaUtilList;", "(Ljava/util/List<Ljava/util/regex/Pattern;>;)V", "apply", "LGHKPickleEvent;", "Ljava/util/List<Ljava/util/regex/Pattern;>;" };
   static const J2ObjcClassInfo _CCBRNamePredicate = { "NamePredicate", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 2, 1, -1, -1, -1, -1, -1 };
   return &_CCBRNamePredicate;
 }

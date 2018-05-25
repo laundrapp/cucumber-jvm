@@ -25,7 +25,7 @@
 #define INCLUDE_CCBRCucumberException 1
 #include "cucumber/runtime/CucumberException.h"
 
-@class GherkinPicklesPickleStep;
+@class GHKPickleStep;
 @class JavaLangThrowable;
 @protocol JavaUtilList;
 
@@ -33,8 +33,8 @@
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
-                                          withJavaUtilList:(id<JavaUtilList>)matches;
+- (instancetype __nonnull)initWithGHKPickleStep:(GHKPickleStep *)step
+                               withJavaUtilList:(id<JavaUtilList>)matches;
 
 - (id<JavaUtilList>)getMatches;
 
@@ -51,11 +51,11 @@
 
 J2OBJC_EMPTY_STATIC_INIT(CCBRAmbiguousStepDefinitionsException)
 
-FOUNDATION_EXPORT void CCBRAmbiguousStepDefinitionsException_initWithGherkinPicklesPickleStep_withJavaUtilList_(CCBRAmbiguousStepDefinitionsException *self, GherkinPicklesPickleStep *step, id<JavaUtilList> matches);
+FOUNDATION_EXPORT void CCBRAmbiguousStepDefinitionsException_initWithGHKPickleStep_withJavaUtilList_(CCBRAmbiguousStepDefinitionsException *self, GHKPickleStep *step, id<JavaUtilList> matches);
 
-FOUNDATION_EXPORT CCBRAmbiguousStepDefinitionsException *new_CCBRAmbiguousStepDefinitionsException_initWithGherkinPicklesPickleStep_withJavaUtilList_(GherkinPicklesPickleStep *step, id<JavaUtilList> matches) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRAmbiguousStepDefinitionsException *new_CCBRAmbiguousStepDefinitionsException_initWithGHKPickleStep_withJavaUtilList_(GHKPickleStep *step, id<JavaUtilList> matches) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRAmbiguousStepDefinitionsException *create_CCBRAmbiguousStepDefinitionsException_initWithGherkinPicklesPickleStep_withJavaUtilList_(GherkinPicklesPickleStep *step, id<JavaUtilList> matches);
+FOUNDATION_EXPORT CCBRAmbiguousStepDefinitionsException *create_CCBRAmbiguousStepDefinitionsException_initWithGHKPickleStep_withJavaUtilList_(GHKPickleStep *step, id<JavaUtilList> matches);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRAmbiguousStepDefinitionsException)
 

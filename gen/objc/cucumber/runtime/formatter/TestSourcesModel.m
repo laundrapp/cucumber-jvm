@@ -40,11 +40,11 @@
 - (void)parseGherkinSourceWithNSString:(NSString *)path;
 
 - (void)processScenarioDefinitionWithJavaUtilMap:(id<JavaUtilMap>)nodeMap
-                withGherkinAstScenarioDefinition:(GherkinAstScenarioDefinition *)child
+                      withGHKAScenarioDefinition:(GHKAScenarioDefinition *)child
                 withCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)currentParent;
 
 - (void)processScenarioOutlineExamplesWithJavaUtilMap:(id<JavaUtilMap>)nodeMap
-                        withGherkinAstScenarioOutline:(GherkinAstScenarioOutline *)scenarioOutline
+                              withGHKAScenarioOutline:(GHKAScenarioOutline *)scenarioOutline
                      withCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)childNode;
 
 @end
@@ -57,9 +57,9 @@ __attribute__((unused)) static CucumberApiEventTestSourceRead *CCBRTestSourcesMo
 
 __attribute__((unused)) static void CCBRTestSourcesModel_parseGherkinSourceWithNSString_(CCBRTestSourcesModel *self, NSString *path);
 
-__attribute__((unused)) static void CCBRTestSourcesModel_processScenarioDefinitionWithJavaUtilMap_withGherkinAstScenarioDefinition_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *self, id<JavaUtilMap> nodeMap, GherkinAstScenarioDefinition *child, CCBRTestSourcesModel_AstNode *currentParent);
+__attribute__((unused)) static void CCBRTestSourcesModel_processScenarioDefinitionWithJavaUtilMap_withGHKAScenarioDefinition_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *self, id<JavaUtilMap> nodeMap, GHKAScenarioDefinition *child, CCBRTestSourcesModel_AstNode *currentParent);
 
-__attribute__((unused)) static void CCBRTestSourcesModel_processScenarioOutlineExamplesWithJavaUtilMap_withGherkinAstScenarioOutline_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *self, id<JavaUtilMap> nodeMap, GherkinAstScenarioOutline *scenarioOutline, CCBRTestSourcesModel_AstNode *childNode);
+__attribute__((unused)) static void CCBRTestSourcesModel_processScenarioOutlineExamplesWithJavaUtilMap_withGHKAScenarioOutline_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *self, id<JavaUtilMap> nodeMap, GHKAScenarioOutline *scenarioOutline, CCBRTestSourcesModel_AstNode *childNode);
 
 @implementation CCBRTestSourcesModel
 
@@ -70,15 +70,15 @@ J2OBJC_IGNORE_DESIGNATED_BEGIN
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-+ (GherkinAstFeature *)getFeatureForTestCaseWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode {
++ (GHKAFeature *)getFeatureForTestCaseWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode {
   return CCBRTestSourcesModel_getFeatureForTestCaseWithCCBRTestSourcesModel_AstNode_(astNode);
 }
 
-+ (GherkinAstBackground *)getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode {
++ (GHKABackground *)getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode {
   return CCBRTestSourcesModel_getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode_(astNode);
 }
 
-+ (GherkinAstScenarioDefinition *)getScenarioDefinitionWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode {
++ (GHKAScenarioDefinition *)getScenarioDefinitionWithCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)astNode {
   return CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_(astNode);
 }
 
@@ -103,18 +103,18 @@ J2OBJC_IGNORE_DESIGNATED_END
   [((id<JavaUtilMap>) nil_chk(pathToReadEventMap_)) putWithId:path withId:event];
 }
 
-- (GherkinAstFeature *)getFeatureWithNSString:(NSString *)path {
+- (GHKAFeature *)getFeatureWithNSString:(NSString *)path {
   if (![((id<JavaUtilMap>) nil_chk(pathToAstMap_)) containsKeyWithId:path]) {
     CCBRTestSourcesModel_parseGherkinSourceWithNSString_(self, path);
   }
   if ([pathToAstMap_ containsKeyWithId:path]) {
-    return [((GherkinAstGherkinDocument *) nil_chk([pathToAstMap_ getWithId:path])) getFeature];
+    return [((GHKAGherkinDocument *) nil_chk([pathToAstMap_ getWithId:path])) getFeature];
   }
   return nil;
 }
 
-- (GherkinAstScenarioDefinition *)getScenarioDefinitionWithNSString:(NSString *)path
-                                                            withInt:(jint)line {
+- (GHKAScenarioDefinition *)getScenarioDefinitionWithNSString:(NSString *)path
+                                                      withInt:(jint)line {
   return CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_([self getAstNodeWithNSString:path withInt:line]);
 }
 
@@ -143,12 +143,12 @@ J2OBJC_IGNORE_DESIGNATED_END
 
 - (NSString *)getKeywordFromSourceWithNSString:(NSString *)uri
                                        withInt:(jint)stepLine {
-  GherkinAstFeature *feature = [self getFeatureWithNSString:uri];
+  GHKAFeature *feature = [self getFeatureWithNSString:uri];
   if (feature != nil) {
     CucumberApiEventTestSourceRead *event = CCBRTestSourcesModel_getTestSourceReadEventWithNSString_(self, uri);
     NSString *trimmedSourceLine = [((NSString *) nil_chk(IOSObjectArray_Get(nil_chk([((NSString *) nil_chk(((CucumberApiEventTestSourceRead *) nil_chk(event))->source_)) java_split:@"\n"]), stepLine - 1))) java_trim];
-    GherkinGherkinDialect *dialect = [create_GherkinGherkinDialectProvider_initWithNSString_([feature getLanguage]) getDefaultDialect];
-    for (NSString * __strong keyword in nil_chk([((GherkinGherkinDialect *) nil_chk(dialect)) getStepKeywords])) {
+    GHKGherkinDialect *dialect = [create_GHKGherkinDialectProvider_initWithNSString_([feature getLanguage]) getDefaultDialect];
+    for (NSString * __strong keyword in nil_chk([((GHKGherkinDialect *) nil_chk(dialect)) getStepKeywords])) {
       if ([((NSString *) nil_chk(trimmedSourceLine)) java_hasPrefix:keyword]) {
         return keyword;
       }
@@ -162,7 +162,7 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (NSString *)getFeatureNameWithNSString:(NSString *)uri {
-  GherkinAstFeature *feature = [self getFeatureWithNSString:uri];
+  GHKAFeature *feature = [self getFeatureWithNSString:uri];
   if (feature != nil) {
     return [feature getName];
   }
@@ -174,15 +174,15 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 - (void)processScenarioDefinitionWithJavaUtilMap:(id<JavaUtilMap>)nodeMap
-                withGherkinAstScenarioDefinition:(GherkinAstScenarioDefinition *)child
+                      withGHKAScenarioDefinition:(GHKAScenarioDefinition *)child
                 withCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)currentParent {
-  CCBRTestSourcesModel_processScenarioDefinitionWithJavaUtilMap_withGherkinAstScenarioDefinition_withCCBRTestSourcesModel_AstNode_(self, nodeMap, child, currentParent);
+  CCBRTestSourcesModel_processScenarioDefinitionWithJavaUtilMap_withGHKAScenarioDefinition_withCCBRTestSourcesModel_AstNode_(self, nodeMap, child, currentParent);
 }
 
 - (void)processScenarioOutlineExamplesWithJavaUtilMap:(id<JavaUtilMap>)nodeMap
-                        withGherkinAstScenarioOutline:(GherkinAstScenarioOutline *)scenarioOutline
+                              withGHKAScenarioOutline:(GHKAScenarioOutline *)scenarioOutline
                      withCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)childNode {
-  CCBRTestSourcesModel_processScenarioOutlineExamplesWithJavaUtilMap_withGherkinAstScenarioOutline_withCCBRTestSourcesModel_AstNode_(self, nodeMap, scenarioOutline, childNode);
+  CCBRTestSourcesModel_processScenarioOutlineExamplesWithJavaUtilMap_withGHKAScenarioOutline_withCCBRTestSourcesModel_AstNode_(self, nodeMap, scenarioOutline, childNode);
 }
 
 - (void)dealloc {
@@ -195,16 +195,16 @@ J2OBJC_IGNORE_DESIGNATED_END
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x0, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LGherkinAstFeature;", 0x8, 0, 1, -1, -1, -1, -1 },
-    { NULL, "LGherkinAstBackground;", 0x8, 2, 1, -1, -1, -1, -1 },
-    { NULL, "LGherkinAstScenarioDefinition;", 0x8, 3, 1, -1, -1, -1, -1 },
+    { NULL, "LGHKAFeature;", 0x8, 0, 1, -1, -1, -1, -1 },
+    { NULL, "LGHKABackground;", 0x8, 2, 1, -1, -1, -1, -1 },
+    { NULL, "LGHKAScenarioDefinition;", 0x8, 3, 1, -1, -1, -1, -1 },
     { NULL, "Z", 0x8, 4, 1, -1, -1, -1, -1 },
     { NULL, "Z", 0x8, 5, 1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x8, 6, 1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x8, 7, 8, -1, -1, -1, -1 },
     { NULL, "V", 0x0, 9, 10, -1, -1, -1, -1 },
-    { NULL, "LGherkinAstFeature;", 0x0, 11, 8, -1, -1, -1, -1 },
-    { NULL, "LGherkinAstScenarioDefinition;", 0x0, 3, 12, -1, -1, -1, -1 },
+    { NULL, "LGHKAFeature;", 0x0, 11, 8, -1, -1, -1, -1 },
+    { NULL, "LGHKAScenarioDefinition;", 0x0, 3, 12, -1, -1, -1, -1 },
     { NULL, "LCCBRTestSourcesModel_AstNode;", 0x0, 13, 12, -1, -1, -1, -1 },
     { NULL, "Z", 0x0, 14, 12, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x0, 15, 12, -1, -1, -1, -1 },
@@ -234,15 +234,15 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[14].selector = @selector(getTestSourceReadEventWithNSString:);
   methods[15].selector = @selector(getFeatureNameWithNSString:);
   methods[16].selector = @selector(parseGherkinSourceWithNSString:);
-  methods[17].selector = @selector(processScenarioDefinitionWithJavaUtilMap:withGherkinAstScenarioDefinition:withCCBRTestSourcesModel_AstNode:);
-  methods[18].selector = @selector(processScenarioOutlineExamplesWithJavaUtilMap:withGherkinAstScenarioOutline:withCCBRTestSourcesModel_AstNode:);
+  methods[17].selector = @selector(processScenarioDefinitionWithJavaUtilMap:withGHKAScenarioDefinition:withCCBRTestSourcesModel_AstNode:);
+  methods[18].selector = @selector(processScenarioOutlineExamplesWithJavaUtilMap:withGHKAScenarioOutline:withCCBRTestSourcesModel_AstNode:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "pathToReadEventMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 25, -1 },
     { "pathToAstMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 26, -1 },
     { "pathToNodeMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 27, -1 },
   };
-  static const void *ptrTable[] = { "getFeatureForTestCase", "LCCBRTestSourcesModel_AstNode;", "getBackgroundForTestCase", "getScenarioDefinition", "isScenarioOutlineScenario", "isBackgroundStep", "calculateId", "convertToId", "LNSString;", "addTestSourceReadEvent", "LNSString;LCucumberApiEventTestSourceRead;", "getFeature", "LNSString;I", "getAstNode", "hasBackground", "getKeywordFromSource", "getTestSourceReadEvent", "getFeatureName", "parseGherkinSource", "processScenarioDefinition", "LJavaUtilMap;LGherkinAstScenarioDefinition;LCCBRTestSourcesModel_AstNode;", "(Ljava/util/Map<Ljava/lang/Integer;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;>;Lgherkin/ast/ScenarioDefinition;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;)V", "processScenarioOutlineExamples", "LJavaUtilMap;LGherkinAstScenarioOutline;LCCBRTestSourcesModel_AstNode;", "(Ljava/util/Map<Ljava/lang/Integer;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;>;Lgherkin/ast/ScenarioOutline;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;)V", "Ljava/util/Map<Ljava/lang/String;Lcucumber/api/event/TestSourceRead;>;", "Ljava/util/Map<Ljava/lang/String;Lgherkin/ast/GherkinDocument;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/util/Map<Ljava/lang/Integer;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;>;>;", "LCCBRTestSourcesModel_ExamplesRowWrapperNode;LCCBRTestSourcesModel_AstNode;" };
+  static const void *ptrTable[] = { "getFeatureForTestCase", "LCCBRTestSourcesModel_AstNode;", "getBackgroundForTestCase", "getScenarioDefinition", "isScenarioOutlineScenario", "isBackgroundStep", "calculateId", "convertToId", "LNSString;", "addTestSourceReadEvent", "LNSString;LCucumberApiEventTestSourceRead;", "getFeature", "LNSString;I", "getAstNode", "hasBackground", "getKeywordFromSource", "getTestSourceReadEvent", "getFeatureName", "parseGherkinSource", "processScenarioDefinition", "LJavaUtilMap;LGHKAScenarioDefinition;LCCBRTestSourcesModel_AstNode;", "(Ljava/util/Map<Ljava/lang/Integer;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;>;Lgherkin/ast/ScenarioDefinition;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;)V", "processScenarioOutlineExamples", "LJavaUtilMap;LGHKAScenarioOutline;LCCBRTestSourcesModel_AstNode;", "(Ljava/util/Map<Ljava/lang/Integer;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;>;Lgherkin/ast/ScenarioOutline;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;)V", "Ljava/util/Map<Ljava/lang/String;Lcucumber/api/event/TestSourceRead;>;", "Ljava/util/Map<Ljava/lang/String;Lgherkin/ast/GherkinDocument;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/util/Map<Ljava/lang/Integer;Lcucumber/runtime/formatter/TestSourcesModel$AstNode;>;>;", "LCCBRTestSourcesModel_ExamplesRowWrapperNode;LCCBRTestSourcesModel_AstNode;" };
   static const J2ObjcClassInfo _CCBRTestSourcesModel = { "TestSourcesModel", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 19, 3, -1, 28, -1, -1, -1 };
   return &_CCBRTestSourcesModel;
 }
@@ -264,58 +264,58 @@ CCBRTestSourcesModel *create_CCBRTestSourcesModel_init() {
   J2OBJC_CREATE_IMPL(CCBRTestSourcesModel, init)
 }
 
-GherkinAstFeature *CCBRTestSourcesModel_getFeatureForTestCaseWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode) {
+GHKAFeature *CCBRTestSourcesModel_getFeatureForTestCaseWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode) {
   CCBRTestSourcesModel_initialize();
   while (((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->parent_ != nil) {
     astNode = astNode->parent_;
   }
-  return (GherkinAstFeature *) cast_chk(astNode->node_, [GherkinAstFeature class]);
+  return (GHKAFeature *) cast_chk(astNode->node_, [GHKAFeature class]);
 }
 
-GherkinAstBackground *CCBRTestSourcesModel_getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode) {
+GHKABackground *CCBRTestSourcesModel_getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode) {
   CCBRTestSourcesModel_initialize();
-  GherkinAstFeature *feature = CCBRTestSourcesModel_getFeatureForTestCaseWithCCBRTestSourcesModel_AstNode_(astNode);
-  GherkinAstScenarioDefinition *backgound = [((id<JavaUtilList>) nil_chk([((GherkinAstFeature *) nil_chk(feature)) getChildren])) getWithInt:0];
-  if ([backgound isKindOfClass:[GherkinAstBackground class]]) {
-    return (GherkinAstBackground *) cast_chk(backgound, [GherkinAstBackground class]);
+  GHKAFeature *feature = CCBRTestSourcesModel_getFeatureForTestCaseWithCCBRTestSourcesModel_AstNode_(astNode);
+  GHKAScenarioDefinition *backgound = [((id<JavaUtilList>) nil_chk([((GHKAFeature *) nil_chk(feature)) getChildren])) getWithInt:0];
+  if ([backgound isKindOfClass:[GHKABackground class]]) {
+    return (GHKABackground *) cast_chk(backgound, [GHKABackground class]);
   }
   else {
     return nil;
   }
 }
 
-GherkinAstScenarioDefinition *CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode) {
+GHKAScenarioDefinition *CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode) {
   CCBRTestSourcesModel_initialize();
-  return [((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->node_ isKindOfClass:[GherkinAstScenarioDefinition class]] ? (GherkinAstScenarioDefinition *) cast_chk(astNode->node_, [GherkinAstScenarioDefinition class]) : (GherkinAstScenarioDefinition *) cast_chk(((CCBRTestSourcesModel_AstNode *) nil_chk(astNode->parent_))->parent_->node_, [GherkinAstScenarioDefinition class]);
+  return [((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->node_ isKindOfClass:[GHKAScenarioDefinition class]] ? (GHKAScenarioDefinition *) cast_chk(astNode->node_, [GHKAScenarioDefinition class]) : (GHKAScenarioDefinition *) cast_chk(((CCBRTestSourcesModel_AstNode *) nil_chk(astNode->parent_))->parent_->node_, [GHKAScenarioDefinition class]);
 }
 
 jboolean CCBRTestSourcesModel_isScenarioOutlineScenarioWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode) {
   CCBRTestSourcesModel_initialize();
-  return !([((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->node_ isKindOfClass:[GherkinAstScenarioDefinition class]]);
+  return !([((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->node_ isKindOfClass:[GHKAScenarioDefinition class]]);
 }
 
 jboolean CCBRTestSourcesModel_isBackgroundStepWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode) {
   CCBRTestSourcesModel_initialize();
-  return [((CCBRTestSourcesModel_AstNode *) nil_chk(((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->parent_))->node_ isKindOfClass:[GherkinAstBackground class]];
+  return [((CCBRTestSourcesModel_AstNode *) nil_chk(((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->parent_))->node_ isKindOfClass:[GHKABackground class]];
 }
 
 NSString *CCBRTestSourcesModel_calculateIdWithCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *astNode) {
   CCBRTestSourcesModel_initialize();
-  GherkinAstNode *node = ((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->node_;
-  if ([node isKindOfClass:[GherkinAstScenarioDefinition class]]) {
-    return JreStrcat("$C$", CCBRTestSourcesModel_calculateIdWithCCBRTestSourcesModel_AstNode_(astNode->parent_), ';', CCBRTestSourcesModel_convertToIdWithNSString_([((GherkinAstScenarioDefinition *) nil_chk(((GherkinAstScenarioDefinition *) cast_chk(node, [GherkinAstScenarioDefinition class])))) getName]));
+  GHKANode *node = ((CCBRTestSourcesModel_AstNode *) nil_chk(astNode))->node_;
+  if ([node isKindOfClass:[GHKAScenarioDefinition class]]) {
+    return JreStrcat("$C$", CCBRTestSourcesModel_calculateIdWithCCBRTestSourcesModel_AstNode_(astNode->parent_), ';', CCBRTestSourcesModel_convertToIdWithNSString_([((GHKAScenarioDefinition *) nil_chk(((GHKAScenarioDefinition *) cast_chk(node, [GHKAScenarioDefinition class])))) getName]));
   }
   if ([node isKindOfClass:[CCBRTestSourcesModel_ExamplesRowWrapperNode class]]) {
     return JreStrcat("$C$", CCBRTestSourcesModel_calculateIdWithCCBRTestSourcesModel_AstNode_(astNode->parent_), ';', JavaLangInteger_toStringWithInt_(((CCBRTestSourcesModel_ExamplesRowWrapperNode *) nil_chk(((CCBRTestSourcesModel_ExamplesRowWrapperNode *) cast_chk(node, [CCBRTestSourcesModel_ExamplesRowWrapperNode class]))))->bodyRowIndex_ + 2));
   }
-  if ([node isKindOfClass:[GherkinAstTableRow class]]) {
+  if ([node isKindOfClass:[GHKATableRow class]]) {
     return JreStrcat("$C$", CCBRTestSourcesModel_calculateIdWithCCBRTestSourcesModel_AstNode_(astNode->parent_), ';', JavaLangInteger_toStringWithInt_(1));
   }
-  if ([node isKindOfClass:[GherkinAstExamples class]]) {
-    return JreStrcat("$C$", CCBRTestSourcesModel_calculateIdWithCCBRTestSourcesModel_AstNode_(astNode->parent_), ';', CCBRTestSourcesModel_convertToIdWithNSString_([((GherkinAstExamples *) nil_chk(((GherkinAstExamples *) cast_chk(node, [GherkinAstExamples class])))) getName]));
+  if ([node isKindOfClass:[GHKAExamples class]]) {
+    return JreStrcat("$C$", CCBRTestSourcesModel_calculateIdWithCCBRTestSourcesModel_AstNode_(astNode->parent_), ';', CCBRTestSourcesModel_convertToIdWithNSString_([((GHKAExamples *) nil_chk(((GHKAExamples *) cast_chk(node, [GHKAExamples class])))) getName]));
   }
-  if ([node isKindOfClass:[GherkinAstFeature class]]) {
-    return CCBRTestSourcesModel_convertToIdWithNSString_([((GherkinAstFeature *) nil_chk(((GherkinAstFeature *) cast_chk(node, [GherkinAstFeature class])))) getName]);
+  if ([node isKindOfClass:[GHKAFeature class]]) {
+    return CCBRTestSourcesModel_convertToIdWithNSString_([((GHKAFeature *) nil_chk(((GHKAFeature *) cast_chk(node, [GHKAFeature class])))) getName]);
   }
   return @"";
 }
@@ -336,44 +336,44 @@ void CCBRTestSourcesModel_parseGherkinSourceWithNSString_(CCBRTestSourcesModel *
   if (![((id<JavaUtilMap>) nil_chk(self->pathToReadEventMap_)) containsKeyWithId:path]) {
     return;
   }
-  GherkinParser *parser = create_GherkinParser_initWithGherkinParser_Builder_(create_GherkinAstBuilder_init());
-  GherkinTokenMatcher *matcher = create_GherkinTokenMatcher_init();
+  GHKParser *parser = create_GHKParser_initWithGHKParser_Builder_(create_GHKAstBuilder_init());
+  GHKTokenMatcher *matcher = create_GHKTokenMatcher_init();
   @try {
-    GherkinAstGherkinDocument *gherkinDocument = [parser parseWithNSString:((CucumberApiEventTestSourceRead *) nil_chk([self->pathToReadEventMap_ getWithId:path]))->source_ withGherkinParser_ITokenMatcher:matcher];
+    GHKAGherkinDocument *gherkinDocument = [parser parseWithNSString:((CucumberApiEventTestSourceRead *) nil_chk([self->pathToReadEventMap_ getWithId:path]))->source_ withGHKParser_ITokenMatcher:matcher];
     [((id<JavaUtilMap>) nil_chk(self->pathToAstMap_)) putWithId:path withId:gherkinDocument];
     id<JavaUtilMap> nodeMap = create_JavaUtilHashMap_init();
-    CCBRTestSourcesModel_AstNode *currentParent = create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(self, [((GherkinAstGherkinDocument *) nil_chk(gherkinDocument)) getFeature], nil);
-    for (GherkinAstScenarioDefinition * __strong child in nil_chk([((GherkinAstFeature *) nil_chk([gherkinDocument getFeature])) getChildren])) {
-      CCBRTestSourcesModel_processScenarioDefinitionWithJavaUtilMap_withGherkinAstScenarioDefinition_withCCBRTestSourcesModel_AstNode_(self, nodeMap, child, currentParent);
+    CCBRTestSourcesModel_AstNode *currentParent = create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGHKANode_withCCBRTestSourcesModel_AstNode_(self, [((GHKAGherkinDocument *) nil_chk(gherkinDocument)) getFeature], nil);
+    for (GHKAScenarioDefinition * __strong child in nil_chk([((GHKAFeature *) nil_chk([gherkinDocument getFeature])) getChildren])) {
+      CCBRTestSourcesModel_processScenarioDefinitionWithJavaUtilMap_withGHKAScenarioDefinition_withCCBRTestSourcesModel_AstNode_(self, nodeMap, child, currentParent);
     }
     [((id<JavaUtilMap>) nil_chk(self->pathToNodeMap_)) putWithId:path withId:nodeMap];
   }
-  @catch (GherkinParserException *e) {
+  @catch (GHKParserException *e) {
   }
 }
 
-void CCBRTestSourcesModel_processScenarioDefinitionWithJavaUtilMap_withGherkinAstScenarioDefinition_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *self, id<JavaUtilMap> nodeMap, GherkinAstScenarioDefinition *child, CCBRTestSourcesModel_AstNode *currentParent) {
-  CCBRTestSourcesModel_AstNode *childNode = create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(self, child, currentParent);
-  [((id<JavaUtilMap>) nil_chk(nodeMap)) putWithId:JavaLangInteger_valueOfWithInt_([((GherkinAstLocation *) nil_chk([((GherkinAstScenarioDefinition *) nil_chk(child)) getLocation])) getLine]) withId:childNode];
-  for (GherkinAstStep * __strong step in nil_chk([child getSteps])) {
-    [nodeMap putWithId:JavaLangInteger_valueOfWithInt_([((GherkinAstLocation *) nil_chk([((GherkinAstStep *) nil_chk(step)) getLocation])) getLine]) withId:create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(self, step, childNode)];
+void CCBRTestSourcesModel_processScenarioDefinitionWithJavaUtilMap_withGHKAScenarioDefinition_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *self, id<JavaUtilMap> nodeMap, GHKAScenarioDefinition *child, CCBRTestSourcesModel_AstNode *currentParent) {
+  CCBRTestSourcesModel_AstNode *childNode = create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGHKANode_withCCBRTestSourcesModel_AstNode_(self, child, currentParent);
+  [((id<JavaUtilMap>) nil_chk(nodeMap)) putWithId:JavaLangInteger_valueOfWithInt_([((GHKALocation *) nil_chk([((GHKAScenarioDefinition *) nil_chk(child)) getLocation])) getLine]) withId:childNode];
+  for (GHKAStep * __strong step in nil_chk([child getSteps])) {
+    [nodeMap putWithId:JavaLangInteger_valueOfWithInt_([((GHKALocation *) nil_chk([((GHKAStep *) nil_chk(step)) getLocation])) getLine]) withId:create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGHKANode_withCCBRTestSourcesModel_AstNode_(self, step, childNode)];
   }
-  if ([child isKindOfClass:[GherkinAstScenarioOutline class]]) {
-    CCBRTestSourcesModel_processScenarioOutlineExamplesWithJavaUtilMap_withGherkinAstScenarioOutline_withCCBRTestSourcesModel_AstNode_(self, nodeMap, (GherkinAstScenarioOutline *) cast_chk(child, [GherkinAstScenarioOutline class]), childNode);
+  if ([child isKindOfClass:[GHKAScenarioOutline class]]) {
+    CCBRTestSourcesModel_processScenarioOutlineExamplesWithJavaUtilMap_withGHKAScenarioOutline_withCCBRTestSourcesModel_AstNode_(self, nodeMap, (GHKAScenarioOutline *) cast_chk(child, [GHKAScenarioOutline class]), childNode);
   }
 }
 
-void CCBRTestSourcesModel_processScenarioOutlineExamplesWithJavaUtilMap_withGherkinAstScenarioOutline_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *self, id<JavaUtilMap> nodeMap, GherkinAstScenarioOutline *scenarioOutline, CCBRTestSourcesModel_AstNode *childNode) {
-  for (GherkinAstExamples * __strong examples in nil_chk([((GherkinAstScenarioOutline *) nil_chk(scenarioOutline)) getExamples])) {
-    CCBRTestSourcesModel_AstNode *examplesNode = create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(self, examples, childNode);
-    GherkinAstTableRow *headerRow = [((GherkinAstExamples *) nil_chk(examples)) getTableHeader];
-    CCBRTestSourcesModel_AstNode *headerNode = create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(self, headerRow, examplesNode);
-    [((id<JavaUtilMap>) nil_chk(nodeMap)) putWithId:JavaLangInteger_valueOfWithInt_([((GherkinAstLocation *) nil_chk([((GherkinAstTableRow *) nil_chk(headerRow)) getLocation])) getLine]) withId:headerNode];
+void CCBRTestSourcesModel_processScenarioOutlineExamplesWithJavaUtilMap_withGHKAScenarioOutline_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *self, id<JavaUtilMap> nodeMap, GHKAScenarioOutline *scenarioOutline, CCBRTestSourcesModel_AstNode *childNode) {
+  for (GHKAExamples * __strong examples in nil_chk([((GHKAScenarioOutline *) nil_chk(scenarioOutline)) getExamples])) {
+    CCBRTestSourcesModel_AstNode *examplesNode = create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGHKANode_withCCBRTestSourcesModel_AstNode_(self, examples, childNode);
+    GHKATableRow *headerRow = [((GHKAExamples *) nil_chk(examples)) getTableHeader];
+    CCBRTestSourcesModel_AstNode *headerNode = create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGHKANode_withCCBRTestSourcesModel_AstNode_(self, headerRow, examplesNode);
+    [((id<JavaUtilMap>) nil_chk(nodeMap)) putWithId:JavaLangInteger_valueOfWithInt_([((GHKALocation *) nil_chk([((GHKATableRow *) nil_chk(headerRow)) getLocation])) getLine]) withId:headerNode];
     for (jint i = 0; i < [((id<JavaUtilList>) nil_chk([examples getTableBody])) size]; ++i) {
-      GherkinAstTableRow *examplesRow = [((id<JavaUtilList>) nil_chk([examples getTableBody])) getWithInt:i];
-      GherkinAstNode *rowNode = create_CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withInt_(self, examplesRow, i);
-      CCBRTestSourcesModel_AstNode *expandedScenarioNode = create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(self, rowNode, examplesNode);
-      [nodeMap putWithId:JavaLangInteger_valueOfWithInt_([((GherkinAstLocation *) nil_chk([((GherkinAstTableRow *) nil_chk(examplesRow)) getLocation])) getLine]) withId:expandedScenarioNode];
+      GHKATableRow *examplesRow = [((id<JavaUtilList>) nil_chk([examples getTableBody])) getWithInt:i];
+      GHKANode *rowNode = create_CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGHKANode_withInt_(self, examplesRow, i);
+      CCBRTestSourcesModel_AstNode *expandedScenarioNode = create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGHKANode_withCCBRTestSourcesModel_AstNode_(self, rowNode, examplesNode);
+      [nodeMap putWithId:JavaLangInteger_valueOfWithInt_([((GHKALocation *) nil_chk([((GHKATableRow *) nil_chk(examplesRow)) getLocation])) getLine]) withId:expandedScenarioNode];
     }
   }
 }
@@ -383,9 +383,9 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTestSourcesModel)
 @implementation CCBRTestSourcesModel_ExamplesRowWrapperNode
 
 - (instancetype __nonnull)initWithCCBRTestSourcesModel:(CCBRTestSourcesModel *)outer$
-                                    withGherkinAstNode:(GherkinAstNode *)examplesRow
+                                          withGHKANode:(GHKANode *)examplesRow
                                                withInt:(jint)bodyRowIndex {
-  CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withInt_(self, outer$, examplesRow, bodyRowIndex);
+  CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGHKANode_withInt_(self, outer$, examplesRow, bodyRowIndex);
   return self;
 }
 
@@ -396,29 +396,29 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTestSourcesModel)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCCBRTestSourcesModel:withGherkinAstNode:withInt:);
+  methods[0].selector = @selector(initWithCCBRTestSourcesModel:withGHKANode:withInt:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "bodyRowIndex_", "I", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LGherkinAstNode;I", "LCCBRTestSourcesModel;" };
+  static const void *ptrTable[] = { "LGHKANode;I", "LCCBRTestSourcesModel;" };
   static const J2ObjcClassInfo _CCBRTestSourcesModel_ExamplesRowWrapperNode = { "ExamplesRowWrapperNode", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x0, 1, 1, 1, -1, -1, -1, -1 };
   return &_CCBRTestSourcesModel_ExamplesRowWrapperNode;
 }
 
 @end
 
-void CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withInt_(CCBRTestSourcesModel_ExamplesRowWrapperNode *self, CCBRTestSourcesModel *outer$, GherkinAstNode *examplesRow, jint bodyRowIndex) {
-  GherkinAstNode_initWithGherkinAstLocation_(self, [((GherkinAstNode *) nil_chk(examplesRow)) getLocation]);
+void CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGHKANode_withInt_(CCBRTestSourcesModel_ExamplesRowWrapperNode *self, CCBRTestSourcesModel *outer$, GHKANode *examplesRow, jint bodyRowIndex) {
+  GHKANode_initWithGHKALocation_(self, [((GHKANode *) nil_chk(examplesRow)) getLocation]);
   self->bodyRowIndex_ = bodyRowIndex;
 }
 
-CCBRTestSourcesModel_ExamplesRowWrapperNode *new_CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withInt_(CCBRTestSourcesModel *outer$, GherkinAstNode *examplesRow, jint bodyRowIndex) {
-  J2OBJC_NEW_IMPL(CCBRTestSourcesModel_ExamplesRowWrapperNode, initWithCCBRTestSourcesModel_withGherkinAstNode_withInt_, outer$, examplesRow, bodyRowIndex)
+CCBRTestSourcesModel_ExamplesRowWrapperNode *new_CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGHKANode_withInt_(CCBRTestSourcesModel *outer$, GHKANode *examplesRow, jint bodyRowIndex) {
+  J2OBJC_NEW_IMPL(CCBRTestSourcesModel_ExamplesRowWrapperNode, initWithCCBRTestSourcesModel_withGHKANode_withInt_, outer$, examplesRow, bodyRowIndex)
 }
 
-CCBRTestSourcesModel_ExamplesRowWrapperNode *create_CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withInt_(CCBRTestSourcesModel *outer$, GherkinAstNode *examplesRow, jint bodyRowIndex) {
-  J2OBJC_CREATE_IMPL(CCBRTestSourcesModel_ExamplesRowWrapperNode, initWithCCBRTestSourcesModel_withGherkinAstNode_withInt_, outer$, examplesRow, bodyRowIndex)
+CCBRTestSourcesModel_ExamplesRowWrapperNode *create_CCBRTestSourcesModel_ExamplesRowWrapperNode_initWithCCBRTestSourcesModel_withGHKANode_withInt_(CCBRTestSourcesModel *outer$, GHKANode *examplesRow, jint bodyRowIndex) {
+  J2OBJC_CREATE_IMPL(CCBRTestSourcesModel_ExamplesRowWrapperNode, initWithCCBRTestSourcesModel_withGHKANode_withInt_, outer$, examplesRow, bodyRowIndex)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTestSourcesModel_ExamplesRowWrapperNode)
@@ -426,9 +426,9 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTestSourcesModel_ExamplesRowWrapperNode)
 @implementation CCBRTestSourcesModel_AstNode
 
 - (instancetype __nonnull)initWithCCBRTestSourcesModel:(CCBRTestSourcesModel *)outer$
-                                    withGherkinAstNode:(GherkinAstNode *)node
+                                          withGHKANode:(GHKANode *)node
                       withCCBRTestSourcesModel_AstNode:(CCBRTestSourcesModel_AstNode *)parent {
-  CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(self, outer$, node, parent);
+  CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGHKANode_withCCBRTestSourcesModel_AstNode_(self, outer$, node, parent);
   return self;
 }
 
@@ -445,31 +445,31 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTestSourcesModel_ExamplesRowWrapperNode)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCCBRTestSourcesModel:withGherkinAstNode:withCCBRTestSourcesModel_AstNode:);
+  methods[0].selector = @selector(initWithCCBRTestSourcesModel:withGHKANode:withCCBRTestSourcesModel_AstNode:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "node_", "LGherkinAstNode;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
+    { "node_", "LGHKANode;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
     { "parent_", "LCCBRTestSourcesModel_AstNode;", .constantValue.asLong = 0, 0x10, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LGherkinAstNode;LCCBRTestSourcesModel_AstNode;", "LCCBRTestSourcesModel;" };
+  static const void *ptrTable[] = { "LGHKANode;LCCBRTestSourcesModel_AstNode;", "LCCBRTestSourcesModel;" };
   static const J2ObjcClassInfo _CCBRTestSourcesModel_AstNode = { "AstNode", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x0, 1, 2, 1, -1, -1, -1, -1 };
   return &_CCBRTestSourcesModel_AstNode;
 }
 
 @end
 
-void CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *self, CCBRTestSourcesModel *outer$, GherkinAstNode *node, CCBRTestSourcesModel_AstNode *parent) {
+void CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGHKANode_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel_AstNode *self, CCBRTestSourcesModel *outer$, GHKANode *node, CCBRTestSourcesModel_AstNode *parent) {
   NSObject_init(self);
   JreStrongAssign(&self->node_, node);
   JreStrongAssign(&self->parent_, parent);
 }
 
-CCBRTestSourcesModel_AstNode *new_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *outer$, GherkinAstNode *node, CCBRTestSourcesModel_AstNode *parent) {
-  J2OBJC_NEW_IMPL(CCBRTestSourcesModel_AstNode, initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_, outer$, node, parent)
+CCBRTestSourcesModel_AstNode *new_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGHKANode_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *outer$, GHKANode *node, CCBRTestSourcesModel_AstNode *parent) {
+  J2OBJC_NEW_IMPL(CCBRTestSourcesModel_AstNode, initWithCCBRTestSourcesModel_withGHKANode_withCCBRTestSourcesModel_AstNode_, outer$, node, parent)
 }
 
-CCBRTestSourcesModel_AstNode *create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *outer$, GherkinAstNode *node, CCBRTestSourcesModel_AstNode *parent) {
-  J2OBJC_CREATE_IMPL(CCBRTestSourcesModel_AstNode, initWithCCBRTestSourcesModel_withGherkinAstNode_withCCBRTestSourcesModel_AstNode_, outer$, node, parent)
+CCBRTestSourcesModel_AstNode *create_CCBRTestSourcesModel_AstNode_initWithCCBRTestSourcesModel_withGHKANode_withCCBRTestSourcesModel_AstNode_(CCBRTestSourcesModel *outer$, GHKANode *node, CCBRTestSourcesModel_AstNode *parent) {
+  J2OBJC_CREATE_IMPL(CCBRTestSourcesModel_AstNode, initWithCCBRTestSourcesModel_withGHKANode_withCCBRTestSourcesModel_AstNode_, outer$, node, parent)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRTestSourcesModel_AstNode)

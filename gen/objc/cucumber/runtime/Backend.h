@@ -22,7 +22,7 @@
 #define CCBRBackend_
 
 @class CCBRFunctionNameGenerator;
-@class GherkinPicklesPickleStep;
+@class GHKPickleStep;
 @protocol CCBRGlue;
 @protocol CCBRUnreportedStepExecutor;
 @protocol JavaUtilList;
@@ -52,9 +52,9 @@
  */
 - (void)disposeWorld;
 
-- (NSString *)getSnippetWithGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step
-                                        withNSString:(NSString *)keyword
-                       withCCBRFunctionNameGenerator:(CCBRFunctionNameGenerator *)functionNameGenerator;
+- (NSString *)getSnippetWithGHKPickleStep:(GHKPickleStep *)step
+                             withNSString:(NSString *)keyword
+            withCCBRFunctionNameGenerator:(CCBRFunctionNameGenerator *)functionNameGenerator;
 
 @end
 

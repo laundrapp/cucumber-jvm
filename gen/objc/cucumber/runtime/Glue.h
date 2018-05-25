@@ -22,7 +22,7 @@
 #define CCBRGlue_
 
 @class CCBRStepDefinitionMatch;
-@class GherkinPicklesPickleStep;
+@class GHKPickleStep;
 @protocol CCBRHookDefinition;
 @protocol CCBRStepDefinition;
 @protocol CucumberApiStepDefinitionReporter;
@@ -41,7 +41,7 @@
 - (id<JavaUtilList>)getAfterHooks;
 
 - (CCBRStepDefinitionMatch *)stepDefinitionMatchWithNSString:(NSString *)featurePath
-                                withGherkinPicklesPickleStep:(GherkinPicklesPickleStep *)step;
+                                           withGHKPickleStep:(GHKPickleStep *)step;
 
 - (void)reportStepDefinitionsWithCucumberApiStepDefinitionReporter:(id<CucumberApiStepDefinitionReporter>)stepDefinitionReporter;
 

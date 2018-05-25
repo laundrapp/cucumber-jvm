@@ -35,7 +35,7 @@
 
 - (id<JavaUtilList>)convertToPickleCellsWithJavaUtilList:(id<JavaUtilList>)e;
 
-- (id<JavaUtilList>)getCellValuesWithGherkinPicklesPickleRow:(GherkinPicklesPickleRow *)r;
+- (id<JavaUtilList>)getCellValuesWithGHKPickleRow:(GHKPickleRow *)r;
 
 - (id<JavaUtilMap>)createDeltasByLineWithJavaUtilList:(id<JavaUtilList>)deltas;
 
@@ -59,7 +59,7 @@ __attribute__((unused)) static void CCBRTableDiffer_checkColumnsWithCucumberApiD
 
 __attribute__((unused)) static id<JavaUtilList> CCBRTableDiffer_convertToPickleCellsWithJavaUtilList_(CCBRTableDiffer *self, id<JavaUtilList> e);
 
-__attribute__((unused)) static id<JavaUtilList> CCBRTableDiffer_getCellValuesWithGherkinPicklesPickleRow_(CCBRTableDiffer *self, GherkinPicklesPickleRow *r);
+__attribute__((unused)) static id<JavaUtilList> CCBRTableDiffer_getCellValuesWithGHKPickleRow_(CCBRTableDiffer *self, GHKPickleRow *r);
 
 __attribute__((unused)) static id<JavaUtilMap> CCBRTableDiffer_createDeltasByLineWithJavaUtilList_(CCBRTableDiffer *self, id<JavaUtilList> deltas);
 
@@ -99,19 +99,19 @@ __attribute__((unused)) static void CCBRTableDiffer_markChangedAndInsertedRowsIn
   id<JavaUtilList> missingRow = create_JavaUtilArrayList_init();
   JavaUtilArrayList *extraRows = create_JavaUtilArrayList_init();
   [extraRows addAllWithJavaUtilCollection:[((CucumberApiDataTable *) nil_chk(to_)) raw]];
-  for (GherkinPicklesPickleRow * __strong r in nil_chk([((CucumberApiDataTable *) nil_chk(from_)) getPickleRows])) {
-    if (![((id<JavaUtilList>) nil_chk([to_ raw])) containsWithId:CCBRTableDiffer_getCellValuesWithGherkinPicklesPickleRow_(self, r)]) {
-      [missingRow addWithId:CCBRTableDiffer_getCellValuesWithGherkinPicklesPickleRow_(self, r)];
-      [diffTableRows addWithId:create_JavaUtilAbstractMap_SimpleEntry_initWithId_withId_(create_GherkinPicklesPickleRow_initWithJavaUtilList_([((GherkinPicklesPickleRow *) nil_chk(r)) getCells]), JreLoadEnum(CCBRDataTableDiff_DiffType, DELETE))];
+  for (GHKPickleRow * __strong r in nil_chk([((CucumberApiDataTable *) nil_chk(from_)) getPickleRows])) {
+    if (![((id<JavaUtilList>) nil_chk([to_ raw])) containsWithId:CCBRTableDiffer_getCellValuesWithGHKPickleRow_(self, r)]) {
+      [missingRow addWithId:CCBRTableDiffer_getCellValuesWithGHKPickleRow_(self, r)];
+      [diffTableRows addWithId:create_JavaUtilAbstractMap_SimpleEntry_initWithId_withId_(create_GHKPickleRow_initWithJavaUtilList_([((GHKPickleRow *) nil_chk(r)) getCells]), JreLoadEnum(CCBRDataTableDiff_DiffType, DELETE))];
       isDifferent = true;
     }
     else {
-      [diffTableRows addWithId:create_JavaUtilAbstractMap_SimpleEntry_initWithId_withId_(create_GherkinPicklesPickleRow_initWithJavaUtilList_([((GherkinPicklesPickleRow *) nil_chk(r)) getCells]), JreLoadEnum(CCBRDataTableDiff_DiffType, NONE))];
-      [extraRows removeWithId:CCBRTableDiffer_getCellValuesWithGherkinPicklesPickleRow_(self, r)];
+      [diffTableRows addWithId:create_JavaUtilAbstractMap_SimpleEntry_initWithId_withId_(create_GHKPickleRow_initWithJavaUtilList_([((GHKPickleRow *) nil_chk(r)) getCells]), JreLoadEnum(CCBRDataTableDiff_DiffType, NONE))];
+      [extraRows removeWithId:CCBRTableDiffer_getCellValuesWithGHKPickleRow_(self, r)];
     }
   }
   for (id<JavaUtilList> __strong e in extraRows) {
-    [diffTableRows addWithId:create_JavaUtilAbstractMap_SimpleEntry_initWithId_withId_(create_GherkinPicklesPickleRow_initWithJavaUtilList_(CCBRTableDiffer_convertToPickleCellsWithJavaUtilList_(self, e)), JreLoadEnum(CCBRDataTableDiff_DiffType, INSERT))];
+    [diffTableRows addWithId:create_JavaUtilAbstractMap_SimpleEntry_initWithId_withId_(create_GHKPickleRow_initWithJavaUtilList_(CCBRTableDiffer_convertToPickleCellsWithJavaUtilList_(self, e)), JreLoadEnum(CCBRDataTableDiff_DiffType, INSERT))];
     isDifferent = true;
   }
   if (isDifferent) {
@@ -123,8 +123,8 @@ __attribute__((unused)) static void CCBRTableDiffer_markChangedAndInsertedRowsIn
   return CCBRTableDiffer_convertToPickleCellsWithJavaUtilList_(self, e);
 }
 
-- (id<JavaUtilList>)getCellValuesWithGherkinPicklesPickleRow:(GherkinPicklesPickleRow *)r {
-  return CCBRTableDiffer_getCellValuesWithGherkinPicklesPickleRow_(self, r);
+- (id<JavaUtilList>)getCellValuesWithGHKPickleRow:(GHKPickleRow *)r {
+  return CCBRTableDiffer_getCellValuesWithGHKPickleRow_(self, r);
 }
 
 - (id<JavaUtilMap>)createDeltasByLineWithJavaUtilList:(id<JavaUtilList>)deltas {
@@ -178,7 +178,7 @@ __attribute__((unused)) static void CCBRTableDiffer_markChangedAndInsertedRowsIn
   methods[2].selector = @selector(calculateDiffs);
   methods[3].selector = @selector(calculateUnorderedDiffs);
   methods[4].selector = @selector(convertToPickleCellsWithJavaUtilList:);
-  methods[5].selector = @selector(getCellValuesWithGherkinPicklesPickleRow:);
+  methods[5].selector = @selector(getCellValuesWithGHKPickleRow:);
   methods[6].selector = @selector(createDeltasByLineWithJavaUtilList:);
   methods[7].selector = @selector(createTableDiffWithJavaUtilMap:);
   methods[8].selector = @selector(addRowsToTableDiffWithJavaUtilList:withDifflibDelta:);
@@ -189,7 +189,7 @@ __attribute__((unused)) static void CCBRTableDiffer_markChangedAndInsertedRowsIn
     { "from_", "LCucumberApiDataTable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "to_", "LCucumberApiDataTable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCucumberApiDataTable;LCucumberApiDataTable;", "checkColumns", "LCCBRTableDiffException;", "convertToPickleCells", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)Ljava/util/List<Lgherkin/pickles/PickleCell;>;", "getCellValues", "LGherkinPicklesPickleRow;", "(Lgherkin/pickles/PickleRow;)Ljava/util/List<Ljava/lang/String;>;", "createDeltasByLine", "(Ljava/util/List<Ldifflib/Delta;>;)Ljava/util/Map<Ljava/lang/Integer;Ldifflib/Delta;>;", "createTableDiff", "LJavaUtilMap;", "(Ljava/util/Map<Ljava/lang/Integer;Ldifflib/Delta;>;)Lcucumber/api/DataTable;", "addRowsToTableDiff", "LJavaUtilList;LDifflibDelta;", "(Ljava/util/List<Ljava/util/AbstractMap$SimpleEntry<Lgherkin/pickles/PickleRow;Lcucumber/runtime/table/DataTableDiff$DiffType;>;>;Ldifflib/Delta;)V", "markChangedAndDeletedRowsInOriginalAsMissing", "markChangedAndInsertedRowsInRevisedAsNew" };
+  static const void *ptrTable[] = { "LCucumberApiDataTable;LCucumberApiDataTable;", "checkColumns", "LCCBRTableDiffException;", "convertToPickleCells", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)Ljava/util/List<Lgherkin/pickles/PickleCell;>;", "getCellValues", "LGHKPickleRow;", "(Lgherkin/pickles/PickleRow;)Ljava/util/List<Ljava/lang/String;>;", "createDeltasByLine", "(Ljava/util/List<Ldifflib/Delta;>;)Ljava/util/Map<Ljava/lang/Integer;Ldifflib/Delta;>;", "createTableDiff", "LJavaUtilMap;", "(Ljava/util/Map<Ljava/lang/Integer;Ldifflib/Delta;>;)Lcucumber/api/DataTable;", "addRowsToTableDiff", "LJavaUtilList;LDifflibDelta;", "(Ljava/util/List<Ljava/util/AbstractMap$SimpleEntry<Lgherkin/pickles/PickleRow;Lcucumber/runtime/table/DataTableDiff$DiffType;>;>;Ldifflib/Delta;)V", "markChangedAndDeletedRowsInOriginalAsMissing", "markChangedAndInsertedRowsInRevisedAsNew" };
   static const J2ObjcClassInfo _CCBRTableDiffer = { "TableDiffer", "cucumber.runtime.table", ptrTable, methods, fields, 7, 0x1, 11, 2, -1, -1, -1, -1, -1 };
   return &_CCBRTableDiffer;
 }
@@ -220,15 +220,15 @@ void CCBRTableDiffer_checkColumnsWithCucumberApiDataTable_withCucumberApiDataTab
 id<JavaUtilList> CCBRTableDiffer_convertToPickleCellsWithJavaUtilList_(CCBRTableDiffer *self, id<JavaUtilList> e) {
   id<JavaUtilList> cells = create_JavaUtilArrayList_initWithInt_([((id<JavaUtilList>) nil_chk(e)) size]);
   for (NSString * __strong value in e) {
-    [cells addWithId:create_GherkinPicklesPickleCell_initWithGherkinPicklesPickleLocation_withNSString_(nil, value)];
+    [cells addWithId:create_GHKPickleCell_initWithGHKPickleLocation_withNSString_(nil, value)];
   }
   return cells;
 }
 
-id<JavaUtilList> CCBRTableDiffer_getCellValuesWithGherkinPicklesPickleRow_(CCBRTableDiffer *self, GherkinPicklesPickleRow *r) {
-  id<JavaUtilList> values = create_JavaUtilArrayList_initWithInt_([((id<JavaUtilList>) nil_chk([((GherkinPicklesPickleRow *) nil_chk(r)) getCells])) size]);
-  for (GherkinPicklesPickleCell * __strong cell in nil_chk([r getCells])) {
-    [values addWithId:[((GherkinPicklesPickleCell *) nil_chk(cell)) getValue]];
+id<JavaUtilList> CCBRTableDiffer_getCellValuesWithGHKPickleRow_(CCBRTableDiffer *self, GHKPickleRow *r) {
+  id<JavaUtilList> values = create_JavaUtilArrayList_initWithInt_([((id<JavaUtilList>) nil_chk([((GHKPickleRow *) nil_chk(r)) getCells])) size]);
+  for (GHKPickleCell * __strong cell in nil_chk([r getCells])) {
+    [values addWithId:[((GHKPickleCell *) nil_chk(cell)) getValue]];
   }
   return values;
 }
@@ -274,14 +274,14 @@ void CCBRTableDiffer_addRowsToTableDiffWithJavaUtilList_withDifflibDelta_(CCBRTa
 void CCBRTableDiffer_markChangedAndDeletedRowsInOriginalAsMissingWithJavaUtilList_withDifflibDelta_(CCBRTableDiffer *self, id<JavaUtilList> diffTableRows, DifflibDelta *delta) {
   id<JavaUtilList> deletedLines = [((DifflibChunk *) nil_chk([((DifflibDelta *) nil_chk(delta)) getOriginal])) getLines];
   for (CCBRDiffableRow * __strong row in nil_chk(deletedLines)) {
-    [((id<JavaUtilList>) nil_chk(diffTableRows)) addWithId:create_JavaUtilAbstractMap_SimpleEntry_initWithId_withId_(create_GherkinPicklesPickleRow_initWithJavaUtilList_([((GherkinPicklesPickleRow *) nil_chk(((CCBRDiffableRow *) nil_chk(row))->row_)) getCells]), JreLoadEnum(CCBRDataTableDiff_DiffType, DELETE))];
+    [((id<JavaUtilList>) nil_chk(diffTableRows)) addWithId:create_JavaUtilAbstractMap_SimpleEntry_initWithId_withId_(create_GHKPickleRow_initWithJavaUtilList_([((GHKPickleRow *) nil_chk(((CCBRDiffableRow *) nil_chk(row))->row_)) getCells]), JreLoadEnum(CCBRDataTableDiff_DiffType, DELETE))];
   }
 }
 
 void CCBRTableDiffer_markChangedAndInsertedRowsInRevisedAsNewWithJavaUtilList_withDifflibDelta_(CCBRTableDiffer *self, id<JavaUtilList> diffTableRows, DifflibDelta *delta) {
   id<JavaUtilList> insertedLines = [((DifflibChunk *) nil_chk([((DifflibDelta *) nil_chk(delta)) getRevised])) getLines];
   for (CCBRDiffableRow * __strong row in nil_chk(insertedLines)) {
-    [((id<JavaUtilList>) nil_chk(diffTableRows)) addWithId:create_JavaUtilAbstractMap_SimpleEntry_initWithId_withId_(create_GherkinPicklesPickleRow_initWithJavaUtilList_([((GherkinPicklesPickleRow *) nil_chk(((CCBRDiffableRow *) nil_chk(row))->row_)) getCells]), JreLoadEnum(CCBRDataTableDiff_DiffType, INSERT))];
+    [((id<JavaUtilList>) nil_chk(diffTableRows)) addWithId:create_JavaUtilAbstractMap_SimpleEntry_initWithId_withId_(create_GHKPickleRow_initWithJavaUtilList_([((GHKPickleRow *) nil_chk(((CCBRDiffableRow *) nil_chk(row))->row_)) getCells]), JreLoadEnum(CCBRDataTableDiff_DiffType, INSERT))];
   }
 }
 

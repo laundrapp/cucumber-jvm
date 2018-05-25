@@ -36,10 +36,10 @@ __attribute__((unused)) static void CCBRDataTableDiff_DiffType_initWithNSString_
   return CCBRDataTableDiff_createWithJavaUtilList_withCucumberApiTableConverter_(diffTableRows, tableConverter);
 }
 
-- (instancetype __nonnull)initWithGherkinPicklesPickleTable:(GherkinPicklesPickleTable *)pickleTable
-                                           withJavaUtilList:(id<JavaUtilList>)diffTypes
-                              withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter {
-  CCBRDataTableDiff_initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_(self, pickleTable, diffTypes, tableConverter);
+- (instancetype __nonnull)initWithGHKPickleTable:(GHKPickleTable *)pickleTable
+                                withJavaUtilList:(id<JavaUtilList>)diffTypes
+                   withCucumberApiTableConverter:(id<CucumberApiTableConverter>)tableConverter {
+  CCBRDataTableDiff_initWithGHKPickleTable_withJavaUtilList_withCucumberApiTableConverter_(self, pickleTable, diffTypes, tableConverter);
   return self;
 }
 
@@ -62,13 +62,13 @@ __attribute__((unused)) static void CCBRDataTableDiff_DiffType_initWithNSString_
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(createWithJavaUtilList:withCucumberApiTableConverter:);
-  methods[1].selector = @selector(initWithGherkinPicklesPickleTable:withJavaUtilList:withCucumberApiTableConverter:);
+  methods[1].selector = @selector(initWithGHKPickleTable:withJavaUtilList:withCucumberApiTableConverter:);
   methods[2].selector = @selector(createTablePrinter);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "diffTypes_", "LJavaUtilList;", .constantValue.asLong = 0, 0x2, -1, -1, 5, -1 },
   };
-  static const void *ptrTable[] = { "create", "LJavaUtilList;LCucumberApiTableConverter;", "(Ljava/util/List<Ljava/util/AbstractMap$SimpleEntry<Lgherkin/pickles/PickleRow;Lcucumber/runtime/table/DataTableDiff$DiffType;>;>;Lcucumber/api/TableConverter;)Lcucumber/runtime/table/DataTableDiff;", "LGherkinPicklesPickleTable;LJavaUtilList;LCucumberApiTableConverter;", "(Lgherkin/pickles/PickleTable;Ljava/util/List<Lcucumber/runtime/table/DataTableDiff$DiffType;>;Lcucumber/api/TableConverter;)V", "Ljava/util/List<Lcucumber/runtime/table/DataTableDiff$DiffType;>;", "LCCBRDataTableDiff_DiffType;" };
+  static const void *ptrTable[] = { "create", "LJavaUtilList;LCucumberApiTableConverter;", "(Ljava/util/List<Ljava/util/AbstractMap$SimpleEntry<Lgherkin/pickles/PickleRow;Lcucumber/runtime/table/DataTableDiff$DiffType;>;>;Lcucumber/api/TableConverter;)Lcucumber/runtime/table/DataTableDiff;", "LGHKPickleTable;LJavaUtilList;LCucumberApiTableConverter;", "(Lgherkin/pickles/PickleTable;Ljava/util/List<Lcucumber/runtime/table/DataTableDiff$DiffType;>;Lcucumber/api/TableConverter;)V", "Ljava/util/List<Lcucumber/runtime/table/DataTableDiff$DiffType;>;", "LCCBRDataTableDiff_DiffType;" };
   static const J2ObjcClassInfo _CCBRDataTableDiff = { "DataTableDiff", "cucumber.runtime.table", ptrTable, methods, fields, 7, 0x1, 3, 1, -1, 6, -1, -1, -1 };
   return &_CCBRDataTableDiff;
 }
@@ -83,20 +83,20 @@ CCBRDataTableDiff *CCBRDataTableDiff_createWithJavaUtilList_withCucumberApiTable
     [rows addWithId:[((JavaUtilAbstractMap_SimpleEntry *) nil_chk(row)) getKey]];
     [diffTypes addWithId:[row getValue]];
   }
-  return create_CCBRDataTableDiff_initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_(create_GherkinPicklesPickleTable_initWithJavaUtilList_(rows), diffTypes, tableConverter);
+  return create_CCBRDataTableDiff_initWithGHKPickleTable_withJavaUtilList_withCucumberApiTableConverter_(create_GHKPickleTable_initWithJavaUtilList_(rows), diffTypes, tableConverter);
 }
 
-void CCBRDataTableDiff_initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_(CCBRDataTableDiff *self, GherkinPicklesPickleTable *pickleTable, id<JavaUtilList> diffTypes, id<CucumberApiTableConverter> tableConverter) {
-  CucumberApiDataTable_initWithGherkinPicklesPickleTable_withCucumberApiTableConverter_(self, pickleTable, tableConverter);
+void CCBRDataTableDiff_initWithGHKPickleTable_withJavaUtilList_withCucumberApiTableConverter_(CCBRDataTableDiff *self, GHKPickleTable *pickleTable, id<JavaUtilList> diffTypes, id<CucumberApiTableConverter> tableConverter) {
+  CucumberApiDataTable_initWithGHKPickleTable_withCucumberApiTableConverter_(self, pickleTable, tableConverter);
   JreStrongAssign(&self->diffTypes_, diffTypes);
 }
 
-CCBRDataTableDiff *new_CCBRDataTableDiff_initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_(GherkinPicklesPickleTable *pickleTable, id<JavaUtilList> diffTypes, id<CucumberApiTableConverter> tableConverter) {
-  J2OBJC_NEW_IMPL(CCBRDataTableDiff, initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_, pickleTable, diffTypes, tableConverter)
+CCBRDataTableDiff *new_CCBRDataTableDiff_initWithGHKPickleTable_withJavaUtilList_withCucumberApiTableConverter_(GHKPickleTable *pickleTable, id<JavaUtilList> diffTypes, id<CucumberApiTableConverter> tableConverter) {
+  J2OBJC_NEW_IMPL(CCBRDataTableDiff, initWithGHKPickleTable_withJavaUtilList_withCucumberApiTableConverter_, pickleTable, diffTypes, tableConverter)
 }
 
-CCBRDataTableDiff *create_CCBRDataTableDiff_initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_(GherkinPicklesPickleTable *pickleTable, id<JavaUtilList> diffTypes, id<CucumberApiTableConverter> tableConverter) {
-  J2OBJC_CREATE_IMPL(CCBRDataTableDiff, initWithGherkinPicklesPickleTable_withJavaUtilList_withCucumberApiTableConverter_, pickleTable, diffTypes, tableConverter)
+CCBRDataTableDiff *create_CCBRDataTableDiff_initWithGHKPickleTable_withJavaUtilList_withCucumberApiTableConverter_(GHKPickleTable *pickleTable, id<JavaUtilList> diffTypes, id<CucumberApiTableConverter> tableConverter) {
+  J2OBJC_CREATE_IMPL(CCBRDataTableDiff, initWithGHKPickleTable_withJavaUtilList_withCucumberApiTableConverter_, pickleTable, diffTypes, tableConverter)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRDataTableDiff)

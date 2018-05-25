@@ -80,7 +80,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberApiTestStep)
   return 0;
 }
 
-- (GherkinPicklesPickleStep *)getPickleStep {
+- (GHKPickleStep *)getPickleStep {
   // can't call an abstract method
   [self doesNotRecognizeSelector:_cmd];
   return 0;
@@ -176,7 +176,7 @@ J2OBJC_INITIALIZED_DEFN(CucumberApiTestStep)
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 2, -1, -1 },
     { NULL, "Z", 0x401, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LGherkinPicklesPickleStep;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LGHKPickleStep;", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "I", 0x401, -1, -1, -1, -1, -1, -1 },

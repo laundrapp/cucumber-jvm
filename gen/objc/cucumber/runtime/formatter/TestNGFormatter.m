@@ -472,7 +472,7 @@ void CCBRTestNGFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarte
     JreStrongAssign(JreLoadStaticRef(CCBRTestNGFormatter_TestMethod, previousTestCaseName), @"");
     *JreLoadStaticRef(CCBRTestNGFormatter_TestMethod, exampleNumber) = 1;
     JreStrongAssign(&self->clazz_, [((id<OrgW3cDomDocument>) nil_chk(self->document_)) createElementWithNSString:@"class"]);
-    [((id<OrgW3cDomElement>) nil_chk(self->clazz_)) setAttributeWithNSString:@"name" withNSString:[((GherkinAstFeature *) nil_chk([((CCBRTestSourcesModel *) nil_chk(JreLoadStatic(CCBRTestNGFormatter_TestMethod, testSources))) getFeatureWithNSString:[event->testCase_ getUri]])) getName]];
+    [((id<OrgW3cDomElement>) nil_chk(self->clazz_)) setAttributeWithNSString:@"name" withNSString:[((GHKAFeature *) nil_chk([((CCBRTestSourcesModel *) nil_chk(JreLoadStatic(CCBRTestNGFormatter_TestMethod, testSources))) getFeatureWithNSString:[event->testCase_ getUri]])) getName]];
     [((id<OrgW3cDomElement>) nil_chk(self->test_)) appendChildWithOrgW3cDomNode:self->clazz_];
   }
   JreStrongAssign(&self->root_, [((id<OrgW3cDomDocument>) nil_chk(self->document_)) createElementWithNSString:@"test-method"]);
