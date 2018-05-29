@@ -12,10 +12,10 @@
     <name>Cucumber-JVM: Core</name>
 
     <dependencies>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-html</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>io.cucumber</groupId>-->
+            <!--<artifactId>cucumber-html</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>gherkin</artifactId>
