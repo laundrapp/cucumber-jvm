@@ -1,15 +1,20 @@
 package cucumber.examples.java.paxexam.test;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.ops4j.pax.exam.CoreOptions.junitBundles;
 import static org.ops4j.pax.exam.CoreOptions.mavenBundle;
 import static org.ops4j.pax.exam.CoreOptions.options;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
+import java.util.Locale;
 
 import javax.inject.Inject;
 
+import cucumber.api.event.EventHandler;
+import cucumber.api.event.TestStepFinished;
+import io.cucumber.stepexpression.TypeRegistry;
 import cucumber.api.java.ObjectFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -54,7 +59,9 @@ public class CalculatorTest {
 
             mavenBundle("io.cucumber", "gherkin"),
             mavenBundle("io.cucumber", "tag-expressions"),
-            mavenBundle("io.cucumber", "cucumber-jvm-deps"),
+            mavenBundle("io.cucumber", "datatable"),
+            mavenBundle("io.cucumber", "datatable-dependencies"),
+            mavenBundle("io.cucumber", "cucumber-expressions"),
             mavenBundle("io.cucumber", "cucumber-core"),
             mavenBundle("io.cucumber", "cucumber-java"),
             mavenBundle("io.cucumber", "cucumber-osgi"),
@@ -75,20 +82,31 @@ public class CalculatorTest {
         final ClassLoader classLoader = Runtime.class.getClassLoader();
         final ObjectFactory objectFactory = new PaxExamObjectFactory(injector);
         final ClassFinder classFinder = new OsgiClassFinder(bundleContext);
-        final Backend backend = new JavaBackend(objectFactory, classFinder);
+        TypeRegistry typeRegistry = new TypeRegistry(Locale.ENGLISH);
+        final Backend backend = new JavaBackend(objectFactory, classFinder, typeRegistry);
 
         final RuntimeOptionsFactory runtimeOptionsFactory = new RuntimeOptionsFactory(getClass());
         final RuntimeOptions runtimeOptions = runtimeOptionsFactory.create();
 
         final Runtime runtime = new Runtime(resourceLoader, classLoader, Collections.singleton(backend), runtimeOptions);
+        final List<Throwable> errors = new ArrayList<Throwable>();
+
+
+        runtime.getEventBus().registerHandlerFor(TestStepFinished.class, new EventHandler<TestStepFinished>() {
+            @Override
+            public void receive(TestStepFinished event) {
+                Throwable error = event.result.getError();
+                if(error != null)
+                errors.add(error);
+            }
+        });
 
         runtime.run();
 
-        if (!runtime.getErrors().isEmpty()) {
-            throw new CucumberException(runtime.getErrors().get(0));
+        if (!errors.isEmpty()) {
+            throw new CucumberException(errors.get(0));
         } else if (runtime.exitStatus() != 0x00) {
             throw new CucumberException("There are pending or undefined steps.");
         }
-        assertEquals(runtime.getErrors().size(), 0);
     }
 }

@@ -3,18 +3,17 @@ package cucumber.runtime;
 import cucumber.api.Plugin;
 import cucumber.api.SnippetType;
 import cucumber.api.StepDefinitionReporter;
-import cucumber.api.SummaryPrinter;
+import cucumber.api.event.EventListener;
+import io.cucumber.datatable.DataTable;
 import cucumber.api.event.TestRunStarted;
 import cucumber.api.formatter.ColorAware;
 import cucumber.api.formatter.Formatter;
 import cucumber.api.formatter.StrictAware;
 import cucumber.runner.EventBus;
-import cucumber.deps.com.thoughtworks.xstream.annotations.XStreamConverter;
 import cucumber.runtime.formatter.PluginFactory;
 import cucumber.runtime.io.ResourceLoader;
 import cucumber.runtime.model.CucumberFeature;
 import cucumber.runtime.model.PathWithLines;
-import cucumber.runtime.table.TablePrinter;
 import cucumber.util.FixJava;
 import cucumber.util.Mapper;
 import gherkin.GherkinDialect;
@@ -37,7 +36,6 @@ import static cucumber.runtime.model.CucumberFeature.load;
 import static cucumber.util.FixJava.join;
 import static cucumber.util.FixJava.map;
 import static java.util.Arrays.asList;
-import static java.util.Collections.unmodifiableList;
 
 // IMPORTANT! Make sure USAGE.txt is always uptodate if this class changes.
 public class RuntimeOptions {
@@ -70,7 +68,6 @@ public class RuntimeOptions {
     private final List<String> junitOptions = new ArrayList<String>();
     private final PluginFactory pluginFactory;
     private final List<Plugin> plugins = new ArrayList<Plugin>();
-    private final List<XStreamConverter> converters = new ArrayList<XStreamConverter>();
     private boolean dryRun;
     private boolean strict = false;
     private boolean monochrome = false;
@@ -127,6 +124,12 @@ public class RuntimeOptions {
         }
     }
 
+    public RuntimeOptions noSummaryPrinter(){
+        pluginSummaryPrinterNames.clear();
+        return this;
+    }
+
+
     private void parse(List<String> args) {
         List<String> parsedTagFilters = new ArrayList<String>();
         List<Pattern> parsedNameFilters = new ArrayList<Pattern>();
@@ -155,9 +158,6 @@ public class RuntimeOptions {
                 parsedTagFilters.add(args.remove(0));
             } else if (arg.equals("--plugin") || arg.equals("--add-plugin") || arg.equals("-p")) {
                 parsedPluginData.addPluginName(args.remove(0), arg.equals("--add-plugin"));
-            } else if (arg.equals("--format") || arg.equals("-f")) {
-                System.err.println("WARNING: Cucumber-JVM's --format option is deprecated. Please use --plugin instead.");
-                parsedPluginData.addPluginName(args.remove(0), true);
             } else if (arg.equals("--no-dry-run") || arg.equals("--dry-run") || arg.equals("-d")) {
                 dryRun = !arg.startsWith("--no-");
             } else if (arg.equals("--no-strict") || arg.equals("--strict") || arg.equals("-s")) {
@@ -216,11 +216,6 @@ public class RuntimeOptions {
         parsedPluginData.updatePluginSummaryPrinterNames(pluginSummaryPrinterNames);
     }
 
-    RuntimeOptions withConverters(List<XStreamConverter> converters) {
-        this.converters.addAll(converters);
-        return this;
-    }
-
     private void addLineFilters(Map<String, List<Long>> parsedLineFilters, String key, List<Long> lines) {
         if (parsedLineFilters.containsKey(key)) {
             parsedLineFilters.get(key).addAll(lines);
@@ -274,7 +269,6 @@ public class RuntimeOptions {
 
     private int printKeywordsFor(GherkinDialect dialect) {
         StringBuilder builder = new StringBuilder();
-        TablePrinter printer = new TablePrinter();
         List<List<String>> table = new ArrayList<List<String>>();
         addKeywordRow(table, "feature", dialect.getFeatureKeywords());
         addKeywordRow(table, "background", dialect.getBackgroundKeywords());
@@ -291,7 +285,7 @@ public class RuntimeOptions {
         addCodeKeywordRow(table, "then", dialect.getThenKeywords());
         addCodeKeywordRow(table, "and", dialect.getAndKeywords());
         addCodeKeywordRow(table, "but", dialect.getButKeywords());
-        printer.printTable(table, builder);
+        DataTable.create(table).print(builder);
         System.out.println(builder.toString());
         return 0;
     }
@@ -321,26 +315,19 @@ public class RuntimeOptions {
         if (!pluginNamesInstantiated) {
             for (String pluginName : pluginFormatterNames) {
                 Plugin plugin = pluginFactory.create(pluginName);
-                plugins.add(plugin);
-                setMonochromeOnColorAwarePlugins(plugin);
-                setStrictOnStrictAwarePlugins(plugin);
-                setEventBusFormatterPlugins(plugin);
+                addPlugin(plugin);
             }
             for (String pluginName : pluginStepDefinitionReporterNames) {
                 Plugin plugin = pluginFactory.create(pluginName);
-                plugins.add(plugin);
+                addPlugin(plugin);
             }
             for (String pluginName : pluginSummaryPrinterNames) {
                 Plugin plugin = pluginFactory.create(pluginName);
-                plugins.add(plugin);
+                addPlugin(plugin);
             }
             pluginNamesInstantiated = true;
         }
         return plugins;
-    }
-
-    List<XStreamConverter> getConverters() {
-        return unmodifiableList(converters);
     }
 
     public Formatter formatter(ClassLoader classLoader) {
@@ -349,10 +336,6 @@ public class RuntimeOptions {
 
     public StepDefinitionReporter stepDefinitionReporter(ClassLoader classLoader) {
         return pluginProxy(classLoader, StepDefinitionReporter.class);
-    }
-
-    public SummaryPrinter summaryPrinter(ClassLoader classLoader) {
-        return pluginProxy(classLoader, SummaryPrinter.class);
     }
 
     /**
@@ -399,8 +382,8 @@ public class RuntimeOptions {
         }
     }
 
-    private void setEventBusFormatterPlugins(Object plugin) {
-        if (plugin instanceof Formatter && bus != null) {
+    private void setEventBusOnEventListenerPlugins(Object plugin) {
+        if (plugin instanceof EventListener && bus != null) {
             Formatter formatter = (Formatter) plugin;
             formatter.setEventPublisher(bus);
         }
@@ -422,9 +405,11 @@ public class RuntimeOptions {
         return featurePaths;
     }
 
-    public void addPlugin(Formatter plugin) {
+    public void addPlugin(Plugin plugin) {
         plugins.add(plugin);
-        setEventBusFormatterPlugins(plugin);
+        setMonochromeOnColorAwarePlugins(plugin);
+        setStrictOnStrictAwarePlugins(plugin);
+        setEventBusOnEventListenerPlugins(plugin);
     }
 
     public List<Pattern> getNameFilters() {
@@ -468,12 +453,12 @@ public class RuntimeOptions {
         ParsedOptionNames summaryPrinterNames = new ParsedOptionNames();
 
         public void addPluginName(String name, boolean isAddPlugin) {
-            if (PluginFactory.isFormatterName(name)) {
-                formatterNames.addName(name, isAddPlugin);
-            } else if (PluginFactory.isStepDefinitionReporterName(name)) {
+            if (PluginFactory.isStepDefinitionReporterName(name)) {
                 stepDefinitionReporterNames.addName(name, isAddPlugin);
             } else if (PluginFactory.isSummaryPrinterName(name)) {
                 summaryPrinterNames.addName(name, isAddPlugin);
+            } else if (PluginFactory.isFormatterName(name)) {
+                formatterNames.addName(name, isAddPlugin);
             } else {
                 throw new CucumberException("Unrecognized plugin: " + name);
             }

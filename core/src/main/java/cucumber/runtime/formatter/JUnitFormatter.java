@@ -1,7 +1,7 @@
 package cucumber.runtime.formatter;
 
 import cucumber.api.Result;
-import cucumber.api.TestStep;
+import cucumber.api.PickleStepTestStep;
 import cucumber.api.event.EventHandler;
 import cucumber.api.event.EventPublisher;
 import cucumber.api.event.TestCaseFinished;
@@ -121,8 +121,8 @@ final class JUnitFormatter implements Formatter, StrictAware {
     }
 
     private void handleTestStepFinished(TestStepFinished event) {
-        if (!event.testStep.isHook()) {
-            testCase.steps.add(event.testStep);
+        if (event.testStep instanceof PickleStepTestStep) {
+            testCase.steps.add((PickleStepTestStep) event.testStep);
             testCase.results.add(event.result);
         }
     }
@@ -142,9 +142,6 @@ final class JUnitFormatter implements Formatter, StrictAware {
             rootElement.setAttribute("failures", String.valueOf(rootElement.getElementsByTagName("failure").getLength()));
             rootElement.setAttribute("skipped", String.valueOf(rootElement.getElementsByTagName("skipped").getLength()));
             rootElement.setAttribute("time", sumTimes(rootElement.getElementsByTagName("testcase")));
-            if (rootElement.getElementsByTagName("testcase").getLength() == 0) {
-                addDummyTestCase(); // to avoid failed Jenkins jobs
-            }
             TransformerFactory transfac = TransformerFactory.newInstance();
             Transformer trans = transfac.newTransformer();
             trans.setOutputProperty(OutputKeys.INDENT, "yes");
@@ -155,16 +152,6 @@ final class JUnitFormatter implements Formatter, StrictAware {
         } catch (TransformerException e) {
             throw new CucumberException("Error while transforming.", e);
         }
-    }
-
-    private void addDummyTestCase() {
-        Element dummy = doc.createElement("testcase");
-        dummy.setAttribute("classname", "dummy");
-        dummy.setAttribute("name", "dummy");
-        rootElement.appendChild(dummy);
-        Element skipped = doc.createElement("skipped");
-        skipped.setAttribute("message", "No features found");
-        dummy.appendChild(skipped);
     }
 
     private String sumTimes(NodeList testCaseNodes) {
@@ -214,7 +201,7 @@ final class JUnitFormatter implements Formatter, StrictAware {
         static String previousTestCaseName;
         static int exampleNumber;
         static boolean treatConditionallySkippedAsFailure = false;
-        final List<TestStep> steps = new ArrayList<TestStep>();
+        final List<PickleStepTestStep> steps = new ArrayList<PickleStepTestStep>();
         final List<Result> results = new ArrayList<Result>();
         private final cucumber.api.TestCase testCase;
 

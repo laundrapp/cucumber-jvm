@@ -1,11 +1,13 @@
 package cucumber.runtime;
 
+import cucumber.api.HookType;
 import cucumber.api.PendingException;
 import cucumber.api.Result;
-import cucumber.api.Scenario;
 import cucumber.api.StepDefinitionReporter;
 import cucumber.api.TestCase;
+import io.cucumber.stepexpression.TypeRegistry;
 import cucumber.api.event.TestCaseFinished;
+import cucumber.api.Scenario;
 import cucumber.runtime.formatter.FormatterSpy;
 import cucumber.runtime.io.ClasspathResourceLoader;
 import cucumber.runtime.io.Resource;
@@ -22,6 +24,7 @@ import org.mockito.ArgumentCaptor;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+
 import java.io.PrintStream;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
@@ -30,6 +33,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import static cucumber.runtime.TestHelper.feature;
@@ -204,6 +208,22 @@ public class RuntimeTest {
     }
 
     @Test
+    public void non_strict_with_ambiguous_scenarios() {
+        Runtime runtime = createNonStrictRuntime();
+        runtime.getEventBus().send(testCaseFinishedWithStatus(Result.Type.AMBIGUOUS));
+
+        assertEquals(0x1, runtime.exitStatus());
+    }
+
+    @Test
+    public void strict_with_ambiguous_scenarios() {
+        Runtime runtime = createStrictRuntime();
+        runtime.getEventBus().send(testCaseFinishedWithStatus(Result.Type.AMBIGUOUS));
+
+        assertEquals(0x1, runtime.exitStatus());
+    }
+
+    @Test
     public void should_pass_if_no_features_are_found() throws IOException {
         ResourceLoader resourceLoader = createResourceLoaderThatFindsNoFeatures();
         Runtime runtime = createStrictRuntime(resourceLoader);
@@ -214,10 +234,10 @@ public class RuntimeTest {
     }
 
     @Test
-    public void reports_step_definitions_to_plugin() throws IOException, NoSuchMethodException {
+    public void reports_step_definitions_to_plugin() throws IOException {
         Runtime runtime = createRuntime("--plugin", "cucumber.runtime.RuntimeTest$StepdefsPrinter");
 
-        StubStepDefinition stepDefinition = new StubStepDefinition(this, getClass().getMethod("reports_step_definitions_to_plugin"), "some pattern");
+        StubStepDefinition stepDefinition = new StubStepDefinition( "some pattern", new TypeRegistry(Locale.ENGLISH));
         runtime.getGlue().addStepDefinition(stepDefinition);
         runtime.run();
 
@@ -252,118 +272,6 @@ public class RuntimeTest {
     }
 
     @Test
-    public void should_add_passed_result_to_the_summary_counter() throws Exception {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        StepDefinitionMatch match = mock(StepDefinitionMatch.class);
-
-        Runtime runtime = createRuntimeWithMockedGlue(match, "--monochrome");
-        runScenario(runtime, stepCount(1));
-        runtime.printStats(new PrintStream(baos));
-
-        assertThat(baos.toString(), startsWith(String.format(
-                "1 Scenarios (1 passed)%n" +
-                        "1 Steps (1 passed)%n")));
-    }
-
-    @Test
-    public void should_add_pending_result_to_the_summary_counter() throws Throwable {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        StepDefinitionMatch match = createExceptionThrowingMatch(new PendingException());
-
-        Runtime runtime = createRuntimeWithMockedGlue(match, "--monochrome");
-        runScenario(runtime, stepCount(1));
-        runtime.printStats(new PrintStream(baos));
-
-        assertThat(baos.toString(), containsString(String.format("" +
-                "1 Scenarios (1 pending)%n" +
-                "1 Steps (1 pending)%n")));
-    }
-
-    @Test
-    public void should_add_failed_result_to_the_summary_counter() throws Throwable {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        StepDefinitionMatch match = createExceptionThrowingMatch(new Exception());
-
-        Runtime runtime = createRuntimeWithMockedGlue(match, "--monochrome");
-        runScenario(runtime, stepCount(1));
-        runtime.printStats(new PrintStream(baos));
-
-        assertThat(baos.toString(), containsString(String.format("" +
-                "1 Scenarios (1 failed)%n" +
-                "1 Steps (1 failed)%n")));
-    }
-
-    @Test
-    public void should_add_ambiguous_match_as_failed_result_to_the_summary_counter() throws Throwable {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-
-        Runtime runtime = createRuntimeWithMockedGlueWithAmbiguousMatch("--monochrome");
-        runScenario(runtime, stepCount(1));
-        runtime.printStats(new PrintStream(baos));
-
-        assertThat(baos.toString(), containsString(String.format(""+
-                "1 Scenarios (1 ambiguous)%n" +
-                "1 Steps (1 ambiguous)%n")));
-    }
-
-    @Test
-    public void should_add_skipped_result_to_the_summary_counter() throws Throwable {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        StepDefinitionMatch match = createExceptionThrowingMatch(new Exception());
-
-        Runtime runtime = createRuntimeWithMockedGlue(match, "--monochrome");
-        runScenario(runtime, stepCount(2));
-        runtime.printStats(new PrintStream(baos));
-
-        assertThat(baos.toString(), containsString(String.format("" +
-                "1 Scenarios (1 failed)%n" +
-                "2 Steps (1 failed, 1 skipped)%n")));
-    }
-
-    @Test
-    public void should_add_undefined_result_to_the_summary_counter() throws Throwable {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-
-        Runtime runtime = createRuntimeWithMockedGlue(null, "--monochrome");
-        runScenario(runtime, stepCount(1));
-        runtime.printStats(new PrintStream(baos));
-
-        assertThat(baos.toString(), containsString(String.format("" +
-                "1 Scenarios (1 undefined)%n" +
-                "1 Steps (1 undefined)%n")));
-    }
-
-    @Test
-    public void should_fail_the_scenario_if_before_fails() throws Throwable {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        StepDefinitionMatch match = mock(StepDefinitionMatch.class);
-        HookDefinition hook = createExceptionThrowingHook();
-
-        Runtime runtime = createRuntimeWithMockedGlue(match, hook, true, "--monochrome");
-        runScenario(runtime, stepCount(1));
-        runtime.printStats(new PrintStream(baos));
-
-        assertThat(baos.toString(), containsString(String.format("" +
-                "1 Scenarios (1 failed)%n" +
-                "1 Steps (1 skipped)%n")));
-    }
-
-    @Test
-    public void should_fail_the_scenario_if_after_fails() throws Throwable {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        StepDefinitionMatch match = mock(StepDefinitionMatch.class);
-        HookDefinition hook = createExceptionThrowingHook();
-
-        Runtime runtime = createRuntimeWithMockedGlue(match, hook, false, "--monochrome");
-        runScenario(runtime, stepCount(1));
-        runtime.printStats(new PrintStream(baos));
-
-        assertThat(baos.toString(), containsString(String.format("" +
-                "1 Scenarios (1 failed)%n" +
-                "1 Steps (1 passed)%n")));
-    }
-
-    @Test
     public void should_make_scenario_name_available_to_hooks() throws Throwable {
         CucumberFeature feature = TestHelper.feature("path/test.feature",
                 "Feature: feature name\n" +
@@ -374,7 +282,7 @@ public class RuntimeTest {
         HookDefinition beforeHook = mock(HookDefinition.class);
         when(beforeHook.matches(anyCollectionOf(PickleTag.class))).thenReturn(true);
 
-        Runtime runtime = createRuntimeWithMockedGlue(mock(StepDefinitionMatch.class), beforeHook, true);
+        Runtime runtime = createRuntimeWithMockedGlue(mock(PickleStepDefinitionMatch.class), beforeHook, HookType.Before);
         runtime.runFeature(feature);
 
         ArgumentCaptor<Scenario> capturedScenario = ArgumentCaptor.forClass(Scenario.class);
@@ -475,8 +383,8 @@ public class RuntimeTest {
         return formatterSpy.toString();
     }
 
-    private StepDefinitionMatch createExceptionThrowingMatch(Exception exception) throws Throwable {
-        StepDefinitionMatch match = mock(StepDefinitionMatch.class);
+    private PickleStepDefinitionMatch createExceptionThrowingMatch(Exception exception) throws Throwable {
+        PickleStepDefinitionMatch match = mock(PickleStepDefinitionMatch.class);
         doThrow(exception).when(match).runStep(anyString(), (Scenario) any());
         return match;
     }
@@ -520,21 +428,21 @@ public class RuntimeTest {
         return new Runtime(resourceLoader, classLoader, backends, runtimeOptions);
     }
 
-    private Runtime createRuntimeWithMockedGlue(StepDefinitionMatch match, String... runtimeArgs) {
-        return createRuntimeWithMockedGlue(match, false, mock(HookDefinition.class), false, runtimeArgs);
+    private Runtime createRuntimeWithMockedGlue(PickleStepDefinitionMatch match, String... runtimeArgs) {
+        return createRuntimeWithMockedGlue(match, false, mock(HookDefinition.class), HookType.After, runtimeArgs);
     }
 
-    private Runtime createRuntimeWithMockedGlue(StepDefinitionMatch match, HookDefinition hook, boolean isBefore,
+    private Runtime createRuntimeWithMockedGlue(PickleStepDefinitionMatch match, HookDefinition hook, HookType hookType,
                                                 String... runtimeArgs) {
-        return createRuntimeWithMockedGlue(match, false, hook, isBefore, runtimeArgs);
+        return createRuntimeWithMockedGlue(match, false, hook, hookType, runtimeArgs);
     }
 
     private Runtime createRuntimeWithMockedGlueWithAmbiguousMatch(String... runtimeArgs) {
-        return createRuntimeWithMockedGlue(mock(StepDefinitionMatch.class), true, mock(HookDefinition.class), false, runtimeArgs);
+        return createRuntimeWithMockedGlue(mock(PickleStepDefinitionMatch.class), true, mock(HookDefinition.class), HookType.After, runtimeArgs);
     }
 
-    private Runtime createRuntimeWithMockedGlue(StepDefinitionMatch match, boolean isAmbiguous, HookDefinition hook,
-                                                boolean isBefore, String... runtimeArgs) {
+    private Runtime createRuntimeWithMockedGlue(PickleStepDefinitionMatch match, boolean isAmbiguous, HookDefinition hook,
+                                                HookType hookType, String... runtimeArgs) {
         ResourceLoader resourceLoader = mock(ResourceLoader.class);
         ClassLoader classLoader = mock(ClassLoader.class);
         List<String> args = new ArrayList<String>(asList(runtimeArgs));
@@ -545,13 +453,13 @@ public class RuntimeTest {
         Backend backend = mock(Backend.class);
         RuntimeGlue glue = mock(RuntimeGlue.class);
         mockMatch(glue, match, isAmbiguous);
-        mockHook(glue, hook, isBefore);
+        mockHook(glue, hook, hookType);
         Collection<Backend> backends = Arrays.asList(backend);
 
         return new Runtime(resourceLoader, classLoader, backends, runtimeOptions, glue);
     }
 
-    private void mockMatch(RuntimeGlue glue, StepDefinitionMatch match, boolean isAmbiguous) {
+    private void mockMatch(RuntimeGlue glue, PickleStepDefinitionMatch match, boolean isAmbiguous) {
         if (isAmbiguous) {
             Exception exception = new AmbiguousStepDefinitionsException(mock(PickleStep.class), Arrays.asList(match, match));
             doThrow(exception).when(glue).stepDefinitionMatch(anyString(), (PickleStep) any());
@@ -560,11 +468,17 @@ public class RuntimeTest {
         }
     }
 
-    private void mockHook(RuntimeGlue glue, HookDefinition hook, boolean isBefore) {
-        if (isBefore) {
-            when(glue.getBeforeHooks()).thenReturn(Arrays.asList(hook));
-        } else {
-            when(glue.getAfterHooks()).thenReturn(Arrays.asList(hook));
+    private void mockHook(RuntimeGlue glue, HookDefinition hook, HookType hookType) {
+        switch (hookType) {
+            case Before:
+                when(glue.getBeforeHooks()).thenReturn(Arrays.asList(hook));
+                return;
+            case After:
+                when(glue.getAfterHooks()).thenReturn(Arrays.asList(hook));
+                return;
+            case AfterStep:
+                when(glue.getAfterStepHooks()).thenReturn(Arrays.asList(hook));
+                return;
         }
     }
 

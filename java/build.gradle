@@ -37,7 +37,7 @@ task translateJava(type:Exec, dependsOn: ['generateSources']) {
     args '--prefixes', file('../resources/prefixes.properties').path
 //    args '--mapping', file('mapping.properties').path
     args '--doc-comments'
-    args "--prefix", "'cucumber.*=CCB'"
+//    args "--prefix", "'cucumber.*=CCB'"
     args '--nullability'
     args '-d', file('../gen/objc').path
     args '-sourcepath', (sourceSets.main.allJava.srcDirs).join(':')

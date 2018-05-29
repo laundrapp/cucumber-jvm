@@ -4,7 +4,7 @@
     <parent>
         <groupId>io.cucumber</groupId>
         <artifactId>cucumber-jvm</artifactId>
-        <version>2.3.1</version>
+        <version>3.0.2</version>
     </parent>
 
     <artifactId>cucumber-examples</artifactId>
@@ -16,9 +16,9 @@
         <module>java-calculator</module>
         <module>java8-calculator</module>
         <module>java-calculator-testng</module>
-        <module>pax-exam</module>
         <module>java-wicket</module>
         <module>java-webbit-websockets-selenium</module>
+        <module>pax-exam</module>
     </modules>
 
     <profiles>
@@ -74,6 +74,13 @@
                     <artifactId>nexus-staging-maven-plugin</artifactId>
                     <configuration>
                         <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.revapi</groupId>
+                    <artifactId>revapi-maven-plugin</artifactId>
+                    <configuration>
+                        <skip>true</skip>
                     </configuration>
                 </plugin>
             </plugins>
