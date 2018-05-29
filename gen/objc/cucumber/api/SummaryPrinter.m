@@ -13,16 +13,7 @@
 @implementation CucumberApiSummaryPrinter
 
 + (const J2ObjcClassInfo *)__metadata {
-  static J2ObjcMethodInfo methods[] = {
-    { NULL, "V", 0x401, 0, 1, -1, -1, -1, -1 },
-  };
-  #pragma clang diagnostic push
-  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
-  #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(printWithCCBRRuntime:);
-  #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "print", "LCCBRRuntime;" };
-  static const J2ObjcClassInfo _CucumberApiSummaryPrinter = { "SummaryPrinter", "cucumber.api", ptrTable, methods, NULL, 7, 0x609, 1, 0, -1, -1, -1, -1, -1 };
+  static const J2ObjcClassInfo _CucumberApiSummaryPrinter = { "SummaryPrinter", "cucumber.api", NULL, NULL, NULL, 7, 0x609, 0, 0, -1, -1, -1, -1, -1 };
   return &_CucumberApiSummaryPrinter;
 }
 

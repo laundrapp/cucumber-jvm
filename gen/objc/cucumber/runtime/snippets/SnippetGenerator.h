@@ -24,26 +24,23 @@
 @class CCBRFunctionNameGenerator;
 @class GHKPickleStep;
 @class IOSObjectArray;
+@class IoCucumberCucumberexpressionsParameterTypeRegistry;
 @protocol CCBRSnippet;
-@protocol JavaUtilList;
 
 @interface CCBRSnippetGenerator : NSObject
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCCBRSnippet:(id<CCBRSnippet>)snippet;
+- (instancetype __nonnull)initWithCCBRSnippet:(id<CCBRSnippet>)snippet
+withIoCucumberCucumberexpressionsParameterTypeRegistry:(IoCucumberCucumberexpressionsParameterTypeRegistry *)parameterTypeRegistry;
 
 - (NSString *)getSnippetWithGHKPickleStep:(GHKPickleStep *)step
                              withNSString:(NSString *)keyword
             withCCBRFunctionNameGenerator:(CCBRFunctionNameGenerator *)functionNameGenerator;
 
-+ (NSString *)untypedArgumentsWithJavaUtilList:(id<JavaUtilList>)argumentTypes;
-
 #pragma mark Package-Private
 
 - (IOSObjectArray *)argumentPatterns;
-
-- (NSString *)patternForWithNSString:(NSString *)stepName;
 
 // Disallowed inherited constructors, do not use.
 
@@ -53,13 +50,11 @@
 
 J2OBJC_STATIC_INIT(CCBRSnippetGenerator)
 
-FOUNDATION_EXPORT void CCBRSnippetGenerator_initWithCCBRSnippet_(CCBRSnippetGenerator *self, id<CCBRSnippet> snippet);
+FOUNDATION_EXPORT void CCBRSnippetGenerator_initWithCCBRSnippet_withIoCucumberCucumberexpressionsParameterTypeRegistry_(CCBRSnippetGenerator *self, id<CCBRSnippet> snippet, IoCucumberCucumberexpressionsParameterTypeRegistry *parameterTypeRegistry);
 
-FOUNDATION_EXPORT CCBRSnippetGenerator *new_CCBRSnippetGenerator_initWithCCBRSnippet_(id<CCBRSnippet> snippet) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRSnippetGenerator *new_CCBRSnippetGenerator_initWithCCBRSnippet_withIoCucumberCucumberexpressionsParameterTypeRegistry_(id<CCBRSnippet> snippet, IoCucumberCucumberexpressionsParameterTypeRegistry *parameterTypeRegistry) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRSnippetGenerator *create_CCBRSnippetGenerator_initWithCCBRSnippet_(id<CCBRSnippet> snippet);
-
-FOUNDATION_EXPORT NSString *CCBRSnippetGenerator_untypedArgumentsWithJavaUtilList_(id<JavaUtilList> argumentTypes);
+FOUNDATION_EXPORT CCBRSnippetGenerator *create_CCBRSnippetGenerator_initWithCCBRSnippet_withIoCucumberCucumberexpressionsParameterTypeRegistry_(id<CCBRSnippet> snippet, IoCucumberCucumberexpressionsParameterTypeRegistry *parameterTypeRegistry);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRSnippetGenerator)
 

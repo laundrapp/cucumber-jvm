@@ -25,25 +25,18 @@
 #define INCLUDE_CCBRStepDefinition 1
 #include "cucumber/runtime/StepDefinition.h"
 
-@class CCBRParameterInfo;
 @class GHKPickleStep;
 @class IOSObjectArray;
+@class IoCucumberStepexpressionTypeRegistry;
 @class JavaLangInteger;
 @class JavaLangReflectMethod;
 @class JavaLangStackTraceElement;
-@class JavaUtilRegexPattern;
 @protocol CucumberApiJavaObjectFactory;
-@protocol JavaLangReflectType;
 @protocol JavaUtilList;
 
 @interface CucumberRuntimeJavaJavaStepDefinition : NSObject < CCBRStepDefinition >
 
 #pragma mark Public
-
-- (instancetype __nonnull)initWithJavaLangReflectMethod:(JavaLangReflectMethod *)method
-                               withJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern
-                                               withLong:(jlong)timeoutMillis
-                       withCucumberApiJavaObjectFactory:(id<CucumberApiJavaObjectFactory>)objectFactory;
 
 - (void)executeWithNSString:(NSString *)language
           withNSObjectArray:(IOSObjectArray *)args;
@@ -51,9 +44,6 @@
 - (NSString *)getLocationWithBoolean:(jboolean)detail;
 
 - (JavaLangInteger *)getParameterCount;
-
-- (CCBRParameterInfo *)getParameterTypeWithInt:(jint)n
-                       withJavaLangReflectType:(id<JavaLangReflectType>)argumentType;
 
 - (NSString *)getPattern;
 
@@ -63,6 +53,14 @@
 
 - (id<JavaUtilList>)matchedArgumentsWithGHKPickleStep:(GHKPickleStep *)step;
 
+#pragma mark Package-Private
+
+- (instancetype __nonnull)initWithJavaLangReflectMethod:(JavaLangReflectMethod *)method
+                                           withNSString:(NSString *)expression
+                                               withLong:(jlong)timeoutMillis
+                       withCucumberApiJavaObjectFactory:(id<CucumberApiJavaObjectFactory>)objectFactory
+               withIoCucumberStepexpressionTypeRegistry:(IoCucumberStepexpressionTypeRegistry *)typeRegistry;
+
 // Disallowed inherited constructors, do not use.
 
 - (instancetype __nonnull)init NS_UNAVAILABLE;
@@ -71,11 +69,11 @@
 
 J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeJavaJavaStepDefinition)
 
-FOUNDATION_EXPORT void CucumberRuntimeJavaJavaStepDefinition_initWithJavaLangReflectMethod_withJavaUtilRegexPattern_withLong_withCucumberApiJavaObjectFactory_(CucumberRuntimeJavaJavaStepDefinition *self, JavaLangReflectMethod *method, JavaUtilRegexPattern *pattern, jlong timeoutMillis, id<CucumberApiJavaObjectFactory> objectFactory);
+FOUNDATION_EXPORT void CucumberRuntimeJavaJavaStepDefinition_initWithJavaLangReflectMethod_withNSString_withLong_withCucumberApiJavaObjectFactory_withIoCucumberStepexpressionTypeRegistry_(CucumberRuntimeJavaJavaStepDefinition *self, JavaLangReflectMethod *method, NSString *expression, jlong timeoutMillis, id<CucumberApiJavaObjectFactory> objectFactory, IoCucumberStepexpressionTypeRegistry *typeRegistry);
 
-FOUNDATION_EXPORT CucumberRuntimeJavaJavaStepDefinition *new_CucumberRuntimeJavaJavaStepDefinition_initWithJavaLangReflectMethod_withJavaUtilRegexPattern_withLong_withCucumberApiJavaObjectFactory_(JavaLangReflectMethod *method, JavaUtilRegexPattern *pattern, jlong timeoutMillis, id<CucumberApiJavaObjectFactory> objectFactory) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CucumberRuntimeJavaJavaStepDefinition *new_CucumberRuntimeJavaJavaStepDefinition_initWithJavaLangReflectMethod_withNSString_withLong_withCucumberApiJavaObjectFactory_withIoCucumberStepexpressionTypeRegistry_(JavaLangReflectMethod *method, NSString *expression, jlong timeoutMillis, id<CucumberApiJavaObjectFactory> objectFactory, IoCucumberStepexpressionTypeRegistry *typeRegistry) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeJavaJavaStepDefinition *create_CucumberRuntimeJavaJavaStepDefinition_initWithJavaLangReflectMethod_withJavaUtilRegexPattern_withLong_withCucumberApiJavaObjectFactory_(JavaLangReflectMethod *method, JavaUtilRegexPattern *pattern, jlong timeoutMillis, id<CucumberApiJavaObjectFactory> objectFactory);
+FOUNDATION_EXPORT CucumberRuntimeJavaJavaStepDefinition *create_CucumberRuntimeJavaJavaStepDefinition_initWithJavaLangReflectMethod_withNSString_withLong_withCucumberApiJavaObjectFactory_withIoCucumberStepexpressionTypeRegistry_(JavaLangReflectMethod *method, NSString *expression, jlong timeoutMillis, id<CucumberApiJavaObjectFactory> objectFactory, IoCucumberStepexpressionTypeRegistry *typeRegistry);
 
 J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeJavaJavaStepDefinition)
 

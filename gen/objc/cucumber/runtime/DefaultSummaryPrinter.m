@@ -3,9 +3,14 @@
 //  source: /Users/Salton/Documents/Projects/cucumber-jvm/core/src/main/java/cucumber/runtime/DefaultSummaryPrinter.java
 //
 
+#include "IOSClass.h"
 #include "J2ObjC_source.h"
+#include "cucumber/api/event/EventHandler.h"
+#include "cucumber/api/event/EventPublisher.h"
+#include "cucumber/api/event/TestRunFinished.h"
 #include "cucumber/runtime/DefaultSummaryPrinter.h"
-#include "cucumber/runtime/Runtime.h"
+#include "cucumber/runtime/Stats.h"
+#include "cucumber/runtime/UndefinedStepsTracker.h"
 #include "java/io/PrintStream.h"
 #include "java/lang/System.h"
 #include "java/lang/Throwable.h"
@@ -13,24 +18,51 @@
 
 @interface CCBRDefaultSummaryPrinter () {
  @public
+  CCBRStats *stats_;
+  CCBRUndefinedStepsTracker *undefinedStepsTracker_;
   JavaIoPrintStream *out_;
 }
 
-- (void)printStatsWithCCBRRuntime:(CCBRRuntime *)runtime;
+- (void)print;
 
-- (void)printErrorsWithCCBRRuntime:(CCBRRuntime *)runtime;
+- (void)printStats;
 
-- (void)printSnippetsWithCCBRRuntime:(CCBRRuntime *)runtime;
+- (void)printErrors;
+
+- (void)printSnippets;
 
 @end
 
+J2OBJC_FIELD_SETTER(CCBRDefaultSummaryPrinter, stats_, CCBRStats *)
+J2OBJC_FIELD_SETTER(CCBRDefaultSummaryPrinter, undefinedStepsTracker_, CCBRUndefinedStepsTracker *)
 J2OBJC_FIELD_SETTER(CCBRDefaultSummaryPrinter, out_, JavaIoPrintStream *)
 
-__attribute__((unused)) static void CCBRDefaultSummaryPrinter_printStatsWithCCBRRuntime_(CCBRDefaultSummaryPrinter *self, CCBRRuntime *runtime);
+__attribute__((unused)) static void CCBRDefaultSummaryPrinter_print(CCBRDefaultSummaryPrinter *self);
 
-__attribute__((unused)) static void CCBRDefaultSummaryPrinter_printErrorsWithCCBRRuntime_(CCBRDefaultSummaryPrinter *self, CCBRRuntime *runtime);
+__attribute__((unused)) static void CCBRDefaultSummaryPrinter_printStats(CCBRDefaultSummaryPrinter *self);
 
-__attribute__((unused)) static void CCBRDefaultSummaryPrinter_printSnippetsWithCCBRRuntime_(CCBRDefaultSummaryPrinter *self, CCBRRuntime *runtime);
+__attribute__((unused)) static void CCBRDefaultSummaryPrinter_printErrors(CCBRDefaultSummaryPrinter *self);
+
+__attribute__((unused)) static void CCBRDefaultSummaryPrinter_printSnippets(CCBRDefaultSummaryPrinter *self);
+
+@interface CCBRDefaultSummaryPrinter_1 : NSObject < CucumberApiEventEventHandler > {
+ @public
+  CCBRDefaultSummaryPrinter *this$0_;
+}
+
+- (instancetype __nonnull)initWithCCBRDefaultSummaryPrinter:(CCBRDefaultSummaryPrinter *)outer$;
+
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event;
+
+@end
+
+J2OBJC_EMPTY_STATIC_INIT(CCBRDefaultSummaryPrinter_1)
+
+__attribute__((unused)) static void CCBRDefaultSummaryPrinter_1_initWithCCBRDefaultSummaryPrinter_(CCBRDefaultSummaryPrinter_1 *self, CCBRDefaultSummaryPrinter *outer$);
+
+__attribute__((unused)) static CCBRDefaultSummaryPrinter_1 *new_CCBRDefaultSummaryPrinter_1_initWithCCBRDefaultSummaryPrinter_(CCBRDefaultSummaryPrinter *outer$) NS_RETURNS_RETAINED;
+
+__attribute__((unused)) static CCBRDefaultSummaryPrinter_1 *create_CCBRDefaultSummaryPrinter_1_initWithCCBRDefaultSummaryPrinter_(CCBRDefaultSummaryPrinter *outer$);
 
 @implementation CCBRDefaultSummaryPrinter
 
@@ -41,27 +73,39 @@ J2OBJC_IGNORE_DESIGNATED_BEGIN
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (void)printWithCCBRRuntime:(CCBRRuntime *)runtime {
-  [((JavaIoPrintStream *) nil_chk(out_)) println];
-  CCBRDefaultSummaryPrinter_printStatsWithCCBRRuntime_(self, runtime);
-  [out_ println];
-  CCBRDefaultSummaryPrinter_printErrorsWithCCBRRuntime_(self, runtime);
-  CCBRDefaultSummaryPrinter_printSnippetsWithCCBRRuntime_(self, runtime);
+- (void)print {
+  CCBRDefaultSummaryPrinter_print(self);
 }
 
-- (void)printStatsWithCCBRRuntime:(CCBRRuntime *)runtime {
-  CCBRDefaultSummaryPrinter_printStatsWithCCBRRuntime_(self, runtime);
+- (void)printStats {
+  CCBRDefaultSummaryPrinter_printStats(self);
 }
 
-- (void)printErrorsWithCCBRRuntime:(CCBRRuntime *)runtime {
-  CCBRDefaultSummaryPrinter_printErrorsWithCCBRRuntime_(self, runtime);
+- (void)printErrors {
+  CCBRDefaultSummaryPrinter_printErrors(self);
 }
 
-- (void)printSnippetsWithCCBRRuntime:(CCBRRuntime *)runtime {
-  CCBRDefaultSummaryPrinter_printSnippetsWithCCBRRuntime_(self, runtime);
+- (void)printSnippets {
+  CCBRDefaultSummaryPrinter_printSnippets(self);
+}
+
+- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher {
+  [((CCBRStats *) nil_chk(stats_)) setEventPublisherWithCucumberApiEventEventPublisher:publisher];
+  [((CCBRUndefinedStepsTracker *) nil_chk(undefinedStepsTracker_)) setEventPublisherWithCucumberApiEventEventPublisher:publisher];
+  [((id<CucumberApiEventEventPublisher>) nil_chk(publisher)) registerHandlerForWithIOSClass:CucumberApiEventTestRunFinished_class_() withCucumberApiEventEventHandler:create_CCBRDefaultSummaryPrinter_1_initWithCCBRDefaultSummaryPrinter_(self)];
+}
+
+- (void)setMonochromeWithBoolean:(jboolean)monochrome {
+  [((CCBRStats *) nil_chk(stats_)) setMonochromeWithBoolean:monochrome];
+}
+
+- (void)setStrictWithBoolean:(jboolean)strict {
+  [((CCBRStats *) nil_chk(stats_)) setStrictWithBoolean:strict];
 }
 
 - (void)dealloc {
+  RELEASE_(stats_);
+  RELEASE_(undefinedStepsTracker_);
   RELEASE_(out_);
   [super dealloc];
 }
@@ -69,25 +113,33 @@ J2OBJC_IGNORE_DESIGNATED_END
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
+    { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
+    { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
+    { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 0, 1, -1, -1, -1, -1 },
-    { NULL, "V", 0x2, 2, 1, -1, -1, -1, -1 },
-    { NULL, "V", 0x2, 3, 1, -1, -1, -1, -1 },
-    { NULL, "V", 0x2, 4, 1, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 2, 3, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 4, 3, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(printWithCCBRRuntime:);
-  methods[2].selector = @selector(printStatsWithCCBRRuntime:);
-  methods[3].selector = @selector(printErrorsWithCCBRRuntime:);
-  methods[4].selector = @selector(printSnippetsWithCCBRRuntime:);
+  methods[1].selector = @selector(print);
+  methods[2].selector = @selector(printStats);
+  methods[3].selector = @selector(printErrors);
+  methods[4].selector = @selector(printSnippets);
+  methods[5].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
+  methods[6].selector = @selector(setMonochromeWithBoolean:);
+  methods[7].selector = @selector(setStrictWithBoolean:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
+    { "stats_", "LCCBRStats;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "undefinedStepsTracker_", "LCCBRUndefinedStepsTracker;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "out_", "LJavaIoPrintStream;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "print", "LCCBRRuntime;", "printStats", "printErrors", "printSnippets" };
-  static const J2ObjcClassInfo _CCBRDefaultSummaryPrinter = { "DefaultSummaryPrinter", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 5, 1, -1, -1, -1, -1, -1 };
+  static const void *ptrTable[] = { "setEventPublisher", "LCucumberApiEventEventPublisher;", "setMonochrome", "Z", "setStrict" };
+  static const J2ObjcClassInfo _CCBRDefaultSummaryPrinter = { "DefaultSummaryPrinter", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 8, 3, -1, -1, -1, -1, -1 };
   return &_CCBRDefaultSummaryPrinter;
 }
 
@@ -95,6 +147,8 @@ J2OBJC_IGNORE_DESIGNATED_END
 
 void CCBRDefaultSummaryPrinter_init(CCBRDefaultSummaryPrinter *self) {
   NSObject_init(self);
+  JreStrongAssignAndConsume(&self->stats_, new_CCBRStats_init());
+  JreStrongAssignAndConsume(&self->undefinedStepsTracker_, new_CCBRUndefinedStepsTracker_init());
   JreStrongAssign(&self->out_, JreLoadStatic(JavaLangSystem, out));
 }
 
@@ -106,19 +160,27 @@ CCBRDefaultSummaryPrinter *create_CCBRDefaultSummaryPrinter_init() {
   J2OBJC_CREATE_IMPL(CCBRDefaultSummaryPrinter, init)
 }
 
-void CCBRDefaultSummaryPrinter_printStatsWithCCBRRuntime_(CCBRDefaultSummaryPrinter *self, CCBRRuntime *runtime) {
-  [((CCBRRuntime *) nil_chk(runtime)) printStatsWithJavaIoPrintStream:self->out_];
+void CCBRDefaultSummaryPrinter_print(CCBRDefaultSummaryPrinter *self) {
+  [((JavaIoPrintStream *) nil_chk(self->out_)) println];
+  CCBRDefaultSummaryPrinter_printStats(self);
+  [self->out_ println];
+  CCBRDefaultSummaryPrinter_printErrors(self);
+  CCBRDefaultSummaryPrinter_printSnippets(self);
 }
 
-void CCBRDefaultSummaryPrinter_printErrorsWithCCBRRuntime_(CCBRDefaultSummaryPrinter *self, CCBRRuntime *runtime) {
-  for (JavaLangThrowable * __strong error in nil_chk([((CCBRRuntime *) nil_chk(runtime)) getErrors])) {
+void CCBRDefaultSummaryPrinter_printStats(CCBRDefaultSummaryPrinter *self) {
+  [((CCBRStats *) nil_chk(self->stats_)) printStatsWithJavaIoPrintStream:self->out_];
+}
+
+void CCBRDefaultSummaryPrinter_printErrors(CCBRDefaultSummaryPrinter *self) {
+  for (JavaLangThrowable * __strong error in nil_chk([((CCBRStats *) nil_chk(self->stats_)) getErrors])) {
     [((JavaLangThrowable *) nil_chk(error)) printStackTraceWithJavaIoPrintStream:self->out_];
     [((JavaIoPrintStream *) nil_chk(self->out_)) println];
   }
 }
 
-void CCBRDefaultSummaryPrinter_printSnippetsWithCCBRRuntime_(CCBRDefaultSummaryPrinter *self, CCBRRuntime *runtime) {
-  id<JavaUtilList> snippets = [((CCBRRuntime *) nil_chk(runtime)) getSnippets];
+void CCBRDefaultSummaryPrinter_printSnippets(CCBRDefaultSummaryPrinter *self) {
+  id<JavaUtilList> snippets = [((CCBRUndefinedStepsTracker *) nil_chk(self->undefinedStepsTracker_)) getSnippets];
   if (![((id<JavaUtilList>) nil_chk(snippets)) isEmpty]) {
     [((JavaIoPrintStream *) nil_chk(self->out_)) appendWithJavaLangCharSequence:@"\n"];
     [self->out_ printlnWithNSString:@"You can implement missing steps with the snippets below:"];
@@ -130,3 +192,53 @@ void CCBRDefaultSummaryPrinter_printSnippetsWithCCBRRuntime_(CCBRDefaultSummaryP
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRDefaultSummaryPrinter)
+
+@implementation CCBRDefaultSummaryPrinter_1
+
+- (instancetype __nonnull)initWithCCBRDefaultSummaryPrinter:(CCBRDefaultSummaryPrinter *)outer$ {
+  CCBRDefaultSummaryPrinter_1_initWithCCBRDefaultSummaryPrinter_(self, outer$);
+  return self;
+}
+
+- (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestRunFinished *)event {
+  CCBRDefaultSummaryPrinter_print(this$0_);
+}
+
+- (void)dealloc {
+  RELEASE_(this$0_);
+  [super dealloc];
+}
+
++ (const J2ObjcClassInfo *)__metadata {
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, NULL, 0x0, -1, -1, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 0, 1, -1, -1, -1, -1 },
+  };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
+  methods[0].selector = @selector(initWithCCBRDefaultSummaryPrinter:);
+  methods[1].selector = @selector(receiveWithCucumberApiEventEvent:);
+  #pragma clang diagnostic pop
+  static const J2ObjcFieldInfo fields[] = {
+    { "this$0_", "LCCBRDefaultSummaryPrinter;", .constantValue.asLong = 0, 0x1012, -1, -1, -1, -1 },
+  };
+  static const void *ptrTable[] = { "receive", "LCucumberApiEventTestRunFinished;", "LCCBRDefaultSummaryPrinter;", "setEventPublisherWithCucumberApiEventEventPublisher:", "Ljava/lang/Object;Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
+  static const J2ObjcClassInfo _CCBRDefaultSummaryPrinter_1 = { "", "cucumber.runtime", ptrTable, methods, fields, 7, 0x8018, 2, 1, 2, -1, 3, 4, -1 };
+  return &_CCBRDefaultSummaryPrinter_1;
+}
+
+@end
+
+void CCBRDefaultSummaryPrinter_1_initWithCCBRDefaultSummaryPrinter_(CCBRDefaultSummaryPrinter_1 *self, CCBRDefaultSummaryPrinter *outer$) {
+  JreStrongAssign(&self->this$0_, outer$);
+  NSObject_init(self);
+}
+
+CCBRDefaultSummaryPrinter_1 *new_CCBRDefaultSummaryPrinter_1_initWithCCBRDefaultSummaryPrinter_(CCBRDefaultSummaryPrinter *outer$) {
+  J2OBJC_NEW_IMPL(CCBRDefaultSummaryPrinter_1, initWithCCBRDefaultSummaryPrinter_, outer$)
+}
+
+CCBRDefaultSummaryPrinter_1 *create_CCBRDefaultSummaryPrinter_1_initWithCCBRDefaultSummaryPrinter_(CCBRDefaultSummaryPrinter *outer$) {
+  J2OBJC_CREATE_IMPL(CCBRDefaultSummaryPrinter_1, initWithCCBRDefaultSummaryPrinter_, outer$)
+}

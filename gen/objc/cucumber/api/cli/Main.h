@@ -37,7 +37,6 @@
  @param argv runtime options. See details in the <code>cucumber.api.cli.Usage.txt</code>  resource.
  @param classLoader classloader used to load the runtime
  @return 0 if execution was successful, 1 if it was not (test failures)
- @throw IOExceptionif resources couldn't be loaded during the run.
  */
 + (jbyte)runWithNSStringArray:(IOSObjectArray *)argv
       withJavaLangClassLoader:(JavaLangClassLoader *)classLoader;

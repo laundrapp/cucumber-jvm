@@ -25,15 +25,11 @@
 #define INCLUDE_CucumberApiSummaryPrinter 1
 #include "cucumber/api/SummaryPrinter.h"
 
-@class CCBRRuntime;
-
 @interface CCBRNullSummaryPrinter : NSObject < CucumberApiSummaryPrinter >
 
 #pragma mark Public
 
 - (instancetype __nonnull)init;
-
-- (void)printWithCCBRRuntime:(CCBRRuntime *)runtime;
 
 @end
 

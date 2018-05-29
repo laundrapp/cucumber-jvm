@@ -24,8 +24,7 @@
 @protocol CucumberApiEventEventPublisher;
 
 /*!
- @brief This is the interface you should implement if you want your own custom
-  formatter.
+ @brief This is the interface you should implement if your plugin listens to cucumber execution events
  */
 @protocol CucumberApiEventEventListener < JavaObject >
 

@@ -26,19 +26,19 @@
 #include "cucumber/api/event/TimeStampedEvent.h"
 
 @class CucumberApiResult;
-@class CucumberApiTestCase;
 @class JavaLangLong;
+@protocol CucumberApiTestCase;
 
 @interface CucumberApiEventTestCaseFinished : CucumberApiEventTimeStampedEvent {
  @public
   CucumberApiResult *result_;
-  CucumberApiTestCase *testCase_;
+  id<CucumberApiTestCase> testCase_;
 }
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp
-                       withCucumberApiTestCase:(CucumberApiTestCase *)testCase
+                       withCucumberApiTestCase:(id<CucumberApiTestCase>)testCase
                          withCucumberApiResult:(CucumberApiResult *)result;
 
 // Disallowed inherited constructors, do not use.
@@ -50,13 +50,13 @@
 J2OBJC_EMPTY_STATIC_INIT(CucumberApiEventTestCaseFinished)
 
 J2OBJC_FIELD_SETTER(CucumberApiEventTestCaseFinished, result_, CucumberApiResult *)
-J2OBJC_FIELD_SETTER(CucumberApiEventTestCaseFinished, testCase_, CucumberApiTestCase *)
+J2OBJC_FIELD_SETTER(CucumberApiEventTestCaseFinished, testCase_, id<CucumberApiTestCase>)
 
-FOUNDATION_EXPORT void CucumberApiEventTestCaseFinished_initWithJavaLangLong_withCucumberApiTestCase_withCucumberApiResult_(CucumberApiEventTestCaseFinished *self, JavaLangLong *timeStamp, CucumberApiTestCase *testCase, CucumberApiResult *result);
+FOUNDATION_EXPORT void CucumberApiEventTestCaseFinished_initWithJavaLangLong_withCucumberApiTestCase_withCucumberApiResult_(CucumberApiEventTestCaseFinished *self, JavaLangLong *timeStamp, id<CucumberApiTestCase> testCase, CucumberApiResult *result);
 
-FOUNDATION_EXPORT CucumberApiEventTestCaseFinished *new_CucumberApiEventTestCaseFinished_initWithJavaLangLong_withCucumberApiTestCase_withCucumberApiResult_(JavaLangLong *timeStamp, CucumberApiTestCase *testCase, CucumberApiResult *result) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CucumberApiEventTestCaseFinished *new_CucumberApiEventTestCaseFinished_initWithJavaLangLong_withCucumberApiTestCase_withCucumberApiResult_(JavaLangLong *timeStamp, id<CucumberApiTestCase> testCase, CucumberApiResult *result) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberApiEventTestCaseFinished *create_CucumberApiEventTestCaseFinished_initWithJavaLangLong_withCucumberApiTestCase_withCucumberApiResult_(JavaLangLong *timeStamp, CucumberApiTestCase *testCase, CucumberApiResult *result);
+FOUNDATION_EXPORT CucumberApiEventTestCaseFinished *create_CucumberApiEventTestCaseFinished_initWithJavaLangLong_withCucumberApiTestCase_withCucumberApiResult_(JavaLangLong *timeStamp, id<CucumberApiTestCase> testCase, CucumberApiResult *result);
 
 J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventTestCaseFinished)
 

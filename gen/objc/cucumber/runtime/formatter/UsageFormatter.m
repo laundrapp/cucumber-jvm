@@ -7,6 +7,7 @@
 #include "J2ObjC_source.h"
 #include "com/google/gson/Gson.h"
 #include "com/google/gson/GsonBuilder.h"
+#include "cucumber/api/PickleStepTestStep.h"
 #include "cucumber/api/Result.h"
 #include "cucumber/api/TestStep.h"
 #include "cucumber/api/event/EventHandler.h"
@@ -158,8 +159,9 @@ J2OBJC_INITIALIZED_DEFN(CCBRUsageFormatter)
 }
 
 - (void)handleTestStepFinishedWithCucumberApiEventTestStepFinished:(CucumberApiEventTestStepFinished *)event {
-  if (![((CucumberApiTestStep *) nil_chk(((CucumberApiEventTestStepFinished *) nil_chk(event))->testStep_)) isHook] && [((CucumberApiResult *) nil_chk(event->result_)) isWithCucumberApiResult_Type:JreLoadEnum(CucumberApiResult_Type, PASSED)]) {
-    CCBRUsageFormatter_addUsageEntryWithCucumberApiResult_withNSString_withNSString_withNSString_(self, event->result_, [event->testStep_ getPattern], [event->testStep_ getStepText], [event->testStep_ getStepLocation]);
+  if ([CucumberApiPickleStepTestStep_class_() isInstance:((CucumberApiEventTestStepFinished *) nil_chk(event))->testStep_] && [((CucumberApiResult *) nil_chk(event->result_)) isWithCucumberApiResult_Type:JreLoadEnum(CucumberApiResult_Type, PASSED)]) {
+    id<CucumberApiPickleStepTestStep> testStep = (id<CucumberApiPickleStepTestStep>) cast_check(event->testStep_, CucumberApiPickleStepTestStep_class_());
+    CCBRUsageFormatter_addUsageEntryWithCucumberApiResult_withNSString_withNSString_withNSString_(self, event->result_, [((id<CucumberApiPickleStepTestStep>) nil_chk(testStep)) getPattern], [testStep getStepText], [testStep getStepLocation]);
   }
 }
 

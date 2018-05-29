@@ -8,8 +8,6 @@
 #include "J2ObjC_source.h"
 #include "cucumber/api/CucumberOptions.h"
 #include "cucumber/api/SnippetType.h"
-#include "cucumber/deps/com/thoughtworks/xstream/annotations/XStreamConverter.h"
-#include "cucumber/deps/com/thoughtworks/xstream/annotations/XStreamConverters.h"
 #include "cucumber/runtime/RuntimeOptions.h"
 #include "cucumber/runtime/RuntimeOptionsFactory.h"
 #include "cucumber/runtime/formatter/PluginFactory.h"
@@ -69,8 +67,6 @@
 - (void)addJunitOptionsWithCucumberApiCucumberOptions:(id<CucumberApiCucumberOptions>)options
                                      withJavaUtilList:(id<JavaUtilList>)args;
 
-- (id<JavaUtilList>)buildConverters;
-
 - (jboolean)runningInEnvironmentWithoutAnsiSupport;
 
 - (jboolean)hasSuperClassWithIOSClass:(IOSClass *)classWithOptions;
@@ -109,8 +105,6 @@ __attribute__((unused)) static void CCBRRuntimeOptionsFactory_addStrictWithCucum
 
 __attribute__((unused)) static void CCBRRuntimeOptionsFactory_addJunitOptionsWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args);
 
-__attribute__((unused)) static id<JavaUtilList> CCBRRuntimeOptionsFactory_buildConverters(CCBRRuntimeOptionsFactory *self);
-
 __attribute__((unused)) static jboolean CCBRRuntimeOptionsFactory_runningInEnvironmentWithoutAnsiSupport(CCBRRuntimeOptionsFactory *self);
 
 __attribute__((unused)) static jboolean CCBRRuntimeOptionsFactory_hasSuperClassWithIOSClass_(CCBRRuntimeOptionsFactory *self, IOSClass *classWithOptions);
@@ -126,8 +120,7 @@ __attribute__((unused)) static id<CucumberApiCucumberOptions> CCBRRuntimeOptions
 
 - (CCBRRuntimeOptions *)create {
   id<JavaUtilList> args = CCBRRuntimeOptionsFactory_buildArgsFromOptions(self);
-  id<JavaUtilList> converters = CCBRRuntimeOptionsFactory_buildConverters(self);
-  return [create_CCBRRuntimeOptions_initWithJavaUtilList_(args) withConvertersWithJavaUtilList:converters];
+  return create_CCBRRuntimeOptions_initWithJavaUtilList_(args);
 }
 
 - (id<JavaUtilList>)buildArgsFromOptions {
@@ -198,10 +191,6 @@ __attribute__((unused)) static id<CucumberApiCucumberOptions> CCBRRuntimeOptions
   CCBRRuntimeOptionsFactory_addJunitOptionsWithCucumberApiCucumberOptions_withJavaUtilList_(self, options, args);
 }
 
-- (id<JavaUtilList>)buildConverters {
-  return CCBRRuntimeOptionsFactory_buildConverters(self);
-}
-
 + (NSString *)packagePathWithIOSClass:(IOSClass *)clazz {
   return CCBRRuntimeOptionsFactory_packagePathWithIOSClass_(clazz);
 }
@@ -249,13 +238,12 @@ __attribute__((unused)) static id<CucumberApiCucumberOptions> CCBRRuntimeOptions
     { NULL, "V", 0x2, 18, 15, -1, 16, -1, -1 },
     { NULL, "V", 0x2, 19, 3, -1, 4, -1, -1 },
     { NULL, "V", 0x2, 20, 3, -1, 4, -1, -1 },
-    { NULL, "LJavaUtilList;", 0x2, -1, -1, -1, 21, -1, -1 },
-    { NULL, "LNSString;", 0x8, 22, 0, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x8, 22, 23, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x8, 24, 23, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x8, 21, 0, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x8, 21, 22, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x8, 23, 22, -1, -1, -1, -1 },
     { NULL, "Z", 0x2, -1, -1, -1, -1, -1, -1 },
-    { NULL, "Z", 0x2, 25, 0, -1, -1, -1, -1 },
-    { NULL, "LCucumberApiCucumberOptions;", 0x2, 26, 0, -1, 27, -1, -1 },
+    { NULL, "Z", 0x2, 24, 0, -1, -1, -1, -1 },
+    { NULL, "LCucumberApiCucumberOptions;", 0x2, 25, 0, -1, 26, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -276,13 +264,12 @@ __attribute__((unused)) static id<CucumberApiCucumberOptions> CCBRRuntimeOptions
   methods[13].selector = @selector(addDefaultGlueIfNoGlueIsSpecifiedWithJavaUtilList:withIOSClass:);
   methods[14].selector = @selector(addStrictWithCucumberApiCucumberOptions:withJavaUtilList:);
   methods[15].selector = @selector(addJunitOptionsWithCucumberApiCucumberOptions:withJavaUtilList:);
-  methods[16].selector = @selector(buildConverters);
-  methods[17].selector = @selector(packagePathWithIOSClass:);
-  methods[18].selector = @selector(packagePathWithNSString:);
-  methods[19].selector = @selector(packageNameWithNSString:);
-  methods[20].selector = @selector(runningInEnvironmentWithoutAnsiSupport);
-  methods[21].selector = @selector(hasSuperClassWithIOSClass:);
-  methods[22].selector = @selector(getOptionsWithIOSClass:);
+  methods[16].selector = @selector(packagePathWithIOSClass:);
+  methods[17].selector = @selector(packagePathWithNSString:);
+  methods[18].selector = @selector(packageNameWithNSString:);
+  methods[19].selector = @selector(runningInEnvironmentWithoutAnsiSupport);
+  methods[20].selector = @selector(hasSuperClassWithIOSClass:);
+  methods[21].selector = @selector(getOptionsWithIOSClass:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "clazz_", "LIOSClass;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
@@ -290,8 +277,8 @@ __attribute__((unused)) static id<CucumberApiCucumberOptions> CCBRRuntimeOptions
     { "glueSpecified_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "pluginSpecified_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LIOSClass;", "()Ljava/util/List<Ljava/lang/String;>;", "addName", "LCucumberApiCucumberOptions;LJavaUtilList;", "(Lcucumber/api/CucumberOptions;Ljava/util/List<Ljava/lang/String;>;)V", "addSnippets", "addDryRun", "addMonochrome", "addTags", "addPlugins", "addNullFormatIfNoPluginIsSpecified", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)V", "addFeatures", "addDefaultFeaturePathIfNoFeaturePathIsSpecified", "LJavaUtilList;LIOSClass;", "(Ljava/util/List<Ljava/lang/String;>;Ljava/lang/Class;)V", "addGlue", "addDefaultGlueIfNoGlueIsSpecified", "addStrict", "addJunitOptions", "()Ljava/util/List<Lcucumber/deps/com/thoughtworks/xstream/annotations/XStreamConverter;>;", "packagePath", "LNSString;", "packageName", "hasSuperClass", "getOptions", "(Ljava/lang/Class<*>;)Lcucumber/api/CucumberOptions;" };
-  static const J2ObjcClassInfo _CCBRRuntimeOptionsFactory = { "RuntimeOptionsFactory", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 23, 4, -1, -1, -1, -1, -1 };
+  static const void *ptrTable[] = { "LIOSClass;", "()Ljava/util/List<Ljava/lang/String;>;", "addName", "LCucumberApiCucumberOptions;LJavaUtilList;", "(Lcucumber/api/CucumberOptions;Ljava/util/List<Ljava/lang/String;>;)V", "addSnippets", "addDryRun", "addMonochrome", "addTags", "addPlugins", "addNullFormatIfNoPluginIsSpecified", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)V", "addFeatures", "addDefaultFeaturePathIfNoFeaturePathIsSpecified", "LJavaUtilList;LIOSClass;", "(Ljava/util/List<Ljava/lang/String;>;Ljava/lang/Class;)V", "addGlue", "addDefaultGlueIfNoGlueIsSpecified", "addStrict", "addJunitOptions", "packagePath", "LNSString;", "packageName", "hasSuperClass", "getOptions", "(Ljava/lang/Class<*>;)Lcucumber/api/CucumberOptions;" };
+  static const J2ObjcClassInfo _CCBRRuntimeOptionsFactory = { "RuntimeOptionsFactory", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 22, 4, -1, -1, -1, -1, -1 };
   return &_CCBRRuntimeOptionsFactory;
 }
 
@@ -382,7 +369,6 @@ void CCBRRuntimeOptionsFactory_addTagsWithCucumberApiCucumberOptions_withJavaUti
 void CCBRRuntimeOptionsFactory_addPluginsWithCucumberApiCucumberOptions_withJavaUtilList_(CCBRRuntimeOptionsFactory *self, id<CucumberApiCucumberOptions> options, id<JavaUtilList> args) {
   id<JavaUtilList> plugins = create_JavaUtilArrayList_init();
   [plugins addAllWithJavaUtilCollection:JavaUtilArrays_asListWithNSObjectArray_([((id<CucumberApiCucumberOptions>) nil_chk(options)) plugin])];
-  [plugins addAllWithJavaUtilCollection:JavaUtilArrays_asListWithNSObjectArray_([options format])];
   for (NSString * __strong plugin in plugins) {
     [((id<JavaUtilList>) nil_chk(args)) addWithId:@"--plugin"];
     [args addWithId:plugin];
@@ -449,21 +435,6 @@ void CCBRRuntimeOptionsFactory_addJunitOptionsWithCucumberApiCucumberOptions_wit
       [((id<JavaUtilList>) nil_chk(args)) addWithId:JreStrcat("$$", @"--junit,", junitOption)];
     }
   }
-}
-
-id<JavaUtilList> CCBRRuntimeOptionsFactory_buildConverters(CCBRRuntimeOptionsFactory *self) {
-  id<JavaUtilList> converters = create_JavaUtilArrayList_init();
-  for (IOSClass *classWithConverters = self->clazz_; CCBRRuntimeOptionsFactory_hasSuperClassWithIOSClass_(self, classWithConverters); classWithConverters = [classWithConverters getSuperclass]) {
-    id<CucumberDepsComThoughtworksXstreamAnnotationsXStreamConverters> xstreamConverters = ((id<CucumberDepsComThoughtworksXstreamAnnotationsXStreamConverters>) [((IOSClass *) nil_chk(classWithConverters)) getAnnotationWithIOSClass:CucumberDepsComThoughtworksXstreamAnnotationsXStreamConverters_class_()]);
-    if (xstreamConverters != nil) {
-      JavaUtilCollections_addAllWithJavaUtilCollection_withNSObjectArray_(converters, [xstreamConverters value]);
-    }
-    id<CucumberDepsComThoughtworksXstreamAnnotationsXStreamConverter> xstreamConverter = ((id<CucumberDepsComThoughtworksXstreamAnnotationsXStreamConverter>) [classWithConverters getAnnotationWithIOSClass:CucumberDepsComThoughtworksXstreamAnnotationsXStreamConverter_class_()]);
-    if (xstreamConverter != nil) {
-      [converters addWithId:xstreamConverter];
-    }
-  }
-  return converters;
 }
 
 NSString *CCBRRuntimeOptionsFactory_packagePathWithIOSClass_(IOSClass *clazz) {

@@ -24,7 +24,6 @@
 @class CCBRFunctionNameGenerator;
 @class GHKPickleStep;
 @protocol CCBRGlue;
-@protocol CCBRUnreportedStepExecutor;
 @protocol JavaUtilList;
 
 @protocol CCBRBackend < JavaObject >
@@ -34,12 +33,6 @@
  */
 - (void)loadGlueWithCCBRGlue:(id<CCBRGlue>)glue
             withJavaUtilList:(id<JavaUtilList>)gluePaths;
-
-/*!
- @brief Invoked once, handing the backend a reference to a step executor
-  in case the backend needs to call steps defined within other steps
- */
-- (void)setUnreportedStepExecutorWithCCBRUnreportedStepExecutor:(id<CCBRUnreportedStepExecutor>)executor;
 
 /*!
  @brief Invoked before a new scenario starts.Implementations should do any necessary

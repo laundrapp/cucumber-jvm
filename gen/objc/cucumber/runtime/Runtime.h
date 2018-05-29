@@ -24,10 +24,8 @@
 @class CCBEventBus;
 @class CCBRCucumberFeature;
 @class CCBRRuntimeOptions;
-@class CCBRStats;
 @class CCBRunner;
 @class GHKPickleEvent;
-@class JavaIoPrintStream;
 @class JavaLangClassLoader;
 @protocol CCBRClassFinder;
 @protocol CCBRGlue;
@@ -40,10 +38,7 @@
 /*!
  @brief This is the main entry point for running Cucumber features.
  */
-@interface CCBRRuntime : NSObject {
- @public
-  CCBRStats *stats_;
-}
+@interface CCBRRuntime : NSObject
 
 #pragma mark Public
 
@@ -74,19 +69,13 @@
 
 - (jbyte)exitStatus;
 
-- (id<JavaUtilList>)getErrors;
-
 - (CCBEventBus *)getEventBus;
 
 - (id<CCBRGlue>)getGlue;
 
 - (CCBRunner *)getRunner;
 
-- (id<JavaUtilList>)getSnippets;
-
 - (jboolean)matchesFiltersWithGHKPickleEvent:(GHKPickleEvent *)pickleEvent;
-
-- (void)printSummary;
 
 - (void)reportStepDefinitionsWithCucumberApiStepDefinitionReporter:(id<CucumberApiStepDefinitionReporter>)stepDefinitionReporter;
 
@@ -97,10 +86,6 @@
 
 - (void)runFeatureWithCCBRCucumberFeature:(CCBRCucumberFeature *)feature;
 
-#pragma mark Package-Private
-
-- (void)printStatsWithJavaIoPrintStream:(JavaIoPrintStream *)outArg;
-
 // Disallowed inherited constructors, do not use.
 
 - (instancetype __nonnull)init NS_UNAVAILABLE;
@@ -108,8 +93,6 @@
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(CCBRRuntime)
-
-J2OBJC_FIELD_SETTER(CCBRRuntime, stats_, CCBRStats *)
 
 FOUNDATION_EXPORT void CCBRRuntime_initWithCCBRResourceLoader_withCCBRClassFinder_withJavaLangClassLoader_withCCBRRuntimeOptions_(CCBRRuntime *self, id<CCBRResourceLoader> resourceLoader, id<CCBRClassFinder> classFinder, JavaLangClassLoader *classLoader, CCBRRuntimeOptions *runtimeOptions);
 

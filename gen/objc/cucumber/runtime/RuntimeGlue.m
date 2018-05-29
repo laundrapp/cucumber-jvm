@@ -3,22 +3,16 @@
 //  source: /Users/Salton/Documents/Projects/cucumber-jvm/core/src/main/java/cucumber/runtime/RuntimeGlue.java
 //
 
-#include "IOSClass.h"
-#include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
 #include "cucumber/api/StepDefinitionReporter.h"
 #include "cucumber/runtime/AmbiguousStepDefinitionsException.h"
 #include "cucumber/runtime/DuplicateStepDefinitionException.h"
 #include "cucumber/runtime/HookComparator.h"
 #include "cucumber/runtime/HookDefinition.h"
+#include "cucumber/runtime/PickleStepDefinitionMatch.h"
 #include "cucumber/runtime/RuntimeGlue.h"
 #include "cucumber/runtime/StepDefinition.h"
-#include "cucumber/runtime/StepDefinitionMatch.h"
-#include "cucumber/runtime/UndefinedStepsTracker.h"
-#include "cucumber/runtime/xstream/LocalizedXStreams.h"
 #include "gherkin/pickles/PickleStep.h"
-#include "java/lang/Deprecated.h"
-#include "java/lang/annotation/Annotation.h"
 #include "java/util/ArrayList.h"
 #include "java/util/Collection.h"
 #include "java/util/Collections.h"
@@ -29,10 +23,7 @@
 #include "java/util/Set.h"
 #include "java/util/TreeMap.h"
 
-@interface CCBRRuntimeGlue () {
- @public
-  CCBRLocalizedXStreams *localizedXStreams_;
-}
+@interface CCBRRuntimeGlue ()
 
 - (id<JavaUtilList>)stepDefinitionMatchesWithNSString:(NSString *)featurePath
                                     withGHKPickleStep:(GHKPickleStep *)step;
@@ -43,41 +34,32 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(CCBRRuntimeGlue, localizedXStreams_, CCBRLocalizedXStreams *)
-
 __attribute__((unused)) static id<JavaUtilList> CCBRRuntimeGlue_stepDefinitionMatchesWithNSString_withGHKPickleStep_(CCBRRuntimeGlue *self, NSString *featurePath, GHKPickleStep *step);
 
 __attribute__((unused)) static void CCBRRuntimeGlue_removeScenarioScopedHooksWithJavaUtilList_(CCBRRuntimeGlue *self, id<JavaUtilList> beforeHooks1);
 
 __attribute__((unused)) static void CCBRRuntimeGlue_removeScenarioScopedStepdefs(CCBRRuntimeGlue *self);
 
-__attribute__((unused)) static IOSObjectArray *CCBRRuntimeGlue__Annotations$0(void);
-
 @interface CCBRRuntimeGlue_CacheEntry ()
 
-- (instancetype __nonnull)initWithCCBRStepDefinition:(id<CCBRStepDefinition>)stepDefinition
-                                    withJavaUtilList:(id<JavaUtilList>)arguments;
+- (instancetype __nonnull)initWithCCBRStepDefinition:(id<CCBRStepDefinition>)stepDefinition;
 
 @end
 
-__attribute__((unused)) static void CCBRRuntimeGlue_CacheEntry_initWithCCBRStepDefinition_withJavaUtilList_(CCBRRuntimeGlue_CacheEntry *self, id<CCBRStepDefinition> stepDefinition, id<JavaUtilList> arguments);
+__attribute__((unused)) static void CCBRRuntimeGlue_CacheEntry_initWithCCBRStepDefinition_(CCBRRuntimeGlue_CacheEntry *self, id<CCBRStepDefinition> stepDefinition);
 
-__attribute__((unused)) static CCBRRuntimeGlue_CacheEntry *new_CCBRRuntimeGlue_CacheEntry_initWithCCBRStepDefinition_withJavaUtilList_(id<CCBRStepDefinition> stepDefinition, id<JavaUtilList> arguments) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRRuntimeGlue_CacheEntry *new_CCBRRuntimeGlue_CacheEntry_initWithCCBRStepDefinition_(id<CCBRStepDefinition> stepDefinition) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CCBRRuntimeGlue_CacheEntry *create_CCBRRuntimeGlue_CacheEntry_initWithCCBRStepDefinition_withJavaUtilList_(id<CCBRStepDefinition> stepDefinition, id<JavaUtilList> arguments);
+__attribute__((unused)) static CCBRRuntimeGlue_CacheEntry *create_CCBRRuntimeGlue_CacheEntry_initWithCCBRStepDefinition_(id<CCBRStepDefinition> stepDefinition);
 
 @implementation CCBRRuntimeGlue
 
-- (instancetype __nonnull)initWithCCBRLocalizedXStreams:(CCBRLocalizedXStreams *)localizedXStreams {
-  CCBRRuntimeGlue_initWithCCBRLocalizedXStreams_(self, localizedXStreams);
+J2OBJC_IGNORE_DESIGNATED_BEGIN
+- (instancetype __nonnull)init {
+  CCBRRuntimeGlue_init(self);
   return self;
 }
-
-- (instancetype __nonnull)initWithCCBRUndefinedStepsTracker:(CCBRUndefinedStepsTracker *)tracker
-                                  withCCBRLocalizedXStreams:(CCBRLocalizedXStreams *)localizedXStreams {
-  CCBRRuntimeGlue_initWithCCBRUndefinedStepsTracker_withCCBRLocalizedXStreams_(self, tracker, localizedXStreams);
-  return self;
-}
+J2OBJC_IGNORE_DESIGNATED_END
 
 - (void)addStepDefinitionWithCCBRStepDefinition:(id<CCBRStepDefinition>)stepDefinition {
   id<CCBRStepDefinition> previous = [((id<JavaUtilMap>) nil_chk(stepDefinitionsByPattern_)) getWithId:[((id<CCBRStepDefinition>) nil_chk(stepDefinition)) getPattern]];
@@ -92,36 +74,56 @@ __attribute__((unused)) static CCBRRuntimeGlue_CacheEntry *create_CCBRRuntimeGlu
   JavaUtilCollections_sortWithJavaUtilList_withJavaUtilComparator_(beforeHooks_, create_CCBRHookComparator_initWithBoolean_(true));
 }
 
+- (void)addBeforeStepHookWithCCBRHookDefinition:(id<CCBRHookDefinition>)hookDefinition {
+  [((id<JavaUtilList>) nil_chk(beforeStepHooks_)) addWithId:hookDefinition];
+  JavaUtilCollections_sortWithJavaUtilList_withJavaUtilComparator_(beforeStepHooks_, create_CCBRHookComparator_initWithBoolean_(true));
+}
+
 - (void)addAfterHookWithCCBRHookDefinition:(id<CCBRHookDefinition>)hookDefinition {
   [((id<JavaUtilList>) nil_chk(afterHooks_)) addWithId:hookDefinition];
   JavaUtilCollections_sortWithJavaUtilList_withJavaUtilComparator_(afterHooks_, create_CCBRHookComparator_initWithBoolean_(false));
+}
+
+- (void)addAfterStepHookWithCCBRHookDefinition:(id<CCBRHookDefinition>)hookDefinition {
+  [((id<JavaUtilList>) nil_chk(afterStepHooks_)) addWithId:hookDefinition];
+  JavaUtilCollections_sortWithJavaUtilList_withJavaUtilComparator_(afterStepHooks_, create_CCBRHookComparator_initWithBoolean_(false));
 }
 
 - (id<JavaUtilList>)getBeforeHooks {
   return beforeHooks_;
 }
 
+- (id<JavaUtilList>)getBeforeStepHooks {
+  return beforeStepHooks_;
+}
+
 - (id<JavaUtilList>)getAfterHooks {
   return afterHooks_;
 }
 
-- (CCBRStepDefinitionMatch *)stepDefinitionMatchWithNSString:(NSString *)featurePath
-                                           withGHKPickleStep:(GHKPickleStep *)step {
+- (id<JavaUtilList>)getAfterStepHooks {
+  return afterStepHooks_;
+}
+
+- (CCBRPickleStepDefinitionMatch *)stepDefinitionMatchWithNSString:(NSString *)featurePath
+                                                 withGHKPickleStep:(GHKPickleStep *)step {
   NSString *stepText = [((GHKPickleStep *) nil_chk(step)) getText];
   CCBRRuntimeGlue_CacheEntry *cacheEntry = [((id<JavaUtilMap>) nil_chk(matchedStepDefinitionsCache_)) getWithId:stepText];
   if (cacheEntry != nil) {
-    return create_CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGHKPickleStep_withCCBRLocalizedXStreams_(cacheEntry->arguments_, cacheEntry->stepDefinition_, featurePath, step, localizedXStreams_);
+    return create_CCBRPickleStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGHKPickleStep_(JavaUtilCollections_emptyList(), cacheEntry->stepDefinition_, featurePath, step);
   }
   id<JavaUtilList> matches = CCBRRuntimeGlue_stepDefinitionMatchesWithNSString_withGHKPickleStep_(self, featurePath, step);
   if ([((id<JavaUtilList>) nil_chk(matches)) isEmpty]) {
     return nil;
   }
-  if ([matches size] == 1) {
-    CCBRStepDefinitionMatch *match = [matches getWithInt:0];
-    [matchedStepDefinitionsCache_ putWithId:stepText withId:create_CCBRRuntimeGlue_CacheEntry_initWithCCBRStepDefinition_withJavaUtilList_([((CCBRStepDefinitionMatch *) nil_chk(match)) getStepDefinition], [match getArguments])];
-    return match;
+  if ([matches size] > 1) {
+    @throw create_CCBRAmbiguousStepDefinitionsException_initWithGHKPickleStep_withJavaUtilList_(step, matches);
   }
-  @throw create_CCBRAmbiguousStepDefinitionsException_initWithGHKPickleStep_withJavaUtilList_(step, matches);
+  CCBRPickleStepDefinitionMatch *match = [matches getWithInt:0];
+  if ([((id<JavaUtilList>) nil_chk([((CCBRPickleStepDefinitionMatch *) nil_chk(match)) getArguments])) isEmpty]) {
+    [matchedStepDefinitionsCache_ putWithId:stepText withId:create_CCBRRuntimeGlue_CacheEntry_initWithCCBRStepDefinition_([match getStepDefinition])];
+  }
+  return match;
 }
 
 - (id<JavaUtilList>)stepDefinitionMatchesWithNSString:(NSString *)featurePath
@@ -137,7 +139,9 @@ __attribute__((unused)) static CCBRRuntimeGlue_CacheEntry *create_CCBRRuntimeGlu
 
 - (void)removeScenarioScopedGlue {
   CCBRRuntimeGlue_removeScenarioScopedHooksWithJavaUtilList_(self, beforeHooks_);
+  CCBRRuntimeGlue_removeScenarioScopedHooksWithJavaUtilList_(self, beforeStepHooks_);
   CCBRRuntimeGlue_removeScenarioScopedHooksWithJavaUtilList_(self, afterHooks_);
+  CCBRRuntimeGlue_removeScenarioScopedHooksWithJavaUtilList_(self, afterStepHooks_);
   CCBRRuntimeGlue_removeScenarioScopedStepdefs(self);
 }
 
@@ -152,86 +156,83 @@ __attribute__((unused)) static CCBRRuntimeGlue_CacheEntry *create_CCBRRuntimeGlu
 - (void)dealloc {
   RELEASE_(stepDefinitionsByPattern_);
   RELEASE_(beforeHooks_);
+  RELEASE_(beforeStepHooks_);
   RELEASE_(afterHooks_);
+  RELEASE_(afterStepHooks_);
   RELEASE_(matchedStepDefinitionsCache_);
-  RELEASE_(localizedXStreams_);
   [super dealloc];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
-    { NULL, NULL, 0x1, -1, 1, -1, -1, 2, -1 },
-    { NULL, "V", 0x1, 3, 4, -1, -1, -1, -1 },
-    { NULL, "V", 0x1, 5, 6, -1, -1, -1, -1 },
-    { NULL, "V", 0x1, 7, 6, -1, -1, -1, -1 },
-    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 8, -1, -1 },
-    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 8, -1, -1 },
-    { NULL, "LCCBRStepDefinitionMatch;", 0x1, 9, 10, -1, -1, -1, -1 },
-    { NULL, "LJavaUtilList;", 0x2, 11, 10, -1, 12, -1, -1 },
-    { NULL, "V", 0x1, 13, 14, -1, -1, -1, -1 },
+    { NULL, NULL, 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 0, 1, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 2, 3, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 4, 3, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 5, 3, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 6, 3, -1, -1, -1, -1 },
+    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 7, -1, -1 },
+    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 7, -1, -1 },
+    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 7, -1, -1 },
+    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 7, -1, -1 },
+    { NULL, "LCCBRPickleStepDefinitionMatch;", 0x1, 8, 9, -1, -1, -1, -1 },
+    { NULL, "LJavaUtilList;", 0x2, 10, 9, -1, 11, -1, -1 },
+    { NULL, "V", 0x1, 12, 13, -1, -1, -1, -1 },
     { NULL, "V", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "V", 0x2, 15, 16, -1, 17, -1, -1 },
+    { NULL, "V", 0x2, 14, 15, -1, 16, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCCBRLocalizedXStreams:);
-  methods[1].selector = @selector(initWithCCBRUndefinedStepsTracker:withCCBRLocalizedXStreams:);
-  methods[2].selector = @selector(addStepDefinitionWithCCBRStepDefinition:);
-  methods[3].selector = @selector(addBeforeHookWithCCBRHookDefinition:);
+  methods[0].selector = @selector(init);
+  methods[1].selector = @selector(addStepDefinitionWithCCBRStepDefinition:);
+  methods[2].selector = @selector(addBeforeHookWithCCBRHookDefinition:);
+  methods[3].selector = @selector(addBeforeStepHookWithCCBRHookDefinition:);
   methods[4].selector = @selector(addAfterHookWithCCBRHookDefinition:);
-  methods[5].selector = @selector(getBeforeHooks);
-  methods[6].selector = @selector(getAfterHooks);
-  methods[7].selector = @selector(stepDefinitionMatchWithNSString:withGHKPickleStep:);
-  methods[8].selector = @selector(stepDefinitionMatchesWithNSString:withGHKPickleStep:);
-  methods[9].selector = @selector(reportStepDefinitionsWithCucumberApiStepDefinitionReporter:);
-  methods[10].selector = @selector(removeScenarioScopedGlue);
-  methods[11].selector = @selector(removeScenarioScopedHooksWithJavaUtilList:);
-  methods[12].selector = @selector(removeScenarioScopedStepdefs);
+  methods[5].selector = @selector(addAfterStepHookWithCCBRHookDefinition:);
+  methods[6].selector = @selector(getBeforeHooks);
+  methods[7].selector = @selector(getBeforeStepHooks);
+  methods[8].selector = @selector(getAfterHooks);
+  methods[9].selector = @selector(getAfterStepHooks);
+  methods[10].selector = @selector(stepDefinitionMatchWithNSString:withGHKPickleStep:);
+  methods[11].selector = @selector(stepDefinitionMatchesWithNSString:withGHKPickleStep:);
+  methods[12].selector = @selector(reportStepDefinitionsWithCucumberApiStepDefinitionReporter:);
+  methods[13].selector = @selector(removeScenarioScopedGlue);
+  methods[14].selector = @selector(removeScenarioScopedHooksWithJavaUtilList:);
+  methods[15].selector = @selector(removeScenarioScopedStepdefs);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "stepDefinitionsByPattern_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x10, -1, -1, 18, -1 },
-    { "beforeHooks_", "LJavaUtilList;", .constantValue.asLong = 0, 0x10, -1, -1, 19, -1 },
-    { "afterHooks_", "LJavaUtilList;", .constantValue.asLong = 0, 0x10, -1, -1, 19, -1 },
-    { "matchedStepDefinitionsCache_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x10, -1, -1, 20, -1 },
-    { "localizedXStreams_", "LCCBRLocalizedXStreams;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "stepDefinitionsByPattern_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x10, -1, -1, 17, -1 },
+    { "beforeHooks_", "LJavaUtilList;", .constantValue.asLong = 0, 0x10, -1, -1, 18, -1 },
+    { "beforeStepHooks_", "LJavaUtilList;", .constantValue.asLong = 0, 0x10, -1, -1, 18, -1 },
+    { "afterHooks_", "LJavaUtilList;", .constantValue.asLong = 0, 0x10, -1, -1, 18, -1 },
+    { "afterStepHooks_", "LJavaUtilList;", .constantValue.asLong = 0, 0x10, -1, -1, 18, -1 },
+    { "matchedStepDefinitionsCache_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x10, -1, -1, 19, -1 },
   };
-  static const void *ptrTable[] = { "LCCBRLocalizedXStreams;", "LCCBRUndefinedStepsTracker;LCCBRLocalizedXStreams;", (void *)&CCBRRuntimeGlue__Annotations$0, "addStepDefinition", "LCCBRStepDefinition;", "addBeforeHook", "LCCBRHookDefinition;", "addAfterHook", "()Ljava/util/List<Lcucumber/runtime/HookDefinition;>;", "stepDefinitionMatch", "LNSString;LGHKPickleStep;", "stepDefinitionMatches", "(Ljava/lang/String;Lgherkin/pickles/PickleStep;)Ljava/util/List<Lcucumber/runtime/StepDefinitionMatch;>;", "reportStepDefinitions", "LCucumberApiStepDefinitionReporter;", "removeScenarioScopedHooks", "LJavaUtilList;", "(Ljava/util/List<Lcucumber/runtime/HookDefinition;>;)V", "Ljava/util/Map<Ljava/lang/String;Lcucumber/runtime/StepDefinition;>;", "Ljava/util/List<Lcucumber/runtime/HookDefinition;>;", "Ljava/util/Map<Ljava/lang/String;Lcucumber/runtime/RuntimeGlue$CacheEntry;>;", "LCCBRRuntimeGlue_CacheEntry;" };
-  static const J2ObjcClassInfo _CCBRRuntimeGlue = { "RuntimeGlue", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 13, 5, -1, 21, -1, -1, -1 };
+  static const void *ptrTable[] = { "addStepDefinition", "LCCBRStepDefinition;", "addBeforeHook", "LCCBRHookDefinition;", "addBeforeStepHook", "addAfterHook", "addAfterStepHook", "()Ljava/util/List<Lcucumber/runtime/HookDefinition;>;", "stepDefinitionMatch", "LNSString;LGHKPickleStep;", "stepDefinitionMatches", "(Ljava/lang/String;Lgherkin/pickles/PickleStep;)Ljava/util/List<Lcucumber/runtime/PickleStepDefinitionMatch;>;", "reportStepDefinitions", "LCucumberApiStepDefinitionReporter;", "removeScenarioScopedHooks", "LJavaUtilList;", "(Ljava/util/List<Lcucumber/runtime/HookDefinition;>;)V", "Ljava/util/Map<Ljava/lang/String;Lcucumber/runtime/StepDefinition;>;", "Ljava/util/List<Lcucumber/runtime/HookDefinition;>;", "Ljava/util/Map<Ljava/lang/String;Lcucumber/runtime/RuntimeGlue$CacheEntry;>;", "LCCBRRuntimeGlue_CacheEntry;" };
+  static const J2ObjcClassInfo _CCBRRuntimeGlue = { "RuntimeGlue", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 16, 6, -1, 20, -1, -1, -1 };
   return &_CCBRRuntimeGlue;
 }
 
 @end
 
-void CCBRRuntimeGlue_initWithCCBRLocalizedXStreams_(CCBRRuntimeGlue *self, CCBRLocalizedXStreams *localizedXStreams) {
-  CCBRRuntimeGlue_initWithCCBRUndefinedStepsTracker_withCCBRLocalizedXStreams_(self, nil, localizedXStreams);
-}
-
-CCBRRuntimeGlue *new_CCBRRuntimeGlue_initWithCCBRLocalizedXStreams_(CCBRLocalizedXStreams *localizedXStreams) {
-  J2OBJC_NEW_IMPL(CCBRRuntimeGlue, initWithCCBRLocalizedXStreams_, localizedXStreams)
-}
-
-CCBRRuntimeGlue *create_CCBRRuntimeGlue_initWithCCBRLocalizedXStreams_(CCBRLocalizedXStreams *localizedXStreams) {
-  J2OBJC_CREATE_IMPL(CCBRRuntimeGlue, initWithCCBRLocalizedXStreams_, localizedXStreams)
-}
-
-void CCBRRuntimeGlue_initWithCCBRUndefinedStepsTracker_withCCBRLocalizedXStreams_(CCBRRuntimeGlue *self, CCBRUndefinedStepsTracker *tracker, CCBRLocalizedXStreams *localizedXStreams) {
+void CCBRRuntimeGlue_init(CCBRRuntimeGlue *self) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->stepDefinitionsByPattern_, new_JavaUtilTreeMap_init());
   JreStrongAssignAndConsume(&self->beforeHooks_, new_JavaUtilArrayList_init());
+  JreStrongAssignAndConsume(&self->beforeStepHooks_, new_JavaUtilArrayList_init());
   JreStrongAssignAndConsume(&self->afterHooks_, new_JavaUtilArrayList_init());
+  JreStrongAssignAndConsume(&self->afterStepHooks_, new_JavaUtilArrayList_init());
   JreStrongAssignAndConsume(&self->matchedStepDefinitionsCache_, new_JavaUtilHashMap_init());
-  JreStrongAssign(&self->localizedXStreams_, localizedXStreams);
 }
 
-CCBRRuntimeGlue *new_CCBRRuntimeGlue_initWithCCBRUndefinedStepsTracker_withCCBRLocalizedXStreams_(CCBRUndefinedStepsTracker *tracker, CCBRLocalizedXStreams *localizedXStreams) {
-  J2OBJC_NEW_IMPL(CCBRRuntimeGlue, initWithCCBRUndefinedStepsTracker_withCCBRLocalizedXStreams_, tracker, localizedXStreams)
+CCBRRuntimeGlue *new_CCBRRuntimeGlue_init() {
+  J2OBJC_NEW_IMPL(CCBRRuntimeGlue, init)
 }
 
-CCBRRuntimeGlue *create_CCBRRuntimeGlue_initWithCCBRUndefinedStepsTracker_withCCBRLocalizedXStreams_(CCBRUndefinedStepsTracker *tracker, CCBRLocalizedXStreams *localizedXStreams) {
-  J2OBJC_CREATE_IMPL(CCBRRuntimeGlue, initWithCCBRUndefinedStepsTracker_withCCBRLocalizedXStreams_, tracker, localizedXStreams)
+CCBRRuntimeGlue *create_CCBRRuntimeGlue_init() {
+  J2OBJC_CREATE_IMPL(CCBRRuntimeGlue, init)
 }
 
 id<JavaUtilList> CCBRRuntimeGlue_stepDefinitionMatchesWithNSString_withGHKPickleStep_(CCBRRuntimeGlue *self, NSString *featurePath, GHKPickleStep *step) {
@@ -239,7 +240,7 @@ id<JavaUtilList> CCBRRuntimeGlue_stepDefinitionMatchesWithNSString_withGHKPickle
   for (id<CCBRStepDefinition> __strong stepDefinition in nil_chk([((id<JavaUtilMap>) nil_chk(self->stepDefinitionsByPattern_)) values])) {
     id<JavaUtilList> arguments = [((id<CCBRStepDefinition>) nil_chk(stepDefinition)) matchedArgumentsWithGHKPickleStep:step];
     if (arguments != nil) {
-      [result addWithId:create_CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGHKPickleStep_withCCBRLocalizedXStreams_(arguments, stepDefinition, featurePath, step, self->localizedXStreams_)];
+      [result addWithId:create_CCBRPickleStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGHKPickleStep_(arguments, stepDefinition, featurePath, step)];
     }
   }
   return result;
@@ -272,58 +273,50 @@ void CCBRRuntimeGlue_removeScenarioScopedStepdefs(CCBRRuntimeGlue *self) {
   }
 }
 
-IOSObjectArray *CCBRRuntimeGlue__Annotations$0() {
-  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
-}
-
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRRuntimeGlue)
 
 @implementation CCBRRuntimeGlue_CacheEntry
 
-- (instancetype __nonnull)initWithCCBRStepDefinition:(id<CCBRStepDefinition>)stepDefinition
-                                    withJavaUtilList:(id<JavaUtilList>)arguments {
-  CCBRRuntimeGlue_CacheEntry_initWithCCBRStepDefinition_withJavaUtilList_(self, stepDefinition, arguments);
+- (instancetype __nonnull)initWithCCBRStepDefinition:(id<CCBRStepDefinition>)stepDefinition {
+  CCBRRuntimeGlue_CacheEntry_initWithCCBRStepDefinition_(self, stepDefinition);
   return self;
 }
 
 - (void)dealloc {
   RELEASE_(stepDefinition_);
-  RELEASE_(arguments_);
   [super dealloc];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, NULL, 0x2, -1, 0, -1, 1, -1, -1 },
+    { NULL, NULL, 0x2, -1, 0, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCCBRStepDefinition:withJavaUtilList:);
+  methods[0].selector = @selector(initWithCCBRStepDefinition:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "stepDefinition_", "LCCBRStepDefinition;", .constantValue.asLong = 0, 0x0, -1, -1, -1, -1 },
-    { "arguments_", "LJavaUtilList;", .constantValue.asLong = 0, 0x0, -1, -1, 2, -1 },
   };
-  static const void *ptrTable[] = { "LCCBRStepDefinition;LJavaUtilList;", "(Lcucumber/runtime/StepDefinition;Ljava/util/List<Lcucumber/runtime/Argument;>;)V", "Ljava/util/List<Lcucumber/runtime/Argument;>;", "LCCBRRuntimeGlue;" };
-  static const J2ObjcClassInfo _CCBRRuntimeGlue_CacheEntry = { "CacheEntry", "cucumber.runtime", ptrTable, methods, fields, 7, 0x18, 1, 2, 3, -1, -1, -1, -1 };
+  static const void *ptrTable[] = { "LCCBRStepDefinition;", "LCCBRRuntimeGlue;" };
+  static const J2ObjcClassInfo _CCBRRuntimeGlue_CacheEntry = { "CacheEntry", "cucumber.runtime", ptrTable, methods, fields, 7, 0x18, 1, 1, 1, -1, -1, -1, -1 };
   return &_CCBRRuntimeGlue_CacheEntry;
 }
 
 @end
 
-void CCBRRuntimeGlue_CacheEntry_initWithCCBRStepDefinition_withJavaUtilList_(CCBRRuntimeGlue_CacheEntry *self, id<CCBRStepDefinition> stepDefinition, id<JavaUtilList> arguments) {
+void CCBRRuntimeGlue_CacheEntry_initWithCCBRStepDefinition_(CCBRRuntimeGlue_CacheEntry *self, id<CCBRStepDefinition> stepDefinition) {
   NSObject_init(self);
   JreStrongAssign(&self->stepDefinition_, stepDefinition);
-  JreStrongAssign(&self->arguments_, arguments);
 }
 
-CCBRRuntimeGlue_CacheEntry *new_CCBRRuntimeGlue_CacheEntry_initWithCCBRStepDefinition_withJavaUtilList_(id<CCBRStepDefinition> stepDefinition, id<JavaUtilList> arguments) {
-  J2OBJC_NEW_IMPL(CCBRRuntimeGlue_CacheEntry, initWithCCBRStepDefinition_withJavaUtilList_, stepDefinition, arguments)
+CCBRRuntimeGlue_CacheEntry *new_CCBRRuntimeGlue_CacheEntry_initWithCCBRStepDefinition_(id<CCBRStepDefinition> stepDefinition) {
+  J2OBJC_NEW_IMPL(CCBRRuntimeGlue_CacheEntry, initWithCCBRStepDefinition_, stepDefinition)
 }
 
-CCBRRuntimeGlue_CacheEntry *create_CCBRRuntimeGlue_CacheEntry_initWithCCBRStepDefinition_withJavaUtilList_(id<CCBRStepDefinition> stepDefinition, id<JavaUtilList> arguments) {
-  J2OBJC_CREATE_IMPL(CCBRRuntimeGlue_CacheEntry, initWithCCBRStepDefinition_withJavaUtilList_, stepDefinition, arguments)
+CCBRRuntimeGlue_CacheEntry *create_CCBRRuntimeGlue_CacheEntry_initWithCCBRStepDefinition_(id<CCBRStepDefinition> stepDefinition) {
+  J2OBJC_CREATE_IMPL(CCBRRuntimeGlue_CacheEntry, initWithCCBRStepDefinition_, stepDefinition)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRRuntimeGlue_CacheEntry)

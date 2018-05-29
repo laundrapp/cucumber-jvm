@@ -21,77 +21,25 @@
 #if !defined (CCBRStepDefinitionMatch_) && (INCLUDE_ALL_CucumberRuntimeStepDefinitionMatch || defined(INCLUDE_CCBRStepDefinitionMatch))
 #define CCBRStepDefinitionMatch_
 
-#define RESTRICT_CucumberRuntimeMatch 1
-#define INCLUDE_CCBRMatch 1
-#include "cucumber/runtime/Match.h"
-
-#define RESTRICT_CucumberRuntimeDefinitionMatch 1
-#define INCLUDE_CCBRDefinitionMatch 1
-#include "cucumber/runtime/DefinitionMatch.h"
-
-@class CCBRLocalizedXStreams;
-@class GHKPickleStep;
-@class JavaLangStackTraceElement;
-@class JavaLangThrowable;
-@protocol CCBRStepDefinition;
 @protocol CucumberApiScenario;
-@protocol JavaUtilList;
 
-@interface CCBRStepDefinitionMatch : CCBRMatch < CCBRDefinitionMatch >
+@protocol CCBRStepDefinitionMatch < JavaObject >
 
-#pragma mark Public
-
-- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)arguments
-                        withCCBRStepDefinition:(id<CCBRStepDefinition>)stepDefinition
-                                  withNSString:(NSString *)featurePath
-                             withGHKPickleStep:(GHKPickleStep *)step
-                     withCCBRLocalizedXStreams:(CCBRLocalizedXStreams *)localizedXStreams;
+- (void)runStepWithNSString:(NSString *)language
+    withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
 
 - (void)dryRunStepWithNSString:(NSString *)language
        withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
 
 - (NSString *)getCodeLocation;
 
-- (CCBRMatch *)getMatch;
-
-- (NSString *)getPattern;
-
-+ (jint)getStepLineWithGHKPickleStep:(GHKPickleStep *)step;
-
-- (JavaLangStackTraceElement *)getStepLocation;
-
-- (void)runStepWithNSString:(NSString *)language
-    withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
-
-#pragma mark Protected
-
-- (JavaLangThrowable *)removeFrameworkFramesAndAppendStepLocationWithJavaLangThrowable:(JavaLangThrowable *)error
-                                                         withJavaLangStackTraceElement:(JavaLangStackTraceElement *)stepLocation;
-
-#pragma mark Package-Private
-
-- (id<CCBRStepDefinition>)getStepDefinition;
-
-// Disallowed inherited constructors, do not use.
-
-- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)arg0
-                                  withNSString:(NSString *)arg1 NS_UNAVAILABLE;
-
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(CCBRStepDefinitionMatch)
 
-FOUNDATION_EXPORT void CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGHKPickleStep_withCCBRLocalizedXStreams_(CCBRStepDefinitionMatch *self, id<JavaUtilList> arguments, id<CCBRStepDefinition> stepDefinition, NSString *featurePath, GHKPickleStep *step, CCBRLocalizedXStreams *localizedXStreams);
-
-FOUNDATION_EXPORT CCBRStepDefinitionMatch *new_CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGHKPickleStep_withCCBRLocalizedXStreams_(id<JavaUtilList> arguments, id<CCBRStepDefinition> stepDefinition, NSString *featurePath, GHKPickleStep *step, CCBRLocalizedXStreams *localizedXStreams) NS_RETURNS_RETAINED;
-
-FOUNDATION_EXPORT CCBRStepDefinitionMatch *create_CCBRStepDefinitionMatch_initWithJavaUtilList_withCCBRStepDefinition_withNSString_withGHKPickleStep_withCCBRLocalizedXStreams_(id<JavaUtilList> arguments, id<CCBRStepDefinition> stepDefinition, NSString *featurePath, GHKPickleStep *step, CCBRLocalizedXStreams *localizedXStreams);
-
-FOUNDATION_EXPORT jint CCBRStepDefinitionMatch_getStepLineWithGHKPickleStep_(GHKPickleStep *step);
-
 J2OBJC_TYPE_LITERAL_HEADER(CCBRStepDefinitionMatch)
 
-@compatibility_alias CucumberRuntimeStepDefinitionMatch CCBRStepDefinitionMatch;
+#define CucumberRuntimeStepDefinitionMatch CCBRStepDefinitionMatch
 
 #endif
 

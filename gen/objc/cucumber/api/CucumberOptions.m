@@ -23,7 +23,6 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiCucumberOptions__Annot
 @synthesize features = features_;
 @synthesize glue = glue_;
 @synthesize tags = tags_;
-@synthesize format = format_;
 @synthesize plugin = plugin_;
 @synthesize monochrome = monochrome_;
 @synthesize name = name_;
@@ -47,10 +46,6 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiCucumberOptions__Annot
 }
 
 + (IOSObjectArray *)tagsDefault {
-  return [IOSObjectArray arrayWithLength:0 type:NSString_class_()];
-}
-
-+ (IOSObjectArray *)formatDefault {
   return [IOSObjectArray arrayWithLength:0 type:NSString_class_()];
 }
 
@@ -79,7 +74,7 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiCucumberOptions__Annot
 }
 
 - (NSString *)description {
-  return [NSString stringWithFormat:@"@cucumber.api.CucumberOptions(dryRun=%d, strict=%d, features=%@, glue=%@, tags=%@, format=%@, plugin=%@, monochrome=%d, name=%@, snippets=%@, junit=%@)", dryRun_, strict_, features_, glue_, tags_, format_, plugin_, monochrome_, name_, snippets_, junit_];
+  return [NSString stringWithFormat:@"@cucumber.api.CucumberOptions(dryRun=%d, strict=%d, features=%@, glue=%@, tags=%@, plugin=%@, monochrome=%d, name=%@, snippets=%@, junit=%@)", dryRun_, strict_, features_, glue_, tags_, plugin_, monochrome_, name_, snippets_, junit_];
 }
 
 - (jboolean)isEqual:(id)obj {
@@ -94,7 +89,6 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiCucumberOptions__Annot
   RELEASE_(features_);
   RELEASE_(glue_);
   RELEASE_(tags_);
-  RELEASE_(format_);
   RELEASE_(plugin_);
   RELEASE_(name_);
   RELEASE_(snippets_);
@@ -106,7 +100,6 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiCucumberOptions__Annot
   static J2ObjcMethodInfo methods[] = {
     { NULL, "Z", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x401, -1, -1, -1, -1, -1, -1 },
-    { NULL, "[LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "[LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "[LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "[LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
@@ -124,12 +117,11 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiCucumberOptions__Annot
   methods[2].selector = @selector(features);
   methods[3].selector = @selector(glue);
   methods[4].selector = @selector(tags);
-  methods[5].selector = @selector(format);
-  methods[6].selector = @selector(plugin);
-  methods[7].selector = @selector(monochrome);
-  methods[8].selector = @selector(name);
-  methods[9].selector = @selector(snippets);
-  methods[10].selector = @selector(junit);
+  methods[5].selector = @selector(plugin);
+  methods[6].selector = @selector(monochrome);
+  methods[7].selector = @selector(name);
+  methods[8].selector = @selector(snippets);
+  methods[9].selector = @selector(junit);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "dryRun_", "Z", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
@@ -137,7 +129,6 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiCucumberOptions__Annot
     { "features_", "[LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "glue_", "[LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "tags_", "[LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
-    { "format_", "[LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "plugin_", "[LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "monochrome_", "Z", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
     { "name_", "[LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
@@ -145,17 +136,16 @@ __attribute__((unused)) static IOSObjectArray *CucumberApiCucumberOptions__Annot
     { "junit_", "[LNSString;", .constantValue.asLong = 0, 0x1000, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { (void *)&CucumberApiCucumberOptions__Annotations$0 };
-  static const J2ObjcClassInfo _CucumberApiCucumberOptions = { "CucumberOptions", "cucumber.api", ptrTable, methods, fields, 7, 0x2609, 11, 11, -1, -1, -1, -1, 0 };
+  static const J2ObjcClassInfo _CucumberApiCucumberOptions = { "CucumberOptions", "cucumber.api", ptrTable, methods, fields, 7, 0x2609, 10, 10, -1, -1, -1, -1, 0 };
   return &_CucumberApiCucumberOptions;
 }
 
 @end
 
-id<CucumberApiCucumberOptions> create_CucumberApiCucumberOptions(jboolean dryRun, IOSObjectArray *features, IOSObjectArray *format, IOSObjectArray *glue, IOSObjectArray *junit, jboolean monochrome, IOSObjectArray *name, IOSObjectArray *plugin, CucumberApiSnippetType *snippets, jboolean strict, IOSObjectArray *tags) {
+id<CucumberApiCucumberOptions> create_CucumberApiCucumberOptions(jboolean dryRun, IOSObjectArray *features, IOSObjectArray *glue, IOSObjectArray *junit, jboolean monochrome, IOSObjectArray *name, IOSObjectArray *plugin, CucumberApiSnippetType *snippets, jboolean strict, IOSObjectArray *tags) {
   CucumberApiCucumberOptions *self = AUTORELEASE([[CucumberApiCucumberOptions alloc] init]);
   self->dryRun_ = dryRun;
   self->features_ = RETAIN_(features);
-  self->format_ = RETAIN_(format);
   self->glue_ = RETAIN_(glue);
   self->junit_ = RETAIN_(junit);
   self->monochrome_ = monochrome;

@@ -21,12 +21,10 @@
 #if !defined (CCBRStepDefinition_) && (INCLUDE_ALL_CucumberRuntimeStepDefinition || defined(INCLUDE_CCBRStepDefinition))
 #define CCBRStepDefinition_
 
-@class CCBRParameterInfo;
 @class GHKPickleStep;
 @class IOSObjectArray;
 @class JavaLangInteger;
 @class JavaLangStackTraceElement;
-@protocol JavaLangReflectType;
 @protocol JavaUtilList;
 
 @protocol CCBRStepDefinition < JavaObject >
@@ -47,19 +45,9 @@
 - (NSString *)getLocationWithBoolean:(jboolean)detail;
 
 /*!
- @brief How many declared parameters this stepdefinition has.Returns null if unknown.
+ @brief How many declared parameters this step definition has.Returns null if unknown.
  */
 - (JavaLangInteger *)getParameterCount;
-
-/*!
- @brief The parameter type at index n.A hint about the raw parameter type is passed to make
-  it easier for the implementation to make a guess based on runtime information.
- <p>
-  Statically typed languages will typically ignore the <code>argumentType</code> while dynamically
-  typed ones will use it to infer a "good type". It's also ok to return null.
- */
-- (CCBRParameterInfo *)getParameterTypeWithInt:(jint)n
-                       withJavaLangReflectType:(id<JavaLangReflectType>)argumentType;
 
 /*!
  @brief Invokes the step definition.The method should raise a Throwable

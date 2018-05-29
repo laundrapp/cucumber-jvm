@@ -3,7 +3,6 @@
 //  source: /Users/Salton/Documents/Projects/cucumber-jvm/java/src/main/java/cucumber/runtime/java/JavaSnippet.java
 //
 
-#include "IOSClass.h"
 #include "J2ObjC_source.h"
 #include "cucumber/runtime/java/AbstractJavaSnippet.h"
 #include "cucumber/runtime/java/JavaSnippet.h"
@@ -17,10 +16,6 @@ J2OBJC_IGNORE_DESIGNATED_BEGIN
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (NSString *)getArgTypeWithIOSClass:(IOSClass *)argType {
-  return [((IOSClass *) nil_chk(argType)) getSimpleName];
-}
-
 - (NSString *)template__ {
   return @"@{0}(\"{1}\")\npublic void {2}({3}) '{'\n    // {4}\n{5}    throw new PendingException();\n'}'\n";
 }
@@ -28,18 +23,16 @@ J2OBJC_IGNORE_DESIGNATED_END
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x0, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x4, 0, 1, -1, 2, -1, -1 },
-    { NULL, "LNSString;", 0x1, 3, -1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x1, 0, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(getArgTypeWithIOSClass:);
-  methods[2].selector = @selector(template__);
+  methods[1].selector = @selector(template__);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "getArgType", "LIOSClass;", "(Ljava/lang/Class<*>;)Ljava/lang/String;", "template" };
-  static const J2ObjcClassInfo _CucumberRuntimeJavaJavaSnippet = { "JavaSnippet", "cucumber.runtime.java", ptrTable, methods, NULL, 7, 0x0, 3, 0, -1, -1, -1, -1, -1 };
+  static const void *ptrTable[] = { "template" };
+  static const J2ObjcClassInfo _CucumberRuntimeJavaJavaSnippet = { "JavaSnippet", "cucumber.runtime.java", ptrTable, methods, NULL, 7, 0x10, 2, 0, -1, -1, -1, -1, -1 };
   return &_CucumberRuntimeJavaJavaSnippet;
 }
 

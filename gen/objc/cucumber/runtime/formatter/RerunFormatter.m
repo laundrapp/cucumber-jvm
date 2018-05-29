@@ -29,11 +29,11 @@
   id<CucumberApiEventEventHandler> runFinishHandler_;
 }
 
-- (void)handeTestCaseFinishedWithCucumberApiEventTestCaseFinished:(CucumberApiEventTestCaseFinished *)event;
+- (void)handleTestCaseFinishedWithCucumberApiEventTestCaseFinished:(CucumberApiEventTestCaseFinished *)event;
 
 - (void)handleTestRunFinished;
 
-- (void)recordTestFailedWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
+- (void)recordTestFailedWithCucumberApiTestCase:(id<CucumberApiTestCase>)testCase;
 
 - (void)reportFailedTestCases;
 
@@ -44,11 +44,11 @@ J2OBJC_FIELD_SETTER(CCBRRerunFormatter, featureAndFailedLinesMapping_, id<JavaUt
 J2OBJC_FIELD_SETTER(CCBRRerunFormatter, testCaseFinishedHandler_, id<CucumberApiEventEventHandler>)
 J2OBJC_FIELD_SETTER(CCBRRerunFormatter, runFinishHandler_, id<CucumberApiEventEventHandler>)
 
-__attribute__((unused)) static void CCBRRerunFormatter_handeTestCaseFinishedWithCucumberApiEventTestCaseFinished_(CCBRRerunFormatter *self, CucumberApiEventTestCaseFinished *event);
+__attribute__((unused)) static void CCBRRerunFormatter_handleTestCaseFinishedWithCucumberApiEventTestCaseFinished_(CCBRRerunFormatter *self, CucumberApiEventTestCaseFinished *event);
 
 __attribute__((unused)) static void CCBRRerunFormatter_handleTestRunFinished(CCBRRerunFormatter *self);
 
-__attribute__((unused)) static void CCBRRerunFormatter_recordTestFailedWithCucumberApiTestCase_(CCBRRerunFormatter *self, CucumberApiTestCase *testCase);
+__attribute__((unused)) static void CCBRRerunFormatter_recordTestFailedWithCucumberApiTestCase_(CCBRRerunFormatter *self, id<CucumberApiTestCase> testCase);
 
 __attribute__((unused)) static void CCBRRerunFormatter_reportFailedTestCases(CCBRRerunFormatter *self);
 
@@ -106,15 +106,15 @@ __attribute__((unused)) static CCBRRerunFormatter_2 *create_CCBRRerunFormatter_2
   isStrict_ = strict;
 }
 
-- (void)handeTestCaseFinishedWithCucumberApiEventTestCaseFinished:(CucumberApiEventTestCaseFinished *)event {
-  CCBRRerunFormatter_handeTestCaseFinishedWithCucumberApiEventTestCaseFinished_(self, event);
+- (void)handleTestCaseFinishedWithCucumberApiEventTestCaseFinished:(CucumberApiEventTestCaseFinished *)event {
+  CCBRRerunFormatter_handleTestCaseFinishedWithCucumberApiEventTestCaseFinished_(self, event);
 }
 
 - (void)handleTestRunFinished {
   CCBRRerunFormatter_handleTestRunFinished(self);
 }
 
-- (void)recordTestFailedWithCucumberApiTestCase:(CucumberApiTestCase *)testCase {
+- (void)recordTestFailedWithCucumberApiTestCase:(id<CucumberApiTestCase>)testCase {
   CCBRRerunFormatter_recordTestFailedWithCucumberApiTestCase_(self, testCase);
 }
 
@@ -146,7 +146,7 @@ __attribute__((unused)) static CCBRRerunFormatter_2 *create_CCBRRerunFormatter_2
   methods[0].selector = @selector(initWithJavaLangAppendable:);
   methods[1].selector = @selector(setEventPublisherWithCucumberApiEventEventPublisher:);
   methods[2].selector = @selector(setStrictWithBoolean:);
-  methods[3].selector = @selector(handeTestCaseFinishedWithCucumberApiEventTestCaseFinished:);
+  methods[3].selector = @selector(handleTestCaseFinishedWithCucumberApiEventTestCaseFinished:);
   methods[4].selector = @selector(handleTestRunFinished);
   methods[5].selector = @selector(recordTestFailedWithCucumberApiTestCase:);
   methods[6].selector = @selector(reportFailedTestCases);
@@ -158,7 +158,7 @@ __attribute__((unused)) static CCBRRerunFormatter_2 *create_CCBRRerunFormatter_2
     { "testCaseFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 10, -1 },
     { "runFinishHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 11, -1 },
   };
-  static const void *ptrTable[] = { "LJavaLangAppendable;", "setEventPublisher", "LCucumberApiEventEventPublisher;", "setStrict", "Z", "handeTestCaseFinished", "LCucumberApiEventTestCaseFinished;", "recordTestFailed", "LCucumberApiTestCase;", "Ljava/util/Map<Ljava/lang/String;Ljava/util/ArrayList<Ljava/lang/Integer;>;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
+  static const void *ptrTable[] = { "LJavaLangAppendable;", "setEventPublisher", "LCucumberApiEventEventPublisher;", "setStrict", "Z", "handleTestCaseFinished", "LCucumberApiEventTestCaseFinished;", "recordTestFailed", "LCucumberApiTestCase;", "Ljava/util/Map<Ljava/lang/String;Ljava/util/ArrayList<Ljava/lang/Integer;>;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
   static const J2ObjcClassInfo _CCBRRerunFormatter = { "RerunFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 7, 5, -1, -1, -1, -1, -1 };
   return &_CCBRRerunFormatter;
 }
@@ -182,7 +182,7 @@ CCBRRerunFormatter *create_CCBRRerunFormatter_initWithJavaLangAppendable_(id<Jav
   J2OBJC_CREATE_IMPL(CCBRRerunFormatter, initWithJavaLangAppendable_, outArg)
 }
 
-void CCBRRerunFormatter_handeTestCaseFinishedWithCucumberApiEventTestCaseFinished_(CCBRRerunFormatter *self, CucumberApiEventTestCaseFinished *event) {
+void CCBRRerunFormatter_handleTestCaseFinishedWithCucumberApiEventTestCaseFinished_(CCBRRerunFormatter *self, CucumberApiEventTestCaseFinished *event) {
   if (![((CucumberApiResult *) nil_chk(((CucumberApiEventTestCaseFinished *) nil_chk(event))->result_)) isOkWithBoolean:self->isStrict_]) {
     CCBRRerunFormatter_recordTestFailedWithCucumberApiTestCase_(self, event->testCase_);
   }
@@ -193,8 +193,8 @@ void CCBRRerunFormatter_handleTestRunFinished(CCBRRerunFormatter *self) {
   [((CucumberApiFormatterNiceAppendable *) nil_chk(self->out_)) close];
 }
 
-void CCBRRerunFormatter_recordTestFailedWithCucumberApiTestCase_(CCBRRerunFormatter *self, CucumberApiTestCase *testCase) {
-  NSString *path = [((CucumberApiTestCase *) nil_chk(testCase)) getUri];
+void CCBRRerunFormatter_recordTestFailedWithCucumberApiTestCase_(CCBRRerunFormatter *self, id<CucumberApiTestCase> testCase) {
+  NSString *path = [((id<CucumberApiTestCase>) nil_chk(testCase)) getUri];
   JavaUtilArrayList *failedTestCases = [((id<JavaUtilMap>) nil_chk(self->featureAndFailedLinesMapping_)) getWithId:path];
   if (failedTestCases == nil) {
     failedTestCases = create_JavaUtilArrayList_init();
@@ -226,7 +226,7 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRRerunFormatter)
 }
 
 - (void)receiveWithCucumberApiEventEvent:(CucumberApiEventTestCaseFinished *)event {
-  CCBRRerunFormatter_handeTestCaseFinishedWithCucumberApiEventTestCaseFinished_(this$0_, event);
+  CCBRRerunFormatter_handleTestCaseFinishedWithCucumberApiEventTestCaseFinished_(this$0_, event);
 }
 
 - (void)dealloc {

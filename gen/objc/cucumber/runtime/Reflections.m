@@ -43,14 +43,18 @@ __attribute__((unused)) static jboolean CCBRReflections_hasConstructorWithIOSCla
 }
 
 - (id)instantiateExactlyOneSubclassWithIOSClass:(IOSClass *)parentType
-                                   withNSString:(NSString *)packageName
+                               withJavaUtilList:(id<JavaUtilList>)packageNames
                               withIOSClassArray:(IOSObjectArray *)constructorParams
-                              withNSObjectArray:(IOSObjectArray *)constructorArgs {
-  id<JavaUtilCollection> instances = [self instantiateSubclassesWithIOSClass:parentType withNSString:packageName withIOSClassArray:constructorParams withNSObjectArray:constructorArgs];
+                              withNSObjectArray:(IOSObjectArray *)constructorArgs
+                                         withId:(id)fallback {
+  id<JavaUtilCollection> instances = [self instantiateSubclassesWithIOSClass:parentType withJavaUtilList:packageNames withIOSClassArray:constructorParams withNSObjectArray:constructorArgs];
   if ([((id<JavaUtilCollection>) nil_chk(instances)) size] == 1) {
     return [((id<JavaUtilIterator>) nil_chk([instances iterator])) next];
   }
   else if ([instances isEmpty]) {
+    if (fallback != nil) {
+      return fallback;
+    }
     @throw create_CCBRNoInstancesException_initWithIOSClass_(parentType);
   }
   else {
@@ -59,13 +63,15 @@ __attribute__((unused)) static jboolean CCBRReflections_hasConstructorWithIOSCla
 }
 
 - (id<JavaUtilCollection>)instantiateSubclassesWithIOSClass:(IOSClass *)parentType
-                                               withNSString:(NSString *)packageName
+                                           withJavaUtilList:(id<JavaUtilList>)packageNames
                                           withIOSClassArray:(IOSObjectArray *)constructorParams
                                           withNSObjectArray:(IOSObjectArray *)constructorArgs {
   id<JavaUtilCollection> result = create_JavaUtilHashSet_init();
-  for (IOSClass * __strong clazz in nil_chk([((id<CCBRClassFinder>) nil_chk(classFinder_)) getDescendantsWithIOSClass:parentType withNSString:packageName])) {
-    if (CCBRUtils_isInstantiableWithIOSClass_(clazz) && CCBRReflections_hasConstructorWithIOSClass_withIOSClassArray_(self, clazz, constructorParams)) {
-      [result addWithId:[self newInstanceWithIOSClassArray:constructorParams withNSObjectArray:constructorArgs withIOSClass:clazz]];
+  for (NSString * __strong packageName in nil_chk(packageNames)) {
+    for (IOSClass * __strong clazz in nil_chk([((id<CCBRClassFinder>) nil_chk(classFinder_)) getDescendantsWithIOSClass:parentType withNSString:packageName])) {
+      if (CCBRUtils_isInstantiableWithIOSClass_(clazz)) {
+        [result addWithId:[self newInstanceWithIOSClassArray:constructorParams withNSObjectArray:constructorArgs withIOSClass:clazz]];
+      }
     }
   }
   return result;
@@ -104,23 +110,23 @@ __attribute__((unused)) static jboolean CCBRReflections_hasConstructorWithIOSCla
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
     { NULL, "LNSObject;", 0x1, 1, 2, -1, 3, -1, -1 },
-    { NULL, "LJavaUtilCollection;", 0x1, 4, 2, -1, 5, -1, -1 },
-    { NULL, "LNSObject;", 0x1, 6, 7, -1, 8, -1, -1 },
-    { NULL, "Z", 0x2, 9, 10, -1, 11, -1, -1 },
+    { NULL, "LJavaUtilCollection;", 0x1, 4, 5, -1, 6, -1, -1 },
+    { NULL, "LNSObject;", 0x1, 7, 8, -1, 9, -1, -1 },
+    { NULL, "Z", 0x2, 10, 11, -1, 12, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithCCBRClassFinder:);
-  methods[1].selector = @selector(instantiateExactlyOneSubclassWithIOSClass:withNSString:withIOSClassArray:withNSObjectArray:);
-  methods[2].selector = @selector(instantiateSubclassesWithIOSClass:withNSString:withIOSClassArray:withNSObjectArray:);
+  methods[1].selector = @selector(instantiateExactlyOneSubclassWithIOSClass:withJavaUtilList:withIOSClassArray:withNSObjectArray:withId:);
+  methods[2].selector = @selector(instantiateSubclassesWithIOSClass:withJavaUtilList:withIOSClassArray:withNSObjectArray:);
   methods[3].selector = @selector(newInstanceWithIOSClassArray:withNSObjectArray:withIOSClass:);
   methods[4].selector = @selector(hasConstructorWithIOSClass:withIOSClassArray:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "classFinder_", "LCCBRClassFinder;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCCBRClassFinder;", "instantiateExactlyOneSubclass", "LIOSClass;LNSString;[LIOSClass;[LNSObject;", "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)TT;", "instantiateSubclasses", "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/util/Collection<+TT;>;", "newInstance", "[LIOSClass;[LNSObject;LIOSClass;", "<T:Ljava/lang/Object;>([Ljava/lang/Class;[Ljava/lang/Object;Ljava/lang/Class<+TT;>;)TT;", "hasConstructor", "LIOSClass;[LIOSClass;", "(Ljava/lang/Class<*>;[Ljava/lang/Class;)Z" };
+  static const void *ptrTable[] = { "LCCBRClassFinder;", "instantiateExactlyOneSubclass", "LIOSClass;LJavaUtilList;[LIOSClass;[LNSObject;LNSObject;", "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;Ljava/util/List<Ljava/lang/String;>;[Ljava/lang/Class;[Ljava/lang/Object;TT;)TT;", "instantiateSubclasses", "LIOSClass;LJavaUtilList;[LIOSClass;[LNSObject;", "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;Ljava/util/List<Ljava/lang/String;>;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/util/Collection<+TT;>;", "newInstance", "[LIOSClass;[LNSObject;LIOSClass;", "<T:Ljava/lang/Object;>([Ljava/lang/Class;[Ljava/lang/Object;Ljava/lang/Class<+TT;>;)TT;", "hasConstructor", "LIOSClass;[LIOSClass;", "(Ljava/lang/Class<*>;[Ljava/lang/Class;)Z" };
   static const J2ObjcClassInfo _CCBRReflections = { "Reflections", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 5, 1, -1, -1, -1, -1, -1 };
   return &_CCBRReflections;
 }

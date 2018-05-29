@@ -39,7 +39,6 @@
 @property (readonly) IOSObjectArray *features;
 @property (readonly) IOSObjectArray *glue;
 @property (readonly) IOSObjectArray *tags;
-@property (readonly) IOSObjectArray *format;
 @property (readonly) IOSObjectArray *plugin;
 @property (readonly) jboolean monochrome;
 @property (readonly) IOSObjectArray *name;
@@ -59,7 +58,6 @@
   IOSObjectArray *features_;
   IOSObjectArray *glue_;
   IOSObjectArray *tags_;
-  IOSObjectArray *format_;
   IOSObjectArray *plugin_;
   jboolean monochrome_;
   IOSObjectArray *name_;
@@ -71,7 +69,7 @@
 
 J2OBJC_EMPTY_STATIC_INIT(CucumberApiCucumberOptions)
 
-FOUNDATION_EXPORT id<CucumberApiCucumberOptions> create_CucumberApiCucumberOptions(jboolean dryRun, IOSObjectArray *features, IOSObjectArray *format, IOSObjectArray *glue, IOSObjectArray *junit, jboolean monochrome, IOSObjectArray *name, IOSObjectArray *plugin, CucumberApiSnippetType *snippets, jboolean strict, IOSObjectArray *tags);
+FOUNDATION_EXPORT id<CucumberApiCucumberOptions> create_CucumberApiCucumberOptions(jboolean dryRun, IOSObjectArray *features, IOSObjectArray *glue, IOSObjectArray *junit, jboolean monochrome, IOSObjectArray *name, IOSObjectArray *plugin, CucumberApiSnippetType *snippets, jboolean strict, IOSObjectArray *tags);
 
 J2OBJC_TYPE_LITERAL_HEADER(CucumberApiCucumberOptions)
 

@@ -25,17 +25,11 @@
 #define INCLUDE_CucumberRuntimeJavaAbstractJavaSnippet 1
 #include "cucumber/runtime/java/AbstractJavaSnippet.h"
 
-@class IOSClass;
-
 @interface CucumberRuntimeJavaJavaSnippet : CucumberRuntimeJavaAbstractJavaSnippet
 
 #pragma mark Public
 
 - (NSString *)template__;
-
-#pragma mark Protected
-
-- (NSString *)getArgTypeWithIOSClass:(IOSClass *)argType;
 
 #pragma mark Package-Private
 

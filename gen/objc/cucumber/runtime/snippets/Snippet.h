@@ -21,21 +21,22 @@
 #if !defined (CCBRSnippet_) && (INCLUDE_ALL_CucumberRuntimeSnippetsSnippet || defined(INCLUDE_CCBRSnippet))
 #define CCBRSnippet_
 
-@protocol JavaUtilList;
+@protocol JavaUtilMap;
 
 @protocol CCBRSnippet < JavaObject >
 
 /*!
- @return a <code>java.text.MessageFormat</code> template used to generate a snippet. The template can access the following variables:
-          <p>
-          <ul>
-          <li>{0} : Step Keyword</li>
-          <li>{1} : Value of <code>escapePattern(String)</code></li>
-          <li>{2} : Function name</li>
-          <li>{3} : Value of <code>arguments(java.util.List)</code></li>
-          <li>{4} : Regexp hint comment</li>
-          <li>{5} : value of <code>tableHint()</code> if the step has a table</li>
-          </ul>
+ @return a <code>java.text.MessageFormat</code> template used to generate a snippet. The template can access the
+  following variables: 
+ <p>
+  <ul>
+  <li>{0} : Step Keyword</li>
+  <li>{1} : Value of <code>escapePattern(String)</code></li>
+  <li>{2} : Function name</li>
+  <li>{3} : Value of <code>arguments(Map)</code></li>
+  <li>{4} : Regexp hint comment</li>
+  <li>{5} : value of <code>tableHint()</code> if the step has a table</li>
+  </ul>
  */
 - (NSString *)template__;
 
@@ -45,22 +46,13 @@
 - (NSString *)tableHint;
 
 /*!
- @param argumentTypes the types the snippet's argument should accept
+ @brief Constructs a string representation of the arguments a step definition should accept.The arguments are
+  provided a map of (suggested) names and types.
+ The arguments are ordered by their position.
+ @param arguments ordered pairs of names and types
  @return a string representation of the arguments
  */
-- (NSString *)argumentsWithJavaUtilList:(id<JavaUtilList>)argumentTypes;
-
-/*!
- @brief Langauges that don't support named capture groups should return null.
- @return the start of a named capture group
- */
-- (NSString *)namedGroupStart;
-
-/*!
- @brief Langauges that don't support named capture groups should return null.
- @return the end of a named capture group
- */
-- (NSString *)namedGroupEnd;
+- (NSString *)argumentsWithJavaUtilMap:(id<JavaUtilMap>)arguments;
 
 /*!
  @param pattern the computed pattern that will match an undefined step

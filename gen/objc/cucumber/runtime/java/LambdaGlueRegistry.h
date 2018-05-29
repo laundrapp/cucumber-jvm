@@ -23,11 +23,15 @@
 
 @class JavaLangThreadLocal;
 @protocol CCBRHookDefinition;
-@protocol CCBRStepDefinition;
+@protocol CucumberRuntimeJavaFunction;
 
 @protocol CucumberRuntimeJavaLambdaGlueRegistry < JavaObject >
 
-- (void)addStepDefinitionWithCCBRStepDefinition:(id<CCBRStepDefinition>)stepDefinition;
+- (void)addStepDefinitionWithCucumberRuntimeJavaFunction:(id<CucumberRuntimeJavaFunction>)stepDefinition;
+
+- (void)addBeforeStepHookDefinitionWithCCBRHookDefinition:(id<CCBRHookDefinition>)beforeStepHook;
+
+- (void)addAfterStepHookDefinitionWithCCBRHookDefinition:(id<CCBRHookDefinition>)afterStepHook;
 
 - (void)addBeforeHookDefinitionWithCCBRHookDefinition:(id<CCBRHookDefinition>)beforeHook;
 

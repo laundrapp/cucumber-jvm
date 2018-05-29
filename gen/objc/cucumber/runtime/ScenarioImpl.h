@@ -70,7 +70,7 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CCBRScenarioImpl)
+J2OBJC_EMPTY_STATIC_INIT(CCBRScenarioImpl)
 
 FOUNDATION_EXPORT void CCBRScenarioImpl_initWithCCBEventBus_withGHKPickleEvent_(CCBRScenarioImpl *self, CCBEventBus *bus, GHKPickleEvent *pickleEvent);
 

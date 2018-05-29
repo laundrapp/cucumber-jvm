@@ -32,14 +32,14 @@
 @class CCBRFunctionNameGenerator;
 @class GHKPickleStep;
 @class IOSClass;
+@class IoCucumberStepexpressionTypeRegistry;
 @class JavaLangReflectMethod;
 @protocol CCBRClassFinder;
 @protocol CCBRGlue;
 @protocol CCBRHookDefinition;
 @protocol CCBRResourceLoader;
-@protocol CCBRStepDefinition;
-@protocol CCBRUnreportedStepExecutor;
 @protocol CucumberApiJavaObjectFactory;
+@protocol CucumberRuntimeJavaFunction;
 @protocol JavaLangAnnotationAnnotation;
 @protocol JavaUtilList;
 
@@ -48,19 +48,25 @@
 #pragma mark Public
 
 - (instancetype __nonnull)initWithCucumberApiJavaObjectFactory:(id<CucumberApiJavaObjectFactory>)objectFactory
-                                           withCCBRClassFinder:(id<CCBRClassFinder>)classFinder;
+                                           withCCBRClassFinder:(id<CCBRClassFinder>)classFinder
+                      withIoCucumberStepexpressionTypeRegistry:(IoCucumberStepexpressionTypeRegistry *)typeRegistry;
 
 /*!
  @brief The constructor called by reflection by default.
  @param resourceLoader
  */
-- (instancetype __nonnull)initWithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader;
+- (instancetype __nonnull)initWithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
+            withIoCucumberStepexpressionTypeRegistry:(IoCucumberStepexpressionTypeRegistry *)typeRegistry;
 
 - (void)addAfterHookDefinitionWithCCBRHookDefinition:(id<CCBRHookDefinition>)afterHook;
 
+- (void)addAfterStepHookDefinitionWithCCBRHookDefinition:(id<CCBRHookDefinition>)afterStepHook;
+
 - (void)addBeforeHookDefinitionWithCCBRHookDefinition:(id<CCBRHookDefinition>)beforeHook;
 
-- (void)addStepDefinitionWithCCBRStepDefinition:(id<CCBRStepDefinition>)stepDefinition;
+- (void)addBeforeStepHookDefinitionWithCCBRHookDefinition:(id<CCBRHookDefinition>)beforeStepHook;
+
+- (void)addStepDefinitionWithCucumberRuntimeJavaFunction:(id<CucumberRuntimeJavaFunction>)stepDefinitionFunction;
 
 - (void)buildWorld;
 
@@ -84,8 +90,6 @@
    withJavaLangReflectMethod:(JavaLangReflectMethod *)method
                 withIOSClass:(IOSClass *)glueCodeClass;
 
-- (void)setUnreportedStepExecutorWithCCBRUnreportedStepExecutor:(id<CCBRUnreportedStepExecutor>)executor;
-
 #pragma mark Package-Private
 
 - (void)addHookWithJavaLangAnnotationAnnotation:(id<JavaLangAnnotationAnnotation>)annotation
@@ -102,17 +106,17 @@
 
 J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeJavaJavaBackend)
 
-FOUNDATION_EXPORT void CucumberRuntimeJavaJavaBackend_initWithCCBRResourceLoader_(CucumberRuntimeJavaJavaBackend *self, id<CCBRResourceLoader> resourceLoader);
+FOUNDATION_EXPORT void CucumberRuntimeJavaJavaBackend_initWithCCBRResourceLoader_withIoCucumberStepexpressionTypeRegistry_(CucumberRuntimeJavaJavaBackend *self, id<CCBRResourceLoader> resourceLoader, IoCucumberStepexpressionTypeRegistry *typeRegistry);
 
-FOUNDATION_EXPORT CucumberRuntimeJavaJavaBackend *new_CucumberRuntimeJavaJavaBackend_initWithCCBRResourceLoader_(id<CCBRResourceLoader> resourceLoader) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CucumberRuntimeJavaJavaBackend *new_CucumberRuntimeJavaJavaBackend_initWithCCBRResourceLoader_withIoCucumberStepexpressionTypeRegistry_(id<CCBRResourceLoader> resourceLoader, IoCucumberStepexpressionTypeRegistry *typeRegistry) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeJavaJavaBackend *create_CucumberRuntimeJavaJavaBackend_initWithCCBRResourceLoader_(id<CCBRResourceLoader> resourceLoader);
+FOUNDATION_EXPORT CucumberRuntimeJavaJavaBackend *create_CucumberRuntimeJavaJavaBackend_initWithCCBRResourceLoader_withIoCucumberStepexpressionTypeRegistry_(id<CCBRResourceLoader> resourceLoader, IoCucumberStepexpressionTypeRegistry *typeRegistry);
 
-FOUNDATION_EXPORT void CucumberRuntimeJavaJavaBackend_initWithCucumberApiJavaObjectFactory_withCCBRClassFinder_(CucumberRuntimeJavaJavaBackend *self, id<CucumberApiJavaObjectFactory> objectFactory, id<CCBRClassFinder> classFinder);
+FOUNDATION_EXPORT void CucumberRuntimeJavaJavaBackend_initWithCucumberApiJavaObjectFactory_withCCBRClassFinder_withIoCucumberStepexpressionTypeRegistry_(CucumberRuntimeJavaJavaBackend *self, id<CucumberApiJavaObjectFactory> objectFactory, id<CCBRClassFinder> classFinder, IoCucumberStepexpressionTypeRegistry *typeRegistry);
 
-FOUNDATION_EXPORT CucumberRuntimeJavaJavaBackend *new_CucumberRuntimeJavaJavaBackend_initWithCucumberApiJavaObjectFactory_withCCBRClassFinder_(id<CucumberApiJavaObjectFactory> objectFactory, id<CCBRClassFinder> classFinder) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CucumberRuntimeJavaJavaBackend *new_CucumberRuntimeJavaJavaBackend_initWithCucumberApiJavaObjectFactory_withCCBRClassFinder_withIoCucumberStepexpressionTypeRegistry_(id<CucumberApiJavaObjectFactory> objectFactory, id<CCBRClassFinder> classFinder, IoCucumberStepexpressionTypeRegistry *typeRegistry) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberRuntimeJavaJavaBackend *create_CucumberRuntimeJavaJavaBackend_initWithCucumberApiJavaObjectFactory_withCCBRClassFinder_(id<CucumberApiJavaObjectFactory> objectFactory, id<CCBRClassFinder> classFinder);
+FOUNDATION_EXPORT CucumberRuntimeJavaJavaBackend *create_CucumberRuntimeJavaJavaBackend_initWithCucumberApiJavaObjectFactory_withCCBRClassFinder_withIoCucumberStepexpressionTypeRegistry_(id<CucumberApiJavaObjectFactory> objectFactory, id<CCBRClassFinder> classFinder, IoCucumberStepexpressionTypeRegistry *typeRegistry);
 
 J2OBJC_TYPE_LITERAL_HEADER(CucumberRuntimeJavaJavaBackend)
 

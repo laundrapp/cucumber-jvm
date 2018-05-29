@@ -21,31 +21,9 @@
 #if !defined (CucumberApiTestCase_) && (INCLUDE_ALL_CucumberApiTestCase || defined(INCLUDE_CucumberApiTestCase))
 #define CucumberApiTestCase_
 
-@class CCBEventBus;
-@class GHKPickleEvent;
 @protocol JavaUtilList;
 
-@interface CucumberApiTestCase : NSObject
-
-#pragma mark Public
-
-/*!
- @brief Creates a new instance of a test case.
- @param testSteps of the test case
- @param pickleEvent the pickle executed by this test case
- */
-- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)testSteps
-                            withGHKPickleEvent:(GHKPickleEvent *)pickleEvent;
-
-/*!
- @brief Creates a new instance of a test case.
- @param testSteps of the test case
- @param pickleEvent the pickle executed by this test case
- @param dryRun skip execution of the test steps
- */
-- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)testSteps
-                            withGHKPickleEvent:(GHKPickleEvent *)pickleEvent
-                                   withBoolean:(jboolean)dryRun;
+@protocol CucumberApiTestCase < JavaObject >
 
 - (jint)getLine;
 
@@ -59,31 +37,9 @@
 
 - (NSString *)getUri;
 
-/*!
- @brief Executes the test case.
- @param bus to which events should be broadcast
- */
-- (void)runWithCCBEventBus:(CCBEventBus *)bus;
-
-// Disallowed inherited constructors, do not use.
-
-- (instancetype __nonnull)init NS_UNAVAILABLE;
-
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(CucumberApiTestCase)
-
-FOUNDATION_EXPORT void CucumberApiTestCase_initWithJavaUtilList_withGHKPickleEvent_(CucumberApiTestCase *self, id<JavaUtilList> testSteps, GHKPickleEvent *pickleEvent);
-
-FOUNDATION_EXPORT CucumberApiTestCase *new_CucumberApiTestCase_initWithJavaUtilList_withGHKPickleEvent_(id<JavaUtilList> testSteps, GHKPickleEvent *pickleEvent) NS_RETURNS_RETAINED;
-
-FOUNDATION_EXPORT CucumberApiTestCase *create_CucumberApiTestCase_initWithJavaUtilList_withGHKPickleEvent_(id<JavaUtilList> testSteps, GHKPickleEvent *pickleEvent);
-
-FOUNDATION_EXPORT void CucumberApiTestCase_initWithJavaUtilList_withGHKPickleEvent_withBoolean_(CucumberApiTestCase *self, id<JavaUtilList> testSteps, GHKPickleEvent *pickleEvent, jboolean dryRun);
-
-FOUNDATION_EXPORT CucumberApiTestCase *new_CucumberApiTestCase_initWithJavaUtilList_withGHKPickleEvent_withBoolean_(id<JavaUtilList> testSteps, GHKPickleEvent *pickleEvent, jboolean dryRun) NS_RETURNS_RETAINED;
-
-FOUNDATION_EXPORT CucumberApiTestCase *create_CucumberApiTestCase_initWithJavaUtilList_withGHKPickleEvent_withBoolean_(id<JavaUtilList> testSteps, GHKPickleEvent *pickleEvent, jboolean dryRun);
 
 J2OBJC_TYPE_LITERAL_HEADER(CucumberApiTestCase)
 

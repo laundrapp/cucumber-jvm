@@ -3,192 +3,39 @@
 //  source: /Users/Salton/Documents/Projects/cucumber-jvm/core/src/main/java/cucumber/api/TestCase.java
 //
 
-#include "IOSClass.h"
-#include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
-#include "cucumber/api/Result.h"
 #include "cucumber/api/TestCase.h"
-#include "cucumber/api/TestStep.h"
-#include "cucumber/api/event/TestCaseFinished.h"
-#include "cucumber/api/event/TestCaseStarted.h"
-#include "cucumber/runner/EventBus.h"
-#include "cucumber/runtime/ScenarioImpl.h"
-#include "gherkin/events/PickleEvent.h"
-#include "gherkin/pickles/Pickle.h"
-#include "gherkin/pickles/PickleLocation.h"
-#include "java/lang/Deprecated.h"
-#include "java/lang/Long.h"
-#include "java/lang/Throwable.h"
-#include "java/lang/annotation/Annotation.h"
-#include "java/util/List.h"
 
-@interface CucumberApiTestCase () {
- @public
-  GHKPickleEvent *pickleEvent_;
-  id<JavaUtilList> testSteps_;
-  jboolean dryRun_;
-}
-
-- (NSString *)fileColonLineWithGHKPickleLocation:(GHKPickleLocation *)location;
+@interface CucumberApiTestCase : NSObject
 
 @end
 
-J2OBJC_FIELD_SETTER(CucumberApiTestCase, pickleEvent_, GHKPickleEvent *)
-J2OBJC_FIELD_SETTER(CucumberApiTestCase, testSteps_, id<JavaUtilList>)
-
-__attribute__((unused)) static NSString *CucumberApiTestCase_fileColonLineWithGHKPickleLocation_(CucumberApiTestCase *self, GHKPickleLocation *location);
-
-__attribute__((unused)) static IOSObjectArray *CucumberApiTestCase__Annotations$0(void);
-
-__attribute__((unused)) static IOSObjectArray *CucumberApiTestCase__Annotations$1(void);
-
-__attribute__((unused)) static IOSObjectArray *CucumberApiTestCase__Annotations$2(void);
-
 @implementation CucumberApiTestCase
-
-- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)testSteps
-                            withGHKPickleEvent:(GHKPickleEvent *)pickleEvent {
-  CucumberApiTestCase_initWithJavaUtilList_withGHKPickleEvent_(self, testSteps, pickleEvent);
-  return self;
-}
-
-- (instancetype __nonnull)initWithJavaUtilList:(id<JavaUtilList>)testSteps
-                            withGHKPickleEvent:(GHKPickleEvent *)pickleEvent
-                                   withBoolean:(jboolean)dryRun {
-  CucumberApiTestCase_initWithJavaUtilList_withGHKPickleEvent_withBoolean_(self, testSteps, pickleEvent, dryRun);
-  return self;
-}
-
-- (void)runWithCCBEventBus:(CCBEventBus *)bus {
-  jboolean skipNextStep = self->dryRun_;
-  JavaLangLong *startTime = [((CCBEventBus *) nil_chk(bus)) getTime];
-  [bus sendWithCucumberApiEventEvent:create_CucumberApiEventTestCaseStarted_initWithJavaLangLong_withCucumberApiTestCase_(startTime, self)];
-  CCBRScenarioImpl *scenarioResult = create_CCBRScenarioImpl_initWithCCBEventBus_withGHKPickleEvent_(bus, pickleEvent_);
-  for (CucumberApiTestStep * __strong step in nil_chk(testSteps_)) {
-    CucumberApiResult *stepResult = [((CucumberApiTestStep *) nil_chk(step)) runWithCCBEventBus:bus withNSString:[((GHKPickle *) nil_chk(((GHKPickleEvent *) nil_chk(pickleEvent_))->pickle_)) getLanguage] withCucumberApiScenario:scenarioResult withBoolean:skipNextStep];
-    if (![((CucumberApiResult *) nil_chk(stepResult)) isWithCucumberApiResult_Type:JreLoadEnum(CucumberApiResult_Type, PASSED)]) {
-      skipNextStep = true;
-    }
-    [scenarioResult addWithCucumberApiResult:stepResult];
-  }
-  JavaLangLong *stopTime = [bus getTime];
-  [bus sendWithCucumberApiEventEvent:create_CucumberApiEventTestCaseFinished_initWithJavaLangLong_withCucumberApiTestCase_withCucumberApiResult_(stopTime, self, create_CucumberApiResult_initWithCucumberApiResult_Type_withJavaLangLong_withJavaLangThrowable_([scenarioResult getStatus], JavaLangLong_valueOfWithLong_([((JavaLangLong *) nil_chk(stopTime)) longLongValue] - [((JavaLangLong *) nil_chk(startTime)) longLongValue]), [scenarioResult getError]))];
-}
-
-- (id<JavaUtilList>)getTestSteps {
-  return testSteps_;
-}
-
-- (NSString *)getName {
-  return [((GHKPickle *) nil_chk(((GHKPickleEvent *) nil_chk(pickleEvent_))->pickle_)) getName];
-}
-
-- (NSString *)getScenarioDesignation {
-  return JreStrcat("$$$", CucumberApiTestCase_fileColonLineWithGHKPickleLocation_(self, [((id<JavaUtilList>) nil_chk([((GHKPickle *) nil_chk(((GHKPickleEvent *) nil_chk(pickleEvent_))->pickle_)) getLocations])) getWithInt:0]), @" # ", [self getName]);
-}
-
-- (NSString *)getUri {
-  return ((GHKPickleEvent *) nil_chk(pickleEvent_))->uri_;
-}
-
-- (jint)getLine {
-  return [((GHKPickleLocation *) nil_chk([((id<JavaUtilList>) nil_chk([((GHKPickle *) nil_chk(((GHKPickleEvent *) nil_chk(pickleEvent_))->pickle_)) getLocations])) getWithInt:0])) getLine];
-}
-
-- (NSString *)fileColonLineWithGHKPickleLocation:(GHKPickleLocation *)location {
-  return CucumberApiTestCase_fileColonLineWithGHKPickleLocation_(self, location);
-}
-
-- (id<JavaUtilList>)getTags {
-  return [((GHKPickle *) nil_chk(((GHKPickleEvent *) nil_chk(pickleEvent_))->pickle_)) getTags];
-}
-
-- (void)dealloc {
-  RELEASE_(pickleEvent_);
-  RELEASE_(testSteps_);
-  [super dealloc];
-}
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, NULL, 0x1, -1, 0, -1, 1, 2, -1 },
-    { NULL, NULL, 0x1, -1, 3, -1, 4, 5, -1 },
-    { NULL, "V", 0x1, 6, 7, -1, -1, 8, -1 },
-    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 9, -1, -1 },
-    { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "I", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x2, 10, 11, -1, -1, -1, -1 },
-    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 12, -1, -1 },
+    { NULL, "I", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LJavaUtilList;", 0x401, -1, -1, -1, 0, -1, -1 },
+    { NULL, "LJavaUtilList;", 0x401, -1, -1, -1, 1, -1, -1 },
+    { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithJavaUtilList:withGHKPickleEvent:);
-  methods[1].selector = @selector(initWithJavaUtilList:withGHKPickleEvent:withBoolean:);
-  methods[2].selector = @selector(runWithCCBEventBus:);
-  methods[3].selector = @selector(getTestSteps);
-  methods[4].selector = @selector(getName);
-  methods[5].selector = @selector(getScenarioDesignation);
-  methods[6].selector = @selector(getUri);
-  methods[7].selector = @selector(getLine);
-  methods[8].selector = @selector(fileColonLineWithGHKPickleLocation:);
-  methods[9].selector = @selector(getTags);
+  methods[0].selector = @selector(getLine);
+  methods[1].selector = @selector(getName);
+  methods[2].selector = @selector(getScenarioDesignation);
+  methods[3].selector = @selector(getTags);
+  methods[4].selector = @selector(getTestSteps);
+  methods[5].selector = @selector(getUri);
   #pragma clang diagnostic pop
-  static const J2ObjcFieldInfo fields[] = {
-    { "pickleEvent_", "LGHKPickleEvent;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "testSteps_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 13, -1 },
-    { "dryRun_", "Z", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-  };
-  static const void *ptrTable[] = { "LJavaUtilList;LGHKPickleEvent;", "(Ljava/util/List<Lcucumber/api/TestStep;>;Lgherkin/events/PickleEvent;)V", (void *)&CucumberApiTestCase__Annotations$0, "LJavaUtilList;LGHKPickleEvent;Z", "(Ljava/util/List<Lcucumber/api/TestStep;>;Lgherkin/events/PickleEvent;Z)V", (void *)&CucumberApiTestCase__Annotations$1, "run", "LCCBEventBus;", (void *)&CucumberApiTestCase__Annotations$2, "()Ljava/util/List<Lcucumber/api/TestStep;>;", "fileColonLine", "LGHKPickleLocation;", "()Ljava/util/List<Lgherkin/pickles/PickleTag;>;", "Ljava/util/List<Lcucumber/api/TestStep;>;" };
-  static const J2ObjcClassInfo _CucumberApiTestCase = { "TestCase", "cucumber.api", ptrTable, methods, fields, 7, 0x1, 10, 3, -1, -1, -1, -1, -1 };
+  static const void *ptrTable[] = { "()Ljava/util/List<Lgherkin/pickles/PickleTag;>;", "()Ljava/util/List<Lcucumber/api/TestStep;>;" };
+  static const J2ObjcClassInfo _CucumberApiTestCase = { "TestCase", "cucumber.api", ptrTable, methods, NULL, 7, 0x609, 6, 0, -1, -1, -1, -1, -1 };
   return &_CucumberApiTestCase;
 }
 
 @end
 
-void CucumberApiTestCase_initWithJavaUtilList_withGHKPickleEvent_(CucumberApiTestCase *self, id<JavaUtilList> testSteps, GHKPickleEvent *pickleEvent) {
-  CucumberApiTestCase_initWithJavaUtilList_withGHKPickleEvent_withBoolean_(self, testSteps, pickleEvent, false);
-}
-
-CucumberApiTestCase *new_CucumberApiTestCase_initWithJavaUtilList_withGHKPickleEvent_(id<JavaUtilList> testSteps, GHKPickleEvent *pickleEvent) {
-  J2OBJC_NEW_IMPL(CucumberApiTestCase, initWithJavaUtilList_withGHKPickleEvent_, testSteps, pickleEvent)
-}
-
-CucumberApiTestCase *create_CucumberApiTestCase_initWithJavaUtilList_withGHKPickleEvent_(id<JavaUtilList> testSteps, GHKPickleEvent *pickleEvent) {
-  J2OBJC_CREATE_IMPL(CucumberApiTestCase, initWithJavaUtilList_withGHKPickleEvent_, testSteps, pickleEvent)
-}
-
-void CucumberApiTestCase_initWithJavaUtilList_withGHKPickleEvent_withBoolean_(CucumberApiTestCase *self, id<JavaUtilList> testSteps, GHKPickleEvent *pickleEvent, jboolean dryRun) {
-  NSObject_init(self);
-  JreStrongAssign(&self->testSteps_, testSteps);
-  JreStrongAssign(&self->pickleEvent_, pickleEvent);
-  self->dryRun_ = dryRun;
-}
-
-CucumberApiTestCase *new_CucumberApiTestCase_initWithJavaUtilList_withGHKPickleEvent_withBoolean_(id<JavaUtilList> testSteps, GHKPickleEvent *pickleEvent, jboolean dryRun) {
-  J2OBJC_NEW_IMPL(CucumberApiTestCase, initWithJavaUtilList_withGHKPickleEvent_withBoolean_, testSteps, pickleEvent, dryRun)
-}
-
-CucumberApiTestCase *create_CucumberApiTestCase_initWithJavaUtilList_withGHKPickleEvent_withBoolean_(id<JavaUtilList> testSteps, GHKPickleEvent *pickleEvent, jboolean dryRun) {
-  J2OBJC_CREATE_IMPL(CucumberApiTestCase, initWithJavaUtilList_withGHKPickleEvent_withBoolean_, testSteps, pickleEvent, dryRun)
-}
-
-NSString *CucumberApiTestCase_fileColonLineWithGHKPickleLocation_(CucumberApiTestCase *self, GHKPickleLocation *location) {
-  return JreStrcat("$CI", ((GHKPickleEvent *) nil_chk(self->pickleEvent_))->uri_, ':', [((GHKPickleLocation *) nil_chk(location)) getLine]);
-}
-
-IOSObjectArray *CucumberApiTestCase__Annotations$0() {
-  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
-}
-
-IOSObjectArray *CucumberApiTestCase__Annotations$1() {
-  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
-}
-
-IOSObjectArray *CucumberApiTestCase__Annotations$2() {
-  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
-}
-
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiTestCase)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(CucumberApiTestCase)

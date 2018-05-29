@@ -27,12 +27,15 @@
 
 @class JavaLangClassLoader;
 @protocol JavaLangIterable;
+@protocol JavaUtilList;
 
 @interface CCBRMultiLoader : NSObject < CCBRResourceLoader >
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
+
++ (id<JavaUtilList>)packageNameWithJavaUtilList:(id<JavaUtilList>)glue;
 
 + (NSString *)packageNameWithNSString:(NSString *)gluePath;
 
@@ -57,6 +60,8 @@ FOUNDATION_EXPORT void CCBRMultiLoader_initWithJavaLangClassLoader_(CCBRMultiLoa
 FOUNDATION_EXPORT CCBRMultiLoader *new_CCBRMultiLoader_initWithJavaLangClassLoader_(JavaLangClassLoader *classLoader) NS_RETURNS_RETAINED;
 
 FOUNDATION_EXPORT CCBRMultiLoader *create_CCBRMultiLoader_initWithJavaLangClassLoader_(JavaLangClassLoader *classLoader);
+
+FOUNDATION_EXPORT id<JavaUtilList> CCBRMultiLoader_packageNameWithJavaUtilList_(id<JavaUtilList> glue);
 
 FOUNDATION_EXPORT NSString *CCBRMultiLoader_packageNameWithNSString_(NSString *gluePath);
 

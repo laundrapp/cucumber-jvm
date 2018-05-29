@@ -21,16 +21,14 @@
 #if !defined (CCBRHookDefinitionMatch_) && (INCLUDE_ALL_CucumberRuntimeHookDefinitionMatch || defined(INCLUDE_CCBRHookDefinitionMatch))
 #define CCBRHookDefinitionMatch_
 
-#define RESTRICT_CucumberRuntimeDefinitionMatch 1
-#define INCLUDE_CCBRDefinitionMatch 1
-#include "cucumber/runtime/DefinitionMatch.h"
+#define RESTRICT_CucumberRuntimeStepDefinitionMatch 1
+#define INCLUDE_CCBRStepDefinitionMatch 1
+#include "cucumber/runtime/StepDefinitionMatch.h"
 
-@class CCBRMatch;
 @protocol CCBRHookDefinition;
 @protocol CucumberApiScenario;
-@protocol JavaUtilList;
 
-@interface CCBRHookDefinitionMatch : NSObject < CCBRDefinitionMatch >
+@interface CCBRHookDefinitionMatch : NSObject < CCBRStepDefinitionMatch >
 
 #pragma mark Public
 
@@ -39,13 +37,7 @@
 - (void)dryRunStepWithNSString:(NSString *)language
        withCucumberApiScenario:(id<CucumberApiScenario>)scenario;
 
-- (id<JavaUtilList>)getArguments;
-
 - (NSString *)getCodeLocation;
-
-- (CCBRMatch *)getMatch;
-
-- (NSString *)getPattern;
 
 - (void)runStepWithNSString:(NSString *)language
     withCucumberApiScenario:(id<CucumberApiScenario>)scenario;

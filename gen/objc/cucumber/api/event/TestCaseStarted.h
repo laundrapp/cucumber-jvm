@@ -25,18 +25,18 @@
 #define INCLUDE_CucumberApiEventTimeStampedEvent 1
 #include "cucumber/api/event/TimeStampedEvent.h"
 
-@class CucumberApiTestCase;
 @class JavaLangLong;
+@protocol CucumberApiTestCase;
 
 @interface CucumberApiEventTestCaseStarted : CucumberApiEventTimeStampedEvent {
  @public
-  CucumberApiTestCase *testCase_;
+  id<CucumberApiTestCase> testCase_;
 }
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp
-                       withCucumberApiTestCase:(CucumberApiTestCase *)testCase;
+                       withCucumberApiTestCase:(id<CucumberApiTestCase>)testCase;
 
 // Disallowed inherited constructors, do not use.
 
@@ -46,13 +46,13 @@
 
 J2OBJC_EMPTY_STATIC_INIT(CucumberApiEventTestCaseStarted)
 
-J2OBJC_FIELD_SETTER(CucumberApiEventTestCaseStarted, testCase_, CucumberApiTestCase *)
+J2OBJC_FIELD_SETTER(CucumberApiEventTestCaseStarted, testCase_, id<CucumberApiTestCase>)
 
-FOUNDATION_EXPORT void CucumberApiEventTestCaseStarted_initWithJavaLangLong_withCucumberApiTestCase_(CucumberApiEventTestCaseStarted *self, JavaLangLong *timeStamp, CucumberApiTestCase *testCase);
+FOUNDATION_EXPORT void CucumberApiEventTestCaseStarted_initWithJavaLangLong_withCucumberApiTestCase_(CucumberApiEventTestCaseStarted *self, JavaLangLong *timeStamp, id<CucumberApiTestCase> testCase);
 
-FOUNDATION_EXPORT CucumberApiEventTestCaseStarted *new_CucumberApiEventTestCaseStarted_initWithJavaLangLong_withCucumberApiTestCase_(JavaLangLong *timeStamp, CucumberApiTestCase *testCase) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CucumberApiEventTestCaseStarted *new_CucumberApiEventTestCaseStarted_initWithJavaLangLong_withCucumberApiTestCase_(JavaLangLong *timeStamp, id<CucumberApiTestCase> testCase) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberApiEventTestCaseStarted *create_CucumberApiEventTestCaseStarted_initWithJavaLangLong_withCucumberApiTestCase_(JavaLangLong *timeStamp, CucumberApiTestCase *testCase);
+FOUNDATION_EXPORT CucumberApiEventTestCaseStarted *create_CucumberApiEventTestCaseStarted_initWithJavaLangLong_withCucumberApiTestCase_(JavaLangLong *timeStamp, id<CucumberApiTestCase> testCase);
 
 J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventTestCaseStarted)
 

@@ -12,7 +12,7 @@
 @implementation CucumberApiEventTestCaseStarted
 
 - (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp
-                       withCucumberApiTestCase:(CucumberApiTestCase *)testCase {
+                       withCucumberApiTestCase:(id<CucumberApiTestCase>)testCase {
   CucumberApiEventTestCaseStarted_initWithJavaLangLong_withCucumberApiTestCase_(self, timeStamp, testCase);
   return self;
 }
@@ -41,16 +41,16 @@
 
 @end
 
-void CucumberApiEventTestCaseStarted_initWithJavaLangLong_withCucumberApiTestCase_(CucumberApiEventTestCaseStarted *self, JavaLangLong *timeStamp, CucumberApiTestCase *testCase) {
+void CucumberApiEventTestCaseStarted_initWithJavaLangLong_withCucumberApiTestCase_(CucumberApiEventTestCaseStarted *self, JavaLangLong *timeStamp, id<CucumberApiTestCase> testCase) {
   CucumberApiEventTimeStampedEvent_initWithJavaLangLong_(self, timeStamp);
   JreStrongAssign(&self->testCase_, testCase);
 }
 
-CucumberApiEventTestCaseStarted *new_CucumberApiEventTestCaseStarted_initWithJavaLangLong_withCucumberApiTestCase_(JavaLangLong *timeStamp, CucumberApiTestCase *testCase) {
+CucumberApiEventTestCaseStarted *new_CucumberApiEventTestCaseStarted_initWithJavaLangLong_withCucumberApiTestCase_(JavaLangLong *timeStamp, id<CucumberApiTestCase> testCase) {
   J2OBJC_NEW_IMPL(CucumberApiEventTestCaseStarted, initWithJavaLangLong_withCucumberApiTestCase_, timeStamp, testCase)
 }
 
-CucumberApiEventTestCaseStarted *create_CucumberApiEventTestCaseStarted_initWithJavaLangLong_withCucumberApiTestCase_(JavaLangLong *timeStamp, CucumberApiTestCase *testCase) {
+CucumberApiEventTestCaseStarted *create_CucumberApiEventTestCaseStarted_initWithJavaLangLong_withCucumberApiTestCase_(JavaLangLong *timeStamp, id<CucumberApiTestCase> testCase) {
   J2OBJC_CREATE_IMPL(CucumberApiEventTestCaseStarted, initWithJavaLangLong_withCucumberApiTestCase_, timeStamp, testCase)
 }
 

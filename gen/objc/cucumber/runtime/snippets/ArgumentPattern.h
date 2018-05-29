@@ -21,27 +21,17 @@
 #if !defined (CCBRArgumentPattern_) && (INCLUDE_ALL_CucumberRuntimeSnippetsArgumentPattern || defined(INCLUDE_CCBRArgumentPattern))
 #define CCBRArgumentPattern_
 
-@class IOSClass;
 @class JavaUtilRegexPattern;
 
 @interface CCBRArgumentPattern : NSObject
 
-#pragma mark Public
+#pragma mark Package-Private
 
-- (instancetype __nonnull)initWithJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern
-                                          withIOSClass:(IOSClass *)type;
-
-- (instancetype __nonnull)initWithJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern
-                                          withNSString:(NSString *)replacement
-                                          withIOSClass:(IOSClass *)type;
-
-- (JavaUtilRegexPattern *)pattern;
+- (instancetype __nonnull)initWithJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern;
 
 - (NSString *)replaceMatchesWithGroupsWithNSString:(NSString *)name;
 
 - (NSString *)replaceMatchesWithSpaceWithNSString:(NSString *)name;
-
-- (IOSClass *)type;
 
 // Disallowed inherited constructors, do not use.
 
@@ -51,17 +41,11 @@
 
 J2OBJC_EMPTY_STATIC_INIT(CCBRArgumentPattern)
 
-FOUNDATION_EXPORT void CCBRArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(CCBRArgumentPattern *self, JavaUtilRegexPattern *pattern, IOSClass *type);
+FOUNDATION_EXPORT void CCBRArgumentPattern_initWithJavaUtilRegexPattern_(CCBRArgumentPattern *self, JavaUtilRegexPattern *pattern);
 
-FOUNDATION_EXPORT CCBRArgumentPattern *new_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(JavaUtilRegexPattern *pattern, IOSClass *type) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRArgumentPattern *new_CCBRArgumentPattern_initWithJavaUtilRegexPattern_(JavaUtilRegexPattern *pattern) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRArgumentPattern *create_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(JavaUtilRegexPattern *pattern, IOSClass *type);
-
-FOUNDATION_EXPORT void CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(CCBRArgumentPattern *self, JavaUtilRegexPattern *pattern, NSString *replacement, IOSClass *type);
-
-FOUNDATION_EXPORT CCBRArgumentPattern *new_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(JavaUtilRegexPattern *pattern, NSString *replacement, IOSClass *type) NS_RETURNS_RETAINED;
-
-FOUNDATION_EXPORT CCBRArgumentPattern *create_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(JavaUtilRegexPattern *pattern, NSString *replacement, IOSClass *type);
+FOUNDATION_EXPORT CCBRArgumentPattern *create_CCBRArgumentPattern_initWithJavaUtilRegexPattern_(JavaUtilRegexPattern *pattern);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRArgumentPattern)
 

@@ -45,7 +45,14 @@
   <li><code>File</code></li>
   </ul>
   <p>
-  To make the parameter optional the plugin must also have a public default constructor.
+  To make the parameter optional the plugin must also have a public default constructor. 
+ <p>
+  Plugins may also implement one of these interfaces: 
+ <ul>
+  <li><code>cucumber.api.formatter.ColorAware</code></li>
+  <li><code>cucumber.api.formatter.StrictAware</code></li>
+  <li><code>cucumber.api.event.EventListener</code></li>
+  </ul>
  */
 @protocol CucumberApiPlugin < JavaObject >
 

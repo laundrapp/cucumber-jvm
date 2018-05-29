@@ -25,18 +25,33 @@
 #define INCLUDE_CucumberApiEventTimeStampedEvent 1
 #include "cucumber/api/event/TimeStampedEvent.h"
 
-@class CucumberApiTestStep;
 @class JavaLangLong;
+@protocol CucumberApiTestStep;
 
+/*!
+ @brief A test step started event is broadcast when ever a step starts.
+ A step can either be a <code>PickleStepTestStep</code> or a 
+ <code>HookTestStep</code> depending on what step was executed.
+  Each test step started event is followed by an matching 
+ <code>TestStepFinished</code> event for the same step.The order in
+  which these events may be expected is: 
+ @code
+
+      [before hook,]* [[before step hook,]* test step, [after step hook,]*]+, [after hook,]* 
+  
+@endcode
+ - seealso: PickleStepTestStep
+ - seealso: HookTestStep
+ */
 @interface CucumberApiEventTestStepStarted : CucumberApiEventTimeStampedEvent {
  @public
-  CucumberApiTestStep *testStep_;
+  id<CucumberApiTestStep> testStep_;
 }
 
 #pragma mark Public
 
 - (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp
-                       withCucumberApiTestStep:(CucumberApiTestStep *)testStep;
+                       withCucumberApiTestStep:(id<CucumberApiTestStep>)testStep;
 
 // Disallowed inherited constructors, do not use.
 
@@ -46,13 +61,13 @@
 
 J2OBJC_EMPTY_STATIC_INIT(CucumberApiEventTestStepStarted)
 
-J2OBJC_FIELD_SETTER(CucumberApiEventTestStepStarted, testStep_, CucumberApiTestStep *)
+J2OBJC_FIELD_SETTER(CucumberApiEventTestStepStarted, testStep_, id<CucumberApiTestStep>)
 
-FOUNDATION_EXPORT void CucumberApiEventTestStepStarted_initWithJavaLangLong_withCucumberApiTestStep_(CucumberApiEventTestStepStarted *self, JavaLangLong *timeStamp, CucumberApiTestStep *testStep);
+FOUNDATION_EXPORT void CucumberApiEventTestStepStarted_initWithJavaLangLong_withCucumberApiTestStep_(CucumberApiEventTestStepStarted *self, JavaLangLong *timeStamp, id<CucumberApiTestStep> testStep);
 
-FOUNDATION_EXPORT CucumberApiEventTestStepStarted *new_CucumberApiEventTestStepStarted_initWithJavaLangLong_withCucumberApiTestStep_(JavaLangLong *timeStamp, CucumberApiTestStep *testStep) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CucumberApiEventTestStepStarted *new_CucumberApiEventTestStepStarted_initWithJavaLangLong_withCucumberApiTestStep_(JavaLangLong *timeStamp, id<CucumberApiTestStep> testStep) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CucumberApiEventTestStepStarted *create_CucumberApiEventTestStepStarted_initWithJavaLangLong_withCucumberApiTestStep_(JavaLangLong *timeStamp, CucumberApiTestStep *testStep);
+FOUNDATION_EXPORT CucumberApiEventTestStepStarted *create_CucumberApiEventTestStepStarted_initWithJavaLangLong_withCucumberApiTestStep_(JavaLangLong *timeStamp, id<CucumberApiTestStep> testStep);
 
 J2OBJC_TYPE_LITERAL_HEADER(CucumberApiEventTestStepStarted)
 

@@ -9,6 +9,8 @@
 #include "cucumber/runtime/io/MultiLoader.h"
 #include "java/lang/ClassLoader.h"
 #include "java/lang/Iterable.h"
+#include "java/util/ArrayList.h"
+#include "java/util/List.h"
 
 @interface CCBRMultiLoader () {
  @public
@@ -48,6 +50,10 @@ NSString *CCBRMultiLoader_CLASSPATH_SCHEME = @"classpath:";
   }
 }
 
++ (id<JavaUtilList>)packageNameWithJavaUtilList:(id<JavaUtilList>)glue {
+  return CCBRMultiLoader_packageNameWithJavaUtilList_(glue);
+}
+
 + (NSString *)packageNameWithNSString:(NSString *)gluePath {
   return CCBRMultiLoader_packageNameWithNSString_(gluePath);
 }
@@ -70,26 +76,28 @@ NSString *CCBRMultiLoader_CLASSPATH_SCHEME = @"classpath:";
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
     { NULL, "LJavaLangIterable;", 0x1, 1, 2, -1, 3, -1, -1 },
-    { NULL, "LNSString;", 0x9, 4, 5, -1, -1, -1, -1 },
-    { NULL, "Z", 0xa, 6, 5, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0xa, 7, 5, -1, -1, -1, -1 },
+    { NULL, "LJavaUtilList;", 0x9, 4, 5, -1, 6, -1, -1 },
+    { NULL, "LNSString;", 0x9, 4, 7, -1, -1, -1, -1 },
+    { NULL, "Z", 0xa, 8, 7, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0xa, 9, 7, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(initWithJavaLangClassLoader:);
   methods[1].selector = @selector(resourcesWithNSString:withNSString:);
-  methods[2].selector = @selector(packageNameWithNSString:);
-  methods[3].selector = @selector(isClasspathPathWithNSString:);
-  methods[4].selector = @selector(stripClasspathPrefixWithNSString:);
+  methods[2].selector = @selector(packageNameWithJavaUtilList:);
+  methods[3].selector = @selector(packageNameWithNSString:);
+  methods[4].selector = @selector(isClasspathPathWithNSString:);
+  methods[5].selector = @selector(stripClasspathPrefixWithNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "CLASSPATH_SCHEME", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 8, -1, -1 },
+    { "CLASSPATH_SCHEME", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 10, -1, -1 },
     { "classpath_", "LCCBRClasspathResourceLoader;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "fs_", "LCCBRFileResourceLoader;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LJavaLangClassLoader;", "resources", "LNSString;LNSString;", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Iterable<Lcucumber/runtime/io/Resource;>;", "packageName", "LNSString;", "isClasspathPath", "stripClasspathPrefix", &CCBRMultiLoader_CLASSPATH_SCHEME };
-  static const J2ObjcClassInfo _CCBRMultiLoader = { "MultiLoader", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 5, 3, -1, -1, -1, -1, -1 };
+  static const void *ptrTable[] = { "LJavaLangClassLoader;", "resources", "LNSString;LNSString;", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Iterable<Lcucumber/runtime/io/Resource;>;", "packageName", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)Ljava/util/List<Ljava/lang/String;>;", "LNSString;", "isClasspathPath", "stripClasspathPrefix", &CCBRMultiLoader_CLASSPATH_SCHEME };
+  static const J2ObjcClassInfo _CCBRMultiLoader = { "MultiLoader", "cucumber.runtime.io", ptrTable, methods, fields, 7, 0x1, 6, 3, -1, -1, -1, -1, -1 };
   return &_CCBRMultiLoader;
 }
 
@@ -107,6 +115,15 @@ CCBRMultiLoader *new_CCBRMultiLoader_initWithJavaLangClassLoader_(JavaLangClassL
 
 CCBRMultiLoader *create_CCBRMultiLoader_initWithJavaLangClassLoader_(JavaLangClassLoader *classLoader) {
   J2OBJC_CREATE_IMPL(CCBRMultiLoader, initWithJavaLangClassLoader_, classLoader)
+}
+
+id<JavaUtilList> CCBRMultiLoader_packageNameWithJavaUtilList_(id<JavaUtilList> glue) {
+  CCBRMultiLoader_initialize();
+  id<JavaUtilList> packageNames = create_JavaUtilArrayList_initWithInt_([((id<JavaUtilList>) nil_chk(glue)) size]);
+  for (NSString * __strong gluePath in glue) {
+    [packageNames addWithId:CCBRMultiLoader_packageNameWithNSString_(gluePath)];
+  }
+  return packageNames;
 }
 
 NSString *CCBRMultiLoader_packageNameWithNSString_(NSString *gluePath) {

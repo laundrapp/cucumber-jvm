@@ -13,7 +13,7 @@
 @implementation CucumberApiEventTestStepFinished
 
 - (instancetype __nonnull)initWithJavaLangLong:(JavaLangLong *)timeStamp
-                       withCucumberApiTestStep:(CucumberApiTestStep *)testStep
+                       withCucumberApiTestStep:(id<CucumberApiTestStep>)testStep
                          withCucumberApiResult:(CucumberApiResult *)result {
   CucumberApiEventTestStepFinished_initWithJavaLangLong_withCucumberApiTestStep_withCucumberApiResult_(self, timeStamp, testStep, result);
   return self;
@@ -45,17 +45,17 @@
 
 @end
 
-void CucumberApiEventTestStepFinished_initWithJavaLangLong_withCucumberApiTestStep_withCucumberApiResult_(CucumberApiEventTestStepFinished *self, JavaLangLong *timeStamp, CucumberApiTestStep *testStep, CucumberApiResult *result) {
+void CucumberApiEventTestStepFinished_initWithJavaLangLong_withCucumberApiTestStep_withCucumberApiResult_(CucumberApiEventTestStepFinished *self, JavaLangLong *timeStamp, id<CucumberApiTestStep> testStep, CucumberApiResult *result) {
   CucumberApiEventTimeStampedEvent_initWithJavaLangLong_(self, timeStamp);
   JreStrongAssign(&self->testStep_, testStep);
   JreStrongAssign(&self->result_, result);
 }
 
-CucumberApiEventTestStepFinished *new_CucumberApiEventTestStepFinished_initWithJavaLangLong_withCucumberApiTestStep_withCucumberApiResult_(JavaLangLong *timeStamp, CucumberApiTestStep *testStep, CucumberApiResult *result) {
+CucumberApiEventTestStepFinished *new_CucumberApiEventTestStepFinished_initWithJavaLangLong_withCucumberApiTestStep_withCucumberApiResult_(JavaLangLong *timeStamp, id<CucumberApiTestStep> testStep, CucumberApiResult *result) {
   J2OBJC_NEW_IMPL(CucumberApiEventTestStepFinished, initWithJavaLangLong_withCucumberApiTestStep_withCucumberApiResult_, timeStamp, testStep, result)
 }
 
-CucumberApiEventTestStepFinished *create_CucumberApiEventTestStepFinished_initWithJavaLangLong_withCucumberApiTestStep_withCucumberApiResult_(JavaLangLong *timeStamp, CucumberApiTestStep *testStep, CucumberApiResult *result) {
+CucumberApiEventTestStepFinished *create_CucumberApiEventTestStepFinished_initWithJavaLangLong_withCucumberApiTestStep_withCucumberApiResult_(JavaLangLong *timeStamp, id<CucumberApiTestStep> testStep, CucumberApiResult *result) {
   J2OBJC_CREATE_IMPL(CucumberApiEventTestStepFinished, initWithJavaLangLong_withCucumberApiTestStep_withCucumberApiResult_, timeStamp, testStep, result)
 }
 

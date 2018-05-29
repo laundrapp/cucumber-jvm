@@ -28,8 +28,8 @@
 @class JavaLangClassLoader;
 @protocol CCBRResourceLoader;
 @protocol CucumberApiFormatterFormatter;
+@protocol CucumberApiPlugin;
 @protocol CucumberApiStepDefinitionReporter;
-@protocol CucumberApiSummaryPrinter;
 @protocol JavaUtilList;
 @protocol JavaUtilMap;
 
@@ -65,7 +65,7 @@
  */
 - (instancetype __nonnull)initWithNSString:(NSString *)argv;
 
-- (void)addPluginWithCucumberApiFormatterFormatter:(id<CucumberApiFormatterFormatter>)plugin;
+- (void)addPluginWithCucumberApiPlugin:(id<CucumberApiPlugin>)plugin;
 
 - (id<JavaUtilList>)cucumberFeaturesWithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader
                                            withCCBEventBus:(CCBEventBus *)bus;
@@ -94,19 +94,15 @@
 
 - (jboolean)isStrict;
 
+- (CCBRRuntimeOptions *)noSummaryPrinter;
+
 - (id<CucumberApiStepDefinitionReporter>)stepDefinitionReporterWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
 
-- (id<CucumberApiSummaryPrinter>)summaryPrinterWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader;
-
 #pragma mark Package-Private
-
-- (id<JavaUtilList>)getConverters;
 
 + (void)loadUsageTextIfNeeded;
 
 - (void)setEventBusWithCCBEventBus:(CCBEventBus *)bus;
-
-- (CCBRRuntimeOptions *)withConvertersWithJavaUtilList:(id<JavaUtilList>)converters;
 
 // Disallowed inherited constructors, do not use.
 

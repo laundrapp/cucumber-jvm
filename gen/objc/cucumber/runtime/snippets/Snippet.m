@@ -17,8 +17,6 @@
     { NULL, "LNSString;", 0x401, 0, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x401, 1, 2, -1, 3, -1, -1 },
-    { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x401, 4, 5, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
@@ -26,13 +24,11 @@
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(template__);
   methods[1].selector = @selector(tableHint);
-  methods[2].selector = @selector(argumentsWithJavaUtilList:);
-  methods[3].selector = @selector(namedGroupStart);
-  methods[4].selector = @selector(namedGroupEnd);
-  methods[5].selector = @selector(escapePatternWithNSString:);
+  methods[2].selector = @selector(argumentsWithJavaUtilMap:);
+  methods[3].selector = @selector(escapePatternWithNSString:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "template", "arguments", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/Class<*>;>;)Ljava/lang/String;", "escapePattern", "LNSString;" };
-  static const J2ObjcClassInfo _CCBRSnippet = { "Snippet", "cucumber.runtime.snippets", ptrTable, methods, NULL, 7, 0x609, 6, 0, -1, -1, -1, -1, -1 };
+  static const void *ptrTable[] = { "template", "arguments", "LJavaUtilMap;", "(Ljava/util/Map<Ljava/lang/String;Ljava/lang/reflect/Type;>;)Ljava/lang/String;", "escapePattern", "LNSString;" };
+  static const J2ObjcClassInfo _CCBRSnippet = { "Snippet", "cucumber.runtime.snippets", ptrTable, methods, NULL, 7, 0x609, 4, 0, -1, -1, -1, -1, -1 };
   return &_CCBRSnippet;
 }
 

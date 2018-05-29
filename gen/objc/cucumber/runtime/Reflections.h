@@ -25,6 +25,7 @@
 @class IOSObjectArray;
 @protocol CCBRClassFinder;
 @protocol JavaUtilCollection;
+@protocol JavaUtilList;
 
 @interface CCBRReflections : NSObject
 
@@ -33,12 +34,13 @@
 - (instancetype __nonnull)initWithCCBRClassFinder:(id<CCBRClassFinder>)classFinder;
 
 - (id)instantiateExactlyOneSubclassWithIOSClass:(IOSClass *)parentType
-                                   withNSString:(NSString *)packageName
+                               withJavaUtilList:(id<JavaUtilList>)packageNames
                               withIOSClassArray:(IOSObjectArray *)constructorParams
-                              withNSObjectArray:(IOSObjectArray *)constructorArgs;
+                              withNSObjectArray:(IOSObjectArray *)constructorArgs
+                                         withId:(id)fallback;
 
 - (id<JavaUtilCollection>)instantiateSubclassesWithIOSClass:(IOSClass *)parentType
-                                               withNSString:(NSString *)packageName
+                                           withJavaUtilList:(id<JavaUtilList>)packageNames
                                           withIOSClassArray:(IOSObjectArray *)constructorParams
                                           withNSObjectArray:(IOSObjectArray *)constructorArgs;
 

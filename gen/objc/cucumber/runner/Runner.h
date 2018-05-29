@@ -21,20 +21,14 @@
 #if !defined (CCBRunner_) && (INCLUDE_ALL_CucumberRunnerRunner || defined(INCLUDE_CCBRunner))
 #define CCBRunner_
 
-#define RESTRICT_CucumberRuntimeUnreportedStepExecutor 1
-#define INCLUDE_CCBRUnreportedStepExecutor 1
-#include "cucumber/runtime/UnreportedStepExecutor.h"
-
 @class CCBEventBus;
 @class CCBRRuntimeOptions;
 @class GHKPickleEvent;
-@class GHKPickleString;
 @protocol CCBRGlue;
 @protocol CucumberApiStepDefinitionReporter;
 @protocol JavaUtilCollection;
-@protocol JavaUtilList;
 
-@interface CCBRunner : NSObject < CCBRUnreportedStepExecutor >
+@interface CCBRunner : NSObject
 
 #pragma mark Public
 
@@ -48,13 +42,6 @@
 - (void)reportStepDefinitionsWithCucumberApiStepDefinitionReporter:(id<CucumberApiStepDefinitionReporter>)stepDefinitionReporter;
 
 - (void)runPickleWithGHKPickleEvent:(GHKPickleEvent *)pickle;
-
-- (void)runUnreportedStepWithNSString:(NSString *)featurePath
-                         withNSString:(NSString *)language
-                         withNSString:(NSString *)stepName
-                              withInt:(jint)line
-                     withJavaUtilList:(id<JavaUtilList>)dataTableRows
-                  withGHKPickleString:(GHKPickleString *)docString;
 
 // Disallowed inherited constructors, do not use.
 

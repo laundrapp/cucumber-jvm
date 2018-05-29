@@ -6,7 +6,6 @@
 #include "IOSClass.h"
 #include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
-#include "cucumber/api/DataTable.h"
 #include "cucumber/runtime/snippets/ArgumentPattern.h"
 #include "cucumber/runtime/snippets/FunctionNameGenerator.h"
 #include "cucumber/runtime/snippets/Snippet.h"
@@ -15,42 +14,42 @@
 #include "gherkin/pickles/PickleStep.h"
 #include "gherkin/pickles/PickleString.h"
 #include "gherkin/pickles/PickleTable.h"
-#include "java/lang/Integer.h"
-#include "java/lang/StringBuffer.h"
-#include "java/lang/StringBuilder.h"
+#include "io/cucumber/cucumberexpressions/CucumberExpressionGenerator.h"
+#include "io/cucumber/cucumberexpressions/GeneratedExpression.h"
+#include "io/cucumber/cucumberexpressions/ParameterType.h"
+#include "io/cucumber/cucumberexpressions/ParameterTypeRegistry.h"
+#include "io/cucumber/datatable/DataTable.h"
+#include "java/lang/reflect/Type.h"
 #include "java/text/MessageFormat.h"
-#include "java/util/ArrayList.h"
+#include "java/util/LinkedHashMap.h"
 #include "java/util/List.h"
-#include "java/util/regex/Matcher.h"
+#include "java/util/Map.h"
 #include "java/util/regex/Pattern.h"
 
 @interface CCBRSnippetGenerator () {
  @public
   id<CCBRSnippet> snippet_;
+  IoCucumberCucumberexpressionsCucumberExpressionGenerator *generator_;
 }
 
 - (NSString *)functionNameWithNSString:(NSString *)sentence
          withCCBRFunctionNameGenerator:(CCBRFunctionNameGenerator *)functionNameGenerator;
 
-- (NSString *)withNamedGroupsWithNSString:(NSString *)snippetPattern;
+- (id<JavaUtilMap>)argumentsWithGHKPickleStep:(GHKPickleStep *)step
+                             withJavaUtilList:(id<JavaUtilList>)parameterNames
+                             withJavaUtilList:(id<JavaUtilList>)parameterTypes;
 
-- (id<JavaUtilList>)argumentTypesWithGHKPickleStep:(GHKPickleStep *)step;
+- (NSString *)parameterNameWithNSString:(NSString *)name
+                       withJavaUtilList:(id<JavaUtilList>)parameterNames;
 
 @end
 
 J2OBJC_FIELD_SETTER(CCBRSnippetGenerator, snippet_, id<CCBRSnippet>)
+J2OBJC_FIELD_SETTER(CCBRSnippetGenerator, generator_, IoCucumberCucumberexpressionsCucumberExpressionGenerator *)
 
 inline IOSObjectArray *CCBRSnippetGenerator_get_DEFAULT_ARGUMENT_PATTERNS(void);
 static IOSObjectArray *CCBRSnippetGenerator_DEFAULT_ARGUMENT_PATTERNS;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRSnippetGenerator, DEFAULT_ARGUMENT_PATTERNS, IOSObjectArray *)
-
-inline JavaUtilRegexPattern *CCBRSnippetGenerator_get_GROUP_PATTERN(void);
-static JavaUtilRegexPattern *CCBRSnippetGenerator_GROUP_PATTERN;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRSnippetGenerator, GROUP_PATTERN, JavaUtilRegexPattern *)
-
-inline IOSObjectArray *CCBRSnippetGenerator_get_ESCAPE_PATTERNS(void);
-static IOSObjectArray *CCBRSnippetGenerator_ESCAPE_PATTERNS;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRSnippetGenerator, ESCAPE_PATTERNS, IOSObjectArray *)
 
 inline NSString *CCBRSnippetGenerator_get_REGEXP_HINT(void);
 static NSString *CCBRSnippetGenerator_REGEXP_HINT = @"Write code here that turns the phrase above into concrete actions";
@@ -58,51 +57,26 @@ J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRSnippetGenerator, REGEXP_HINT, NSString *)
 
 __attribute__((unused)) static NSString *CCBRSnippetGenerator_functionNameWithNSString_withCCBRFunctionNameGenerator_(CCBRSnippetGenerator *self, NSString *sentence, CCBRFunctionNameGenerator *functionNameGenerator);
 
-__attribute__((unused)) static NSString *CCBRSnippetGenerator_withNamedGroupsWithNSString_(CCBRSnippetGenerator *self, NSString *snippetPattern);
+__attribute__((unused)) static id<JavaUtilMap> CCBRSnippetGenerator_argumentsWithGHKPickleStep_withJavaUtilList_withJavaUtilList_(CCBRSnippetGenerator *self, GHKPickleStep *step, id<JavaUtilList> parameterNames, id<JavaUtilList> parameterTypes);
 
-__attribute__((unused)) static id<JavaUtilList> CCBRSnippetGenerator_argumentTypesWithGHKPickleStep_(CCBRSnippetGenerator *self, GHKPickleStep *step);
+__attribute__((unused)) static NSString *CCBRSnippetGenerator_parameterNameWithNSString_withJavaUtilList_(CCBRSnippetGenerator *self, NSString *name, id<JavaUtilList> parameterNames);
 
 J2OBJC_INITIALIZED_DEFN(CCBRSnippetGenerator)
 
 @implementation CCBRSnippetGenerator
 
-- (instancetype __nonnull)initWithCCBRSnippet:(id<CCBRSnippet>)snippet {
-  CCBRSnippetGenerator_initWithCCBRSnippet_(self, snippet);
+- (instancetype __nonnull)initWithCCBRSnippet:(id<CCBRSnippet>)snippet
+withIoCucumberCucumberexpressionsParameterTypeRegistry:(IoCucumberCucumberexpressionsParameterTypeRegistry *)parameterTypeRegistry {
+  CCBRSnippetGenerator_initWithCCBRSnippet_withIoCucumberCucumberexpressionsParameterTypeRegistry_(self, snippet, parameterTypeRegistry);
   return self;
 }
 
 - (NSString *)getSnippetWithGHKPickleStep:(GHKPickleStep *)step
                              withNSString:(NSString *)keyword
             withCCBRFunctionNameGenerator:(CCBRFunctionNameGenerator *)functionNameGenerator {
-  return JavaTextMessageFormat_formatWithNSString_withNSObjectArray_([((id<CCBRSnippet>) nil_chk(snippet_)) template__], [IOSObjectArray arrayWithObjects:(id[]){ keyword, [snippet_ escapePatternWithNSString:[self patternForWithNSString:[((GHKPickleStep *) nil_chk(step)) getText]]], CCBRSnippetGenerator_functionNameWithNSString_withCCBRFunctionNameGenerator_(self, [step getText], functionNameGenerator), [snippet_ argumentsWithJavaUtilList:CCBRSnippetGenerator_argumentTypesWithGHKPickleStep_(self, step)], CCBRSnippetGenerator_REGEXP_HINT, ![((id<JavaUtilList>) nil_chk([step getArgument])) isEmpty] && [[((id<JavaUtilList>) nil_chk([step getArgument])) getWithInt:0] isKindOfClass:[GHKPickleTable class]] ? [snippet_ tableHint] : @"" } count:6 type:NSObject_class_()]);
-}
-
-- (NSString *)patternForWithNSString:(NSString *)stepName {
-  NSString *pattern = stepName;
-  {
-    IOSObjectArray *a__ = CCBRSnippetGenerator_ESCAPE_PATTERNS;
-    JavaUtilRegexPattern * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
-    JavaUtilRegexPattern * const *e__ = b__ + a__->size_;
-    while (b__ < e__) {
-      JavaUtilRegexPattern *escapePattern = *b__++;
-      JavaUtilRegexMatcher *m = [((JavaUtilRegexPattern *) nil_chk(escapePattern)) matcherWithJavaLangCharSequence:pattern];
-      NSString *replacement = JavaUtilRegexMatcher_quoteReplacementWithNSString_([escapePattern description]);
-      pattern = [((JavaUtilRegexMatcher *) nil_chk(m)) replaceAllWithNSString:replacement];
-    }
-  }
-  {
-    IOSObjectArray *a__ = [self argumentPatterns];
-    CCBRArgumentPattern * const *b__ = ((IOSObjectArray *) nil_chk(a__))->buffer_;
-    CCBRArgumentPattern * const *e__ = b__ + a__->size_;
-    while (b__ < e__) {
-      CCBRArgumentPattern *argumentPattern = *b__++;
-      pattern = [((CCBRArgumentPattern *) nil_chk(argumentPattern)) replaceMatchesWithGroupsWithNSString:pattern];
-    }
-  }
-  if ([((id<CCBRSnippet>) nil_chk(snippet_)) namedGroupStart] != nil) {
-    pattern = CCBRSnippetGenerator_withNamedGroupsWithNSString_(self, pattern);
-  }
-  return JreStrcat("C$C", '^', pattern, '$');
+  id<JavaUtilList> expressions = [((IoCucumberCucumberexpressionsCucumberExpressionGenerator *) nil_chk(generator_)) generateExpressionsWithNSString:[((GHKPickleStep *) nil_chk(step)) getText]];
+  IoCucumberCucumberexpressionsGeneratedExpression *expression = [((id<JavaUtilList>) nil_chk(expressions)) getWithInt:0];
+  return JavaTextMessageFormat_formatWithNSString_withNSObjectArray_([((id<CCBRSnippet>) nil_chk(snippet_)) template__], [IOSObjectArray arrayWithObjects:(id[]){ keyword, [snippet_ escapePatternWithNSString:[((IoCucumberCucumberexpressionsGeneratedExpression *) nil_chk(expression)) getSource]], CCBRSnippetGenerator_functionNameWithNSString_withCCBRFunctionNameGenerator_(self, [expression getSource], functionNameGenerator), [snippet_ argumentsWithJavaUtilMap:CCBRSnippetGenerator_argumentsWithGHKPickleStep_withJavaUtilList_withJavaUtilList_(self, step, [expression getParameterNames], [expression getParameterTypes])], CCBRSnippetGenerator_REGEXP_HINT, ![((id<JavaUtilList>) nil_chk([step getArgument])) isEmpty] && [[((id<JavaUtilList>) nil_chk([step getArgument])) getWithInt:0] isKindOfClass:[GHKPickleTable class]] ? [snippet_ tableHint] : @"" } count:6 type:NSObject_class_()]);
 }
 
 - (NSString *)functionNameWithNSString:(NSString *)sentence
@@ -110,24 +84,24 @@ J2OBJC_INITIALIZED_DEFN(CCBRSnippetGenerator)
   return CCBRSnippetGenerator_functionNameWithNSString_withCCBRFunctionNameGenerator_(self, sentence, functionNameGenerator);
 }
 
-- (NSString *)withNamedGroupsWithNSString:(NSString *)snippetPattern {
-  return CCBRSnippetGenerator_withNamedGroupsWithNSString_(self, snippetPattern);
+- (id<JavaUtilMap>)argumentsWithGHKPickleStep:(GHKPickleStep *)step
+                             withJavaUtilList:(id<JavaUtilList>)parameterNames
+                             withJavaUtilList:(id<JavaUtilList>)parameterTypes {
+  return CCBRSnippetGenerator_argumentsWithGHKPickleStep_withJavaUtilList_withJavaUtilList_(self, step, parameterNames, parameterTypes);
 }
 
-- (id<JavaUtilList>)argumentTypesWithGHKPickleStep:(GHKPickleStep *)step {
-  return CCBRSnippetGenerator_argumentTypesWithGHKPickleStep_(self, step);
+- (NSString *)parameterNameWithNSString:(NSString *)name
+                       withJavaUtilList:(id<JavaUtilList>)parameterNames {
+  return CCBRSnippetGenerator_parameterNameWithNSString_withJavaUtilList_(self, name, parameterNames);
 }
 
 - (IOSObjectArray *)argumentPatterns {
   return CCBRSnippetGenerator_DEFAULT_ARGUMENT_PATTERNS;
 }
 
-+ (NSString *)untypedArgumentsWithJavaUtilList:(id<JavaUtilList>)argumentTypes {
-  return CCBRSnippetGenerator_untypedArgumentsWithJavaUtilList_(argumentTypes);
-}
-
 - (void)dealloc {
   RELEASE_(snippet_);
+  RELEASE_(generator_);
   [super dealloc];
 }
 
@@ -135,59 +109,53 @@ J2OBJC_INITIALIZED_DEFN(CCBRSnippetGenerator)
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, 1, 2, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x0, 3, 4, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x2, 5, 6, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x2, 7, 4, -1, -1, -1, -1 },
-    { NULL, "LJavaUtilList;", 0x2, 8, 9, -1, 10, -1, -1 },
+    { NULL, "LNSString;", 0x2, 3, 4, -1, -1, -1, -1 },
+    { NULL, "LJavaUtilMap;", 0x2, 5, 6, -1, 7, -1, -1 },
+    { NULL, "LNSString;", 0x2, 8, 9, -1, 10, -1, -1 },
     { NULL, "[LCCBRArgumentPattern;", 0x0, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x9, 11, 12, -1, 13, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithCCBRSnippet:);
+  methods[0].selector = @selector(initWithCCBRSnippet:withIoCucumberCucumberexpressionsParameterTypeRegistry:);
   methods[1].selector = @selector(getSnippetWithGHKPickleStep:withNSString:withCCBRFunctionNameGenerator:);
-  methods[2].selector = @selector(patternForWithNSString:);
-  methods[3].selector = @selector(functionNameWithNSString:withCCBRFunctionNameGenerator:);
-  methods[4].selector = @selector(withNamedGroupsWithNSString:);
-  methods[5].selector = @selector(argumentTypesWithGHKPickleStep:);
-  methods[6].selector = @selector(argumentPatterns);
-  methods[7].selector = @selector(untypedArgumentsWithJavaUtilList:);
+  methods[2].selector = @selector(functionNameWithNSString:withCCBRFunctionNameGenerator:);
+  methods[3].selector = @selector(argumentsWithGHKPickleStep:withJavaUtilList:withJavaUtilList:);
+  methods[4].selector = @selector(parameterNameWithNSString:withJavaUtilList:);
+  methods[5].selector = @selector(argumentPatterns);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "DEFAULT_ARGUMENT_PATTERNS", "[LCCBRArgumentPattern;", .constantValue.asLong = 0, 0x1a, -1, 14, -1, -1 },
-    { "GROUP_PATTERN", "LJavaUtilRegexPattern;", .constantValue.asLong = 0, 0x1a, -1, 15, -1, -1 },
-    { "ESCAPE_PATTERNS", "[LJavaUtilRegexPattern;", .constantValue.asLong = 0, 0x1a, -1, 16, -1, -1 },
-    { "REGEXP_HINT", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 17, -1, -1 },
+    { "DEFAULT_ARGUMENT_PATTERNS", "[LCCBRArgumentPattern;", .constantValue.asLong = 0, 0x1a, -1, 11, -1, -1 },
+    { "REGEXP_HINT", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 12, -1, -1 },
     { "snippet_", "LCCBRSnippet;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "generator_", "LIoCucumberCucumberexpressionsCucumberExpressionGenerator;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCCBRSnippet;", "getSnippet", "LGHKPickleStep;LNSString;LCCBRFunctionNameGenerator;", "patternFor", "LNSString;", "functionName", "LNSString;LCCBRFunctionNameGenerator;", "withNamedGroups", "argumentTypes", "LGHKPickleStep;", "(Lgherkin/pickles/PickleStep;)Ljava/util/List<Ljava/lang/Class<*>;>;", "untypedArguments", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/Class<*>;>;)Ljava/lang/String;", &CCBRSnippetGenerator_DEFAULT_ARGUMENT_PATTERNS, &CCBRSnippetGenerator_GROUP_PATTERN, &CCBRSnippetGenerator_ESCAPE_PATTERNS, &CCBRSnippetGenerator_REGEXP_HINT };
-  static const J2ObjcClassInfo _CCBRSnippetGenerator = { "SnippetGenerator", "cucumber.runtime.snippets", ptrTable, methods, fields, 7, 0x1, 8, 5, -1, -1, -1, -1, -1 };
+  static const void *ptrTable[] = { "LCCBRSnippet;LIoCucumberCucumberexpressionsParameterTypeRegistry;", "getSnippet", "LGHKPickleStep;LNSString;LCCBRFunctionNameGenerator;", "functionName", "LNSString;LCCBRFunctionNameGenerator;", "arguments", "LGHKPickleStep;LJavaUtilList;LJavaUtilList;", "(Lgherkin/pickles/PickleStep;Ljava/util/List<Ljava/lang/String;>;Ljava/util/List<Lio/cucumber/cucumberexpressions/ParameterType<*>;>;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/reflect/Type;>;", "parameterName", "LNSString;LJavaUtilList;", "(Ljava/lang/String;Ljava/util/List<Ljava/lang/String;>;)Ljava/lang/String;", &CCBRSnippetGenerator_DEFAULT_ARGUMENT_PATTERNS, &CCBRSnippetGenerator_REGEXP_HINT };
+  static const J2ObjcClassInfo _CCBRSnippetGenerator = { "SnippetGenerator", "cucumber.runtime.snippets", ptrTable, methods, fields, 7, 0x1, 6, 4, -1, -1, -1, -1, -1 };
   return &_CCBRSnippetGenerator;
 }
 
 + (void)initialize {
   if (self == [CCBRSnippetGenerator class]) {
-    JreStrongAssignAndConsume(&CCBRSnippetGenerator_DEFAULT_ARGUMENT_PATTERNS, [IOSObjectArray newArrayWithObjects:(id[]){ create_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(JavaUtilRegexPattern_compileWithNSString_(@"\"([^\"]*)\""), NSString_class_()), create_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(JavaUtilRegexPattern_compileWithNSString_(@"(\\d+)"), JreLoadStatic(JavaLangInteger, TYPE)), create_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(JavaUtilRegexPattern_compileWithNSString_(@"<([^>]*)>"), @"(.*)", NSString_class_()) } count:3 type:CCBRArgumentPattern_class_()]);
-    JreStrongAssign(&CCBRSnippetGenerator_GROUP_PATTERN, JavaUtilRegexPattern_compileWithNSString_(@"\\("));
-    JreStrongAssignAndConsume(&CCBRSnippetGenerator_ESCAPE_PATTERNS, [IOSObjectArray newArrayWithObjects:(id[]){ JavaUtilRegexPattern_compileWithNSString_(@"\\$"), JavaUtilRegexPattern_compileWithNSString_(@"\\("), JavaUtilRegexPattern_compileWithNSString_(@"\\)"), JavaUtilRegexPattern_compileWithNSString_(@"\\["), JavaUtilRegexPattern_compileWithNSString_(@"\\]"), JavaUtilRegexPattern_compileWithNSString_(@"\\?"), JavaUtilRegexPattern_compileWithNSString_(@"\\*"), JavaUtilRegexPattern_compileWithNSString_(@"\\+"), JavaUtilRegexPattern_compileWithNSString_(@"\\."), JavaUtilRegexPattern_compileWithNSString_(@"\\^") } count:10 type:JavaUtilRegexPattern_class_()]);
+    JreStrongAssignAndConsume(&CCBRSnippetGenerator_DEFAULT_ARGUMENT_PATTERNS, [IOSObjectArray newArrayWithObjects:(id[]){ create_CCBRArgumentPattern_initWithJavaUtilRegexPattern_(JavaUtilRegexPattern_compileWithNSString_(@"\\{.*?\\}")) } count:1 type:CCBRArgumentPattern_class_()]);
     J2OBJC_SET_INITIALIZED(CCBRSnippetGenerator)
   }
 }
 
 @end
 
-void CCBRSnippetGenerator_initWithCCBRSnippet_(CCBRSnippetGenerator *self, id<CCBRSnippet> snippet) {
+void CCBRSnippetGenerator_initWithCCBRSnippet_withIoCucumberCucumberexpressionsParameterTypeRegistry_(CCBRSnippetGenerator *self, id<CCBRSnippet> snippet, IoCucumberCucumberexpressionsParameterTypeRegistry *parameterTypeRegistry) {
   NSObject_init(self);
   JreStrongAssign(&self->snippet_, snippet);
+  JreStrongAssignAndConsume(&self->generator_, new_IoCucumberCucumberexpressionsCucumberExpressionGenerator_initWithIoCucumberCucumberexpressionsParameterTypeRegistry_(parameterTypeRegistry));
 }
 
-CCBRSnippetGenerator *new_CCBRSnippetGenerator_initWithCCBRSnippet_(id<CCBRSnippet> snippet) {
-  J2OBJC_NEW_IMPL(CCBRSnippetGenerator, initWithCCBRSnippet_, snippet)
+CCBRSnippetGenerator *new_CCBRSnippetGenerator_initWithCCBRSnippet_withIoCucumberCucumberexpressionsParameterTypeRegistry_(id<CCBRSnippet> snippet, IoCucumberCucumberexpressionsParameterTypeRegistry *parameterTypeRegistry) {
+  J2OBJC_NEW_IMPL(CCBRSnippetGenerator, initWithCCBRSnippet_withIoCucumberCucumberexpressionsParameterTypeRegistry_, snippet, parameterTypeRegistry)
 }
 
-CCBRSnippetGenerator *create_CCBRSnippetGenerator_initWithCCBRSnippet_(id<CCBRSnippet> snippet) {
-  J2OBJC_CREATE_IMPL(CCBRSnippetGenerator, initWithCCBRSnippet_, snippet)
+CCBRSnippetGenerator *create_CCBRSnippetGenerator_initWithCCBRSnippet_withIoCucumberCucumberexpressionsParameterTypeRegistry_(id<CCBRSnippet> snippet, IoCucumberCucumberexpressionsParameterTypeRegistry *parameterTypeRegistry) {
+  J2OBJC_CREATE_IMPL(CCBRSnippetGenerator, initWithCCBRSnippet_withIoCucumberCucumberexpressionsParameterTypeRegistry_, snippet, parameterTypeRegistry)
 }
 
 NSString *CCBRSnippetGenerator_functionNameWithNSString_withCCBRFunctionNameGenerator_(CCBRSnippetGenerator *self, NSString *sentence, CCBRFunctionNameGenerator *functionNameGenerator) {
@@ -206,63 +174,35 @@ NSString *CCBRSnippetGenerator_functionNameWithNSString_withCCBRFunctionNameGene
   return [functionNameGenerator generateFunctionNameWithNSString:sentence];
 }
 
-NSString *CCBRSnippetGenerator_withNamedGroupsWithNSString_(CCBRSnippetGenerator *self, NSString *snippetPattern) {
-  JavaUtilRegexMatcher *m = [((JavaUtilRegexPattern *) nil_chk(CCBRSnippetGenerator_GROUP_PATTERN)) matcherWithJavaLangCharSequence:snippetPattern];
-  JavaLangStringBuffer *sb = create_JavaLangStringBuffer_init();
-  jint n = 1;
-  while ([((JavaUtilRegexMatcher *) nil_chk(m)) find]) {
-    [m appendReplacementWithJavaLangStringBuffer:sb withNSString:JreStrcat("C$I$", '(', [((id<CCBRSnippet>) nil_chk(self->snippet_)) namedGroupStart], n++, [self->snippet_ namedGroupEnd])];
+id<JavaUtilMap> CCBRSnippetGenerator_argumentsWithGHKPickleStep_withJavaUtilList_withJavaUtilList_(CCBRSnippetGenerator *self, GHKPickleStep *step, id<JavaUtilList> parameterNames, id<JavaUtilList> parameterTypes) {
+  id<JavaUtilMap> arguments = create_JavaUtilLinkedHashMap_initWithInt_([((id<JavaUtilList>) nil_chk(parameterTypes)) size] + 1);
+  for (jint i = 0; i < [parameterTypes size]; i++) {
+    IoCucumberCucumberexpressionsParameterType *parameterType = [parameterTypes getWithInt:i];
+    NSString *parameterName = [((id<JavaUtilList>) nil_chk(parameterNames)) getWithInt:i];
+    [arguments putWithId:parameterName withId:[((IoCucumberCucumberexpressionsParameterType *) nil_chk(parameterType)) getType]];
   }
-  [m appendTailWithJavaLangStringBuffer:sb];
-  return [sb description];
+  if ([((id<JavaUtilList>) nil_chk([((GHKPickleStep *) nil_chk(step)) getArgument])) isEmpty]) {
+    return arguments;
+  }
+  id<GHKArgument> arg = [((id<JavaUtilList>) nil_chk([step getArgument])) getWithInt:0];
+  if ([arg isKindOfClass:[GHKPickleString class]]) {
+    [arguments putWithId:CCBRSnippetGenerator_parameterNameWithNSString_withJavaUtilList_(self, @"docString", parameterNames) withId:NSString_class_()];
+  }
+  if ([arg isKindOfClass:[GHKPickleTable class]]) {
+    [arguments putWithId:CCBRSnippetGenerator_parameterNameWithNSString_withJavaUtilList_(self, @"dataTable", parameterNames) withId:IoCucumberDatatableDataTable_class_()];
+  }
+  return arguments;
 }
 
-id<JavaUtilList> CCBRSnippetGenerator_argumentTypesWithGHKPickleStep_(CCBRSnippetGenerator *self, GHKPickleStep *step) {
-  NSString *name = [((GHKPickleStep *) nil_chk(step)) getText];
-  id<JavaUtilList> argTypes = create_JavaUtilArrayList_init();
-  IOSObjectArray *matchers = [IOSObjectArray arrayWithLength:((IOSObjectArray *) nil_chk([self argumentPatterns]))->size_ type:JavaUtilRegexMatcher_class_()];
-  for (jint i = 0; i < ((IOSObjectArray *) nil_chk([self argumentPatterns]))->size_; i++) {
-    IOSObjectArray_Set(matchers, i, [((JavaUtilRegexPattern *) nil_chk([((CCBRArgumentPattern *) nil_chk(IOSObjectArray_Get(nil_chk([self argumentPatterns]), i))) pattern])) matcherWithJavaLangCharSequence:name]);
+NSString *CCBRSnippetGenerator_parameterNameWithNSString_withJavaUtilList_(CCBRSnippetGenerator *self, NSString *name, id<JavaUtilList> parameterNames) {
+  if (![((id<JavaUtilList>) nil_chk(parameterNames)) containsWithId:name]) {
+    return name;
   }
-  jint pos = 0;
-  while (true) {
-    jint matchedLength = 1;
-    for (jint i = 0; i < matchers->size_; i++) {
-      JavaUtilRegexMatcher *m = [((JavaUtilRegexMatcher *) nil_chk(IOSObjectArray_Get(matchers, i))) regionWithInt:pos withInt:[((NSString *) nil_chk(name)) java_length]];
-      if ([((JavaUtilRegexMatcher *) nil_chk(m)) lookingAt]) {
-        IOSClass *typeForSignature = [((CCBRArgumentPattern *) nil_chk(IOSObjectArray_Get(nil_chk([self argumentPatterns]), i))) type];
-        [argTypes addWithId:typeForSignature];
-        matchedLength = [((NSString *) nil_chk([m group])) java_length];
-        break;
-      }
-    }
-    pos += matchedLength;
-    if (pos == [((NSString *) nil_chk(name)) java_length]) {
-      break;
+  for (jint i = 1; ; i++) {
+    if (![parameterNames containsWithId:JreStrcat("$I", name, i)]) {
+      return JreStrcat("$I", name, i);
     }
   }
-  if (![((id<JavaUtilList>) nil_chk([step getArgument])) isEmpty]) {
-    id<GHKArgument> arg = [((id<JavaUtilList>) nil_chk([step getArgument])) getWithInt:0];
-    if ([arg isKindOfClass:[GHKPickleString class]]) {
-      [argTypes addWithId:NSString_class_()];
-    }
-    if ([arg isKindOfClass:[GHKPickleTable class]]) {
-      [argTypes addWithId:CucumberApiDataTable_class_()];
-    }
-  }
-  return argTypes;
-}
-
-NSString *CCBRSnippetGenerator_untypedArgumentsWithJavaUtilList_(id<JavaUtilList> argumentTypes) {
-  CCBRSnippetGenerator_initialize();
-  JavaLangStringBuilder *sb = create_JavaLangStringBuilder_init();
-  for (jint n = 0; n < [((id<JavaUtilList>) nil_chk(argumentTypes)) size]; n++) {
-    if (n > 0) {
-      [sb appendWithNSString:@", "];
-    }
-    [((JavaLangStringBuilder *) nil_chk([sb appendWithNSString:@"arg"])) appendWithInt:n + 1];
-  }
-  return [sb description];
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CCBRSnippetGenerator)

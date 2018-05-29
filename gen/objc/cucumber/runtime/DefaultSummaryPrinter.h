@@ -25,15 +25,31 @@
 #define INCLUDE_CucumberApiSummaryPrinter 1
 #include "cucumber/api/SummaryPrinter.h"
 
-@class CCBRRuntime;
+#define RESTRICT_CucumberApiFormatterColorAware 1
+#define INCLUDE_CucumberApiFormatterColorAware 1
+#include "cucumber/api/formatter/ColorAware.h"
 
-@interface CCBRDefaultSummaryPrinter : NSObject < CucumberApiSummaryPrinter >
+#define RESTRICT_CucumberApiFormatterStrictAware 1
+#define INCLUDE_CucumberApiFormatterStrictAware 1
+#include "cucumber/api/formatter/StrictAware.h"
+
+#define RESTRICT_CucumberApiEventEventListener 1
+#define INCLUDE_CucumberApiEventEventListener 1
+#include "cucumber/api/event/EventListener.h"
+
+@protocol CucumberApiEventEventPublisher;
+
+@interface CCBRDefaultSummaryPrinter : NSObject < CucumberApiSummaryPrinter, CucumberApiFormatterColorAware, CucumberApiFormatterStrictAware, CucumberApiEventEventListener >
 
 #pragma mark Public
 
 - (instancetype __nonnull)init;
 
-- (void)printWithCCBRRuntime:(CCBRRuntime *)runtime;
+- (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
+
+- (void)setMonochromeWithBoolean:(jboolean)monochrome;
+
+- (void)setStrictWithBoolean:(jboolean)strict;
 
 @end
 

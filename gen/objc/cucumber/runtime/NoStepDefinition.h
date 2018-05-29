@@ -25,12 +25,10 @@
 #define INCLUDE_CCBRStepDefinition 1
 #include "cucumber/runtime/StepDefinition.h"
 
-@class CCBRParameterInfo;
 @class GHKPickleStep;
 @class IOSObjectArray;
 @class JavaLangInteger;
 @class JavaLangStackTraceElement;
-@protocol JavaLangReflectType;
 @protocol JavaUtilList;
 
 @interface CCBRNoStepDefinition : NSObject < CCBRStepDefinition >
@@ -43,9 +41,6 @@
 - (NSString *)getLocationWithBoolean:(jboolean)detail;
 
 - (JavaLangInteger *)getParameterCount;
-
-- (CCBRParameterInfo *)getParameterTypeWithInt:(jint)n
-                       withJavaLangReflectType:(id<JavaLangReflectType>)argumentType;
 
 - (NSString *)getPattern;
 

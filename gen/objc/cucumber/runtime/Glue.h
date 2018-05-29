@@ -21,7 +21,7 @@
 #if !defined (CCBRGlue_) && (INCLUDE_ALL_CucumberRuntimeGlue || defined(INCLUDE_CCBRGlue))
 #define CCBRGlue_
 
-@class CCBRStepDefinitionMatch;
+@class CCBRPickleStepDefinitionMatch;
 @class GHKPickleStep;
 @protocol CCBRHookDefinition;
 @protocol CCBRStepDefinition;
@@ -36,12 +36,20 @@
 
 - (void)addAfterHookWithCCBRHookDefinition:(id<CCBRHookDefinition>)hookDefinition;
 
+- (void)addBeforeStepHookWithCCBRHookDefinition:(id<CCBRHookDefinition>)beforeStepHook;
+
+- (void)addAfterStepHookWithCCBRHookDefinition:(id<CCBRHookDefinition>)hookDefinition;
+
 - (id<JavaUtilList>)getBeforeHooks;
 
 - (id<JavaUtilList>)getAfterHooks;
 
-- (CCBRStepDefinitionMatch *)stepDefinitionMatchWithNSString:(NSString *)featurePath
-                                           withGHKPickleStep:(GHKPickleStep *)step;
+- (id<JavaUtilList>)getAfterStepHooks;
+
+- (id<JavaUtilList>)getBeforeStepHooks;
+
+- (CCBRPickleStepDefinitionMatch *)stepDefinitionMatchWithNSString:(NSString *)featurePath
+                                                 withGHKPickleStep:(GHKPickleStep *)step;
 
 - (void)reportStepDefinitionsWithCucumberApiStepDefinitionReporter:(id<CucumberApiStepDefinitionReporter>)stepDefinitionReporter;
 

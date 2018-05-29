@@ -13,7 +13,7 @@ __attribute__((unused)) static void CucumberApiHookType_initWithNSString_withInt
 
 J2OBJC_INITIALIZED_DEFN(CucumberApiHookType)
 
-CucumberApiHookType *CucumberApiHookType_values_[2];
+CucumberApiHookType *CucumberApiHookType_values_[4];
 
 @implementation CucumberApiHookType
 
@@ -45,19 +45,21 @@ CucumberApiHookType *CucumberApiHookType_values_[2];
   static const J2ObjcFieldInfo fields[] = {
     { "Before", "LCucumberApiHookType;", .constantValue.asLong = 0, 0x4019, -1, 3, -1, -1 },
     { "After", "LCucumberApiHookType;", .constantValue.asLong = 0, 0x4019, -1, 4, -1, -1 },
+    { "BeforeStep", "LCucumberApiHookType;", .constantValue.asLong = 0, 0x4019, -1, 5, -1, -1 },
+    { "AfterStep", "LCucumberApiHookType;", .constantValue.asLong = 0, 0x4019, -1, 6, -1, -1 },
   };
-  static const void *ptrTable[] = { "toString", "valueOf", "LNSString;", &JreEnum(CucumberApiHookType, Before), &JreEnum(CucumberApiHookType, After), "Ljava/lang/Enum<Lcucumber/api/HookType;>;" };
-  static const J2ObjcClassInfo _CucumberApiHookType = { "HookType", "cucumber.api", ptrTable, methods, fields, 7, 0x4011, 3, 2, -1, -1, -1, 5, -1 };
+  static const void *ptrTable[] = { "toString", "valueOf", "LNSString;", &JreEnum(CucumberApiHookType, Before), &JreEnum(CucumberApiHookType, After), &JreEnum(CucumberApiHookType, BeforeStep), &JreEnum(CucumberApiHookType, AfterStep), "Ljava/lang/Enum<Lcucumber/api/HookType;>;" };
+  static const J2ObjcClassInfo _CucumberApiHookType = { "HookType", "cucumber.api", ptrTable, methods, fields, 7, 0x4011, 3, 4, -1, -1, -1, 7, -1 };
   return &_CucumberApiHookType;
 }
 
 + (void)initialize {
   if (self == [CucumberApiHookType class]) {
     size_t objSize = class_getInstanceSize(self);
-    size_t allocSize = 2 * objSize;
+    size_t allocSize = 4 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
-    for (jint i = 0; i < 2; i++) {
+    for (jint i = 0; i < 4; i++) {
       ((void)(CucumberApiHookType_values_[i] = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
       CucumberApiHookType_initWithNSString_withInt_(e, JreEnumConstantName(CucumberApiHookType_class_(), i), i);
     }
@@ -73,12 +75,12 @@ void CucumberApiHookType_initWithNSString_withInt_(CucumberApiHookType *self, NS
 
 IOSObjectArray *CucumberApiHookType_values() {
   CucumberApiHookType_initialize();
-  return [IOSObjectArray arrayWithObjects:CucumberApiHookType_values_ count:2 type:CucumberApiHookType_class_()];
+  return [IOSObjectArray arrayWithObjects:CucumberApiHookType_values_ count:4 type:CucumberApiHookType_class_()];
 }
 
 CucumberApiHookType *CucumberApiHookType_valueOfWithNSString_(NSString *name) {
   CucumberApiHookType_initialize();
-  for (int i = 0; i < 2; i++) {
+  for (int i = 0; i < 4; i++) {
     CucumberApiHookType *e = CucumberApiHookType_values_[i];
     if ([name isEqual:[e name]]) {
       return e;
@@ -90,7 +92,7 @@ CucumberApiHookType *CucumberApiHookType_valueOfWithNSString_(NSString *name) {
 
 CucumberApiHookType *CucumberApiHookType_fromOrdinal(NSUInteger ordinal) {
   CucumberApiHookType_initialize();
-  if (ordinal >= 2) {
+  if (ordinal >= 4) {
     return nil;
   }
   return CucumberApiHookType_values_[ordinal];

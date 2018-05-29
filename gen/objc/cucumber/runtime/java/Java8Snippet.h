@@ -25,17 +25,11 @@
 #define INCLUDE_CucumberRuntimeJavaAbstractJavaSnippet 1
 #include "cucumber/runtime/java/AbstractJavaSnippet.h"
 
-@class IOSClass;
-
 @interface CucumberRuntimeJavaJava8Snippet : CucumberRuntimeJavaAbstractJavaSnippet
 
 #pragma mark Public
 
 - (NSString *)template__;
-
-#pragma mark Protected
-
-- (NSString *)getArgTypeWithIOSClass:(IOSClass *)argType;
 
 #pragma mark Package-Private
 
@@ -43,7 +37,7 @@
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberRuntimeJavaJava8Snippet)
+J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeJavaJava8Snippet)
 
 FOUNDATION_EXPORT void CucumberRuntimeJavaJava8Snippet_init(CucumberRuntimeJavaJava8Snippet *self);
 

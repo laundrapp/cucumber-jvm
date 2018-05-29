@@ -18,13 +18,8 @@
 #include "java/lang/reflect/InvocationTargetException.h"
 #include "java/lang/reflect/Method.h"
 #include "java/lang/reflect/Modifier.h"
-#include "java/lang/reflect/ParameterizedType.h"
-#include "java/lang/reflect/Type.h"
-#include "java/lang/reflect/TypeVariable.h"
 #include "java/net/MalformedURLException.h"
 #include "java/net/URL.h"
-#include "java/util/List.h"
-#include "java/util/Map.h"
 
 @interface CCBRUtils ()
 
@@ -32,10 +27,6 @@
 
 + (JavaLangReflectMethod *)targetMethodWithId:(id)target
                     withJavaLangReflectMethod:(JavaLangReflectMethod *)method;
-
-+ (id<JavaLangReflectType>)typeArgWithJavaLangReflectType:(id<JavaLangReflectType>)type
-                                             withIOSClass:(IOSClass *)wantedRawType
-                                                  withInt:(jint)index;
 
 + (jboolean)includesBlankWithNSString:(NSString *)testCaseName;
 
@@ -48,8 +39,6 @@ __attribute__((unused)) static CCBRUtils *new_CCBRUtils_init(void) NS_RETURNS_RE
 __attribute__((unused)) static CCBRUtils *create_CCBRUtils_init(void);
 
 __attribute__((unused)) static JavaLangReflectMethod *CCBRUtils_targetMethodWithId_withJavaLangReflectMethod_(id target, JavaLangReflectMethod *method);
-
-__attribute__((unused)) static id<JavaLangReflectType> CCBRUtils_typeArgWithJavaLangReflectType_withIOSClass_withInt_(id<JavaLangReflectType> type, IOSClass *wantedRawType, jint index);
 
 __attribute__((unused)) static jboolean CCBRUtils_includesBlankWithNSString_(NSString *testCaseName);
 
@@ -101,24 +90,6 @@ withJavaLangReflectMethod:(JavaLangReflectMethod *)method
   return CCBRUtils_targetMethodWithId_withJavaLangReflectMethod_(target, method);
 }
 
-+ (id<JavaLangReflectType>)listItemTypeWithJavaLangReflectType:(id<JavaLangReflectType>)type {
-  return CCBRUtils_listItemTypeWithJavaLangReflectType_(type);
-}
-
-+ (id<JavaLangReflectType>)mapKeyTypeWithJavaLangReflectType:(id<JavaLangReflectType>)type {
-  return CCBRUtils_mapKeyTypeWithJavaLangReflectType_(type);
-}
-
-+ (id<JavaLangReflectType>)mapValueTypeWithJavaLangReflectType:(id<JavaLangReflectType>)type {
-  return CCBRUtils_mapValueTypeWithJavaLangReflectType_(type);
-}
-
-+ (id<JavaLangReflectType>)typeArgWithJavaLangReflectType:(id<JavaLangReflectType>)type
-                                             withIOSClass:(IOSClass *)wantedRawType
-                                                  withInt:(jint)index {
-  return CCBRUtils_typeArgWithJavaLangReflectType_withIOSClass_withInt_(type, wantedRawType, index);
-}
-
 + (JavaNetURL *)toURLWithNSString:(NSString *)pathOrUrl {
   return CCBRUtils_toURLWithNSString_(pathOrUrl);
 }
@@ -142,14 +113,10 @@ withJavaLangReflectMethod:(JavaLangReflectMethod *)method
     { NULL, "Z", 0x9, 0, 1, -1, 2, -1, -1 },
     { NULL, "LNSObject;", 0x89, 3, 4, 5, -1, -1, -1 },
     { NULL, "LJavaLangReflectMethod;", 0xa, 6, 7, 8, -1, -1, -1 },
-    { NULL, "LJavaLangReflectType;", 0x9, 9, 10, -1, -1, -1, -1 },
-    { NULL, "LJavaLangReflectType;", 0x9, 11, 10, -1, -1, -1, -1 },
-    { NULL, "LJavaLangReflectType;", 0x9, 12, 10, -1, -1, -1, -1 },
-    { NULL, "LJavaLangReflectType;", 0xa, 13, 14, -1, 15, -1, -1 },
-    { NULL, "LJavaNetURL;", 0x9, 16, 17, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x9, 18, 17, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x9, 19, 20, -1, -1, -1, -1 },
-    { NULL, "Z", 0xa, 21, 17, -1, -1, -1, -1 },
+    { NULL, "LJavaNetURL;", 0x9, 9, 10, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x9, 11, 10, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x9, 12, 13, -1, -1, -1, -1 },
+    { NULL, "Z", 0xa, 14, 10, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -158,17 +125,13 @@ withJavaLangReflectMethod:(JavaLangReflectMethod *)method
   methods[1].selector = @selector(isInstantiableWithIOSClass:);
   methods[2].selector = @selector(invokeWithId:withJavaLangReflectMethod:withLong:withNSObjectArray:);
   methods[3].selector = @selector(targetMethodWithId:withJavaLangReflectMethod:);
-  methods[4].selector = @selector(listItemTypeWithJavaLangReflectType:);
-  methods[5].selector = @selector(mapKeyTypeWithJavaLangReflectType:);
-  methods[6].selector = @selector(mapValueTypeWithJavaLangReflectType:);
-  methods[7].selector = @selector(typeArgWithJavaLangReflectType:withIOSClass:withInt:);
-  methods[8].selector = @selector(toURLWithNSString:);
-  methods[9].selector = @selector(htmlEscapeWithNSString:);
-  methods[10].selector = @selector(getUniqueTestNameForScenarioExampleWithNSString:withInt:);
-  methods[11].selector = @selector(includesBlankWithNSString:);
+  methods[4].selector = @selector(toURLWithNSString:);
+  methods[5].selector = @selector(htmlEscapeWithNSString:);
+  methods[6].selector = @selector(getUniqueTestNameForScenarioExampleWithNSString:withInt:);
+  methods[7].selector = @selector(includesBlankWithNSString:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "isInstantiable", "LIOSClass;", "(Ljava/lang/Class<*>;)Z", "invoke", "LNSObject;LJavaLangReflectMethod;J[LNSObject;", "LJavaLangThrowable;", "targetMethod", "LNSObject;LJavaLangReflectMethod;", "LJavaLangNoSuchMethodException;", "listItemType", "LJavaLangReflectType;", "mapKeyType", "mapValueType", "typeArg", "LJavaLangReflectType;LIOSClass;I", "(Ljava/lang/reflect/Type;Ljava/lang/Class<*>;I)Ljava/lang/reflect/Type;", "toURL", "LNSString;", "htmlEscape", "getUniqueTestNameForScenarioExample", "LNSString;I", "includesBlank" };
-  static const J2ObjcClassInfo _CCBRUtils = { "Utils", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x1, 12, 0, -1, -1, -1, -1, -1 };
+  static const void *ptrTable[] = { "isInstantiable", "LIOSClass;", "(Ljava/lang/Class<*>;)Z", "invoke", "LNSObject;LJavaLangReflectMethod;J[LNSObject;", "LJavaLangThrowable;", "targetMethod", "LNSObject;LJavaLangReflectMethod;", "LJavaLangNoSuchMethodException;", "toURL", "LNSString;", "htmlEscape", "getUniqueTestNameForScenarioExample", "LNSString;I", "includesBlank" };
+  static const J2ObjcClassInfo _CCBRUtils = { "Utils", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x1, 8, 0, -1, -1, -1, -1, -1 };
   return &_CCBRUtils;
 }
 
@@ -219,42 +182,6 @@ JavaLangReflectMethod *CCBRUtils_targetMethodWithId_withJavaLangReflectMethod_(i
       }
     }
     @throw create_JavaLangNoSuchMethodException_initWithNSString_(NSString_java_valueOf_(method));
-  }
-}
-
-id<JavaLangReflectType> CCBRUtils_listItemTypeWithJavaLangReflectType_(id<JavaLangReflectType> type) {
-  CCBRUtils_initialize();
-  return CCBRUtils_typeArgWithJavaLangReflectType_withIOSClass_withInt_(type, JavaUtilList_class_(), 0);
-}
-
-id<JavaLangReflectType> CCBRUtils_mapKeyTypeWithJavaLangReflectType_(id<JavaLangReflectType> type) {
-  CCBRUtils_initialize();
-  return CCBRUtils_typeArgWithJavaLangReflectType_withIOSClass_withInt_(type, JavaUtilMap_class_(), 0);
-}
-
-id<JavaLangReflectType> CCBRUtils_mapValueTypeWithJavaLangReflectType_(id<JavaLangReflectType> type) {
-  CCBRUtils_initialize();
-  return CCBRUtils_typeArgWithJavaLangReflectType_withIOSClass_withInt_(type, JavaUtilMap_class_(), 1);
-}
-
-id<JavaLangReflectType> CCBRUtils_typeArgWithJavaLangReflectType_withIOSClass_withInt_(id<JavaLangReflectType> type, IOSClass *wantedRawType, jint index) {
-  CCBRUtils_initialize();
-  if ([JavaLangReflectParameterizedType_class_() isInstance:type]) {
-    id<JavaLangReflectParameterizedType> parameterizedType = (id<JavaLangReflectParameterizedType>) cast_check(type, JavaLangReflectParameterizedType_class_());
-    id<JavaLangReflectType> rawType = [((id<JavaLangReflectParameterizedType>) nil_chk(parameterizedType)) getRawType];
-    if ([rawType isKindOfClass:[IOSClass class]] && [((IOSClass *) nil_chk(wantedRawType)) isAssignableFrom:(IOSClass *) cast_chk(rawType, [IOSClass class])]) {
-      id<JavaLangReflectType> result = IOSObjectArray_Get(nil_chk([parameterizedType getActualTypeArguments]), index);
-      if ([JavaLangReflectTypeVariable_class_() isInstance:result]) {
-        @throw create_CCBRCucumberException_initWithNSString_(@"Generic types must be explicit");
-      }
-      return result;
-    }
-    else {
-      return nil;
-    }
-  }
-  else {
-    return nil;
   }
 }
 

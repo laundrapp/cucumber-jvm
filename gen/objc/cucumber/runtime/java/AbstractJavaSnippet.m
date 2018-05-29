@@ -7,9 +7,19 @@
 #include "J2ObjC_source.h"
 #include "cucumber/runtime/java/AbstractJavaSnippet.h"
 #include "java/lang/StringBuilder.h"
-#include "java/util/List.h"
+#include "java/lang/reflect/Type.h"
+#include "java/util/Map.h"
+#include "java/util/Set.h"
 
 #pragma clang diagnostic ignored "-Wprotocol"
+
+@interface CucumberRuntimeJavaAbstractJavaSnippet ()
+
+- (NSString *)getArgTypeWithJavaLangReflectType:(id<JavaLangReflectType>)argType;
+
+@end
+
+__attribute__((unused)) static NSString *CucumberRuntimeJavaAbstractJavaSnippet_getArgTypeWithJavaLangReflectType_(CucumberRuntimeJavaAbstractJavaSnippet *self, id<JavaLangReflectType> argType);
 
 @implementation CucumberRuntimeJavaAbstractJavaSnippet
 
@@ -20,34 +30,27 @@ J2OBJC_IGNORE_DESIGNATED_BEGIN
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (NSString *)argumentsWithJavaUtilList:(id<JavaUtilList>)argumentTypes {
+- (NSString *)argumentsWithJavaUtilMap:(id<JavaUtilMap>)arguments {
   JavaLangStringBuilder *sb = create_JavaLangStringBuilder_init();
-  jint n = 1;
-  for (IOSClass * __strong argType in nil_chk(argumentTypes)) {
-    if (n > 1) {
+  jboolean first = true;
+  for (id<JavaUtilMap_Entry> __strong argType in nil_chk([((id<JavaUtilMap>) nil_chk(arguments)) entrySet])) {
+    if (first) {
+      first = false;
+    }
+    else {
       [sb appendWithNSString:@", "];
     }
-    [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([sb appendWithNSString:[self getArgTypeWithIOSClass:argType]])) appendWithNSString:@" "])) appendWithNSString:@"arg"])) appendWithInt:n++];
+    [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([sb appendWithNSString:CucumberRuntimeJavaAbstractJavaSnippet_getArgTypeWithJavaLangReflectType_(self, [((id<JavaUtilMap_Entry>) nil_chk(argType)) getValue])])) appendWithNSString:@" "])) appendWithNSString:[argType getKey]];
   }
   return [sb description];
 }
 
-- (NSString *)getArgTypeWithIOSClass:(IOSClass *)argType {
-  // can't call an abstract method
-  [self doesNotRecognizeSelector:_cmd];
-  return 0;
+- (NSString *)getArgTypeWithJavaLangReflectType:(id<JavaLangReflectType>)argType {
+  return CucumberRuntimeJavaAbstractJavaSnippet_getArgTypeWithJavaLangReflectType_(self, argType);
 }
 
 - (NSString *)tableHint {
-  return @"    // For automatic transformation, change DataTable to one of\n    // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.\n    // E,K,V must be a scalar (String, Integer, Date, enum etc).\n    // Field names for YourType must match the column names in \n    // your feature file (except for spaces and capitalization).\n";
-}
-
-- (NSString *)namedGroupStart {
-  return nil;
-}
-
-- (NSString *)namedGroupEnd {
-  return nil;
+  return @"    // For automatic transformation, change DataTable to one of\n    // List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or\n    // Map<K, List<V>>. E,K,V must be a String, Integer, Float,\n    // Double, Byte Short, Long, BigInteger or BigDecimal.\n    //\n    // For other transformations you can register a DataTableType.\n";
 }
 
 - (NSString *)escapePatternWithNSString:(NSString *)pattern {
@@ -56,27 +59,23 @@ J2OBJC_IGNORE_DESIGNATED_END
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, NULL, 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x1, 0, 1, -1, 2, -1, -1 },
-    { NULL, "LNSString;", 0x404, 3, 4, -1, 5, -1, -1 },
-    { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x1, 6, 7, -1, -1, -1, -1 },
+    { NULL, NULL, 0x0, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x11, 0, 1, -1, 2, -1, -1 },
+    { NULL, "LNSString;", 0x2, 3, 4, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x11, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x11, 5, 6, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(argumentsWithJavaUtilList:);
-  methods[2].selector = @selector(getArgTypeWithIOSClass:);
+  methods[1].selector = @selector(argumentsWithJavaUtilMap:);
+  methods[2].selector = @selector(getArgTypeWithJavaLangReflectType:);
   methods[3].selector = @selector(tableHint);
-  methods[4].selector = @selector(namedGroupStart);
-  methods[5].selector = @selector(namedGroupEnd);
-  methods[6].selector = @selector(escapePatternWithNSString:);
+  methods[4].selector = @selector(escapePatternWithNSString:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "arguments", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/Class<*>;>;)Ljava/lang/String;", "getArgType", "LIOSClass;", "(Ljava/lang/Class<*>;)Ljava/lang/String;", "escapePattern", "LNSString;" };
-  static const J2ObjcClassInfo _CucumberRuntimeJavaAbstractJavaSnippet = { "AbstractJavaSnippet", "cucumber.runtime.java", ptrTable, methods, NULL, 7, 0x401, 7, 0, -1, -1, -1, -1, -1 };
+  static const void *ptrTable[] = { "arguments", "LJavaUtilMap;", "(Ljava/util/Map<Ljava/lang/String;Ljava/lang/reflect/Type;>;)Ljava/lang/String;", "getArgType", "LJavaLangReflectType;", "escapePattern", "LNSString;" };
+  static const J2ObjcClassInfo _CucumberRuntimeJavaAbstractJavaSnippet = { "AbstractJavaSnippet", "cucumber.runtime.java", ptrTable, methods, NULL, 7, 0x400, 5, 0, -1, -1, -1, -1, -1 };
   return &_CucumberRuntimeJavaAbstractJavaSnippet;
 }
 
@@ -84,6 +83,14 @@ J2OBJC_IGNORE_DESIGNATED_END
 
 void CucumberRuntimeJavaAbstractJavaSnippet_init(CucumberRuntimeJavaAbstractJavaSnippet *self) {
   NSObject_init(self);
+}
+
+NSString *CucumberRuntimeJavaAbstractJavaSnippet_getArgTypeWithJavaLangReflectType_(CucumberRuntimeJavaAbstractJavaSnippet *self, id<JavaLangReflectType> argType) {
+  if ([argType isKindOfClass:[IOSClass class]]) {
+    IOSClass *cType = (IOSClass *) cast_chk(argType, [IOSClass class]);
+    return [((IOSClass *) nil_chk(cType)) getSimpleName];
+  }
+  return [((id<JavaLangReflectType>) nil_chk(argType)) description];
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeJavaAbstractJavaSnippet)

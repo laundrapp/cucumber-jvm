@@ -5,6 +5,7 @@
 
 #include "J2ObjC_source.h"
 #include "cucumber/runtime/Match.h"
+#include "java/lang/NullPointerException.h"
 #include "java/util/Collections.h"
 #include "java/util/List.h"
 
@@ -63,7 +64,7 @@ CCBRMatch *CCBRMatch_UNDEFINED;
     { "location_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "UNDEFINED", "LCCBRMatch;", .constantValue.asLong = 0, 0x19, -1, 4, -1, -1 },
   };
-  static const void *ptrTable[] = { "LJavaUtilList;LNSString;", "(Ljava/util/List<Lcucumber/runtime/Argument;>;Ljava/lang/String;)V", "()Ljava/util/List<Lcucumber/runtime/Argument;>;", "Ljava/util/List<Lcucumber/runtime/Argument;>;", &CCBRMatch_UNDEFINED };
+  static const void *ptrTable[] = { "LJavaUtilList;LNSString;", "(Ljava/util/List<Lio/cucumber/stepexpression/Argument;>;Ljava/lang/String;)V", "()Ljava/util/List<Lio/cucumber/stepexpression/Argument;>;", "Ljava/util/List<Lio/cucumber/stepexpression/Argument;>;", &CCBRMatch_UNDEFINED };
   static const J2ObjcClassInfo _CCBRMatch = { "Match", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 3, 3, -1, -1, -1, -1, -1 };
   return &_CCBRMatch;
 }
@@ -79,6 +80,7 @@ CCBRMatch *CCBRMatch_UNDEFINED;
 
 void CCBRMatch_initWithJavaUtilList_withNSString_(CCBRMatch *self, id<JavaUtilList> arguments, NSString *location) {
   NSObject_init(self);
+  if (arguments == nil) @throw create_JavaLangNullPointerException_initWithNSString_(@"argument may not be null");
   JreStrongAssign(&self->arguments_, arguments);
   JreStrongAssign(&self->location_, location);
 }

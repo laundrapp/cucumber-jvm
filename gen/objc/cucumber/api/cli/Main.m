@@ -40,8 +40,8 @@ J2OBJC_IGNORE_DESIGNATED_END
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "V", 0x9, 0, 1, 2, -1, -1, -1 },
-    { NULL, "B", 0x9, 3, 4, 5, -1, -1, -1 },
+    { NULL, "V", 0x9, 0, 1, -1, -1, -1, -1 },
+    { NULL, "B", 0x9, 2, 3, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -50,7 +50,7 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[1].selector = @selector(mainWithNSStringArray:);
   methods[2].selector = @selector(runWithNSStringArray:withJavaLangClassLoader:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "main", "[LNSString;", "LJavaLangThrowable;", "run", "[LNSString;LJavaLangClassLoader;", "LJavaIoIOException;" };
+  static const void *ptrTable[] = { "main", "[LNSString;", "run", "[LNSString;LJavaLangClassLoader;" };
   static const J2ObjcClassInfo _CucumberApiCliMain = { "Main", "cucumber.api.cli", ptrTable, methods, NULL, 7, 0x1, 3, 0, -1, -1, -1, -1, -1 };
   return &_CucumberApiCliMain;
 }

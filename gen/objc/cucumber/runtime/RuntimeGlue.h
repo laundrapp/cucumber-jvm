@@ -25,9 +25,7 @@
 #define INCLUDE_CCBRGlue 1
 #include "cucumber/runtime/Glue.h"
 
-@class CCBRLocalizedXStreams;
-@class CCBRStepDefinitionMatch;
-@class CCBRUndefinedStepsTracker;
+@class CCBRPickleStepDefinitionMatch;
 @class GHKPickleStep;
 @protocol CCBRHookDefinition;
 @protocol CCBRStepDefinition;
@@ -39,37 +37,40 @@
  @public
   id<JavaUtilMap> stepDefinitionsByPattern_;
   id<JavaUtilList> beforeHooks_;
+  id<JavaUtilList> beforeStepHooks_;
   id<JavaUtilList> afterHooks_;
+  id<JavaUtilList> afterStepHooks_;
   id<JavaUtilMap> matchedStepDefinitionsCache_;
 }
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithCCBRLocalizedXStreams:(CCBRLocalizedXStreams *)localizedXStreams;
-
-- (instancetype __nonnull)initWithCCBRUndefinedStepsTracker:(CCBRUndefinedStepsTracker *)tracker
-                                  withCCBRLocalizedXStreams:(CCBRLocalizedXStreams *)localizedXStreams;
+- (instancetype __nonnull)init;
 
 - (void)addAfterHookWithCCBRHookDefinition:(id<CCBRHookDefinition>)hookDefinition;
 
+- (void)addAfterStepHookWithCCBRHookDefinition:(id<CCBRHookDefinition>)hookDefinition;
+
 - (void)addBeforeHookWithCCBRHookDefinition:(id<CCBRHookDefinition>)hookDefinition;
+
+- (void)addBeforeStepHookWithCCBRHookDefinition:(id<CCBRHookDefinition>)hookDefinition;
 
 - (void)addStepDefinitionWithCCBRStepDefinition:(id<CCBRStepDefinition>)stepDefinition;
 
 - (id<JavaUtilList>)getAfterHooks;
 
+- (id<JavaUtilList>)getAfterStepHooks;
+
 - (id<JavaUtilList>)getBeforeHooks;
+
+- (id<JavaUtilList>)getBeforeStepHooks;
 
 - (void)removeScenarioScopedGlue;
 
 - (void)reportStepDefinitionsWithCucumberApiStepDefinitionReporter:(id<CucumberApiStepDefinitionReporter>)stepDefinitionReporter;
 
-- (CCBRStepDefinitionMatch *)stepDefinitionMatchWithNSString:(NSString *)featurePath
-                                           withGHKPickleStep:(GHKPickleStep *)step;
-
-// Disallowed inherited constructors, do not use.
-
-- (instancetype __nonnull)init NS_UNAVAILABLE;
+- (CCBRPickleStepDefinitionMatch *)stepDefinitionMatchWithNSString:(NSString *)featurePath
+                                                 withGHKPickleStep:(GHKPickleStep *)step;
 
 @end
 
@@ -77,20 +78,16 @@ J2OBJC_EMPTY_STATIC_INIT(CCBRRuntimeGlue)
 
 J2OBJC_FIELD_SETTER(CCBRRuntimeGlue, stepDefinitionsByPattern_, id<JavaUtilMap>)
 J2OBJC_FIELD_SETTER(CCBRRuntimeGlue, beforeHooks_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRRuntimeGlue, beforeStepHooks_, id<JavaUtilList>)
 J2OBJC_FIELD_SETTER(CCBRRuntimeGlue, afterHooks_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(CCBRRuntimeGlue, afterStepHooks_, id<JavaUtilList>)
 J2OBJC_FIELD_SETTER(CCBRRuntimeGlue, matchedStepDefinitionsCache_, id<JavaUtilMap>)
 
-FOUNDATION_EXPORT void CCBRRuntimeGlue_initWithCCBRLocalizedXStreams_(CCBRRuntimeGlue *self, CCBRLocalizedXStreams *localizedXStreams);
+FOUNDATION_EXPORT void CCBRRuntimeGlue_init(CCBRRuntimeGlue *self);
 
-FOUNDATION_EXPORT CCBRRuntimeGlue *new_CCBRRuntimeGlue_initWithCCBRLocalizedXStreams_(CCBRLocalizedXStreams *localizedXStreams) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRRuntimeGlue *new_CCBRRuntimeGlue_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRRuntimeGlue *create_CCBRRuntimeGlue_initWithCCBRLocalizedXStreams_(CCBRLocalizedXStreams *localizedXStreams);
-
-FOUNDATION_EXPORT void CCBRRuntimeGlue_initWithCCBRUndefinedStepsTracker_withCCBRLocalizedXStreams_(CCBRRuntimeGlue *self, CCBRUndefinedStepsTracker *tracker, CCBRLocalizedXStreams *localizedXStreams);
-
-FOUNDATION_EXPORT CCBRRuntimeGlue *new_CCBRRuntimeGlue_initWithCCBRUndefinedStepsTracker_withCCBRLocalizedXStreams_(CCBRUndefinedStepsTracker *tracker, CCBRLocalizedXStreams *localizedXStreams) NS_RETURNS_RETAINED;
-
-FOUNDATION_EXPORT CCBRRuntimeGlue *create_CCBRRuntimeGlue_initWithCCBRUndefinedStepsTracker_withCCBRLocalizedXStreams_(CCBRUndefinedStepsTracker *tracker, CCBRLocalizedXStreams *localizedXStreams);
+FOUNDATION_EXPORT CCBRRuntimeGlue *create_CCBRRuntimeGlue_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRRuntimeGlue)
 
@@ -102,12 +99,10 @@ J2OBJC_TYPE_LITERAL_HEADER(CCBRRuntimeGlue)
 #define CCBRRuntimeGlue_CacheEntry_
 
 @protocol CCBRStepDefinition;
-@protocol JavaUtilList;
 
 @interface CCBRRuntimeGlue_CacheEntry : NSObject {
  @public
   id<CCBRStepDefinition> stepDefinition_;
-  id<JavaUtilList> arguments_;
 }
 
 // Disallowed inherited constructors, do not use.
@@ -119,7 +114,6 @@ J2OBJC_TYPE_LITERAL_HEADER(CCBRRuntimeGlue)
 J2OBJC_EMPTY_STATIC_INIT(CCBRRuntimeGlue_CacheEntry)
 
 J2OBJC_FIELD_SETTER(CCBRRuntimeGlue_CacheEntry, stepDefinition_, id<CCBRStepDefinition>)
-J2OBJC_FIELD_SETTER(CCBRRuntimeGlue_CacheEntry, arguments_, id<JavaUtilList>)
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRRuntimeGlue_CacheEntry)
 

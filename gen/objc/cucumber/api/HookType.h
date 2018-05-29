@@ -30,6 +30,8 @@
 typedef NS_ENUM(NSUInteger, CucumberApiHookType_Enum) {
   CucumberApiHookType_Enum_Before = 0,
   CucumberApiHookType_Enum_After = 1,
+  CucumberApiHookType_Enum_BeforeStep = 2,
+  CucumberApiHookType_Enum_AfterStep = 3,
 };
 
 @interface CucumberApiHookType : JavaLangEnum
@@ -54,6 +56,12 @@ J2OBJC_ENUM_CONSTANT(CucumberApiHookType, Before)
 
 inline CucumberApiHookType *CucumberApiHookType_get_After(void);
 J2OBJC_ENUM_CONSTANT(CucumberApiHookType, After)
+
+inline CucumberApiHookType *CucumberApiHookType_get_BeforeStep(void);
+J2OBJC_ENUM_CONSTANT(CucumberApiHookType, BeforeStep)
+
+inline CucumberApiHookType *CucumberApiHookType_get_AfterStep(void);
+J2OBJC_ENUM_CONSTANT(CucumberApiHookType, AfterStep)
 
 FOUNDATION_EXPORT IOSObjectArray *CucumberApiHookType_values(void);
 

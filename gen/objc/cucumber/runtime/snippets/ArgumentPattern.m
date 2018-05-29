@@ -3,7 +3,6 @@
 //  source: /Users/Salton/Documents/Projects/cucumber-jvm/core/src/main/java/cucumber/runtime/snippets/ArgumentPattern.java
 //
 
-#include "IOSClass.h"
 #include "J2ObjC_source.h"
 #include "cucumber/runtime/snippets/ArgumentPattern.h"
 #include "java/util/regex/Matcher.h"
@@ -12,9 +11,11 @@
 @interface CCBRArgumentPattern () {
  @public
   JavaUtilRegexPattern *pattern_;
-  IOSClass *type_;
   NSString *replacement_;
 }
+
+- (instancetype __nonnull)initWithJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern
+                                          withNSString:(NSString *)replacement;
 
 - (NSString *)replaceMatchWithWithNSString:(NSString *)name
                               withNSString:(NSString *)replacement;
@@ -22,32 +23,27 @@
 @end
 
 J2OBJC_FIELD_SETTER(CCBRArgumentPattern, pattern_, JavaUtilRegexPattern *)
-J2OBJC_FIELD_SETTER(CCBRArgumentPattern, type_, IOSClass *)
 J2OBJC_FIELD_SETTER(CCBRArgumentPattern, replacement_, NSString *)
+
+__attribute__((unused)) static void CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_(CCBRArgumentPattern *self, JavaUtilRegexPattern *pattern, NSString *replacement);
+
+__attribute__((unused)) static CCBRArgumentPattern *new_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_(JavaUtilRegexPattern *pattern, NSString *replacement) NS_RETURNS_RETAINED;
+
+__attribute__((unused)) static CCBRArgumentPattern *create_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_(JavaUtilRegexPattern *pattern, NSString *replacement);
 
 __attribute__((unused)) static NSString *CCBRArgumentPattern_replaceMatchWithWithNSString_withNSString_(CCBRArgumentPattern *self, NSString *name, NSString *replacement);
 
 @implementation CCBRArgumentPattern
 
-- (instancetype __nonnull)initWithJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern
-                                          withIOSClass:(IOSClass *)type {
-  CCBRArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(self, pattern, type);
+- (instancetype __nonnull)initWithJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern {
+  CCBRArgumentPattern_initWithJavaUtilRegexPattern_(self, pattern);
   return self;
 }
 
 - (instancetype __nonnull)initWithJavaUtilRegexPattern:(JavaUtilRegexPattern *)pattern
-                                          withNSString:(NSString *)replacement
-                                          withIOSClass:(IOSClass *)type {
-  CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(self, pattern, replacement, type);
+                                          withNSString:(NSString *)replacement {
+  CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_(self, pattern, replacement);
   return self;
-}
-
-- (JavaUtilRegexPattern *)pattern {
-  return pattern_;
-}
-
-- (IOSClass *)type {
-  return type_;
 }
 
 - (NSString *)replaceMatchesWithGroupsWithNSString:(NSString *)name {
@@ -65,69 +61,62 @@ __attribute__((unused)) static NSString *CCBRArgumentPattern_replaceMatchWithWit
 
 - (void)dealloc {
   RELEASE_(pattern_);
-  RELEASE_(type_);
   RELEASE_(replacement_);
   [super dealloc];
 }
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, NULL, 0x1, -1, 0, -1, 1, -1, -1 },
-    { NULL, NULL, 0x1, -1, 2, -1, 3, -1, -1 },
-    { NULL, "LJavaUtilRegexPattern;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LIOSClass;", 0x1, -1, -1, -1, 4, -1, -1 },
-    { NULL, "LNSString;", 0x1, 5, 6, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x1, 7, 6, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x2, 8, 9, -1, -1, -1, -1 },
+    { NULL, NULL, 0x0, -1, 0, -1, -1, -1, -1 },
+    { NULL, NULL, 0x2, -1, 1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x0, 2, 3, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x0, 4, 3, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x2, 5, 6, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(initWithJavaUtilRegexPattern:withIOSClass:);
-  methods[1].selector = @selector(initWithJavaUtilRegexPattern:withNSString:withIOSClass:);
-  methods[2].selector = @selector(pattern);
-  methods[3].selector = @selector(type);
-  methods[4].selector = @selector(replaceMatchesWithGroupsWithNSString:);
-  methods[5].selector = @selector(replaceMatchesWithSpaceWithNSString:);
-  methods[6].selector = @selector(replaceMatchWithWithNSString:withNSString:);
+  methods[0].selector = @selector(initWithJavaUtilRegexPattern:);
+  methods[1].selector = @selector(initWithJavaUtilRegexPattern:withNSString:);
+  methods[2].selector = @selector(replaceMatchesWithGroupsWithNSString:);
+  methods[3].selector = @selector(replaceMatchesWithSpaceWithNSString:);
+  methods[4].selector = @selector(replaceMatchWithWithNSString:withNSString:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "pattern_", "LJavaUtilRegexPattern;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "type_", "LIOSClass;", .constantValue.asLong = 0, 0x12, -1, -1, 10, -1 },
     { "replacement_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LJavaUtilRegexPattern;LIOSClass;", "(Ljava/util/regex/Pattern;Ljava/lang/Class<*>;)V", "LJavaUtilRegexPattern;LNSString;LIOSClass;", "(Ljava/util/regex/Pattern;Ljava/lang/String;Ljava/lang/Class<*>;)V", "()Ljava/lang/Class<*>;", "replaceMatchesWithGroups", "LNSString;", "replaceMatchesWithSpace", "replaceMatchWith", "LNSString;LNSString;", "Ljava/lang/Class<*>;" };
-  static const J2ObjcClassInfo _CCBRArgumentPattern = { "ArgumentPattern", "cucumber.runtime.snippets", ptrTable, methods, fields, 7, 0x1, 7, 3, -1, -1, -1, -1, -1 };
+  static const void *ptrTable[] = { "LJavaUtilRegexPattern;", "LJavaUtilRegexPattern;LNSString;", "replaceMatchesWithGroups", "LNSString;", "replaceMatchesWithSpace", "replaceMatchWith", "LNSString;LNSString;" };
+  static const J2ObjcClassInfo _CCBRArgumentPattern = { "ArgumentPattern", "cucumber.runtime.snippets", ptrTable, methods, fields, 7, 0x0, 5, 2, -1, -1, -1, -1, -1 };
   return &_CCBRArgumentPattern;
 }
 
 @end
 
-void CCBRArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(CCBRArgumentPattern *self, JavaUtilRegexPattern *pattern, IOSClass *type) {
-  CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(self, pattern, [((JavaUtilRegexPattern *) nil_chk(pattern)) pattern], type);
+void CCBRArgumentPattern_initWithJavaUtilRegexPattern_(CCBRArgumentPattern *self, JavaUtilRegexPattern *pattern) {
+  CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_(self, pattern, [((JavaUtilRegexPattern *) nil_chk(pattern)) pattern]);
 }
 
-CCBRArgumentPattern *new_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(JavaUtilRegexPattern *pattern, IOSClass *type) {
-  J2OBJC_NEW_IMPL(CCBRArgumentPattern, initWithJavaUtilRegexPattern_withIOSClass_, pattern, type)
+CCBRArgumentPattern *new_CCBRArgumentPattern_initWithJavaUtilRegexPattern_(JavaUtilRegexPattern *pattern) {
+  J2OBJC_NEW_IMPL(CCBRArgumentPattern, initWithJavaUtilRegexPattern_, pattern)
 }
 
-CCBRArgumentPattern *create_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withIOSClass_(JavaUtilRegexPattern *pattern, IOSClass *type) {
-  J2OBJC_CREATE_IMPL(CCBRArgumentPattern, initWithJavaUtilRegexPattern_withIOSClass_, pattern, type)
+CCBRArgumentPattern *create_CCBRArgumentPattern_initWithJavaUtilRegexPattern_(JavaUtilRegexPattern *pattern) {
+  J2OBJC_CREATE_IMPL(CCBRArgumentPattern, initWithJavaUtilRegexPattern_, pattern)
 }
 
-void CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(CCBRArgumentPattern *self, JavaUtilRegexPattern *pattern, NSString *replacement, IOSClass *type) {
+void CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_(CCBRArgumentPattern *self, JavaUtilRegexPattern *pattern, NSString *replacement) {
   NSObject_init(self);
   JreStrongAssign(&self->pattern_, pattern);
   JreStrongAssign(&self->replacement_, replacement);
-  JreStrongAssign(&self->type_, type);
 }
 
-CCBRArgumentPattern *new_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(JavaUtilRegexPattern *pattern, NSString *replacement, IOSClass *type) {
-  J2OBJC_NEW_IMPL(CCBRArgumentPattern, initWithJavaUtilRegexPattern_withNSString_withIOSClass_, pattern, replacement, type)
+CCBRArgumentPattern *new_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_(JavaUtilRegexPattern *pattern, NSString *replacement) {
+  J2OBJC_NEW_IMPL(CCBRArgumentPattern, initWithJavaUtilRegexPattern_withNSString_, pattern, replacement)
 }
 
-CCBRArgumentPattern *create_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_withIOSClass_(JavaUtilRegexPattern *pattern, NSString *replacement, IOSClass *type) {
-  J2OBJC_CREATE_IMPL(CCBRArgumentPattern, initWithJavaUtilRegexPattern_withNSString_withIOSClass_, pattern, replacement, type)
+CCBRArgumentPattern *create_CCBRArgumentPattern_initWithJavaUtilRegexPattern_withNSString_(JavaUtilRegexPattern *pattern, NSString *replacement) {
+  J2OBJC_CREATE_IMPL(CCBRArgumentPattern, initWithJavaUtilRegexPattern_withNSString_, pattern, replacement)
 }
 
 NSString *CCBRArgumentPattern_replaceMatchWithWithNSString_withNSString_(CCBRArgumentPattern *self, NSString *name, NSString *replacement) {

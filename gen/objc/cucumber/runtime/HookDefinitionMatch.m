@@ -7,10 +7,6 @@
 #include "cucumber/api/Scenario.h"
 #include "cucumber/runtime/HookDefinition.h"
 #include "cucumber/runtime/HookDefinitionMatch.h"
-#include "cucumber/runtime/Match.h"
-#include "java/lang/UnsupportedOperationException.h"
-#include "java/util/Collections.h"
-#include "java/util/List.h"
 
 @interface CCBRHookDefinitionMatch () {
  @public
@@ -37,20 +33,8 @@ J2OBJC_FIELD_SETTER(CCBRHookDefinitionMatch, hookDefinition_, id<CCBRHookDefinit
        withCucumberApiScenario:(id<CucumberApiScenario>)scenario {
 }
 
-- (CCBRMatch *)getMatch {
-  return create_CCBRMatch_initWithJavaUtilList_withNSString_(JavaUtilCollections_emptyList(), [((id<CCBRHookDefinition>) nil_chk(hookDefinition_)) getLocationWithBoolean:false]);
-}
-
-- (NSString *)getPattern {
-  @throw create_JavaLangUnsupportedOperationException_init();
-}
-
 - (NSString *)getCodeLocation {
   return [((id<CCBRHookDefinition>) nil_chk(hookDefinition_)) getLocationWithBoolean:false];
-}
-
-- (id<JavaUtilList>)getArguments {
-  return JavaUtilCollections_emptyList();
 }
 
 - (void)dealloc {
@@ -63,10 +47,7 @@ J2OBJC_FIELD_SETTER(CCBRHookDefinitionMatch, hookDefinition_, id<CCBRHookDefinit
     { NULL, NULL, 0x1, -1, 0, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 1, 2, 3, -1, -1, -1 },
     { NULL, "V", 0x1, 4, 2, 3, -1, -1, -1 },
-    { NULL, "LCCBRMatch;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 5, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -74,16 +55,13 @@ J2OBJC_FIELD_SETTER(CCBRHookDefinitionMatch, hookDefinition_, id<CCBRHookDefinit
   methods[0].selector = @selector(initWithCCBRHookDefinition:);
   methods[1].selector = @selector(runStepWithNSString:withCucumberApiScenario:);
   methods[2].selector = @selector(dryRunStepWithNSString:withCucumberApiScenario:);
-  methods[3].selector = @selector(getMatch);
-  methods[4].selector = @selector(getPattern);
-  methods[5].selector = @selector(getCodeLocation);
-  methods[6].selector = @selector(getArguments);
+  methods[3].selector = @selector(getCodeLocation);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "hookDefinition_", "LCCBRHookDefinition;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCCBRHookDefinition;", "runStep", "LNSString;LCucumberApiScenario;", "LJavaLangThrowable;", "dryRunStep", "()Ljava/util/List<Lcucumber/runtime/Argument;>;" };
-  static const J2ObjcClassInfo _CCBRHookDefinitionMatch = { "HookDefinitionMatch", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 7, 1, -1, -1, -1, -1, -1 };
+  static const void *ptrTable[] = { "LCCBRHookDefinition;", "runStep", "LNSString;LCucumberApiScenario;", "LJavaLangThrowable;", "dryRunStep" };
+  static const J2ObjcClassInfo _CCBRHookDefinitionMatch = { "HookDefinitionMatch", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 4, 1, -1, -1, -1, -1, -1 };
   return &_CCBRHookDefinitionMatch;
 }
 

@@ -17,10 +17,14 @@
     { NULL, "V", 0x401, 0, 1, 2, -1, -1, -1 },
     { NULL, "V", 0x401, 3, 4, -1, -1, -1, -1 },
     { NULL, "V", 0x401, 5, 4, -1, -1, -1, -1 },
-    { NULL, "LJavaUtilList;", 0x401, -1, -1, -1, 6, -1, -1 },
-    { NULL, "LJavaUtilList;", 0x401, -1, -1, -1, 6, -1, -1 },
-    { NULL, "LCCBRStepDefinitionMatch;", 0x401, 7, 8, -1, -1, -1, -1 },
-    { NULL, "V", 0x401, 9, 10, -1, -1, -1, -1 },
+    { NULL, "V", 0x401, 6, 4, -1, -1, -1, -1 },
+    { NULL, "V", 0x401, 7, 4, -1, -1, -1, -1 },
+    { NULL, "LJavaUtilList;", 0x401, -1, -1, -1, 8, -1, -1 },
+    { NULL, "LJavaUtilList;", 0x401, -1, -1, -1, 8, -1, -1 },
+    { NULL, "LJavaUtilList;", 0x401, -1, -1, -1, 8, -1, -1 },
+    { NULL, "LJavaUtilList;", 0x401, -1, -1, -1, 8, -1, -1 },
+    { NULL, "LCCBRPickleStepDefinitionMatch;", 0x401, 9, 10, -1, -1, -1, -1 },
+    { NULL, "V", 0x401, 11, 12, -1, -1, -1, -1 },
     { NULL, "V", 0x401, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
@@ -29,14 +33,18 @@
   methods[0].selector = @selector(addStepDefinitionWithCCBRStepDefinition:);
   methods[1].selector = @selector(addBeforeHookWithCCBRHookDefinition:);
   methods[2].selector = @selector(addAfterHookWithCCBRHookDefinition:);
-  methods[3].selector = @selector(getBeforeHooks);
-  methods[4].selector = @selector(getAfterHooks);
-  methods[5].selector = @selector(stepDefinitionMatchWithNSString:withGHKPickleStep:);
-  methods[6].selector = @selector(reportStepDefinitionsWithCucumberApiStepDefinitionReporter:);
-  methods[7].selector = @selector(removeScenarioScopedGlue);
+  methods[3].selector = @selector(addBeforeStepHookWithCCBRHookDefinition:);
+  methods[4].selector = @selector(addAfterStepHookWithCCBRHookDefinition:);
+  methods[5].selector = @selector(getBeforeHooks);
+  methods[6].selector = @selector(getAfterHooks);
+  methods[7].selector = @selector(getAfterStepHooks);
+  methods[8].selector = @selector(getBeforeStepHooks);
+  methods[9].selector = @selector(stepDefinitionMatchWithNSString:withGHKPickleStep:);
+  methods[10].selector = @selector(reportStepDefinitionsWithCucumberApiStepDefinitionReporter:);
+  methods[11].selector = @selector(removeScenarioScopedGlue);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "addStepDefinition", "LCCBRStepDefinition;", "LCCBRDuplicateStepDefinitionException;", "addBeforeHook", "LCCBRHookDefinition;", "addAfterHook", "()Ljava/util/List<Lcucumber/runtime/HookDefinition;>;", "stepDefinitionMatch", "LNSString;LGHKPickleStep;", "reportStepDefinitions", "LCucumberApiStepDefinitionReporter;" };
-  static const J2ObjcClassInfo _CCBRGlue = { "Glue", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 8, 0, -1, -1, -1, -1, -1 };
+  static const void *ptrTable[] = { "addStepDefinition", "LCCBRStepDefinition;", "LCCBRDuplicateStepDefinitionException;", "addBeforeHook", "LCCBRHookDefinition;", "addAfterHook", "addBeforeStepHook", "addAfterStepHook", "()Ljava/util/List<Lcucumber/runtime/HookDefinition;>;", "stepDefinitionMatch", "LNSString;LGHKPickleStep;", "reportStepDefinitions", "LCucumberApiStepDefinitionReporter;" };
+  static const J2ObjcClassInfo _CCBRGlue = { "Glue", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 12, 0, -1, -1, -1, -1, -1 };
   return &_CCBRGlue;
 }
 

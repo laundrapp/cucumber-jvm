@@ -3,8 +3,6 @@
 //  source: /Users/Salton/Documents/Projects/cucumber-jvm/core/src/main/java/cucumber/runtime/ScenarioImpl.java
 //
 
-#include "IOSClass.h"
-#include "IOSObjectArray.h"
 #include "IOSPrimitiveArray.h"
 #include "J2ObjC_source.h"
 #include "cucumber/api/Result.h"
@@ -18,12 +16,11 @@
 #include "gherkin/pickles/PickleTag.h"
 #include "java/lang/Integer.h"
 #include "java/lang/Long.h"
-#include "java/lang/Math.h"
 #include "java/lang/Throwable.h"
 #include "java/util/ArrayList.h"
-#include "java/util/Arrays.h"
 #include "java/util/Collection.h"
 #include "java/util/Collections.h"
+#include "java/util/Comparator.h"
 #include "java/util/HashSet.h"
 #include "java/util/List.h"
 #include "java/util/Set.h"
@@ -49,12 +46,6 @@ J2OBJC_FIELD_SETTER(CCBRScenarioImpl, scenarioId_, NSString *)
 J2OBJC_FIELD_SETTER(CCBRScenarioImpl, scenarioLines_, id<JavaUtilList>)
 J2OBJC_FIELD_SETTER(CCBRScenarioImpl, bus_, CCBEventBus *)
 
-inline id<JavaUtilList> CCBRScenarioImpl_get_SEVERITY(void);
-static id<JavaUtilList> CCBRScenarioImpl_SEVERITY;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CCBRScenarioImpl, SEVERITY, id<JavaUtilList>)
-
-J2OBJC_INITIALIZED_DEFN(CCBRScenarioImpl)
-
 @implementation CCBRScenarioImpl
 
 - (instancetype __nonnull)initWithCCBEventBus:(CCBEventBus *)bus
@@ -79,11 +70,7 @@ J2OBJC_INITIALIZED_DEFN(CCBRScenarioImpl)
   if ([((id<JavaUtilList>) nil_chk(stepResults_)) isEmpty]) {
     return JreLoadEnum(CucumberApiResult_Type, UNDEFINED);
   }
-  jint pos = 0;
-  for (CucumberApiResult * __strong stepResult in stepResults_) {
-    pos = JavaLangMath_maxWithInt_withInt_(pos, [((id<JavaUtilList>) nil_chk(CCBRScenarioImpl_SEVERITY)) indexOfWithId:[((CucumberApiResult *) nil_chk(stepResult)) getStatus]]);
-  }
-  return [((id<JavaUtilList>) nil_chk(CCBRScenarioImpl_SEVERITY)) getWithInt:pos];
+  return [((CucumberApiResult *) nil_chk(JavaUtilCollections_maxWithJavaUtilCollection_withJavaUtilComparator_(stepResults_, JreLoadStatic(CucumberApiResult, SEVERITY)))) getStatus];
 }
 
 - (jboolean)isFailed {
@@ -120,16 +107,10 @@ J2OBJC_INITIALIZED_DEFN(CCBRScenarioImpl)
 }
 
 - (JavaLangThrowable *)getError {
-  JavaLangThrowable *error = nil;
-  jint maxPos = 0;
-  for (CucumberApiResult * __strong stepResult in nil_chk(stepResults_)) {
-    jint currentPos = [((id<JavaUtilList>) nil_chk(CCBRScenarioImpl_SEVERITY)) indexOfWithId:[((CucumberApiResult *) nil_chk(stepResult)) getStatus]];
-    if (currentPos > maxPos) {
-      maxPos = currentPos;
-      error = [stepResult getError];
-    }
+  if ([((id<JavaUtilList>) nil_chk(stepResults_)) isEmpty]) {
+    return nil;
   }
-  return error;
+  return [((CucumberApiResult *) nil_chk(JavaUtilCollections_maxWithJavaUtilCollection_withJavaUtilComparator_(stepResults_, JreLoadStatic(CucumberApiResult, SEVERITY)))) getError];
 }
 
 - (void)dealloc {
@@ -175,25 +156,17 @@ J2OBJC_INITIALIZED_DEFN(CCBRScenarioImpl)
   methods[11].selector = @selector(getError);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "SEVERITY", "LJavaUtilList;", .constantValue.asLong = 0, 0x1a, -1, 9, 10, -1 },
-    { "stepResults_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 11, -1 },
-    { "tags_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 12, -1 },
+    { "stepResults_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 9, -1 },
+    { "tags_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 10, -1 },
     { "uri_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "scenarioName_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "scenarioId_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "scenarioLines_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 13, -1 },
+    { "scenarioLines_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 11, -1 },
     { "bus_", "LCCBEventBus;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCCBEventBus;LGHKPickleEvent;", "add", "LCucumberApiResult;", "()Ljava/util/Collection<Ljava/lang/String;>;", "embed", "[BLNSString;", "write", "LNSString;", "()Ljava/util/List<Ljava/lang/Integer;>;", &CCBRScenarioImpl_SEVERITY, "Ljava/util/List<Lcucumber/api/Result$Type;>;", "Ljava/util/List<Lcucumber/api/Result;>;", "Ljava/util/List<Lgherkin/pickles/PickleTag;>;", "Ljava/util/List<Ljava/lang/Integer;>;" };
-  static const J2ObjcClassInfo _CCBRScenarioImpl = { "ScenarioImpl", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 12, 8, -1, -1, -1, -1, -1 };
+  static const void *ptrTable[] = { "LCCBEventBus;LGHKPickleEvent;", "add", "LCucumberApiResult;", "()Ljava/util/Collection<Ljava/lang/String;>;", "embed", "[BLNSString;", "write", "LNSString;", "()Ljava/util/List<Ljava/lang/Integer;>;", "Ljava/util/List<Lcucumber/api/Result;>;", "Ljava/util/List<Lgherkin/pickles/PickleTag;>;", "Ljava/util/List<Ljava/lang/Integer;>;" };
+  static const J2ObjcClassInfo _CCBRScenarioImpl = { "ScenarioImpl", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 12, 7, -1, -1, -1, -1, -1 };
   return &_CCBRScenarioImpl;
-}
-
-+ (void)initialize {
-  if (self == [CCBRScenarioImpl class]) {
-    JreStrongAssign(&CCBRScenarioImpl_SEVERITY, JavaUtilArrays_asListWithNSObjectArray_([IOSObjectArray arrayWithObjects:(id[]){ JreLoadEnum(CucumberApiResult_Type, PASSED), JreLoadEnum(CucumberApiResult_Type, SKIPPED), JreLoadEnum(CucumberApiResult_Type, PENDING), JreLoadEnum(CucumberApiResult_Type, UNDEFINED), JreLoadEnum(CucumberApiResult_Type, AMBIGUOUS), JreLoadEnum(CucumberApiResult_Type, FAILED) } count:6 type:CucumberApiResult_Type_class_()]));
-    J2OBJC_SET_INITIALIZED(CCBRScenarioImpl)
-  }
 }
 
 @end

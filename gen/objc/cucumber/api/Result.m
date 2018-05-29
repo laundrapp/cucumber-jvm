@@ -13,6 +13,13 @@
 #include "java/lang/Long.h"
 #include "java/lang/StringBuffer.h"
 #include "java/lang/Throwable.h"
+#include "java/util/Comparator.h"
+#include "java/util/function/Function.h"
+#include "java/util/function/ToDoubleFunction.h"
+#include "java/util/function/ToIntFunction.h"
+#include "java/util/function/ToLongFunction.h"
+
+#pragma clang diagnostic ignored "-Wprotocol"
 
 @interface CucumberApiResult () {
  @public
@@ -43,10 +50,28 @@ __attribute__((unused)) static jboolean CucumberApiResult_hasOkWhenNotStrictStat
 
 __attribute__((unused)) static NSString *CucumberApiResult_getErrorMessageWithJavaLangThrowable_(CucumberApiResult *self, JavaLangThrowable *error);
 
+@interface CucumberApiResult_1 : NSObject < JavaUtilComparator >
+
+- (instancetype __nonnull)init;
+
+- (jint)compareWithId:(CucumberApiResult *)a
+               withId:(CucumberApiResult *)b;
+
+@end
+
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiResult_1)
+
+__attribute__((unused)) static void CucumberApiResult_1_init(CucumberApiResult_1 *self);
+
+__attribute__((unused)) static CucumberApiResult_1 *new_CucumberApiResult_1_init(void) NS_RETURNS_RETAINED;
+
+__attribute__((unused)) static CucumberApiResult_1 *create_CucumberApiResult_1_init(void);
+
 __attribute__((unused)) static void CucumberApiResult_Type_initWithNSString_withInt_(CucumberApiResult_Type *self, NSString *__name, jint __ordinal);
 
 J2OBJC_INITIALIZED_DEFN(CucumberApiResult)
 
+id<JavaUtilComparator> CucumberApiResult_SEVERITY;
 CucumberApiResult *CucumberApiResult_SKIPPED;
 CucumberApiResult *CucumberApiResult_UNDEFINED;
 
@@ -95,6 +120,10 @@ CucumberApiResult *CucumberApiResult_UNDEFINED;
   return CucumberApiResult_getErrorMessageWithJavaLangThrowable_(self, error);
 }
 
+- (NSString *)description {
+  return JreStrcat("$@$@$@C", @"Result{status=", status_, @", duration=", duration_, @", error=", error_, '}');
+}
+
 - (void)dealloc {
   RELEASE_(status_);
   RELEASE_(duration_);
@@ -114,6 +143,7 @@ CucumberApiResult *CucumberApiResult_UNDEFINED;
     { NULL, "Z", 0x2, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x2, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x2, 5, 6, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x1, 7, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -128,22 +158,25 @@ CucumberApiResult *CucumberApiResult_UNDEFINED;
   methods[7].selector = @selector(hasAlwaysOkStatus);
   methods[8].selector = @selector(hasOkWhenNotStrictStatus);
   methods[9].selector = @selector(getErrorMessageWithJavaLangThrowable:);
+  methods[10].selector = @selector(description);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
+    { "SEVERITY", "LJavaUtilComparator;", .constantValue.asLong = 0, 0x19, -1, 8, 9, -1 },
     { "serialVersionUID", "J", .constantValue.asLong = CucumberApiResult_serialVersionUID, 0x1a, -1, -1, -1, -1 },
     { "status_", "LCucumberApiResult_Type;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "duration_", "LJavaLangLong;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "error_", "LJavaLangThrowable;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "SKIPPED", "LCucumberApiResult;", .constantValue.asLong = 0, 0x19, -1, 7, -1, -1 },
-    { "UNDEFINED", "LCucumberApiResult;", .constantValue.asLong = 0, 0x19, -1, 8, -1, -1 },
+    { "SKIPPED", "LCucumberApiResult;", .constantValue.asLong = 0, 0x19, -1, 10, -1, -1 },
+    { "UNDEFINED", "LCucumberApiResult;", .constantValue.asLong = 0, 0x19, -1, 11, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCucumberApiResult_Type;LJavaLangLong;LJavaLangThrowable;", "is", "LCucumberApiResult_Type;", "isOk", "Z", "getErrorMessage", "LJavaLangThrowable;", &CucumberApiResult_SKIPPED, &CucumberApiResult_UNDEFINED };
-  static const J2ObjcClassInfo _CucumberApiResult = { "Result", "cucumber.api", ptrTable, methods, fields, 7, 0x1, 10, 6, -1, 2, -1, -1, -1 };
+  static const void *ptrTable[] = { "LCucumberApiResult_Type;LJavaLangLong;LJavaLangThrowable;", "is", "LCucumberApiResult_Type;", "isOk", "Z", "getErrorMessage", "LJavaLangThrowable;", "toString", &CucumberApiResult_SEVERITY, "Ljava/util/Comparator<Lcucumber/api/Result;>;", &CucumberApiResult_SKIPPED, &CucumberApiResult_UNDEFINED };
+  static const J2ObjcClassInfo _CucumberApiResult = { "Result", "cucumber.api", ptrTable, methods, fields, 7, 0x1, 11, 7, -1, 2, -1, -1, -1 };
   return &_CucumberApiResult;
 }
 
 + (void)initialize {
   if (self == [CucumberApiResult class]) {
+    JreStrongAssignAndConsume(&CucumberApiResult_SEVERITY, new_CucumberApiResult_1_init());
     JreStrongAssignAndConsume(&CucumberApiResult_SKIPPED, new_CucumberApiResult_initWithCucumberApiResult_Type_withJavaLangLong_withJavaLangThrowable_(JreLoadEnum(CucumberApiResult_Type, SKIPPED), nil, nil));
     JreStrongAssignAndConsume(&CucumberApiResult_UNDEFINED, new_CucumberApiResult_initWithCucumberApiResult_Type_withJavaLangLong_withJavaLangThrowable_(JreLoadEnum(CucumberApiResult_Type, UNDEFINED), nil, nil));
     J2OBJC_SET_INITIALIZED(CucumberApiResult)
@@ -183,6 +216,79 @@ NSString *CucumberApiResult_getErrorMessageWithJavaLangThrowable_(CucumberApiRes
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberApiResult)
+
+@implementation CucumberApiResult_1
+
+J2OBJC_IGNORE_DESIGNATED_BEGIN
+- (instancetype __nonnull)init {
+  CucumberApiResult_1_init(self);
+  return self;
+}
+J2OBJC_IGNORE_DESIGNATED_END
+
+- (jint)compareWithId:(CucumberApiResult *)a
+               withId:(CucumberApiResult *)b {
+  return ((CucumberApiResult *) nil_chk(a))->status_ == ((CucumberApiResult *) nil_chk(b))->status_ ? 0 : [((CucumberApiResult_Type *) nil_chk(a->status_)) ordinal] > [b->status_ ordinal] ? 1 : -1;
+}
+
+- (id<JavaUtilComparator>)reversed {
+  return JavaUtilComparator_reversed(self);
+}
+
+- (id<JavaUtilComparator>)thenComparingWithJavaUtilComparator:(id<JavaUtilComparator>)arg0 {
+  return JavaUtilComparator_thenComparingWithJavaUtilComparator_(self, arg0);
+}
+
+- (id<JavaUtilComparator>)thenComparingWithJavaUtilFunctionFunction:(id<JavaUtilFunctionFunction>)arg0
+                                             withJavaUtilComparator:(id<JavaUtilComparator>)arg1 {
+  return JavaUtilComparator_thenComparingWithJavaUtilFunctionFunction_withJavaUtilComparator_(self, arg0, arg1);
+}
+
+- (id<JavaUtilComparator>)thenComparingWithJavaUtilFunctionFunction:(id<JavaUtilFunctionFunction>)arg0 {
+  return JavaUtilComparator_thenComparingWithJavaUtilFunctionFunction_(self, arg0);
+}
+
+- (id<JavaUtilComparator>)thenComparingIntWithJavaUtilFunctionToIntFunction:(id<JavaUtilFunctionToIntFunction>)arg0 {
+  return JavaUtilComparator_thenComparingIntWithJavaUtilFunctionToIntFunction_(self, arg0);
+}
+
+- (id<JavaUtilComparator>)thenComparingLongWithJavaUtilFunctionToLongFunction:(id<JavaUtilFunctionToLongFunction>)arg0 {
+  return JavaUtilComparator_thenComparingLongWithJavaUtilFunctionToLongFunction_(self, arg0);
+}
+
+- (id<JavaUtilComparator>)thenComparingDoubleWithJavaUtilFunctionToDoubleFunction:(id<JavaUtilFunctionToDoubleFunction>)arg0 {
+  return JavaUtilComparator_thenComparingDoubleWithJavaUtilFunctionToDoubleFunction_(self, arg0);
+}
+
++ (const J2ObjcClassInfo *)__metadata {
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, NULL, 0x0, -1, -1, -1, -1, -1, -1 },
+    { NULL, "I", 0x1, 0, 1, -1, -1, -1, -1 },
+  };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  #pragma clang diagnostic ignored "-Wundeclared-selector"
+  methods[0].selector = @selector(init);
+  methods[1].selector = @selector(compareWithId:withId:);
+  #pragma clang diagnostic pop
+  static const void *ptrTable[] = { "compare", "LCucumberApiResult;LCucumberApiResult;", "LCucumberApiResult;", "Ljava/lang/Object;Ljava/util/Comparator<Lcucumber/api/Result;>;" };
+  static const J2ObjcClassInfo _CucumberApiResult_1 = { "", "cucumber.api", ptrTable, methods, NULL, 7, 0x8018, 2, 0, 2, -1, -1, 3, -1 };
+  return &_CucumberApiResult_1;
+}
+
+@end
+
+void CucumberApiResult_1_init(CucumberApiResult_1 *self) {
+  NSObject_init(self);
+}
+
+CucumberApiResult_1 *new_CucumberApiResult_1_init() {
+  J2OBJC_NEW_IMPL(CucumberApiResult_1, init)
+}
+
+CucumberApiResult_1 *create_CucumberApiResult_1_init() {
+  J2OBJC_CREATE_IMPL(CucumberApiResult_1, init)
+}
 
 J2OBJC_INITIALIZED_DEFN(CucumberApiResult_Type)
 

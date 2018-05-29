@@ -15,22 +15,20 @@
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, "V", 0x401, 0, 1, -1, 2, -1, -1 },
-    { NULL, "V", 0x401, 3, 4, -1, -1, -1, -1 },
     { NULL, "V", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x401, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x401, 5, 6, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x401, 3, 4, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(loadGlueWithCCBRGlue:withJavaUtilList:);
-  methods[1].selector = @selector(setUnreportedStepExecutorWithCCBRUnreportedStepExecutor:);
-  methods[2].selector = @selector(buildWorld);
-  methods[3].selector = @selector(disposeWorld);
-  methods[4].selector = @selector(getSnippetWithGHKPickleStep:withNSString:withCCBRFunctionNameGenerator:);
+  methods[1].selector = @selector(buildWorld);
+  methods[2].selector = @selector(disposeWorld);
+  methods[3].selector = @selector(getSnippetWithGHKPickleStep:withNSString:withCCBRFunctionNameGenerator:);
   #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "loadGlue", "LCCBRGlue;LJavaUtilList;", "(Lcucumber/runtime/Glue;Ljava/util/List<Ljava/lang/String;>;)V", "setUnreportedStepExecutor", "LCCBRUnreportedStepExecutor;", "getSnippet", "LGHKPickleStep;LNSString;LCCBRFunctionNameGenerator;" };
-  static const J2ObjcClassInfo _CCBRBackend = { "Backend", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 5, 0, -1, -1, -1, -1, -1 };
+  static const void *ptrTable[] = { "loadGlue", "LCCBRGlue;LJavaUtilList;", "(Lcucumber/runtime/Glue;Ljava/util/List<Ljava/lang/String;>;)V", "getSnippet", "LGHKPickleStep;LNSString;LCCBRFunctionNameGenerator;" };
+  static const J2ObjcClassInfo _CCBRBackend = { "Backend", "cucumber.runtime", ptrTable, methods, NULL, 7, 0x609, 4, 0, -1, -1, -1, -1, -1 };
   return &_CCBRBackend;
 }
 

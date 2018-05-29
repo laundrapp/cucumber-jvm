@@ -6,7 +6,7 @@
 #include "J2ObjC_source.h"
 #include "cucumber/runtime/AmbiguousStepDefinitionsException.h"
 #include "cucumber/runtime/CucumberException.h"
-#include "cucumber/runtime/StepDefinitionMatch.h"
+#include "cucumber/runtime/PickleStepDefinitionMatch.h"
 #include "gherkin/pickles/PickleStep.h"
 #include "java/lang/StringBuilder.h"
 #include "java/util/List.h"
@@ -73,7 +73,7 @@ __attribute__((unused)) static NSString *CCBRAmbiguousStepDefinitionsException_q
   static const J2ObjcFieldInfo fields[] = {
     { "matches_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 7, -1 },
   };
-  static const void *ptrTable[] = { "LGHKPickleStep;LJavaUtilList;", "(Lgherkin/pickles/PickleStep;Ljava/util/List<Lcucumber/runtime/StepDefinitionMatch;>;)V", "createMessage", "(Lgherkin/pickles/PickleStep;Ljava/util/List<Lcucumber/runtime/StepDefinitionMatch;>;)Ljava/lang/String;", "quoteText", "LNSString;", "()Ljava/util/List<Lcucumber/runtime/StepDefinitionMatch;>;", "Ljava/util/List<Lcucumber/runtime/StepDefinitionMatch;>;" };
+  static const void *ptrTable[] = { "LGHKPickleStep;LJavaUtilList;", "(Lgherkin/pickles/PickleStep;Ljava/util/List<Lcucumber/runtime/PickleStepDefinitionMatch;>;)V", "createMessage", "(Lgherkin/pickles/PickleStep;Ljava/util/List<Lcucumber/runtime/PickleStepDefinitionMatch;>;)Ljava/lang/String;", "quoteText", "LNSString;", "()Ljava/util/List<Lcucumber/runtime/PickleStepDefinitionMatch;>;", "Ljava/util/List<Lcucumber/runtime/PickleStepDefinitionMatch;>;" };
   static const J2ObjcClassInfo _CCBRAmbiguousStepDefinitionsException = { "AmbiguousStepDefinitionsException", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 4, 1, -1, -1, -1, -1, -1 };
   return &_CCBRAmbiguousStepDefinitionsException;
 }
@@ -97,8 +97,8 @@ NSString *CCBRAmbiguousStepDefinitionsException_createMessageWithGHKPickleStep_w
   CCBRAmbiguousStepDefinitionsException_initialize();
   JavaLangStringBuilder *msg = create_JavaLangStringBuilder_init();
   [((JavaLangStringBuilder *) nil_chk([msg appendWithNSString:CCBRAmbiguousStepDefinitionsException_quoteTextWithNSString_([((GHKPickleStep *) nil_chk(step)) getText])])) appendWithNSString:@" matches more than one step definition:\n"];
-  for (CCBRStepDefinitionMatch * __strong match in nil_chk(matches)) {
-    [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([msg appendWithNSString:@"  "])) appendWithNSString:CCBRAmbiguousStepDefinitionsException_quoteTextWithNSString_([((CCBRStepDefinitionMatch *) nil_chk(match)) getPattern])])) appendWithNSString:@" in "])) appendWithNSString:[match getLocation]])) appendWithNSString:@"\n"];
+  for (CCBRPickleStepDefinitionMatch * __strong match in nil_chk(matches)) {
+    [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk([msg appendWithNSString:@"  "])) appendWithNSString:CCBRAmbiguousStepDefinitionsException_quoteTextWithNSString_([((CCBRPickleStepDefinitionMatch *) nil_chk(match)) getPattern])])) appendWithNSString:@" in "])) appendWithNSString:[match getLocation]])) appendWithNSString:@"\n"];
   }
   return [msg description];
 }

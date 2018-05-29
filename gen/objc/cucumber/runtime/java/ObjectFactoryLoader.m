@@ -18,6 +18,8 @@
 #include "java/lang/ClassNotFoundException.h"
 #include "java/lang/StringBuilder.h"
 #include "java/lang/System.h"
+#include "java/util/Arrays.h"
+#include "java/util/List.h"
 
 @interface CucumberRuntimeJavaObjectFactoryLoader ()
 
@@ -95,7 +97,7 @@ id<CucumberApiJavaObjectFactory> CucumberRuntimeJavaObjectFactoryLoader_loadObje
       objectFactory = [reflections newInstanceWithIOSClassArray:[IOSObjectArray arrayWithLength:0 type:IOSClass_class_()] withNSObjectArray:[IOSObjectArray arrayWithLength:0 type:NSObject_class_()] withIOSClass:objectFactoryClass];
     }
     else {
-      objectFactory = [reflections instantiateExactlyOneSubclassWithIOSClass:CucumberApiJavaObjectFactory_class_() withNSString:@"cucumber.runtime" withIOSClassArray:[IOSObjectArray arrayWithLength:0 type:IOSClass_class_()] withNSObjectArray:[IOSObjectArray arrayWithLength:0 type:NSObject_class_()]];
+      objectFactory = [reflections instantiateExactlyOneSubclassWithIOSClass:CucumberApiJavaObjectFactory_class_() withJavaUtilList:JavaUtilArrays_asListWithNSObjectArray_([IOSObjectArray arrayWithObjects:(id[]){ @"cucumber.runtime" } count:1 type:NSString_class_()]) withIOSClassArray:[IOSObjectArray arrayWithLength:0 type:IOSClass_class_()] withNSObjectArray:[IOSObjectArray arrayWithLength:0 type:NSObject_class_()] withId:nil];
     }
   }
   @catch (CCBRTooManyInstancesException *e) {

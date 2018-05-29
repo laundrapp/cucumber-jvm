@@ -25,6 +25,14 @@
 #define INCLUDE_CucumberApiEventEventListener 1
 #include "cucumber/api/event/EventListener.h"
 
+#define RESTRICT_CucumberApiFormatterColorAware 1
+#define INCLUDE_CucumberApiFormatterColorAware 1
+#include "cucumber/api/formatter/ColorAware.h"
+
+#define RESTRICT_CucumberApiFormatterStrictAware 1
+#define INCLUDE_CucumberApiFormatterStrictAware 1
+#include "cucumber/api/formatter/StrictAware.h"
+
 @class CucumberApiResult_Type;
 @class JavaIoPrintStream;
 @class JavaLangLong;
@@ -32,25 +40,25 @@
 @protocol CucumberApiEventEventPublisher;
 @protocol JavaUtilList;
 
-@interface CCBRStats : NSObject < CucumberApiEventEventListener >
+@interface CCBRStats : NSObject < CucumberApiEventEventListener, CucumberApiFormatterColorAware, CucumberApiFormatterStrictAware >
 
 #pragma mark Public
 
-- (instancetype __nonnull)initWithBoolean:(jboolean)monochrome;
-
-- (instancetype __nonnull)initWithBoolean:(jboolean)monochrome
-                       withJavaUtilLocale:(JavaUtilLocale *)locale;
-
-- (jbyte)exitStatusWithBoolean:(jboolean)isStrict;
+- (instancetype __nonnull)init;
 
 - (id<JavaUtilList>)getErrors;
 
-- (void)printStatsWithJavaIoPrintStream:(JavaIoPrintStream *)outArg
-                            withBoolean:(jboolean)isStrict;
+- (void)printStatsWithJavaIoPrintStream:(JavaIoPrintStream *)outArg;
 
 - (void)setEventPublisherWithCucumberApiEventEventPublisher:(id<CucumberApiEventEventPublisher>)publisher;
 
+- (void)setMonochromeWithBoolean:(jboolean)monochrome;
+
+- (void)setStrictWithBoolean:(jboolean)strict;
+
 #pragma mark Package-Private
+
+- (instancetype __nonnull)initWithJavaUtilLocale:(JavaUtilLocale *)locale;
 
 - (void)addScenarioWithCucumberApiResult_Type:(CucumberApiResult_Type *)resultStatus
                                  withNSString:(NSString *)scenarioDesignation;
@@ -60,10 +68,6 @@
 - (void)setFinishTimeWithJavaLangLong:(JavaLangLong *)finishTime;
 
 - (void)setStartTimeWithJavaLangLong:(JavaLangLong *)startTime;
-
-// Disallowed inherited constructors, do not use.
-
-- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 
@@ -77,17 +81,17 @@ inline jlong CCBRStats_get_ONE_MINUTE(void);
 #define CCBRStats_ONE_MINUTE 60000000000LL
 J2OBJC_STATIC_FIELD_CONSTANT(CCBRStats, ONE_MINUTE, jlong)
 
-FOUNDATION_EXPORT void CCBRStats_initWithBoolean_(CCBRStats *self, jboolean monochrome);
+FOUNDATION_EXPORT void CCBRStats_init(CCBRStats *self);
 
-FOUNDATION_EXPORT CCBRStats *new_CCBRStats_initWithBoolean_(jboolean monochrome) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRStats *new_CCBRStats_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRStats *create_CCBRStats_initWithBoolean_(jboolean monochrome);
+FOUNDATION_EXPORT CCBRStats *create_CCBRStats_init(void);
 
-FOUNDATION_EXPORT void CCBRStats_initWithBoolean_withJavaUtilLocale_(CCBRStats *self, jboolean monochrome, JavaUtilLocale *locale);
+FOUNDATION_EXPORT void CCBRStats_initWithJavaUtilLocale_(CCBRStats *self, JavaUtilLocale *locale);
 
-FOUNDATION_EXPORT CCBRStats *new_CCBRStats_initWithBoolean_withJavaUtilLocale_(jboolean monochrome, JavaUtilLocale *locale) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT CCBRStats *new_CCBRStats_initWithJavaUtilLocale_(JavaUtilLocale *locale) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT CCBRStats *create_CCBRStats_initWithBoolean_withJavaUtilLocale_(jboolean monochrome, JavaUtilLocale *locale);
+FOUNDATION_EXPORT CCBRStats *create_CCBRStats_initWithJavaUtilLocale_(JavaUtilLocale *locale);
 
 J2OBJC_TYPE_LITERAL_HEADER(CCBRStats)
 

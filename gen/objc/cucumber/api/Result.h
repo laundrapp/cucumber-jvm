@@ -24,6 +24,7 @@
 @class CucumberApiResult_Type;
 @class JavaLangLong;
 @class JavaLangThrowable;
+@protocol JavaUtilComparator;
 
 @interface CucumberApiResult : NSObject
 
@@ -51,6 +52,8 @@
 
 - (jboolean)isOkWithBoolean:(jboolean)isStrict;
 
+- (NSString *)description;
+
 // Disallowed inherited constructors, do not use.
 
 - (instancetype __nonnull)init NS_UNAVAILABLE;
@@ -58,6 +61,11 @@
 @end
 
 J2OBJC_STATIC_INIT(CucumberApiResult)
+
+inline id<JavaUtilComparator> CucumberApiResult_get_SEVERITY(void);
+/*! INTERNAL ONLY - Use accessor function from above. */
+FOUNDATION_EXPORT id<JavaUtilComparator> CucumberApiResult_SEVERITY;
+J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberApiResult, SEVERITY, id<JavaUtilComparator>)
 
 inline CucumberApiResult *CucumberApiResult_get_SKIPPED(void);
 /*! INTERNAL ONLY - Use accessor function from above. */

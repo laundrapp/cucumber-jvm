@@ -9,7 +9,7 @@
 #include "cucumber/api/Plugin.h"
 #include "cucumber/api/SnippetType.h"
 #include "cucumber/api/StepDefinitionReporter.h"
-#include "cucumber/api/SummaryPrinter.h"
+#include "cucumber/api/event/EventListener.h"
 #include "cucumber/api/event/TestRunStarted.h"
 #include "cucumber/api/formatter/ColorAware.h"
 #include "cucumber/api/formatter/Formatter.h"
@@ -24,12 +24,12 @@
 #include "cucumber/runtime/io/ResourceLoader.h"
 #include "cucumber/runtime/model/CucumberFeature.h"
 #include "cucumber/runtime/model/PathWithLines.h"
-#include "cucumber/runtime/table/TablePrinter.h"
 #include "cucumber/util/FixJava.h"
 #include "cucumber/util/Mapper.h"
 #include "gherkin/GherkinDialect.h"
 #include "gherkin/GherkinDialectProvider.h"
 #include "gherkin/IGherkinDialectProvider.h"
+#include "io/cucumber/datatable/DataTable.h"
 #include "java/io/InputStream.h"
 #include "java/io/InputStreamReader.h"
 #include "java/io/PrintStream.h"
@@ -45,7 +45,6 @@
 #include "java/lang/reflect/Proxy.h"
 #include "java/util/ArrayList.h"
 #include "java/util/Arrays.h"
-#include "java/util/Collections.h"
 #include "java/util/HashMap.h"
 #include "java/util/List.h"
 #include "java/util/Map.h"
@@ -66,7 +65,6 @@
   id<JavaUtilList> junitOptions_;
   CCBRPluginFactory *pluginFactory_;
   id<JavaUtilList> plugins_;
-  id<JavaUtilList> converters_;
   jboolean dryRun_;
   jboolean strict_;
   jboolean monochrome_;
@@ -110,7 +108,7 @@
 
 - (void)setStrictOnStrictAwarePluginsWithId:(id)plugin;
 
-- (void)setEventBusFormatterPluginsWithId:(id)plugin;
+- (void)setEventBusOnEventListenerPluginsWithId:(id)plugin;
 
 - (void)processRerunFilesWithCCBRResourceLoader:(id<CCBRResourceLoader>)resourceLoader;
 
@@ -127,7 +125,6 @@ J2OBJC_FIELD_SETTER(CCBRRuntimeOptions, pluginSummaryPrinterNames_, id<JavaUtilL
 J2OBJC_FIELD_SETTER(CCBRRuntimeOptions, junitOptions_, id<JavaUtilList>)
 J2OBJC_FIELD_SETTER(CCBRRuntimeOptions, pluginFactory_, CCBRPluginFactory *)
 J2OBJC_FIELD_SETTER(CCBRRuntimeOptions, plugins_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CCBRRuntimeOptions, converters_, id<JavaUtilList>)
 J2OBJC_FIELD_SETTER(CCBRRuntimeOptions, snippetType_, CucumberApiSnippetType *)
 J2OBJC_FIELD_SETTER(CCBRRuntimeOptions, bus_, CCBEventBus *)
 
@@ -161,7 +158,7 @@ __attribute__((unused)) static void CCBRRuntimeOptions_setMonochromeOnColorAware
 
 __attribute__((unused)) static void CCBRRuntimeOptions_setStrictOnStrictAwarePluginsWithId_(CCBRRuntimeOptions *self, id plugin);
 
-__attribute__((unused)) static void CCBRRuntimeOptions_setEventBusFormatterPluginsWithId_(CCBRRuntimeOptions *self, id plugin);
+__attribute__((unused)) static void CCBRRuntimeOptions_setEventBusOnEventListenerPluginsWithId_(CCBRRuntimeOptions *self, id plugin);
 
 __attribute__((unused)) static void CCBRRuntimeOptions_processRerunFilesWithCCBRResourceLoader_(CCBRRuntimeOptions *self, id<CCBRResourceLoader> resourceLoader);
 
@@ -267,13 +264,13 @@ NSString *CCBRRuntimeOptions_usageText;
   return self;
 }
 
-- (void)parseWithJavaUtilList:(id<JavaUtilList>)args {
-  CCBRRuntimeOptions_parseWithJavaUtilList_(self, args);
+- (CCBRRuntimeOptions *)noSummaryPrinter {
+  [((id<JavaUtilList>) nil_chk(pluginSummaryPrinterNames_)) clear];
+  return self;
 }
 
-- (CCBRRuntimeOptions *)withConvertersWithJavaUtilList:(id<JavaUtilList>)converters {
-  [((id<JavaUtilList>) nil_chk(self->converters_)) addAllWithJavaUtilCollection:converters];
-  return self;
+- (void)parseWithJavaUtilList:(id<JavaUtilList>)args {
+  CCBRRuntimeOptions_parseWithJavaUtilList_(self, args);
 }
 
 - (void)addLineFiltersWithJavaUtilMap:(id<JavaUtilMap>)parsedLineFilters
@@ -329,26 +326,19 @@ NSString *CCBRRuntimeOptions_usageText;
   if (!pluginNamesInstantiated_) {
     for (NSString * __strong pluginName in nil_chk(pluginFormatterNames_)) {
       id<CucumberApiPlugin> plugin = [((CCBRPluginFactory *) nil_chk(pluginFactory_)) createWithNSString:pluginName];
-      [((id<JavaUtilList>) nil_chk(plugins_)) addWithId:plugin];
-      CCBRRuntimeOptions_setMonochromeOnColorAwarePluginsWithId_(self, plugin);
-      CCBRRuntimeOptions_setStrictOnStrictAwarePluginsWithId_(self, plugin);
-      CCBRRuntimeOptions_setEventBusFormatterPluginsWithId_(self, plugin);
+      [self addPluginWithCucumberApiPlugin:plugin];
     }
     for (NSString * __strong pluginName in nil_chk(pluginStepDefinitionReporterNames_)) {
       id<CucumberApiPlugin> plugin = [((CCBRPluginFactory *) nil_chk(pluginFactory_)) createWithNSString:pluginName];
-      [((id<JavaUtilList>) nil_chk(plugins_)) addWithId:plugin];
+      [self addPluginWithCucumberApiPlugin:plugin];
     }
     for (NSString * __strong pluginName in nil_chk(pluginSummaryPrinterNames_)) {
       id<CucumberApiPlugin> plugin = [((CCBRPluginFactory *) nil_chk(pluginFactory_)) createWithNSString:pluginName];
-      [((id<JavaUtilList>) nil_chk(plugins_)) addWithId:plugin];
+      [self addPluginWithCucumberApiPlugin:plugin];
     }
     pluginNamesInstantiated_ = true;
   }
   return plugins_;
-}
-
-- (id<JavaUtilList>)getConverters {
-  return JavaUtilCollections_unmodifiableListWithJavaUtilList_(converters_);
 }
 
 - (id<CucumberApiFormatterFormatter>)formatterWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader {
@@ -357,10 +347,6 @@ NSString *CCBRRuntimeOptions_usageText;
 
 - (id<CucumberApiStepDefinitionReporter>)stepDefinitionReporterWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader {
   return CCBRRuntimeOptions_pluginProxyWithJavaLangClassLoader_withIOSClass_(self, classLoader, CucumberApiStepDefinitionReporter_class_());
-}
-
-- (id<CucumberApiSummaryPrinter>)summaryPrinterWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader {
-  return CCBRRuntimeOptions_pluginProxyWithJavaLangClassLoader_withIOSClass_(self, classLoader, CucumberApiSummaryPrinter_class_());
 }
 
 - (id)pluginProxyWithJavaLangClassLoader:(JavaLangClassLoader *)classLoader
@@ -376,8 +362,8 @@ NSString *CCBRRuntimeOptions_usageText;
   CCBRRuntimeOptions_setStrictOnStrictAwarePluginsWithId_(self, plugin);
 }
 
-- (void)setEventBusFormatterPluginsWithId:(id)plugin {
-  CCBRRuntimeOptions_setEventBusFormatterPluginsWithId_(self, plugin);
+- (void)setEventBusOnEventListenerPluginsWithId:(id)plugin {
+  CCBRRuntimeOptions_setEventBusOnEventListenerPluginsWithId_(self, plugin);
 }
 
 - (id<JavaUtilList>)getGlue {
@@ -396,9 +382,11 @@ NSString *CCBRRuntimeOptions_usageText;
   return featurePaths_;
 }
 
-- (void)addPluginWithCucumberApiFormatterFormatter:(id<CucumberApiFormatterFormatter>)plugin {
+- (void)addPluginWithCucumberApiPlugin:(id<CucumberApiPlugin>)plugin {
   [((id<JavaUtilList>) nil_chk(plugins_)) addWithId:plugin];
-  CCBRRuntimeOptions_setEventBusFormatterPluginsWithId_(self, plugin);
+  CCBRRuntimeOptions_setMonochromeOnColorAwarePluginsWithId_(self, plugin);
+  CCBRRuntimeOptions_setStrictOnStrictAwarePluginsWithId_(self, plugin);
+  CCBRRuntimeOptions_setEventBusOnEventListenerPluginsWithId_(self, plugin);
 }
 
 - (id<JavaUtilList>)getNameFilters {
@@ -446,7 +434,6 @@ NSString *CCBRRuntimeOptions_usageText;
   RELEASE_(junitOptions_);
   RELEASE_(pluginFactory_);
   RELEASE_(plugins_);
-  RELEASE_(converters_);
   RELEASE_(snippetType_);
   RELEASE_(bus_);
   [super dealloc];
@@ -459,39 +446,37 @@ NSString *CCBRRuntimeOptions_usageText;
     { NULL, NULL, 0x1, -1, 3, -1, 4, -1, -1 },
     { NULL, NULL, 0x1, -1, 5, -1, 6, -1, -1 },
     { NULL, NULL, 0x1, -1, 7, -1, 8, -1, -1 },
+    { NULL, "LCCBRRuntimeOptions;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 9, 1, -1, 2, -1, -1 },
-    { NULL, "LCCBRRuntimeOptions;", 0x0, 10, 1, -1, 11, -1, -1 },
-    { NULL, "V", 0x2, 12, 13, -1, 14, -1, -1 },
-    { NULL, "Z", 0x2, 15, 1, -1, 16, -1, -1 },
+    { NULL, "V", 0x2, 10, 11, -1, 12, -1, -1 },
+    { NULL, "Z", 0x2, 13, 1, -1, 14, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
     { NULL, "V", 0x8, -1, -1, -1, -1, -1, -1 },
-    { NULL, "I", 0x2, 17, 0, -1, -1, -1, -1 },
-    { NULL, "I", 0x2, 18, 19, -1, -1, -1, -1 },
-    { NULL, "V", 0x2, 20, 21, -1, 22, -1, -1 },
-    { NULL, "V", 0x2, 23, 21, -1, 22, -1, -1 },
-    { NULL, "LJavaUtilList;", 0x1, 24, 25, -1, 26, -1, -1 },
-    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 27, -1, -1 },
-    { NULL, "LJavaUtilList;", 0x0, -1, -1, -1, 28, -1, -1 },
-    { NULL, "LCucumberApiFormatterFormatter;", 0x1, 29, 30, -1, -1, -1, -1 },
-    { NULL, "LCucumberApiStepDefinitionReporter;", 0x1, 31, 30, -1, -1, -1, -1 },
-    { NULL, "LCucumberApiSummaryPrinter;", 0x1, 32, 30, -1, -1, -1, -1 },
-    { NULL, "LNSObject;", 0x2, 33, 34, -1, 35, -1, -1 },
-    { NULL, "V", 0x2, 36, 37, -1, -1, -1, -1 },
-    { NULL, "V", 0x2, 38, 37, -1, -1, -1, -1 },
-    { NULL, "V", 0x2, 39, 37, -1, -1, -1, -1 },
-    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 40, -1, -1 },
+    { NULL, "I", 0x2, 15, 0, -1, -1, -1, -1 },
+    { NULL, "I", 0x2, 16, 17, -1, -1, -1, -1 },
+    { NULL, "V", 0x2, 18, 19, -1, 20, -1, -1 },
+    { NULL, "V", 0x2, 21, 19, -1, 20, -1, -1 },
+    { NULL, "LJavaUtilList;", 0x1, 22, 23, -1, 24, -1, -1 },
+    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 25, -1, -1 },
+    { NULL, "LCucumberApiFormatterFormatter;", 0x1, 26, 27, -1, -1, -1, -1 },
+    { NULL, "LCucumberApiStepDefinitionReporter;", 0x1, 28, 27, -1, -1, -1, -1 },
+    { NULL, "LNSObject;", 0x2, 29, 30, -1, 31, -1, -1 },
+    { NULL, "V", 0x2, 32, 33, -1, -1, -1, -1 },
+    { NULL, "V", 0x2, 34, 33, -1, -1, -1, -1 },
+    { NULL, "V", 0x2, 35, 33, -1, -1, -1, -1 },
+    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 36, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 40, -1, -1 },
-    { NULL, "V", 0x1, 41, 42, -1, -1, -1, -1 },
-    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 43, -1, -1 },
-    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 40, -1, -1 },
-    { NULL, "LJavaUtilMap;", 0x1, 44, 45, -1, 46, -1, -1 },
-    { NULL, "V", 0x2, 47, 45, -1, -1, -1, -1 },
+    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 36, -1, -1 },
+    { NULL, "V", 0x1, 37, 38, -1, -1, -1, -1 },
+    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 39, -1, -1 },
+    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 36, -1, -1 },
+    { NULL, "LJavaUtilMap;", 0x1, 40, 41, -1, 42, -1, -1 },
+    { NULL, "V", 0x2, 43, 41, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LCucumberApiSnippetType;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 40, -1, -1 },
-    { NULL, "V", 0x0, 48, 49, -1, -1, -1, -1 },
+    { NULL, "LJavaUtilList;", 0x1, -1, -1, -1, 36, -1, -1 },
+    { NULL, "V", 0x0, 44, 45, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -501,8 +486,8 @@ NSString *CCBRRuntimeOptions_usageText;
   methods[2].selector = @selector(initWithCCBREnv:withJavaUtilList:);
   methods[3].selector = @selector(initWithCCBRPluginFactory:withJavaUtilList:);
   methods[4].selector = @selector(initWithCCBREnv:withCCBRPluginFactory:withJavaUtilList:);
-  methods[5].selector = @selector(parseWithJavaUtilList:);
-  methods[6].selector = @selector(withConvertersWithJavaUtilList:);
+  methods[5].selector = @selector(noSummaryPrinter);
+  methods[6].selector = @selector(parseWithJavaUtilList:);
   methods[7].selector = @selector(addLineFiltersWithJavaUtilMap:withNSString:withJavaUtilList:);
   methods[8].selector = @selector(haveLineFiltersWithJavaUtilList:);
   methods[9].selector = @selector(printUsage);
@@ -513,46 +498,43 @@ NSString *CCBRRuntimeOptions_usageText;
   methods[14].selector = @selector(addKeywordRowWithJavaUtilList:withNSString:withJavaUtilList:);
   methods[15].selector = @selector(cucumberFeaturesWithCCBRResourceLoader:withCCBEventBus:);
   methods[16].selector = @selector(getPlugins);
-  methods[17].selector = @selector(getConverters);
-  methods[18].selector = @selector(formatterWithJavaLangClassLoader:);
-  methods[19].selector = @selector(stepDefinitionReporterWithJavaLangClassLoader:);
-  methods[20].selector = @selector(summaryPrinterWithJavaLangClassLoader:);
-  methods[21].selector = @selector(pluginProxyWithJavaLangClassLoader:withIOSClass:);
-  methods[22].selector = @selector(setMonochromeOnColorAwarePluginsWithId:);
-  methods[23].selector = @selector(setStrictOnStrictAwarePluginsWithId:);
-  methods[24].selector = @selector(setEventBusFormatterPluginsWithId:);
-  methods[25].selector = @selector(getGlue);
-  methods[26].selector = @selector(isStrict);
-  methods[27].selector = @selector(isDryRun);
-  methods[28].selector = @selector(getFeaturePaths);
-  methods[29].selector = @selector(addPluginWithCucumberApiFormatterFormatter:);
-  methods[30].selector = @selector(getNameFilters);
-  methods[31].selector = @selector(getTagFilters);
-  methods[32].selector = @selector(getLineFiltersWithCCBRResourceLoader:);
-  methods[33].selector = @selector(processRerunFilesWithCCBRResourceLoader:);
-  methods[34].selector = @selector(isMonochrome);
-  methods[35].selector = @selector(getSnippetType);
-  methods[36].selector = @selector(getJunitOptions);
-  methods[37].selector = @selector(setEventBusWithCCBEventBus:);
+  methods[17].selector = @selector(formatterWithJavaLangClassLoader:);
+  methods[18].selector = @selector(stepDefinitionReporterWithJavaLangClassLoader:);
+  methods[19].selector = @selector(pluginProxyWithJavaLangClassLoader:withIOSClass:);
+  methods[20].selector = @selector(setMonochromeOnColorAwarePluginsWithId:);
+  methods[21].selector = @selector(setStrictOnStrictAwarePluginsWithId:);
+  methods[22].selector = @selector(setEventBusOnEventListenerPluginsWithId:);
+  methods[23].selector = @selector(getGlue);
+  methods[24].selector = @selector(isStrict);
+  methods[25].selector = @selector(isDryRun);
+  methods[26].selector = @selector(getFeaturePaths);
+  methods[27].selector = @selector(addPluginWithCucumberApiPlugin:);
+  methods[28].selector = @selector(getNameFilters);
+  methods[29].selector = @selector(getTagFilters);
+  methods[30].selector = @selector(getLineFiltersWithCCBRResourceLoader:);
+  methods[31].selector = @selector(processRerunFilesWithCCBRResourceLoader:);
+  methods[32].selector = @selector(isMonochrome);
+  methods[33].selector = @selector(getSnippetType);
+  methods[34].selector = @selector(getJunitOptions);
+  methods[35].selector = @selector(setEventBusWithCCBEventBus:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "VERSION", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 50, -1, -1 },
-    { "USAGE_RESOURCE", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 51, -1, -1 },
-    { "usageText", "LNSString;", .constantValue.asLong = 0, 0x8, -1, 52, -1, -1 },
-    { "QUOTE_MAPPER", "LCCBMapper;", .constantValue.asLong = 0, 0x1a, -1, 53, 54, -1 },
-    { "CODE_KEYWORD_MAPPER", "LCCBMapper;", .constantValue.asLong = 0, 0x1a, -1, 55, 54, -1 },
-    { "glue_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 56, -1 },
-    { "tagFilters_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 56, -1 },
-    { "nameFilters_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 57, -1 },
-    { "lineFilters_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 58, -1 },
-    { "featurePaths_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 56, -1 },
-    { "pluginFormatterNames_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 56, -1 },
-    { "pluginStepDefinitionReporterNames_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 56, -1 },
-    { "pluginSummaryPrinterNames_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 56, -1 },
-    { "junitOptions_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 56, -1 },
+    { "VERSION", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 46, -1, -1 },
+    { "USAGE_RESOURCE", "LNSString;", .constantValue.asLong = 0, 0x19, -1, 47, -1, -1 },
+    { "usageText", "LNSString;", .constantValue.asLong = 0, 0x8, -1, 48, -1, -1 },
+    { "QUOTE_MAPPER", "LCCBMapper;", .constantValue.asLong = 0, 0x1a, -1, 49, 50, -1 },
+    { "CODE_KEYWORD_MAPPER", "LCCBMapper;", .constantValue.asLong = 0, 0x1a, -1, 51, 50, -1 },
+    { "glue_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 52, -1 },
+    { "tagFilters_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 52, -1 },
+    { "nameFilters_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 53, -1 },
+    { "lineFilters_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x12, -1, -1, 54, -1 },
+    { "featurePaths_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 52, -1 },
+    { "pluginFormatterNames_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 52, -1 },
+    { "pluginStepDefinitionReporterNames_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 52, -1 },
+    { "pluginSummaryPrinterNames_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 52, -1 },
+    { "junitOptions_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 52, -1 },
     { "pluginFactory_", "LCCBRPluginFactory;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
-    { "plugins_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 59, -1 },
-    { "converters_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 60, -1 },
+    { "plugins_", "LJavaUtilList;", .constantValue.asLong = 0, 0x12, -1, -1, 55, -1 },
     { "dryRun_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "strict_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "monochrome_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
@@ -560,8 +542,8 @@ NSString *CCBRRuntimeOptions_usageText;
     { "pluginNamesInstantiated_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "bus_", "LCCBEventBus;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LNSString;", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)V", "LCCBREnv;LJavaUtilList;", "(Lcucumber/runtime/Env;Ljava/util/List<Ljava/lang/String;>;)V", "LCCBRPluginFactory;LJavaUtilList;", "(Lcucumber/runtime/formatter/PluginFactory;Ljava/util/List<Ljava/lang/String;>;)V", "LCCBREnv;LCCBRPluginFactory;LJavaUtilList;", "(Lcucumber/runtime/Env;Lcucumber/runtime/formatter/PluginFactory;Ljava/util/List<Ljava/lang/String;>;)V", "parse", "withConverters", "(Ljava/util/List<Lcucumber/deps/com/thoughtworks/xstream/annotations/XStreamConverter;>;)Lcucumber/runtime/RuntimeOptions;", "addLineFilters", "LJavaUtilMap;LNSString;LJavaUtilList;", "(Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;>;Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;)V", "haveLineFilters", "(Ljava/util/List<Ljava/lang/String;>;)Z", "printI18n", "printKeywordsFor", "LGHKGherkinDialect;", "addCodeKeywordRow", "LJavaUtilList;LNSString;LJavaUtilList;", "(Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;Ljava/lang/String;Ljava/util/List<Ljava/lang/String;>;)V", "addKeywordRow", "cucumberFeatures", "LCCBRResourceLoader;LCCBEventBus;", "(Lcucumber/runtime/io/ResourceLoader;Lcucumber/runner/EventBus;)Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;", "()Ljava/util/List<Lcucumber/api/Plugin;>;", "()Ljava/util/List<Lcucumber/deps/com/thoughtworks/xstream/annotations/XStreamConverter;>;", "formatter", "LJavaLangClassLoader;", "stepDefinitionReporter", "summaryPrinter", "pluginProxy", "LJavaLangClassLoader;LIOSClass;", "<T:Ljava/lang/Object;>(Ljava/lang/ClassLoader;Ljava/lang/Class<TT;>;)TT;", "setMonochromeOnColorAwarePlugins", "LNSObject;", "setStrictOnStrictAwarePlugins", "setEventBusFormatterPlugins", "()Ljava/util/List<Ljava/lang/String;>;", "addPlugin", "LCucumberApiFormatterFormatter;", "()Ljava/util/List<Ljava/util/regex/Pattern;>;", "getLineFilters", "LCCBRResourceLoader;", "(Lcucumber/runtime/io/ResourceLoader;)Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;>;", "processRerunFiles", "setEventBus", "LCCBEventBus;", &CCBRRuntimeOptions_VERSION, &CCBRRuntimeOptions_USAGE_RESOURCE, &CCBRRuntimeOptions_usageText, &CCBRRuntimeOptions_QUOTE_MAPPER, "Lcucumber/util/Mapper<Ljava/lang/String;Ljava/lang/String;>;", &CCBRRuntimeOptions_CODE_KEYWORD_MAPPER, "Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/List<Ljava/util/regex/Pattern;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;>;", "Ljava/util/List<Lcucumber/api/Plugin;>;", "Ljava/util/List<Lcucumber/deps/com/thoughtworks/xstream/annotations/XStreamConverter;>;", "LCCBRRuntimeOptions_ParsedPluginData;LCCBRRuntimeOptions_ParsedOptionNames;" };
-  static const J2ObjcClassInfo _CCBRRuntimeOptions = { "RuntimeOptions", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 38, 23, -1, 61, -1, -1, -1 };
+  static const void *ptrTable[] = { "LNSString;", "LJavaUtilList;", "(Ljava/util/List<Ljava/lang/String;>;)V", "LCCBREnv;LJavaUtilList;", "(Lcucumber/runtime/Env;Ljava/util/List<Ljava/lang/String;>;)V", "LCCBRPluginFactory;LJavaUtilList;", "(Lcucumber/runtime/formatter/PluginFactory;Ljava/util/List<Ljava/lang/String;>;)V", "LCCBREnv;LCCBRPluginFactory;LJavaUtilList;", "(Lcucumber/runtime/Env;Lcucumber/runtime/formatter/PluginFactory;Ljava/util/List<Ljava/lang/String;>;)V", "parse", "addLineFilters", "LJavaUtilMap;LNSString;LJavaUtilList;", "(Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;>;Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;)V", "haveLineFilters", "(Ljava/util/List<Ljava/lang/String;>;)Z", "printI18n", "printKeywordsFor", "LGHKGherkinDialect;", "addCodeKeywordRow", "LJavaUtilList;LNSString;LJavaUtilList;", "(Ljava/util/List<Ljava/util/List<Ljava/lang/String;>;>;Ljava/lang/String;Ljava/util/List<Ljava/lang/String;>;)V", "addKeywordRow", "cucumberFeatures", "LCCBRResourceLoader;LCCBEventBus;", "(Lcucumber/runtime/io/ResourceLoader;Lcucumber/runner/EventBus;)Ljava/util/List<Lcucumber/runtime/model/CucumberFeature;>;", "()Ljava/util/List<Lcucumber/api/Plugin;>;", "formatter", "LJavaLangClassLoader;", "stepDefinitionReporter", "pluginProxy", "LJavaLangClassLoader;LIOSClass;", "<T:Ljava/lang/Object;>(Ljava/lang/ClassLoader;Ljava/lang/Class<TT;>;)TT;", "setMonochromeOnColorAwarePlugins", "LNSObject;", "setStrictOnStrictAwarePlugins", "setEventBusOnEventListenerPlugins", "()Ljava/util/List<Ljava/lang/String;>;", "addPlugin", "LCucumberApiPlugin;", "()Ljava/util/List<Ljava/util/regex/Pattern;>;", "getLineFilters", "LCCBRResourceLoader;", "(Lcucumber/runtime/io/ResourceLoader;)Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;>;", "processRerunFiles", "setEventBus", "LCCBEventBus;", &CCBRRuntimeOptions_VERSION, &CCBRRuntimeOptions_USAGE_RESOURCE, &CCBRRuntimeOptions_usageText, &CCBRRuntimeOptions_QUOTE_MAPPER, "Lcucumber/util/Mapper<Ljava/lang/String;Ljava/lang/String;>;", &CCBRRuntimeOptions_CODE_KEYWORD_MAPPER, "Ljava/util/List<Ljava/lang/String;>;", "Ljava/util/List<Ljava/util/regex/Pattern;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/Long;>;>;", "Ljava/util/List<Lcucumber/api/Plugin;>;", "LCCBRRuntimeOptions_ParsedPluginData;LCCBRRuntimeOptions_ParsedOptionNames;" };
+  static const J2ObjcClassInfo _CCBRRuntimeOptions = { "RuntimeOptions", "cucumber.runtime", ptrTable, methods, fields, 7, 0x1, 36, 22, -1, 56, -1, -1, -1 };
   return &_CCBRRuntimeOptions;
 }
 
@@ -636,7 +618,6 @@ void CCBRRuntimeOptions_initWithCCBREnv_withCCBRPluginFactory_withJavaUtilList_(
   JreStrongAssignAndConsume(&self->pluginSummaryPrinterNames_, new_JavaUtilArrayList_init());
   JreStrongAssignAndConsume(&self->junitOptions_, new_JavaUtilArrayList_init());
   JreStrongAssignAndConsume(&self->plugins_, new_JavaUtilArrayList_init());
-  JreStrongAssignAndConsume(&self->converters_, new_JavaUtilArrayList_init());
   self->strict_ = false;
   self->monochrome_ = false;
   JreStrongAssign(&self->snippetType_, JreLoadEnum(CucumberApiSnippetType, UNDERSCORE));
@@ -694,10 +675,6 @@ void CCBRRuntimeOptions_parseWithJavaUtilList_(CCBRRuntimeOptions *self, id<Java
     }
     else if ([arg isEqual:@"--plugin"] || [arg isEqual:@"--add-plugin"] || [arg isEqual:@"-p"]) {
       [parsedPluginData addPluginNameWithNSString:[args removeWithInt:0] withBoolean:[arg isEqual:@"--add-plugin"]];
-    }
-    else if ([arg isEqual:@"--format"] || [arg isEqual:@"-f"]) {
-      [((JavaIoPrintStream *) nil_chk(JreLoadStatic(JavaLangSystem, err))) printlnWithNSString:@"WARNING: Cucumber-JVM's --format option is deprecated. Please use --plugin instead."];
-      [parsedPluginData addPluginNameWithNSString:[args removeWithInt:0] withBoolean:true];
     }
     else if ([arg isEqual:@"--no-dry-run"] || [arg isEqual:@"--dry-run"] || [arg isEqual:@"-d"]) {
       self->dryRun_ = ![arg java_hasPrefix:@"--no-"];
@@ -822,7 +799,6 @@ jint CCBRRuntimeOptions_printI18nWithNSString_(CCBRRuntimeOptions *self, NSStrin
 
 jint CCBRRuntimeOptions_printKeywordsForWithGHKGherkinDialect_(CCBRRuntimeOptions *self, GHKGherkinDialect *dialect) {
   JavaLangStringBuilder *builder = create_JavaLangStringBuilder_init();
-  CCBRTablePrinter *printer = create_CCBRTablePrinter_init();
   id<JavaUtilList> table = create_JavaUtilArrayList_init();
   CCBRRuntimeOptions_addKeywordRowWithJavaUtilList_withNSString_withJavaUtilList_(self, table, @"feature", [((GHKGherkinDialect *) nil_chk(dialect)) getFeatureKeywords]);
   CCBRRuntimeOptions_addKeywordRowWithJavaUtilList_withNSString_withJavaUtilList_(self, table, @"background", [dialect getBackgroundKeywords]);
@@ -839,7 +815,7 @@ jint CCBRRuntimeOptions_printKeywordsForWithGHKGherkinDialect_(CCBRRuntimeOption
   CCBRRuntimeOptions_addCodeKeywordRowWithJavaUtilList_withNSString_withJavaUtilList_(self, table, @"then", [dialect getThenKeywords]);
   CCBRRuntimeOptions_addCodeKeywordRowWithJavaUtilList_withNSString_withJavaUtilList_(self, table, @"and", [dialect getAndKeywords]);
   CCBRRuntimeOptions_addCodeKeywordRowWithJavaUtilList_withNSString_withJavaUtilList_(self, table, @"but", [dialect getButKeywords]);
-  [printer printTableWithJavaUtilList:table withJavaLangStringBuilder:builder];
+  [((IoCucumberDatatableDataTable *) nil_chk(IoCucumberDatatableDataTable_createWithJavaUtilList_(table))) printWithJavaLangStringBuilder:builder];
   [((JavaIoPrintStream *) nil_chk(JreLoadStatic(JavaLangSystem, out))) printlnWithNSString:[builder description]];
   return 0;
 }
@@ -874,8 +850,8 @@ void CCBRRuntimeOptions_setStrictOnStrictAwarePluginsWithId_(CCBRRuntimeOptions 
   }
 }
 
-void CCBRRuntimeOptions_setEventBusFormatterPluginsWithId_(CCBRRuntimeOptions *self, id plugin) {
-  if ([CucumberApiFormatterFormatter_class_() isInstance:plugin] && self->bus_ != nil) {
+void CCBRRuntimeOptions_setEventBusOnEventListenerPluginsWithId_(CCBRRuntimeOptions *self, id plugin) {
+  if ([CucumberApiEventEventListener_class_() isInstance:plugin] && self->bus_ != nil) {
     id<CucumberApiFormatterFormatter> formatter = (id<CucumberApiFormatterFormatter>) cast_check(plugin, CucumberApiFormatterFormatter_class_());
     [((id<CucumberApiFormatterFormatter>) nil_chk(formatter)) setEventPublisherWithCucumberApiEventEventPublisher:self->bus_];
   }
@@ -1056,14 +1032,14 @@ CCBRRuntimeOptions_3 *create_CCBRRuntimeOptions_3_initWithCCBRRuntimeOptions_wit
 
 - (void)addPluginNameWithNSString:(NSString *)name
                       withBoolean:(jboolean)isAddPlugin {
-  if (CCBRPluginFactory_isFormatterNameWithNSString_(name)) {
-    [((CCBRRuntimeOptions_ParsedOptionNames *) nil_chk(formatterNames_)) addNameWithNSString:name withBoolean:isAddPlugin];
-  }
-  else if (CCBRPluginFactory_isStepDefinitionReporterNameWithNSString_(name)) {
+  if (CCBRPluginFactory_isStepDefinitionReporterNameWithNSString_(name)) {
     [((CCBRRuntimeOptions_ParsedOptionNames *) nil_chk(stepDefinitionReporterNames_)) addNameWithNSString:name withBoolean:isAddPlugin];
   }
   else if (CCBRPluginFactory_isSummaryPrinterNameWithNSString_(name)) {
     [((CCBRRuntimeOptions_ParsedOptionNames *) nil_chk(summaryPrinterNames_)) addNameWithNSString:name withBoolean:isAddPlugin];
+  }
+  else if (CCBRPluginFactory_isFormatterNameWithNSString_(name)) {
+    [((CCBRRuntimeOptions_ParsedOptionNames *) nil_chk(formatterNames_)) addNameWithNSString:name withBoolean:isAddPlugin];
   }
   else {
     @throw create_CCBRCucumberException_initWithNSString_(JreStrcat("$$", @"Unrecognized plugin: ", name));

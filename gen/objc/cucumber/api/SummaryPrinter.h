@@ -25,15 +25,11 @@
 #define INCLUDE_CucumberApiPlugin 1
 #include "cucumber/api/Plugin.h"
 
-@class CCBRRuntime;
-
 /*!
  @brief Interface for plugins that print a summary after test execution.
  - seealso: Plugin
  */
 @protocol CucumberApiSummaryPrinter < CucumberApiPlugin, JavaObject >
-
-- (void)printWithCCBRRuntime:(CCBRRuntime *)runtime;
 
 @end
 

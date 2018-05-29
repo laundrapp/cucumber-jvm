@@ -5,8 +5,8 @@
 
 #include "IOSClass.h"
 #include "J2ObjC_source.h"
+#include "cucumber/api/PickleStepTestStep.h"
 #include "cucumber/api/Result.h"
-#include "cucumber/api/TestStep.h"
 #include "cucumber/api/event/EventHandler.h"
 #include "cucumber/api/event/EventPublisher.h"
 #include "cucumber/api/event/TestRunFinished.h"
@@ -304,7 +304,7 @@ CCBRProgressFormatter *create_CCBRProgressFormatter_initWithJavaLangAppendable_(
 }
 
 void CCBRProgressFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(CCBRProgressFormatter *self, CucumberApiEventTestStepFinished *event) {
-  if (![((CucumberApiTestStep *) nil_chk(((CucumberApiEventTestStepFinished *) nil_chk(event))->testStep_)) isHook] || [((CucumberApiResult *) nil_chk(event->result_)) isWithCucumberApiResult_Type:JreLoadEnum(CucumberApiResult_Type, FAILED)]) {
+  if ([CucumberApiPickleStepTestStep_class_() isInstance:((CucumberApiEventTestStepFinished *) nil_chk(event))->testStep_] || [((CucumberApiResult *) nil_chk(event->result_)) isWithCucumberApiResult_Type:JreLoadEnum(CucumberApiResult_Type, FAILED)]) {
     if (!self->monochrome_) {
       [((CucumberApiFormatterAnsiEscapes *) nil_chk([((id<JavaUtilMap>) nil_chk(CCBRProgressFormatter_ANSI_ESCAPES)) getWithId:[((CucumberApiResult *) nil_chk(event->result_)) getStatus]])) appendToWithCucumberApiFormatterNiceAppendable:self->out_];
     }

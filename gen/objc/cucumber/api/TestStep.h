@@ -21,77 +21,86 @@
 #if !defined (CucumberApiTestStep_) && (INCLUDE_ALL_CucumberApiTestStep || defined(INCLUDE_CucumberApiTestStep))
 #define CucumberApiTestStep_
 
-@class CCBEventBus;
 @class CucumberApiHookType;
-@class CucumberApiResult;
-@class CucumberApiResult_Type;
 @class GHKPickleStep;
-@protocol CCBRDefinitionMatch;
-@protocol CucumberApiScenario;
 @protocol JavaUtilList;
 
-@interface CucumberApiTestStep : NSObject {
- @public
-  /*!
-   */
-  id<CCBRDefinitionMatch> definitionMatch_;
-}
-
-#pragma mark Public
+/*!
+ @brief A test step can either represent the execution of a hook
+  or a pickle step.Each step is tied to some glue code.
+ - seealso: cucumber.api.event.TestCaseStarted
+ - seealso: cucumber.api.event.TestCaseFinished
+ */
+@protocol CucumberApiTestStep < JavaObject >
 
 /*!
- @brief Creates a new test step from the matching step definition
- @param definitionMatch the matching step definition
+ @brief Returns a string representation of the glue code location.
+ @return a string representation of the glue code location.
  */
-- (instancetype __nonnull)initWithCCBRDefinitionMatch:(id<CCBRDefinitionMatch>)definitionMatch;
-
 - (NSString *)getCodeLocation;
 
-- (id<JavaUtilList>)getDefinitionArgument;
-
+/*!
+ @brief Returns the hook hook type.
+ @return the hook type.
+ */
 - (CucumberApiHookType *)getHookType;
 
-- (NSString *)getPattern;
-
-- (GHKPickleStep *)getPickleStep;
-
-- (id<JavaUtilList>)getStepArgument;
-
-- (jint)getStepLine;
-
-- (NSString *)getStepLocation;
-
-- (NSString *)getStepText;
-
+/*!
+ @brief Returns true if the test step is a hook test step
+ @return true if the test step is a hook test step
+ */
 - (jboolean)isHook;
 
 /*!
- @param bus to which events should be broadcast
- @param language in which the step is defined
- @param scenario of which this step is part
- @param skipSteps if this step should be skipped
- @return result of running this step
+ @brief The pattern or expression used to match the glue code to the Gherkin step.
+ @return a pattern or expression
  */
-- (CucumberApiResult *)runWithCCBEventBus:(CCBEventBus *)bus
-                             withNSString:(NSString *)language
-                  withCucumberApiScenario:(id<CucumberApiScenario>)scenario
-                              withBoolean:(jboolean)skipSteps;
+- (NSString *)getPattern;
 
-#pragma mark Protected
+/*!
+ @brief The matched Gherkin step as a compiled Pickle
+ @return the matched step
+ */
+- (GHKPickleStep *)getPickleStep;
 
-- (CucumberApiResult_Type *)executeStepWithNSString:(NSString *)language
-                            withCucumberApiScenario:(id<CucumberApiScenario>)scenario
-                                        withBoolean:(jboolean)skipSteps;
+/*!
+ @brief Returns the arguments provided to the step definition.
+ <p>
+  For example the step definition <code>Given (.*) pickles</code>
+  when matched with <code>Given 15 pickles</code> will receive
+  as argument <code>"15"</code>
+ @return argument provided to the step definition
+ */
+- (id<JavaUtilList>)getDefinitionArgument;
 
-- (CucumberApiResult_Type *)nonExceptionStatusWithBoolean:(jboolean)skipSteps;
+/*!
+ @brief Returns arguments provided to the Gherkin step.E.g:
+  a data table or doc string.
+ @return arguments provided to the gherkin step.
+ */
+- (id<JavaUtilList>)getStepArgument;
+
+/*!
+ @brief The line in the feature file defining this step.
+ @return a line number
+ */
+- (jint)getStepLine;
+
+/*!
+ @brief A uri to to the feature and line of this step.
+ @return a uri
+ */
+- (NSString *)getStepLocation;
+
+/*!
+ @brief The full text of the Gherkin step.
+ @return the step text
+ */
+- (NSString *)getStepText;
 
 @end
 
-J2OBJC_STATIC_INIT(CucumberApiTestStep)
-
-J2OBJC_FIELD_SETTER(CucumberApiTestStep, definitionMatch_, id<CCBRDefinitionMatch>)
-
-FOUNDATION_EXPORT void CucumberApiTestStep_initWithCCBRDefinitionMatch_(CucumberApiTestStep *self, id<CCBRDefinitionMatch> definitionMatch);
+J2OBJC_EMPTY_STATIC_INIT(CucumberApiTestStep)
 
 J2OBJC_TYPE_LITERAL_HEADER(CucumberApiTestStep)
 

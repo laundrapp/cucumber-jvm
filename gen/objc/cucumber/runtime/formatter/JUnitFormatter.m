@@ -5,6 +5,7 @@
 
 #include "IOSClass.h"
 #include "J2ObjC_source.h"
+#include "cucumber/api/PickleStepTestStep.h"
 #include "cucumber/api/Result.h"
 #include "cucumber/api/TestCase.h"
 #include "cucumber/api/TestStep.h"
@@ -82,8 +83,6 @@
 
 - (void)finishReport;
 
-- (void)addDummyTestCase;
-
 - (NSString *)sumTimesWithOrgW3cDomNodeList:(id<OrgW3cDomNodeList>)testCaseNodes;
 
 - (void)increaseAttributeValueWithOrgW3cDomElement:(id<OrgW3cDomElement>)element
@@ -113,8 +112,6 @@ __attribute__((unused)) static void CCBRJUnitFormatter_handleTestStepFinishedWit
 __attribute__((unused)) static void CCBRJUnitFormatter_handleTestCaseFinishedWithCucumberApiEventTestCaseFinished_(CCBRJUnitFormatter *self, CucumberApiEventTestCaseFinished *event);
 
 __attribute__((unused)) static void CCBRJUnitFormatter_finishReport(CCBRJUnitFormatter *self);
-
-__attribute__((unused)) static void CCBRJUnitFormatter_addDummyTestCase(CCBRJUnitFormatter *self);
 
 __attribute__((unused)) static NSString *CCBRJUnitFormatter_sumTimesWithOrgW3cDomNodeList_(CCBRJUnitFormatter *self, id<OrgW3cDomNodeList> testCaseNodes);
 
@@ -221,17 +218,17 @@ __attribute__((unused)) static CCBRJUnitFormatter_5 *create_CCBRJUnitFormatter_5
  @public
   id<JavaUtilList> steps_;
   id<JavaUtilList> results_;
-  CucumberApiTestCase *testCase_;
+  id<CucumberApiTestCase> testCase_;
 }
 
-- (instancetype __nonnull)initWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
+- (instancetype __nonnull)initWithCucumberApiTestCase:(id<CucumberApiTestCase>)testCase;
 
 - (id<OrgW3cDomElement>)createElementWithOrgW3cDomDocument:(id<OrgW3cDomDocument>)doc;
 
 - (void)writeElementWithOrgW3cDomDocument:(id<OrgW3cDomDocument>)doc
                      withOrgW3cDomElement:(id<OrgW3cDomElement>)tc;
 
-- (NSString *)calculateElementNameWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
+- (NSString *)calculateElementNameWithCucumberApiTestCase:(id<CucumberApiTestCase>)testCase;
 
 - (void)addTestCaseElementWithOrgW3cDomDocument:(id<OrgW3cDomDocument>)doc
                            withOrgW3cDomElement:(id<OrgW3cDomElement>)tc
@@ -265,7 +262,7 @@ J2OBJC_STATIC_INIT(CCBRJUnitFormatter_TestCase)
 
 J2OBJC_FIELD_SETTER(CCBRJUnitFormatter_TestCase, steps_, id<JavaUtilList>)
 J2OBJC_FIELD_SETTER(CCBRJUnitFormatter_TestCase, results_, id<JavaUtilList>)
-J2OBJC_FIELD_SETTER(CCBRJUnitFormatter_TestCase, testCase_, CucumberApiTestCase *)
+J2OBJC_FIELD_SETTER(CCBRJUnitFormatter_TestCase, testCase_, id<CucumberApiTestCase>)
 
 inline JavaTextDecimalFormat *CCBRJUnitFormatter_TestCase_get_NUMBER_FORMAT(void);
 static JavaTextDecimalFormat *CCBRJUnitFormatter_TestCase_NUMBER_FORMAT;
@@ -297,17 +294,17 @@ inline jboolean *CCBRJUnitFormatter_TestCase_getRef_treatConditionallySkippedAsF
 static jboolean CCBRJUnitFormatter_TestCase_treatConditionallySkippedAsFailure = false;
 J2OBJC_STATIC_FIELD_PRIMITIVE(CCBRJUnitFormatter_TestCase, treatConditionallySkippedAsFailure, jboolean)
 
-__attribute__((unused)) static void CCBRJUnitFormatter_TestCase_initWithCucumberApiTestCase_(CCBRJUnitFormatter_TestCase *self, CucumberApiTestCase *testCase);
+__attribute__((unused)) static void CCBRJUnitFormatter_TestCase_initWithCucumberApiTestCase_(CCBRJUnitFormatter_TestCase *self, id<CucumberApiTestCase> testCase);
 
-__attribute__((unused)) static CCBRJUnitFormatter_TestCase *new_CCBRJUnitFormatter_TestCase_initWithCucumberApiTestCase_(CucumberApiTestCase *testCase) NS_RETURNS_RETAINED;
+__attribute__((unused)) static CCBRJUnitFormatter_TestCase *new_CCBRJUnitFormatter_TestCase_initWithCucumberApiTestCase_(id<CucumberApiTestCase> testCase) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static CCBRJUnitFormatter_TestCase *create_CCBRJUnitFormatter_TestCase_initWithCucumberApiTestCase_(CucumberApiTestCase *testCase);
+__attribute__((unused)) static CCBRJUnitFormatter_TestCase *create_CCBRJUnitFormatter_TestCase_initWithCucumberApiTestCase_(id<CucumberApiTestCase> testCase);
 
 __attribute__((unused)) static id<OrgW3cDomElement> CCBRJUnitFormatter_TestCase_createElementWithOrgW3cDomDocument_(CCBRJUnitFormatter_TestCase *self, id<OrgW3cDomDocument> doc);
 
 __attribute__((unused)) static void CCBRJUnitFormatter_TestCase_writeElementWithOrgW3cDomDocument_withOrgW3cDomElement_(CCBRJUnitFormatter_TestCase *self, id<OrgW3cDomDocument> doc, id<OrgW3cDomElement> tc);
 
-__attribute__((unused)) static NSString *CCBRJUnitFormatter_TestCase_calculateElementNameWithCucumberApiTestCase_(CCBRJUnitFormatter_TestCase *self, CucumberApiTestCase *testCase);
+__attribute__((unused)) static NSString *CCBRJUnitFormatter_TestCase_calculateElementNameWithCucumberApiTestCase_(CCBRJUnitFormatter_TestCase *self, id<CucumberApiTestCase> testCase);
 
 __attribute__((unused)) static NSString *CCBRJUnitFormatter_TestCase_calculateTotalDurationStringWithCucumberApiResult_(CCBRJUnitFormatter_TestCase *self, CucumberApiResult *result);
 
@@ -358,10 +355,6 @@ J2OBJC_TYPE_LITERAL_HEADER(CCBRJUnitFormatter_TestCase)
   CCBRJUnitFormatter_finishReport(self);
 }
 
-- (void)addDummyTestCase {
-  CCBRJUnitFormatter_addDummyTestCase(self);
-}
-
 - (NSString *)sumTimesWithOrgW3cDomNodeList:(id<OrgW3cDomNodeList>)testCaseNodes {
   return CCBRJUnitFormatter_sumTimesWithOrgW3cDomNodeList_(self, testCaseNodes);
 }
@@ -402,7 +395,6 @@ J2OBJC_TYPE_LITERAL_HEADER(CCBRJUnitFormatter_TestCase)
     { NULL, "V", 0x2, 8, 9, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 10, 11, -1, -1, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
-    { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x2, 12, 13, -1, -1, -1, -1 },
     { NULL, "V", 0x2, 14, 15, -1, -1, -1, -1 },
     { NULL, "V", 0x1, 16, 17, -1, -1, -1, -1 },
@@ -418,11 +410,10 @@ J2OBJC_TYPE_LITERAL_HEADER(CCBRJUnitFormatter_TestCase)
   methods[4].selector = @selector(handleTestStepFinishedWithCucumberApiEventTestStepFinished:);
   methods[5].selector = @selector(handleTestCaseFinishedWithCucumberApiEventTestCaseFinished:);
   methods[6].selector = @selector(finishReport);
-  methods[7].selector = @selector(addDummyTestCase);
-  methods[8].selector = @selector(sumTimesWithOrgW3cDomNodeList:);
-  methods[9].selector = @selector(increaseAttributeValueWithOrgW3cDomElement:withNSString:);
-  methods[10].selector = @selector(setStrictWithBoolean:);
-  methods[11].selector = @selector(closeQuietlyWithJavaIoCloseable:);
+  methods[7].selector = @selector(sumTimesWithOrgW3cDomNodeList:);
+  methods[8].selector = @selector(increaseAttributeValueWithOrgW3cDomElement:withNSString:);
+  methods[9].selector = @selector(setStrictWithBoolean:);
+  methods[10].selector = @selector(closeQuietlyWithJavaIoCloseable:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "out_", "LJavaIoWriter;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
@@ -437,7 +428,7 @@ J2OBJC_TYPE_LITERAL_HEADER(CCBRJUnitFormatter_TestCase)
     { "runFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 24, -1 },
   };
   static const void *ptrTable[] = { "LJavaNetURL;", "LJavaIoIOException;", "setEventPublisher", "LCucumberApiEventEventPublisher;", "handleTestSourceRead", "LCucumberApiEventTestSourceRead;", "handleTestCaseStarted", "LCucumberApiEventTestCaseStarted;", "handleTestStepFinished", "LCucumberApiEventTestStepFinished;", "handleTestCaseFinished", "LCucumberApiEventTestCaseFinished;", "sumTimes", "LOrgW3cDomNodeList;", "increaseAttributeValue", "LOrgW3cDomElement;LNSString;", "setStrict", "Z", "closeQuietly", "LJavaIoCloseable;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;", "LCCBRJUnitFormatter_TestCase;" };
-  static const J2ObjcClassInfo _CCBRJUnitFormatter = { "JUnitFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 12, 10, -1, 25, -1, -1, -1 };
+  static const J2ObjcClassInfo _CCBRJUnitFormatter = { "JUnitFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 11, 10, -1, 25, -1, -1, -1 };
   return &_CCBRJUnitFormatter;
 }
 
@@ -478,8 +469,8 @@ void CCBRJUnitFormatter_handleTestSourceReadWithCucumberApiEventTestSourceRead_(
 }
 
 void CCBRJUnitFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarted_(CCBRJUnitFormatter *self, CucumberApiEventTestCaseStarted *event) {
-  if (JreLoadStatic(CCBRJUnitFormatter_TestCase, currentFeatureFile) == nil || ![JreLoadStatic(CCBRJUnitFormatter_TestCase, currentFeatureFile) isEqual:[((CucumberApiTestCase *) nil_chk(((CucumberApiEventTestCaseStarted *) nil_chk(event))->testCase_)) getUri]]) {
-    JreStrongAssign(JreLoadStaticRef(CCBRJUnitFormatter_TestCase, currentFeatureFile), [((CucumberApiTestCase *) nil_chk(((CucumberApiEventTestCaseStarted *) nil_chk(event))->testCase_)) getUri]);
+  if (JreLoadStatic(CCBRJUnitFormatter_TestCase, currentFeatureFile) == nil || ![JreLoadStatic(CCBRJUnitFormatter_TestCase, currentFeatureFile) isEqual:[((id<CucumberApiTestCase>) nil_chk(((CucumberApiEventTestCaseStarted *) nil_chk(event))->testCase_)) getUri]]) {
+    JreStrongAssign(JreLoadStaticRef(CCBRJUnitFormatter_TestCase, currentFeatureFile), [((id<CucumberApiTestCase>) nil_chk(((CucumberApiEventTestCaseStarted *) nil_chk(event))->testCase_)) getUri]);
     JreStrongAssign(JreLoadStaticRef(CCBRJUnitFormatter_TestCase, previousTestCaseName), @"");
     *JreLoadStaticRef(CCBRJUnitFormatter_TestCase, exampleNumber) = 1;
   }
@@ -491,8 +482,8 @@ void CCBRJUnitFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarted
 }
 
 void CCBRJUnitFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(CCBRJUnitFormatter *self, CucumberApiEventTestStepFinished *event) {
-  if (![((CucumberApiTestStep *) nil_chk(((CucumberApiEventTestStepFinished *) nil_chk(event))->testStep_)) isHook]) {
-    [((id<JavaUtilList>) nil_chk(((CCBRJUnitFormatter_TestCase *) nil_chk(self->testCase_))->steps_)) addWithId:event->testStep_];
+  if ([CucumberApiPickleStepTestStep_class_() isInstance:((CucumberApiEventTestStepFinished *) nil_chk(event))->testStep_]) {
+    [((id<JavaUtilList>) nil_chk(((CCBRJUnitFormatter_TestCase *) nil_chk(self->testCase_))->steps_)) addWithId:(id<CucumberApiPickleStepTestStep>) cast_check(event->testStep_, CucumberApiPickleStepTestStep_class_())];
     [((id<JavaUtilList>) nil_chk(((CCBRJUnitFormatter_TestCase *) nil_chk(self->testCase_))->results_)) addWithId:event->result_];
   }
 }
@@ -512,9 +503,6 @@ void CCBRJUnitFormatter_finishReport(CCBRJUnitFormatter *self) {
     [self->rootElement_ setAttributeWithNSString:@"failures" withNSString:NSString_java_valueOfInt_([((id<OrgW3cDomNodeList>) nil_chk([self->rootElement_ getElementsByTagNameWithNSString:@"failure"])) getLength])];
     [self->rootElement_ setAttributeWithNSString:@"skipped" withNSString:NSString_java_valueOfInt_([((id<OrgW3cDomNodeList>) nil_chk([self->rootElement_ getElementsByTagNameWithNSString:@"skipped"])) getLength])];
     [self->rootElement_ setAttributeWithNSString:@"time" withNSString:CCBRJUnitFormatter_sumTimesWithOrgW3cDomNodeList_(self, [self->rootElement_ getElementsByTagNameWithNSString:@"testcase"])];
-    if ([((id<OrgW3cDomNodeList>) nil_chk([self->rootElement_ getElementsByTagNameWithNSString:@"testcase"])) getLength] == 0) {
-      CCBRJUnitFormatter_addDummyTestCase(self);
-    }
     JavaxXmlTransformTransformerFactory *transfac = JavaxXmlTransformTransformerFactory_newInstance();
     JavaxXmlTransformTransformer *trans = [((JavaxXmlTransformTransformerFactory *) nil_chk(transfac)) newTransformer];
     [((JavaxXmlTransformTransformer *) nil_chk(trans)) setOutputPropertyWithNSString:JavaxXmlTransformOutputKeys_INDENT withNSString:@"yes"];
@@ -526,16 +514,6 @@ void CCBRJUnitFormatter_finishReport(CCBRJUnitFormatter *self) {
   @catch (JavaxXmlTransformTransformerException *e) {
     @throw create_CCBRCucumberException_initWithNSString_withJavaLangThrowable_(@"Error while transforming.", e);
   }
-}
-
-void CCBRJUnitFormatter_addDummyTestCase(CCBRJUnitFormatter *self) {
-  id<OrgW3cDomElement> dummy = [((id<OrgW3cDomDocument>) nil_chk(self->doc_)) createElementWithNSString:@"testcase"];
-  [((id<OrgW3cDomElement>) nil_chk(dummy)) setAttributeWithNSString:@"classname" withNSString:@"dummy"];
-  [dummy setAttributeWithNSString:@"name" withNSString:@"dummy"];
-  [((id<OrgW3cDomElement>) nil_chk(self->rootElement_)) appendChildWithOrgW3cDomNode:dummy];
-  id<OrgW3cDomElement> skipped = [self->doc_ createElementWithNSString:@"skipped"];
-  [((id<OrgW3cDomElement>) nil_chk(skipped)) setAttributeWithNSString:@"message" withNSString:@"No features found"];
-  [dummy appendChildWithOrgW3cDomNode:skipped];
 }
 
 NSString *CCBRJUnitFormatter_sumTimesWithOrgW3cDomNodeList_(CCBRJUnitFormatter *self, id<OrgW3cDomNodeList> testCaseNodes) {
@@ -830,7 +808,7 @@ J2OBJC_INITIALIZED_DEFN(CCBRJUnitFormatter_TestCase)
 
 @implementation CCBRJUnitFormatter_TestCase
 
-- (instancetype __nonnull)initWithCucumberApiTestCase:(CucumberApiTestCase *)testCase {
+- (instancetype __nonnull)initWithCucumberApiTestCase:(id<CucumberApiTestCase>)testCase {
   CCBRJUnitFormatter_TestCase_initWithCucumberApiTestCase_(self, testCase);
   return self;
 }
@@ -844,7 +822,7 @@ J2OBJC_INITIALIZED_DEFN(CCBRJUnitFormatter_TestCase)
   CCBRJUnitFormatter_TestCase_writeElementWithOrgW3cDomDocument_withOrgW3cDomElement_(self, doc, tc);
 }
 
-- (NSString *)calculateElementNameWithCucumberApiTestCase:(CucumberApiTestCase *)testCase {
+- (NSString *)calculateElementNameWithCucumberApiTestCase:(id<CucumberApiTestCase>)testCase {
   return CCBRJUnitFormatter_TestCase_calculateElementNameWithCucumberApiTestCase_(self, testCase);
 }
 
@@ -969,7 +947,7 @@ J2OBJC_INITIALIZED_DEFN(CCBRJUnitFormatter_TestCase)
     { "results_", "LJavaUtilList;", .constantValue.asLong = 0, 0x10, -1, -1, 27, -1 },
     { "testCase_", "LCucumberApiTestCase;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LCucumberApiTestCase;", "createElement", "LOrgW3cDomDocument;", "writeElement", "LOrgW3cDomDocument;LOrgW3cDomElement;", "calculateElementName", "addTestCaseElement", "LOrgW3cDomDocument;LOrgW3cDomElement;LCucumberApiResult;", "handleEmptyTestCase", "calculateTotalDurationString", "LCucumberApiResult;", "addStepAndResultListing", "LJavaLangStringBuilder;", "getKeywordFromSource", "I", "addStackTrace", "LJavaLangStringBuilder;LCucumberApiResult;", "createElementWithMessage", "LOrgW3cDomDocument;LJavaLangStringBuilder;LNSString;LNSString;", "LOrgW3cDomDocument;LJavaLangStringBuilder;LNSString;", &CCBRJUnitFormatter_TestCase_NUMBER_FORMAT, &CCBRJUnitFormatter_TestCase_testSources, &CCBRJUnitFormatter_TestCase_currentFeatureFile, &CCBRJUnitFormatter_TestCase_previousTestCaseName, &CCBRJUnitFormatter_TestCase_exampleNumber, &CCBRJUnitFormatter_TestCase_treatConditionallySkippedAsFailure, "Ljava/util/List<Lcucumber/api/TestStep;>;", "Ljava/util/List<Lcucumber/api/Result;>;", "LCCBRJUnitFormatter;" };
+  static const void *ptrTable[] = { "LCucumberApiTestCase;", "createElement", "LOrgW3cDomDocument;", "writeElement", "LOrgW3cDomDocument;LOrgW3cDomElement;", "calculateElementName", "addTestCaseElement", "LOrgW3cDomDocument;LOrgW3cDomElement;LCucumberApiResult;", "handleEmptyTestCase", "calculateTotalDurationString", "LCucumberApiResult;", "addStepAndResultListing", "LJavaLangStringBuilder;", "getKeywordFromSource", "I", "addStackTrace", "LJavaLangStringBuilder;LCucumberApiResult;", "createElementWithMessage", "LOrgW3cDomDocument;LJavaLangStringBuilder;LNSString;LNSString;", "LOrgW3cDomDocument;LJavaLangStringBuilder;LNSString;", &CCBRJUnitFormatter_TestCase_NUMBER_FORMAT, &CCBRJUnitFormatter_TestCase_testSources, &CCBRJUnitFormatter_TestCase_currentFeatureFile, &CCBRJUnitFormatter_TestCase_previousTestCaseName, &CCBRJUnitFormatter_TestCase_exampleNumber, &CCBRJUnitFormatter_TestCase_treatConditionallySkippedAsFailure, "Ljava/util/List<Lcucumber/api/PickleStepTestStep;>;", "Ljava/util/List<Lcucumber/api/Result;>;", "LCCBRJUnitFormatter;" };
   static const J2ObjcClassInfo _CCBRJUnitFormatter_TestCase = { "TestCase", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0xa, 12, 9, 28, -1, -1, -1, -1 };
   return &_CCBRJUnitFormatter_TestCase;
 }
@@ -987,18 +965,18 @@ J2OBJC_INITIALIZED_DEFN(CCBRJUnitFormatter_TestCase)
 
 @end
 
-void CCBRJUnitFormatter_TestCase_initWithCucumberApiTestCase_(CCBRJUnitFormatter_TestCase *self, CucumberApiTestCase *testCase) {
+void CCBRJUnitFormatter_TestCase_initWithCucumberApiTestCase_(CCBRJUnitFormatter_TestCase *self, id<CucumberApiTestCase> testCase) {
   NSObject_init(self);
   JreStrongAssignAndConsume(&self->steps_, new_JavaUtilArrayList_init());
   JreStrongAssignAndConsume(&self->results_, new_JavaUtilArrayList_init());
   JreStrongAssign(&self->testCase_, testCase);
 }
 
-CCBRJUnitFormatter_TestCase *new_CCBRJUnitFormatter_TestCase_initWithCucumberApiTestCase_(CucumberApiTestCase *testCase) {
+CCBRJUnitFormatter_TestCase *new_CCBRJUnitFormatter_TestCase_initWithCucumberApiTestCase_(id<CucumberApiTestCase> testCase) {
   J2OBJC_NEW_IMPL(CCBRJUnitFormatter_TestCase, initWithCucumberApiTestCase_, testCase)
 }
 
-CCBRJUnitFormatter_TestCase *create_CCBRJUnitFormatter_TestCase_initWithCucumberApiTestCase_(CucumberApiTestCase *testCase) {
+CCBRJUnitFormatter_TestCase *create_CCBRJUnitFormatter_TestCase_initWithCucumberApiTestCase_(id<CucumberApiTestCase> testCase) {
   J2OBJC_CREATE_IMPL(CCBRJUnitFormatter_TestCase, initWithCucumberApiTestCase_, testCase)
 }
 
@@ -1011,8 +989,8 @@ void CCBRJUnitFormatter_TestCase_writeElementWithOrgW3cDomDocument_withOrgW3cDom
   [tc setAttributeWithNSString:@"name" withNSString:CCBRJUnitFormatter_TestCase_calculateElementNameWithCucumberApiTestCase_(self, self->testCase_)];
 }
 
-NSString *CCBRJUnitFormatter_TestCase_calculateElementNameWithCucumberApiTestCase_(CCBRJUnitFormatter_TestCase *self, CucumberApiTestCase *testCase) {
-  NSString *testCaseName = [((CucumberApiTestCase *) nil_chk(testCase)) getName];
+NSString *CCBRJUnitFormatter_TestCase_calculateElementNameWithCucumberApiTestCase_(CCBRJUnitFormatter_TestCase *self, id<CucumberApiTestCase> testCase) {
+  NSString *testCaseName = [((id<CucumberApiTestCase>) nil_chk(testCase)) getName];
   if ([((NSString *) nil_chk(testCaseName)) isEqual:CCBRJUnitFormatter_TestCase_previousTestCaseName]) {
     return CCBRUtils_getUniqueTestNameForScenarioExampleWithNSString_withInt_(testCaseName, ++CCBRJUnitFormatter_TestCase_exampleNumber);
   }
@@ -1034,7 +1012,7 @@ void CCBRJUnitFormatter_TestCase_addStepAndResultListingWithJavaLangStringBuilde
     if (i < [((id<JavaUtilList>) nil_chk(self->results_)) size]) {
       resultStatus = [((CucumberApiResult_Type *) nil_chk([((CucumberApiResult *) nil_chk([self->results_ getWithInt:i])) getStatus])) lowerCaseName];
     }
-    [sb appendWithNSString:JreStrcat("$$", CCBRJUnitFormatter_TestCase_getKeywordFromSourceWithInt_(self, [((CucumberApiTestStep *) nil_chk([self->steps_ getWithInt:i])) getStepLine]), [((CucumberApiTestStep *) nil_chk([self->steps_ getWithInt:i])) getStepText])];
+    [sb appendWithNSString:JreStrcat("$$", CCBRJUnitFormatter_TestCase_getKeywordFromSourceWithInt_(self, [((id<CucumberApiPickleStepTestStep>) nil_chk([self->steps_ getWithInt:i])) getStepLine]), [((id<CucumberApiPickleStepTestStep>) nil_chk([self->steps_ getWithInt:i])) getStepText])];
     do {
       [sb appendWithNSString:@"."];
     }

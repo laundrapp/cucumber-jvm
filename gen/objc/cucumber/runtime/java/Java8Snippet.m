@@ -3,75 +3,9 @@
 //  source: /Users/Salton/Documents/Projects/cucumber-jvm/java/src/main/java/cucumber/runtime/java/Java8Snippet.java
 //
 
-#include "IOSClass.h"
 #include "J2ObjC_source.h"
 #include "cucumber/runtime/java/AbstractJavaSnippet.h"
 #include "cucumber/runtime/java/Java8Snippet.h"
-#include "java/lang/Boolean.h"
-#include "java/lang/Byte.h"
-#include "java/lang/Character.h"
-#include "java/lang/Double.h"
-#include "java/lang/Float.h"
-#include "java/lang/Integer.h"
-#include "java/lang/Long.h"
-#include "java/lang/Short.h"
-#include "java/lang/Void.h"
-#include "java/util/HashMap.h"
-#include "java/util/Map.h"
-
-@protocol JavaUtilFunctionBiFunction;
-@protocol JavaUtilFunctionFunction;
-
-#pragma clang diagnostic ignored "-Wincomplete-implementation"
-
-inline id<JavaUtilMap> CucumberRuntimeJavaJava8Snippet_get_PRIMITIVES_TO_WRAPPERS(void);
-static id<JavaUtilMap> CucumberRuntimeJavaJava8Snippet_PRIMITIVES_TO_WRAPPERS;
-J2OBJC_STATIC_FIELD_OBJ_FINAL(CucumberRuntimeJavaJava8Snippet, PRIMITIVES_TO_WRAPPERS, id<JavaUtilMap>)
-
-@interface CucumberRuntimeJavaJava8Snippet_1 : JavaUtilHashMap
-
-- (instancetype __nonnull)init;
-
-- (IOSClass *)computeIfAbsentWithId:(IOSClass *)arg0
-       withJavaUtilFunctionFunction:(id<JavaUtilFunctionFunction>)arg1;
-
-- (IOSClass *)getWithId:(id)arg0;
-
-- (IOSClass *)removeWithId:(id)arg0;
-
-- (IOSClass *)putIfAbsentWithId:(IOSClass *)arg0
-                         withId:(IOSClass *)arg1;
-
-- (IOSClass *)computeIfPresentWithId:(IOSClass *)arg0
-      withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg1;
-
-- (IOSClass *)replaceWithId:(IOSClass *)arg0
-                     withId:(IOSClass *)arg1;
-
-- (IOSClass *)putWithId:(IOSClass *)arg0
-                 withId:(IOSClass *)arg1;
-
-- (IOSClass *)computeWithId:(IOSClass *)arg0
-withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg1;
-
-- (IOSClass *)mergeWithId:(IOSClass *)arg0
-                   withId:(IOSClass *)arg1
-withJavaUtilFunctionBiFunction:(id<JavaUtilFunctionBiFunction>)arg2;
-
-- (IOSClass *)getOrDefaultWithId:(id)arg0
-                          withId:(IOSClass *)arg1;
-
-@end
-
-J2OBJC_EMPTY_STATIC_INIT(CucumberRuntimeJavaJava8Snippet_1)
-
-__attribute__((unused)) static void CucumberRuntimeJavaJava8Snippet_1_init(CucumberRuntimeJavaJava8Snippet_1 *self);
-
-__attribute__((unused)) static CucumberRuntimeJavaJava8Snippet_1 *new_CucumberRuntimeJavaJava8Snippet_1_init(void) NS_RETURNS_RETAINED;
-
-__attribute__((unused)) static CucumberRuntimeJavaJava8Snippet_1 *create_CucumberRuntimeJavaJava8Snippet_1_init(void);
-
-J2OBJC_INITIALIZED_DEFN(CucumberRuntimeJavaJava8Snippet)
 
 @implementation CucumberRuntimeJavaJava8Snippet
 
@@ -82,13 +16,6 @@ J2OBJC_IGNORE_DESIGNATED_BEGIN
 }
 J2OBJC_IGNORE_DESIGNATED_END
 
-- (NSString *)getArgTypeWithIOSClass:(IOSClass *)argType {
-  if ([((IOSClass *) nil_chk(argType)) isPrimitive]) {
-    return [((IOSClass *) nil_chk([((id<JavaUtilMap>) nil_chk(CucumberRuntimeJavaJava8Snippet_PRIMITIVES_TO_WRAPPERS)) getWithId:argType])) getSimpleName];
-  }
-  return [argType getSimpleName];
-}
-
 - (NSString *)template__ {
   return @"{0}(\"{1}\", ({3}) -> '{'\n    // {4}\n{5}    throw new PendingException();\n'}');\n";
 }
@@ -96,29 +23,17 @@ J2OBJC_IGNORE_DESIGNATED_END
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { NULL, NULL, 0x0, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x4, 0, 1, -1, 2, -1, -1 },
-    { NULL, "LNSString;", 0x1, 3, -1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x1, 0, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
   #pragma clang diagnostic ignored "-Wundeclared-selector"
   methods[0].selector = @selector(init);
-  methods[1].selector = @selector(getArgTypeWithIOSClass:);
-  methods[2].selector = @selector(template__);
+  methods[1].selector = @selector(template__);
   #pragma clang diagnostic pop
-  static const J2ObjcFieldInfo fields[] = {
-    { "PRIMITIVES_TO_WRAPPERS", "LJavaUtilMap;", .constantValue.asLong = 0, 0x1a, -1, 4, 5, -1 },
-  };
-  static const void *ptrTable[] = { "getArgType", "LIOSClass;", "(Ljava/lang/Class<*>;)Ljava/lang/String;", "template", &CucumberRuntimeJavaJava8Snippet_PRIMITIVES_TO_WRAPPERS, "Ljava/util/Map<Ljava/lang/Class<*>;Ljava/lang/Class<*>;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeJavaJava8Snippet = { "Java8Snippet", "cucumber.runtime.java", ptrTable, methods, fields, 7, 0x0, 3, 1, -1, -1, -1, -1, -1 };
+  static const void *ptrTable[] = { "template" };
+  static const J2ObjcClassInfo _CucumberRuntimeJavaJava8Snippet = { "Java8Snippet", "cucumber.runtime.java", ptrTable, methods, NULL, 7, 0x10, 2, 0, -1, -1, -1, -1, -1 };
   return &_CucumberRuntimeJavaJava8Snippet;
-}
-
-+ (void)initialize {
-  if (self == [CucumberRuntimeJavaJava8Snippet class]) {
-    JreStrongAssignAndConsume(&CucumberRuntimeJavaJava8Snippet_PRIMITIVES_TO_WRAPPERS, new_CucumberRuntimeJavaJava8Snippet_1_init());
-    J2OBJC_SET_INITIALIZED(CucumberRuntimeJavaJava8Snippet)
-  }
 }
 
 @end
@@ -136,51 +51,3 @@ CucumberRuntimeJavaJava8Snippet *create_CucumberRuntimeJavaJava8Snippet_init() {
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(CucumberRuntimeJavaJava8Snippet)
-
-@implementation CucumberRuntimeJavaJava8Snippet_1
-
-J2OBJC_IGNORE_DESIGNATED_BEGIN
-- (instancetype __nonnull)init {
-  CucumberRuntimeJavaJava8Snippet_1_init(self);
-  return self;
-}
-J2OBJC_IGNORE_DESIGNATED_END
-
-+ (const J2ObjcClassInfo *)__metadata {
-  static J2ObjcMethodInfo methods[] = {
-    { NULL, NULL, 0x0, -1, -1, -1, -1, -1, -1 },
-  };
-  #pragma clang diagnostic push
-  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
-  #pragma clang diagnostic ignored "-Wundeclared-selector"
-  methods[0].selector = @selector(init);
-  #pragma clang diagnostic pop
-  static const void *ptrTable[] = { "LCucumberRuntimeJavaJava8Snippet;", "Ljava/util/HashMap<Ljava/lang/Class<*>;Ljava/lang/Class<*>;>;" };
-  static const J2ObjcClassInfo _CucumberRuntimeJavaJava8Snippet_1 = { "", "cucumber.runtime.java", ptrTable, methods, NULL, 7, 0x8018, 1, 0, 0, -1, -1, 1, -1 };
-  return &_CucumberRuntimeJavaJava8Snippet_1;
-}
-
-@end
-
-void CucumberRuntimeJavaJava8Snippet_1_init(CucumberRuntimeJavaJava8Snippet_1 *self) {
-  JavaUtilHashMap_init(self);
-  {
-    [self putWithId:[IOSClass booleanClass] withId:JavaLangBoolean_class_()];
-    [self putWithId:[IOSClass byteClass] withId:JavaLangByte_class_()];
-    [self putWithId:[IOSClass charClass] withId:JavaLangCharacter_class_()];
-    [self putWithId:[IOSClass doubleClass] withId:JavaLangDouble_class_()];
-    [self putWithId:[IOSClass floatClass] withId:JavaLangFloat_class_()];
-    [self putWithId:[IOSClass intClass] withId:JavaLangInteger_class_()];
-    [self putWithId:[IOSClass longClass] withId:JavaLangLong_class_()];
-    [self putWithId:[IOSClass shortClass] withId:JavaLangShort_class_()];
-    [self putWithId:[IOSClass voidClass] withId:JavaLangVoid_class_()];
-  }
-}
-
-CucumberRuntimeJavaJava8Snippet_1 *new_CucumberRuntimeJavaJava8Snippet_1_init() {
-  J2OBJC_NEW_IMPL(CucumberRuntimeJavaJava8Snippet_1, init)
-}
-
-CucumberRuntimeJavaJava8Snippet_1 *create_CucumberRuntimeJavaJava8Snippet_1_init() {
-  J2OBJC_CREATE_IMPL(CucumberRuntimeJavaJava8Snippet_1, init)
-}

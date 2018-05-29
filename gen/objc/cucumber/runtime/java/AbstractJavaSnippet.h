@@ -25,28 +25,21 @@
 #define INCLUDE_CCBRSnippet 1
 #include "cucumber/runtime/snippets/Snippet.h"
 
-@class IOSClass;
-@protocol JavaUtilList;
+@protocol JavaUtilMap;
 
 @interface CucumberRuntimeJavaAbstractJavaSnippet : NSObject < CCBRSnippet >
 
 #pragma mark Public
 
-- (instancetype __nonnull)init;
-
-- (NSString *)argumentsWithJavaUtilList:(id<JavaUtilList>)argumentTypes;
+- (NSString *)argumentsWithJavaUtilMap:(id<JavaUtilMap>)arguments;
 
 - (NSString *)escapePatternWithNSString:(NSString *)pattern;
 
-- (NSString *)namedGroupEnd;
-
-- (NSString *)namedGroupStart;
-
 - (NSString *)tableHint;
 
-#pragma mark Protected
+#pragma mark Package-Private
 
-- (NSString *)getArgTypeWithIOSClass:(IOSClass *)argType;
+- (instancetype __nonnull)init;
 
 @end
 

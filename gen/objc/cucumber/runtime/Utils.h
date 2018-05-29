@@ -25,7 +25,6 @@
 @class IOSObjectArray;
 @class JavaLangReflectMethod;
 @class JavaNetURL;
-@protocol JavaLangReflectType;
 
 @interface CCBRUtils : NSObject
 
@@ -43,12 +42,6 @@ withJavaLangReflectMethod:(JavaLangReflectMethod *)method
 
 + (jboolean)isInstantiableWithIOSClass:(IOSClass *)clazz;
 
-+ (id<JavaLangReflectType>)listItemTypeWithJavaLangReflectType:(id<JavaLangReflectType>)type;
-
-+ (id<JavaLangReflectType>)mapKeyTypeWithJavaLangReflectType:(id<JavaLangReflectType>)type;
-
-+ (id<JavaLangReflectType>)mapValueTypeWithJavaLangReflectType:(id<JavaLangReflectType>)type;
-
 + (JavaNetURL *)toURLWithNSString:(NSString *)pathOrUrl;
 
 @end
@@ -58,12 +51,6 @@ J2OBJC_EMPTY_STATIC_INIT(CCBRUtils)
 FOUNDATION_EXPORT jboolean CCBRUtils_isInstantiableWithIOSClass_(IOSClass *clazz);
 
 FOUNDATION_EXPORT id CCBRUtils_invokeWithId_withJavaLangReflectMethod_withLong_withNSObjectArray_(id target, JavaLangReflectMethod *method, jlong timeoutMillis, IOSObjectArray *args);
-
-FOUNDATION_EXPORT id<JavaLangReflectType> CCBRUtils_listItemTypeWithJavaLangReflectType_(id<JavaLangReflectType> type);
-
-FOUNDATION_EXPORT id<JavaLangReflectType> CCBRUtils_mapKeyTypeWithJavaLangReflectType_(id<JavaLangReflectType> type);
-
-FOUNDATION_EXPORT id<JavaLangReflectType> CCBRUtils_mapValueTypeWithJavaLangReflectType_(id<JavaLangReflectType> type);
 
 FOUNDATION_EXPORT JavaNetURL *CCBRUtils_toURLWithNSString_(NSString *pathOrUrl);
 

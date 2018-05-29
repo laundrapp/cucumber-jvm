@@ -9,7 +9,9 @@
 #include "J2ObjC_source.h"
 #include "com/google/gson/Gson.h"
 #include "com/google/gson/GsonBuilder.h"
+#include "cucumber/api/HookTestStep.h"
 #include "cucumber/api/HookType.h"
+#include "cucumber/api/PickleStepTestStep.h"
 #include "cucumber/api/Result.h"
 #include "cucumber/api/TestCase.h"
 #include "cucumber/api/TestStep.h"
@@ -51,6 +53,7 @@
 #include "java/io/InputStream.h"
 #include "java/io/OutputStream.h"
 #include "java/io/OutputStreamWriter.h"
+#include "java/lang/IllegalStateException.h"
 #include "java/lang/StringBuilder.h"
 #include "java/net/URL.h"
 #include "java/util/ArrayList.h"
@@ -97,13 +100,13 @@
 
 - (void)finishReport;
 
-- (void)handleStartOfFeatureWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
+- (void)handleStartOfFeatureWithCucumberApiTestCase:(id<CucumberApiTestCase>)testCase;
 
-- (id<JavaUtilMap>)createFeatureWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
+- (id<JavaUtilMap>)createFeatureWithCucumberApiTestCase:(id<CucumberApiTestCase>)testCase;
 
 - (id<JavaUtilList>)createTagListWithJavaUtilList:(id<JavaUtilList>)tags;
 
-- (void)handleScenarioOutlineWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
+- (void)handleScenarioOutlineWithCucumberApiTestCase:(id<CucumberApiTestCase>)testCase;
 
 - (id<JavaUtilMap>)createScenarioOutlineWithGHKAScenarioOutline:(GHKAScenarioOutline *)scenarioOutline;
 
@@ -119,13 +122,13 @@
 
 - (id<JavaUtilMap>)createExamplesWithGHKAExamples:(GHKAExamples *)examples;
 
-- (id<JavaUtilMap>)createTestCaseWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
+- (id<JavaUtilMap>)createTestCaseWithCucumberApiTestCase:(id<CucumberApiTestCase>)testCase;
 
-- (id<JavaUtilMap>)createBackgroundWithCucumberApiTestCase:(CucumberApiTestCase *)testCase;
+- (id<JavaUtilMap>)createBackgroundWithCucumberApiTestCase:(id<CucumberApiTestCase>)testCase;
 
-- (jboolean)isFirstStepAfterBackgroundWithCucumberApiTestStep:(CucumberApiTestStep *)testStep;
+- (jboolean)isFirstStepAfterBackgroundWithCucumberApiPickleStepTestStep:(id<CucumberApiPickleStepTestStep>)testStep;
 
-- (id<JavaUtilMap>)createTestStepWithCucumberApiTestStep:(CucumberApiTestStep *)testStep;
+- (id<JavaUtilMap>)createTestStepWithCucumberApiPickleStepTestStep:(id<CucumberApiPickleStepTestStep>)testStep;
 
 - (id<JavaUtilMap>)createDocStringMapWithGHKPickleString:(GHKPickleString *)docString;
 
@@ -135,8 +138,7 @@
 
 - (id<JavaUtilList>)createCellListWithGHKPickleRow:(GHKPickleRow *)row;
 
-- (id<JavaUtilMap>)createMatchMapWithCucumberApiTestStep:(CucumberApiTestStep *)testStep
-                                   withCucumberApiResult:(CucumberApiResult *)result;
+- (id<JavaUtilMap>)createMatchMapWithCucumberApiPickleStepTestStep:(id<CucumberApiPickleStepTestStep>)testStep;
 
 - (id<JavaUtilMap>)createResultMapWithCucumberApiResult:(CucumberApiResult *)result;
 
@@ -210,13 +212,13 @@ __attribute__((unused)) static void CCBRHTMLFormatter_handleWriteWithCucumberApi
 
 __attribute__((unused)) static void CCBRHTMLFormatter_finishReport(CCBRHTMLFormatter *self);
 
-__attribute__((unused)) static void CCBRHTMLFormatter_handleStartOfFeatureWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase);
+__attribute__((unused)) static void CCBRHTMLFormatter_handleStartOfFeatureWithCucumberApiTestCase_(CCBRHTMLFormatter *self, id<CucumberApiTestCase> testCase);
 
-__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createFeatureWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase);
+__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createFeatureWithCucumberApiTestCase_(CCBRHTMLFormatter *self, id<CucumberApiTestCase> testCase);
 
 __attribute__((unused)) static id<JavaUtilList> CCBRHTMLFormatter_createTagListWithJavaUtilList_(CCBRHTMLFormatter *self, id<JavaUtilList> tags);
 
-__attribute__((unused)) static void CCBRHTMLFormatter_handleScenarioOutlineWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase);
+__attribute__((unused)) static void CCBRHTMLFormatter_handleScenarioOutlineWithCucumberApiTestCase_(CCBRHTMLFormatter *self, id<CucumberApiTestCase> testCase);
 
 __attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createScenarioOutlineWithGHKAScenarioOutline_(CCBRHTMLFormatter *self, GHKAScenarioOutline *scenarioOutline);
 
@@ -232,13 +234,13 @@ __attribute__((unused)) static id<JavaUtilList> CCBRHTMLFormatter_createCellList
 
 __attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createExamplesWithGHKAExamples_(CCBRHTMLFormatter *self, GHKAExamples *examples);
 
-__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createTestCaseWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase);
+__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createTestCaseWithCucumberApiTestCase_(CCBRHTMLFormatter *self, id<CucumberApiTestCase> testCase);
 
-__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createBackgroundWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase);
+__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createBackgroundWithCucumberApiTestCase_(CCBRHTMLFormatter *self, id<CucumberApiTestCase> testCase);
 
-__attribute__((unused)) static jboolean CCBRHTMLFormatter_isFirstStepAfterBackgroundWithCucumberApiTestStep_(CCBRHTMLFormatter *self, CucumberApiTestStep *testStep);
+__attribute__((unused)) static jboolean CCBRHTMLFormatter_isFirstStepAfterBackgroundWithCucumberApiPickleStepTestStep_(CCBRHTMLFormatter *self, id<CucumberApiPickleStepTestStep> testStep);
 
-__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createTestStepWithCucumberApiTestStep_(CCBRHTMLFormatter *self, CucumberApiTestStep *testStep);
+__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createTestStepWithCucumberApiPickleStepTestStep_(CCBRHTMLFormatter *self, id<CucumberApiPickleStepTestStep> testStep);
 
 __attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createDocStringMapWithGHKPickleString_(CCBRHTMLFormatter *self, GHKPickleString *docString);
 
@@ -248,7 +250,7 @@ __attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createRowMapWit
 
 __attribute__((unused)) static id<JavaUtilList> CCBRHTMLFormatter_createCellListWithGHKPickleRow_(CCBRHTMLFormatter *self, GHKPickleRow *row);
 
-__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createMatchMapWithCucumberApiTestStep_withCucumberApiResult_(CCBRHTMLFormatter *self, CucumberApiTestStep *testStep, CucumberApiResult *result);
+__attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createMatchMapWithCucumberApiPickleStepTestStep_(CCBRHTMLFormatter *self, id<CucumberApiPickleStepTestStep> testStep);
 
 __attribute__((unused)) static id<JavaUtilMap> CCBRHTMLFormatter_createResultMapWithCucumberApiResult_(CCBRHTMLFormatter *self, CucumberApiResult *result);
 
@@ -497,11 +499,11 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
   CCBRHTMLFormatter_finishReport(self);
 }
 
-- (void)handleStartOfFeatureWithCucumberApiTestCase:(CucumberApiTestCase *)testCase {
+- (void)handleStartOfFeatureWithCucumberApiTestCase:(id<CucumberApiTestCase>)testCase {
   CCBRHTMLFormatter_handleStartOfFeatureWithCucumberApiTestCase_(self, testCase);
 }
 
-- (id<JavaUtilMap>)createFeatureWithCucumberApiTestCase:(CucumberApiTestCase *)testCase {
+- (id<JavaUtilMap>)createFeatureWithCucumberApiTestCase:(id<CucumberApiTestCase>)testCase {
   return CCBRHTMLFormatter_createFeatureWithCucumberApiTestCase_(self, testCase);
 }
 
@@ -509,7 +511,7 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
   return CCBRHTMLFormatter_createTagListWithJavaUtilList_(self, tags);
 }
 
-- (void)handleScenarioOutlineWithCucumberApiTestCase:(CucumberApiTestCase *)testCase {
+- (void)handleScenarioOutlineWithCucumberApiTestCase:(id<CucumberApiTestCase>)testCase {
   CCBRHTMLFormatter_handleScenarioOutlineWithCucumberApiTestCase_(self, testCase);
 }
 
@@ -541,20 +543,20 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
   return CCBRHTMLFormatter_createExamplesWithGHKAExamples_(self, examples);
 }
 
-- (id<JavaUtilMap>)createTestCaseWithCucumberApiTestCase:(CucumberApiTestCase *)testCase {
+- (id<JavaUtilMap>)createTestCaseWithCucumberApiTestCase:(id<CucumberApiTestCase>)testCase {
   return CCBRHTMLFormatter_createTestCaseWithCucumberApiTestCase_(self, testCase);
 }
 
-- (id<JavaUtilMap>)createBackgroundWithCucumberApiTestCase:(CucumberApiTestCase *)testCase {
+- (id<JavaUtilMap>)createBackgroundWithCucumberApiTestCase:(id<CucumberApiTestCase>)testCase {
   return CCBRHTMLFormatter_createBackgroundWithCucumberApiTestCase_(self, testCase);
 }
 
-- (jboolean)isFirstStepAfterBackgroundWithCucumberApiTestStep:(CucumberApiTestStep *)testStep {
-  return CCBRHTMLFormatter_isFirstStepAfterBackgroundWithCucumberApiTestStep_(self, testStep);
+- (jboolean)isFirstStepAfterBackgroundWithCucumberApiPickleStepTestStep:(id<CucumberApiPickleStepTestStep>)testStep {
+  return CCBRHTMLFormatter_isFirstStepAfterBackgroundWithCucumberApiPickleStepTestStep_(self, testStep);
 }
 
-- (id<JavaUtilMap>)createTestStepWithCucumberApiTestStep:(CucumberApiTestStep *)testStep {
-  return CCBRHTMLFormatter_createTestStepWithCucumberApiTestStep_(self, testStep);
+- (id<JavaUtilMap>)createTestStepWithCucumberApiPickleStepTestStep:(id<CucumberApiPickleStepTestStep>)testStep {
+  return CCBRHTMLFormatter_createTestStepWithCucumberApiPickleStepTestStep_(self, testStep);
 }
 
 - (id<JavaUtilMap>)createDocStringMapWithGHKPickleString:(GHKPickleString *)docString {
@@ -573,9 +575,8 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
   return CCBRHTMLFormatter_createCellListWithGHKPickleRow_(self, row);
 }
 
-- (id<JavaUtilMap>)createMatchMapWithCucumberApiTestStep:(CucumberApiTestStep *)testStep
-                                   withCucumberApiResult:(CucumberApiResult *)result {
-  return CCBRHTMLFormatter_createMatchMapWithCucumberApiTestStep_withCucumberApiResult_(self, testStep, result);
+- (id<JavaUtilMap>)createMatchMapWithCucumberApiPickleStepTestStep:(id<CucumberApiPickleStepTestStep>)testStep {
+  return CCBRHTMLFormatter_createMatchMapWithCucumberApiPickleStepTestStep_(self, testStep);
 }
 
 - (id<JavaUtilMap>)createResultMapWithCucumberApiResult:(CucumberApiResult *)result {
@@ -666,16 +667,16 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
     { NULL, "LJavaUtilList;", 0x2, 31, 50, -1, 51, -1, -1 },
     { NULL, "LJavaUtilMap;", 0x2, 34, 52, -1, 53, -1, -1 },
     { NULL, "LJavaUtilList;", 0x2, 37, 52, -1, 54, -1, -1 },
-    { NULL, "LJavaUtilMap;", 0x2, 55, 56, -1, 57, -1, -1 },
-    { NULL, "LJavaUtilMap;", 0x2, 58, 59, -1, 60, -1, -1 },
-    { NULL, "V", 0x82, 61, 62, -1, -1, -1, -1 },
+    { NULL, "LJavaUtilMap;", 0x2, 55, 45, -1, 47, -1, -1 },
+    { NULL, "LJavaUtilMap;", 0x2, 56, 57, -1, 58, -1, -1 },
+    { NULL, "V", 0x82, 59, 60, -1, -1, -1, -1 },
     { NULL, "V", 0x2, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LJavaNetURL;", 0x2, 63, 64, -1, -1, -1, -1 },
-    { NULL, "V", 0xa, 65, 66, -1, -1, -1, -1 },
-    { NULL, "V", 0xa, 67, 68, 69, -1, -1, -1 },
-    { NULL, "LCucumberApiFormatterNiceAppendable;", 0xa, 70, 0, -1, -1, -1, -1 },
-    { NULL, "LJavaIoOutputStream;", 0xa, 71, 0, -1, -1, -1, -1 },
-    { NULL, "V", 0xa, 72, 73, -1, -1, -1, -1 },
+    { NULL, "LJavaNetURL;", 0x2, 61, 62, -1, -1, -1, -1 },
+    { NULL, "V", 0xa, 63, 64, -1, -1, -1, -1 },
+    { NULL, "V", 0xa, 65, 66, 67, -1, -1, -1 },
+    { NULL, "LCucumberApiFormatterNiceAppendable;", 0xa, 68, 0, -1, -1, -1, -1 },
+    { NULL, "LJavaIoOutputStream;", 0xa, 69, 0, -1, -1, -1, -1 },
+    { NULL, "V", 0xa, 70, 71, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -703,13 +704,13 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
   methods[20].selector = @selector(createExamplesWithGHKAExamples:);
   methods[21].selector = @selector(createTestCaseWithCucumberApiTestCase:);
   methods[22].selector = @selector(createBackgroundWithCucumberApiTestCase:);
-  methods[23].selector = @selector(isFirstStepAfterBackgroundWithCucumberApiTestStep:);
-  methods[24].selector = @selector(createTestStepWithCucumberApiTestStep:);
+  methods[23].selector = @selector(isFirstStepAfterBackgroundWithCucumberApiPickleStepTestStep:);
+  methods[24].selector = @selector(createTestStepWithCucumberApiPickleStepTestStep:);
   methods[25].selector = @selector(createDocStringMapWithGHKPickleString:);
   methods[26].selector = @selector(createDataTableListWithGHKPickleTable:);
   methods[27].selector = @selector(createRowMapWithGHKPickleRow:);
   methods[28].selector = @selector(createCellListWithGHKPickleRow:);
-  methods[29].selector = @selector(createMatchMapWithCucumberApiTestStep:withCucumberApiResult:);
+  methods[29].selector = @selector(createMatchMapWithCucumberApiPickleStepTestStep:);
   methods[30].selector = @selector(createResultMapWithCucumberApiResult:);
   methods[31].selector = @selector(jsFunctionCallWithNSString:withNSObjectArray:);
   methods[32].selector = @selector(copyReportFiles);
@@ -721,29 +722,29 @@ J2OBJC_INITIALIZED_DEFN(CCBRHTMLFormatter)
   methods[38].selector = @selector(closeQuietlyWithJavaIoCloseable:);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "gson", "LComGoogleGsonGson;", .constantValue.asLong = 0, 0x1a, -1, 74, -1, -1 },
-    { "JS_FORMATTER_VAR", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 75, -1, -1 },
-    { "JS_REPORT_FILENAME", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 76, -1, -1 },
-    { "TEXT_ASSETS", "[LNSString;", .constantValue.asLong = 0, 0x1a, -1, 77, -1, -1 },
-    { "MIME_TYPES_EXTENSIONS", "LJavaUtilMap;", .constantValue.asLong = 0, 0x1a, -1, 78, 79, -1 },
+    { "gson", "LComGoogleGsonGson;", .constantValue.asLong = 0, 0x1a, -1, 72, -1, -1 },
+    { "JS_FORMATTER_VAR", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 73, -1, -1 },
+    { "JS_REPORT_FILENAME", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 74, -1, -1 },
+    { "TEXT_ASSETS", "[LNSString;", .constantValue.asLong = 0, 0x1a, -1, 75, -1, -1 },
+    { "MIME_TYPES_EXTENSIONS", "LJavaUtilMap;", .constantValue.asLong = 0, 0x1a, -1, 76, 77, -1 },
     { "testSources_", "LCCBRTestSourcesModel;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "htmlReportDir_", "LJavaNetURL;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
     { "jsOut_", "LCucumberApiFormatterNiceAppendable;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "firstFeature_", "Z", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "currentFeatureFile_", "LNSString;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "currentTestCaseMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 80, -1 },
+    { "currentTestCaseMap_", "LJavaUtilMap;", .constantValue.asLong = 0, 0x2, -1, -1, 78, -1 },
     { "currentScenarioOutline_", "LGHKAScenarioOutline;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "currentExamples_", "LGHKAExamples;", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
     { "embeddedIndex_", "I", .constantValue.asLong = 0, 0x2, -1, -1, -1, -1 },
-    { "testSourceReadHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 81, -1 },
-    { "caseStartedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 82, -1 },
-    { "stepStartedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 83, -1 },
-    { "stepFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 84, -1 },
-    { "embedEventhandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 85, -1 },
-    { "writeEventhandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 86, -1 },
-    { "runFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 87, -1 },
+    { "testSourceReadHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 79, -1 },
+    { "caseStartedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 80, -1 },
+    { "stepStartedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 81, -1 },
+    { "stepFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 82, -1 },
+    { "embedEventhandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 83, -1 },
+    { "writeEventhandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 84, -1 },
+    { "runFinishedHandler_", "LCucumberApiEventEventHandler;", .constantValue.asLong = 0, 0x2, -1, -1, 85, -1 },
   };
-  static const void *ptrTable[] = { "LJavaNetURL;", "LJavaNetURL;LCucumberApiFormatterNiceAppendable;", "setEventPublisher", "LCucumberApiEventEventPublisher;", "handleTestSourceRead", "LCucumberApiEventTestSourceRead;", "handleTestCaseStarted", "LCucumberApiEventTestCaseStarted;", "handleTestStepStarted", "LCucumberApiEventTestStepStarted;", "handleTestStepFinished", "LCucumberApiEventTestStepFinished;", "handleEmbed", "LCucumberApiEventEmbedEvent;", "handleWrite", "LCucumberApiEventWriteEvent;", "handleStartOfFeature", "LCucumberApiTestCase;", "createFeature", "(Lcucumber/api/TestCase;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createTagList", "LJavaUtilList;", "(Ljava/util/List<Lgherkin/ast/Tag;>;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "handleScenarioOutline", "createScenarioOutline", "LGHKAScenarioOutline;", "(Lgherkin/ast/ScenarioOutline;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "addOutlineStepsToReport", "createDocStringMap", "LGHKADocString;", "(Lgherkin/ast/DocString;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createDataTableList", "LGHKADataTable;", "(Lgherkin/ast/DataTable;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "createRowMap", "LGHKATableRow;", "(Lgherkin/ast/TableRow;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createCellList", "(Lgherkin/ast/TableRow;)Ljava/util/List<Ljava/lang/String;>;", "createExamples", "LGHKAExamples;", "(Lgherkin/ast/Examples;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createTestCase", "createBackground", "isFirstStepAfterBackground", "LCucumberApiTestStep;", "createTestStep", "(Lcucumber/api/TestStep;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "LGHKPickleString;", "(Lgherkin/pickles/PickleString;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "LGHKPickleTable;", "(Lgherkin/pickles/PickleTable;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "LGHKPickleRow;", "(Lgherkin/pickles/PickleRow;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "(Lgherkin/pickles/PickleRow;)Ljava/util/List<Ljava/lang/String;>;", "createMatchMap", "LCucumberApiTestStep;LCucumberApiResult;", "(Lcucumber/api/TestStep;Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createResultMap", "LCucumberApiResult;", "(Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "jsFunctionCall", "LNSString;[LNSObject;", "toUrl", "LNSString;", "writeStreamToURL", "LJavaIoInputStream;LJavaNetURL;", "writeBytesToURL", "[BLJavaNetURL;", "LCCBRCucumberException;", "createJsOut", "createReportFileOutputStream", "closeQuietly", "LJavaIoCloseable;", &CCBRHTMLFormatter_gson, &CCBRHTMLFormatter_JS_FORMATTER_VAR, &CCBRHTMLFormatter_JS_REPORT_FILENAME, &CCBRHTMLFormatter_TEXT_ASSETS, &CCBRHTMLFormatter_MIME_TYPES_EXTENSIONS, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/EmbedEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
+  static const void *ptrTable[] = { "LJavaNetURL;", "LJavaNetURL;LCucumberApiFormatterNiceAppendable;", "setEventPublisher", "LCucumberApiEventEventPublisher;", "handleTestSourceRead", "LCucumberApiEventTestSourceRead;", "handleTestCaseStarted", "LCucumberApiEventTestCaseStarted;", "handleTestStepStarted", "LCucumberApiEventTestStepStarted;", "handleTestStepFinished", "LCucumberApiEventTestStepFinished;", "handleEmbed", "LCucumberApiEventEmbedEvent;", "handleWrite", "LCucumberApiEventWriteEvent;", "handleStartOfFeature", "LCucumberApiTestCase;", "createFeature", "(Lcucumber/api/TestCase;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createTagList", "LJavaUtilList;", "(Ljava/util/List<Lgherkin/ast/Tag;>;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "handleScenarioOutline", "createScenarioOutline", "LGHKAScenarioOutline;", "(Lgherkin/ast/ScenarioOutline;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "addOutlineStepsToReport", "createDocStringMap", "LGHKADocString;", "(Lgherkin/ast/DocString;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createDataTableList", "LGHKADataTable;", "(Lgherkin/ast/DataTable;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "createRowMap", "LGHKATableRow;", "(Lgherkin/ast/TableRow;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createCellList", "(Lgherkin/ast/TableRow;)Ljava/util/List<Ljava/lang/String;>;", "createExamples", "LGHKAExamples;", "(Lgherkin/ast/Examples;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "createTestCase", "createBackground", "isFirstStepAfterBackground", "LCucumberApiPickleStepTestStep;", "createTestStep", "(Lcucumber/api/PickleStepTestStep;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "LGHKPickleString;", "(Lgherkin/pickles/PickleString;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "LGHKPickleTable;", "(Lgherkin/pickles/PickleTable;)Ljava/util/List<Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;>;", "LGHKPickleRow;", "(Lgherkin/pickles/PickleRow;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "(Lgherkin/pickles/PickleRow;)Ljava/util/List<Ljava/lang/String;>;", "createMatchMap", "createResultMap", "LCucumberApiResult;", "(Lcucumber/api/Result;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "jsFunctionCall", "LNSString;[LNSObject;", "toUrl", "LNSString;", "writeStreamToURL", "LJavaIoInputStream;LJavaNetURL;", "writeBytesToURL", "[BLJavaNetURL;", "LCCBRCucumberException;", "createJsOut", "createReportFileOutputStream", "closeQuietly", "LJavaIoCloseable;", &CCBRHTMLFormatter_gson, &CCBRHTMLFormatter_JS_FORMATTER_VAR, &CCBRHTMLFormatter_JS_REPORT_FILENAME, &CCBRHTMLFormatter_TEXT_ASSETS, &CCBRHTMLFormatter_MIME_TYPES_EXTENSIONS, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;", "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestSourceRead;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestCaseStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepStarted;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestStepFinished;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/EmbedEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/WriteEvent;>;", "Lcucumber/api/event/EventHandler<Lcucumber/api/event/TestRunFinished;>;" };
   static const J2ObjcClassInfo _CCBRHTMLFormatter = { "HTMLFormatter", "cucumber.runtime.formatter", ptrTable, methods, fields, 7, 0x10, 39, 21, -1, -1, -1, -1, -1 };
   return &_CCBRHTMLFormatter;
 }
@@ -806,7 +807,7 @@ void CCBRHTMLFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarted_
   CCBRHTMLFormatter_handleStartOfFeatureWithCucumberApiTestCase_(self, ((CucumberApiEventTestCaseStarted *) nil_chk(event))->testCase_);
   CCBRHTMLFormatter_handleScenarioOutlineWithCucumberApiTestCase_(self, event->testCase_);
   JreStrongAssign(&self->currentTestCaseMap_, CCBRHTMLFormatter_createTestCaseWithCucumberApiTestCase_(self, event->testCase_));
-  if ([((CCBRTestSourcesModel *) nil_chk(self->testSources_)) hasBackgroundWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestCase *) nil_chk(event->testCase_)) getLine]]) {
+  if ([((CCBRTestSourcesModel *) nil_chk(self->testSources_)) hasBackgroundWithNSString:self->currentFeatureFile_ withInt:[((id<CucumberApiTestCase>) nil_chk(event->testCase_)) getLine]]) {
     CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"background", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createBackgroundWithCucumberApiTestCase_(self, event->testCase_) } count:1 type:NSObject_class_()]);
   }
   else {
@@ -816,22 +817,27 @@ void CCBRHTMLFormatter_handleTestCaseStartedWithCucumberApiEventTestCaseStarted_
 }
 
 void CCBRHTMLFormatter_handleTestStepStartedWithCucumberApiEventTestStepStarted_(CCBRHTMLFormatter *self, CucumberApiEventTestStepStarted *event) {
-  if (![((CucumberApiTestStep *) nil_chk(((CucumberApiEventTestStepStarted *) nil_chk(event))->testStep_)) isHook]) {
-    if (CCBRHTMLFormatter_isFirstStepAfterBackgroundWithCucumberApiTestStep_(self, event->testStep_)) {
+  if ([CucumberApiPickleStepTestStep_class_() isInstance:((CucumberApiEventTestStepStarted *) nil_chk(event))->testStep_]) {
+    id<CucumberApiPickleStepTestStep> testStep = (id<CucumberApiPickleStepTestStep>) cast_check(event->testStep_, CucumberApiPickleStepTestStep_class_());
+    if (CCBRHTMLFormatter_isFirstStepAfterBackgroundWithCucumberApiPickleStepTestStep_(self, testStep)) {
       CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"scenario", [IOSObjectArray arrayWithObjects:(id[]){ self->currentTestCaseMap_ } count:1 type:NSObject_class_()]);
       JreStrongAssign(&self->currentTestCaseMap_, nil);
     }
-    CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"step", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createTestStepWithCucumberApiTestStep_(self, event->testStep_) } count:1 type:NSObject_class_()]);
+    CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"step", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createTestStepWithCucumberApiPickleStepTestStep_(self, testStep) } count:1 type:NSObject_class_()]);
+    CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"match", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createMatchMapWithCucumberApiPickleStepTestStep_(self, (id<CucumberApiPickleStepTestStep>) cast_check(event->testStep_, CucumberApiPickleStepTestStep_class_())) } count:1 type:NSObject_class_()]);
   }
 }
 
 void CCBRHTMLFormatter_handleTestStepFinishedWithCucumberApiEventTestStepFinished_(CCBRHTMLFormatter *self, CucumberApiEventTestStepFinished *event) {
-  if (![((CucumberApiTestStep *) nil_chk(((CucumberApiEventTestStepFinished *) nil_chk(event))->testStep_)) isHook]) {
-    CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"match", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createMatchMapWithCucumberApiTestStep_withCucumberApiResult_(self, event->testStep_, event->result_) } count:1 type:NSObject_class_()]);
+  if ([CucumberApiPickleStepTestStep_class_() isInstance:((CucumberApiEventTestStepFinished *) nil_chk(event))->testStep_]) {
     CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"result", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createResultMapWithCucumberApiResult_(self, event->result_) } count:1 type:NSObject_class_()]);
   }
+  else if ([CucumberApiHookTestStep_class_() isInstance:event->testStep_]) {
+    id<CucumberApiHookTestStep> hookTestStep = (id<CucumberApiHookTestStep>) cast_check(event->testStep_, CucumberApiHookTestStep_class_());
+    CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, [((CucumberApiHookType *) nil_chk([((id<CucumberApiHookTestStep>) nil_chk(hookTestStep)) getHookType])) description], [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createResultMapWithCucumberApiResult_(self, event->result_) } count:1 type:NSObject_class_()]);
+  }
   else {
-    CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, [((CucumberApiHookType *) nil_chk([event->testStep_ getHookType])) description], [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createResultMapWithCucumberApiResult_(self, event->result_) } count:1 type:NSObject_class_()]);
+    @throw create_JavaLangIllegalStateException_init();
   }
 }
 
@@ -862,17 +868,17 @@ void CCBRHTMLFormatter_finishReport(CCBRHTMLFormatter *self) {
   [((CucumberApiFormatterNiceAppendable *) nil_chk(self->jsOut_)) close];
 }
 
-void CCBRHTMLFormatter_handleStartOfFeatureWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase) {
-  if (self->currentFeatureFile_ == nil || ![self->currentFeatureFile_ isEqual:[((CucumberApiTestCase *) nil_chk(testCase)) getUri]]) {
-    JreStrongAssign(&self->currentFeatureFile_, [((CucumberApiTestCase *) nil_chk(testCase)) getUri]);
+void CCBRHTMLFormatter_handleStartOfFeatureWithCucumberApiTestCase_(CCBRHTMLFormatter *self, id<CucumberApiTestCase> testCase) {
+  if (self->currentFeatureFile_ == nil || ![self->currentFeatureFile_ isEqual:[((id<CucumberApiTestCase>) nil_chk(testCase)) getUri]]) {
+    JreStrongAssign(&self->currentFeatureFile_, [((id<CucumberApiTestCase>) nil_chk(testCase)) getUri]);
     CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"uri", [IOSObjectArray arrayWithObjects:(id[]){ self->currentFeatureFile_ } count:1 type:NSObject_class_()]);
     CCBRHTMLFormatter_jsFunctionCallWithNSString_withNSObjectArray_(self, @"feature", [IOSObjectArray arrayWithObjects:(id[]){ CCBRHTMLFormatter_createFeatureWithCucumberApiTestCase_(self, testCase) } count:1 type:NSObject_class_()]);
   }
 }
 
-id<JavaUtilMap> CCBRHTMLFormatter_createFeatureWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase) {
+id<JavaUtilMap> CCBRHTMLFormatter_createFeatureWithCucumberApiTestCase_(CCBRHTMLFormatter *self, id<CucumberApiTestCase> testCase) {
   id<JavaUtilMap> featureMap = create_JavaUtilHashMap_init();
-  GHKAFeature *feature = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getFeatureWithNSString:[((CucumberApiTestCase *) nil_chk(testCase)) getUri]];
+  GHKAFeature *feature = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getFeatureWithNSString:[((id<CucumberApiTestCase>) nil_chk(testCase)) getUri]];
   if (feature != nil) {
     [featureMap putWithId:@"keyword" withId:[feature getKeyword]];
     [featureMap putWithId:@"name" withId:[feature getName]];
@@ -894,8 +900,8 @@ id<JavaUtilList> CCBRHTMLFormatter_createTagListWithJavaUtilList_(CCBRHTMLFormat
   return tagList;
 }
 
-void CCBRHTMLFormatter_handleScenarioOutlineWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase) {
-  CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestCase *) nil_chk(testCase)) getLine]];
+void CCBRHTMLFormatter_handleScenarioOutlineWithCucumberApiTestCase_(CCBRHTMLFormatter *self, id<CucumberApiTestCase> testCase) {
+  CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((id<CucumberApiTestCase>) nil_chk(testCase)) getLine]];
   if (CCBRTestSourcesModel_isScenarioOutlineScenarioWithCCBRTestSourcesModel_AstNode_(astNode)) {
     GHKAScenarioOutline *scenarioOutline = (GHKAScenarioOutline *) cast_chk(CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_(astNode), [GHKAScenarioOutline class]);
     if (self->currentScenarioOutline_ == nil || ![self->currentScenarioOutline_ isEqual:scenarioOutline]) {
@@ -989,9 +995,9 @@ id<JavaUtilMap> CCBRHTMLFormatter_createExamplesWithGHKAExamples_(CCBRHTMLFormat
   return examplesMap;
 }
 
-id<JavaUtilMap> CCBRHTMLFormatter_createTestCaseWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase) {
+id<JavaUtilMap> CCBRHTMLFormatter_createTestCaseWithCucumberApiTestCase_(CCBRHTMLFormatter *self, id<CucumberApiTestCase> testCase) {
   id<JavaUtilMap> testCaseMap = create_JavaUtilHashMap_init();
-  [testCaseMap putWithId:@"name" withId:[((CucumberApiTestCase *) nil_chk(testCase)) getName]];
+  [testCaseMap putWithId:@"name" withId:[((id<CucumberApiTestCase>) nil_chk(testCase)) getName]];
   CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[testCase getLine]];
   if (astNode != nil) {
     GHKAScenarioDefinition *scenarioDefinition = CCBRTestSourcesModel_getScenarioDefinitionWithCCBRTestSourcesModel_AstNode_(astNode);
@@ -1010,8 +1016,8 @@ id<JavaUtilMap> CCBRHTMLFormatter_createTestCaseWithCucumberApiTestCase_(CCBRHTM
   return testCaseMap;
 }
 
-id<JavaUtilMap> CCBRHTMLFormatter_createBackgroundWithCucumberApiTestCase_(CCBRHTMLFormatter *self, CucumberApiTestCase *testCase) {
-  CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestCase *) nil_chk(testCase)) getLine]];
+id<JavaUtilMap> CCBRHTMLFormatter_createBackgroundWithCucumberApiTestCase_(CCBRHTMLFormatter *self, id<CucumberApiTestCase> testCase) {
+  CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((id<CucumberApiTestCase>) nil_chk(testCase)) getLine]];
   if (astNode != nil) {
     GHKABackground *background = CCBRTestSourcesModel_getBackgroundForTestCaseWithCCBRTestSourcesModel_AstNode_(astNode);
     id<JavaUtilMap> testCaseMap = create_JavaUtilHashMap_init();
@@ -1023,8 +1029,8 @@ id<JavaUtilMap> CCBRHTMLFormatter_createBackgroundWithCucumberApiTestCase_(CCBRH
   return nil;
 }
 
-jboolean CCBRHTMLFormatter_isFirstStepAfterBackgroundWithCucumberApiTestStep_(CCBRHTMLFormatter *self, CucumberApiTestStep *testStep) {
-  CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((CucumberApiTestStep *) nil_chk(testStep)) getStepLine]];
+jboolean CCBRHTMLFormatter_isFirstStepAfterBackgroundWithCucumberApiPickleStepTestStep_(CCBRHTMLFormatter *self, id<CucumberApiPickleStepTestStep> testStep) {
+  CCBRTestSourcesModel_AstNode *astNode = [((CCBRTestSourcesModel *) nil_chk(self->testSources_)) getAstNodeWithNSString:self->currentFeatureFile_ withInt:[((id<CucumberApiPickleStepTestStep>) nil_chk(testStep)) getStepLine]];
   if (astNode != nil) {
     if (self->currentTestCaseMap_ != nil && !CCBRTestSourcesModel_isBackgroundStepWithCCBRTestSourcesModel_AstNode_(astNode)) {
       return true;
@@ -1033,9 +1039,9 @@ jboolean CCBRHTMLFormatter_isFirstStepAfterBackgroundWithCucumberApiTestStep_(CC
   return false;
 }
 
-id<JavaUtilMap> CCBRHTMLFormatter_createTestStepWithCucumberApiTestStep_(CCBRHTMLFormatter *self, CucumberApiTestStep *testStep) {
+id<JavaUtilMap> CCBRHTMLFormatter_createTestStepWithCucumberApiPickleStepTestStep_(CCBRHTMLFormatter *self, id<CucumberApiPickleStepTestStep> testStep) {
   id<JavaUtilMap> stepMap = create_JavaUtilHashMap_init();
-  [stepMap putWithId:@"name" withId:[((CucumberApiTestStep *) nil_chk(testStep)) getStepText]];
+  [stepMap putWithId:@"name" withId:[((id<CucumberApiPickleStepTestStep>) nil_chk(testStep)) getStepText]];
   if (![((id<JavaUtilList>) nil_chk([testStep getStepArgument])) isEmpty]) {
     id<GHKArgument> argument = [((id<JavaUtilList>) nil_chk([testStep getStepArgument])) getWithInt:0];
     if ([argument isKindOfClass:[GHKPickleString class]]) {
@@ -1081,10 +1087,11 @@ id<JavaUtilList> CCBRHTMLFormatter_createCellListWithGHKPickleRow_(CCBRHTMLForma
   return cells;
 }
 
-id<JavaUtilMap> CCBRHTMLFormatter_createMatchMapWithCucumberApiTestStep_withCucumberApiResult_(CCBRHTMLFormatter *self, CucumberApiTestStep *testStep, CucumberApiResult *result) {
+id<JavaUtilMap> CCBRHTMLFormatter_createMatchMapWithCucumberApiPickleStepTestStep_(CCBRHTMLFormatter *self, id<CucumberApiPickleStepTestStep> testStep) {
   id<JavaUtilMap> matchMap = create_JavaUtilHashMap_init();
-  if (![((CucumberApiResult *) nil_chk(result)) isWithCucumberApiResult_Type:JreLoadEnum(CucumberApiResult_Type, UNDEFINED)]) {
-    [matchMap putWithId:@"location" withId:[((CucumberApiTestStep *) nil_chk(testStep)) getCodeLocation]];
+  NSString *location = [((id<CucumberApiPickleStepTestStep>) nil_chk(testStep)) getCodeLocation];
+  if (location != nil) {
+    [matchMap putWithId:@"location" withId:location];
   }
   return matchMap;
 }

@@ -7,7 +7,9 @@
 #include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
 #include "cucumber/api/java/After.h"
+#include "cucumber/api/java/AfterStep.h"
 #include "cucumber/api/java/Before.h"
+#include "cucumber/api/java/BeforeStep.h"
 #include "cucumber/runtime/ClassFinder.h"
 #include "cucumber/runtime/CucumberException.h"
 #include "cucumber/runtime/Utils.h"
@@ -166,7 +168,7 @@ void CucumberRuntimeJavaMethodScanner_validateMethodWithJavaLangReflectMethod_wi
 
 jboolean CucumberRuntimeJavaMethodScanner_isHookAnnotationWithJavaLangAnnotationAnnotation_(CucumberRuntimeJavaMethodScanner *self, id<JavaLangAnnotationAnnotation> annotation) {
   IOSClass *annotationClass = [((id<JavaLangAnnotationAnnotation>) nil_chk(annotation)) annotationType];
-  return [((IOSClass *) nil_chk(annotationClass)) isEqual:CucumberApiJavaBefore_class_()] || [annotationClass isEqual:CucumberApiJavaAfter_class_()];
+  return [((IOSClass *) nil_chk(annotationClass)) isEqual:CucumberApiJavaBefore_class_()] || [annotationClass isEqual:CucumberApiJavaAfter_class_()] || [annotationClass isEqual:CucumberApiJavaBeforeStep_class_()] || [annotationClass isEqual:CucumberApiJavaAfterStep_class_()];
 }
 
 jboolean CucumberRuntimeJavaMethodScanner_isStepdefAnnotationWithJavaLangAnnotationAnnotation_(CucumberRuntimeJavaMethodScanner *self, id<JavaLangAnnotationAnnotation> annotation) {
